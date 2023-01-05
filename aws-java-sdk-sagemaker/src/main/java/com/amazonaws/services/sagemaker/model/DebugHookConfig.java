@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for the Debugger hook parameters, metric and tensor collections, and storage paths. To
- * learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a
+ * Configuration information for the Amazon SageMaker Debugger hook parameters, metric and tensor collections, and
+ * storage paths. To learn more about how to configure the <code>DebugHookConfig</code> parameter, see <a
  * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
  * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
  * </p>
@@ -45,14 +45,14 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
     private String s3OutputPath;
     /**
      * <p>
-     * Configuration information for the Debugger hook parameters.
+     * Configuration information for the Amazon SageMaker Debugger hook parameters.
      * </p>
      */
     private java.util.Map<String, String> hookParameters;
     /**
      * <p>
-     * Configuration information for Debugger tensor collections. To learn more about how to configure the
-     * <code>CollectionConfiguration</code> parameter, see <a
+     * Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure
+     * the <code>CollectionConfiguration</code> parameter, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
      * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
@@ -141,10 +141,10 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for the Debugger hook parameters.
+     * Configuration information for the Amazon SageMaker Debugger hook parameters.
      * </p>
      * 
-     * @return Configuration information for the Debugger hook parameters.
+     * @return Configuration information for the Amazon SageMaker Debugger hook parameters.
      */
 
     public java.util.Map<String, String> getHookParameters() {
@@ -153,11 +153,11 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for the Debugger hook parameters.
+     * Configuration information for the Amazon SageMaker Debugger hook parameters.
      * </p>
      * 
      * @param hookParameters
-     *        Configuration information for the Debugger hook parameters.
+     *        Configuration information for the Amazon SageMaker Debugger hook parameters.
      */
 
     public void setHookParameters(java.util.Map<String, String> hookParameters) {
@@ -166,11 +166,11 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for the Debugger hook parameters.
+     * Configuration information for the Amazon SageMaker Debugger hook parameters.
      * </p>
      * 
      * @param hookParameters
-     *        Configuration information for the Debugger hook parameters.
+     *        Configuration information for the Amazon SageMaker Debugger hook parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,14 +209,14 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for Debugger tensor collections. To learn more about how to configure the
-     * <code>CollectionConfiguration</code> parameter, see <a
+     * Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure
+     * the <code>CollectionConfiguration</code> parameter, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
      * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      * 
-     * @return Configuration information for Debugger tensor collections. To learn more about how to configure the
-     *         <code>CollectionConfiguration</code> parameter, see <a
+     * @return Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to
+     *         configure the <code>CollectionConfiguration</code> parameter, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
      *         SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      */
@@ -227,15 +227,15 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for Debugger tensor collections. To learn more about how to configure the
-     * <code>CollectionConfiguration</code> parameter, see <a
+     * Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure
+     * the <code>CollectionConfiguration</code> parameter, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
      * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      * 
      * @param collectionConfigurations
-     *        Configuration information for Debugger tensor collections. To learn more about how to configure the
-     *        <code>CollectionConfiguration</code> parameter, see <a
+     *        Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to
+     *        configure the <code>CollectionConfiguration</code> parameter, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
      *        SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      */
@@ -251,8 +251,8 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for Debugger tensor collections. To learn more about how to configure the
-     * <code>CollectionConfiguration</code> parameter, see <a
+     * Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure
+     * the <code>CollectionConfiguration</code> parameter, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
      * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
@@ -263,8 +263,8 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param collectionConfigurations
-     *        Configuration information for Debugger tensor collections. To learn more about how to configure the
-     *        <code>CollectionConfiguration</code> parameter, see <a
+     *        Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to
+     *        configure the <code>CollectionConfiguration</code> parameter, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
      *        SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -282,15 +282,15 @@ public class DebugHookConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Configuration information for Debugger tensor collections. To learn more about how to configure the
-     * <code>CollectionConfiguration</code> parameter, see <a
+     * Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to configure
+     * the <code>CollectionConfiguration</code> parameter, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the SageMaker and
      * Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * </p>
      * 
      * @param collectionConfigurations
-     *        Configuration information for Debugger tensor collections. To learn more about how to configure the
-     *        <code>CollectionConfiguration</code> parameter, see <a
+     *        Configuration information for Amazon SageMaker Debugger tensor collections. To learn more about how to
+     *        configure the <code>CollectionConfiguration</code> parameter, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use the
      *        SageMaker and Debugger Configuration API Operations to Create, Update, and Debug Your Training Job</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

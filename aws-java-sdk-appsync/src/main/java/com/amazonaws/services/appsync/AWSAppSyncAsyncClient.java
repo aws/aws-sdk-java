@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -652,6 +652,39 @@ public class AWSAppSyncAsyncClient extends AWSAppSyncClient implements AWSAppSyn
 
                 try {
                     result = executeDisassociateApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<EvaluateCodeResult> evaluateCodeAsync(EvaluateCodeRequest request) {
+
+        return evaluateCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EvaluateCodeResult> evaluateCodeAsync(final EvaluateCodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<EvaluateCodeRequest, EvaluateCodeResult> asyncHandler) {
+        final EvaluateCodeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<EvaluateCodeResult>() {
+            @Override
+            public EvaluateCodeResult call() throws Exception {
+                EvaluateCodeResult result = null;
+
+                try {
+                    result = executeEvaluateCode(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

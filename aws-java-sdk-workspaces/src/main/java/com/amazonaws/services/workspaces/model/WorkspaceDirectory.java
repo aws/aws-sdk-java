@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -141,6 +141,13 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private SamlProperties samlProperties;
+    /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory for WorkSpaces login.
+     * </p>
+     */
+    private CertificateBasedAuthProperties certificateBasedAuthProperties;
 
     /**
      * <p>
@@ -1119,6 +1126,52 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory for WorkSpaces login.
+     * </p>
+     * 
+     * @param certificateBasedAuthProperties
+     *        The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     *        identities to Active Directory for WorkSpaces login.
+     */
+
+    public void setCertificateBasedAuthProperties(CertificateBasedAuthProperties certificateBasedAuthProperties) {
+        this.certificateBasedAuthProperties = certificateBasedAuthProperties;
+    }
+
+    /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory for WorkSpaces login.
+     * </p>
+     * 
+     * @return The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP)
+     *         user identities to Active Directory for WorkSpaces login.
+     */
+
+    public CertificateBasedAuthProperties getCertificateBasedAuthProperties() {
+        return this.certificateBasedAuthProperties;
+    }
+
+    /**
+     * <p>
+     * The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     * identities to Active Directory for WorkSpaces login.
+     * </p>
+     * 
+     * @param certificateBasedAuthProperties
+     *        The certificate-based authentication properties used to authenticate SAML 2.0 Identity Provider (IdP) user
+     *        identities to Active Directory for WorkSpaces login.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDirectory withCertificateBasedAuthProperties(CertificateBasedAuthProperties certificateBasedAuthProperties) {
+        setCertificateBasedAuthProperties(certificateBasedAuthProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1163,7 +1216,9 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         if (getSelfservicePermissions() != null)
             sb.append("SelfservicePermissions: ").append(getSelfservicePermissions()).append(",");
         if (getSamlProperties() != null)
-            sb.append("SamlProperties: ").append(getSamlProperties());
+            sb.append("SamlProperties: ").append(getSamlProperties()).append(",");
+        if (getCertificateBasedAuthProperties() != null)
+            sb.append("CertificateBasedAuthProperties: ").append(getCertificateBasedAuthProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -1246,6 +1301,11 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSamlProperties() != null && other.getSamlProperties().equals(this.getSamlProperties()) == false)
             return false;
+        if (other.getCertificateBasedAuthProperties() == null ^ this.getCertificateBasedAuthProperties() == null)
+            return false;
+        if (other.getCertificateBasedAuthProperties() != null
+                && other.getCertificateBasedAuthProperties().equals(this.getCertificateBasedAuthProperties()) == false)
+            return false;
         return true;
     }
 
@@ -1271,6 +1331,7 @@ public class WorkspaceDirectory implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         hashCode = prime * hashCode + ((getSelfservicePermissions() == null) ? 0 : getSelfservicePermissions().hashCode());
         hashCode = prime * hashCode + ((getSamlProperties() == null) ? 0 : getSamlProperties().hashCode());
+        hashCode = prime * hashCode + ((getCertificateBasedAuthProperties() == null) ? 0 : getCertificateBasedAuthProperties().hashCode());
         return hashCode;
     }
 

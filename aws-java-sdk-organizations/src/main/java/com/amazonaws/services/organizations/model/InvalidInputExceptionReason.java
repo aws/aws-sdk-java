@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,11 @@ public enum InvalidInputExceptionReason {
     INVALID_SYSTEM_TAGS_PARAMETER("INVALID_SYSTEM_TAGS_PARAMETER"),
     DUPLICATE_TAG_KEY("DUPLICATE_TAG_KEY"),
     TARGET_NOT_SUPPORTED("TARGET_NOT_SUPPORTED"),
-    INVALID_EMAIL_ADDRESS_TARGET("INVALID_EMAIL_ADDRESS_TARGET");
+    INVALID_EMAIL_ADDRESS_TARGET("INVALID_EMAIL_ADDRESS_TARGET"),
+    INVALID_RESOURCE_POLICY_JSON("INVALID_RESOURCE_POLICY_JSON"),
+    UNSUPPORTED_ACTION_IN_RESOURCE_POLICY("UNSUPPORTED_ACTION_IN_RESOURCE_POLICY"),
+    UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY("UNSUPPORTED_POLICY_TYPE_IN_RESOURCE_POLICY"),
+    UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY("UNSUPPORTED_RESOURCE_IN_RESOURCE_POLICY");
 
     private String value;
 

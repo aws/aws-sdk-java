@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1556,6 +1556,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @return A Java Future containing the result of the GetPosition operation returned by the service.
@@ -1563,12 +1570,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest getPositionRequest);
 
     /**
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @param asyncHandler
@@ -1580,6 +1595,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest getPositionRequest,
             com.amazonaws.handlers.AsyncHandler<GetPositionRequest, GetPositionResult> asyncHandler);
 
@@ -1587,6 +1603,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @return A Java Future containing the result of the GetPositionConfiguration operation returned by the service.
@@ -1594,12 +1617,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest getPositionConfigurationRequest);
 
     /**
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @param asyncHandler
@@ -1611,8 +1642,42 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest getPositionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetPositionConfigurationRequest, GetPositionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @return A Java Future containing the result of the GetPositionEstimate operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest getPositionEstimateRequest);
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPositionEstimate operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest getPositionEstimateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPositionEstimateRequest, GetPositionEstimateResult> asyncHandler);
 
     /**
      * <p>
@@ -1681,6 +1746,39 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      */
     java.util.concurrent.Future<GetResourceLogLevelResult> getResourceLogLevelAsync(GetResourceLogLevelRequest getResourceLogLevelRequest,
             com.amazonaws.handlers.AsyncHandler<GetResourceLogLevelRequest, GetResourceLogLevelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The postion information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @return A Java Future containing the result of the GetResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsync.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest getResourcePositionRequest);
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The postion information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest getResourcePositionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourcePositionRequest, GetResourcePositionResult> asyncHandler);
 
     /**
      * <p>
@@ -2274,6 +2372,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @return A Java Future containing the result of the ListPositionConfigurations operation returned by the service.
@@ -2281,6 +2386,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(
             ListPositionConfigurationsRequest listPositionConfigurationsRequest);
 
@@ -2288,6 +2394,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @param asyncHandler
@@ -2299,6 +2412,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(
             ListPositionConfigurationsRequest listPositionConfigurationsRequest,
             com.amazonaws.handlers.AsyncHandler<ListPositionConfigurationsRequest, ListPositionConfigurationsResult> asyncHandler);
@@ -2497,6 +2611,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @return A Java Future containing the result of the PutPositionConfiguration operation returned by the service.
@@ -2504,12 +2625,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest putPositionConfigurationRequest);
 
     /**
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @param asyncHandler
@@ -2521,6 +2650,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest putPositionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutPositionConfigurationRequest, PutPositionConfigurationResult> asyncHandler);
 
@@ -3153,6 +3283,13 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @return A Java Future containing the result of the UpdatePosition operation returned by the service.
@@ -3160,12 +3297,20 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest updatePositionRequest);
 
     /**
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @param asyncHandler
@@ -3177,6 +3322,7 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest updatePositionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePositionRequest, UpdatePositionResult> asyncHandler);
 
@@ -3214,6 +3360,41 @@ public interface AWSIoTWirelessAsync extends AWSIoTWireless {
     java.util.concurrent.Future<UpdateResourceEventConfigurationResult> updateResourceEventConfigurationAsync(
             UpdateResourceEventConfigurationRequest updateResourceEventConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateResourceEventConfigurationRequest, UpdateResourceEventConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The postion
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @return A Java Future containing the result of the UpdateResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsync.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest updateResourcePositionRequest);
+
+    /**
+     * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The postion
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResourcePosition operation returned by the service.
+     * @sample AWSIoTWirelessAsyncHandler.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest updateResourcePositionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourcePositionRequest, UpdateResourcePositionResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,11 @@ public class GenerateMacResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.
+     * The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and
+     * MAC algorithm.
+     * </p>
+     * <p>
+     * This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
      * </p>
      */
     private java.nio.ByteBuffer mac;
@@ -44,7 +48,11 @@ public class GenerateMacResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.
+     * The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and
+     * MAC algorithm.
+     * </p>
+     * <p>
+     * This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -58,7 +66,11 @@ public class GenerateMacResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param mac
-     *        The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.
+     *        The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS
+     *        key, and MAC algorithm.</p>
+     *        <p>
+     *        This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     *        2104</a>.
      */
 
     public void setMac(java.nio.ByteBuffer mac) {
@@ -67,7 +79,11 @@ public class GenerateMacResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.
+     * The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and
+     * MAC algorithm.
+     * </p>
+     * <p>
+     * This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -77,7 +93,11 @@ public class GenerateMacResult extends com.amazonaws.AmazonWebServiceResult<com.
      * {@code position}.
      * </p>
      * 
-     * @return The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.
+     * @return The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS
+     *         key, and MAC algorithm.</p>
+     *         <p>
+     *         This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     *         2104</a>.
      */
 
     public java.nio.ByteBuffer getMac() {
@@ -86,7 +106,11 @@ public class GenerateMacResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.
+     * The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS key, and
+     * MAC algorithm.
+     * </p>
+     * <p>
+     * This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC 2104</a>.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -100,7 +124,11 @@ public class GenerateMacResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param mac
-     *        The hash-based message authentication code (HMAC) for the given message, key, and MAC algorithm.
+     *        The hash-based message authentication code (HMAC) that was generated for the specified message, HMAC KMS
+     *        key, and MAC algorithm.</p>
+     *        <p>
+     *        This is the standard, raw HMAC defined in <a href="https://datatracker.ietf.org/doc/html/rfc2104">RFC
+     *        2104</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

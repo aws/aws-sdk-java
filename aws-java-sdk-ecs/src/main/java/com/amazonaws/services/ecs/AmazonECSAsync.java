@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1141,8 +1141,13 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * If you use a condition key in your IAM policy to refine the conditions for the policy statement, for example
-     * limit the actions to a specific cluster, you recevie an <code>AccessDeniedException</code> when there is a
+     * limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code> when there is a
      * mismatch between the condition key value and the corresponding parameter value.
+     * </p>
+     * <p>
+     * For information about required permissions and considerations, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using Amazon ECS Exec for
+     * debugging</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param executeCommandRequest
@@ -1159,8 +1164,13 @@ public interface AmazonECSAsync extends AmazonECS {
      * </p>
      * <p>
      * If you use a condition key in your IAM policy to refine the conditions for the policy statement, for example
-     * limit the actions to a specific cluster, you recevie an <code>AccessDeniedException</code> when there is a
+     * limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code> when there is a
      * mismatch between the condition key value and the corresponding parameter value.
+     * </p>
+     * <p>
+     * For information about required permissions and considerations, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using Amazon ECS Exec for
+     * debugging</a> in the <i>Amazon ECS Developer Guide</i>.
      * </p>
      * 
      * @param executeCommandRequest
@@ -1175,6 +1185,37 @@ public interface AmazonECSAsync extends AmazonECS {
      */
     java.util.concurrent.Future<ExecuteCommandResult> executeCommandAsync(ExecuteCommandRequest executeCommandRequest,
             com.amazonaws.handlers.AsyncHandler<ExecuteCommandRequest, ExecuteCommandResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the protection status of tasks in an Amazon ECS service.
+     * </p>
+     * 
+     * @param getTaskProtectionRequest
+     * @return A Java Future containing the result of the GetTaskProtection operation returned by the service.
+     * @sample AmazonECSAsync.GetTaskProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTaskProtectionResult> getTaskProtectionAsync(GetTaskProtectionRequest getTaskProtectionRequest);
+
+    /**
+     * <p>
+     * Retrieves the protection status of tasks in an Amazon ECS service.
+     * </p>
+     * 
+     * @param getTaskProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTaskProtection operation returned by the service.
+     * @sample AmazonECSAsyncHandler.GetTaskProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/GetTaskProtection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetTaskProtectionResult> getTaskProtectionAsync(GetTaskProtectionRequest getTaskProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTaskProtectionRequest, GetTaskProtectionResult> asyncHandler);
 
     /**
      * <p>
@@ -1389,6 +1430,47 @@ public interface AmazonECSAsync extends AmazonECS {
      * @see #listServicesAsync(ListServicesRequest, com.amazonaws.handlers.AsyncHandler)
      */
     java.util.concurrent.Future<ListServicesResult> listServicesAsync(com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation lists all of the services that are associated with a Cloud Map namespace. This list might include
+     * services in different clusters. In contrast, <code>ListServices</code> can only list services in one cluster at a
+     * time. If you need to filter the list of services in a single cluster by various parameters, use
+     * <code>ListServices</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listServicesByNamespaceRequest
+     * @return A Java Future containing the result of the ListServicesByNamespace operation returned by the service.
+     * @sample AmazonECSAsync.ListServicesByNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListServicesByNamespaceResult> listServicesByNamespaceAsync(ListServicesByNamespaceRequest listServicesByNamespaceRequest);
+
+    /**
+     * <p>
+     * This operation lists all of the services that are associated with a Cloud Map namespace. This list might include
+     * services in different clusters. In contrast, <code>ListServices</code> can only list services in one cluster at a
+     * time. If you need to filter the list of services in a single cluster by various parameters, use
+     * <code>ListServices</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param listServicesByNamespaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListServicesByNamespace operation returned by the service.
+     * @sample AmazonECSAsyncHandler.ListServicesByNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListServicesByNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListServicesByNamespaceResult> listServicesByNamespaceAsync(ListServicesByNamespaceRequest listServicesByNamespaceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListServicesByNamespaceRequest, ListServicesByNamespaceResult> asyncHandler);
 
     /**
      * <p>
@@ -2447,6 +2529,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon
      * ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
+     * </note> <note>
+     * <p>
+     * Agent updates with the <code>UpdateContainerAgent</code> API operation do not apply to Windows container
+     * instances. We recommend that you launch new container instances to update the agent version in your Windows
+     * clusters.
+     * </p>
      * </note>
      * <p>
      * The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or Amazon Linux AMI with the
@@ -2479,6 +2567,12 @@ public interface AmazonECSAsync extends AmazonECS {
      * updates the agent. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating the Amazon
      * ECS container agent</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Agent updates with the <code>UpdateContainerAgent</code> API operation do not apply to Windows container
+     * instances. We recommend that you launch new container instances to update the agent version in your Windows
+     * clusters.
      * </p>
      * </note>
      * <p>
@@ -3009,6 +3103,105 @@ public interface AmazonECSAsync extends AmazonECS {
     java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(
             UpdateServicePrimaryTaskSetRequest updateServicePrimaryTaskSetRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateServicePrimaryTaskSetRequest, UpdateServicePrimaryTaskSetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the protection status of a task. You can set <code>protectionEnabled</code> to <code>true</code> to
+     * protect your task from termination during scale-in events from <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+     * Autoscaling</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.
+     * </p>
+     * <p>
+     * Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets the
+     * <code>protectionEnabled</code> property making the task eligible for termination by a subsequent scale-in event.
+     * </p>
+     * <p>
+     * You can specify a custom expiration period for task protection from 1 minute to up to 2,880 minutes (48 hours).
+     * To specify the custom expiration period, set the <code>expiresInMinutes</code> property. The
+     * <code>expiresInMinutes</code> property is always reset when you invoke this operation for a task that already has
+     * <code>protectionEnabled</code> set to <code>true</code>. You can keep extending the protection expiration period
+     * of a task by invoking this operation repeatedly.
+     * </p>
+     * <p>
+     * To learn more about Amazon ECS task protection, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task scale-in
+     * protection</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported for tasks belonging to an Amazon ECS service. Invoking this operation for a
+     * standalone task will result in an <code>TASK_NOT_VALID</code> failure. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a>.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If you prefer to set task protection from within the container, we recommend using the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection-endpoint.html">Task
+     * scale-in protection endpoint</a>.
+     * </p>
+     * </important>
+     * 
+     * @param updateTaskProtectionRequest
+     * @return A Java Future containing the result of the UpdateTaskProtection operation returned by the service.
+     * @sample AmazonECSAsync.UpdateTaskProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTaskProtectionResult> updateTaskProtectionAsync(UpdateTaskProtectionRequest updateTaskProtectionRequest);
+
+    /**
+     * <p>
+     * Updates the protection status of a task. You can set <code>protectionEnabled</code> to <code>true</code> to
+     * protect your task from termination during scale-in events from <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+     * Autoscaling</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.
+     * </p>
+     * <p>
+     * Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets the
+     * <code>protectionEnabled</code> property making the task eligible for termination by a subsequent scale-in event.
+     * </p>
+     * <p>
+     * You can specify a custom expiration period for task protection from 1 minute to up to 2,880 minutes (48 hours).
+     * To specify the custom expiration period, set the <code>expiresInMinutes</code> property. The
+     * <code>expiresInMinutes</code> property is always reset when you invoke this operation for a task that already has
+     * <code>protectionEnabled</code> set to <code>true</code>. You can keep extending the protection expiration period
+     * of a task by invoking this operation repeatedly.
+     * </p>
+     * <p>
+     * To learn more about Amazon ECS task protection, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection.html">Task scale-in
+     * protection</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is only supported for tasks belonging to an Amazon ECS service. Invoking this operation for a
+     * standalone task will result in an <code>TASK_NOT_VALID</code> failure. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API failure
+     * reasons</a>.
+     * </p>
+     * </note> <important>
+     * <p>
+     * If you prefer to set task protection from within the container, we recommend using the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-scale-in-protection-endpoint.html">Task
+     * scale-in protection endpoint</a>.
+     * </p>
+     * </important>
+     * 
+     * @param updateTaskProtectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTaskProtection operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateTaskProtection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskProtection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTaskProtectionResult> updateTaskProtectionAsync(UpdateTaskProtectionRequest updateTaskProtectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTaskProtectionRequest, UpdateTaskProtectionResult> asyncHandler);
 
     /**
      * <p>

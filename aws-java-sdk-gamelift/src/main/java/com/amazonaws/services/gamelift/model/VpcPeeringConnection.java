@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>Related actions</b>
  * </p>
  * <p>
- * <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> | <a>DeleteVpcPeeringAuthorization</a>
- * | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a> | <a>DeleteVpcPeeringConnection</a> | <a
- * href=
+ * <a href=
  * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
  * >All APIs by task</a>
  * </p>
@@ -63,7 +61,7 @@ public class VpcPeeringConnection implements Serializable, Cloneable, Structured
     /**
      * <p>
      * A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering
-     * connection events, and is used when deleting a connection with <a>DeleteVpcPeeringConnection</a>.
+     * connection events, and is used when deleting a connection.
      * </p>
      */
     private String vpcPeeringConnectionId;
@@ -232,12 +230,12 @@ public class VpcPeeringConnection implements Serializable, Cloneable, Structured
     /**
      * <p>
      * A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering
-     * connection events, and is used when deleting a connection with <a>DeleteVpcPeeringConnection</a>.
+     * connection events, and is used when deleting a connection.
      * </p>
      * 
      * @param vpcPeeringConnectionId
      *        A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC
-     *        peering connection events, and is used when deleting a connection with <a>DeleteVpcPeeringConnection</a>.
+     *        peering connection events, and is used when deleting a connection.
      */
 
     public void setVpcPeeringConnectionId(String vpcPeeringConnectionId) {
@@ -247,11 +245,11 @@ public class VpcPeeringConnection implements Serializable, Cloneable, Structured
     /**
      * <p>
      * A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering
-     * connection events, and is used when deleting a connection with <a>DeleteVpcPeeringConnection</a>.
+     * connection events, and is used when deleting a connection.
      * </p>
      * 
      * @return A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC
-     *         peering connection events, and is used when deleting a connection with <a>DeleteVpcPeeringConnection</a>.
+     *         peering connection events, and is used when deleting a connection.
      */
 
     public String getVpcPeeringConnectionId() {
@@ -261,12 +259,12 @@ public class VpcPeeringConnection implements Serializable, Cloneable, Structured
     /**
      * <p>
      * A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering
-     * connection events, and is used when deleting a connection with <a>DeleteVpcPeeringConnection</a>.
+     * connection events, and is used when deleting a connection.
      * </p>
      * 
      * @param vpcPeeringConnectionId
      *        A unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC
-     *        peering connection events, and is used when deleting a connection with <a>DeleteVpcPeeringConnection</a>.
+     *        peering connection events, and is used when deleting a connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

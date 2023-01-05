@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -183,6 +183,8 @@ public class AWSRedshiftServerlessClient extends AmazonWebServiceClient implemen
      *         The submitted action has conflicts.
      * @throws ValidationException
      *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws TooManyTagsException
+     *         The request exceeded the number of tags allowed for a resource.
      * @throws ServiceQuotaExceededException
      *         The service limit was exceeded.
      * @sample AWSRedshiftServerless.ConvertRecoveryPointToSnapshot
@@ -383,6 +385,8 @@ public class AWSRedshiftServerlessClient extends AmazonWebServiceClient implemen
      *         The submitted action has conflicts.
      * @throws ValidationException
      *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws TooManyTagsException
+     *         The request exceeded the number of tags allowed for a resource.
      * @throws ServiceQuotaExceededException
      *         The service limit was exceeded.
      * @sample AWSRedshiftServerless.CreateSnapshot
@@ -954,7 +958,7 @@ public class AWSRedshiftServerlessClient extends AmazonWebServiceClient implemen
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt; The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources. &lt;/p&gt; &lt;p&gt; If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
      * </pre>
      * 
      * @param getCredentialsRequest
@@ -1324,6 +1328,66 @@ public class AWSRedshiftServerlessClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Returns information about a <code>TableRestoreStatus</code> object.
+     * </p>
+     * 
+     * @param getTableRestoreStatusRequest
+     * @return Result of the GetTableRestoreStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @sample AWSRedshiftServerless.GetTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetTableRestoreStatusResult getTableRestoreStatus(GetTableRestoreStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTableRestoreStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetTableRestoreStatusResult executeGetTableRestoreStatus(GetTableRestoreStatusRequest getTableRestoreStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTableRestoreStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTableRestoreStatusRequest> request = null;
+        Response<GetTableRestoreStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTableRestoreStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTableRestoreStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Serverless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTableRestoreStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTableRestoreStatusResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetTableRestoreStatusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about a usage limit.
      * </p>
      * 
@@ -1678,6 +1742,68 @@ public class AWSRedshiftServerlessClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<ListSnapshotsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSnapshotsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about an array of <code>TableRestoreStatus</code> objects.
+     * </p>
+     * 
+     * @param listTableRestoreStatusRequest
+     * @return Result of the ListTableRestoreStatus operation returned by the service.
+     * @throws InvalidPaginationException
+     *         The provided pagination token is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @sample AWSRedshiftServerless.ListTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTableRestoreStatusResult listTableRestoreStatus(ListTableRestoreStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTableRestoreStatus(request);
+    }
+
+    @SdkInternalApi
+    final ListTableRestoreStatusResult executeListTableRestoreStatus(ListTableRestoreStatusRequest listTableRestoreStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTableRestoreStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTableRestoreStatusRequest> request = null;
+        Response<ListTableRestoreStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTableRestoreStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTableRestoreStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Serverless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTableRestoreStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTableRestoreStatusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTableRestoreStatusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2061,6 +2187,71 @@ public class AWSRedshiftServerlessClient extends AmazonWebServiceClient implemen
 
             HttpResponseHandler<AmazonWebServiceResponse<RestoreFromSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreFromSnapshotResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+     * </p>
+     * 
+     * @param restoreTableFromSnapshotRequest
+     * @return Result of the RestoreTableFromSnapshot operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ConflictException
+     *         The submitted action has conflicts.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @sample AWSRedshiftServerless.RestoreTableFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RestoreTableFromSnapshotResult restoreTableFromSnapshot(RestoreTableFromSnapshotRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreTableFromSnapshot(request);
+    }
+
+    @SdkInternalApi
+    final RestoreTableFromSnapshotResult executeRestoreTableFromSnapshot(RestoreTableFromSnapshotRequest restoreTableFromSnapshotRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreTableFromSnapshotRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreTableFromSnapshotRequest> request = null;
+        Response<RestoreTableFromSnapshotResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreTableFromSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(restoreTableFromSnapshotRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Redshift Serverless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableFromSnapshot");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreTableFromSnapshotResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RestoreTableFromSnapshotResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

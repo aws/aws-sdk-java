@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class ListBillingGroupCostReportsRequest extends com.amazonaws.AmazonWebS
     private Integer maxResults;
     /**
      * <p>
-     * The pagination token used on subsequent calls to get reports.
+     * The pagination token that's used on subsequent calls to get reports.
      * </p>
      */
     private String nextToken;
@@ -132,11 +132,11 @@ public class ListBillingGroupCostReportsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get reports.
+     * The pagination token that's used on subsequent calls to get reports.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to get reports.
+     *        The pagination token that's used on subsequent calls to get reports.
      */
 
     public void setNextToken(String nextToken) {
@@ -145,10 +145,10 @@ public class ListBillingGroupCostReportsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get reports.
+     * The pagination token that's used on subsequent calls to get reports.
      * </p>
      * 
-     * @return The pagination token used on subsequent calls to get reports.
+     * @return The pagination token that's used on subsequent calls to get reports.
      */
 
     public String getNextToken() {
@@ -157,11 +157,11 @@ public class ListBillingGroupCostReportsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get reports.
+     * The pagination token that's used on subsequent calls to get reports.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to get reports.
+     *        The pagination token that's used on subsequent calls to get reports.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

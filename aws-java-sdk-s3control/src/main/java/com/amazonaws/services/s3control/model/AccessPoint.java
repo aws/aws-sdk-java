@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,12 @@ public class AccessPoint implements Serializable, Cloneable {
      * </p>
      */
     private String alias;
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     */
+    private String bucketAccountId;
 
     /**
      * <p>
@@ -395,6 +401,46 @@ public class AccessPoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     */
+
+    public void setBucketAccountId(String bucketAccountId) {
+        this.bucketAccountId = bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     */
+
+    public String getBucketAccountId() {
+        return this.bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccessPoint withBucketAccountId(String bucketAccountId) {
+        setBucketAccountId(bucketAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -417,7 +463,9 @@ public class AccessPoint implements Serializable, Cloneable {
         if (getAccessPointArn() != null)
             sb.append("AccessPointArn: ").append(getAccessPointArn()).append(",");
         if (getAlias() != null)
-            sb.append("Alias: ").append(getAlias());
+            sb.append("Alias: ").append(getAlias()).append(",");
+        if (getBucketAccountId() != null)
+            sb.append("BucketAccountId: ").append(getBucketAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -456,6 +504,10 @@ public class AccessPoint implements Serializable, Cloneable {
             return false;
         if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
             return false;
+        if (other.getBucketAccountId() == null ^ this.getBucketAccountId() == null)
+            return false;
+        if (other.getBucketAccountId() != null && other.getBucketAccountId().equals(this.getBucketAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -470,6 +522,7 @@ public class AccessPoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode());
         hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
+        hashCode = prime * hashCode + ((getBucketAccountId() == null) ? 0 : getBucketAccountId().hashCode());
         return hashCode;
     }
 

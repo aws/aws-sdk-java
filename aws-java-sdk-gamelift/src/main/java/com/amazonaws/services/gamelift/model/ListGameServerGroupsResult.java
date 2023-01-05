@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,23 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of game server group objects that match the request.
+     * The game server groups' game server groups.
      * </p>
      */
     private java.util.List<GameServerGroup> gameServerGroups;
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     * returned, these results represent the end of the list.
+     * Specify the pagination token from a previous request to retrieve the next page of results.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A collection of game server group objects that match the request.
+     * The game server groups' game server groups.
      * </p>
      * 
-     * @return A collection of game server group objects that match the request.
+     * @return The game server groups' game server groups.
      */
 
     public java.util.List<GameServerGroup> getGameServerGroups() {
@@ -51,11 +50,11 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of game server group objects that match the request.
+     * The game server groups' game server groups.
      * </p>
      * 
      * @param gameServerGroups
-     *        A collection of game server group objects that match the request.
+     *        The game server groups' game server groups.
      */
 
     public void setGameServerGroups(java.util.Collection<GameServerGroup> gameServerGroups) {
@@ -69,7 +68,7 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of game server group objects that match the request.
+     * The game server groups' game server groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +77,7 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param gameServerGroups
-     *        A collection of game server group objects that match the request.
+     *        The game server groups' game server groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +93,11 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A collection of game server group objects that match the request.
+     * The game server groups' game server groups.
      * </p>
      * 
      * @param gameServerGroups
-     *        A collection of game server group objects that match the request.
+     *        The game server groups' game server groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +108,11 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     * returned, these results represent the end of the list.
+     * Specify the pagination token from a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
-     *        is returned, these results represent the end of the list.
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,12 +121,10 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     * returned, these results represent the end of the list.
+     * Specify the pagination token from a previous request to retrieve the next page of results.
      * </p>
      * 
-     * @return A token that indicates where to resume retrieving results on the next call to this operation. If no token
-     *         is returned, these results represent the end of the list.
+     * @return Specify the pagination token from a previous request to retrieve the next page of results.
      */
 
     public String getNextToken() {
@@ -138,13 +133,11 @@ public class ListGameServerGroupsResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
-     * returned, these results represent the end of the list.
+     * Specify the pagination token from a previous request to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
-     *        is returned, these results represent the end of the list.
+     *        Specify the pagination token from a previous request to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

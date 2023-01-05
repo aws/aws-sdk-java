@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -161,6 +161,12 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
      * </p>
      */
     private ExasolParameters exasolParameters;
+    /**
+     * <p>
+     * The required parameters that are needed to connect to a Databricks data source.
+     * </p>
+     */
+    private DatabricksParameters databricksParameters;
 
     /**
      * <p>
@@ -1043,6 +1049,46 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The required parameters that are needed to connect to a Databricks data source.
+     * </p>
+     * 
+     * @param databricksParameters
+     *        The required parameters that are needed to connect to a Databricks data source.
+     */
+
+    public void setDatabricksParameters(DatabricksParameters databricksParameters) {
+        this.databricksParameters = databricksParameters;
+    }
+
+    /**
+     * <p>
+     * The required parameters that are needed to connect to a Databricks data source.
+     * </p>
+     * 
+     * @return The required parameters that are needed to connect to a Databricks data source.
+     */
+
+    public DatabricksParameters getDatabricksParameters() {
+        return this.databricksParameters;
+    }
+
+    /**
+     * <p>
+     * The required parameters that are needed to connect to a Databricks data source.
+     * </p>
+     * 
+     * @param databricksParameters
+     *        The required parameters that are needed to connect to a Databricks data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceParameters withDatabricksParameters(DatabricksParameters databricksParameters) {
+        setDatabricksParameters(databricksParameters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1097,7 +1143,9 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         if (getAmazonOpenSearchParameters() != null)
             sb.append("AmazonOpenSearchParameters: ").append(getAmazonOpenSearchParameters()).append(",");
         if (getExasolParameters() != null)
-            sb.append("ExasolParameters: ").append(getExasolParameters());
+            sb.append("ExasolParameters: ").append(getExasolParameters()).append(",");
+        if (getDatabricksParameters() != null)
+            sb.append("DatabricksParameters: ").append(getDatabricksParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -1201,6 +1249,10 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
             return false;
         if (other.getExasolParameters() != null && other.getExasolParameters().equals(this.getExasolParameters()) == false)
             return false;
+        if (other.getDatabricksParameters() == null ^ this.getDatabricksParameters() == null)
+            return false;
+        if (other.getDatabricksParameters() != null && other.getDatabricksParameters().equals(this.getDatabricksParameters()) == false)
+            return false;
         return true;
     }
 
@@ -1231,6 +1283,7 @@ public class DataSourceParameters implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getTwitterParameters() == null) ? 0 : getTwitterParameters().hashCode());
         hashCode = prime * hashCode + ((getAmazonOpenSearchParameters() == null) ? 0 : getAmazonOpenSearchParameters().hashCode());
         hashCode = prime * hashCode + ((getExasolParameters() == null) ? 0 : getExasolParameters().hashCode());
+        hashCode = prime * hashCode + ((getDatabricksParameters() == null) ? 0 : getDatabricksParameters().hashCode());
         return hashCode;
     }
 

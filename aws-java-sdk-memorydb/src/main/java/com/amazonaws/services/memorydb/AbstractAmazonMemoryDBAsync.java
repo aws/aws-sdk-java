@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -288,6 +288,32 @@ public class AbstractAmazonMemoryDBAsync extends AbstractAmazonMemoryDB implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest request) {
+
+        return describeReservedNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesRequest, DescribeReservedNodesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReservedNodesOfferingsResult> describeReservedNodesOfferingsAsync(DescribeReservedNodesOfferingsRequest request) {
+
+        return describeReservedNodesOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReservedNodesOfferingsResult> describeReservedNodesOfferingsAsync(DescribeReservedNodesOfferingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesOfferingsRequest, DescribeReservedNodesOfferingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeServiceUpdatesResult> describeServiceUpdatesAsync(DescribeServiceUpdatesRequest request) {
 
         return describeServiceUpdatesAsync(request, null);
@@ -374,6 +400,19 @@ public class AbstractAmazonMemoryDBAsync extends AbstractAmazonMemoryDB implemen
     @Override
     public java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseReservedNodesOfferingResult> purchaseReservedNodesOfferingAsync(PurchaseReservedNodesOfferingRequest request) {
+
+        return purchaseReservedNodesOfferingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseReservedNodesOfferingResult> purchaseReservedNodesOfferingAsync(PurchaseReservedNodesOfferingRequest request,
+            com.amazonaws.handlers.AsyncHandler<PurchaseReservedNodesOfferingRequest, PurchaseReservedNodesOfferingResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

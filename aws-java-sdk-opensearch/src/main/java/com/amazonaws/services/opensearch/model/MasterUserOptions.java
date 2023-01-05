@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Credentials for the master user: username and password, ARN, or both.
+ * Credentials for the master user for a domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,30 +27,33 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ARN for the master user (if IAM is enabled).
+     * Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     * <code>false</code>.
      * </p>
      */
     private String masterUserARN;
     /**
      * <p>
-     * The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      */
     private String masterUserName;
     /**
      * <p>
-     * The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      */
     private String masterUserPassword;
 
     /**
      * <p>
-     * ARN for the master user (if IAM is enabled).
+     * Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     * <code>false</code>.
      * </p>
      * 
      * @param masterUserARN
-     *        ARN for the master user (if IAM is enabled).
+     *        Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code>
+     *        is <code>false</code>.
      */
 
     public void setMasterUserARN(String masterUserARN) {
@@ -59,10 +62,12 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ARN for the master user (if IAM is enabled).
+     * Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     * <code>false</code>.
      * </p>
      * 
-     * @return ARN for the master user (if IAM is enabled).
+     * @return Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code>
+     *         is <code>false</code>.
      */
 
     public String getMasterUserARN() {
@@ -71,11 +76,13 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * ARN for the master user (if IAM is enabled).
+     * Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     * <code>false</code>.
      * </p>
      * 
      * @param masterUserARN
-     *        ARN for the master user (if IAM is enabled).
+     *        Amazon Resource Name (ARN) for the master user. Only specify if <code>InternalUserDatabaseEnabled</code>
+     *        is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +93,12 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      * 
      * @param masterUserName
-     *        The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     *        User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     *        <code>true</code>.
      */
 
     public void setMasterUserName(String masterUserName) {
@@ -99,10 +107,11 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      * 
-     * @return The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * @return User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     *         <code>true</code>.
      */
 
     public String getMasterUserName() {
@@ -111,11 +120,12 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      * 
      * @param masterUserName
-     *        The master user's username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     *        User name for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +136,12 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      * 
      * @param masterUserPassword
-     *        The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.
+     *        Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     *        <code>true</code>.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -139,10 +150,11 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      * 
-     * @return The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * @return Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     *         <code>true</code>.
      */
 
     public String getMasterUserPassword() {
@@ -151,11 +163,12 @@ public class MasterUserOptions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is <code>true</code>.
      * </p>
      * 
      * @param masterUserPassword
-     *        The master user's password, which is stored in the Amazon OpenSearch Service domain's internal database.
+     *        Password for the master user. Only specify if <code>InternalUserDatabaseEnabled</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1626,6 +1626,77 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Start replication to origin / target region - applies only to protected instances that originated in EC2. For
+     * recovery instances on target region - starts replication back to origin region. For failback instances on origin
+     * region - starts replication to target region to re-protect them.
+     * </p>
+     * 
+     * @param reverseReplicationRequest
+     * @return Result of the ReverseReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.ReverseReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ReverseReplicationResult reverseReplication(ReverseReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeReverseReplication(request);
+    }
+
+    @SdkInternalApi
+    final ReverseReplicationResult executeReverseReplication(ReverseReplicationRequest reverseReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(reverseReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReverseReplicationRequest> request = null;
+        Response<ReverseReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReverseReplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(reverseReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReverseReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ReverseReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReverseReplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This
      * will run conversion on the failback client and will reboot your machine, thus completing the failback process.
      * </p>
@@ -1760,6 +1831,72 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
     /**
      * <p>
+     * Starts replication for a stopped Source Server. This action would make the Source Server protected again and
+     * restart billing for it.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @return Result of the StartReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartReplicationResult startReplication(StartReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartReplication(request);
+    }
+
+    @SdkInternalApi
+    final StartReplicationResult executeStartReplication(StartReplicationRequest startReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartReplicationRequest> request = null;
+        Response<StartReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartReplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartReplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery
      * Instance back to FAILBACK_NOT_STARTED.
      * </p>
@@ -1812,6 +1949,72 @@ public class AWSdrsClient extends AmazonWebServiceClient implements AWSdrs {
 
             HttpResponseHandler<AmazonWebServiceResponse<StopFailbackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopFailbackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing
+     * snapshots and stop billing for it.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return Result of the StopReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopReplicationResult stopReplication(StopReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopReplication(request);
+    }
+
+    @SdkInternalApi
+    final StopReplicationResult executeStopReplication(StopReplicationRequest stopReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopReplicationRequest> request = null;
+        Response<StopReplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopReplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "drs");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopReplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopReplicationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

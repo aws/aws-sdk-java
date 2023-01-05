@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -521,9 +521,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid <code>Iops</code> values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
@@ -3941,9 +3941,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid <code>Iops</code> values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
@@ -3956,9 +3956,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB
      *        instance in the Multi-AZ DB cluster.</p>
      *        <p>
-     *        For information about valid <code>Iops</code> values, see <a
+     *        For information about valid IOPS values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
-     *        Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+     *        Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
@@ -3977,9 +3977,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid <code>Iops</code> values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
@@ -3991,9 +3991,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB
      *         instance in the Multi-AZ DB cluster.</p>
      *         <p>
-     *         For information about valid <code>Iops</code> values, see <a
+     *         For information about valid IOPS values, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
-     *         Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+     *         Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
@@ -4012,9 +4012,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * instance in the Multi-AZ DB cluster.
      * </p>
      * <p>
-     * For information about valid <code>Iops</code> values, see <a
+     * For information about valid IOPS values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+     * IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.
@@ -4027,9 +4027,9 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB
      *        instance in the Multi-AZ DB cluster.</p>
      *        <p>
-     *        For information about valid <code>Iops</code> values, see <a
+     *        For information about valid IOPS values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
-     *        Provisioned IOPS storage to improve performance</a> in the <i>Amazon RDS User Guide</i>.
+     *        Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Constraints: Must be a multiple between .5 and 50 of the storage amount for the DB instance.

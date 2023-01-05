@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,7 @@ public class QuipConfiguration implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for
-     * a Quip data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -189,8 +188,7 @@ public class QuipConfiguration implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for
-     * a Quip data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -202,8 +200,7 @@ public class QuipConfiguration implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        accessToken—The token created in Quip. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication"
-     *        >Authentication for a Quip data source</a>.
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.
      *        </p>
      *        </li>
      */
@@ -221,8 +218,7 @@ public class QuipConfiguration implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for
-     * a Quip data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -233,8 +229,7 @@ public class QuipConfiguration implements Serializable, Cloneable, StructuredPoj
      *         <li>
      *         <p>
      *         accessToken—The token created in Quip. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication"
-     *         >Authentication for a Quip data source</a>.
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.
      *         </p>
      *         </li>
      */
@@ -252,8 +247,7 @@ public class QuipConfiguration implements Serializable, Cloneable, StructuredPoj
      * <li>
      * <p>
      * accessToken—The token created in Quip. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication">Authentication for
-     * a Quip data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.
      * </p>
      * </li>
      * </ul>
@@ -265,8 +259,7 @@ public class QuipConfiguration implements Serializable, Cloneable, StructuredPoj
      *        <li>
      *        <p>
      *        accessToken—The token created in Quip. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html#quip-authentication"
-     *        >Authentication for a Quip data source</a>.
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-slack.html">Using a Quip data source</a>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

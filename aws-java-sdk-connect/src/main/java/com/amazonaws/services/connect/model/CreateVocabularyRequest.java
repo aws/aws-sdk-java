@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,11 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create
-     * request is received more than once with same client token, subsequent requests return the previous response
-     * without creating a vocabulary again.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>. If a create request is received more than once with same client token, subsequent requests
+     * return the previous response without creating a vocabulary again.
      * </p>
      */
     private String clientToken;
@@ -73,15 +75,19 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create
-     * request is received more than once with same client token, subsequent requests return the previous response
-     * without creating a vocabulary again.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>. If a create request is received more than once with same client token, subsequent requests
+     * return the previous response without creating a vocabulary again.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create
-     *        request is received more than once with same client token, subsequent requests return the previous
-     *        response without creating a vocabulary again.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>. If a create request is received more than once with same client token,
+     *        subsequent requests return the previous response without creating a vocabulary again.
      */
 
     public void setClientToken(String clientToken) {
@@ -90,14 +96,18 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create
-     * request is received more than once with same client token, subsequent requests return the previous response
-     * without creating a vocabulary again.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>. If a create request is received more than once with same client token, subsequent requests
+     * return the previous response without creating a vocabulary again.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a
-     *         create request is received more than once with same client token, subsequent requests return the previous
-     *         response without creating a vocabulary again.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>. If a create request is received more than once with same client
+     *         token, subsequent requests return the previous response without creating a vocabulary again.
      */
 
     public String getClientToken() {
@@ -106,15 +116,19 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create
-     * request is received more than once with same client token, subsequent requests return the previous response
-     * without creating a vocabulary again.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>. If a create request is received more than once with same client token, subsequent requests
+     * return the previous response without creating a vocabulary again.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If a create
-     *        request is received more than once with same client token, subsequent requests return the previous
-     *        response without creating a vocabulary again.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>. If a create request is received more than once with same client token,
+     *        subsequent requests return the previous response without creating a vocabulary again.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

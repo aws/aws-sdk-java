@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,7 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of cache policies. The response
      * includes cache policies in the list that occur after the marker. To get the next page of the list, set this
-     * field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      */
     private String marker;
@@ -213,13 +213,13 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of cache policies. The response
      * includes cache policies in the list that occur after the marker. To get the next page of the list, set this
-     * field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      * 
      * @param marker
      *        Use this field when paginating results to indicate where to begin in your list of cache policies. The
      *        response includes cache policies in the list that occur after the marker. To get the next page of the
-     *        list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     *        list, set this field's value to the value of <code>NextMarker</code> from the current page's response.
      */
 
     public void setMarker(String marker) {
@@ -230,12 +230,12 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of cache policies. The response
      * includes cache policies in the list that occur after the marker. To get the next page of the list, set this
-     * field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      * 
      * @return Use this field when paginating results to indicate where to begin in your list of cache policies. The
      *         response includes cache policies in the list that occur after the marker. To get the next page of the
-     *         list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     *         list, set this field's value to the value of <code>NextMarker</code> from the current page's response.
      */
 
     public String getMarker() {
@@ -246,13 +246,13 @@ public class ListCachePoliciesRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Use this field when paginating results to indicate where to begin in your list of cache policies. The response
      * includes cache policies in the list that occur after the marker. To get the next page of the list, set this
-     * field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     * field's value to the value of <code>NextMarker</code> from the current page's response.
      * </p>
      * 
      * @param marker
      *        Use this field when paginating results to indicate where to begin in your list of cache policies. The
      *        response includes cache policies in the list that occur after the marker. To get the next page of the
-     *        list, set this field’s value to the value of <code>NextMarker</code> from the current page’s response.
+     *        list, set this field's value to the value of <code>NextMarker</code> from the current page's response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -183,8 +183,8 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
      * @throws ValidationErrorException
      *         There was an error validating your request.
      * @throws InternalFailureException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws AccessForbiddenException
@@ -239,9 +239,10 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
 
     /**
      * <p>
-     * Deletes a <code>Record</code> from a <code>FeatureGroup</code>. A new record will show up in the
-     * <code>OfflineStore</code> when the <code>DeleteRecord</code> API is called. This record will have a value of
-     * <code>True</code> in the <code>is_deleted</code> column.
+     * Deletes a <code>Record</code> from a <code>FeatureGroup</code>. When the <code>DeleteRecord</code> API is called
+     * a new record will be added to the <code>OfflineStore</code> and the <code>Record</code> will be removed from the
+     * <code>OnlineStore</code>. This record will have a value of <code>True</code> in the <code>is_deleted</code>
+     * column.
      * </p>
      * 
      * @param deleteRecordRequest
@@ -249,8 +250,8 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
      * @throws ValidationErrorException
      *         There was an error validating your request.
      * @throws InternalFailureException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws AccessForbiddenException
@@ -317,8 +318,8 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
      * @throws ResourceNotFoundException
      *         A resource that is required to perform an action was not found.
      * @throws InternalFailureException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws AccessForbiddenException
@@ -385,8 +386,8 @@ public class AmazonSageMakerFeatureStoreRuntimeClient extends AmazonWebServiceCl
      * @throws ValidationErrorException
      *         There was an error validating your request.
      * @throws InternalFailureException
-     *         An internal failure occurred. Try your request again. If the problem persists, contact AWS customer
-     *         support.
+     *         An internal failure occurred. Try your request again. If the problem persists, contact Amazon Web
+     *         Services customer support.
      * @throws ServiceUnavailableException
      *         The service is currently unavailable.
      * @throws AccessForbiddenException

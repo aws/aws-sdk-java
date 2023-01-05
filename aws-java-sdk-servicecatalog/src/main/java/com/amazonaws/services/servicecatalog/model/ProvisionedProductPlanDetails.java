@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,7 +91,7 @@ public class ProvisionedProductPlanDetails implements Serializable, Cloneable, S
     private String status;
     /**
      * <p>
-     * The time when the plan was last updated.
+     * The UTC time stamp when the plan was last updated.
      * </p>
      */
     private java.util.Date updatedTime;
@@ -567,11 +567,11 @@ public class ProvisionedProductPlanDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The time when the plan was last updated.
+     * The UTC time stamp when the plan was last updated.
      * </p>
      * 
      * @param updatedTime
-     *        The time when the plan was last updated.
+     *        The UTC time stamp when the plan was last updated.
      */
 
     public void setUpdatedTime(java.util.Date updatedTime) {
@@ -580,10 +580,10 @@ public class ProvisionedProductPlanDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The time when the plan was last updated.
+     * The UTC time stamp when the plan was last updated.
      * </p>
      * 
-     * @return The time when the plan was last updated.
+     * @return The UTC time stamp when the plan was last updated.
      */
 
     public java.util.Date getUpdatedTime() {
@@ -592,11 +592,11 @@ public class ProvisionedProductPlanDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The time when the plan was last updated.
+     * The UTC time stamp when the plan was last updated.
      * </p>
      * 
      * @param updatedTime
-     *        The time when the plan was last updated.
+     *        The UTC time stamp when the plan was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

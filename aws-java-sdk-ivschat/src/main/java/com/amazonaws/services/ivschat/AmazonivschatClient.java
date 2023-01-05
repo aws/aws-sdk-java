@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,9 +83,15 @@ import com.amazonaws.services.ivschat.model.transform.*;
  * <b>Resources</b>
  * </p>
  * <p>
- * The following resource is part of Amazon IVS Chat:
+ * The following resources are part of Amazon IVS Chat:
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <b>LoggingConfiguration</b> — A configuration that allows customers to store and record sent messages in a chat room.
+ * See the Logging Configuration endpoints for more information.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See
@@ -215,9 +221,10 @@ import com.amazonaws.services.ivschat.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateChatToken</a> — Creates an encrypted token that is used to establish an individual WebSocket connection to a
- * room. The token is valid for one minute, and a connection (session) established with the token is valid for the
- * specified duration.
+ * <a>CreateChatToken</a> — Creates an encrypted token that is used by a chat participant to establish an individual
+ * WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the
+ * session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in
+ * the response.
  * </p>
  * </li>
  * </ul>
@@ -249,6 +256,38 @@ import com.amazonaws.services.ivschat.model.transform.*;
  * <li>
  * <p>
  * <a>UpdateRoom</a> — Updates a room’s configuration.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Logging Configuration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateLoggingConfiguration</a> — Creates a logging configuration that allows clients to store and record sent
+ * messages.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteLoggingConfiguration</a> — Deletes the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetLoggingConfiguration</a> — Gets the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListLoggingConfigurations</a> — Gets summary information about all your logging configurations in the AWS region
+ * where the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateLoggingConfiguration</a> — Updates a specified logging configuration.
  * </p>
  * </li>
  * </ul>
@@ -305,14 +344,17 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivschat.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ivschat.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivschat.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivschat.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ivschat.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ivschat.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivschat.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
@@ -322,9 +364,6 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ivschat.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.ivschat.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.ivschat.model.AmazonivschatException.class));
 
     public static AmazonivschatClientBuilder builder() {
@@ -375,8 +414,18 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Creates an encrypted token that is used to establish an individual WebSocket connection to a room. The token is
-     * valid for one minute, and a connection (session) established with the token is valid for the specified duration.
+     * Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat
+     * connection to a room. When the token is used to connect to chat, the connection is valid for the session duration
+     * specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.
+     * </p>
+     * <p>
+     * Use the <code>capabilities</code> field to permit an end user to send messages or moderate a room.
+     * </p>
+     * <p>
+     * The <code>attributes</code> field securely attaches structured data to the chat session; the data is included
+     * within each message sent by the end user and received by other participants in the room. Common use cases for
+     * attributes include passing end-user profile data like an icon, display name, colors, badges, and other display
+     * features.
      * </p>
      * <p>
      * Encryption keys are owned by Amazon IVS Chat and never used directly by your application.
@@ -426,6 +475,69 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateChatTokenResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateChatTokenResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a logging configuration that allows clients to store and record sent messages.
+     * </p>
+     * 
+     * @param createLoggingConfigurationRequest
+     * @return Result of the CreateLoggingConfiguration operation returned by the service.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws ServiceQuotaExceededException
+     * @throws PendingVerificationException
+     * @throws ValidationException
+     * @sample Amazonivschat.CreateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateLoggingConfigurationResult createLoggingConfiguration(CreateLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final CreateLoggingConfigurationResult executeCreateLoggingConfiguration(CreateLoggingConfigurationRequest createLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLoggingConfigurationRequest> request = null;
+        Response<CreateLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivschat");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateLoggingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -499,6 +611,68 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Deletes the specified logging configuration.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @return Result of the DeleteLoggingConfiguration operation returned by the service.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
+     * @throws ValidationException
+     * @sample Amazonivschat.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLoggingConfigurationResult executeDeleteLoggingConfiguration(DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLoggingConfigurationRequest> request = null;
+        Response<DeleteLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivschat");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends an event to a specific room which directs clients to delete a specific message; that is, unrender it from
      * view and delete it from the client’s chat history. This event’s <code>EventName</code> is
      * <code>aws:DELETE_MESSAGE</code>. This replicates the <a
@@ -511,6 +685,7 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.DeleteMessage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteMessage" target="_top">AWS API
@@ -631,6 +806,7 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.DisconnectUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DisconnectUser" target="_top">AWS API
@@ -670,6 +846,66 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<DisconnectUserResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DisconnectUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the specified logging configuration.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @return Result of the GetLoggingConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @sample Amazonivschat.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetLoggingConfigurationResult executeGetLoggingConfiguration(GetLoggingConfigurationRequest getLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLoggingConfigurationRequest> request = null;
+        Response<GetLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivschat");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLoggingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -728,6 +964,66 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<GetRoomResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetRoomResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets summary information about all your logging configurations in the AWS region where the API request is
+     * processed.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @return Result of the ListLoggingConfigurations operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @sample Amazonivschat.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListLoggingConfigurationsResult listLoggingConfigurations(ListLoggingConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLoggingConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final ListLoggingConfigurationsResult executeListLoggingConfigurations(ListLoggingConfigurationsRequest listLoggingConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLoggingConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLoggingConfigurationsRequest> request = null;
+        Response<ListLoggingConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLoggingConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listLoggingConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivschat");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggingConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLoggingConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListLoggingConfigurationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -866,6 +1162,7 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.SendEvent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/SendEvent" target="_top">AWS API
@@ -1021,6 +1318,67 @@ public class AmazonivschatClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a specified logging configuration.
+     * </p>
+     * 
+     * @param updateLoggingConfigurationRequest
+     * @return Result of the UpdateLoggingConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
+     * @throws ValidationException
+     * @sample Amazonivschat.UpdateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateLoggingConfigurationResult updateLoggingConfiguration(UpdateLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLoggingConfigurationResult executeUpdateLoggingConfiguration(UpdateLoggingConfigurationRequest updateLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLoggingConfigurationRequest> request = null;
+        Response<UpdateLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ivschat");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLoggingConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateLoggingConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

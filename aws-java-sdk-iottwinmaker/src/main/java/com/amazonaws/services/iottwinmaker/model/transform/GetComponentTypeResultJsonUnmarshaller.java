@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,21 +48,26 @@ public class GetComponentTypeResultJsonUnmarshaller implements Unmarshaller<GetC
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arn", targetDepth)) {
+                if (context.testExpression("workspaceId", targetDepth)) {
                     context.nextToken();
-                    getComponentTypeResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    getComponentTypeResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("isSingleton", targetDepth)) {
+                    context.nextToken();
+                    getComponentTypeResult.setIsSingleton(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("componentTypeId", targetDepth)) {
                     context.nextToken();
                     getComponentTypeResult.setComponentTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("creationDateTime", targetDepth)) {
-                    context.nextToken();
-                    getComponentTypeResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
-                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     getComponentTypeResult.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("propertyDefinitions", targetDepth)) {
+                    context.nextToken();
+                    getComponentTypeResult.setPropertyDefinitions(new MapUnmarshaller<String, PropertyDefinitionResponse>(
+                            context.getUnmarshaller(String.class), PropertyDefinitionResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("extendsFrom", targetDepth)) {
                     context.nextToken();
@@ -75,6 +80,18 @@ public class GetComponentTypeResultJsonUnmarshaller implements Unmarshaller<GetC
                     getComponentTypeResult.setFunctions(new MapUnmarshaller<String, FunctionResponse>(context.getUnmarshaller(String.class),
                             FunctionResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("creationDateTime", targetDepth)) {
+                    context.nextToken();
+                    getComponentTypeResult.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("updateDateTime", targetDepth)) {
+                    context.nextToken();
+                    getComponentTypeResult.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    getComponentTypeResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("isAbstract", targetDepth)) {
                     context.nextToken();
                     getComponentTypeResult.setIsAbstract(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -83,26 +100,22 @@ public class GetComponentTypeResultJsonUnmarshaller implements Unmarshaller<GetC
                     context.nextToken();
                     getComponentTypeResult.setIsSchemaInitialized(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("isSingleton", targetDepth)) {
-                    context.nextToken();
-                    getComponentTypeResult.setIsSingleton(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("propertyDefinitions", targetDepth)) {
-                    context.nextToken();
-                    getComponentTypeResult.setPropertyDefinitions(new MapUnmarshaller<String, PropertyDefinitionResponse>(
-                            context.getUnmarshaller(String.class), PropertyDefinitionResponseJsonUnmarshaller.getInstance()).unmarshall(context));
-                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     getComponentTypeResult.setStatus(StatusJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("updateDateTime", targetDepth)) {
+                if (context.testExpression("propertyGroups", targetDepth)) {
                     context.nextToken();
-                    getComponentTypeResult.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                    getComponentTypeResult.setPropertyGroups(new MapUnmarshaller<String, PropertyGroupResponse>(context.getUnmarshaller(String.class),
+                            PropertyGroupResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("workspaceId", targetDepth)) {
+                if (context.testExpression("syncSource", targetDepth)) {
                     context.nextToken();
-                    getComponentTypeResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    getComponentTypeResult.setSyncSource(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("componentTypeName", targetDepth)) {
+                    context.nextToken();
+                    getComponentTypeResult.setComponentTypeName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

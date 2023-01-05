@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,197 @@ public class DescribeTrustedAdvisorChecksRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support
-     * currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for
-     * operations that take them.
+     * The ISO 639-1 code for the language that you want your checks to appear in.
      * </p>
+     * <p>
+     * The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chinese, Simplified - <code>zh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chinese, Traditional - <code>zh_TW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * English - <code>en</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * French - <code>fr</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * German - <code>de</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Indonesian - <code>id</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Italian - <code>it</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Japanese - <code>ja</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Korean - <code>ko</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Portuguese, Brazilian - <code>pt_BR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spanish - <code>es</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String language;
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support
-     * currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for
-     * operations that take them.
+     * The ISO 639-1 code for the language that you want your checks to appear in.
      * </p>
+     * <p>
+     * The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chinese, Simplified - <code>zh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chinese, Traditional - <code>zh_TW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * English - <code>en</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * French - <code>fr</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * German - <code>de</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Indonesian - <code>id</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Italian - <code>it</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Japanese - <code>ja</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Korean - <code>ko</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Portuguese, Brazilian - <code>pt_BR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spanish - <code>es</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services
-     *        Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed
-     *        explicitly for operations that take them.
+     *        The ISO 639-1 code for the language that you want your checks to appear in.</p>
+     *        <p>
+     *        The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Chinese, Simplified - <code>zh</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Chinese, Traditional - <code>zh_TW</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        English - <code>en</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        French - <code>fr</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        German - <code>de</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Indonesian - <code>id</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Italian - <code>it</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Japanese - <code>ja</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Korean - <code>ko</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Portuguese, Brazilian - <code>pt_BR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spanish - <code>es</code>
+     *        </p>
+     *        </li>
      */
 
     public void setLanguage(String language) {
@@ -53,14 +226,129 @@ public class DescribeTrustedAdvisorChecksRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support
-     * currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for
-     * operations that take them.
+     * The ISO 639-1 code for the language that you want your checks to appear in.
      * </p>
+     * <p>
+     * The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chinese, Simplified - <code>zh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chinese, Traditional - <code>zh_TW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * English - <code>en</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * French - <code>fr</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * German - <code>de</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Indonesian - <code>id</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Italian - <code>it</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Japanese - <code>ja</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Korean - <code>ko</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Portuguese, Brazilian - <code>pt_BR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spanish - <code>es</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services
-     *         Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed
-     *         explicitly for operations that take them.
+     * @return The ISO 639-1 code for the language that you want your checks to appear in.</p>
+     *         <p>
+     *         The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Chinese, Simplified - <code>zh</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Chinese, Traditional - <code>zh_TW</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         English - <code>en</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         French - <code>fr</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         German - <code>de</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Indonesian - <code>id</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Italian - <code>it</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Japanese - <code>ja</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Korean - <code>ko</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Portuguese, Brazilian - <code>pt_BR</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spanish - <code>es</code>
+     *         </p>
+     *         </li>
      */
 
     public String getLanguage() {
@@ -69,15 +357,130 @@ public class DescribeTrustedAdvisorChecksRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support
-     * currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for
-     * operations that take them.
+     * The ISO 639-1 code for the language that you want your checks to appear in.
      * </p>
+     * <p>
+     * The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Chinese, Simplified - <code>zh</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Chinese, Traditional - <code>zh_TW</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * English - <code>en</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * French - <code>fr</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * German - <code>de</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Indonesian - <code>id</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Italian - <code>it</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Japanese - <code>ja</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Korean - <code>ko</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Portuguese, Brazilian - <code>pt_BR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spanish - <code>es</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param language
-     *        The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services
-     *        Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed
-     *        explicitly for operations that take them.
+     *        The ISO 639-1 code for the language that you want your checks to appear in.</p>
+     *        <p>
+     *        The Amazon Web Services Support API currently supports the following languages for Trusted Advisor:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Chinese, Simplified - <code>zh</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Chinese, Traditional - <code>zh_TW</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        English - <code>en</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        French - <code>fr</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        German - <code>de</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Indonesian - <code>id</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Italian - <code>it</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Japanese - <code>ja</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Korean - <code>ko</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Portuguese, Brazilian - <code>pt_BR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spanish - <code>es</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

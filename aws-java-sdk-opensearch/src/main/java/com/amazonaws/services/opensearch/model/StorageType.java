@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,15 +19,23 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * StorageTypes represents the list of storage-related types and their attributes that are available for a given
- * InstanceType.
+ * A list of storage types for an Amazon OpenSearch Service domain that are available for a given intance type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StorageType implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the storage type.
+     * </p>
+     */
     private String storageTypeName;
-
+    /**
+     * <p>
+     * The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
+     * </p>
+     */
     private String storageSubTypeName;
     /**
      * <p>
@@ -37,7 +45,12 @@ public class StorageType implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<StorageTypeLimit> storageTypeLimits;
 
     /**
+     * <p>
+     * The name of the storage type.
+     * </p>
+     * 
      * @param storageTypeName
+     *        The name of the storage type.
      */
 
     public void setStorageTypeName(String storageTypeName) {
@@ -45,7 +58,11 @@ public class StorageType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the storage type.
+     * </p>
+     * 
+     * @return The name of the storage type.
      */
 
     public String getStorageTypeName() {
@@ -53,7 +70,12 @@ public class StorageType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name of the storage type.
+     * </p>
+     * 
      * @param storageTypeName
+     *        The name of the storage type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -63,7 +85,12 @@ public class StorageType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
+     * </p>
+     * 
      * @param storageSubTypeName
+     *        The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
      */
 
     public void setStorageSubTypeName(String storageSubTypeName) {
@@ -71,7 +98,11 @@ public class StorageType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
+     * </p>
+     * 
+     * @return The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
      */
 
     public String getStorageSubTypeName() {
@@ -79,7 +110,12 @@ public class StorageType implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
+     * </p>
+     * 
      * @param storageSubTypeName
+     *        The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

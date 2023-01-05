@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for the response returned by the <code> <a>GetCompatibleVersions</a> </code> operation.
+ * Container for the response returned by the <code>GetCompatibleVersions</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,20 +25,17 @@ public class GetCompatibleVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A map of compatible OpenSearch versions returned as part of the <code> <a>GetCompatibleVersions</a> </code>
-     * operation.
+     * A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * </p>
      */
     private java.util.List<CompatibleVersionsMap> compatibleVersions;
 
     /**
      * <p>
-     * A map of compatible OpenSearch versions returned as part of the <code> <a>GetCompatibleVersions</a> </code>
-     * operation.
+     * A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * </p>
      * 
-     * @return A map of compatible OpenSearch versions returned as part of the
-     *         <code> <a>GetCompatibleVersions</a> </code> operation.
+     * @return A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      */
 
     public java.util.List<CompatibleVersionsMap> getCompatibleVersions() {
@@ -47,13 +44,11 @@ public class GetCompatibleVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A map of compatible OpenSearch versions returned as part of the <code> <a>GetCompatibleVersions</a> </code>
-     * operation.
+     * A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * </p>
      * 
      * @param compatibleVersions
-     *        A map of compatible OpenSearch versions returned as part of the
-     *        <code> <a>GetCompatibleVersions</a> </code> operation.
+     *        A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      */
 
     public void setCompatibleVersions(java.util.Collection<CompatibleVersionsMap> compatibleVersions) {
@@ -67,8 +62,7 @@ public class GetCompatibleVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A map of compatible OpenSearch versions returned as part of the <code> <a>GetCompatibleVersions</a> </code>
-     * operation.
+     * A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,8 +71,7 @@ public class GetCompatibleVersionsResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param compatibleVersions
-     *        A map of compatible OpenSearch versions returned as part of the
-     *        <code> <a>GetCompatibleVersions</a> </code> operation.
+     *        A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,13 +87,11 @@ public class GetCompatibleVersionsResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A map of compatible OpenSearch versions returned as part of the <code> <a>GetCompatibleVersions</a> </code>
-     * operation.
+     * A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * </p>
      * 
      * @param compatibleVersions
-     *        A map of compatible OpenSearch versions returned as part of the
-     *        <code> <a>GetCompatibleVersions</a> </code> operation.
+     *        A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

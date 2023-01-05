@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemakerfeaturestoreruntime.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class DeleteRecordRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("RecordIdentifierValueAsString").build();
     private static final MarshallingInfo<String> EVENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("EventTime").build();
+    private static final MarshallingInfo<List> TARGETSTORES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("TargetStores").build();
 
     private static final DeleteRecordRequestMarshaller instance = new DeleteRecordRequestMarshaller();
 
@@ -53,6 +56,7 @@ public class DeleteRecordRequestMarshaller {
             protocolMarshaller.marshall(deleteRecordRequest.getFeatureGroupName(), FEATUREGROUPNAME_BINDING);
             protocolMarshaller.marshall(deleteRecordRequest.getRecordIdentifierValueAsString(), RECORDIDENTIFIERVALUEASSTRING_BINDING);
             protocolMarshaller.marshall(deleteRecordRequest.getEventTime(), EVENTTIME_BINDING);
+            protocolMarshaller.marshall(deleteRecordRequest.getTargetStores(), TARGETSTORES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

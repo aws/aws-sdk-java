@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -166,6 +166,27 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.Date lastRestoreTime;
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     */
+    private String parentRecoveryPointArn;
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     */
+    private String compositeMemberIdentifier;
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     */
+    private Boolean isParent;
 
     /**
      * <p>
@@ -1101,6 +1122,156 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     * 
+     * @param parentRecoveryPointArn
+     *        This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     */
+
+    public void setParentRecoveryPointArn(String parentRecoveryPointArn) {
+        this.parentRecoveryPointArn = parentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     * 
+     * @return This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     */
+
+    public String getParentRecoveryPointArn() {
+        return this.parentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * </p>
+     * 
+     * @param parentRecoveryPointArn
+     *        This is the Amazon Resource Name (ARN) of the parent (composite) recovery point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByBackupVault withParentRecoveryPointArn(String parentRecoveryPointArn) {
+        setParentRecoveryPointArn(parentRecoveryPointArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @param compositeMemberIdentifier
+     *        This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *        belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *        > logical ID</a> within a stack.
+     */
+
+    public void setCompositeMemberIdentifier(String compositeMemberIdentifier) {
+        this.compositeMemberIdentifier = compositeMemberIdentifier;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @return This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *         belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *         > logical ID</a> within a stack.
+     */
+
+    public String getCompositeMemberIdentifier() {
+        return this.compositeMemberIdentifier;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @param compositeMemberIdentifier
+     *        This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *        belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *        > logical ID</a> within a stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByBackupVault withCompositeMemberIdentifier(String compositeMemberIdentifier) {
+        setCompositeMemberIdentifier(compositeMemberIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) recovery point.
+     */
+
+    public void setIsParent(Boolean isParent) {
+        this.isParent = isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) recovery point.
+     */
+
+    public Boolean getIsParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) recovery point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPointByBackupVault withIsParent(Boolean isParent) {
+        setIsParent(isParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) recovery point.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) recovery point.
+     */
+
+    public Boolean isParent() {
+        return this.isParent;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1147,7 +1318,13 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
         if (getIsEncrypted() != null)
             sb.append("IsEncrypted: ").append(getIsEncrypted()).append(",");
         if (getLastRestoreTime() != null)
-            sb.append("LastRestoreTime: ").append(getLastRestoreTime());
+            sb.append("LastRestoreTime: ").append(getLastRestoreTime()).append(",");
+        if (getParentRecoveryPointArn() != null)
+            sb.append("ParentRecoveryPointArn: ").append(getParentRecoveryPointArn()).append(",");
+        if (getCompositeMemberIdentifier() != null)
+            sb.append("CompositeMemberIdentifier: ").append(getCompositeMemberIdentifier()).append(",");
+        if (getIsParent() != null)
+            sb.append("IsParent: ").append(getIsParent());
         sb.append("}");
         return sb.toString();
     }
@@ -1234,6 +1411,18 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
             return false;
         if (other.getLastRestoreTime() != null && other.getLastRestoreTime().equals(this.getLastRestoreTime()) == false)
             return false;
+        if (other.getParentRecoveryPointArn() == null ^ this.getParentRecoveryPointArn() == null)
+            return false;
+        if (other.getParentRecoveryPointArn() != null && other.getParentRecoveryPointArn().equals(this.getParentRecoveryPointArn()) == false)
+            return false;
+        if (other.getCompositeMemberIdentifier() == null ^ this.getCompositeMemberIdentifier() == null)
+            return false;
+        if (other.getCompositeMemberIdentifier() != null && other.getCompositeMemberIdentifier().equals(this.getCompositeMemberIdentifier()) == false)
+            return false;
+        if (other.getIsParent() == null ^ this.getIsParent() == null)
+            return false;
+        if (other.getIsParent() != null && other.getIsParent().equals(this.getIsParent()) == false)
+            return false;
         return true;
     }
 
@@ -1260,6 +1449,9 @@ public class RecoveryPointByBackupVault implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getEncryptionKeyArn() == null) ? 0 : getEncryptionKeyArn().hashCode());
         hashCode = prime * hashCode + ((getIsEncrypted() == null) ? 0 : getIsEncrypted().hashCode());
         hashCode = prime * hashCode + ((getLastRestoreTime() == null) ? 0 : getLastRestoreTime().hashCode());
+        hashCode = prime * hashCode + ((getParentRecoveryPointArn() == null) ? 0 : getParentRecoveryPointArn().hashCode());
+        hashCode = prime * hashCode + ((getCompositeMemberIdentifier() == null) ? 0 : getCompositeMemberIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
         return hashCode;
     }
 

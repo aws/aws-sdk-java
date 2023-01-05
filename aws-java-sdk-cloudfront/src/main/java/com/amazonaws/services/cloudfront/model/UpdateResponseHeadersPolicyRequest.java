@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class UpdateResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are updating.
      * </p>
      * <p>
-     * The version is returned in the cache policy’s <code>ETag</code> field in the response to
+     * The version is returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
      */
@@ -133,14 +133,14 @@ public class UpdateResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are updating.
      * </p>
      * <p>
-     * The version is returned in the cache policy’s <code>ETag</code> field in the response to
+     * The version is returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
      *        The version of the response headers policy that you are updating.</p>
      *        <p>
-     *        The version is returned in the cache policy’s <code>ETag</code> field in the response to
+     *        The version is returned in the cache policy's <code>ETag</code> field in the response to
      *        <code>GetResponseHeadersPolicyConfig</code>.
      */
 
@@ -153,13 +153,13 @@ public class UpdateResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are updating.
      * </p>
      * <p>
-     * The version is returned in the cache policy’s <code>ETag</code> field in the response to
+     * The version is returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
      * 
      * @return The version of the response headers policy that you are updating.</p>
      *         <p>
-     *         The version is returned in the cache policy’s <code>ETag</code> field in the response to
+     *         The version is returned in the cache policy's <code>ETag</code> field in the response to
      *         <code>GetResponseHeadersPolicyConfig</code>.
      */
 
@@ -172,14 +172,14 @@ public class UpdateResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are updating.
      * </p>
      * <p>
-     * The version is returned in the cache policy’s <code>ETag</code> field in the response to
+     * The version is returned in the cache policy's <code>ETag</code> field in the response to
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
      *        The version of the response headers policy that you are updating.</p>
      *        <p>
-     *        The version is returned in the cache policy’s <code>ETag</code> field in the response to
+     *        The version is returned in the cache policy's <code>ETag</code> field in the response to
      *        <code>GetResponseHeadersPolicyConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/SearchGameSessions" target="_top">AWS API
  *      Documentation</a>
@@ -46,8 +43,6 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the
      * Amazon Web Services Region code format, such as <code>us-west-2</code>.
-     * </p>
-     * <p>
      * </p>
      */
     private String location;
@@ -267,13 +262,10 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the
      * Amazon Web Services Region code format, such as <code>us-west-2</code>.
      * </p>
-     * <p>
-     * </p>
      * 
      * @param location
      *        A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location.
-     *        Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
-     *        <p>
+     *        Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
      */
 
     public void setLocation(String location) {
@@ -285,12 +277,9 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the
      * Amazon Web Services Region code format, such as <code>us-west-2</code>.
      * </p>
-     * <p>
-     * </p>
      * 
      * @return A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location.
-     *         Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
-     *         <p>
+     *         Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
      */
 
     public String getLocation() {
@@ -302,13 +291,10 @@ public class SearchGameSessionsRequest extends com.amazonaws.AmazonWebServiceReq
      * A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location. Use the
      * Amazon Web Services Region code format, such as <code>us-west-2</code>.
      * </p>
-     * <p>
-     * </p>
      * 
      * @param location
      *        A fleet location to search for game sessions. You can specify a fleet's home Region or a remote location.
-     *        Use the Amazon Web Services Region code format, such as <code>us-west-2</code>. </p>
-     *        <p>
+     *        Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

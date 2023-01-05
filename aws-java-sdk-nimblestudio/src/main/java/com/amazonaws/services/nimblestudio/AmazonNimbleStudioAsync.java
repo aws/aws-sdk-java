@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,7 +135,8 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * Creates a streaming session in a studio.
      * </p>
      * <p>
-     * After invoking this operation, you must poll GetStreamingSession until the streaming session is in state READY.
+     * After invoking this operation, you must poll GetStreamingSession until the streaming session is in the
+     * <code>READY</code> state.
      * </p>
      * 
      * @param createStreamingSessionRequest
@@ -151,7 +152,8 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * Creates a streaming session in a studio.
      * </p>
      * <p>
-     * After invoking this operation, you must poll GetStreamingSession until the streaming session is in state READY.
+     * After invoking this operation, you must poll GetStreamingSession until the streaming session is in the
+     * <code>READY</code> state.
      * </p>
      * 
      * @param createStreamingSessionRequest
@@ -173,7 +175,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * <p>
      * After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until
-     * it is in state READY.
+     * it is in the <code>READY</code> state.
      * </p>
      * 
      * @param createStreamingSessionStreamRequest
@@ -192,7 +194,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * <p>
      * After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until
-     * it is in state READY.
+     * it is in the <code>READY</code> state.
      * </p>
      * 
      * @param createStreamingSessionStreamRequest
@@ -212,28 +214,28 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Create a new Studio.
+     * Create a new studio.
      * </p>
      * <p>
-     * When creating a Studio, two IAM roles must be provided: the admin role and the user Role. These roles are assumed
+     * When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed
      * by your users when they log in to the Nimble Studio portal.
      * </p>
      * <p>
-     * The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
-     * properly.
+     * The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to
+     * function properly.
      * </p>
      * <p>
-     * The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function
-     * properly.
+     * The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal
+     * to function properly.
      * </p>
      * <p>
-     * You may optionally specify a KMS key in the StudioEncryptionConfiguration.
+     * You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.
      * </p>
      * <p>
      * In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always
      * encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your
-     * behalf. You may provide your own KMS key when calling CreateStudio to encrypt this data using a key you own and
-     * manage.
+     * behalf. You may provide your own KMS key when calling <code>CreateStudio</code> to encrypt this data using a key
+     * you own and manage.
      * </p>
      * <p>
      * When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide
@@ -256,28 +258,28 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Create a new Studio.
+     * Create a new studio.
      * </p>
      * <p>
-     * When creating a Studio, two IAM roles must be provided: the admin role and the user Role. These roles are assumed
+     * When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed
      * by your users when they log in to the Nimble Studio portal.
      * </p>
      * <p>
-     * The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
-     * properly.
+     * The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to
+     * function properly.
      * </p>
      * <p>
-     * The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function
-     * properly.
+     * The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal
+     * to function properly.
      * </p>
      * <p>
-     * You may optionally specify a KMS key in the StudioEncryptionConfiguration.
+     * You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.
      * </p>
      * <p>
      * In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always
      * encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your
-     * behalf. You may provide your own KMS key when calling CreateStudio to encrypt this data using a key you own and
-     * manage.
+     * behalf. You may provide your own KMS key when calling <code>CreateStudio</code> to encrypt this data using a key
+     * you own and manage.
      * </p>
      * <p>
      * When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide
@@ -434,11 +436,11 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * Deletes streaming session resource.
      * </p>
      * <p>
-     * After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a DELETED
-     * state.
+     * After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a
+     * <code>DELETED</code> state.
      * </p>
      * <p>
-     * A streaming session will count against your streaming session quota until it is marked DELETED.
+     * A streaming session will count against your streaming session quota until it is marked <code>DELETED</code>.
      * </p>
      * 
      * @param deleteStreamingSessionRequest
@@ -454,11 +456,11 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * Deletes streaming session resource.
      * </p>
      * <p>
-     * After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a DELETED
-     * state.
+     * After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a
+     * <code>DELETED</code> state.
      * </p>
      * <p>
-     * A streaming session will count against your streaming session quota until it is marked DELETED.
+     * A streaming session will count against your streaming session quota until it is marked <code>DELETED</code>.
      * </p>
      * 
      * @param deleteStreamingSessionRequest
@@ -569,7 +571,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Get Eula.
+     * Get EULA.
      * </p>
      * 
      * @param getEulaRequest
@@ -582,7 +584,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Get Eula.
+     * Get EULA.
      * </p>
      * 
      * @param getEulaRequest
@@ -800,14 +802,53 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
+     * Gets <code>StreamingSessionBackup</code> resource.
+     * </p>
+     * <p>
+     * Invoke this operation to poll for a streaming session backup while stopping a streaming session.
+     * </p>
+     * 
+     * @param getStreamingSessionBackupRequest
+     * @return A Java Future containing the result of the GetStreamingSessionBackup operation returned by the service.
+     * @sample AmazonNimbleStudioAsync.GetStreamingSessionBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStreamingSessionBackupResult> getStreamingSessionBackupAsync(
+            GetStreamingSessionBackupRequest getStreamingSessionBackupRequest);
+
+    /**
+     * <p>
+     * Gets <code>StreamingSessionBackup</code> resource.
+     * </p>
+     * <p>
+     * Invoke this operation to poll for a streaming session backup while stopping a streaming session.
+     * </p>
+     * 
+     * @param getStreamingSessionBackupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStreamingSessionBackup operation returned by the service.
+     * @sample AmazonNimbleStudioAsyncHandler.GetStreamingSessionBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetStreamingSessionBackupResult> getStreamingSessionBackupAsync(
+            GetStreamingSessionBackupRequest getStreamingSessionBackupRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStreamingSessionBackupRequest, GetStreamingSessionBackupResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a StreamingSessionStream for a streaming session.
      * </p>
      * <p>
-     * Invoke this operation to poll the resource after invoking CreateStreamingSessionStream.
+     * Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.
      * </p>
      * <p>
-     * After the StreamingSessionStream changes to the state READY, the url property will contain a stream to be used
-     * with the DCV streaming client.
+     * After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the url property will
+     * contain a stream to be used with the DCV streaming client.
      * </p>
      * 
      * @param getStreamingSessionStreamRequest
@@ -824,11 +865,11 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * Gets a StreamingSessionStream for a streaming session.
      * </p>
      * <p>
-     * Invoke this operation to poll the resource after invoking CreateStreamingSessionStream.
+     * Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.
      * </p>
      * <p>
-     * After the StreamingSessionStream changes to the state READY, the url property will contain a stream to be used
-     * with the DCV streaming client.
+     * After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the url property will
+     * contain a stream to be used with the DCV streaming client.
      * </p>
      * 
      * @param getStreamingSessionStreamRequest
@@ -847,7 +888,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Get a Studio resource.
+     * Get a studio resource.
      * </p>
      * 
      * @param getStudioRequest
@@ -860,7 +901,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Get a Studio resource.
+     * Get a studio resource.
      * </p>
      * 
      * @param getStudioRequest
@@ -940,7 +981,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * List Eula Acceptances.
+     * List EULA acceptances.
      * </p>
      * 
      * @param listEulaAcceptancesRequest
@@ -953,7 +994,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * List Eula Acceptances.
+     * List EULA acceptances.
      * </p>
      * 
      * @param listEulaAcceptancesRequest
@@ -971,7 +1012,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * List Eulas.
+     * List EULAs.
      * </p>
      * 
      * @param listEulasRequest
@@ -984,7 +1025,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * List Eulas.
+     * List EULAs.
      * </p>
      * 
      * @param listEulasRequest
@@ -1103,6 +1144,39 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
+     * Lists the backups of a streaming session in a studio.
+     * </p>
+     * 
+     * @param listStreamingSessionBackupsRequest
+     * @return A Java Future containing the result of the ListStreamingSessionBackups operation returned by the service.
+     * @sample AmazonNimbleStudioAsync.ListStreamingSessionBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessionBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStreamingSessionBackupsResult> listStreamingSessionBackupsAsync(
+            ListStreamingSessionBackupsRequest listStreamingSessionBackupsRequest);
+
+    /**
+     * <p>
+     * Lists the backups of a streaming session in a studio.
+     * </p>
+     * 
+     * @param listStreamingSessionBackupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStreamingSessionBackups operation returned by the service.
+     * @sample AmazonNimbleStudioAsyncHandler.ListStreamingSessionBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessionBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListStreamingSessionBackupsResult> listStreamingSessionBackupsAsync(
+            ListStreamingSessionBackupsRequest listStreamingSessionBackupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStreamingSessionBackupsRequest, ListStreamingSessionBackupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the streaming sessions in a studio.
      * </p>
      * 
@@ -1134,7 +1208,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Lists the StudioComponents in a studio.
+     * Lists the <code>StudioComponents</code> in a studio.
      * </p>
      * 
      * @param listStudioComponentsRequest
@@ -1147,7 +1221,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Lists the StudioComponents in a studio.
+     * Lists the <code>StudioComponents</code> in a studio.
      * </p>
      * 
      * @param listStudioComponentsRequest
@@ -1206,7 +1280,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * List studios in your Amazon Web Services account in the requested Amazon Web Services Region.
+     * List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region.
      * </p>
      * 
      * @param listStudiosRequest
@@ -1219,7 +1293,7 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * List studios in your Amazon Web Services account in the requested Amazon Web Services Region.
+     * List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region.
      * </p>
      * 
      * @param listStudiosRequest
@@ -1340,8 +1414,9 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate
-     * state between the STOPPED and READY states.
+     * Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code> state. The
+     * <code>START_IN_PROGRESS</code> state is the intermediate state between the <code>STOPPED</code> and
+     * <code>READY</code> states.
      * </p>
      * 
      * @param startStreamingSessionRequest
@@ -1354,8 +1429,9 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate
-     * state between the STOPPED and READY states.
+     * Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code> state. The
+     * <code>START_IN_PROGRESS</code> state is the intermediate state between the <code>STOPPED</code> and
+     * <code>READY</code> states.
      * </p>
      * 
      * @param startStreamingSessionRequest
@@ -1381,7 +1457,8 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * <p>
      * If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new
-     * IAM Identity Center application is created for the studio and the studio is changed to the READY state.
+     * IAM Identity Center application is created for the studio and the studio is changed to the <code>READY</code>
+     * state.
      * </p>
      * <p>
      * After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add
@@ -1408,7 +1485,8 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
      * </p>
      * <p>
      * If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new
-     * IAM Identity Center application is created for the studio and the studio is changed to the READY state.
+     * IAM Identity Center application is created for the studio and the studio is changed to the <code>READY</code>
+     * state.
      * </p>
      * <p>
      * After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add
@@ -1432,8 +1510,9 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate
-     * state between the READY and STOPPED states.
+     * Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code> state. The
+     * <code>STOP_IN_PROGRESS</code> state is the intermediate state between the <code>READY</code> and
+     * <code>STOPPED</code> states.
      * </p>
      * 
      * @param stopStreamingSessionRequest
@@ -1446,8 +1525,9 @@ public interface AmazonNimbleStudioAsync extends AmazonNimbleStudio {
 
     /**
      * <p>
-     * Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate
-     * state between the READY and STOPPED states.
+     * Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code> state. The
+     * <code>STOP_IN_PROGRESS</code> state is the intermediate state between the <code>READY</code> and
+     * <code>STOPPED</code> states.
      * </p>
      * 
      * @param stopStreamingSessionRequest

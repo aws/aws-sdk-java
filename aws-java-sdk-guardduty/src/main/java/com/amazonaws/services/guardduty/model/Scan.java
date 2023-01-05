@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,7 +73,7 @@ public class Scan implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date scanEndTime;
     /**
      * <p>
-     * Represents the reason the scan was triggered.
+     * Specifies the reason why the scan was initiated.
      * </p>
      */
     private TriggerDetails triggerDetails;
@@ -421,11 +421,11 @@ public class Scan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the reason the scan was triggered.
+     * Specifies the reason why the scan was initiated.
      * </p>
      * 
      * @param triggerDetails
-     *        Represents the reason the scan was triggered.
+     *        Specifies the reason why the scan was initiated.
      */
 
     public void setTriggerDetails(TriggerDetails triggerDetails) {
@@ -434,10 +434,10 @@ public class Scan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the reason the scan was triggered.
+     * Specifies the reason why the scan was initiated.
      * </p>
      * 
-     * @return Represents the reason the scan was triggered.
+     * @return Specifies the reason why the scan was initiated.
      */
 
     public TriggerDetails getTriggerDetails() {
@@ -446,11 +446,11 @@ public class Scan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Represents the reason the scan was triggered.
+     * Specifies the reason why the scan was initiated.
      * </p>
      * 
      * @param triggerDetails
-     *        Represents the reason the scan was triggered.
+     *        Specifies the reason why the scan was initiated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

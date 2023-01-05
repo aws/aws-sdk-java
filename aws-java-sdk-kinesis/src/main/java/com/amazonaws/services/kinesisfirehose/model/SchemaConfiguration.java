@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you use for
-     * Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
+     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -45,13 +45,14 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
     private String roleARN;
     /**
      * <p>
-     * The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.
+     * The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID
+     * is used by default.
      * </p>
      */
     private String catalogId;
     /**
      * <p>
-     * Specifies the name of the AWS Glue database that contains the schema for the output data.
+     * Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.
      * </p>
      * <important>
      * <p>
@@ -64,7 +65,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
     private String databaseName;
     /**
      * <p>
-     * Specifies the AWS Glue table that contains the column information that constitutes your data schema.
+     * Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data
+     * schema.
      * </p>
      * <important>
      * <p>
@@ -77,7 +79,7 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
     private String tableName;
     /**
      * <p>
-     * If you don't specify an AWS Region, the default is the current Region.
+     * If you don't specify an Amazon Web Services Region, the default is the current Region.
      * </p>
      */
     private String region;
@@ -92,8 +94,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you use for
-     * Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
+     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -104,8 +106,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param roleARN
-     *        The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you
-     *        use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
+     *        The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the
+     *        same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value
@@ -119,8 +121,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you use for
-     * Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
+     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -130,8 +132,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * </important>
      * 
-     * @return The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you
-     *         use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
+     * @return The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the
+     *         same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
      *         <p>
      *         If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *         <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value
@@ -145,8 +147,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you use for
-     * Kinesis Data Firehose. Cross-account roles aren't allowed.
+     * The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the same
+     * account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.
      * </p>
      * <important>
      * <p>
@@ -157,8 +159,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param roleARN
-     *        The role that Kinesis Data Firehose can use to access AWS Glue. This role must be in the same account you
-     *        use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
+     *        The role that Kinesis Data Firehose can use to access Amazon Web Services Glue. This role must be in the
+     *        same account you use for Kinesis Data Firehose. Cross-account roles aren't allowed.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property is required and its value
@@ -174,11 +176,13 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.
+     * The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID
+     * is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.
+     *        The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services
+     *        account ID is used by default.
      */
 
     public void setCatalogId(String catalogId) {
@@ -187,10 +191,12 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.
+     * The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID
+     * is used by default.
      * </p>
      * 
-     * @return The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.
+     * @return The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services
+     *         account ID is used by default.
      */
 
     public String getCatalogId() {
@@ -199,11 +205,13 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.
+     * The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services account ID
+     * is used by default.
      * </p>
      * 
      * @param catalogId
-     *        The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS account ID is used by default.
+     *        The ID of the Amazon Web Services Glue Data Catalog. If you don't supply this, the Amazon Web Services
+     *        account ID is used by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,7 +222,7 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the name of the AWS Glue database that contains the schema for the output data.
+     * Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.
      * </p>
      * <important>
      * <p>
@@ -225,7 +233,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param databaseName
-     *        Specifies the name of the AWS Glue database that contains the schema for the output data.</p> <important>
+     *        Specifies the name of the Amazon Web Services Glue database that contains the schema for the output
+     *        data.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its
@@ -239,7 +248,7 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the name of the AWS Glue database that contains the schema for the output data.
+     * Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.
      * </p>
      * <important>
      * <p>
@@ -249,7 +258,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * </important>
      * 
-     * @return Specifies the name of the AWS Glue database that contains the schema for the output data.</p> <important>
+     * @return Specifies the name of the Amazon Web Services Glue database that contains the schema for the output
+     *         data.</p> <important>
      *         <p>
      *         If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *         <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its
@@ -263,7 +273,7 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the name of the AWS Glue database that contains the schema for the output data.
+     * Specifies the name of the Amazon Web Services Glue database that contains the schema for the output data.
      * </p>
      * <important>
      * <p>
@@ -274,7 +284,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param databaseName
-     *        Specifies the name of the AWS Glue database that contains the schema for the output data.</p> <important>
+     *        Specifies the name of the Amazon Web Services Glue database that contains the schema for the output
+     *        data.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property is required and its
@@ -290,7 +301,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the AWS Glue table that contains the column information that constitutes your data schema.
+     * Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data
+     * schema.
      * </p>
      * <important>
      * <p>
@@ -301,8 +313,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param tableName
-     *        Specifies the AWS Glue table that contains the column information that constitutes your data schema.</p>
-     *        <important>
+     *        Specifies the Amazon Web Services Glue table that contains the column information that constitutes your
+     *        data schema.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value
@@ -316,7 +328,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the AWS Glue table that contains the column information that constitutes your data schema.
+     * Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data
+     * schema.
      * </p>
      * <important>
      * <p>
@@ -326,8 +339,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </p>
      * </important>
      * 
-     * @return Specifies the AWS Glue table that contains the column information that constitutes your data schema.</p>
-     *         <important>
+     * @return Specifies the Amazon Web Services Glue table that contains the column information that constitutes your
+     *         data schema.</p> <important>
      *         <p>
      *         If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *         <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value
@@ -341,7 +354,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Specifies the AWS Glue table that contains the column information that constitutes your data schema.
+     * Specifies the Amazon Web Services Glue table that contains the column information that constitutes your data
+     * schema.
      * </p>
      * <important>
      * <p>
@@ -352,8 +366,8 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
      * </important>
      * 
      * @param tableName
-     *        Specifies the AWS Glue table that contains the column information that constitutes your data schema.</p>
-     *        <important>
+     *        Specifies the Amazon Web Services Glue table that contains the column information that constitutes your
+     *        data schema.</p> <important>
      *        <p>
      *        If the <code>SchemaConfiguration</code> request parameter is used as part of invoking the
      *        <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property is required and its value
@@ -369,11 +383,11 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If you don't specify an AWS Region, the default is the current Region.
+     * If you don't specify an Amazon Web Services Region, the default is the current Region.
      * </p>
      * 
      * @param region
-     *        If you don't specify an AWS Region, the default is the current Region.
+     *        If you don't specify an Amazon Web Services Region, the default is the current Region.
      */
 
     public void setRegion(String region) {
@@ -382,10 +396,10 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If you don't specify an AWS Region, the default is the current Region.
+     * If you don't specify an Amazon Web Services Region, the default is the current Region.
      * </p>
      * 
-     * @return If you don't specify an AWS Region, the default is the current Region.
+     * @return If you don't specify an Amazon Web Services Region, the default is the current Region.
      */
 
     public String getRegion() {
@@ -394,11 +408,11 @@ public class SchemaConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * If you don't specify an AWS Region, the default is the current Region.
+     * If you don't specify an Amazon Web Services Region, the default is the current Region.
      * </p>
      * 
      * @param region
-     *        If you don't specify an AWS Region, the default is the current Region.
+     *        If you don't specify an Amazon Web Services Region, the default is the current Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,10 +41,14 @@ public class MatchingBucketMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorMessage").build();
     private static final MarshallingInfo<StructuredPojo> JOBDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobDetails").build();
+    private static final MarshallingInfo<java.util.Date> LASTAUTOMATEDDISCOVERYTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAutomatedDiscoveryTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Long> OBJECTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("objectCount").build();
     private static final MarshallingInfo<StructuredPojo> OBJECTCOUNTBYENCRYPTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("objectCountByEncryptionType").build();
+    private static final MarshallingInfo<Integer> SENSITIVITYSCORE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sensitivityScore").build();
     private static final MarshallingInfo<Long> SIZEINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sizeInBytes").build();
     private static final MarshallingInfo<Long> SIZEINBYTESCOMPRESSED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
@@ -77,8 +81,10 @@ public class MatchingBucketMarshaller {
             protocolMarshaller.marshall(matchingBucket.getErrorCode(), ERRORCODE_BINDING);
             protocolMarshaller.marshall(matchingBucket.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(matchingBucket.getJobDetails(), JOBDETAILS_BINDING);
+            protocolMarshaller.marshall(matchingBucket.getLastAutomatedDiscoveryTime(), LASTAUTOMATEDDISCOVERYTIME_BINDING);
             protocolMarshaller.marshall(matchingBucket.getObjectCount(), OBJECTCOUNT_BINDING);
             protocolMarshaller.marshall(matchingBucket.getObjectCountByEncryptionType(), OBJECTCOUNTBYENCRYPTIONTYPE_BINDING);
+            protocolMarshaller.marshall(matchingBucket.getSensitivityScore(), SENSITIVITYSCORE_BINDING);
             protocolMarshaller.marshall(matchingBucket.getSizeInBytes(), SIZEINBYTES_BINDING);
             protocolMarshaller.marshall(matchingBucket.getSizeInBytesCompressed(), SIZEINBYTESCOMPRESSED_BINDING);
             protocolMarshaller.marshall(matchingBucket.getUnclassifiableObjectCount(), UNCLASSIFIABLEOBJECTCOUNT_BINDING);

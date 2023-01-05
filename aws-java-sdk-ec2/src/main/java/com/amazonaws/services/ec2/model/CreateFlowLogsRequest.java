@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * the VPCs.
      * </p>
      * <p>
-     * Constraints: Maximum of 1000 resources
+     * Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceIds;
@@ -76,7 +76,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     private String resourceType;
     /**
      * <p>
-     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     * supported for transit gateway resource types. It is required for the other resource types.
      * </p>
      */
     private String trafficType;
@@ -131,11 +132,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     private String logDestination;
     /**
      * <p>
-     * The fields to include in the flow log record. List the fields in the order in which they should appear. For more
-     * information about the available fields, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a>. If
-     * you omit this parameter, the flow log is created using the default format. If you specify this parameter, you
-     * must include at least one field.
+     * The fields to include in the flow log record. List the fields in the order in which they should appear. If you
+     * omit this parameter, the flow log is created using the default format. If you specify this parameter, you must
+     * include at least one field. For more information about the available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a> in
+     * the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log
+     * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
@@ -152,7 +155,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
-     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for
+     * transit gateway resource types.
      * </p>
      * <p>
      * When a network interface is attached to a <a
@@ -391,13 +395,14 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * the VPCs.
      * </p>
      * <p>
-     * Constraints: Maximum of 1000 resources
+     * Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.
      * </p>
      * 
      * @return The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the
      *         IDs of the VPCs.</p>
      *         <p>
-     *         Constraints: Maximum of 1000 resources
+     *         Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource
+     *         types.
      */
 
     public java.util.List<String> getResourceIds() {
@@ -413,14 +418,15 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * the VPCs.
      * </p>
      * <p>
-     * Constraints: Maximum of 1000 resources
+     * Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.
      * </p>
      * 
      * @param resourceIds
      *        The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the
      *        IDs of the VPCs.</p>
      *        <p>
-     *        Constraints: Maximum of 1000 resources
+     *        Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource
+     *        types.
      */
 
     public void setResourceIds(java.util.Collection<String> resourceIds) {
@@ -438,7 +444,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * the VPCs.
      * </p>
      * <p>
-     * Constraints: Maximum of 1000 resources
+     * Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -450,7 +456,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      *        The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the
      *        IDs of the VPCs.</p>
      *        <p>
-     *        Constraints: Maximum of 1000 resources
+     *        Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -470,14 +477,15 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * the VPCs.
      * </p>
      * <p>
-     * Constraints: Maximum of 1000 resources
+     * Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource types.
      * </p>
      * 
      * @param resourceIds
      *        The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>, specify the
      *        IDs of the VPCs.</p>
      *        <p>
-     *        Constraints: Maximum of 1000 resources
+     *        Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for the other resource
+     *        types.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -561,11 +569,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     * supported for transit gateway resource types. It is required for the other resource types.
      * </p>
      * 
      * @param trafficType
-     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     *        supported for transit gateway resource types. It is required for the other resource types.
      * @see TrafficType
      */
 
@@ -575,10 +585,12 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     * supported for transit gateway resource types. It is required for the other resource types.
      * </p>
      * 
-     * @return The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     * @return The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is
+     *         not supported for transit gateway resource types. It is required for the other resource types.
      * @see TrafficType
      */
 
@@ -588,11 +600,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     * supported for transit gateway resource types. It is required for the other resource types.
      * </p>
      * 
      * @param trafficType
-     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     *        supported for transit gateway resource types. It is required for the other resource types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficType
      */
@@ -604,11 +618,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     * supported for transit gateway resource types. It is required for the other resource types.
      * </p>
      * 
      * @param trafficType
-     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     *        supported for transit gateway resource types. It is required for the other resource types.
      * @see TrafficType
      */
 
@@ -618,11 +634,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     * The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     * supported for transit gateway resource types. It is required for the other resource types.
      * </p>
      * 
      * @param trafficType
-     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic).
+     *        The type of traffic to monitor (accepted traffic, rejected traffic, or all traffic). This parameter is not
+     *        supported for transit gateway resource types. It is required for the other resource types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrafficType
      */
@@ -973,11 +991,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The fields to include in the flow log record. List the fields in the order in which they should appear. For more
-     * information about the available fields, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a>. If
-     * you omit this parameter, the flow log is created using the default format. If you specify this parameter, you
-     * must include at least one field.
+     * The fields to include in the flow log record. List the fields in the order in which they should appear. If you
+     * omit this parameter, the flow log is created using the default format. If you specify this parameter, you must
+     * include at least one field. For more information about the available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a> in
+     * the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log
+     * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
@@ -985,11 +1005,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param logFormat
-     *        The fields to include in the flow log record. List the fields in the order in which they should appear.
-     *        For more information about the available fields, see <a
+     *        The fields to include in the flow log record. List the fields in the order in which they should appear. If
+     *        you omit this parameter, the flow log is created using the default format. If you specify this parameter,
+     *        you must include at least one field. For more information about the available fields, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log
-     *        records</a>. If you omit this parameter, the flow log is created using the default format. If you specify
-     *        this parameter, you must include at least one field.</p>
+     *        records</a> in the <i>Amazon VPC User Guide</i> or <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow
+     *        Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
      *        <p>
      *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround
      *        this parameter value with single quotes on Linux or double quotes on Windows.
@@ -1001,11 +1023,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The fields to include in the flow log record. List the fields in the order in which they should appear. For more
-     * information about the available fields, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a>. If
-     * you omit this parameter, the flow log is created using the default format. If you specify this parameter, you
-     * must include at least one field.
+     * The fields to include in the flow log record. List the fields in the order in which they should appear. If you
+     * omit this parameter, the flow log is created using the default format. If you specify this parameter, you must
+     * include at least one field. For more information about the available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a> in
+     * the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log
+     * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
@@ -1013,10 +1037,12 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @return The fields to include in the flow log record. List the fields in the order in which they should appear.
-     *         For more information about the available fields, see <a
+     *         If you omit this parameter, the flow log is created using the default format. If you specify this
+     *         parameter, you must include at least one field. For more information about the available fields, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log
-     *         records</a>. If you omit this parameter, the flow log is created using the default format. If you specify
-     *         this parameter, you must include at least one field.</p>
+     *         records</a> in the <i>Amazon VPC User Guide</i> or <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway
+     *         Flow Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
      *         <p>
      *         Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround
      *         this parameter value with single quotes on Linux or double quotes on Windows.
@@ -1028,11 +1054,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * The fields to include in the flow log record. List the fields in the order in which they should appear. For more
-     * information about the available fields, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a>. If
-     * you omit this parameter, the flow log is created using the default format. If you specify this parameter, you
-     * must include at least one field.
+     * The fields to include in the flow log record. List the fields in the order in which they should appear. If you
+     * omit this parameter, the flow log is created using the default format. If you specify this parameter, you must
+     * include at least one field. For more information about the available fields, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a> in
+     * the <i>Amazon VPC User Guide</i> or <a
+     * href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow Log
+     * records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.
      * </p>
      * <p>
      * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround this
@@ -1040,11 +1068,13 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param logFormat
-     *        The fields to include in the flow log record. List the fields in the order in which they should appear.
-     *        For more information about the available fields, see <a
+     *        The fields to include in the flow log record. List the fields in the order in which they should appear. If
+     *        you omit this parameter, the flow log is created using the default format. If you specify this parameter,
+     *        you must include at least one field. For more information about the available fields, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log
-     *        records</a>. If you omit this parameter, the flow log is created using the default format. If you specify
-     *        this parameter, you must include at least one field.</p>
+     *        records</a> in the <i>Amazon VPC User Guide</i> or <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-flow-logs.html#flow-log-records">Transit Gateway Flow
+     *        Log records</a> in the <i>Amazon Web Services Transit Gateway Guide</i>.</p>
      *        <p>
      *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the CLI, surround
      *        this parameter value with single quotes on Linux or double quotes on Windows.
@@ -1132,7 +1162,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
-     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for
+     * transit gateway resource types.
      * </p>
      * <p>
      * When a network interface is attached to a <a
@@ -1145,7 +1176,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * 
      * @param maxAggregationInterval
      *        The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
-     *        record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
+     *        record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be
+     *        60 seconds for transit gateway resource types.</p>
      *        <p>
      *        When a network interface is attached to a <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
@@ -1163,7 +1195,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
-     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for
+     * transit gateway resource types.
      * </p>
      * <p>
      * When a network interface is attached to a <a
@@ -1175,7 +1208,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @return The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
-     *         record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
+     *         record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be
+     *         60 seconds for transit gateway resource types.</p>
      *         <p>
      *         When a network interface is attached to a <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
@@ -1193,7 +1227,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     /**
      * <p>
      * The maximum interval of time during which a flow of packets is captured and aggregated into a flow log record.
-     * You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).
+     * The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be 60 seconds for
+     * transit gateway resource types.
      * </p>
      * <p>
      * When a network interface is attached to a <a
@@ -1206,7 +1241,8 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * 
      * @param maxAggregationInterval
      *        The maximum interval of time during which a flow of packets is captured and aggregated into a flow log
-     *        record. You can specify 60 seconds (1 minute) or 600 seconds (10 minutes).</p>
+     *        record. The possible values are 60 seconds (1 minute) or 600 seconds (10 minutes). This parameter must be
+     *        60 seconds for transit gateway resource types.</p>
      *        <p>
      *        When a network interface is attached to a <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"

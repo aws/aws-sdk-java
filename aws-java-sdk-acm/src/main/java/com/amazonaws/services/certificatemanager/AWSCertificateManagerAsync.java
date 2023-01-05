@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -681,8 +681,8 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
     /**
      * <p>
      * Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this
-     * operation. In order to renew your ACM Private CA certificates with ACM, you must first <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
+     * operation. In order to renew your Amazon Web Services Private CA certificates with ACM, you must first <a
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant the ACM service principal
      * permission to do so</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the
      * ACM User Guide.
@@ -699,8 +699,8 @@ public interface AWSCertificateManagerAsync extends AWSCertificateManager {
     /**
      * <p>
      * Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this
-     * operation. In order to renew your ACM Private CA certificates with ACM, you must first <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
+     * operation. In order to renew your Amazon Web Services Private CA certificates with ACM, you must first <a
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant the ACM service principal
      * permission to do so</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the
      * ACM User Guide.

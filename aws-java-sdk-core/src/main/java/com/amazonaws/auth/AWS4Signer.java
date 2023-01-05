@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -502,7 +502,7 @@ public class AWS4Signer extends AbstractAWSSigner implements
                 continue;
             }
             String key = StringUtils.lowerCase(header);
-            String value = requestHeaders.get(header);
+            String value = StringUtils.trim(requestHeaders.get(header));
 
             StringUtils.appendCompactedString(buffer, key);
             buffer.append(":");

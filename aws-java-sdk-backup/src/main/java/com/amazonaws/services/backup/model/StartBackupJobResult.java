@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class StartBackupJobResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Date creationDate;
+    /**
+     * <p>
+     * This is a returned boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     */
+    private Boolean isParent;
 
     /**
      * <p>
@@ -184,6 +190,58 @@ public class StartBackupJobResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * This is a returned boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a returned boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public void setIsParent(Boolean isParent) {
+        this.isParent = isParent;
+    }
+
+    /**
+     * <p>
+     * This is a returned boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @return This is a returned boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public Boolean getIsParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is a returned boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a returned boolean value indicating this is a parent (composite) backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBackupJobResult withIsParent(Boolean isParent) {
+        setIsParent(isParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a returned boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @return This is a returned boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public Boolean isParent() {
+        return this.isParent;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,7 +258,9 @@ public class StartBackupJobResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getRecoveryPointArn() != null)
             sb.append("RecoveryPointArn: ").append(getRecoveryPointArn()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: ").append(getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getIsParent() != null)
+            sb.append("IsParent: ").append(getIsParent());
         sb.append("}");
         return sb.toString();
     }
@@ -227,6 +287,10 @@ public class StartBackupJobResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
             return false;
+        if (other.getIsParent() == null ^ this.getIsParent() == null)
+            return false;
+        if (other.getIsParent() != null && other.getIsParent().equals(this.getIsParent()) == false)
+            return false;
         return true;
     }
 
@@ -238,6 +302,7 @@ public class StartBackupJobResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getBackupJobId() == null) ? 0 : getBackupJobId().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
         return hashCode;
     }
 

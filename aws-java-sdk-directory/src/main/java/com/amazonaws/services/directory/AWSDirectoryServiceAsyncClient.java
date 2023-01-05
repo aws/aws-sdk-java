@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1412,6 +1412,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(DescribeUpdateDirectoryRequest request) {
+
+        return describeUpdateDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(final DescribeUpdateDirectoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeUpdateDirectoryRequest, DescribeUpdateDirectoryResult> asyncHandler) {
+        final DescribeUpdateDirectoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeUpdateDirectoryResult>() {
+            @Override
+            public DescribeUpdateDirectoryResult call() throws Exception {
+                DescribeUpdateDirectoryResult result = null;
+
+                try {
+                    result = executeDescribeUpdateDirectory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(DisableClientAuthenticationRequest request) {
 
         return disableClientAuthenticationAsync(request, null);
@@ -2310,6 +2343,39 @@ public class AWSDirectoryServiceAsyncClient extends AWSDirectoryServiceClient im
 
                 try {
                     result = executeUpdateConditionalForwarder(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(UpdateDirectorySetupRequest request) {
+
+        return updateDirectorySetupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(final UpdateDirectorySetupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateDirectorySetupRequest, UpdateDirectorySetupResult> asyncHandler) {
+        final UpdateDirectorySetupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateDirectorySetupResult>() {
+            @Override
+            public UpdateDirectorySetupResult call() throws Exception {
+                UpdateDirectorySetupResult result = null;
+
+                try {
+                    result = executeUpdateDirectorySetup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

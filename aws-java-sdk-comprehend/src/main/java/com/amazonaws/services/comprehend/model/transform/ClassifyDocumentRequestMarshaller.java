@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class ClassifyDocumentRequestMarshaller {
             .marshallLocationName("Text").build();
     private static final MarshallingInfo<String> ENDPOINTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointArn").build();
+    private static final MarshallingInfo<java.nio.ByteBuffer> BYTES_BINDING = MarshallingInfo.builder(MarshallingType.BYTE_BUFFER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Bytes").build();
+    private static final MarshallingInfo<StructuredPojo> DOCUMENTREADERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DocumentReaderConfig").build();
 
     private static final ClassifyDocumentRequestMarshaller instance = new ClassifyDocumentRequestMarshaller();
 
@@ -50,6 +54,8 @@ public class ClassifyDocumentRequestMarshaller {
         try {
             protocolMarshaller.marshall(classifyDocumentRequest.getText(), TEXT_BINDING);
             protocolMarshaller.marshall(classifyDocumentRequest.getEndpointArn(), ENDPOINTARN_BINDING);
+            protocolMarshaller.marshall(classifyDocumentRequest.getBytes(), BYTES_BINDING);
+            protocolMarshaller.marshall(classifyDocumentRequest.getDocumentReaderConfig(), DOCUMENTREADERCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

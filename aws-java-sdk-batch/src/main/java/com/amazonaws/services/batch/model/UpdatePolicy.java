@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies the infrastructure update policy for the compute environment. For more information about infrastructure
- * updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/infrastructure-updates.html">Infrastructure
- * updates</a> in the <i>Batch User Guide</i>.
+ * updates, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+ * compute environments</a> in the <i>Batch User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/UpdatePolicy" target="_top">AWS API
@@ -39,7 +39,7 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
     private Boolean terminateJobsOnUpdate;
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      */
@@ -107,12 +107,12 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      * 
      * @param jobExecutionTimeoutMinutes
-     *        Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default
+     *        Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default
      *        value is 30.
      */
 
@@ -122,11 +122,11 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      * 
-     * @return Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The
+     * @return Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The
      *         default value is 30.
      */
 
@@ -136,12 +136,12 @@ public class UpdatePolicy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default value
+     * Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default value
      * is 30.
      * </p>
      * 
      * @param jobExecutionTimeoutMinutes
-     *        Specifies the job timeout, in minutes, when the compute environment infrastructure is updated. The default
+     *        Specifies the job timeout (in minutes) when the compute environment infrastructure is updated. The default
      *        value is 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

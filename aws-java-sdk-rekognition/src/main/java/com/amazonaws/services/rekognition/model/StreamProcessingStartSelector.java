@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,28 +18,31 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <p/>
+ * <p>
+ * This is a required parameter for label detection stream processors and should not be used to start a face search
+ * stream processor.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StreamProcessingStartSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment
-     * number in a Kinesis stream.
+     * Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a
+     * fragment number in a Kinesis stream.
      * </p>
      */
     private KinesisVideoStreamStartSelector kVSStreamStartSelector;
 
     /**
      * <p>
-     * Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment
-     * number in a Kinesis stream.
+     * Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a
+     * fragment number in a Kinesis stream.
      * </p>
      * 
      * @param kVSStreamStartSelector
-     *        Specifies the starting point in the stream to start processing. This can be done with a timestamp or a
-     *        fragment number in a Kinesis stream.
+     *        Specifies the starting point in the stream to start processing. This can be done with a producer timestamp
+     *        or a fragment number in a Kinesis stream.
      */
 
     public void setKVSStreamStartSelector(KinesisVideoStreamStartSelector kVSStreamStartSelector) {
@@ -48,12 +51,12 @@ public class StreamProcessingStartSelector implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment
-     * number in a Kinesis stream.
+     * Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a
+     * fragment number in a Kinesis stream.
      * </p>
      * 
-     * @return Specifies the starting point in the stream to start processing. This can be done with a timestamp or a
-     *         fragment number in a Kinesis stream.
+     * @return Specifies the starting point in the stream to start processing. This can be done with a producer
+     *         timestamp or a fragment number in a Kinesis stream.
      */
 
     public KinesisVideoStreamStartSelector getKVSStreamStartSelector() {
@@ -62,13 +65,13 @@ public class StreamProcessingStartSelector implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Specifies the starting point in the stream to start processing. This can be done with a timestamp or a fragment
-     * number in a Kinesis stream.
+     * Specifies the starting point in the stream to start processing. This can be done with a producer timestamp or a
+     * fragment number in a Kinesis stream.
      * </p>
      * 
      * @param kVSStreamStartSelector
-     *        Specifies the starting point in the stream to start processing. This can be done with a timestamp or a
-     *        fragment number in a Kinesis stream.
+     *        Specifies the starting point in the stream to start processing. This can be done with a producer timestamp
+     *        or a fragment number in a Kinesis stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

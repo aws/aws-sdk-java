@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,18 @@ public class AggregationResponse implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private ImageLayerAggregationResponse imageLayerAggregation;
+    /**
+     * <p>
+     * An aggregation of findings by AWS Lambda function.
+     * </p>
+     */
+    private LambdaFunctionAggregationResponse lambdaFunctionAggregation;
+    /**
+     * <p>
+     * An aggregation of findings by AWS Lambda layer.
+     * </p>
+     */
+    private LambdaLayerAggregationResponse lambdaLayerAggregation;
     /**
      * <p>
      * An object that contains details about an aggregation response based on operating system package type.
@@ -325,6 +337,86 @@ public class AggregationResponse implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * An aggregation of findings by AWS Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunctionAggregation
+     *        An aggregation of findings by AWS Lambda function.
+     */
+
+    public void setLambdaFunctionAggregation(LambdaFunctionAggregationResponse lambdaFunctionAggregation) {
+        this.lambdaFunctionAggregation = lambdaFunctionAggregation;
+    }
+
+    /**
+     * <p>
+     * An aggregation of findings by AWS Lambda function.
+     * </p>
+     * 
+     * @return An aggregation of findings by AWS Lambda function.
+     */
+
+    public LambdaFunctionAggregationResponse getLambdaFunctionAggregation() {
+        return this.lambdaFunctionAggregation;
+    }
+
+    /**
+     * <p>
+     * An aggregation of findings by AWS Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunctionAggregation
+     *        An aggregation of findings by AWS Lambda function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AggregationResponse withLambdaFunctionAggregation(LambdaFunctionAggregationResponse lambdaFunctionAggregation) {
+        setLambdaFunctionAggregation(lambdaFunctionAggregation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An aggregation of findings by AWS Lambda layer.
+     * </p>
+     * 
+     * @param lambdaLayerAggregation
+     *        An aggregation of findings by AWS Lambda layer.
+     */
+
+    public void setLambdaLayerAggregation(LambdaLayerAggregationResponse lambdaLayerAggregation) {
+        this.lambdaLayerAggregation = lambdaLayerAggregation;
+    }
+
+    /**
+     * <p>
+     * An aggregation of findings by AWS Lambda layer.
+     * </p>
+     * 
+     * @return An aggregation of findings by AWS Lambda layer.
+     */
+
+    public LambdaLayerAggregationResponse getLambdaLayerAggregation() {
+        return this.lambdaLayerAggregation;
+    }
+
+    /**
+     * <p>
+     * An aggregation of findings by AWS Lambda layer.
+     * </p>
+     * 
+     * @param lambdaLayerAggregation
+     *        An aggregation of findings by AWS Lambda layer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AggregationResponse withLambdaLayerAggregation(LambdaLayerAggregationResponse lambdaLayerAggregation) {
+        setLambdaLayerAggregation(lambdaLayerAggregation);
+        return this;
+    }
+
+    /**
+     * <p>
      * An object that contains details about an aggregation response based on operating system package type.
      * </p>
      * 
@@ -467,6 +559,10 @@ public class AggregationResponse implements Serializable, Cloneable, StructuredP
             sb.append("FindingTypeAggregation: ").append(getFindingTypeAggregation()).append(",");
         if (getImageLayerAggregation() != null)
             sb.append("ImageLayerAggregation: ").append(getImageLayerAggregation()).append(",");
+        if (getLambdaFunctionAggregation() != null)
+            sb.append("LambdaFunctionAggregation: ").append(getLambdaFunctionAggregation()).append(",");
+        if (getLambdaLayerAggregation() != null)
+            sb.append("LambdaLayerAggregation: ").append(getLambdaLayerAggregation()).append(",");
         if (getPackageAggregation() != null)
             sb.append("PackageAggregation: ").append(getPackageAggregation()).append(",");
         if (getRepositoryAggregation() != null)
@@ -511,6 +607,14 @@ public class AggregationResponse implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getImageLayerAggregation() != null && other.getImageLayerAggregation().equals(this.getImageLayerAggregation()) == false)
             return false;
+        if (other.getLambdaFunctionAggregation() == null ^ this.getLambdaFunctionAggregation() == null)
+            return false;
+        if (other.getLambdaFunctionAggregation() != null && other.getLambdaFunctionAggregation().equals(this.getLambdaFunctionAggregation()) == false)
+            return false;
+        if (other.getLambdaLayerAggregation() == null ^ this.getLambdaLayerAggregation() == null)
+            return false;
+        if (other.getLambdaLayerAggregation() != null && other.getLambdaLayerAggregation().equals(this.getLambdaLayerAggregation()) == false)
+            return false;
         if (other.getPackageAggregation() == null ^ this.getPackageAggregation() == null)
             return false;
         if (other.getPackageAggregation() != null && other.getPackageAggregation().equals(this.getPackageAggregation()) == false)
@@ -537,6 +641,8 @@ public class AggregationResponse implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getEc2InstanceAggregation() == null) ? 0 : getEc2InstanceAggregation().hashCode());
         hashCode = prime * hashCode + ((getFindingTypeAggregation() == null) ? 0 : getFindingTypeAggregation().hashCode());
         hashCode = prime * hashCode + ((getImageLayerAggregation() == null) ? 0 : getImageLayerAggregation().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionAggregation() == null) ? 0 : getLambdaFunctionAggregation().hashCode());
+        hashCode = prime * hashCode + ((getLambdaLayerAggregation() == null) ? 0 : getLambdaLayerAggregation().hashCode());
         hashCode = prime * hashCode + ((getPackageAggregation() == null) ? 0 : getPackageAggregation().hashCode());
         hashCode = prime * hashCode + ((getRepositoryAggregation() == null) ? 0 : getRepositoryAggregation().hashCode());
         hashCode = prime * hashCode + ((getTitleAggregation() == null) ? 0 : getTitleAggregation().hashCode());

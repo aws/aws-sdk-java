@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,12 +29,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ComponentRequestMarshaller {
 
-    private static final MarshallingInfo<String> COMPONENTTYPEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentTypeId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> COMPONENTTYPEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentTypeId").build();
     private static final MarshallingInfo<Map> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("properties").build();
+    private static final MarshallingInfo<Map> PROPERTYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("propertyGroups").build();
 
     private static final ComponentRequestMarshaller instance = new ComponentRequestMarshaller();
 
@@ -52,9 +54,10 @@ public class ComponentRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(componentRequest.getComponentTypeId(), COMPONENTTYPEID_BINDING);
             protocolMarshaller.marshall(componentRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(componentRequest.getComponentTypeId(), COMPONENTTYPEID_BINDING);
             protocolMarshaller.marshall(componentRequest.getProperties(), PROPERTIES_BINDING);
+            protocolMarshaller.marshall(componentRequest.getPropertyGroups(), PROPERTYGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

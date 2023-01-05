@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ import javax.annotation.Generated;
  * </ul>
  * <p>
  * For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, Config throws an
- * exception if APIs are called from member accounts. All APIs must be called from organization master account.
+ * exception if APIs are called from member accounts. All APIs must be called from organization management account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,10 +56,6 @@ public class DeleteRecommendationPreferencesRequest extends com.amazonaws.Amazon
     /**
      * <p>
      * The name of the recommendation preference to delete.
-     * </p>
-     * <p>
-     * Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be
-     * activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.
      * </p>
      */
     private java.util.List<String> recommendationPreferenceNames;
@@ -276,16 +272,8 @@ public class DeleteRecommendationPreferencesRequest extends com.amazonaws.Amazon
      * <p>
      * The name of the recommendation preference to delete.
      * </p>
-     * <p>
-     * Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be
-     * activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.
-     * </p>
      * 
-     * @return The name of the recommendation preference to delete.</p>
-     *         <p>
-     *         Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can
-     *         be activated through preferences. Therefore, it is also the only recommendation preference that can be
-     *         deleted.
+     * @return The name of the recommendation preference to delete.
      * @see RecommendationPreferenceName
      */
 
@@ -297,17 +285,9 @@ public class DeleteRecommendationPreferencesRequest extends com.amazonaws.Amazon
      * <p>
      * The name of the recommendation preference to delete.
      * </p>
-     * <p>
-     * Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be
-     * activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.
-     * </p>
      * 
      * @param recommendationPreferenceNames
-     *        The name of the recommendation preference to delete.</p>
-     *        <p>
-     *        Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can
-     *        be activated through preferences. Therefore, it is also the only recommendation preference that can be
-     *        deleted.
+     *        The name of the recommendation preference to delete.
      * @see RecommendationPreferenceName
      */
 
@@ -325,21 +305,13 @@ public class DeleteRecommendationPreferencesRequest extends com.amazonaws.Amazon
      * The name of the recommendation preference to delete.
      * </p>
      * <p>
-     * Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be
-     * activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRecommendationPreferenceNames(java.util.Collection)} or
      * {@link #withRecommendationPreferenceNames(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param recommendationPreferenceNames
-     *        The name of the recommendation preference to delete.</p>
-     *        <p>
-     *        Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can
-     *        be activated through preferences. Therefore, it is also the only recommendation preference that can be
-     *        deleted.
+     *        The name of the recommendation preference to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationPreferenceName
      */
@@ -358,17 +330,9 @@ public class DeleteRecommendationPreferencesRequest extends com.amazonaws.Amazon
      * <p>
      * The name of the recommendation preference to delete.
      * </p>
-     * <p>
-     * Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be
-     * activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.
-     * </p>
      * 
      * @param recommendationPreferenceNames
-     *        The name of the recommendation preference to delete.</p>
-     *        <p>
-     *        Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can
-     *        be activated through preferences. Therefore, it is also the only recommendation preference that can be
-     *        deleted.
+     *        The name of the recommendation preference to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationPreferenceName
      */
@@ -382,17 +346,9 @@ public class DeleteRecommendationPreferencesRequest extends com.amazonaws.Amazon
      * <p>
      * The name of the recommendation preference to delete.
      * </p>
-     * <p>
-     * Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can be
-     * activated through preferences. Therefore, it is also the only recommendation preference that can be deleted.
-     * </p>
      * 
      * @param recommendationPreferenceNames
-     *        The name of the recommendation preference to delete.</p>
-     *        <p>
-     *        Enhanced infrastructure metrics (<code>EnhancedInfrastructureMetrics</code>) is the only feature that can
-     *        be activated through preferences. Therefore, it is also the only recommendation preference that can be
-     *        deleted.
+     *        The name of the recommendation preference to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecommendationPreferenceName
      */

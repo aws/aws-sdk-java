@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
 
+    /** The approximate asset count of the PackagingGroup. */
+    private Integer approximateAssetCount;
     /** The ARN of the PackagingGroup. */
     private String arn;
 
@@ -38,6 +40,40 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
     private String id;
 
     private java.util.Map<String, String> tags;
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @param approximateAssetCount
+     *        The approximate asset count of the PackagingGroup.
+     */
+
+    public void setApproximateAssetCount(Integer approximateAssetCount) {
+        this.approximateAssetCount = approximateAssetCount;
+    }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @return The approximate asset count of the PackagingGroup.
+     */
+
+    public Integer getApproximateAssetCount() {
+        return this.approximateAssetCount;
+    }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @param approximateAssetCount
+     *        The approximate asset count of the PackagingGroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackagingGroup withApproximateAssetCount(Integer approximateAssetCount) {
+        setApproximateAssetCount(approximateAssetCount);
+        return this;
+    }
 
     /**
      * The ARN of the PackagingGroup.
@@ -259,6 +295,8 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApproximateAssetCount() != null)
+            sb.append("ApproximateAssetCount: ").append(getApproximateAssetCount()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getAuthorization() != null)
@@ -285,6 +323,10 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PackagingGroup == false)
             return false;
         PackagingGroup other = (PackagingGroup) obj;
+        if (other.getApproximateAssetCount() == null ^ this.getApproximateAssetCount() == null)
+            return false;
+        if (other.getApproximateAssetCount() != null && other.getApproximateAssetCount().equals(this.getApproximateAssetCount()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -317,6 +359,7 @@ public class PackagingGroup implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApproximateAssetCount() == null) ? 0 : getApproximateAssetCount().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());

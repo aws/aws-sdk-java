@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,14 @@ public class NetworkInfo implements Serializable, Cloneable {
      * </p>
      */
     private Boolean encryptionInTransitSupported;
+    /**
+     * <p>
+     * Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable
+     * Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network
+     * traffic between EC2 instances.
+     * </p>
+     */
+    private Boolean enaSrdSupported;
 
     /**
      * <p>
@@ -668,6 +676,74 @@ public class NetworkInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable
+     * Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network
+     * traffic between EC2 instances.
+     * </p>
+     * 
+     * @param enaSrdSupported
+     *        Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable
+     *        Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail
+     *        latency of network traffic between EC2 instances.
+     */
+
+    public void setEnaSrdSupported(Boolean enaSrdSupported) {
+        this.enaSrdSupported = enaSrdSupported;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable
+     * Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network
+     * traffic between EC2 instances.
+     * </p>
+     * 
+     * @return Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable
+     *         Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail
+     *         latency of network traffic between EC2 instances.
+     */
+
+    public Boolean getEnaSrdSupported() {
+        return this.enaSrdSupported;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable
+     * Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network
+     * traffic between EC2 instances.
+     * </p>
+     * 
+     * @param enaSrdSupported
+     *        Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable
+     *        Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail
+     *        latency of network traffic between EC2 instances.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withEnaSrdSupported(Boolean enaSrdSupported) {
+        setEnaSrdSupported(enaSrdSupported);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable Reliable
+     * Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail latency of network
+     * traffic between EC2 instances.
+     * </p>
+     * 
+     * @return Indicates whether the instance type supports ENA Express. ENA Express uses Amazon Web Services Scalable
+     *         Reliable Datagram (SRD) technology to increase the maximum bandwidth used per stream and minimize tail
+     *         latency of network traffic between EC2 instances.
+     */
+
+    public Boolean isEnaSrdSupported() {
+        return this.enaSrdSupported;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -702,7 +778,9 @@ public class NetworkInfo implements Serializable, Cloneable {
         if (getEfaInfo() != null)
             sb.append("EfaInfo: ").append(getEfaInfo()).append(",");
         if (getEncryptionInTransitSupported() != null)
-            sb.append("EncryptionInTransitSupported: ").append(getEncryptionInTransitSupported());
+            sb.append("EncryptionInTransitSupported: ").append(getEncryptionInTransitSupported()).append(",");
+        if (getEnaSrdSupported() != null)
+            sb.append("EnaSrdSupported: ").append(getEnaSrdSupported());
         sb.append("}");
         return sb.toString();
     }
@@ -765,6 +843,10 @@ public class NetworkInfo implements Serializable, Cloneable {
             return false;
         if (other.getEncryptionInTransitSupported() != null && other.getEncryptionInTransitSupported().equals(this.getEncryptionInTransitSupported()) == false)
             return false;
+        if (other.getEnaSrdSupported() == null ^ this.getEnaSrdSupported() == null)
+            return false;
+        if (other.getEnaSrdSupported() != null && other.getEnaSrdSupported().equals(this.getEnaSrdSupported()) == false)
+            return false;
         return true;
     }
 
@@ -785,6 +867,7 @@ public class NetworkInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getEfaSupported() == null) ? 0 : getEfaSupported().hashCode());
         hashCode = prime * hashCode + ((getEfaInfo() == null) ? 0 : getEfaInfo().hashCode());
         hashCode = prime * hashCode + ((getEncryptionInTransitSupported() == null) ? 0 : getEncryptionInTransitSupported().hashCode());
+        hashCode = prime * hashCode + ((getEnaSrdSupported() == null) ? 0 : getEnaSrdSupported().hashCode());
         return hashCode;
     }
 

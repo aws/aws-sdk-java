@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,17 +35,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -57,9 +57,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     private String functionName;
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
-     * package.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
@@ -104,7 +103,7 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean dryRun;
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      */
@@ -127,17 +126,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -154,17 +153,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code>.
+     *        <b>Function name</b> – <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -187,17 +186,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -213,17 +212,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>my-function</code>.
+     *         <b>Function name</b> – <code>my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -246,17 +245,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -273,17 +272,17 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code>.
+     *        <b>Function name</b> – <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -300,9 +299,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
-     * package.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -316,9 +314,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     *        clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
-     *        package.
+     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     *        encoding for you. Use only with a function defined with a .zip file archive deployment package.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -327,9 +324,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
-     * package.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -339,9 +335,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * {@code position}.
      * </p>
      * 
-     * @return The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services
-     *         CLI clients handle the encoding for you. Use only with a function defined with a .zip file archive
-     *         deployment package.
+     * @return The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     *         encoding for you. Use only with a function defined with a .zip file archive deployment package.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -350,9 +345,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
-     * package.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you. Use only with a function defined with a .zip file archive deployment package.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -366,9 +360,8 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     *        clients handle the encoding for you. Use only with a function defined with a .zip file archive deployment
-     *        package.
+     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     *        encoding for you. Use only with a function defined with a .zip file archive deployment package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,12 +664,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        Update the function only if the revision ID matches the ID that's specified. Use this option to avoid
      *        modifying a function that has changed since you last read it.
      */
 
@@ -686,11 +679,11 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      * 
-     * @return Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     * @return Update the function only if the revision ID matches the ID that's specified. Use this option to avoid
      *         modifying a function that has changed since you last read it.
      */
 
@@ -700,12 +693,12 @@ public class UpdateFunctionCodeRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Only update the function if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the function only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * function that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the function if the revision ID matches the ID that's specified. Use this option to avoid
+     *        Update the function only if the revision ID matches the ID that's specified. Use this option to avoid
      *        modifying a function that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

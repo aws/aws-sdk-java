@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -100,6 +100,13 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private Boolean isLatestForTarget;
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     */
+    private String parentTargetArn;
     /**
      * <p>
      * A list of key-value pairs that contain metadata for the resource. For more information, see <a
@@ -680,6 +687,55 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     */
+
+    public void setParentTargetArn(String parentTargetArn) {
+        this.parentTargetArn = parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @return The parent deployment's target <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *         subdeployment.
+     */
+
+    public String getParentTargetArn() {
+        return this.parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDeploymentResult withParentTargetArn(String parentTargetArn) {
+        setParentTargetArn(parentTargetArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of key-value pairs that contain metadata for the resource. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the
      * <i>IoT Greengrass V2 Developer Guide</i>.
@@ -794,6 +850,8 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
             sb.append("CreationTimestamp: ").append(getCreationTimestamp()).append(",");
         if (getIsLatestForTarget() != null)
             sb.append("IsLatestForTarget: ").append(getIsLatestForTarget()).append(",");
+        if (getParentTargetArn() != null)
+            sb.append("ParentTargetArn: ").append(getParentTargetArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -858,6 +916,10 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getIsLatestForTarget() != null && other.getIsLatestForTarget().equals(this.getIsLatestForTarget()) == false)
             return false;
+        if (other.getParentTargetArn() == null ^ this.getParentTargetArn() == null)
+            return false;
+        if (other.getParentTargetArn() != null && other.getParentTargetArn().equals(this.getParentTargetArn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -882,6 +944,7 @@ public class GetDeploymentResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getIotJobConfiguration() == null) ? 0 : getIotJobConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getIsLatestForTarget() == null) ? 0 : getIsLatestForTarget().hashCode());
+        hashCode = prime * hashCode + ((getParentTargetArn() == null) ? 0 : getParentTargetArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class DescribeImageVersionRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private Integer version;
+    /**
+     * <p>
+     * The alias of the image version.
+     * </p>
+     */
+    private String alias;
 
     /**
      * <p>
@@ -119,6 +125,46 @@ public class DescribeImageVersionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The alias of the image version.
+     * </p>
+     * 
+     * @param alias
+     *        The alias of the image version.
+     */
+
+    public void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    /**
+     * <p>
+     * The alias of the image version.
+     * </p>
+     * 
+     * @return The alias of the image version.
+     */
+
+    public String getAlias() {
+        return this.alias;
+    }
+
+    /**
+     * <p>
+     * The alias of the image version.
+     * </p>
+     * 
+     * @param alias
+     *        The alias of the image version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImageVersionRequest withAlias(String alias) {
+        setAlias(alias);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,7 +179,9 @@ public class DescribeImageVersionRequest extends com.amazonaws.AmazonWebServiceR
         if (getImageName() != null)
             sb.append("ImageName: ").append(getImageName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getAlias() != null)
+            sb.append("Alias: ").append(getAlias());
         sb.append("}");
         return sb.toString();
     }
@@ -156,6 +204,10 @@ public class DescribeImageVersionRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getAlias() == null ^ this.getAlias() == null)
+            return false;
+        if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
+            return false;
         return true;
     }
 
@@ -166,6 +218,7 @@ public class DescribeImageVersionRequest extends com.amazonaws.AmazonWebServiceR
 
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         return hashCode;
     }
 

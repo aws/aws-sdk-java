@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Specifies that you want Kinesis Data Firehose to convert data from the JSON format to the Parquet or ORC format
  * before writing it to Amazon S3. Kinesis Data Firehose uses the serializer and deserializer that you specify, in
- * addition to the column information from the AWS Glue table, to deserialize your input data from JSON and then
- * serialize it to the Parquet or ORC format. For more information, see <a
+ * addition to the column information from the Amazon Web Services Glue table, to deserialize your input data from JSON
+ * and then serialize it to the Parquet or ORC format. For more information, see <a
  * href="https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html">Kinesis Data Firehose Record
  * Format Conversion</a>.
  * </p>
@@ -35,8 +35,8 @@ public class DataFormatConversionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if
-     * <code>Enabled</code> is set to true.
+     * Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is
+     * required if <code>Enabled</code> is set to true.
      * </p>
      */
     private SchemaConfiguration schemaConfiguration;
@@ -64,13 +64,13 @@ public class DataFormatConversionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if
-     * <code>Enabled</code> is set to true.
+     * Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is
+     * required if <code>Enabled</code> is set to true.
      * </p>
      * 
      * @param schemaConfiguration
-     *        Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required
-     *        if <code>Enabled</code> is set to true.
+     *        Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This
+     *        parameter is required if <code>Enabled</code> is set to true.
      */
 
     public void setSchemaConfiguration(SchemaConfiguration schemaConfiguration) {
@@ -79,12 +79,12 @@ public class DataFormatConversionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if
-     * <code>Enabled</code> is set to true.
+     * Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is
+     * required if <code>Enabled</code> is set to true.
      * </p>
      * 
-     * @return Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is
-     *         required if <code>Enabled</code> is set to true.
+     * @return Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This
+     *         parameter is required if <code>Enabled</code> is set to true.
      */
 
     public SchemaConfiguration getSchemaConfiguration() {
@@ -93,13 +93,13 @@ public class DataFormatConversionConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required if
-     * <code>Enabled</code> is set to true.
+     * Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This parameter is
+     * required if <code>Enabled</code> is set to true.
      * </p>
      * 
      * @param schemaConfiguration
-     *        Specifies the AWS Glue Data Catalog table that contains the column information. This parameter is required
-     *        if <code>Enabled</code> is set to true.
+     *        Specifies the Amazon Web Services Glue Data Catalog table that contains the column information. This
+     *        parameter is required if <code>Enabled</code> is set to true.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

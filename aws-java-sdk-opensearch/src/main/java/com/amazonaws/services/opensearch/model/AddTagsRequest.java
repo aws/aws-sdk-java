@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>AddTags</a> </code> operation. Specifies the tags to attach to the
- * domain.
+ * Container for the parameters to the <code>AddTags</code> operation. Specifies the tags to attach to the domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,24 +27,24 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain you want to add tags to.
+     * Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * List of <code>Tag</code> to add to the domain.
+     * List of resource tags.
      * </p>
      */
     private java.util.List<Tag> tagList;
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain you want to add tags to.
+     * Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.
      * </p>
      * 
      * @param aRN
-     *        Specify the <code>ARN</code> of the domain you want to add tags to.
+     *        Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.
      */
 
     public void setARN(String aRN) {
@@ -54,10 +53,10 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain you want to add tags to.
+     * Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.
      * </p>
      * 
-     * @return Specify the <code>ARN</code> of the domain you want to add tags to.
+     * @return Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.
      */
 
     public String getARN() {
@@ -66,11 +65,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain you want to add tags to.
+     * Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.
      * </p>
      * 
      * @param aRN
-     *        Specify the <code>ARN</code> of the domain you want to add tags to.
+     *        Amazon Resource Name (ARN) for the OpenSearch Service domain to which you want to attach resource tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +80,10 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * List of <code>Tag</code> to add to the domain.
+     * List of resource tags.
      * </p>
      * 
-     * @return List of <code>Tag</code> to add to the domain.
+     * @return List of resource tags.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -93,11 +92,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * List of <code>Tag</code> to add to the domain.
+     * List of resource tags.
      * </p>
      * 
      * @param tagList
-     *        List of <code>Tag</code> to add to the domain.
+     *        List of resource tags.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -111,7 +110,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * List of <code>Tag</code> to add to the domain.
+     * List of resource tags.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +119,7 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      * 
      * @param tagList
-     *        List of <code>Tag</code> to add to the domain.
+     *        List of resource tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +135,11 @@ public class AddTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * List of <code>Tag</code> to add to the domain.
+     * List of resource tags.
      * </p>
      * 
      * @param tagList
-     *        List of <code>Tag</code> to add to the domain.
+     *        List of resource tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

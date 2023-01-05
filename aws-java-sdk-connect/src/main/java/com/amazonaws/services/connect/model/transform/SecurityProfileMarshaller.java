@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.connect.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +41,10 @@ public class SecurityProfileMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Map> ALLOWEDACCESSCONTROLTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedAccessControlTags").build();
+    private static final MarshallingInfo<List> TAGRESTRICTEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagRestrictedResources").build();
 
     private static final SecurityProfileMarshaller instance = new SecurityProfileMarshaller();
 
@@ -64,6 +68,8 @@ public class SecurityProfileMarshaller {
             protocolMarshaller.marshall(securityProfile.getSecurityProfileName(), SECURITYPROFILENAME_BINDING);
             protocolMarshaller.marshall(securityProfile.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(securityProfile.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(securityProfile.getAllowedAccessControlTags(), ALLOWEDACCESSCONTROLTAGS_BINDING);
+            protocolMarshaller.marshall(securityProfile.getTagRestrictedResources(), TAGRESTRICTEDRESOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

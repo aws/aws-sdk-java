@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class ResourceScanMetadata implements Serializable, Cloneable, Structured
      * </p>
      */
     private EcrRepositoryMetadata ecrRepository;
+    /**
+     * <p>
+     * An object that contains metadata details for an AWS Lambda function.
+     * </p>
+     */
+    private LambdaFunctionMetadata lambdaFunction;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class ResourceScanMetadata implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * An object that contains metadata details for an AWS Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunction
+     *        An object that contains metadata details for an AWS Lambda function.
+     */
+
+    public void setLambdaFunction(LambdaFunctionMetadata lambdaFunction) {
+        this.lambdaFunction = lambdaFunction;
+    }
+
+    /**
+     * <p>
+     * An object that contains metadata details for an AWS Lambda function.
+     * </p>
+     * 
+     * @return An object that contains metadata details for an AWS Lambda function.
+     */
+
+    public LambdaFunctionMetadata getLambdaFunction() {
+        return this.lambdaFunction;
+    }
+
+    /**
+     * <p>
+     * An object that contains metadata details for an AWS Lambda function.
+     * </p>
+     * 
+     * @param lambdaFunction
+     *        An object that contains metadata details for an AWS Lambda function.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceScanMetadata withLambdaFunction(LambdaFunctionMetadata lambdaFunction) {
+        setLambdaFunction(lambdaFunction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class ResourceScanMetadata implements Serializable, Cloneable, Structured
         if (getEcrImage() != null)
             sb.append("EcrImage: ").append(getEcrImage()).append(",");
         if (getEcrRepository() != null)
-            sb.append("EcrRepository: ").append(getEcrRepository());
+            sb.append("EcrRepository: ").append(getEcrRepository()).append(",");
+        if (getLambdaFunction() != null)
+            sb.append("LambdaFunction: ").append(getLambdaFunction());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class ResourceScanMetadata implements Serializable, Cloneable, Structured
             return false;
         if (other.getEcrRepository() != null && other.getEcrRepository().equals(this.getEcrRepository()) == false)
             return false;
+        if (other.getLambdaFunction() == null ^ this.getLambdaFunction() == null)
+            return false;
+        if (other.getLambdaFunction() != null && other.getLambdaFunction().equals(this.getLambdaFunction()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class ResourceScanMetadata implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getEc2() == null) ? 0 : getEc2().hashCode());
         hashCode = prime * hashCode + ((getEcrImage() == null) ? 0 : getEcrImage().hashCode());
         hashCode = prime * hashCode + ((getEcrRepository() == null) ? 0 : getEcrRepository().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunction() == null) ? 0 : getLambdaFunction().hashCode());
         return hashCode;
     }
 

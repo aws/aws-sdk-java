@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,6 +20,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Describes the Amazon S3 location of the media file you want to use in your request.
+ * </p>
+ * <p>
+ * For information on supported media formats, refer to the <a href=
+ * "https://docs.aws.amazon.com/APIReference/API_StartTranscriptionJob.html#transcribe-StartTranscriptionJob-request-MediaFormat"
+ * >MediaFormat</a> parameter or the <a
+ * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media formats</a> section in
+ * the Amazon S3 Developer Guide.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/Media" target="_top">AWS API
@@ -72,8 +79,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
-     * transcription requests.
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only
+     * supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.
      * </p>
      * </important>
      */
@@ -234,8 +241,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
-     * transcription requests.
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only
+     * supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.
      * </p>
      * </important>
      * 
@@ -259,8 +266,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <important>
      *        <p>
-     *        <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>
-     *        ) transcription requests.
+     *        <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It
+     *        is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.
      *        </p>
      */
 
@@ -290,8 +297,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
-     * transcription requests.
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only
+     * supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.
      * </p>
      * </important>
      * 
@@ -314,8 +321,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <important>
      *         <p>
-     *         <code>RedactedMediaFileUri</code> is only supported for Call Analytics (
-     *         <code>StartCallAnalyticsJob</code>) transcription requests.
+     *         <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It
+     *         is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.
      *         </p>
      */
 
@@ -345,8 +352,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <important>
      * <p>
-     * <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
-     * transcription requests.
+     * <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It is only
+     * supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.
      * </p>
      * </important>
      * 
@@ -370,8 +377,8 @@ public class Media implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <important>
      *        <p>
-     *        <code>RedactedMediaFileUri</code> is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>
-     *        ) transcription requests.
+     *        <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a redacted transcript. It
+     *        is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>) transcription requests.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

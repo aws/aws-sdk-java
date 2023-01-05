@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -137,9 +137,14 @@ public class SnsMessageManager {
             case US_ISOB_EAST_1:
                 return "sns-us-isob-east-1.sc2s.sgov.gov";
             case AP_EAST_1:
+            case AP_SOUTH_2:
             case ME_SOUTH_1:
+            case ME_CENTRAL_1:
             case EU_SOUTH_1:
+            case EU_SOUTH_2:
+            case EU_CENTRAL_2:
             case AF_SOUTH_1:
+            case AP_SOUTHEAST_3:
                 return "sns-signing." + regionStr + ".amazonaws.com";
             default:
                 return "sns.amazonaws.com";

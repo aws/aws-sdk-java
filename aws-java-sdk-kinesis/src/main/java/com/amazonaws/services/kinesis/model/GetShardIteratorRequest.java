@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,12 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.Date timestamp;
+    /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     */
+    private String streamARN;
 
     /**
      * <p>
@@ -711,6 +717,46 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     * 
+     * @param streamARN
+     *        The ARN of the stream.
+     */
+
+    public void setStreamARN(String streamARN) {
+        this.streamARN = streamARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     * 
+     * @return The ARN of the stream.
+     */
+
+    public String getStreamARN() {
+        return this.streamARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     * 
+     * @param streamARN
+     *        The ARN of the stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetShardIteratorRequest withStreamARN(String streamARN) {
+        setStreamARN(streamARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -731,7 +777,9 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
         if (getStartingSequenceNumber() != null)
             sb.append("StartingSequenceNumber: ").append(getStartingSequenceNumber()).append(",");
         if (getTimestamp() != null)
-            sb.append("Timestamp: ").append(getTimestamp());
+            sb.append("Timestamp: ").append(getTimestamp()).append(",");
+        if (getStreamARN() != null)
+            sb.append("StreamARN: ").append(getStreamARN());
         sb.append("}");
         return sb.toString();
     }
@@ -766,6 +814,10 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
             return false;
+        if (other.getStreamARN() == null ^ this.getStreamARN() == null)
+            return false;
+        if (other.getStreamARN() != null && other.getStreamARN().equals(this.getStreamARN()) == false)
+            return false;
         return true;
     }
 
@@ -779,6 +831,7 @@ public class GetShardIteratorRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getShardIteratorType() == null) ? 0 : getShardIteratorType().hashCode());
         hashCode = prime * hashCode + ((getStartingSequenceNumber() == null) ? 0 : getStartingSequenceNumber().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getStreamARN() == null) ? 0 : getStreamARN().hashCode());
         return hashCode;
     }
 

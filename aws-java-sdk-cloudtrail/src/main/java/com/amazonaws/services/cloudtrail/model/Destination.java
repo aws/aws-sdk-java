@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,27 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For service-linked channels, the value is
+     * <code>AWS_SERVICE</code>.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The location of the service. For service-linked channels, this is the name of the Amazon Web Services service.
+     * For service-linked channels, the value is the name of the Amazon Web Services service.
      * </p>
      */
     private String location;
 
     /**
      * <p>
-     * The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For service-linked channels, the value is
+     * <code>AWS_SERVICE</code>.
      * </p>
      * 
      * @param type
-     *        The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     *        The type of destination for events arriving from a channel. For service-linked channels, the value is
+     *        <code>AWS_SERVICE</code>.
      * @see DestinationType
      */
 
@@ -57,10 +60,12 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For service-linked channels, the value is
+     * <code>AWS_SERVICE</code>.
      * </p>
      * 
-     * @return The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     * @return The type of destination for events arriving from a channel. For service-linked channels, the value is
+     *         <code>AWS_SERVICE</code>.
      * @see DestinationType
      */
 
@@ -70,11 +75,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For service-linked channels, the value is
+     * <code>AWS_SERVICE</code>.
      * </p>
      * 
      * @param type
-     *        The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     *        The type of destination for events arriving from a channel. For service-linked channels, the value is
+     *        <code>AWS_SERVICE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */
@@ -86,11 +93,13 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     * The type of destination for events arriving from a channel. For service-linked channels, the value is
+     * <code>AWS_SERVICE</code>.
      * </p>
      * 
      * @param type
-     *        The type of service. For service-linked channels, the value is <code>AWS_SERVICE</code>.
+     *        The type of destination for events arriving from a channel. For service-linked channels, the value is
+     *        <code>AWS_SERVICE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DestinationType
      */
@@ -102,12 +111,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the service. For service-linked channels, this is the name of the Amazon Web Services service.
+     * For service-linked channels, the value is the name of the Amazon Web Services service.
      * </p>
      * 
      * @param location
-     *        The location of the service. For service-linked channels, this is the name of the Amazon Web Services
-     *        service.
+     *        For service-linked channels, the value is the name of the Amazon Web Services service.
      */
 
     public void setLocation(String location) {
@@ -116,11 +124,10 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the service. For service-linked channels, this is the name of the Amazon Web Services service.
+     * For service-linked channels, the value is the name of the Amazon Web Services service.
      * </p>
      * 
-     * @return The location of the service. For service-linked channels, this is the name of the Amazon Web Services
-     *         service.
+     * @return For service-linked channels, the value is the name of the Amazon Web Services service.
      */
 
     public String getLocation() {
@@ -129,12 +136,11 @@ public class Destination implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The location of the service. For service-linked channels, this is the name of the Amazon Web Services service.
+     * For service-linked channels, the value is the name of the Amazon Web Services service.
      * </p>
      * 
      * @param location
-     *        The location of the service. For service-linked channels, this is the name of the Amazon Web Services
-     *        service.
+     *        For service-linked channels, the value is the name of the Amazon Web Services service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

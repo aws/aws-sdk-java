@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,8 +83,8 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String platformDetails;
@@ -199,16 +199,16 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      */
     private String bootMode;
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      */
     private String tpmSupport;
@@ -227,7 +227,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String imdsSupport;
@@ -718,14 +718,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param platformDetails
      *        The platform details associated with the billing code of the AMI. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     *        billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     *        information</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setPlatformDetails(String platformDetails) {
@@ -735,13 +735,13 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The platform details associated with the billing code of the AMI. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     *         billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     *         information</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public String getPlatformDetails() {
@@ -751,14 +751,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The platform details associated with the billing code of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI billing</a> in
-     * the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param platformDetails
      *        The platform details associated with the billing code of the AMI. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     *        billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     *        information</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1730,14 +1730,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1748,13 +1748,13 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @return The boot mode of the image. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *         Elastic Compute Cloud User Guide</i>.
+     *         EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1765,14 +1765,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */
@@ -1785,14 +1785,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1803,14 +1803,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * The boot mode of the image. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the image. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */
@@ -1823,14 +1823,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1841,13 +1841,13 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @return If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information,
      *         see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         <i>Amazon EC2 User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1858,14 +1858,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TpmSupportValues
      */
@@ -1878,14 +1878,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1896,14 +1896,14 @@ public class Image implements Serializable, Cloneable {
     /**
      * <p>
      * If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For more information, see
      *        <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TpmSupportValues
      */
@@ -1972,7 +1972,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -1981,7 +1981,7 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @see ImdsSupportValues
      */
 
@@ -1996,7 +1996,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI
@@ -2004,7 +2004,7 @@ public class Image implements Serializable, Cloneable {
      *         instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *         <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *         >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @see ImdsSupportValues
      */
 
@@ -2019,7 +2019,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -2028,7 +2028,7 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImdsSupportValues
      */
@@ -2045,7 +2045,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -2054,7 +2054,7 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @see ImdsSupportValues
      */
 
@@ -2069,7 +2069,7 @@ public class Image implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -2078,7 +2078,7 @@ public class Image implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ImdsSupportValues
      */

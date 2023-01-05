@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class CaptchaResponse implements Serializable, Cloneable, StructuredPojo 
     private Integer responseCode;
     /**
      * <p>
-     * The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token.
+     * The time that the <code>CAPTCHA</code> was last solved for the supplied token.
      * </p>
      */
     private Long solveTimestamp;
@@ -96,11 +96,11 @@ public class CaptchaResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token.
+     * The time that the <code>CAPTCHA</code> was last solved for the supplied token.
      * </p>
      * 
      * @param solveTimestamp
-     *        The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token.
+     *        The time that the <code>CAPTCHA</code> was last solved for the supplied token.
      */
 
     public void setSolveTimestamp(Long solveTimestamp) {
@@ -109,10 +109,10 @@ public class CaptchaResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token.
+     * The time that the <code>CAPTCHA</code> was last solved for the supplied token.
      * </p>
      * 
-     * @return The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token.
+     * @return The time that the <code>CAPTCHA</code> was last solved for the supplied token.
      */
 
     public Long getSolveTimestamp() {
@@ -121,11 +121,11 @@ public class CaptchaResponse implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token.
+     * The time that the <code>CAPTCHA</code> was last solved for the supplied token.
      * </p>
      * 
      * @param solveTimestamp
-     *        The time that the <code>CAPTCHA</code> puzzle was solved for the supplied token.
+     *        The time that the <code>CAPTCHA</code> was last solved for the supplied token.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

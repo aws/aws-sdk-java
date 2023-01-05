@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
      * namespace.
      * </p>
      */
@@ -44,12 +44,12 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
      * namespace.
      * </p>
      * 
      * @param dnsProperties
-     *        A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+     *        A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
      *        namespace.
      */
 
@@ -59,11 +59,11 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
      * namespace.
      * </p>
      * 
-     * @return A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+     * @return A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
      *         namespace.
      */
 
@@ -73,12 +73,12 @@ public class NamespaceProperties implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+     * A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
      * namespace.
      * </p>
      * 
      * @param dnsProperties
-     *        A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
+     *        A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a
      *        namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

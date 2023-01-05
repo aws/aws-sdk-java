@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * A response headers policy configuration contains metadata about the response headers policy, and configurations for
- * sets of HTTP response headers and their values. CloudFront adds the headers in the policy to HTTP responses that it
- * sends for requests that match a cache behavior associated with the policy.
+ * sets of HTTP response headers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicyConfig"
@@ -73,6 +72,12 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
      * </p>
      */
     private ResponseHeadersPolicyCustomHeadersConfig customHeadersConfig;
+    /**
+     * <p>
+     * A configuration for a set of HTTP headers to remove from the HTTP response.
+     * </p>
+     */
+    private ResponseHeadersPolicyRemoveHeadersConfig removeHeadersConfig;
 
     /**
      * <p>
@@ -347,6 +352,46 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A configuration for a set of HTTP headers to remove from the HTTP response.
+     * </p>
+     * 
+     * @param removeHeadersConfig
+     *        A configuration for a set of HTTP headers to remove from the HTTP response.
+     */
+
+    public void setRemoveHeadersConfig(ResponseHeadersPolicyRemoveHeadersConfig removeHeadersConfig) {
+        this.removeHeadersConfig = removeHeadersConfig;
+    }
+
+    /**
+     * <p>
+     * A configuration for a set of HTTP headers to remove from the HTTP response.
+     * </p>
+     * 
+     * @return A configuration for a set of HTTP headers to remove from the HTTP response.
+     */
+
+    public ResponseHeadersPolicyRemoveHeadersConfig getRemoveHeadersConfig() {
+        return this.removeHeadersConfig;
+    }
+
+    /**
+     * <p>
+     * A configuration for a set of HTTP headers to remove from the HTTP response.
+     * </p>
+     * 
+     * @param removeHeadersConfig
+     *        A configuration for a set of HTTP headers to remove from the HTTP response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseHeadersPolicyConfig withRemoveHeadersConfig(ResponseHeadersPolicyRemoveHeadersConfig removeHeadersConfig) {
+        setRemoveHeadersConfig(removeHeadersConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -369,7 +414,9 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
         if (getServerTimingHeadersConfig() != null)
             sb.append("ServerTimingHeadersConfig: ").append(getServerTimingHeadersConfig()).append(",");
         if (getCustomHeadersConfig() != null)
-            sb.append("CustomHeadersConfig: ").append(getCustomHeadersConfig());
+            sb.append("CustomHeadersConfig: ").append(getCustomHeadersConfig()).append(",");
+        if (getRemoveHeadersConfig() != null)
+            sb.append("RemoveHeadersConfig: ").append(getRemoveHeadersConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -408,6 +455,10 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
             return false;
         if (other.getCustomHeadersConfig() != null && other.getCustomHeadersConfig().equals(this.getCustomHeadersConfig()) == false)
             return false;
+        if (other.getRemoveHeadersConfig() == null ^ this.getRemoveHeadersConfig() == null)
+            return false;
+        if (other.getRemoveHeadersConfig() != null && other.getRemoveHeadersConfig().equals(this.getRemoveHeadersConfig()) == false)
+            return false;
         return true;
     }
 
@@ -422,6 +473,7 @@ public class ResponseHeadersPolicyConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSecurityHeadersConfig() == null) ? 0 : getSecurityHeadersConfig().hashCode());
         hashCode = prime * hashCode + ((getServerTimingHeadersConfig() == null) ? 0 : getServerTimingHeadersConfig().hashCode());
         hashCode = prime * hashCode + ((getCustomHeadersConfig() == null) ? 0 : getCustomHeadersConfig().hashCode());
+        hashCode = prime * hashCode + ((getRemoveHeadersConfig() == null) ? 0 : getRemoveHeadersConfig().hashCode());
         return hashCode;
     }
 

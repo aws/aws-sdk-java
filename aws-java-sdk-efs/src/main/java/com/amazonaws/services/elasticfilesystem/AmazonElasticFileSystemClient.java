@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -384,6 +384,13 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access
      * points</a>.
      * </p>
+     * <note>
+     * <p>
+     * If multiple requests to create access points on the same file system are sent in quick succession, and the file
+     * system is near the limit of 120 access points, you may experience a throttling response for these requests. This
+     * is to ensure that the file system does not exceed the stated access point limit.
+     * </p>
+     * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
      * </p>
@@ -410,7 +417,9 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      *         >https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region</a>.
      * @throws ThrottlingException
      *         Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of
-     *         Access Points in the account is nearing the limit of 120.
+     *         Access Points on the file system is nearing the <a href=
+     *         "https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit
+     *         of 120</a>.
      * @sample AmazonElasticFileSystem.CreateAccessPoint
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticfilesystem-2015-02-01/CreateAccessPoint"
      *      target="_top">AWS API Documentation</a>
@@ -2732,14 +2741,15 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
-     * consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+     * Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A
+     * <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the
-     * lower-cost Infrequent Access (IA) storage class.
+     * lower-cost EFS Infrequent Access (IA) storage class.
      * </p>
      * <p>
      * To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.
@@ -2747,11 +2757,11 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * </li>
      * <li>
      * <p>
-     * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
-     * system's primary storage class (Standard or One Zone Standard.
+     * <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
+     * system's primary storage class (EFS Standard or EFS One Zone Standard).
      * </p>
      * <p>
-     * To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
+     * To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
      * <code>AFTER_1_ACCESS</code>.
      * </p>
      * </li>
@@ -2765,8 +2775,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and intelligent
-     * tiering for the file system.
+     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS
+     * Intelligent-Tiering for the file system.
      * </p>
      * <p>
      * In the request, specify the following:
@@ -2774,8 +2784,8 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
      * <ul>
      * <li>
      * <p>
-     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and
-     * intelligent tiering.
+     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and EFS
+     * Intelligent-Tiering.
      * </p>
      * </li>
      * <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1288,6 +1288,41 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
     }
 
     @Override
+    public java.util.concurrent.Future<GetMultiRegionAccessPointRoutesResult> getMultiRegionAccessPointRoutesAsync(
+            GetMultiRegionAccessPointRoutesRequest request) {
+
+        return getMultiRegionAccessPointRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMultiRegionAccessPointRoutesResult> getMultiRegionAccessPointRoutesAsync(
+            final GetMultiRegionAccessPointRoutesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetMultiRegionAccessPointRoutesRequest, GetMultiRegionAccessPointRoutesResult> asyncHandler) {
+        final GetMultiRegionAccessPointRoutesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetMultiRegionAccessPointRoutesResult>() {
+            @Override
+            public GetMultiRegionAccessPointRoutesResult call() throws Exception {
+                GetMultiRegionAccessPointRoutesResult result = null;
+
+                try {
+                    result = executeGetMultiRegionAccessPointRoutes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPublicAccessBlockResult> getPublicAccessBlockAsync(GetPublicAccessBlockRequest request) {
 
         return getPublicAccessBlockAsync(request, null);
@@ -1980,6 +2015,41 @@ public class AWSS3ControlAsyncClient extends AWSS3ControlClient implements AWSS3
 
                 try {
                     result = executePutStorageLensConfigurationTagging(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitMultiRegionAccessPointRoutesResult> submitMultiRegionAccessPointRoutesAsync(
+            SubmitMultiRegionAccessPointRoutesRequest request) {
+
+        return submitMultiRegionAccessPointRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitMultiRegionAccessPointRoutesResult> submitMultiRegionAccessPointRoutesAsync(
+            final SubmitMultiRegionAccessPointRoutesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SubmitMultiRegionAccessPointRoutesRequest, SubmitMultiRegionAccessPointRoutesResult> asyncHandler) {
+        final SubmitMultiRegionAccessPointRoutesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SubmitMultiRegionAccessPointRoutesResult>() {
+            @Override
+            public SubmitMultiRegionAccessPointRoutesResult call() throws Exception {
+                SubmitMultiRegionAccessPointRoutesResult result = null;
+
+                try {
+                    result = executeSubmitMultiRegionAccessPointRoutes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,21 +52,17 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     private Options options;
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      */
     private java.util.List<FilterRule> excludes;
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The list should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that include specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      */
     private java.util.List<FilterRule> includes;
@@ -79,9 +75,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The expected number of files that is to be transferred over the network. This value is calculated during the
-     * PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred.
-     * It's calculated based on comparing the content of the source and destination locations and finding the delta that
-     * needs to be transferred.
+     * <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the
+     * expected number of files to be transferred. It's calculated based on comparing the content of the source and
+     * destination locations and finding the delta that needs to be transferred.
      * </p>
      */
     private Long estimatedFilesToTransfer;
@@ -94,12 +90,12 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The actual number of files that was transferred over the network. This value is calculated and updated on an
-     * ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and
-     * sent over the network.
+     * ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when
+     * each file is read from the source and sent over the network.
      * </p>
      * <p>
-     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This
-     * value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is
+     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some
+     * cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an indicator for a correct file number or to
      * monitor your task execution.
      * </p>
@@ -113,7 +109,8 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     private Long bytesWritten;
     /**
      * <p>
-     * The physical number of bytes transferred over the network.
+     * The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see
+     * <code>BytesCompressed</code>.
      * </p>
      */
     private Long bytesTransferred;
@@ -123,6 +120,13 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private TaskExecutionResultDetail result;
+    /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code> unless the data isn't compressible.
+     * </p>
+     */
+    private Long bytesCompressed;
 
     /**
      * <p>
@@ -315,17 +319,14 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
-     *         is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *         <p>
+     * @return A list of filter rules that exclude specific data during your transfer. For more information and
+     *         examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *         data transferred by DataSync</a>.
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -334,18 +335,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        A list of filter rules that exclude specific data during your transfer. For more information and examples,
+     *        see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     *        transferred by DataSync</a>.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -359,11 +357,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -372,10 +368,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        A list of filter rules that exclude specific data during your transfer. For more information and examples,
+     *        see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     *        transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,18 +386,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that exclude specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        A list of filter rules that exclude specific data during your transfer. For more information and examples,
+     *        see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     *        transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,17 +405,14 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The list should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that include specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to include when running a task. The list should
-     *         contain a single filter string that consists of the patterns to include. The patterns are delimited by
-     *         "|" (that is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *         <p>
+     * @return A list of filter rules that include specific data during your transfer. For more information and
+     *         examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *         data transferred by DataSync</a>.
      */
 
     public java.util.List<FilterRule> getIncludes() {
@@ -432,18 +421,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The list should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that include specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The list should contain
-     *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        A list of filter rules that include specific data during your transfer. For more information and examples,
+     *        see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     *        transferred by DataSync</a>.
      */
 
     public void setIncludes(java.util.Collection<FilterRule> includes) {
@@ -457,11 +443,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The list should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that include specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -470,10 +454,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The list should contain
-     *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        A list of filter rules that include specific data during your transfer. For more information and examples,
+     *        see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     *        transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -489,18 +472,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The list should contain a
-     * single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a
-     * pipe), for example: <code>"/folder1|/folder2"</code>
-     * </p>
-     * <p>
+     * A list of filter rules that include specific data during your transfer. For more information and examples, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     * DataSync</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The list should contain
-     *        a single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *        is, a pipe), for example: <code>"/folder1|/folder2"</code> </p>
-     *        <p>
+     *        A list of filter rules that include specific data during your transfer. For more information and examples,
+     *        see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     *        transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -552,16 +532,16 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The expected number of files that is to be transferred over the network. This value is calculated during the
-     * PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred.
-     * It's calculated based on comparing the content of the source and destination locations and finding the delta that
-     * needs to be transferred.
+     * <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the
+     * expected number of files to be transferred. It's calculated based on comparing the content of the source and
+     * destination locations and finding the delta that needs to be transferred.
      * </p>
      * 
      * @param estimatedFilesToTransfer
      *        The expected number of files that is to be transferred over the network. This value is calculated during
-     *        the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be
-     *        transferred. It's calculated based on comparing the content of the source and destination locations and
-     *        finding the delta that needs to be transferred.
+     *        the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This
+     *        value is the expected number of files to be transferred. It's calculated based on comparing the content of
+     *        the source and destination locations and finding the delta that needs to be transferred.
      */
 
     public void setEstimatedFilesToTransfer(Long estimatedFilesToTransfer) {
@@ -571,15 +551,15 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The expected number of files that is to be transferred over the network. This value is calculated during the
-     * PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred.
-     * It's calculated based on comparing the content of the source and destination locations and finding the delta that
-     * needs to be transferred.
+     * <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the
+     * expected number of files to be transferred. It's calculated based on comparing the content of the source and
+     * destination locations and finding the delta that needs to be transferred.
      * </p>
      * 
      * @return The expected number of files that is to be transferred over the network. This value is calculated during
-     *         the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be
-     *         transferred. It's calculated based on comparing the content of the source and destination locations and
-     *         finding the delta that needs to be transferred.
+     *         the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This
+     *         value is the expected number of files to be transferred. It's calculated based on comparing the content
+     *         of the source and destination locations and finding the delta that needs to be transferred.
      */
 
     public Long getEstimatedFilesToTransfer() {
@@ -589,16 +569,16 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The expected number of files that is to be transferred over the network. This value is calculated during the
-     * PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be transferred.
-     * It's calculated based on comparing the content of the source and destination locations and finding the delta that
-     * needs to be transferred.
+     * <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This value is the
+     * expected number of files to be transferred. It's calculated based on comparing the content of the source and
+     * destination locations and finding the delta that needs to be transferred.
      * </p>
      * 
      * @param estimatedFilesToTransfer
      *        The expected number of files that is to be transferred over the network. This value is calculated during
-     *        the PREPARING phase, before the TRANSFERRING phase. This value is the expected number of files to be
-     *        transferred. It's calculated based on comparing the content of the source and destination locations and
-     *        finding the delta that needs to be transferred.
+     *        the <code>PREPARING</code> phase before the <code>TRANSFERRING</code> phase of the task execution. This
+     *        value is the expected number of files to be transferred. It's calculated based on comparing the content of
+     *        the source and destination locations and finding the delta that needs to be transferred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,23 +630,23 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The actual number of files that was transferred over the network. This value is calculated and updated on an
-     * ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and
-     * sent over the network.
+     * ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when
+     * each file is read from the source and sent over the network.
      * </p>
      * <p>
-     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This
-     * value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is
+     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some
+     * cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an indicator for a correct file number or to
      * monitor your task execution.
      * </p>
      * 
      * @param filesTransferred
      *        The actual number of files that was transferred over the network. This value is calculated and updated on
-     *        an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the
-     *        source and sent over the network. </p>
+     *        an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated
+     *        periodically when each file is read from the source and sent over the network. </p>
      *        <p>
-     *        If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>.
-     *        This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is
+     *        If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In
+     *        some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is
      *        implementation-specific for some location types, so don't use it as an indicator for a correct file number
      *        or to monitor your task execution.
      */
@@ -678,22 +658,22 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The actual number of files that was transferred over the network. This value is calculated and updated on an
-     * ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and
-     * sent over the network.
+     * ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when
+     * each file is read from the source and sent over the network.
      * </p>
      * <p>
-     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This
-     * value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is
+     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some
+     * cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an indicator for a correct file number or to
      * monitor your task execution.
      * </p>
      * 
      * @return The actual number of files that was transferred over the network. This value is calculated and updated on
-     *         an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the
-     *         source and sent over the network. </p>
+     *         an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated
+     *         periodically when each file is read from the source and sent over the network. </p>
      *         <p>
      *         If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>.
-     *         This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is
+     *         In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is
      *         implementation-specific for some location types, so don't use it as an indicator for a correct file
      *         number or to monitor your task execution.
      */
@@ -705,23 +685,23 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The actual number of files that was transferred over the network. This value is calculated and updated on an
-     * ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the source and
-     * sent over the network.
+     * ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated periodically when
+     * each file is read from the source and sent over the network.
      * </p>
      * <p>
-     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. This
-     * value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is
+     * If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In some
+     * cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is
      * implementation-specific for some location types, so don't use it as an indicator for a correct file number or to
      * monitor your task execution.
      * </p>
      * 
      * @param filesTransferred
      *        The actual number of files that was transferred over the network. This value is calculated and updated on
-     *        an ongoing basis during the TRANSFERRING phase. It's updated periodically when each file is read from the
-     *        source and sent over the network. </p>
+     *        an ongoing basis during the <code>TRANSFERRING</code> phase of the task execution. It's updated
+     *        periodically when each file is read from the source and sent over the network. </p>
      *        <p>
-     *        If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>.
-     *        This value can also be greater than <code>EstimatedFilesTransferred</code> in some cases. This element is
+     *        If failures occur during a transfer, this value can be less than <code>EstimatedFilesToTransfer</code>. In
+     *        some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>. This element is
      *        implementation-specific for some location types, so don't use it as an indicator for a correct file number
      *        or to monitor your task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -774,11 +754,13 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The physical number of bytes transferred over the network.
+     * The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see
+     * <code>BytesCompressed</code>.
      * </p>
      * 
      * @param bytesTransferred
-     *        The physical number of bytes transferred over the network.
+     *        The total number of bytes that are involved in the transfer. For the number of bytes sent over the
+     *        network, see <code>BytesCompressed</code>.
      */
 
     public void setBytesTransferred(Long bytesTransferred) {
@@ -787,10 +769,12 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The physical number of bytes transferred over the network.
+     * The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see
+     * <code>BytesCompressed</code>.
      * </p>
      * 
-     * @return The physical number of bytes transferred over the network.
+     * @return The total number of bytes that are involved in the transfer. For the number of bytes sent over the
+     *         network, see <code>BytesCompressed</code>.
      */
 
     public Long getBytesTransferred() {
@@ -799,11 +783,13 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The physical number of bytes transferred over the network.
+     * The total number of bytes that are involved in the transfer. For the number of bytes sent over the network, see
+     * <code>BytesCompressed</code>.
      * </p>
      * 
      * @param bytesTransferred
-     *        The physical number of bytes transferred over the network.
+     *        The total number of bytes that are involved in the transfer. For the number of bytes sent over the
+     *        network, see <code>BytesCompressed</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -853,6 +839,52 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code> unless the data isn't compressible.
+     * </p>
+     * 
+     * @param bytesCompressed
+     *        The physical number of bytes transferred over the network after compression was applied. In most cases,
+     *        this number is less than <code>BytesTransferred</code> unless the data isn't compressible.
+     */
+
+    public void setBytesCompressed(Long bytesCompressed) {
+        this.bytesCompressed = bytesCompressed;
+    }
+
+    /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code> unless the data isn't compressible.
+     * </p>
+     * 
+     * @return The physical number of bytes transferred over the network after compression was applied. In most cases,
+     *         this number is less than <code>BytesTransferred</code> unless the data isn't compressible.
+     */
+
+    public Long getBytesCompressed() {
+        return this.bytesCompressed;
+    }
+
+    /**
+     * <p>
+     * The physical number of bytes transferred over the network after compression was applied. In most cases, this
+     * number is less than <code>BytesTransferred</code> unless the data isn't compressible.
+     * </p>
+     * 
+     * @param bytesCompressed
+     *        The physical number of bytes transferred over the network after compression was applied. In most cases,
+     *        this number is less than <code>BytesTransferred</code> unless the data isn't compressible.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTaskExecutionResult withBytesCompressed(Long bytesCompressed) {
+        setBytesCompressed(bytesCompressed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -887,7 +919,9 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
         if (getBytesTransferred() != null)
             sb.append("BytesTransferred: ").append(getBytesTransferred()).append(",");
         if (getResult() != null)
-            sb.append("Result: ").append(getResult());
+            sb.append("Result: ").append(getResult()).append(",");
+        if (getBytesCompressed() != null)
+            sb.append("BytesCompressed: ").append(getBytesCompressed());
         sb.append("}");
         return sb.toString();
     }
@@ -950,6 +984,10 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getResult() != null && other.getResult().equals(this.getResult()) == false)
             return false;
+        if (other.getBytesCompressed() == null ^ this.getBytesCompressed() == null)
+            return false;
+        if (other.getBytesCompressed() != null && other.getBytesCompressed().equals(this.getBytesCompressed()) == false)
+            return false;
         return true;
     }
 
@@ -970,6 +1008,7 @@ public class DescribeTaskExecutionResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getBytesWritten() == null) ? 0 : getBytesWritten().hashCode());
         hashCode = prime * hashCode + ((getBytesTransferred() == null) ? 0 : getBytesTransferred().hashCode());
         hashCode = prime * hashCode + ((getResult() == null) ? 0 : getResult().hashCode());
+        hashCode = prime * hashCode + ((getBytesCompressed() == null) ? 0 : getBytesCompressed().hashCode());
         return hashCode;
     }
 

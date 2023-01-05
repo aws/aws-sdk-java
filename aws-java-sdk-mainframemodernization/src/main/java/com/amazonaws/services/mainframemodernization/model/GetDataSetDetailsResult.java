@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
     private String dataSetName;
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      */
     private DatasetDetailOrgAttributes dataSetOrg;
@@ -61,7 +61,7 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      */
     private String location;
@@ -194,11 +194,11 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      * 
      * @param dataSetOrg
-     *        The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     *        The type of data set. The only supported value is VSAM.
      */
 
     public void setDataSetOrg(DatasetDetailOrgAttributes dataSetOrg) {
@@ -207,10 +207,10 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      * 
-     * @return The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * @return The type of data set. The only supported value is VSAM.
      */
 
     public DatasetDetailOrgAttributes getDataSetOrg() {
@@ -219,11 +219,11 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     * The type of data set. The only supported value is VSAM.
      * </p>
      * 
      * @param dataSetOrg
-     *        The type of data set. Possible values include VSAM, IS, PS, GDG, PO, PS, or unknown.
+     *        The type of data set. The only supported value is VSAM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -314,11 +314,11 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      * 
      * @param location
-     *        The locaion where the data set is stored.
+     *        The location where the data set is stored.
      */
 
     public void setLocation(String location) {
@@ -327,10 +327,10 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      * 
-     * @return The locaion where the data set is stored.
+     * @return The location where the data set is stored.
      */
 
     public String getLocation() {
@@ -339,11 +339,11 @@ public class GetDataSetDetailsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The locaion where the data set is stored.
+     * The location where the data set is stored.
      * </p>
      * 
      * @param location
-     *        The locaion where the data set is stored.
+     *        The location where the data set is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

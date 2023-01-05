@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,13 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String labelModelVersion;
+    /**
+     * <p>
+     * Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant
+     * colors.
+     * </p>
+     */
+    private DetectLabelsImageProperties imageProperties;
 
     /**
      * <p>
@@ -348,6 +355,52 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant
+     * colors.
+     * </p>
+     * 
+     * @param imageProperties
+     *        Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant
+     *        colors.
+     */
+
+    public void setImageProperties(DetectLabelsImageProperties imageProperties) {
+        this.imageProperties = imageProperties;
+    }
+
+    /**
+     * <p>
+     * Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant
+     * colors.
+     * </p>
+     * 
+     * @return Information about the properties of the input image, such as brightness, sharpness, contrast, and
+     *         dominant colors.
+     */
+
+    public DetectLabelsImageProperties getImageProperties() {
+        return this.imageProperties;
+    }
+
+    /**
+     * <p>
+     * Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant
+     * colors.
+     * </p>
+     * 
+     * @param imageProperties
+     *        Information about the properties of the input image, such as brightness, sharpness, contrast, and dominant
+     *        colors.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DetectLabelsResult withImageProperties(DetectLabelsImageProperties imageProperties) {
+        setImageProperties(imageProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -364,7 +417,9 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getOrientationCorrection() != null)
             sb.append("OrientationCorrection: ").append(getOrientationCorrection()).append(",");
         if (getLabelModelVersion() != null)
-            sb.append("LabelModelVersion: ").append(getLabelModelVersion());
+            sb.append("LabelModelVersion: ").append(getLabelModelVersion()).append(",");
+        if (getImageProperties() != null)
+            sb.append("ImageProperties: ").append(getImageProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +446,10 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getLabelModelVersion() != null && other.getLabelModelVersion().equals(this.getLabelModelVersion()) == false)
             return false;
+        if (other.getImageProperties() == null ^ this.getImageProperties() == null)
+            return false;
+        if (other.getImageProperties() != null && other.getImageProperties().equals(this.getImageProperties()) == false)
+            return false;
         return true;
     }
 
@@ -402,6 +461,7 @@ public class DetectLabelsResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
         hashCode = prime * hashCode + ((getOrientationCorrection() == null) ? 0 : getOrientationCorrection().hashCode());
         hashCode = prime * hashCode + ((getLabelModelVersion() == null) ? 0 : getLabelModelVersion().hashCode());
+        hashCode = prime * hashCode + ((getImageProperties() == null) ? 0 : getImageProperties().hashCode());
         return hashCode;
     }
 

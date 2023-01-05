@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class UpdateTaintsPayload implements Serializable, Cloneable, StructuredP
     private java.util.List<Taint> addOrUpdateTaints;
     /**
      * <p>
-     * Kubernetes taints to be removed.
+     * Kubernetes taints to remove.
      * </p>
      */
     private java.util.List<Taint> removeTaints;
@@ -115,10 +115,10 @@ public class UpdateTaintsPayload implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Kubernetes taints to be removed.
+     * Kubernetes taints to remove.
      * </p>
      * 
-     * @return Kubernetes taints to be removed.
+     * @return Kubernetes taints to remove.
      */
 
     public java.util.List<Taint> getRemoveTaints() {
@@ -127,11 +127,11 @@ public class UpdateTaintsPayload implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Kubernetes taints to be removed.
+     * Kubernetes taints to remove.
      * </p>
      * 
      * @param removeTaints
-     *        Kubernetes taints to be removed.
+     *        Kubernetes taints to remove.
      */
 
     public void setRemoveTaints(java.util.Collection<Taint> removeTaints) {
@@ -145,7 +145,7 @@ public class UpdateTaintsPayload implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Kubernetes taints to be removed.
+     * Kubernetes taints to remove.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -154,7 +154,7 @@ public class UpdateTaintsPayload implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param removeTaints
-     *        Kubernetes taints to be removed.
+     *        Kubernetes taints to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class UpdateTaintsPayload implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Kubernetes taints to be removed.
+     * Kubernetes taints to remove.
      * </p>
      * 
      * @param removeTaints
-     *        Kubernetes taints to be removed.
+     *        Kubernetes taints to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.connect.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -36,6 +37,10 @@ public class UpdateSecurityProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("SecurityProfileId").build();
     private static final MarshallingInfo<String> INSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("InstanceId").build();
+    private static final MarshallingInfo<Map> ALLOWEDACCESSCONTROLTAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedAccessControlTags").build();
+    private static final MarshallingInfo<List> TAGRESTRICTEDRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TagRestrictedResources").build();
 
     private static final UpdateSecurityProfileRequestMarshaller instance = new UpdateSecurityProfileRequestMarshaller();
 
@@ -57,6 +62,8 @@ public class UpdateSecurityProfileRequestMarshaller {
             protocolMarshaller.marshall(updateSecurityProfileRequest.getPermissions(), PERMISSIONS_BINDING);
             protocolMarshaller.marshall(updateSecurityProfileRequest.getSecurityProfileId(), SECURITYPROFILEID_BINDING);
             protocolMarshaller.marshall(updateSecurityProfileRequest.getInstanceId(), INSTANCEID_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getAllowedAccessControlTags(), ALLOWEDACCESSCONTROLTAGS_BINDING);
+            protocolMarshaller.marshall(updateSecurityProfileRequest.getTagRestrictedResources(), TAGRESTRICTEDRESOURCES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

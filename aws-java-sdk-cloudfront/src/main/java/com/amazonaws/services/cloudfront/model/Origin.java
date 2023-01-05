@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -138,10 +138,10 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
-     * and the default (if you don’t specify otherwise) is 3.
+     * and the default (if you don't specify otherwise) is 3.
      * </p>
      * <p>
-     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value
      * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
      * <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -157,7 +157,7 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
-     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -567,10 +567,10 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
-     * and the default (if you don’t specify otherwise) is 3.
+     * and the default (if you don't specify otherwise) is 3.
      * </p>
      * <p>
-     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value
      * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
      * <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -584,9 +584,9 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param connectionAttempts
      *        The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
-     *        maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *        maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
      *        <p>
-     *        For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this
+     *        For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this
      *        value also specifies the number of times that CloudFront attempts to get a response from the origin, in
      *        the case of an <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -605,10 +605,10 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
-     * and the default (if you don’t specify otherwise) is 3.
+     * and the default (if you don't specify otherwise) is 3.
      * </p>
      * <p>
-     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value
      * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
      * <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -621,9 +621,9 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * 
      * @return The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
-     *         maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *         maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
      *         <p>
-     *         For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this
+     *         For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this
      *         value also specifies the number of times that CloudFront attempts to get a response from the origin, in
      *         the case of an <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -642,10 +642,10 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the maximum is 3,
-     * and the default (if you don’t specify otherwise) is 3.
+     * and the default (if you don't specify otherwise) is 3.
      * </p>
      * <p>
-     * For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this value
+     * For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this value
      * also specifies the number of times that CloudFront attempts to get a response from the origin, in the case of an
      * <a href=
      * "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -659,9 +659,9 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param connectionAttempts
      *        The number of times that CloudFront attempts to connect to the origin. The minimum number is 1, the
-     *        maximum is 3, and the default (if you don’t specify otherwise) is 3.</p>
+     *        maximum is 3, and the default (if you don't specify otherwise) is 3.</p>
      *        <p>
-     *        For a custom origin (including an Amazon S3 bucket that’s configured with static website hosting), this
+     *        For a custom origin (including an Amazon S3 bucket that's configured with static website hosting), this
      *        value also specifies the number of times that CloudFront attempts to get a response from the origin, in
      *        the case of an <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -682,7 +682,7 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
-     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -692,7 +692,7 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param connectionTimeout
      *        The number of seconds that CloudFront waits when trying to establish a connection to the origin. The
-     *        minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise)
+     *        minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise)
      *        is 10 seconds.</p>
      *        <p>
      *        For more information, see <a href=
@@ -707,7 +707,7 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
-     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -716,7 +716,7 @@ public class Origin implements Serializable, Cloneable {
      * </p>
      * 
      * @return The number of seconds that CloudFront waits when trying to establish a connection to the origin. The
-     *         minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise)
+     *         minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise)
      *         is 10 seconds.</p>
      *         <p>
      *         For more information, see <a href=
@@ -731,7 +731,7 @@ public class Origin implements Serializable, Cloneable {
     /**
      * <p>
      * The number of seconds that CloudFront waits when trying to establish a connection to the origin. The minimum
-     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise) is 10 seconds.
+     * timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise) is 10 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -741,7 +741,7 @@ public class Origin implements Serializable, Cloneable {
      * 
      * @param connectionTimeout
      *        The number of seconds that CloudFront waits when trying to establish a connection to the origin. The
-     *        minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don’t specify otherwise)
+     *        minimum timeout is 1 second, the maximum is 10 seconds, and the default (if you don't specify otherwise)
      *        is 10 seconds.</p>
      *        <p>
      *        For more information, see <a href=

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class ReplicationPendingModifiedValuesMarshaller {
             .marshallLocationName("MultiAZ").build();
     private static final MarshallingInfo<String> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
+    private static final MarshallingInfo<String> NETWORKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkType").build();
 
     private static final ReplicationPendingModifiedValuesMarshaller instance = new ReplicationPendingModifiedValuesMarshaller();
 
@@ -56,6 +58,7 @@ public class ReplicationPendingModifiedValuesMarshaller {
             protocolMarshaller.marshall(replicationPendingModifiedValues.getAllocatedStorage(), ALLOCATEDSTORAGE_BINDING);
             protocolMarshaller.marshall(replicationPendingModifiedValues.getMultiAZ(), MULTIAZ_BINDING);
             protocolMarshaller.marshall(replicationPendingModifiedValues.getEngineVersion(), ENGINEVERSION_BINDING);
+            protocolMarshaller.marshall(replicationPendingModifiedValues.getNetworkType(), NETWORKTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

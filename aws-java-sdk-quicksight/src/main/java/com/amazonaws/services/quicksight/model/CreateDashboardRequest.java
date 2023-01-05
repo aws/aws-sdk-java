@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -126,6 +126,15 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String themeArn;
+    /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     */
+    private DashboardVersionDefinition definition;
 
     /**
      * <p>
@@ -835,6 +844,61 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a dashboard.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     */
+
+    public void setDefinition(DashboardVersionDefinition definition) {
+        this.definition = definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * 
+     * @return The definition of a dashboard.</p>
+     *         <p>
+     *         A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     */
+
+    public DashboardVersionDefinition getDefinition() {
+        return this.definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a dashboard.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a dashboard.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withDefinition(DashboardVersionDefinition definition) {
+        setDefinition(definition);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -865,7 +929,9 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         if (getDashboardPublishOptions() != null)
             sb.append("DashboardPublishOptions: ").append(getDashboardPublishOptions()).append(",");
         if (getThemeArn() != null)
-            sb.append("ThemeArn: ").append(getThemeArn());
+            sb.append("ThemeArn: ").append(getThemeArn()).append(",");
+        if (getDefinition() != null)
+            sb.append("Definition: ").append(getDefinition());
         sb.append("}");
         return sb.toString();
     }
@@ -920,6 +986,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getThemeArn() != null && other.getThemeArn().equals(this.getThemeArn()) == false)
             return false;
+        if (other.getDefinition() == null ^ this.getDefinition() == null)
+            return false;
+        if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
+            return false;
         return true;
     }
 
@@ -938,6 +1008,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDashboardPublishOptions() == null) ? 0 : getDashboardPublishOptions().hashCode());
         hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
+        hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         return hashCode;
     }
 

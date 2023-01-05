@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,13 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
      * </p>
      */
     private String domainName;
+    /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of a domain to validate domain ownership.
+     * </p>
+     */
+    private LoadBalancerTlsCertificateDnsRecordCreationState dnsRecordCreationState;
 
     /**
      * <p>
@@ -280,6 +287,52 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
     }
 
     /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of a domain to validate domain ownership.
+     * </p>
+     * 
+     * @param dnsRecordCreationState
+     *        An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     *        Lightsail to the DNS of a domain to validate domain ownership.
+     */
+
+    public void setDnsRecordCreationState(LoadBalancerTlsCertificateDnsRecordCreationState dnsRecordCreationState) {
+        this.dnsRecordCreationState = dnsRecordCreationState;
+    }
+
+    /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of a domain to validate domain ownership.
+     * </p>
+     * 
+     * @return An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     *         Lightsail to the DNS of a domain to validate domain ownership.
+     */
+
+    public LoadBalancerTlsCertificateDnsRecordCreationState getDnsRecordCreationState() {
+        return this.dnsRecordCreationState;
+    }
+
+    /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of a domain to validate domain ownership.
+     * </p>
+     * 
+     * @param dnsRecordCreationState
+     *        An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     *        Lightsail to the DNS of a domain to validate domain ownership.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancerTlsCertificateDomainValidationRecord withDnsRecordCreationState(LoadBalancerTlsCertificateDnsRecordCreationState dnsRecordCreationState) {
+        setDnsRecordCreationState(dnsRecordCreationState);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -300,7 +353,9 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
         if (getValidationStatus() != null)
             sb.append("ValidationStatus: ").append(getValidationStatus()).append(",");
         if (getDomainName() != null)
-            sb.append("DomainName: ").append(getDomainName());
+            sb.append("DomainName: ").append(getDomainName()).append(",");
+        if (getDnsRecordCreationState() != null)
+            sb.append("DnsRecordCreationState: ").append(getDnsRecordCreationState());
         sb.append("}");
         return sb.toString();
     }
@@ -335,6 +390,10 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
             return false;
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
             return false;
+        if (other.getDnsRecordCreationState() == null ^ this.getDnsRecordCreationState() == null)
+            return false;
+        if (other.getDnsRecordCreationState() != null && other.getDnsRecordCreationState().equals(this.getDnsRecordCreationState()) == false)
+            return false;
         return true;
     }
 
@@ -348,6 +407,7 @@ public class LoadBalancerTlsCertificateDomainValidationRecord implements Seriali
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         hashCode = prime * hashCode + ((getValidationStatus() == null) ? 0 : getValidationStatus().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getDnsRecordCreationState() == null) ? 0 : getDnsRecordCreationState().hashCode());
         return hashCode;
     }
 

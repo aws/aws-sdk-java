@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,16 +80,41 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
     private OnlineStoreConfig onlineStoreConfig;
     /**
      * <p>
-     * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
-     * configuration.
+     * The configuration of the offline store. It includes the following configurations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon S3 location of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Configuration of the Glue data catalog.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table format of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Option to disable the automatic creation of a Glue table for the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption configuration.
+     * </p>
+     * </li>
+     * </ul>
      */
     private OfflineStoreConfig offlineStoreConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code>
-     * if an <code>OfflineStoreConfig</code> is provided.
+     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an
+     * OfflineStoreConfig is provided.
      * </p>
      */
     private String roleArn;
@@ -546,15 +571,64 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
-     * configuration.
+     * The configuration of the offline store. It includes the following configurations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon S3 location of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Configuration of the Glue data catalog.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table format of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Option to disable the automatic creation of a Glue table for the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption configuration.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param offlineStoreConfig
-     *        The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-     *        <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue
-     *        configurations, and the security configuration.
+     *        The configuration of the offline store. It includes the following configurations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon S3 location of the offline store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Configuration of the Glue data catalog.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Table format of the offline store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Option to disable the automatic creation of a Glue table for the offline store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Encryption configuration.
+     *        </p>
+     *        </li>
      */
 
     public void setOfflineStoreConfig(OfflineStoreConfig offlineStoreConfig) {
@@ -563,14 +637,63 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
-     * configuration.
+     * The configuration of the offline store. It includes the following configurations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon S3 location of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Configuration of the Glue data catalog.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table format of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Option to disable the automatic creation of a Glue table for the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption configuration.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-     *         <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue
-     *         configurations, and the security configuration.
+     * @return The configuration of the offline store. It includes the following configurations:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Amazon S3 location of the offline store.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Configuration of the Glue data catalog.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Table format of the offline store.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Option to disable the automatic creation of a Glue table for the offline store.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Encryption configuration.
+     *         </p>
+     *         </li>
      */
 
     public OfflineStoreConfig getOfflineStoreConfig() {
@@ -579,15 +702,64 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The configuration of the <code>OfflineStore</code>, inducing the S3 location of the <code>OfflineStore</code>,
-     * Amazon Web Services Glue or Amazon Web Services Hive data catalogue configurations, and the security
-     * configuration.
+     * The configuration of the offline store. It includes the following configurations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Amazon S3 location of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Configuration of the Glue data catalog.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Table format of the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Option to disable the automatic creation of a Glue table for the offline store.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Encryption configuration.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param offlineStoreConfig
-     *        The configuration of the <code>OfflineStore</code>, inducing the S3 location of the
-     *        <code>OfflineStore</code>, Amazon Web Services Glue or Amazon Web Services Hive data catalogue
-     *        configurations, and the security configuration.
+     *        The configuration of the offline store. It includes the following configurations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Amazon S3 location of the offline store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Configuration of the Glue data catalog.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Table format of the offline store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Option to disable the automatic creation of a Glue table for the offline store.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Encryption configuration.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,13 +770,13 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code>
-     * if an <code>OfflineStoreConfig</code> is provided.
+     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an
+     * OfflineStoreConfig is provided.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
-     *        <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.
+     *        The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an
+     *        OfflineStoreConfig is provided.
      */
 
     public void setRoleArn(String roleArn) {
@@ -613,12 +785,12 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code>
-     * if an <code>OfflineStoreConfig</code> is provided.
+     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an
+     * OfflineStoreConfig is provided.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
-     *         <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.
+     * @return The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an
+     *         OfflineStoreConfig is provided.
      */
 
     public String getRoleArn() {
@@ -627,13 +799,13 @@ public class DescribeFeatureGroupResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the <code>OfflineStore</code>
-     * if an <code>OfflineStoreConfig</code> is provided.
+     * The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an
+     * OfflineStoreConfig is provided.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the
-     *        <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.
+     *        The Amazon Resource Name (ARN) of the IAM execution role used to persist data into the OfflineStore if an
+     *        OfflineStoreConfig is provided.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

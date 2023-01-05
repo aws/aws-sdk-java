@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,51 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.List<String> securityGroupIds;
     /**
      * <p>
-     * The maintenance window to update
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
     private String maintenanceWindow;
@@ -265,11 +309,99 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maintenance window to update
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param maintenanceWindow
-     *        The maintenance window to update
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public void setMaintenanceWindow(String maintenanceWindow) {
@@ -278,10 +410,98 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maintenance window to update
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
-     * @return The maintenance window to update
+     * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
+     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
+     *         minute period.</p>
+     *         <p>
+     *         Valid values for <code>ddd</code> are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>sun</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tue</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>wed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>thu</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>fri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sat</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public String getMaintenanceWindow() {
@@ -290,11 +510,99 @@ public class UpdateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maintenance window to update
+     * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param maintenanceWindow
-     *        The maintenance window to update
+     *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

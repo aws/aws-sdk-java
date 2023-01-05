@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
+     * The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.
      * </p>
      */
     private String vocabularyName;
@@ -51,11 +51,12 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
+     * The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
+     *        The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case
+     *        sensitive.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -64,10 +65,11 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
+     * The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.
      * </p>
      * 
-     * @return The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
+     * @return The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case
+     *         sensitive.
      */
 
     public String getVocabularyName() {
@@ -76,11 +78,12 @@ public class UpdateMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
+     * The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the custom medical vocabulary you want to update. Vocabulary names are case sensitive.
+     *        The name of the custom medical vocabulary you want to update. Custom medical vocabulary names are case
+     *        sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

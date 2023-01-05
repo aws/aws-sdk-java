@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,9 @@ import com.amazonaws.services.acmpca.model.*;
  * </p>
  * <p>
  * <p>
- * This is the <i>Certificate Manager Private Certificate Authority (PCA) API Reference</i>. It provides descriptions,
- * syntax, and usage examples for each of the actions and data types involved in creating and managing a private
- * certificate authority (CA) for your organization.
+ * This is the <i>Private Certificate Authority (PCA) API Reference</i>. It provides descriptions, syntax, and usage
+ * examples for each of the actions and data types involved in creating and managing a private certificate authority
+ * (CA) for your organization.
  * </p>
  * <p>
  * The documentation for each action shows the API request parameters and the JSON response. Alternatively, you can use

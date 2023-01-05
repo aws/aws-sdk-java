@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule statement that defines a string match search against labels that have been added to the web request by rules
- * that have already run in the web ACL.
+ * A rule statement to match against labels that have been added to the web request by rules that have already run in
+ * the web ACL.
  * </p>
  * <p>
  * The label match statement provides the label or namespace string to search for. The label string can represent a part

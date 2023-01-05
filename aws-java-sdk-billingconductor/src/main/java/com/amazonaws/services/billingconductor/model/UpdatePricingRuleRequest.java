@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class UpdatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Double modifierPercentage;
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     */
+    private UpdateTieringInput tiering;
 
     /**
      * <p>
@@ -276,6 +282,46 @@ public class UpdatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     */
+
+    public void setTiering(UpdateTieringInput tiering) {
+        this.tiering = tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @return The set of tiering configurations for the pricing rule.
+     */
+
+    public UpdateTieringInput getTiering() {
+        return this.tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePricingRuleRequest withTiering(UpdateTieringInput tiering) {
+        setTiering(tiering);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -296,7 +342,9 @@ public class UpdatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getModifierPercentage() != null)
-            sb.append("ModifierPercentage: ").append(getModifierPercentage());
+            sb.append("ModifierPercentage: ").append(getModifierPercentage()).append(",");
+        if (getTiering() != null)
+            sb.append("Tiering: ").append(getTiering());
         sb.append("}");
         return sb.toString();
     }
@@ -331,6 +379,10 @@ public class UpdatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getModifierPercentage() != null && other.getModifierPercentage().equals(this.getModifierPercentage()) == false)
             return false;
+        if (other.getTiering() == null ^ this.getTiering() == null)
+            return false;
+        if (other.getTiering() != null && other.getTiering().equals(this.getTiering()) == false)
+            return false;
         return true;
     }
 
@@ -344,6 +396,7 @@ public class UpdatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getModifierPercentage() == null) ? 0 : getModifierPercentage().hashCode());
+        hashCode = prime * hashCode + ((getTiering() == null) ? 0 : getTiering().hashCode());
         return hashCode;
     }
 

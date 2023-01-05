@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Launch Profile Initialization Script is used when start streaming session runs.
+ * The launch profile initialization script is used when start streaming session runs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfileInitializationScript"
@@ -30,8 +30,8 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      */
     private String runtimeRoleArn;
@@ -44,7 +44,7 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      */
     private String secureInitializationRoleArn;
@@ -63,13 +63,13 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      * 
      * @param runtimeRoleArn
-     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
-     *        anytime while the instance is running.
+     *        An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     *        resources at anytime while the instance is running.
      */
 
     public void setRuntimeRoleArn(String runtimeRoleArn) {
@@ -78,12 +78,12 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      * 
-     * @return An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
-     *         anytime while the instance is running.
+     * @return An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     *         resources at anytime while the instance is running.
      */
 
     public String getRuntimeRoleArn() {
@@ -92,13 +92,13 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
 
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      * 
      * @param runtimeRoleArn
-     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
-     *        anytime while the instance is running.
+     *        An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     *        resources at anytime while the instance is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,12 +150,12 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      * 
      * @param secureInitializationRoleArn
      *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     *        component access to AWS resources when the system initialization script runs.
+     *        component access to Amazon Web Services resources when the system initialization script runs.
      */
 
     public void setSecureInitializationRoleArn(String secureInitializationRoleArn) {
@@ -165,11 +165,11 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      * 
      * @return An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     *         component access to AWS resources when the system initialization script runs.
+     *         component access to Amazon Web Services resources when the system initialization script runs.
      */
 
     public String getSecureInitializationRoleArn() {
@@ -179,12 +179,12 @@ public class LaunchProfileInitializationScript implements Serializable, Cloneabl
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      * 
      * @param secureInitializationRoleArn
      *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     *        component access to AWS resources when the system initialization script runs.
+     *        component access to Amazon Web Services resources when the system initialization script runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,12 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String jobID;
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     */
+    private String originEnvironment;
     /**
      * <p>
      * The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.
@@ -414,6 +420,65 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @param originEnvironment
+     *        Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @see OriginEnvironment
+     */
+
+    public void setOriginEnvironment(String originEnvironment) {
+        this.originEnvironment = originEnvironment;
+    }
+
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @return Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @see OriginEnvironment
+     */
+
+    public String getOriginEnvironment() {
+        return this.originEnvironment;
+    }
+
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @param originEnvironment
+     *        Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OriginEnvironment
+     */
+
+    public RecoveryInstance withOriginEnvironment(String originEnvironment) {
+        setOriginEnvironment(originEnvironment);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * </p>
+     * 
+     * @param originEnvironment
+     *        Environment (On Premises / AWS) of the instance that the recovery instance originated from.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see OriginEnvironment
+     */
+
+    public RecoveryInstance withOriginEnvironment(OriginEnvironment originEnvironment) {
+        this.originEnvironment = originEnvironment.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time of the Point in Time (PIT) snapshot that this Recovery Instance was launched from.
      * </p>
      * 
@@ -666,6 +731,8 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
             sb.append("IsDrill: ").append(getIsDrill()).append(",");
         if (getJobID() != null)
             sb.append("JobID: ").append(getJobID()).append(",");
+        if (getOriginEnvironment() != null)
+            sb.append("OriginEnvironment: ").append(getOriginEnvironment()).append(",");
         if (getPointInTimeSnapshotDateTime() != null)
             sb.append("PointInTimeSnapshotDateTime: ").append(getPointInTimeSnapshotDateTime()).append(",");
         if (getRecoveryInstanceID() != null)
@@ -718,6 +785,10 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getJobID() != null && other.getJobID().equals(this.getJobID()) == false)
             return false;
+        if (other.getOriginEnvironment() == null ^ this.getOriginEnvironment() == null)
+            return false;
+        if (other.getOriginEnvironment() != null && other.getOriginEnvironment().equals(this.getOriginEnvironment()) == false)
+            return false;
         if (other.getPointInTimeSnapshotDateTime() == null ^ this.getPointInTimeSnapshotDateTime() == null)
             return false;
         if (other.getPointInTimeSnapshotDateTime() != null && other.getPointInTimeSnapshotDateTime().equals(this.getPointInTimeSnapshotDateTime()) == false)
@@ -753,6 +824,7 @@ public class RecoveryInstance implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getFailback() == null) ? 0 : getFailback().hashCode());
         hashCode = prime * hashCode + ((getIsDrill() == null) ? 0 : getIsDrill().hashCode());
         hashCode = prime * hashCode + ((getJobID() == null) ? 0 : getJobID().hashCode());
+        hashCode = prime * hashCode + ((getOriginEnvironment() == null) ? 0 : getOriginEnvironment().hashCode());
         hashCode = prime * hashCode + ((getPointInTimeSnapshotDateTime() == null) ? 0 : getPointInTimeSnapshotDateTime().hashCode());
         hashCode = prime * hashCode + ((getRecoveryInstanceID() == null) ? 0 : getRecoveryInstanceID().hashCode());
         hashCode = prime * hashCode + ((getRecoveryInstanceProperties() == null) ? 0 : getRecoveryInstanceProperties().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,50 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.Date submittedDate;
+    /**
+     * <p>
+     * The date when the operation was last updated.
+     * </p>
+     */
+    private java.util.Date lastUpdatedDate;
+    /**
+     * <p>
+     * Lists any outstanding operations that require customer action. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String statusFlag;
 
     /**
      * <p>
@@ -370,6 +414,439 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The date when the operation was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedDate
+     *        The date when the operation was last updated.
+     */
+
+    public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    /**
+     * <p>
+     * The date when the operation was last updated.
+     * </p>
+     * 
+     * @return The date when the operation was last updated.
+     */
+
+    public java.util.Date getLastUpdatedDate() {
+        return this.lastUpdatedDate;
+    }
+
+    /**
+     * <p>
+     * The date when the operation was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedDate
+     *        The date when the operation was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetOperationDetailResult withLastUpdatedDate(java.util.Date lastUpdatedDate) {
+        setLastUpdatedDate(lastUpdatedDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists any outstanding operations that require customer action. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Lists any outstanding operations that require customer action. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @see StatusFlag
+     */
+
+    public void setStatusFlag(String statusFlag) {
+        this.statusFlag = statusFlag;
+    }
+
+    /**
+     * <p>
+     * Lists any outstanding operations that require customer action. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Lists any outstanding operations that require customer action. Valid values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *         receiving the domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example,
+     *         returning an email.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *         >ResendOperationAuthorization</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *         resolution.
+     *         </p>
+     *         </li>
+     * @see StatusFlag
+     */
+
+    public String getStatusFlag() {
+        return this.statusFlag;
+    }
+
+    /**
+     * <p>
+     * Lists any outstanding operations that require customer action. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Lists any outstanding operations that require customer action. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusFlag
+     */
+
+    public GetOperationDetailResult withStatusFlag(String statusFlag) {
+        setStatusFlag(statusFlag);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Lists any outstanding operations that require customer action. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Lists any outstanding operations that require customer action. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @see StatusFlag
+     */
+
+    public void setStatusFlag(StatusFlag statusFlag) {
+        withStatusFlag(statusFlag);
+    }
+
+    /**
+     * <p>
+     * Lists any outstanding operations that require customer action. Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Lists any outstanding operations that require customer action. Valid values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusFlag
+     */
+
+    public GetOperationDetailResult withStatusFlag(StatusFlag statusFlag) {
+        this.statusFlag = statusFlag.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -392,7 +869,11 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getSubmittedDate() != null)
-            sb.append("SubmittedDate: ").append(getSubmittedDate());
+            sb.append("SubmittedDate: ").append(getSubmittedDate()).append(",");
+        if (getLastUpdatedDate() != null)
+            sb.append("LastUpdatedDate: ").append(getLastUpdatedDate()).append(",");
+        if (getStatusFlag() != null)
+            sb.append("StatusFlag: ").append(getStatusFlag());
         sb.append("}");
         return sb.toString();
     }
@@ -431,6 +912,14 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getSubmittedDate() != null && other.getSubmittedDate().equals(this.getSubmittedDate()) == false)
             return false;
+        if (other.getLastUpdatedDate() == null ^ this.getLastUpdatedDate() == null)
+            return false;
+        if (other.getLastUpdatedDate() != null && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
+            return false;
+        if (other.getStatusFlag() == null ^ this.getStatusFlag() == null)
+            return false;
+        if (other.getStatusFlag() != null && other.getStatusFlag().equals(this.getStatusFlag()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +934,8 @@ public class GetOperationDetailResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getSubmittedDate() == null) ? 0 : getSubmittedDate().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
+        hashCode = prime * hashCode + ((getStatusFlag() == null) ? 0 : getStatusFlag().hashCode());
         return hashCode;
     }
 

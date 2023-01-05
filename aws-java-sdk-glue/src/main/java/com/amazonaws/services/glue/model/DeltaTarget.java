@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,13 @@ public class DeltaTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean writeManifest;
+    /**
+     * <p>
+     * Specifies whether the crawler will create native tables, to allow integration with query engines that support
+     * querying of the Delta transaction log directly.
+     * </p>
+     */
+    private Boolean createNativeDeltaTable;
 
     /**
      * <p>
@@ -210,6 +217,66 @@ public class DeltaTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies whether the crawler will create native tables, to allow integration with query engines that support
+     * querying of the Delta transaction log directly.
+     * </p>
+     * 
+     * @param createNativeDeltaTable
+     *        Specifies whether the crawler will create native tables, to allow integration with query engines that
+     *        support querying of the Delta transaction log directly.
+     */
+
+    public void setCreateNativeDeltaTable(Boolean createNativeDeltaTable) {
+        this.createNativeDeltaTable = createNativeDeltaTable;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the crawler will create native tables, to allow integration with query engines that support
+     * querying of the Delta transaction log directly.
+     * </p>
+     * 
+     * @return Specifies whether the crawler will create native tables, to allow integration with query engines that
+     *         support querying of the Delta transaction log directly.
+     */
+
+    public Boolean getCreateNativeDeltaTable() {
+        return this.createNativeDeltaTable;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the crawler will create native tables, to allow integration with query engines that support
+     * querying of the Delta transaction log directly.
+     * </p>
+     * 
+     * @param createNativeDeltaTable
+     *        Specifies whether the crawler will create native tables, to allow integration with query engines that
+     *        support querying of the Delta transaction log directly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeltaTarget withCreateNativeDeltaTable(Boolean createNativeDeltaTable) {
+        setCreateNativeDeltaTable(createNativeDeltaTable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the crawler will create native tables, to allow integration with query engines that support
+     * querying of the Delta transaction log directly.
+     * </p>
+     * 
+     * @return Specifies whether the crawler will create native tables, to allow integration with query engines that
+     *         support querying of the Delta transaction log directly.
+     */
+
+    public Boolean isCreateNativeDeltaTable() {
+        return this.createNativeDeltaTable;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -226,7 +293,9 @@ public class DeltaTarget implements Serializable, Cloneable, StructuredPojo {
         if (getConnectionName() != null)
             sb.append("ConnectionName: ").append(getConnectionName()).append(",");
         if (getWriteManifest() != null)
-            sb.append("WriteManifest: ").append(getWriteManifest());
+            sb.append("WriteManifest: ").append(getWriteManifest()).append(",");
+        if (getCreateNativeDeltaTable() != null)
+            sb.append("CreateNativeDeltaTable: ").append(getCreateNativeDeltaTable());
         sb.append("}");
         return sb.toString();
     }
@@ -253,6 +322,10 @@ public class DeltaTarget implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWriteManifest() != null && other.getWriteManifest().equals(this.getWriteManifest()) == false)
             return false;
+        if (other.getCreateNativeDeltaTable() == null ^ this.getCreateNativeDeltaTable() == null)
+            return false;
+        if (other.getCreateNativeDeltaTable() != null && other.getCreateNativeDeltaTable().equals(this.getCreateNativeDeltaTable()) == false)
+            return false;
         return true;
     }
 
@@ -264,6 +337,7 @@ public class DeltaTarget implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeltaTables() == null) ? 0 : getDeltaTables().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
         hashCode = prime * hashCode + ((getWriteManifest() == null) ? 0 : getWriteManifest().hashCode());
+        hashCode = prime * hashCode + ((getCreateNativeDeltaTable() == null) ? 0 : getCreateNativeDeltaTable().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class StartQueryRequestMarshaller {
 
     private static final MarshallingInfo<String> QUERYSTATEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryStatement").build();
+    private static final MarshallingInfo<String> DELIVERYS3URI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeliveryS3Uri").build();
 
     private static final StartQueryRequestMarshaller instance = new StartQueryRequestMarshaller();
 
@@ -47,6 +49,7 @@ public class StartQueryRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(startQueryRequest.getQueryStatement(), QUERYSTATEMENT_BINDING);
+            protocolMarshaller.marshall(startQueryRequest.getDeliveryS3Uri(), DELIVERYS3URI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

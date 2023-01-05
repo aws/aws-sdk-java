@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -49,6 +49,7 @@
     "asyncClient" : "AWSIoTFleetWiseAsyncClient",
     "asyncClientBuilderClassName" : "AWSIoTFleetWiseAsyncClientBuilder",
     "asyncInterface" : "AWSIoTFleetWiseAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,
@@ -56,7 +57,7 @@
     "defaultEndpoint" : "iotfleetwise.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "iotfleetwise.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<note> <p>Amazon Web Services IoT FleetWise is in preview release and is subject to change. We recommend that you use the service only with test data, and not in production environments.</p> <p>While Amazon Web Services IoT FleetWise is in preview, you must download the preview Amazon Web Services SDK and CLI to use the API operations for this service. These API operations aren't available in the public Amazon Web Services SDK or CLI. For more information, see <a href=\"https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/preview-sdk-cli.html\">Preview Amazon Web Services SDK and CLI</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p> </note> <p>Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect, model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon Web Services IoT FleetWise, you can standardize all of your vehicle data models, independent of the in-vehicle communication architecture, and define data collection rules to transfer only high-value data to the cloud. </p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/\">What is Amazon Web Services IoT FleetWise?</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>",
+    "documentation" : "<p>Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect, model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon Web Services IoT FleetWise, you can standardize all of your vehicle data models, independent of the in-vehicle communication architecture, and define data collection rules to transfer only high-value data to the cloud. </p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/\">What is Amazon Web Services IoT FleetWise?</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>",
     "endpointPrefix" : "iotfleetwise",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -1208,6 +1209,10 @@
       }, {
         "exceptionName" : "ThrottlingException",
         "documentation" : "<p>The request couldn't be completed due to throttling.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>",
         "httpStatusCode" : null
       }, {
         "exceptionName" : "AccessDeniedException",
@@ -2750,6 +2755,10 @@
         "documentation" : "<p>The request couldn't be completed due to throttling.</p>",
         "httpStatusCode" : null
       }, {
+        "exceptionName" : "ValidationException",
+        "documentation" : "<p>The input fails to satisfy the constraints specified by an Amazon Web Services service.</p>",
+        "httpStatusCode" : null
+      }, {
         "exceptionName" : "InvalidSignalsException",
         "documentation" : "<p>The request couldn't be completed because it contains signals that aren't valid.</p>",
         "httpStatusCode" : null
@@ -3468,7 +3477,7 @@
       }, {
         "c2jName" : "assignedValue",
         "c2jShape" : "string",
-        "deprecated" : false,
+        "deprecated" : true,
         "documentation" : "<p>A specified value for the actuator.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
@@ -3693,7 +3702,7 @@
         "AssignedValue" : {
           "c2jName" : "assignedValue",
           "c2jShape" : "string",
-          "deprecated" : false,
+          "deprecated" : true,
           "documentation" : "<p>A specified value for the actuator.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
@@ -5164,7 +5173,7 @@
       }, {
         "c2jName" : "assignedValue",
         "c2jShape" : "string",
-        "deprecated" : false,
+        "deprecated" : true,
         "documentation" : "<p>A specified value for the attribute.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
@@ -5458,7 +5467,7 @@
         "AssignedValue" : {
           "c2jName" : "assignedValue",
           "c2jShape" : "string",
-          "deprecated" : false,
+          "deprecated" : true,
           "documentation" : "<p>A specified value for the attribute.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
@@ -14014,12 +14023,12 @@
         "c2jName" : "expiryTime",
         "c2jShape" : "timestamp",
         "deprecated" : false,
-        "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>",
+        "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withExpiryTime",
-        "getterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@return (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)*/",
+        "getterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@return (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)*/",
         "getterMethodName" : "getExpiryTime",
         "getterModel" : {
           "returnType" : "java.util.Date",
@@ -14053,7 +14062,7 @@
         "marshallingType" : "DATE",
         "name" : "ExpiryTime",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)*/",
+        "setterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)*/",
         "setterMethodName" : "setExpiryTime",
         "setterModel" : {
           "timestampFormat" : null,
@@ -14068,13 +14077,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : "unixTimestamp",
           "variableDeclarationType" : "java.util.Date",
           "variableName" : "expiryTime",
           "variableType" : "java.util.Date",
-          "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>",
+          "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>",
           "simpleType" : "Date",
           "variableSetterType" : "java.util.Date"
         },
@@ -14650,12 +14659,12 @@
         "c2jName" : "dataExtraDimensions",
         "c2jShape" : "DataExtraDimensionNodePathList",
         "deprecated" : false,
-        "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>",
+        "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withDataExtraDimensions",
-        "getterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n@return (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array*/",
+        "getterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n@return (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array*/",
         "getterMethodName" : "getDataExtraDimensions",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -14773,7 +14782,7 @@
         "marshallingType" : "LIST",
         "name" : "DataExtraDimensions",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array*/",
+        "setterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array*/",
         "setterMethodName" : "setDataExtraDimensions",
         "setterModel" : {
           "timestampFormat" : null,
@@ -14788,13 +14797,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDataExtraDimensions(java.util.Collection)} or {@link #withDataExtraDimensions(java.util.Collection)} if you want to override the existing values.</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDataExtraDimensions(java.util.Collection)} or {@link #withDataExtraDimensions(java.util.Collection)} if you want to override the existing values.</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "dataExtraDimensions",
           "variableType" : "java.util.List<String>",
-          "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>",
+          "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -15098,12 +15107,12 @@
           "c2jName" : "dataExtraDimensions",
           "c2jShape" : "DataExtraDimensionNodePathList",
           "deprecated" : false,
-          "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>",
+          "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withDataExtraDimensions",
-          "getterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n@return (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array*/",
+          "getterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n@return (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array*/",
           "getterMethodName" : "getDataExtraDimensions",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -15221,7 +15230,7 @@
           "marshallingType" : "LIST",
           "name" : "DataExtraDimensions",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array*/",
+          "setterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array*/",
           "setterMethodName" : "setDataExtraDimensions",
           "setterModel" : {
             "timestampFormat" : null,
@@ -15236,13 +15245,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDataExtraDimensions(java.util.Collection)} or {@link #withDataExtraDimensions(java.util.Collection)} if you want to override the existing values.</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDataExtraDimensions(java.util.Collection)} or {@link #withDataExtraDimensions(java.util.Collection)} if you want to override the existing values.</p>\n@param dataExtraDimensions (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "dataExtraDimensions",
             "variableType" : "java.util.List<String>",
-            "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>",
+            "documentation" : "<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -15392,12 +15401,12 @@
           "c2jName" : "expiryTime",
           "c2jShape" : "timestamp",
           "deprecated" : false,
-          "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>",
+          "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withExpiryTime",
-          "getterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@return (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)*/",
+          "getterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@return (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)*/",
           "getterMethodName" : "getExpiryTime",
           "getterModel" : {
             "returnType" : "java.util.Date",
@@ -15431,7 +15440,7 @@
           "marshallingType" : "DATE",
           "name" : "ExpiryTime",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)*/",
+          "setterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)*/",
           "setterMethodName" : "setExpiryTime",
           "setterModel" : {
             "timestampFormat" : null,
@@ -15446,13 +15455,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>\n@param expiryTime (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : "unixTimestamp",
             "variableDeclarationType" : "java.util.Date",
             "variableName" : "expiryTime",
             "variableType" : "java.util.Date",
-            "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>",
+            "documentation" : "<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>",
             "simpleType" : "Date",
             "variableSetterType" : "java.util.Date"
           },
@@ -86607,7 +86616,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSIoTFleetWiseException",

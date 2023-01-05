@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,23 +25,23 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the environments in your account.
+     * Returns a list of summary details for all the runtime environments in your account.
      * </p>
      */
     private java.util.List<EnvironmentSummary> environments;
     /**
      * <p>
-     * A pagination token that's returned when the response doesn't contain all the environments.
+     * A pagination token that's returned when the response doesn't contain all the runtime environments.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Returns a list of summary details for all the environments in your account.
+     * Returns a list of summary details for all the runtime environments in your account.
      * </p>
      * 
-     * @return Returns a list of summary details for all the environments in your account.
+     * @return Returns a list of summary details for all the runtime environments in your account.
      */
 
     public java.util.List<EnvironmentSummary> getEnvironments() {
@@ -50,11 +50,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the environments in your account.
+     * Returns a list of summary details for all the runtime environments in your account.
      * </p>
      * 
      * @param environments
-     *        Returns a list of summary details for all the environments in your account.
+     *        Returns a list of summary details for all the runtime environments in your account.
      */
 
     public void setEnvironments(java.util.Collection<EnvironmentSummary> environments) {
@@ -68,7 +68,7 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the environments in your account.
+     * Returns a list of summary details for all the runtime environments in your account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param environments
-     *        Returns a list of summary details for all the environments in your account.
+     *        Returns a list of summary details for all the runtime environments in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the environments in your account.
+     * Returns a list of summary details for all the runtime environments in your account.
      * </p>
      * 
      * @param environments
-     *        Returns a list of summary details for all the environments in your account.
+     *        Returns a list of summary details for all the runtime environments in your account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,11 +108,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A pagination token that's returned when the response doesn't contain all the environments.
+     * A pagination token that's returned when the response doesn't contain all the runtime environments.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token that's returned when the response doesn't contain all the environments.
+     *        A pagination token that's returned when the response doesn't contain all the runtime environments.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A pagination token that's returned when the response doesn't contain all the environments.
+     * A pagination token that's returned when the response doesn't contain all the runtime environments.
      * </p>
      * 
-     * @return A pagination token that's returned when the response doesn't contain all the environments.
+     * @return A pagination token that's returned when the response doesn't contain all the runtime environments.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListEnvironmentsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A pagination token that's returned when the response doesn't contain all the environments.
+     * A pagination token that's returned when the response doesn't contain all the runtime environments.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token that's returned when the response doesn't contain all the environments.
+     *        A pagination token that's returned when the response doesn't contain all the runtime environments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,13 @@ public class RelationshipValueJsonUnmarshaller implements Unmarshaller<Relations
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("targetComponentName", targetDepth)) {
-                    context.nextToken();
-                    relationshipValue.setTargetComponentName(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("targetEntityId", targetDepth)) {
                     context.nextToken();
                     relationshipValue.setTargetEntityId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("targetComponentName", targetDepth)) {
+                    context.nextToken();
+                    relationshipValue.setTargetComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

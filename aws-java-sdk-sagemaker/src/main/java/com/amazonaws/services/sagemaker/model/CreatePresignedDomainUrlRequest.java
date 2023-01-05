@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,12 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private Integer expiresInSeconds;
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     */
+    private String spaceName;
 
     /**
      * <p>
@@ -211,6 +217,46 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space.
+     */
+
+    public void setSpaceName(String spaceName) {
+        this.spaceName = spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @return The name of the space.
+     */
+
+    public String getSpaceName() {
+        return this.spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePresignedDomainUrlRequest withSpaceName(String spaceName) {
+        setSpaceName(spaceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -229,7 +275,9 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
         if (getSessionExpirationDurationInSeconds() != null)
             sb.append("SessionExpirationDurationInSeconds: ").append(getSessionExpirationDurationInSeconds()).append(",");
         if (getExpiresInSeconds() != null)
-            sb.append("ExpiresInSeconds: ").append(getExpiresInSeconds());
+            sb.append("ExpiresInSeconds: ").append(getExpiresInSeconds()).append(",");
+        if (getSpaceName() != null)
+            sb.append("SpaceName: ").append(getSpaceName());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +309,10 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getExpiresInSeconds() != null && other.getExpiresInSeconds().equals(this.getExpiresInSeconds()) == false)
             return false;
+        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
+            return false;
+        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
+            return false;
         return true;
     }
 
@@ -273,6 +325,7 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getUserProfileName() == null) ? 0 : getUserProfileName().hashCode());
         hashCode = prime * hashCode + ((getSessionExpirationDurationInSeconds() == null) ? 0 : getSessionExpirationDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getExpiresInSeconds() == null) ? 0 : getExpiresInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         return hashCode;
     }
 

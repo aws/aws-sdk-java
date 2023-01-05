@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -477,6 +477,19 @@ public class AbstractAWSKafkaAsync extends AbstractAWSKafka implements AWSKafkaA
     @Override
     public java.util.concurrent.Future<UpdateSecurityResult> updateSecurityAsync(UpdateSecurityRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSecurityRequest, UpdateSecurityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStorageResult> updateStorageAsync(UpdateStorageRequest request) {
+
+        return updateStorageAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStorageResult> updateStorageAsync(UpdateStorageRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateStorageRequest, UpdateStorageResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

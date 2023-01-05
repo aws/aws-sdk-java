@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,22 @@ public class AbstractAmazonKinesisVideo implements AmazonKinesisVideo {
     }
 
     @Override
+    public DescribeEdgeConfigurationResult describeEdgeConfiguration(DescribeEdgeConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeImageGenerationConfigurationResult describeImageGenerationConfiguration(DescribeImageGenerationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMappedResourceConfigurationResult describeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMediaStorageConfigurationResult describeMediaStorageConfiguration(DescribeMediaStorageConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +113,11 @@ public class AbstractAmazonKinesisVideo implements AmazonKinesisVideo {
     }
 
     @Override
+    public StartEdgeConfigurationUpdateResult startEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +144,11 @@ public class AbstractAmazonKinesisVideo implements AmazonKinesisVideo {
 
     @Override
     public UpdateImageGenerationConfigurationResult updateImageGenerationConfiguration(UpdateImageGenerationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMediaStorageConfigurationResult updateMediaStorageConfiguration(UpdateMediaStorageConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

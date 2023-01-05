@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information on a package associated with a domain.
+ * Information about a package that is associated with a domain. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for
+ * Amazon OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +29,7 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The internal ID of the package.
+     * Internal ID of the package.
      * </p>
      */
     private String packageID;
@@ -39,35 +41,38 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
     private String packageName;
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      */
     private String packageType;
     /**
      * <p>
-     * The timestamp of the most recent update to the package association status.
+     * Timestamp of the most recent update to the package association status.
      * </p>
      */
     private java.util.Date lastUpdated;
     /**
      * <p>
-     * The name of the domain you've associated a package with.
+     * Name of the domain that the package is associated with.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     * DISSOCIATION_FAILED.
+     * State of the association.
      * </p>
      */
     private String domainPackageStatus;
-
+    /**
+     * <p>
+     * The current version of the package.
+     * </p>
+     */
     private String packageVersion;
     /**
      * <p>
-     * The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package is a
-     * synonym file.
+     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
+     * <code>synonym_path</code> for dictionary files.
      * </p>
      */
     private String referencePath;
@@ -80,11 +85,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The internal ID of the package.
+     * Internal ID of the package.
      * </p>
      * 
      * @param packageID
-     *        The internal ID of the package.
+     *        Internal ID of the package.
      */
 
     public void setPackageID(String packageID) {
@@ -93,10 +98,10 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The internal ID of the package.
+     * Internal ID of the package.
      * </p>
      * 
-     * @return The internal ID of the package.
+     * @return Internal ID of the package.
      */
 
     public String getPackageID() {
@@ -105,11 +110,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The internal ID of the package.
+     * Internal ID of the package.
      * </p>
      * 
      * @param packageID
-     *        The internal ID of the package.
+     *        Internal ID of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +165,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Currently supports only TXT-DICTIONARY.
+     *        The type of package.
      * @see PackageType
      */
 
@@ -174,10 +179,10 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
-     * @return Currently supports only TXT-DICTIONARY.
+     * @return The type of package.
      * @see PackageType
      */
 
@@ -187,11 +192,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Currently supports only TXT-DICTIONARY.
+     *        The type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -203,11 +208,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Currently supports only TXT-DICTIONARY.
+     *        The type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -219,11 +224,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The timestamp of the most recent update to the package association status.
+     * Timestamp of the most recent update to the package association status.
      * </p>
      * 
      * @param lastUpdated
-     *        The timestamp of the most recent update to the package association status.
+     *        Timestamp of the most recent update to the package association status.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -232,10 +237,10 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The timestamp of the most recent update to the package association status.
+     * Timestamp of the most recent update to the package association status.
      * </p>
      * 
-     * @return The timestamp of the most recent update to the package association status.
+     * @return Timestamp of the most recent update to the package association status.
      */
 
     public java.util.Date getLastUpdated() {
@@ -244,11 +249,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The timestamp of the most recent update to the package association status.
+     * Timestamp of the most recent update to the package association status.
      * </p>
      * 
      * @param lastUpdated
-     *        The timestamp of the most recent update to the package association status.
+     *        Timestamp of the most recent update to the package association status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,11 +264,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the domain you've associated a package with.
+     * Name of the domain that the package is associated with.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain you've associated a package with.
+     *        Name of the domain that the package is associated with.
      */
 
     public void setDomainName(String domainName) {
@@ -272,10 +277,10 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the domain you've associated a package with.
+     * Name of the domain that the package is associated with.
      * </p>
      * 
-     * @return The name of the domain you've associated a package with.
+     * @return Name of the domain that the package is associated with.
      */
 
     public String getDomainName() {
@@ -284,11 +289,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The name of the domain you've associated a package with.
+     * Name of the domain that the package is associated with.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain you've associated a package with.
+     *        Name of the domain that the package is associated with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,13 +304,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     * DISSOCIATION_FAILED.
+     * State of the association.
      * </p>
      * 
      * @param domainPackageStatus
-     *        State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     *        DISSOCIATION_FAILED.
+     *        State of the association.
      * @see DomainPackageStatus
      */
 
@@ -315,12 +318,10 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     * DISSOCIATION_FAILED.
+     * State of the association.
      * </p>
      * 
-     * @return State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     *         DISSOCIATION_FAILED.
+     * @return State of the association.
      * @see DomainPackageStatus
      */
 
@@ -330,13 +331,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     * DISSOCIATION_FAILED.
+     * State of the association.
      * </p>
      * 
      * @param domainPackageStatus
-     *        State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     *        DISSOCIATION_FAILED.
+     *        State of the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainPackageStatus
      */
@@ -348,13 +347,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     * DISSOCIATION_FAILED.
+     * State of the association.
      * </p>
      * 
      * @param domainPackageStatus
-     *        State of the association. Values are ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, and
-     *        DISSOCIATION_FAILED.
+     *        State of the association.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainPackageStatus
      */
@@ -365,7 +362,12 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The current version of the package.
+     * </p>
+     * 
      * @param packageVersion
+     *        The current version of the package.
      */
 
     public void setPackageVersion(String packageVersion) {
@@ -373,7 +375,11 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * The current version of the package.
+     * </p>
+     * 
+     * @return The current version of the package.
      */
 
     public String getPackageVersion() {
@@ -381,7 +387,12 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The current version of the package.
+     * </p>
+     * 
      * @param packageVersion
+     *        The current version of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -392,13 +403,13 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package is a
-     * synonym file.
+     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
+     * <code>synonym_path</code> for dictionary files.
      * </p>
      * 
      * @param referencePath
-     *        The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package
-     *        is a synonym file.
+     *        Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
+     *        <code>synonym_path</code> for dictionary files.
      */
 
     public void setReferencePath(String referencePath) {
@@ -407,12 +418,12 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package is a
-     * synonym file.
+     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
+     * <code>synonym_path</code> for dictionary files.
      * </p>
      * 
-     * @return The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package
-     *         is a synonym file.
+     * @return Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
+     *         <code>synonym_path</code> for dictionary files.
      */
 
     public String getReferencePath() {
@@ -421,13 +432,13 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package is a
-     * synonym file.
+     * Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
+     * <code>synonym_path</code> for dictionary files.
      * </p>
      * 
      * @param referencePath
-     *        The relative path on Amazon OpenSearch Service nodes, which can be used as synonym_path when the package
-     *        is a synonym file.
+     *        Denotes the location of the package on the OpenSearch Service cluster nodes. It's the same as
+     *        <code>synonym_path</code> for dictionary files.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

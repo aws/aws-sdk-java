@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,8 @@ public enum ExtraParamName {
     VAT_NUMBER("VAT_NUMBER"),
     UK_CONTACT_TYPE("UK_CONTACT_TYPE"),
     UK_COMPANY_NUMBER("UK_COMPANY_NUMBER"),
-    EU_COUNTRY_OF_CITIZENSHIP("EU_COUNTRY_OF_CITIZENSHIP");
+    EU_COUNTRY_OF_CITIZENSHIP("EU_COUNTRY_OF_CITIZENSHIP"),
+    AU_PRIORITY_TOKEN("AU_PRIORITY_TOKEN");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
     private String ruleEvaluatorImage;
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for debugging a training job.
+     * The instance type to deploy a custom rule for debugging a training job.
      * </p>
      */
     private String instanceType;
@@ -239,11 +239,11 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for debugging a training job.
+     * The instance type to deploy a custom rule for debugging a training job.
      * </p>
      * 
      * @param instanceType
-     *        The instance type to deploy a Debugger custom rule for debugging a training job.
+     *        The instance type to deploy a custom rule for debugging a training job.
      * @see ProcessingInstanceType
      */
 
@@ -253,10 +253,10 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for debugging a training job.
+     * The instance type to deploy a custom rule for debugging a training job.
      * </p>
      * 
-     * @return The instance type to deploy a Debugger custom rule for debugging a training job.
+     * @return The instance type to deploy a custom rule for debugging a training job.
      * @see ProcessingInstanceType
      */
 
@@ -266,11 +266,11 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for debugging a training job.
+     * The instance type to deploy a custom rule for debugging a training job.
      * </p>
      * 
      * @param instanceType
-     *        The instance type to deploy a Debugger custom rule for debugging a training job.
+     *        The instance type to deploy a custom rule for debugging a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingInstanceType
      */
@@ -282,11 +282,11 @@ public class DebugRuleConfiguration implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for debugging a training job.
+     * The instance type to deploy a custom rule for debugging a training job.
      * </p>
      * 
      * @param instanceType
-     *        The instance type to deploy a Debugger custom rule for debugging a training job.
+     *        The instance type to deploy a custom rule for debugging a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingInstanceType
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListImportsRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer maxResults;
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      */
     private String destination;
@@ -92,11 +92,11 @@ public class ListImportsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
      * @param destination
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      */
 
     public void setDestination(String destination) {
@@ -105,10 +105,10 @@ public class ListImportsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
-     * @return The destination event data store.
+     * @return The ARN of the destination event data store.
      */
 
     public String getDestination() {
@@ -117,11 +117,11 @@ public class ListImportsRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
      * @param destination
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

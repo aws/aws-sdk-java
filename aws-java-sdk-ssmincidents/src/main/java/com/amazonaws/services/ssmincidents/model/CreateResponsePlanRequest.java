@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,8 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
     private String displayName;
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      */
     private java.util.List<String> engagements;
@@ -61,6 +62,12 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private IncidentTemplate incidentTemplate;
+    /**
+     * <p>
+     * Information about third-party services integrated into the response plan.
+     * </p>
+     */
+    private java.util.List<Integration> integrations;
     /**
      * <p>
      * The short format name of the response plan. Can't include spaces.
@@ -266,10 +273,12 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
-     * @return The contacts and escalation plans that the response plan engages during an incident.
+     * @return The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages
+     *         during an incident.
      */
 
     public java.util.List<String> getEngagements() {
@@ -278,11 +287,13 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that the response plan engages during an incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      */
 
     public void setEngagements(java.util.Collection<String> engagements) {
@@ -296,7 +307,8 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -305,7 +317,8 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that the response plan engages during an incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,11 +334,13 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The contacts and escalation plans that the response plan engages during an incident.
+     * The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during an
+     * incident.
      * </p>
      * 
      * @param engagements
-     *        The contacts and escalation plans that the response plan engages during an incident.
+     *        The Amazon Resource Name (ARN) for the contacts and escalation plans that the response plan engages during
+     *        an incident.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -371,6 +386,76 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
 
     public CreateResponsePlanRequest withIncidentTemplate(IncidentTemplate incidentTemplate) {
         setIncidentTemplate(incidentTemplate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about third-party services integrated into the response plan.
+     * </p>
+     * 
+     * @return Information about third-party services integrated into the response plan.
+     */
+
+    public java.util.List<Integration> getIntegrations() {
+        return integrations;
+    }
+
+    /**
+     * <p>
+     * Information about third-party services integrated into the response plan.
+     * </p>
+     * 
+     * @param integrations
+     *        Information about third-party services integrated into the response plan.
+     */
+
+    public void setIntegrations(java.util.Collection<Integration> integrations) {
+        if (integrations == null) {
+            this.integrations = null;
+            return;
+        }
+
+        this.integrations = new java.util.ArrayList<Integration>(integrations);
+    }
+
+    /**
+     * <p>
+     * Information about third-party services integrated into the response plan.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setIntegrations(java.util.Collection)} or {@link #withIntegrations(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param integrations
+     *        Information about third-party services integrated into the response plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResponsePlanRequest withIntegrations(Integration... integrations) {
+        if (this.integrations == null) {
+            setIntegrations(new java.util.ArrayList<Integration>(integrations.length));
+        }
+        for (Integration ele : integrations) {
+            this.integrations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about third-party services integrated into the response plan.
+     * </p>
+     * 
+     * @param integrations
+     *        Information about third-party services integrated into the response plan.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateResponsePlanRequest withIntegrations(java.util.Collection<Integration> integrations) {
+        setIntegrations(integrations);
         return this;
     }
 
@@ -506,6 +591,8 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("Engagements: ").append(getEngagements()).append(",");
         if (getIncidentTemplate() != null)
             sb.append("IncidentTemplate: ").append(getIncidentTemplate()).append(",");
+        if (getIntegrations() != null)
+            sb.append("Integrations: ").append(getIntegrations()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getTags() != null)
@@ -548,6 +635,10 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getIncidentTemplate() != null && other.getIncidentTemplate().equals(this.getIncidentTemplate()) == false)
             return false;
+        if (other.getIntegrations() == null ^ this.getIntegrations() == null)
+            return false;
+        if (other.getIntegrations() != null && other.getIntegrations().equals(this.getIntegrations()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -570,6 +661,7 @@ public class CreateResponsePlanRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getEngagements() == null) ? 0 : getEngagements().hashCode());
         hashCode = prime * hashCode + ((getIncidentTemplate() == null) ? 0 : getIncidentTemplate().hashCode());
+        hashCode = prime * hashCode + ((getIntegrations() == null) ? 0 : getIntegrations().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

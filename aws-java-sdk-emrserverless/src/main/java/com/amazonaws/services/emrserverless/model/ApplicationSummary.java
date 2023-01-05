@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,12 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.Date updatedAt;
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     */
+    private String architecture;
 
     /**
      * <p>
@@ -463,6 +469,65 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @return The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public ApplicationSummary withArchitecture(String architecture) {
+        setArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public ApplicationSummary withArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -491,7 +556,9 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getArchitecture() != null)
+            sb.append("Architecture: ").append(getArchitecture());
         sb.append("}");
         return sb.toString();
     }
@@ -542,6 +609,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null)
+            return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
         return true;
     }
 
@@ -559,6 +630,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getStateDetails() == null) ? 0 : getStateDetails().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies the name of the key to create. Key names must be unique to the workspace.
+     * Specifies the name of the key. Keynames must be unique to the workspace.
      * </p>
      */
     private String keyName;
@@ -36,7 +36,7 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code>
+     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
      * </p>
      */
     private String keyRole;
@@ -48,18 +48,18 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
     private Integer secondsToLive;
     /**
      * <p>
-     * The ID of the workspace in which to create an API key.
+     * The ID of the workspace to create an API key.
      * </p>
      */
     private String workspaceId;
 
     /**
      * <p>
-     * Specifies the name of the key to create. Key names must be unique to the workspace.
+     * Specifies the name of the key. Keynames must be unique to the workspace.
      * </p>
      * 
      * @param keyName
-     *        Specifies the name of the key to create. Key names must be unique to the workspace.
+     *        Specifies the name of the key. Keynames must be unique to the workspace.
      */
 
     public void setKeyName(String keyName) {
@@ -68,10 +68,10 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies the name of the key to create. Key names must be unique to the workspace.
+     * Specifies the name of the key. Keynames must be unique to the workspace.
      * </p>
      * 
-     * @return Specifies the name of the key to create. Key names must be unique to the workspace.
+     * @return Specifies the name of the key. Keynames must be unique to the workspace.
      */
 
     public String getKeyName() {
@@ -80,11 +80,11 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Specifies the name of the key to create. Key names must be unique to the workspace.
+     * Specifies the name of the key. Keynames must be unique to the workspace.
      * </p>
      * 
      * @param keyName
-     *        Specifies the name of the key to create. Key names must be unique to the workspace.
+     *        Specifies the name of the key. Keynames must be unique to the workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,13 +98,13 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code>
+     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
      * </p>
      * 
      * @param keyRole
      *        Specifies the permission level of the key.</p>
      *        <p>
-     *        Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code>
+     *        Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
      */
 
     public void setKeyRole(String keyRole) {
@@ -116,12 +116,12 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code>
+     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
      * </p>
      * 
      * @return Specifies the permission level of the key.</p>
      *         <p>
-     *         Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code>
+     *         Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
      */
 
     public String getKeyRole() {
@@ -133,13 +133,13 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
      * Specifies the permission level of the key.
      * </p>
      * <p>
-     * Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code>
+     * Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
      * </p>
      * 
      * @param keyRole
      *        Specifies the permission level of the key.</p>
      *        <p>
-     *        Valid Values: <code>VIEWER</code> | <code>EDITOR</code> | <code>ADMIN</code>
+     *        Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,11 +190,11 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the workspace in which to create an API key.
+     * The ID of the workspace to create an API key.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to create an API key.
+     *        The ID of the workspace to create an API key.
      */
 
     public void setWorkspaceId(String workspaceId) {
@@ -203,10 +203,10 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the workspace in which to create an API key.
+     * The ID of the workspace to create an API key.
      * </p>
      * 
-     * @return The ID of the workspace in which to create an API key.
+     * @return The ID of the workspace to create an API key.
      */
 
     public String getWorkspaceId() {
@@ -215,11 +215,11 @@ public class CreateWorkspaceApiKeyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the workspace in which to create an API key.
+     * The ID of the workspace to create an API key.
      * </p>
      * 
      * @param workspaceId
-     *        The ID of the workspace in which to create an API key.
+     *        The ID of the workspace to create an API key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

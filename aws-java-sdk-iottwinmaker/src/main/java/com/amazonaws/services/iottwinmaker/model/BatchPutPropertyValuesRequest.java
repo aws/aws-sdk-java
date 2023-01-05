@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,17 +27,57 @@ public class BatchPutPropertyValuesRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The ID of the workspace that contains the properties to set.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * An object that maps strings to the property value entries to set. Each string in the mapping must be unique to
      * this object.
      * </p>
      */
     private java.util.List<PropertyValueEntry> entries;
+
     /**
      * <p>
      * The ID of the workspace that contains the properties to set.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the properties to set.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the properties to set.
+     * </p>
+     * 
+     * @return The ID of the workspace that contains the properties to set.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the properties to set.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the properties to set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutPropertyValuesRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -118,46 +158,6 @@ public class BatchPutPropertyValuesRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
-     * <p>
-     * The ID of the workspace that contains the properties to set.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the properties to set.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the properties to set.
-     * </p>
-     * 
-     * @return The ID of the workspace that contains the properties to set.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the properties to set.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the properties to set.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BatchPutPropertyValuesRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -169,10 +169,10 @@ public class BatchPutPropertyValuesRequest extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEntries() != null)
-            sb.append("Entries: ").append(getEntries()).append(",");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getEntries() != null)
+            sb.append("Entries: ").append(getEntries());
         sb.append("}");
         return sb.toString();
     }
@@ -187,13 +187,13 @@ public class BatchPutPropertyValuesRequest extends com.amazonaws.AmazonWebServic
         if (obj instanceof BatchPutPropertyValuesRequest == false)
             return false;
         BatchPutPropertyValuesRequest other = (BatchPutPropertyValuesRequest) obj;
-        if (other.getEntries() == null ^ this.getEntries() == null)
-            return false;
-        if (other.getEntries() != null && other.getEntries().equals(this.getEntries()) == false)
-            return false;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
+        if (other.getEntries() == null ^ this.getEntries() == null)
+            return false;
+        if (other.getEntries() != null && other.getEntries().equals(this.getEntries()) == false)
             return false;
         return true;
     }
@@ -203,8 +203,8 @@ public class BatchPutPropertyValuesRequest extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEntries() == null) ? 0 : getEntries().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getEntries() == null) ? 0 : getEntries().hashCode());
         return hashCode;
     }
 

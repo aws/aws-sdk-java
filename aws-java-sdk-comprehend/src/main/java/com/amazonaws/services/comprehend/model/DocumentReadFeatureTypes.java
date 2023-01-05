@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,19 +16,18 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the
- * document where entity recognition is expected.
+ * Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code> as the
+ * read action, you must specify one or both of the following values:
  * </p>
  * <ul>
  * <li>
  * <p>
- * <code>TABLES</code> - Add TABLES to the list to return information about the tables that are detected in the input
- * document.
+ * <code>TABLES</code> - Returns additional information about any tables that are detected in the input document.
  * </p>
  * </li>
  * <li>
  * <p>
- * <code>FORMS</code> - Add FORMS to return detected form data.
+ * <code>FORMS</code> - Returns additional information about any forms that are detected in the input document.
  * </p>
  * </li>
  * </ul>

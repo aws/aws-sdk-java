@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,26 +33,47 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>price-capacity-optimized (recommended)</dt>
+     * <dd>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
-     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
-     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
-     * your desired capacity is met, you might receive Spot Instances from several pools.
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of these pools.
      * </p>
+     * </dd>
+     * <dt>capacity-optimized</dt>
+     * <dd>
      * <p>
-     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
-     * </p>
-     * <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
-     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by
-     * using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
-     * but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. To give certain instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     * <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your EC2 Fleet
      * uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
      * <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * </p>
+     * </dd>
+     * <dt>diversified</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
+     * </p>
+     * </dd>
+     * <dt>lowest-price</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest
+     * priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has
+     * available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will
+     * continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers
+     * instance price and not capacity availability, it might lead to high interruption rates.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
@@ -143,26 +164,47 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>price-capacity-optimized (recommended)</dt>
+     * <dd>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
-     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
-     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
-     * your desired capacity is met, you might receive Spot Instances from several pools.
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of these pools.
      * </p>
+     * </dd>
+     * <dt>capacity-optimized</dt>
+     * <dd>
      * <p>
-     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
-     * </p>
-     * <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
-     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by
-     * using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
-     * but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. To give certain instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     * <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your EC2 Fleet
      * uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
      * <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * </p>
+     * </dd>
+     * <dt>diversified</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
+     * </p>
+     * </dd>
+     * <dt>lowest-price</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest
+     * priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has
+     * available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will
+     * continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers
+     * instance price and not capacity availability, it might lead to high interruption rates.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
@@ -172,28 +214,49 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *        pools specified by the EC2 Fleet launch configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     *        <dl>
+     *        <dt>price-capacity-optimized (recommended)</dt>
+     *        <dd>
      *        <p>
-     *        <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
-     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
-     *        desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool.
-     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
+     *        EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     *        launching. This means that we will request Spot Instances from the pools that we believe have the lowest
+     *        chance of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of
+     *        these pools.
      *        </p>
+     *        </dd>
+     *        <dt>capacity-optimized</dt>
+     *        <dd>
      *        <p>
-     *        <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
-     *        specify.
+     *        EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     *        launching. This means that we will request Spot Instances from the pools that we believe have the lowest
+     *        chance of interruption in the near term. To give certain instance types a higher chance of launching
+     *        first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     *        <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority
+     *        to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
+     *        but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your
+     *        EC2 Fleet uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
+     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      *        </p>
+     *        </dd>
+     *        <dt>diversified</dt>
+     *        <dd>
      *        <p>
-     *        <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     *        optimal capacity for the number of instances that are launching. To give certain instance types a higher
-     *        chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     *        instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     *        can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     *        priorities on a best-effort basis, but optimizes for capacity first.
-     *        <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch template. Note
-     *        that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
-     *        priority is applied when fulfilling On-Demand capacity.
+     *        EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
      *        </p>
+     *        </dd>
+     *        <dt>lowest-price</dt>
+     *        <dd>
+     *        <p>
+     *        EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the
+     *        lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced
+     *        pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity,
+     *        EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure
+     *        that your desired capacity is met, you might receive Spot Instances from several pools. Because this
+     *        strategy only considers instance price and not capacity availability, it might lead to high interruption
+     *        rates.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        <p>
      *        Default: <code>lowest-price</code>
      * @see SpotAllocationStrategy
@@ -210,26 +273,47 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>price-capacity-optimized (recommended)</dt>
+     * <dd>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
-     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
-     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
-     * your desired capacity is met, you might receive Spot Instances from several pools.
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of these pools.
      * </p>
+     * </dd>
+     * <dt>capacity-optimized</dt>
+     * <dd>
      * <p>
-     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
-     * </p>
-     * <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
-     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by
-     * using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
-     * but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. To give certain instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     * <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your EC2 Fleet
      * uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
      * <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * </p>
+     * </dd>
+     * <dt>diversified</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
+     * </p>
+     * </dd>
+     * <dt>lowest-price</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest
+     * priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has
+     * available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will
+     * continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers
+     * instance price and not capacity availability, it might lead to high interruption rates.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
@@ -238,28 +322,50 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *         pools specified by the EC2 Fleet launch configuration. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      *         strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     *         <dl>
+     *         <dt>price-capacity-optimized (recommended)</dt>
+     *         <dd>
      *         <p>
-     *         <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that
-     *         has available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come
-     *         from the next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling
-     *         your desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest
-     *         pool. To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
+     *         EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that
+     *         are launching. This means that we will request Spot Instances from the pools that we believe have the
+     *         lowest chance of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest
+     *         priced of these pools.
      *         </p>
+     *         </dd>
+     *         <dt>capacity-optimized</dt>
+     *         <dd>
      *         <p>
-     *         <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
-     *         specify.
+     *         EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that
+     *         are launching. This means that we will request Spot Instances from the pools that we believe have the
+     *         lowest chance of interruption in the near term. To give certain instance types a higher chance of
+     *         launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type
+     *         by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the
+     *         same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a
+     *         best-effort basis, but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is
+     *         supported only if your EC2 Fleet uses a launch template. Note that if the On-Demand
+     *         <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same priority is applied when
+     *         fulfilling On-Demand capacity.
      *         </p>
+     *         </dd>
+     *         <dt>diversified</dt>
+     *         <dd>
      *         <p>
-     *         <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools
-     *         with optimal capacity for the number of instances that are launching. To give certain instance types a
-     *         higher chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for
-     *         each instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>.
-     *         You can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     *         priorities on a best-effort basis, but optimizes for capacity first.
-     *         <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch template. Note
-     *         that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
-     *         priority is applied when fulfilling On-Demand capacity.
+     *         EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
      *         </p>
+     *         </dd>
+     *         <dt>lowest-price</dt>
+     *         <dd>
+     *         <p>
+     *         EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If
+     *         the lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest
+     *         priced pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
+     *         capacity, EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To
+     *         ensure that your desired capacity is met, you might receive Spot Instances from several pools. Because
+     *         this strategy only considers instance price and not capacity availability, it might lead to high
+     *         interruption rates.
+     *         </p>
+     *         </dd>
+     *         </dl>
      *         <p>
      *         Default: <code>lowest-price</code>
      * @see SpotAllocationStrategy
@@ -276,26 +382,47 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>price-capacity-optimized (recommended)</dt>
+     * <dd>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
-     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
-     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
-     * your desired capacity is met, you might receive Spot Instances from several pools.
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of these pools.
      * </p>
+     * </dd>
+     * <dt>capacity-optimized</dt>
+     * <dd>
      * <p>
-     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
-     * </p>
-     * <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
-     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by
-     * using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
-     * but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. To give certain instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     * <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your EC2 Fleet
      * uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
      * <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * </p>
+     * </dd>
+     * <dt>diversified</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
+     * </p>
+     * </dd>
+     * <dt>lowest-price</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest
+     * priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has
+     * available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will
+     * continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers
+     * instance price and not capacity availability, it might lead to high interruption rates.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
@@ -305,28 +432,49 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *        pools specified by the EC2 Fleet launch configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     *        <dl>
+     *        <dt>price-capacity-optimized (recommended)</dt>
+     *        <dd>
      *        <p>
-     *        <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
-     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
-     *        desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool.
-     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
+     *        EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     *        launching. This means that we will request Spot Instances from the pools that we believe have the lowest
+     *        chance of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of
+     *        these pools.
      *        </p>
+     *        </dd>
+     *        <dt>capacity-optimized</dt>
+     *        <dd>
      *        <p>
-     *        <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
-     *        specify.
+     *        EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     *        launching. This means that we will request Spot Instances from the pools that we believe have the lowest
+     *        chance of interruption in the near term. To give certain instance types a higher chance of launching
+     *        first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     *        <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority
+     *        to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
+     *        but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your
+     *        EC2 Fleet uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
+     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      *        </p>
+     *        </dd>
+     *        <dt>diversified</dt>
+     *        <dd>
      *        <p>
-     *        <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     *        optimal capacity for the number of instances that are launching. To give certain instance types a higher
-     *        chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     *        instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     *        can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     *        priorities on a best-effort basis, but optimizes for capacity first.
-     *        <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch template. Note
-     *        that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
-     *        priority is applied when fulfilling On-Demand capacity.
+     *        EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
      *        </p>
+     *        </dd>
+     *        <dt>lowest-price</dt>
+     *        <dd>
+     *        <p>
+     *        EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the
+     *        lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced
+     *        pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity,
+     *        EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure
+     *        that your desired capacity is met, you might receive Spot Instances from several pools. Because this
+     *        strategy only considers instance price and not capacity availability, it might lead to high interruption
+     *        rates.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        <p>
      *        Default: <code>lowest-price</code>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -345,26 +493,47 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      * strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
+     * <dl>
+     * <dt>price-capacity-optimized (recommended)</dt>
+     * <dd>
      * <p>
-     * <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     * available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the next
-     * cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your desired
-     * capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool. To ensure that
-     * your desired capacity is met, you might receive Spot Instances from several pools.
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of these pools.
      * </p>
+     * </dd>
+     * <dt>capacity-optimized</dt>
+     * <dd>
      * <p>
-     * <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you specify.
-     * </p>
-     * <p>
-     * <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     * optimal capacity for the number of instances that are launching. To give certain instance types a higher chance
-     * of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by
-     * using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same
-     * priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
-     * but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your fleet
+     * EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     * launching. This means that we will request Spot Instances from the pools that we believe have the lowest chance
+     * of interruption in the near term. To give certain instance types a higher chance of launching first, use
+     * <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     * <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority to
+     * different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis, but
+     * optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your EC2 Fleet
      * uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
      * <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      * </p>
+     * </dd>
+     * <dt>diversified</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
+     * </p>
+     * </dd>
+     * <dt>lowest-price</dt>
+     * <dd>
+     * <p>
+     * EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the lowest
+     * priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced pool that has
+     * available capacity. If a pool runs out of capacity before fulfilling your desired capacity, EC2 Fleet will
+     * continue to fulfill your request by drawing from the next lowest priced pool. To ensure that your desired
+     * capacity is met, you might receive Spot Instances from several pools. Because this strategy only considers
+     * instance price and not capacity availability, it might lead to high interruption rates.
+     * </p>
+     * </dd>
+     * </dl>
      * <p>
      * Default: <code>lowest-price</code>
      * </p>
@@ -374,28 +543,49 @@ public class SpotOptionsRequest implements Serializable, Cloneable {
      *        pools specified by the EC2 Fleet launch configuration. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
      *        strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>
+     *        <dl>
+     *        <dt>price-capacity-optimized (recommended)</dt>
+     *        <dd>
      *        <p>
-     *        <code>lowest-price</code> - EC2 Fleet launches instances from the lowest-price Spot Instance pool that has
-     *        available capacity. If the cheapest pool doesn't have available capacity, the Spot Instances come from the
-     *        next cheapest pool that has available capacity. If a pool runs out of capacity before fulfilling your
-     *        desired capacity, EC2 Fleet will continue to fulfill your request by drawing from the next cheapest pool.
-     *        To ensure that your desired capacity is met, you might receive Spot Instances from several pools.
+     *        EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     *        launching. This means that we will request Spot Instances from the pools that we believe have the lowest
+     *        chance of interruption in the near term. EC2 Fleet then requests Spot Instances from the lowest priced of
+     *        these pools.
      *        </p>
+     *        </dd>
+     *        <dt>capacity-optimized</dt>
+     *        <dd>
      *        <p>
-     *        <code>diversified</code> - EC2 Fleet launches instances from all of the Spot Instance pools that you
-     *        specify.
+     *        EC2 Fleet identifies the pools with the highest capacity availability for the number of instances that are
+     *        launching. This means that we will request Spot Instances from the pools that we believe have the lowest
+     *        chance of interruption in the near term. To give certain instance types a higher chance of launching
+     *        first, use <code>capacity-optimized-prioritized</code>. Set a priority for each instance type by using the
+     *        <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You can assign the same priority
+     *        to different <code>LaunchTemplateOverrides</code>. EC2 implements the priorities on a best-effort basis,
+     *        but optimizes for capacity first. <code>capacity-optimized-prioritized</code> is supported only if your
+     *        EC2 Fleet uses a launch template. Note that if the On-Demand <code>AllocationStrategy</code> is set to
+     *        <code>prioritized</code>, the same priority is applied when fulfilling On-Demand capacity.
      *        </p>
+     *        </dd>
+     *        <dt>diversified</dt>
+     *        <dd>
      *        <p>
-     *        <code>capacity-optimized</code> (recommended) - EC2 Fleet launches instances from Spot Instance pools with
-     *        optimal capacity for the number of instances that are launching. To give certain instance types a higher
-     *        chance of launching first, use <code>capacity-optimized-prioritized</code>. Set a priority for each
-     *        instance type by using the <code>Priority</code> parameter for <code>LaunchTemplateOverrides</code>. You
-     *        can assign the same priority to different <code>LaunchTemplateOverrides</code>. EC2 implements the
-     *        priorities on a best-effort basis, but optimizes for capacity first.
-     *        <code>capacity-optimized-prioritized</code> is supported only if your fleet uses a launch template. Note
-     *        that if the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>, the same
-     *        priority is applied when fulfilling On-Demand capacity.
+     *        EC2 Fleet requests instances from all of the Spot Instance pools that you specify.
      *        </p>
+     *        </dd>
+     *        <dt>lowest-price</dt>
+     *        <dd>
+     *        <p>
+     *        EC2 Fleet requests instances from the lowest priced Spot Instance pool that has available capacity. If the
+     *        lowest priced pool doesn't have available capacity, the Spot Instances come from the next lowest priced
+     *        pool that has available capacity. If a pool runs out of capacity before fulfilling your desired capacity,
+     *        EC2 Fleet will continue to fulfill your request by drawing from the next lowest priced pool. To ensure
+     *        that your desired capacity is met, you might receive Spot Instances from several pools. Because this
+     *        strategy only considers instance price and not capacity availability, it might lead to high interruption
+     *        rates.
+     *        </p>
+     *        </dd>
+     *        </dl>
      *        <p>
      *        Default: <code>lowest-price</code>
      * @return Returns a reference to this object so that method calls can be chained together.

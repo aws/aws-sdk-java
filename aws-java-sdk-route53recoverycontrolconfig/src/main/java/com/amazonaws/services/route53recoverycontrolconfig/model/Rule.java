@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,14 +32,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
      * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
-     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
-     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
+     * criteria might be that at least one routing control state is On after the transaction so that traffic continues
+     * to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      */
     private AssertionRule aSSERTION;
     /**
      * <p>
-     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based
      * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
      * </p>
      * <p>
@@ -55,14 +55,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
      * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
-     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
-     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
+     * criteria might be that at least one routing control state is On after the transaction so that traffic continues
+     * to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      * 
      * @param aSSERTION
      *        An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
      *        configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
-     *        criteria might be that at least one routing control state is On after the transation so that traffic
+     *        criteria might be that at least one routing control state is On after the transaction so that traffic
      *        continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      *        scenario.
      */
@@ -75,13 +75,13 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
      * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
-     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
-     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
+     * criteria might be that at least one routing control state is On after the transaction so that traffic continues
+     * to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      * 
      * @return An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
      *         configuration is met. Otherwise, the change to the routing control state is not accepted. For example,
-     *         the criteria might be that at least one routing control state is On after the transation so that traffic
+     *         the criteria might be that at least one routing control state is On after the transaction so that traffic
      *         continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      *         scenario.
      */
@@ -94,14 +94,14 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
      * configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
-     * criteria might be that at least one routing control state is On after the transation so that traffic continues to
-     * flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
+     * criteria might be that at least one routing control state is On after the transaction so that traffic continues
+     * to flow to at least one cell for the application. This ensures that you avoid a fail-open scenario.
      * </p>
      * 
      * @param aSSERTION
      *        An assertion rule enforces that, when a routing control state is changed, the criteria set by the rule
      *        configuration is met. Otherwise, the change to the routing control state is not accepted. For example, the
-     *        criteria might be that at least one routing control state is On after the transation so that traffic
+     *        criteria might be that at least one routing control state is On after the transaction so that traffic
      *        continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      *        scenario.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -114,7 +114,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based
      * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
      * </p>
      * <p>
@@ -125,9 +125,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gATING
-     *        A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as
-     *        true, based on a rule configuration that you specify, which allows a set of routing control state changes
-     *        to complete.</p>
+     *        A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true,
+     *        based on a rule configuration that you specify, which allows a set of routing control state changes to
+     *        complete.</p>
      *        <p>
      *        For example, if you specify one gating routing control and you set the Type in the rule configuration to
      *        OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true;
@@ -141,7 +141,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based
      * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
      * </p>
      * <p>
@@ -151,7 +151,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * target routing controls that you specify in the gating rule.
      * </p>
      * 
-     * @return A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as
+     * @return A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as
      *         true, based on a rule configuration that you specify, which allows a set of routing control state changes
      *         to complete.</p>
      *         <p>
@@ -167,7 +167,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based
+     * A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based
      * on a rule configuration that you specify, which allows a set of routing control state changes to complete.
      * </p>
      * <p>
@@ -178,9 +178,9 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param gATING
-     *        A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as
-     *        true, based on a rule configuration that you specify, which allows a set of routing control state changes
-     *        to complete.</p>
+     *        A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true,
+     *        based on a rule configuration that you specify, which allows a set of routing control state changes to
+     *        complete.</p>
      *        <p>
      *        For example, if you specify one gating routing control and you set the Type in the rule configuration to
      *        OR, that indicates that you must set the gating routing control to On for the rule to evaluate as true;

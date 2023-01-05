@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -238,6 +238,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config
      */
     private String timecodeInsertion;
+    /** Timecode burn-in settings */
+    private TimecodeBurninSettings timecodeBurninSettings;
 
     /**
      * Enables or disables adaptive quantization, which is a technique MediaLive can apply to video on a frame-by-frame
@@ -2647,6 +2649,40 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Timecode burn-in settings
+     * 
+     * @param timecodeBurninSettings
+     *        Timecode burn-in settings
+     */
+
+    public void setTimecodeBurninSettings(TimecodeBurninSettings timecodeBurninSettings) {
+        this.timecodeBurninSettings = timecodeBurninSettings;
+    }
+
+    /**
+     * Timecode burn-in settings
+     * 
+     * @return Timecode burn-in settings
+     */
+
+    public TimecodeBurninSettings getTimecodeBurninSettings() {
+        return this.timecodeBurninSettings;
+    }
+
+    /**
+     * Timecode burn-in settings
+     * 
+     * @param timecodeBurninSettings
+     *        Timecode burn-in settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H264Settings withTimecodeBurninSettings(TimecodeBurninSettings timecodeBurninSettings) {
+        setTimecodeBurninSettings(timecodeBurninSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2739,7 +2775,9 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         if (getTemporalAq() != null)
             sb.append("TemporalAq: ").append(getTemporalAq()).append(",");
         if (getTimecodeInsertion() != null)
-            sb.append("TimecodeInsertion: ").append(getTimecodeInsertion());
+            sb.append("TimecodeInsertion: ").append(getTimecodeInsertion()).append(",");
+        if (getTimecodeBurninSettings() != null)
+            sb.append("TimecodeBurninSettings: ").append(getTimecodeBurninSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -2918,6 +2956,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimecodeInsertion() != null && other.getTimecodeInsertion().equals(this.getTimecodeInsertion()) == false)
             return false;
+        if (other.getTimecodeBurninSettings() == null ^ this.getTimecodeBurninSettings() == null)
+            return false;
+        if (other.getTimecodeBurninSettings() != null && other.getTimecodeBurninSettings().equals(this.getTimecodeBurninSettings()) == false)
+            return false;
         return true;
     }
 
@@ -2967,6 +3009,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSyntax() == null) ? 0 : getSyntax().hashCode());
         hashCode = prime * hashCode + ((getTemporalAq() == null) ? 0 : getTemporalAq().hashCode());
         hashCode = prime * hashCode + ((getTimecodeInsertion() == null) ? 0 : getTimecodeInsertion().hashCode());
+        hashCode = prime * hashCode + ((getTimecodeBurninSettings() == null) ? 0 : getTimecodeBurninSettings().hashCode());
         return hashCode;
     }
 

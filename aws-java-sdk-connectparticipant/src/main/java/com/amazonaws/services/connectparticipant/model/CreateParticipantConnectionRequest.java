@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     * <code>true</code>.
      * </p>
      */
     private java.util.List<String> type;
@@ -51,10 +52,12 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     * <code>true</code>.
      * </p>
      * 
-     * @return Type of connection information required.
+     * @return Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     *         <code>true</code>.
      * @see ConnectionType
      */
 
@@ -64,11 +67,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     *        <code>true</code>.
      * @see ConnectionType
      */
 
@@ -83,7 +88,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     * <code>true</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -92,7 +98,8 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -109,11 +116,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -125,11 +134,13 @@ public class CreateParticipantConnectionRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Type of connection information required.
+     * Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param type
-     *        Type of connection information required.
+     *        Type of connection information required. This can be omitted if <code>ConnectParticipant</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */

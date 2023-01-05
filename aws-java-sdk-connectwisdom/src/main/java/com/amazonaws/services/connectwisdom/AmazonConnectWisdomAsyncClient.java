@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -790,39 +790,6 @@ public class AmazonConnectWisdomAsyncClient extends AmazonConnectWisdomClient im
 
                 try {
                     result = executeNotifyRecommendationsReceived(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutFeedbackResult> putFeedbackAsync(PutFeedbackRequest request) {
-
-        return putFeedbackAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutFeedbackResult> putFeedbackAsync(final PutFeedbackRequest request,
-            final com.amazonaws.handlers.AsyncHandler<PutFeedbackRequest, PutFeedbackResult> asyncHandler) {
-        final PutFeedbackRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<PutFeedbackResult>() {
-            @Override
-            public PutFeedbackResult call() throws Exception {
-                PutFeedbackResult result = null;
-
-                try {
-                    result = executePutFeedback(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

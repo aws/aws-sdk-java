@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -421,9 +421,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
      * to process your data. You can bypass the 256-step limitation in various ways, including using SSH to connect to
      * the master node and submitting queries directly to the software running on the master node, such as Hive and
-     * Hadoop. For more information on how to do this, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to
-     * a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
+     * Hadoop.
      * </p>
      * <p>
      * A step specifies the location of a JAR file stored either on the master node of the cluster or in Amazon S3. Each
@@ -750,7 +748,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * <p>
      * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
      * refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to
-     * a Studio when you use Amazon Web Services SSO authentication. For instructions on how to assign users to a Studio
+     * a Studio when you use IAM Identity Center authentication. For instructions on how to assign users to a Studio
      * when you use IAM authentication, see <a href=
      * "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups"
      * >Assign a user or group to your EMR Studio</a>.
@@ -1560,6 +1558,69 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<GetBlockPublicAccessConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetBlockPublicAccessConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides Temporary, basic HTTP credentials that are associated with a given runtime IAM role and used by a
+     * cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints
+     * that support username-based and password-based authentication.
+     * </p>
+     * 
+     * @param getClusterSessionCredentialsRequest
+     * @return Result of the GetClusterSessionCredentials operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.GetClusterSessionCredentials
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetClusterSessionCredentials"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetClusterSessionCredentialsResult getClusterSessionCredentials(GetClusterSessionCredentialsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetClusterSessionCredentials(request);
+    }
+
+    @SdkInternalApi
+    final GetClusterSessionCredentialsResult executeGetClusterSessionCredentials(GetClusterSessionCredentialsRequest getClusterSessionCredentialsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getClusterSessionCredentialsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetClusterSessionCredentialsRequest> request = null;
+        Response<GetClusterSessionCredentialsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetClusterSessionCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getClusterSessionCredentialsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetClusterSessionCredentials");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetClusterSessionCredentialsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetClusterSessionCredentialsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3069,12 +3130,10 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
      * If your cluster is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps
      * to process your data. You can bypass the 256-step limitation in various ways, including using the SSH shell to
      * connect to the master node and submitting queries directly to the software running on the master node, such as
-     * Hive and Hadoop. For more information on how to do this, see <a
-     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/AddMoreThan256Steps.html">Add More than 256 Steps to
-     * a Cluster</a> in the <i>Amazon EMR Management Guide</i>.
+     * Hive and Hadoop.
      * </p>
      * <p>
-     * For long running clusters, we recommend that you periodically store your results.
+     * For long-running clusters, we recommend that you periodically store your results.
      * </p>
      * <note>
      * <p>

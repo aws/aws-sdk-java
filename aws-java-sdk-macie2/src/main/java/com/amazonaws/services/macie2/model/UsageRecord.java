@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,15 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
     private String accountId;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery
+     * started for the account. If the account is a member account in an organization, this value is the same as the
+     * value for the organization's Amazon Macie administrator account.
+     * </p>
+     */
+    private java.util.Date automatedDiscoveryFreeTrialStartDate;
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.
      * </p>
      */
     private java.util.Date freeTrialStartDate;
@@ -90,11 +98,64 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery
+     * started for the account. If the account is a member account in an organization, this value is the same as the
+     * value for the organization's Amazon Macie administrator account.
+     * </p>
+     * 
+     * @param automatedDiscoveryFreeTrialStartDate
+     *        The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data
+     *        discovery started for the account. If the account is a member account in an organization, this value is
+     *        the same as the value for the organization's Amazon Macie administrator account.
+     */
+
+    public void setAutomatedDiscoveryFreeTrialStartDate(java.util.Date automatedDiscoveryFreeTrialStartDate) {
+        this.automatedDiscoveryFreeTrialStartDate = automatedDiscoveryFreeTrialStartDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery
+     * started for the account. If the account is a member account in an organization, this value is the same as the
+     * value for the organization's Amazon Macie administrator account.
+     * </p>
+     * 
+     * @return The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data
+     *         discovery started for the account. If the account is a member account in an organization, this value is
+     *         the same as the value for the organization's Amazon Macie administrator account.
+     */
+
+    public java.util.Date getAutomatedDiscoveryFreeTrialStartDate() {
+        return this.automatedDiscoveryFreeTrialStartDate;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data discovery
+     * started for the account. If the account is a member account in an organization, this value is the same as the
+     * value for the organization's Amazon Macie administrator account.
+     * </p>
+     * 
+     * @param automatedDiscoveryFreeTrialStartDate
+     *        The date and time, in UTC and extended ISO 8601 format, when the free trial of automated sensitive data
+     *        discovery started for the account. If the account is a member account in an organization, this value is
+     *        the same as the value for the organization's Amazon Macie administrator account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UsageRecord withAutomatedDiscoveryFreeTrialStartDate(java.util.Date automatedDiscoveryFreeTrialStartDate) {
+        setAutomatedDiscoveryFreeTrialStartDate(automatedDiscoveryFreeTrialStartDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.
      * </p>
      * 
      * @param freeTrialStartDate
-     *        The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
+     *        The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the
+     *        account.
      */
 
     public void setFreeTrialStartDate(java.util.Date freeTrialStartDate) {
@@ -103,10 +164,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
+     * The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
+     * @return The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the
+     *         account.
      */
 
     public java.util.Date getFreeTrialStartDate() {
@@ -115,11 +177,12 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
+     * The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the account.
      * </p>
      * 
      * @param freeTrialStartDate
-     *        The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.
+     *        The date and time, in UTC and extended ISO 8601 format, when the Amazon Macie free trial started for the
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,6 +283,8 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getAutomatedDiscoveryFreeTrialStartDate() != null)
+            sb.append("AutomatedDiscoveryFreeTrialStartDate: ").append(getAutomatedDiscoveryFreeTrialStartDate()).append(",");
         if (getFreeTrialStartDate() != null)
             sb.append("FreeTrialStartDate: ").append(getFreeTrialStartDate()).append(",");
         if (getUsage() != null)
@@ -242,6 +307,11 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
+        if (other.getAutomatedDiscoveryFreeTrialStartDate() == null ^ this.getAutomatedDiscoveryFreeTrialStartDate() == null)
+            return false;
+        if (other.getAutomatedDiscoveryFreeTrialStartDate() != null
+                && other.getAutomatedDiscoveryFreeTrialStartDate().equals(this.getAutomatedDiscoveryFreeTrialStartDate()) == false)
+            return false;
         if (other.getFreeTrialStartDate() == null ^ this.getFreeTrialStartDate() == null)
             return false;
         if (other.getFreeTrialStartDate() != null && other.getFreeTrialStartDate().equals(this.getFreeTrialStartDate()) == false)
@@ -259,6 +329,7 @@ public class UsageRecord implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getAutomatedDiscoveryFreeTrialStartDate() == null) ? 0 : getAutomatedDiscoveryFreeTrialStartDate().hashCode());
         hashCode = prime * hashCode + ((getFreeTrialStartDate() == null) ? 0 : getFreeTrialStartDate().hashCode());
         hashCode = prime * hashCode + ((getUsage() == null) ? 0 : getUsage().hashCode());
         return hashCode;

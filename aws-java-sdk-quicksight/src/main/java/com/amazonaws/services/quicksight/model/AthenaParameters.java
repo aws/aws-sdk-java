@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,16 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String workGroup;
+    /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For
+     * example, say an account administrator has turned off all Athena access with an account-wide role. The
+     * administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the
+     * single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena
+     * access is still active.
+     * </p>
+     */
+    private String roleArn;
 
     /**
      * <p>
@@ -76,6 +86,70 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For
+     * example, say an account administrator has turned off all Athena access with an account-wide role. The
+     * administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the
+     * single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena
+     * access is still active.
+     * </p>
+     * 
+     * @param roleArn
+     *        Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source.
+     *        For example, say an account administrator has turned off all Athena access with an account-wide role. The
+     *        administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access
+     *        for the single Athena data source that is specified in the structure, even if the account-wide role
+     *        forbidding Athena access is still active.
+     */
+
+    public void setRoleArn(String roleArn) {
+        this.roleArn = roleArn;
+    }
+
+    /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For
+     * example, say an account administrator has turned off all Athena access with an account-wide role. The
+     * administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the
+     * single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena
+     * access is still active.
+     * </p>
+     * 
+     * @return Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data
+     *         source. For example, say an account administrator has turned off all Athena access with an account-wide
+     *         role. The administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow
+     *         Athena access for the single Athena data source that is specified in the structure, even if the
+     *         account-wide role forbidding Athena access is still active.
+     */
+
+    public String getRoleArn() {
+        return this.roleArn;
+    }
+
+    /**
+     * <p>
+     * Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source. For
+     * example, say an account administrator has turned off all Athena access with an account-wide role. The
+     * administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access for the
+     * single Athena data source that is specified in the structure, even if the account-wide role forbidding Athena
+     * access is still active.
+     * </p>
+     * 
+     * @param roleArn
+     *        Use the <code>RoleArn</code> structure to override an account-wide role for a specific Athena data source.
+     *        For example, say an account administrator has turned off all Athena access with an account-wide role. The
+     *        administrator can then use <code>RoleArn</code> to bypass the account-wide role and allow Athena access
+     *        for the single Athena data source that is specified in the structure, even if the account-wide role
+     *        forbidding Athena access is still active.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AthenaParameters withRoleArn(String roleArn) {
+        setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +162,9 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getWorkGroup() != null)
-            sb.append("WorkGroup: ").append(getWorkGroup());
+            sb.append("WorkGroup: ").append(getWorkGroup()).append(",");
+        if (getRoleArn() != null)
+            sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +183,10 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getWorkGroup() != null && other.getWorkGroup().equals(this.getWorkGroup()) == false)
             return false;
+        if (other.getRoleArn() == null ^ this.getRoleArn() == null)
+            return false;
+        if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +196,7 @@ public class AthenaParameters implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
+        hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }
 

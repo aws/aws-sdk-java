@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class DetectLabelsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxLabels").build();
     private static final MarshallingInfo<Float> MINCONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MinConfidence").build();
+    private static final MarshallingInfo<List> FEATURES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Features").build();
+    private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
 
     private static final DetectLabelsRequestMarshaller instance = new DetectLabelsRequestMarshaller();
 
@@ -53,6 +58,8 @@ public class DetectLabelsRequestMarshaller {
             protocolMarshaller.marshall(detectLabelsRequest.getImage(), IMAGE_BINDING);
             protocolMarshaller.marshall(detectLabelsRequest.getMaxLabels(), MAXLABELS_BINDING);
             protocolMarshaller.marshall(detectLabelsRequest.getMinConfidence(), MINCONFIDENCE_BINDING);
+            protocolMarshaller.marshall(detectLabelsRequest.getFeatures(), FEATURES_BINDING);
+            protocolMarshaller.marshall(detectLabelsRequest.getSettings(), SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

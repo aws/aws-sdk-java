@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * The headers, cookies, and query strings that are included in the cache key are automatically included in requests
- * that CloudFront sends to the origin. CloudFront sends a request when it can’t find an object in its cache that
- * matches the request’s cache key. If you want to send values to the origin but <i>not</i> include them in the cache
+ * that CloudFront sends to the origin. CloudFront sends a request when it can't find an object in its cache that
+ * matches the request's cache key. If you want to send values to the origin but <i>not</i> include them in the cache
  * key, use <code>OriginRequestPolicy</code>.
  * </p>
  * 
@@ -47,7 +47,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -74,7 +74,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -93,7 +93,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -120,7 +120,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -161,7 +161,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -188,7 +188,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -204,7 +204,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *        Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *        </p>
      *        </li>
      *        <li>
@@ -231,8 +231,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *        header the same as any other HTTP header in the viewer request. By default, it’s not included in the cache
-     *        key and it’s not included in origin requests. In this case, you can manually add
+     *        header the same as any other HTTP header in the viewer request. By default, it's not included in the cache
+     *        key and it's not included in origin requests. In this case, you can manually add
      *        <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      */
 
@@ -253,7 +253,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -280,7 +280,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -295,7 +295,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *         Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *         </p>
      *         </li>
      *         <li>
@@ -322,8 +322,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *         header the same as any other HTTP header in the viewer request. By default, it’s not included in the
-     *         cache key and it’s not included in origin requests. In this case, you can manually add
+     *         header the same as any other HTTP header in the viewer request. By default, it's not included in the
+     *         cache key and it's not included in origin requests. In this case, you can manually add
      *         <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      */
 
@@ -344,7 +344,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -371,7 +371,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -387,7 +387,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *        Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *        </p>
      *        </li>
      *        <li>
@@ -414,8 +414,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *        header the same as any other HTTP header in the viewer request. By default, it’s not included in the cache
-     *        key and it’s not included in origin requests. In this case, you can manually add
+     *        header the same as any other HTTP header in the viewer request. By default, it's not included in the cache
+     *        key and it's not included in origin requests. In this case, you can manually add
      *        <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -438,7 +438,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -465,7 +465,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -480,7 +480,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *         Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *         </p>
      *         </li>
      *         <li>
@@ -507,8 +507,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *         header the same as any other HTTP header in the viewer request. By default, it’s not included in the
-     *         cache key and it’s not included in origin requests. In this case, you can manually add
+     *         header the same as any other HTTP header in the viewer request. By default, it's not included in the
+     *         cache key and it's not included in origin requests. In this case, you can manually add
      *         <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      */
 
@@ -529,7 +529,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -556,7 +556,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -572,7 +572,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *        Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *        </p>
      *        </li>
      *        <li>
@@ -599,8 +599,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *        header the same as any other HTTP header in the viewer request. By default, it’s not included in the cache
-     *        key and it’s not included in origin requests. In this case, you can manually add
+     *        header the same as any other HTTP header in the viewer request. By default, it's not included in the cache
+     *        key and it's not included in origin requests. In this case, you can manually add
      *        <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      */
 
@@ -621,7 +621,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -648,7 +648,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -663,7 +663,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *         Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *         </p>
      *         </li>
      *         <li>
@@ -690,8 +690,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *         header the same as any other HTTP header in the viewer request. By default, it’s not included in the
-     *         cache key and it’s not included in origin requests. In this case, you can manually add
+     *         header the same as any other HTTP header in the viewer request. By default, it's not included in the
+     *         cache key and it's not included in origin requests. In this case, you can manually add
      *         <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      */
 
@@ -712,7 +712,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -739,7 +739,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -755,7 +755,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        <ul>
      *        <li>
      *        <p>
-     *        Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *        Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *        </p>
      *        </li>
      *        <li>
@@ -782,8 +782,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *        </p>
      *        <p>
      *        If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *        header the same as any other HTTP header in the viewer request. By default, it’s not included in the cache
-     *        key and it’s not included in origin requests. In this case, you can manually add
+     *        header the same as any other HTTP header in the viewer request. By default, it's not included in the cache
+     *        key and it's not included in origin requests. In this case, you can manually add
      *        <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -806,7 +806,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * <ul>
      * <li>
      * <p>
-     * Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     * Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      * </p>
      * </li>
      * <li>
@@ -833,7 +833,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      * </p>
      * <p>
      * If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code> header
-     * the same as any other HTTP header in the viewer request. By default, it’s not included in the cache key and it’s
+     * the same as any other HTTP header in the viewer request. By default, it's not included in the cache key and it's
      * not included in origin requests. In this case, you can manually add <code>Accept-Encoding</code> to the headers
      * whitelist like any other HTTP header.
      * </p>
@@ -848,7 +848,7 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         <ul>
      *         <li>
      *         <p>
-     *         Normalizes the value of the viewer’s <code>Accept-Encoding</code> header
+     *         Normalizes the value of the viewer's <code>Accept-Encoding</code> header
      *         </p>
      *         </li>
      *         <li>
@@ -875,8 +875,8 @@ public class ParametersInCacheKeyAndForwardedToOrigin implements Serializable, C
      *         </p>
      *         <p>
      *         If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
-     *         header the same as any other HTTP header in the viewer request. By default, it’s not included in the
-     *         cache key and it’s not included in origin requests. In this case, you can manually add
+     *         header the same as any other HTTP header in the viewer request. By default, it's not included in the
+     *         cache key and it's not included in origin requests. In this case, you can manually add
      *         <code>Accept-Encoding</code> to the headers whitelist like any other HTTP header.
      */
 

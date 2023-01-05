@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration status for the specified domain.
+ * The cluster configuration status for a domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class ClusterConfigStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The cluster configuration for the specified domain.
+     * Cluster configuration options for the specified domain.
      * </p>
      */
     private ClusterConfig options;
     /**
      * <p>
-     * The cluster configuration status for the specified domain.
+     * The status of cluster configuration options for the specified domain.
      * </p>
      */
     private OptionStatus status;
 
     /**
      * <p>
-     * The cluster configuration for the specified domain.
+     * Cluster configuration options for the specified domain.
      * </p>
      * 
      * @param options
-     *        The cluster configuration for the specified domain.
+     *        Cluster configuration options for the specified domain.
      */
 
     public void setOptions(ClusterConfig options) {
@@ -53,10 +53,10 @@ public class ClusterConfigStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The cluster configuration for the specified domain.
+     * Cluster configuration options for the specified domain.
      * </p>
      * 
-     * @return The cluster configuration for the specified domain.
+     * @return Cluster configuration options for the specified domain.
      */
 
     public ClusterConfig getOptions() {
@@ -65,11 +65,11 @@ public class ClusterConfigStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The cluster configuration for the specified domain.
+     * Cluster configuration options for the specified domain.
      * </p>
      * 
      * @param options
-     *        The cluster configuration for the specified domain.
+     *        Cluster configuration options for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class ClusterConfigStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The cluster configuration status for the specified domain.
+     * The status of cluster configuration options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The cluster configuration status for the specified domain.
+     *        The status of cluster configuration options for the specified domain.
      */
 
     public void setStatus(OptionStatus status) {
@@ -93,10 +93,10 @@ public class ClusterConfigStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The cluster configuration status for the specified domain.
+     * The status of cluster configuration options for the specified domain.
      * </p>
      * 
-     * @return The cluster configuration status for the specified domain.
+     * @return The status of cluster configuration options for the specified domain.
      */
 
     public OptionStatus getStatus() {
@@ -105,11 +105,11 @@ public class ClusterConfigStatus implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The cluster configuration status for the specified domain.
+     * The status of cluster configuration options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The cluster configuration status for the specified domain.
+     *        The status of cluster configuration options for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

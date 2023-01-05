@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,56 +30,16 @@ public class ParentEntityUpdateRequest implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ID of the parent entity.
-     * </p>
-     */
-    private String parentEntityId;
-    /**
-     * <p>
      * The type of the update.
      * </p>
      */
     private String updateType;
-
     /**
      * <p>
      * The ID of the parent entity.
      * </p>
-     * 
-     * @param parentEntityId
-     *        The ID of the parent entity.
      */
-
-    public void setParentEntityId(String parentEntityId) {
-        this.parentEntityId = parentEntityId;
-    }
-
-    /**
-     * <p>
-     * The ID of the parent entity.
-     * </p>
-     * 
-     * @return The ID of the parent entity.
-     */
-
-    public String getParentEntityId() {
-        return this.parentEntityId;
-    }
-
-    /**
-     * <p>
-     * The ID of the parent entity.
-     * </p>
-     * 
-     * @param parentEntityId
-     *        The ID of the parent entity.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ParentEntityUpdateRequest withParentEntityId(String parentEntityId) {
-        setParentEntityId(parentEntityId);
-        return this;
-    }
+    private String parentEntityId;
 
     /**
      * <p>
@@ -141,6 +101,46 @@ public class ParentEntityUpdateRequest implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The ID of the parent entity.
+     * </p>
+     * 
+     * @param parentEntityId
+     *        The ID of the parent entity.
+     */
+
+    public void setParentEntityId(String parentEntityId) {
+        this.parentEntityId = parentEntityId;
+    }
+
+    /**
+     * <p>
+     * The ID of the parent entity.
+     * </p>
+     * 
+     * @return The ID of the parent entity.
+     */
+
+    public String getParentEntityId() {
+        return this.parentEntityId;
+    }
+
+    /**
+     * <p>
+     * The ID of the parent entity.
+     * </p>
+     * 
+     * @param parentEntityId
+     *        The ID of the parent entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ParentEntityUpdateRequest withParentEntityId(String parentEntityId) {
+        setParentEntityId(parentEntityId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,10 +152,10 @@ public class ParentEntityUpdateRequest implements Serializable, Cloneable, Struc
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getParentEntityId() != null)
-            sb.append("ParentEntityId: ").append(getParentEntityId()).append(",");
         if (getUpdateType() != null)
-            sb.append("UpdateType: ").append(getUpdateType());
+            sb.append("UpdateType: ").append(getUpdateType()).append(",");
+        if (getParentEntityId() != null)
+            sb.append("ParentEntityId: ").append(getParentEntityId());
         sb.append("}");
         return sb.toString();
     }
@@ -170,13 +170,13 @@ public class ParentEntityUpdateRequest implements Serializable, Cloneable, Struc
         if (obj instanceof ParentEntityUpdateRequest == false)
             return false;
         ParentEntityUpdateRequest other = (ParentEntityUpdateRequest) obj;
-        if (other.getParentEntityId() == null ^ this.getParentEntityId() == null)
-            return false;
-        if (other.getParentEntityId() != null && other.getParentEntityId().equals(this.getParentEntityId()) == false)
-            return false;
         if (other.getUpdateType() == null ^ this.getUpdateType() == null)
             return false;
         if (other.getUpdateType() != null && other.getUpdateType().equals(this.getUpdateType()) == false)
+            return false;
+        if (other.getParentEntityId() == null ^ this.getParentEntityId() == null)
+            return false;
+        if (other.getParentEntityId() != null && other.getParentEntityId().equals(this.getParentEntityId()) == false)
             return false;
         return true;
     }
@@ -186,8 +186,8 @@ public class ParentEntityUpdateRequest implements Serializable, Cloneable, Struc
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getParentEntityId() == null) ? 0 : getParentEntityId().hashCode());
         hashCode = prime * hashCode + ((getUpdateType() == null) ? 0 : getUpdateType().hashCode());
+        hashCode = prime * hashCode + ((getParentEntityId() == null) ? 0 : getParentEntityId().hashCode());
         return hashCode;
     }
 

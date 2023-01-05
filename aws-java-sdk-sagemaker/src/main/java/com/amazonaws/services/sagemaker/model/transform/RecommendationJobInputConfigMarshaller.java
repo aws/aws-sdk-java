@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,10 @@ public class RecommendationJobInputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VolumeKmsKeyId").build();
     private static final MarshallingInfo<StructuredPojo> CONTAINERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContainerConfig").build();
+    private static final MarshallingInfo<List> ENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Endpoints").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfig").build();
 
     private static final RecommendationJobInputConfigMarshaller instance = new RecommendationJobInputConfigMarshaller();
 
@@ -66,6 +70,8 @@ public class RecommendationJobInputConfigMarshaller {
             protocolMarshaller.marshall(recommendationJobInputConfig.getEndpointConfigurations(), ENDPOINTCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(recommendationJobInputConfig.getVolumeKmsKeyId(), VOLUMEKMSKEYID_BINDING);
             protocolMarshaller.marshall(recommendationJobInputConfig.getContainerConfig(), CONTAINERCONFIG_BINDING);
+            protocolMarshaller.marshall(recommendationJobInputConfig.getEndpoints(), ENDPOINTS_BINDING);
+            protocolMarshaller.marshall(recommendationJobInputConfig.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

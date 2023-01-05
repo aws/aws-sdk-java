@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,12 +16,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because the trust anchor certificate in the request is not the trust anchor certificate for
- * the specified CloudHSM cluster.
+ * The request was rejected because the trust anchor certificate in the request to create an CloudHSM key store is not
+ * the trust anchor certificate for the specified CloudHSM cluster.
  * </p>
  * <p>
  * When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
- * the cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code> file.
+ * the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the <code>customerCA.crt</code>
+ * file.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

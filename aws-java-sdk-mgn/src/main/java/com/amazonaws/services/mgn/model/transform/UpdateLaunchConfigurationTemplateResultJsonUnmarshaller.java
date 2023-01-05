@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,18 +52,70 @@ public class UpdateLaunchConfigurationTemplateResultJsonUnmarshaller implements 
                     context.nextToken();
                     updateLaunchConfigurationTemplateResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("associatePublicIpAddress", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setAssociatePublicIpAddress(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("bootMode", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setBootMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("copyPrivateIp", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setCopyPrivateIp(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("copyTags", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setCopyTags(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ec2LaunchTemplateID", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setEc2LaunchTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("enableMapAutoTagging", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setEnableMapAutoTagging(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("largeVolumeConf", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setLargeVolumeConf(LaunchTemplateDiskConfJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("launchConfigurationTemplateID", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationTemplateResult.setLaunchConfigurationTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("launchDisposition", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setLaunchDisposition(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("licensing", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setLicensing(LicensingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapAutoTaggingMpeID", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setMapAutoTaggingMpeID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("postLaunchActions", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationTemplateResult.setPostLaunchActions(PostLaunchActionsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("smallVolumeConf", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setSmallVolumeConf(LaunchTemplateDiskConfJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("smallVolumeMaxSize", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setSmallVolumeMaxSize(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationTemplateResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("targetInstanceTypeRightSizingMethod", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationTemplateResult.setTargetInstanceTypeRightSizingMethod(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

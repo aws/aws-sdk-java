@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -403,6 +403,37 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
+     * Retrieves a <code>TagKey</code> configuration from an account.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @return A Java Future containing the result of the GetConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsync.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest getConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves a <code>TagKey</code> configuration from an account.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsyncHandler.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest getConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConfigurationRequest, GetConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves a list of all of your applications. Results are paginated.
      * </p>
      * 
@@ -469,8 +500,15 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Lists all resources that are associated with specified application. Results are paginated.
+     * Lists all of the resources that are associated with the specified application. Results are paginated.
      * </p>
+     * <note>
+     * <p>
+     * If you share an application, and a consumer account associates a tag query to the application, all of the users
+     * who can access the application can also view the tag values in all accounts that are associated with it using
+     * this API.
+     * </p>
+     * </note>
      * 
      * @param listAssociatedResourcesRequest
      * @return A Java Future containing the result of the ListAssociatedResources operation returned by the service.
@@ -482,8 +520,15 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
 
     /**
      * <p>
-     * Lists all resources that are associated with specified application. Results are paginated.
+     * Lists all of the resources that are associated with the specified application. Results are paginated.
      * </p>
+     * <note>
+     * <p>
+     * If you share an application, and a consumer account associates a tag query to the application, all of the users
+     * who can access the application can also view the tag values in all accounts that are associated with it using
+     * this API.
+     * </p>
+     * </note>
      * 
      * @param listAssociatedResourcesRequest
      * @param asyncHandler
@@ -596,6 +641,37 @@ public interface AWSAppRegistryAsync extends AWSAppRegistry {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a <code>TagKey</code> configuration to an account.
+     * </p>
+     * 
+     * @param putConfigurationRequest
+     * @return A Java Future containing the result of the PutConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsync.PutConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationResult> putConfigurationAsync(PutConfigurationRequest putConfigurationRequest);
+
+    /**
+     * <p>
+     * Associates a <code>TagKey</code> configuration to an account.
+     * </p>
+     * 
+     * @param putConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutConfiguration operation returned by the service.
+     * @sample AWSAppRegistryAsyncHandler.PutConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutConfigurationResult> putConfigurationAsync(PutConfigurationRequest putConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationRequest, PutConfigurationResult> asyncHandler);
 
     /**
      * <p>

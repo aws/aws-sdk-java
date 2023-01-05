@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
     private String accountAccessType;
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      */
@@ -178,6 +178,12 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
     private java.util.Map<String, String> tags;
     /**
      * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     */
+    private VpcConfiguration vpcConfiguration;
+    /**
+     * <p>
      * The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from.
      * This role must already exist.
      * </p>
@@ -269,13 +275,13 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      * 
      * @param authentication
-     *        A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for
-     *        user authentication.
+     *        A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
+     *        authentication.
      */
 
     public void setAuthentication(AuthenticationSummary authentication) {
@@ -284,12 +290,12 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      * 
-     * @return A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for
-     *         user authentication.
+     * @return A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
+     *         authentication.
      */
 
     public AuthenticationSummary getAuthentication() {
@@ -298,13 +304,13 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+     * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
      * authentication.
      * </p>
      * 
      * @param authentication
-     *        A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for
-     *        user authentication.
+     *        A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
+     *        authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1459,6 +1465,46 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     */
+
+    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     * 
+     * @return The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     */
+
+    public VpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration for connecting to data sources in a private VPC (Amazon Virtual Private Cloud).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceDescription withVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from.
      * This role must already exist.
      * </p>
@@ -1557,6 +1603,8 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             sb.append("Status: ").append(getStatus()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getWorkspaceRoleArn() != null)
             sb.append("WorkspaceRoleArn: ").append("***Sensitive Data Redacted***");
         sb.append("}");
@@ -1657,6 +1705,10 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
+            return false;
         if (other.getWorkspaceRoleArn() == null ^ this.getWorkspaceRoleArn() == null)
             return false;
         if (other.getWorkspaceRoleArn() != null && other.getWorkspaceRoleArn().equals(this.getWorkspaceRoleArn()) == false)
@@ -1690,6 +1742,7 @@ public class WorkspaceDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceRoleArn() == null) ? 0 : getWorkspaceRoleArn().hashCode());
         return hashCode;
     }

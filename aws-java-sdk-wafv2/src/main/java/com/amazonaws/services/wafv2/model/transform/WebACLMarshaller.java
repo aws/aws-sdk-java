@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,10 @@ public class WebACLMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponseBodies").build();
     private static final MarshallingInfo<StructuredPojo> CAPTCHACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptchaConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CHALLENGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChallengeConfig").build();
+    private static final MarshallingInfo<List> TOKENDOMAINS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TokenDomains").build();
 
     private static final WebACLMarshaller instance = new WebACLMarshaller();
 
@@ -88,6 +92,8 @@ public class WebACLMarshaller {
             protocolMarshaller.marshall(webACL.getLabelNamespace(), LABELNAMESPACE_BINDING);
             protocolMarshaller.marshall(webACL.getCustomResponseBodies(), CUSTOMRESPONSEBODIES_BINDING);
             protocolMarshaller.marshall(webACL.getCaptchaConfig(), CAPTCHACONFIG_BINDING);
+            protocolMarshaller.marshall(webACL.getChallengeConfig(), CHALLENGECONFIG_BINDING);
+            protocolMarshaller.marshall(webACL.getTokenDomains(), TOKENDOMAINS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

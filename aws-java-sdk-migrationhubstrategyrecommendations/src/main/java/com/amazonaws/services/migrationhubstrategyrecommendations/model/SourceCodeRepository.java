@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class SourceCodeRepository implements Serializable, Cloneable, Structured
      * </p>
      */
     private String branch;
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     */
+    private String projectName;
     /**
      * <p>
      * The repository name for the source code.
@@ -84,6 +90,46 @@ public class SourceCodeRepository implements Serializable, Cloneable, Structured
 
     public SourceCodeRepository withBranch(String branch) {
         setBranch(branch);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     * 
+     * @param projectName
+     *        The name of the project.
+     */
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     * 
+     * @return The name of the project.
+     */
+
+    public String getProjectName() {
+        return this.projectName;
+    }
+
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     * 
+     * @param projectName
+     *        The name of the project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceCodeRepository withProjectName(String projectName) {
+        setProjectName(projectName);
         return this;
     }
 
@@ -181,6 +227,8 @@ public class SourceCodeRepository implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getBranch() != null)
             sb.append("Branch: ").append(getBranch()).append(",");
+        if (getProjectName() != null)
+            sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getRepository() != null)
             sb.append("Repository: ").append(getRepository()).append(",");
         if (getVersionControlType() != null)
@@ -203,6 +251,10 @@ public class SourceCodeRepository implements Serializable, Cloneable, Structured
             return false;
         if (other.getBranch() != null && other.getBranch().equals(this.getBranch()) == false)
             return false;
+        if (other.getProjectName() == null ^ this.getProjectName() == null)
+            return false;
+        if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
+            return false;
         if (other.getRepository() == null ^ this.getRepository() == null)
             return false;
         if (other.getRepository() != null && other.getRepository().equals(this.getRepository()) == false)
@@ -220,6 +272,7 @@ public class SourceCodeRepository implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getBranch() == null) ? 0 : getBranch().hashCode());
+        hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getRepository() == null) ? 0 : getRepository().hashCode());
         hashCode = prime * hashCode + ((getVersionControlType() == null) ? 0 : getVersionControlType().hashCode());
         return hashCode;

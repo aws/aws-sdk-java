@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class TaskScheduledEventDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInSeconds").build();
     private static final MarshallingInfo<Long> HEARTBEATINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("heartbeatInSeconds").build();
+    private static final MarshallingInfo<StructuredPojo> TASKCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskCredentials").build();
 
     private static final TaskScheduledEventDetailsMarshaller instance = new TaskScheduledEventDetailsMarshaller();
 
@@ -62,6 +64,7 @@ public class TaskScheduledEventDetailsMarshaller {
             protocolMarshaller.marshall(taskScheduledEventDetails.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(taskScheduledEventDetails.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(taskScheduledEventDetails.getHeartbeatInSeconds(), HEARTBEATINSECONDS_BINDING);
+            protocolMarshaller.marshall(taskScheduledEventDetails.getTaskCredentials(), TASKCREDENTIALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

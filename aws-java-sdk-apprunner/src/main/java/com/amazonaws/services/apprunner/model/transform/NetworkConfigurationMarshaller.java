@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class NetworkConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> EGRESSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EgressConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> INGRESSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IngressConfiguration").build();
 
     private static final NetworkConfigurationMarshaller instance = new NetworkConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class NetworkConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(networkConfiguration.getEgressConfiguration(), EGRESSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(networkConfiguration.getIngressConfiguration(), INGRESSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

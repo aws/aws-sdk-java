@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String importId;
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> destinations;
@@ -75,7 +75,9 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private java.util.Date updatedTimestamp;
     /**
      * <p>
-     * Provides statistics for the import.
+     * Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values
+     * for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail
+     * updates statistics incrementally over the course of the import.
      * </p>
      */
     private ImportStatistics importStatistics;
@@ -122,10 +124,10 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
-     * @return The destination event data store.
+     * @return The ARN of the destination event data store.
      */
 
     public java.util.List<String> getDestinations() {
@@ -137,11 +139,11 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
      * @param destinations
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      */
 
     public void setDestinations(java.util.Collection<String> destinations) {
@@ -155,7 +157,7 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +166,7 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param destinations
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +182,11 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
      * @param destinations
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,11 +468,15 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Provides statistics for the import.
+     * Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values
+     * for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail
+     * updates statistics incrementally over the course of the import.
      * </p>
      * 
      * @param importStatistics
-     *        Provides statistics for the import.
+     *        Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned
+     *        values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because
+     *        CloudTrail updates statistics incrementally over the course of the import.
      */
 
     public void setImportStatistics(ImportStatistics importStatistics) {
@@ -479,10 +485,14 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Provides statistics for the import.
+     * Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values
+     * for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail
+     * updates statistics incrementally over the course of the import.
      * </p>
      * 
-     * @return Provides statistics for the import.
+     * @return Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned
+     *         values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because
+     *         CloudTrail updates statistics incrementally over the course of the import.
      */
 
     public ImportStatistics getImportStatistics() {
@@ -491,11 +501,15 @@ public class GetImportResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Provides statistics for the import.
+     * Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned values
+     * for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because CloudTrail
+     * updates statistics incrementally over the course of the import.
      * </p>
      * 
      * @param importStatistics
-     *        Provides statistics for the import.
+     *        Provides statistics for the import. CloudTrail does not update import statistics in real-time. Returned
+     *        values for parameters such as <code>EventsCompleted</code> may be lower than the actual value, because
+     *        CloudTrail updates statistics incrementally over the course of the import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

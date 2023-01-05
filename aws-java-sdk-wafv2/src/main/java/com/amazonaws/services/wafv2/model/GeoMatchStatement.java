@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,44 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule statement used to identify web requests based on country of origin.
+ * A rule statement that labels web requests by country and region and that matches against web requests based on
+ * country code. A geo match rule labels every request that it inspects regardless of whether it finds a match.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * To manage requests only by country, you can use this statement by itself and specify the countries that you want to
+ * match against in the <code>CountryCodes</code> array.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Otherwise, configure your geo match rule with Count action so that it only labels requests. Then, add one or more
+ * label match rules to run after the geo match rule and configure them to match against the geographic labels and
+ * handle the requests as needed.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * WAF labels requests using the alpha-2 country and region codes from the International Organization for
+ * Standardization (ISO) 3166 standard. WAF determines the codes using either the IP address in the web request origin
+ * or, if you specify it, the address in the geo match <code>ForwardedIPConfig</code>.
+ * </p>
+ * <p>
+ * If you use the web request origin, the label formats are
+ * <code>awswaf:clientip:geo:region:&lt;ISO country code&gt;-&lt;ISO region code&gt;</code> and
+ * <code>awswaf:clientip:geo:country:&lt;ISO country code&gt;</code>.
+ * </p>
+ * <p>
+ * If you use a forwarded IP address, the label formats are
+ * <code>awswaf:forwardedip:geo:region:&lt;ISO country code&gt;-&lt;ISO region code&gt;</code> and
+ * <code>awswaf:forwardedip:geo:country:&lt;ISO country code&gt;</code>.
+ * </p>
+ * <p>
+ * For additional details, see <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-rule-statement-type-geo-match.html">Geographic match
+ * rule statement</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+ * Developer Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GeoMatchStatement" target="_top">AWS API
@@ -30,8 +67,15 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO
-     * codes of the ISO 3166 international standard.
+     * An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>,
+     * from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     * </p>
+     * <p>
+     * When you use a geo match statement just for the region and country labels that it adds to requests, you still
+     * have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count
+     * matching requests, but it will still generate logging and count metrics for any matches. You can reduce the
+     * logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to
+     * your site.
      * </p>
      */
     private java.util.List<String> countryCodes;
@@ -51,12 +95,26 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO
-     * codes of the ISO 3166 international standard.
+     * An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>,
+     * from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     * </p>
+     * <p>
+     * When you use a geo match statement just for the region and country labels that it adds to requests, you still
+     * have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count
+     * matching requests, but it will still generate logging and count metrics for any matches. You can reduce the
+     * logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to
+     * your site.
      * </p>
      * 
-     * @return An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2
-     *         country ISO codes of the ISO 3166 international standard.
+     * @return An array of two-character country codes that you want to match against, for example,
+     *         <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     *         </p>
+     *         <p>
+     *         When you use a geo match statement just for the region and country labels that it adds to requests, you
+     *         still have to supply a country code for the rule to evaluate. In this case, you configure the rule to
+     *         only count matching requests, but it will still generate logging and count metrics for any matches. You
+     *         can reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a
+     *         source of traffic to your site.
      * @see CountryCode
      */
 
@@ -66,13 +124,27 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO
-     * codes of the ISO 3166 international standard.
+     * An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>,
+     * from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     * </p>
+     * <p>
+     * When you use a geo match statement just for the region and country labels that it adds to requests, you still
+     * have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count
+     * matching requests, but it will still generate logging and count metrics for any matches. You can reduce the
+     * logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to
+     * your site.
      * </p>
      * 
      * @param countryCodes
-     *        An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2
-     *        country ISO codes of the ISO 3166 international standard.
+     *        An array of two-character country codes that you want to match against, for example,
+     *        <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     *        </p>
+     *        <p>
+     *        When you use a geo match statement just for the region and country labels that it adds to requests, you
+     *        still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only
+     *        count matching requests, but it will still generate logging and count metrics for any matches. You can
+     *        reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a
+     *        source of traffic to your site.
      * @see CountryCode
      */
 
@@ -87,8 +159,15 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO
-     * codes of the ISO 3166 international standard.
+     * An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>,
+     * from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     * </p>
+     * <p>
+     * When you use a geo match statement just for the region and country labels that it adds to requests, you still
+     * have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count
+     * matching requests, but it will still generate logging and count metrics for any matches. You can reduce the
+     * logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to
+     * your site.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,8 +176,15 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param countryCodes
-     *        An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2
-     *        country ISO codes of the ISO 3166 international standard.
+     *        An array of two-character country codes that you want to match against, for example,
+     *        <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     *        </p>
+     *        <p>
+     *        When you use a geo match statement just for the region and country labels that it adds to requests, you
+     *        still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only
+     *        count matching requests, but it will still generate logging and count metrics for any matches. You can
+     *        reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a
+     *        source of traffic to your site.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CountryCode
      */
@@ -115,13 +201,27 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO
-     * codes of the ISO 3166 international standard.
+     * An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>,
+     * from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     * </p>
+     * <p>
+     * When you use a geo match statement just for the region and country labels that it adds to requests, you still
+     * have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count
+     * matching requests, but it will still generate logging and count metrics for any matches. You can reduce the
+     * logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to
+     * your site.
      * </p>
      * 
      * @param countryCodes
-     *        An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2
-     *        country ISO codes of the ISO 3166 international standard.
+     *        An array of two-character country codes that you want to match against, for example,
+     *        <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     *        </p>
+     *        <p>
+     *        When you use a geo match statement just for the region and country labels that it adds to requests, you
+     *        still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only
+     *        count matching requests, but it will still generate logging and count metrics for any matches. You can
+     *        reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a
+     *        source of traffic to your site.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CountryCode
      */
@@ -133,13 +233,27 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO
-     * codes of the ISO 3166 international standard.
+     * An array of two-character country codes that you want to match against, for example, <code>[ "US", "CN" ]</code>,
+     * from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     * </p>
+     * <p>
+     * When you use a geo match statement just for the region and country labels that it adds to requests, you still
+     * have to supply a country code for the rule to evaluate. In this case, you configure the rule to only count
+     * matching requests, but it will still generate logging and count metrics for any matches. You can reduce the
+     * logging and metrics that the rule produces by specifying a country that's unlikely to be a source of traffic to
+     * your site.
      * </p>
      * 
      * @param countryCodes
-     *        An array of two-character country codes, for example, <code>[ "US", "CN" ]</code>, from the alpha-2
-     *        country ISO codes of the ISO 3166 international standard.
+     *        An array of two-character country codes that you want to match against, for example,
+     *        <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international standard.
+     *        </p>
+     *        <p>
+     *        When you use a geo match statement just for the region and country labels that it adds to requests, you
+     *        still have to supply a country code for the rule to evaluate. In this case, you configure the rule to only
+     *        count matching requests, but it will still generate logging and count metrics for any matches. You can
+     *        reduce the logging and metrics that the rule produces by specifying a country that's unlikely to be a
+     *        source of traffic to your site.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CountryCode
      */

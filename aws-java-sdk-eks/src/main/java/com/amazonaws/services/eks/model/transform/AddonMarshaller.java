@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,14 @@ public class AddonMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceAccountRoleArn").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> PUBLISHER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("publisher").build();
+    private static final MarshallingInfo<String> OWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("owner").build();
+    private static final MarshallingInfo<StructuredPojo> MARKETPLACEINFORMATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("marketplaceInformation").build();
+    private static final MarshallingInfo<String> CONFIGURATIONVALUES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationValues").build();
 
     private static final AddonMarshaller instance = new AddonMarshaller();
 
@@ -76,6 +84,10 @@ public class AddonMarshaller {
             protocolMarshaller.marshall(addon.getModifiedAt(), MODIFIEDAT_BINDING);
             protocolMarshaller.marshall(addon.getServiceAccountRoleArn(), SERVICEACCOUNTROLEARN_BINDING);
             protocolMarshaller.marshall(addon.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(addon.getPublisher(), PUBLISHER_BINDING);
+            protocolMarshaller.marshall(addon.getOwner(), OWNER_BINDING);
+            protocolMarshaller.marshall(addon.getMarketplaceInformation(), MARKETPLACEINFORMATION_BINDING);
+            protocolMarshaller.marshall(addon.getConfigurationValues(), CONFIGURATIONVALUES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

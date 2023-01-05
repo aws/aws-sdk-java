@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,10 +61,24 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     private LoggingConfiguration loggingConfiguration;
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      */
     private TracingConfiguration tracingConfiguration;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned
+     * only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     */
+    private String mapRunArn;
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only
+     * if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     */
+    private String label;
 
     /**
      * <p>
@@ -312,11 +326,11 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      */
 
     public void setTracingConfiguration(TracingConfiguration tracingConfiguration) {
@@ -325,10 +339,10 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
-     * @return Selects whether AWS X-Ray tracing is enabled.
+     * @return Selects whether X-Ray tracing is enabled.
      */
 
     public TracingConfiguration getTracingConfiguration() {
@@ -337,16 +351,114 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeStateMachineForExecutionResult withTracingConfiguration(TracingConfiguration tracingConfiguration) {
         setTracingConfiguration(tracingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned
+     * only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is
+     *        returned only if the <code>executionArn</code> is a child workflow execution that was started by a
+     *        Distributed Map state.
+     */
+
+    public void setMapRunArn(String mapRunArn) {
+        this.mapRunArn = mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned
+     * only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is
+     *         returned only if the <code>executionArn</code> is a child workflow execution that was started by a
+     *         Distributed Map state.
+     */
+
+    public String getMapRunArn() {
+        return this.mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is returned
+     * only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution. This field is
+     *        returned only if the <code>executionArn</code> is a child workflow execution that was started by a
+     *        Distributed Map state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineForExecutionResult withMapRunArn(String mapRunArn) {
+        setMapRunArn(mapRunArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only
+     * if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     * 
+     * @param label
+     *        A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned
+     *        only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map
+     *        state.
+     */
+
+    public void setLabel(String label) {
+        this.label = label;
+    }
+
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only
+     * if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     * 
+     * @return A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is
+     *         returned only if the <code>executionArn</code> is a child workflow execution that was started by a
+     *         Distributed Map state.
+     */
+
+    public String getLabel() {
+        return this.label;
+    }
+
+    /**
+     * <p>
+     * A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned only
+     * if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map state.
+     * </p>
+     * 
+     * @param label
+     *        A user-defined or an auto-generated string that identifies a <code>Map</code> state. This ﬁeld is returned
+     *        only if the <code>executionArn</code> is a child workflow execution that was started by a Distributed Map
+     *        state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineForExecutionResult withLabel(String label) {
+        setLabel(label);
         return this;
     }
 
@@ -375,7 +487,11 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         if (getLoggingConfiguration() != null)
             sb.append("LoggingConfiguration: ").append(getLoggingConfiguration()).append(",");
         if (getTracingConfiguration() != null)
-            sb.append("TracingConfiguration: ").append(getTracingConfiguration());
+            sb.append("TracingConfiguration: ").append(getTracingConfiguration()).append(",");
+        if (getMapRunArn() != null)
+            sb.append("MapRunArn: ").append(getMapRunArn()).append(",");
+        if (getLabel() != null)
+            sb.append("Label: ").append(getLabel());
         sb.append("}");
         return sb.toString();
     }
@@ -418,6 +534,14 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
             return false;
         if (other.getTracingConfiguration() != null && other.getTracingConfiguration().equals(this.getTracingConfiguration()) == false)
             return false;
+        if (other.getMapRunArn() == null ^ this.getMapRunArn() == null)
+            return false;
+        if (other.getMapRunArn() != null && other.getMapRunArn().equals(this.getMapRunArn()) == false)
+            return false;
+        if (other.getLabel() == null ^ this.getLabel() == null)
+            return false;
+        if (other.getLabel() != null && other.getLabel().equals(this.getLabel()) == false)
+            return false;
         return true;
     }
 
@@ -433,6 +557,8 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTracingConfiguration() == null) ? 0 : getTracingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
+        hashCode = prime * hashCode + ((getLabel() == null) ? 0 : getLabel().hashCode());
         return hashCode;
     }
 

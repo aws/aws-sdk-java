@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,8 @@ public enum AssociateResourceErrorReason {
     INVALID_ARN("INVALID_ARN"),
     SERVICE_LIMIT_EXCEEDED("SERVICE_LIMIT_EXCEEDED"),
     ILLEGAL_CUSTOMLINEITEM("ILLEGAL_CUSTOMLINEITEM"),
-    INTERNAL_SERVER_EXCEPTION("INTERNAL_SERVER_EXCEPTION");
+    INTERNAL_SERVER_EXCEPTION("INTERNAL_SERVER_EXCEPTION"),
+    INVALID_BILLING_PERIOD_RANGE("INVALID_BILLING_PERIOD_RANGE");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -162,6 +162,39 @@ public class AWSGlobalAcceleratorAsyncClient extends AWSGlobalAcceleratorClient 
 
                 try {
                     result = executeAddCustomRoutingEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(AddEndpointsRequest request) {
+
+        return addEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(final AddEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddEndpointsRequest, AddEndpointsResult> asyncHandler) {
+        final AddEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddEndpointsResult>() {
+            @Override
+            public AddEndpointsResult call() throws Exception {
+                AddEndpointsResult result = null;
+
+                try {
+                    result = executeAddEndpoints(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1370,6 +1403,39 @@ public class AWSGlobalAcceleratorAsyncClient extends AWSGlobalAcceleratorClient 
 
                 try {
                     result = executeRemoveCustomRoutingEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(RemoveEndpointsRequest request) {
+
+        return removeEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(final RemoveEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveEndpointsRequest, RemoveEndpointsResult> asyncHandler) {
+        final RemoveEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveEndpointsResult>() {
+            @Override
+            public RemoveEndpointsResult call() throws Exception {
+                RemoveEndpointsResult result = null;
+
+                try {
+                    result = executeRemoveEndpoints(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

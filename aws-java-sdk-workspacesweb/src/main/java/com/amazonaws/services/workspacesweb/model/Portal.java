@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,7 +96,13 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
     private String trustStoreArn;
     /**
      * <p>
-     * The ARN of the trust store that is associated with the web portal.
+     * The ARN of the user access logging settings that is associated with the web portal.
+     * </p>
+     */
+    private String userAccessLoggingSettingsArn;
+    /**
+     * <p>
+     * The ARN of the user settings that is associated with the web portal.
      * </p>
      */
     private String userSettingsArn;
@@ -600,11 +606,51 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the trust store that is associated with the web portal.
+     * The ARN of the user access logging settings that is associated with the web portal.
+     * </p>
+     * 
+     * @param userAccessLoggingSettingsArn
+     *        The ARN of the user access logging settings that is associated with the web portal.
+     */
+
+    public void setUserAccessLoggingSettingsArn(String userAccessLoggingSettingsArn) {
+        this.userAccessLoggingSettingsArn = userAccessLoggingSettingsArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user access logging settings that is associated with the web portal.
+     * </p>
+     * 
+     * @return The ARN of the user access logging settings that is associated with the web portal.
+     */
+
+    public String getUserAccessLoggingSettingsArn() {
+        return this.userAccessLoggingSettingsArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user access logging settings that is associated with the web portal.
+     * </p>
+     * 
+     * @param userAccessLoggingSettingsArn
+     *        The ARN of the user access logging settings that is associated with the web portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Portal withUserAccessLoggingSettingsArn(String userAccessLoggingSettingsArn) {
+        setUserAccessLoggingSettingsArn(userAccessLoggingSettingsArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the user settings that is associated with the web portal.
      * </p>
      * 
      * @param userSettingsArn
-     *        The ARN of the trust store that is associated with the web portal.
+     *        The ARN of the user settings that is associated with the web portal.
      */
 
     public void setUserSettingsArn(String userSettingsArn) {
@@ -613,10 +659,10 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the trust store that is associated with the web portal.
+     * The ARN of the user settings that is associated with the web portal.
      * </p>
      * 
-     * @return The ARN of the trust store that is associated with the web portal.
+     * @return The ARN of the user settings that is associated with the web portal.
      */
 
     public String getUserSettingsArn() {
@@ -625,11 +671,11 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the trust store that is associated with the web portal.
+     * The ARN of the user settings that is associated with the web portal.
      * </p>
      * 
      * @param userSettingsArn
-     *        The ARN of the trust store that is associated with the web portal.
+     *        The ARN of the user settings that is associated with the web portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -672,6 +718,8 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getTrustStoreArn() != null)
             sb.append("TrustStoreArn: ").append(getTrustStoreArn()).append(",");
+        if (getUserAccessLoggingSettingsArn() != null)
+            sb.append("UserAccessLoggingSettingsArn: ").append(getUserAccessLoggingSettingsArn()).append(",");
         if (getUserSettingsArn() != null)
             sb.append("UserSettingsArn: ").append(getUserSettingsArn());
         sb.append("}");
@@ -732,6 +780,10 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTrustStoreArn() != null && other.getTrustStoreArn().equals(this.getTrustStoreArn()) == false)
             return false;
+        if (other.getUserAccessLoggingSettingsArn() == null ^ this.getUserAccessLoggingSettingsArn() == null)
+            return false;
+        if (other.getUserAccessLoggingSettingsArn() != null && other.getUserAccessLoggingSettingsArn().equals(this.getUserAccessLoggingSettingsArn()) == false)
+            return false;
         if (other.getUserSettingsArn() == null ^ this.getUserSettingsArn() == null)
             return false;
         if (other.getUserSettingsArn() != null && other.getUserSettingsArn().equals(this.getUserSettingsArn()) == false)
@@ -755,6 +807,7 @@ public class Portal implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRendererType() == null) ? 0 : getRendererType().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getTrustStoreArn() == null) ? 0 : getTrustStoreArn().hashCode());
+        hashCode = prime * hashCode + ((getUserAccessLoggingSettingsArn() == null) ? 0 : getUserAccessLoggingSettingsArn().hashCode());
         hashCode = prime * hashCode + ((getUserSettingsArn() == null) ? 0 : getUserSettingsArn().hashCode());
         return hashCode;
     }

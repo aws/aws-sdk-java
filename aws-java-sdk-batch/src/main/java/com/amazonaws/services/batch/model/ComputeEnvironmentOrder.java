@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The order in which compute environments are tried for job placement within a queue. Compute environments are tried in
+ * The order that compute environments are tried in for job placement within a queue. Compute environments are tried in
  * ascending order. For example, if two compute environments are associated with a job queue, the compute environment
  * with a lower order integer value is tried for job placement first. Compute environments must be in the
  * <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be

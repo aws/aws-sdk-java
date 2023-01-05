@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,56 +25,16 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The string that specifies the next page of results.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * Metadata that you can use to manage a resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
-
     /**
      * <p>
      * The string that specifies the next page of results.
      * </p>
-     * 
-     * @param nextToken
-     *        The string that specifies the next page of results.
      */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The string that specifies the next page of results.
-     * </p>
-     * 
-     * @return The string that specifies the next page of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The string that specifies the next page of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The string that specifies the next page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListTagsForResourceResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -145,6 +105,46 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @return The string that specifies the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTagsForResourceResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -156,10 +156,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -174,13 +174,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof ListTagsForResourceResult == false)
             return false;
         ListTagsForResourceResult other = (ListTagsForResourceResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -190,8 +190,8 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

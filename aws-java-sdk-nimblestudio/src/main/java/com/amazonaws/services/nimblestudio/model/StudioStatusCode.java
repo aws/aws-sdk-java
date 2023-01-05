@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public enum StudioStatusCode {
     ENCRYPTION_KEY_NOT_FOUND("ENCRYPTION_KEY_NOT_FOUND"),
     ENCRYPTION_KEY_ACCESS_DENIED("ENCRYPTION_KEY_ACCESS_DENIED"),
     AWS_SSO_CONFIGURATION_REPAIRED("AWS_SSO_CONFIGURATION_REPAIRED"),
-    AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS("AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS");
+    AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS("AWS_SSO_CONFIGURATION_REPAIR_IN_PROGRESS"),
+    AWS_STS_REGION_DISABLED("AWS_STS_REGION_DISABLED");
 
     private String value;
 

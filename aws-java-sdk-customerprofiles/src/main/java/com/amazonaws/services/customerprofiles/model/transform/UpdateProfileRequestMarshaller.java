@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,10 @@ public class UpdateProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingAddress").build();
     private static final MarshallingInfo<Map> ATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Attributes").build();
+    private static final MarshallingInfo<String> PARTYTYPESTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PartyTypeString").build();
+    private static final MarshallingInfo<String> GENDERSTRING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GenderString").build();
 
     private static final UpdateProfileRequestMarshaller instance = new UpdateProfileRequestMarshaller();
 
@@ -115,6 +119,8 @@ public class UpdateProfileRequestMarshaller {
             protocolMarshaller.marshall(updateProfileRequest.getMailingAddress(), MAILINGADDRESS_BINDING);
             protocolMarshaller.marshall(updateProfileRequest.getBillingAddress(), BILLINGADDRESS_BINDING);
             protocolMarshaller.marshall(updateProfileRequest.getAttributes(), ATTRIBUTES_BINDING);
+            protocolMarshaller.marshall(updateProfileRequest.getPartyTypeString(), PARTYTYPESTRING_BINDING);
+            protocolMarshaller.marshall(updateProfileRequest.getGenderString(), GENDERSTRING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

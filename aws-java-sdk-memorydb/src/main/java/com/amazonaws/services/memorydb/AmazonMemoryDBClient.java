@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,6 +92,9 @@ public class AmazonMemoryDBClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("SubnetInUse").withExceptionUnmarshaller(
                                     com.amazonaws.services.memorydb.model.transform.SubnetInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReservedNodesOfferingNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.memorydb.model.transform.ReservedNodesOfferingNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
                                     com.amazonaws.services.memorydb.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -161,6 +164,9 @@ public class AmazonMemoryDBClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InvalidVPCNetworkStateFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.memorydb.model.transform.InvalidVPCNetworkStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReservedNodeQuotaExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.memorydb.model.transform.ReservedNodeQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ACLNotFoundFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.memorydb.model.transform.ACLNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -184,6 +190,12 @@ public class AmazonMemoryDBClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidCredentialsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.memorydb.model.transform.InvalidCredentialsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReservedNodeAlreadyExistsFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.memorydb.model.transform.ReservedNodeAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ReservedNodeNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.memorydb.model.transform.ReservedNodeNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.memorydb.model.transform.InvalidParameterCombinationExceptionUnmarshaller.getInstance()))
@@ -1509,6 +1521,129 @@ public class AmazonMemoryDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Returns information about reserved nodes for this account, or about a specified reserved node.
+     * </p>
+     * 
+     * @param describeReservedNodesRequest
+     * @return Result of the DescribeReservedNodes operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The requested node does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @sample AmazonMemoryDB.DescribeReservedNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeReservedNodesResult describeReservedNodes(DescribeReservedNodesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedNodes(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedNodesResult executeDescribeReservedNodes(DescribeReservedNodesRequest describeReservedNodesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservedNodesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservedNodesRequest> request = null;
+        Response<DescribeReservedNodesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservedNodesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReservedNodesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MemoryDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedNodes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservedNodesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeReservedNodesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists available reserved node offerings.
+     * </p>
+     * 
+     * @param describeReservedNodesOfferingsRequest
+     * @return Result of the DescribeReservedNodesOfferings operation returned by the service.
+     * @throws ReservedNodesOfferingNotFoundException
+     *         The requested node offering does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @sample AmazonMemoryDB.DescribeReservedNodesOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeReservedNodesOfferingsResult describeReservedNodesOfferings(DescribeReservedNodesOfferingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeReservedNodesOfferings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeReservedNodesOfferingsResult executeDescribeReservedNodesOfferings(DescribeReservedNodesOfferingsRequest describeReservedNodesOfferingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeReservedNodesOfferingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeReservedNodesOfferingsRequest> request = null;
+        Response<DescribeReservedNodesOfferingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeReservedNodesOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeReservedNodesOfferingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MemoryDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedNodesOfferings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeReservedNodesOfferingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeReservedNodesOfferingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns details of the service updates
      * </p>
      * 
@@ -1742,7 +1877,10 @@ public class AmazonMemoryDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Used to failover a shard
+     * Used to failover a shard. This API is designed for testing the behavior of your application in case of MemoryDB
+     * failover. It is not designed to be used as a production-level tool for initiating a failover to overcome a
+     * problem you may have with the cluster. Moreover, in certain conditions such as large scale operational events,
+     * Amazon may block this API.
      * </p>
      * 
      * @param failoverShardRequest
@@ -1923,6 +2061,74 @@ public class AmazonMemoryDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to purchase a reserved node offering. Reserved nodes are not eligible for cancellation and are
+     * non-refundable.
+     * </p>
+     * 
+     * @param purchaseReservedNodesOfferingRequest
+     * @return Result of the PurchaseReservedNodesOffering operation returned by the service.
+     * @throws ReservedNodesOfferingNotFoundException
+     *         The requested node offering does not exist.
+     * @throws ReservedNodeAlreadyExistsException
+     *         You already have a reservation with the given identifier.
+     * @throws ReservedNodeQuotaExceededException
+     *         The request cannot be processed because it would exceed the user's node quota.
+     * @throws ServiceLinkedRoleNotFoundException
+     * @throws TagQuotaPerResourceExceededException
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @sample AmazonMemoryDB.PurchaseReservedNodesOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PurchaseReservedNodesOfferingResult purchaseReservedNodesOffering(PurchaseReservedNodesOfferingRequest request) {
+        request = beforeClientExecution(request);
+        return executePurchaseReservedNodesOffering(request);
+    }
+
+    @SdkInternalApi
+    final PurchaseReservedNodesOfferingResult executePurchaseReservedNodesOffering(PurchaseReservedNodesOfferingRequest purchaseReservedNodesOfferingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(purchaseReservedNodesOfferingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PurchaseReservedNodesOfferingRequest> request = null;
+        Response<PurchaseReservedNodesOfferingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PurchaseReservedNodesOfferingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(purchaseReservedNodesOfferingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MemoryDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseReservedNodesOffering");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PurchaseReservedNodesOfferingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PurchaseReservedNodesOfferingResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,24 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private EngineVersion engineVersion;
+    /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     */
+    private String additionalConfiguration;
+    /**
+     * <p>
+     * Role used in a notebook session for accessing the user's resources.
+     * </p>
+     */
+    private String executionRole;
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * </p>
+     */
+    private CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration;
 
     /**
      * <p>
@@ -467,6 +485,126 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     * 
+     * @param additionalConfiguration
+     *        Specifies a user defined JSON string that is passed to the notebook engine.
+     */
+
+    public void setAdditionalConfiguration(String additionalConfiguration) {
+        this.additionalConfiguration = additionalConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     * 
+     * @return Specifies a user defined JSON string that is passed to the notebook engine.
+     */
+
+    public String getAdditionalConfiguration() {
+        return this.additionalConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies a user defined JSON string that is passed to the notebook engine.
+     * </p>
+     * 
+     * @param additionalConfiguration
+     *        Specifies a user defined JSON string that is passed to the notebook engine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withAdditionalConfiguration(String additionalConfiguration) {
+        setAdditionalConfiguration(additionalConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Role used in a notebook session for accessing the user's resources.
+     * </p>
+     * 
+     * @param executionRole
+     *        Role used in a notebook session for accessing the user's resources.
+     */
+
+    public void setExecutionRole(String executionRole) {
+        this.executionRole = executionRole;
+    }
+
+    /**
+     * <p>
+     * Role used in a notebook session for accessing the user's resources.
+     * </p>
+     * 
+     * @return Role used in a notebook session for accessing the user's resources.
+     */
+
+    public String getExecutionRole() {
+        return this.executionRole;
+    }
+
+    /**
+     * <p>
+     * Role used in a notebook session for accessing the user's resources.
+     * </p>
+     * 
+     * @param executionRole
+     *        Role used in a notebook session for accessing the user's resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withExecutionRole(String executionRole) {
+        setExecutionRole(executionRole);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * </p>
+     * 
+     * @param customerContentEncryptionConfiguration
+     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     */
+
+    public void setCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration) {
+        this.customerContentEncryptionConfiguration = customerContentEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * </p>
+     * 
+     * @return Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     */
+
+    public CustomerContentEncryptionConfiguration getCustomerContentEncryptionConfiguration() {
+        return this.customerContentEncryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * </p>
+     * 
+     * @param customerContentEncryptionConfiguration
+     *        Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration customerContentEncryptionConfiguration) {
+        setCustomerContentEncryptionConfiguration(customerContentEncryptionConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -489,7 +627,13 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
         if (getRequesterPaysEnabled() != null)
             sb.append("RequesterPaysEnabled: ").append(getRequesterPaysEnabled()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getAdditionalConfiguration() != null)
+            sb.append("AdditionalConfiguration: ").append(getAdditionalConfiguration()).append(",");
+        if (getExecutionRole() != null)
+            sb.append("ExecutionRole: ").append(getExecutionRole()).append(",");
+        if (getCustomerContentEncryptionConfiguration() != null)
+            sb.append("CustomerContentEncryptionConfiguration: ").append(getCustomerContentEncryptionConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +674,19 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getAdditionalConfiguration() == null ^ this.getAdditionalConfiguration() == null)
+            return false;
+        if (other.getAdditionalConfiguration() != null && other.getAdditionalConfiguration().equals(this.getAdditionalConfiguration()) == false)
+            return false;
+        if (other.getExecutionRole() == null ^ this.getExecutionRole() == null)
+            return false;
+        if (other.getExecutionRole() != null && other.getExecutionRole().equals(this.getExecutionRole()) == false)
+            return false;
+        if (other.getCustomerContentEncryptionConfiguration() == null ^ this.getCustomerContentEncryptionConfiguration() == null)
+            return false;
+        if (other.getCustomerContentEncryptionConfiguration() != null
+                && other.getCustomerContentEncryptionConfiguration().equals(this.getCustomerContentEncryptionConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -544,6 +701,9 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getBytesScannedCutoffPerQuery() == null) ? 0 : getBytesScannedCutoffPerQuery().hashCode());
         hashCode = prime * hashCode + ((getRequesterPaysEnabled() == null) ? 0 : getRequesterPaysEnabled().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalConfiguration() == null) ? 0 : getAdditionalConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getExecutionRole() == null) ? 0 : getExecutionRole().hashCode());
+        hashCode = prime * hashCode + ((getCustomerContentEncryptionConfiguration() == null) ? 0 : getCustomerContentEncryptionConfiguration().hashCode());
         return hashCode;
     }
 

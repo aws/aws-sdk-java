@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -358,6 +358,35 @@ public class UpdateResponseHeadersPolicyRequestMarshaller implements
 
                                 if (responseHeadersPolicyCustomHeadersConfigItemsListValue.getOverride() != null) {
                                     xmlWriter.startElement("Override").value(responseHeadersPolicyCustomHeadersConfigItemsListValue.getOverride()).endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                            xmlWriter.endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
+
+                {
+                    ResponseHeadersPolicyRemoveHeadersConfig removeHeadersConfig = responseHeadersPolicyConfig.getRemoveHeadersConfig();
+                    if (removeHeadersConfig != null) {
+                        xmlWriter.startElement("RemoveHeadersConfig");
+
+                        if (removeHeadersConfig.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(removeHeadersConfig.getQuantity()).endElement();
+                        }
+
+                        com.amazonaws.internal.SdkInternalList<ResponseHeadersPolicyRemoveHeader> responseHeadersPolicyRemoveHeadersConfigItemsList = (com.amazonaws.internal.SdkInternalList<ResponseHeadersPolicyRemoveHeader>) removeHeadersConfig
+                                .getItems();
+                        if (!responseHeadersPolicyRemoveHeadersConfigItemsList.isEmpty()
+                                || !responseHeadersPolicyRemoveHeadersConfigItemsList.isAutoConstruct()) {
+                            xmlWriter.startElement("Items");
+
+                            for (ResponseHeadersPolicyRemoveHeader responseHeadersPolicyRemoveHeadersConfigItemsListValue : responseHeadersPolicyRemoveHeadersConfigItemsList) {
+                                xmlWriter.startElement("ResponseHeadersPolicyRemoveHeader");
+
+                                if (responseHeadersPolicyRemoveHeadersConfigItemsListValue.getHeader() != null) {
+                                    xmlWriter.startElement("Header").value(responseHeadersPolicyRemoveHeadersConfigItemsListValue.getHeader()).endElement();
                                 }
                                 xmlWriter.endElement();
                             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,38 +101,17 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TransferAlreadyCompletedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.TransferAlreadyCompletedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotConfiguredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.NotConfiguredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.MalformedPolicyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidQueryException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.InvalidQueryExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateTransitionException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.InvalidStateTransitionExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceRegistrationFailureException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.ResourceRegistrationFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeleteConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.DeleteConflictExceptionUnmarshaller.getInstance()))
@@ -149,14 +128,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResponseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.InvalidResponseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidAggregationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.InvalidAggregationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SqlParseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.SqlParseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictingResourceUpdateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.ConflictingResourceUpdateExceptionUnmarshaller.getInstance()))
@@ -170,6 +143,39 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("VersionsLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.VersionsLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.CertificateStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TransferAlreadyCompletedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.TransferAlreadyCompletedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.MalformedPolicyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateTransitionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.InvalidStateTransitionExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceRegistrationFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.ResourceRegistrationFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAggregationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.InvalidAggregationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SqlParseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot.model.transform.SqlParseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransferConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.TransferConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -179,17 +185,11 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                             new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CertificateStateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.CertificateStateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("VersionConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.VersionConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TaskAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.TaskAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.iot.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CertificateValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.CertificateValidationExceptionUnmarshaller.getInstance()))
@@ -917,8 +917,8 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
-     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users,
-     * groups, and roles, Amazon Cognito identities or federated identities.
+     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito
+     * identities or federated identities.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -12141,6 +12141,127 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
 
     /**
      * <p>
+     * The related resources of an Audit finding. The following resources can be returned from calling this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DEVICE_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOT_POLICY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COGNITO_IDENTITY_POOL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CLIENT_ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACCOUNT_SETTINGS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ROLE_ALIAS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM_ROLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUER_CERTIFICATE
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This API is similar to DescribeAuditFinding's <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but
+     * provides pagination and is not limited to 10 resources. When calling <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+     * for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You
+     * must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.
+     * </p>
+     * </note>
+     * 
+     * @param listRelatedResourcesForAuditFindingRequest
+     * @return Result of the ListRelatedResourcesForAuditFinding operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListRelatedResourcesForAuditFinding
+     */
+    @Override
+    public ListRelatedResourcesForAuditFindingResult listRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRelatedResourcesForAuditFinding(request);
+    }
+
+    @SdkInternalApi
+    final ListRelatedResourcesForAuditFindingResult executeListRelatedResourcesForAuditFinding(
+            ListRelatedResourcesForAuditFindingRequest listRelatedResourcesForAuditFindingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRelatedResourcesForAuditFindingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRelatedResourcesForAuditFindingRequest> request = null;
+        Response<ListRelatedResourcesForAuditFindingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRelatedResourcesForAuditFindingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRelatedResourcesForAuditFindingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRelatedResourcesForAuditFinding");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRelatedResourcesForAuditFindingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRelatedResourcesForAuditFindingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the role aliases registered in your account.
      * </p>
      * <p>
@@ -13096,7 +13217,9 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
      * <p>
      * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
-     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
+     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List Things</a> from
+     * the <i>Amazon Web Services IoT Core Developer Guide</i>.
      * </p>
      * <p>
      * Requires permission to access the <a href=

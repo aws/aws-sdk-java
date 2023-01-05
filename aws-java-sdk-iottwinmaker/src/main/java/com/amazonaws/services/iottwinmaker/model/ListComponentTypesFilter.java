@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,16 +41,16 @@ public class ListComponentTypesFilter implements Serializable, Cloneable, Struct
     private String extendsFrom;
     /**
      * <p>
-     * A Boolean value that specifies whether the component types in the list are abstract.
-     * </p>
-     */
-    private Boolean isAbstract;
-    /**
-     * <p>
      * The namespace to which the component types in the list belong.
      * </p>
      */
     private String namespace;
+    /**
+     * <p>
+     * A Boolean value that specifies whether the component types in the list are abstract.
+     * </p>
+     */
+    private Boolean isAbstract;
 
     /**
      * <p>
@@ -89,6 +89,46 @@ public class ListComponentTypesFilter implements Serializable, Cloneable, Struct
 
     public ListComponentTypesFilter withExtendsFrom(String extendsFrom) {
         setExtendsFrom(extendsFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The namespace to which the component types in the list belong.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace to which the component types in the list belong.
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace to which the component types in the list belong.
+     * </p>
+     * 
+     * @return The namespace to which the component types in the list belong.
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The namespace to which the component types in the list belong.
+     * </p>
+     * 
+     * @param namespace
+     *        The namespace to which the component types in the list belong.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListComponentTypesFilter withNamespace(String namespace) {
+        setNamespace(namespace);
         return this;
     }
 
@@ -145,46 +185,6 @@ public class ListComponentTypesFilter implements Serializable, Cloneable, Struct
     }
 
     /**
-     * <p>
-     * The namespace to which the component types in the list belong.
-     * </p>
-     * 
-     * @param namespace
-     *        The namespace to which the component types in the list belong.
-     */
-
-    public void setNamespace(String namespace) {
-        this.namespace = namespace;
-    }
-
-    /**
-     * <p>
-     * The namespace to which the component types in the list belong.
-     * </p>
-     * 
-     * @return The namespace to which the component types in the list belong.
-     */
-
-    public String getNamespace() {
-        return this.namespace;
-    }
-
-    /**
-     * <p>
-     * The namespace to which the component types in the list belong.
-     * </p>
-     * 
-     * @param namespace
-     *        The namespace to which the component types in the list belong.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListComponentTypesFilter withNamespace(String namespace) {
-        setNamespace(namespace);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,10 +198,10 @@ public class ListComponentTypesFilter implements Serializable, Cloneable, Struct
         sb.append("{");
         if (getExtendsFrom() != null)
             sb.append("ExtendsFrom: ").append(getExtendsFrom()).append(",");
-        if (getIsAbstract() != null)
-            sb.append("IsAbstract: ").append(getIsAbstract()).append(",");
         if (getNamespace() != null)
-            sb.append("Namespace: ").append(getNamespace());
+            sb.append("Namespace: ").append(getNamespace()).append(",");
+        if (getIsAbstract() != null)
+            sb.append("IsAbstract: ").append(getIsAbstract());
         sb.append("}");
         return sb.toString();
     }
@@ -220,13 +220,13 @@ public class ListComponentTypesFilter implements Serializable, Cloneable, Struct
             return false;
         if (other.getExtendsFrom() != null && other.getExtendsFrom().equals(this.getExtendsFrom()) == false)
             return false;
-        if (other.getIsAbstract() == null ^ this.getIsAbstract() == null)
-            return false;
-        if (other.getIsAbstract() != null && other.getIsAbstract().equals(this.getIsAbstract()) == false)
-            return false;
         if (other.getNamespace() == null ^ this.getNamespace() == null)
             return false;
         if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
+        if (other.getIsAbstract() == null ^ this.getIsAbstract() == null)
+            return false;
+        if (other.getIsAbstract() != null && other.getIsAbstract().equals(this.getIsAbstract()) == false)
             return false;
         return true;
     }
@@ -237,8 +237,8 @@ public class ListComponentTypesFilter implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getExtendsFrom() == null) ? 0 : getExtendsFrom().hashCode());
-        hashCode = prime * hashCode + ((getIsAbstract() == null) ? 0 : getIsAbstract().hashCode());
         hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getIsAbstract() == null) ? 0 : getIsAbstract().hashCode());
         return hashCode;
     }
 

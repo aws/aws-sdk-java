@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,15 +53,14 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
     private String dailyAutomaticBackupStartTime;
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code>.
      * </p>
      */
     private String deploymentType;
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      */
     private Integer throughputCapacity;
@@ -298,13 +297,13 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
+     *        <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.
      * @see OpenZFSDeploymentType
      */
 
@@ -314,12 +313,12 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code>.
      * </p>
      * 
-     * @return Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *         <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * @return Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
+     *         <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.
      * @see OpenZFSDeploymentType
      */
 
@@ -329,13 +328,13 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
+     *        <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSDeploymentType
      */
@@ -347,13 +346,13 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     * Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028; <code>SINGLE_AZ_1</code> and
+     * <code>SINGLE_AZ_2</code>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> is a file system configured for a single Availability Zone (AZ) of redundancy.
+     *        Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
+     *        <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSDeploymentType
      */
@@ -365,13 +364,11 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64,
-     *        128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -380,12 +377,10 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      * 
-     * @return The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are
-     *         64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * @return The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      */
 
     public Integer getThroughputCapacity() {
@@ -394,13 +389,11 @@ public class OpenZFSFileSystemConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * </p>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64,
-     *        128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

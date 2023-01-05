@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -173,17 +173,44 @@ public interface AWSMarketplaceCatalog {
 
     /**
      * <p>
-     * This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the
-     * same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the
-     * entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded,
-     * cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already
-     * locked, you will receive a <code>ResourceInUseException</code>.
+     * Lists all tags that have been added to a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource wasn't found.
+     * @throws InternalServiceException
+     *         There was an internal service exception.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ValidationException
+     *         An error occurred during validation.
+     * @throws ThrottlingException
+     *         Too many requests.
+     * @sample AWSMarketplaceCatalog.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same
+     * change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all
+     * the entities targeted by the different changes are locked until the change set has completed (either succeeded,
+     * cancelled, or failed). If you try to start a change set containing a change against an entity that is already
+     * locked, you will receive a <code>ResourceInUseException</code> error.
      * </p>
      * <p>
-     * For example, you cannot start the ChangeSet described in the <a href=
+     * For example, you can't start the <code>ChangeSet</code> described in the <a href=
      * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples"
-     * >example</a> later in this topic, because it contains two changes to execute the same change type (
-     * <code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.
+     * >example</a> later in this topic because it contains two changes to run the same change type (
+     * <code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).
      * </p>
      * <p>
      * For more information about working with change sets, see <a href=
@@ -212,6 +239,60 @@ public interface AWSMarketplaceCatalog {
      *      target="_top">AWS API Documentation</a>
      */
     StartChangeSetResult startChangeSet(StartChangeSetRequest startChangeSetRequest);
+
+    /**
+     * <p>
+     * Tags a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource wasn't found.
+     * @throws InternalServiceException
+     *         There was an internal service exception.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ValidationException
+     *         An error occurred during validation.
+     * @throws ThrottlingException
+     *         Too many requests.
+     * @sample AWSMarketplaceCatalog.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/TagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes a tag or list of tags from a resource (either an <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities"
+     * >entity</a> or <a href=
+     * "https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"
+     * >change set</a>).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource wasn't found.
+     * @throws InternalServiceException
+     *         There was an internal service exception.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ValidationException
+     *         An error occurred during validation.
+     * @throws ThrottlingException
+     *         Too many requests.
+     * @sample AWSMarketplaceCatalog.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

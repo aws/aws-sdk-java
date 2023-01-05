@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListLexBotsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The names and Regions of the Amazon Lex bots associated with the specified instance.
+     * The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      * </p>
      */
     private java.util.List<LexBot> lexBots;
@@ -38,10 +38,10 @@ public class ListLexBotsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The names and Regions of the Amazon Lex bots associated with the specified instance.
+     * The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      * </p>
      * 
-     * @return The names and Regions of the Amazon Lex bots associated with the specified instance.
+     * @return The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      */
 
     public java.util.List<LexBot> getLexBots() {
@@ -50,11 +50,11 @@ public class ListLexBotsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The names and Regions of the Amazon Lex bots associated with the specified instance.
+     * The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      * </p>
      * 
      * @param lexBots
-     *        The names and Regions of the Amazon Lex bots associated with the specified instance.
+     *        The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      */
 
     public void setLexBots(java.util.Collection<LexBot> lexBots) {
@@ -68,7 +68,7 @@ public class ListLexBotsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The names and Regions of the Amazon Lex bots associated with the specified instance.
+     * The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListLexBotsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param lexBots
-     *        The names and Regions of the Amazon Lex bots associated with the specified instance.
+     *        The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListLexBotsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The names and Regions of the Amazon Lex bots associated with the specified instance.
+     * The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      * </p>
      * 
      * @param lexBots
-     *        The names and Regions of the Amazon Lex bots associated with the specified instance.
+     *        The names and Amazon Web Services Regions of the Amazon Lex bots associated with the specified instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

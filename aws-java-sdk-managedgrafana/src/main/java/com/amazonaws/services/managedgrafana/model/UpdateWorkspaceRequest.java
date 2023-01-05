@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,10 +61,25 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String permissionType;
     /**
      * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     */
+    private Boolean removeVpcConfiguration;
+    /**
+     * <p>
      * The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.
      * </p>
      */
     private String stackSetName;
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     */
+    private VpcConfiguration vpcConfiguration;
     /**
      * <p>
      * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
@@ -405,6 +420,82 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @param removeVpcConfiguration
+     *        Whether to remove the VPC configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *        error.
+     */
+
+    public void setRemoveVpcConfiguration(Boolean removeVpcConfiguration) {
+        this.removeVpcConfiguration = removeVpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @return Whether to remove the VPC configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *         error.
+     */
+
+    public Boolean getRemoveVpcConfiguration() {
+        return this.removeVpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @param removeVpcConfiguration
+     *        Whether to remove the VPC configuration from the workspace.</p>
+     *        <p>
+     *        Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *        error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withRemoveVpcConfiguration(Boolean removeVpcConfiguration) {
+        setRemoveVpcConfiguration(removeVpcConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to remove the VPC configuration from the workspace.
+     * </p>
+     * <p>
+     * Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an error.
+     * </p>
+     * 
+     * @return Whether to remove the VPC configuration from the workspace.</p>
+     *         <p>
+     *         Setting this to <code>true</code> and providing a <code>vpcConfiguration</code> to set will return an
+     *         error.
+     */
+
+    public Boolean isRemoveVpcConfiguration() {
+        return this.removeVpcConfiguration;
+    }
+
+    /**
+     * <p>
      * The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.
      * </p>
      * 
@@ -440,6 +531,49 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     public UpdateWorkspaceRequest withStackSetName(String stackSetName) {
         setStackSetName(stackSetName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *        connect to.
+     */
+
+    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @return The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *         connect to.
+     */
+
+    public VpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *        connect to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
         return this;
     }
 
@@ -999,8 +1133,12 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("OrganizationRoleName: ").append("***Sensitive Data Redacted***").append(",");
         if (getPermissionType() != null)
             sb.append("PermissionType: ").append(getPermissionType()).append(",");
+        if (getRemoveVpcConfiguration() != null)
+            sb.append("RemoveVpcConfiguration: ").append(getRemoveVpcConfiguration()).append(",");
         if (getStackSetName() != null)
             sb.append("StackSetName: ").append(getStackSetName()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getWorkspaceDataSources() != null)
             sb.append("WorkspaceDataSources: ").append(getWorkspaceDataSources()).append(",");
         if (getWorkspaceDescription() != null)
@@ -1041,9 +1179,17 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getPermissionType() != null && other.getPermissionType().equals(this.getPermissionType()) == false)
             return false;
+        if (other.getRemoveVpcConfiguration() == null ^ this.getRemoveVpcConfiguration() == null)
+            return false;
+        if (other.getRemoveVpcConfiguration() != null && other.getRemoveVpcConfiguration().equals(this.getRemoveVpcConfiguration()) == false)
+            return false;
         if (other.getStackSetName() == null ^ this.getStackSetName() == null)
             return false;
         if (other.getStackSetName() != null && other.getStackSetName().equals(this.getStackSetName()) == false)
+            return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
             return false;
         if (other.getWorkspaceDataSources() == null ^ this.getWorkspaceDataSources() == null)
             return false;
@@ -1085,7 +1231,9 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getAccountAccessType() == null) ? 0 : getAccountAccessType().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
+        hashCode = prime * hashCode + ((getRemoveVpcConfiguration() == null) ? 0 : getRemoveVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceDataSources() == null) ? 0 : getWorkspaceDataSources().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceDescription() == null) ? 0 : getWorkspaceDescription().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());

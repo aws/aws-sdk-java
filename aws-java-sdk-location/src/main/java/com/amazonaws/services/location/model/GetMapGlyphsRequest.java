@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,12 +76,33 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> |
-     * <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> |
-     * <code>Noto Sans CJK JP Regular</code>
+     * VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> |
+     * <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview)</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use <code>Amazon Ember</code>
+     * for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      */
     private String fontStack;
     /**
@@ -150,12 +171,33 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> |
-     * <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> |
-     * <code>Noto Sans CJK JP Regular</code>
+     * VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> |
+     * <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview)</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use <code>Amazon Ember</code>
+     * for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      * 
      * @param fontStack
      *        A comma-separated list of fonts to load glyphs from in order of preference. For example,
@@ -206,11 +248,34 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> |
-     *        <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> |
-     *        <code>Noto Sans CJK JP Regular</code>
+     *        VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> |
+     *        <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     *        <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid font stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview)</a>
+     *        styles:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     *        <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     *        <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use
+     *        <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by
+     *        <code>Amazon Ember</code>.
+     *        </p>
      */
 
     public void setFontStack(String fontStack) {
@@ -268,12 +333,33 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> |
-     * <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> |
-     * <code>Noto Sans CJK JP Regular</code>
+     * VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> |
+     * <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview)</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use <code>Amazon Ember</code>
+     * for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      * 
      * @return A comma-separated list of fonts to load glyphs from in order of preference. For example,
      *         <code>Noto Sans Regular, Arial Unicode</code>.</p>
@@ -324,11 +410,34 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> |
-     *         <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code>
-     *         | <code>Noto Sans CJK JP Regular</code>
+     *         VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> |
+     *         <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     *         <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Valid font stacks for <a
+     *         href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview)</a>
+     *         styles:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     *         <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     *         <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     *         <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     *         <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use
+     *         <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by
+     *         <code>Amazon Ember</code>.
+     *         </p>
      */
 
     public String getFontStack() {
@@ -386,12 +495,33 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> |
-     * <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> |
-     * <code>Noto Sans CJK JP Regular</code>
+     * VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> |
+     * <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     * <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
+     * Data (Preview)</a> styles:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     * <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     * <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use <code>Amazon Ember</code>
+     * for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.
+     * </p>
+     * </note>
      * 
      * @param fontStack
      *        A comma-separated list of fonts to load glyphs from in order of preference. For example,
@@ -442,11 +572,34 @@ public class GetMapGlyphsRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        VectorHereExplore, VectorHereExploreTruck – <code>Firo GO Italic</code> | <code>Fira GO Map</code> |
-     *        <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> |
-     *        <code>Noto Sans CJK JP Regular</code>
+     *        VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> |
+     *        <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> |
+     *        <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code>
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid font stacks for <a
+     *        href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data (Preview)</a>
+     *        styles:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> |
+     *        <code>Amazon Ember Regular Italic,Noto Sans Italic</code> |
+     *        <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> |
+     *        <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that use
+     *        <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by
+     *        <code>Amazon Ember</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

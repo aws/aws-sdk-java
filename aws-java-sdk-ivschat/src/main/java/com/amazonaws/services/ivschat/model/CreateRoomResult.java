@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,13 +44,20 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String id;
     /**
      * <p>
-     * Maximum number of characters in a single message, from the request.
+     * Array of logging configurations attached to the room, from the request (if specified).
+     * </p>
+     */
+    private java.util.List<String> loggingConfigurationIdentifiers;
+    /**
+     * <p>
+     * Maximum number of characters in a single message, from the request (if specified).
      * </p>
      */
     private Integer maximumMessageLength;
     /**
      * <p>
-     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request (if
+     * specified).
      * </p>
      */
     private Integer maximumMessageRatePerSecond;
@@ -68,7 +75,7 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String name;
     /**
      * <p>
-     * Tags attached to the resource, from the request.
+     * Tags attached to the resource, from the request (if specified).
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -210,11 +217,81 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of characters in a single message, from the request.
+     * Array of logging configurations attached to the room, from the request (if specified).
+     * </p>
+     * 
+     * @return Array of logging configurations attached to the room, from the request (if specified).
+     */
+
+    public java.util.List<String> getLoggingConfigurationIdentifiers() {
+        return loggingConfigurationIdentifiers;
+    }
+
+    /**
+     * <p>
+     * Array of logging configurations attached to the room, from the request (if specified).
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        Array of logging configurations attached to the room, from the request (if specified).
+     */
+
+    public void setLoggingConfigurationIdentifiers(java.util.Collection<String> loggingConfigurationIdentifiers) {
+        if (loggingConfigurationIdentifiers == null) {
+            this.loggingConfigurationIdentifiers = null;
+            return;
+        }
+
+        this.loggingConfigurationIdentifiers = new java.util.ArrayList<String>(loggingConfigurationIdentifiers);
+    }
+
+    /**
+     * <p>
+     * Array of logging configurations attached to the room, from the request (if specified).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoggingConfigurationIdentifiers(java.util.Collection)} or
+     * {@link #withLoggingConfigurationIdentifiers(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        Array of logging configurations attached to the room, from the request (if specified).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoomResult withLoggingConfigurationIdentifiers(String... loggingConfigurationIdentifiers) {
+        if (this.loggingConfigurationIdentifiers == null) {
+            setLoggingConfigurationIdentifiers(new java.util.ArrayList<String>(loggingConfigurationIdentifiers.length));
+        }
+        for (String ele : loggingConfigurationIdentifiers) {
+            this.loggingConfigurationIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Array of logging configurations attached to the room, from the request (if specified).
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        Array of logging configurations attached to the room, from the request (if specified).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoomResult withLoggingConfigurationIdentifiers(java.util.Collection<String> loggingConfigurationIdentifiers) {
+        setLoggingConfigurationIdentifiers(loggingConfigurationIdentifiers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum number of characters in a single message, from the request (if specified).
      * </p>
      * 
      * @param maximumMessageLength
-     *        Maximum number of characters in a single message, from the request.
+     *        Maximum number of characters in a single message, from the request (if specified).
      */
 
     public void setMaximumMessageLength(Integer maximumMessageLength) {
@@ -223,10 +300,10 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of characters in a single message, from the request.
+     * Maximum number of characters in a single message, from the request (if specified).
      * </p>
      * 
-     * @return Maximum number of characters in a single message, from the request.
+     * @return Maximum number of characters in a single message, from the request (if specified).
      */
 
     public Integer getMaximumMessageLength() {
@@ -235,11 +312,11 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of characters in a single message, from the request.
+     * Maximum number of characters in a single message, from the request (if specified).
      * </p>
      * 
      * @param maximumMessageLength
-     *        Maximum number of characters in a single message, from the request.
+     *        Maximum number of characters in a single message, from the request (if specified).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,11 +327,13 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request (if
+     * specified).
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        Maximum number of messages per second that can be sent to the room (by all clients), from the request.
+     *        Maximum number of messages per second that can be sent to the room (by all clients), from the request (if
+     *        specified).
      */
 
     public void setMaximumMessageRatePerSecond(Integer maximumMessageRatePerSecond) {
@@ -263,10 +342,12 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request (if
+     * specified).
      * </p>
      * 
-     * @return Maximum number of messages per second that can be sent to the room (by all clients), from the request.
+     * @return Maximum number of messages per second that can be sent to the room (by all clients), from the request (if
+     *         specified).
      */
 
     public Integer getMaximumMessageRatePerSecond() {
@@ -275,11 +356,13 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Maximum number of messages per second that can be sent to the room (by all clients), from the request.
+     * Maximum number of messages per second that can be sent to the room (by all clients), from the request (if
+     * specified).
      * </p>
      * 
      * @param maximumMessageRatePerSecond
-     *        Maximum number of messages per second that can be sent to the room (by all clients), from the request.
+     *        Maximum number of messages per second that can be sent to the room (by all clients), from the request (if
+     *        specified).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,10 +453,10 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Tags attached to the resource, from the request.
+     * Tags attached to the resource, from the request (if specified).
      * </p>
      * 
-     * @return Tags attached to the resource, from the request.
+     * @return Tags attached to the resource, from the request (if specified).
      */
 
     public java.util.Map<String, String> getTags() {
@@ -382,11 +465,11 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Tags attached to the resource, from the request.
+     * Tags attached to the resource, from the request (if specified).
      * </p>
      * 
      * @param tags
-     *        Tags attached to the resource, from the request.
+     *        Tags attached to the resource, from the request (if specified).
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -395,11 +478,11 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Tags attached to the resource, from the request.
+     * Tags attached to the resource, from the request (if specified).
      * </p>
      * 
      * @param tags
-     *        Tags attached to the resource, from the request.
+     *        Tags attached to the resource, from the request (if specified).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -497,6 +580,8 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getLoggingConfigurationIdentifiers() != null)
+            sb.append("LoggingConfigurationIdentifiers: ").append(getLoggingConfigurationIdentifiers()).append(",");
         if (getMaximumMessageLength() != null)
             sb.append("MaximumMessageLength: ").append(getMaximumMessageLength()).append(",");
         if (getMaximumMessageRatePerSecond() != null)
@@ -535,6 +620,11 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getLoggingConfigurationIdentifiers() == null ^ this.getLoggingConfigurationIdentifiers() == null)
+            return false;
+        if (other.getLoggingConfigurationIdentifiers() != null
+                && other.getLoggingConfigurationIdentifiers().equals(this.getLoggingConfigurationIdentifiers()) == false)
+            return false;
         if (other.getMaximumMessageLength() == null ^ this.getMaximumMessageLength() == null)
             return false;
         if (other.getMaximumMessageLength() != null && other.getMaximumMessageLength().equals(this.getMaximumMessageLength()) == false)
@@ -570,6 +660,7 @@ public class CreateRoomResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfigurationIdentifiers() == null) ? 0 : getLoggingConfigurationIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getMaximumMessageLength() == null) ? 0 : getMaximumMessageLength().hashCode());
         hashCode = prime * hashCode + ((getMaximumMessageRatePerSecond() == null) ? 0 : getMaximumMessageRatePerSecond().hashCode());
         hashCode = prime * hashCode + ((getMessageReviewHandler() == null) ? 0 : getMessageReviewHandler().hashCode());

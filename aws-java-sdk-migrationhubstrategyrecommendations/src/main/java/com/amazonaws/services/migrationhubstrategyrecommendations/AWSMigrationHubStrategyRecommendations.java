@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,6 +131,28 @@ public interface AWSMigrationHubStrategyRecommendations {
      *      target="_top">AWS API Documentation</a>
      */
     GetImportFileTaskResult getImportFileTask(GetImportFileTaskRequest getImportFileTaskRequest);
+
+    /**
+     * <p>
+     * Retrieve the latest ID of a specific assessment task.
+     * </p>
+     * 
+     * @param getLatestAssessmentIdRequest
+     * @return Result of the GetLatestAssessmentId operation returned by the service.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws AccessDeniedException
+     *         The AWS user account does not have permission to perform the action. Check the AWS Identity and Access
+     *         Management (IAM) policy associated with this account.
+     * @throws ValidationException
+     *         The request body isn't valid.
+     * @throws InternalServerException
+     *         The server experienced an internal error. Try again.
+     * @sample AWSMigrationHubStrategyRecommendations.GetLatestAssessmentId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLatestAssessmentIdResult getLatestAssessmentId(GetLatestAssessmentIdRequest getLatestAssessmentIdRequest);
 
     /**
      * <p>

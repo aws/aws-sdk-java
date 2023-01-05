@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a custom vocabulary, including the language of the vocabulary, when it was last modified,
- * its name, and the processing state.
+ * Provides information about a custom vocabulary, including the language of the custom vocabulary, when it was last
+ * modified, its name, and the processing state.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/VocabularyInfo" target="_top">AWS API
@@ -38,18 +38,19 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
     private String vocabularyName;
     /**
      * <p>
-     * The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.
+     * The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one
+     * language.
      * </p>
      * <p>
-     * A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if
-     * you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that
-     * contain English audio.
+     * A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For
+     * example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom
+     * vocabulary to files that contain English audio.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The date and time the specified vocabulary was last modified.
+     * The date and time the specified custom vocabulary was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -59,8 +60,8 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      */
     private String vocabularyState;
@@ -113,21 +114,22 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.
+     * The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one
+     * language.
      * </p>
      * <p>
-     * A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if
-     * you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that
-     * contain English audio.
+     * A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For
+     * example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom
+     * vocabulary to files that contain English audio.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one
-     *        language.</p>
+     *        The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only
+     *        one language.</p>
      *        <p>
-     *        A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For
-     *        example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this
-     *        vocabulary to files that contain English audio.
+     *        A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary.
+     *        For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply
+     *        this custom vocabulary to files that contain English audio.
      * @see LanguageCode
      */
 
@@ -137,20 +139,21 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.
+     * The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one
+     * language.
      * </p>
      * <p>
-     * A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if
-     * you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that
-     * contain English audio.
+     * A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For
+     * example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom
+     * vocabulary to files that contain English audio.
      * </p>
      * 
-     * @return The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one
-     *         language.</p>
+     * @return The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in
+     *         only one language.</p>
      *         <p>
-     *         A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For
-     *         example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this
-     *         vocabulary to files that contain English audio.
+     *         A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary.
+     *         For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply
+     *         this custom vocabulary to files that contain English audio.
      * @see LanguageCode
      */
 
@@ -160,21 +163,22 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.
+     * The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one
+     * language.
      * </p>
      * <p>
-     * A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if
-     * you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that
-     * contain English audio.
+     * A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For
+     * example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom
+     * vocabulary to files that contain English audio.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one
-     *        language.</p>
+     *        The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only
+     *        one language.</p>
      *        <p>
-     *        A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For
-     *        example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this
-     *        vocabulary to files that contain English audio.
+     *        A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary.
+     *        For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply
+     *        this custom vocabulary to files that contain English audio.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -186,21 +190,22 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one language.
+     * The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only one
+     * language.
      * </p>
      * <p>
-     * A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For example, if
-     * you create a vocabulary using US English (<code>en-US</code>), you can only apply this vocabulary to files that
-     * contain English audio.
+     * A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary. For
+     * example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply this custom
+     * vocabulary to files that contain English audio.
      * </p>
      * 
      * @param languageCode
-     *        The language code used to create your custom vocabulary. Each vocabulary must contain terms in only one
-     *        language.</p>
+     *        The language code used to create your custom vocabulary. Each custom vocabulary must contain terms in only
+     *        one language.</p>
      *        <p>
-     *        A custom vocabulary can only be used to transcribe files in the same language as the vocabulary. For
-     *        example, if you create a vocabulary using US English (<code>en-US</code>), you can only apply this
-     *        vocabulary to files that contain English audio.
+     *        A custom vocabulary can only be used to transcribe files in the same language as the custom vocabulary.
+     *        For example, if you create a custom vocabulary using US English (<code>en-US</code>), you can only apply
+     *        this custom vocabulary to files that contain English audio.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -212,7 +217,7 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time the specified vocabulary was last modified.
+     * The date and time the specified custom vocabulary was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -220,7 +225,7 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the specified vocabulary was last modified.</p>
+     *        The date and time the specified custom vocabulary was last modified.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -232,14 +237,14 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time the specified vocabulary was last modified.
+     * The date and time the specified custom vocabulary was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return The date and time the specified vocabulary was last modified.</p>
+     * @return The date and time the specified custom vocabulary was last modified.</p>
      *         <p>
      *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -251,7 +256,7 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time the specified vocabulary was last modified.
+     * The date and time the specified custom vocabulary was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -259,7 +264,7 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the specified vocabulary was last modified.</p>
+     *        The date and time the specified custom vocabulary was last modified.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -273,12 +278,12 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
      *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
@@ -289,12 +294,12 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @return The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
-     *         vocabulary in a <code>StartTranscriptionJob</code> request.
+     *         custom vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -304,12 +309,12 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
      *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
@@ -322,12 +327,12 @@ public class VocabularyInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
      *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState

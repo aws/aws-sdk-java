@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,10 +86,30 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
     private String iamId;
     /**
      * <p>
-     * The evaluation status for evidence that falls under the compliance check category. For evidence collected from
-     * Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown.
+     * The evaluation status for automated evidence that falls under the compliance check category.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence.
+     * This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those
+     * services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't
+     * support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
      */
     private String complianceCheck;
     /**
@@ -549,15 +569,55 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The evaluation status for evidence that falls under the compliance check category. For evidence collected from
-     * Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown.
+     * The evaluation status for automated evidence that falls under the compliance check category.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence.
+     * This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those
+     * services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't
+     * support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param complianceCheck
-     *        The evaluation status for evidence that falls under the compliance check category. For evidence collected
-     *        from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a
-     *        <i>Compliant</i> or <i>Noncompliant</i> result is shown.
+     *        The evaluation status for automated evidence that falls under the compliance check category.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     *        reports a <i>Non-compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     *        reports a <i>Compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a compliance check isn't available or applicable, then no compliance evaluation can be made for that
+     *        evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type,
+     *        but those services aren't enabled. This is also the case if the evidence uses an underlying data source
+     *        type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or
+     *        CloudTrail).
+     *        </p>
+     *        </li>
      */
 
     public void setComplianceCheck(String complianceCheck) {
@@ -566,14 +626,54 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The evaluation status for evidence that falls under the compliance check category. For evidence collected from
-     * Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown.
+     * The evaluation status for automated evidence that falls under the compliance check category.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence.
+     * This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those
+     * services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't
+     * support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The evaluation status for evidence that falls under the compliance check category. For evidence collected
-     *         from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a
-     *         <i>Compliant</i> or <i>Noncompliant</i> result is shown.
+     * @return The evaluation status for automated evidence that falls under the compliance check category.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if
+     *         Config reports a <i>Non-compliant</i> result.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     *         reports a <i>Compliant</i> result.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a compliance check isn't available or applicable, then no compliance evaluation can be made for that
+     *         evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source
+     *         type, but those services aren't enabled. This is also the case if the evidence uses an underlying data
+     *         source type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API
+     *         calls, or CloudTrail).
+     *         </p>
+     *         </li>
      */
 
     public String getComplianceCheck() {
@@ -582,15 +682,55 @@ public class Evidence implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The evaluation status for evidence that falls under the compliance check category. For evidence collected from
-     * Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a
-     * <i>Compliant</i> or <i>Noncompliant</i> result is shown.
+     * The evaluation status for automated evidence that falls under the compliance check category.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config reports a
+     * <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that evidence.
+     * This is the case if the evidence uses Config or Security Hub as the underlying data source type, but those
+     * services aren't enabled. This is also the case if the evidence uses an underlying data source type that doesn't
+     * support compliance checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param complianceCheck
-     *        The evaluation status for evidence that falls under the compliance check category. For evidence collected
-     *        from Security Hub, a <i>Pass</i> or <i>Fail</i> result is shown. For evidence collected from Config, a
-     *        <i>Compliant</i> or <i>Noncompliant</i> result is shown.
+     *        The evaluation status for automated evidence that falls under the compliance check category.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes evidence as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     *        reports a <i>Non-compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes evidence as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     *        reports a <i>Compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a compliance check isn't available or applicable, then no compliance evaluation can be made for that
+     *        evidence. This is the case if the evidence uses Config or Security Hub as the underlying data source type,
+     *        but those services aren't enabled. This is also the case if the evidence uses an underlying data source
+     *        type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or
+     *        CloudTrail).
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

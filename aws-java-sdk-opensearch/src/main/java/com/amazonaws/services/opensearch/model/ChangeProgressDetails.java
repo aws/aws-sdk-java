@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies change details of the domain configuration change.
+ * Container for information about a configuration change happening on a domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      */
     private String changeId;
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      * 
      * @param changeId
-     *        The unique change identifier associated with a specific domain configuration change.
+     *        The ID of the configuration change.
      */
 
     public void setChangeId(String changeId) {
@@ -53,10 +53,10 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      * 
-     * @return The unique change identifier associated with a specific domain configuration change.
+     * @return The ID of the configuration change.
      */
 
     public String getChangeId() {
@@ -65,11 +65,11 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique change identifier associated with a specific domain configuration change.
+     * The ID of the configuration change.
      * </p>
      * 
      * @param changeId
-     *        The unique change identifier associated with a specific domain configuration change.
+     *        The ID of the configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      * 
      * @param message
-     *        Contains an optional message associated with the domain configuration change.
+     *        A message corresponding to the status of the configuration change.
      */
 
     public void setMessage(String message) {
@@ -93,10 +93,10 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      * 
-     * @return Contains an optional message associated with the domain configuration change.
+     * @return A message corresponding to the status of the configuration change.
      */
 
     public String getMessage() {
@@ -105,11 +105,11 @@ public class ChangeProgressDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Contains an optional message associated with the domain configuration change.
+     * A message corresponding to the status of the configuration change.
      * </p>
      * 
      * @param message
-     *        Contains an optional message associated with the domain configuration change.
+     *        A message corresponding to the status of the configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

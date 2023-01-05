@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.12.319-SNAPSHOT</version>
+    <version>1.12.379-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-osgi</artifactId>
@@ -15,6 +15,108 @@
 
   <!-- The dependencies section in pom.xml is auto generated. No manual changes are allowed -->
   <dependencies>
+    <dependency>
+        <artifactId>aws-java-sdk-licensemanagerlinuxsubscriptions</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-kinesisvideowebrtcstorage</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-sagemakermetrics</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-pipes</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-sagemakergeospatial</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-docdbelastic</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-omics</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-opensearchserverless</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-securitylake</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-simspaceweaver</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-arczonalshift</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-oam</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-iotroborunner</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-chimesdkvoice</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-ssmsap</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-scheduler</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
+    <dependency>
+        <artifactId>aws-java-sdk-resourceexplorer2</artifactId>
+        <groupId>com.amazonaws</groupId>
+        <optional>false</optional>
+        <version>${awsjavasdk.version}</version>
+    </dependency>
     <dependency>
         <artifactId>aws-java-sdk-connectcases</artifactId>
         <groupId>com.amazonaws</groupId>
@@ -2036,6 +2138,74 @@
                               </taglet>
                           </taglets>
                           <groups>
+                              <group>
+                                  <title>AWS License Manager Linux Subscriptions</title>
+                                  <packages>com.amazonaws.services.licensemanagerlinuxsubscriptions*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Kinesis Video WebRTC Storage</title>
+                                  <packages>com.amazonaws.services.kinesisvideowebrtcstorage*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon SageMaker Metrics</title>
+                                  <packages>com.amazonaws.services.sagemakermetrics*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon EventBridge Pipes</title>
+                                  <packages>com.amazonaws.services.pipes*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon SageMaker geospatial capabilities</title>
+                                  <packages>com.amazonaws.services.sagemakergeospatial*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon DocumentDB Elastic Clusters</title>
+                                  <packages>com.amazonaws.services.docdbelastic*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Omics</title>
+                                  <packages>com.amazonaws.services.omics*</packages>
+                              </group>
+                              <group>
+                                  <title>OpenSearch Service Serverless</title>
+                                  <packages>com.amazonaws.services.opensearchserverless*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Security Lake</title>
+                                  <packages>com.amazonaws.services.securitylake*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS SimSpace Weaver</title>
+                                  <packages>com.amazonaws.services.simspaceweaver*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS ARC - Zonal Shift</title>
+                                  <packages>com.amazonaws.services.arczonalshift*</packages>
+                              </group>
+                              <group>
+                                  <title>CloudWatch Observability Access Manager</title>
+                                  <packages>com.amazonaws.services.oam*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS IoT RoboRunner</title>
+                                  <packages>com.amazonaws.services.iotroborunner*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon Chime SDK Voice</title>
+                                  <packages>com.amazonaws.services.chimesdkvoice*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Systems Manager for SAP</title>
+                                  <packages>com.amazonaws.services.ssmsap*</packages>
+                              </group>
+                              <group>
+                                  <title>Amazon EventBridge Scheduler</title>
+                                  <packages>com.amazonaws.services.scheduler*</packages>
+                              </group>
+                              <group>
+                                  <title>AWS Resource Explorer</title>
+                                  <packages>com.amazonaws.services.resourceexplorer2*</packages>
+                              </group>
                               <group>
                                   <title>Amazon Connect Cases</title>
                                   <packages>com.amazonaws.services.connectcases*</packages>

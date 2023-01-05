@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a single step of the upgrade or upgrade eligibility check workflow.
+ * Represents a single step of an upgrade or upgrade eligibility check workflow.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,25 +27,53 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PreUpgradeCheck
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upgrade
+     * </p>
+     * </li>
+     * </ul>
      */
     private String upgradeStep;
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      */
     private String upgradeStepStatus;
     /**
@@ -63,21 +91,44 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PreUpgradeCheck
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upgrade
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStep
-     *        One of three steps an upgrade or upgrade eligibility check goes through:
+     *        One of three steps that an upgrade or upgrade eligibility check goes through: </p>
      *        <ul>
-     *        <li>PreUpgradeCheck</li>
-     *        <li>Snapshot</li>
-     *        <li>Upgrade</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        PreUpgradeCheck
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Upgrade
+     *        </p>
+     *        </li>
      * @see UpgradeStep
      */
 
@@ -87,20 +138,43 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PreUpgradeCheck
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upgrade
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return One of three steps an upgrade or upgrade eligibility check goes through:
+     * @return One of three steps that an upgrade or upgrade eligibility check goes through: </p>
      *         <ul>
-     *         <li>PreUpgradeCheck</li>
-     *         <li>Snapshot</li>
-     *         <li>Upgrade</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         PreUpgradeCheck
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Snapshot
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Upgrade
+     *         </p>
+     *         </li>
      * @see UpgradeStep
      */
 
@@ -110,21 +184,44 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PreUpgradeCheck
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upgrade
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStep
-     *        One of three steps an upgrade or upgrade eligibility check goes through:
+     *        One of three steps that an upgrade or upgrade eligibility check goes through: </p>
      *        <ul>
-     *        <li>PreUpgradeCheck</li>
-     *        <li>Snapshot</li>
-     *        <li>Upgrade</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        PreUpgradeCheck
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Upgrade
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStep
      */
@@ -136,21 +233,44 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * PreUpgradeCheck
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Snapshot
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Upgrade
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStep
-     *        One of three steps an upgrade or upgrade eligibility check goes through:
+     *        One of three steps that an upgrade or upgrade eligibility check goes through: </p>
      *        <ul>
-     *        <li>PreUpgradeCheck</li>
-     *        <li>Snapshot</li>
-     *        <li>Upgrade</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        PreUpgradeCheck
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Snapshot
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Upgrade
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStep
      */
@@ -163,22 +283,53 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStepStatus
-     *        The current status of the upgrade. The status can take one of the following values:
+     *        The current status of the upgrade. The status can take one of the following values: </p>
      *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        In Progress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded with Issues
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
      * @see UpgradeStatus
      */
 
@@ -189,21 +340,52 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current status of the upgrade. The status can take one of the following values:
+     * @return The current status of the upgrade. The status can take one of the following values: </p>
      *         <ul>
-     *         <li>In Progress</li>
-     *         <li>Succeeded</li>
-     *         <li>Succeeded with Issues</li>
-     *         <li>Failed</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         In Progress
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded with Issues
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed
+     *         </p>
+     *         </li>
      * @see UpgradeStatus
      */
 
@@ -214,22 +396,53 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStepStatus
-     *        The current status of the upgrade. The status can take one of the following values:
+     *        The current status of the upgrade. The status can take one of the following values: </p>
      *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        In Progress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded with Issues
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStatus
      */
@@ -242,22 +455,53 @@ public class UpgradeStepItem implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStepStatus
-     *        The current status of the upgrade. The status can take one of the following values:
+     *        The current status of the upgrade. The status can take one of the following values: </p>
      *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        In Progress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded with Issues
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStatus
      */

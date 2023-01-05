@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,14 +26,15 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * The identifier of the index to search. The identifier is returned in the response from the
      * <code>CreateIndex</code> API.
      * </p>
      */
     private String indexId;
     /**
      * <p>
-     * The text to search for.
+     * The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes
+     * punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.
      * </p>
      */
     private String queryText;
@@ -136,12 +137,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * The identifier of the index to search. The identifier is returned in the response from the
      * <code>CreateIndex</code> API.
      * </p>
      * 
      * @param indexId
-     *        The unique identifier of the index to search. The identifier is returned in the response from the
+     *        The identifier of the index to search. The identifier is returned in the response from the
      *        <code>CreateIndex</code> API.
      */
 
@@ -151,11 +152,11 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * The identifier of the index to search. The identifier is returned in the response from the
      * <code>CreateIndex</code> API.
      * </p>
      * 
-     * @return The unique identifier of the index to search. The identifier is returned in the response from the
+     * @return The identifier of the index to search. The identifier is returned in the response from the
      *         <code>CreateIndex</code> API.
      */
 
@@ -165,12 +166,12 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The unique identifier of the index to search. The identifier is returned in the response from the
+     * The identifier of the index to search. The identifier is returned in the response from the
      * <code>CreateIndex</code> API.
      * </p>
      * 
      * @param indexId
-     *        The unique identifier of the index to search. The identifier is returned in the response from the
+     *        The identifier of the index to search. The identifier is returned in the response from the
      *        <code>CreateIndex</code> API.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -182,11 +183,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The text to search for.
+     * The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes
+     * punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.
      * </p>
      * 
      * @param queryText
-     *        The text to search for.
+     *        The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes
+     *        punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.
      */
 
     public void setQueryText(String queryText) {
@@ -195,10 +198,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The text to search for.
+     * The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes
+     * punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.
      * </p>
      * 
-     * @return The text to search for.
+     * @return The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes
+     *         punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex
+     *         queries.
      */
 
     public String getQueryText() {
@@ -207,11 +213,13 @@ public class QueryRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The text to search for.
+     * The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes
+     * punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.
      * </p>
      * 
      * @param queryText
-     *        The text to search for.
+     *        The input query text for the search. Amazon Kendra truncates queries at 30 token words, which excludes
+     *        punctuation and stop words. Truncation still applies if you use Boolean or more advanced, complex queries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.backupgateway.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,6 +40,8 @@ public class VirtualMachineDetailsMarshaller {
             .marshallLocationName("Path").build();
     private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
+    private static final MarshallingInfo<List> VMWARETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("VmwareTags").build();
 
     private static final VirtualMachineDetailsMarshaller instance = new VirtualMachineDetailsMarshaller();
 
@@ -62,6 +65,7 @@ public class VirtualMachineDetailsMarshaller {
             protocolMarshaller.marshall(virtualMachineDetails.getName(), NAME_BINDING);
             protocolMarshaller.marshall(virtualMachineDetails.getPath(), PATH_BINDING);
             protocolMarshaller.marshall(virtualMachineDetails.getResourceArn(), RESOURCEARN_BINDING);
+            protocolMarshaller.marshall(virtualMachineDetails.getVmwareTags(), VMWARETAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

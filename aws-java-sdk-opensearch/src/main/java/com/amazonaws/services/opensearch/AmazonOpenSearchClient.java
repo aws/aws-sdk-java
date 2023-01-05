@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,22 +50,18 @@ import com.amazonaws.services.opensearch.model.transform.*;
  * Client for accessing Amazon OpenSearch Service. All service calls made using this client are blocking, and will not
  * return until the service call completes.
  * <p>
- * <fullname>Amazon OpenSearch Configuration Service</fullname>
  * <p>
- * Use the Amazon OpenSearch configuration API to create, configure, and manage Amazon OpenSearch Service domains.
+ * Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains.
  * </p>
  * <p>
  * For sample code that uses the configuration API, see the <a
  * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/opensearch-configuration-samples.html">
- * Amazon OpenSearch Service Developer Guide</a>. The guide also contains <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html"> sample code for
- * sending signed HTTP requests to the OpenSearch APIs</a>.
- * </p>
- * <p>
- * The endpoint for configuration service requests is region-specific: es.<i>region</i>.amazonaws.com. For example,
- * es.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a
- * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions" target="_blank">Regions and
- * Endpoints</a>.
+ * <i>Amazon OpenSearch Service Developer Guide</i> </a>. The guide also contains <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/request-signing.html">sample code</a> for
+ * sending signed HTTP requests to the OpenSearch APIs. The endpoint for configuration service requests is Region
+ * specific: es.<i>region</i>.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported
+ * Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions">Amazon
+ * Web Services service endpoints</a>.
  * </p>
  */
 @ThreadSafe
@@ -174,11 +170,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Allows the remote domain owner to accept an inbound cross-cluster connection request.
+     * Allows the destination Amazon OpenSearch Service domain owner to accept an inbound cross-cluster search
+     * connection request. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html"
+     * >Cross-cluster search for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param acceptInboundConnectionRequest
-     *        Container for the parameters to the <code> <a>AcceptInboundConnection</a> </code> operation.
+     *        Container for the parameters to the <code>AcceptInboundConnection</code> operation.
      * @return Result of the AcceptInboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
      *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
@@ -238,15 +237,15 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Attaches tags to an existing domain. Tags are a set of case-sensitive key value pairs. An domain can have up to
-     * 10 tags. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"
-     * target="_blank"> Tagging Amazon OpenSearch Service domains</a> for more information.
+     * Attaches tags to an existing Amazon OpenSearch Service domain. Tags are a set of case-sensitive key-value pairs.
+     * An domain can have up to 10 tags. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"
+     * > Tagging Amazon OpenSearch Service domains</a>.
      * </p>
      * 
      * @param addTagsRequest
-     *        Container for the parameters to the <code> <a>AddTags</a> </code> operation. Specifies the tags to attach
-     *        to the domain.
+     *        Container for the parameters to the <code>AddTags</code> operation. Specifies the tags to attach to the
+     *        domain.
      * @return Result of the AddTags operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -306,11 +305,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Associates a package with an Amazon OpenSearch Service domain.
+     * Associates a package with an Amazon OpenSearch Service domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param associatePackageRequest
-     *        Container for the request parameters to the <code> <a>AssociatePackage</a> </code> operation.
+     *        Container for the request parameters to the <code>AssociatePackage</code> operation.
      * @return Result of the AssociatePackage operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -375,14 +376,85 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
+     * </p>
+     * 
+     * @param authorizeVpcEndpointAccessRequest
+     * @return Result of the AuthorizeVpcEndpointAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.AuthorizeVpcEndpointAccess
+     */
+    @Override
+    public AuthorizeVpcEndpointAccessResult authorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeAuthorizeVpcEndpointAccess(request);
+    }
+
+    @SdkInternalApi
+    final AuthorizeVpcEndpointAccessResult executeAuthorizeVpcEndpointAccess(AuthorizeVpcEndpointAccessRequest authorizeVpcEndpointAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(authorizeVpcEndpointAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AuthorizeVpcEndpointAccessRequest> request = null;
+        Response<AuthorizeVpcEndpointAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AuthorizeVpcEndpointAccessRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(authorizeVpcEndpointAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeVpcEndpointAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AuthorizeVpcEndpointAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AuthorizeVpcEndpointAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this
-     * operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the
-     * <code>PENDING_UPDATE</code> state.
+     * operation before the <code>AutomatedUpdateDate</code> and when the domain's <code>UpdateStatus</code> is
+     * <code>PENDING_UPDATE</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+     * software updates in Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param cancelServiceSoftwareUpdateRequest
-     *        Container for the parameters to the <code> <a>CancelServiceSoftwareUpdate</a> </code> operation. Specifies
-     *        the name of the domain that you wish to cancel a service software update on.
+     *        Container for the request parameters to cancel a service software update.
      * @return Result of the CancelServiceSoftwareUpdate operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -443,10 +515,9 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates a new Amazon OpenSearch Service domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html"
-     * target="_blank">Creating and managing Amazon OpenSearch Service domains </a> in the <i>Amazon OpenSearch Service
-     * Developer Guide</i>.
+     * Creates an Amazon OpenSearch Service domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and
+     * managing Amazon OpenSearch Service domains</a>.
      * </p>
      * 
      * @param createDomainRequest
@@ -517,11 +588,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates a new cross-cluster connection from a local OpenSearch domain to a remote OpenSearch domain.
+     * Creates a new cross-cluster search connection from a source Amazon OpenSearch Service domain to a destination
+     * domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html"
+     * >Cross-cluster search for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param createOutboundConnectionRequest
-     *        Container for the parameters to the <code> <a>CreateOutboundConnection</a> </code> operation.
+     *        Container for the parameters to the <code>CreateOutboundConnection</code> operation.
      * @return Result of the CreateOutboundConnection operation returned by the service.
      * @throws LimitExceededException
      *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
@@ -584,11 +658,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Create a package for use with Amazon OpenSearch Service domains.
+     * Creates a package for use with Amazon OpenSearch Service domains. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param createPackageRequest
-     *        Container for request parameters to the <code> <a>CreatePackage</a> </code> operation.
+     *        Container for request parameters to the <code>CreatePackage</code> operation.
      * @return Result of the CreatePackage operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -656,12 +732,80 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Permanently deletes the specified domain and all of its data. Once a domain is deleted, it cannot be recovered.
+     * Creates an Amazon OpenSearch Service-managed VPC endpoint.
+     * </p>
+     * 
+     * @param createVpcEndpointRequest
+     * @return Result of the CreateVpcEndpoint operation returned by the service.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws LimitExceededException
+     *         An exception for trying to create more than allowed resources or sub-resources. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.CreateVpcEndpoint
+     */
+    @Override
+    public CreateVpcEndpointResult createVpcEndpoint(CreateVpcEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVpcEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateVpcEndpointResult executeCreateVpcEndpoint(CreateVpcEndpointRequest createVpcEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVpcEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVpcEndpointRequest> request = null;
+        Response<CreateVpcEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVpcEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVpcEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVpcEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVpcEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVpcEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon OpenSearch Service domain and all of its data. You can't recover a domain after you delete it.
      * </p>
      * 
      * @param deleteDomainRequest
-     *        Container for the parameters to the <code> <a>DeleteDomain</a> </code> operation. Specifies the name of
-     *        the domain you want to delete.
+     *        Container for the parameters to the <code>DeleteDomain</code> operation.
      * @return Result of the DeleteDomain operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -720,11 +864,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Allows the remote domain owner to delete an existing inbound cross-cluster connection.
+     * Allows the destination Amazon OpenSearch Service domain owner to delete an existing inbound cross-cluster search
+     * connection. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html"
+     * >Cross-cluster search for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param deleteInboundConnectionRequest
-     *        Container for the parameters to the <code> <a>DeleteInboundConnection</a> </code> operation.
+     *        Container for the parameters to the <code>DeleteInboundConnection</code> operation.
      * @return Result of the DeleteInboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
      *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
@@ -781,11 +928,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Allows the local domain owner to delete an existing outbound cross-cluster connection.
+     * Allows the source Amazon OpenSearch Service domain owner to delete an existing outbound cross-cluster search
+     * connection. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html"
+     * >Cross-cluster search for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param deleteOutboundConnectionRequest
-     *        Container for the parameters to the <code> <a>DeleteOutboundConnection</a> </code> operation.
+     *        Container for the parameters to the <code>DeleteOutboundConnection</code> operation.
      * @return Result of the DeleteOutboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
      *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
@@ -842,11 +992,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes the package.
+     * Deletes an Amazon OpenSearch Service package. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param deletePackageRequest
-     *        Container for the request parameters to the <code> <a>DeletePackage</a> </code> operation.
+     *        Deletes a package from OpenSearch Service. The package can't be associated with any OpenSearch Service
+     *        domain.
      * @return Result of the DeletePackage operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -911,12 +1064,75 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns domain configuration information about the specified domain, including the domain ID, domain endpoint,
-     * and domain ARN.
+     * Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
+     * </p>
+     * 
+     * @param deleteVpcEndpointRequest
+     * @return Result of the DeleteVpcEndpoint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.DeleteVpcEndpoint
+     */
+    @Override
+    public DeleteVpcEndpointResult deleteVpcEndpoint(DeleteVpcEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVpcEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVpcEndpointResult executeDeleteVpcEndpoint(DeleteVpcEndpointRequest deleteVpcEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVpcEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVpcEndpointRequest> request = null;
+        Response<DeleteVpcEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVpcEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVpcEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVpcEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVpcEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVpcEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the domain configuration for the specified Amazon OpenSearch Service domain, including the domain ID,
+     * domain service endpoint, and domain ARN.
      * </p>
      * 
      * @param describeDomainRequest
-     *        Container for the parameters to the <code> <a>DescribeDomain</a> </code> operation.
+     *        Container for the parameters to the <code>DescribeDomain</code> operation.
      * @return Result of the DescribeDomain operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -975,8 +1191,10 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Provides scheduled Auto-Tune action details for the domain, such as Auto-Tune action type, description, severity,
-     * and scheduled date.
+     * Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch Service domain. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+     * OpenSearch Service</a>.
      * </p>
      * 
      * @param describeDomainAutoTunesRequest
@@ -1041,13 +1259,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns information about the current blue/green deployment happening on a domain, including a change ID, status,
-     * and progress stages.
+     * Returns information about the current blue/green deployment happening on an Amazon OpenSearch Service domain. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html"
+     * >Making configuration changes in Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param describeDomainChangeProgressRequest
-     *        Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the
-     *        domain name and optional change specific identity for which you want progress information.
+     *        Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation.
      * @return Result of the DescribeDomainChangeProgress operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1108,13 +1327,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Provides cluster configuration information about the specified domain, such as the state, creation date, update
-     * version, and update date for cluster options.
+     * Returns the configuration of an Amazon OpenSearch Service domain.
      * </p>
      * 
      * @param describeDomainConfigRequest
-     *        Container for the parameters to the <code>DescribeDomainConfig</code> operation. Specifies the domain name
-     *        for which you want configuration information.
+     *        Container for the parameters to the <code>DescribeDomainConfig</code> operation.
      * @return Result of the DescribeDomainConfig operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1173,13 +1390,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns domain configuration information about the specified domains, including the domain ID, domain endpoint,
-     * and domain ARN.
+     * Returns domain configuration information about the specified Amazon OpenSearch Service domains.
      * </p>
      * 
      * @param describeDomainsRequest
-     *        Container for the parameters to the <code> <a>DescribeDomains</a> </code> operation. By default, the API
-     *        returns the status of all domains.
+     *        Container for the parameters to the <code>DescribeDomains</code> operation.
      * @return Result of the DescribeDomains operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1236,11 +1451,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists all the inbound cross-cluster connections for a remote domain.
+     * Lists all the inbound cross-cluster search connections for a destination (remote) Amazon OpenSearch Service
+     * domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html"
+     * >Cross-cluster search for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param describeInboundConnectionsRequest
-     *        Container for the parameters to the <code> <a>DescribeInboundConnections</a> </code> operation.
+     *        Container for the parameters to the <code>DescribeInboundConnections</code> operation.
      * @return Result of the DescribeInboundConnections operation returned by the service.
      * @throws InvalidPaginationTokenException
      *         The request processing has failed because of invalid pagination token provided by customer. Returns an
@@ -1298,12 +1516,12 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Describe the limits for a given instance type and OpenSearch or Elasticsearch version. When modifying an existing
-     * domain, specify the <code> <a>DomainName</a> </code> to see which limits you can modify.
+     * Describes the instance count, storage, and master node limits for a given OpenSearch or Elasticsearch version and
+     * instance type.
      * </p>
      * 
      * @param describeInstanceTypeLimitsRequest
-     *        Container for the parameters to the <code> <a>DescribeInstanceTypeLimits</a> </code> operation.
+     *        Container for the parameters to the <code>DescribeInstanceTypeLimits</code> operation.
      * @return Result of the DescribeInstanceTypeLimits operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1370,11 +1588,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists all the outbound cross-cluster connections for a local domain.
+     * Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch Service domain. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html"
+     * >Cross-cluster search for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param describeOutboundConnectionsRequest
-     *        Container for the parameters to the <code> <a>DescribeOutboundConnections</a> </code> operation.
+     *        Container for the parameters to the <code>DescribeOutboundConnections</code> operation.
      * @return Result of the DescribeOutboundConnections operation returned by the service.
      * @throws InvalidPaginationTokenException
      *         The request processing has failed because of invalid pagination token provided by customer. Returns an
@@ -1432,12 +1653,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Describes all packages available to Amazon OpenSearch Service domains. Includes options for filtering, limiting
-     * the number of results, and pagination.
+     * Describes all packages available to OpenSearch Service. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param describePackagesRequest
-     *        Container for the request parameters to the <code> <a>DescribePackage</a> </code> operation.
+     *        Container for the request parameters to the <code>DescribePackage</code> operation.
      * @return Result of the DescribePackages operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1499,11 +1721,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists available reserved OpenSearch instance offerings.
+     * Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more
+     * information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved
+     * Instances in Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param describeReservedInstanceOfferingsRequest
-     *        Container for parameters to <code>DescribeReservedInstanceOfferings</code>
+     *        Container for the request parameters to a <code>DescribeReservedInstanceOfferings</code> operation.
      * @return Result of the DescribeReservedInstanceOfferings operation returned by the service.
      * @throws ResourceNotFoundException
      *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
@@ -1566,11 +1790,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns information about reserved OpenSearch instances for this account.
+     * Describes the Amazon OpenSearch Service instances that you have reserved in a given Region. For more information,
+     * see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in
+     * Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param describeReservedInstancesRequest
-     *        Container for parameters to <code>DescribeReservedInstances</code>
+     *        Container for the request parameters to the <code>DescribeReservedInstances</code> operation.
      * @return Result of the DescribeReservedInstances operation returned by the service.
      * @throws ResourceNotFoundException
      *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
@@ -1632,11 +1858,78 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Dissociates a package from the Amazon OpenSearch Service domain.
+     * Describes one or more Amazon OpenSearch Service-managed VPC endpoints.
+     * </p>
+     * 
+     * @param describeVpcEndpointsRequest
+     * @return Result of the DescribeVpcEndpoints operation returned by the service.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.DescribeVpcEndpoints
+     */
+    @Override
+    public DescribeVpcEndpointsResult describeVpcEndpoints(DescribeVpcEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVpcEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVpcEndpointsResult executeDescribeVpcEndpoints(DescribeVpcEndpointsRequest describeVpcEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVpcEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVpcEndpointsRequest> request = null;
+        Response<DescribeVpcEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVpcEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVpcEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVpcEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeVpcEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeVpcEndpointsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a package from the specified Amazon OpenSearch Service domain. The package can't be in use with any
+     * OpenSearch index for the dissociation to succeed. The package is still available in OpenSearch Service for
+     * association later. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param dissociatePackageRequest
-     *        Container for the request parameters to the <code> <a>DissociatePackage</a> </code> operation.
+     *        Container for the request parameters to the <code>DissociatePackage</code> operation.
      * @return Result of the DissociatePackage operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1701,13 +1994,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns a list of upgrade-compatible versions of OpenSearch/Elasticsearch. You can optionally pass a
-     * <code> <a>DomainName</a> </code> to get all upgrade-compatible versions of OpenSearch/Elasticsearch for that
-     * specific domain.
+     * Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
      * </p>
      * 
      * @param getCompatibleVersionsRequest
-     *        Container for the request parameters to <code> <a>GetCompatibleVersions</a> </code> operation.
+     *        Container for the request parameters to <code>GetCompatibleVersions</code> operation.
      * @return Result of the GetCompatibleVersions operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1770,11 +2061,14 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns a list of package versions, along with their creation time and commit message.
+     * Returns a list of Amazon OpenSearch Service package versions, along with their creation time and commit message.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param getPackageVersionHistoryRequest
-     *        Container for the request parameters to the <code> <a>GetPackageVersionHistory</a> </code> operation.
+     *        Container for the request parameters to the <code>GetPackageVersionHistory</code> operation.
      * @return Result of the GetPackageVersionHistory operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1838,11 +2132,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Retrieves the complete history of the last 10 upgrades performed on the domain.
+     * Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch Service domain.
      * </p>
      * 
      * @param getUpgradeHistoryRequest
-     *        Container for the request parameters to the <code> <a>GetUpgradeHistory</a> </code> operation.
+     *        Container for the request parameters to the <code>GetUpgradeHistory</code> operation.
      * @return Result of the GetUpgradeHistory operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1904,11 +2198,12 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Retrieves the latest status of the last upgrade or upgrade eligibility check performed on the domain.
+     * Returns the most recent status of the last upgrade or upgrade eligibility check performed on an Amazon OpenSearch
+     * Service domain.
      * </p>
      * 
      * @param getUpgradeStatusRequest
-     *        Container for the request parameters to the <code> <a>GetUpgradeStatus</a> </code> operation.
+     *        Container for the request parameters to the <code>GetUpgradeStatus</code> operation.
      * @return Result of the GetUpgradeStatus operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -1970,11 +2265,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns the names of all domains owned by the current user's account.
+     * Returns the names of all Amazon OpenSearch Service domains owned by the current user in the active Region.
      * </p>
      * 
      * @param listDomainNamesRequest
-     *        Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
+     *        Container for the parameters to the <code>ListDomainNames</code> operation.
      * @return Result of the ListDomainNames operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2028,11 +2323,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists all Amazon OpenSearch Service domains associated with the package.
+     * Lists all Amazon OpenSearch Service domains associated with a given package. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param listDomainsForPackageRequest
-     *        Container for the request parameters to the <code> <a>ListDomainsForPackage</a> </code> operation.
+     *        Container for the request parameters to the <code>ListDomainsForPackage</code> operation.
      * @return Result of the ListDomainsForPackage operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2094,6 +2391,10 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
     }
 
     /**
+     * <p>
+     * Lists all instance types and available features for a given OpenSearch or Elasticsearch version.
+     * </p>
+     * 
      * @param listInstanceTypeDetailsRequest
      * @return Result of the ListInstanceTypeDetails operation returned by the service.
      * @throws BaseException
@@ -2155,11 +2456,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Lists all packages associated with the Amazon OpenSearch Service domain.
+     * Lists all packages associated with an Amazon OpenSearch Service domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param listPackagesForDomainRequest
-     *        Container for the request parameters to the <code> <a>ListPackagesForDomain</a> </code> operation.
+     *        Container for the request parameters to the <code>ListPackagesForDomain</code> operation.
      * @return Result of the ListPackagesForDomain operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2222,12 +2525,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns all tags for the given domain.
+     * Returns all resource tags for an Amazon OpenSearch Service domain. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html"
+     * >Tagging Amazon OpenSearch Service domains</a>.
      * </p>
      * 
      * @param listTagsRequest
-     *        Container for the parameters to the <code> <a>ListTags</a> </code> operation. Specify the <code>ARN</code>
-     *        of the domain that the tags you want to view are attached to.
+     *        Container for the parameters to the <code>ListTags</code> operation.
      * @return Result of the ListTags operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2286,19 +2590,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * List all supported versions of OpenSearch and Elasticsearch.
+     * Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.
      * </p>
      * 
      * @param listVersionsRequest
-     *        Container for the parameters to the <code> <a>ListVersions</a> </code> operation.
-     *        <p>
-     *        Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single
-     *        call.
-     *        </p>
-     *        <p>
-     *        Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does
-     *        not contain a NextToken, there are no more results to retrieve.
-     *        </p>
+     *        Container for the request parameters to the <code>ListVersions</code> operation.
      * @return Result of the ListVersions operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2357,11 +2653,203 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Allows you to purchase reserved OpenSearch instances.
+     * Retrieves information about each Amazon Web Services principal that is allowed to access a given Amazon
+     * OpenSearch Service domain through the use of an interface VPC endpoint.
+     * </p>
+     * 
+     * @param listVpcEndpointAccessRequest
+     * @return Result of the ListVpcEndpointAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.ListVpcEndpointAccess
+     */
+    @Override
+    public ListVpcEndpointAccessResult listVpcEndpointAccess(ListVpcEndpointAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVpcEndpointAccess(request);
+    }
+
+    @SdkInternalApi
+    final ListVpcEndpointAccessResult executeListVpcEndpointAccess(ListVpcEndpointAccessRequest listVpcEndpointAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVpcEndpointAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVpcEndpointAccessRequest> request = null;
+        Response<ListVpcEndpointAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVpcEndpointAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVpcEndpointAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVpcEndpointAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVpcEndpointAccessResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListVpcEndpointAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current Amazon Web Services account and
+     * Region.
+     * </p>
+     * 
+     * @param listVpcEndpointsRequest
+     * @return Result of the ListVpcEndpoints operation returned by the service.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.ListVpcEndpoints
+     */
+    @Override
+    public ListVpcEndpointsResult listVpcEndpoints(ListVpcEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVpcEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final ListVpcEndpointsResult executeListVpcEndpoints(ListVpcEndpointsRequest listVpcEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVpcEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVpcEndpointsRequest> request = null;
+        Response<ListVpcEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVpcEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVpcEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVpcEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVpcEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVpcEndpointsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.
+     * </p>
+     * 
+     * @param listVpcEndpointsForDomainRequest
+     * @return Result of the ListVpcEndpointsForDomain operation returned by the service.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.ListVpcEndpointsForDomain
+     */
+    @Override
+    public ListVpcEndpointsForDomainResult listVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVpcEndpointsForDomain(request);
+    }
+
+    @SdkInternalApi
+    final ListVpcEndpointsForDomainResult executeListVpcEndpointsForDomain(ListVpcEndpointsForDomainRequest listVpcEndpointsForDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVpcEndpointsForDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVpcEndpointsForDomainRequest> request = null;
+        Response<ListVpcEndpointsForDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVpcEndpointsForDomainRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listVpcEndpointsForDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVpcEndpointsForDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVpcEndpointsForDomainResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListVpcEndpointsForDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to purchase Amazon OpenSearch Service Reserved Instances.
      * </p>
      * 
      * @param purchaseReservedInstanceOfferingRequest
-     *        Container for parameters to <code>PurchaseReservedInstanceOffering</code>
+     *        Container for request parameters to the <code>PurchaseReservedInstanceOffering</code> operation.
      * @return Result of the PurchaseReservedInstanceOffering operation returned by the service.
      * @throws ResourceNotFoundException
      *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
@@ -2429,11 +2917,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Allows the remote domain owner to reject an inbound cross-cluster connection request.
+     * Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster connection request.
      * </p>
      * 
      * @param rejectInboundConnectionRequest
-     *        Container for the parameters to the <code> <a>RejectInboundConnection</a> </code> operation.
+     *        Container for the request parameters to the <code>RejectInboundConnection</code> operation.
      * @return Result of the RejectInboundConnection operation returned by the service.
      * @throws ResourceNotFoundException
      *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
@@ -2490,12 +2978,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Removes the specified set of tags from the given domain.
+     * Removes the specified set of tags from an Amazon OpenSearch Service domain. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-awsresorcetagging"
+     * > Tagging Amazon OpenSearch Service domains</a>.
      * </p>
      * 
      * @param removeTagsRequest
-     *        Container for the parameters to the <code> <a>RemoveTags</a> </code> operation. Specify the
-     *        <code>ARN</code> for the domain from which you want to remove the specified <code>TagKey</code>.
+     *        Container for the request parameters to the <code>RemoveTags</code> operation.
      * @return Result of the RemoveTags operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2552,12 +3041,80 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Schedules a service software update for an Amazon OpenSearch Service domain.
+     * Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
+     * </p>
+     * 
+     * @param revokeVpcEndpointAccessRequest
+     * @return Result of the RevokeVpcEndpointAccess operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.RevokeVpcEndpointAccess
+     */
+    @Override
+    public RevokeVpcEndpointAccessResult revokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest request) {
+        request = beforeClientExecution(request);
+        return executeRevokeVpcEndpointAccess(request);
+    }
+
+    @SdkInternalApi
+    final RevokeVpcEndpointAccessResult executeRevokeVpcEndpointAccess(RevokeVpcEndpointAccessRequest revokeVpcEndpointAccessRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(revokeVpcEndpointAccessRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RevokeVpcEndpointAccessRequest> request = null;
+        Response<RevokeVpcEndpointAccessResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RevokeVpcEndpointAccessRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(revokeVpcEndpointAccessRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeVpcEndpointAccess");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RevokeVpcEndpointAccessResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RevokeVpcEndpointAccessResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Schedules a service software update for an Amazon OpenSearch Service domain. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+     * software updates in Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param startServiceSoftwareUpdateRequest
-     *        Container for the parameters to the <code> <a>StartServiceSoftwareUpdate</a> </code> operation. Specifies
-     *        the name of the domain to schedule a service software update for.
+     *        Container for the request parameters to the <code>StartServiceSoftwareUpdate</code> operation.
      * @return Result of the StartServiceSoftwareUpdate operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2618,13 +3175,11 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Modifies the cluster configuration of the specified domain, such as setting the instance type and the number of
-     * instances.
+     * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
      * </p>
      * 
      * @param updateDomainConfigRequest
-     *        Container for the parameters to the <code> <a>UpdateDomain</a> </code> operation. Specifies the type and
-     *        number of instances in the domain cluster.
+     *        Container for the request parameters to the <code>UpdateDomain</code> operation.
      * @return Result of the UpdateDomainConfig operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2689,11 +3244,13 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Updates a package for use with Amazon OpenSearch Service domains.
+     * Updates a package for use with Amazon OpenSearch Service domains. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages
+     * for Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param updatePackageRequest
-     *        Container for request parameters to the <code> <a>UpdatePackage</a> </code> operation.
+     *        Container for request parameters to the <code>UpdatePackage</code> operation.
      * @return Result of the UpdatePackage operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.
@@ -2758,12 +3315,80 @@ public class AmazonOpenSearchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Allows you to either upgrade your domain or perform an upgrade eligibility check to a compatible version of
-     * OpenSearch or Elasticsearch.
+     * Modifies an Amazon OpenSearch Service-managed interface VPC endpoint.
+     * </p>
+     * 
+     * @param updateVpcEndpointRequest
+     * @return Result of the UpdateVpcEndpoint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An exception for accessing or deleting a resource that does not exist. Gives http status code of 400.
+     * @throws DisabledOperationException
+     *         An error occured because the client wanted to access a not supported operation. Gives http status code of
+     *         409.
+     * @throws InternalException
+     *         The request processing has failed because of an unknown error, exception or failure (the failure is
+     *         internal to the service) . Gives http status code of 500.
+     * @throws ValidationException
+     *         An exception for missing / invalid input fields. Gives http status code of 400.
+     * @throws ConflictException
+     *         An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP
+     *         status code 409.
+     * @throws BaseException
+     *         An error occurred while processing the request.
+     * @sample AmazonOpenSearch.UpdateVpcEndpoint
+     */
+    @Override
+    public UpdateVpcEndpointResult updateVpcEndpoint(UpdateVpcEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVpcEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVpcEndpointResult executeUpdateVpcEndpoint(UpdateVpcEndpointRequest updateVpcEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVpcEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVpcEndpointRequest> request = null;
+        Response<UpdateVpcEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVpcEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVpcEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "OpenSearch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVpcEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVpcEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVpcEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade eligibility check to a
+     * compatible version of OpenSearch or Elasticsearch.
      * </p>
      * 
      * @param upgradeDomainRequest
-     *        Container for the request parameters to <code> <a>UpgradeDomain</a> </code> operation.
+     *        Container for the request parameters to the <code>UpgradeDomain</code> operation.
      * @return Result of the UpgradeDomain operation returned by the service.
      * @throws BaseException
      *         An error occurred while processing the request.

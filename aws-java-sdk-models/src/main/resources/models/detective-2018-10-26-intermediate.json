@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonDetectiveAsyncClient",
     "asyncClientBuilderClassName" : "AmazonDetectiveAsyncClientBuilder",
     "asyncInterface" : "AmazonDetectiveAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",
@@ -98,6 +99,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The request attempted an invalid action.</p>",
         "httpStatusCode" : 409
@@ -147,6 +152,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -192,6 +201,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -237,6 +250,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The request attempted an invalid action.</p>",
         "httpStatusCode" : 409
@@ -282,6 +299,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -331,6 +352,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -376,6 +401,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The request attempted an invalid action.</p>",
         "httpStatusCode" : 409
@@ -425,6 +454,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -470,6 +503,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -515,6 +552,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The request attempted an invalid action.</p>",
         "httpStatusCode" : 409
@@ -564,6 +605,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -609,6 +654,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -654,6 +703,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -699,6 +752,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -740,6 +797,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -781,6 +842,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -826,6 +891,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -871,6 +940,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -916,6 +989,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The request attempted an invalid action.</p>",
         "httpStatusCode" : 409
@@ -965,6 +1042,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "ConflictException",
         "documentation" : "<p>The request attempted an invalid action.</p>",
         "httpStatusCode" : 409
@@ -1018,6 +1099,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -1063,6 +1148,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -1108,6 +1197,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -1157,6 +1250,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "AccessDeniedException",
+        "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+        "httpStatusCode" : 403
+      }, {
         "exceptionName" : "InternalServerException",
         "documentation" : "<p>The request was valid but failed because of a problem with the service.</p>",
         "httpStatusCode" : 500
@@ -1420,6 +1517,604 @@
         "documentation" : null,
         "simpleType" : "AcceptInvitationResult",
         "variableSetterType" : "AcceptInvitationResult"
+      },
+      "wrapper" : false
+    },
+    "AccessDeniedException" : {
+      "c2jName" : "AccessDeniedException",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "<p>The request issuer does not have permission to access this resource or perform this operation.</p>",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.detective.exception.AccessDeniedException",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : [ {
+        "c2jName" : "ErrorCode",
+        "c2jShape" : "ErrorCode",
+        "deprecated" : false,
+        "documentation" : "<p>The SDK default error code associated with the access denied exception.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "ErrorCode",
+        "fluentSetterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@param errorCode The SDK default error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+        "fluentSetterMethodName" : "withErrorCode",
+        "getterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@return The SDK default error code associated with the access denied exception.\n@see ErrorCode*/",
+        "getterMethodName" : "getErrorCode",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ErrorCode",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ErrorCode",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ErrorCode",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@param errorCode The SDK default error code associated with the access denied exception.\n@see ErrorCode*/",
+        "setterMethodName" : "setErrorCode",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "errorCode",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@param errorCode The SDK default error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "errorCode",
+          "variableType" : "String",
+          "documentation" : "<p>The SDK default error code associated with the access denied exception.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ErrorCodeReason",
+        "c2jShape" : "ErrorCodeReason",
+        "deprecated" : false,
+        "documentation" : "<p>The SDK default explanation of why access was denied.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@param errorCodeReason The SDK default explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withErrorCodeReason",
+        "getterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@return The SDK default explanation of why access was denied.*/",
+        "getterMethodName" : "getErrorCodeReason",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ErrorCodeReason",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ErrorCodeReason",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ErrorCodeReason",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@param errorCodeReason The SDK default explanation of why access was denied.*/",
+        "setterMethodName" : "setErrorCodeReason",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "errorCodeReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@param errorCodeReason The SDK default explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "errorCodeReason",
+          "variableType" : "String",
+          "documentation" : "<p>The SDK default explanation of why access was denied.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SubErrorCode",
+        "c2jShape" : "ErrorCode",
+        "deprecated" : false,
+        "documentation" : "<p>The error code associated with the access denied exception.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "ErrorCode",
+        "fluentSetterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@param subErrorCode The error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+        "fluentSetterMethodName" : "withSubErrorCode",
+        "getterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@return The error code associated with the access denied exception.\n@see ErrorCode*/",
+        "getterMethodName" : "getSubErrorCode",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "SubErrorCode",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SubErrorCode",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "SubErrorCode",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@param subErrorCode The error code associated with the access denied exception.\n@see ErrorCode*/",
+        "setterMethodName" : "setSubErrorCode",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "subErrorCode",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@param subErrorCode The error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "subErrorCode",
+          "variableType" : "String",
+          "documentation" : "<p>The error code associated with the access denied exception.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "SubErrorCodeReason",
+        "c2jShape" : "ErrorCodeReason",
+        "deprecated" : false,
+        "documentation" : "<p> An explanation of why access was denied.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@param subErrorCodeReason An explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withSubErrorCodeReason",
+        "getterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@return An explanation of why access was denied.*/",
+        "getterMethodName" : "getSubErrorCodeReason",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "SubErrorCodeReason",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "SubErrorCodeReason",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "SubErrorCodeReason",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@param subErrorCodeReason An explanation of why access was denied.*/",
+        "setterMethodName" : "setSubErrorCodeReason",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "subErrorCodeReason",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@param subErrorCodeReason An explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "subErrorCodeReason",
+          "variableType" : "String",
+          "documentation" : "<p> An explanation of why access was denied.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "ErrorCode" : {
+          "c2jName" : "ErrorCode",
+          "c2jShape" : "ErrorCode",
+          "deprecated" : false,
+          "documentation" : "<p>The SDK default error code associated with the access denied exception.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "ErrorCode",
+          "fluentSetterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@param errorCode The SDK default error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+          "fluentSetterMethodName" : "withErrorCode",
+          "getterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@return The SDK default error code associated with the access denied exception.\n@see ErrorCode*/",
+          "getterMethodName" : "getErrorCode",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ErrorCode",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ErrorCode",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ErrorCode",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@param errorCode The SDK default error code associated with the access denied exception.\n@see ErrorCode*/",
+          "setterMethodName" : "setErrorCode",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "errorCode",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The SDK default error code associated with the access denied exception.</p>\n@param errorCode The SDK default error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "errorCode",
+            "variableType" : "String",
+            "documentation" : "<p>The SDK default error code associated with the access denied exception.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ErrorCodeReason" : {
+          "c2jName" : "ErrorCodeReason",
+          "c2jShape" : "ErrorCodeReason",
+          "deprecated" : false,
+          "documentation" : "<p>The SDK default explanation of why access was denied.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@param errorCodeReason The SDK default explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withErrorCodeReason",
+          "getterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@return The SDK default explanation of why access was denied.*/",
+          "getterMethodName" : "getErrorCodeReason",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ErrorCodeReason",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ErrorCodeReason",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ErrorCodeReason",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@param errorCodeReason The SDK default explanation of why access was denied.*/",
+          "setterMethodName" : "setErrorCodeReason",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "errorCodeReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The SDK default explanation of why access was denied.</p>\n@param errorCodeReason The SDK default explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "errorCodeReason",
+            "variableType" : "String",
+            "documentation" : "<p>The SDK default explanation of why access was denied.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SubErrorCode" : {
+          "c2jName" : "SubErrorCode",
+          "c2jShape" : "ErrorCode",
+          "deprecated" : false,
+          "documentation" : "<p>The error code associated with the access denied exception.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "ErrorCode",
+          "fluentSetterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@param subErrorCode The error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+          "fluentSetterMethodName" : "withSubErrorCode",
+          "getterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@return The error code associated with the access denied exception.\n@see ErrorCode*/",
+          "getterMethodName" : "getSubErrorCode",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "SubErrorCode",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SubErrorCode",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "SubErrorCode",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@param subErrorCode The error code associated with the access denied exception.\n@see ErrorCode*/",
+          "setterMethodName" : "setSubErrorCode",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "subErrorCode",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The error code associated with the access denied exception.</p>\n@param subErrorCode The error code associated with the access denied exception.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ErrorCode*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "subErrorCode",
+            "variableType" : "String",
+            "documentation" : "<p>The error code associated with the access denied exception.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "SubErrorCodeReason" : {
+          "c2jName" : "SubErrorCodeReason",
+          "c2jShape" : "ErrorCodeReason",
+          "deprecated" : false,
+          "documentation" : "<p> An explanation of why access was denied.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@param subErrorCodeReason An explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withSubErrorCodeReason",
+          "getterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@return An explanation of why access was denied.*/",
+          "getterMethodName" : "getSubErrorCodeReason",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "SubErrorCodeReason",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "SubErrorCodeReason",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "SubErrorCodeReason",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@param subErrorCodeReason An explanation of why access was denied.*/",
+          "setterMethodName" : "setSubErrorCodeReason",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "subErrorCodeReason",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> An explanation of why access was denied.</p>\n@param subErrorCodeReason An explanation of why access was denied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "subErrorCodeReason",
+            "variableType" : "String",
+            "documentation" : "<p> An explanation of why access was denied.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.detective.exception",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ ],
+      "shapeName" : "AccessDeniedException",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "AccessDeniedException",
+        "variableName" : "accessDeniedException",
+        "variableType" : "AccessDeniedException",
+        "documentation" : null,
+        "simpleType" : "AccessDeniedException",
+        "variableSetterType" : "AccessDeniedException"
       },
       "wrapper" : false
     },
@@ -24669,7 +25364,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonDetectiveException",

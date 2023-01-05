@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A gating rule verifies that a gating routing control or set of gating rounting controls, evaluates as true, based on
- * a rule configuration that you specify, which allows a set of routing control state changes to complete.
+ * A gating rule verifies that a gating routing control or set of gating routing controls, evaluates as true, based on a
+ * rule configuration that you specify, which allows a set of routing control state changes to complete.
  * </p>
  * <p>
  * For example, if you specify one gating routing control and you set the Type in the rule configuration to OR, that
@@ -57,7 +57,7 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * The criteria that you set for gating routing controls that designate how many of the routing control states must
      * be ON to allow you to update target routing control states.
      * </p>
      */
@@ -79,7 +79,7 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
      * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
      * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
-     * use this to manually override automated fail over, for example.
+     * use this to manually override automated failover, for example.
      * </p>
      */
     private java.util.List<String> targetControls;
@@ -260,12 +260,12 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * The criteria that you set for gating routing controls that designate how many of the routing control states must
      * be ON to allow you to update target routing control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for gating routing controls that designates how many of the routing control
+     *        The criteria that you set for gating routing controls that designate how many of the routing control
      *        states must be ON to allow you to update target routing control states.
      */
 
@@ -275,11 +275,11 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * The criteria that you set for gating routing controls that designate how many of the routing control states must
      * be ON to allow you to update target routing control states.
      * </p>
      * 
-     * @return The criteria that you set for gating routing controls that designates how many of the routing control
+     * @return The criteria that you set for gating routing controls that designate how many of the routing control
      *         states must be ON to allow you to update target routing control states.
      */
 
@@ -289,12 +289,12 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for gating routing controls that designates how many of the routing control states must
+     * The criteria that you set for gating routing controls that designate how many of the routing control states must
      * be ON to allow you to update target routing control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for gating routing controls that designates how many of the routing control
+     *        The criteria that you set for gating routing controls that designate how many of the routing control
      *        states must be ON to allow you to update target routing control states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -412,13 +412,13 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
      * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
      * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
-     * use this to manually override automated fail over, for example.
+     * use this to manually override automated failover, for example.
      * </p>
      * 
      * @return An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
      *         if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
      *         example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
-     *         routing controls. You can use this to manually override automated fail over, for example.
+     *         routing controls. You can use this to manually override automated failover, for example.
      */
 
     public java.util.List<String> getTargetControls() {
@@ -430,14 +430,14 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
      * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
      * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
-     * use this to manually override automated fail over, for example.
+     * use this to manually override automated failover, for example.
      * </p>
      * 
      * @param targetControls
      *        An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
      *        if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
      *        example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
-     *        routing controls. You can use this to manually override automated fail over, for example.
+     *        routing controls. You can use this to manually override automated failover, for example.
      */
 
     public void setTargetControls(java.util.Collection<String> targetControls) {
@@ -454,7 +454,7 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
      * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
      * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
-     * use this to manually override automated fail over, for example.
+     * use this to manually override automated failover, for example.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -466,7 +466,7 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      *        An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
      *        if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
      *        example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
-     *        routing controls. You can use this to manually override automated fail over, for example.
+     *        routing controls. You can use this to manually override automated failover, for example.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,14 +485,14 @@ public class GatingRule implements Serializable, Cloneable, StructuredPojo {
      * An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated if the
      * rule configuration that you specify evaluates to true for the gating routing control. As a simple example, if you
      * have a single gating control, it acts as an overall "on/off" switch for a set of target routing controls. You can
-     * use this to manually override automated fail over, for example.
+     * use this to manually override automated failover, for example.
      * </p>
      * 
      * @param targetControls
      *        An array of target routing control Amazon Resource Names (ARNs) for which the states can only be updated
      *        if the rule configuration that you specify evaluates to true for the gating routing control. As a simple
      *        example, if you have a single gating control, it acts as an overall "on/off" switch for a set of target
-     *        routing controls. You can use this to manually override automated fail over, for example.
+     *        routing controls. You can use this to manually override automated failover, for example.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,11 @@ public class ProvisionPublicIpv4PoolCidrResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String poolId;
-
+    /**
+     * <p>
+     * Information about the address range of the public IPv4 pool.
+     * </p>
+     */
     private PublicIpv4PoolRange poolAddressRange;
 
     /**
@@ -73,7 +77,12 @@ public class ProvisionPublicIpv4PoolCidrResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Information about the address range of the public IPv4 pool.
+     * </p>
+     * 
      * @param poolAddressRange
+     *        Information about the address range of the public IPv4 pool.
      */
 
     public void setPoolAddressRange(PublicIpv4PoolRange poolAddressRange) {
@@ -81,7 +90,11 @@ public class ProvisionPublicIpv4PoolCidrResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the address range of the public IPv4 pool.
+     * </p>
+     * 
+     * @return Information about the address range of the public IPv4 pool.
      */
 
     public PublicIpv4PoolRange getPoolAddressRange() {
@@ -89,7 +102,12 @@ public class ProvisionPublicIpv4PoolCidrResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Information about the address range of the public IPv4 pool.
+     * </p>
+     * 
      * @param poolAddressRange
+     *        Information about the address range of the public IPv4 pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

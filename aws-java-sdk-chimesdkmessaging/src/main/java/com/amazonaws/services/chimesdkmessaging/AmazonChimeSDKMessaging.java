@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1473,9 +1473,8 @@ public interface AmazonChimeSDKMessaging {
 
     /**
      * <p>
-     * Allows an <code>AppInstanceUser</code> to search the channels that they belong to. The
-     * <code>AppInstanceUser</code> can search by membership or external ID. An <code>AppInstanceAdmin</code> can search
-     * across all channels within the <code>AppInstance</code>.
+     * Allows <code>ChimeBearer</code> to search channels by channel members. AppInstanceUsers can search across the
+     * channels that they belong to. AppInstanceAdmins can search across all channels.
      * </p>
      * 
      * @param searchChannelsRequest

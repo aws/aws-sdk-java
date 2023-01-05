@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,8 @@ public class ActionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kafka").build();
     private static final MarshallingInfo<StructuredPojo> OPENSEARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("openSearch").build();
+    private static final MarshallingInfo<StructuredPojo> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("location").build();
 
     private static final ActionMarshaller instance = new ActionMarshaller();
 
@@ -110,6 +112,7 @@ public class ActionMarshaller {
             protocolMarshaller.marshall(action.getHttp(), HTTP_BINDING);
             protocolMarshaller.marshall(action.getKafka(), KAFKA_BINDING);
             protocolMarshaller.marshall(action.getOpenSearch(), OPENSEARCH_BINDING);
+            protocolMarshaller.marshall(action.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

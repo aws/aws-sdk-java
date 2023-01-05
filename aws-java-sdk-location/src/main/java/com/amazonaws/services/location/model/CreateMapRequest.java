@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the map style selected from an available data provider.
+     * Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The
+     * map style defines the look of maps and the data provider for your map resource.
      * </p>
      */
     private MapConfiguration configuration;
@@ -118,11 +119,13 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the map style selected from an available data provider.
+     * Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The
+     * map style defines the look of maps and the data provider for your map resource.
      * </p>
      * 
      * @param configuration
-     *        Specifies the map style selected from an available data provider.
+     *        Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you
+     *        create. The map style defines the look of maps and the data provider for your map resource.
      */
 
     public void setConfiguration(MapConfiguration configuration) {
@@ -131,10 +134,12 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the map style selected from an available data provider.
+     * Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The
+     * map style defines the look of maps and the data provider for your map resource.
      * </p>
      * 
-     * @return Specifies the map style selected from an available data provider.
+     * @return Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you
+     *         create. The map style defines the look of maps and the data provider for your map resource.
      */
 
     public MapConfiguration getConfiguration() {
@@ -143,11 +148,13 @@ public class CreateMapRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies the map style selected from an available data provider.
+     * Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you create. The
+     * map style defines the look of maps and the data provider for your map resource.
      * </p>
      * 
      * @param configuration
-     *        Specifies the map style selected from an available data provider.
+     *        Specifies the <code>MapConfiguration</code>, including the map style, for the map resource that you
+     *        create. The map style defines the look of maps and the data provider for your map resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

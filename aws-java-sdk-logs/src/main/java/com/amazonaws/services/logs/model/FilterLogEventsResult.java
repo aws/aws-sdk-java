@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,7 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
     private com.amazonaws.internal.SdkInternalList<FilteredLogEvent> events;
     /**
      * <p>
-     * <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty
-     * list after the deprecation occurs.
+     * <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.
      * </p>
      * <p>
      * Indicates which log streams have been searched and whether each has been searched completely.
@@ -121,15 +120,14 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty
-     * list after the deprecation occurs.
+     * <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.
      * </p>
      * <p>
      * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      * 
-     * @return <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an
-     *         empty list after the deprecation occurs.</p>
+     * @return <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an
+     *         empty list.</p>
      *         <p>
      *         Indicates which log streams have been searched and whether each has been searched completely.
      */
@@ -143,16 +141,15 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty
-     * list after the deprecation occurs.
+     * <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.
      * </p>
      * <p>
      * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      * 
      * @param searchedLogStreams
-     *        <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an
-     *        empty list after the deprecation occurs.</p>
+     *        <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an
+     *        empty list.</p>
      *        <p>
      *        Indicates which log streams have been searched and whether each has been searched completely.
      */
@@ -168,8 +165,7 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty
-     * list after the deprecation occurs.
+     * <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.
      * </p>
      * <p>
      * Indicates which log streams have been searched and whether each has been searched completely.
@@ -181,8 +177,8 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param searchedLogStreams
-     *        <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an
-     *        empty list after the deprecation occurs.</p>
+     *        <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an
+     *        empty list.</p>
      *        <p>
      *        Indicates which log streams have been searched and whether each has been searched completely.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -200,16 +196,15 @@ public class FilterLogEventsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an empty
-     * list after the deprecation occurs.
+     * <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an empty list.
      * </p>
      * <p>
      * Indicates which log streams have been searched and whether each has been searched completely.
      * </p>
      * 
      * @param searchedLogStreams
-     *        <b>IMPORTANT</b> Starting on May 15, 2020, this parameter will be deprecated. This parameter will be an
-     *        empty list after the deprecation occurs.</p>
+     *        <b>Important</b> As of May 15, 2020, this parameter is no longer supported. This parameter returns an
+     *        empty list.</p>
      *        <p>
      *        Indicates which log streams have been searched and whether each has been searched completely.
      * @return Returns a reference to this object so that method calls can be chained together.

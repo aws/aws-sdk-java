@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchGetDataQualityResultResult batchGetDataQualityResult(BatchGetDataQualityResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetDevEndpointsResult batchGetDevEndpoints(BatchGetDevEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +104,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public BatchUpdatePartitionResult batchUpdatePartition(BatchUpdatePartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelDataQualityRuleRecommendationRunResult cancelDataQualityRuleRecommendationRun(CancelDataQualityRuleRecommendationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelDataQualityRulesetEvaluationRunResult cancelDataQualityRulesetEvaluationRun(CancelDataQualityRulesetEvaluationRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,6 +154,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public CreateCustomEntityTypeResult createCustomEntityType(CreateCustomEntityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDataQualityRulesetResult createDataQualityRuleset(CreateDataQualityRulesetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -249,6 +269,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeleteCustomEntityTypeResult deleteCustomEntityType(DeleteCustomEntityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDataQualityRulesetResult deleteDataQualityRuleset(DeleteDataQualityRulesetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -409,6 +434,26 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public GetDataCatalogEncryptionSettingsResult getDataCatalogEncryptionSettings(GetDataCatalogEncryptionSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityResultResult getDataQualityResult(GetDataQualityResultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityRuleRecommendationRunResult getDataQualityRuleRecommendationRun(GetDataQualityRuleRecommendationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityRulesetResult getDataQualityRuleset(GetDataQualityRulesetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDataQualityRulesetEvaluationRunResult getDataQualityRulesetEvaluationRun(GetDataQualityRulesetEvaluationRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -668,6 +713,26 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public ListDataQualityResultsResult listDataQualityResults(ListDataQualityResultsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityRuleRecommendationRunsResult listDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityRulesetEvaluationRunsResult listDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityRulesetsResult listDataQualityRulesets(ListDataQualityRulesetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDevEndpointsResult listDevEndpoints(ListDevEndpointsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -788,6 +853,16 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public StartDataQualityRuleRecommendationRunResult startDataQualityRuleRecommendationRun(StartDataQualityRuleRecommendationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartDataQualityRulesetEvaluationRunResult startDataQualityRulesetEvaluationRun(StartDataQualityRulesetEvaluationRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartExportLabelsTaskRunResult startExportLabelsTaskRun(StartExportLabelsTaskRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -889,6 +964,11 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public UpdateCrawlerScheduleResult updateCrawlerSchedule(UpdateCrawlerScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDataQualityRulesetResult updateDataQualityRuleset(UpdateDataQualityRulesetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

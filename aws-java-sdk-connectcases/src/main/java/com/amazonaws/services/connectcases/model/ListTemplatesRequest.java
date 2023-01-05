@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * A list of status values to filter on.
+     * </p>
+     */
+    private java.util.List<String> status;
 
     /**
      * <p>
@@ -172,6 +178,104 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A list of status values to filter on.
+     * </p>
+     * 
+     * @return A list of status values to filter on.
+     * @see TemplateStatus
+     */
+
+    public java.util.List<String> getStatus() {
+        return status;
+    }
+
+    /**
+     * <p>
+     * A list of status values to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A list of status values to filter on.
+     * @see TemplateStatus
+     */
+
+    public void setStatus(java.util.Collection<String> status) {
+        if (status == null) {
+            this.status = null;
+            return;
+        }
+
+        this.status = new java.util.ArrayList<String>(status);
+    }
+
+    /**
+     * <p>
+     * A list of status values to filter on.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setStatus(java.util.Collection)} or {@link #withStatus(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param status
+     *        A list of status values to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public ListTemplatesRequest withStatus(String... status) {
+        if (this.status == null) {
+            setStatus(new java.util.ArrayList<String>(status.length));
+        }
+        for (String ele : status) {
+            this.status.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of status values to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A list of status values to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public ListTemplatesRequest withStatus(java.util.Collection<String> status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of status values to filter on.
+     * </p>
+     * 
+     * @param status
+     *        A list of status values to filter on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public ListTemplatesRequest withStatus(TemplateStatus... status) {
+        java.util.ArrayList<String> statusCopy = new java.util.ArrayList<String>(status.length);
+        for (TemplateStatus value : status) {
+            statusCopy.add(value.toString());
+        }
+        if (getStatus() == null) {
+            setStatus(statusCopy);
+        } else {
+            getStatus().addAll(statusCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +292,9 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +321,10 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +336,7 @@ public class ListTemplatesRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

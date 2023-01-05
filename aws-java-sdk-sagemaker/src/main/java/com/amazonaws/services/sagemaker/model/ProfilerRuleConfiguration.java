@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,13 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
     private String s3OutputPath;
     /**
      * <p>
-     * The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+     * The Amazon Elastic Container Registry Image for the managed rule evaluation.
      * </p>
      */
     private String ruleEvaluatorImage;
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for profiling a training job.
+     * The instance type to deploy a custom rule for profiling a training job.
      * </p>
      */
     private String instanceType;
@@ -196,11 +196,11 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+     * The Amazon Elastic Container Registry Image for the managed rule evaluation.
      * </p>
      * 
      * @param ruleEvaluatorImage
-     *        The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+     *        The Amazon Elastic Container Registry Image for the managed rule evaluation.
      */
 
     public void setRuleEvaluatorImage(String ruleEvaluatorImage) {
@@ -209,10 +209,10 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+     * The Amazon Elastic Container Registry Image for the managed rule evaluation.
      * </p>
      * 
-     * @return The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+     * @return The Amazon Elastic Container Registry Image for the managed rule evaluation.
      */
 
     public String getRuleEvaluatorImage() {
@@ -221,11 +221,11 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+     * The Amazon Elastic Container Registry Image for the managed rule evaluation.
      * </p>
      * 
      * @param ruleEvaluatorImage
-     *        The Amazon Elastic Container (ECR) Image for the managed rule evaluation.
+     *        The Amazon Elastic Container Registry Image for the managed rule evaluation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,11 +236,11 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for profiling a training job.
+     * The instance type to deploy a custom rule for profiling a training job.
      * </p>
      * 
      * @param instanceType
-     *        The instance type to deploy a Debugger custom rule for profiling a training job.
+     *        The instance type to deploy a custom rule for profiling a training job.
      * @see ProcessingInstanceType
      */
 
@@ -250,10 +250,10 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for profiling a training job.
+     * The instance type to deploy a custom rule for profiling a training job.
      * </p>
      * 
-     * @return The instance type to deploy a Debugger custom rule for profiling a training job.
+     * @return The instance type to deploy a custom rule for profiling a training job.
      * @see ProcessingInstanceType
      */
 
@@ -263,11 +263,11 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for profiling a training job.
+     * The instance type to deploy a custom rule for profiling a training job.
      * </p>
      * 
      * @param instanceType
-     *        The instance type to deploy a Debugger custom rule for profiling a training job.
+     *        The instance type to deploy a custom rule for profiling a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingInstanceType
      */
@@ -279,11 +279,11 @@ public class ProfilerRuleConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The instance type to deploy a Debugger custom rule for profiling a training job.
+     * The instance type to deploy a custom rule for profiling a training job.
      * </p>
      * 
      * @param instanceType
-     *        The instance type to deploy a Debugger custom rule for profiling a training job.
+     *        The instance type to deploy a custom rule for profiling a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingInstanceType
      */

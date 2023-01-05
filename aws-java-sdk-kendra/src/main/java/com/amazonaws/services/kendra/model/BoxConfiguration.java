@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,9 +70,8 @@ public class BoxConfiguration implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * You create an application in Box to generate the keys or credentials required for the secret. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a
-     * Box data source</a>.
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data
+     * source</a>.
      * </p>
      */
     private String secretArn;
@@ -254,9 +253,8 @@ public class BoxConfiguration implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * You create an application in Box to generate the keys or credentials required for the secret. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a
-     * Box data source</a>.
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data
+     * source</a>.
      * </p>
      * 
      * @param secretArn
@@ -291,9 +289,8 @@ public class BoxConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        You create an application in Box to generate the keys or credentials required for the secret. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     *        for a Box data source</a>.
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box
+     *        data source</a>.
      */
 
     public void setSecretArn(String secretArn) {
@@ -334,9 +331,8 @@ public class BoxConfiguration implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * You create an application in Box to generate the keys or credentials required for the secret. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a
-     * Box data source</a>.
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data
+     * source</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the key-value pairs required to
@@ -370,9 +366,8 @@ public class BoxConfiguration implements Serializable, Cloneable, StructuredPojo
      *         </ul>
      *         <p>
      *         You create an application in Box to generate the keys or credentials required for the secret. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication"
-     *         >Authentication for a Box data source</a>.
+     *         information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box
+     *         data source</a>.
      */
 
     public String getSecretArn() {
@@ -413,9 +408,8 @@ public class BoxConfiguration implements Serializable, Cloneable, StructuredPojo
      * </ul>
      * <p>
      * You create an application in Box to generate the keys or credentials required for the secret. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication for a
-     * Box data source</a>.
+     * information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box data
+     * source</a>.
      * </p>
      * 
      * @param secretArn
@@ -450,9 +444,8 @@ public class BoxConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </ul>
      *        <p>
      *        You create an application in Box to generate the keys or credentials required for the secret. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html#box-authentication">Authentication
-     *        for a Box data source</a>.
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-box.html">Using a Box
+     *        data source</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example,
-     * <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a
+     * <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a
      * master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.
      * </p>
@@ -57,14 +57,14 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example,
-     * <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a
+     * <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a
      * master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.
      * </p>
      * 
      * @param masterRegion
      *        For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example,
-     *        <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from
+     *        <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from
      *        a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      *        <code>ALL</code>.
      */
@@ -76,13 +76,13 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example,
-     * <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a
+     * <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a
      * master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.
      * </p>
      * 
      * @return For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example,
-     *         <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated
+     *         <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated
      *         from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code>
      *         to <code>ALL</code>.
      */
@@ -94,14 +94,14 @@ public class ListFunctionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example,
-     * <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from a
+     * <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a
      * master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      * <code>ALL</code>.
      * </p>
      * 
      * @param masterRegion
      *        For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example,
-     *        <code>us-east-1</code> filters the list of functions to only include Lambda@Edge functions replicated from
+     *        <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from
      *        a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to
      *        <code>ALL</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

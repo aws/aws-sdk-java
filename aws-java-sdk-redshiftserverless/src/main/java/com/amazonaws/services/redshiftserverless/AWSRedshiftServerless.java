@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,8 @@ public interface AWSRedshiftServerless {
      *         The submitted action has conflicts.
      * @throws ValidationException
      *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws TooManyTagsException
+     *         The request exceeded the number of tags allowed for a resource.
      * @throws ServiceQuotaExceededException
      *         The service limit was exceeded.
      * @sample AWSRedshiftServerless.ConvertRecoveryPointToSnapshot
@@ -142,6 +144,8 @@ public interface AWSRedshiftServerless {
      *         The submitted action has conflicts.
      * @throws ValidationException
      *         The input failed to satisfy the constraints specified by an AWS service.
+     * @throws TooManyTagsException
+     *         The request exceeded the number of tags allowed for a resource.
      * @throws ServiceQuotaExceededException
      *         The service limit was exceeded.
      * @sample AWSRedshiftServerless.CreateSnapshot
@@ -335,7 +339,7 @@ public interface AWSRedshiftServerless {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt; The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources. &lt;/p&gt; &lt;p&gt; If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
      * </pre>
      * 
      * @param getCredentialsRequest
@@ -453,6 +457,23 @@ public interface AWSRedshiftServerless {
 
     /**
      * <p>
+     * Returns information about a <code>TableRestoreStatus</code> object.
+     * </p>
+     * 
+     * @param getTableRestoreStatusRequest
+     * @return Result of the GetTableRestoreStatus operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @sample AWSRedshiftServerless.GetTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetTableRestoreStatusResult getTableRestoreStatus(GetTableRestoreStatusRequest getTableRestoreStatusRequest);
+
+    /**
+     * <p>
      * Returns information about a usage limit.
      * </p>
      * 
@@ -564,6 +585,25 @@ public interface AWSRedshiftServerless {
      *      target="_top">AWS API Documentation</a>
      */
     ListSnapshotsResult listSnapshots(ListSnapshotsRequest listSnapshotsRequest);
+
+    /**
+     * <p>
+     * Returns information about an array of <code>TableRestoreStatus</code> objects.
+     * </p>
+     * 
+     * @param listTableRestoreStatusRequest
+     * @return Result of the ListTableRestoreStatus operation returned by the service.
+     * @throws InvalidPaginationException
+     *         The provided pagination token is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @sample AWSRedshiftServerless.ListTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListTableRestoreStatusResult listTableRestoreStatus(ListTableRestoreStatusRequest listTableRestoreStatusRequest);
 
     /**
      * <p>
@@ -693,6 +733,27 @@ public interface AWSRedshiftServerless {
      *      target="_top">AWS API Documentation</a>
      */
     RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest restoreFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+     * </p>
+     * 
+     * @param restoreTableFromSnapshotRequest
+     * @return Result of the RestoreTableFromSnapshot operation returned by the service.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ResourceNotFoundException
+     *         The resource could not be found.
+     * @throws ConflictException
+     *         The submitted action has conflicts.
+     * @throws ValidationException
+     *         The input failed to satisfy the constraints specified by an AWS service.
+     * @sample AWSRedshiftServerless.RestoreTableFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RestoreTableFromSnapshotResult restoreTableFromSnapshot(RestoreTableFromSnapshotRequest restoreTableFromSnapshotRequest);
 
     /**
      * <p>

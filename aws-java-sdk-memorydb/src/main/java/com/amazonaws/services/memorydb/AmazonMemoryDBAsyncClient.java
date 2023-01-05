@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -737,6 +737,73 @@ public class AmazonMemoryDBAsyncClient extends AmazonMemoryDBClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest request) {
+
+        return describeReservedNodesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(final DescribeReservedNodesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesRequest, DescribeReservedNodesResult> asyncHandler) {
+        final DescribeReservedNodesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReservedNodesResult>() {
+            @Override
+            public DescribeReservedNodesResult call() throws Exception {
+                DescribeReservedNodesResult result = null;
+
+                try {
+                    result = executeDescribeReservedNodes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReservedNodesOfferingsResult> describeReservedNodesOfferingsAsync(DescribeReservedNodesOfferingsRequest request) {
+
+        return describeReservedNodesOfferingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReservedNodesOfferingsResult> describeReservedNodesOfferingsAsync(
+            final DescribeReservedNodesOfferingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesOfferingsRequest, DescribeReservedNodesOfferingsResult> asyncHandler) {
+        final DescribeReservedNodesOfferingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeReservedNodesOfferingsResult>() {
+            @Override
+            public DescribeReservedNodesOfferingsResult call() throws Exception {
+                DescribeReservedNodesOfferingsResult result = null;
+
+                try {
+                    result = executeDescribeReservedNodesOfferings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeServiceUpdatesResult> describeServiceUpdatesAsync(DescribeServiceUpdatesRequest request) {
 
         return describeServiceUpdatesAsync(request, null);
@@ -952,6 +1019,40 @@ public class AmazonMemoryDBAsyncClient extends AmazonMemoryDBClient implements A
 
                 try {
                     result = executeListTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseReservedNodesOfferingResult> purchaseReservedNodesOfferingAsync(PurchaseReservedNodesOfferingRequest request) {
+
+        return purchaseReservedNodesOfferingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PurchaseReservedNodesOfferingResult> purchaseReservedNodesOfferingAsync(
+            final PurchaseReservedNodesOfferingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PurchaseReservedNodesOfferingRequest, PurchaseReservedNodesOfferingResult> asyncHandler) {
+        final PurchaseReservedNodesOfferingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PurchaseReservedNodesOfferingResult>() {
+            @Override
+            public PurchaseReservedNodesOfferingResult call() throws Exception {
+                PurchaseReservedNodesOfferingResult result = null;
+
+                try {
+                    result = executePurchaseReservedNodesOffering(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

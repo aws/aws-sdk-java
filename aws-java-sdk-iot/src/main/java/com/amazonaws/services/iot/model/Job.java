@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -190,6 +190,13 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean isConcurrent;
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     */
+    private SchedulingConfig schedulingConfig;
 
     /**
      * <p>
@@ -1408,6 +1415,52 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     */
+
+    public void setSchedulingConfig(SchedulingConfig schedulingConfig) {
+        this.schedulingConfig = schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @return The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *         the end behavior for each job execution.
+     */
+
+    public SchedulingConfig getSchedulingConfig() {
+        return this.schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Job withSchedulingConfig(SchedulingConfig schedulingConfig) {
+        setSchedulingConfig(schedulingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1462,7 +1515,9 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         if (getDocumentParameters() != null)
             sb.append("DocumentParameters: ").append(getDocumentParameters()).append(",");
         if (getIsConcurrent() != null)
-            sb.append("IsConcurrent: ").append(getIsConcurrent());
+            sb.append("IsConcurrent: ").append(getIsConcurrent()).append(",");
+        if (getSchedulingConfig() != null)
+            sb.append("SchedulingConfig: ").append(getSchedulingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1565,6 +1620,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIsConcurrent() != null && other.getIsConcurrent().equals(this.getIsConcurrent()) == false)
             return false;
+        if (other.getSchedulingConfig() == null ^ this.getSchedulingConfig() == null)
+            return false;
+        if (other.getSchedulingConfig() != null && other.getSchedulingConfig().equals(this.getSchedulingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1595,6 +1654,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getJobExecutionsRetryConfig() == null) ? 0 : getJobExecutionsRetryConfig().hashCode());
         hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
         hashCode = prime * hashCode + ((getIsConcurrent() == null) ? 0 : getIsConcurrent().hashCode());
+        hashCode = prime * hashCode + ((getSchedulingConfig() == null) ? 0 : getSchedulingConfig().hashCode());
         return hashCode;
     }
 

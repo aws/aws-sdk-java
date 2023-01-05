@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,19 @@ public class DocumentRequires implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String version;
+    /**
+     * <p>
+     * The document type of the required SSM document.
+     * </p>
+     */
+    private String requireType;
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * </p>
+     */
+    private String versionName;
 
     /**
      * <p>
@@ -122,6 +135,92 @@ public class DocumentRequires implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The document type of the required SSM document.
+     * </p>
+     * 
+     * @param requireType
+     *        The document type of the required SSM document.
+     */
+
+    public void setRequireType(String requireType) {
+        this.requireType = requireType;
+    }
+
+    /**
+     * <p>
+     * The document type of the required SSM document.
+     * </p>
+     * 
+     * @return The document type of the required SSM document.
+     */
+
+    public String getRequireType() {
+        return this.requireType;
+    }
+
+    /**
+     * <p>
+     * The document type of the required SSM document.
+     * </p>
+     * 
+     * @param requireType
+     *        The document type of the required SSM document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentRequires withRequireType(String requireType) {
+        setRequireType(requireType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        An optional field specifying the version of the artifact associated with the document. For example,
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     */
+
+    public void setVersionName(String versionName) {
+        this.versionName = versionName;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * </p>
+     * 
+     * @return An optional field specifying the version of the artifact associated with the document. For example,
+     *         "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     */
+
+    public String getVersionName() {
+        return this.versionName;
+    }
+
+    /**
+     * <p>
+     * An optional field specifying the version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * </p>
+     * 
+     * @param versionName
+     *        An optional field specifying the version of the artifact associated with the document. For example,
+     *        "Release 12, Update 6". This value is unique across all versions of a document, and can't be changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentRequires withVersionName(String versionName) {
+        setVersionName(versionName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +235,11 @@ public class DocumentRequires implements Serializable, Cloneable, StructuredPojo
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getRequireType() != null)
+            sb.append("RequireType: ").append(getRequireType()).append(",");
+        if (getVersionName() != null)
+            sb.append("VersionName: ").append(getVersionName());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +262,14 @@ public class DocumentRequires implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getRequireType() == null ^ this.getRequireType() == null)
+            return false;
+        if (other.getRequireType() != null && other.getRequireType().equals(this.getRequireType()) == false)
+            return false;
+        if (other.getVersionName() == null ^ this.getVersionName() == null)
+            return false;
+        if (other.getVersionName() != null && other.getVersionName().equals(this.getVersionName()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +280,8 @@ public class DocumentRequires implements Serializable, Cloneable, StructuredPojo
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getRequireType() == null) ? 0 : getRequireType().hashCode());
+        hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         return hashCode;
     }
 

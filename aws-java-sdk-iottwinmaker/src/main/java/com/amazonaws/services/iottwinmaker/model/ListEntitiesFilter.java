@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class ListEntitiesFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The parent of the entities in the list.
+     * </p>
+     */
+    private String parentEntityId;
+    /**
+     * <p>
      * The ID of the component type in the entities in the list.
      * </p>
      */
@@ -41,12 +47,46 @@ public class ListEntitiesFilter implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String externalId;
+
     /**
      * <p>
      * The parent of the entities in the list.
      * </p>
+     * 
+     * @param parentEntityId
+     *        The parent of the entities in the list.
      */
-    private String parentEntityId;
+
+    public void setParentEntityId(String parentEntityId) {
+        this.parentEntityId = parentEntityId;
+    }
+
+    /**
+     * <p>
+     * The parent of the entities in the list.
+     * </p>
+     * 
+     * @return The parent of the entities in the list.
+     */
+
+    public String getParentEntityId() {
+        return this.parentEntityId;
+    }
+
+    /**
+     * <p>
+     * The parent of the entities in the list.
+     * </p>
+     * 
+     * @param parentEntityId
+     *        The parent of the entities in the list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEntitiesFilter withParentEntityId(String parentEntityId) {
+        setParentEntityId(parentEntityId);
+        return this;
+    }
 
     /**
      * <p>
@@ -135,46 +175,6 @@ public class ListEntitiesFilter implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p>
-     * The parent of the entities in the list.
-     * </p>
-     * 
-     * @param parentEntityId
-     *        The parent of the entities in the list.
-     */
-
-    public void setParentEntityId(String parentEntityId) {
-        this.parentEntityId = parentEntityId;
-    }
-
-    /**
-     * <p>
-     * The parent of the entities in the list.
-     * </p>
-     * 
-     * @return The parent of the entities in the list.
-     */
-
-    public String getParentEntityId() {
-        return this.parentEntityId;
-    }
-
-    /**
-     * <p>
-     * The parent of the entities in the list.
-     * </p>
-     * 
-     * @param parentEntityId
-     *        The parent of the entities in the list.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListEntitiesFilter withParentEntityId(String parentEntityId) {
-        setParentEntityId(parentEntityId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -186,12 +186,12 @@ public class ListEntitiesFilter implements Serializable, Cloneable, StructuredPo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getParentEntityId() != null)
+            sb.append("ParentEntityId: ").append(getParentEntityId()).append(",");
         if (getComponentTypeId() != null)
             sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
         if (getExternalId() != null)
-            sb.append("ExternalId: ").append(getExternalId()).append(",");
-        if (getParentEntityId() != null)
-            sb.append("ParentEntityId: ").append(getParentEntityId());
+            sb.append("ExternalId: ").append(getExternalId());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +206,10 @@ public class ListEntitiesFilter implements Serializable, Cloneable, StructuredPo
         if (obj instanceof ListEntitiesFilter == false)
             return false;
         ListEntitiesFilter other = (ListEntitiesFilter) obj;
+        if (other.getParentEntityId() == null ^ this.getParentEntityId() == null)
+            return false;
+        if (other.getParentEntityId() != null && other.getParentEntityId().equals(this.getParentEntityId()) == false)
+            return false;
         if (other.getComponentTypeId() == null ^ this.getComponentTypeId() == null)
             return false;
         if (other.getComponentTypeId() != null && other.getComponentTypeId().equals(this.getComponentTypeId()) == false)
@@ -213,10 +217,6 @@ public class ListEntitiesFilter implements Serializable, Cloneable, StructuredPo
         if (other.getExternalId() == null ^ this.getExternalId() == null)
             return false;
         if (other.getExternalId() != null && other.getExternalId().equals(this.getExternalId()) == false)
-            return false;
-        if (other.getParentEntityId() == null ^ this.getParentEntityId() == null)
-            return false;
-        if (other.getParentEntityId() != null && other.getParentEntityId().equals(this.getParentEntityId()) == false)
             return false;
         return true;
     }
@@ -226,9 +226,9 @@ public class ListEntitiesFilter implements Serializable, Cloneable, StructuredPo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getParentEntityId() == null) ? 0 : getParentEntityId().hashCode());
         hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
-        hashCode = prime * hashCode + ((getParentEntityId() == null) ? 0 : getParentEntityId().hashCode());
         return hashCode;
     }
 

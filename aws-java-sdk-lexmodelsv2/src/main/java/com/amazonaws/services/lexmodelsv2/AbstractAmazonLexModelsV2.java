@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,21 @@ import com.amazonaws.services.lexmodelsv2.waiters.AmazonLexModelsV2Waiters;
 public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     protected AbstractAmazonLexModelsV2() {
+    }
+
+    @Override
+    public BatchCreateCustomVocabularyItemResult batchCreateCustomVocabularyItem(BatchCreateCustomVocabularyItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDeleteCustomVocabularyItemResult batchDeleteCustomVocabularyItem(BatchDeleteCustomVocabularyItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchUpdateCustomVocabularyItemResult batchUpdateCustomVocabularyItem(BatchUpdateCustomVocabularyItemRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -250,6 +265,11 @@ public class AbstractAmazonLexModelsV2 implements AmazonLexModelsV2 {
 
     @Override
     public ListBuiltInSlotTypesResult listBuiltInSlotTypes(ListBuiltInSlotTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListCustomVocabularyItemsResult listCustomVocabularyItems(ListCustomVocabularyItemsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

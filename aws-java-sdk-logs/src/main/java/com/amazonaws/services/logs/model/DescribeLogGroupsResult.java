@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
-     * events never expire.
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not
+     * expire.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LogGroup> logGroups;
@@ -41,14 +41,14 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
-     * events never expire.
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not
+     * expire.
      * </p>
      * 
      * @return The log groups.</p>
      *         <p>
-     *         If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
-     *         have its events never expire.
+     *         If the <code>retentionInDays</code> value is not included for a log group, then that log group's events
+     *         do not expire.
      */
 
     public java.util.List<LogGroup> getLogGroups() {
@@ -63,15 +63,15 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
-     * events never expire.
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not
+     * expire.
      * </p>
      * 
      * @param logGroups
      *        The log groups.</p>
      *        <p>
-     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
-     *        have its events never expire.
+     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do
+     *        not expire.
      */
 
     public void setLogGroups(java.util.Collection<LogGroup> logGroups) {
@@ -88,8 +88,8 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
-     * events never expire.
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not
+     * expire.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,8 +100,8 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * @param logGroups
      *        The log groups.</p>
      *        <p>
-     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
-     *        have its events never expire.
+     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do
+     *        not expire.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,15 +120,15 @@ public class DescribeLogGroupsResult extends com.amazonaws.AmazonWebServiceResul
      * The log groups.
      * </p>
      * <p>
-     * If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to have its
-     * events never expire.
+     * If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do not
+     * expire.
      * </p>
      * 
      * @param logGroups
      *        The log groups.</p>
      *        <p>
-     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group is set to
-     *        have its events never expire.
+     *        If the <code>retentionInDays</code> value is not included for a log group, then that log group's events do
+     *        not expire.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

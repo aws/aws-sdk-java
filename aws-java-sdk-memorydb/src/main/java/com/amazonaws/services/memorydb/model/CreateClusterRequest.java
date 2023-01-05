@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,8 +76,50 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period.
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      */
     private String maintenanceWindow;
@@ -166,6 +208,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     */
+    private Boolean dataTiering;
 
     /**
      * <p>
@@ -520,14 +570,98 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period.
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param maintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period.
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public void setMaintenanceWindow(String maintenanceWindow) {
@@ -537,13 +671,97 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period.
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @return Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as
-     *         a range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance
-     *         window is a 60 minute period.
+     *         a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60
+     *         minute period.</p>
+     *         <p>
+     *         Valid values for <code>ddd</code> are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>sun</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>mon</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>tue</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>wed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>thu</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>fri</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>sat</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Example: <code>sun:23:00-mon:01:30</code>
      */
 
     public String getMaintenanceWindow() {
@@ -553,14 +771,98 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range
-     * in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window is a 60 minute
-     * period.
+     * in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
+     * </p>
+     * <p>
+     * Valid values for <code>ddd</code> are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>sun</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>mon</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>tue</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>wed</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>thu</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>fri</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>sat</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Example: <code>sun:23:00-mon:01:30</code>
      * </p>
      * 
      * @param maintenanceWindow
      *        Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a
-     *        range in the format <code>ddd:hh24:mi-ddd:hh24:mi</code> (24H Clock UTC). The minimum maintenance window
-     *        is a 60 minute period.
+     *        range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute
+     *        period.</p>
+     *        <p>
+     *        Valid values for <code>ddd</code> are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>sun</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>mon</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>tue</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>wed</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>thu</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>fri</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>sat</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Example: <code>sun:23:00-mon:01:30</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1220,6 +1522,74 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @param dataTiering
+     *        Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter
+     *        must be set when using r6gd nodes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     */
+
+    public void setDataTiering(Boolean dataTiering) {
+        this.dataTiering = dataTiering;
+    }
+
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @return Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This
+     *         parameter must be set when using r6gd nodes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     */
+
+    public Boolean getDataTiering() {
+        return this.dataTiering;
+    }
+
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @param dataTiering
+     *        Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter
+     *        must be set when using r6gd nodes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withDataTiering(Boolean dataTiering) {
+        setDataTiering(dataTiering);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @return Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This
+     *         parameter must be set when using r6gd nodes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     */
+
+    public Boolean isDataTiering() {
+        return this.dataTiering;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1272,7 +1642,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
-            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade());
+            sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
+        if (getDataTiering() != null)
+            sb.append("DataTiering: ").append(getDataTiering());
         sb.append("}");
         return sb.toString();
     }
@@ -1371,6 +1743,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
             return false;
+        if (other.getDataTiering() == null ^ this.getDataTiering() == null)
+            return false;
+        if (other.getDataTiering() != null && other.getDataTiering().equals(this.getDataTiering()) == false)
+            return false;
         return true;
     }
 
@@ -1400,6 +1776,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getACLName() == null) ? 0 : getACLName().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
+        hashCode = prime * hashCode + ((getDataTiering() == null) ? 0 : getDataTiering().hashCode());
         return hashCode;
     }
 

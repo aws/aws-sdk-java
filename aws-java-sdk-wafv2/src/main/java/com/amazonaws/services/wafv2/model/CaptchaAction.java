@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,14 +24,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <ul>
  * <li>
  * <p>
- * If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF allows the web request inspection to
- * proceed to the next rule, similar to a <code>CountAction</code>.
+ * If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF applies any custom request handling and
+ * labels that you've configured and then allows the web request inspection to proceed to the next rule, similar to a
+ * <code>CountAction</code>.
  * </p>
  * </li>
  * <li>
  * <p>
- * If the request doesn't include a valid, unexpired <code>CAPTCHA</code> token, WAF discontinues the web ACL evaluation
- * of the request and blocks it from going to its intended destination.
+ * If the request doesn't include a valid, unexpired token, WAF discontinues the web ACL evaluation of the request and
+ * blocks it from going to its intended destination.
  * </p>
  * <p>
  * WAF generates a response that it sends back to the client, which includes the following:
@@ -50,7 +51,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a
- * <code>CAPTCHA</code> challenge.
+ * <code>CAPTCHA</code> JavaScript page interstitial.
  * </p>
  * </li>
  * </ul>
@@ -72,7 +73,8 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines custom handling for the web request.
+     * Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the
+     * request's token is valid and unexpired.
      * </p>
      * <p>
      * For information about customizing web requests and responses, see <a
@@ -85,7 +87,8 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines custom handling for the web request.
+     * Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the
+     * request's token is valid and unexpired.
      * </p>
      * <p>
      * For information about customizing web requests and responses, see <a
@@ -95,7 +98,8 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param customRequestHandling
-     *        Defines custom handling for the web request.</p>
+     *        Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that
+     *        the request's token is valid and unexpired.</p>
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
@@ -109,7 +113,8 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines custom handling for the web request.
+     * Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the
+     * request's token is valid and unexpired.
      * </p>
      * <p>
      * For information about customizing web requests and responses, see <a
@@ -118,7 +123,8 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF Developer Guide</a>.
      * </p>
      * 
-     * @return Defines custom handling for the web request.</p>
+     * @return Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines
+     *         that the request's token is valid and unexpired.</p>
      *         <p>
      *         For information about customizing web requests and responses, see <a
      *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
@@ -132,7 +138,8 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Defines custom handling for the web request.
+     * Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that the
+     * request's token is valid and unexpired.
      * </p>
      * <p>
      * For information about customizing web requests and responses, see <a
@@ -142,7 +149,8 @@ public class CaptchaAction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param customRequestHandling
-     *        Defines custom handling for the web request.</p>
+     *        Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection determines that
+     *        the request's token is valid and unexpired.</p>
      *        <p>
      *        For information about customizing web requests and responses, see <a
      *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,16 @@ public class EdgeJsonUnmarshaller implements Unmarshaller<Edge, JsonUnmarshaller
                 if (context.testExpression("Aliases", targetDepth)) {
                     context.nextToken();
                     edge.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("EdgeType", targetDepth)) {
+                    context.nextToken();
+                    edge.setEdgeType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReceivedEventAgeHistogram", targetDepth)) {
+                    context.nextToken();
+                    edge.setReceivedEventAgeHistogram(new ListUnmarshaller<HistogramEntry>(HistogramEntryJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

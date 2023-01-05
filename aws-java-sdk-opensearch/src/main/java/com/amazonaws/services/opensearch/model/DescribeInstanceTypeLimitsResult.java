@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,16 +17,28 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for the parameters received from the <code> <a>DescribeInstanceTypeLimits</a> </code> operation.
+ * Container for the parameters received from the <code>DescribeInstanceTypeLimits</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeInstanceTypeLimitsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code>
+     * refers to dedicated master nodes.
+     * </p>
+     */
     private java.util.Map<String, Limits> limitsByRole;
 
     /**
-     * @return
+     * <p>
+     * Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code>
+     * refers to dedicated master nodes.
+     * </p>
+     * 
+     * @return Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.
+     *         <code>master</code> refers to dedicated master nodes.
      */
 
     public java.util.Map<String, Limits> getLimitsByRole() {
@@ -34,7 +46,14 @@ public class DescribeInstanceTypeLimitsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code>
+     * refers to dedicated master nodes.
+     * </p>
+     * 
      * @param limitsByRole
+     *        Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.
+     *        <code>master</code> refers to dedicated master nodes.
      */
 
     public void setLimitsByRole(java.util.Map<String, Limits> limitsByRole) {
@@ -42,7 +61,14 @@ public class DescribeInstanceTypeLimitsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.<code>master</code>
+     * refers to dedicated master nodes.
+     * </p>
+     * 
      * @param limitsByRole
+     *        Map that contains all applicable instance type limits.<code>data</code> refers to data nodes.
+     *        <code>master</code> refers to dedicated master nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

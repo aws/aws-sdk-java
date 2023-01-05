@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DeleteTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to delete.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
      * </p>
      */
     private String taskArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to delete.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task to delete.
+     *        Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
      */
 
     public void setTaskArn(String taskArn) {
@@ -50,10 +50,10 @@ public class DeleteTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to delete.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task to delete.
+     * @return Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
      */
 
     public String getTaskArn() {
@@ -62,11 +62,11 @@ public class DeleteTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task to delete.
+     * Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
      * </p>
      * 
      * @param taskArn
-     *        The Amazon Resource Name (ARN) of the task to delete.
+     *        Specifies the Amazon Resource Name (ARN) of the task that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

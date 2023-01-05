@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -49,6 +49,7 @@
     "asyncClient" : "AWSComprehendMedicalAsyncClient",
     "asyncClientBuilderClassName" : "AWSComprehendMedicalAsyncClientBuilder",
     "asyncInterface" : "AWSComprehendMedicalAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : null,
@@ -3019,6 +3020,21 @@
       }, {
         "name" : "NEGATION",
         "value" : "NEGATION"
+      }, {
+        "name" : "PERTAINS_TO_FAMILY",
+        "value" : "PERTAINS_TO_FAMILY"
+      }, {
+        "name" : "HYPOTHETICAL",
+        "value" : "HYPOTHETICAL"
+      }, {
+        "name" : "LOW_CONFIDENCE",
+        "value" : "LOW_CONFIDENCE"
+      }, {
+        "name" : "PAST_HISTORY",
+        "value" : "PAST_HISTORY"
+      }, {
+        "name" : "FUTURE",
+        "value" : "FUTURE"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.comprehendmedical.enum.AttributeName",
@@ -12513,6 +12529,27 @@
       }, {
         "name" : "TIME_TO_TREATMENT_NAME",
         "value" : "TIME_TO_TREATMENT_NAME"
+      }, {
+        "name" : "AMOUNT",
+        "value" : "AMOUNT"
+      }, {
+        "name" : "GENDER",
+        "value" : "GENDER"
+      }, {
+        "name" : "RACE_ETHNICITY",
+        "value" : "RACE_ETHNICITY"
+      }, {
+        "name" : "ALLERGIES",
+        "value" : "ALLERGIES"
+      }, {
+        "name" : "TOBACCO_USE",
+        "value" : "TOBACCO_USE"
+      }, {
+        "name" : "ALCOHOL_CONSUMPTION",
+        "value" : "ALCOHOL_CONSUMPTION"
+      }, {
+        "name" : "REC_DRUG_USE",
+        "value" : "REC_DRUG_USE"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.comprehendmedical.enum.EntitySubType",
@@ -12575,6 +12612,9 @@
       }, {
         "name" : "TIME_EXPRESSION",
         "value" : "TIME_EXPRESSION"
+      }, {
+        "name" : "BEHAVIORAL_ENVIRONMENTAL_SOCIAL",
+        "value" : "BEHAVIORAL_ENVIRONMENTAL_SOCIAL"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.comprehendmedical.enum.EntityType",
@@ -17170,6 +17210,15 @@
       }, {
         "name" : "SYMPTOM",
         "value" : "SYMPTOM"
+      }, {
+        "name" : "PERTAINS_TO_FAMILY",
+        "value" : "PERTAINS_TO_FAMILY"
+      }, {
+        "name" : "HYPOTHETICAL",
+        "value" : "HYPOTHETICAL"
+      }, {
+        "name" : "LOW_CONFIDENCE",
+        "value" : "LOW_CONFIDENCE"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.comprehendmedical.enum.ICD10CMTraitName",
@@ -25669,6 +25718,9 @@
       }, {
         "name" : "SYSTEM_ORGAN_SITE",
         "value" : "SYSTEM_ORGAN_SITE"
+      }, {
+        "name" : "AMOUNT",
+        "value" : "AMOUNT"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.comprehendmedical.enum.RelationshipType",
@@ -35353,6 +35405,21 @@
       }, {
         "name" : "SYMPTOM",
         "value" : "SYMPTOM"
+      }, {
+        "name" : "PERTAINS_TO_FAMILY",
+        "value" : "PERTAINS_TO_FAMILY"
+      }, {
+        "name" : "HYPOTHETICAL",
+        "value" : "HYPOTHETICAL"
+      }, {
+        "name" : "LOW_CONFIDENCE",
+        "value" : "LOW_CONFIDENCE"
+      }, {
+        "name" : "PAST_HISTORY",
+        "value" : "PAST_HISTORY"
+      }, {
+        "name" : "FUTURE",
+        "value" : "FUTURE"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.comprehendmedical.enum.SNOMEDCTTraitName",
@@ -44093,7 +44160,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSComprehendMedicalException",

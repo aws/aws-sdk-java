@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,19 @@ public class DeleteVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.
+     * The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.
      * </p>
      */
     private String vocabularyFilterName;
 
     /**
      * <p>
-     * The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.
+     * The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.
+     *        The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case
+     *        sensitive.
      */
 
     public void setVocabularyFilterName(String vocabularyFilterName) {
@@ -47,10 +48,11 @@ public class DeleteVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.
+     * The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.
      * </p>
      * 
-     * @return The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.
+     * @return The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case
+     *         sensitive.
      */
 
     public String getVocabularyFilterName() {
@@ -59,11 +61,12 @@ public class DeleteVocabularyFilterRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.
+     * The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param vocabularyFilterName
-     *        The name of the custom vocabulary filter you want to delete. Vocabulary filter names are case sensitive.
+     *        The name of the custom vocabulary filter you want to delete. Custom vocabulary filter names are case
+     *        sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

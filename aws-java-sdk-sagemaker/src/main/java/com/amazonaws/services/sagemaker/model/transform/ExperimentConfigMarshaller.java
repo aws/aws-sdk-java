@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ExperimentConfigMarshaller {
             .marshallLocationName("TrialName").build();
     private static final MarshallingInfo<String> TRIALCOMPONENTDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrialComponentDisplayName").build();
+    private static final MarshallingInfo<String> RUNNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RunName").build();
 
     private static final ExperimentConfigMarshaller instance = new ExperimentConfigMarshaller();
 
@@ -53,6 +55,7 @@ public class ExperimentConfigMarshaller {
             protocolMarshaller.marshall(experimentConfig.getExperimentName(), EXPERIMENTNAME_BINDING);
             protocolMarshaller.marshall(experimentConfig.getTrialName(), TRIALNAME_BINDING);
             protocolMarshaller.marshall(experimentConfig.getTrialComponentDisplayName(), TRIALCOMPONENTDISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(experimentConfig.getRunName(), RUNNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

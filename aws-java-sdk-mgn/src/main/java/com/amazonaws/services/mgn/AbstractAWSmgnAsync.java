@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,58 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ArchiveApplicationResult> archiveApplicationAsync(ArchiveApplicationRequest request) {
+
+        return archiveApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ArchiveApplicationResult> archiveApplicationAsync(ArchiveApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ArchiveApplicationRequest, ArchiveApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ArchiveWaveResult> archiveWaveAsync(ArchiveWaveRequest request) {
+
+        return archiveWaveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ArchiveWaveResult> archiveWaveAsync(ArchiveWaveRequest request,
+            com.amazonaws.handlers.AsyncHandler<ArchiveWaveRequest, ArchiveWaveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateApplicationsResult> associateApplicationsAsync(AssociateApplicationsRequest request) {
+
+        return associateApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateApplicationsResult> associateApplicationsAsync(AssociateApplicationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateApplicationsRequest, AssociateApplicationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSourceServersResult> associateSourceServersAsync(AssociateSourceServersRequest request) {
+
+        return associateSourceServersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateSourceServersResult> associateSourceServersAsync(AssociateSourceServersRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateSourceServersRequest, AssociateSourceServersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeServerLifeCycleStateResult> changeServerLifeCycleStateAsync(ChangeServerLifeCycleStateRequest request) {
 
         return changeServerLifeCycleStateAsync(request, null);
@@ -35,6 +87,19 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<ChangeServerLifeCycleStateResult> changeServerLifeCycleStateAsync(ChangeServerLifeCycleStateRequest request,
             com.amazonaws.handlers.AsyncHandler<ChangeServerLifeCycleStateRequest, ChangeServerLifeCycleStateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request) {
+
+        return createApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -65,6 +130,32 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     public java.util.concurrent.Future<CreateReplicationConfigurationTemplateResult> createReplicationConfigurationTemplateAsync(
             CreateReplicationConfigurationTemplateRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateReplicationConfigurationTemplateRequest, CreateReplicationConfigurationTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWaveResult> createWaveAsync(CreateWaveRequest request) {
+
+        return createWaveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWaveResult> createWaveAsync(CreateWaveRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWaveRequest, CreateWaveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
+
+        return deleteApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +225,19 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<DeleteVcenterClientResult> deleteVcenterClientAsync(DeleteVcenterClientRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteVcenterClientRequest, DeleteVcenterClientResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWaveResult> deleteWaveAsync(DeleteWaveRequest request) {
+
+        return deleteWaveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWaveResult> deleteWaveAsync(DeleteWaveRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWaveRequest, DeleteWaveResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -221,6 +325,32 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateApplicationsResult> disassociateApplicationsAsync(DisassociateApplicationsRequest request) {
+
+        return disassociateApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateApplicationsResult> disassociateApplicationsAsync(DisassociateApplicationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateApplicationsRequest, DisassociateApplicationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSourceServersResult> disassociateSourceServersAsync(DisassociateSourceServersRequest request) {
+
+        return disassociateSourceServersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateSourceServersResult> disassociateSourceServersAsync(DisassociateSourceServersRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSourceServersRequest, DisassociateSourceServersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisconnectFromServiceResult> disconnectFromServiceAsync(DisconnectFromServiceRequest request) {
 
         return disconnectFromServiceAsync(request, null);
@@ -286,6 +416,32 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request) {
+
+        return listApplicationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSourceServerActionsResult> listSourceServerActionsAsync(ListSourceServerActionsRequest request) {
+
+        return listSourceServerActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSourceServerActionsResult> listSourceServerActionsAsync(ListSourceServerActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSourceServerActionsRequest, ListSourceServerActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -299,6 +455,32 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListTemplateActionsResult> listTemplateActionsAsync(ListTemplateActionsRequest request) {
+
+        return listTemplateActionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTemplateActionsResult> listTemplateActionsAsync(ListTemplateActionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTemplateActionsRequest, ListTemplateActionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWavesResult> listWavesAsync(ListWavesRequest request) {
+
+        return listWavesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWavesResult> listWavesAsync(ListWavesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWavesRequest, ListWavesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<MarkAsArchivedResult> markAsArchivedAsync(MarkAsArchivedRequest request) {
 
         return markAsArchivedAsync(request, null);
@@ -307,6 +489,58 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<MarkAsArchivedResult> markAsArchivedAsync(MarkAsArchivedRequest request,
             com.amazonaws.handlers.AsyncHandler<MarkAsArchivedRequest, MarkAsArchivedResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSourceServerActionResult> putSourceServerActionAsync(PutSourceServerActionRequest request) {
+
+        return putSourceServerActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSourceServerActionResult> putSourceServerActionAsync(PutSourceServerActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutSourceServerActionRequest, PutSourceServerActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutTemplateActionResult> putTemplateActionAsync(PutTemplateActionRequest request) {
+
+        return putTemplateActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutTemplateActionResult> putTemplateActionAsync(PutTemplateActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutTemplateActionRequest, PutTemplateActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveSourceServerActionResult> removeSourceServerActionAsync(RemoveSourceServerActionRequest request) {
+
+        return removeSourceServerActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveSourceServerActionResult> removeSourceServerActionAsync(RemoveSourceServerActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveSourceServerActionRequest, RemoveSourceServerActionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTemplateActionResult> removeTemplateActionAsync(RemoveTemplateActionRequest request) {
+
+        return removeTemplateActionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveTemplateActionResult> removeTemplateActionAsync(RemoveTemplateActionRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveTemplateActionRequest, RemoveTemplateActionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -390,6 +624,32 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<UnarchiveApplicationResult> unarchiveApplicationAsync(UnarchiveApplicationRequest request) {
+
+        return unarchiveApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnarchiveApplicationResult> unarchiveApplicationAsync(UnarchiveApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UnarchiveApplicationRequest, UnarchiveApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnarchiveWaveResult> unarchiveWaveAsync(UnarchiveWaveRequest request) {
+
+        return unarchiveWaveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnarchiveWaveResult> unarchiveWaveAsync(UnarchiveWaveRequest request,
+            com.amazonaws.handlers.AsyncHandler<UnarchiveWaveRequest, UnarchiveWaveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
 
         return untagResourceAsync(request, null);
@@ -398,6 +658,19 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request) {
+
+        return updateApplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -469,6 +742,19 @@ public class AbstractAWSmgnAsync extends AbstractAWSmgn implements AWSmgnAsync {
     public java.util.concurrent.Future<UpdateSourceServerReplicationTypeResult> updateSourceServerReplicationTypeAsync(
             UpdateSourceServerReplicationTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSourceServerReplicationTypeRequest, UpdateSourceServerReplicationTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWaveResult> updateWaveAsync(UpdateWaveRequest request) {
+
+        return updateWaveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWaveResult> updateWaveAsync(UpdateWaveRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateWaveRequest, UpdateWaveResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

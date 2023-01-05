@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the current Auto-Tune status for the domain.
+ * The current status of Auto-Tune for the domain. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +29,13 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune options creation date.
+     * Date and time when Auto-Tune was enabled for the domain.
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
-     * The timestamp of when the Auto-Tune options were last updated.
+     * Date and time when the Auto-Tune options were last updated for the domain.
      * </p>
      */
     private java.util.Date updateDate;
@@ -45,13 +47,13 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
     private Integer updateVersion;
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      */
     private String errorMessage;
@@ -64,11 +66,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune options creation date.
+     * Date and time when Auto-Tune was enabled for the domain.
      * </p>
      * 
      * @param creationDate
-     *        The timestamp of the Auto-Tune options creation date.
+     *        Date and time when Auto-Tune was enabled for the domain.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -77,10 +79,10 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune options creation date.
+     * Date and time when Auto-Tune was enabled for the domain.
      * </p>
      * 
-     * @return The timestamp of the Auto-Tune options creation date.
+     * @return Date and time when Auto-Tune was enabled for the domain.
      */
 
     public java.util.Date getCreationDate() {
@@ -89,11 +91,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune options creation date.
+     * Date and time when Auto-Tune was enabled for the domain.
      * </p>
      * 
      * @param creationDate
-     *        The timestamp of the Auto-Tune options creation date.
+     *        Date and time when Auto-Tune was enabled for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +106,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the Auto-Tune options were last updated.
+     * Date and time when the Auto-Tune options were last updated for the domain.
      * </p>
      * 
      * @param updateDate
-     *        The timestamp of when the Auto-Tune options were last updated.
+     *        Date and time when the Auto-Tune options were last updated for the domain.
      */
 
     public void setUpdateDate(java.util.Date updateDate) {
@@ -117,10 +119,10 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the Auto-Tune options were last updated.
+     * Date and time when the Auto-Tune options were last updated for the domain.
      * </p>
      * 
-     * @return The timestamp of when the Auto-Tune options were last updated.
+     * @return Date and time when the Auto-Tune options were last updated for the domain.
      */
 
     public java.util.Date getUpdateDate() {
@@ -129,11 +131,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the Auto-Tune options were last updated.
+     * Date and time when the Auto-Tune options were last updated for the domain.
      * </p>
      * 
      * @param updateDate
-     *        The timestamp of when the Auto-Tune options were last updated.
+     *        Date and time when the Auto-Tune options were last updated for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +186,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
      * @param state
-     *        The <code>AutoTuneState</code> for the domain.
+     *        The current state of Auto-Tune on the domain.
      * @see AutoTuneState
      */
 
@@ -198,10 +200,10 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
-     * @return The <code>AutoTuneState</code> for the domain.
+     * @return The current state of Auto-Tune on the domain.
      * @see AutoTuneState
      */
 
@@ -211,11 +213,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
      * @param state
-     *        The <code>AutoTuneState</code> for the domain.
+     *        The current state of Auto-Tune on the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneState
      */
@@ -227,11 +229,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>AutoTuneState</code> for the domain.
+     * The current state of Auto-Tune on the domain.
      * </p>
      * 
      * @param state
-     *        The <code>AutoTuneState</code> for the domain.
+     *        The current state of Auto-Tune on the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneState
      */
@@ -243,11 +245,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      * 
      * @param errorMessage
-     *        The error message while enabling or disabling Auto-Tune.
+     *        Any errors that occurred while enabling or disabling Auto-Tune.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -256,10 +258,10 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      * 
-     * @return The error message while enabling or disabling Auto-Tune.
+     * @return Any errors that occurred while enabling or disabling Auto-Tune.
      */
 
     public String getErrorMessage() {
@@ -268,11 +270,11 @@ public class AutoTuneStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The error message while enabling or disabling Auto-Tune.
+     * Any errors that occurred while enabling or disabling Auto-Tune.
      * </p>
      * 
      * @param errorMessage
-     *        The error message while enabling or disabling Auto-Tune.
+     *        Any errors that occurred while enabling or disabling Auto-Tune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

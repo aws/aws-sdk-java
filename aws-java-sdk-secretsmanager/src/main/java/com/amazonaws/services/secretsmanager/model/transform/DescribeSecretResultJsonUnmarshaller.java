@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,10 @@ public class DescribeSecretResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("DeletedDate", targetDepth)) {
                     context.nextToken();
                     describeSecretResult.setDeletedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("NextRotationDate", targetDepth)) {
+                    context.nextToken();
+                    describeSecretResult.setNextRotationDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class ServerDetailMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> RECOMMENDATIONSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendationSet").build();
+    private static final MarshallingInfo<StructuredPojo> SERVERERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serverError").build();
     private static final MarshallingInfo<String> SERVERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serverType").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -81,6 +83,7 @@ public class ServerDetailMarshaller {
             protocolMarshaller.marshall(serverDetail.getListAntipatternSeveritySummary(), LISTANTIPATTERNSEVERITYSUMMARY_BINDING);
             protocolMarshaller.marshall(serverDetail.getName(), NAME_BINDING);
             protocolMarshaller.marshall(serverDetail.getRecommendationSet(), RECOMMENDATIONSET_BINDING);
+            protocolMarshaller.marshall(serverDetail.getServerError(), SERVERERROR_BINDING);
             protocolMarshaller.marshall(serverDetail.getServerType(), SERVERTYPE_BINDING);
             protocolMarshaller.marshall(serverDetail.getStatusMessage(), STATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(serverDetail.getSystemInfo(), SYSTEMINFO_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,27 @@ public class CopyJobJsonUnmarshaller implements Unmarshaller<CopyJob, JsonUnmars
                 if (context.testExpression("ResourceType", targetDepth)) {
                     context.nextToken();
                     copyJob.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ParentJobId", targetDepth)) {
+                    context.nextToken();
+                    copyJob.setParentJobId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IsParent", targetDepth)) {
+                    context.nextToken();
+                    copyJob.setIsParent(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CompositeMemberIdentifier", targetDepth)) {
+                    context.nextToken();
+                    copyJob.setCompositeMemberIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NumberOfChildJobs", targetDepth)) {
+                    context.nextToken();
+                    copyJob.setNumberOfChildJobs(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ChildJobsInState", targetDepth)) {
+                    context.nextToken();
+                    copyJob.setChildJobsInState(new MapUnmarshaller<String, Long>(context.getUnmarshaller(String.class), context.getUnmarshaller(Long.class))
+                            .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

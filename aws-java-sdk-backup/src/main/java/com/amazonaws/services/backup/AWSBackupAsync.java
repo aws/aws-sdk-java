@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,39 @@ import com.amazonaws.services.backup.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSBackupAsync extends AWSBackup {
+
+    /**
+     * <p>
+     * This action removes the specified legal hold on a recovery point. This action can only be performed by a user
+     * with sufficient permissions.
+     * </p>
+     * 
+     * @param cancelLegalHoldRequest
+     * @return A Java Future containing the result of the CancelLegalHold operation returned by the service.
+     * @sample AWSBackupAsync.CancelLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelLegalHoldResult> cancelLegalHoldAsync(CancelLegalHoldRequest cancelLegalHoldRequest);
+
+    /**
+     * <p>
+     * This action removes the specified legal hold on a recovery point. This action can only be performed by a user
+     * with sufficient permissions.
+     * </p>
+     * 
+     * @param cancelLegalHoldRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelLegalHold operation returned by the service.
+     * @sample AWSBackupAsyncHandler.CancelLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelLegalHoldResult> cancelLegalHoldAsync(CancelLegalHoldRequest cancelLegalHoldRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelLegalHoldRequest, CancelLegalHoldResult> asyncHandler);
 
     /**
      * <p>
@@ -188,6 +221,41 @@ public interface AWSBackupAsync extends AWSBackup {
      */
     java.util.concurrent.Future<CreateFrameworkResult> createFrameworkAsync(CreateFrameworkRequest createFrameworkRequest,
             com.amazonaws.handlers.AsyncHandler<CreateFrameworkRequest, CreateFrameworkResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or
+     * deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a
+     * recovery point will fail with an error if one or more active legal holds are on the recovery point.
+     * </p>
+     * 
+     * @param createLegalHoldRequest
+     * @return A Java Future containing the result of the CreateLegalHold operation returned by the service.
+     * @sample AWSBackupAsync.CreateLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLegalHoldResult> createLegalHoldAsync(CreateLegalHoldRequest createLegalHoldRequest);
+
+    /**
+     * <p>
+     * This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or
+     * deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a
+     * recovery point will fail with an error if one or more active legal holds are on the recovery point.
+     * </p>
+     * 
+     * @param createLegalHoldRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLegalHold operation returned by the service.
+     * @sample AWSBackupAsyncHandler.CreateLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLegalHoldResult> createLegalHoldAsync(CreateLegalHoldRequest createLegalHoldRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLegalHoldRequest, CreateLegalHoldResult> asyncHandler);
 
     /**
      * <p>
@@ -483,6 +551,20 @@ public interface AWSBackupAsync extends AWSBackup {
      * If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous
      * backup and stops future continuous backup.
      * </p>
+     * <p>
+     * When an IAM role's permissions are insufficient to call this API, the service sends back an HTTP 200 response
+     * with an empty HTTP body, but the recovery point is not deleted. Instead, it enters an <code>EXPIRED</code> state.
+     * </p>
+     * <p>
+     * <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role has the
+     * <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding this role, see <a href=
+     * "https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+     * Troubleshooting manual deletions</a>.
+     * </p>
+     * <p>
+     * If the user or role is deleted or the permission within the role is removed, the deletion will not be successful
+     * and will enter an <code>EXPIRED</code> state.
+     * </p>
      * 
      * @param deleteRecoveryPointRequest
      * @return A Java Future containing the result of the DeleteRecoveryPoint operation returned by the service.
@@ -499,6 +581,20 @@ public interface AWSBackupAsync extends AWSBackup {
      * <p>
      * If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous
      * backup and stops future continuous backup.
+     * </p>
+     * <p>
+     * When an IAM role's permissions are insufficient to call this API, the service sends back an HTTP 200 response
+     * with an empty HTTP body, but the recovery point is not deleted. Instead, it enters an <code>EXPIRED</code> state.
+     * </p>
+     * <p>
+     * <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role has the
+     * <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding this role, see <a href=
+     * "https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+     * Troubleshooting manual deletions</a>.
+     * </p>
+     * <p>
+     * If the user or role is deleted or the permission within the role is removed, the deletion will not be successful
+     * and will enter an <code>EXPIRED</code> state.
      * </p>
      * 
      * @param deleteRecoveryPointRequest
@@ -943,6 +1039,43 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
+     * This action to a specific child (nested) recovery point removes the relationship between the specified recovery
+     * point and its parent (composite) recovery point.
+     * </p>
+     * 
+     * @param disassociateRecoveryPointFromParentRequest
+     * @return A Java Future containing the result of the DisassociateRecoveryPointFromParent operation returned by the
+     *         service.
+     * @sample AWSBackupAsync.DisassociateRecoveryPointFromParent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateRecoveryPointFromParentResult> disassociateRecoveryPointFromParentAsync(
+            DisassociateRecoveryPointFromParentRequest disassociateRecoveryPointFromParentRequest);
+
+    /**
+     * <p>
+     * This action to a specific child (nested) recovery point removes the relationship between the specified recovery
+     * point and its parent (composite) recovery point.
+     * </p>
+     * 
+     * @param disassociateRecoveryPointFromParentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateRecoveryPointFromParent operation returned by the
+     *         service.
+     * @sample AWSBackupAsyncHandler.DisassociateRecoveryPointFromParent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateRecoveryPointFromParentResult> disassociateRecoveryPointFromParentAsync(
+            DisassociateRecoveryPointFromParentRequest disassociateRecoveryPointFromParentRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateRecoveryPointFromParentRequest, DisassociateRecoveryPointFromParentResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the backup plan that is specified by the plan ID as a backup template.
      * </p>
      * 
@@ -1167,6 +1300,39 @@ public interface AWSBackupAsync extends AWSBackup {
     java.util.concurrent.Future<GetBackupVaultNotificationsResult> getBackupVaultNotificationsAsync(
             GetBackupVaultNotificationsRequest getBackupVaultNotificationsRequest,
             com.amazonaws.handlers.AsyncHandler<GetBackupVaultNotificationsRequest, GetBackupVaultNotificationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format,
+     * in addition to metadata.
+     * </p>
+     * 
+     * @param getLegalHoldRequest
+     * @return A Java Future containing the result of the GetLegalHold operation returned by the service.
+     * @sample AWSBackupAsync.GetLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLegalHoldResult> getLegalHoldAsync(GetLegalHoldRequest getLegalHoldRequest);
+
+    /**
+     * <p>
+     * This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format,
+     * in addition to metadata.
+     * </p>
+     * 
+     * @param getLegalHoldRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLegalHold operation returned by the service.
+     * @sample AWSBackupAsyncHandler.GetLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetLegalHoldResult> getLegalHoldAsync(GetLegalHoldRequest getLegalHoldRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLegalHoldRequest, GetLegalHoldResult> asyncHandler);
 
     /**
      * <p>
@@ -1498,6 +1664,37 @@ public interface AWSBackupAsync extends AWSBackup {
 
     /**
      * <p>
+     * This action returns metadata about active and previous legal holds.
+     * </p>
+     * 
+     * @param listLegalHoldsRequest
+     * @return A Java Future containing the result of the ListLegalHolds operation returned by the service.
+     * @sample AWSBackupAsync.ListLegalHolds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLegalHoldsResult> listLegalHoldsAsync(ListLegalHoldsRequest listLegalHoldsRequest);
+
+    /**
+     * <p>
+     * This action returns metadata about active and previous legal holds.
+     * </p>
+     * 
+     * @param listLegalHoldsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLegalHolds operation returned by the service.
+     * @sample AWSBackupAsyncHandler.ListLegalHolds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListLegalHoldsResult> listLegalHoldsAsync(ListLegalHoldsRequest listLegalHoldsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLegalHoldsRequest, ListLegalHoldsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of resources successfully backed up by Backup, including the time the resource was saved, an
      * Amazon Resource Name (ARN) of the resource, and a resource type.
      * </p>
@@ -1563,6 +1760,41 @@ public interface AWSBackupAsync extends AWSBackup {
     java.util.concurrent.Future<ListRecoveryPointsByBackupVaultResult> listRecoveryPointsByBackupVaultAsync(
             ListRecoveryPointsByBackupVaultRequest listRecoveryPointsByBackupVaultRequest,
             com.amazonaws.handlers.AsyncHandler<ListRecoveryPointsByBackupVaultRequest, ListRecoveryPointsByBackupVaultResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action returns recovery point ARNs (Amazon Resource Names) of the specified legal hold.
+     * </p>
+     * 
+     * @param listRecoveryPointsByLegalHoldRequest
+     * @return A Java Future containing the result of the ListRecoveryPointsByLegalHold operation returned by the
+     *         service.
+     * @sample AWSBackupAsync.ListRecoveryPointsByLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecoveryPointsByLegalHoldResult> listRecoveryPointsByLegalHoldAsync(
+            ListRecoveryPointsByLegalHoldRequest listRecoveryPointsByLegalHoldRequest);
+
+    /**
+     * <p>
+     * This action returns recovery point ARNs (Amazon Resource Names) of the specified legal hold.
+     * </p>
+     * 
+     * @param listRecoveryPointsByLegalHoldRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRecoveryPointsByLegalHold operation returned by the
+     *         service.
+     * @sample AWSBackupAsyncHandler.ListRecoveryPointsByLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListRecoveryPointsByLegalHoldResult> listRecoveryPointsByLegalHoldAsync(
+            ListRecoveryPointsByLegalHoldRequest listRecoveryPointsByLegalHoldRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRecoveryPointsByLegalHoldRequest, ListRecoveryPointsByLegalHoldResult> asyncHandler);
 
     /**
      * <p>
@@ -2004,6 +2236,11 @@ public interface AWSBackupAsync extends AWSBackup {
      * <p>
      * Attempts to cancel a job to create a one-time backup of a resource.
      * </p>
+     * <p>
+     * This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for
+     * Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
+     * Amazon Aurora, and Amazon Neptune.
+     * </p>
      * 
      * @param stopBackupJobRequest
      * @return A Java Future containing the result of the StopBackupJob operation returned by the service.
@@ -2016,6 +2253,11 @@ public interface AWSBackupAsync extends AWSBackup {
     /**
      * <p>
      * Attempts to cancel a job to create a one-time backup of a resource.
+     * </p>
+     * <p>
+     * This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for
+     * Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
+     * Amazon Aurora, and Amazon Neptune.
      * </p>
      * 
      * @param stopBackupJobRequest

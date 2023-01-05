@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,6 +117,70 @@ public interface AWSFMSAsync extends AWSFMS {
     java.util.concurrent.Future<AssociateThirdPartyFirewallResult> associateThirdPartyFirewallAsync(
             AssociateThirdPartyFirewallRequest associateThirdPartyFirewallRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateThirdPartyFirewallRequest, AssociateThirdPartyFirewallResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate resources to a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchAssociateResourceRequest
+     * @return A Java Future containing the result of the BatchAssociateResource operation returned by the service.
+     * @sample AWSFMSAsync.BatchAssociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateResourceResult> batchAssociateResourceAsync(BatchAssociateResourceRequest batchAssociateResourceRequest);
+
+    /**
+     * <p>
+     * Associate resources to a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchAssociateResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchAssociateResource operation returned by the service.
+     * @sample AWSFMSAsyncHandler.BatchAssociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchAssociateResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<BatchAssociateResourceResult> batchAssociateResourceAsync(BatchAssociateResourceRequest batchAssociateResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchAssociateResourceRequest, BatchAssociateResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates resources from a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchDisassociateResourceRequest
+     * @return A Java Future containing the result of the BatchDisassociateResource operation returned by the service.
+     * @sample AWSFMSAsync.BatchDisassociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateResourceResult> batchDisassociateResourceAsync(
+            BatchDisassociateResourceRequest batchDisassociateResourceRequest);
+
+    /**
+     * <p>
+     * Disassociates resources from a Firewall Manager resource set.
+     * </p>
+     * 
+     * @param batchDisassociateResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchDisassociateResource operation returned by the service.
+     * @sample AWSFMSAsyncHandler.BatchDisassociateResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/BatchDisassociateResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchDisassociateResourceResult> batchDisassociateResourceAsync(
+            BatchDisassociateResourceRequest batchDisassociateResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchDisassociateResourceRequest, BatchDisassociateResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -245,6 +309,37 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<DeleteProtocolsListResult> deleteProtocolsListAsync(DeleteProtocolsListRequest deleteProtocolsListRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProtocolsListRequest, DeleteProtocolsListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified <a>ResourceSet</a>.
+     * </p>
+     * 
+     * @param deleteResourceSetRequest
+     * @return A Java Future containing the result of the DeleteResourceSet operation returned by the service.
+     * @sample AWSFMSAsync.DeleteResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceSetResult> deleteResourceSetAsync(DeleteResourceSetRequest deleteResourceSetRequest);
+
+    /**
+     * <p>
+     * Deletes the specified <a>ResourceSet</a>.
+     * </p>
+     * 
+     * @param deleteResourceSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourceSet operation returned by the service.
+     * @sample AWSFMSAsyncHandler.DeleteResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourceSetResult> deleteResourceSetAsync(DeleteResourceSetRequest deleteResourceSetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourceSetRequest, DeleteResourceSetResult> asyncHandler);
 
     /**
      * <p>
@@ -599,6 +694,37 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Gets information about a specific resource set.
+     * </p>
+     * 
+     * @param getResourceSetRequest
+     * @return A Java Future containing the result of the GetResourceSet operation returned by the service.
+     * @sample AWSFMSAsync.GetResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceSetResult> getResourceSetAsync(GetResourceSetRequest getResourceSetRequest);
+
+    /**
+     * <p>
+     * Gets information about a specific resource set.
+     * </p>
+     * 
+     * @param getResourceSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceSet operation returned by the service.
+     * @sample AWSFMSAsyncHandler.GetResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceSetResult> getResourceSetAsync(GetResourceSetRequest getResourceSetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceSetRequest, GetResourceSetResult> asyncHandler);
+
+    /**
+     * <p>
      * The onboarding status of a Firewall Manager admin account to third-party firewall vendor tenant.
      * </p>
      * 
@@ -731,6 +857,39 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Returns an array of resources in the organization's accounts that are available to be associated with a resource
+     * set.
+     * </p>
+     * 
+     * @param listDiscoveredResourcesRequest
+     * @return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.
+     * @sample AWSFMSAsync.ListDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest);
+
+    /**
+     * <p>
+     * Returns an array of resources in the organization's accounts that are available to be associated with a resource
+     * set.
+     * </p>
+     * 
+     * @param listDiscoveredResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDiscoveredResources operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListDiscoveredResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListDiscoveredResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a <code>MemberAccounts</code> object that lists the member accounts in the administrator's Amazon Web
      * Services organization.
      * </p>
@@ -831,6 +990,68 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<ListProtocolsListsResult> listProtocolsListsAsync(ListProtocolsListsRequest listProtocolsListsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProtocolsListsRequest, ListProtocolsListsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of resources that are currently associated to a resource set.
+     * </p>
+     * 
+     * @param listResourceSetResourcesRequest
+     * @return A Java Future containing the result of the ListResourceSetResources operation returned by the service.
+     * @sample AWSFMSAsync.ListResourceSetResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetResourcesResult> listResourceSetResourcesAsync(ListResourceSetResourcesRequest listResourceSetResourcesRequest);
+
+    /**
+     * <p>
+     * Returns an array of resources that are currently associated to a resource set.
+     * </p>
+     * 
+     * @param listResourceSetResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceSetResources operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListResourceSetResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSetResources" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetResourcesResult> listResourceSetResourcesAsync(ListResourceSetResourcesRequest listResourceSetResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceSetResourcesRequest, ListResourceSetResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <code>ResourceSetSummary</code> objects.
+     * </p>
+     * 
+     * @param listResourceSetsRequest
+     * @return A Java Future containing the result of the ListResourceSets operation returned by the service.
+     * @sample AWSFMSAsync.ListResourceSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetsResult> listResourceSetsAsync(ListResourceSetsRequest listResourceSetsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>ResourceSetSummary</code> objects.
+     * </p>
+     * 
+     * @param listResourceSetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceSets operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListResourceSets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListResourceSets" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceSetsResult> listResourceSetsAsync(ListResourceSetsRequest listResourceSetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceSetsRequest, ListResourceSetsResult> asyncHandler);
 
     /**
      * <p>
@@ -1131,6 +1352,45 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<PutProtocolsListResult> putProtocolsListAsync(PutProtocolsListRequest putProtocolsListRequest,
             com.amazonaws.handlers.AsyncHandler<PutProtocolsListRequest, PutProtocolsListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates the resource set.
+     * </p>
+     * <p>
+     * An Firewall Manager resource set defines the resources to import into an Firewall Manager policy from another
+     * Amazon Web Services service.
+     * </p>
+     * 
+     * @param putResourceSetRequest
+     * @return A Java Future containing the result of the PutResourceSet operation returned by the service.
+     * @sample AWSFMSAsync.PutResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourceSetResult> putResourceSetAsync(PutResourceSetRequest putResourceSetRequest);
+
+    /**
+     * <p>
+     * Creates the resource set.
+     * </p>
+     * <p>
+     * An Firewall Manager resource set defines the resources to import into an Firewall Manager policy from another
+     * Amazon Web Services service.
+     * </p>
+     * 
+     * @param putResourceSetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourceSet operation returned by the service.
+     * @sample AWSFMSAsyncHandler.PutResourceSet
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutResourceSet" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourceSetResult> putResourceSetAsync(PutResourceSetRequest putResourceSetRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourceSetRequest, PutResourceSetResult> asyncHandler);
 
     /**
      * <p>

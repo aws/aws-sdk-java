@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,18 @@ public enum StateReasonCode {
     InvalidSecurityGroup("InvalidSecurityGroup"),
     ImageDeleted("ImageDeleted"),
     ImageAccessDenied("ImageAccessDenied"),
-    InvalidImage("InvalidImage");
+    InvalidImage("InvalidImage"),
+    KMSKeyAccessDenied("KMSKeyAccessDenied"),
+    KMSKeyNotFound("KMSKeyNotFound"),
+    InvalidStateKMSKey("InvalidStateKMSKey"),
+    DisabledKMSKey("DisabledKMSKey"),
+    EFSIOError("EFSIOError"),
+    EFSMountConnectivityError("EFSMountConnectivityError"),
+    EFSMountFailure("EFSMountFailure"),
+    EFSMountTimeout("EFSMountTimeout"),
+    InvalidRuntime("InvalidRuntime"),
+    InvalidZipFileException("InvalidZipFileException"),
+    FunctionError("FunctionError");
 
     private String value;
 

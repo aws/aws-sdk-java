@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,10 +117,28 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
     private CloudWatchEventsExecutionDataDetails outputDetails;
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      */
     private String traceHeader;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+     * </p>
+     */
+    private String mapRunArn;
+    /**
+     * <p>
+     * The error string if the state machine execution failed.
+     * </p>
+     */
+    private String error;
+    /**
+     * <p>
+     * The cause string if the state machine execution failed.
+     * </p>
+     */
+    private String cause;
 
     /**
      * <p>
@@ -760,11 +778,11 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      * 
      * @param traceHeader
-     *        The AWS X-Ray trace header that was passed to the execution.
+     *        The X-Ray trace header that was passed to the execution.
      */
 
     public void setTraceHeader(String traceHeader) {
@@ -773,10 +791,10 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      * 
-     * @return The AWS X-Ray trace header that was passed to the execution.
+     * @return The X-Ray trace header that was passed to the execution.
      */
 
     public String getTraceHeader() {
@@ -785,16 +803,136 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      * 
      * @param traceHeader
-     *        The AWS X-Ray trace header that was passed to the execution.
+     *        The X-Ray trace header that was passed to the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeExecutionResult withTraceHeader(String traceHeader) {
         setTraceHeader(traceHeader);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+     */
+
+    public void setMapRunArn(String mapRunArn) {
+        this.mapRunArn = mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+     */
+
+    public String getMapRunArn() {
+        return this.mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) that identifies a Map Run, which dispatched this execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withMapRunArn(String mapRunArn) {
+        setMapRunArn(mapRunArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The error string if the state machine execution failed.
+     * </p>
+     * 
+     * @param error
+     *        The error string if the state machine execution failed.
+     */
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * The error string if the state machine execution failed.
+     * </p>
+     * 
+     * @return The error string if the state machine execution failed.
+     */
+
+    public String getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * The error string if the state machine execution failed.
+     * </p>
+     * 
+     * @param error
+     *        The error string if the state machine execution failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withError(String error) {
+        setError(error);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cause string if the state machine execution failed.
+     * </p>
+     * 
+     * @param cause
+     *        The cause string if the state machine execution failed.
+     */
+
+    public void setCause(String cause) {
+        this.cause = cause;
+    }
+
+    /**
+     * <p>
+     * The cause string if the state machine execution failed.
+     * </p>
+     * 
+     * @return The cause string if the state machine execution failed.
+     */
+
+    public String getCause() {
+        return this.cause;
+    }
+
+    /**
+     * <p>
+     * The cause string if the state machine execution failed.
+     * </p>
+     * 
+     * @param cause
+     *        The cause string if the state machine execution failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeExecutionResult withCause(String cause) {
+        setCause(cause);
         return this;
     }
 
@@ -831,7 +969,13 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         if (getOutputDetails() != null)
             sb.append("OutputDetails: ").append(getOutputDetails()).append(",");
         if (getTraceHeader() != null)
-            sb.append("TraceHeader: ").append(getTraceHeader());
+            sb.append("TraceHeader: ").append(getTraceHeader()).append(",");
+        if (getMapRunArn() != null)
+            sb.append("MapRunArn: ").append(getMapRunArn()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append("***Sensitive Data Redacted***").append(",");
+        if (getCause() != null)
+            sb.append("Cause: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -890,6 +1034,18 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getTraceHeader() != null && other.getTraceHeader().equals(this.getTraceHeader()) == false)
             return false;
+        if (other.getMapRunArn() == null ^ this.getMapRunArn() == null)
+            return false;
+        if (other.getMapRunArn() != null && other.getMapRunArn().equals(this.getMapRunArn()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
+            return false;
+        if (other.getCause() == null ^ this.getCause() == null)
+            return false;
+        if (other.getCause() != null && other.getCause().equals(this.getCause()) == false)
+            return false;
         return true;
     }
 
@@ -909,6 +1065,9 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
         hashCode = prime * hashCode + ((getOutputDetails() == null) ? 0 : getOutputDetails().hashCode());
         hashCode = prime * hashCode + ((getTraceHeader() == null) ? 0 : getTraceHeader().hashCode());
+        hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
+        hashCode = prime * hashCode + ((getCause() == null) ? 0 : getCause().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class GetVocabularyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.
+     * The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.
      * </p>
      */
     private String vocabularyName;
 
     /**
      * <p>
-     * The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.
+     * The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.
+     *        The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -47,10 +47,10 @@ public class GetVocabularyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.
+     * The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.
      * </p>
      * 
-     * @return The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.
+     * @return The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.
      */
 
     public String getVocabularyName() {
@@ -59,11 +59,11 @@ public class GetVocabularyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.
+     * The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the custom vocabulary you want information about. Vocabulary names are case sensitive.
+     *        The name of the custom vocabulary you want information about. Custom vocabulary names are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

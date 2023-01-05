@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Server participating in Job.
+ * Post Launch Actions to executed on the Test or Cutover instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PostLaunchActions" target="_top">AWS API
@@ -30,42 +30,42 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's CloudWatch log group name.
      * </p>
      */
     private String cloudWatchLogGroupName;
     /**
      * <p>
-     * Server participating in Job.
+     * Deployment type in which AWS Systems Manager Documents will be executed.
      * </p>
      */
     private String deployment;
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 log bucket.
      * </p>
      */
     private String s3LogBucket;
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 output key prefix.
      * </p>
      */
     private String s3OutputKeyPrefix;
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Documents.
      * </p>
      */
     private java.util.List<SsmDocument> ssmDocuments;
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's CloudWatch log group name.
      * </p>
      * 
      * @param cloudWatchLogGroupName
-     *        Server participating in Job.
+     *        AWS Systems Manager Command's CloudWatch log group name.
      */
 
     public void setCloudWatchLogGroupName(String cloudWatchLogGroupName) {
@@ -74,10 +74,10 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's CloudWatch log group name.
      * </p>
      * 
-     * @return Server participating in Job.
+     * @return AWS Systems Manager Command's CloudWatch log group name.
      */
 
     public String getCloudWatchLogGroupName() {
@@ -86,11 +86,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's CloudWatch log group name.
      * </p>
      * 
      * @param cloudWatchLogGroupName
-     *        Server participating in Job.
+     *        AWS Systems Manager Command's CloudWatch log group name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * Deployment type in which AWS Systems Manager Documents will be executed.
      * </p>
      * 
      * @param deployment
-     *        Server participating in Job.
+     *        Deployment type in which AWS Systems Manager Documents will be executed.
      * @see PostLaunchActionsDeploymentType
      */
 
@@ -115,10 +115,10 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * Deployment type in which AWS Systems Manager Documents will be executed.
      * </p>
      * 
-     * @return Server participating in Job.
+     * @return Deployment type in which AWS Systems Manager Documents will be executed.
      * @see PostLaunchActionsDeploymentType
      */
 
@@ -128,11 +128,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * Deployment type in which AWS Systems Manager Documents will be executed.
      * </p>
      * 
      * @param deployment
-     *        Server participating in Job.
+     *        Deployment type in which AWS Systems Manager Documents will be executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PostLaunchActionsDeploymentType
      */
@@ -144,11 +144,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * Deployment type in which AWS Systems Manager Documents will be executed.
      * </p>
      * 
      * @param deployment
-     *        Server participating in Job.
+     *        Deployment type in which AWS Systems Manager Documents will be executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PostLaunchActionsDeploymentType
      */
@@ -160,11 +160,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 log bucket.
      * </p>
      * 
      * @param s3LogBucket
-     *        Server participating in Job.
+     *        AWS Systems Manager Command's logs S3 log bucket.
      */
 
     public void setS3LogBucket(String s3LogBucket) {
@@ -173,10 +173,10 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 log bucket.
      * </p>
      * 
-     * @return Server participating in Job.
+     * @return AWS Systems Manager Command's logs S3 log bucket.
      */
 
     public String getS3LogBucket() {
@@ -185,11 +185,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 log bucket.
      * </p>
      * 
      * @param s3LogBucket
-     *        Server participating in Job.
+     *        AWS Systems Manager Command's logs S3 log bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +200,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 output key prefix.
      * </p>
      * 
      * @param s3OutputKeyPrefix
-     *        Server participating in Job.
+     *        AWS Systems Manager Command's logs S3 output key prefix.
      */
 
     public void setS3OutputKeyPrefix(String s3OutputKeyPrefix) {
@@ -213,10 +213,10 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 output key prefix.
      * </p>
      * 
-     * @return Server participating in Job.
+     * @return AWS Systems Manager Command's logs S3 output key prefix.
      */
 
     public String getS3OutputKeyPrefix() {
@@ -225,11 +225,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Command's logs S3 output key prefix.
      * </p>
      * 
      * @param s3OutputKeyPrefix
-     *        Server participating in Job.
+     *        AWS Systems Manager Command's logs S3 output key prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,10 +240,10 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Documents.
      * </p>
      * 
-     * @return Server participating in Job.
+     * @return AWS Systems Manager Documents.
      */
 
     public java.util.List<SsmDocument> getSsmDocuments() {
@@ -252,11 +252,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Documents.
      * </p>
      * 
      * @param ssmDocuments
-     *        Server participating in Job.
+     *        AWS Systems Manager Documents.
      */
 
     public void setSsmDocuments(java.util.Collection<SsmDocument> ssmDocuments) {
@@ -270,7 +270,7 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Documents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -279,7 +279,7 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param ssmDocuments
-     *        Server participating in Job.
+     *        AWS Systems Manager Documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,11 +295,11 @@ public class PostLaunchActions implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Server participating in Job.
+     * AWS Systems Manager Documents.
      * </p>
      * 
      * @param ssmDocuments
-     *        Server participating in Job.
+     *        AWS Systems Manager Documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

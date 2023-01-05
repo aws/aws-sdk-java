@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,9 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * A container for a key-value name pair.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3Tag" target="_top">AWS API
  *      Documentation</a>
@@ -24,15 +26,26 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3Tag implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Key of the tag
+     * </p>
+     */
     private String key;
-    /** <p/> */
+    /**
+     * <p>
+     * Value of the tag
+     * </p>
+     */
     private String value;
 
     /**
-     * <p/>
+     * <p>
+     * Key of the tag
+     * </p>
      * 
      * @param key
+     *        Key of the tag
      */
 
     public void setKey(String key) {
@@ -40,9 +53,11 @@ public class S3Tag implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Key of the tag
+     * </p>
      * 
-     * @return
+     * @return Key of the tag
      */
 
     public String getKey() {
@@ -50,9 +65,12 @@ public class S3Tag implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Key of the tag
+     * </p>
      * 
      * @param key
+     *        Key of the tag
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,9 +80,12 @@ public class S3Tag implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Value of the tag
+     * </p>
      * 
      * @param value
+     *        Value of the tag
      */
 
     public void setValue(String value) {
@@ -72,9 +93,11 @@ public class S3Tag implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Value of the tag
+     * </p>
      * 
-     * @return
+     * @return Value of the tag
      */
 
     public String getValue() {
@@ -82,9 +105,12 @@ public class S3Tag implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Value of the tag
+     * </p>
      * 
      * @param value
+     *        Value of the tag
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,14 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private String klvMetadata;
     /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest
+     * metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same
+     * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
+     * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
+     * Manifest metadata signaling to Disabled.
+     */
+    private String manifestMetadataSignaling;
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
      * XML (sccXml).
@@ -117,6 +125,25 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
      * or leave blank.
      */
     private String timedMetadata;
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
+     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    private String timedMetadataBoxVersion;
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
+     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
+     * metadata (timedMetadata) to Passthrough.
+     */
+    private String timedMetadataSchemeIdUri;
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
+     * set ID3 metadata (timedMetadata) to Passthrough.
+     */
+    private String timedMetadataValue;
 
     /**
      * Specify this setting only when your output will be consumed by a downstream repackaging workflow that is
@@ -776,6 +803,89 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest
+     * metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same
+     * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
+     * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
+     * Manifest metadata signaling to Disabled.
+     * 
+     * @param manifestMetadataSignaling
+     *        To add an InbandEventStream element in your output MPD manifest for each type of event message, set
+     *        Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri
+     *        will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     *        InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
+     *        your output MPD manifest, set Manifest metadata signaling to Disabled.
+     * @see CmfcManifestMetadataSignaling
+     */
+
+    public void setManifestMetadataSignaling(String manifestMetadataSignaling) {
+        this.manifestMetadataSignaling = manifestMetadataSignaling;
+    }
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest
+     * metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same
+     * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
+     * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
+     * Manifest metadata signaling to Disabled.
+     * 
+     * @return To add an InbandEventStream element in your output MPD manifest for each type of event message, set
+     *         Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri
+     *         will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     *         InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
+     *         your output MPD manifest, set Manifest metadata signaling to Disabled.
+     * @see CmfcManifestMetadataSignaling
+     */
+
+    public String getManifestMetadataSignaling() {
+        return this.manifestMetadataSignaling;
+    }
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest
+     * metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same
+     * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
+     * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
+     * Manifest metadata signaling to Disabled.
+     * 
+     * @param manifestMetadataSignaling
+     *        To add an InbandEventStream element in your output MPD manifest for each type of event message, set
+     *        Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri
+     *        will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     *        InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
+     *        your output MPD manifest, set Manifest metadata signaling to Disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcManifestMetadataSignaling
+     */
+
+    public CmfcSettings withManifestMetadataSignaling(String manifestMetadataSignaling) {
+        setManifestMetadataSignaling(manifestMetadataSignaling);
+        return this;
+    }
+
+    /**
+     * To add an InbandEventStream element in your output MPD manifest for each type of event message, set Manifest
+     * metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri will be same
+     * value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the InbandEventStream element
+     * schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of your output MPD manifest, set
+     * Manifest metadata signaling to Disabled.
+     * 
+     * @param manifestMetadataSignaling
+     *        To add an InbandEventStream element in your output MPD manifest for each type of event message, set
+     *        Manifest metadata signaling to Enabled. For ID3 event messages, the InbandEventStream element schemeIdUri
+     *        will be same value that you specify for ID3 metadata scheme ID URI. For SCTE35 event messages, the
+     *        InbandEventStream element schemeIdUri will be "urn:scte:scte35:2013:bin". To leave these elements out of
+     *        your output MPD manifest, set Manifest metadata signaling to Disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcManifestMetadataSignaling
+     */
+
+    public CmfcSettings withManifestMetadataSignaling(CmfcManifestMetadataSignaling manifestMetadataSignaling) {
+        this.manifestMetadataSignaling = manifestMetadataSignaling.toString();
+        return this;
+    }
+
+    /**
      * Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this
      * output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC
      * XML (sccXml).
@@ -985,6 +1095,171 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
+     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * 
+     * @param timedMetadataBoxVersion
+     *        Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
+     *        see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
+     *        you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * @see CmfcTimedMetadataBoxVersion
+     */
+
+    public void setTimedMetadataBoxVersion(String timedMetadataBoxVersion) {
+        this.timedMetadataBoxVersion = timedMetadataBoxVersion;
+    }
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
+     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * 
+     * @return Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
+     *         see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
+     *         you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * @see CmfcTimedMetadataBoxVersion
+     */
+
+    public String getTimedMetadataBoxVersion() {
+        return this.timedMetadataBoxVersion;
+    }
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
+     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * 
+     * @param timedMetadataBoxVersion
+     *        Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
+     *        see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
+     *        you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcTimedMetadataBoxVersion
+     */
+
+    public CmfcSettings withTimedMetadataBoxVersion(String timedMetadataBoxVersion) {
+        setTimedMetadataBoxVersion(timedMetadataBoxVersion);
+        return this;
+    }
+
+    /**
+     * Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When you specify
+     * Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * 
+     * @param timedMetadataBoxVersion
+     *        Specify the event message box (eMSG) version for ID3 timed metadata in your output. For more information,
+     *        see ISO/IEC 23009-1:2022 section 5.10.3.3.3 Syntax. Leave blank to use the default value Version 0. When
+     *        you specify Version 1, you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CmfcTimedMetadataBoxVersion
+     */
+
+    public CmfcSettings withTimedMetadataBoxVersion(CmfcTimedMetadataBoxVersion timedMetadataBoxVersion) {
+        this.timedMetadataBoxVersion = timedMetadataBoxVersion.toString();
+        return this;
+    }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
+     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
+     * metadata (timedMetadata) to Passthrough.
+     * 
+     * @param timedMetadataSchemeIdUri
+     *        Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
+     *        For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
+     *        default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
+     *        must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+
+    public void setTimedMetadataSchemeIdUri(String timedMetadataSchemeIdUri) {
+        this.timedMetadataSchemeIdUri = timedMetadataSchemeIdUri;
+    }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
+     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
+     * metadata (timedMetadata) to Passthrough.
+     * 
+     * @return Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
+     *         For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
+     *         default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
+     *         must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+
+    public String getTimedMetadataSchemeIdUri() {
+        return this.timedMetadataSchemeIdUri;
+    }
+
+    /**
+     * Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output. For
+     * more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the default value:
+     * https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you must also set ID3
+     * metadata (timedMetadata) to Passthrough.
+     * 
+     * @param timedMetadataSchemeIdUri
+     *        Specify the event message box (eMSG) scheme ID URI (scheme_id_uri) for ID3 timed metadata in your output.
+     *        For more informaiton, see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. Leave blank to use the
+     *        default value: https://aomedia.org/emsg/ID3 When you specify a value for ID3 metadata scheme ID URI, you
+     *        must also set ID3 metadata (timedMetadata) to Passthrough.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmfcSettings withTimedMetadataSchemeIdUri(String timedMetadataSchemeIdUri) {
+        setTimedMetadataSchemeIdUri(timedMetadataSchemeIdUri);
+        return this;
+    }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
+     * set ID3 metadata (timedMetadata) to Passthrough.
+     * 
+     * @param timedMetadataValue
+     *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton,
+     *        see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
+     *        you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+
+    public void setTimedMetadataValue(String timedMetadataValue) {
+        this.timedMetadataValue = timedMetadataValue;
+    }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
+     * set ID3 metadata (timedMetadata) to Passthrough.
+     * 
+     * @return Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton,
+     *         see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
+     *         you must also set ID3 metadata (timedMetadata) to Passthrough.
+     */
+
+    public String getTimedMetadataValue() {
+        return this.timedMetadataValue;
+    }
+
+    /**
+     * Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton, see
+     * ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value, you must also
+     * set ID3 metadata (timedMetadata) to Passthrough.
+     * 
+     * @param timedMetadataValue
+     *        Specify the event message box (eMSG) value for ID3 timed metadata in your output. For more informaiton,
+     *        see ISO/IEC 23009-1:2022 section 5.10.3.3.4 Semantics. When you specify a value for ID3 Metadata Value,
+     *        you must also set ID3 metadata (timedMetadata) to Passthrough.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CmfcSettings withTimedMetadataValue(String timedMetadataValue) {
+        setTimedMetadataValue(timedMetadataValue);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1010,12 +1285,20 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("IFrameOnlyManifest: ").append(getIFrameOnlyManifest()).append(",");
         if (getKlvMetadata() != null)
             sb.append("KlvMetadata: ").append(getKlvMetadata()).append(",");
+        if (getManifestMetadataSignaling() != null)
+            sb.append("ManifestMetadataSignaling: ").append(getManifestMetadataSignaling()).append(",");
         if (getScte35Esam() != null)
             sb.append("Scte35Esam: ").append(getScte35Esam()).append(",");
         if (getScte35Source() != null)
             sb.append("Scte35Source: ").append(getScte35Source()).append(",");
         if (getTimedMetadata() != null)
-            sb.append("TimedMetadata: ").append(getTimedMetadata());
+            sb.append("TimedMetadata: ").append(getTimedMetadata()).append(",");
+        if (getTimedMetadataBoxVersion() != null)
+            sb.append("TimedMetadataBoxVersion: ").append(getTimedMetadataBoxVersion()).append(",");
+        if (getTimedMetadataSchemeIdUri() != null)
+            sb.append("TimedMetadataSchemeIdUri: ").append(getTimedMetadataSchemeIdUri()).append(",");
+        if (getTimedMetadataValue() != null)
+            sb.append("TimedMetadataValue: ").append(getTimedMetadataValue());
         sb.append("}");
         return sb.toString();
     }
@@ -1058,6 +1341,10 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKlvMetadata() != null && other.getKlvMetadata().equals(this.getKlvMetadata()) == false)
             return false;
+        if (other.getManifestMetadataSignaling() == null ^ this.getManifestMetadataSignaling() == null)
+            return false;
+        if (other.getManifestMetadataSignaling() != null && other.getManifestMetadataSignaling().equals(this.getManifestMetadataSignaling()) == false)
+            return false;
         if (other.getScte35Esam() == null ^ this.getScte35Esam() == null)
             return false;
         if (other.getScte35Esam() != null && other.getScte35Esam().equals(this.getScte35Esam()) == false)
@@ -1069,6 +1356,18 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getTimedMetadata() == null ^ this.getTimedMetadata() == null)
             return false;
         if (other.getTimedMetadata() != null && other.getTimedMetadata().equals(this.getTimedMetadata()) == false)
+            return false;
+        if (other.getTimedMetadataBoxVersion() == null ^ this.getTimedMetadataBoxVersion() == null)
+            return false;
+        if (other.getTimedMetadataBoxVersion() != null && other.getTimedMetadataBoxVersion().equals(this.getTimedMetadataBoxVersion()) == false)
+            return false;
+        if (other.getTimedMetadataSchemeIdUri() == null ^ this.getTimedMetadataSchemeIdUri() == null)
+            return false;
+        if (other.getTimedMetadataSchemeIdUri() != null && other.getTimedMetadataSchemeIdUri().equals(this.getTimedMetadataSchemeIdUri()) == false)
+            return false;
+        if (other.getTimedMetadataValue() == null ^ this.getTimedMetadataValue() == null)
+            return false;
+        if (other.getTimedMetadataValue() != null && other.getTimedMetadataValue().equals(this.getTimedMetadataValue()) == false)
             return false;
         return true;
     }
@@ -1085,9 +1384,13 @@ public class CmfcSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescriptiveVideoServiceFlag() == null) ? 0 : getDescriptiveVideoServiceFlag().hashCode());
         hashCode = prime * hashCode + ((getIFrameOnlyManifest() == null) ? 0 : getIFrameOnlyManifest().hashCode());
         hashCode = prime * hashCode + ((getKlvMetadata() == null) ? 0 : getKlvMetadata().hashCode());
+        hashCode = prime * hashCode + ((getManifestMetadataSignaling() == null) ? 0 : getManifestMetadataSignaling().hashCode());
         hashCode = prime * hashCode + ((getScte35Esam() == null) ? 0 : getScte35Esam().hashCode());
         hashCode = prime * hashCode + ((getScte35Source() == null) ? 0 : getScte35Source().hashCode());
         hashCode = prime * hashCode + ((getTimedMetadata() == null) ? 0 : getTimedMetadata().hashCode());
+        hashCode = prime * hashCode + ((getTimedMetadataBoxVersion() == null) ? 0 : getTimedMetadataBoxVersion().hashCode());
+        hashCode = prime * hashCode + ((getTimedMetadataSchemeIdUri() == null) ? 0 : getTimedMetadataSchemeIdUri().hashCode());
+        hashCode = prime * hashCode + ((getTimedMetadataValue() == null) ? 0 : getTimedMetadataValue().hashCode());
         return hashCode;
     }
 

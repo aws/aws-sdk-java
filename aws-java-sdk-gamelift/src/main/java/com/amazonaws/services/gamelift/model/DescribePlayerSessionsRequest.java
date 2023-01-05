@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribePlayerSessions" target="_top">AWS
  *      API Documentation</a>
@@ -48,7 +45,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
     private String playerSessionId;
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a
+     * DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.
      * </p>
      * <p>
      * Possible player session statuses include the following:
@@ -217,7 +215,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a
+     * DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.
      * </p>
      * <p>
      * Possible player session statuses include the following:
@@ -248,7 +247,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param playerSessionStatusFilter
-     *        Player session status to filter results on.</p>
+     *        Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a
+     *        DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
      *        <p>
      *        Possible player session statuses include the following:
      *        </p>
@@ -283,7 +283,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a
+     * DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.
      * </p>
      * <p>
      * Possible player session statuses include the following:
@@ -313,7 +314,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * </ul>
      * 
-     * @return Player session status to filter results on.</p>
+     * @return Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a
+     *         DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
      *         <p>
      *         Possible player session statuses include the following:
      *         </p>
@@ -348,7 +350,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Player session status to filter results on.
+     * Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a
+     * DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.
      * </p>
      * <p>
      * Possible player session statuses include the following:
@@ -379,7 +382,8 @@ public class DescribePlayerSessionsRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * 
      * @param playerSessionStatusFilter
-     *        Player session status to filter results on.</p>
+     *        Player session status to filter results on. Note that when a PlayerSessionId or PlayerId is provided in a
+     *        DescribePlayerSessions request, then the PlayerSessionStatusFilter has no effect on the response.</p>
      *        <p>
      *        Possible player session statuses include the following:
      *        </p>

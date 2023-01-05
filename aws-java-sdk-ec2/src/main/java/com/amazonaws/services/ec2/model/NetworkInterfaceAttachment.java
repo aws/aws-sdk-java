@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,12 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Configures ENA Express for the network interface that this action attaches to the instance.
+     * </p>
+     */
+    private AttachmentEnaSrdSpecification enaSrdSpecification;
 
     /**
      * <p>
@@ -441,6 +447,46 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Configures ENA Express for the network interface that this action attaches to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Configures ENA Express for the network interface that this action attaches to the instance.
+     */
+
+    public void setEnaSrdSpecification(AttachmentEnaSrdSpecification enaSrdSpecification) {
+        this.enaSrdSpecification = enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Configures ENA Express for the network interface that this action attaches to the instance.
+     * </p>
+     * 
+     * @return Configures ENA Express for the network interface that this action attaches to the instance.
+     */
+
+    public AttachmentEnaSrdSpecification getEnaSrdSpecification() {
+        return this.enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Configures ENA Express for the network interface that this action attaches to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Configures ENA Express for the network interface that this action attaches to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInterfaceAttachment withEnaSrdSpecification(AttachmentEnaSrdSpecification enaSrdSpecification) {
+        setEnaSrdSpecification(enaSrdSpecification);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -467,7 +513,9 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
         if (getInstanceOwnerId() != null)
             sb.append("InstanceOwnerId: ").append(getInstanceOwnerId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getEnaSrdSpecification() != null)
+            sb.append("EnaSrdSpecification: ").append(getEnaSrdSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -514,6 +562,10 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getEnaSrdSpecification() == null ^ this.getEnaSrdSpecification() == null)
+            return false;
+        if (other.getEnaSrdSpecification() != null && other.getEnaSrdSpecification().equals(this.getEnaSrdSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -530,6 +582,7 @@ public class NetworkInterfaceAttachment implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceOwnerId() == null) ? 0 : getInstanceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getEnaSrdSpecification() == null) ? 0 : getEnaSrdSpecification().hashCode());
         return hashCode;
     }
 

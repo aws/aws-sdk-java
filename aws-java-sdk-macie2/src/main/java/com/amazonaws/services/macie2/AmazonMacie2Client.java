@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,12 +52,7 @@ import com.amazonaws.services.macie2.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern
- * matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as
- * PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie
- * also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects
- * sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as
- * necessary.
+ * Amazon Macie
  * </p>
  */
 @ThreadSafe
@@ -165,7 +160,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param acceptInvitationRequest
      * @return Result of the AcceptInvitation operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -235,7 +230,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param batchGetCustomDataIdentifiersRequest
      * @return Result of the BatchGetCustomDataIdentifiers operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -307,7 +302,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param createAllowListRequest
      * @return Result of the CreateAllowList operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -377,7 +372,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param createClassificationJobRequest
      * @return Result of the CreateClassificationJob operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -449,7 +444,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param createCustomDataIdentifierRequest
      * @return Result of the CreateCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -521,7 +516,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param createFindingsFilterRequest
      * @return Result of the CreateFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -591,7 +586,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param createInvitationsRequest
      * @return Result of the CreateInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -661,7 +656,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param createMemberRequest
      * @return Result of the CreateMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -731,7 +726,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param createSampleFindingsRequest
      * @return Result of the CreateSampleFindings operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -801,7 +796,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param declineInvitationsRequest
      * @return Result of the DeclineInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -875,7 +870,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -936,7 +931,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param deleteCustomDataIdentifierRequest
      * @return Result of the DeleteCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1008,7 +1003,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param deleteFindingsFilterRequest
      * @return Result of the DeleteFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1078,7 +1073,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param deleteInvitationsRequest
      * @return Result of the DeleteInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1148,7 +1143,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param deleteMemberRequest
      * @return Result of the DeleteMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1213,13 +1208,13 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie
-     * monitors and analyzes.
+     * monitors and analyzes for an account.
      * </p>
      * 
      * @param describeBucketsRequest
      * @return Result of the DescribeBuckets operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1289,7 +1284,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param describeClassificationJobRequest
      * @return Result of the DescribeClassificationJob operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1361,7 +1356,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param describeOrganizationConfigurationRequest
      * @return Result of the DescribeOrganizationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1434,7 +1429,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param disableMacieRequest
      * @return Result of the DisableMacie operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1504,7 +1499,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param disableOrganizationAdminAccountRequest
      * @return Result of the DisableOrganizationAdminAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1577,7 +1572,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param disassociateFromAdministratorAccountRequest
      * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1652,7 +1647,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1724,7 +1719,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param disassociateMemberRequest
      * @return Result of the DisassociateMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1794,7 +1789,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param enableMacieRequest
      * @return Result of the EnableMacie operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1864,7 +1859,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param enableOrganizationAdminAccountRequest
      * @return Result of the EnableOrganizationAdminAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1936,7 +1931,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getAdministratorAccountRequest
      * @return Result of the GetAdministratorAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2012,7 +2007,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -2067,13 +2062,80 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie monitors and analyzes.
+     * Retrieves the configuration settings and status of automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param getAutomatedDiscoveryConfigurationRequest
+     * @return Result of the GetAutomatedDiscoveryConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.GetAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAutomatedDiscoveryConfigurationResult getAutomatedDiscoveryConfiguration(GetAutomatedDiscoveryConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAutomatedDiscoveryConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetAutomatedDiscoveryConfigurationResult executeGetAutomatedDiscoveryConfiguration(
+            GetAutomatedDiscoveryConfigurationRequest getAutomatedDiscoveryConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAutomatedDiscoveryConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAutomatedDiscoveryConfigurationRequest> request = null;
+        Response<GetAutomatedDiscoveryConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAutomatedDiscoveryConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAutomatedDiscoveryConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAutomatedDiscoveryConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAutomatedDiscoveryConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAutomatedDiscoveryConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon Macie monitors and analyzes
+     * for an account.
      * </p>
      * 
      * @param getBucketStatisticsRequest
      * @return Result of the GetBucketStatistics operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2143,7 +2205,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getClassificationExportConfigurationRequest
      * @return Result of the GetClassificationExportConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2210,13 +2272,79 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Retrieves the classification scope settings for an account.
+     * </p>
+     * 
+     * @param getClassificationScopeRequest
+     * @return Result of the GetClassificationScope operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.GetClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetClassificationScopeResult getClassificationScope(GetClassificationScopeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetClassificationScope(request);
+    }
+
+    @SdkInternalApi
+    final GetClassificationScopeResult executeGetClassificationScope(GetClassificationScopeRequest getClassificationScopeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getClassificationScopeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetClassificationScopeRequest> request = null;
+        Response<GetClassificationScopeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetClassificationScopeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getClassificationScopeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetClassificationScope");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetClassificationScopeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetClassificationScopeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the criteria and other settings for a custom data identifier.
      * </p>
      * 
      * @param getCustomDataIdentifierRequest
      * @return Result of the GetCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2288,7 +2416,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getFindingStatisticsRequest
      * @return Result of the GetFindingStatistics operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2358,7 +2486,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getFindingsRequest
      * @return Result of the GetFindings operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2428,7 +2556,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getFindingsFilterRequest
      * @return Result of the GetFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2498,7 +2626,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getFindingsPublicationConfigurationRequest
      * @return Result of the GetFindingsPublicationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2571,7 +2699,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getInvitationsCountRequest
      * @return Result of the GetInvitationsCount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2635,13 +2763,13 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
      * @return Result of the GetMacieSession operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2712,7 +2840,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getMasterAccountRequest
      * @return Result of the GetMasterAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2782,7 +2910,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getMemberRequest
      * @return Result of the GetMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -2846,6 +2974,74 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Retrieves (queries) sensitive data discovery statistics and the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param getResourceProfileRequest
+     * @return Result of the GetResourceProfile operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.GetResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetResourceProfileResult getResourceProfile(GetResourceProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceProfile(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceProfileResult executeGetResourceProfile(GetResourceProfileRequest getResourceProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceProfileRequest> request = null;
+        Response<GetResourceProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceProfileResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourceProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the status and configuration settings for retrieving occurrences of sensitive data reported by
      * findings.
      * </p>
@@ -2855,7 +3051,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -3048,13 +3244,81 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Retrieves the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param getSensitivityInspectionTemplateRequest
+     * @return Result of the GetSensitivityInspectionTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.GetSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSensitivityInspectionTemplateResult getSensitivityInspectionTemplate(GetSensitivityInspectionTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSensitivityInspectionTemplate(request);
+    }
+
+    @SdkInternalApi
+    final GetSensitivityInspectionTemplateResult executeGetSensitivityInspectionTemplate(
+            GetSensitivityInspectionTemplateRequest getSensitivityInspectionTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSensitivityInspectionTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSensitivityInspectionTemplateRequest> request = null;
+        Response<GetSensitivityInspectionTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSensitivityInspectionTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSensitivityInspectionTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSensitivityInspectionTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSensitivityInspectionTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSensitivityInspectionTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves (queries) quotas and aggregated usage data for one or more accounts.
      * </p>
      * 
      * @param getUsageStatisticsRequest
      * @return Result of the GetUsageStatistics operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3124,7 +3388,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param getUsageTotalsRequest
      * @return Result of the GetUsageTotals operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3196,7 +3460,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -3257,7 +3521,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param listClassificationJobsRequest
      * @return Result of the ListClassificationJobs operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3322,13 +3586,78 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Retrieves a subset of information about the classification scope for an account.
+     * </p>
+     * 
+     * @param listClassificationScopesRequest
+     * @return Result of the ListClassificationScopes operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.ListClassificationScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListClassificationScopesResult listClassificationScopes(ListClassificationScopesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListClassificationScopes(request);
+    }
+
+    @SdkInternalApi
+    final ListClassificationScopesResult executeListClassificationScopes(ListClassificationScopesRequest listClassificationScopesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listClassificationScopesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListClassificationScopesRequest> request = null;
+        Response<ListClassificationScopesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListClassificationScopesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listClassificationScopesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClassificationScopes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListClassificationScopesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListClassificationScopesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a subset of information about all the custom data identifiers for an account.
      * </p>
      * 
      * @param listCustomDataIdentifiersRequest
      * @return Result of the ListCustomDataIdentifiers operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3400,7 +3729,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param listFindingsRequest
      * @return Result of the ListFindings operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3470,7 +3799,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param listFindingsFiltersRequest
      * @return Result of the ListFindingsFilters operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3540,7 +3869,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3667,7 +3996,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param listMembersRequest
      * @return Result of the ListMembers operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3738,7 +4067,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param listOrganizationAdminAccountsRequest
      * @return Result of the ListOrganizationAdminAccounts operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3792,6 +4121,212 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<ListOrganizationAdminAccountsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListOrganizationAdminAccountsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about objects that were selected from an S3 bucket for automated sensitive data discovery.
+     * </p>
+     * 
+     * @param listResourceProfileArtifactsRequest
+     * @return Result of the ListResourceProfileArtifacts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.ListResourceProfileArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceProfileArtifactsResult listResourceProfileArtifacts(ListResourceProfileArtifactsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceProfileArtifacts(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceProfileArtifactsResult executeListResourceProfileArtifacts(ListResourceProfileArtifactsRequest listResourceProfileArtifactsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceProfileArtifactsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceProfileArtifactsRequest> request = null;
+        Response<ListResourceProfileArtifactsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceProfileArtifactsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourceProfileArtifactsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceProfileArtifacts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceProfileArtifactsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourceProfileArtifactsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.
+     * </p>
+     * 
+     * @param listResourceProfileDetectionsRequest
+     * @return Result of the ListResourceProfileDetections operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.ListResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListResourceProfileDetectionsResult listResourceProfileDetections(ListResourceProfileDetectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListResourceProfileDetections(request);
+    }
+
+    @SdkInternalApi
+    final ListResourceProfileDetectionsResult executeListResourceProfileDetections(ListResourceProfileDetectionsRequest listResourceProfileDetectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listResourceProfileDetectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListResourceProfileDetectionsRequest> request = null;
+        Response<ListResourceProfileDetectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListResourceProfileDetectionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listResourceProfileDetectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceProfileDetections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListResourceProfileDetectionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListResourceProfileDetectionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a subset of information about the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param listSensitivityInspectionTemplatesRequest
+     * @return Result of the ListSensitivityInspectionTemplates operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.ListSensitivityInspectionTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSensitivityInspectionTemplatesResult listSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSensitivityInspectionTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListSensitivityInspectionTemplatesResult executeListSensitivityInspectionTemplates(
+            ListSensitivityInspectionTemplatesRequest listSensitivityInspectionTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSensitivityInspectionTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSensitivityInspectionTemplatesRequest> request = null;
+        Response<ListSensitivityInspectionTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSensitivityInspectionTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSensitivityInspectionTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSensitivityInspectionTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSensitivityInspectionTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSensitivityInspectionTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3865,7 +4400,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param putClassificationExportConfigurationRequest
      * @return Result of the PutClassificationExportConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -3938,7 +4473,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param putFindingsPublicationConfigurationRequest
      * @return Result of the PutFindingsPublicationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4012,7 +4547,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param searchResourcesRequest
      * @return Result of the SearchResources operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4137,7 +4672,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param testCustomDataIdentifierRequest
      * @return Result of the TestCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4268,7 +4803,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -4323,13 +4858,79 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Enables or disables automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param updateAutomatedDiscoveryConfigurationRequest
+     * @return Result of the UpdateAutomatedDiscoveryConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.UpdateAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAutomatedDiscoveryConfigurationResult updateAutomatedDiscoveryConfiguration(UpdateAutomatedDiscoveryConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAutomatedDiscoveryConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAutomatedDiscoveryConfigurationResult executeUpdateAutomatedDiscoveryConfiguration(
+            UpdateAutomatedDiscoveryConfigurationRequest updateAutomatedDiscoveryConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAutomatedDiscoveryConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAutomatedDiscoveryConfigurationRequest> request = null;
+        Response<UpdateAutomatedDiscoveryConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAutomatedDiscoveryConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAutomatedDiscoveryConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAutomatedDiscoveryConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAutomatedDiscoveryConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAutomatedDiscoveryConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Changes the status of a classification job.
      * </p>
      * 
      * @param updateClassificationJobRequest
      * @return Result of the UpdateClassificationJob operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4395,13 +4996,80 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Updates the classification scope settings for an account.
+     * </p>
+     * 
+     * @param updateClassificationScopeRequest
+     * @return Result of the UpdateClassificationScope operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.UpdateClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateClassificationScopeResult updateClassificationScope(UpdateClassificationScopeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateClassificationScope(request);
+    }
+
+    @SdkInternalApi
+    final UpdateClassificationScopeResult executeUpdateClassificationScope(UpdateClassificationScopeRequest updateClassificationScopeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateClassificationScopeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateClassificationScopeRequest> request = null;
+        Response<UpdateClassificationScopeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateClassificationScopeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateClassificationScopeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClassificationScope");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateClassificationScopeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateClassificationScopeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the criteria and other settings for a findings filter.
      * </p>
      * 
      * @param updateFindingsFilterRequest
      * @return Result of the UpdateFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4471,7 +5139,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param updateMacieSessionRequest
      * @return Result of the UpdateMacieSession operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4541,7 +5209,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param updateMemberSessionRequest
      * @return Result of the UpdateMemberSession operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4611,7 +5279,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @param updateOrganizationConfigurationRequest
      * @return Result of the UpdateOrganizationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -4678,6 +5346,146 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Updates the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileRequest
+     * @return Result of the UpdateResourceProfile operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.UpdateResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateResourceProfileResult updateResourceProfile(UpdateResourceProfileRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateResourceProfile(request);
+    }
+
+    @SdkInternalApi
+    final UpdateResourceProfileResult executeUpdateResourceProfile(UpdateResourceProfileRequest updateResourceProfileRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateResourceProfileRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateResourceProfileRequest> request = null;
+        Response<UpdateResourceProfileResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateResourceProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceProfileRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceProfile");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceProfileResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateResourceProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the sensitivity scoring settings for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileDetectionsRequest
+     * @return Result of the UpdateResourceProfileDetections operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.UpdateResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateResourceProfileDetectionsResult updateResourceProfileDetections(UpdateResourceProfileDetectionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateResourceProfileDetections(request);
+    }
+
+    @SdkInternalApi
+    final UpdateResourceProfileDetectionsResult executeUpdateResourceProfileDetections(
+            UpdateResourceProfileDetectionsRequest updateResourceProfileDetectionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateResourceProfileDetectionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateResourceProfileDetectionsRequest> request = null;
+        Response<UpdateResourceProfileDetectionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateResourceProfileDetectionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateResourceProfileDetectionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceProfileDetections");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceProfileDetectionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateResourceProfileDetectionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the status and configuration settings for retrieving occurrences of sensitive data reported by findings.
      * </p>
      * 
@@ -4686,7 +5494,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -4731,6 +5539,74 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<UpdateRevealConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateRevealConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param updateSensitivityInspectionTemplateRequest
+     * @return Result of the UpdateSensitivityInspectionTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.UpdateSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSensitivityInspectionTemplateResult updateSensitivityInspectionTemplate(UpdateSensitivityInspectionTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSensitivityInspectionTemplate(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSensitivityInspectionTemplateResult executeUpdateSensitivityInspectionTemplate(
+            UpdateSensitivityInspectionTemplateRequest updateSensitivityInspectionTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSensitivityInspectionTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSensitivityInspectionTemplateRequest> request = null;
+        Response<UpdateSensitivityInspectionTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSensitivityInspectionTemplateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSensitivityInspectionTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSensitivityInspectionTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSensitivityInspectionTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSensitivityInspectionTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

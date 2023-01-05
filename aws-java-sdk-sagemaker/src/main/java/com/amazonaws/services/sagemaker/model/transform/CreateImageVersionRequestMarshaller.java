@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -36,6 +37,22 @@ public class CreateImageVersionRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> IMAGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ImageName").build();
+    private static final MarshallingInfo<List> ALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Aliases").build();
+    private static final MarshallingInfo<String> VENDORGUIDANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VendorGuidance").build();
+    private static final MarshallingInfo<String> JOBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("JobType").build();
+    private static final MarshallingInfo<String> MLFRAMEWORK_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MLFramework").build();
+    private static final MarshallingInfo<String> PROGRAMMINGLANG_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProgrammingLang").build();
+    private static final MarshallingInfo<String> PROCESSOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Processor").build();
+    private static final MarshallingInfo<Boolean> HOROVOD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Horovod").build();
+    private static final MarshallingInfo<String> RELEASENOTES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReleaseNotes").build();
 
     private static final CreateImageVersionRequestMarshaller instance = new CreateImageVersionRequestMarshaller();
 
@@ -56,6 +73,14 @@ public class CreateImageVersionRequestMarshaller {
             protocolMarshaller.marshall(createImageVersionRequest.getBaseImage(), BASEIMAGE_BINDING);
             protocolMarshaller.marshall(createImageVersionRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createImageVersionRequest.getImageName(), IMAGENAME_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getAliases(), ALIASES_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getVendorGuidance(), VENDORGUIDANCE_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getJobType(), JOBTYPE_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getMLFramework(), MLFRAMEWORK_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getProgrammingLang(), PROGRAMMINGLANG_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getProcessor(), PROCESSOR_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getHorovod(), HOROVOD_BINDING);
+            protocolMarshaller.marshall(createImageVersionRequest.getReleaseNotes(), RELEASENOTES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

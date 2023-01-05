@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeMapRunResult> describeMapRunAsync(DescribeMapRunRequest request) {
+
+        return describeMapRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMapRunResult> describeMapRunAsync(DescribeMapRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMapRunRequest, DescribeMapRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeStateMachineResult> describeStateMachineAsync(DescribeStateMachineRequest request) {
 
         return describeStateMachineAsync(request, null);
@@ -181,6 +194,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     @Override
     public java.util.concurrent.Future<ListExecutionsResult> listExecutionsAsync(ListExecutionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListExecutionsRequest, ListExecutionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMapRunsResult> listMapRunsAsync(ListMapRunsRequest request) {
+
+        return listMapRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMapRunsResult> listMapRunsAsync(ListMapRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMapRunsRequest, ListMapRunsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -311,6 +337,19 @@ public class AbstractAWSStepFunctionsAsync extends AbstractAWSStepFunctions impl
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMapRunResult> updateMapRunAsync(UpdateMapRunRequest request) {
+
+        return updateMapRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMapRunResult> updateMapRunAsync(UpdateMapRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMapRunRequest, UpdateMapRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

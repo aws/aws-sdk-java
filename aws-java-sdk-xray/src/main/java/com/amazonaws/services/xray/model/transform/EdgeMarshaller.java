@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class EdgeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResponseTimeHistogram").build();
     private static final MarshallingInfo<List> ALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Aliases").build();
+    private static final MarshallingInfo<String> EDGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EdgeType").build();
+    private static final MarshallingInfo<List> RECEIVEDEVENTAGEHISTOGRAM_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReceivedEventAgeHistogram").build();
 
     private static final EdgeMarshaller instance = new EdgeMarshaller();
 
@@ -63,6 +67,8 @@ public class EdgeMarshaller {
             protocolMarshaller.marshall(edge.getSummaryStatistics(), SUMMARYSTATISTICS_BINDING);
             protocolMarshaller.marshall(edge.getResponseTimeHistogram(), RESPONSETIMEHISTOGRAM_BINDING);
             protocolMarshaller.marshall(edge.getAliases(), ALIASES_BINDING);
+            protocolMarshaller.marshall(edge.getEdgeType(), EDGETYPE_BINDING);
+            protocolMarshaller.marshall(edge.getReceivedEventAgeHistogram(), RECEIVEDEVENTAGEHISTOGRAM_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,6 +122,44 @@ public class DescribeFlowResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     */
+    private MetadataCatalogConfig metadataCatalogConfig;
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     */
+    private java.util.List<MetadataCatalogDetail> lastRunMetadataCatalogDetails;
+    /**
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Long schemaVersion;
 
     /**
      * <p>
@@ -889,6 +927,275 @@ public class DescribeFlowResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     * 
+     * @param metadataCatalogConfig
+     *        Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     *        associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     */
+
+    public void setMetadataCatalogConfig(MetadataCatalogConfig metadataCatalogConfig) {
+        this.metadataCatalogConfig = metadataCatalogConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     * 
+     * @return Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     *         associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     */
+
+    public MetadataCatalogConfig getMetadataCatalogConfig() {
+        return this.metadataCatalogConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     * 
+     * @param metadataCatalogConfig
+     *        Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     *        associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowResult withMetadataCatalogConfig(MetadataCatalogConfig metadataCatalogConfig) {
+        setMetadataCatalogConfig(metadataCatalogConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * 
+     * @return Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *         associated flow run.
+     */
+
+    public java.util.List<MetadataCatalogDetail> getLastRunMetadataCatalogDetails() {
+        return lastRunMetadataCatalogDetails;
+    }
+
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * 
+     * @param lastRunMetadataCatalogDetails
+     *        Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *        associated flow run.
+     */
+
+    public void setLastRunMetadataCatalogDetails(java.util.Collection<MetadataCatalogDetail> lastRunMetadataCatalogDetails) {
+        if (lastRunMetadataCatalogDetails == null) {
+            this.lastRunMetadataCatalogDetails = null;
+            return;
+        }
+
+        this.lastRunMetadataCatalogDetails = new java.util.ArrayList<MetadataCatalogDetail>(lastRunMetadataCatalogDetails);
+    }
+
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLastRunMetadataCatalogDetails(java.util.Collection)} or
+     * {@link #withLastRunMetadataCatalogDetails(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param lastRunMetadataCatalogDetails
+     *        Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *        associated flow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowResult withLastRunMetadataCatalogDetails(MetadataCatalogDetail... lastRunMetadataCatalogDetails) {
+        if (this.lastRunMetadataCatalogDetails == null) {
+            setLastRunMetadataCatalogDetails(new java.util.ArrayList<MetadataCatalogDetail>(lastRunMetadataCatalogDetails.length));
+        }
+        for (MetadataCatalogDetail ele : lastRunMetadataCatalogDetails) {
+            this.lastRunMetadataCatalogDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * 
+     * @param lastRunMetadataCatalogDetails
+     *        Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *        associated flow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowResult withLastRunMetadataCatalogDetails(java.util.Collection<MetadataCatalogDetail> lastRunMetadataCatalogDetails) {
+        setLastRunMetadataCatalogDetails(lastRunMetadataCatalogDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param schemaVersion
+     *        The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *        increases by one when you change any of the following settings in your flow configuration:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source-to-destination field mappings
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Field data types
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Partition keys
+     *        </p>
+     *        </li>
+     */
+
+    public void setSchemaVersion(Long schemaVersion) {
+        this.schemaVersion = schemaVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *         increases by one when you change any of the following settings in your flow configuration:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Source-to-destination field mappings
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Field data types
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Partition keys
+     *         </p>
+     *         </li>
+     */
+
+    public Long getSchemaVersion() {
+        return this.schemaVersion;
+    }
+
+    /**
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param schemaVersion
+     *        The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *        increases by one when you change any of the following settings in your flow configuration:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source-to-destination field mappings
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Field data types
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Partition keys
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeFlowResult withSchemaVersion(Long schemaVersion) {
+        setSchemaVersion(schemaVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -931,7 +1238,13 @@ public class DescribeFlowResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getLastUpdatedBy() != null)
             sb.append("LastUpdatedBy: ").append(getLastUpdatedBy()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getMetadataCatalogConfig() != null)
+            sb.append("MetadataCatalogConfig: ").append(getMetadataCatalogConfig()).append(",");
+        if (getLastRunMetadataCatalogDetails() != null)
+            sb.append("LastRunMetadataCatalogDetails: ").append(getLastRunMetadataCatalogDetails()).append(",");
+        if (getSchemaVersion() != null)
+            sb.append("SchemaVersion: ").append(getSchemaVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -1010,6 +1323,19 @@ public class DescribeFlowResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getMetadataCatalogConfig() == null ^ this.getMetadataCatalogConfig() == null)
+            return false;
+        if (other.getMetadataCatalogConfig() != null && other.getMetadataCatalogConfig().equals(this.getMetadataCatalogConfig()) == false)
+            return false;
+        if (other.getLastRunMetadataCatalogDetails() == null ^ this.getLastRunMetadataCatalogDetails() == null)
+            return false;
+        if (other.getLastRunMetadataCatalogDetails() != null
+                && other.getLastRunMetadataCatalogDetails().equals(this.getLastRunMetadataCatalogDetails()) == false)
+            return false;
+        if (other.getSchemaVersion() == null ^ this.getSchemaVersion() == null)
+            return false;
+        if (other.getSchemaVersion() != null && other.getSchemaVersion().equals(this.getSchemaVersion()) == false)
+            return false;
         return true;
     }
 
@@ -1034,6 +1360,9 @@ public class DescribeFlowResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedBy() == null) ? 0 : getLastUpdatedBy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getMetadataCatalogConfig() == null) ? 0 : getMetadataCatalogConfig().hashCode());
+        hashCode = prime * hashCode + ((getLastRunMetadataCatalogDetails() == null) ? 0 : getLastRunMetadataCatalogDetails().hashCode());
+        hashCode = prime * hashCode + ((getSchemaVersion() == null) ? 0 : getSchemaVersion().hashCode());
         return hashCode;
     }
 

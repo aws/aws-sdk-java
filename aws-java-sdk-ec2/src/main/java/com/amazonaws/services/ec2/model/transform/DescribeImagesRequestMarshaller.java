@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -108,6 +108,14 @@ public class DescribeImagesRequestMarshaller implements Marshaller<Request<Descr
 
         if (describeImagesRequest.getIncludeDeprecated() != null) {
             request.addParameter("IncludeDeprecated", StringUtils.fromBoolean(describeImagesRequest.getIncludeDeprecated()));
+        }
+
+        if (describeImagesRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeImagesRequest.getMaxResults()));
+        }
+
+        if (describeImagesRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeImagesRequest.getNextToken()));
         }
 
         return request;

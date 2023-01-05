@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,10 +58,17 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
     private String domainIdEquals;
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      */
     private String userProfileNameEquals;
+    /**
+     * <p>
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
+     * </p>
+     */
+    private String spaceNameEquals;
 
     /**
      * <p>
@@ -309,11 +316,13 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      * 
      * @param userProfileNameEquals
-     *        A parameter to search by user profile name.
+     *        A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot
+     *        be set.
      */
 
     public void setUserProfileNameEquals(String userProfileNameEquals) {
@@ -322,10 +331,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      * 
-     * @return A parameter to search by user profile name.
+     * @return A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value
+     *         cannot be set.
      */
 
     public String getUserProfileNameEquals() {
@@ -334,16 +345,61 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * A parameter to search by user profile name.
+     * A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot be
+     * set.
      * </p>
      * 
      * @param userProfileNameEquals
-     *        A parameter to search by user profile name.
+     *        A parameter to search by user profile name. If <code>SpaceNameEquals</code> is set, then this value cannot
+     *        be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListAppsRequest withUserProfileNameEquals(String userProfileNameEquals) {
         setUserProfileNameEquals(userProfileNameEquals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
+     * </p>
+     * 
+     * @param spaceNameEquals
+     *        A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot
+     *        be set.
+     */
+
+    public void setSpaceNameEquals(String spaceNameEquals) {
+        this.spaceNameEquals = spaceNameEquals;
+    }
+
+    /**
+     * <p>
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
+     * </p>
+     * 
+     * @return A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot
+     *         be set.
+     */
+
+    public String getSpaceNameEquals() {
+        return this.spaceNameEquals;
+    }
+
+    /**
+     * <p>
+     * A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot be set.
+     * </p>
+     * 
+     * @param spaceNameEquals
+     *        A parameter to search by space name. If <code>UserProfileNameEquals</code> is set, then this value cannot
+     *        be set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAppsRequest withSpaceNameEquals(String spaceNameEquals) {
+        setSpaceNameEquals(spaceNameEquals);
         return this;
     }
 
@@ -370,7 +426,9 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (getDomainIdEquals() != null)
             sb.append("DomainIdEquals: ").append(getDomainIdEquals()).append(",");
         if (getUserProfileNameEquals() != null)
-            sb.append("UserProfileNameEquals: ").append(getUserProfileNameEquals());
+            sb.append("UserProfileNameEquals: ").append(getUserProfileNameEquals()).append(",");
+        if (getSpaceNameEquals() != null)
+            sb.append("SpaceNameEquals: ").append(getSpaceNameEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -409,6 +467,10 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getUserProfileNameEquals() != null && other.getUserProfileNameEquals().equals(this.getUserProfileNameEquals()) == false)
             return false;
+        if (other.getSpaceNameEquals() == null ^ this.getSpaceNameEquals() == null)
+            return false;
+        if (other.getSpaceNameEquals() != null && other.getSpaceNameEquals().equals(this.getSpaceNameEquals()) == false)
+            return false;
         return true;
     }
 
@@ -423,6 +485,7 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         hashCode = prime * hashCode + ((getDomainIdEquals() == null) ? 0 : getDomainIdEquals().hashCode());
         hashCode = prime * hashCode + ((getUserProfileNameEquals() == null) ? 0 : getUserProfileNameEquals().hashCode());
+        hashCode = prime * hashCode + ((getSpaceNameEquals() == null) ? 0 : getSpaceNameEquals().hashCode());
         return hashCode;
     }
 

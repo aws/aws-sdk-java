@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class PortfolioShareDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Accepted").build();
     private static final MarshallingInfo<Boolean> SHARETAGOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareTagOptions").build();
+    private static final MarshallingInfo<Boolean> SHAREPRINCIPALS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SharePrincipals").build();
 
     private static final PortfolioShareDetailMarshaller instance = new PortfolioShareDetailMarshaller();
 
@@ -56,6 +58,7 @@ public class PortfolioShareDetailMarshaller {
             protocolMarshaller.marshall(portfolioShareDetail.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(portfolioShareDetail.getAccepted(), ACCEPTED_BINDING);
             protocolMarshaller.marshall(portfolioShareDetail.getShareTagOptions(), SHARETAGOPTIONS_BINDING);
+            protocolMarshaller.marshall(portfolioShareDetail.getSharePrincipals(), SHAREPRINCIPALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

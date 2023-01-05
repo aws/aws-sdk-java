@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,8 @@ public enum InstanceAttributeType {
     USE_CUSTOM_TTS_VOICES("USE_CUSTOM_TTS_VOICES"),
     EARLY_MEDIA("EARLY_MEDIA"),
     MULTI_PARTY_CONFERENCE("MULTI_PARTY_CONFERENCE"),
-    HIGH_VOLUME_OUTBOUND("HIGH_VOLUME_OUTBOUND");
+    HIGH_VOLUME_OUTBOUND("HIGH_VOLUME_OUTBOUND"),
+    ENHANCED_CONTACT_MONITORING("ENHANCED_CONTACT_MONITORING");
 
     private String value;
 

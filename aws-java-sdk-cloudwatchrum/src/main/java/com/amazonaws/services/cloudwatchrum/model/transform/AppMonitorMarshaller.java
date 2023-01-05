@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class AppMonitorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppMonitorConfiguration").build();
     private static final MarshallingInfo<String> CREATED_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Created").build();
+    private static final MarshallingInfo<StructuredPojo> CUSTOMEVENTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomEvents").build();
     private static final MarshallingInfo<StructuredPojo> DATASTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataStorage").build();
     private static final MarshallingInfo<String> DOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -66,6 +68,7 @@ public class AppMonitorMarshaller {
         try {
             protocolMarshaller.marshall(appMonitor.getAppMonitorConfiguration(), APPMONITORCONFIGURATION_BINDING);
             protocolMarshaller.marshall(appMonitor.getCreated(), CREATED_BINDING);
+            protocolMarshaller.marshall(appMonitor.getCustomEvents(), CUSTOMEVENTS_BINDING);
             protocolMarshaller.marshall(appMonitor.getDataStorage(), DATASTORAGE_BINDING);
             protocolMarshaller.marshall(appMonitor.getDomain(), DOMAIN_BINDING);
             protocolMarshaller.marshall(appMonitor.getId(), ID_BINDING);

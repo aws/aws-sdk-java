@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,10 @@ public class CreateWorkloadRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> DISCOVERYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiscoveryConfig").build();
+    private static final MarshallingInfo<List> APPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Applications").build();
 
     private static final CreateWorkloadRequestMarshaller instance = new CreateWorkloadRequestMarshaller();
 
@@ -94,6 +98,8 @@ public class CreateWorkloadRequestMarshaller {
             protocolMarshaller.marshall(createWorkloadRequest.getNotes(), NOTES_BINDING);
             protocolMarshaller.marshall(createWorkloadRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createWorkloadRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWorkloadRequest.getDiscoveryConfig(), DISCOVERYCONFIG_BINDING);
+            protocolMarshaller.marshall(createWorkloadRequest.getApplications(), APPLICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,10 @@ public enum SrcCodeOrDbAnalysisStatus {
     ANALYSIS_TO_BE_SCHEDULED("ANALYSIS_TO_BE_SCHEDULED"),
     ANALYSIS_STARTED("ANALYSIS_STARTED"),
     ANALYSIS_SUCCESS("ANALYSIS_SUCCESS"),
-    ANALYSIS_FAILED("ANALYSIS_FAILED");
+    ANALYSIS_FAILED("ANALYSIS_FAILED"),
+    ANALYSIS_PARTIAL_SUCCESS("ANALYSIS_PARTIAL_SUCCESS"),
+    UNCONFIGURED("UNCONFIGURED"),
+    CONFIGURED("CONFIGURED");
 
     private String value;
 

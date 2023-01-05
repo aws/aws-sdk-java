@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -538,6 +538,14 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsBackupRecoveryPointDetails awsBackupRecoveryPoint;
+
+    private AwsEc2LaunchTemplateDetails awsEc2LaunchTemplate;
+
+    private AwsSageMakerNotebookInstanceDetails awsSageMakerNotebookInstance;
+
+    private AwsWafv2WebAclDetails awsWafv2WebAcl;
+
+    private AwsWafv2RuleGroupDetails awsWafv2RuleGroup;
 
     /**
      * <p>
@@ -3869,6 +3877,110 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * @param awsEc2LaunchTemplate
+     */
+
+    public void setAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails awsEc2LaunchTemplate) {
+        this.awsEc2LaunchTemplate = awsEc2LaunchTemplate;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsEc2LaunchTemplateDetails getAwsEc2LaunchTemplate() {
+        return this.awsEc2LaunchTemplate;
+    }
+
+    /**
+     * @param awsEc2LaunchTemplate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetails awsEc2LaunchTemplate) {
+        setAwsEc2LaunchTemplate(awsEc2LaunchTemplate);
+        return this;
+    }
+
+    /**
+     * @param awsSageMakerNotebookInstance
+     */
+
+    public void setAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails awsSageMakerNotebookInstance) {
+        this.awsSageMakerNotebookInstance = awsSageMakerNotebookInstance;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsSageMakerNotebookInstanceDetails getAwsSageMakerNotebookInstance() {
+        return this.awsSageMakerNotebookInstance;
+    }
+
+    /**
+     * @param awsSageMakerNotebookInstance
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetails awsSageMakerNotebookInstance) {
+        setAwsSageMakerNotebookInstance(awsSageMakerNotebookInstance);
+        return this;
+    }
+
+    /**
+     * @param awsWafv2WebAcl
+     */
+
+    public void setAwsWafv2WebAcl(AwsWafv2WebAclDetails awsWafv2WebAcl) {
+        this.awsWafv2WebAcl = awsWafv2WebAcl;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsWafv2WebAclDetails getAwsWafv2WebAcl() {
+        return this.awsWafv2WebAcl;
+    }
+
+    /**
+     * @param awsWafv2WebAcl
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafv2WebAcl(AwsWafv2WebAclDetails awsWafv2WebAcl) {
+        setAwsWafv2WebAcl(awsWafv2WebAcl);
+        return this;
+    }
+
+    /**
+     * @param awsWafv2RuleGroup
+     */
+
+    public void setAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails awsWafv2RuleGroup) {
+        this.awsWafv2RuleGroup = awsWafv2RuleGroup;
+    }
+
+    /**
+     * @return
+     */
+
+    public AwsWafv2RuleGroupDetails getAwsWafv2RuleGroup() {
+        return this.awsWafv2RuleGroup;
+    }
+
+    /**
+     * @param awsWafv2RuleGroup
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails awsWafv2RuleGroup) {
+        setAwsWafv2RuleGroup(awsWafv2RuleGroup);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4037,7 +4149,15 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (getAwsBackupBackupPlan() != null)
             sb.append("AwsBackupBackupPlan: ").append(getAwsBackupBackupPlan()).append(",");
         if (getAwsBackupRecoveryPoint() != null)
-            sb.append("AwsBackupRecoveryPoint: ").append(getAwsBackupRecoveryPoint());
+            sb.append("AwsBackupRecoveryPoint: ").append(getAwsBackupRecoveryPoint()).append(",");
+        if (getAwsEc2LaunchTemplate() != null)
+            sb.append("AwsEc2LaunchTemplate: ").append(getAwsEc2LaunchTemplate()).append(",");
+        if (getAwsSageMakerNotebookInstance() != null)
+            sb.append("AwsSageMakerNotebookInstance: ").append(getAwsSageMakerNotebookInstance()).append(",");
+        if (getAwsWafv2WebAcl() != null)
+            sb.append("AwsWafv2WebAcl: ").append(getAwsWafv2WebAcl()).append(",");
+        if (getAwsWafv2RuleGroup() != null)
+            sb.append("AwsWafv2RuleGroup: ").append(getAwsWafv2RuleGroup());
         sb.append("}");
         return sb.toString();
     }
@@ -4374,6 +4494,22 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsBackupRecoveryPoint() != null && other.getAwsBackupRecoveryPoint().equals(this.getAwsBackupRecoveryPoint()) == false)
             return false;
+        if (other.getAwsEc2LaunchTemplate() == null ^ this.getAwsEc2LaunchTemplate() == null)
+            return false;
+        if (other.getAwsEc2LaunchTemplate() != null && other.getAwsEc2LaunchTemplate().equals(this.getAwsEc2LaunchTemplate()) == false)
+            return false;
+        if (other.getAwsSageMakerNotebookInstance() == null ^ this.getAwsSageMakerNotebookInstance() == null)
+            return false;
+        if (other.getAwsSageMakerNotebookInstance() != null && other.getAwsSageMakerNotebookInstance().equals(this.getAwsSageMakerNotebookInstance()) == false)
+            return false;
+        if (other.getAwsWafv2WebAcl() == null ^ this.getAwsWafv2WebAcl() == null)
+            return false;
+        if (other.getAwsWafv2WebAcl() != null && other.getAwsWafv2WebAcl().equals(this.getAwsWafv2WebAcl()) == false)
+            return false;
+        if (other.getAwsWafv2RuleGroup() == null ^ this.getAwsWafv2RuleGroup() == null)
+            return false;
+        if (other.getAwsWafv2RuleGroup() != null && other.getAwsWafv2RuleGroup().equals(this.getAwsWafv2RuleGroup()) == false)
+            return false;
         return true;
     }
 
@@ -4461,6 +4597,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAwsBackupBackupVault() == null) ? 0 : getAwsBackupBackupVault().hashCode());
         hashCode = prime * hashCode + ((getAwsBackupBackupPlan() == null) ? 0 : getAwsBackupBackupPlan().hashCode());
         hashCode = prime * hashCode + ((getAwsBackupRecoveryPoint() == null) ? 0 : getAwsBackupRecoveryPoint().hashCode());
+        hashCode = prime * hashCode + ((getAwsEc2LaunchTemplate() == null) ? 0 : getAwsEc2LaunchTemplate().hashCode());
+        hashCode = prime * hashCode + ((getAwsSageMakerNotebookInstance() == null) ? 0 : getAwsSageMakerNotebookInstance().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafv2WebAcl() == null) ? 0 : getAwsWafv2WebAcl().hashCode());
+        hashCode = prime * hashCode + ((getAwsWafv2RuleGroup() == null) ? 0 : getAwsWafv2RuleGroup().hashCode());
         return hashCode;
     }
 

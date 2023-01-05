@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of Access Points in
- * the account is nearing the limit of 120.
+ * Returned when the <code>CreateAccessPoint</code> API action is called too quickly and the number of Access Points on
+ * the file system is nearing the <a
+ * href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit of
+ * 120</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

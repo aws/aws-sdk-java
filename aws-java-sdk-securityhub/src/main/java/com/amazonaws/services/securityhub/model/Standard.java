@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a specific standard.
+ * Provides information about a specific security standard.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/Standard" target="_top">AWS API
@@ -57,6 +57,12 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean enabledByDefault;
+    /**
+     * <p>
+     * Provides details about the management of a standard.
+     * </p>
+     */
+    private StandardsManagedBy standardsManagedBy;
 
     /**
      * <p>
@@ -267,6 +273,46 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Provides details about the management of a standard.
+     * </p>
+     * 
+     * @param standardsManagedBy
+     *        Provides details about the management of a standard.
+     */
+
+    public void setStandardsManagedBy(StandardsManagedBy standardsManagedBy) {
+        this.standardsManagedBy = standardsManagedBy;
+    }
+
+    /**
+     * <p>
+     * Provides details about the management of a standard.
+     * </p>
+     * 
+     * @return Provides details about the management of a standard.
+     */
+
+    public StandardsManagedBy getStandardsManagedBy() {
+        return this.standardsManagedBy;
+    }
+
+    /**
+     * <p>
+     * Provides details about the management of a standard.
+     * </p>
+     * 
+     * @param standardsManagedBy
+     *        Provides details about the management of a standard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Standard withStandardsManagedBy(StandardsManagedBy standardsManagedBy) {
+        setStandardsManagedBy(standardsManagedBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -285,7 +331,9 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEnabledByDefault() != null)
-            sb.append("EnabledByDefault: ").append(getEnabledByDefault());
+            sb.append("EnabledByDefault: ").append(getEnabledByDefault()).append(",");
+        if (getStandardsManagedBy() != null)
+            sb.append("StandardsManagedBy: ").append(getStandardsManagedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +364,10 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnabledByDefault() != null && other.getEnabledByDefault().equals(this.getEnabledByDefault()) == false)
             return false;
+        if (other.getStandardsManagedBy() == null ^ this.getStandardsManagedBy() == null)
+            return false;
+        if (other.getStandardsManagedBy() != null && other.getStandardsManagedBy().equals(this.getStandardsManagedBy()) == false)
+            return false;
         return true;
     }
 
@@ -328,6 +380,7 @@ public class Standard implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnabledByDefault() == null) ? 0 : getEnabledByDefault().hashCode());
+        hashCode = prime * hashCode + ((getStandardsManagedBy() == null) ? 0 : getStandardsManagedBy().hashCode());
         return hashCode;
     }
 

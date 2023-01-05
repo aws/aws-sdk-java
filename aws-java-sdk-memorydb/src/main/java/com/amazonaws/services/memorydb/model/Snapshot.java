@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,14 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ClusterConfiguration clusterConfiguration;
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     */
+    private String dataTiering;
 
     /**
      * <p>
@@ -306,6 +314,81 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @param dataTiering
+     *        Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter
+     *        must be set when using r6gd nodes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * @see DataTieringStatus
+     */
+
+    public void setDataTiering(String dataTiering) {
+        this.dataTiering = dataTiering;
+    }
+
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @return Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This
+     *         parameter must be set when using r6gd nodes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * @see DataTieringStatus
+     */
+
+    public String getDataTiering() {
+        return this.dataTiering;
+    }
+
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @param dataTiering
+     *        Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter
+     *        must be set when using r6gd nodes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataTieringStatus
+     */
+
+    public Snapshot withDataTiering(String dataTiering) {
+        setDataTiering(dataTiering);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must
+     * be set when using r6gd nodes. For more information, see <a
+     * href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * </p>
+     * 
+     * @param dataTiering
+     *        Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter
+     *        must be set when using r6gd nodes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataTieringStatus
+     */
+
+    public Snapshot withDataTiering(DataTieringStatus dataTiering) {
+        this.dataTiering = dataTiering.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -328,7 +411,9 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
         if (getARN() != null)
             sb.append("ARN: ").append(getARN()).append(",");
         if (getClusterConfiguration() != null)
-            sb.append("ClusterConfiguration: ").append(getClusterConfiguration());
+            sb.append("ClusterConfiguration: ").append(getClusterConfiguration()).append(",");
+        if (getDataTiering() != null)
+            sb.append("DataTiering: ").append(getDataTiering());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +452,10 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getClusterConfiguration() != null && other.getClusterConfiguration().equals(this.getClusterConfiguration()) == false)
             return false;
+        if (other.getDataTiering() == null ^ this.getDataTiering() == null)
+            return false;
+        if (other.getDataTiering() != null && other.getDataTiering().equals(this.getDataTiering()) == false)
+            return false;
         return true;
     }
 
@@ -381,6 +470,7 @@ public class Snapshot implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
         hashCode = prime * hashCode + ((getClusterConfiguration() == null) ? 0 : getClusterConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getDataTiering() == null) ? 0 : getDataTiering().hashCode());
         return hashCode;
     }
 

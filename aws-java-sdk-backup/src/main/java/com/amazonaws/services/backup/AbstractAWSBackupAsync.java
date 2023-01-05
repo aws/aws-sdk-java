@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,19 @@ import com.amazonaws.services.backup.model.*;
 public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBackupAsync {
 
     protected AbstractAWSBackupAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelLegalHoldResult> cancelLegalHoldAsync(CancelLegalHoldRequest request) {
+
+        return cancelLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelLegalHoldResult> cancelLegalHoldAsync(CancelLegalHoldRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelLegalHoldRequest, CancelLegalHoldResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -74,6 +87,19 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     @Override
     public java.util.concurrent.Future<CreateFrameworkResult> createFrameworkAsync(CreateFrameworkRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateFrameworkRequest, CreateFrameworkResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLegalHoldResult> createLegalHoldAsync(CreateLegalHoldRequest request) {
+
+        return createLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLegalHoldResult> createLegalHoldAsync(CreateLegalHoldRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLegalHoldRequest, CreateLegalHoldResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -367,6 +393,21 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointFromParentResult> disassociateRecoveryPointFromParentAsync(
+            DisassociateRecoveryPointFromParentRequest request) {
+
+        return disassociateRecoveryPointFromParentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointFromParentResult> disassociateRecoveryPointFromParentAsync(
+            DisassociateRecoveryPointFromParentRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateRecoveryPointFromParentRequest, DisassociateRecoveryPointFromParentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportBackupPlanTemplateResult> exportBackupPlanTemplateAsync(ExportBackupPlanTemplateRequest request) {
 
         return exportBackupPlanTemplateAsync(request, null);
@@ -453,6 +494,19 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     @Override
     public java.util.concurrent.Future<GetBackupVaultNotificationsResult> getBackupVaultNotificationsAsync(GetBackupVaultNotificationsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBackupVaultNotificationsRequest, GetBackupVaultNotificationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLegalHoldResult> getLegalHoldAsync(GetLegalHoldRequest request) {
+
+        return getLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLegalHoldResult> getLegalHoldAsync(GetLegalHoldRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetLegalHoldRequest, GetLegalHoldResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -590,6 +644,19 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     }
 
     @Override
+    public java.util.concurrent.Future<ListLegalHoldsResult> listLegalHoldsAsync(ListLegalHoldsRequest request) {
+
+        return listLegalHoldsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLegalHoldsResult> listLegalHoldsAsync(ListLegalHoldsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListLegalHoldsRequest, ListLegalHoldsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProtectedResourcesResult> listProtectedResourcesAsync(ListProtectedResourcesRequest request) {
 
         return listProtectedResourcesAsync(request, null);
@@ -613,6 +680,19 @@ public class AbstractAWSBackupAsync extends AbstractAWSBackup implements AWSBack
     public java.util.concurrent.Future<ListRecoveryPointsByBackupVaultResult> listRecoveryPointsByBackupVaultAsync(
             ListRecoveryPointsByBackupVaultRequest request,
             com.amazonaws.handlers.AsyncHandler<ListRecoveryPointsByBackupVaultRequest, ListRecoveryPointsByBackupVaultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecoveryPointsByLegalHoldResult> listRecoveryPointsByLegalHoldAsync(ListRecoveryPointsByLegalHoldRequest request) {
+
+        return listRecoveryPointsByLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecoveryPointsByLegalHoldResult> listRecoveryPointsByLegalHoldAsync(ListRecoveryPointsByLegalHoldRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListRecoveryPointsByLegalHoldRequest, ListRecoveryPointsByLegalHoldResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

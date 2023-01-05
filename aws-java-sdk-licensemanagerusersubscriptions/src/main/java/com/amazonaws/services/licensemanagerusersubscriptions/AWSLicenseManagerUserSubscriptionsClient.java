@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -155,6 +155,14 @@ public class AWSLicenseManagerUserSubscriptionsClient extends AmazonWebServiceCl
      * <p>
      * Associates the user to an EC2 instance to utilize user-based subscriptions.
      * </p>
+     * <note>
+     * <p>
+     * Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing
+     * periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more
+     * information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your
+     * monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param associateUserRequest
      * @return Result of the AssociateUser operation returned by the service.
@@ -720,6 +728,14 @@ public class AWSLicenseManagerUserSubscriptionsClient extends AmazonWebServiceCl
      * <p>
      * Starts a product subscription for a user with the specified identity provider.
      * </p>
+     * <note>
+     * <p>
+     * Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing
+     * periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more
+     * information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your
+     * monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param startProductSubscriptionRequest
      * @return Result of the StartProductSubscription operation returned by the service.
@@ -850,6 +866,72 @@ public class AWSLicenseManagerUserSubscriptionsClient extends AmazonWebServiceCl
             HttpResponseHandler<AmazonWebServiceResponse<StopProductSubscriptionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StopProductSubscriptionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates additional product configuration settings for the registered identity provider.
+     * </p>
+     * 
+     * @param updateIdentityProviderSettingsRequest
+     * @return Result of the UpdateIdentityProviderSettings operation returned by the service.
+     * @throws ValidationException
+     *         A parameter is not valid.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws InternalServerException
+     *         An exception occurred with the service.
+     * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action.
+     * @sample AWSLicenseManagerUserSubscriptions.UpdateIdentityProviderSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UpdateIdentityProviderSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateIdentityProviderSettingsResult updateIdentityProviderSettings(UpdateIdentityProviderSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateIdentityProviderSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateIdentityProviderSettingsResult executeUpdateIdentityProviderSettings(UpdateIdentityProviderSettingsRequest updateIdentityProviderSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateIdentityProviderSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateIdentityProviderSettingsRequest> request = null;
+        Response<UpdateIdentityProviderSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateIdentityProviderSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateIdentityProviderSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "License Manager User Subscriptions");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityProviderSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateIdentityProviderSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateIdentityProviderSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

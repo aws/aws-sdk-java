@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code> <a>DeleteOutboundConnection</a> </code> operation. Contains details about the deleted outbound
- * connection.
+ * Details about the deleted outbound connection.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -26,18 +25,18 @@ public class DeleteOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>OutboundConnection</a> </code> of the deleted outbound connection.
+     * The deleted inbound connection.
      * </p>
      */
     private OutboundConnection connection;
 
     /**
      * <p>
-     * The <code> <a>OutboundConnection</a> </code> of the deleted outbound connection.
+     * The deleted inbound connection.
      * </p>
      * 
      * @param connection
-     *        The <code> <a>OutboundConnection</a> </code> of the deleted outbound connection.
+     *        The deleted inbound connection.
      */
 
     public void setConnection(OutboundConnection connection) {
@@ -46,10 +45,10 @@ public class DeleteOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>OutboundConnection</a> </code> of the deleted outbound connection.
+     * The deleted inbound connection.
      * </p>
      * 
-     * @return The <code> <a>OutboundConnection</a> </code> of the deleted outbound connection.
+     * @return The deleted inbound connection.
      */
 
     public OutboundConnection getConnection() {
@@ -58,11 +57,11 @@ public class DeleteOutboundConnectionResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The <code> <a>OutboundConnection</a> </code> of the deleted outbound connection.
+     * The deleted inbound connection.
      * </p>
      * 
      * @param connection
-     *        The <code> <a>OutboundConnection</a> </code> of the deleted outbound connection.
+     *        The deleted inbound connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,14 @@ public class DiscoverPollEndpointResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String telemetryEndpoint;
+    /**
+     * <p>
+     * The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private String serviceConnectEndpoint;
 
     /**
      * <p>
@@ -117,6 +125,58 @@ public class DiscoverPollEndpointResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectEndpoint
+     *        The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setServiceConnectEndpoint(String serviceConnectEndpoint) {
+        this.serviceConnectEndpoint = serviceConnectEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information,
+     *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public String getServiceConnectEndpoint() {
+        return this.serviceConnectEndpoint;
+    }
+
+    /**
+     * <p>
+     * The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectEndpoint
+     *        The endpoint for the Amazon ECS agent to poll for Service Connect configuration. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DiscoverPollEndpointResult withServiceConnectEndpoint(String serviceConnectEndpoint) {
+        setServiceConnectEndpoint(serviceConnectEndpoint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +191,9 @@ public class DiscoverPollEndpointResult extends com.amazonaws.AmazonWebServiceRe
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getTelemetryEndpoint() != null)
-            sb.append("TelemetryEndpoint: ").append(getTelemetryEndpoint());
+            sb.append("TelemetryEndpoint: ").append(getTelemetryEndpoint()).append(",");
+        if (getServiceConnectEndpoint() != null)
+            sb.append("ServiceConnectEndpoint: ").append(getServiceConnectEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +216,10 @@ public class DiscoverPollEndpointResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTelemetryEndpoint() != null && other.getTelemetryEndpoint().equals(this.getTelemetryEndpoint()) == false)
             return false;
+        if (other.getServiceConnectEndpoint() == null ^ this.getServiceConnectEndpoint() == null)
+            return false;
+        if (other.getServiceConnectEndpoint() != null && other.getServiceConnectEndpoint().equals(this.getServiceConnectEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +230,7 @@ public class DiscoverPollEndpointResult extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getTelemetryEndpoint() == null) ? 0 : getTelemetryEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getServiceConnectEndpoint() == null) ? 0 : getServiceConnectEndpoint().hashCode());
         return hashCode;
     }
 

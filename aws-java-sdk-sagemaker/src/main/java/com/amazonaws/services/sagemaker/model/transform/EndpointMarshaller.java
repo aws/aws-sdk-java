@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class EndpointMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringSchedules").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<List> SHADOWPRODUCTIONVARIANTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShadowProductionVariants").build();
 
     private static final EndpointMarshaller instance = new EndpointMarshaller();
 
@@ -78,6 +80,7 @@ public class EndpointMarshaller {
             protocolMarshaller.marshall(endpoint.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(endpoint.getMonitoringSchedules(), MONITORINGSCHEDULES_BINDING);
             protocolMarshaller.marshall(endpoint.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(endpoint.getShadowProductionVariants(), SHADOWPRODUCTIONVARIANTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

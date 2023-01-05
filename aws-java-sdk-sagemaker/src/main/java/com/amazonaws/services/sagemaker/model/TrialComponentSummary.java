@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
     private String trialComponentName;
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      */
     private String trialComponentArn;
@@ -152,11 +152,11 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
      * @param trialComponentArn
-     *        The ARN of the trial component.
+     *        The Amazon Resource Name (ARN) of the trial component.
      */
 
     public void setTrialComponentArn(String trialComponentArn) {
@@ -165,10 +165,10 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
-     * @return The ARN of the trial component.
+     * @return The Amazon Resource Name (ARN) of the trial component.
      */
 
     public String getTrialComponentArn() {
@@ -177,11 +177,11 @@ public class TrialComponentSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The ARN of the trial component.
+     * The Amazon Resource Name (ARN) of the trial component.
      * </p>
      * 
      * @param trialComponentArn
-     *        The ARN of the trial component.
+     *        The Amazon Resource Name (ARN) of the trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

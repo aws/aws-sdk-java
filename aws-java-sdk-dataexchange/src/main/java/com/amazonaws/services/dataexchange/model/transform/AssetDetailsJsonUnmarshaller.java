@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,14 @@ public class AssetDetailsJsonUnmarshaller implements Unmarshaller<AssetDetails, 
                 if (context.testExpression("ApiGatewayApiAsset", targetDepth)) {
                     context.nextToken();
                     assetDetails.setApiGatewayApiAsset(ApiGatewayApiAssetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("S3DataAccessAsset", targetDepth)) {
+                    context.nextToken();
+                    assetDetails.setS3DataAccessAsset(S3DataAccessAssetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LakeFormationDataPermissionAsset", targetDepth)) {
+                    context.nextToken();
+                    assetDetails.setLakeFormationDataPermissionAsset(LakeFormationDataPermissionAssetJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,9 +50,9 @@ import com.amazonaws.services.stepfunctions.model.transform.*;
  * Client for accessing AWS SFN. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
- * <fullname>AWS Step Functions</fullname>
+ * <fullname>Step Functions</fullname>
  * <p>
- * AWS Step Functions is a service that lets you coordinate the components of distributed applications and microservices
+ * Step Functions is a service that lets you coordinate the components of distributed applications and microservices
  * using visual workflows.
  * </p>
  * <p>
@@ -64,9 +64,10 @@ import com.amazonaws.services.stepfunctions.model.transform.*;
  * </p>
  * <p>
  * Step Functions manages operations and underlying infrastructure to ensure your application is available at any scale.
- * You can run tasks on AWS, your own servers, or any system that has access to AWS. You can access and use Step
- * Functions using the console, the AWS SDKs, or an HTTP API. For more information about Step Functions, see the <i> <a
- * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </i>.
+ * You can run tasks on Amazon Web Services, your own servers, or any system that has access to Amazon Web Services. You
+ * can access and use Step Functions using the console, the Amazon Web Services SDKs, or an HTTP API. For more
+ * information about Step Functions, see the <i> <a
+ * href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">Step Functions Developer Guide</a> </i>.
  * </p>
  */
 @ThreadSafe
@@ -160,6 +161,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TaskDoesNotExist").withExceptionUnmarshaller(
                                     com.amazonaws.services.stepfunctions.model.transform.TaskDoesNotExistExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withExceptionUnmarshaller(
                                     com.amazonaws.services.stepfunctions.model.transform.StateMachineDoesNotExistExceptionUnmarshaller.getInstance()))
@@ -367,10 +371,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
     /**
      * <p>
      * Creates an activity. An activity is a task that you write in any programming language and host on any machine
-     * that has access to AWS Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code>
-     * API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the
-     * existence of your activity and returns an identifier for use in a state machine and when polling from the
-     * activity.
+     * that has access to Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API
+     * action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence
+     * of your activity and returns an identifier for use in a state machine and when polling from the activity.
      * </p>
      * <note>
      * <p>
@@ -393,10 +396,10 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         The maximum number of activities has been reached. Existing activities must be deleted before a new
      *         activity can be created.
      * @throws InvalidNameException
-     *         The provided name is invalid.
+     *         The provided name is not valid.
      * @throws TooManyTagsException
      *         You've exceeded the number of tags allowed for a resource. See the <a
-     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step
      *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateActivity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateActivity" target="_top">AWS API
@@ -453,7 +456,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured
      * language. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
-     * Language</a> in the AWS Step Functions User Guide.
+     * Language</a> in the Step Functions User Guide.
      * </p>
      * <note>
      * <p>
@@ -475,11 +478,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param createStateMachineRequest
      * @return Result of the CreateStateMachine operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws InvalidDefinitionException
-     *         The provided Amazon States Language definition is invalid.
+     *         The provided Amazon States Language definition is not valid.
      * @throws InvalidNameException
-     *         The provided name is invalid.
+     *         The provided name is not valid.
      * @throws InvalidLoggingConfigurationException
      * @throws InvalidTracingConfigurationException
      *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
@@ -494,7 +497,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws StateMachineTypeNotSupportedException
      * @throws TooManyTagsException
      *         You've exceeded the number of tags allowed for a resource. See the <a
-     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step
      *         Functions Developer Guide.
      * @sample AWSStepFunctions.CreateStateMachine
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/CreateStateMachine" target="_top">AWS API
@@ -552,7 +555,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param deleteActivityRequest
      * @return Result of the DeleteActivity operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @sample AWSStepFunctions.DeleteActivity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteActivity" target="_top">AWS API
      *      Documentation</a>
@@ -606,17 +609,30 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to
      * <code>DELETING</code> and begins the deletion process.
      * </p>
+     * <p>
+     * If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
+     * ValidationException.
+     * </p>
+     * <p>
+     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
+     * example, the qualified state machine ARN
+     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
+     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
+     * <code>stateMachineName</code>.
+     * </p>
      * <note>
      * <p>
-     * For <code>EXPRESS</code>state machines, the deletion will happen eventually (usually less than a minute). Running
-     * executions may emit logs after <code>DeleteStateMachine</code> API is called.
+     * For <code>EXPRESS</code> state machines, the deletion will happen eventually (usually less than a minute).
+     * Running executions may emit logs after <code>DeleteStateMachine</code> API is called.
      * </p>
      * </note>
      * 
      * @param deleteStateMachineRequest
      * @return Result of the DeleteStateMachine operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
+     * @throws ValidationException
+     *         The input does not satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSStepFunctions.DeleteStateMachine
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DeleteStateMachine" target="_top">AWS API
      *      Documentation</a>
@@ -681,7 +697,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws ActivityDoesNotExistException
      *         The specified activity does not exist.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @sample AWSStepFunctions.DescribeActivity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeActivity" target="_top">AWS API
      *      Documentation</a>
@@ -732,7 +748,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Describes an execution.
+     * Provides all information about a state machine execution, such as the state machine associated with the
+     * execution, the execution input and output, and relevant execution metadata. Use this API action to return the Map
+     * Run ARN if the execution was dispatched by a Map Run.
      * </p>
      * <note>
      * <p>
@@ -741,7 +759,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This API action is not supported by <code>EXPRESS</code> state machines.
+     * This API action is not supported by <code>EXPRESS</code> state machine executions unless they were dispatched by
+     * a Map Run.
      * </p>
      * 
      * @param describeExecutionRequest
@@ -749,7 +768,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws ExecutionDoesNotExistException
      *         The specified execution does not exist.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @sample AWSStepFunctions.DescribeExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeExecution" target="_top">AWS API
      *      Documentation</a>
@@ -800,7 +819,77 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Describes a state machine.
+     * Provides information about a Map Run's configuration, progress, and results. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * 
+     * @param describeMapRunRequest
+     * @return Result of the DescribeMapRun operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Could not find the referenced resource. Only state machine and activity ARNs are supported.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is not valid.
+     * @sample AWSStepFunctions.DescribeMapRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeMapRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeMapRunResult describeMapRun(DescribeMapRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMapRun(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMapRunResult executeDescribeMapRun(DescribeMapRunRequest describeMapRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMapRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMapRunRequest> request = null;
+        Response<DescribeMapRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMapRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMapRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMapRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMapRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeMapRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and
+     * configuration. If the state machine ARN is a qualified state machine ARN, the response returned includes the
+     * <code>Map</code> state's label.
+     * </p>
+     * <p>
+     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
+     * example, the qualified state machine ARN
+     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
+     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
+     * <code>stateMachineName</code>.
      * </p>
      * <note>
      * <p>
@@ -812,7 +901,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param describeStateMachineRequest
      * @return Result of the DescribeStateMachine operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @sample AWSStepFunctions.DescribeStateMachine
@@ -865,7 +954,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Describes the state machine associated with a specific execution.
+     * Provides information about a state machine's definition, its execution role ARN, and configuration. If an
+     * execution was dispatched by a Map Run, the Map Run is returned in the response. Additionally, the state machine
+     * returned will be the state machine associated with the Map Run.
      * </p>
      * <note>
      * <p>
@@ -882,7 +973,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws ExecutionDoesNotExistException
      *         The specified execution does not exist.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @sample AWSStepFunctions.DescribeStateMachineForExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/DescribeStateMachineForExecution"
      *      target="_top">AWS API Documentation</a>
@@ -942,7 +1033,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the
      * poll returns a <code>taskToken</code> with a null string.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * This API action isn't logged in CloudTrail.
+     * </p>
+     * </note> <important>
      * <p>
      * Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than the maximum
      * time the service may hold the poll request).
@@ -961,7 +1056,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws ActivityWorkerLimitExceededException
      *         The maximum number of workers concurrently polling for activity tasks has been reached.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @sample AWSStepFunctions.GetActivityTask
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetActivityTask" target="_top">AWS API
      *      Documentation</a>
@@ -1031,9 +1126,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws ExecutionDoesNotExistException
      *         The specified execution does not exist.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws InvalidTokenException
-     *         The provided token is invalid.
+     *         The provided token is not valid.
      * @sample AWSStepFunctions.GetExecutionHistory
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/GetExecutionHistory" target="_top">AWS API
      *      Documentation</a>
@@ -1102,7 +1197,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param listActivitiesRequest
      * @return Result of the ListActivities operation returned by the service.
      * @throws InvalidTokenException
-     *         The provided token is invalid.
+     *         The provided token is not valid.
      * @sample AWSStepFunctions.ListActivities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListActivities" target="_top">AWS API
      *      Documentation</a>
@@ -1153,8 +1248,11 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists the executions of a state machine that meet the filtering criteria. Results are sorted by time, with the
-     * most recent execution first.
+     * Lists all executions of a state machine or a Map Run. You can list all executions related to a state machine by
+     * specifying a state machine Amazon Resource Name (ARN), or those related to a Map Run by specifying a Map Run ARN.
+     * </p>
+     * <p>
+     * Results are sorted by time, with the most recent execution first.
      * </p>
      * <p>
      * If <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is a
@@ -1175,12 +1273,16 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param listExecutionsRequest
      * @return Result of the ListExecutions operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws InvalidTokenException
-     *         The provided token is invalid.
+     *         The provided token is not valid.
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @throws StateMachineTypeNotSupportedException
+     * @throws ValidationException
+     *         The input does not satisfy the constraints specified by an Amazon Web Services service.
+     * @throws ResourceNotFoundException
+     *         Could not find the referenced resource. Only state machine and activity ARNs are supported.
      * @sample AWSStepFunctions.ListExecutions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListExecutions" target="_top">AWS API
      *      Documentation</a>
@@ -1231,6 +1333,68 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Lists all Map Runs that were started by a given state machine execution. Use this API action to obtain Map Run
+     * ARNs, and then call <code>DescribeMapRun</code> to obtain more information, if needed.
+     * </p>
+     * 
+     * @param listMapRunsRequest
+     * @return Result of the ListMapRuns operation returned by the service.
+     * @throws ExecutionDoesNotExistException
+     *         The specified execution does not exist.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is not valid.
+     * @throws InvalidTokenException
+     *         The provided token is not valid.
+     * @sample AWSStepFunctions.ListMapRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListMapRuns" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListMapRunsResult listMapRuns(ListMapRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMapRuns(request);
+    }
+
+    @SdkInternalApi
+    final ListMapRunsResult executeListMapRuns(ListMapRunsRequest listMapRunsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMapRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMapRunsRequest> request = null;
+        Response<ListMapRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMapRunsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMapRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMapRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMapRunsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMapRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the existing state machines.
      * </p>
      * <p>
@@ -1249,7 +1413,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param listStateMachinesRequest
      * @return Result of the ListStateMachines operation returned by the service.
      * @throws InvalidTokenException
-     *         The provided token is invalid.
+     *         The provided token is not valid.
      * @sample AWSStepFunctions.ListStateMachines
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ListStateMachines" target="_top">AWS API
      *      Documentation</a>
@@ -1309,7 +1473,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws ResourceNotFoundException
      *         Could not find the referenced resource. Only state machine and activity ARNs are supported.
      * @sample AWSStepFunctions.ListTagsForResource
@@ -1371,7 +1535,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @return Result of the SendTaskFailure operation returned by the service.
      * @throws TaskDoesNotExistException
      * @throws InvalidTokenException
-     *         The provided token is invalid.
+     *         The provided token is not valid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskFailure
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskFailure" target="_top">AWS API
@@ -1447,7 +1611,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @return Result of the SendTaskHeartbeat operation returned by the service.
      * @throws TaskDoesNotExistException
      * @throws InvalidTokenException
-     *         The provided token is invalid.
+     *         The provided token is not valid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskHeartbeat
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskHeartbeat" target="_top">AWS API
@@ -1508,9 +1672,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @return Result of the SendTaskSuccess operation returned by the service.
      * @throws TaskDoesNotExistException
      * @throws InvalidOutputException
-     *         The provided JSON output data is invalid.
+     *         The provided JSON output data is not valid.
      * @throws InvalidTokenException
-     *         The provided token is invalid.
+     *         The provided token is not valid.
      * @throws TaskTimedOutException
      * @sample AWSStepFunctions.SendTaskSuccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/SendTaskSuccess" target="_top">AWS API
@@ -1562,14 +1726,25 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Starts a state machine execution.
+     * Starts a state machine execution. If the given state machine Amazon Resource Name (ARN) is a qualified state
+     * machine ARN, it will fail with ValidationException.
+     * </p>
+     * <p>
+     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
+     * example, the qualified state machine ARN
+     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
+     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
+     * <code>stateMachineName</code>.
      * </p>
      * <note>
      * <p>
-     * <code>StartExecution</code> is idempotent. If <code>StartExecution</code> is called with the same name and input
-     * as a running execution, the call will succeed and return the same response as the original request. If the
-     * execution is closed or if the input is different, it will return a 400 <code>ExecutionAlreadyExists</code> error.
-     * Names can be reused after 90 days.
+     * <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For a <code>STANDARD</code>
+     * workflow, if <code>StartExecution</code> is called with the same name and input as a running execution, the call
+     * will succeed and return the same response as the original request. If the execution is closed or if the input is
+     * different, it will return a <code>400 ExecutionAlreadyExists</code> error. Names can be reused after 90 days.
+     * </p>
+     * <p>
+     * <code>StartExecution</code> is not idempotent for <code>EXPRESS</code> workflows.
      * </p>
      * </note>
      * 
@@ -1585,15 +1760,17 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         Executions with the same <code>name</code> and <code>input</code> are considered idempotent.
      *         </p>
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws InvalidExecutionInputException
-     *         The provided JSON input data is invalid.
+     *         The provided JSON input data is not valid.
      * @throws InvalidNameException
-     *         The provided name is invalid.
+     *         The provided name is not valid.
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @throws StateMachineDeletingException
      *         The specified state machine is being deleted.
+     * @throws ValidationException
+     *         The input does not satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSStepFunctions.StartExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartExecution" target="_top">AWS API
      *      Documentation</a>
@@ -1644,17 +1821,30 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Starts a Synchronous Express state machine execution.
+     * Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code> is not available for
+     * <code>STANDARD</code> workflows.
      * </p>
+     * <note>
+     * <p>
+     * <code>StartSyncExecution</code> will return a <code>200 OK</code> response, even if your execution fails, because
+     * the status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
+     * prevent your execution from running, such as permissions errors, limit errors, or issues with your state machine
+     * code and configuration.
+     * </p>
+     * </note> <note>
+     * <p>
+     * This API action isn't logged in CloudTrail.
+     * </p>
+     * </note>
      * 
      * @param startSyncExecutionRequest
      * @return Result of the StartSyncExecution operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws InvalidExecutionInputException
-     *         The provided JSON input data is invalid.
+     *         The provided JSON input data is not valid.
      * @throws InvalidNameException
-     *         The provided name is invalid.
+     *         The provided name is not valid.
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
      * @throws StateMachineDeletingException
@@ -1730,7 +1920,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @throws ExecutionDoesNotExistException
      *         The specified execution does not exist.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
+     * @throws ValidationException
+     *         The input does not satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSStepFunctions.StopExecution
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StopExecution" target="_top">AWS API
      *      Documentation</a>
@@ -1786,7 +1978,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -1797,12 +1989,12 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws ResourceNotFoundException
      *         Could not find the referenced resource. Only state machine and activity ARNs are supported.
      * @throws TooManyTagsException
      *         You've exceeded the number of tags allowed for a resource. See the <a
-     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the AWS Step
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html"> Limits Topic</a> in the Step
      *         Functions Developer Guide.
      * @sample AWSStepFunctions.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TagResource" target="_top">AWS API
@@ -1860,7 +2052,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws ResourceNotFoundException
      *         Could not find the referenced resource. Only state machine and activity ARNs are supported.
      * @sample AWSStepFunctions.UntagResource
@@ -1913,10 +2105,83 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Updates an in-progress Map Run's configuration to include changes to the settings that control maximum
+     * concurrency and Map Run failure.
+     * </p>
+     * 
+     * @param updateMapRunRequest
+     * @return Result of the UpdateMapRun operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Could not find the referenced resource. Only state machine and activity ARNs are supported.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is not valid.
+     * @throws ValidationException
+     *         The input does not satisfy the constraints specified by an Amazon Web Services service.
+     * @sample AWSStepFunctions.UpdateMapRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateMapRun" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateMapRunResult updateMapRun(UpdateMapRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMapRun(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMapRunResult executeUpdateMapRun(UpdateMapRunRequest updateMapRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMapRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMapRunRequest> request = null;
+        Response<UpdateMapRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMapRunRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMapRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SFN");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMapRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMapRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateMapRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or
      * <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code>
      * and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you
      * will receive a <code>MissingRequiredParameter</code> error.
+     * </p>
+     * <p>
+     * If the given state machine Amazon Resource Name (ARN) is a qualified state machine ARN, it will fail with
+     * ValidationException.
+     * </p>
+     * <p>
+     * A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within a state machine. For
+     * example, the qualified state machine ARN
+     * <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code> refers to a
+     * <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in the state machine named
+     * <code>stateMachineName</code>.
      * </p>
      * <note>
      * <p>
@@ -1929,9 +2194,9 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      * @param updateStateMachineRequest
      * @return Result of the UpdateStateMachine operation returned by the service.
      * @throws InvalidArnException
-     *         The provided Amazon Resource Name (ARN) is invalid.
+     *         The provided Amazon Resource Name (ARN) is not valid.
      * @throws InvalidDefinitionException
-     *         The provided Amazon States Language definition is invalid.
+     *         The provided Amazon States Language definition is not valid.
      * @throws InvalidLoggingConfigurationException
      * @throws InvalidTracingConfigurationException
      *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
@@ -1943,6 +2208,8 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
      *         The specified state machine is being deleted.
      * @throws StateMachineDoesNotExistException
      *         The specified state machine does not exist.
+     * @throws ValidationException
+     *         The input does not satisfy the constraints specified by an Amazon Web Services service.
      * @sample AWSStepFunctions.UpdateStateMachine
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/UpdateStateMachine" target="_top">AWS API
      *      Documentation</a>

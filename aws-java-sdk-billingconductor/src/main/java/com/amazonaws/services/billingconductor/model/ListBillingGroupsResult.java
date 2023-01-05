@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class ListBillingGroupsResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<BillingGroupListElement> billingGroups;
     /**
      * <p>
-     * The pagination token used on subsequent calls to get billing groups.
+     * The pagination token that's used on subsequent calls to get billing groups.
      * </p>
      */
     private String nextToken;
@@ -108,11 +108,11 @@ public class ListBillingGroupsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get billing groups.
+     * The pagination token that's used on subsequent calls to get billing groups.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to get billing groups.
+     *        The pagination token that's used on subsequent calls to get billing groups.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,10 +121,10 @@ public class ListBillingGroupsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get billing groups.
+     * The pagination token that's used on subsequent calls to get billing groups.
      * </p>
      * 
-     * @return The pagination token used on subsequent calls to get billing groups.
+     * @return The pagination token that's used on subsequent calls to get billing groups.
      */
 
     public String getNextToken() {
@@ -133,11 +133,11 @@ public class ListBillingGroupsResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get billing groups.
+     * The pagination token that's used on subsequent calls to get billing groups.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to get billing groups.
+     *        The pagination token that's used on subsequent calls to get billing groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

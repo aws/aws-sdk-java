@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,12 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private java.util.Map<String, String> endpoints;
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     */
+    private String bucketAccountId;
 
     /**
      * <p>
@@ -564,6 +570,46 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     */
+
+    public void setBucketAccountId(String bucketAccountId) {
+        this.bucketAccountId = bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     */
+
+    public String getBucketAccountId() {
+        return this.bucketAccountId;
+    }
+
+    /**
+     * <p>
+     * The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * </p>
+     * 
+     * @param bucketAccountId
+     *        The Amazon Web Services account ID associated with the S3 bucket associated with this access point.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccessPointResult withBucketAccountId(String bucketAccountId) {
+        setBucketAccountId(bucketAccountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -592,7 +638,9 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getAccessPointArn() != null)
             sb.append("AccessPointArn: ").append(getAccessPointArn()).append(",");
         if (getEndpoints() != null)
-            sb.append("Endpoints: ").append(getEndpoints());
+            sb.append("Endpoints: ").append(getEndpoints()).append(",");
+        if (getBucketAccountId() != null)
+            sb.append("BucketAccountId: ").append(getBucketAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -644,6 +692,10 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getEndpoints() != null && other.getEndpoints().equals(this.getEndpoints()) == false)
             return false;
+        if (other.getBucketAccountId() == null ^ this.getBucketAccountId() == null)
+            return false;
+        if (other.getBucketAccountId() != null && other.getBucketAccountId().equals(this.getBucketAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -661,6 +713,7 @@ public class GetAccessPointResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
         hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
         hashCode = prime * hashCode + ((getEndpoints() == null) ? 0 : getEndpoints().hashCode());
+        hashCode = prime * hashCode + ((getBucketAccountId() == null) ? 0 : getBucketAccountId().hashCode());
         return hashCode;
     }
 

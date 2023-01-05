@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,9 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      * The name that you specify for your container service will make up part of its default domain. The default domain
      * of a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>. If the name
-     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region
-     * (<code>us-east-2</code>), then the domain for your container service will be like the following example:
-     * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web
+     * Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following
+     * example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p>
      * <p>
      * The following are the requirements for container service names:
@@ -164,9 +164,9 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      * The name that you specify for your container service will make up part of its default domain. The default domain
      * of a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>. If the name
-     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region
-     * (<code>us-east-2</code>), then the domain for your container service will be like the following example:
-     * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web
+     * Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following
+     * example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p>
      * <p>
      * The following are the requirements for container service names:
@@ -201,8 +201,9 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      *        domain of a container service is typically
      *        <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>. If
      *        the name of your container service is <code>container-service-1</code>, and it's located in the US East
-     *        (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the
-     *        following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+     *        (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service
+     *        will be like the following example:
+     *        <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      *        </p>
      *        <p>
      *        The following are the requirements for container service names:
@@ -242,9 +243,9 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      * The name that you specify for your container service will make up part of its default domain. The default domain
      * of a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>. If the name
-     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region
-     * (<code>us-east-2</code>), then the domain for your container service will be like the following example:
-     * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web
+     * Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following
+     * example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p>
      * <p>
      * The following are the requirements for container service names:
@@ -278,8 +279,8 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      *         domain of a container service is typically
      *         <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>. If
      *         the name of your container service is <code>container-service-1</code>, and it's located in the US East
-     *         (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the
-     *         following example:
+     *         (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service
+     *         will be like the following example:
      *         <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      *         </p>
      *         <p>
@@ -320,9 +321,9 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      * The name that you specify for your container service will make up part of its default domain. The default domain
      * of a container service is typically
      * <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>. If the name
-     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) AWS region
-     * (<code>us-east-2</code>), then the domain for your container service will be like the following example:
-     * <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+     * of your container service is <code>container-service-1</code>, and it's located in the US East (Ohio) Amazon Web
+     * Services Region (<code>us-east-2</code>), then the domain for your container service will be like the following
+     * example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      * </p>
      * <p>
      * The following are the requirements for container service names:
@@ -357,8 +358,9 @@ public class CreateContainerServiceRequest extends com.amazonaws.AmazonWebServic
      *        domain of a container service is typically
      *        <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>. If
      *        the name of your container service is <code>container-service-1</code>, and it's located in the US East
-     *        (Ohio) AWS region (<code>us-east-2</code>), then the domain for your container service will be like the
-     *        following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+     *        (Ohio) Amazon Web Services Region (<code>us-east-2</code>), then the domain for your container service
+     *        will be like the following example:
+     *        <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
      *        </p>
      *        <p>
      *        The following are the requirements for container service names:

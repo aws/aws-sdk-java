@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,11 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The name of the database schema.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
      */
     private String schema;
     /**
@@ -299,9 +304,17 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The name of the database schema.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
      * 
      * @param schema
-     *        The name of the database schema.
+     *        The name of the database schema.</p> <note>
+     *        <p>
+     *        Currently, the <code>schema</code> parameter isn't supported.
+     *        </p>
      */
 
     public void setSchema(String schema) {
@@ -312,8 +325,16 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The name of the database schema.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
      * 
-     * @return The name of the database schema.
+     * @return The name of the database schema.</p> <note>
+     *         <p>
+     *         Currently, the <code>schema</code> parameter isn't supported.
+     *         </p>
      */
 
     public String getSchema() {
@@ -324,9 +345,17 @@ public class BatchExecuteStatementRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The name of the database schema.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>schema</code> parameter isn't supported.
+     * </p>
+     * </note>
      * 
      * @param schema
-     *        The name of the database schema.
+     *        The name of the database schema.</p> <note>
+     *        <p>
+     *        Currently, the <code>schema</code> parameter isn't supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

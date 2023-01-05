@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </ul>
  * <p>
  * The following describes the possible <code>healthStatus</code> values for a task. The container health check status
- * of nonessential containers do not have an effect on the health status of a task.
+ * of nonessential containers only affects the health status of a task if no essential containers have health checks
+ * defined.
  * </p>
  * <ul>
  * <li>
@@ -73,7 +74,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <li>
  * <p>
  * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there
- * are no container health checks defined.
+ * are only nonessential containers with health checks defined.
  * </p>
  * </li>
  * </ul>
@@ -82,6 +83,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped
  * and the service scheduler will replace it.
  * </p>
+ * <important>
+ * <p>
+ * For tasks that are a part of a service and the service uses the <code>ECS</code> rolling deployment type, the
+ * deployment is paused while the new tasks have the <code>UNKNOWN</code> task health check status. For example, tasks
+ * that define health checks for nonessential containers when no essential containers have health checks will have the
+ * <code>UNKNOWN</code> health check status indefinitely which prevents the deployment from completing.
+ * </p>
+ * </important>
  * <p>
  * The following are notes about container health check support:
  * </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,36 +27,36 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      */
     private String engineType;
     /**
      * <p>
-     * The maximum number of environments to return.
+     * The maximum number of runtime environments to return.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The name of the environment.
+     * The names of the runtime environments. Must be unique within the account.
      * </p>
      */
     private java.util.List<String> names;
     /**
      * <p>
-     * A pagination token to control the number of environments displayed in the list.
+     * A pagination token to control the number of runtime environments displayed in the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The engine type for the environment.
+     *        The engine type for the runtime environment.
      * @see EngineType
      */
 
@@ -66,10 +66,10 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
-     * @return The engine type for the environment.
+     * @return The engine type for the runtime environment.
      * @see EngineType
      */
 
@@ -79,11 +79,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The engine type for the environment.
+     *        The engine type for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -95,11 +95,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The engine type for the environment.
+     * The engine type for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The engine type for the environment.
+     *        The engine type for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -111,11 +111,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of environments to return.
+     * The maximum number of runtime environments to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of environments to return.
+     *        The maximum number of runtime environments to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -124,10 +124,10 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of environments to return.
+     * The maximum number of runtime environments to return.
      * </p>
      * 
-     * @return The maximum number of environments to return.
+     * @return The maximum number of runtime environments to return.
      */
 
     public Integer getMaxResults() {
@@ -136,11 +136,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The maximum number of environments to return.
+     * The maximum number of runtime environments to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of environments to return.
+     *        The maximum number of runtime environments to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -151,10 +151,10 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the environment.
+     * The names of the runtime environments. Must be unique within the account.
      * </p>
      * 
-     * @return The name of the environment.
+     * @return The names of the runtime environments. Must be unique within the account.
      */
 
     public java.util.List<String> getNames() {
@@ -163,11 +163,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the environment.
+     * The names of the runtime environments. Must be unique within the account.
      * </p>
      * 
      * @param names
-     *        The name of the environment.
+     *        The names of the runtime environments. Must be unique within the account.
      */
 
     public void setNames(java.util.Collection<String> names) {
@@ -181,7 +181,7 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the environment.
+     * The names of the runtime environments. Must be unique within the account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -190,7 +190,7 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param names
-     *        The name of the environment.
+     *        The names of the runtime environments. Must be unique within the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -206,11 +206,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the environment.
+     * The names of the runtime environments. Must be unique within the account.
      * </p>
      * 
      * @param names
-     *        The name of the environment.
+     *        The names of the runtime environments. Must be unique within the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A pagination token to control the number of environments displayed in the list.
+     * A pagination token to control the number of runtime environments displayed in the list.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token to control the number of environments displayed in the list.
+     *        A pagination token to control the number of runtime environments displayed in the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -234,10 +234,10 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A pagination token to control the number of environments displayed in the list.
+     * A pagination token to control the number of runtime environments displayed in the list.
      * </p>
      * 
-     * @return A pagination token to control the number of environments displayed in the list.
+     * @return A pagination token to control the number of runtime environments displayed in the list.
      */
 
     public String getNextToken() {
@@ -246,11 +246,11 @@ public class ListEnvironmentsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A pagination token to control the number of environments displayed in the list.
+     * A pagination token to control the number of runtime environments displayed in the list.
      * </p>
      * 
      * @param nextToken
-     *        A pagination token to control the number of environments displayed in the list.
+     *        A pagination token to control the number of runtime environments displayed in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

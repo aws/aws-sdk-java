@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services KMS encryption key ID.
+     * The Key Management Service (KMS) encryption key ID.
      * </p>
      */
     private String kmsKeyId;
@@ -43,11 +43,11 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services KMS encryption key ID.
+     * The Key Management Service (KMS) encryption key ID.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services KMS encryption key ID.
+     *        The Key Management Service (KMS) encryption key ID.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -56,10 +56,10 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services KMS encryption key ID.
+     * The Key Management Service (KMS) encryption key ID.
      * </p>
      * 
-     * @return The Amazon Web Services KMS encryption key ID.
+     * @return The Key Management Service (KMS) encryption key ID.
      */
 
     public String getKmsKeyId() {
@@ -68,11 +68,11 @@ public class AutoMLOutputDataConfig implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services KMS encryption key ID.
+     * The Key Management Service (KMS) encryption key ID.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Web Services KMS encryption key ID.
+     *        The Key Management Service (KMS) encryption key ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of messages,
      * rather than receiving every message published to the topic.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -138,6 +156,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
      *        messages, rather than receiving every message published to the topic.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the
+     *        following string value types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MessageBody</code> – The filter is applied on the message body.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -253,6 +289,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
      * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
      * created for Amazon SNS metadata.
@@ -314,6 +368,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
      *        messages, rather than receiving every message published to the topic.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the
+     *        following string value types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MessageBody</code> – The filter is applied on the message body.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -386,6 +458,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
      * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
      * created for Amazon SNS metadata.
@@ -446,6 +536,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *         <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
      *         messages, rather than receiving every message published to the topic.
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the
+     *         following string value types:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MessageBody</code> – The filter is applied on the message body.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -519,6 +627,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
+     * <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the following
+     * string value types:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MessageBody</code> – The filter is applied on the message body.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
      * <code>RawMessageDelivery</code> – When set to <code>true</code>, enables raw message delivery to Amazon SQS or
      * HTTP/S endpoints. This eliminates the need for the endpoints to process JSON formatting, which is otherwise
      * created for Amazon SNS metadata.
@@ -580,6 +706,24 @@ public class SetSubscriptionAttributesRequest extends com.amazonaws.AmazonWebSer
      *        <code>FilterPolicy</code> – The simple JSON object that lets your subscriber receive only a subset of
      *        messages, rather than receiving every message published to the topic.
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FilterPolicyScope</code> – This attribute lets you choose the filtering scope by using one of the
+     *        following string value types:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>MessageAttributes</code> (default) – The filter is applied on the message attributes.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MessageBody</code> – The filter is applied on the message body.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>

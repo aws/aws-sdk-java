@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,9 @@ public class GetProvisionedConcurrencyConfigResult extends com.amazonaws.AmazonW
     private Integer availableProvisionedConcurrentExecutions;
     /**
      * <p>
-     * The amount of provisioned concurrency allocated.
+     * The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary
+     * deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function
+     * versions.
      * </p>
      */
     private Integer allocatedProvisionedConcurrentExecutions;
@@ -144,11 +146,15 @@ public class GetProvisionedConcurrencyConfigResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The amount of provisioned concurrency allocated.
+     * The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary
+     * deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function
+     * versions.
      * </p>
      * 
      * @param allocatedProvisionedConcurrentExecutions
-     *        The amount of provisioned concurrency allocated.
+     *        The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary
+     *        deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the
+     *        function versions.
      */
 
     public void setAllocatedProvisionedConcurrentExecutions(Integer allocatedProvisionedConcurrentExecutions) {
@@ -157,10 +163,14 @@ public class GetProvisionedConcurrencyConfigResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The amount of provisioned concurrency allocated.
+     * The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary
+     * deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function
+     * versions.
      * </p>
      * 
-     * @return The amount of provisioned concurrency allocated.
+     * @return The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary
+     *         deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the
+     *         function versions.
      */
 
     public Integer getAllocatedProvisionedConcurrentExecutions() {
@@ -169,11 +179,15 @@ public class GetProvisionedConcurrencyConfigResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The amount of provisioned concurrency allocated.
+     * The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary
+     * deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the function
+     * versions.
      * </p>
      * 
      * @param allocatedProvisionedConcurrentExecutions
-     *        The amount of provisioned concurrency allocated.
+     *        The amount of provisioned concurrency allocated. When a weighted alias is used during linear and canary
+     *        deployments, this value fluctuates depending on the amount of concurrency that is provisioned for the
+     *        function versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

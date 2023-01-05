@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class UpdateFPorts implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Positioning positioning;
+    /**
+     * <p>
+     * LoRaWAN application, which can be used for geolocation by activating positioning.
+     * </p>
+     */
+    private java.util.List<ApplicationConfig> applications;
 
     /**
      * <p>
@@ -76,6 +82,76 @@ public class UpdateFPorts implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * LoRaWAN application, which can be used for geolocation by activating positioning.
+     * </p>
+     * 
+     * @return LoRaWAN application, which can be used for geolocation by activating positioning.
+     */
+
+    public java.util.List<ApplicationConfig> getApplications() {
+        return applications;
+    }
+
+    /**
+     * <p>
+     * LoRaWAN application, which can be used for geolocation by activating positioning.
+     * </p>
+     * 
+     * @param applications
+     *        LoRaWAN application, which can be used for geolocation by activating positioning.
+     */
+
+    public void setApplications(java.util.Collection<ApplicationConfig> applications) {
+        if (applications == null) {
+            this.applications = null;
+            return;
+        }
+
+        this.applications = new java.util.ArrayList<ApplicationConfig>(applications);
+    }
+
+    /**
+     * <p>
+     * LoRaWAN application, which can be used for geolocation by activating positioning.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param applications
+     *        LoRaWAN application, which can be used for geolocation by activating positioning.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFPorts withApplications(ApplicationConfig... applications) {
+        if (this.applications == null) {
+            setApplications(new java.util.ArrayList<ApplicationConfig>(applications.length));
+        }
+        for (ApplicationConfig ele : applications) {
+            this.applications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * LoRaWAN application, which can be used for geolocation by activating positioning.
+     * </p>
+     * 
+     * @param applications
+     *        LoRaWAN application, which can be used for geolocation by activating positioning.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFPorts withApplications(java.util.Collection<ApplicationConfig> applications) {
+        setApplications(applications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +164,9 @@ public class UpdateFPorts implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPositioning() != null)
-            sb.append("Positioning: ").append(getPositioning());
+            sb.append("Positioning: ").append(getPositioning()).append(",");
+        if (getApplications() != null)
+            sb.append("Applications: ").append(getApplications());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +185,10 @@ public class UpdateFPorts implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPositioning() != null && other.getPositioning().equals(this.getPositioning()) == false)
             return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +198,7 @@ public class UpdateFPorts implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPositioning() == null) ? 0 : getPositioning().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         return hashCode;
     }
 

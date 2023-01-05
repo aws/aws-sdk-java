@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,13 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private Boolean deletePipelineProvisioningRepository;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     */
+    private String pipelineCodebuildRoleArn;
     /**
      * <p>
      * A linked repository for pipeline provisioning. Specify it if you have environments configured for self-managed
@@ -113,6 +120,52 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
 
     public Boolean isDeletePipelineProvisioningRepository() {
         return this.deletePipelineProvisioningRepository;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     * 
+     * @param pipelineCodebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton
+     *        assumes this role for CodeBuild-based provisioning.
+     */
+
+    public void setPipelineCodebuildRoleArn(String pipelineCodebuildRoleArn) {
+        this.pipelineCodebuildRoleArn = pipelineCodebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton
+     *         assumes this role for CodeBuild-based provisioning.
+     */
+
+    public String getPipelineCodebuildRoleArn() {
+        return this.pipelineCodebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     * 
+     * @param pipelineCodebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the service role you want to use for provisioning pipelines. Proton
+     *        assumes this role for CodeBuild-based provisioning.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAccountSettingsRequest withPipelineCodebuildRoleArn(String pipelineCodebuildRoleArn) {
+        setPipelineCodebuildRoleArn(pipelineCodebuildRoleArn);
+        return this;
     }
 
     /**
@@ -266,6 +319,8 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
         sb.append("{");
         if (getDeletePipelineProvisioningRepository() != null)
             sb.append("DeletePipelineProvisioningRepository: ").append(getDeletePipelineProvisioningRepository()).append(",");
+        if (getPipelineCodebuildRoleArn() != null)
+            sb.append("PipelineCodebuildRoleArn: ").append(getPipelineCodebuildRoleArn()).append(",");
         if (getPipelineProvisioningRepository() != null)
             sb.append("PipelineProvisioningRepository: ").append(getPipelineProvisioningRepository()).append(",");
         if (getPipelineServiceRoleArn() != null)
@@ -289,6 +344,10 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
         if (other.getDeletePipelineProvisioningRepository() != null
                 && other.getDeletePipelineProvisioningRepository().equals(this.getDeletePipelineProvisioningRepository()) == false)
             return false;
+        if (other.getPipelineCodebuildRoleArn() == null ^ this.getPipelineCodebuildRoleArn() == null)
+            return false;
+        if (other.getPipelineCodebuildRoleArn() != null && other.getPipelineCodebuildRoleArn().equals(this.getPipelineCodebuildRoleArn()) == false)
+            return false;
         if (other.getPipelineProvisioningRepository() == null ^ this.getPipelineProvisioningRepository() == null)
             return false;
         if (other.getPipelineProvisioningRepository() != null
@@ -307,6 +366,7 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDeletePipelineProvisioningRepository() == null) ? 0 : getDeletePipelineProvisioningRepository().hashCode());
+        hashCode = prime * hashCode + ((getPipelineCodebuildRoleArn() == null) ? 0 : getPipelineCodebuildRoleArn().hashCode());
         hashCode = prime * hashCode + ((getPipelineProvisioningRepository() == null) ? 0 : getPipelineProvisioningRepository().hashCode());
         hashCode = prime * hashCode + ((getPipelineServiceRoleArn() == null) ? 0 : getPipelineServiceRoleArn().hashCode());
         return hashCode;

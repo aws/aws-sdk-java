@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ListTagsForStreamRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusiveStartTagKey").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamARN").build();
 
     private static final ListTagsForStreamRequestMarshaller instance = new ListTagsForStreamRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class ListTagsForStreamRequestMarshaller {
             protocolMarshaller.marshall(listTagsForStreamRequest.getStreamName(), STREAMNAME_BINDING);
             protocolMarshaller.marshall(listTagsForStreamRequest.getExclusiveStartTagKey(), EXCLUSIVESTARTTAGKEY_BINDING);
             protocolMarshaller.marshall(listTagsForStreamRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(listTagsForStreamRequest.getStreamARN(), STREAMARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,16 +29,16 @@ import com.amazonaws.services.batch.model.*;
  * <p>
  * Using Batch, you can run batch computing workloads on the Amazon Web Services Cloud. Batch computing is a common
  * means for developers, scientists, and engineers to access large amounts of compute resources. Batch uses the
- * advantages of this computing workload to remove the undifferentiated heavy lifting of configuring and managing
- * required infrastructure. At the same time, it also adopts a familiar batch computing software approach. Given these
- * advantages, Batch can help you to efficiently provision resources in response to jobs submitted, thus effectively
- * helping you to eliminate capacity constraints, reduce compute costs, and deliver your results more quickly.
+ * advantages of the batch computing to remove the undifferentiated heavy lifting of configuring and managing required
+ * infrastructure. At the same time, it also adopts a familiar batch computing software approach. You can use Batch to
+ * efficiently provision resources d, and work toward eliminating capacity constraints, reducing your overall compute
+ * costs, and delivering results more quickly.
  * </p>
  * <p>
  * As a fully managed service, Batch can run batch computing workloads of any scale. Batch automatically provisions
  * compute resources and optimizes workload distribution based on the quantity and scale of your specific workloads.
- * With Batch, there's no need to install or manage batch computing software. This means that you can focus your time
- * and energy on analyzing results and solving your specific problems.
+ * With Batch, there's no need to install or manage batch computing software. This means that you can focus on analyzing
+ * results and solving your specific problems instead.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -47,9 +47,9 @@ public interface AWSBatchAsync extends AWSBatch {
     /**
      * <p>
      * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
-     * <code>RUNNABLE</code> state are canceled. Jobs that have progressed to <code>STARTING</code> or
-     * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even if no job is canceled. These
-     * jobs must be terminated with the <a>TerminateJob</a> operation.
+     * <code>RUNNABLE</code> state are canceled. Jobs that progressed to the <code>STARTING</code> or
+     * <code>RUNNING</code> state aren't canceled. However, the API operation still succeeds, even if no job is
+     * canceled. These jobs must be terminated with the <a>TerminateJob</a> operation.
      * </p>
      * 
      * @param cancelJobRequest
@@ -64,9 +64,9 @@ public interface AWSBatchAsync extends AWSBatch {
     /**
      * <p>
      * Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code>, <code>PENDING</code>, or
-     * <code>RUNNABLE</code> state are canceled. Jobs that have progressed to <code>STARTING</code> or
-     * <code>RUNNING</code> aren't canceled, but the API operation still succeeds, even if no job is canceled. These
-     * jobs must be terminated with the <a>TerminateJob</a> operation.
+     * <code>RUNNABLE</code> state are canceled. Jobs that progressed to the <code>STARTING</code> or
+     * <code>RUNNING</code> state aren't canceled. However, the API operation still succeeds, even if no job is
+     * canceled. These jobs must be terminated with the <a>TerminateJob</a> operation.
      * </p>
      * 
      * @param cancelJobRequest
@@ -104,9 +104,9 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * </note>
      * <p>
-     * In an unmanaged compute environment, you can manage your own EC2 compute resources and have a lot of flexibility
-     * with how you configure your compute resources. For example, you can use custom AMIs. However, you must verify
-     * that each of your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a
+     * In an unmanaged compute environment, you can manage your own EC2 compute resources and have flexibility with how
+     * you configure your compute resources. For example, you can use custom AMIs. However, you must verify that each of
+     * your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
      * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you created your
      * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
@@ -116,6 +116,11 @@ public interface AWSBatchAsync extends AWSBatch {
      * Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
+     * <p>
+     * To create a compute environment that uses EKS resources, the caller must have permissions to call
+     * <code>eks:DescribeCluster</code>.
+     * </p>
+     * </note> <note>
      * <p>
      * Batch doesn't automatically upgrade the AMIs in a compute environment after it's created. For example, it also
      * doesn't update the AMIs in your compute environment when a newer version of the Amazon ECS optimized AMI is
@@ -154,7 +159,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * <ul>
      * <li>
      * <p>
-     * Either do not set the service role (<code>serviceRole</code>) parameter or set it to the
+     * Either don't set the service role (<code>serviceRole</code>) parameter or set it to the
      * <b>AWSBatchServiceRole</b> service-linked role.
      * </p>
      * </li>
@@ -171,25 +176,25 @@ public interface AWSBatchAsync extends AWSBatch {
      * </li>
      * <li>
      * <p>
-     * Do not specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in <a
+     * Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
-     * <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>). In that case Batch
-     * will select the latest Amazon ECS optimized AMI supported by Batch at the time the infrastructure update is
-     * initiated. Alternatively you can specify the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code>
+     * <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>). In that case, Batch
+     * selects the latest Amazon ECS optimized AMI that's supported by Batch at the time the infrastructure update is
+     * initiated. Alternatively, you can specify the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code>
      * parameters, or the launch template identified by the <code>LaunchTemplate</code> properties. Changing any of
-     * these properties will trigger an infrastructure update. If the AMI ID is specified in the launch template, it can
-     * not be replaced by specifying an AMI ID in either the <code>imageId</code> or <code>imageIdOverride</code>
-     * parameters. It can only be replaced by specifying a different launch template, or if the launch template version
-     * is set to <code>$Default</code> or <code>$Latest</code>, by setting either a new default version for the launch
-     * template (if <code>$Default</code>)or by adding a new version to the launch template (if <code>$Latest</code>).
+     * these properties starts an infrastructure update. If the AMI ID is specified in the launch template, it can't be
+     * replaced by specifying an AMI ID in either the <code>imageId</code> or <code>imageIdOverride</code> parameters.
+     * It can only be replaced by specifying a different launch template, or if the launch template version is set to
+     * <code>$Default</code> or <code>$Latest</code>, by setting either a new default version for the launch template
+     * (if <code>$Default</code>) or by adding a new version to the launch template (if <code>$Latest</code>).
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If these rules are followed, any update that triggers an infrastructure update will cause the AMI ID to be
-     * re-selected. If the <code>version</code> setting in the launch template (<code>launchTemplate</code>) is set to
-     * <code>$Latest</code> or <code>$Default</code>, the latest or default version of the launch template will be
-     * evaluated up at the time of the infrastructure update, even if the <code>launchTemplate</code> was not updated.
+     * If these rules are followed, any update that starts an infrastructure update causes the AMI ID to be re-selected.
+     * If the <code>version</code> setting in the launch template (<code>launchTemplate</code>) is set to
+     * <code>$Latest</code> or <code>$Default</code>, the latest or default version of the launch template is evaluated
+     * up at the time of the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
      * </p>
      * </note>
      * 
@@ -223,9 +228,9 @@ public interface AWSBatchAsync extends AWSBatch {
      * </p>
      * </note>
      * <p>
-     * In an unmanaged compute environment, you can manage your own EC2 compute resources and have a lot of flexibility
-     * with how you configure your compute resources. For example, you can use custom AMIs. However, you must verify
-     * that each of your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a
+     * In an unmanaged compute environment, you can manage your own EC2 compute resources and have flexibility with how
+     * you configure your compute resources. For example, you can use custom AMIs. However, you must verify that each of
+     * your AMIs meet the Amazon ECS container instance AMI specification. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
      * instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. After you created your
      * unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a> operation to find the Amazon
@@ -235,6 +240,11 @@ public interface AWSBatchAsync extends AWSBatch {
      * Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <note>
+     * <p>
+     * To create a compute environment that uses EKS resources, the caller must have permissions to call
+     * <code>eks:DescribeCluster</code>.
+     * </p>
+     * </note> <note>
      * <p>
      * Batch doesn't automatically upgrade the AMIs in a compute environment after it's created. For example, it also
      * doesn't update the AMIs in your compute environment when a newer version of the Amazon ECS optimized AMI is
@@ -273,7 +283,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * <ul>
      * <li>
      * <p>
-     * Either do not set the service role (<code>serviceRole</code>) parameter or set it to the
+     * Either don't set the service role (<code>serviceRole</code>) parameter or set it to the
      * <b>AWSBatchServiceRole</b> service-linked role.
      * </p>
      * </li>
@@ -290,25 +300,25 @@ public interface AWSBatchAsync extends AWSBatch {
      * </li>
      * <li>
      * <p>
-     * Do not specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in <a
+     * Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in <a
      * href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
-     * <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>). In that case Batch
-     * will select the latest Amazon ECS optimized AMI supported by Batch at the time the infrastructure update is
-     * initiated. Alternatively you can specify the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code>
+     * <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>). In that case, Batch
+     * selects the latest Amazon ECS optimized AMI that's supported by Batch at the time the infrastructure update is
+     * initiated. Alternatively, you can specify the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code>
      * parameters, or the launch template identified by the <code>LaunchTemplate</code> properties. Changing any of
-     * these properties will trigger an infrastructure update. If the AMI ID is specified in the launch template, it can
-     * not be replaced by specifying an AMI ID in either the <code>imageId</code> or <code>imageIdOverride</code>
-     * parameters. It can only be replaced by specifying a different launch template, or if the launch template version
-     * is set to <code>$Default</code> or <code>$Latest</code>, by setting either a new default version for the launch
-     * template (if <code>$Default</code>)or by adding a new version to the launch template (if <code>$Latest</code>).
+     * these properties starts an infrastructure update. If the AMI ID is specified in the launch template, it can't be
+     * replaced by specifying an AMI ID in either the <code>imageId</code> or <code>imageIdOverride</code> parameters.
+     * It can only be replaced by specifying a different launch template, or if the launch template version is set to
+     * <code>$Default</code> or <code>$Latest</code>, by setting either a new default version for the launch template
+     * (if <code>$Default</code>) or by adding a new version to the launch template (if <code>$Latest</code>).
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If these rules are followed, any update that triggers an infrastructure update will cause the AMI ID to be
-     * re-selected. If the <code>version</code> setting in the launch template (<code>launchTemplate</code>) is set to
-     * <code>$Latest</code> or <code>$Default</code>, the latest or default version of the launch template will be
-     * evaluated up at the time of the infrastructure update, even if the <code>launchTemplate</code> was not updated.
+     * If these rules are followed, any update that starts an infrastructure update causes the AMI ID to be re-selected.
+     * If the <code>version</code> setting in the launch template (<code>launchTemplate</code>) is set to
+     * <code>$Latest</code> or <code>$Default</code>, the latest or default version of the launch template is evaluated
+     * up at the time of the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
      * </p>
      * </note>
      * 
@@ -863,7 +873,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * <p>
      * Lists the tags for an Batch resource. Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs
-     * are not supported.
+     * aren't supported.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -879,7 +889,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * <p>
      * Lists the tags for an Batch resource. Batch resources that support tags are compute environments, jobs, job
      * definitions, job queues, and scheduling policies. ARNs for child jobs of array and multi-node parallel (MNP) jobs
-     * are not supported.
+     * aren't supported.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -998,7 +1008,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
      * that are associated with that resource are deleted as well. Batch resources that support tags are compute
      * environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and
-     * multi-node parallel (MNP) jobs are not supported.
+     * multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1016,7 +1026,7 @@ public interface AWSBatchAsync extends AWSBatch {
      * resource aren't specified in the request parameters, they aren't changed. When a resource is deleted, the tags
      * that are associated with that resource are deleted as well. Batch resources that support tags are compute
      * environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array and
-     * multi-node parallel (MNP) jobs are not supported.
+     * multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @param tagResourceRequest

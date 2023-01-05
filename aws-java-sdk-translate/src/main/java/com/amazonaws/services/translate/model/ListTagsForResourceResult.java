@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
-     * @return
+     * <p>
+     * Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
+     * </p>
+     * 
+     * @return Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as
+     *         a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be
+     *         added to a resource to indicate its use by the sales department.
      */
 
     public java.util.List<Tag> getTags() {
@@ -34,7 +49,16 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
+     * </p>
+     * 
      * @param tags
+     *        Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     *        metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added
+     *        to a resource to indicate its use by the sales department.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -48,12 +72,20 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     *        metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added
+     *        to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +100,16 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     * metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a
+     * resource to indicate its use by the sales department.
+     * </p>
+     * 
      * @param tags
+     *        Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a
+     *        metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added
+     *        to a resource to indicate its use by the sales department.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,10 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+ * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
  * </p>
  * <p>
- * If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the
+ * If the distribution doesn't use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the
  * distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set
  * <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty.
  * </p>
@@ -33,7 +33,7 @@ import javax.annotation.Generated;
  * <p>
  * Which viewers the distribution accepts HTTPS connections from: only viewers that support <a
  * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a> (recommended), or all
- * viewers including those that don’t support SNI.
+ * viewers including those that don't support SNI.
  * </p>
  * <ul>
  * <li>
@@ -44,7 +44,7 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * To accept HTTPS connections from all viewers, including those that don’t support SNI, set
+ * To accept HTTPS connections from all viewers, including those that don't support SNI, set
  * <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges
  * from CloudFront.
  * </p>
@@ -168,7 +168,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
+     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      * </p>
      * </li>
@@ -182,7 +182,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set
+     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set
      * a value for this field.
      * </p>
      */
@@ -218,7 +218,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
+     * When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
      * <p>
@@ -674,7 +674,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
+     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      * </p>
      * </li>
@@ -688,7 +688,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set
+     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set
      * a value for this field.
      * </p>
      * 
@@ -705,7 +705,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
+     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      *        </p>
      *        </li>
@@ -720,7 +720,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
-     *        don’t set a value for this field.
+     *        don't set a value for this field.
      * @see SSLSupportMethod
      */
 
@@ -743,7 +743,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
+     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      * </p>
      * </li>
@@ -757,7 +757,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set
+     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set
      * a value for this field.
      * </p>
      * 
@@ -773,7 +773,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
+     *         <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't
      *         support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      *         </p>
      *         </li>
@@ -788,7 +788,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         </ul>
      *         <p>
      *         If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
-     *         don’t set a value for this field.
+     *         don't set a value for this field.
      * @see SSLSupportMethod
      */
 
@@ -811,7 +811,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
+     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      * </p>
      * </li>
@@ -825,7 +825,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set
+     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set
      * a value for this field.
      * </p>
      * 
@@ -842,7 +842,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
+     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      *        </p>
      *        </li>
@@ -857,7 +857,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
-     *        don’t set a value for this field.
+     *        don't set a value for this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SSLSupportMethod
      */
@@ -882,7 +882,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
+     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      * </p>
      * </li>
@@ -896,7 +896,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set
+     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set
      * a value for this field.
      * </p>
      * 
@@ -913,7 +913,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
+     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      *        </p>
      *        </li>
@@ -928,7 +928,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
-     *        don’t set a value for this field.
+     *        don't set a value for this field.
      * @see SSLSupportMethod
      */
 
@@ -951,7 +951,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
-     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
+     * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      * </p>
      * </li>
@@ -965,7 +965,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </li>
      * </ul>
      * <p>
-     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don’t set
+     * If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>, don't set
      * a value for this field.
      * </p>
      * 
@@ -982,7 +982,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
+     *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don't
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
      *        </p>
      *        </li>
@@ -997,7 +997,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </ul>
      *        <p>
      *        If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
-     *        don’t set a value for this field.
+     *        don't set a value for this field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SSLSupportMethod
      */
@@ -1038,7 +1038,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
+     * When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
      * <p>
@@ -1077,7 +1077,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     *        When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
      *        </p>
      *        <p>
@@ -1122,7 +1122,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
+     * When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
      * <p>
@@ -1160,7 +1160,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         </p>
      *         </note>
      *         <p>
-     *         When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     *         When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *         specify <code>TLSv1</code> or higher.
      *         </p>
      *         <p>
@@ -1205,7 +1205,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
+     * When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
      * <p>
@@ -1244,7 +1244,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     *        When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
      *        </p>
      *        <p>
@@ -1291,7 +1291,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
+     * When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
      * <p>
@@ -1330,7 +1330,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     *        When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
      *        </p>
      *        <p>
@@ -1375,7 +1375,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
+     * When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
      * <p>
@@ -1414,7 +1414,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        </p>
      *        </note>
      *        <p>
-     *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
+     *        When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
      *        </p>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,8 @@ public class TrialComponentMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<List> PARENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parents").build();
+    private static final MarshallingInfo<String> RUNNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RunName").build();
 
     private static final TrialComponentMarshaller instance = new TrialComponentMarshaller();
 
@@ -106,6 +108,7 @@ public class TrialComponentMarshaller {
             protocolMarshaller.marshall(trialComponent.getLineageGroupArn(), LINEAGEGROUPARN_BINDING);
             protocolMarshaller.marshall(trialComponent.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(trialComponent.getParents(), PARENTS_BINDING);
+            protocolMarshaller.marshall(trialComponent.getRunName(), RUNNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,20 +43,6 @@ public class AWSLambdaWaiters {
     }
 
     /**
-     * Builds a FunctionUpdated waiter by using custom parameters waiterParameters and other parameters defined in the
-     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
-     * where polling criteria is bound by either default polling strategy or custom polling strategy.
-     */
-    public Waiter<GetFunctionConfigurationRequest> functionUpdated() {
-
-        return new WaiterBuilder<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>()
-                .withSdkFunction(new GetFunctionConfigurationFunction(client))
-                .withAcceptors(new FunctionUpdated.IsSuccessfulMatcher(), new FunctionUpdated.IsFailedMatcher(), new FunctionUpdated.IsInProgressMatcher())
-                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(5)))
-                .withExecutorService(executorService).build();
-    }
-
-    /**
      * Builds a FunctionExists waiter by using custom parameters waiterParameters and other parameters defined in the
      * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
      * where polling criteria is bound by either default polling strategy or custom polling strategy.
@@ -79,6 +65,35 @@ public class AWSLambdaWaiters {
         return new WaiterBuilder<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>()
                 .withSdkFunction(new GetFunctionConfigurationFunction(client))
                 .withAcceptors(new FunctionActive.IsActiveMatcher(), new FunctionActive.IsFailedMatcher(), new FunctionActive.IsPendingMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a PublishedVersionActive waiter by using custom parameters waiterParameters and other parameters defined
+     * in the waiters specification, and then polls until it determines whether the resource entered the desired state
+     * or not, where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetFunctionConfigurationRequest> publishedVersionActive() {
+
+        return new WaiterBuilder<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>()
+                .withSdkFunction(new GetFunctionConfigurationFunction(client))
+                .withAcceptors(new PublishedVersionActive.IsActiveMatcher(), new PublishedVersionActive.IsFailedMatcher(),
+                        new PublishedVersionActive.IsPendingMatcher())
+                .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(312), new FixedDelayStrategy(5)))
+                .withExecutorService(executorService).build();
+    }
+
+    /**
+     * Builds a FunctionUpdated waiter by using custom parameters waiterParameters and other parameters defined in the
+     * waiters specification, and then polls until it determines whether the resource entered the desired state or not,
+     * where polling criteria is bound by either default polling strategy or custom polling strategy.
+     */
+    public Waiter<GetFunctionConfigurationRequest> functionUpdated() {
+
+        return new WaiterBuilder<GetFunctionConfigurationRequest, GetFunctionConfigurationResult>()
+                .withSdkFunction(new GetFunctionConfigurationFunction(client))
+                .withAcceptors(new FunctionUpdated.IsSuccessfulMatcher(), new FunctionUpdated.IsFailedMatcher(), new FunctionUpdated.IsInProgressMatcher())
                 .withDefaultPollingStrategy(new PollingStrategy(new MaxAttemptsRetryStrategy(60), new FixedDelayStrategy(5)))
                 .withExecutorService(executorService).build();
     }

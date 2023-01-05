@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DeletePlaybackConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the playback configuration.
      * </p>
      */
     private String name;
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the playback configuration.
      * </p>
      * 
      * @param name
-     *        The identifier for the playback configuration.
+     *        The name of the playback configuration.
      */
 
     public void setName(String name) {
@@ -47,10 +47,10 @@ public class DeletePlaybackConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the playback configuration.
      * </p>
      * 
-     * @return The identifier for the playback configuration.
+     * @return The name of the playback configuration.
      */
 
     public String getName() {
@@ -59,11 +59,11 @@ public class DeletePlaybackConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier for the playback configuration.
+     * The name of the playback configuration.
      * </p>
      * 
      * @param name
-     *        The identifier for the playback configuration.
+     *        The name of the playback configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

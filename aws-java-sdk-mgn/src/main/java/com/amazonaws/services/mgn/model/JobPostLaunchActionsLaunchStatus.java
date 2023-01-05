@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Job type.
+ * Launch Status of the Job Post Launch Actions.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/JobPostLaunchActionsLaunchStatus"
@@ -30,42 +30,42 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
      * </p>
      */
     private String executionID;
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution status.
      * </p>
      */
     private String executionStatus;
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's failure reason.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager's Document of the of the Job Post Launch Actions.
      * </p>
      */
     private SsmDocument ssmDocument;
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document type.
      * </p>
      */
     private String ssmDocumentType;
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
      * </p>
      * 
      * @param executionID
-     *        Job type.
+     *        AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
      */
 
     public void setExecutionID(String executionID) {
@@ -74,10 +74,10 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
      * </p>
      * 
-     * @return Job type.
+     * @return AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
      */
 
     public String getExecutionID() {
@@ -86,11 +86,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
      * </p>
      * 
      * @param executionID
-     *        Job type.
+     *        AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution status.
      * </p>
      * 
      * @param executionStatus
-     *        Job type.
+     *        AWS Systems Manager Document's execution status.
      * @see PostLaunchActionExecutionStatus
      */
 
@@ -115,10 +115,10 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution status.
      * </p>
      * 
-     * @return Job type.
+     * @return AWS Systems Manager Document's execution status.
      * @see PostLaunchActionExecutionStatus
      */
 
@@ -128,11 +128,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution status.
      * </p>
      * 
      * @param executionStatus
-     *        Job type.
+     *        AWS Systems Manager Document's execution status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PostLaunchActionExecutionStatus
      */
@@ -144,11 +144,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's execution status.
      * </p>
      * 
      * @param executionStatus
-     *        Job type.
+     *        AWS Systems Manager Document's execution status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PostLaunchActionExecutionStatus
      */
@@ -160,11 +160,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's failure reason.
      * </p>
      * 
      * @param failureReason
-     *        Job type.
+     *        AWS Systems Manager Document's failure reason.
      */
 
     public void setFailureReason(String failureReason) {
@@ -173,10 +173,10 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's failure reason.
      * </p>
      * 
-     * @return Job type.
+     * @return AWS Systems Manager Document's failure reason.
      */
 
     public String getFailureReason() {
@@ -185,11 +185,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document's failure reason.
      * </p>
      * 
      * @param failureReason
-     *        Job type.
+     *        AWS Systems Manager Document's failure reason.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -200,11 +200,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager's Document of the of the Job Post Launch Actions.
      * </p>
      * 
      * @param ssmDocument
-     *        Job type.
+     *        AWS Systems Manager's Document of the of the Job Post Launch Actions.
      */
 
     public void setSsmDocument(SsmDocument ssmDocument) {
@@ -213,10 +213,10 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager's Document of the of the Job Post Launch Actions.
      * </p>
      * 
-     * @return Job type.
+     * @return AWS Systems Manager's Document of the of the Job Post Launch Actions.
      */
 
     public SsmDocument getSsmDocument() {
@@ -225,11 +225,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager's Document of the of the Job Post Launch Actions.
      * </p>
      * 
      * @param ssmDocument
-     *        Job type.
+     *        AWS Systems Manager's Document of the of the Job Post Launch Actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +240,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document type.
      * </p>
      * 
      * @param ssmDocumentType
-     *        Job type.
+     *        AWS Systems Manager Document type.
      * @see SsmDocumentType
      */
 
@@ -254,10 +254,10 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document type.
      * </p>
      * 
-     * @return Job type.
+     * @return AWS Systems Manager Document type.
      * @see SsmDocumentType
      */
 
@@ -267,11 +267,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document type.
      * </p>
      * 
      * @param ssmDocumentType
-     *        Job type.
+     *        AWS Systems Manager Document type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SsmDocumentType
      */
@@ -283,11 +283,11 @@ public class JobPostLaunchActionsLaunchStatus implements Serializable, Cloneable
 
     /**
      * <p>
-     * Job type.
+     * AWS Systems Manager Document type.
      * </p>
      * 
      * @param ssmDocumentType
-     *        Job type.
+     *        AWS Systems Manager Document type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SsmDocumentType
      */

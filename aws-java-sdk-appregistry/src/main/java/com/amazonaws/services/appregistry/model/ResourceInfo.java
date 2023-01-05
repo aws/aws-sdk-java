@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,18 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     */
+    private String resourceType;
+    /**
+     * <p>
+     * The details related to the resource.
+     * </p>
+     */
+    private ResourceDetails resourceDetails;
 
     /**
      * <p>
@@ -122,6 +134,105 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     * 
+     * @param resourceType
+     *        Provides information about the Service Catalog App Registry resource type.
+     * @see ResourceType
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     * 
+     * @return Provides information about the Service Catalog App Registry resource type.
+     * @see ResourceType
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     * 
+     * @param resourceType
+     *        Provides information about the Service Catalog App Registry resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public ResourceInfo withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about the Service Catalog App Registry resource type.
+     * </p>
+     * 
+     * @param resourceType
+     *        Provides information about the Service Catalog App Registry resource type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceType
+     */
+
+    public ResourceInfo withResourceType(ResourceType resourceType) {
+        this.resourceType = resourceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details related to the resource.
+     * </p>
+     * 
+     * @param resourceDetails
+     *        The details related to the resource.
+     */
+
+    public void setResourceDetails(ResourceDetails resourceDetails) {
+        this.resourceDetails = resourceDetails;
+    }
+
+    /**
+     * <p>
+     * The details related to the resource.
+     * </p>
+     * 
+     * @return The details related to the resource.
+     */
+
+    public ResourceDetails getResourceDetails() {
+        return this.resourceDetails;
+    }
+
+    /**
+     * <p>
+     * The details related to the resource.
+     * </p>
+     * 
+     * @param resourceDetails
+     *        The details related to the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceInfo withResourceDetails(ResourceDetails resourceDetails) {
+        setResourceDetails(resourceDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +247,11 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getArn() != null)
-            sb.append("Arn: ").append(getArn());
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getResourceDetails() != null)
+            sb.append("ResourceDetails: ").append(getResourceDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +274,14 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
+        if (other.getResourceDetails() == null ^ this.getResourceDetails() == null)
+            return false;
+        if (other.getResourceDetails() != null && other.getResourceDetails().equals(this.getResourceDetails()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +292,8 @@ public class ResourceInfo implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceDetails() == null) ? 0 : getResourceDetails().hashCode());
         return hashCode;
     }
 

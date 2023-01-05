@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,18 +26,18 @@ public class CreateQuerySuggestionsBlockListResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The unique identifier of the created block list.
+     * The identifier of the created block list.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * The unique identifier of the created block list.
+     * The identifier of the created block list.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the created block list.
+     *        The identifier of the created block list.
      */
 
     public void setId(String id) {
@@ -46,10 +46,10 @@ public class CreateQuerySuggestionsBlockListResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The unique identifier of the created block list.
+     * The identifier of the created block list.
      * </p>
      * 
-     * @return The unique identifier of the created block list.
+     * @return The identifier of the created block list.
      */
 
     public String getId() {
@@ -58,11 +58,11 @@ public class CreateQuerySuggestionsBlockListResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The unique identifier of the created block list.
+     * The identifier of the created block list.
      * </p>
      * 
      * @param id
-     *        The unique identifier of the created block list.
+     *        The identifier of the created block list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,16 @@ public class ExpenseFieldJsonUnmarshaller implements Unmarshaller<ExpenseField, 
                 if (context.testExpression("PageNumber", targetDepth)) {
                     context.nextToken();
                     expenseField.setPageNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Currency", targetDepth)) {
+                    context.nextToken();
+                    expenseField.setCurrency(ExpenseCurrencyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("GroupProperties", targetDepth)) {
+                    context.nextToken();
+                    expenseField.setGroupProperties(new ListUnmarshaller<ExpenseGroupProperty>(ExpenseGroupPropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

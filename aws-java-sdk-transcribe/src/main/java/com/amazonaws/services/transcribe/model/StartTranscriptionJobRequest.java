@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique name, chosen by you, for your transcription job. The name you specify is also used as the default name
-     * of your transcription output file. If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.
+     * A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default
+     * name of your transcription output file. If you want to specify a different name for your transcription output,
+     * use the <code>OutputKey</code> parameter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
@@ -65,13 +65,13 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private String languageCode;
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample
-     * rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the value you specify
-     * and the value detected, your job fails. Therefore, in most cases, it's advised to omit
-     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.
+     * rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you
+     * specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and
+     * let Amazon Transcribe determine the sample rate.
      * </p>
      */
     private Integer mediaSampleRateHertz;
@@ -232,7 +232,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
+     * transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.
      * </p>
      * <p>
      * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
@@ -260,7 +260,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private ModelSettings modelSettings;
     /**
      * <p>
-     * Allows you to control how your transcription job is processed. Currently, the only
+     * Makes it possible to control how your transcription job is processed. Currently, the only
      * <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
      * <code>AllowDeferredExecution</code> sub-parameter.
      * </p>
@@ -272,26 +272,30 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private JobExecutionSettings jobExecutionSettings;
     /**
      * <p>
-     * Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use
-     * <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If
+     * you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.
      * </p>
      */
     private ContentRedaction contentRedaction;
     /**
      * <p>
-     * Enables automatic language identification in your transcription job request.
+     * Enables automatic language identification in your transcription job request. Use this parameter if your media
+     * file contains only one language. If your media contains multiple languages, use
+     * <code>IdentifyMultipleLanguages</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      * automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     * <code>VocabularyFilterName</code>).
+     * <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -303,17 +307,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Enables automatic multi-language identification in your transcription job request. Use this parameter if your
-     * media file contains more than one language.
+     * media file contains more than one language. If your media contains only one language, use
+     * <code>IdentifyLanguage</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification
      * request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>
-     * and <code>VocabularyFilterName</code>).
+     * and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -324,8 +331,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private Boolean identifyMultipleLanguages;
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * You can specify two or more language codes that represent the languages you think may be present in your media.
+     * Including more than five is not recommended. If you're unsure what languages are present, do not include this
      * parameter.
      * </p>
      * <p>
@@ -360,30 +367,31 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * If using automatic language identification in your request and you want to apply a custom language model, a
+     * custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant
+     * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification (
+     * <code>IdentifyMultipleLanguages</code>) doesn't support custom language models.
      * </p>
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an
+     * associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you
+     * specify must match the languages of the associated custom language models, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
+     * It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to
+     * ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is
+     * in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is
+     * <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include
+     * <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom
+     * vocabulary <i>is</i> applied to your transcription.
      * </p>
      * <p>
      * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter. If you
+     * want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b>
+     * want to use automatic language identification, use instead the
      * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
      * sub-parameter.
      * </p>
@@ -392,9 +400,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique name, chosen by you, for your transcription job. The name you specify is also used as the default name
-     * of your transcription output file. If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.
+     * A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default
+     * name of your transcription output file. If you want to specify a different name for your transcription output,
+     * use the <code>OutputKey</code> parameter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
@@ -403,9 +411,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param transcriptionJobName
-     *        A unique name, chosen by you, for your transcription job. The name you specify is also used as the default
-     *        name of your transcription output file. If you want to specify a different name for your transcription
-     *        output, use the <code>OutputKey</code> parameter.</p>
+     *        A unique name, chosen by you, for your transcription job. The name that you specify is also used as the
+     *        default name of your transcription output file. If you want to specify a different name for your
+     *        transcription output, use the <code>OutputKey</code> parameter.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
      *        account. If you try to create a new job with the same name as an existing job, you get a
@@ -418,9 +426,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique name, chosen by you, for your transcription job. The name you specify is also used as the default name
-     * of your transcription output file. If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.
+     * A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default
+     * name of your transcription output file. If you want to specify a different name for your transcription output,
+     * use the <code>OutputKey</code> parameter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
@@ -428,7 +436,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * error.
      * </p>
      * 
-     * @return A unique name, chosen by you, for your transcription job. The name you specify is also used as the
+     * @return A unique name, chosen by you, for your transcription job. The name that you specify is also used as the
      *         default name of your transcription output file. If you want to specify a different name for your
      *         transcription output, use the <code>OutputKey</code> parameter.</p>
      *         <p>
@@ -443,9 +451,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique name, chosen by you, for your transcription job. The name you specify is also used as the default name
-     * of your transcription output file. If you want to specify a different name for your transcription output, use the
-     * <code>OutputKey</code> parameter.
+     * A unique name, chosen by you, for your transcription job. The name that you specify is also used as the default
+     * name of your transcription output file. If you want to specify a different name for your transcription output,
+     * use the <code>OutputKey</code> parameter.
      * </p>
      * <p>
      * This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If
@@ -454,9 +462,9 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param transcriptionJobName
-     *        A unique name, chosen by you, for your transcription job. The name you specify is also used as the default
-     *        name of your transcription output file. If you want to specify a different name for your transcription
-     *        output, use the <code>OutputKey</code> parameter.</p>
+     *        A unique name, chosen by you, for your transcription job. The name that you specify is also used as the
+     *        default name of your transcription output file. If you want to specify a different name for your
+     *        transcription output, use the <code>OutputKey</code> parameter.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
      *        account. If you try to create a new job with the same name as an existing job, you get a
@@ -682,21 +690,21 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample
-     * rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the value you specify
-     * and the value detected, your job fails. Therefore, in most cases, it's advised to omit
-     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.
+     * rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you
+     * specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and
+     * let Amazon Transcribe determine the sample rate.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.</p>
+     *        The sample rate, in hertz, of the audio track in your input media file.</p>
      *        <p>
      *        If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the
-     *        sample rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the value
-     *        you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     *        sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value
+     *        that you specify and the value detected, your job fails. In most cases, you can omit
      *        <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.
      */
 
@@ -706,20 +714,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample
-     * rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the value you specify
-     * and the value detected, your job fails. Therefore, in most cases, it's advised to omit
-     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.
+     * rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you
+     * specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and
+     * let Amazon Transcribe determine the sample rate.
      * </p>
      * 
-     * @return The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * @return The sample rate, in hertz, of the audio track in your input media file.</p>
      *         <p>
      *         If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the
-     *         sample rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the
-     *         value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     *         sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the
+     *         value that you specify and the value detected, your job fails. In most cases, you can omit
      *         <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.
      */
 
@@ -729,21 +737,21 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the sample
-     * rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the value you specify
-     * and the value detected, your job fails. Therefore, in most cases, it's advised to omit
-     * <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.
+     * rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value that you
+     * specify and the value detected, your job fails. In most cases, you can omit <code>MediaSampleRateHertz</code> and
+     * let Amazon Transcribe determine the sample rate.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.</p>
+     *        The sample rate, in hertz, of the audio track in your input media file.</p>
      *        <p>
      *        If you don't specify the media sample rate, Amazon Transcribe determines it for you. If you specify the
-     *        sample rate, it must match the rate detected by Amazon Transcribe; if there's a mismatch between the value
-     *        you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     *        sample rate, it must match the rate detected by Amazon Transcribe. If there's a mismatch between the value
+     *        that you specify and the value detected, your job fails. In most cases, you can omit
      *        <code>MediaSampleRateHertz</code> and let Amazon Transcribe determine the sample rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1754,7 +1762,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
+     * transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.
      * </p>
      * <p>
      * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
@@ -1770,7 +1778,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param settings
      *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
+     *        transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary
+     *        filters.</p>
      *        <p>
      *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
      *        <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the
@@ -1790,7 +1799,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
+     * transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.
      * </p>
      * <p>
      * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
@@ -1805,7 +1814,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return Specify additional optional settings in your request, including channel identification, alternative
-     *         transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
+     *         transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary
+     *         filters.</p>
      *         <p>
      *         If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
      *         <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the
@@ -1825,7 +1835,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.
+     * transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary filters.
      * </p>
      * <p>
      * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
@@ -1841,7 +1851,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param settings
      *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, speaker labeling; allows you to apply custom vocabularies and vocabulary filters.</p>
+     *        transcriptions, speaker partitioning. You can use that to apply custom vocabularies and vocabulary
+     *        filters.</p>
      *        <p>
      *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
      *        <b>do not</b> want to use automatic language identification, use <code>Settings</code> with the
@@ -1935,7 +1946,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to control how your transcription job is processed. Currently, the only
+     * Makes it possible to control how your transcription job is processed. Currently, the only
      * <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
      * <code>AllowDeferredExecution</code> sub-parameter.
      * </p>
@@ -1945,7 +1956,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param jobExecutionSettings
-     *        Allows you to control how your transcription job is processed. Currently, the only
+     *        Makes it possible to control how your transcription job is processed. Currently, the only
      *        <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
      *        <code>AllowDeferredExecution</code> sub-parameter.</p>
      *        <p>
@@ -1959,7 +1970,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to control how your transcription job is processed. Currently, the only
+     * Makes it possible to control how your transcription job is processed. Currently, the only
      * <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
      * <code>AllowDeferredExecution</code> sub-parameter.
      * </p>
@@ -1968,7 +1979,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.
      * </p>
      * 
-     * @return Allows you to control how your transcription job is processed. Currently, the only
+     * @return Makes it possible to control how your transcription job is processed. Currently, the only
      *         <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
      *         <code>AllowDeferredExecution</code> sub-parameter.</p>
      *         <p>
@@ -1982,7 +1993,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to control how your transcription job is processed. Currently, the only
+     * Makes it possible to control how your transcription job is processed. Currently, the only
      * <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
      * <code>AllowDeferredExecution</code> sub-parameter.
      * </p>
@@ -1992,7 +2003,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param jobExecutionSettings
-     *        Allows you to control how your transcription job is processed. Currently, the only
+     *        Makes it possible to control how your transcription job is processed. Currently, the only
      *        <code>JobExecutionSettings</code> modification you can choose is enabling job queueing using the
      *        <code>AllowDeferredExecution</code> sub-parameter.</p>
      *        <p>
@@ -2008,14 +2019,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use
-     * <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If
+     * you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.
      * </p>
      * 
      * @param contentRedaction
-     *        Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If
-     *        you use <code>ContentRedaction</code>, you must also include the sub-parameters:
+     *        Makes it possible to redact or flag specified personally identifiable information (PII) in your
+     *        transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters:
      *        <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.
      */
 
@@ -2025,13 +2036,13 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use
-     * <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If
+     * you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.
      * </p>
      * 
-     * @return Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If
-     *         you use <code>ContentRedaction</code>, you must also include the sub-parameters:
+     * @return Makes it possible to redact or flag specified personally identifiable information (PII) in your
+     *         transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters:
      *         <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.
      */
 
@@ -2041,14 +2052,14 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use
-     * <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
+     * Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If
+     * you use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
      * <code>RedactionOutput</code>, and <code>RedactionType</code>.
      * </p>
      * 
      * @param contentRedaction
-     *        Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If
-     *        you use <code>ContentRedaction</code>, you must also include the sub-parameters:
+     *        Makes it possible to redact or flag specified personally identifiable information (PII) in your
+     *        transcript. If you use <code>ContentRedaction</code>, you must also include the sub-parameters:
      *        <code>PiiEntityTypes</code>, <code>RedactionOutput</code>, and <code>RedactionType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -2060,18 +2071,22 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Enables automatic language identification in your transcription job request.
+     * Enables automatic language identification in your transcription job request. Use this parameter if your media
+     * file contains only one language. If your media contains multiple languages, use
+     * <code>IdentifyMultipleLanguages</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      * automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     * <code>VocabularyFilterName</code>).
+     * <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2080,17 +2095,21 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param identifyLanguage
-     *        Enables automatic language identification in your transcription job request.</p>
+     *        Enables automatic language identification in your transcription job request. Use this parameter if your
+     *        media file contains only one language. If your media contains multiple languages, use
+     *        <code>IdentifyMultipleLanguages</code> instead.</p>
      *        <p>
      *        If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     *        <code>LanguageOptions</code>, that you think may be present in your media file. Including language options
-     *        can improve transcription accuracy.
+     *        <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     *        <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     *        specify, which can improve transcription accuracy.
      *        </p>
      *        <p>
      *        If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      *        automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      *        sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     *        <code>VocabularyFilterName</code>).
+     *        <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     *        <code>LanguageOptions</code>.
      *        </p>
      *        <p>
      *        Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2104,18 +2123,22 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Enables automatic language identification in your transcription job request.
+     * Enables automatic language identification in your transcription job request. Use this parameter if your media
+     * file contains only one language. If your media contains multiple languages, use
+     * <code>IdentifyMultipleLanguages</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      * automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     * <code>VocabularyFilterName</code>).
+     * <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2123,17 +2146,21 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * transcription job fails.
      * </p>
      * 
-     * @return Enables automatic language identification in your transcription job request.</p>
+     * @return Enables automatic language identification in your transcription job request. Use this parameter if your
+     *         media file contains only one language. If your media contains multiple languages, use
+     *         <code>IdentifyMultipleLanguages</code> instead.</p>
      *         <p>
      *         If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     *         <code>LanguageOptions</code>, that you think may be present in your media file. Including language
-     *         options can improve transcription accuracy.
+     *         <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     *         <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that
+     *         you specify, which can improve transcription accuracy.
      *         </p>
      *         <p>
      *         If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      *         automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      *         sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     *         <code>VocabularyFilterName</code>).
+     *         <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     *         <code>LanguageOptions</code>.
      *         </p>
      *         <p>
      *         Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2147,18 +2174,22 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Enables automatic language identification in your transcription job request.
+     * Enables automatic language identification in your transcription job request. Use this parameter if your media
+     * file contains only one language. If your media contains multiple languages, use
+     * <code>IdentifyMultipleLanguages</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      * automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     * <code>VocabularyFilterName</code>).
+     * <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2167,17 +2198,21 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param identifyLanguage
-     *        Enables automatic language identification in your transcription job request.</p>
+     *        Enables automatic language identification in your transcription job request. Use this parameter if your
+     *        media file contains only one language. If your media contains multiple languages, use
+     *        <code>IdentifyMultipleLanguages</code> instead.</p>
      *        <p>
      *        If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     *        <code>LanguageOptions</code>, that you think may be present in your media file. Including language options
-     *        can improve transcription accuracy.
+     *        <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     *        <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     *        specify, which can improve transcription accuracy.
      *        </p>
      *        <p>
      *        If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      *        automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      *        sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     *        <code>VocabularyFilterName</code>).
+     *        <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     *        <code>LanguageOptions</code>.
      *        </p>
      *        <p>
      *        Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2193,18 +2228,22 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Enables automatic language identification in your transcription job request.
+     * Enables automatic language identification in your transcription job request. Use this parameter if your media
+     * file contains only one language. If your media contains multiple languages, use
+     * <code>IdentifyMultipleLanguages</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      * automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     * <code>VocabularyFilterName</code>).
+     * <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2212,17 +2251,21 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * transcription job fails.
      * </p>
      * 
-     * @return Enables automatic language identification in your transcription job request.</p>
+     * @return Enables automatic language identification in your transcription job request. Use this parameter if your
+     *         media file contains only one language. If your media contains multiple languages, use
+     *         <code>IdentifyMultipleLanguages</code> instead.</p>
      *         <p>
      *         If you include <code>IdentifyLanguage</code>, you can optionally include a list of language codes, using
-     *         <code>LanguageOptions</code>, that you think may be present in your media file. Including language
-     *         options can improve transcription accuracy.
+     *         <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     *         <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that
+     *         you specify, which can improve transcription accuracy.
      *         </p>
      *         <p>
      *         If you want to apply a custom language model, a custom vocabulary, or a custom vocabulary filter to your
      *         automatic language identification request, include <code>LanguageIdSettings</code> with the relevant
      *         sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
-     *         <code>VocabularyFilterName</code>).
+     *         <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     *         <code>LanguageOptions</code>.
      *         </p>
      *         <p>
      *         Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2237,17 +2280,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Enables automatic multi-language identification in your transcription job request. Use this parameter if your
-     * media file contains more than one language.
+     * media file contains more than one language. If your media contains only one language, use
+     * <code>IdentifyLanguage</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification
      * request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>
-     * and <code>VocabularyFilterName</code>).
+     * and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2257,16 +2303,19 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param identifyMultipleLanguages
      *        Enables automatic multi-language identification in your transcription job request. Use this parameter if
-     *        your media file contains more than one language.</p>
+     *        your media file contains more than one language. If your media contains only one language, use
+     *        <code>IdentifyLanguage</code> instead.</p>
      *        <p>
      *        If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language
      *        codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including
-     *        language options can improve transcription accuracy.
+     *        <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     *        specify, which can improve transcription accuracy.
      *        </p>
      *        <p>
      *        If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language
      *        identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (
-     *        <code>VocabularyName</code> and <code>VocabularyFilterName</code>).
+     *        <code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you include
+     *        <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.
      *        </p>
      *        <p>
      *        Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2281,17 +2330,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Enables automatic multi-language identification in your transcription job request. Use this parameter if your
-     * media file contains more than one language.
+     * media file contains more than one language. If your media contains only one language, use
+     * <code>IdentifyLanguage</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification
      * request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>
-     * and <code>VocabularyFilterName</code>).
+     * and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2300,16 +2352,19 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return Enables automatic multi-language identification in your transcription job request. Use this parameter if
-     *         your media file contains more than one language.</p>
+     *         your media file contains more than one language. If your media contains only one language, use
+     *         <code>IdentifyLanguage</code> instead.</p>
      *         <p>
      *         If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language
      *         codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including
-     *         language options can improve transcription accuracy.
+     *         <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that
+     *         you specify, which can improve transcription accuracy.
      *         </p>
      *         <p>
      *         If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language
      *         identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (
-     *         <code>VocabularyName</code> and <code>VocabularyFilterName</code>).
+     *         <code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you include
+     *         <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.
      *         </p>
      *         <p>
      *         Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2324,17 +2379,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Enables automatic multi-language identification in your transcription job request. Use this parameter if your
-     * media file contains more than one language.
+     * media file contains more than one language. If your media contains only one language, use
+     * <code>IdentifyLanguage</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification
      * request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>
-     * and <code>VocabularyFilterName</code>).
+     * and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2344,16 +2402,19 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param identifyMultipleLanguages
      *        Enables automatic multi-language identification in your transcription job request. Use this parameter if
-     *        your media file contains more than one language.</p>
+     *        your media file contains more than one language. If your media contains only one language, use
+     *        <code>IdentifyLanguage</code> instead.</p>
      *        <p>
      *        If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language
      *        codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including
-     *        language options can improve transcription accuracy.
+     *        <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     *        specify, which can improve transcription accuracy.
      *        </p>
      *        <p>
      *        If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language
      *        identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (
-     *        <code>VocabularyName</code> and <code>VocabularyFilterName</code>).
+     *        <code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you include
+     *        <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.
      *        </p>
      *        <p>
      *        Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2370,17 +2431,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Enables automatic multi-language identification in your transcription job request. Use this parameter if your
-     * media file contains more than one language.
+     * media file contains more than one language. If your media contains only one language, use
+     * <code>IdentifyLanguage</code> instead.
      * </p>
      * <p>
      * If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language codes, using
-     * <code>LanguageOptions</code>, that you think may be present in your media file. Including language options can
-     * improve transcription accuracy.
+     * <code>LanguageOptions</code>, that you think may be present in your media file. Including
+     * <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that you
+     * specify, which can improve transcription accuracy.
      * </p>
      * <p>
      * If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language identification
      * request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>
-     * and <code>VocabularyFilterName</code>).
+     * and <code>VocabularyFilterName</code>). If you include <code>LanguageIdSettings</code>, also include
+     * <code>LanguageOptions</code>.
      * </p>
      * <p>
      * Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2389,16 +2453,19 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return Enables automatic multi-language identification in your transcription job request. Use this parameter if
-     *         your media file contains more than one language.</p>
+     *         your media file contains more than one language. If your media contains only one language, use
+     *         <code>IdentifyLanguage</code> instead.</p>
      *         <p>
      *         If you include <code>IdentifyMultipleLanguages</code>, you can optionally include a list of language
      *         codes, using <code>LanguageOptions</code>, that you think may be present in your media file. Including
-     *         language options can improve transcription accuracy.
+     *         <code>LanguageOptions</code> restricts <code>IdentifyLanguage</code> to only the language options that
+     *         you specify, which can improve transcription accuracy.
      *         </p>
      *         <p>
      *         If you want to apply a custom vocabulary or a custom vocabulary filter to your automatic language
      *         identification request, include <code>LanguageIdSettings</code> with the relevant sub-parameters (
-     *         <code>VocabularyName</code> and <code>VocabularyFilterName</code>).
+     *         <code>VocabularyName</code> and <code>VocabularyFilterName</code>). If you include
+     *         <code>LanguageIdSettings</code>, also include <code>LanguageOptions</code>.
      *         </p>
      *         <p>
      *         Note that you must include one of <code>LanguageCode</code>, <code>IdentifyLanguage</code>, or
@@ -2412,8 +2479,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * You can specify two or more language codes that represent the languages you think may be present in your media.
+     * Including more than five is not recommended. If you're unsure what languages are present, do not include this
      * parameter.
      * </p>
      * <p>
@@ -2429,7 +2496,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return You can specify two or more language codes that represent the languages you think may be present in your
-     *         media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *         media. Including more than five is not recommended. If you're unsure what languages are present, do not
      *         include this parameter.</p>
      *         <p>
      *         If you include <code>LanguageOptions</code> in your request, you must also include
@@ -2451,8 +2518,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * You can specify two or more language codes that represent the languages you think may be present in your media.
+     * Including more than five is not recommended. If you're unsure what languages are present, do not include this
      * parameter.
      * </p>
      * <p>
@@ -2469,7 +2536,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param languageOptions
      *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        media. Including more than five is not recommended. If you're unsure what languages are present, do not
      *        include this parameter.</p>
      *        <p>
      *        If you include <code>LanguageOptions</code> in your request, you must also include
@@ -2496,8 +2563,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * You can specify two or more language codes that represent the languages you think may be present in your media.
+     * Including more than five is not recommended. If you're unsure what languages are present, do not include this
      * parameter.
      * </p>
      * <p>
@@ -2519,7 +2586,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param languageOptions
      *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        media. Including more than five is not recommended. If you're unsure what languages are present, do not
      *        include this parameter.</p>
      *        <p>
      *        If you include <code>LanguageOptions</code> in your request, you must also include
@@ -2548,8 +2615,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * You can specify two or more language codes that represent the languages you think may be present in your media.
+     * Including more than five is not recommended. If you're unsure what languages are present, do not include this
      * parameter.
      * </p>
      * <p>
@@ -2566,7 +2633,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param languageOptions
      *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        media. Including more than five is not recommended. If you're unsure what languages are present, do not
      *        include this parameter.</p>
      *        <p>
      *        If you include <code>LanguageOptions</code> in your request, you must also include
@@ -2590,8 +2657,8 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. If you're unsure what languages are present, do not include this
+     * You can specify two or more language codes that represent the languages you think may be present in your media.
+     * Including more than five is not recommended. If you're unsure what languages are present, do not include this
      * parameter.
      * </p>
      * <p>
@@ -2608,7 +2675,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param languageOptions
      *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. If you're unsure what languages are present, do not
+     *        media. Including more than five is not recommended. If you're unsure what languages are present, do not
      *        include this parameter.</p>
      *        <p>
      *        If you include <code>LanguageOptions</code> in your request, you must also include
@@ -2786,59 +2853,59 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * If using automatic language identification in your request and you want to apply a custom language model, a
+     * custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant
+     * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification (
+     * <code>IdentifyMultipleLanguages</code>) doesn't support custom language models.
      * </p>
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an
+     * associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you
+     * specify must match the languages of the associated custom language models, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
+     * It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to
+     * ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is
+     * in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is
+     * <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include
+     * <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom
+     * vocabulary <i>is</i> applied to your transcription.
      * </p>
      * <p>
      * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter. If you
+     * want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b>
+     * want to use automatic language identification, use instead the
      * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
      * sub-parameter.
      * </p>
      * 
-     * @return If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want
-     *         to apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     *         <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     *         <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     * @return If using automatic language identification in your request and you want to apply a custom language model,
+     *         a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
+     *         relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     *         <code>VocabularyFilterName</code>). Note that multi-language identification (
+     *         <code>IdentifyMultipleLanguages</code>) doesn't support custom language models.</p>
      *         <p>
-     *         You can specify two or more language codes that represent the languages you think may be present in your
-     *         media; including more than five is not recommended. Each language code you include can have an associated
-     *         custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
-     *         match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
-     *         filters.
+     *         <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can
+     *         have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language
+     *         codes that you specify must match the languages of the associated custom language models, custom
+     *         vocabularies, and custom vocabulary filters.
      *         </p>
      *         <p>
-     *         To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom
-     *         language model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code>
-     *         instead of <code>LanguageIdSettings</code>. Including language options can improve the accuracy of
-     *         automatic language identification.
+     *         It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code>
+     *         to ensure that the correct language dialect is identified. For example, if you specify a custom
+     *         vocabulary that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in
+     *         your media is <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If
+     *         you include <code>LanguageOptions</code> and include <code>en-US</code> as the only English language
+     *         dialect, your custom vocabulary <i>is</i> applied to your transcription.
      *         </p>
      *         <p>
      *         If you want to include a custom language model with your request but <b>do not</b> want to use automatic
      *         language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
-     *         sub-parameter.
-     *         </p>
-     *         <p>
-     *         If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *         <b>do not</b> want to use automatic language identification, use instead the
+     *         sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with
+     *         your request but <b>do not</b> want to use automatic language identification, use instead the
      *         <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
      *         sub-parameter.
      */
@@ -2849,60 +2916,60 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * If using automatic language identification in your request and you want to apply a custom language model, a
+     * custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant
+     * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification (
+     * <code>IdentifyMultipleLanguages</code>) doesn't support custom language models.
      * </p>
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an
+     * associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you
+     * specify must match the languages of the associated custom language models, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
+     * It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to
+     * ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is
+     * in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is
+     * <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include
+     * <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom
+     * vocabulary <i>is</i> applied to your transcription.
      * </p>
      * <p>
      * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter. If you
+     * want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b>
+     * want to use automatic language identification, use instead the
      * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
      * sub-parameter.
      * </p>
      * 
      * @param languageIdSettings
-     *        If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to
-     *        apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     *        <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     *        <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     *        If using automatic language identification in your request and you want to apply a custom language model,
+     *        a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
+     *        relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     *        <code>VocabularyFilterName</code>). Note that multi-language identification (
+     *        <code>IdentifyMultipleLanguages</code>) doesn't support custom language models.</p>
      *        <p>
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. Each language code you include can have an associated
-     *        custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
-     *        match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
-     *        filters.
+     *        <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can
+     *        have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language
+     *        codes that you specify must match the languages of the associated custom language models, custom
+     *        vocabularies, and custom vocabulary filters.
      *        </p>
      *        <p>
-     *        To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     *        model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     *        <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     *        identification.
+     *        It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code>
+     *        to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary
+     *        that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is
+     *        <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include
+     *        <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your
+     *        custom vocabulary <i>is</i> applied to your transcription.
      *        </p>
      *        <p>
      *        If you want to include a custom language model with your request but <b>do not</b> want to use automatic
      *        language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
-     *        sub-parameter.
-     *        </p>
-     *        <p>
-     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *        <b>do not</b> want to use automatic language identification, use instead the
+     *        sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with
+     *        your request but <b>do not</b> want to use automatic language identification, use instead the
      *        <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
      *        sub-parameter.
      */
@@ -2913,60 +2980,60 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to apply
-     * a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     * <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     * <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).
+     * If using automatic language identification in your request and you want to apply a custom language model, a
+     * custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the relevant
+     * sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     * <code>VocabularyFilterName</code>). Note that multi-language identification (
+     * <code>IdentifyMultipleLanguages</code>) doesn't support custom language models.
      * </p>
      * <p>
-     * You can specify two or more language codes that represent the languages you think may be present in your media;
-     * including more than five is not recommended. Each language code you include can have an associated custom
-     * language model, custom vocabulary, and custom vocabulary filter. The languages you specify must match the
-     * languages of the specified custom language models, custom vocabularies, and custom vocabulary filters.
+     * <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can have an
+     * associated custom language model, custom vocabulary, and custom vocabulary filter. The language codes that you
+     * specify must match the languages of the associated custom language models, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * <p>
-     * To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language model,
-     * a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     * <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     * identification.
+     * It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code> to
+     * ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary that is
+     * in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is
+     * <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include
+     * <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your custom
+     * vocabulary <i>is</i> applied to your transcription.
      * </p>
      * <p>
      * If you want to include a custom language model with your request but <b>do not</b> want to use automatic language
-     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter.
-     * </p>
-     * <p>
-     * If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do
-     * not</b> want to use automatic language identification, use instead the
+     * identification, use instead the <code/> parameter with the <code>LanguageModelName</code> sub-parameter. If you
+     * want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b>
+     * want to use automatic language identification, use instead the
      * <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
      * sub-parameter.
      * </p>
      * 
      * @param languageIdSettings
-     *        If using automatic language identification (<code>IdentifyLanguage</code>) in your request and you want to
-     *        apply a custom language model, a custom vocabulary, or a custom vocabulary filter, include
-     *        <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-     *        <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>).</p>
+     *        If using automatic language identification in your request and you want to apply a custom language model,
+     *        a custom vocabulary, or a custom vocabulary filter, include <code>LanguageIdSettings</code> with the
+     *        relevant sub-parameters (<code>VocabularyName</code>, <code>LanguageModelName</code>, and
+     *        <code>VocabularyFilterName</code>). Note that multi-language identification (
+     *        <code>IdentifyMultipleLanguages</code>) doesn't support custom language models.</p>
      *        <p>
-     *        You can specify two or more language codes that represent the languages you think may be present in your
-     *        media; including more than five is not recommended. Each language code you include can have an associated
-     *        custom language model, custom vocabulary, and custom vocabulary filter. The languages you specify must
-     *        match the languages of the specified custom language models, custom vocabularies, and custom vocabulary
-     *        filters.
+     *        <code>LanguageIdSettings</code> supports two to five language codes. Each language code you include can
+     *        have an associated custom language model, custom vocabulary, and custom vocabulary filter. The language
+     *        codes that you specify must match the languages of the associated custom language models, custom
+     *        vocabularies, and custom vocabulary filters.
      *        </p>
      *        <p>
-     *        To include language options using <code>IdentifyLanguage</code> <b>without</b> including a custom language
-     *        model, a custom vocabulary, or a custom vocabulary filter, use <code>LanguageOptions</code> instead of
-     *        <code>LanguageIdSettings</code>. Including language options can improve the accuracy of automatic language
-     *        identification.
+     *        It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code>
+     *        to ensure that the correct language dialect is identified. For example, if you specify a custom vocabulary
+     *        that is in <code>en-US</code> but Amazon Transcribe determines that the language spoken in your media is
+     *        <code>en-AU</code>, your custom vocabulary <i>is not</i> applied to your transcription. If you include
+     *        <code>LanguageOptions</code> and include <code>en-US</code> as the only English language dialect, your
+     *        custom vocabulary <i>is</i> applied to your transcription.
      *        </p>
      *        <p>
      *        If you want to include a custom language model with your request but <b>do not</b> want to use automatic
      *        language identification, use instead the <code/> parameter with the <code>LanguageModelName</code>
-     *        sub-parameter.
-     *        </p>
-     *        <p>
-     *        If you want to include a custom vocabulary or a custom vocabulary filter (or both) with your request but
-     *        <b>do not</b> want to use automatic language identification, use instead the
+     *        sub-parameter. If you want to include a custom vocabulary or a custom vocabulary filter (or both) with
+     *        your request but <b>do not</b> want to use automatic language identification, use instead the
      *        <code/> parameter with the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)
      *        sub-parameter.
      * @return Returns a reference to this object so that method calls can be chained together.

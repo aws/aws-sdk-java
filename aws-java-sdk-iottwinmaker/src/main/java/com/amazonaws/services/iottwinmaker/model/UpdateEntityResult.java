@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,56 @@ public class UpdateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The current state of the entity update.
-     * </p>
-     */
-    private String state;
-    /**
-     * <p>
      * The date and time when the entity was last updated.
      * </p>
      */
     private java.util.Date updateDateTime;
+    /**
+     * <p>
+     * The current state of the entity update.
+     * </p>
+     */
+    private String state;
+
+    /**
+     * <p>
+     * The date and time when the entity was last updated.
+     * </p>
+     * 
+     * @param updateDateTime
+     *        The date and time when the entity was last updated.
+     */
+
+    public void setUpdateDateTime(java.util.Date updateDateTime) {
+        this.updateDateTime = updateDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the entity was last updated.
+     * </p>
+     * 
+     * @return The date and time when the entity was last updated.
+     */
+
+    public java.util.Date getUpdateDateTime() {
+        return this.updateDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the entity was last updated.
+     * </p>
+     * 
+     * @param updateDateTime
+     *        The date and time when the entity was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEntityResult withUpdateDateTime(java.util.Date updateDateTime) {
+        setUpdateDateTime(updateDateTime);
+        return this;
+    }
 
     /**
      * <p>
@@ -96,46 +136,6 @@ public class UpdateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
-     * <p>
-     * The date and time when the entity was last updated.
-     * </p>
-     * 
-     * @param updateDateTime
-     *        The date and time when the entity was last updated.
-     */
-
-    public void setUpdateDateTime(java.util.Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
-    }
-
-    /**
-     * <p>
-     * The date and time when the entity was last updated.
-     * </p>
-     * 
-     * @return The date and time when the entity was last updated.
-     */
-
-    public java.util.Date getUpdateDateTime() {
-        return this.updateDateTime;
-    }
-
-    /**
-     * <p>
-     * The date and time when the entity was last updated.
-     * </p>
-     * 
-     * @param updateDateTime
-     *        The date and time when the entity was last updated.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateEntityResult withUpdateDateTime(java.util.Date updateDateTime) {
-        setUpdateDateTime(updateDateTime);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -147,10 +147,10 @@ public class UpdateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
         if (getUpdateDateTime() != null)
-            sb.append("UpdateDateTime: ").append(getUpdateDateTime());
+            sb.append("UpdateDateTime: ").append(getUpdateDateTime()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -165,13 +165,13 @@ public class UpdateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof UpdateEntityResult == false)
             return false;
         UpdateEntityResult other = (UpdateEntityResult) obj;
-        if (other.getState() == null ^ this.getState() == null)
-            return false;
-        if (other.getState() != null && other.getState().equals(this.getState()) == false)
-            return false;
         if (other.getUpdateDateTime() == null ^ this.getUpdateDateTime() == null)
             return false;
         if (other.getUpdateDateTime() != null && other.getUpdateDateTime().equals(this.getUpdateDateTime()) == false)
+            return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
         return true;
     }
@@ -181,8 +181,8 @@ public class UpdateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getUpdateDateTime() == null) ? 0 : getUpdateDateTime().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 

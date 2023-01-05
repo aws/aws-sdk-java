@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -366,7 +366,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <p>
      * To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in
      * the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to
-     * change the <code>AlarmRule</code> of one of the alarms to <code>False</code>.
+     * change the <code>AlarmRule</code> of one of the alarms to <code>false</code>.
      * </p>
      * <p>
      * Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
@@ -2039,18 +2039,24 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * List the specified metrics. You can use the returned metrics with <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
      * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
-     * GetMetricStatistics</a> to obtain statistical data.
+     * GetMetricStatistics</a> to get statistical data.
      * </p>
      * <p>
      * Up to 500 results are returned for any one call. To retrieve additional results, use the returned token with
      * subsequent calls.
      * </p>
      * <p>
-     * After you create a metric, allow up to 15 minutes before the metric appears. You can see statistics about the
-     * metric sooner by using <a
+     * After you create a metric, allow up to 15 minutes for the metric to appear. To see metric statistics sooner, use
+     * <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
      * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
      * GetMetricStatistics</a>.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view metrics from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * <p>
      * <code>ListMetrics</code> doesn't return information about metrics if those metrics haven't reported data in the
@@ -2283,7 +2289,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <p>
      * To get out of such a situation, you must break the cycle by changing the rule of one of the composite alarms in
      * the cycle to remove a dependency that creates the cycle. The simplest change to make to break a cycle is to
-     * change the <code>AlarmRule</code> of one of the alarms to <code>False</code>.
+     * change the <code>AlarmRule</code> of one of the alarms to <code>false</code>.
      * </p>
      * <p>
      * Additionally, the evaluation of composite alarms stops if CloudWatch detects a cycle in the evaluation path.
@@ -2574,8 +2580,11 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates or updates an alarm and associates it with the specified metric, metric math expression, or anomaly
-     * detection model.
+     * Creates or updates an alarm and associates it with the specified metric, metric math expression, anomaly
+     * detection model, or Metrics Insights query. For more information about using a Metrics Insights query for an
+     * alarm, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+     * alarms on Metrics Insights queries</a>.
      * </p>
      * <p>
      * Alarms based on anomaly detection models cannot have Auto Scaling actions.
@@ -2818,7 +2827,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to Amazon Web
-     * Services destinations including Amazon S3 and to many third-party solutions.
+     * Services destinations, including Amazon S3, and to many third-party solutions.
      * </p>
      * <p>
      * For more information, see <a
@@ -2826,7 +2835,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * Metric Streams</a>.
      * </p>
      * <p>
-     * To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code> permission
+     * To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code> permission
      * and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
      * permission.
      * </p>
@@ -2854,7 +2863,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <p>
      * By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and
      * <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can use the
-     * <code>StatisticsConfigurations</code> parameter to have the metric stream also send additional statistics in the
+     * <code>StatisticsConfigurations</code> parameter to have the metric stream send additional statistics in the
      * stream. Streaming additional statistics incurs additional costs. For more information, see <a
      * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
      * </p>

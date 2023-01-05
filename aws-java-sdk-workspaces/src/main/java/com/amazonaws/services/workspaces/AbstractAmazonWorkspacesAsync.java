@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -114,6 +114,19 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces impl
     @Override
     public java.util.concurrent.Future<CreateIpGroupResult> createIpGroupAsync(CreateIpGroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateIpGroupRequest, CreateIpGroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStandbyWorkspacesResult> createStandbyWorkspacesAsync(CreateStandbyWorkspacesRequest request) {
+
+        return createStandbyWorkspacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStandbyWorkspacesResult> createStandbyWorkspacesAsync(CreateStandbyWorkspacesRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateStandbyWorkspacesRequest, CreateStandbyWorkspacesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -659,6 +672,21 @@ public class AbstractAmazonWorkspacesAsync extends AbstractAmazonWorkspaces impl
     @Override
     public java.util.concurrent.Future<ModifyAccountResult> modifyAccountAsync(ModifyAccountRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyAccountRequest, ModifyAccountResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyCertificateBasedAuthPropertiesResult> modifyCertificateBasedAuthPropertiesAsync(
+            ModifyCertificateBasedAuthPropertiesRequest request) {
+
+        return modifyCertificateBasedAuthPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyCertificateBasedAuthPropertiesResult> modifyCertificateBasedAuthPropertiesAsync(
+            ModifyCertificateBasedAuthPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyCertificateBasedAuthPropertiesRequest, ModifyCertificateBasedAuthPropertiesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

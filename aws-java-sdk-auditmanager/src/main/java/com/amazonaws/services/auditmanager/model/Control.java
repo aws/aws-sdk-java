@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,7 +78,7 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
     private String actionPlanInstructions;
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      */
     private String controlSources;
@@ -460,11 +460,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      * 
      * @param controlSources
-     *        The data source that determines where Audit Manager collects evidence from for the control.
+     *        The data source types that determine where Audit Manager collects evidence from for the control.
      */
 
     public void setControlSources(String controlSources) {
@@ -473,10 +473,10 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      * 
-     * @return The data source that determines where Audit Manager collects evidence from for the control.
+     * @return The data source types that determine where Audit Manager collects evidence from for the control.
      */
 
     public String getControlSources() {
@@ -485,11 +485,11 @@ public class Control implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The data source that determines where Audit Manager collects evidence from for the control.
+     * The data source types that determine where Audit Manager collects evidence from for the control.
      * </p>
      * 
      * @param controlSources
-     *        The data source that determines where Audit Manager collects evidence from for the control.
+     *        The data source types that determine where Audit Manager collects evidence from for the control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

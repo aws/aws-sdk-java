@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,9 @@ public class DescribeWarmPoolResult extends com.amazonaws.AmazonWebServiceResult
     private com.amazonaws.internal.SdkInternalList<Instance> instances;
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a previous call.)
+     * This string indicates that the response contains more items than can be returned in a single response. To receive
+     * additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items.
+     * This value is null when there are no more items to return.
      * </p>
      */
     private String nextToken;
@@ -157,11 +159,15 @@ public class DescribeWarmPoolResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a previous call.)
+     * This string indicates that the response contains more items than can be returned in a single response. To receive
+     * additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items.
+     * This value is null when there are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a previous call.)
+     *        This string indicates that the response contains more items than can be returned in a single response. To
+     *        receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *        next set of items. This value is null when there are no more items to return.
      */
 
     public void setNextToken(String nextToken) {
@@ -170,10 +176,14 @@ public class DescribeWarmPoolResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a previous call.)
+     * This string indicates that the response contains more items than can be returned in a single response. To receive
+     * additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items.
+     * This value is null when there are no more items to return.
      * </p>
      * 
-     * @return The token for the next set of items to return. (You received this token from a previous call.)
+     * @return This string indicates that the response contains more items than can be returned in a single response. To
+     *         receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *         next set of items. This value is null when there are no more items to return.
      */
 
     public String getNextToken() {
@@ -182,11 +192,15 @@ public class DescribeWarmPoolResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The token for the next set of items to return. (You received this token from a previous call.)
+     * This string indicates that the response contains more items than can be returned in a single response. To receive
+     * additional items, specify this string for the <code>NextToken</code> value when requesting the next set of items.
+     * This value is null when there are no more items to return.
      * </p>
      * 
      * @param nextToken
-     *        The token for the next set of items to return. (You received this token from a previous call.)
+     *        This string indicates that the response contains more items than can be returned in a single response. To
+     *        receive additional items, specify this string for the <code>NextToken</code> value when requesting the
+     *        next set of items. This value is null when there are no more items to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

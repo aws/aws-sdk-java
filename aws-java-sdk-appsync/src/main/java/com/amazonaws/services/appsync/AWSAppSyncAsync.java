@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -607,6 +607,45 @@ public interface AWSAppSyncAsync extends AWSAppSync {
      */
     java.util.concurrent.Future<DisassociateApiResult> disassociateApiAsync(DisassociateApiRequest disassociateApiRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateApiRequest, DisassociateApiResult> asyncHandler);
+
+    /**
+     * <p>
+     * Evaluates the given code and returns the response. The code definition requirements depend on the specified
+     * runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request
+     * function takes the incoming request after a GraphQL operation is parsed and converts it into a request
+     * configuration for the selected data source operation. The response function interprets responses from the data
+     * source and maps it to the shape of the GraphQL field output type.
+     * </p>
+     * 
+     * @param evaluateCodeRequest
+     * @return A Java Future containing the result of the EvaluateCode operation returned by the service.
+     * @sample AWSAppSyncAsync.EvaluateCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EvaluateCodeResult> evaluateCodeAsync(EvaluateCodeRequest evaluateCodeRequest);
+
+    /**
+     * <p>
+     * Evaluates the given code and returns the response. The code definition requirements depend on the specified
+     * runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request
+     * function takes the incoming request after a GraphQL operation is parsed and converts it into a request
+     * configuration for the selected data source operation. The response function interprets responses from the data
+     * source and maps it to the shape of the GraphQL field output type.
+     * </p>
+     * 
+     * @param evaluateCodeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EvaluateCode operation returned by the service.
+     * @sample AWSAppSyncAsyncHandler.EvaluateCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EvaluateCodeResult> evaluateCodeAsync(EvaluateCodeRequest evaluateCodeRequest,
+            com.amazonaws.handlers.AsyncHandler<EvaluateCodeRequest, EvaluateCodeResult> asyncHandler);
 
     /**
      * <p>

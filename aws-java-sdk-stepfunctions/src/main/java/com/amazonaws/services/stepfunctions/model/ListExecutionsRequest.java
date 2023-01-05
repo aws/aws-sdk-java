@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,9 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
      */
     private String stateMachineArn;
     /**
@@ -57,14 +60,32 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     */
+    private String mapRunArn;
 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.
+     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
      */
 
     public void setStateMachineArn(String stateMachineArn) {
@@ -75,8 +96,13 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the state machine whose executions is listed.
+     * @return The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+     *         <p>
+     *         You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
      */
 
     public String getStateMachineArn() {
@@ -87,9 +113,14 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The Amazon Resource Name (ARN) of the state machine whose executions is listed.
      * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
      * 
      * @param stateMachineArn
-     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.
+     *        The Amazon Resource Name (ARN) of the state machine whose executions is listed.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,6 +331,85 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     *        <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map
+     *        Run is returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map
+     *        Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     */
+
+    public void setMapRunArn(String mapRunArn) {
+        this.mapRunArn = mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     *         <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a
+     *         Map Run is returned. For more information, see <a
+     *         href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map
+     *         Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+     *         <p>
+     *         You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     */
+
+    public String getMapRunArn() {
+        return this.mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     * <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map Run is
+     * returned. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a>
+     * in the <i>Step Functions Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of the Map Run that started the child workflow executions. If the
+     *        <code>mapRunArn</code> field is specified, a list of all of the child workflow executions started by a Map
+     *        Run is returned. For more information, see <a
+     *        href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map
+     *        Run</a> in the <i>Step Functions Developer Guide</i>.</p>
+     *        <p>
+     *        You can specify either a <code>mapRunArn</code> or a <code>stateMachineArn</code>, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListExecutionsRequest withMapRunArn(String mapRunArn) {
+        setMapRunArn(mapRunArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -318,7 +428,9 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getMapRunArn() != null)
+            sb.append("MapRunArn: ").append(getMapRunArn());
         sb.append("}");
         return sb.toString();
     }
@@ -349,6 +461,10 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getMapRunArn() == null ^ this.getMapRunArn() == null)
+            return false;
+        if (other.getMapRunArn() != null && other.getMapRunArn().equals(this.getMapRunArn()) == false)
+            return false;
         return true;
     }
 
@@ -361,6 +477,7 @@ public class ListExecutionsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getStatusFilter() == null) ? 0 : getStatusFilter().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
         return hashCode;
     }
 

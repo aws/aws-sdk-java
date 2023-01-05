@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for the response parameters to the <code> <a>DeletePackage</a> </code> operation.
+ * Container for the response parameters to the <code>DeletePackage</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,18 +25,18 @@ public class DeletePackageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * <code>PackageDetails</code>
+     * Information about the deleted package.
      * </p>
      */
     private PackageDetails packageDetails;
 
     /**
      * <p>
-     * <code>PackageDetails</code>
+     * Information about the deleted package.
      * </p>
      * 
      * @param packageDetails
-     *        <code>PackageDetails</code>
+     *        Information about the deleted package.
      */
 
     public void setPackageDetails(PackageDetails packageDetails) {
@@ -45,10 +45,10 @@ public class DeletePackageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * <code>PackageDetails</code>
+     * Information about the deleted package.
      * </p>
      * 
-     * @return <code>PackageDetails</code>
+     * @return Information about the deleted package.
      */
 
     public PackageDetails getPackageDetails() {
@@ -57,11 +57,11 @@ public class DeletePackageResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * <code>PackageDetails</code>
+     * Information about the deleted package.
      * </p>
      * 
      * @param packageDetails
-     *        <code>PackageDetails</code>
+     *        Information about the deleted package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

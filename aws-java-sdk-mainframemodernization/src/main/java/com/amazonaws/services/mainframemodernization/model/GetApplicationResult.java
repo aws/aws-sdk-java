@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,14 +61,19 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     private String engineType;
     /**
      * <p>
-     * The identifier of the environment where the application will be deployed.
+     * The identifier of the runtime environment where you want to deploy the application.
      * </p>
      */
     private String environmentId;
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The identifier of a customer managed key.
+     * </p>
+     */
+    private String kmsKeyId;
+    /**
+     * <p>
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      */
     private java.util.Date lastStartTime;
@@ -81,8 +86,8 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     * account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you
-     * deploy an application.
+     * account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an
+     * application.
      * </p>
      */
     private java.util.List<String> listenerArns;
@@ -101,8 +106,8 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are
-     * CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under
-     * the customer's account.
+     * CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the
+     * customer's account.
      * </p>
      */
     private java.util.List<LogGroupSummary> logGroups;
@@ -398,11 +403,11 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The identifier of the environment where the application will be deployed.
+     * The identifier of the runtime environment where you want to deploy the application.
      * </p>
      * 
      * @param environmentId
-     *        The identifier of the environment where the application will be deployed.
+     *        The identifier of the runtime environment where you want to deploy the application.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -411,10 +416,10 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The identifier of the environment where the application will be deployed.
+     * The identifier of the runtime environment where you want to deploy the application.
      * </p>
      * 
-     * @return The identifier of the environment where the application will be deployed.
+     * @return The identifier of the runtime environment where you want to deploy the application.
      */
 
     public String getEnvironmentId() {
@@ -423,11 +428,11 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The identifier of the environment where the application will be deployed.
+     * The identifier of the runtime environment where you want to deploy the application.
      * </p>
      * 
      * @param environmentId
-     *        The identifier of the environment where the application will be deployed.
+     *        The identifier of the runtime environment where you want to deploy the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,13 +443,51 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @return The identifier of a customer managed key.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetApplicationResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
      * @param lastStartTime
-     *        The timestamp when the application was last started. Null until the application has started running for
-     *        the first time.
+     *        The timestamp when you last started the application. Null until the application runs for the first time.
      */
 
     public void setLastStartTime(java.util.Date lastStartTime) {
@@ -453,12 +496,10 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
-     * @return The timestamp when the application was last started. Null until the application has started running for
-     *         the first time.
+     * @return The timestamp when you last started the application. Null until the application runs for the first time.
      */
 
     public java.util.Date getLastStartTime() {
@@ -467,13 +508,11 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
      * @param lastStartTime
-     *        The timestamp when the application was last started. Null until the application has started running for
-     *        the first time.
+     *        The timestamp when you last started the application. Null until the application runs for the first time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -525,13 +564,13 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     * account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you
-     * deploy an application.
+     * account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an
+     * application.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     *         account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time
-     *         you deploy an application.
+     *         account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you
+     *         deploy an application.
      */
 
     public java.util.List<String> getListenerArns() {
@@ -541,14 +580,14 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     * account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you
-     * deploy an application.
+     * account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an
+     * application.
      * </p>
      * 
      * @param listenerArns
      *        The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     *        account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time
-     *        you deploy an application.
+     *        account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you
+     *        deploy an application.
      */
 
     public void setListenerArns(java.util.Collection<String> listenerArns) {
@@ -563,8 +602,8 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     * account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you
-     * deploy an application.
+     * account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an
+     * application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -574,8 +613,8 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param listenerArns
      *        The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     *        account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time
-     *        you deploy an application.
+     *        account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you
+     *        deploy an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,14 +631,14 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     * account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time you
-     * deploy an application.
+     * account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you deploy an
+     * application.
      * </p>
      * 
      * @param listenerArns
      *        The Amazon Resource Name (ARN) for the network load balancer listener created in your Amazon Web Services
-     *        account. Amazon Web Services Mainframe Modernization creates this listener on your behalf the first time
-     *        you deploy an application.
+     *        account. Amazon Web Services Mainframe Modernization creates this listener for you the first time you
+     *        deploy an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -721,12 +760,12 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are
-     * CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under
-     * the customer's account.
+     * CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the
+     * customer's account.
      * </p>
      * 
      * @return The list of log summaries. Each log summary includes the log type as well as the log group identifier.
-     *         These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to
+     *         These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to
      *         CloudWatch under the customer's account.
      */
 
@@ -737,13 +776,13 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are
-     * CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under
-     * the customer's account.
+     * CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the
+     * customer's account.
      * </p>
      * 
      * @param logGroups
      *        The list of log summaries. Each log summary includes the log type as well as the log group identifier.
-     *        These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to
+     *        These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to
      *        CloudWatch under the customer's account.
      */
 
@@ -759,8 +798,8 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are
-     * CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under
-     * the customer's account.
+     * CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the
+     * customer's account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -770,7 +809,7 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
      * 
      * @param logGroups
      *        The list of log summaries. Each log summary includes the log type as well as the log group identifier.
-     *        These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to
+     *        These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to
      *        CloudWatch under the customer's account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -788,13 +827,13 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
     /**
      * <p>
      * The list of log summaries. Each log summary includes the log type as well as the log group identifier. These are
-     * CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to CloudWatch under
-     * the customer's account.
+     * CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to CloudWatch under the
+     * customer's account.
      * </p>
      * 
      * @param logGroups
      *        The list of log summaries. Each log summary includes the log type as well as the log group identifier.
-     *        These are CloudWatch logs. The Amazon Web Services Mainframe Modernization application log is pushed to
+     *        These are CloudWatch logs. Amazon Web Services Mainframe Modernization pushes the application log to
      *        CloudWatch under the customer's account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1111,6 +1150,8 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("EngineType: ").append(getEngineType()).append(",");
         if (getEnvironmentId() != null)
             sb.append("EnvironmentId: ").append(getEnvironmentId()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getLastStartTime() != null)
             sb.append("LastStartTime: ").append(getLastStartTime()).append(",");
         if (getLatestVersion() != null)
@@ -1175,6 +1216,10 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getEnvironmentId() != null && other.getEnvironmentId().equals(this.getEnvironmentId()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getLastStartTime() == null ^ this.getLastStartTime() == null)
             return false;
         if (other.getLastStartTime() != null && other.getLastStartTime().equals(this.getLastStartTime()) == false)
@@ -1234,6 +1279,7 @@ public class GetApplicationResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentId() == null) ? 0 : getEnvironmentId().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLastStartTime() == null) ? 0 : getLastStartTime().hashCode());
         hashCode = prime * hashCode + ((getLatestVersion() == null) ? 0 : getLatestVersion().hashCode());
         hashCode = prime * hashCode + ((getListenerArns() == null) ? 0 : getListenerArns().hashCode());

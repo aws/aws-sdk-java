@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -377,6 +377,10 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
 
                 if (placement.getPartitionNumber() != null) {
                     request.addParameter("LaunchTemplateData.Placement.PartitionNumber", StringUtils.fromInteger(placement.getPartitionNumber()));
+                }
+
+                if (placement.getGroupId() != null) {
+                    request.addParameter("LaunchTemplateData.Placement.GroupId", StringUtils.fromString(placement.getGroupId()));
                 }
             }
 
@@ -864,6 +868,34 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                     if (acceleratorTotalMemoryMiB.getMax() != null) {
                         request.addParameter("LaunchTemplateData.InstanceRequirements.AcceleratorTotalMemoryMiB.Max",
                                 StringUtils.fromInteger(acceleratorTotalMemoryMiB.getMax()));
+                    }
+                }
+
+                NetworkBandwidthGbpsRequest networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                if (networkBandwidthGbps != null) {
+
+                    if (networkBandwidthGbps.getMin() != null) {
+                        request.addParameter("LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Min",
+                                StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                    }
+
+                    if (networkBandwidthGbps.getMax() != null) {
+                        request.addParameter("LaunchTemplateData.InstanceRequirements.NetworkBandwidthGbps.Max",
+                                StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                    }
+                }
+
+                com.amazonaws.internal.SdkInternalList<String> instanceRequirementsRequestAllowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                        .getAllowedInstanceTypes();
+                if (!instanceRequirementsRequestAllowedInstanceTypesList.isEmpty() || !instanceRequirementsRequestAllowedInstanceTypesList.isAutoConstruct()) {
+                    int allowedInstanceTypesListIndex = 1;
+
+                    for (String instanceRequirementsRequestAllowedInstanceTypesListValue : instanceRequirementsRequestAllowedInstanceTypesList) {
+                        if (instanceRequirementsRequestAllowedInstanceTypesListValue != null) {
+                            request.addParameter("LaunchTemplateData.InstanceRequirements.AllowedInstanceType." + allowedInstanceTypesListIndex,
+                                    StringUtils.fromString(instanceRequirementsRequestAllowedInstanceTypesListValue));
+                        }
+                        allowedInstanceTypesListIndex++;
                     }
                 }
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class CreateDedicatedIpPoolRequestMarshaller {
             .marshallLocationName("PoolName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> SCALINGMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScalingMode").build();
 
     private static final CreateDedicatedIpPoolRequestMarshaller instance = new CreateDedicatedIpPoolRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class CreateDedicatedIpPoolRequestMarshaller {
         try {
             protocolMarshaller.marshall(createDedicatedIpPoolRequest.getPoolName(), POOLNAME_BINDING);
             protocolMarshaller.marshall(createDedicatedIpPoolRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDedicatedIpPoolRequest.getScalingMode(), SCALINGMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

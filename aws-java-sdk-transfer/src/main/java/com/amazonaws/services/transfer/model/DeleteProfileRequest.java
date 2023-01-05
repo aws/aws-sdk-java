@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DeleteProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the profile that you are deleting.
+     * The identifier of the profile that you are deleting.
      * </p>
      */
     private String profileId;
 
     /**
      * <p>
-     * The ID of the profile that you are deleting.
+     * The identifier of the profile that you are deleting.
      * </p>
      * 
      * @param profileId
-     *        The ID of the profile that you are deleting.
+     *        The identifier of the profile that you are deleting.
      */
 
     public void setProfileId(String profileId) {
@@ -47,10 +47,10 @@ public class DeleteProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the profile that you are deleting.
+     * The identifier of the profile that you are deleting.
      * </p>
      * 
-     * @return The ID of the profile that you are deleting.
+     * @return The identifier of the profile that you are deleting.
      */
 
     public String getProfileId() {
@@ -59,11 +59,11 @@ public class DeleteProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the profile that you are deleting.
+     * The identifier of the profile that you are deleting.
      * </p>
      * 
      * @param profileId
-     *        The ID of the profile that you are deleting.
+     *        The identifier of the profile that you are deleting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

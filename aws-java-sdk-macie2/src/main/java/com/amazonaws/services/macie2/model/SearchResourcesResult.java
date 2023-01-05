@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class SearchResourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of objects, one for each resource that meets the filter criteria specified in the request.
+     * An array of objects, one for each resource that matches the filter criteria specified in the request.
      * </p>
      */
     private java.util.List<MatchingResource> matchingResources;
@@ -39,10 +39,10 @@ public class SearchResourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of objects, one for each resource that meets the filter criteria specified in the request.
+     * An array of objects, one for each resource that matches the filter criteria specified in the request.
      * </p>
      * 
-     * @return An array of objects, one for each resource that meets the filter criteria specified in the request.
+     * @return An array of objects, one for each resource that matches the filter criteria specified in the request.
      */
 
     public java.util.List<MatchingResource> getMatchingResources() {
@@ -51,11 +51,11 @@ public class SearchResourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of objects, one for each resource that meets the filter criteria specified in the request.
+     * An array of objects, one for each resource that matches the filter criteria specified in the request.
      * </p>
      * 
      * @param matchingResources
-     *        An array of objects, one for each resource that meets the filter criteria specified in the request.
+     *        An array of objects, one for each resource that matches the filter criteria specified in the request.
      */
 
     public void setMatchingResources(java.util.Collection<MatchingResource> matchingResources) {
@@ -69,7 +69,7 @@ public class SearchResourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of objects, one for each resource that meets the filter criteria specified in the request.
+     * An array of objects, one for each resource that matches the filter criteria specified in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class SearchResourcesResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param matchingResources
-     *        An array of objects, one for each resource that meets the filter criteria specified in the request.
+     *        An array of objects, one for each resource that matches the filter criteria specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class SearchResourcesResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * An array of objects, one for each resource that meets the filter criteria specified in the request.
+     * An array of objects, one for each resource that matches the filter criteria specified in the request.
      * </p>
      * 
      * @param matchingResources
-     *        An array of objects, one for each resource that meets the filter criteria specified in the request.
+     *        An array of objects, one for each resource that matches the filter criteria specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

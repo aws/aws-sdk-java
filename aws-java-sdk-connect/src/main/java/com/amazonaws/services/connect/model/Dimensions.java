@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String channel;
+
+    private RoutingProfileReference routingProfile;
 
     /**
      * <p>
@@ -141,6 +143,32 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param routingProfile
+     */
+
+    public void setRoutingProfile(RoutingProfileReference routingProfile) {
+        this.routingProfile = routingProfile;
+    }
+
+    /**
+     * @return
+     */
+
+    public RoutingProfileReference getRoutingProfile() {
+        return this.routingProfile;
+    }
+
+    /**
+     * @param routingProfile
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dimensions withRoutingProfile(RoutingProfileReference routingProfile) {
+        setRoutingProfile(routingProfile);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -155,7 +183,9 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
         if (getQueue() != null)
             sb.append("Queue: ").append(getQueue()).append(",");
         if (getChannel() != null)
-            sb.append("Channel: ").append(getChannel());
+            sb.append("Channel: ").append(getChannel()).append(",");
+        if (getRoutingProfile() != null)
+            sb.append("RoutingProfile: ").append(getRoutingProfile());
         sb.append("}");
         return sb.toString();
     }
@@ -178,6 +208,10 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getChannel() != null && other.getChannel().equals(this.getChannel()) == false)
             return false;
+        if (other.getRoutingProfile() == null ^ this.getRoutingProfile() == null)
+            return false;
+        if (other.getRoutingProfile() != null && other.getRoutingProfile().equals(this.getRoutingProfile()) == false)
+            return false;
         return true;
     }
 
@@ -188,6 +222,7 @@ public class Dimensions implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getChannel() == null) ? 0 : getChannel().hashCode());
+        hashCode = prime * hashCode + ((getRoutingProfile() == null) ? 0 : getRoutingProfile().hashCode());
         return hashCode;
     }
 

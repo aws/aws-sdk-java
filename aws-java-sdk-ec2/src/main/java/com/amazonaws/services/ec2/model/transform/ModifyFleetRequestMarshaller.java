@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -149,6 +149,11 @@ public class ModifyFleetRequestMarshaller implements Marshaller<Request<ModifyFl
                             if (placement.getHostResourceGroupArn() != null) {
                                 request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
                                         + ".Placement.HostResourceGroupArn", StringUtils.fromString(placement.getHostResourceGroupArn()));
+                            }
+
+                            if (placement.getGroupId() != null) {
+                                request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                        + ".Placement.GroupId", StringUtils.fromString(placement.getGroupId()));
                             }
                         }
 
@@ -411,6 +416,36 @@ public class ModifyFleetRequestMarshaller implements Marshaller<Request<ModifyFl
                                     request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
                                             + ".InstanceRequirements.AcceleratorTotalMemoryMiB.Max",
                                             StringUtils.fromInteger(acceleratorTotalMemoryMiB.getMax()));
+                                }
+                            }
+
+                            NetworkBandwidthGbpsRequest networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                            if (networkBandwidthGbps != null) {
+
+                                if (networkBandwidthGbps.getMin() != null) {
+                                    request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                            + ".InstanceRequirements.NetworkBandwidthGbps.Min", StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                                }
+
+                                if (networkBandwidthGbps.getMax() != null) {
+                                    request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                            + ".InstanceRequirements.NetworkBandwidthGbps.Max", StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                                }
+                            }
+
+                            com.amazonaws.internal.SdkInternalList<String> instanceRequirementsRequestAllowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                                    .getAllowedInstanceTypes();
+                            if (!instanceRequirementsRequestAllowedInstanceTypesList.isEmpty()
+                                    || !instanceRequirementsRequestAllowedInstanceTypesList.isAutoConstruct()) {
+                                int allowedInstanceTypesListIndex = 1;
+
+                                for (String instanceRequirementsRequestAllowedInstanceTypesListValue : instanceRequirementsRequestAllowedInstanceTypesList) {
+                                    if (instanceRequirementsRequestAllowedInstanceTypesListValue != null) {
+                                        request.addParameter("LaunchTemplateConfig." + launchTemplateConfigsListIndex + ".Overrides." + overridesListIndex
+                                                + ".InstanceRequirements.AllowedInstanceType." + allowedInstanceTypesListIndex,
+                                                StringUtils.fromString(instanceRequirementsRequestAllowedInstanceTypesListValue));
+                                    }
+                                    allowedInstanceTypesListIndex++;
                                 }
                             }
                         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class SourceServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lifeCycle").build();
     private static final MarshallingInfo<String> RECOVERYINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recoveryInstanceId").build();
+    private static final MarshallingInfo<String> REPLICATIONDIRECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationDirection").build();
+    private static final MarshallingInfo<String> REVERSEDDIRECTIONSOURCESERVERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reversedDirectionSourceServerArn").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCECLOUDPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCloudProperties").build();
     private static final MarshallingInfo<StructuredPojo> SOURCEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceProperties").build();
     private static final MarshallingInfo<String> SOURCESERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +75,9 @@ public class SourceServerMarshaller {
             protocolMarshaller.marshall(sourceServer.getLastLaunchResult(), LASTLAUNCHRESULT_BINDING);
             protocolMarshaller.marshall(sourceServer.getLifeCycle(), LIFECYCLE_BINDING);
             protocolMarshaller.marshall(sourceServer.getRecoveryInstanceId(), RECOVERYINSTANCEID_BINDING);
+            protocolMarshaller.marshall(sourceServer.getReplicationDirection(), REPLICATIONDIRECTION_BINDING);
+            protocolMarshaller.marshall(sourceServer.getReversedDirectionSourceServerArn(), REVERSEDDIRECTIONSOURCESERVERARN_BINDING);
+            protocolMarshaller.marshall(sourceServer.getSourceCloudProperties(), SOURCECLOUDPROPERTIES_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceProperties(), SOURCEPROPERTIES_BINDING);
             protocolMarshaller.marshall(sourceServer.getSourceServerID(), SOURCESERVERID_BINDING);
             protocolMarshaller.marshall(sourceServer.getStagingArea(), STAGINGAREA_BINDING);

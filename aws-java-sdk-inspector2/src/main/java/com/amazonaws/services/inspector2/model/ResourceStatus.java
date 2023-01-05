@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ecr;
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * </p>
+     */
+    private String lambda;
 
     /**
      * <p>
@@ -160,6 +166,65 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * </p>
+     * 
+     * @param lambda
+     *        The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * @see Status
+     */
+
+    public void setLambda(String lambda) {
+        this.lambda = lambda;
+    }
+
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * </p>
+     * 
+     * @return The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * @see Status
+     */
+
+    public String getLambda() {
+        return this.lambda;
+    }
+
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * </p>
+     * 
+     * @param lambda
+     *        The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Status
+     */
+
+    public ResourceStatus withLambda(String lambda) {
+        setLambda(lambda);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * </p>
+     * 
+     * @param lambda
+     *        The status of Amazon Inspector scanning for AWS Lambda function resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Status
+     */
+
+    public ResourceStatus withLambda(Status lambda) {
+        this.lambda = lambda.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -174,7 +239,9 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
         if (getEc2() != null)
             sb.append("Ec2: ").append(getEc2()).append(",");
         if (getEcr() != null)
-            sb.append("Ecr: ").append(getEcr());
+            sb.append("Ecr: ").append(getEcr()).append(",");
+        if (getLambda() != null)
+            sb.append("Lambda: ").append(getLambda());
         sb.append("}");
         return sb.toString();
     }
@@ -197,6 +264,10 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEcr() != null && other.getEcr().equals(this.getEcr()) == false)
             return false;
+        if (other.getLambda() == null ^ this.getLambda() == null)
+            return false;
+        if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
+            return false;
         return true;
     }
 
@@ -207,6 +278,7 @@ public class ResourceStatus implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getEc2() == null) ? 0 : getEc2().hashCode());
         hashCode = prime * hashCode + ((getEcr() == null) ? 0 : getEcr().hashCode());
+        hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
         return hashCode;
     }
 

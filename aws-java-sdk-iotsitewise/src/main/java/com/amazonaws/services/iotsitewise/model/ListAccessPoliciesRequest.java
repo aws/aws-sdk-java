@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter
-     * is required if you specify <code>identityId</code>.
+     * The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     * required if you specify <code>identityId</code>.
      * </p>
      */
     private String identityType;
@@ -77,13 +77,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter
-     * is required if you specify <code>identityId</code>.
+     * The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     * required if you specify <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This
-     *        parameter is required if you specify <code>identityId</code>.
+     *        The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     *        required if you specify <code>identityId</code>.
      * @see IdentityType
      */
 
@@ -93,12 +93,12 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter
-     * is required if you specify <code>identityId</code>.
+     * The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     * required if you specify <code>identityId</code>.
      * </p>
      * 
-     * @return The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This
-     *         parameter is required if you specify <code>identityId</code>.
+     * @return The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter
+     *         is required if you specify <code>identityId</code>.
      * @see IdentityType
      */
 
@@ -108,13 +108,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter
-     * is required if you specify <code>identityId</code>.
+     * The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     * required if you specify <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This
-     *        parameter is required if you specify <code>identityId</code>.
+     *        The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     *        required if you specify <code>identityId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */
@@ -126,13 +126,13 @@ public class ListAccessPoliciesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter
-     * is required if you specify <code>identityId</code>.
+     * The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     * required if you specify <code>identityId</code>.
      * </p>
      * 
      * @param identityType
-     *        The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This
-     *        parameter is required if you specify <code>identityId</code>.
+     *        The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM user). This parameter is
+     *        required if you specify <code>identityId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityType
      */

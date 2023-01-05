@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PutPortfolioPreferencesRequestMarshaller {
 
+    private static final MarshallingInfo<String> APPLICATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationMode").build();
     private static final MarshallingInfo<StructuredPojo> APPLICATIONPREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationPreferences").build();
     private static final MarshallingInfo<StructuredPojo> DATABASEPREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -50,6 +52,7 @@ public class PutPortfolioPreferencesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(putPortfolioPreferencesRequest.getApplicationMode(), APPLICATIONMODE_BINDING);
             protocolMarshaller.marshall(putPortfolioPreferencesRequest.getApplicationPreferences(), APPLICATIONPREFERENCES_BINDING);
             protocolMarshaller.marshall(putPortfolioPreferencesRequest.getDatabasePreferences(), DATABASEPREFERENCES_BINDING);
             protocolMarshaller.marshall(putPortfolioPreferencesRequest.getPrioritizeBusinessGoals(), PRIORITIZEBUSINESSGOALS_BINDING);

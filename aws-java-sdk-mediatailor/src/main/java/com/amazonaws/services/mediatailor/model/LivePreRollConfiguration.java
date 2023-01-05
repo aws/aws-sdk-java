@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
      */
     private String adDecisionServerUrl;
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      */
     private Integer maxDurationSeconds;
 
@@ -102,8 +104,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      * 
      * @param maxDurationSeconds
      *        The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads
@@ -115,8 +119,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      * 
      * @return The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads
      *         to exceed this duration, regardless of the total duration of ads that the ADS returns.
@@ -127,8 +133,10 @@ public class LivePreRollConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
      * The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads to
      * exceed this duration, regardless of the total duration of ads that the ADS returns.
+     * </p>
      * 
      * @param maxDurationSeconds
      *        The maximum allowed duration for the pre-roll ad avail. AWS Elemental MediaTailor won't play pre-roll ads

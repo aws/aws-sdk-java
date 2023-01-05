@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ import com.amazonaws.services.redshiftdataapi.model.*;
  * <p>
  * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
  * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the
- * <i>Amazon Redshift Cluster Management Guide</i>.
+ * <i>Amazon Redshift Management Guide</i>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -69,6 +69,11 @@ public interface AWSRedshiftDataAPI {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param batchExecuteStatementRequest
      * @return Result of the BatchExecuteStatement operation returned by the service.
@@ -87,6 +92,11 @@ public interface AWSRedshiftDataAPI {
     /**
      * <p>
      * Cancels a running query. To be canceled, a query must be running.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param cancelStatementRequest
@@ -110,6 +120,11 @@ public interface AWSRedshiftDataAPI {
      * Describes the details about a specific instance when a query was run by the Amazon Redshift Data API. The
      * information includes when the query started, when it finished, the query status, the number of rows returned, and
      * the SQL statement.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param describeStatementRequest
@@ -149,6 +164,11 @@ public interface AWSRedshiftDataAPI {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param describeTableRequest
      * @return Result of the DescribeTable operation returned by the service.
@@ -187,6 +207,11 @@ public interface AWSRedshiftDataAPI {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param executeStatementRequest
      * @return Result of the ExecuteStatement operation returned by the service.
@@ -206,6 +231,11 @@ public interface AWSRedshiftDataAPI {
      * <p>
      * Fetches the temporarily cached result of an SQL statement. A token is returned to page through the statement
      * results.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param getStatementResultRequest
@@ -244,6 +274,11 @@ public interface AWSRedshiftDataAPI {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listDatabasesRequest
      * @return Result of the ListDatabases operation returned by the service.
@@ -281,6 +316,11 @@ public interface AWSRedshiftDataAPI {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listSchemasRequest
      * @return Result of the ListSchemas operation returned by the service.
@@ -300,6 +340,11 @@ public interface AWSRedshiftDataAPI {
      * <p>
      * List of SQL statements. By default, only finished statements are shown. A token is returned to page through the
      * statement list.
+     * </p>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
      * </p>
      * 
      * @param listStatementsRequest
@@ -337,6 +382,11 @@ public interface AWSRedshiftDataAPI {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
+     * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in
+     * the <i>Amazon Redshift Management Guide</i>.
+     * </p>
      * 
      * @param listTablesRequest
      * @return Result of the ListTables operation returned by the service.

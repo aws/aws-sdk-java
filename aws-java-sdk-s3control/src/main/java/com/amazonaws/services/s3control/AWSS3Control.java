@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1699,6 +1699,56 @@ public interface AWSS3Control {
 
     /**
      * <p>
+     * Returns the routing configuration for a Multi-Region Access Point, indicating which Regions are active or
+     * passive.
+     * </p>
+     * <p>
+     * To obtain routing control changes and failover requests, use the Amazon S3 failover control infrastructure
+     * endpoints in these five Amazon Web Services Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>us-east-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>us-west-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-southeast-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-northeast-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>eu-west-1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Your Amazon S3 bucket does not need to be in these five Regions.
+     * </p>
+     * </note>
+     * 
+     * @param getMultiRegionAccessPointRoutesRequest
+     * @return Result of the GetMultiRegionAccessPointRoutes operation returned by the service.
+     * @sample AWSS3Control.GetMultiRegionAccessPointRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/GetMultiRegionAccessPointRoutes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetMultiRegionAccessPointRoutesResult getMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest getMultiRegionAccessPointRoutesRequest);
+
+    /**
+     * <p>
      * Retrieves the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3
@@ -1737,7 +1787,10 @@ public interface AWSS3Control {
      * <p>
      * Gets the Amazon S3 Storage Lens configuration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and
-     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.
+     * usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens
+     * metrics, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens
+     * metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1782,10 +1835,10 @@ public interface AWSS3Control {
 
     /**
      * <p>
-     * Returns a list of the access points currently associated with the specified bucket. You can retrieve up to 1000
-     * access points per call. If the specified bucket has more than 1,000 access points (or the number specified in
-     * <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to
-     * list the additional access points.
+     * Returns a list of the access points owned by the current account associated with the specified bucket. You can
+     * retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access points (or the
+     * number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token
+     * that you can use to list the additional access points.
      * </p>
      * <p/>
      * <p>
@@ -2633,7 +2686,9 @@ public interface AWSS3Control {
      * <p>
      * Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a>
-     * in the <i>Amazon S3 User Guide</i>.
+     * in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens
+     * metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -2675,6 +2730,71 @@ public interface AWSS3Control {
      */
     PutStorageLensConfigurationTaggingResult putStorageLensConfigurationTagging(
             PutStorageLensConfigurationTaggingRequest putStorageLensConfigurationTaggingRequest);
+
+    /**
+     * <p>
+     * Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing
+     * status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code>
+     * indicates a passive status, which means that traffic won't be routed to the specified Region. A value of
+     * <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At
+     * least one Region must be active at all times.
+     * </p>
+     * <p>
+     * When the routing configuration is changed, any in-progress operations (uploads, copies, deletes, and so on) to
+     * formerly active Regions will continue to run to their final completion state (success or failure). The routing
+     * configurations of any Regions that aren’t specified remain unchanged.
+     * </p>
+     * <note>
+     * <p>
+     * Updated routing configurations might not be immediately applied. It can take up to 2 minutes for your changes to
+     * take effect.
+     * </p>
+     * </note>
+     * <p>
+     * To submit routing control changes and failover requests, use the Amazon S3 failover control infrastructure
+     * endpoints in these five Amazon Web Services Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>us-east-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>us-west-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-southeast-2</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ap-northeast-1</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>eu-west-1</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * Your Amazon S3 bucket does not need to be in these five Regions.
+     * </p>
+     * </note>
+     * 
+     * @param submitMultiRegionAccessPointRoutesRequest
+     * @return Result of the SubmitMultiRegionAccessPointRoutes operation returned by the service.
+     * @sample AWSS3Control.SubmitMultiRegionAccessPointRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/SubmitMultiRegionAccessPointRoutes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SubmitMultiRegionAccessPointRoutesResult submitMultiRegionAccessPointRoutes(
+            SubmitMultiRegionAccessPointRoutesRequest submitMultiRegionAccessPointRoutesRequest);
 
     /**
      * <p>

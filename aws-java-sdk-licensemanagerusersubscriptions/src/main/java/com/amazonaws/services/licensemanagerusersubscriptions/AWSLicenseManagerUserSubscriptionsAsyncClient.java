@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -391,6 +391,40 @@ public class AWSLicenseManagerUserSubscriptionsAsyncClient extends AWSLicenseMan
 
                 try {
                     result = executeStopProductSubscription(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIdentityProviderSettingsResult> updateIdentityProviderSettingsAsync(UpdateIdentityProviderSettingsRequest request) {
+
+        return updateIdentityProviderSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateIdentityProviderSettingsResult> updateIdentityProviderSettingsAsync(
+            final UpdateIdentityProviderSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateIdentityProviderSettingsRequest, UpdateIdentityProviderSettingsResult> asyncHandler) {
+        final UpdateIdentityProviderSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateIdentityProviderSettingsResult>() {
+            @Override
+            public UpdateIdentityProviderSettingsResult call() throws Exception {
+                UpdateIdentityProviderSettingsResult result = null;
+
+                try {
+                    result = executeUpdateIdentityProviderSettings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

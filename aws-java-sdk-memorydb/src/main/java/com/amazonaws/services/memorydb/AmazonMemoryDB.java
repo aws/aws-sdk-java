@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -436,6 +436,42 @@ public interface AmazonMemoryDB {
 
     /**
      * <p>
+     * Returns information about reserved nodes for this account, or about a specified reserved node.
+     * </p>
+     * 
+     * @param describeReservedNodesRequest
+     * @return Result of the DescribeReservedNodes operation returned by the service.
+     * @throws ReservedNodeNotFoundException
+     *         The requested node does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @sample AmazonMemoryDB.DescribeReservedNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeReservedNodesResult describeReservedNodes(DescribeReservedNodesRequest describeReservedNodesRequest);
+
+    /**
+     * <p>
+     * Lists available reserved node offerings.
+     * </p>
+     * 
+     * @param describeReservedNodesOfferingsRequest
+     * @return Result of the DescribeReservedNodesOfferings operation returned by the service.
+     * @throws ReservedNodesOfferingNotFoundException
+     *         The requested node offering does not exist.
+     * @throws ServiceLinkedRoleNotFoundException
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @sample AmazonMemoryDB.DescribeReservedNodesOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeReservedNodesOfferingsResult describeReservedNodesOfferings(DescribeReservedNodesOfferingsRequest describeReservedNodesOfferingsRequest);
+
+    /**
+     * <p>
      * Returns details of the service updates
      * </p>
      * 
@@ -500,7 +536,10 @@ public interface AmazonMemoryDB {
 
     /**
      * <p>
-     * Used to failover a shard
+     * Used to failover a shard. This API is designed for testing the behavior of your application in case of MemoryDB
+     * failover. It is not designed to be used as a production-level tool for initiating a failover to overcome a
+     * problem you may have with the cluster. Moreover, in certain conditions such as large scale operational events,
+     * Amazon may block this API.
      * </p>
      * 
      * @param failoverShardRequest
@@ -562,6 +601,30 @@ public interface AmazonMemoryDB {
      *      Documentation</a>
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
+     * Allows you to purchase a reserved node offering. Reserved nodes are not eligible for cancellation and are
+     * non-refundable.
+     * </p>
+     * 
+     * @param purchaseReservedNodesOfferingRequest
+     * @return Result of the PurchaseReservedNodesOffering operation returned by the service.
+     * @throws ReservedNodesOfferingNotFoundException
+     *         The requested node offering does not exist.
+     * @throws ReservedNodeAlreadyExistsException
+     *         You already have a reservation with the given identifier.
+     * @throws ReservedNodeQuotaExceededException
+     *         The request cannot be processed because it would exceed the user's node quota.
+     * @throws ServiceLinkedRoleNotFoundException
+     * @throws TagQuotaPerResourceExceededException
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @sample AmazonMemoryDB.PurchaseReservedNodesOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PurchaseReservedNodesOfferingResult purchaseReservedNodesOffering(PurchaseReservedNodesOfferingRequest purchaseReservedNodesOfferingRequest);
 
     /**
      * <p>

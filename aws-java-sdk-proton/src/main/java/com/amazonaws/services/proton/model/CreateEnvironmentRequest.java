@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * <p>
+     * To use CodeBuild-based provisioning for the environment or for any service instance running in the environment,
+     * specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.
+     * </p>
+     */
+    private String codebuildRoleArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
@@ -130,6 +141,76 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String templateName;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * <p>
+     * To use CodeBuild-based provisioning for the environment or for any service instance running in the environment,
+     * specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *        using CodeBuild-based provisioning on your behalf.</p>
+     *        <p>
+     *        To use CodeBuild-based provisioning for the environment or for any service instance running in the
+     *        environment, specify either the <code>environmentAccountConnectionId</code> or
+     *        <code>codebuildRoleArn</code> parameter.
+     */
+
+    public void setCodebuildRoleArn(String codebuildRoleArn) {
+        this.codebuildRoleArn = codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * <p>
+     * To use CodeBuild-based provisioning for the environment or for any service instance running in the environment,
+     * specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *         using CodeBuild-based provisioning on your behalf.</p>
+     *         <p>
+     *         To use CodeBuild-based provisioning for the environment or for any service instance running in the
+     *         environment, specify either the <code>environmentAccountConnectionId</code> or
+     *         <code>codebuildRoleArn</code> parameter.
+     */
+
+    public String getCodebuildRoleArn() {
+        return this.codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * <p>
+     * To use CodeBuild-based provisioning for the environment or for any service instance running in the environment,
+     * specify either the <code>environmentAccountConnectionId</code> or <code>codebuildRoleArn</code> parameter.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *        using CodeBuild-based provisioning on your behalf.</p>
+     *        <p>
+     *        To use CodeBuild-based provisioning for the environment or for any service instance running in the
+     *        environment, specify either the <code>environmentAccountConnectionId</code> or
+     *        <code>codebuildRoleArn</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentRequest withCodebuildRoleArn(String codebuildRoleArn) {
+        setCodebuildRoleArn(codebuildRoleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -850,6 +931,8 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCodebuildRoleArn() != null)
+            sb.append("CodebuildRoleArn: ").append(getCodebuildRoleArn()).append(",");
         if (getComponentRoleArn() != null)
             sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getDescription() != null)
@@ -886,6 +969,10 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof CreateEnvironmentRequest == false)
             return false;
         CreateEnvironmentRequest other = (CreateEnvironmentRequest) obj;
+        if (other.getCodebuildRoleArn() == null ^ this.getCodebuildRoleArn() == null)
+            return false;
+        if (other.getCodebuildRoleArn() != null && other.getCodebuildRoleArn().equals(this.getCodebuildRoleArn()) == false)
+            return false;
         if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
             return false;
         if (other.getComponentRoleArn() != null && other.getComponentRoleArn().equals(this.getComponentRoleArn()) == false)
@@ -939,6 +1026,7 @@ public class CreateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCodebuildRoleArn() == null) ? 0 : getCodebuildRoleArn().hashCode());
         hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentAccountConnectionId() == null) ? 0 : getEnvironmentAccountConnectionId().hashCode());

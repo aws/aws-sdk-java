@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,56 +27,16 @@ public class DeleteComponentTypeRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The ID of the component type to delete.
-     * </p>
-     */
-    private String componentTypeId;
-    /**
-     * <p>
      * The ID of the workspace that contains the component type.
      * </p>
      */
     private String workspaceId;
-
     /**
      * <p>
      * The ID of the component type to delete.
      * </p>
-     * 
-     * @param componentTypeId
-     *        The ID of the component type to delete.
      */
-
-    public void setComponentTypeId(String componentTypeId) {
-        this.componentTypeId = componentTypeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the component type to delete.
-     * </p>
-     * 
-     * @return The ID of the component type to delete.
-     */
-
-    public String getComponentTypeId() {
-        return this.componentTypeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the component type to delete.
-     * </p>
-     * 
-     * @param componentTypeId
-     *        The ID of the component type to delete.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteComponentTypeRequest withComponentTypeId(String componentTypeId) {
-        setComponentTypeId(componentTypeId);
-        return this;
-    }
+    private String componentTypeId;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class DeleteComponentTypeRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The ID of the component type to delete.
+     * </p>
+     * 
+     * @param componentTypeId
+     *        The ID of the component type to delete.
+     */
+
+    public void setComponentTypeId(String componentTypeId) {
+        this.componentTypeId = componentTypeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type to delete.
+     * </p>
+     * 
+     * @return The ID of the component type to delete.
+     */
+
+    public String getComponentTypeId() {
+        return this.componentTypeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type to delete.
+     * </p>
+     * 
+     * @param componentTypeId
+     *        The ID of the component type to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteComponentTypeRequest withComponentTypeId(String componentTypeId) {
+        setComponentTypeId(componentTypeId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -130,10 +130,10 @@ public class DeleteComponentTypeRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComponentTypeId() != null)
-            sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getComponentTypeId() != null)
+            sb.append("ComponentTypeId: ").append(getComponentTypeId());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class DeleteComponentTypeRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof DeleteComponentTypeRequest == false)
             return false;
         DeleteComponentTypeRequest other = (DeleteComponentTypeRequest) obj;
-        if (other.getComponentTypeId() == null ^ this.getComponentTypeId() == null)
-            return false;
-        if (other.getComponentTypeId() != null && other.getComponentTypeId().equals(this.getComponentTypeId()) == false)
-            return false;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
+        if (other.getComponentTypeId() == null ^ this.getComponentTypeId() == null)
+            return false;
+        if (other.getComponentTypeId() != null && other.getComponentTypeId().equals(this.getComponentTypeId()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class DeleteComponentTypeRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
         return hashCode;
     }
 

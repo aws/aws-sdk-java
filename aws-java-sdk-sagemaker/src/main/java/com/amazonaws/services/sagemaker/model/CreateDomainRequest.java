@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private DomainSettings domainSettings;
+    /**
+     * <p>
+     * The default settings used to create a space.
+     * </p>
+     */
+    private DefaultSpaceSettings defaultSpaceSettings;
 
     /**
      * <p>
@@ -864,6 +870,46 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The default settings used to create a space.
+     * </p>
+     * 
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space.
+     */
+
+    public void setDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        this.defaultSpaceSettings = defaultSpaceSettings;
+    }
+
+    /**
+     * <p>
+     * The default settings used to create a space.
+     * </p>
+     * 
+     * @return The default settings used to create a space.
+     */
+
+    public DefaultSpaceSettings getDefaultSpaceSettings() {
+        return this.defaultSpaceSettings;
+    }
+
+    /**
+     * <p>
+     * The default settings used to create a space.
+     * </p>
+     * 
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainRequest withDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        setDefaultSpaceSettings(defaultSpaceSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -896,7 +942,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getAppSecurityGroupManagement() != null)
             sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement()).append(",");
         if (getDomainSettings() != null)
-            sb.append("DomainSettings: ").append(getDomainSettings());
+            sb.append("DomainSettings: ").append(getDomainSettings()).append(",");
+        if (getDefaultSpaceSettings() != null)
+            sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -955,6 +1003,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDomainSettings() != null && other.getDomainSettings().equals(this.getDomainSettings()) == false)
             return false;
+        if (other.getDefaultSpaceSettings() == null ^ this.getDefaultSpaceSettings() == null)
+            return false;
+        if (other.getDefaultSpaceSettings() != null && other.getDefaultSpaceSettings().equals(this.getDefaultSpaceSettings()) == false)
+            return false;
         return true;
     }
 
@@ -974,6 +1026,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getAppSecurityGroupManagement() == null) ? 0 : getAppSecurityGroupManagement().hashCode());
         hashCode = prime * hashCode + ((getDomainSettings() == null) ? 0 : getDomainSettings().hashCode());
+        hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
         return hashCode;
     }
 

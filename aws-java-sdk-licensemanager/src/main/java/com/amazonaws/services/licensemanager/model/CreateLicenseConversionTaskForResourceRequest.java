@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting from. For the structure of the source license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      */
     private LicenseConversionContext sourceLicenseContext;
@@ -46,7 +46,7 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting to. For the structure of the destination license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      */
     private LicenseConversionContext destinationLicenseContext;
@@ -96,14 +96,14 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting from. For the structure of the source license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @param sourceLicenseContext
      *        Information that identifies the license type you are converting from. For the structure of the source
      *        license, see <a href=
      *        "https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     *        >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     *        >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      */
 
     public void setSourceLicenseContext(LicenseConversionContext sourceLicenseContext) {
@@ -115,13 +115,13 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting from. For the structure of the source license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @return Information that identifies the license type you are converting from. For the structure of the source
      *         license, see <a href=
      *         "https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     *         >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     *         >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      */
 
     public LicenseConversionContext getSourceLicenseContext() {
@@ -133,14 +133,14 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting from. For the structure of the source license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @param sourceLicenseContext
      *        Information that identifies the license type you are converting from. For the structure of the source
      *        license, see <a href=
      *        "https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     *        >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     *        >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,14 +154,14 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting to. For the structure of the destination license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @param destinationLicenseContext
      *        Information that identifies the license type you are converting to. For the structure of the destination
      *        license, see <a href=
      *        "https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     *        >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     *        >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      */
 
     public void setDestinationLicenseContext(LicenseConversionContext destinationLicenseContext) {
@@ -173,13 +173,13 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting to. For the structure of the destination license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @return Information that identifies the license type you are converting to. For the structure of the destination
      *         license, see <a href=
      *         "https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     *         >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     *         >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      */
 
     public LicenseConversionContext getDestinationLicenseContext() {
@@ -191,14 +191,14 @@ public class CreateLicenseConversionTaskForResourceRequest extends com.amazonaws
      * Information that identifies the license type you are converting to. For the structure of the destination license,
      * see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     * >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     * >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * </p>
      * 
      * @param destinationLicenseContext
      *        Information that identifies the license type you are converting to. For the structure of the destination
      *        license, see <a href=
      *        "https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli"
-     *        >Convert a license type using the AWS CLI</a> in the <i>License Manager User Guide</i>.
+     *        >Convert a license type using the Amazon Web Services CLI</a> in the <i>License Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

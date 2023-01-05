@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,8 @@ public class ChatMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the content. Supported types are <code>text/plain</code>.
+     * The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and
+     * <code>application/json</code>.
      * </p>
      */
     private String contentType;
@@ -38,16 +39,31 @@ public class ChatMessage implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The content of the chat message.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of
+     * 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String content;
 
     /**
      * <p>
-     * The type of the content. Supported types are <code>text/plain</code>.
+     * The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and
+     * <code>application/json</code>.
      * </p>
      * 
      * @param contentType
-     *        The type of the content. Supported types are <code>text/plain</code>.
+     *        The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and
+     *        <code>application/json</code>.
      */
 
     public void setContentType(String contentType) {
@@ -56,10 +72,12 @@ public class ChatMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the content. Supported types are <code>text/plain</code>.
+     * The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and
+     * <code>application/json</code>.
      * </p>
      * 
-     * @return The type of the content. Supported types are <code>text/plain</code>.
+     * @return The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and
+     *         <code>application/json</code>.
      */
 
     public String getContentType() {
@@ -68,11 +86,13 @@ public class ChatMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the content. Supported types are <code>text/plain</code>.
+     * The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and
+     * <code>application/json</code>.
      * </p>
      * 
      * @param contentType
-     *        The type of the content. Supported types are <code>text/plain</code>.
+     *        The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, and
+     *        <code>application/json</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,9 +105,34 @@ public class ChatMessage implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The content of the chat message.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of
+     * 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param content
-     *        The content of the chat message.
+     *        The content of the chat message. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1,
+     *        Maximum of 1024.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.
+     *        </p>
+     *        </li>
      */
 
     public void setContent(String content) {
@@ -98,8 +143,33 @@ public class ChatMessage implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The content of the chat message.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of
+     * 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The content of the chat message.
+     * @return The content of the chat message. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1,
+     *         Maximum of 1024.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.
+     *         </p>
+     *         </li>
      */
 
     public String getContent() {
@@ -110,9 +180,34 @@ public class ChatMessage implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The content of the chat message.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of
+     * 1024.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param content
-     *        The content of the chat message.
+     *        The content of the chat message. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1,
+     *        Maximum of 1024.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

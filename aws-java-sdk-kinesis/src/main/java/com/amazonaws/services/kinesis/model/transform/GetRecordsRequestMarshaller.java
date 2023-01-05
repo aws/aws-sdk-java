@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class GetRecordsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShardIterator").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Limit").build();
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamARN").build();
 
     private static final GetRecordsRequestMarshaller instance = new GetRecordsRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class GetRecordsRequestMarshaller {
         try {
             protocolMarshaller.marshall(getRecordsRequest.getShardIterator(), SHARDITERATOR_BINDING);
             protocolMarshaller.marshall(getRecordsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(getRecordsRequest.getStreamARN(), STREAMARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

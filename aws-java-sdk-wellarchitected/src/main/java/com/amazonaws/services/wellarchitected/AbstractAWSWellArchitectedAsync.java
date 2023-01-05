@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -296,6 +296,32 @@ public class AbstractAWSWellArchitectedAsync extends AbstractAWSWellArchitected 
     @Override
     public java.util.concurrent.Future<ListAnswersResult> listAnswersAsync(ListAnswersRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAnswersRequest, ListAnswersResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCheckDetailsResult> listCheckDetailsAsync(ListCheckDetailsRequest request) {
+
+        return listCheckDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCheckDetailsResult> listCheckDetailsAsync(ListCheckDetailsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCheckDetailsRequest, ListCheckDetailsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCheckSummariesResult> listCheckSummariesAsync(ListCheckSummariesRequest request) {
+
+        return listCheckSummariesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCheckSummariesResult> listCheckSummariesAsync(ListCheckSummariesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCheckSummariesRequest, ListCheckSummariesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

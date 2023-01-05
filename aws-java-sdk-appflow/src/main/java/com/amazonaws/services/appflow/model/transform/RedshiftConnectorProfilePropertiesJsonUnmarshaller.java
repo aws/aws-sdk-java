@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,26 @@ public class RedshiftConnectorProfilePropertiesJsonUnmarshaller implements Unmar
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     redshiftConnectorProfileProperties.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("dataApiRoleArn", targetDepth)) {
+                    context.nextToken();
+                    redshiftConnectorProfileProperties.setDataApiRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("isRedshiftServerless", targetDepth)) {
+                    context.nextToken();
+                    redshiftConnectorProfileProperties.setIsRedshiftServerless(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("clusterIdentifier", targetDepth)) {
+                    context.nextToken();
+                    redshiftConnectorProfileProperties.setClusterIdentifier(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("workgroupName", targetDepth)) {
+                    context.nextToken();
+                    redshiftConnectorProfileProperties.setWorkgroupName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("databaseName", targetDepth)) {
+                    context.nextToken();
+                    redshiftConnectorProfileProperties.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

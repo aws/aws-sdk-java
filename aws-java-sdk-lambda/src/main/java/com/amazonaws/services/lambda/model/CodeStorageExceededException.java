@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have exceeded your maximum total code size per account. <a
- * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+ * Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a
+ * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

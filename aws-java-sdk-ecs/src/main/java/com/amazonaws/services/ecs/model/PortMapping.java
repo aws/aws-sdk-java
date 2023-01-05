@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,24 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
+     * If you specify a <code>containerPortRange</code>, leave this field empty and the value of the
+     * <code>hostPort</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the
+     * host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
@@ -97,6 +115,137 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String protocol;
+    /**
+     * <p>
+     * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We
+     * recommend that you set this parameter to be consistent with the protocol that your application uses. If you set
+     * this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set
+     * this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.
+     * </p>
+     * <p>
+     * If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific
+     * telemetry for TCP.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private String appProtocol;
+    /**
+     * <p>
+     * The port number range on the container that's bound to the dynamically mapped host port range.
+     * </p>
+     * <p>
+     * The following rules apply when you specify a <code>containerPortRange</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the EC2 and Fargate launch types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the Linux and Windows operating systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of
+     * the <code>ecs-init</code> package
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify a maximum of 100 port ranges per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the container ports.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>containerPortRange</code> valid values are between 1 and 65535.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A port can only be included in one port mapping per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot specify overlapping port ranges.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first port in the range must be less than last port in the range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large
+     * number of ports.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github
+     * website.
+     * </p>
+     * <p>
+     * For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon"
+     * >Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+     * <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to
+     * the container ports.
+     * </p>
+     */
+    private String containerPortRange;
 
     /**
      * <p>
@@ -203,6 +352,24 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
+     * If you specify a <code>containerPortRange</code>, leave this field empty and the value of the
+     * <code>hostPort</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the
+     * host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
@@ -230,6 +397,24 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param hostPort
      *        The port number on the container instance to reserve for your container.</p>
+     *        <p>
+     *        If you specify a <code>containerPortRange</code>, leave this field empty and the value of the
+     *        <code>hostPort</code> is set as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
+     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports
+     *        on the host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      *        <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
@@ -265,6 +450,24 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
+     * If you specify a <code>containerPortRange</code>, leave this field empty and the value of the
+     * <code>hostPort</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the
+     * host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
@@ -291,6 +494,24 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return The port number on the container instance to reserve for your container.</p>
+     *         <p>
+     *         If you specify a <code>containerPortRange</code>, leave this field empty and the value of the
+     *         <code>hostPort</code> is set as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
+     *         the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports
+     *         on the host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      *         <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>
@@ -327,6 +548,24 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * The port number on the container instance to reserve for your container.
      * </p>
      * <p>
+     * If you specify a <code>containerPortRange</code>, leave this field empty and the value of the
+     * <code>hostPort</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports on the
+     * host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
      * If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      * <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
      * </p>
@@ -354,6 +593,24 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param hostPort
      *        The port number on the container instance to reserve for your container.</p>
+     *        <p>
+     *        If you specify a <code>containerPortRange</code>, leave this field empty and the value of the
+     *        <code>hostPort</code> is set as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
+     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open ports
+     *        on the host and automaticaly binds them to the container ports. This is a dynamic mapping strategy.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, the
      *        <code>hostPort</code> can either be left blank or set to the same value as the <code>containerPort</code>.
@@ -470,6 +727,894 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param name
+     *        The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter
+     *        is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can
+     *        include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and
+     *        hyphens (-). The name can't start with a hyphen.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter
+     *         is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can
+     *         include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and
+     *         hyphens (-). The name can't start with a hyphen.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter is the
+     * name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can include up to 64
+     * characters. The characters can include lowercase letters, numbers, underscores (_), and hyphens (-). The name
+     * can't start with a hyphen.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param name
+     *        The name that's used for the port mapping. This parameter only applies to Service Connect. This parameter
+     *        is the name that you use in the <code>serviceConnectConfiguration</code> of a service. The name can
+     *        include up to 64 characters. The characters can include lowercase letters, numbers, underscores (_), and
+     *        hyphens (-). The name can't start with a hyphen.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PortMapping withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We
+     * recommend that you set this parameter to be consistent with the protocol that your application uses. If you set
+     * this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set
+     * this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.
+     * </p>
+     * <p>
+     * If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific
+     * telemetry for TCP.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param appProtocol
+     *        The application protocol that's used for the port mapping. This parameter only applies to Service Connect.
+     *        We recommend that you set this parameter to be consistent with the protocol that your application uses. If
+     *        you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect
+     *        proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console
+     *        and CloudWatch.</p>
+     *        <p>
+     *        If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add
+     *        protocol-specific telemetry for TCP.
+     *        </p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @see ApplicationProtocol
+     */
+
+    public void setAppProtocol(String appProtocol) {
+        this.appProtocol = appProtocol;
+    }
+
+    /**
+     * <p>
+     * The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We
+     * recommend that you set this parameter to be consistent with the protocol that your application uses. If you set
+     * this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set
+     * this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.
+     * </p>
+     * <p>
+     * If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific
+     * telemetry for TCP.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The application protocol that's used for the port mapping. This parameter only applies to Service
+     *         Connect. We recommend that you set this parameter to be consistent with the protocol that your
+     *         application uses. If you set this parameter, Amazon ECS adds protocol-specific connection handling to the
+     *         Service Connect proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the
+     *         Amazon ECS console and CloudWatch.</p>
+     *         <p>
+     *         If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add
+     *         protocol-specific telemetry for TCP.
+     *         </p>
+     *         <p>
+     *         Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *         connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *         container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS
+     *         services create are supported with Service Connect. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @see ApplicationProtocol
+     */
+
+    public String getAppProtocol() {
+        return this.appProtocol;
+    }
+
+    /**
+     * <p>
+     * The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We
+     * recommend that you set this parameter to be consistent with the protocol that your application uses. If you set
+     * this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set
+     * this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.
+     * </p>
+     * <p>
+     * If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific
+     * telemetry for TCP.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param appProtocol
+     *        The application protocol that's used for the port mapping. This parameter only applies to Service Connect.
+     *        We recommend that you set this parameter to be consistent with the protocol that your application uses. If
+     *        you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect
+     *        proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console
+     *        and CloudWatch.</p>
+     *        <p>
+     *        If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add
+     *        protocol-specific telemetry for TCP.
+     *        </p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationProtocol
+     */
+
+    public PortMapping withAppProtocol(String appProtocol) {
+        setAppProtocol(appProtocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We
+     * recommend that you set this parameter to be consistent with the protocol that your application uses. If you set
+     * this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set
+     * this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.
+     * </p>
+     * <p>
+     * If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific
+     * telemetry for TCP.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param appProtocol
+     *        The application protocol that's used for the port mapping. This parameter only applies to Service Connect.
+     *        We recommend that you set this parameter to be consistent with the protocol that your application uses. If
+     *        you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect
+     *        proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console
+     *        and CloudWatch.</p>
+     *        <p>
+     *        If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add
+     *        protocol-specific telemetry for TCP.
+     *        </p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @see ApplicationProtocol
+     */
+
+    public void setAppProtocol(ApplicationProtocol appProtocol) {
+        withAppProtocol(appProtocol);
+    }
+
+    /**
+     * <p>
+     * The application protocol that's used for the port mapping. This parameter only applies to Service Connect. We
+     * recommend that you set this parameter to be consistent with the protocol that your application uses. If you set
+     * this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect proxy. If you set
+     * this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console and CloudWatch.
+     * </p>
+     * <p>
+     * If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add protocol-specific
+     * telemetry for TCP.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param appProtocol
+     *        The application protocol that's used for the port mapping. This parameter only applies to Service Connect.
+     *        We recommend that you set this parameter to be consistent with the protocol that your application uses. If
+     *        you set this parameter, Amazon ECS adds protocol-specific connection handling to the Service Connect
+     *        proxy. If you set this parameter, Amazon ECS adds protocol-specific telemetry in the Amazon ECS console
+     *        and CloudWatch.</p>
+     *        <p>
+     *        If you don't set a value for this parameter, then TCP is used. However, Amazon ECS doesn't add
+     *        protocol-specific telemetry for TCP.
+     *        </p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationProtocol
+     */
+
+    public PortMapping withAppProtocol(ApplicationProtocol appProtocol) {
+        this.appProtocol = appProtocol.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The port number range on the container that's bound to the dynamically mapped host port range.
+     * </p>
+     * <p>
+     * The following rules apply when you specify a <code>containerPortRange</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the EC2 and Fargate launch types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the Linux and Windows operating systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of
+     * the <code>ecs-init</code> package
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify a maximum of 100 port ranges per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the container ports.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>containerPortRange</code> valid values are between 1 and 65535.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A port can only be included in one port mapping per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot specify overlapping port ranges.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first port in the range must be less than last port in the range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large
+     * number of ports.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github
+     * website.
+     * </p>
+     * <p>
+     * For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon"
+     * >Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+     * <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to
+     * the container ports.
+     * </p>
+     * 
+     * @param containerPortRange
+     *        The port number range on the container that's bound to the dynamically mapped host port range.</p>
+     *        <p>
+     *        The following rules apply when you specify a <code>containerPortRange</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This parameter is available for both the EC2 and Fargate launch types.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This parameter is available for both the Linux and Windows operating systems.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The container instance must have at least version 1.67.0 of the container agent and at least version
+     *        1.67.0-1 of the <code>ecs-init</code> package
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can specify a maximum of 100 port ranges per container.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as
+     *        follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
+     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host
+     *        ports from the default ephemeral range and passes it to docker to bind them to the container ports.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>containerPortRange</code> valid values are between 1 and 65535.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A port can only be included in one port mapping per container.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You cannot specify overlapping port ranges.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first port in the range must be less than last port in the range.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a
+     *        large number of ports.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     *        Github website.
+     *        </p>
+     *        <p>
+     *        For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon"
+     *        >Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+     *        <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are
+     *        bound to the container ports.
+     */
+
+    public void setContainerPortRange(String containerPortRange) {
+        this.containerPortRange = containerPortRange;
+    }
+
+    /**
+     * <p>
+     * The port number range on the container that's bound to the dynamically mapped host port range.
+     * </p>
+     * <p>
+     * The following rules apply when you specify a <code>containerPortRange</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the EC2 and Fargate launch types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the Linux and Windows operating systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of
+     * the <code>ecs-init</code> package
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify a maximum of 100 port ranges per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the container ports.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>containerPortRange</code> valid values are between 1 and 65535.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A port can only be included in one port mapping per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot specify overlapping port ranges.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first port in the range must be less than last port in the range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large
+     * number of ports.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github
+     * website.
+     * </p>
+     * <p>
+     * For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon"
+     * >Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+     * <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to
+     * the container ports.
+     * </p>
+     * 
+     * @return The port number range on the container that's bound to the dynamically mapped host port range.</p>
+     *         <p>
+     *         The following rules apply when you specify a <code>containerPortRange</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         This parameter is available for both the EC2 and Fargate launch types.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         This parameter is available for both the Linux and Windows operating systems.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The container instance must have at least version 1.67.0 of the container agent and at least version
+     *         1.67.0-1 of the <code>ecs-init</code> package
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You can specify a maximum of 100 port ranges per container.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as
+     *         follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
+     *         the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host
+     *         ports from the default ephemeral range and passes it to docker to bind them to the container ports.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>containerPortRange</code> valid values are between 1 and 65535.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A port can only be included in one port mapping per container.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You cannot specify overlapping port ranges.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The first port in the range must be less than last port in the range.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a
+     *         large number of ports.
+     *         </p>
+     *         <p>
+     *         For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     *         Github website.
+     *         </p>
+     *         <p>
+     *         For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon"
+     *         >Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+     *         <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are
+     *         bound to the container ports.
+     */
+
+    public String getContainerPortRange() {
+        return this.containerPortRange;
+    }
+
+    /**
+     * <p>
+     * The port number range on the container that's bound to the dynamically mapped host port range.
+     * </p>
+     * <p>
+     * The following rules apply when you specify a <code>containerPortRange</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the EC2 and Fargate launch types.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * This parameter is available for both the Linux and Windows operating systems.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The container instance must have at least version 1.67.0 of the container agent and at least version 1.67.0-1 of
+     * the <code>ecs-init</code> package
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can specify a maximum of 100 port ranges per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to the same
+     * value as the <code>containerPort</code>. This is a static mapping strategy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host ports
+     * from the default ephemeral range and passes it to docker to bind them to the container ports.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * The <code>containerPortRange</code> valid values are between 1 and 65535.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A port can only be included in one port mapping per container.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot specify overlapping port ranges.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The first port in the range must be less than last port in the range.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a large
+     * number of ports.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the Github
+     * website.
+     * </p>
+     * <p>
+     * For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href=
+     * "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon"
+     * >Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+     * <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are bound to
+     * the container ports.
+     * </p>
+     * 
+     * @param containerPortRange
+     *        The port number range on the container that's bound to the dynamically mapped host port range.</p>
+     *        <p>
+     *        The following rules apply when you specify a <code>containerPortRange</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        You must use either the <code>bridge</code> network mode or the <code>awsvpc</code> network mode.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This parameter is available for both the EC2 and Fargate launch types.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        This parameter is available for both the Linux and Windows operating systems.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The container instance must have at least version 1.67.0 of the container agent and at least version
+     *        1.67.0-1 of the <code>ecs-init</code> package
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You can specify a maximum of 100 port ranges per container.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code> is set as
+     *        follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPort</code> is set to
+     *        the same value as the <code>containerPort</code>. This is a static mapping strategy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For containers in a task with the <code>bridge</code> network mode, the Amazon ECS agent finds open host
+     *        ports from the default ephemeral range and passes it to docker to bind them to the container ports.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The <code>containerPortRange</code> valid values are between 1 and 65535.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A port can only be included in one port mapping per container.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        You cannot specify overlapping port ranges.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The first port in the range must be less than last port in the range.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Docker recommends that you turn off the docker-proxy in the Docker daemon config file when you have a
+     *        large number of ports.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://github.com/moby/moby/issues/11185"> Issue #11185</a> on the
+     *        Github website.
+     *        </p>
+     *        <p>
+     *        For information about how to turn off the docker-proxy in the Docker daemon config file, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/bootstrap_container_instance.html#bootstrap_docker_daemon"
+     *        >Docker daemon</a> in the <i>Amazon ECS Developer Guide</i>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
+     *        <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the host ports that are
+     *        bound to the container ports.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PortMapping withContainerPortRange(String containerPortRange) {
+        setContainerPortRange(containerPortRange);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -486,7 +1631,13 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
         if (getHostPort() != null)
             sb.append("HostPort: ").append(getHostPort()).append(",");
         if (getProtocol() != null)
-            sb.append("Protocol: ").append(getProtocol());
+            sb.append("Protocol: ").append(getProtocol()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getAppProtocol() != null)
+            sb.append("AppProtocol: ").append(getAppProtocol()).append(",");
+        if (getContainerPortRange() != null)
+            sb.append("ContainerPortRange: ").append(getContainerPortRange());
         sb.append("}");
         return sb.toString();
     }
@@ -513,6 +1664,18 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
             return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getAppProtocol() == null ^ this.getAppProtocol() == null)
+            return false;
+        if (other.getAppProtocol() != null && other.getAppProtocol().equals(this.getAppProtocol()) == false)
+            return false;
+        if (other.getContainerPortRange() == null ^ this.getContainerPortRange() == null)
+            return false;
+        if (other.getContainerPortRange() != null && other.getContainerPortRange().equals(this.getContainerPortRange()) == false)
+            return false;
         return true;
     }
 
@@ -524,6 +1687,9 @@ public class PortMapping implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContainerPort() == null) ? 0 : getContainerPort().hashCode());
         hashCode = prime * hashCode + ((getHostPort() == null) ? 0 : getHostPort().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getAppProtocol() == null) ? 0 : getAppProtocol().hashCode());
+        hashCode = prime * hashCode + ((getContainerPortRange() == null) ? 0 : getContainerPortRange().hashCode());
         return hashCode;
     }
 

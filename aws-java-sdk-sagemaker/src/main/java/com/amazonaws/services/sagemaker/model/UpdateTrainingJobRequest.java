@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,14 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private String trainingJobName;
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      */
     private ProfilerConfigForUpdate profilerConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
@@ -92,11 +93,13 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      * 
      * @param profilerConfig
-     *        Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     *        Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and
+     *        storage paths.
      */
 
     public void setProfilerConfig(ProfilerConfigForUpdate profilerConfig) {
@@ -105,10 +108,12 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      * 
-     * @return Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * @return Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and
+     *         storage paths.
      */
 
     public ProfilerConfigForUpdate getProfilerConfig() {
@@ -117,11 +122,13 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     * Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and storage
+     * paths.
      * </p>
      * 
      * @param profilerConfig
-     *        Configuration information for Debugger system monitoring, framework profiling, and storage paths.
+     *        Configuration information for Amazon SageMaker Debugger system monitoring, framework profiling, and
+     *        storage paths.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,10 +139,10 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
@@ -144,11 +151,11 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
@@ -162,7 +169,7 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +178,7 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +194,11 @@ public class UpdateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

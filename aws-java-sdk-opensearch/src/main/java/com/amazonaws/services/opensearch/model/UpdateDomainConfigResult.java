@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of an <code>UpdateDomain</code> request. Contains the status of the domain being updated.
+ * The results of an <code>UpdateDomain</code> request. Contains the status of the domain being updated.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -31,7 +31,7 @@ public class UpdateDomainConfigResult extends com.amazonaws.AmazonWebServiceResu
     private DomainConfig domainConfig;
     /**
      * <p>
-     * Contains result of DryRun.
+     * Results of a dry run performed in an update domain request.
      * </p>
      */
     private DryRunResults dryRunResults;
@@ -78,11 +78,11 @@ public class UpdateDomainConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Contains result of DryRun.
+     * Results of a dry run performed in an update domain request.
      * </p>
      * 
      * @param dryRunResults
-     *        Contains result of DryRun.
+     *        Results of a dry run performed in an update domain request.
      */
 
     public void setDryRunResults(DryRunResults dryRunResults) {
@@ -91,10 +91,10 @@ public class UpdateDomainConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Contains result of DryRun.
+     * Results of a dry run performed in an update domain request.
      * </p>
      * 
-     * @return Contains result of DryRun.
+     * @return Results of a dry run performed in an update domain request.
      */
 
     public DryRunResults getDryRunResults() {
@@ -103,11 +103,11 @@ public class UpdateDomainConfigResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Contains result of DryRun.
+     * Results of a dry run performed in an update domain request.
      * </p>
      * 
      * @param dryRunResults
-     *        Contains result of DryRun.
+     *        Results of a dry run performed in an update domain request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

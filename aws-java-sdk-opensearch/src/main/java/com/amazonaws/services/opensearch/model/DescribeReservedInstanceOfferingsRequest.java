@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for parameters to <code>DescribeReservedInstanceOfferings</code>
+ * Container for the request parameters to a <code>DescribeReservedInstanceOfferings</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,33 +27,36 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The offering identifier filter value. Use this parameter to show only the available offering that matches the
-     * specified reservation identifier.
+     * The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that
+     * match the specified reservation identifier.
      * </p>
      */
     private String reservedInstanceOfferingId;
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you
+     * can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code>
+     * operations, which returns results in the next page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The offering identifier filter value. Use this parameter to show only the available offering that matches the
-     * specified reservation identifier.
+     * The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that
+     * match the specified reservation identifier.
      * </p>
      * 
      * @param reservedInstanceOfferingId
-     *        The offering identifier filter value. Use this parameter to show only the available offering that matches
-     *        the specified reservation identifier.
+     *        The Reserved Instance identifier filter value. Use this parameter to show only the available instance
+     *        types that match the specified reservation identifier.
      */
 
     public void setReservedInstanceOfferingId(String reservedInstanceOfferingId) {
@@ -62,12 +65,12 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The offering identifier filter value. Use this parameter to show only the available offering that matches the
-     * specified reservation identifier.
+     * The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that
+     * match the specified reservation identifier.
      * </p>
      * 
-     * @return The offering identifier filter value. Use this parameter to show only the available offering that matches
-     *         the specified reservation identifier.
+     * @return The Reserved Instance identifier filter value. Use this parameter to show only the available instance
+     *         types that match the specified reservation identifier.
      */
 
     public String getReservedInstanceOfferingId() {
@@ -76,13 +79,13 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The offering identifier filter value. Use this parameter to show only the available offering that matches the
-     * specified reservation identifier.
+     * The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that
+     * match the specified reservation identifier.
      * </p>
      * 
      * @param reservedInstanceOfferingId
-     *        The offering identifier filter value. Use this parameter to show only the available offering that matches
-     *        the specified reservation identifier.
+     *        The Reserved Instance identifier filter value. Use this parameter to show only the available instance
+     *        types that match the specified reservation identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +96,13 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. If not specified, defaults to 100.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -106,10 +111,12 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
-     * @return Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -118,11 +125,13 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. If not specified, defaults to 100.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +142,15 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you
+     * can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code>
+     * operations, which returns results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        Provides an identifier to allow retrieval of paginated results.
+     *        If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>,
+     *        you can include the returned <code>nextToken</code> in subsequent
+     *        <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -146,10 +159,14 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you
+     * can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code>
+     * operations, which returns results in the next page.
      * </p>
      * 
-     * @return Provides an identifier to allow retrieval of paginated results.
+     * @return If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>
+     *         , you can include the returned <code>nextToken</code> in subsequent
+     *         <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -158,11 +175,15 @@ public class DescribeReservedInstanceOfferingsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you
+     * can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code>
+     * operations, which returns results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        Provides an identifier to allow retrieval of paginated results.
+     *        If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>,
+     *        you can include the returned <code>nextToken</code> in subsequent
+     *        <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

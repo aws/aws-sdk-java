@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.12.319-SNAPSHOT</version>
+  <version>1.12.379-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,23 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-licensemanagerlinuxsubscriptions</module>
+    <module>aws-java-sdk-kinesisvideowebrtcstorage</module>
+    <module>aws-java-sdk-sagemakermetrics</module>
+    <module>aws-java-sdk-pipes</module>
+    <module>aws-java-sdk-sagemakergeospatial</module>
+    <module>aws-java-sdk-docdbelastic</module>
+    <module>aws-java-sdk-omics</module>
+    <module>aws-java-sdk-opensearchserverless</module>
+    <module>aws-java-sdk-securitylake</module>
+    <module>aws-java-sdk-simspaceweaver</module>
+    <module>aws-java-sdk-arczonalshift</module>
+    <module>aws-java-sdk-oam</module>
+    <module>aws-java-sdk-iotroborunner</module>
+    <module>aws-java-sdk-chimesdkvoice</module>
+    <module>aws-java-sdk-ssmsap</module>
+    <module>aws-java-sdk-scheduler</module>
+    <module>aws-java-sdk-resourceexplorer2</module>
     <module>aws-java-sdk-connectcases</module>
     <module>aws-java-sdk-migrationhuborchestrator</module>
     <module>aws-java-sdk-iotfleetwise</module>
@@ -363,7 +380,7 @@
   <properties>
       <awsjavasdk.version>${project.version}</awsjavasdk.version>
       <jackson.version>2.12.6</jackson.version>
-      <jackson.databind.version>2.12.6.1</jackson.databind.version>
+      <jackson.databind.version>2.12.7.1</jackson.databind.version>
       <ion.java.version>1.0.2</ion.java.version>
       <junit.version>4.12</junit.version>
       <easymock.version>3.2</easymock.version>
@@ -392,7 +409,8 @@
       <cucumber.guice.version>4.2.3</cucumber.guice.version>
       <unitils.version>3.3</unitils.version>
       <!-- Netty is used by Kinesis Video -->
-      <netty.version>4.1.77.Final</netty.version>
+      <netty.version>4.1.86.Final</netty.version>
+      <versions-maven-plugin.version>2.13.0</versions-maven-plugin.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -449,6 +467,12 @@
             </includes>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>${versions-maven-plugin.version}</version>
+        </plugin>
+
       </plugins>
     </pluginManagement>
   </build>

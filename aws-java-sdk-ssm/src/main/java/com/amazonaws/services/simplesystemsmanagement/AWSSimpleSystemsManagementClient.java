@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,18 +52,14 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * service call completes.
  * <p>
  * <p>
- * Amazon Web Services Systems Manager is a collection of capabilities to help you manage your applications and
- * infrastructure running in the Amazon Web Services Cloud;. Systems Manager simplifies application and resource
- * management, shortens the time to detect and resolve operational problems, and helps you manage your Amazon Web
- * Services resources securely at scale.
+ * Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and
+ * a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at
+ * scale.
  * </p>
  * <p>
  * This reference is intended to be used with the <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">Amazon Web Services Systems Manager User
- * Guide</a>.
- * </p>
- * <p>
- * To get started, verify prerequisites. For more information, see <a
+ * Guide</a>. To get started, see <a
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up Amazon
  * Web Services Systems Manager</a>.
  * </p>
@@ -73,28 +69,32 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * <ul>
  * <li>
  * <p>
- * For information about how to use a Query API, see <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
+ * For information about each of the capabilities that comprise Systems Manager, see <a href=
+ * "https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/what-is-systems-manager.html#systems-manager-capabilities"
+ * >Systems Manager capabilities</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about other API operations you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * For details about predefined runbooks for Automation, a capability of Amazon Web Services Systems Manager, see the
+ * <i> <a href=
+ * "https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html"
+ * >Systems Manager Automation runbook reference</a> </i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about AppConfig, a capability of Systems Manager, see the <a
- * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User Guide</a> and the <a
- * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig API Reference</a>.
+ * For information about AppConfig, a capability of Systems Manager, see the <i> <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AppConfig User Guide</a> </i> and the <i> <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AppConfig API Reference</a> </i>.
  * </p>
  * </li>
  * <li>
  * <p>
- * For information about Incident Manager, a capability of Systems Manager, see the <a
- * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Incident Manager User Guide</a> and the <a
- * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Incident Manager API Reference</a>.
+ * For information about Incident Manager, a capability of Systems Manager, see the <i> <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">Systems Manager Incident Manager User Guide</a>
+ * </i> and the <i> <a href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">Systems Manager Incident
+ * Manager API Reference</a> </i>.
  * </p>
  * </li>
  * </ul>
@@ -205,6 +205,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidResourceId").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidResourceIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourcePolicyConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.ResourcePolicyConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ParameterVersionNotFound").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.ParameterVersionNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -303,6 +306,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("InvalidFilterValue").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidFilterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourcePolicyLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.ResourcePolicyLimitExceededExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentVersionLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.DocumentVersionLimitExceededExceptionUnmarshaller
                                             .getInstance()))
@@ -340,6 +347,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDocumentSchemaVersion").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidDocumentSchemaVersionExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourcePolicyInvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.ResourcePolicyInvalidParameterExceptionUnmarshaller
                                             .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInventoryItemContextException").withExceptionUnmarshaller(
@@ -494,6 +505,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeletionIdException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidDeletionIdExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsItemAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsItemAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AssociatedInstances").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AssociatedInstancesExceptionUnmarshaller.getInstance()))
@@ -1220,7 +1234,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidTargetMapsException
      *         TargetMap parameter isn't valid.
      * @throws InvalidTagException
-     *         The tag key or value isn't valid.
+     *         The specified tag key or value isn't valid.
      * @sample AWSSimpleSystemsManagement.CreateAssociation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation" target="_top">AWS API
      *      Documentation</a>
@@ -1562,6 +1576,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         >What are the resource limits for OpsCenter?</a>.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemAccessDeniedException
+     *         You don't have permission to view OpsItems in the specified account. Verify that your account is
+     *         configured either as a Systems Manager delegated administrator or that you are logged into the
+     *         Organizations management account.
      * @sample AWSSimpleSystemsManagement.CreateOpsItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsItem" target="_top">AWS API
      *      Documentation</a>
@@ -2491,6 +2509,73 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceDataSyncResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteResourceDataSyncResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an
+     * Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code>
+     * is the only resource that supports Systems Manager resource policies. The resource policy for
+     * <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational
+     * work items (OpsItems).
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourcePolicyInvalidParameterException
+     *         One or more parameters specified for the call aren't valid. Verify the parameters and their values and
+     *         try again.
+     * @throws ResourcePolicyConflictException
+     *         The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to
+     *         update an obsolete policy version or when multiple requests to update a policy are sent.
+     * @sample AWSSimpleSystemsManagement.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourcePolicyResult executeDeleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourcePolicyRequest> request = null;
+        Response<DeleteResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6114,6 +6199,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         An error occurred on the server side.
      * @throws OpsItemNotFoundException
      *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemAccessDeniedException
+     *         You don't have permission to view OpsItems in the specified account. Verify that your account is
+     *         configured either as a Systems Manager delegated administrator or that you are logged into the
+     *         Organizations management account.
      * @sample AWSSimpleSystemsManagement.GetOpsItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsItem" target="_top">AWS API
      *      Documentation</a>
@@ -6686,6 +6775,66 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<GetPatchBaselineForPatchGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetPatchBaselineForPatchGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of the <code>Policy</code> object.
+     * </p>
+     * 
+     * @param getResourcePoliciesRequest
+     * @return Result of the GetResourcePolicies operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourcePolicyInvalidParameterException
+     *         One or more parameters specified for the call aren't valid. Verify the parameters and their values and
+     *         try again.
+     * @sample AWSSimpleSystemsManagement.GetResourcePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetResourcePolicies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetResourcePoliciesResult getResourcePolicies(GetResourcePoliciesRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePolicies(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePoliciesResult executeGetResourcePolicies(GetResourcePoliciesRequest getResourcePoliciesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePoliciesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePoliciesRequest> request = null;
+        Response<GetResourcePoliciesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePoliciesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicies");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourcePoliciesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8011,9 +8160,15 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidPermissionTypeException
      *         The permission type isn't supported. <i>Share</i> is the only supported permission type.
      * @throws DocumentPermissionLimitException
-     *         The document can't be shared with more Amazon Web Services user accounts. You can share a document with a
-     *         maximum of 20 accounts. You can publicly share up to five documents. If you need to increase this limit,
-     *         contact Amazon Web Services Support.
+     *         The document can't be shared with more Amazon Web Services user accounts. You can specify a maximum of 20
+     *         accounts per API operation to share a private document.</p>
+     *         <p>
+     *         By default, you can share a private document with a maximum of 1,000 accounts and publicly share up to
+     *         five documents.
+     *         </p>
+     *         <p>
+     *         If you need to increase the quota for privately or publicly shared Systems Manager documents, contact
+     *         Amazon Web Services Support.
      * @throws DocumentLimitExceededException
      *         You can have at most 500 active SSM documents.
      * @sample AWSSimpleSystemsManagement.ModifyDocumentPermission
@@ -8425,6 +8580,77 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<PutParameterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutParameterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for
+     * example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently,
+     * <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource
+     * policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter
+     * operational work items (OpsItems).
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws ResourcePolicyInvalidParameterException
+     *         One or more parameters specified for the call aren't valid. Verify the parameters and their values and
+     *         try again.
+     * @throws ResourcePolicyLimitExceededException
+     *         The <a>PutResourcePolicy</a> API action enforces two limits. A policy can't be greater than 1024 bytes in
+     *         size. And only one policy can be attached to <code>OpsItemGroup</code>. Verify these limits and try
+     *         again.
+     * @throws ResourcePolicyConflictException
+     *         The hash provided in the call doesn't match the stored hash. This exception is thrown when trying to
+     *         update an obsolete policy version or when multiple requests to update a policy are sent.
+     * @sample AWSSimpleSystemsManagement.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executePutResourcePolicy(request);
+    }
+
+    @SdkInternalApi
+    final PutResourcePolicyResult executePutResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putResourcePolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutResourcePolicyRequest> request = null;
+        Response<PutResourcePolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -10447,6 +10673,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         >What are the resource limits for OpsCenter?</a>.
      * @throws OpsItemInvalidParameterException
      *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemAccessDeniedException
+     *         You don't have permission to view OpsItems in the specified account. Verify that your account is
+     *         configured either as a Systems Manager delegated administrator or that you are logged into the
+     *         Organizations management account.
      * @sample AWSSimpleSystemsManagement.UpdateOpsItem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsItem" target="_top">AWS API
      *      Documentation</a>

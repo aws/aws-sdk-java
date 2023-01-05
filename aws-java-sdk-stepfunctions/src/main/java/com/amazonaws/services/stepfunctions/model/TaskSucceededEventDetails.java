@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the resource called by a task state.
+     * The service name of the resource in a task state.
      * </p>
      */
     private String resourceType;
     /**
      * <p>
-     * The service name of the resource in a task state.
+     * The action of the resource called by a task state.
      * </p>
      */
     private String resource;
@@ -56,55 +56,15 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action of the resource called by a task state.
+     * The service name of the resource in a task state.
      * </p>
      * 
      * @param resourceType
-     *        The action of the resource called by a task state.
+     *        The service name of the resource in a task state.
      */
 
     public void setResourceType(String resourceType) {
         this.resourceType = resourceType;
-    }
-
-    /**
-     * <p>
-     * The action of the resource called by a task state.
-     * </p>
-     * 
-     * @return The action of the resource called by a task state.
-     */
-
-    public String getResourceType() {
-        return this.resourceType;
-    }
-
-    /**
-     * <p>
-     * The action of the resource called by a task state.
-     * </p>
-     * 
-     * @param resourceType
-     *        The action of the resource called by a task state.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TaskSucceededEventDetails withResourceType(String resourceType) {
-        setResourceType(resourceType);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The service name of the resource in a task state.
-     * </p>
-     * 
-     * @param resource
-     *        The service name of the resource in a task state.
-     */
-
-    public void setResource(String resource) {
-        this.resource = resource;
     }
 
     /**
@@ -115,8 +75,8 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
      * @return The service name of the resource in a task state.
      */
 
-    public String getResource() {
-        return this.resource;
+    public String getResourceType() {
+        return this.resourceType;
     }
 
     /**
@@ -124,8 +84,48 @@ public class TaskSucceededEventDetails implements Serializable, Cloneable, Struc
      * The service name of the resource in a task state.
      * </p>
      * 
-     * @param resource
+     * @param resourceType
      *        The service name of the resource in a task state.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskSucceededEventDetails withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action of the resource called by a task state.
+     * </p>
+     * 
+     * @param resource
+     *        The action of the resource called by a task state.
+     */
+
+    public void setResource(String resource) {
+        this.resource = resource;
+    }
+
+    /**
+     * <p>
+     * The action of the resource called by a task state.
+     * </p>
+     * 
+     * @return The action of the resource called by a task state.
+     */
+
+    public String getResource() {
+        return this.resource;
+    }
+
+    /**
+     * <p>
+     * The action of the resource called by a task state.
+     * </p>
+     * 
+     * @param resource
+     *        The action of the resource called by a task state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

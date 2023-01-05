@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1031,8 +1031,8 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a fleet. A fleet consists of streaming instances that run a specified image when using Always-On or
-     * On-Demand.
+     * Creates a fleet. A fleet consists of streaming instances that your users access for their applications and
+     * desktops.
      * </p>
      * 
      * @param createFleetRequest

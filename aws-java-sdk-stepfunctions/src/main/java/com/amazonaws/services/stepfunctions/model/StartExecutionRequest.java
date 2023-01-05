@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String stateMachineArn;
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
-     * For more information, see <a
+     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -93,7 +93,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String input;
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      */
     private String traceHeader;
@@ -140,10 +140,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
-     * For more information, see <a
+     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -180,10 +180,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your AWS account, region, and state machine for 90
-     *        days. For more information, see <a href=
+     *        The name of the execution. This name must be unique for your Amazon Web Services account, region, and
+     *        state machine for 90 days. For more information, see <a href=
      *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
-     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -224,10 +224,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
-     * For more information, see <a
+     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -263,10 +263,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      * </p>
      * 
-     * @return The name of the execution. This name must be unique for your AWS account, region, and state machine for
-     *         90 days. For more information, see <a href=
+     * @return The name of the execution. This name must be unique for your Amazon Web Services account, region, and
+     *         state machine for 90 days. For more information, see <a href=
      *         "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
-     *         > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *         > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
      *         <p>
      *         A name must <i>not</i> contain:
      *         </p>
@@ -307,10 +307,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the execution. This name must be unique for your AWS account, region, and state machine for 90 days.
-     * For more information, see <a
+     * The name of the execution. This name must be unique for your Amazon Web Services account, region, and state
+     * machine for 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -347,10 +347,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param name
-     *        The name of the execution. This name must be unique for your AWS account, region, and state machine for 90
-     *        days. For more information, see <a href=
+     *        The name of the execution. This name must be unique for your Amazon Web Services account, region, and
+     *        state machine for 90 days. For more information, see <a href=
      *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
-     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -502,11 +502,11 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      * 
      * @param traceHeader
-     *        Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     *        Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      */
 
     public void setTraceHeader(String traceHeader) {
@@ -515,10 +515,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      * 
-     * @return Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * @return Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      */
 
     public String getTraceHeader() {
@@ -527,11 +527,11 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      * 
      * @param traceHeader
-     *        Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     *        Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

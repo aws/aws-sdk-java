@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListResourcesAssociatedToCustomLineItemResponseElementMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> RELATIONSHIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Relationship").build();
+    private static final MarshallingInfo<String> ENDBILLINGPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndBillingPeriod").build();
 
     private static final ListResourcesAssociatedToCustomLineItemResponseElementMarshaller instance = new ListResourcesAssociatedToCustomLineItemResponseElementMarshaller();
 
@@ -51,6 +53,7 @@ public class ListResourcesAssociatedToCustomLineItemResponseElementMarshaller {
         try {
             protocolMarshaller.marshall(listResourcesAssociatedToCustomLineItemResponseElement.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(listResourcesAssociatedToCustomLineItemResponseElement.getRelationship(), RELATIONSHIP_BINDING);
+            protocolMarshaller.marshall(listResourcesAssociatedToCustomLineItemResponseElement.getEndBillingPeriod(), ENDBILLINGPERIOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

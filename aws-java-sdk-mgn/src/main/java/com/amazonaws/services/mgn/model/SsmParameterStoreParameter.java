@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Source server replication type.
+ * AWS Systems Manager Parameter Store parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/SsmParameterStoreParameter" target="_top">AWS API
@@ -30,24 +30,24 @@ public class SsmParameterStoreParameter implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter name.
      * </p>
      */
     private String parameterName;
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter type.
      * </p>
      */
     private String parameterType;
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter name.
      * </p>
      * 
      * @param parameterName
-     *        Source server replication type.
+     *        AWS Systems Manager Parameter Store parameter name.
      */
 
     public void setParameterName(String parameterName) {
@@ -56,10 +56,10 @@ public class SsmParameterStoreParameter implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter name.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return AWS Systems Manager Parameter Store parameter name.
      */
 
     public String getParameterName() {
@@ -68,11 +68,11 @@ public class SsmParameterStoreParameter implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter name.
      * </p>
      * 
      * @param parameterName
-     *        Source server replication type.
+     *        AWS Systems Manager Parameter Store parameter name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class SsmParameterStoreParameter implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter type.
      * </p>
      * 
      * @param parameterType
-     *        Source server replication type.
+     *        AWS Systems Manager Parameter Store parameter type.
      * @see SsmParameterStoreParameterType
      */
 
@@ -97,10 +97,10 @@ public class SsmParameterStoreParameter implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter type.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return AWS Systems Manager Parameter Store parameter type.
      * @see SsmParameterStoreParameterType
      */
 
@@ -110,11 +110,11 @@ public class SsmParameterStoreParameter implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter type.
      * </p>
      * 
      * @param parameterType
-     *        Source server replication type.
+     *        AWS Systems Manager Parameter Store parameter type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SsmParameterStoreParameterType
      */
@@ -126,11 +126,11 @@ public class SsmParameterStoreParameter implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Parameter Store parameter type.
      * </p>
      * 
      * @param parameterType
-     *        Source server replication type.
+     *        AWS Systems Manager Parameter Store parameter type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SsmParameterStoreParameterType
      */

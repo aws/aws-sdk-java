@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     */
+    private AuthenticationMode authenticationMode;
 
     /**
      * <p>
@@ -436,6 +442,46 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     * 
+     * @param authenticationMode
+     *        Specifies how to authenticate the user.
+     */
+
+    public void setAuthenticationMode(AuthenticationMode authenticationMode) {
+        this.authenticationMode = authenticationMode;
+    }
+
+    /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     * 
+     * @return Specifies how to authenticate the user.
+     */
+
+    public AuthenticationMode getAuthenticationMode() {
+        return this.authenticationMode;
+    }
+
+    /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     * 
+     * @param authenticationMode
+     *        Specifies how to authenticate the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateUserRequest withAuthenticationMode(AuthenticationMode authenticationMode) {
+        setAuthenticationMode(authenticationMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -460,7 +506,9 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getNoPasswordRequired() != null)
             sb.append("NoPasswordRequired: ").append(getNoPasswordRequired()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAuthenticationMode() != null)
+            sb.append("AuthenticationMode: ").append(getAuthenticationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -503,6 +551,10 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAuthenticationMode() == null ^ this.getAuthenticationMode() == null)
+            return false;
+        if (other.getAuthenticationMode() != null && other.getAuthenticationMode().equals(this.getAuthenticationMode()) == false)
+            return false;
         return true;
     }
 
@@ -518,6 +570,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getAccessString() == null) ? 0 : getAccessString().hashCode());
         hashCode = prime * hashCode + ((getNoPasswordRequired() == null) ? 0 : getNoPasswordRequired().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationMode() == null) ? 0 : getAuthenticationMode().hashCode());
         return hashCode;
     }
 

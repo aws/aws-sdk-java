@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token for the next set of results, or null if there are no more results.
      * </p>
      */
     private String nextToken;
@@ -98,11 +98,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token for the next set of results, or null if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results.
+     *        The token for the next set of results, or null if there are no more results.
      */
 
     public void setNextToken(String nextToken) {
@@ -111,10 +111,10 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token for the next set of results, or null if there are no more results.
      * </p>
      * 
-     * @return The token to request the next page of results.
+     * @return The token for the next set of results, or null if there are no more results.
      */
 
     public String getNextToken() {
@@ -123,11 +123,11 @@ public class ListLaunchProfilesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The token to request the next page of results.
+     * The token for the next set of results, or null if there are no more results.
      * </p>
      * 
      * @param nextToken
-     *        The token to request the next page of results.
+     *        The token for the next set of results, or null if there are no more results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

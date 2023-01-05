@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes an update for a destination in Amazon OpenSearch Service.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonopensearchserviceDestinationUpdate"
  *      target="_top">AWS API Documentation</a>
@@ -25,20 +28,65 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonopensearchserviceDestinationUpdate implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     */
     private String roleARN;
-
+    /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain,
+     * DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.
+     * </p>
+     */
     private String domainARN;
-
+    /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     */
     private String clusterEndpoint;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     */
     private String indexName;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during runtime.
+     * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for TypeName.
+     * </p>
+     */
     private String typeName;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     */
     private String indexRotationPeriod;
-
+    /**
+     * <p>
+     * The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.
+     * </p>
+     */
     private AmazonopensearchserviceBufferingHints bufferingHints;
-
+    /**
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     */
     private AmazonopensearchserviceRetryOptions retryOptions;
 
     private S3DestinationUpdate s3Update;
@@ -48,7 +96,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     private CloudWatchLoggingOptions cloudWatchLoggingOptions;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     * 
      * @param roleARN
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *        Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public void setRoleARN(String roleARN) {
@@ -56,7 +111,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *         Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public String getRoleARN() {
@@ -64,7 +125,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     * 
      * @param roleARN
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *        Amazon OpenSearch Service Configuration API and for indexing documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +142,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain,
+     * DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.
+     * </p>
+     * 
      * @param domainARN
+     *        The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain,
+     *        DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.
      */
 
     public void setDomainARN(String domainARN) {
@@ -82,7 +157,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain,
+     * DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.
+     * </p>
+     * 
+     * @return The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain,
+     *         DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.
      */
 
     public String getDomainARN() {
@@ -90,7 +171,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain,
+     * DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.
+     * </p>
+     * 
      * @param domainARN
+     *        The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for DescribeDomain,
+     *        DescribeDomains, and DescribeDomainConfig after assuming the IAM role specified in RoleARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,7 +188,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     * 
      * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the
+     *        DomainARN field.
      */
 
     public void setClusterEndpoint(String clusterEndpoint) {
@@ -108,7 +203,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     * 
+     * @return The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the
+     *         DomainARN field.
      */
 
     public String getClusterEndpoint() {
@@ -116,7 +217,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     * 
      * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the
+     *        DomainARN field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,7 +234,12 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     * 
      * @param indexName
+     *        The Amazon OpenSearch Service index name.
      */
 
     public void setIndexName(String indexName) {
@@ -134,7 +247,11 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service index name.
      */
 
     public String getIndexName() {
@@ -142,7 +259,12 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     * 
      * @param indexName
+     *        The Amazon OpenSearch Service index name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,7 +274,25 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during runtime.
+     * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for TypeName.
+     * </p>
+     * 
      * @param typeName
+     *        The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
+     *        you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
+     *        returns an error during runtime. </p>
+     *        <p>
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
+     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
+     *        delivery stream with a new index name, provide an empty string for TypeName.
      */
 
     public void setTypeName(String typeName) {
@@ -160,7 +300,24 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during runtime.
+     * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for TypeName.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
+     *         you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
+     *         returns an error during runtime. </p>
+     *         <p>
+     *         If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
+     *         still delivers data to Elasticsearch with the old index name and type name. If you want to update your
+     *         delivery stream with a new index name, provide an empty string for TypeName.
      */
 
     public String getTypeName() {
@@ -168,7 +325,25 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during runtime.
+     * </p>
+     * <p>
+     * If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose still
+     * delivers data to Elasticsearch with the old index name and type name. If you want to update your delivery stream
+     * with a new index name, provide an empty string for TypeName.
+     * </p>
+     * 
      * @param typeName
+     *        The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
+     *        you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
+     *        returns an error during runtime. </p>
+     *        <p>
+     *        If you upgrade Elasticsearch from 6.x to 7.x and don’t update your delivery stream, Kinesis Data Firehose
+     *        still delivers data to Elasticsearch with the old index name and type name. If you want to update your
+     *        delivery stream with a new index name, provide an empty string for TypeName.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,7 +353,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     *        facilitate the expiration of old data.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
 
@@ -187,7 +369,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     *         facilitate the expiration of old data.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
 
@@ -196,7 +384,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     *        facilitate the expiration of old data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
@@ -207,7 +402,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to IndexName to
+     *        facilitate the expiration of old data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
@@ -218,7 +420,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.
+     * </p>
+     * 
      * @param bufferingHints
+     *        The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are
+     *        used.
      */
 
     public void setBufferingHints(AmazonopensearchserviceBufferingHints bufferingHints) {
@@ -226,7 +434,12 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.
+     * </p>
+     * 
+     * @return The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are
+     *         used.
      */
 
     public AmazonopensearchserviceBufferingHints getBufferingHints() {
@@ -234,7 +447,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are used.
+     * </p>
+     * 
      * @param bufferingHints
+     *        The buffering options. If no value is specified, AmazonopensearchBufferingHints object default values are
+     *        used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,7 +463,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
      * @param retryOptions
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
+     *        Service. The default value is 300 (5 minutes).
      */
 
     public void setRetryOptions(AmazonopensearchserviceRetryOptions retryOptions) {
@@ -252,7 +478,13 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
-     * @return
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
+     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
+     *         Service. The default value is 300 (5 minutes).
      */
 
     public AmazonopensearchserviceRetryOptions getRetryOptions() {
@@ -260,7 +492,14 @@ public class AmazonopensearchserviceDestinationUpdate implements Serializable, C
     }
 
     /**
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
      * @param retryOptions
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
+     *        Service. The default value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

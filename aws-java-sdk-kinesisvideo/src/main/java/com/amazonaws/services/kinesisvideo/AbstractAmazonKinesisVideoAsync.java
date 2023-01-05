@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(DescribeEdgeConfigurationRequest request) {
+
+        return describeEdgeConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(DescribeEdgeConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeEdgeConfigurationRequest, DescribeEdgeConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeImageGenerationConfigurationResult> describeImageGenerationConfigurationAsync(
             DescribeImageGenerationConfigurationRequest request) {
 
@@ -90,6 +103,36 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     public java.util.concurrent.Future<DescribeImageGenerationConfigurationResult> describeImageGenerationConfigurationAsync(
             DescribeImageGenerationConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeImageGenerationConfigurationRequest, DescribeImageGenerationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMappedResourceConfigurationResult> describeMappedResourceConfigurationAsync(
+            DescribeMappedResourceConfigurationRequest request) {
+
+        return describeMappedResourceConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMappedResourceConfigurationResult> describeMappedResourceConfigurationAsync(
+            DescribeMappedResourceConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMappedResourceConfigurationRequest, DescribeMappedResourceConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMediaStorageConfigurationResult> describeMediaStorageConfigurationAsync(
+            DescribeMediaStorageConfigurationRequest request) {
+
+        return describeMediaStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMediaStorageConfigurationResult> describeMediaStorageConfigurationAsync(
+            DescribeMediaStorageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMediaStorageConfigurationRequest, DescribeMediaStorageConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +257,19 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     }
 
     @Override
+    public java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(StartEdgeConfigurationUpdateRequest request) {
+
+        return startEdgeConfigurationUpdateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(StartEdgeConfigurationUpdateRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartEdgeConfigurationUpdateRequest, StartEdgeConfigurationUpdateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -289,6 +345,21 @@ public class AbstractAmazonKinesisVideoAsync extends AbstractAmazonKinesisVideo 
     public java.util.concurrent.Future<UpdateImageGenerationConfigurationResult> updateImageGenerationConfigurationAsync(
             UpdateImageGenerationConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateImageGenerationConfigurationRequest, UpdateImageGenerationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaStorageConfigurationResult> updateMediaStorageConfigurationAsync(
+            UpdateMediaStorageConfigurationRequest request) {
+
+        return updateMediaStorageConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaStorageConfigurationResult> updateMediaStorageConfigurationAsync(
+            UpdateMediaStorageConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMediaStorageConfigurationRequest, UpdateMediaStorageConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

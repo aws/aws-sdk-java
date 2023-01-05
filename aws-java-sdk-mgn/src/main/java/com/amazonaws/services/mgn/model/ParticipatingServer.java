@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,13 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
     private String launchStatus;
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's launched ec2 instance ID.
      * </p>
      */
     private String launchedEc2InstanceID;
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's Post Launch Actions Status.
      * </p>
      */
     private PostLaunchActionsStatus postLaunchActionsStatus;
@@ -114,11 +114,11 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's launched ec2 instance ID.
      * </p>
      * 
      * @param launchedEc2InstanceID
-     *        Participating server Source Server ID.
+     *        Participating server's launched ec2 instance ID.
      */
 
     public void setLaunchedEc2InstanceID(String launchedEc2InstanceID) {
@@ -127,10 +127,10 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's launched ec2 instance ID.
      * </p>
      * 
-     * @return Participating server Source Server ID.
+     * @return Participating server's launched ec2 instance ID.
      */
 
     public String getLaunchedEc2InstanceID() {
@@ -139,11 +139,11 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's launched ec2 instance ID.
      * </p>
      * 
      * @param launchedEc2InstanceID
-     *        Participating server Source Server ID.
+     *        Participating server's launched ec2 instance ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's Post Launch Actions Status.
      * </p>
      * 
      * @param postLaunchActionsStatus
-     *        Participating server Source Server ID.
+     *        Participating server's Post Launch Actions Status.
      */
 
     public void setPostLaunchActionsStatus(PostLaunchActionsStatus postLaunchActionsStatus) {
@@ -167,10 +167,10 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's Post Launch Actions Status.
      * </p>
      * 
-     * @return Participating server Source Server ID.
+     * @return Participating server's Post Launch Actions Status.
      */
 
     public PostLaunchActionsStatus getPostLaunchActionsStatus() {
@@ -179,11 +179,11 @@ public class ParticipatingServer implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Participating server Source Server ID.
+     * Participating server's Post Launch Actions Status.
      * </p>
      * 
      * @param postLaunchActionsStatus
-     *        Participating server Source Server ID.
+     *        Participating server's Post Launch Actions Status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

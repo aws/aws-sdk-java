@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,20 +22,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
- * Properties describing a game server that is running on an instance in a <a>GameServerGroup</a>.
+ * Properties describing a game server that is running on an instance in a game server group.
  * </p>
  * <p>
  * A game server is created by a successful call to <code>RegisterGameServer</code> and deleted by calling
  * <code>DeregisterGameServer</code>. A game server is claimed to host a game session by calling
  * <code>ClaimGameServer</code>.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>RegisterGameServer</a> | <a>ListGameServers</a> | <a>ClaimGameServer</a> | <a>DescribeGameServer</a> |
- * <a>UpdateGameServer</a> | <a>DeregisterGameServer</a> | <a
- * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServer" target="_top">AWS API
@@ -46,8 +38,7 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      */
     private String gameServerGroupName;
@@ -80,7 +71,7 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      */
     private String gameServerData;
@@ -114,38 +105,35 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
     private String utilizationStatus;
     /**
      * <p>
-     * Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is
-     * a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+     * Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date registrationTime;
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The
-     * format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value
-     * is used to calculate when a claimed game server's status should revert to null.
+     * Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time
+     * as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game
+     * server's status should revert to null.
      * </p>
      */
     private java.util.Date lastClaimTime;
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was updated with health status using an
-     * <a>UpdateGameServer</a> request. The format is a number expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server
-     * update specifies a health check value.
+     * Timestamp that indicates the last time the game server was updated with health status. The format is a number
+     * expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
+     * registration, this property is only changed when a game server update specifies a health check value.
      * </p>
      */
     private java.util.Date lastHealthCheckTime;
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A unique identifier for the game server group where the game server is running. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group where the game server is running.
      */
 
     public void setGameServerGroupName(String gameServerGroupName) {
@@ -154,12 +142,10 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      * 
-     * @return A unique identifier for the game server group where the game server is running. Use either the
-     *         <a>GameServerGroup</a> name or ARN value.
+     * @return A unique identifier for the game server group where the game server is running.
      */
 
     public String getGameServerGroupName() {
@@ -168,13 +154,11 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A unique identifier for the game server group where the game server is running. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group where the game server is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,13 +345,12 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
-     *        <a>ClaimGameServer</a>.
+     *        client or service when it requests information on game servers.
      */
 
     public void setGameServerData(String gameServerData) {
@@ -377,12 +360,11 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      * 
      * @return A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *         client or service when it requests information on game servers using <a>ListGameServers</a> or
-     *         <a>ClaimGameServer</a>.
+     *         client or service when it requests information on game servers.
      */
 
     public String getGameServerData() {
@@ -392,13 +374,12 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
-     *        <a>ClaimGameServer</a>.
+     *        client or service when it requests information on game servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -655,13 +636,13 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is
-     * a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+     * Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param registrationTime
-     *        Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The
-     *        format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+     *        Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setRegistrationTime(java.util.Date registrationTime) {
@@ -670,12 +651,12 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is
-     * a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+     * Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The
-     *         format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+     * @return Timestamp that indicates when the game server registered. The format is a number expressed in Unix time
+     *         as milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getRegistrationTime() {
@@ -684,13 +665,13 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The format is
-     * a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+     * Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param registrationTime
-     *        Timestamp that indicates when the game server was created with a <a>RegisterGameServer</a> request. The
-     *        format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+     *        Timestamp that indicates when the game server registered. The format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -701,15 +682,15 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The
-     * format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value
-     * is used to calculate when a claimed game server's status should revert to null.
+     * Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time
+     * as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game
+     * server's status should revert to null.
      * </p>
      * 
      * @param lastClaimTime
-     *        Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request.
-     *        The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
-     *        This value is used to calculate when a claimed game server's status should revert to null.
+     *        Timestamp that indicates the last time the game server was claimed. The format is a number expressed in
+     *        Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate
+     *        when a claimed game server's status should revert to null.
      */
 
     public void setLastClaimTime(java.util.Date lastClaimTime) {
@@ -718,14 +699,14 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The
-     * format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value
-     * is used to calculate when a claimed game server's status should revert to null.
+     * Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time
+     * as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game
+     * server's status should revert to null.
      * </p>
      * 
-     * @return Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request.
-     *         The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>
-     *         ). This value is used to calculate when a claimed game server's status should revert to null.
+     * @return Timestamp that indicates the last time the game server was claimed. The format is a number expressed in
+     *         Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate
+     *         when a claimed game server's status should revert to null.
      */
 
     public java.util.Date getLastClaimTime() {
@@ -734,15 +715,15 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request. The
-     * format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value
-     * is used to calculate when a claimed game server's status should revert to null.
+     * Timestamp that indicates the last time the game server was claimed. The format is a number expressed in Unix time
+     * as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate when a claimed game
+     * server's status should revert to null.
      * </p>
      * 
      * @param lastClaimTime
-     *        Timestamp that indicates the last time the game server was claimed with a <a>ClaimGameServer</a> request.
-     *        The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
-     *        This value is used to calculate when a claimed game server's status should revert to null.
+     *        Timestamp that indicates the last time the game server was claimed. The format is a number expressed in
+     *        Unix time as milliseconds (for example <code>"1469498468.057"</code>). This value is used to calculate
+     *        when a claimed game server's status should revert to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -753,17 +734,16 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was updated with health status using an
-     * <a>UpdateGameServer</a> request. The format is a number expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server
-     * update specifies a health check value.
+     * Timestamp that indicates the last time the game server was updated with health status. The format is a number
+     * expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
+     * registration, this property is only changed when a game server update specifies a health check value.
      * </p>
      * 
      * @param lastHealthCheckTime
-     *        Timestamp that indicates the last time the game server was updated with health status using an
-     *        <a>UpdateGameServer</a> request. The format is a number expressed in Unix time as milliseconds (for
-     *        example <code>"1469498468.057"</code>). After game server registration, this property is only changed when
-     *        a game server update specifies a health check value.
+     *        Timestamp that indicates the last time the game server was updated with health status. The format is a
+     *        number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game
+     *        server registration, this property is only changed when a game server update specifies a health check
+     *        value.
      */
 
     public void setLastHealthCheckTime(java.util.Date lastHealthCheckTime) {
@@ -772,16 +752,15 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was updated with health status using an
-     * <a>UpdateGameServer</a> request. The format is a number expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server
-     * update specifies a health check value.
+     * Timestamp that indicates the last time the game server was updated with health status. The format is a number
+     * expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
+     * registration, this property is only changed when a game server update specifies a health check value.
      * </p>
      * 
-     * @return Timestamp that indicates the last time the game server was updated with health status using an
-     *         <a>UpdateGameServer</a> request. The format is a number expressed in Unix time as milliseconds (for
-     *         example <code>"1469498468.057"</code>). After game server registration, this property is only changed
-     *         when a game server update specifies a health check value.
+     * @return Timestamp that indicates the last time the game server was updated with health status. The format is a
+     *         number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game
+     *         server registration, this property is only changed when a game server update specifies a health check
+     *         value.
      */
 
     public java.util.Date getLastHealthCheckTime() {
@@ -790,17 +769,16 @@ public class GameServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp that indicates the last time the game server was updated with health status using an
-     * <a>UpdateGameServer</a> request. The format is a number expressed in Unix time as milliseconds (for example
-     * <code>"1469498468.057"</code>). After game server registration, this property is only changed when a game server
-     * update specifies a health check value.
+     * Timestamp that indicates the last time the game server was updated with health status. The format is a number
+     * expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game server
+     * registration, this property is only changed when a game server update specifies a health check value.
      * </p>
      * 
      * @param lastHealthCheckTime
-     *        Timestamp that indicates the last time the game server was updated with health status using an
-     *        <a>UpdateGameServer</a> request. The format is a number expressed in Unix time as milliseconds (for
-     *        example <code>"1469498468.057"</code>). After game server registration, this property is only changed when
-     *        a game server update specifies a health check value.
+     *        Timestamp that indicates the last time the game server was updated with health status. The format is a
+     *        number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>). After game
+     *        server registration, this property is only changed when a game server update specifies a health check
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

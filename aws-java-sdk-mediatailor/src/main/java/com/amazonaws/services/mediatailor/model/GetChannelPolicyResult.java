@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class GetChannelPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The IAM policy for the channel.
+     * The IAM policy for the channel. IAM policies are used to control access to your channel.
      * </p>
      */
     private String policy;
 
     /**
      * <p>
-     * The IAM policy for the channel.
+     * The IAM policy for the channel. IAM policies are used to control access to your channel.
      * </p>
      * 
      * @param policy
-     *        The IAM policy for the channel.
+     *        The IAM policy for the channel. IAM policies are used to control access to your channel.
      */
 
     public void setPolicy(String policy) {
@@ -45,10 +45,10 @@ public class GetChannelPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The IAM policy for the channel.
+     * The IAM policy for the channel. IAM policies are used to control access to your channel.
      * </p>
      * 
-     * @return The IAM policy for the channel.
+     * @return The IAM policy for the channel. IAM policies are used to control access to your channel.
      */
 
     public String getPolicy() {
@@ -57,11 +57,11 @@ public class GetChannelPolicyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The IAM policy for the channel.
+     * The IAM policy for the channel. IAM policies are used to control access to your channel.
      * </p>
      * 
      * @param policy
-     *        The IAM policy for the channel.
+     *        The IAM policy for the channel. IAM policies are used to control access to your channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

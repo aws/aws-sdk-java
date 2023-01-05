@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,51 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     */
+    private LockConfiguration lockConfiguration;
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String lockState;
+    /**
+     * <p>
+     * The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been
+     * unlocked and that are still within the unlock delay period.
+     * </p>
+     */
+    private java.util.Date lockEndTime;
 
     /**
      * <p>
@@ -377,6 +422,356 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     * 
+     * @param lockConfiguration
+     *        Information about the retention rule lock configuration.
+     */
+
+    public void setLockConfiguration(LockConfiguration lockConfiguration) {
+        this.lockConfiguration = lockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     * 
+     * @return Information about the retention rule lock configuration.
+     */
+
+    public LockConfiguration getLockConfiguration() {
+        return this.lockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     * 
+     * @param lockConfiguration
+     *        Information about the retention rule lock configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRuleResult withLockConfiguration(LockConfiguration lockConfiguration) {
+        setLockConfiguration(lockConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockState
+     *        The lock state for the retention rule.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     *        period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *        the required permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *        can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *        transition back to <code>null</code>.
+     *        </p>
+     *        </li>
+     * @see LockState
+     */
+
+    public void setLockState(String lockState) {
+        this.lockState = lockState;
+    }
+
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The lock state for the retention rule.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock
+     *         delay period. The retention rule can be modified or deleted only after the unlock delay period has
+     *         expired.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *         the required permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *         can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *         transition back to <code>null</code>.
+     *         </p>
+     *         </li>
+     * @see LockState
+     */
+
+    public String getLockState() {
+        return this.lockState;
+    }
+
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockState
+     *        The lock state for the retention rule.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     *        period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *        the required permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *        can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *        transition back to <code>null</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LockState
+     */
+
+    public GetRuleResult withLockState(String lockState) {
+        setLockState(lockState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockState
+     *        The lock state for the retention rule.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     *        period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *        the required permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *        can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *        transition back to <code>null</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LockState
+     */
+
+    public GetRuleResult withLockState(LockState lockState) {
+        this.lockState = lockState.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been
+     * unlocked and that are still within the unlock delay period.
+     * </p>
+     * 
+     * @param lockEndTime
+     *        The date and time at which the unlock delay is set to expire. Only returned for retention rules that have
+     *        been unlocked and that are still within the unlock delay period.
+     */
+
+    public void setLockEndTime(java.util.Date lockEndTime) {
+        this.lockEndTime = lockEndTime;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been
+     * unlocked and that are still within the unlock delay period.
+     * </p>
+     * 
+     * @return The date and time at which the unlock delay is set to expire. Only returned for retention rules that have
+     *         been unlocked and that are still within the unlock delay period.
+     */
+
+    public java.util.Date getLockEndTime() {
+        return this.lockEndTime;
+    }
+
+    /**
+     * <p>
+     * The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been
+     * unlocked and that are still within the unlock delay period.
+     * </p>
+     * 
+     * @param lockEndTime
+     *        The date and time at which the unlock delay is set to expire. Only returned for retention rules that have
+     *        been unlocked and that are still within the unlock delay period.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRuleResult withLockEndTime(java.util.Date lockEndTime) {
+        setLockEndTime(lockEndTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -399,7 +794,13 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         if (getResourceTags() != null)
             sb.append("ResourceTags: ").append(getResourceTags()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getLockConfiguration() != null)
+            sb.append("LockConfiguration: ").append(getLockConfiguration()).append(",");
+        if (getLockState() != null)
+            sb.append("LockState: ").append(getLockState()).append(",");
+        if (getLockEndTime() != null)
+            sb.append("LockEndTime: ").append(getLockEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +839,18 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getLockConfiguration() == null ^ this.getLockConfiguration() == null)
+            return false;
+        if (other.getLockConfiguration() != null && other.getLockConfiguration().equals(this.getLockConfiguration()) == false)
+            return false;
+        if (other.getLockState() == null ^ this.getLockState() == null)
+            return false;
+        if (other.getLockState() != null && other.getLockState().equals(this.getLockState()) == false)
+            return false;
+        if (other.getLockEndTime() == null ^ this.getLockEndTime() == null)
+            return false;
+        if (other.getLockEndTime() != null && other.getLockEndTime().equals(this.getLockEndTime()) == false)
+            return false;
         return true;
     }
 
@@ -452,6 +865,9 @@ public class GetRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getLockConfiguration() == null) ? 0 : getLockConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLockState() == null) ? 0 : getLockState().hashCode());
+        hashCode = prime * hashCode + ((getLockEndTime() == null) ? 0 : getLockEndTime().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,13 @@ public class RestoreVolumeFromSnapshotResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String lifecycle;
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Amazon FSx system.
+     * </p>
+     */
+    private java.util.List<AdministrativeAction> administrativeActions;
 
     /**
      * <p>
@@ -136,6 +143,84 @@ public class RestoreVolumeFromSnapshotResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Amazon FSx system.
+     * </p>
+     * 
+     * @return A list of administrative actions for the file system that are in process or waiting to be processed.
+     *         Administrative actions describe changes to the Amazon FSx system.
+     */
+
+    public java.util.List<AdministrativeAction> getAdministrativeActions() {
+        return administrativeActions;
+    }
+
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Amazon FSx system.
+     * </p>
+     * 
+     * @param administrativeActions
+     *        A list of administrative actions for the file system that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the Amazon FSx system.
+     */
+
+    public void setAdministrativeActions(java.util.Collection<AdministrativeAction> administrativeActions) {
+        if (administrativeActions == null) {
+            this.administrativeActions = null;
+            return;
+        }
+
+        this.administrativeActions = new java.util.ArrayList<AdministrativeAction>(administrativeActions);
+    }
+
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Amazon FSx system.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdministrativeActions(java.util.Collection)} or
+     * {@link #withAdministrativeActions(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param administrativeActions
+     *        A list of administrative actions for the file system that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the Amazon FSx system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreVolumeFromSnapshotResult withAdministrativeActions(AdministrativeAction... administrativeActions) {
+        if (this.administrativeActions == null) {
+            setAdministrativeActions(new java.util.ArrayList<AdministrativeAction>(administrativeActions.length));
+        }
+        for (AdministrativeAction ele : administrativeActions) {
+            this.administrativeActions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of administrative actions for the file system that are in process or waiting to be processed.
+     * Administrative actions describe changes to the Amazon FSx system.
+     * </p>
+     * 
+     * @param administrativeActions
+     *        A list of administrative actions for the file system that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the Amazon FSx system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreVolumeFromSnapshotResult withAdministrativeActions(java.util.Collection<AdministrativeAction> administrativeActions) {
+        setAdministrativeActions(administrativeActions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -150,7 +235,9 @@ public class RestoreVolumeFromSnapshotResult extends com.amazonaws.AmazonWebServ
         if (getVolumeId() != null)
             sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getLifecycle() != null)
-            sb.append("Lifecycle: ").append(getLifecycle());
+            sb.append("Lifecycle: ").append(getLifecycle()).append(",");
+        if (getAdministrativeActions() != null)
+            sb.append("AdministrativeActions: ").append(getAdministrativeActions());
         sb.append("}");
         return sb.toString();
     }
@@ -173,6 +260,10 @@ public class RestoreVolumeFromSnapshotResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getLifecycle() != null && other.getLifecycle().equals(this.getLifecycle()) == false)
             return false;
+        if (other.getAdministrativeActions() == null ^ this.getAdministrativeActions() == null)
+            return false;
+        if (other.getAdministrativeActions() != null && other.getAdministrativeActions().equals(this.getAdministrativeActions()) == false)
+            return false;
         return true;
     }
 
@@ -183,6 +274,7 @@ public class RestoreVolumeFromSnapshotResult extends com.amazonaws.AmazonWebServ
 
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
+        hashCode = prime * hashCode + ((getAdministrativeActions() == null) ? 0 : getAdministrativeActions().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains details about a lambda function that successfully terminated during an execution.
+ * Contains details about a Lambda function that successfully terminated during an execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionSucceededEventDetails"
@@ -30,7 +30,7 @@ public class LambdaFunctionSucceededEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The JSON data output by the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data output by the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      */
@@ -44,12 +44,12 @@ public class LambdaFunctionSucceededEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The JSON data output by the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data output by the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param output
-     *        The JSON data output by the lambda function. Length constraints apply to the payload size, and are
+     *        The JSON data output by the Lambda function. Length constraints apply to the payload size, and are
      *        expressed as bytes in UTF-8 encoding.
      */
 
@@ -59,11 +59,11 @@ public class LambdaFunctionSucceededEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The JSON data output by the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data output by the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The JSON data output by the lambda function. Length constraints apply to the payload size, and are
+     * @return The JSON data output by the Lambda function. Length constraints apply to the payload size, and are
      *         expressed as bytes in UTF-8 encoding.
      */
 
@@ -73,12 +73,12 @@ public class LambdaFunctionSucceededEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The JSON data output by the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data output by the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param output
-     *        The JSON data output by the lambda function. Length constraints apply to the payload size, and are
+     *        The JSON data output by the Lambda function. Length constraints apply to the payload size, and are
      *        expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

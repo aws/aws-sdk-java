@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ResultConfiguration resultConfiguration;
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     */
+    private ResultReuseConfiguration resultReuseConfiguration;
     /**
      * <p>
      * The database in which the query execution occurred.
@@ -316,6 +322,46 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
 
     public QueryExecution withResultConfiguration(ResultConfiguration resultConfiguration) {
         setResultConfiguration(resultConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior that was used for the query.
+     */
+
+    public void setResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        this.resultReuseConfiguration = resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     * 
+     * @return Specifies the query result reuse behavior that was used for the query.
+     */
+
+    public ResultReuseConfiguration getResultReuseConfiguration() {
+        return this.resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior that was used for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior that was used for the query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecution withResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        setResultReuseConfiguration(resultReuseConfiguration);
         return this;
     }
 
@@ -629,6 +675,8 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             sb.append("StatementType: ").append(getStatementType()).append(",");
         if (getResultConfiguration() != null)
             sb.append("ResultConfiguration: ").append(getResultConfiguration()).append(",");
+        if (getResultReuseConfiguration() != null)
+            sb.append("ResultReuseConfiguration: ").append(getResultReuseConfiguration()).append(",");
         if (getQueryExecutionContext() != null)
             sb.append("QueryExecutionContext: ").append(getQueryExecutionContext()).append(",");
         if (getStatus() != null)
@@ -671,6 +719,10 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResultConfiguration() != null && other.getResultConfiguration().equals(this.getResultConfiguration()) == false)
             return false;
+        if (other.getResultReuseConfiguration() == null ^ this.getResultReuseConfiguration() == null)
+            return false;
+        if (other.getResultReuseConfiguration() != null && other.getResultReuseConfiguration().equals(this.getResultReuseConfiguration()) == false)
+            return false;
         if (other.getQueryExecutionContext() == null ^ this.getQueryExecutionContext() == null)
             return false;
         if (other.getQueryExecutionContext() != null && other.getQueryExecutionContext().equals(this.getQueryExecutionContext()) == false)
@@ -707,6 +759,7 @@ public class QueryExecution implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getQuery() == null) ? 0 : getQuery().hashCode());
         hashCode = prime * hashCode + ((getStatementType() == null) ? 0 : getStatementType().hashCode());
         hashCode = prime * hashCode + ((getResultConfiguration() == null) ? 0 : getResultConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getResultReuseConfiguration() == null) ? 0 : getResultReuseConfiguration().hashCode());
         hashCode = prime * hashCode + ((getQueryExecutionContext() == null) ? 0 : getQueryExecutionContext().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());

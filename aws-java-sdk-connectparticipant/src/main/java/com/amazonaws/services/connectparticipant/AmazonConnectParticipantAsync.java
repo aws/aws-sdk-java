@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,8 @@ import com.amazonaws.services.connectparticipant.model.*;
  * <p>
  * <p>
  * Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact
- * center and provide reliable customer engagement at any scale.
- * </p>
- * <p>
- * Amazon Connect enables customer contacts through voice or chat.
- * </p>
- * <p>
- * The APIs described here are used by chat participants, such as agents and customers.
+ * center. Amazon Connect enables customer contacts through voice or chat. Use the Amazon Connect Participant Service to
+ * manage chat participants, such as agents and customers.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -44,6 +39,11 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
      * Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in
      * StartAttachmentUpload API.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -63,6 +63,11 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
      * Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in
      * StartAttachmentUpload API.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -84,9 +89,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Creates the participant's connection. Note that ParticipantToken is used for invoking this API instead of
-     * ConnectionToken.
+     * Creates the participant's connection.
      * </p>
+     * <note>
+     * <p>
+     * <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The participant token is valid for the lifetime of the participant – until they are part of a contact.
      * </p>
@@ -137,9 +146,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Creates the participant's connection. Note that ParticipantToken is used for invoking this API instead of
-     * ConnectionToken.
+     * Creates the participant's connection.
      * </p>
+     * <note>
+     * <p>
+     * <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The participant token is valid for the lifetime of the participant – until they are part of a contact.
      * </p>
@@ -195,8 +208,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Disconnects a participant. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Disconnects a participant.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -213,8 +231,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Disconnects a participant. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Disconnects a participant.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -239,6 +262,11 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
      * Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active
      * contacts.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -258,6 +286,11 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
      * Provides a pre-signed URL for download of a completed attachment. This is an asynchronous API for use with active
      * contacts.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -279,9 +312,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Retrieves a transcript of the session, including details about any attachments. Note that ConnectionToken is used
-     * for invoking this API instead of ParticipantToken.
+     * Retrieves a transcript of the session, including details about any attachments.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -298,9 +335,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Retrieves a transcript of the session, including details about any attachments. Note that ConnectionToken is used
-     * for invoking this API instead of ParticipantToken.
+     * Retrieves a transcript of the session, including details about any attachments.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -322,8 +363,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Sends an event. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Sends an event.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -340,8 +386,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Sends an event. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Sends an event.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -363,8 +414,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Sends a message. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Sends a message.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -381,8 +437,13 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
 
     /**
      * <p>
-     * Sends a message. Note that ConnectionToken is used for invoking this API instead of ParticipantToken.
+     * Sends a message.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -406,6 +467,11 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
      * <p>
      * Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4
@@ -424,6 +490,11 @@ public interface AmazonConnectParticipantAsync extends AmazonConnectParticipant 
      * <p>
      * Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.
      * </p>
+     * <note>
+     * <p>
+     * <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+     * </p>
+     * </note>
      * <p>
      * The Amazon Connect Participant Service APIs do not use <a
      * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4

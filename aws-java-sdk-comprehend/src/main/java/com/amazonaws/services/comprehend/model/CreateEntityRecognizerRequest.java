@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,8 +70,9 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
     private String clientRequestToken;
     /**
      * <p>
-     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
-     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
+     * You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
+     * German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input
+     * files, you must specify English as the language. All training documents must be in the same language.
      * </p>
      */
     private String languageCode;
@@ -471,14 +472,16 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
-     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
+     * You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
+     * German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input
+     * files, you must specify English as the language. All training documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
-     *        ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
-     *        same language.
+     *        You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian
+     *        ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or
+     *        image input files, you must specify English as the language. All training documents must be in the same
+     *        language.
      * @see LanguageCode
      */
 
@@ -488,13 +491,15 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
-     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
+     * You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
+     * German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input
+     * files, you must specify English as the language. All training documents must be in the same language.
      * </p>
      * 
-     * @return You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
-     *         ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
-     *         same language.
+     * @return You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian
+     *         ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or
+     *         image input files, you must specify English as the language. All training documents must be in the same
+     *         language.
      * @see LanguageCode
      */
 
@@ -504,14 +509,16 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
-     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
+     * You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
+     * German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input
+     * files, you must specify English as the language. All training documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
-     *        ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
-     *        same language.
+     *        You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian
+     *        ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or
+     *        image input files, you must specify English as the language. All training documents must be in the same
+     *        language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -523,14 +530,16 @@ public class CreateEntityRecognizerRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish ("es"),
-     * French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the same language.
+     * You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian ("it"),
+     * German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or image input
+     * files, you must specify English as the language. All training documents must be in the same language.
      * </p>
      * 
      * @param languageCode
-     *        You can specify any of the following languages supported by Amazon Comprehend: English ("en"), Spanish
-     *        ("es"), French ("fr"), Italian ("it"), German ("de"), or Portuguese ("pt"). All documents must be in the
-     *        same language.
+     *        You can specify any of the following languages: English ("en"), Spanish ("es"), French ("fr"), Italian
+     *        ("it"), German ("de"), or Portuguese ("pt"). If you plan to use this entity recognizer with PDF, Word, or
+     *        image input files, you must specify English as the language. All training documents must be in the same
+     *        language.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

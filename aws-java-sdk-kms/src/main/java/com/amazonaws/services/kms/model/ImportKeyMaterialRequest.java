@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,17 +73,36 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
     private java.nio.ByteBuffer encryptedKeyMaterial;
     /**
      * <p>
-     * The time at which the imported key material expires. When the key material expires, KMS deletes the key material
-     * and the KMS key becomes unusable. You must omit this parameter when the <code>ExpirationModel</code> parameter is
-     * set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The date and time when the imported key material expires. This parameter is required when the value of the
+     * <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.
+     * </p>
+     * <p>
+     * The value of this parameter must be a future date and time. The maximum value is 365 days from the request date.
+     * </p>
+     * <p>
+     * When the key material expires, KMS deletes the key material from the KMS key. Without its key material, the KMS
+     * key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key material.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      */
     private java.util.Date validTo;
     /**
      * <p>
-     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
-     * must include the <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.
+     * </p>
+     * <p>
+     * When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for
+     * the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
+     * <code>ValidTo</code> parameter.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      */
     private String expirationModel;
@@ -430,16 +449,39 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time at which the imported key material expires. When the key material expires, KMS deletes the key material
-     * and the KMS key becomes unusable. You must omit this parameter when the <code>ExpirationModel</code> parameter is
-     * set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The date and time when the imported key material expires. This parameter is required when the value of the
+     * <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.
+     * </p>
+     * <p>
+     * The value of this parameter must be a future date and time. The maximum value is 365 days from the request date.
+     * </p>
+     * <p>
+     * When the key material expires, KMS deletes the key material from the KMS key. Without its key material, the KMS
+     * key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key material.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
      * @param validTo
-     *        The time at which the imported key material expires. When the key material expires, KMS deletes the key
-     *        material and the KMS key becomes unusable. You must omit this parameter when the
-     *        <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it
-     *        is required.
+     *        The date and time when the imported key material expires. This parameter is required when the value of the
+     *        <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not
+     *        valid.</p>
+     *        <p>
+     *        The value of this parameter must be a future date and time. The maximum value is 365 days from the request
+     *        date.
+     *        </p>
+     *        <p>
+     *        When the key material expires, KMS deletes the key material from the KMS key. Without its key material,
+     *        the KMS key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key
+     *        material.
+     *        </p>
+     *        <p>
+     *        You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *        after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *        and reimport the key material.
      */
 
     public void setValidTo(java.util.Date validTo) {
@@ -448,15 +490,38 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time at which the imported key material expires. When the key material expires, KMS deletes the key material
-     * and the KMS key becomes unusable. You must omit this parameter when the <code>ExpirationModel</code> parameter is
-     * set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The date and time when the imported key material expires. This parameter is required when the value of the
+     * <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.
+     * </p>
+     * <p>
+     * The value of this parameter must be a future date and time. The maximum value is 365 days from the request date.
+     * </p>
+     * <p>
+     * When the key material expires, KMS deletes the key material from the KMS key. Without its key material, the KMS
+     * key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key material.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
-     * @return The time at which the imported key material expires. When the key material expires, KMS deletes the key
-     *         material and the KMS key becomes unusable. You must omit this parameter when the
-     *         <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it
-     *         is required.
+     * @return The date and time when the imported key material expires. This parameter is required when the value of
+     *         the <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not
+     *         valid.</p>
+     *         <p>
+     *         The value of this parameter must be a future date and time. The maximum value is 365 days from the
+     *         request date.
+     *         </p>
+     *         <p>
+     *         When the key material expires, KMS deletes the key material from the KMS key. Without its key material,
+     *         the KMS key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key
+     *         material.
+     *         </p>
+     *         <p>
+     *         You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *         after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *         and reimport the key material.
      */
 
     public java.util.Date getValidTo() {
@@ -465,16 +530,39 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The time at which the imported key material expires. When the key material expires, KMS deletes the key material
-     * and the KMS key becomes unusable. You must omit this parameter when the <code>ExpirationModel</code> parameter is
-     * set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it is required.
+     * The date and time when the imported key material expires. This parameter is required when the value of the
+     * <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not valid.
+     * </p>
+     * <p>
+     * The value of this parameter must be a future date and time. The maximum value is 365 days from the request date.
+     * </p>
+     * <p>
+     * When the key material expires, KMS deletes the key material from the KMS key. Without its key material, the KMS
+     * key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key material.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
      * @param validTo
-     *        The time at which the imported key material expires. When the key material expires, KMS deletes the key
-     *        material and the KMS key becomes unusable. You must omit this parameter when the
-     *        <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>. Otherwise it
-     *        is required.
+     *        The date and time when the imported key material expires. This parameter is required when the value of the
+     *        <code>ExpirationModel</code> parameter is <code>KEY_MATERIAL_EXPIRES</code>. Otherwise it is not
+     *        valid.</p>
+     *        <p>
+     *        The value of this parameter must be a future date and time. The maximum value is 365 days from the request
+     *        date.
+     *        </p>
+     *        <p>
+     *        When the key material expires, KMS deletes the key material from the KMS key. Without its key material,
+     *        the KMS key is unusable. To use the KMS key in cryptographic operations, you must reimport the same key
+     *        material.
+     *        </p>
+     *        <p>
+     *        You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *        after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *        and reimport the key material.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,15 +573,30 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
-     * must include the <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.
+     * </p>
+     * <p>
+     * When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for
+     * the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
+     * <code>ValidTo</code> parameter.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
-     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.</p>
+     *        <p>
+     *        When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a
+     *        value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you
+     *        must omit the <code>ValidTo</code> parameter.
+     *        </p>
+     *        <p>
+     *        You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *        after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *        and reimport the key material.
      * @see ExpirationModelType
      */
 
@@ -503,14 +606,29 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
-     * must include the <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.
+     * </p>
+     * <p>
+     * When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for
+     * the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
+     * <code>ValidTo</code> parameter.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
-     * @return Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
-     *         case you must include the <code>ValidTo</code> parameter. When this parameter is set to
-     *         <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * @return Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.</p>
+     *         <p>
+     *         When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a
+     *         value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>,
+     *         you must omit the <code>ValidTo</code> parameter.
+     *         </p>
+     *         <p>
+     *         You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *         after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *         and reimport the key material.
      * @see ExpirationModelType
      */
 
@@ -520,15 +638,30 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
-     * must include the <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.
+     * </p>
+     * <p>
+     * When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for
+     * the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
+     * <code>ValidTo</code> parameter.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
-     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.</p>
+     *        <p>
+     *        When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a
+     *        value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you
+     *        must omit the <code>ValidTo</code> parameter.
+     *        </p>
+     *        <p>
+     *        You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *        after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *        and reimport the key material.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExpirationModelType
      */
@@ -540,15 +673,30 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
-     * must include the <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.
+     * </p>
+     * <p>
+     * When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for
+     * the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
+     * <code>ValidTo</code> parameter.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
-     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.</p>
+     *        <p>
+     *        When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a
+     *        value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you
+     *        must omit the <code>ValidTo</code> parameter.
+     *        </p>
+     *        <p>
+     *        You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *        after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *        and reimport the key material.
      * @see ExpirationModelType
      */
 
@@ -558,15 +706,30 @@ public class ImportKeyMaterialRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which case you
-     * must include the <code>ValidTo</code> parameter. When this parameter is set to
-     * <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     * Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.
+     * </p>
+     * <p>
+     * When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a value for
+     * the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the
+     * <code>ValidTo</code> parameter.
+     * </p>
+     * <p>
+     * You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import after
+     * the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>) and reimport
+     * the key material.
      * </p>
      * 
      * @param expirationModel
-     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>, in which
-     *        case you must include the <code>ValidTo</code> parameter. When this parameter is set to
-     *        <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you must omit the <code>ValidTo</code> parameter.
+     *        Specifies whether the key material expires. The default is <code>KEY_MATERIAL_EXPIRES</code>.</p>
+     *        <p>
+     *        When the value of <code>ExpirationModel</code> is <code>KEY_MATERIAL_EXPIRES</code>, you must specify a
+     *        value for the <code>ValidTo</code> parameter. When value is <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>, you
+     *        must omit the <code>ValidTo</code> parameter.
+     *        </p>
+     *        <p>
+     *        You cannot change the <code>ExpirationModel</code> or <code>ValidTo</code> values for the current import
+     *        after the request completes. To change either value, you must delete (<a>DeleteImportedKeyMaterial</a>)
+     *        and reimport the key material.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ExpirationModelType
      */

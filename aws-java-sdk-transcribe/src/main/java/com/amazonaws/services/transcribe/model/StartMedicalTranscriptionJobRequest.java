@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the
      * default name of your transcription output file. If you want to specify a different name for your transcription
      * output, use the <code>OutputKey</code> parameter.
      * </p>
@@ -48,12 +48,12 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     private String languageCode;
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
      * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
-     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      */
@@ -87,10 +87,6 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * also <a href=
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
-     * </p>
-     * <p>
-     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
-     * bucket and you are provided with a URI to access your transcript.
      * </p>
      */
     private String outputBucketName;
@@ -212,7 +208,8 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+     * transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription
+     * job.
      * </p>
      */
     private MedicalTranscriptionSetting settings;
@@ -257,7 +254,7 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the
      * default name of your transcription output file. If you want to specify a different name for your transcription
      * output, use the <code>OutputKey</code> parameter.
      * </p>
@@ -268,8 +265,8 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
-     *        default name of your transcription output file. If you want to specify a different name for your
+     *        A unique name, chosen by you, for your medical transcription job. The name that you specify is also used
+     *        as the default name of your transcription output file. If you want to specify a different name for your
      *        transcription output, use the <code>OutputKey</code> parameter.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
@@ -283,7 +280,7 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the
      * default name of your transcription output file. If you want to specify a different name for your transcription
      * output, use the <code>OutputKey</code> parameter.
      * </p>
@@ -293,8 +290,8 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * error.
      * </p>
      * 
-     * @return A unique name, chosen by you, for your medical transcription job. The name you specify is also used as
-     *         the default name of your transcription output file. If you want to specify a different name for your
+     * @return A unique name, chosen by you, for your medical transcription job. The name that you specify is also used
+     *         as the default name of your transcription output file. If you want to specify a different name for your
      *         transcription output, use the <code>OutputKey</code> parameter.</p>
      *         <p>
      *         This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
@@ -308,7 +305,7 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
+     * A unique name, chosen by you, for your medical transcription job. The name that you specify is also used as the
      * default name of your transcription output file. If you want to specify a different name for your transcription
      * output, use the <code>OutputKey</code> parameter.
      * </p>
@@ -319,8 +316,8 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        A unique name, chosen by you, for your medical transcription job. The name you specify is also used as the
-     *        default name of your transcription output file. If you want to specify a different name for your
+     *        A unique name, chosen by you, for your medical transcription job. The name that you specify is also used
+     *        as the default name of your transcription output file. If you want to specify a different name for your
      *        transcription output, use the <code>OutputKey</code> parameter.</p>
      *        <p>
      *        This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services
@@ -411,23 +408,23 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
      * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
-     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.</p>
+     *        The sample rate, in hertz, of the audio track in your input media file.</p>
      *        <p>
      *        If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you
      *        specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a
-     *        mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases,
-     *        it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the
-     *        sample rate.
+     *        mismatch between the value that you specify and the value detected, your job fails. Therefore, in most
+     *        cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine
+     *        the sample rate.
      */
 
     public void setMediaSampleRateHertz(Integer mediaSampleRateHertz) {
@@ -436,22 +433,22 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
      * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
-     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      * 
-     * @return The sample rate, in Hertz, of the audio track in your input media file.</p>
+     * @return The sample rate, in hertz, of the audio track in your input media file.</p>
      *         <p>
      *         If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you
      *         specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a
-     *         mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases,
-     *         it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the
-     *         sample rate.
+     *         mismatch between the value that you specify and the value detected, your job fails. Therefore, in most
+     *         cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine
+     *         the sample rate.
      */
 
     public Integer getMediaSampleRateHertz() {
@@ -460,23 +457,23 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * <p>
      * If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you specify the
      * sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a mismatch between the
-     * value you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
+     * value that you specify and the value detected, your job fails. Therefore, in most cases, it's advised to omit
      * <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the sample rate.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.</p>
+     *        The sample rate, in hertz, of the audio track in your input media file.</p>
      *        <p>
      *        If you don't specify the media sample rate, Amazon Transcribe Medical determines it for you. If you
      *        specify the sample rate, it must match the rate detected by Amazon Transcribe Medical; if there's a
-     *        mismatch between the value you specify and the value detected, your job fails. Therefore, in most cases,
-     *        it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine the
-     *        sample rate.
+     *        mismatch between the value that you specify and the value detected, your job fails. Therefore, in most
+     *        cases, it's advised to omit <code>MediaSampleRateHertz</code> and let Amazon Transcribe Medical determine
+     *        the sample rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -592,10 +589,6 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
      * </p>
-     * <p>
-     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
-     * bucket and you are provided with a URI to access your transcript.
-     * </p>
      * 
      * @param outputBucketName
      *        The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include
@@ -616,10 +609,6 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      *        Console</a>. See also <a href=
      *        "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      *        >Permissions Required for IAM User Roles</a>.
-     *        </p>
-     *        <p>
-     *        If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon
-     *        S3 bucket and you are provided with a URI to access your transcript.
      */
 
     public void setOutputBucketName(String outputBucketName) {
@@ -648,10 +637,6 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
      * </p>
-     * <p>
-     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
-     * bucket and you are provided with a URI to access your transcript.
-     * </p>
      * 
      * @return The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include
      *         the <code>S3://</code> prefix of the specified bucket.</p>
@@ -671,10 +656,6 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      *         Console</a>. See also <a href=
      *         "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      *         >Permissions Required for IAM User Roles</a>.
-     *         </p>
-     *         <p>
-     *         If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon
-     *         S3 bucket and you are provided with a URI to access your transcript.
      */
 
     public String getOutputBucketName() {
@@ -703,10 +684,6 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      * >Permissions Required for IAM User Roles</a>.
      * </p>
-     * <p>
-     * If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon S3
-     * bucket and you are provided with a URI to access your transcript.
-     * </p>
      * 
      * @param outputBucketName
      *        The name of the Amazon S3 bucket where you want your medical transcription output stored. Do not include
@@ -727,10 +704,6 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      *        Console</a>. See also <a href=
      *        "https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user"
      *        >Permissions Required for IAM User Roles</a>.
-     *        </p>
-     *        <p>
-     *        If you don't specify <code>OutputBucketName</code>, your transcript is placed in a service-managed Amazon
-     *        S3 bucket and you are provided with a URI to access your transcript.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1481,12 +1454,14 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+     * transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription
+     * job.
      * </p>
      * 
      * @param settings
      *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+     *        transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your
+     *        transcription job.
      */
 
     public void setSettings(MedicalTranscriptionSetting settings) {
@@ -1496,11 +1471,13 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+     * transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription
+     * job.
      * </p>
      * 
      * @return Specify additional optional settings in your request, including channel identification, alternative
-     *         transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+     *         transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your
+     *         transcription job.
      */
 
     public MedicalTranscriptionSetting getSettings() {
@@ -1510,12 +1487,14 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     /**
      * <p>
      * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+     * transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your transcription
+     * job.
      * </p>
      * 
      * @param settings
      *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, and speaker labeling; allows you to apply custom vocabularies to your transcription job.
+     *        transcriptions, and speaker partitioning. You can use that to apply custom vocabularies to your
+     *        transcription job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

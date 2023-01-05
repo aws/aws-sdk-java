@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity" target="_top">AWS API
  *      Documentation</a>
@@ -30,7 +27,7 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN
      * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      */
@@ -53,12 +50,12 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN
      * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * 
-     * @return A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet
-     *         ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
+     * @return A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID
+     *         or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -67,13 +64,13 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN
      * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID
-     *        or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
+     *        A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or
+     *        ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -87,7 +84,7 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN
      * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * <p>
@@ -97,8 +94,8 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID
-     *        or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
+     *        A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or
+     *        ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +111,13 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or ARN
      * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID
-     *        or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
+     *        A unique identifier for the fleet to retrieve capacity information for. You can use either the fleet ID or
+     *        ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

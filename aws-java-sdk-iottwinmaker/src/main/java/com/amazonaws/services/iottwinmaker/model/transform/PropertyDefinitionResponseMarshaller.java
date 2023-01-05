@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,26 +29,28 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PropertyDefinitionResponseMarshaller {
 
-    private static final MarshallingInfo<Map> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("configuration").build();
     private static final MarshallingInfo<StructuredPojo> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataType").build();
-    private static final MarshallingInfo<StructuredPojo> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
-    private static final MarshallingInfo<Boolean> ISEXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isExternalId").build();
-    private static final MarshallingInfo<Boolean> ISFINAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("isFinal").build();
-    private static final MarshallingInfo<Boolean> ISIMPORTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isImported").build();
-    private static final MarshallingInfo<Boolean> ISINHERITED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isInherited").build();
-    private static final MarshallingInfo<Boolean> ISREQUIREDINENTITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isRequiredInEntity").build();
-    private static final MarshallingInfo<Boolean> ISSTOREDEXTERNALLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isStoredExternally").build();
     private static final MarshallingInfo<Boolean> ISTIMESERIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isTimeSeries").build();
+    private static final MarshallingInfo<Boolean> ISREQUIREDINENTITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isRequiredInEntity").build();
+    private static final MarshallingInfo<Boolean> ISEXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isExternalId").build();
+    private static final MarshallingInfo<Boolean> ISSTOREDEXTERNALLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isStoredExternally").build();
+    private static final MarshallingInfo<Boolean> ISIMPORTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isImported").build();
+    private static final MarshallingInfo<Boolean> ISFINAL_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("isFinal").build();
+    private static final MarshallingInfo<Boolean> ISINHERITED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isInherited").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
+    private static final MarshallingInfo<Map> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("configuration").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
 
     private static final PropertyDefinitionResponseMarshaller instance = new PropertyDefinitionResponseMarshaller();
 
@@ -66,16 +68,17 @@ public class PropertyDefinitionResponseMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(propertyDefinitionResponse.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(propertyDefinitionResponse.getDataType(), DATATYPE_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionResponse.getDefaultValue(), DEFAULTVALUE_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionResponse.getIsExternalId(), ISEXTERNALID_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionResponse.getIsFinal(), ISFINAL_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionResponse.getIsImported(), ISIMPORTED_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionResponse.getIsInherited(), ISINHERITED_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionResponse.getIsRequiredInEntity(), ISREQUIREDINENTITY_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionResponse.getIsStoredExternally(), ISSTOREDEXTERNALLY_BINDING);
             protocolMarshaller.marshall(propertyDefinitionResponse.getIsTimeSeries(), ISTIMESERIES_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getIsRequiredInEntity(), ISREQUIREDINENTITY_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getIsExternalId(), ISEXTERNALID_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getIsStoredExternally(), ISSTOREDEXTERNALLY_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getIsImported(), ISIMPORTED_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getIsFinal(), ISFINAL_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getIsInherited(), ISINHERITED_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionResponse.getDisplayName(), DISPLAYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

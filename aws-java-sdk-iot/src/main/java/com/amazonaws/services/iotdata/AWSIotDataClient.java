@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -762,6 +762,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
      *         You are not authorized to perform this operation.
      * @throws MethodNotAllowedException
      *         The specified combination of HTTP verb and URI is not supported.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIotData.Publish
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iot-data-2015-05-28/Publish" target="_top">AWS API
      *      Documentation</a>

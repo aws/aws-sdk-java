@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store. Use this parameter for a new import.
+     * The ARN of the destination event data store. Use this parameter for a new import.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> destinations;
@@ -40,14 +40,18 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      */
     private java.util.Date startEventTime;
     /**
      * <p>
      * Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      */
     private java.util.Date endEventTime;
@@ -60,10 +64,10 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store. Use this parameter for a new import.
+     * The ARN of the destination event data store. Use this parameter for a new import.
      * </p>
      * 
-     * @return The destination event data store. Use this parameter for a new import.
+     * @return The ARN of the destination event data store. Use this parameter for a new import.
      */
 
     public java.util.List<String> getDestinations() {
@@ -75,11 +79,11 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store. Use this parameter for a new import.
+     * The ARN of the destination event data store. Use this parameter for a new import.
      * </p>
      * 
      * @param destinations
-     *        The destination event data store. Use this parameter for a new import.
+     *        The ARN of the destination event data store. Use this parameter for a new import.
      */
 
     public void setDestinations(java.util.Collection<String> destinations) {
@@ -93,7 +97,7 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store. Use this parameter for a new import.
+     * The ARN of the destination event data store. Use this parameter for a new import.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -102,7 +106,7 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param destinations
-     *        The destination event data store. Use this parameter for a new import.
+     *        The ARN of the destination event data store. Use this parameter for a new import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +122,11 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The destination event data store. Use this parameter for a new import.
+     * The ARN of the destination event data store. Use this parameter for a new import.
      * </p>
      * 
      * @param destinations
-     *        The destination event data store. Use this parameter for a new import.
+     *        The ARN of the destination event data store. Use this parameter for a new import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,12 +178,16 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      * 
      * @param startEventTime
      *        Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail
-     *        events to only those events logged within a specified time period.
+     *        events to only those events logged within a specified time period. When you specify a time range,
+     *        CloudTrail checks the prefix and log file names to verify the names contain a date between the specified
+     *        <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.
      */
 
     public void setStartEventTime(java.util.Date startEventTime) {
@@ -189,11 +197,15 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      * 
      * @return Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail
-     *         events to only those events logged within a specified time period.
+     *         events to only those events logged within a specified time period. When you specify a time range,
+     *         CloudTrail checks the prefix and log file names to verify the names contain a date between the specified
+     *         <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.
      */
 
     public java.util.Date getStartEventTime() {
@@ -203,12 +215,16 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      * 
      * @param startEventTime
      *        Use with <code>EndEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail
-     *        events to only those events logged within a specified time period.
+     *        events to only those events logged within a specified time period. When you specify a time range,
+     *        CloudTrail checks the prefix and log file names to verify the names contain a date between the specified
+     *        <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,12 +236,16 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      * 
      * @param endEventTime
      *        Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail
-     *        events to only those events logged within a specified time period.
+     *        events to only those events logged within a specified time period. When you specify a time range,
+     *        CloudTrail checks the prefix and log file names to verify the names contain a date between the specified
+     *        <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.
      */
 
     public void setEndEventTime(java.util.Date endEventTime) {
@@ -235,11 +255,15 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      * 
      * @return Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported
-     *         trail events to only those events logged within a specified time period.
+     *         trail events to only those events logged within a specified time period. When you specify a time range,
+     *         CloudTrail checks the prefix and log file names to verify the names contain a date between the specified
+     *         <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.
      */
 
     public java.util.Date getEndEventTime() {
@@ -249,12 +273,16 @@ public class StartImportRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail events
-     * to only those events logged within a specified time period.
+     * to only those events logged within a specified time period. When you specify a time range, CloudTrail checks the
+     * prefix and log file names to verify the names contain a date between the specified <code>StartEventTime</code>
+     * and <code>EndEventTime</code> before attempting to import events.
      * </p>
      * 
      * @param endEventTime
      *        Use with <code>StartEventTime</code> to bound a <code>StartImport</code> request, and limit imported trail
-     *        events to only those events logged within a specified time period.
+     *        events to only those events logged within a specified time period. When you specify a time range,
+     *        CloudTrail checks the prefix and log file names to verify the names contain a date between the specified
+     *        <code>StartEventTime</code> and <code>EndEventTime</code> before attempting to import events.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

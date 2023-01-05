@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Float confidence;
+    /**
+     * <p>
+     * The dominant colors found in an individual instance of a label.
+     * </p>
+     */
+    private java.util.List<DominantColor> dominantColors;
 
     /**
      * <p>
@@ -120,6 +126,76 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The dominant colors found in an individual instance of a label.
+     * </p>
+     * 
+     * @return The dominant colors found in an individual instance of a label.
+     */
+
+    public java.util.List<DominantColor> getDominantColors() {
+        return dominantColors;
+    }
+
+    /**
+     * <p>
+     * The dominant colors found in an individual instance of a label.
+     * </p>
+     * 
+     * @param dominantColors
+     *        The dominant colors found in an individual instance of a label.
+     */
+
+    public void setDominantColors(java.util.Collection<DominantColor> dominantColors) {
+        if (dominantColors == null) {
+            this.dominantColors = null;
+            return;
+        }
+
+        this.dominantColors = new java.util.ArrayList<DominantColor>(dominantColors);
+    }
+
+    /**
+     * <p>
+     * The dominant colors found in an individual instance of a label.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDominantColors(java.util.Collection)} or {@link #withDominantColors(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param dominantColors
+     *        The dominant colors found in an individual instance of a label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withDominantColors(DominantColor... dominantColors) {
+        if (this.dominantColors == null) {
+            setDominantColors(new java.util.ArrayList<DominantColor>(dominantColors.length));
+        }
+        for (DominantColor ele : dominantColors) {
+            this.dominantColors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The dominant colors found in an individual instance of a label.
+     * </p>
+     * 
+     * @param dominantColors
+     *        The dominant colors found in an individual instance of a label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withDominantColors(java.util.Collection<DominantColor> dominantColors) {
+        setDominantColors(dominantColors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,7 +210,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         if (getBoundingBox() != null)
             sb.append("BoundingBox: ").append(getBoundingBox()).append(",");
         if (getConfidence() != null)
-            sb.append("Confidence: ").append(getConfidence());
+            sb.append("Confidence: ").append(getConfidence()).append(",");
+        if (getDominantColors() != null)
+            sb.append("DominantColors: ").append(getDominantColors());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +235,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConfidence() != null && other.getConfidence().equals(this.getConfidence()) == false)
             return false;
+        if (other.getDominantColors() == null ^ this.getDominantColors() == null)
+            return false;
+        if (other.getDominantColors() != null && other.getDominantColors().equals(this.getDominantColors()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +249,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getBoundingBox() == null) ? 0 : getBoundingBox().hashCode());
         hashCode = prime * hashCode + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
+        hashCode = prime * hashCode + ((getDominantColors() == null) ? 0 : getDominantColors().hashCode());
         return hashCode;
     }
 

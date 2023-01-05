@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
     private String value;
     /**
      * <p>
-     * The type of the reference.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      */
     private String type;
@@ -91,11 +91,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
      * @param type
-     *        The type of the reference.
+     *        The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @see ReferenceType
      */
 
@@ -105,10 +105,10 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
-     * @return The type of the reference.
+     * @return The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @see ReferenceType
      */
 
@@ -118,11 +118,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
      * @param type
-     *        The type of the reference.
+     *        The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReferenceType
      */
@@ -134,11 +134,11 @@ public class Reference implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the reference.
+     * The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * </p>
      * 
      * @param type
-     *        The type of the reference.
+     *        The type of the reference. <code>DATE</code> must be of type Epoch timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReferenceType
      */

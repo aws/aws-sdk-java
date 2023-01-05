@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for the response returned by the <code> <a>GetUpgradeHistory</a> </code> operation.
+ * Container for the response returned by the <code>GetUpgradeHistory</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,27 +25,24 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade eligibility check
-     * performed on a domain returned as part of the <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     * A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      * </p>
      */
     private java.util.List<UpgradeHistory> upgradeHistories;
     /**
      * <p>
-     * Pagination token that needs to be supplied to the next call to get the next page of results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade eligibility check
-     * performed on a domain returned as part of the <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     * A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      * </p>
      * 
-     * @return A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade
-     *         eligibility check performed on a domain returned as part of the
-     *         <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     * @return A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      */
 
     public java.util.List<UpgradeHistory> getUpgradeHistories() {
@@ -54,14 +51,11 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade eligibility check
-     * performed on a domain returned as part of the <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     * A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      * </p>
      * 
      * @param upgradeHistories
-     *        A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade
-     *        eligibility check performed on a domain returned as part of the
-     *        <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     *        A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      */
 
     public void setUpgradeHistories(java.util.Collection<UpgradeHistory> upgradeHistories) {
@@ -75,8 +69,7 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade eligibility check
-     * performed on a domain returned as part of the <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     * A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,9 +78,7 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param upgradeHistories
-     *        A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade
-     *        eligibility check performed on a domain returned as part of the
-     *        <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     *        A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,14 +94,11 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade eligibility check
-     * performed on a domain returned as part of the <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     * A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      * </p>
      * 
      * @param upgradeHistories
-     *        A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each upgrade or upgrade
-     *        eligibility check performed on a domain returned as part of the
-     *        <code> <a>GetUpgradeHistoryResponse</a> </code> object.
+     *        A list of objects corresponding to each upgrade or upgrade eligibility check performed on a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,11 +109,14 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Pagination token that needs to be supplied to the next call to get the next page of results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token that needs to be supplied to the next call to get the next page of results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -134,10 +125,13 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Pagination token that needs to be supplied to the next call to get the next page of results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
-     * @return Pagination token that needs to be supplied to the next call to get the next page of results.
+     * @return When <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -146,11 +140,14 @@ public class GetUpgradeHistoryResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Pagination token that needs to be supplied to the next call to get the next page of results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token that needs to be supplied to the next call to get the next page of results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

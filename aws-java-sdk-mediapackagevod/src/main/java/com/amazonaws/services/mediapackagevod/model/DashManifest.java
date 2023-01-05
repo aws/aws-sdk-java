@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class DashManifest implements Serializable, Cloneable, StructuredPojo {
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the
      * ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+     * The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35
+     * tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
      */
     private String scteMarkersSource;
 
@@ -246,11 +248,15 @@ public class DashManifest implements Serializable, Cloneable, StructuredPojo {
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the
      * ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+     * The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35
+     * tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
      * 
      * @param scteMarkersSource
      *        The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of
      *        the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested
-     *        content.
+     *        content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     *        (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this
+     *        option.
      * @see ScteMarkersSource
      */
 
@@ -261,10 +267,14 @@ public class DashManifest implements Serializable, Cloneable, StructuredPojo {
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the
      * ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+     * The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35
+     * tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
      * 
      * @return The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of
      *         the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the
-     *         ingested content.
+     *         ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced
+     *         syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with
+     *         this option.
      * @see ScteMarkersSource
      */
 
@@ -275,11 +285,15 @@ public class DashManifest implements Serializable, Cloneable, StructuredPojo {
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the
      * ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+     * The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35
+     * tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
      * 
      * @param scteMarkersSource
      *        The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of
      *        the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested
-     *        content.
+     *        content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     *        (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this
+     *        option.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScteMarkersSource
      */
@@ -292,11 +306,15 @@ public class DashManifest implements Serializable, Cloneable, StructuredPojo {
     /**
      * The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the
      * ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.
+     * The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35
+     * tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.
      * 
      * @param scteMarkersSource
      *        The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of
      *        the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested
-     *        content.
+     *        content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax
+     *        (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this
+     *        option.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScteMarkersSource
      */

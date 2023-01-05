@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,12 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.Date orderingTimestamp;
+    /**
+     * <p>
+     * A Unique ID for an evaluation result.
+     * </p>
+     */
+    private String resourceEvaluationId;
 
     /**
      * <p>
@@ -143,6 +149,46 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * A Unique ID for an evaluation result.
+     * </p>
+     * 
+     * @param resourceEvaluationId
+     *        A Unique ID for an evaluation result.
+     */
+
+    public void setResourceEvaluationId(String resourceEvaluationId) {
+        this.resourceEvaluationId = resourceEvaluationId;
+    }
+
+    /**
+     * <p>
+     * A Unique ID for an evaluation result.
+     * </p>
+     * 
+     * @return A Unique ID for an evaluation result.
+     */
+
+    public String getResourceEvaluationId() {
+        return this.resourceEvaluationId;
+    }
+
+    /**
+     * <p>
+     * A Unique ID for an evaluation result.
+     * </p>
+     * 
+     * @param resourceEvaluationId
+     *        A Unique ID for an evaluation result.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EvaluationResultIdentifier withResourceEvaluationId(String resourceEvaluationId) {
+        setResourceEvaluationId(resourceEvaluationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -157,7 +203,9 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable, Stru
         if (getEvaluationResultQualifier() != null)
             sb.append("EvaluationResultQualifier: ").append(getEvaluationResultQualifier()).append(",");
         if (getOrderingTimestamp() != null)
-            sb.append("OrderingTimestamp: ").append(getOrderingTimestamp());
+            sb.append("OrderingTimestamp: ").append(getOrderingTimestamp()).append(",");
+        if (getResourceEvaluationId() != null)
+            sb.append("ResourceEvaluationId: ").append(getResourceEvaluationId());
         sb.append("}");
         return sb.toString();
     }
@@ -180,6 +228,10 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable, Stru
             return false;
         if (other.getOrderingTimestamp() != null && other.getOrderingTimestamp().equals(this.getOrderingTimestamp()) == false)
             return false;
+        if (other.getResourceEvaluationId() == null ^ this.getResourceEvaluationId() == null)
+            return false;
+        if (other.getResourceEvaluationId() != null && other.getResourceEvaluationId().equals(this.getResourceEvaluationId()) == false)
+            return false;
         return true;
     }
 
@@ -190,6 +242,7 @@ public class EvaluationResultIdentifier implements Serializable, Cloneable, Stru
 
         hashCode = prime * hashCode + ((getEvaluationResultQualifier() == null) ? 0 : getEvaluationResultQualifier().hashCode());
         hashCode = prime * hashCode + ((getOrderingTimestamp() == null) ? 0 : getOrderingTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getResourceEvaluationId() == null) ? 0 : getResourceEvaluationId().hashCode());
         return hashCode;
     }
 

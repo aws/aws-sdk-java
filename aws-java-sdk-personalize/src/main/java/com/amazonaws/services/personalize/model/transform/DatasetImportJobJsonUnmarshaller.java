@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,10 @@ public class DatasetImportJobJsonUnmarshaller implements Unmarshaller<DatasetImp
                 if (context.testExpression("importMode", targetDepth)) {
                     context.nextToken();
                     datasetImportJob.setImportMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("publishAttributionMetricsToS3", targetDepth)) {
+                    context.nextToken();
+                    datasetImportJob.setPublishAttributionMetricsToS3(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

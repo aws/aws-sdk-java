@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
- * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+ * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first participant
+ * to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
  * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
  * </p>
  * 

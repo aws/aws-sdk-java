@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class CoverageFilterCriteriaMarshaller {
             .marshallLocationName("ecrImageTags").build();
     private static final MarshallingInfo<List> ECRREPOSITORYNAME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrRepositoryName").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionName").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONRUNTIME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionRuntime").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionTags").build();
     private static final MarshallingInfo<List> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("resourceId").build();
     private static final MarshallingInfo<List> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -67,6 +73,9 @@ public class CoverageFilterCriteriaMarshaller {
             protocolMarshaller.marshall(coverageFilterCriteria.getEc2InstanceTags(), EC2INSTANCETAGS_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getEcrImageTags(), ECRIMAGETAGS_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getEcrRepositoryName(), ECRREPOSITORYNAME_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionName(), LAMBDAFUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionRuntime(), LAMBDAFUNCTIONRUNTIME_BINDING);
+            protocolMarshaller.marshall(coverageFilterCriteria.getLambdaFunctionTags(), LAMBDAFUNCTIONTAGS_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(coverageFilterCriteria.getScanStatusCode(), SCANSTATUSCODE_BINDING);

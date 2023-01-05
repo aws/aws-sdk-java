@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,15 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
      * </p>
      */
     private String adminRoleArn;
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      */
     private String clientToken;
@@ -59,24 +59,24 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String studioName;
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio users will assume when logging in to the Nimble Studio portal.
      * </p>
      */
     private String userRoleArn;
 
     /**
      * <p>
-     * The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
      * </p>
      * 
      * @param adminRoleArn
-     *        The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+     *        The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
      */
 
     public void setAdminRoleArn(String adminRoleArn) {
@@ -85,10 +85,10 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
      * </p>
      * 
-     * @return The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+     * @return The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
      */
 
     public String getAdminRoleArn() {
@@ -97,11 +97,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
      * </p>
      * 
      * @param adminRoleArn
-     *        The IAM role that Studio Admins will assume when logging in to the Nimble Studio portal.
+     *        The IAM role that studio admins will assume when logging in to the Nimble Studio portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,14 +113,14 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -130,13 +130,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *         ensure idempotency.
+     *         specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it
+     *         for the request to ensure idempotency.
      */
 
     public String getClientToken() {
@@ -146,14 +146,14 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,10 +284,10 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
-     * @return A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * @return A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -296,11 +296,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -309,11 +309,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,11 +352,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio users will assume when logging in to the Nimble Studio portal.
      * </p>
      * 
      * @param userRoleArn
-     *        The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+     *        The IAM role that studio users will assume when logging in to the Nimble Studio portal.
      */
 
     public void setUserRoleArn(String userRoleArn) {
@@ -365,10 +365,10 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio users will assume when logging in to the Nimble Studio portal.
      * </p>
      * 
-     * @return The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+     * @return The IAM role that studio users will assume when logging in to the Nimble Studio portal.
      */
 
     public String getUserRoleArn() {
@@ -377,11 +377,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+     * The IAM role that studio users will assume when logging in to the Nimble Studio portal.
      * </p>
      * 
      * @param userRoleArn
-     *        The IAM role that Studio Users will assume when logging in to the Nimble Studio portal.
+     *        The IAM role that studio users will assume when logging in to the Nimble Studio portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

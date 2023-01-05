@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,18 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a player session that was created as part of a <a>StartGameSessionPlacement</a> request. This
- * object contains only the player ID and player session ID. To retrieve full details on a player session, call
- * <a>DescribePlayerSessions</a> with the player session ID.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>CreatePlayerSession</a> | <a>CreatePlayerSessions</a> | <a>DescribePlayerSessions</a> |
- * <a>StartGameSessionPlacement</a> | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a> | <a href=
- * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
- * >All APIs by task</a>
+ * Information about a player session. This object contains only the player ID and player session ID. To retrieve full
+ * details on a player session, call <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribePlayerSessions.html"
+ * >DescribePlayerSessions</a> with the player session ID.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlacedPlayerSession" target="_top">AWS API

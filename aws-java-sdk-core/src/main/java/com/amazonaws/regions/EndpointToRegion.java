@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -88,6 +88,13 @@ public class EndpointToRegion {
             return new RegionOrRegionName(regionFromInternalConfig);
         }
 
+        RegionMetadata regionMetadata = RegionUtils.getRegionMetadata();
+
+        Region regionByExplicitEndpoint = regionMetadata.tryGetRegionByExplicitEndpoint(host);
+        if (regionByExplicitEndpoint != null) {
+            return new RegionOrRegionName(regionByExplicitEndpoint);
+        }
+
         String regionFromAwsPartitionPattern = AwsHostNameUtils.parseRegionFromAwsPartitionPattern(host);
         if (regionFromAwsPartitionPattern != null) {
             return new RegionOrRegionName(regionFromAwsPartitionPattern);
@@ -96,13 +103,6 @@ public class EndpointToRegion {
         String serviceHintRegion = AwsHostNameUtils.parseRegionUsingServiceHint(host, serviceHint);
         if (serviceHintRegion != null) {
             return new RegionOrRegionName(serviceHintRegion);
-        }
-
-        RegionMetadata regionMetadata = RegionUtils.getRegionMetadata();
-
-        Region regionByExplicitEndpoint = regionMetadata.tryGetRegionByExplicitEndpoint(host);
-        if (regionByExplicitEndpoint != null) {
-            return new RegionOrRegionName(regionByExplicitEndpoint);
         }
 
         Region regionByDnsSuffix = regionMetadata.tryGetRegionByEndpointDnsSuffix(host);

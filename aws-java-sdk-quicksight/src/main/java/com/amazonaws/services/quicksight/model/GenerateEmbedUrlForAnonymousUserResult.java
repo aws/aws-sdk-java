@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class GenerateEmbedUrlForAnonymousUserResult extends com.amazonaws.Amazon
      * </p>
      */
     private String requestId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+     * </p>
+     */
+    private String anonymousUserArn;
 
     /**
      * <p>
@@ -164,6 +170,46 @@ public class GenerateEmbedUrlForAnonymousUserResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+     * </p>
+     * 
+     * @param anonymousUserArn
+     *        The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+     */
+
+    public void setAnonymousUserArn(String anonymousUserArn) {
+        this.anonymousUserArn = anonymousUserArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+     */
+
+    public String getAnonymousUserArn() {
+        return this.anonymousUserArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+     * </p>
+     * 
+     * @param anonymousUserArn
+     *        The Amazon Resource Name (ARN) to use for the anonymous Amazon QuickSight user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GenerateEmbedUrlForAnonymousUserResult withAnonymousUserArn(String anonymousUserArn) {
+        setAnonymousUserArn(anonymousUserArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -180,7 +226,9 @@ public class GenerateEmbedUrlForAnonymousUserResult extends com.amazonaws.Amazon
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getRequestId() != null)
-            sb.append("RequestId: ").append(getRequestId());
+            sb.append("RequestId: ").append(getRequestId()).append(",");
+        if (getAnonymousUserArn() != null)
+            sb.append("AnonymousUserArn: ").append(getAnonymousUserArn());
         sb.append("}");
         return sb.toString();
     }
@@ -207,6 +255,10 @@ public class GenerateEmbedUrlForAnonymousUserResult extends com.amazonaws.Amazon
             return false;
         if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
             return false;
+        if (other.getAnonymousUserArn() == null ^ this.getAnonymousUserArn() == null)
+            return false;
+        if (other.getAnonymousUserArn() != null && other.getAnonymousUserArn().equals(this.getAnonymousUserArn()) == false)
+            return false;
         return true;
     }
 
@@ -218,6 +270,7 @@ public class GenerateEmbedUrlForAnonymousUserResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getEmbedUrl() == null) ? 0 : getEmbedUrl().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
+        hashCode = prime * hashCode + ((getAnonymousUserArn() == null) ? 0 : getAnonymousUserArn().hashCode());
         return hashCode;
     }
 

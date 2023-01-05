@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -344,10 +344,9 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * </p>
      * <p>
      * Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for
-     * Amazon EKS clusters. Amazon EKS add-ons require clusters running version 1.18 or later because Amazon EKS add-ons
-     * rely on the Server-side Apply Kubernetes feature, which is only available in Kubernetes 1.18 and later. For more
-     * information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS
-     * add-ons</a> in the <i>Amazon EKS User Guide</i>.
+     * Amazon EKS clusters. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon
+     * EKS User Guide</i>.
      * </p>
      * 
      * @param createAddonRequest
@@ -625,11 +624,15 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by Amazon Web Services for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS
-     * optimized Amazon Linux 2 AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
+     * managed by Amazon Web Services for an Amazon EKS cluster. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed node groups</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Windows AMI types are only supported for commercial Regions that support Windows Amazon EKS.
+     * </p>
+     * </note>
      * 
      * @param createNodegroupRequest
      * @return Result of the CreateNodegroup operation returned by the service.
@@ -1145,7 +1148,73 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
 
     /**
      * <p>
-     * Describes the Kubernetes versions that the add-on can be used with.
+     * Returns configuration options.
+     * </p>
+     * 
+     * @param describeAddonConfigurationRequest
+     * @return Result of the DescribeAddonConfiguration operation returned by the service.
+     * @throws ServerException
+     *         These errors are usually caused by a server-side issue.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found. You can view your available clusters with <a>ListClusters</a>.
+     *         You can view your available managed node groups with <a>ListNodegroups</a>. Amazon EKS clusters and node
+     *         groups are Region-specific.
+     * @throws InvalidParameterException
+     *         The specified parameter is invalid. Review the available parameters for the API request.
+     * @sample AmazonEKS.DescribeAddonConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonConfiguration" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAddonConfigurationResult describeAddonConfiguration(DescribeAddonConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAddonConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAddonConfigurationResult executeDescribeAddonConfiguration(DescribeAddonConfigurationRequest describeAddonConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAddonConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAddonConfigurationRequest> request = null;
+        Response<DescribeAddonConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAddonConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAddonConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EKS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddonConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAddonConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAddonConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the versions for an add-on. Information such as the Kubernetes versions that you can use the add-on
+     * with, the <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on are returned.
      * </p>
      * 
      * @param describeAddonVersionsRequest
@@ -2686,9 +2755,11 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
      * If you update without a launch template, then you can update to the latest available AMI version of a node
      * group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the
      * latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version
-     * in the request. For more information, see <a
+     * in the request. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
      * You cannot roll back a node group to an earlier Kubernetes version or AMI version.

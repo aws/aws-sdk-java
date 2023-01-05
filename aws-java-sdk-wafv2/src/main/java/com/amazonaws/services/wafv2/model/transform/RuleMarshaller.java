@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class RuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityConfig").build();
     private static final MarshallingInfo<StructuredPojo> CAPTCHACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptchaConfig").build();
+    private static final MarshallingInfo<StructuredPojo> CHALLENGECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChallengeConfig").build();
 
     private static final RuleMarshaller instance = new RuleMarshaller();
 
@@ -69,6 +71,7 @@ public class RuleMarshaller {
             protocolMarshaller.marshall(rule.getRuleLabels(), RULELABELS_BINDING);
             protocolMarshaller.marshall(rule.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
             protocolMarshaller.marshall(rule.getCaptchaConfig(), CAPTCHACONFIG_BINDING);
+            protocolMarshaller.marshall(rule.getChallengeConfig(), CHALLENGECONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

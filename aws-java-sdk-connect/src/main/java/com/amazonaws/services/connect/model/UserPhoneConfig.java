@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
+     * <note>
+     * <p>
+     * When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
+     * milliseconds.
+     * </p>
+     * </note>
      */
     private Integer afterContactWorkTimeLimit;
     /**
@@ -168,9 +174,19 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
+     * <note>
+     * <p>
+     * When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
+     * milliseconds.
+     * </p>
+     * </note>
      * 
      * @param afterContactWorkTimeLimit
-     *        The After Call Work (ACW) timeout setting, in seconds.
+     *        The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+     *        <p>
+     *        When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
+     *        milliseconds.
+     *        </p>
      */
 
     public void setAfterContactWorkTimeLimit(Integer afterContactWorkTimeLimit) {
@@ -181,8 +197,18 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
+     * <note>
+     * <p>
+     * When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
+     * milliseconds.
+     * </p>
+     * </note>
      * 
-     * @return The After Call Work (ACW) timeout setting, in seconds.
+     * @return The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+     *         <p>
+     *         When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
+     *         milliseconds.
+     *         </p>
      */
 
     public Integer getAfterContactWorkTimeLimit() {
@@ -193,9 +219,19 @@ public class UserPhoneConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The After Call Work (ACW) timeout setting, in seconds.
      * </p>
+     * <note>
+     * <p>
+     * When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
+     * milliseconds.
+     * </p>
+     * </note>
      * 
      * @param afterContactWorkTimeLimit
-     *        The After Call Work (ACW) timeout setting, in seconds.
+     *        The After Call Work (ACW) timeout setting, in seconds.</p> <note>
+     *        <p>
+     *        When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code> is returned in
+     *        milliseconds.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

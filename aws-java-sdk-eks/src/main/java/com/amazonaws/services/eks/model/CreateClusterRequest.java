@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -108,9 +108,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      */
     private OutpostConfigRequest outpostConfig;
@@ -675,17 +675,17 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      * 
      * @param outpostConfig
      *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
      *        Outpost. Before creating a local cluster on an Outpost, review <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     *        cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
-     *        available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     *        clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This
+     *        object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      */
 
     public void setOutpostConfig(OutpostConfigRequest outpostConfig) {
@@ -696,16 +696,16 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      * 
      * @return An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
      *         Outpost. Before creating a local cluster on an Outpost, review <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon
-     *         EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
-     *         available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     *         clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This
+     *         object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      */
 
     public OutpostConfigRequest getOutpostConfig() {
@@ -716,17 +716,17 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost.
      * Before creating a local cluster on an Outpost, review <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     * cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't available
-     * for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local clusters
+     * for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This object isn't
+     * available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * </p>
      * 
      * @param outpostConfig
      *        An object representing the configuration of your local Amazon EKS cluster on an Amazon Web Services
      *        Outpost. Before creating a local cluster on an Outpost, review <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating an Amazon EKS
-     *        cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This object isn't
-     *        available for creating Amazon EKS clusters on the Amazon Web Services cloud.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-overview.html">Local
+     *        clusters for Amazon EKS on Amazon Web Services Outposts</a> in the <i>Amazon EKS User Guide</i>. This
+     *        object isn't available for creating Amazon EKS clusters on the Amazon Web Services cloud.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

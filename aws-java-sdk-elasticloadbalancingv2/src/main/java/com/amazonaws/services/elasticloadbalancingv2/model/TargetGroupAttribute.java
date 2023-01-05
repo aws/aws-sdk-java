@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -42,12 +42,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load
-     * Balancers:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code>
@@ -61,20 +55,63 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip</code> for Network Load Balancers
+     * <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers
+     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The
+     * value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is
+     * <code>use_load_balancer_configuration</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that
+     * must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that
+     * traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the
+     * maximum number of targets. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of
+     * targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as
+     * unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an
+     * integer from 1 to 100. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of
+     * targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets,
+     * including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum
+     * percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send
+     * traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from
+     * 1 to 100. The default is <code>off</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -156,6 +193,29 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <p>
      * <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported only by Gateway Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows
+     * when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The
+     * default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must
+     * be the same.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a
+     * target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes
+     * must be the same.
      * </p>
      * </li>
      * </ul>
@@ -173,7 +233,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -184,12 +244,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load
-     * Balancers:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code>
@@ -203,20 +257,63 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip</code> for Network Load Balancers
+     * <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers
+     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The
+     * value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is
+     * <code>use_load_balancer_configuration</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that
+     * must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that
+     * traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the
+     * maximum number of targets. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of
+     * targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as
+     * unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an
+     * integer from 1 to 100. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of
+     * targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets,
+     * including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum
+     * percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send
+     * traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from
+     * 1 to 100. The default is <code>off</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -301,11 +398,34 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes are supported only by Gateway Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows
+     * when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The
+     * default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must
+     * be the same.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a
+     * target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes
+     * must be the same.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by all load balancers:
+     *        The following attributes are supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -316,12 +436,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway
-     *        Load Balancers:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is
@@ -335,20 +449,64 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+     *        <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source_ip</code> for Network Load Balancers
+     *        <code>source_ip</code> for Network Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers
+     *        <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by Application Load Balancers and Network Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled.
+     *        The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The
+     *        default is <code>use_load_balancer_configuration</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of
+     *        targets that must be healthy. If the number of healthy targets is below this value, mark the zone as
+     *        unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are
+     *        <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage
+     *        of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone
+     *        as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are
+     *        <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum
+     *        number of targets that must be healthy. If the number of healthy targets is below this value, send traffic
+     *        to all targets, including unhealthy targets. The possible values are 1 to the maximum number of targets.
+     *        The default is 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum
+     *        percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send
+     *        traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an
+     *        integer from 1 to 100. The default is <code>off</code>.
+     *        </p>
      *        </li>
      *        </ul>
      *        <p>
@@ -435,6 +593,29 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported only by Gateway Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing
+     *        flows when a target is deregistered. The possible values are <code>rebalance</code> and
+     *        <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (
+     *        <code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set
+     *        independently. The value you set for both attributes must be the same.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows
+     *        when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>.
+     *        The default is <code>no_rebalance</code>. The two attributes (
+     *        <code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be
+     *        set independently. The value you set for both attributes must be the same.
+     *        </p>
+     *        </li>
      */
 
     public void setKey(String key) {
@@ -446,7 +627,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -457,12 +638,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load
-     * Balancers:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code>
@@ -476,20 +651,63 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip</code> for Network Load Balancers
+     * <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers
+     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The
+     * value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is
+     * <code>use_load_balancer_configuration</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that
+     * must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that
+     * traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the
+     * maximum number of targets. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of
+     * targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as
+     * unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an
+     * integer from 1 to 100. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of
+     * targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets,
+     * including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum
+     * percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send
+     * traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from
+     * 1 to 100. The default is <code>off</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -574,10 +792,33 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes are supported only by Gateway Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows
+     * when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The
+     * default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must
+     * be the same.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a
+     * target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes
+     * must be the same.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of the attribute.</p>
      *         <p>
-     *         The following attribute is supported by all load balancers:
+     *         The following attributes are supported by all load balancers:
      *         </p>
      *         <ul>
      *         <li>
@@ -588,12 +829,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         Lambda function, this attribute is not supported.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway
-     *         Load Balancers:
-     *         </p>
-     *         <ul>
      *         <li>
      *         <p>
      *         <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is
@@ -607,20 +842,64 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+     *         <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>source_ip</code> for Network Load Balancers
+     *         <code>source_ip</code> for Network Load Balancers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers
+     *         <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported by Application Load Balancers and Network Load Balancers:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled.
+     *         The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The
+     *         default is <code>use_load_balancer_configuration</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of
+     *         targets that must be healthy. If the number of healthy targets is below this value, mark the zone as
+     *         unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are
+     *         <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage
+     *         of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone
+     *         as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are
+     *         <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum
+     *         number of targets that must be healthy. If the number of healthy targets is below this value, send
+     *         traffic to all targets, including unhealthy targets. The possible values are 1 to the maximum number of
+     *         targets. The default is 1.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum
+     *         percentage of targets that must be healthy. If the percentage of healthy targets is below this value,
+     *         send traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an
+     *         integer from 1 to 100. The default is <code>off</code>.
+     *         </p>
      *         </li>
      *         </ul>
      *         <p>
@@ -707,6 +986,29 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *         is <code>true</code> or <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         The following attributes are supported only by Gateway Load Balancers:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing
+     *         flows when a target is deregistered. The possible values are <code>rebalance</code> and
+     *         <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (
+     *         <code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be
+     *         set independently. The value you set for both attributes must be the same.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing
+     *         flows when a target is unhealthy. The possible values are <code>rebalance</code> and
+     *         <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (
+     *         <code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be
+     *         set independently. The value you set for both attributes must be the same.
+     *         </p>
+     *         </li>
      */
 
     public String getKey() {
@@ -718,7 +1020,7 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
@@ -729,12 +1031,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * not supported.
      * </p>
      * </li>
-     * </ul>
-     * <p>
-     * The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway Load
-     * Balancers:
-     * </p>
-     * <ul>
      * <li>
      * <p>
      * <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is <code>true</code>
@@ -748,20 +1044,63 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+     * <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip</code> for Network Load Balancers
+     * <code>source_ip</code> for Network Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers
+     * <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * The following attributes are supported by Application Load Balancers and Network Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled. The
+     * value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The default is
+     * <code>use_load_balancer_configuration</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of targets that
+     * must be healthy. If the number of healthy targets is below this value, mark the zone as unhealthy in DNS, so that
+     * traffic is routed only to healthy zones. The possible values are <code>off</code> or an integer from 1 to the
+     * maximum number of targets. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage of
+     * targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone as
+     * unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are <code>off</code> or an
+     * integer from 1 to 100. The default is <code>off</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum number of
+     * targets that must be healthy. If the number of healthy targets is below this value, send traffic to all targets,
+     * including unhealthy targets. The possible values are 1 to the maximum number of targets. The default is 1.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum
+     * percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send
+     * traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an integer from
+     * 1 to 100. The default is <code>off</code>.
+     * </p>
      * </li>
      * </ul>
      * <p>
@@ -846,11 +1185,34 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * The following attributes are supported only by Gateway Load Balancers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing flows
+     * when a target is deregistered. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The
+     * default is <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) can't be set independently. The value you set for both attributes must
+     * be the same.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows when a
+     * target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>. The default is
+     * <code>no_rebalance</code>. The two attributes (<code>target_failover.on_deregistration</code> and
+     * <code>target_failover.on_unhealthy</code>) cannot be set independently. The value you set for both attributes
+     * must be the same.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by all load balancers:
+     *        The following attributes are supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
@@ -861,12 +1223,6 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        Lambda function, this attribute is not supported.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The following attributes are supported by Application Load Balancers, Network Load Balancers, and Gateway
-     *        Load Balancers:
-     *        </p>
-     *        <ul>
      *        <li>
      *        <p>
      *        <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled. The value is
@@ -880,20 +1236,64 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers
+     *        <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source_ip</code> for Network Load Balancers
+     *        <code>source_ip</code> for Network Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers
+     *        <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway Load Balancers.
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported by Application Load Balancers and Network Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load balancing is enabled.
+     *        The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>. The
+     *        default is <code>use_load_balancer_configuration</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The minimum number of
+     *        targets that must be healthy. If the number of healthy targets is below this value, mark the zone as
+     *        unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are
+     *        <code>off</code> or an integer from 1 to the maximum number of targets. The default is <code>off</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code> - The minimum percentage
+     *        of targets that must be healthy. If the percentage of healthy targets is below this value, mark the zone
+     *        as unhealthy in DNS, so that traffic is routed only to healthy zones. The possible values are
+     *        <code>off</code> or an integer from 1 to 100. The default is <code>off</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code> - The minimum
+     *        number of targets that must be healthy. If the number of healthy targets is below this value, send traffic
+     *        to all targets, including unhealthy targets. The possible values are 1 to the maximum number of targets.
+     *        The default is 1.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code> - The minimum
+     *        percentage of targets that must be healthy. If the percentage of healthy targets is below this value, send
+     *        traffic to all targets, including unhealthy targets. The possible values are <code>off</code> or an
+     *        integer from 1 to 100. The default is <code>off</code>.
+     *        </p>
      *        </li>
      *        </ul>
      *        <p>
@@ -978,6 +1378,29 @@ public class TargetGroupAttribute implements Serializable, Cloneable {
      *        <p>
      *        <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version 2 is enabled. The value
      *        is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The following attributes are supported only by Gateway Load Balancers:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer handles existing
+     *        flows when a target is deregistered. The possible values are <code>rebalance</code> and
+     *        <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes (
+     *        <code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) can't be set
+     *        independently. The value you set for both attributes must be the same.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer handles existing flows
+     *        when a target is unhealthy. The possible values are <code>rebalance</code> and <code>no_rebalance</code>.
+     *        The default is <code>no_rebalance</code>. The two attributes (
+     *        <code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>) cannot be
+     *        set independently. The value you set for both attributes must be the same.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

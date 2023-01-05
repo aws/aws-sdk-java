@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,7 +93,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String uefiData;
@@ -117,7 +117,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String imdsSupport;
@@ -628,7 +628,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param uefiData
@@ -637,7 +637,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      *        >GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a
      *        href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     *        Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setUefiData(String uefiData) {
@@ -651,7 +651,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a
@@ -660,7 +660,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      *         command. You can inspect and modify the UEFI data by using the <a
      *         href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more
      *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     *         Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public String getUefiData() {
@@ -674,7 +674,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param uefiData
@@ -683,7 +683,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      *        >GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a
      *        href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     *        Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -775,7 +775,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -784,7 +784,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setImdsSupport(String imdsSupport) {
@@ -798,7 +798,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances launched from this AMI
@@ -806,7 +806,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      *         instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *         <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *         >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public String getImdsSupport() {
@@ -820,7 +820,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param imdsSupport
@@ -829,7 +829,7 @@ public class ImageAttribute implements Serializable, Cloneable {
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

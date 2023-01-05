@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class AutoTuneOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies Auto-Tune options for the domain.
+     * Auto-Tune settings for updating a domain.
      * </p>
      */
     private AutoTuneOptions options;
     /**
      * <p>
-     * The status of the Auto-Tune options for the domain.
+     * The current status of Auto-Tune for a domain.
      * </p>
      */
     private AutoTuneStatus status;
 
     /**
      * <p>
-     * Specifies Auto-Tune options for the domain.
+     * Auto-Tune settings for updating a domain.
      * </p>
      * 
      * @param options
-     *        Specifies Auto-Tune options for the domain.
+     *        Auto-Tune settings for updating a domain.
      */
 
     public void setOptions(AutoTuneOptions options) {
@@ -53,10 +53,10 @@ public class AutoTuneOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies Auto-Tune options for the domain.
+     * Auto-Tune settings for updating a domain.
      * </p>
      * 
-     * @return Specifies Auto-Tune options for the domain.
+     * @return Auto-Tune settings for updating a domain.
      */
 
     public AutoTuneOptions getOptions() {
@@ -65,11 +65,11 @@ public class AutoTuneOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies Auto-Tune options for the domain.
+     * Auto-Tune settings for updating a domain.
      * </p>
      * 
      * @param options
-     *        Specifies Auto-Tune options for the domain.
+     *        Auto-Tune settings for updating a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class AutoTuneOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the Auto-Tune options for the domain.
+     * The current status of Auto-Tune for a domain.
      * </p>
      * 
      * @param status
-     *        The status of the Auto-Tune options for the domain.
+     *        The current status of Auto-Tune for a domain.
      */
 
     public void setStatus(AutoTuneStatus status) {
@@ -93,10 +93,10 @@ public class AutoTuneOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the Auto-Tune options for the domain.
+     * The current status of Auto-Tune for a domain.
      * </p>
      * 
-     * @return The status of the Auto-Tune options for the domain.
+     * @return The current status of Auto-Tune for a domain.
      */
 
     public AutoTuneStatus getStatus() {
@@ -105,11 +105,11 @@ public class AutoTuneOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status of the Auto-Tune options for the domain.
+     * The current status of Auto-Tune for a domain.
      * </p>
      * 
      * @param status
-     *        The status of the Auto-Tune options for the domain.
+     *        The current status of Auto-Tune for a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

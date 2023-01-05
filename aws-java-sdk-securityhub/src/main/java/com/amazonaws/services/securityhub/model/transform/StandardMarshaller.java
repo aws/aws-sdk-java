@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class StandardMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Boolean> ENABLEDBYDEFAULT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnabledByDefault").build();
+    private static final MarshallingInfo<StructuredPojo> STANDARDSMANAGEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StandardsManagedBy").build();
 
     private static final StandardMarshaller instance = new StandardMarshaller();
 
@@ -56,6 +58,7 @@ public class StandardMarshaller {
             protocolMarshaller.marshall(standard.getName(), NAME_BINDING);
             protocolMarshaller.marshall(standard.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(standard.getEnabledByDefault(), ENABLEDBYDEFAULT_BINDING);
+            protocolMarshaller.marshall(standard.getStandardsManagedBy(), STANDARDSMANAGEDBY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

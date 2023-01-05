@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,8 @@ public enum CreateAccountFailureReason {
     INVALID_IDENTITY_FOR_BUSINESS_VALIDATION("INVALID_IDENTITY_FOR_BUSINESS_VALIDATION"),
     UNKNOWN_BUSINESS_VALIDATION("UNKNOWN_BUSINESS_VALIDATION"),
     MISSING_PAYMENT_INSTRUMENT("MISSING_PAYMENT_INSTRUMENT"),
-    INVALID_PAYMENT_INSTRUMENT("INVALID_PAYMENT_INSTRUMENT");
+    INVALID_PAYMENT_INSTRUMENT("INVALID_PAYMENT_INSTRUMENT"),
+    UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED("UPDATE_EXISTING_RESOURCE_POLICY_WITH_TAGS_NOT_SUPPORTED");
 
     private String value;
 

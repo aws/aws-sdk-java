@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribePackagesFilter implements Serializable, Cloneable, Structur
     private String name;
     /**
      * <p>
-     * A list of values for the specified field.
+     * A list of values for the specified filter field.
      * </p>
      */
     private java.util.List<String> value;
@@ -99,10 +99,10 @@ public class DescribePackagesFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of values for the specified field.
+     * A list of values for the specified filter field.
      * </p>
      * 
-     * @return A list of values for the specified field.
+     * @return A list of values for the specified filter field.
      */
 
     public java.util.List<String> getValue() {
@@ -111,11 +111,11 @@ public class DescribePackagesFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of values for the specified field.
+     * A list of values for the specified filter field.
      * </p>
      * 
      * @param value
-     *        A list of values for the specified field.
+     *        A list of values for the specified filter field.
      */
 
     public void setValue(java.util.Collection<String> value) {
@@ -129,7 +129,7 @@ public class DescribePackagesFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of values for the specified field.
+     * A list of values for the specified filter field.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,7 +138,7 @@ public class DescribePackagesFilter implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param value
-     *        A list of values for the specified field.
+     *        A list of values for the specified filter field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class DescribePackagesFilter implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of values for the specified field.
+     * A list of values for the specified filter field.
      * </p>
      * 
      * @param value
-     *        A list of values for the specified field.
+     *        A list of values for the specified filter field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

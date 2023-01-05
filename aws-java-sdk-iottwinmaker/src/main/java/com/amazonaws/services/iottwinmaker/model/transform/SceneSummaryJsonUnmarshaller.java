@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,29 +48,29 @@ public class SceneSummaryJsonUnmarshaller implements Unmarshaller<SceneSummary, 
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("arn", targetDepth)) {
+                if (context.testExpression("sceneId", targetDepth)) {
                     context.nextToken();
-                    sceneSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                    sceneSummary.setSceneId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("contentLocation", targetDepth)) {
                     context.nextToken();
                     sceneSummary.setContentLocation(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    sceneSummary.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("creationDateTime", targetDepth)) {
                     context.nextToken();
                     sceneSummary.setCreationDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    sceneSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("sceneId", targetDepth)) {
-                    context.nextToken();
-                    sceneSummary.setSceneId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("updateDateTime", targetDepth)) {
                     context.nextToken();
                     sceneSummary.setUpdateDateTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    sceneSummary.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

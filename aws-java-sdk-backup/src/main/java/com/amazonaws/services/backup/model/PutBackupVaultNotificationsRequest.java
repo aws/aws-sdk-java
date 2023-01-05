@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,7 +76,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <note>
      * <p>
-     * Ignore the list below because it includes deprecated events. Refer to the list above.
+     * The list below shows items that are deprecated events (for reference) and are no longer in use. They are no
+     * longer supported and will not return statuses or notifications. Refer to the list above for current supported
+     * events.
      * </p>
      * </note>
      */
@@ -216,7 +218,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <note>
      * <p>
-     * Ignore the list below because it includes deprecated events. Refer to the list above.
+     * The list below shows items that are deprecated events (for reference) and are no longer in use. They are no
+     * longer supported and will not return statuses or notifications. Refer to the list above for current supported
+     * events.
      * </p>
      * </note>
      * 
@@ -254,7 +258,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      *         </ul>
      *         <note>
      *         <p>
-     *         Ignore the list below because it includes deprecated events. Refer to the list above.
+     *         The list below shows items that are deprecated events (for reference) and are no longer in use. They are
+     *         no longer supported and will not return statuses or notifications. Refer to the list above for current
+     *         supported events.
      *         </p>
      * @see BackupVaultEvent
      */
@@ -299,7 +305,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <note>
      * <p>
-     * Ignore the list below because it includes deprecated events. Refer to the list above.
+     * The list below shows items that are deprecated events (for reference) and are no longer in use. They are no
+     * longer supported and will not return statuses or notifications. Refer to the list above for current supported
+     * events.
      * </p>
      * </note>
      * 
@@ -338,7 +346,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </ul>
      *        <note>
      *        <p>
-     *        Ignore the list below because it includes deprecated events. Refer to the list above.
+     *        The list below shows items that are deprecated events (for reference) and are no longer in use. They are
+     *        no longer supported and will not return statuses or notifications. Refer to the list above for current
+     *        supported events.
      *        </p>
      * @see BackupVaultEvent
      */
@@ -388,7 +398,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <note>
      * <p>
-     * Ignore the list below because it includes deprecated events. Refer to the list above.
+     * The list below shows items that are deprecated events (for reference) and are no longer in use. They are no
+     * longer supported and will not return statuses or notifications. Refer to the list above for current supported
+     * events.
      * </p>
      * </note>
      * <p>
@@ -432,7 +444,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </ul>
      *        <note>
      *        <p>
-     *        Ignore the list below because it includes deprecated events. Refer to the list above.
+     *        The list below shows items that are deprecated events (for reference) and are no longer in use. They are
+     *        no longer supported and will not return statuses or notifications. Refer to the list above for current
+     *        supported events.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupVaultEvent
@@ -484,7 +498,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <note>
      * <p>
-     * Ignore the list below because it includes deprecated events. Refer to the list above.
+     * The list below shows items that are deprecated events (for reference) and are no longer in use. They are no
+     * longer supported and will not return statuses or notifications. Refer to the list above for current supported
+     * events.
      * </p>
      * </note>
      * 
@@ -523,7 +539,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </ul>
      *        <note>
      *        <p>
-     *        Ignore the list below because it includes deprecated events. Refer to the list above.
+     *        The list below shows items that are deprecated events (for reference) and are no longer in use. They are
+     *        no longer supported and will not return statuses or notifications. Refer to the list above for current
+     *        supported events.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupVaultEvent
@@ -570,7 +588,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      * </ul>
      * <note>
      * <p>
-     * Ignore the list below because it includes deprecated events. Refer to the list above.
+     * The list below shows items that are deprecated events (for reference) and are no longer in use. They are no
+     * longer supported and will not return statuses or notifications. Refer to the list above for current supported
+     * events.
      * </p>
      * </note>
      * 
@@ -609,7 +629,9 @@ public class PutBackupVaultNotificationsRequest extends com.amazonaws.AmazonWebS
      *        </ul>
      *        <note>
      *        <p>
-     *        Ignore the list below because it includes deprecated events. Refer to the list above.
+     *        The list below shows items that are deprecated events (for reference) and are no longer in use. They are
+     *        no longer supported and will not return statuses or notifications. Refer to the list above for current
+     *        supported events.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BackupVaultEvent

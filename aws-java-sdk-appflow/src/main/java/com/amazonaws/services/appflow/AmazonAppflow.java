@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -390,8 +390,8 @@ public interface AmazonAppflow {
 
     /**
      * <p>
-     * Registers a new connector with your Amazon Web Services account. Before you can register the connector, you must
-     * deploy lambda in your account.
+     * Registers a new custom connector with your Amazon Web Services account. Before you can register the connector,
+     * you must deploy the associated AWS lambda function in your account.
      * </p>
      * 
      * @param registerConnectorRequest
@@ -489,7 +489,7 @@ public interface AmazonAppflow {
 
     /**
      * <p>
-     * Unregisters the custom connector registered in your account that matches the connectorLabel provided in the
+     * Unregisters the custom connector registered in your account that matches the connector label provided in the
      * request.
      * </p>
      * 
@@ -550,6 +550,51 @@ public interface AmazonAppflow {
      *      API Documentation</a>
      */
     UpdateConnectorProfileResult updateConnectorProfile(UpdateConnectorProfileRequest updateConnectorProfileRequest);
+
+    /**
+     * <p>
+     * Updates a custom connector that you've previously registered. This operation updates the connector with one of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The latest version of the AWS Lambda function that's assigned to the connector
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new AWS Lambda function that you specify
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateConnectorRegistrationRequest
+     * @return Result of the UpdateConnectorRegistration operation returned by the service.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a flow with the given name already exists
+     *         within the account. Check for conflicting resource names and try again.
+     * @throws AccessDeniedException
+     *         AppFlow/Requester has invalid or missing permissions.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request (such as the source or destination connector profile) is not found.
+     * @throws ServiceQuotaExceededException
+     *         The request would cause a service quota (such as the number of flows) to be exceeded.
+     * @throws ThrottlingException
+     *         API calls have exceeded the maximum allowed API request rate per account and per Region.
+     * @throws InternalServerException
+     *         An internal service error occurred during the processing of your request. Try again later.
+     * @throws ConnectorServerException
+     *         An error occurred when retrieving data from the connector endpoint.
+     * @throws ConnectorAuthenticationException
+     *         An error occurred when authenticating with the connector endpoint.
+     * @sample AmazonAppflow.UpdateConnectorRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateConnectorRegistrationResult updateConnectorRegistration(UpdateConnectorRegistrationRequest updateConnectorRegistrationRequest);
 
     /**
      * <p>

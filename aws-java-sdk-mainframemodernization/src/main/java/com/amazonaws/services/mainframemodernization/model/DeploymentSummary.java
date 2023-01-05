@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
     private String deploymentId;
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The unique identifier of the runtime environment.
      * </p>
      */
     private String environmentId;
@@ -233,11 +233,11 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The unique identifier of the runtime environment.
      * </p>
      * 
      * @param environmentId
-     *        The unique identifier of the environment.
+     *        The unique identifier of the runtime environment.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -246,10 +246,10 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The unique identifier of the runtime environment.
      * </p>
      * 
-     * @return The unique identifier of the environment.
+     * @return The unique identifier of the runtime environment.
      */
 
     public String getEnvironmentId() {
@@ -258,11 +258,11 @@ public class DeploymentSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the environment.
+     * The unique identifier of the runtime environment.
      * </p>
      * 
      * @param environmentId
-     *        The unique identifier of the environment.
+     *        The unique identifier of the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the current status of the entity.
+ * Provides the current status of an entity.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the entity was created.
+     * The timestamp when the entity was created.
      * </p>
      */
     private java.util.Date creationDate;
@@ -45,24 +45,24 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
     private Integer updateVersion;
     /**
      * <p>
-     * Provides the <code>OptionState</code> for the domain.
+     * The state of the entity.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * Indicates whether the domain is being deleted.
+     * Indicates whether the entity is being deleted.
      * </p>
      */
     private Boolean pendingDeletion;
 
     /**
      * <p>
-     * The timestamp of when the entity was created.
+     * The timestamp when the entity was created.
      * </p>
      * 
      * @param creationDate
-     *        The timestamp of when the entity was created.
+     *        The timestamp when the entity was created.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -71,10 +71,10 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the entity was created.
+     * The timestamp when the entity was created.
      * </p>
      * 
-     * @return The timestamp of when the entity was created.
+     * @return The timestamp when the entity was created.
      */
 
     public java.util.Date getCreationDate() {
@@ -83,11 +83,11 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the entity was created.
+     * The timestamp when the entity was created.
      * </p>
      * 
      * @param creationDate
-     *        The timestamp of when the entity was created.
+     *        The timestamp when the entity was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides the <code>OptionState</code> for the domain.
+     * The state of the entity.
      * </p>
      * 
      * @param state
-     *        Provides the <code>OptionState</code> for the domain.
+     *        The state of the entity.
      * @see OptionState
      */
 
@@ -192,10 +192,10 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides the <code>OptionState</code> for the domain.
+     * The state of the entity.
      * </p>
      * 
-     * @return Provides the <code>OptionState</code> for the domain.
+     * @return The state of the entity.
      * @see OptionState
      */
 
@@ -205,11 +205,11 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides the <code>OptionState</code> for the domain.
+     * The state of the entity.
      * </p>
      * 
      * @param state
-     *        Provides the <code>OptionState</code> for the domain.
+     *        The state of the entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OptionState
      */
@@ -221,11 +221,11 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Provides the <code>OptionState</code> for the domain.
+     * The state of the entity.
      * </p>
      * 
      * @param state
-     *        Provides the <code>OptionState</code> for the domain.
+     *        The state of the entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OptionState
      */
@@ -237,11 +237,11 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the domain is being deleted.
+     * Indicates whether the entity is being deleted.
      * </p>
      * 
      * @param pendingDeletion
-     *        Indicates whether the domain is being deleted.
+     *        Indicates whether the entity is being deleted.
      */
 
     public void setPendingDeletion(Boolean pendingDeletion) {
@@ -250,10 +250,10 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the domain is being deleted.
+     * Indicates whether the entity is being deleted.
      * </p>
      * 
-     * @return Indicates whether the domain is being deleted.
+     * @return Indicates whether the entity is being deleted.
      */
 
     public Boolean getPendingDeletion() {
@@ -262,11 +262,11 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the domain is being deleted.
+     * Indicates whether the entity is being deleted.
      * </p>
      * 
      * @param pendingDeletion
-     *        Indicates whether the domain is being deleted.
+     *        Indicates whether the entity is being deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -277,10 +277,10 @@ public class OptionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether the domain is being deleted.
+     * Indicates whether the entity is being deleted.
      * </p>
      * 
-     * @return Indicates whether the domain is being deleted.
+     * @return Indicates whether the entity is being deleted.
      */
 
     public Boolean isPendingDeletion() {

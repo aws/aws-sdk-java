@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,18 +46,25 @@ public class GeofenceGeometry implements Serializable, Cloneable, StructuredPojo
     private Circle circle;
     /**
      * <p>
-     * An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last
-     * vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     * <code>[longitude, latitude]</code>.
+     * A polygon is a list of linear rings which are each made up of a list of vertices.
      * </p>
      * <p>
-     * The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner
-     * or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order
-     * around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in
-     * clockwise order, where the left side is the polygon's interior.
+     * Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an
+     * array of doubles of length 2 (so <code>[double, double]</code>).
      * </p>
      * <p>
-     * A geofence polygon can consist of between 4 and 1,000 vertices.
+     * An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is
+     * called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s
+     * interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (
+     * <code>[[double, double], ...]</code>).
+     * </p>
+     * <p>
+     * A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array
+     * of linear rings, which is represented as an array of arrays of arrays of doubles (
+     * <code>[[[double, double], ...], ...]</code>).
+     * </p>
+     * <p>
+     * A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      * </p>
      */
     private java.util.List<java.util.List<java.util.List<Double>>> polygon;
@@ -104,31 +111,45 @@ public class GeofenceGeometry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last
-     * vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     * <code>[longitude, latitude]</code>.
+     * A polygon is a list of linear rings which are each made up of a list of vertices.
      * </p>
      * <p>
-     * The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner
-     * or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order
-     * around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in
-     * clockwise order, where the left side is the polygon's interior.
+     * Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an
+     * array of doubles of length 2 (so <code>[double, double]</code>).
      * </p>
      * <p>
-     * A geofence polygon can consist of between 4 and 1,000 vertices.
+     * An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is
+     * called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s
+     * interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (
+     * <code>[[double, double], ...]</code>).
+     * </p>
+     * <p>
+     * A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array
+     * of linear rings, which is represented as an array of arrays of arrays of doubles (
+     * <code>[[[double, double], ...], ...]</code>).
+     * </p>
+     * <p>
+     * A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      * </p>
      * 
-     * @return An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and
-     *         last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     *         <code>[longitude, latitude]</code>. </p>
+     * @return A polygon is a list of linear rings which are each made up of a list of vertices.</p>
      *         <p>
-     *         The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be
-     *         inner or outer rings to describe holes and islands. Outer rings must list their vertices in
-     *         counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner
-     *         rings must list their vertices in clockwise order, where the left side is the polygon's interior.
+     *         Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented
+     *         as an array of doubles of length 2 (so <code>[double, double]</code>).
      *         </p>
      *         <p>
-     *         A geofence polygon can consist of between 4 and 1,000 vertices.
+     *         An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary),
+     *         is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the
+     *         ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles
+     *         (<code>[[double, double], ...]</code>).
+     *         </p>
+     *         <p>
+     *         A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes
+     *         an array of linear rings, which is represented as an array of arrays of arrays of doubles (
+     *         <code>[[[double, double], ...], ...]</code>).
+     *         </p>
+     *         <p>
+     *         A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      */
 
     public java.util.List<java.util.List<java.util.List<Double>>> getPolygon() {
@@ -137,32 +158,46 @@ public class GeofenceGeometry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last
-     * vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     * <code>[longitude, latitude]</code>.
+     * A polygon is a list of linear rings which are each made up of a list of vertices.
      * </p>
      * <p>
-     * The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner
-     * or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order
-     * around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in
-     * clockwise order, where the left side is the polygon's interior.
+     * Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an
+     * array of doubles of length 2 (so <code>[double, double]</code>).
      * </p>
      * <p>
-     * A geofence polygon can consist of between 4 and 1,000 vertices.
+     * An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is
+     * called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s
+     * interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (
+     * <code>[[double, double], ...]</code>).
+     * </p>
+     * <p>
+     * A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array
+     * of linear rings, which is represented as an array of arrays of arrays of doubles (
+     * <code>[[[double, double], ...], ...]</code>).
+     * </p>
+     * <p>
+     * A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      * </p>
      * 
      * @param polygon
-     *        An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and
-     *        last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     *        <code>[longitude, latitude]</code>. </p>
+     *        A polygon is a list of linear rings which are each made up of a list of vertices.</p>
      *        <p>
-     *        The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be
-     *        inner or outer rings to describe holes and islands. Outer rings must list their vertices in
-     *        counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner
-     *        rings must list their vertices in clockwise order, where the left side is the polygon's interior.
+     *        Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented
+     *        as an array of doubles of length 2 (so <code>[double, double]</code>).
      *        </p>
      *        <p>
-     *        A geofence polygon can consist of between 4 and 1,000 vertices.
+     *        An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary),
+     *        is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the
+     *        ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles
+     *        (<code>[[double, double], ...]</code>).
+     *        </p>
+     *        <p>
+     *        A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an
+     *        array of linear rings, which is represented as an array of arrays of arrays of doubles (
+     *        <code>[[[double, double], ...], ...]</code>).
+     *        </p>
+     *        <p>
+     *        A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      */
 
     public void setPolygon(java.util.Collection<java.util.List<java.util.List<Double>>> polygon) {
@@ -176,18 +211,25 @@ public class GeofenceGeometry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last
-     * vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     * <code>[longitude, latitude]</code>.
+     * A polygon is a list of linear rings which are each made up of a list of vertices.
      * </p>
      * <p>
-     * The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner
-     * or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order
-     * around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in
-     * clockwise order, where the left side is the polygon's interior.
+     * Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an
+     * array of doubles of length 2 (so <code>[double, double]</code>).
      * </p>
      * <p>
-     * A geofence polygon can consist of between 4 and 1,000 vertices.
+     * An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is
+     * called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s
+     * interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (
+     * <code>[[double, double], ...]</code>).
+     * </p>
+     * <p>
+     * A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array
+     * of linear rings, which is represented as an array of arrays of arrays of doubles (
+     * <code>[[[double, double], ...], ...]</code>).
+     * </p>
+     * <p>
+     * A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -196,17 +238,24 @@ public class GeofenceGeometry implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param polygon
-     *        An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and
-     *        last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     *        <code>[longitude, latitude]</code>. </p>
+     *        A polygon is a list of linear rings which are each made up of a list of vertices.</p>
      *        <p>
-     *        The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be
-     *        inner or outer rings to describe holes and islands. Outer rings must list their vertices in
-     *        counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner
-     *        rings must list their vertices in clockwise order, where the left side is the polygon's interior.
+     *        Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented
+     *        as an array of doubles of length 2 (so <code>[double, double]</code>).
      *        </p>
      *        <p>
-     *        A geofence polygon can consist of between 4 and 1,000 vertices.
+     *        An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary),
+     *        is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the
+     *        ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles
+     *        (<code>[[double, double], ...]</code>).
+     *        </p>
+     *        <p>
+     *        A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an
+     *        array of linear rings, which is represented as an array of arrays of arrays of doubles (
+     *        <code>[[[double, double], ...], ...]</code>).
+     *        </p>
+     *        <p>
+     *        A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,32 +271,46 @@ public class GeofenceGeometry implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and last
-     * vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     * <code>[longitude, latitude]</code>.
+     * A polygon is a list of linear rings which are each made up of a list of vertices.
      * </p>
      * <p>
-     * The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be inner
-     * or outer rings to describe holes and islands. Outer rings must list their vertices in counter-clockwise order
-     * around the ring's center, where the left side is the polygon's exterior. Inner rings must list their vertices in
-     * clockwise order, where the left side is the polygon's interior.
+     * Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented as an
+     * array of doubles of length 2 (so <code>[double, double]</code>).
      * </p>
      * <p>
-     * A geofence polygon can consist of between 4 and 1,000 vertices.
+     * An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary), is
+     * called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the ring’s
+     * interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles (
+     * <code>[[double, double], ...]</code>).
+     * </p>
+     * <p>
+     * A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an array
+     * of linear rings, which is represented as an array of arrays of arrays of doubles (
+     * <code>[[[double, double], ...], ...]</code>).
+     * </p>
+     * <p>
+     * A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      * </p>
      * 
      * @param polygon
-     *        An array of 1 or more linear rings. A linear ring is an array of 4 or more vertices, where the first and
-     *        last vertex are the same to form a closed boundary. Each vertex is a 2-dimensional point of the form:
-     *        <code>[longitude, latitude]</code>. </p>
+     *        A polygon is a list of linear rings which are each made up of a list of vertices.</p>
      *        <p>
-     *        The first linear ring is an outer ring, describing the polygon's boundary. Subsequent linear rings may be
-     *        inner or outer rings to describe holes and islands. Outer rings must list their vertices in
-     *        counter-clockwise order around the ring's center, where the left side is the polygon's exterior. Inner
-     *        rings must list their vertices in clockwise order, where the left side is the polygon's interior.
+     *        Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>. This is represented
+     *        as an array of doubles of length 2 (so <code>[double, double]</code>).
      *        </p>
      *        <p>
-     *        A geofence polygon can consist of between 4 and 1,000 vertices.
+     *        An array of 4 or more vertices, where the first and last vertex are the same (to form a closed boundary),
+     *        is called a linear ring. The linear ring vertices must be listed in counter-clockwise order around the
+     *        ring’s interior. The linear ring is represented as an array of vertices, or an array of arrays of doubles
+     *        (<code>[[double, double], ...]</code>).
+     *        </p>
+     *        <p>
+     *        A geofence consists of a single linear ring. To allow for future expansion, the Polygon parameter takes an
+     *        array of linear rings, which is represented as an array of arrays of arrays of doubles (
+     *        <code>[[[double, double], ...], ...]</code>).
+     *        </p>
+     *        <p>
+     *        A linear ring for use in geofences can consist of between 4 and 1,000 vertices.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

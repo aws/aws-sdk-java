@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -436,6 +436,12 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * Adds a statement to a topic's access control policy, granting access for the specified Amazon Web Services
      * accounts to the specified actions.
      * </p>
+     * <note>
+     * <p>
+     * To remove the ability to change topic permissions, you must deny permissions to the <code>AddPermission</code>,
+     * <code>RemovePermission</code>, and <code>SetTopicAttributes</code> actions in your IAM policy.
+     * </p>
+     * </note>
      * 
      * @param addPermissionRequest
      * @return Result of the AddPermission operation returned by the service.
@@ -2869,6 +2875,12 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * Removes a statement from a topic's access control policy.
      * </p>
+     * <note>
+     * <p>
+     * To remove the ability to change topic permissions, you must deny permissions to the <code>AddPermission</code>,
+     * <code>RemovePermission</code>, and <code>SetTopicAttributes</code> actions in your IAM policy.
+     * </p>
+     * </note>
      * 
      * @param removePermissionRequest
      *        Input for RemovePermission action.
@@ -3230,6 +3242,12 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * Allows a topic owner to set an attribute of the topic to a new value.
      * </p>
+     * <note>
+     * <p>
+     * To remove the ability to change topic permissions, you must deny permissions to the <code>AddPermission</code>,
+     * <code>RemovePermission</code>, and <code>SetTopicAttributes</code> actions in your IAM policy.
+     * </p>
+     * </note>
      * 
      * @param setTopicAttributesRequest
      *        Input for SetTopicAttributes action.
@@ -3498,6 +3516,12 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the
      * topic if the <code>Unsubscribe</code> request was unintended.
      * </p>
+     * <note>
+     * <p>
+     * Amazon SQS queue subscriptions require authentication for deletion. Only the owner of the subscription, or the
+     * owner of the topic can unsubscribe using the required Amazon Web Services signature.
+     * </p>
+     * </note>
      * <p>
      * This action is throttled at 100 transactions per second (TPS).
      * </p>

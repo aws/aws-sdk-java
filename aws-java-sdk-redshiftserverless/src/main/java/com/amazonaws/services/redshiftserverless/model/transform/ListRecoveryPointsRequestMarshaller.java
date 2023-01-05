@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListRecoveryPointsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("endTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NAMESPACEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceArn").build();
     private static final MarshallingInfo<String> NAMESPACENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("namespaceName").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,6 +58,7 @@ public class ListRecoveryPointsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listRecoveryPointsRequest.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(listRecoveryPointsRequest.getNamespaceArn(), NAMESPACEARN_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsRequest.getNamespaceName(), NAMESPACENAME_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listRecoveryPointsRequest.getStartTime(), STARTTIME_BINDING);

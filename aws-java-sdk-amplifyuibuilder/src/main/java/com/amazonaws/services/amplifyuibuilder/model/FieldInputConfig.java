@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,13 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String descriptiveText;
+    /**
+     * <p>
+     * Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code>
+     * for the form is a Data Store.
+     * </p>
+     */
+    private Boolean isArray;
     /**
      * <p>
      * The maximum value to display for the field.
@@ -283,6 +290,66 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
     public FieldInputConfig withDescriptiveText(String descriptiveText) {
         setDescriptiveText(descriptiveText);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code>
+     * for the form is a Data Store.
+     * </p>
+     * 
+     * @param isArray
+     *        Specifies whether to render the field as an array. This property is ignored if the
+     *        <code>dataSourceType</code> for the form is a Data Store.
+     */
+
+    public void setIsArray(Boolean isArray) {
+        this.isArray = isArray;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code>
+     * for the form is a Data Store.
+     * </p>
+     * 
+     * @return Specifies whether to render the field as an array. This property is ignored if the
+     *         <code>dataSourceType</code> for the form is a Data Store.
+     */
+
+    public Boolean getIsArray() {
+        return this.isArray;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code>
+     * for the form is a Data Store.
+     * </p>
+     * 
+     * @param isArray
+     *        Specifies whether to render the field as an array. This property is ignored if the
+     *        <code>dataSourceType</code> for the form is a Data Store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FieldInputConfig withIsArray(Boolean isArray) {
+        setIsArray(isArray);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to render the field as an array. This property is ignored if the <code>dataSourceType</code>
+     * for the form is a Data Store.
+     * </p>
+     * 
+     * @return Specifies whether to render the field as an array. This property is ignored if the
+     *         <code>dataSourceType</code> for the form is a Data Store.
+     */
+
+    public Boolean isArray() {
+        return this.isArray;
     }
 
     /**
@@ -729,6 +796,8 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
             sb.append("DefaultValue: ").append(getDefaultValue()).append(",");
         if (getDescriptiveText() != null)
             sb.append("DescriptiveText: ").append(getDescriptiveText()).append(",");
+        if (getIsArray() != null)
+            sb.append("IsArray: ").append(getIsArray()).append(",");
         if (getMaxValue() != null)
             sb.append("MaxValue: ").append(getMaxValue()).append(",");
         if (getMinValue() != null)
@@ -778,6 +847,10 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
         if (other.getDescriptiveText() == null ^ this.getDescriptiveText() == null)
             return false;
         if (other.getDescriptiveText() != null && other.getDescriptiveText().equals(this.getDescriptiveText()) == false)
+            return false;
+        if (other.getIsArray() == null ^ this.getIsArray() == null)
+            return false;
+        if (other.getIsArray() != null && other.getIsArray().equals(this.getIsArray()) == false)
             return false;
         if (other.getMaxValue() == null ^ this.getMaxValue() == null)
             return false;
@@ -831,6 +904,7 @@ public class FieldInputConfig implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDefaultCountryCode() == null) ? 0 : getDefaultCountryCode().hashCode());
         hashCode = prime * hashCode + ((getDefaultValue() == null) ? 0 : getDefaultValue().hashCode());
         hashCode = prime * hashCode + ((getDescriptiveText() == null) ? 0 : getDescriptiveText().hashCode());
+        hashCode = prime * hashCode + ((getIsArray() == null) ? 0 : getIsArray().hashCode());
         hashCode = prime * hashCode + ((getMaxValue() == null) ? 0 : getMaxValue().hashCode());
         hashCode = prime * hashCode + ((getMinValue() == null) ? 0 : getMinValue().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

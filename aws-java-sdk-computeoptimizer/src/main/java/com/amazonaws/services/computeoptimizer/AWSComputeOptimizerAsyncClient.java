@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,15 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Compute Optimizer is a service that analyzes the configuration and utilization metrics of your Amazon Web Services
- * compute resources, such as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, and Amazon EBS
- * volumes. It reports whether your resources are optimal, and generates optimization recommendations to reduce the cost
- * and improve the performance of your workloads. Compute Optimizer also provides recent utilization metric data, in
- * addition to projected utilization metric data for the recommendations, which you can use to evaluate which
- * recommendation provides the best price-performance trade-off. The analysis of your usage patterns can help you decide
- * when to move or resize your running resources, and still meet your performance and capacity requirements. For more
- * information about Compute Optimizer, including the required permissions to use the service, see the <a
- * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute Optimizer User Guide</a>.
+ * compute resources, such as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, Amazon EBS
+ * volumes, and Amazon ECS services on Fargate. It reports whether your resources are optimal, and generates
+ * optimization recommendations to reduce the cost and improve the performance of your workloads. Compute Optimizer also
+ * provides recent utilization metric data, in addition to projected utilization metric data for the recommendations,
+ * which you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of
+ * your usage patterns can help you decide when to move or resize your running resources, and still meet your
+ * performance and capacity requirements. For more information about Compute Optimizer, including the required
+ * permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute
+ * Optimizer User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -258,6 +259,41 @@ public class AWSComputeOptimizerAsyncClient extends AWSComputeOptimizerClient im
     }
 
     @Override
+    public java.util.concurrent.Future<ExportECSServiceRecommendationsResult> exportECSServiceRecommendationsAsync(
+            ExportECSServiceRecommendationsRequest request) {
+
+        return exportECSServiceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportECSServiceRecommendationsResult> exportECSServiceRecommendationsAsync(
+            final ExportECSServiceRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportECSServiceRecommendationsRequest, ExportECSServiceRecommendationsResult> asyncHandler) {
+        final ExportECSServiceRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportECSServiceRecommendationsResult>() {
+            @Override
+            public ExportECSServiceRecommendationsResult call() throws Exception {
+                ExportECSServiceRecommendationsResult result = null;
+
+                try {
+                    result = executeExportECSServiceRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
             ExportLambdaFunctionRecommendationsRequest request) {
 
@@ -414,6 +450,74 @@ public class AWSComputeOptimizerAsyncClient extends AWSComputeOptimizerClient im
 
                 try {
                     result = executeGetEC2RecommendationProjectedMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationProjectedMetricsResult> getECSServiceRecommendationProjectedMetricsAsync(
+            GetECSServiceRecommendationProjectedMetricsRequest request) {
+
+        return getECSServiceRecommendationProjectedMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationProjectedMetricsResult> getECSServiceRecommendationProjectedMetricsAsync(
+            final GetECSServiceRecommendationProjectedMetricsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetECSServiceRecommendationProjectedMetricsRequest, GetECSServiceRecommendationProjectedMetricsResult> asyncHandler) {
+        final GetECSServiceRecommendationProjectedMetricsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetECSServiceRecommendationProjectedMetricsResult>() {
+            @Override
+            public GetECSServiceRecommendationProjectedMetricsResult call() throws Exception {
+                GetECSServiceRecommendationProjectedMetricsResult result = null;
+
+                try {
+                    result = executeGetECSServiceRecommendationProjectedMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationsResult> getECSServiceRecommendationsAsync(GetECSServiceRecommendationsRequest request) {
+
+        return getECSServiceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationsResult> getECSServiceRecommendationsAsync(final GetECSServiceRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetECSServiceRecommendationsRequest, GetECSServiceRecommendationsResult> asyncHandler) {
+        final GetECSServiceRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetECSServiceRecommendationsResult>() {
+            @Override
+            public GetECSServiceRecommendationsResult call() throws Exception {
+                GetECSServiceRecommendationsResult result = null;
+
+                try {
+                    result = executeGetECSServiceRecommendations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

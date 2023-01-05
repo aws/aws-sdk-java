@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,10 +32,12 @@ import com.amazonaws.services.cloudwatchrum.model.*;
  * client-side errors, and user behavior. When you view this data, you can see it all aggregated together and also see
  * breakdowns by the browsers and devices that your customers use.
  * </p>
- * 
- * <pre>
- * <code> &lt;p&gt;You can use the collected data to quickly identify and debug client-side performance issues. CloudWatch RUM helps you visualize anomalies in your application performance and find relevant debugging data such as error messages, stack traces, and user sessions. You can also use RUM to understand the range of end-user impact including the number of users, geolocations, and browsers used.&lt;/p&gt; </code>
- * </pre>
+ * <p>
+ * You can use the collected data to quickly identify and debug client-side performance issues. CloudWatch RUM helps you
+ * visualize anomalies in your application performance and find relevant debugging data such as error messages, stack
+ * traces, and user sessions. You can also use RUM to understand the range of end-user impact including the number of
+ * users, geolocations, and browsers used.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCloudWatchRUM {
@@ -47,6 +49,124 @@ public interface AWSCloudWatchRUM {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "rum";
+
+    /**
+     * <p>
+     * Specifies the extended metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid
+     * destinations include CloudWatch and Evidently.
+     * </p>
+     * <p>
+     * By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch
+     * metrics that you can collect with CloudWatch RUM</a>.
+     * </p>
+     * <p>
+     * If you also send extended metrics, you can send metrics to Evidently as well as CloudWatch, and you can also
+     * optionally send the metrics with additional dimensions. The valid dimension names for the additional dimensions
+     * are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>,
+     * <code>OSName</code>, and <code>PageId</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+     * Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that one destination can contain is 2000.
+     * </p>
+     * <p>
+     * Extended metrics sent are charged as CloudWatch custom metrics. Each combination of additional dimension name and
+     * dimension value counts as a custom metric. For more information, see <a
+     * href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+     * </p>
+     * <p>
+     * You must have already created a destination for the metrics before you send them. For more information, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">
+     * PutRumMetricsDestination</a>.
+     * </p>
+     * <p>
+     * If some metric definitions specified in a <code>BatchCreateRumMetricDefinitions</code> operations are not valid,
+     * those metric definitions fail and return errors, but all valid metric definitions in the same operation still
+     * succeed.
+     * </p>
+     * 
+     * @param batchCreateRumMetricDefinitionsRequest
+     * @return Result of the BatchCreateRumMetricDefinitions operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ServiceQuotaExceededException
+     *         This request exceeds a service quota.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.BatchCreateRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchCreateRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchCreateRumMetricDefinitionsResult batchCreateRumMetricDefinitions(BatchCreateRumMetricDefinitionsRequest batchCreateRumMetricDefinitionsRequest);
+
+    /**
+     * <p>
+     * Removes the specified metrics from being sent to an extended metrics destination.
+     * </p>
+     * <p>
+     * If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not
+     * valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation
+     * are still deleted.
+     * </p>
+     * <p>
+     * The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+     * operation is 200.
+     * </p>
+     * 
+     * @param batchDeleteRumMetricDefinitionsRequest
+     * @return Result of the BatchDeleteRumMetricDefinitions operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.BatchDeleteRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchDeleteRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDeleteRumMetricDefinitionsResult batchDeleteRumMetricDefinitions(BatchDeleteRumMetricDefinitionsRequest batchDeleteRumMetricDefinitionsRequest);
+
+    /**
+     * <p>
+     * Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.
+     * </p>
+     * 
+     * @param batchGetRumMetricDefinitionsRequest
+     * @return Result of the BatchGetRumMetricDefinitions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.BatchGetRumMetricDefinitions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/BatchGetRumMetricDefinitions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchGetRumMetricDefinitionsResult batchGetRumMetricDefinitions(BatchGetRumMetricDefinitionsRequest batchGetRumMetricDefinitionsRequest);
 
     /**
      * <p>
@@ -72,6 +192,8 @@ public interface AWSCloudWatchRUM {
      *         This operation attempted to create a resource that already exists.
      * @throws ServiceQuotaExceededException
      *         This request exceeds a service quota.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
      * @throws InternalServerException
      *         Internal service exception.
      * @throws ValidationException
@@ -110,6 +232,32 @@ public interface AWSCloudWatchRUM {
      *      Documentation</a>
      */
     DeleteAppMonitorResult deleteAppMonitor(DeleteAppMonitorRequest deleteAppMonitorRequest);
+
+    /**
+     * <p>
+     * Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending
+     * extended metrics to that destination.
+     * </p>
+     * 
+     * @param deleteRumMetricsDestinationRequest
+     * @return Result of the DeleteRumMetricsDestination operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.DeleteRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/DeleteRumMetricsDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteRumMetricsDestinationResult deleteRumMetricsDestination(DeleteRumMetricsDestinationRequest deleteRumMetricsDestinationRequest);
 
     /**
      * <p>
@@ -181,6 +329,32 @@ public interface AWSCloudWatchRUM {
 
     /**
      * <p>
+     * Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app
+     * monitor.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param listRumMetricsDestinationsRequest
+     * @return Result of the ListRumMetricsDestinations operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.ListRumMetricsDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/ListRumMetricsDestinations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListRumMetricsDestinationsResult listRumMetricsDestinations(ListRumMetricsDestinationsRequest listRumMetricsDestinationsRequest);
+
+    /**
+     * <p>
      * Displays the tags associated with a CloudWatch RUM resource.
      * </p>
      * 
@@ -225,6 +399,36 @@ public interface AWSCloudWatchRUM {
      *      Documentation</a>
      */
     PutRumEventsResult putRumEvents(PutRumEventsRequest putRumEventsRequest);
+
+    /**
+     * <p>
+     * Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics
+     * to CloudWatch or to a CloudWatch Evidently experiment.
+     * </p>
+     * <p>
+     * For more information about extended metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+     * </p>
+     * 
+     * @param putRumMetricsDestinationRequest
+     * @return Result of the PutRumMetricsDestination operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.PutRumMetricsDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/PutRumMetricsDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutRumMetricsDestinationResult putRumMetricsDestination(PutRumMetricsDestinationRequest putRumMetricsDestinationRequest);
 
     /**
      * <p>
@@ -328,6 +532,36 @@ public interface AWSCloudWatchRUM {
      *      Documentation</a>
      */
     UpdateAppMonitorResult updateAppMonitor(UpdateAppMonitorRequest updateAppMonitorRequest);
+
+    /**
+     * <p>
+     * Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended
+     * metrics, see <a
+     * href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html"
+     * >BatchCreateRumMetricsDefinitions</a>.
+     * </p>
+     * 
+     * @param updateRumMetricDefinitionRequest
+     * @return Result of the UpdateRumMetricDefinition operation returned by the service.
+     * @throws ConflictException
+     *         This operation attempted to create a resource that already exists.
+     * @throws ServiceQuotaExceededException
+     *         This request exceeds a service quota.
+     * @throws ResourceNotFoundException
+     *         Resource not found.
+     * @throws InternalServerException
+     *         Internal service exception.
+     * @throws ValidationException
+     *         One of the arguments for the request is not valid.
+     * @throws ThrottlingException
+     *         The request was throttled because of quota limits.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permissions to perform this action.
+     * @sample AWSCloudWatchRUM.UpdateRumMetricDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rum-2018-05-10/UpdateRumMetricDefinition" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateRumMetricDefinitionResult updateRumMetricDefinition(UpdateRumMetricDefinitionRequest updateRumMetricDefinitionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

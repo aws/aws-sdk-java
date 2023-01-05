@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A Launch Profile Initialization contains information required for a workstation or server to connect to a launch
+ * A launch profile initialization contains information required for a workstation or server to connect to a launch
  * profile.
  * </p>
  * <p>
@@ -34,7 +34,7 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A LaunchProfileInitializationActiveDirectory resource.
+     * A <code>LaunchProfileInitializationActiveDirectory</code> resource.
      * </p>
      */
     private LaunchProfileInitializationActiveDirectory activeDirectory;
@@ -46,7 +46,7 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
     private java.util.List<String> ec2SecurityGroupIds;
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      */
     private String launchProfileId;
@@ -70,7 +70,7 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
     private String name;
     /**
      * <p>
-     * The platform of the launch platform, either WINDOWS or LINUX.
+     * The platform of the launch platform, either Windows or Linux.
      * </p>
      */
     private String platform;
@@ -89,11 +89,11 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A LaunchProfileInitializationActiveDirectory resource.
+     * A <code>LaunchProfileInitializationActiveDirectory</code> resource.
      * </p>
      * 
      * @param activeDirectory
-     *        A LaunchProfileInitializationActiveDirectory resource.
+     *        A <code>LaunchProfileInitializationActiveDirectory</code> resource.
      */
 
     public void setActiveDirectory(LaunchProfileInitializationActiveDirectory activeDirectory) {
@@ -102,10 +102,10 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A LaunchProfileInitializationActiveDirectory resource.
+     * A <code>LaunchProfileInitializationActiveDirectory</code> resource.
      * </p>
      * 
-     * @return A LaunchProfileInitializationActiveDirectory resource.
+     * @return A <code>LaunchProfileInitializationActiveDirectory</code> resource.
      */
 
     public LaunchProfileInitializationActiveDirectory getActiveDirectory() {
@@ -114,11 +114,11 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * A LaunchProfileInitializationActiveDirectory resource.
+     * A <code>LaunchProfileInitializationActiveDirectory</code> resource.
      * </p>
      * 
      * @param activeDirectory
-     *        A LaunchProfileInitializationActiveDirectory resource.
+     *        A <code>LaunchProfileInitializationActiveDirectory</code> resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,11 +199,11 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The ID of the launch profile used to control access from the streaming session.
      */
 
     public void setLaunchProfileId(String launchProfileId) {
@@ -212,10 +212,10 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
-     * @return The launch profile ID.
+     * @return The ID of the launch profile used to control access from the streaming session.
      */
 
     public String getLaunchProfileId() {
@@ -224,11 +224,11 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The ID of the launch profile used to control access from the streaming session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -362,11 +362,11 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The platform of the launch platform, either WINDOWS or LINUX.
+     * The platform of the launch platform, either Windows or Linux.
      * </p>
      * 
      * @param platform
-     *        The platform of the launch platform, either WINDOWS or LINUX.
+     *        The platform of the launch platform, either Windows or Linux.
      * @see LaunchProfilePlatform
      */
 
@@ -376,10 +376,10 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The platform of the launch platform, either WINDOWS or LINUX.
+     * The platform of the launch platform, either Windows or Linux.
      * </p>
      * 
-     * @return The platform of the launch platform, either WINDOWS or LINUX.
+     * @return The platform of the launch platform, either Windows or Linux.
      * @see LaunchProfilePlatform
      */
 
@@ -389,11 +389,11 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The platform of the launch platform, either WINDOWS or LINUX.
+     * The platform of the launch platform, either Windows or Linux.
      * </p>
      * 
      * @param platform
-     *        The platform of the launch platform, either WINDOWS or LINUX.
+     *        The platform of the launch platform, either Windows or Linux.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchProfilePlatform
      */
@@ -405,11 +405,11 @@ public class LaunchProfileInitialization implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The platform of the launch platform, either WINDOWS or LINUX.
+     * The platform of the launch platform, either Windows or Linux.
      * </p>
      * 
      * @param platform
-     *        The platform of the launch platform, either WINDOWS or LINUX.
+     *        The platform of the launch platform, either Windows or Linux.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchProfilePlatform
      */

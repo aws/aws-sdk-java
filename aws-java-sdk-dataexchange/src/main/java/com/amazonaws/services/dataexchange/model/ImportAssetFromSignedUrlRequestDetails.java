@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ImportAssetFromSignedUrlRequestDetails implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.
+     * The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.
      * </p>
      */
     private String assetName;
@@ -55,11 +55,11 @@ public class ImportAssetFromSignedUrlRequestDetails implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.
+     * The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.
      * </p>
      * 
      * @param assetName
-     *        The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.
+     *        The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.
      */
 
     public void setAssetName(String assetName) {
@@ -68,10 +68,10 @@ public class ImportAssetFromSignedUrlRequestDetails implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.
+     * The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.
      * </p>
      * 
-     * @return The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.
+     * @return The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.
      */
 
     public String getAssetName() {
@@ -80,11 +80,11 @@ public class ImportAssetFromSignedUrlRequestDetails implements Serializable, Clo
 
     /**
      * <p>
-     * The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.
+     * The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.
      * </p>
      * 
      * @param assetName
-     *        The name of the asset. When importing from Amazon S3, the S3 object key is used as the asset name.
+     *        The name of the asset. When importing from Amazon S3, the Amazon S3 object key is used as the asset name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

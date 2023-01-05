@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,6 +135,10 @@ public class ActionJsonUnmarshaller implements Unmarshaller<Action, JsonUnmarsha
                 if (context.testExpression("openSearch", targetDepth)) {
                     context.nextToken();
                     action.setOpenSearch(OpenSearchActionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("location", targetDepth)) {
+                    context.nextToken();
+                    action.setLocation(LocationActionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

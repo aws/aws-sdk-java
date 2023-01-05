@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,6 +122,26 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
      * </p>
      */
     private java.util.List<OpenZFSUserOrGroupQuota> userAndGroupQuotas;
+    /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     */
+    private String restoreToSnapshot;
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     */
+    private Boolean deleteIntermediateSnaphots;
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     */
+    private Boolean deleteClonedVolumes;
 
     /**
      * <p>
@@ -879,6 +899,166 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     * 
+     * @param restoreToSnapshot
+     *        Specifies the ID of the snapshot to which the volume was restored.
+     */
+
+    public void setRestoreToSnapshot(String restoreToSnapshot) {
+        this.restoreToSnapshot = restoreToSnapshot;
+    }
+
+    /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     * 
+     * @return Specifies the ID of the snapshot to which the volume was restored.
+     */
+
+    public String getRestoreToSnapshot() {
+        return this.restoreToSnapshot;
+    }
+
+    /**
+     * <p>
+     * Specifies the ID of the snapshot to which the volume was restored.
+     * </p>
+     * 
+     * @param restoreToSnapshot
+     *        Specifies the ID of the snapshot to which the volume was restored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withRestoreToSnapshot(String restoreToSnapshot) {
+        setRestoreToSnapshot(restoreToSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteIntermediateSnaphots
+     *        A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *        be deleted when a volume is restored from snapshot.
+     */
+
+    public void setDeleteIntermediateSnaphots(Boolean deleteIntermediateSnaphots) {
+        this.deleteIntermediateSnaphots = deleteIntermediateSnaphots;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *         be deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean getDeleteIntermediateSnaphots() {
+        return this.deleteIntermediateSnaphots;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteIntermediateSnaphots
+     *        A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *        be deleted when a volume is restored from snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withDeleteIntermediateSnaphots(Boolean deleteIntermediateSnaphots) {
+        setDeleteIntermediateSnaphots(deleteIntermediateSnaphots);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether snapshots between the current state and the specified snapshot should be
+     * deleted when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether snapshots between the current state and the specified snapshot should
+     *         be deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean isDeleteIntermediateSnaphots() {
+        return this.deleteIntermediateSnaphots;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteClonedVolumes
+     *        A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *        deleted when a volume is restored from snapshot.
+     */
+
+    public void setDeleteClonedVolumes(Boolean deleteClonedVolumes) {
+        this.deleteClonedVolumes = deleteClonedVolumes;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *         deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean getDeleteClonedVolumes() {
+        return this.deleteClonedVolumes;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @param deleteClonedVolumes
+     *        A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *        deleted when a volume is restored from snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OpenZFSVolumeConfiguration withDeleteClonedVolumes(Boolean deleteClonedVolumes) {
+        setDeleteClonedVolumes(deleteClonedVolumes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be deleted
+     * when a volume is restored from snapshot.
+     * </p>
+     * 
+     * @return A Boolean value indicating whether dependent clone volumes created from intermediate snapshots should be
+     *         deleted when a volume is restored from snapshot.
+     */
+
+    public Boolean isDeleteClonedVolumes() {
+        return this.deleteClonedVolumes;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -911,7 +1091,13 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
         if (getNfsExports() != null)
             sb.append("NfsExports: ").append(getNfsExports()).append(",");
         if (getUserAndGroupQuotas() != null)
-            sb.append("UserAndGroupQuotas: ").append(getUserAndGroupQuotas());
+            sb.append("UserAndGroupQuotas: ").append(getUserAndGroupQuotas()).append(",");
+        if (getRestoreToSnapshot() != null)
+            sb.append("RestoreToSnapshot: ").append(getRestoreToSnapshot()).append(",");
+        if (getDeleteIntermediateSnaphots() != null)
+            sb.append("DeleteIntermediateSnaphots: ").append(getDeleteIntermediateSnaphots()).append(",");
+        if (getDeleteClonedVolumes() != null)
+            sb.append("DeleteClonedVolumes: ").append(getDeleteClonedVolumes());
         sb.append("}");
         return sb.toString();
     }
@@ -971,6 +1157,18 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
             return false;
         if (other.getUserAndGroupQuotas() != null && other.getUserAndGroupQuotas().equals(this.getUserAndGroupQuotas()) == false)
             return false;
+        if (other.getRestoreToSnapshot() == null ^ this.getRestoreToSnapshot() == null)
+            return false;
+        if (other.getRestoreToSnapshot() != null && other.getRestoreToSnapshot().equals(this.getRestoreToSnapshot()) == false)
+            return false;
+        if (other.getDeleteIntermediateSnaphots() == null ^ this.getDeleteIntermediateSnaphots() == null)
+            return false;
+        if (other.getDeleteIntermediateSnaphots() != null && other.getDeleteIntermediateSnaphots().equals(this.getDeleteIntermediateSnaphots()) == false)
+            return false;
+        if (other.getDeleteClonedVolumes() == null ^ this.getDeleteClonedVolumes() == null)
+            return false;
+        if (other.getDeleteClonedVolumes() != null && other.getDeleteClonedVolumes().equals(this.getDeleteClonedVolumes()) == false)
+            return false;
         return true;
     }
 
@@ -990,6 +1188,9 @@ public class OpenZFSVolumeConfiguration implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getReadOnly() == null) ? 0 : getReadOnly().hashCode());
         hashCode = prime * hashCode + ((getNfsExports() == null) ? 0 : getNfsExports().hashCode());
         hashCode = prime * hashCode + ((getUserAndGroupQuotas() == null) ? 0 : getUserAndGroupQuotas().hashCode());
+        hashCode = prime * hashCode + ((getRestoreToSnapshot() == null) ? 0 : getRestoreToSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getDeleteIntermediateSnaphots() == null) ? 0 : getDeleteIntermediateSnaphots().hashCode());
+        hashCode = prime * hashCode + ((getDeleteClonedVolumes() == null) ? 0 : getDeleteClonedVolumes().hashCode());
         return hashCode;
     }
 

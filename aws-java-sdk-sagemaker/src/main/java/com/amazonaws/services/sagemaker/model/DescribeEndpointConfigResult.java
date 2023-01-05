@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,13 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private ExplainerConfig explainerConfig;
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     */
+    private java.util.List<ProductionVariant> shadowProductionVariants;
 
     /**
      * <p>
@@ -430,6 +437,88 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * 
+     * @return An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *         endpoint in shadow mode with production traffic replicated from the model specified on
+     *         <code>ProductionVariants</code>.
+     */
+
+    public java.util.List<ProductionVariant> getShadowProductionVariants() {
+        return shadowProductionVariants;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.
+     */
+
+    public void setShadowProductionVariants(java.util.Collection<ProductionVariant> shadowProductionVariants) {
+        if (shadowProductionVariants == null) {
+            this.shadowProductionVariants = null;
+            return;
+        }
+
+        this.shadowProductionVariants = new java.util.ArrayList<ProductionVariant>(shadowProductionVariants);
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShadowProductionVariants(java.util.Collection)} or
+     * {@link #withShadowProductionVariants(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withShadowProductionVariants(ProductionVariant... shadowProductionVariants) {
+        if (this.shadowProductionVariants == null) {
+            setShadowProductionVariants(new java.util.ArrayList<ProductionVariant>(shadowProductionVariants.length));
+        }
+        for (ProductionVariant ele : shadowProductionVariants) {
+            this.shadowProductionVariants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this endpoint in
+     * shadow mode with production traffic replicated from the model specified on <code>ProductionVariants</code>.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        An array of <code>ProductionVariant</code> objects, one for each model that you want to host at this
+     *        endpoint in shadow mode with production traffic replicated from the model specified on
+     *        <code>ProductionVariants</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointConfigResult withShadowProductionVariants(java.util.Collection<ProductionVariant> shadowProductionVariants) {
+        setShadowProductionVariants(shadowProductionVariants);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -456,7 +545,9 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         if (getAsyncInferenceConfig() != null)
             sb.append("AsyncInferenceConfig: ").append(getAsyncInferenceConfig()).append(",");
         if (getExplainerConfig() != null)
-            sb.append("ExplainerConfig: ").append(getExplainerConfig());
+            sb.append("ExplainerConfig: ").append(getExplainerConfig()).append(",");
+        if (getShadowProductionVariants() != null)
+            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants());
         sb.append("}");
         return sb.toString();
     }
@@ -503,6 +594,10 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getExplainerConfig() != null && other.getExplainerConfig().equals(this.getExplainerConfig()) == false)
             return false;
+        if (other.getShadowProductionVariants() == null ^ this.getShadowProductionVariants() == null)
+            return false;
+        if (other.getShadowProductionVariants() != null && other.getShadowProductionVariants().equals(this.getShadowProductionVariants()) == false)
+            return false;
         return true;
     }
 
@@ -519,6 +614,7 @@ public class DescribeEndpointConfigResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getAsyncInferenceConfig() == null) ? 0 : getAsyncInferenceConfig().hashCode());
         hashCode = prime * hashCode + ((getExplainerConfig() == null) ? 0 : getExplainerConfig().hashCode());
+        hashCode = prime * hashCode + ((getShadowProductionVariants() == null) ? 0 : getShadowProductionVariants().hashCode());
         return hashCode;
     }
 

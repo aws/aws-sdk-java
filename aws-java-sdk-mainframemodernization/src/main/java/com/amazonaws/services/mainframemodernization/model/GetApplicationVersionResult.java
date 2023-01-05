@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,8 @@ public class GetApplicationVersionResult extends com.amazonaws.AmazonWebServiceR
     private java.util.Date creationTime;
     /**
      * <p>
-     * The content of the application definition. This is a JSON object that contains the resource
-     * configuration/definitions that identify an application.
+     * The content of the application definition. This is a JSON object that contains the resource configuration and
+     * definitions that identify an application.
      * </p>
      */
     private String definitionContent;
@@ -149,13 +149,13 @@ public class GetApplicationVersionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the application definition. This is a JSON object that contains the resource
-     * configuration/definitions that identify an application.
+     * The content of the application definition. This is a JSON object that contains the resource configuration and
+     * definitions that identify an application.
      * </p>
      * 
      * @param definitionContent
-     *        The content of the application definition. This is a JSON object that contains the resource
-     *        configuration/definitions that identify an application.
+     *        The content of the application definition. This is a JSON object that contains the resource configuration
+     *        and definitions that identify an application.
      */
 
     public void setDefinitionContent(String definitionContent) {
@@ -164,12 +164,12 @@ public class GetApplicationVersionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the application definition. This is a JSON object that contains the resource
-     * configuration/definitions that identify an application.
+     * The content of the application definition. This is a JSON object that contains the resource configuration and
+     * definitions that identify an application.
      * </p>
      * 
-     * @return The content of the application definition. This is a JSON object that contains the resource
-     *         configuration/definitions that identify an application.
+     * @return The content of the application definition. This is a JSON object that contains the resource configuration
+     *         and definitions that identify an application.
      */
 
     public String getDefinitionContent() {
@@ -178,13 +178,13 @@ public class GetApplicationVersionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The content of the application definition. This is a JSON object that contains the resource
-     * configuration/definitions that identify an application.
+     * The content of the application definition. This is a JSON object that contains the resource configuration and
+     * definitions that identify an application.
      * </p>
      * 
      * @param definitionContent
-     *        The content of the application definition. This is a JSON object that contains the resource
-     *        configuration/definitions that identify an application.
+     *        The content of the application definition. This is a JSON object that contains the resource configuration
+     *        and definitions that identify an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

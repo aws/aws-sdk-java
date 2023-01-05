@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,29 +27,29 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      * </p>
      */
     private java.util.List<String> launchConfigurationTemplateIDs;
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Maximum results to be returned in DescribeLaunchConfigurationTemplates.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Next pagination token returned from DescribeLaunchConfigurationTemplates.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      * </p>
      * 
-     * @return Request to disconnect Source Server from service by Server ID.
+     * @return Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      */
 
     public java.util.List<String> getLaunchConfigurationTemplateIDs() {
@@ -58,11 +58,11 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      * </p>
      * 
      * @param launchConfigurationTemplateIDs
-     *        Request to disconnect Source Server from service by Server ID.
+     *        Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      */
 
     public void setLaunchConfigurationTemplateIDs(java.util.Collection<String> launchConfigurationTemplateIDs) {
@@ -76,7 +76,7 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -85,7 +85,7 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
      * </p>
      * 
      * @param launchConfigurationTemplateIDs
-     *        Request to disconnect Source Server from service by Server ID.
+     *        Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      * </p>
      * 
      * @param launchConfigurationTemplateIDs
-     *        Request to disconnect Source Server from service by Server ID.
+     *        Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Maximum results to be returned in DescribeLaunchConfigurationTemplates.
      * </p>
      * 
      * @param maxResults
-     *        Request to disconnect Source Server from service by Server ID.
+     *        Maximum results to be returned in DescribeLaunchConfigurationTemplates.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -129,10 +129,10 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Maximum results to be returned in DescribeLaunchConfigurationTemplates.
      * </p>
      * 
-     * @return Request to disconnect Source Server from service by Server ID.
+     * @return Maximum results to be returned in DescribeLaunchConfigurationTemplates.
      */
 
     public Integer getMaxResults() {
@@ -141,11 +141,11 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Maximum results to be returned in DescribeLaunchConfigurationTemplates.
      * </p>
      * 
      * @param maxResults
-     *        Request to disconnect Source Server from service by Server ID.
+     *        Maximum results to be returned in DescribeLaunchConfigurationTemplates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +156,11 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Next pagination token returned from DescribeLaunchConfigurationTemplates.
      * </p>
      * 
      * @param nextToken
-     *        Request to disconnect Source Server from service by Server ID.
+     *        Next pagination token returned from DescribeLaunchConfigurationTemplates.
      */
 
     public void setNextToken(String nextToken) {
@@ -169,10 +169,10 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Next pagination token returned from DescribeLaunchConfigurationTemplates.
      * </p>
      * 
-     * @return Request to disconnect Source Server from service by Server ID.
+     * @return Next pagination token returned from DescribeLaunchConfigurationTemplates.
      */
 
     public String getNextToken() {
@@ -181,11 +181,11 @@ public class DescribeLaunchConfigurationTemplatesRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * Request to disconnect Source Server from service by Server ID.
+     * Next pagination token returned from DescribeLaunchConfigurationTemplates.
      * </p>
      * 
      * @param nextToken
-     *        Request to disconnect Source Server from service by Server ID.
+     *        Next pagination token returned from DescribeLaunchConfigurationTemplates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

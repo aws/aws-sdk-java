@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class FilterLogEventsRequestMarshaller {
 
     private static final MarshallingInfo<String> LOGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupName").build();
+    private static final MarshallingInfo<String> LOGGROUPIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupIdentifier").build();
     private static final MarshallingInfo<List> LOGSTREAMNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logStreamNames").build();
     private static final MarshallingInfo<String> LOGSTREAMNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -46,6 +48,8 @@ public class FilterLogEventsRequestMarshaller {
             .marshallLocationName("limit").build();
     private static final MarshallingInfo<Boolean> INTERLEAVED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("interleaved").build();
+    private static final MarshallingInfo<Boolean> UNMASK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("unmask").build();
 
     private static final FilterLogEventsRequestMarshaller instance = new FilterLogEventsRequestMarshaller();
 
@@ -64,6 +68,7 @@ public class FilterLogEventsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(filterLogEventsRequest.getLogGroupName(), LOGGROUPNAME_BINDING);
+            protocolMarshaller.marshall(filterLogEventsRequest.getLogGroupIdentifier(), LOGGROUPIDENTIFIER_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getLogStreamNames(), LOGSTREAMNAMES_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getLogStreamNamePrefix(), LOGSTREAMNAMEPREFIX_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getStartTime(), STARTTIME_BINDING);
@@ -72,6 +77,7 @@ public class FilterLogEventsRequestMarshaller {
             protocolMarshaller.marshall(filterLogEventsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(filterLogEventsRequest.getInterleaved(), INTERLEAVED_BINDING);
+            protocolMarshaller.marshall(filterLogEventsRequest.getUnmask(), UNMASK_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

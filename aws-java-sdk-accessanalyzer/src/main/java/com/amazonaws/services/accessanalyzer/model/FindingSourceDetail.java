@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class FindingSourceDetail implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String accessPointArn;
+    /**
+     * <p>
+     * The account of the cross-account access point that generated the finding.
+     * </p>
+     */
+    private String accessPointAccount;
 
     /**
      * <p>
@@ -84,6 +90,46 @@ public class FindingSourceDetail implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The account of the cross-account access point that generated the finding.
+     * </p>
+     * 
+     * @param accessPointAccount
+     *        The account of the cross-account access point that generated the finding.
+     */
+
+    public void setAccessPointAccount(String accessPointAccount) {
+        this.accessPointAccount = accessPointAccount;
+    }
+
+    /**
+     * <p>
+     * The account of the cross-account access point that generated the finding.
+     * </p>
+     * 
+     * @return The account of the cross-account access point that generated the finding.
+     */
+
+    public String getAccessPointAccount() {
+        return this.accessPointAccount;
+    }
+
+    /**
+     * <p>
+     * The account of the cross-account access point that generated the finding.
+     * </p>
+     * 
+     * @param accessPointAccount
+     *        The account of the cross-account access point that generated the finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindingSourceDetail withAccessPointAccount(String accessPointAccount) {
+        setAccessPointAccount(accessPointAccount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -96,7 +142,9 @@ public class FindingSourceDetail implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAccessPointArn() != null)
-            sb.append("AccessPointArn: ").append(getAccessPointArn());
+            sb.append("AccessPointArn: ").append(getAccessPointArn()).append(",");
+        if (getAccessPointAccount() != null)
+            sb.append("AccessPointAccount: ").append(getAccessPointAccount());
         sb.append("}");
         return sb.toString();
     }
@@ -115,6 +163,10 @@ public class FindingSourceDetail implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAccessPointArn() != null && other.getAccessPointArn().equals(this.getAccessPointArn()) == false)
             return false;
+        if (other.getAccessPointAccount() == null ^ this.getAccessPointAccount() == null)
+            return false;
+        if (other.getAccessPointAccount() != null && other.getAccessPointAccount().equals(this.getAccessPointAccount()) == false)
+            return false;
         return true;
     }
 
@@ -124,6 +176,7 @@ public class FindingSourceDetail implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccessPointArn() == null) ? 0 : getAccessPointArn().hashCode());
+        hashCode = prime * hashCode + ((getAccessPointAccount() == null) ? 0 : getAccessPointAccount().hashCode());
         return hashCode;
     }
 

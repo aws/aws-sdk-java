@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class Suggestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique UUID (universally unique identifier) of a single query suggestion.
+     * The UUID (universally unique identifier) of a single query suggestion.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The value for the unique UUID (universally unique identifier) of a single query suggestion.
+     * The value for the UUID (universally unique identifier) of a single query suggestion.
      * </p>
      * <p>
      * The value is the text string of a suggestion.
@@ -46,11 +46,11 @@ public class Suggestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique UUID (universally unique identifier) of a single query suggestion.
+     * The UUID (universally unique identifier) of a single query suggestion.
      * </p>
      * 
      * @param id
-     *        The unique UUID (universally unique identifier) of a single query suggestion.
+     *        The UUID (universally unique identifier) of a single query suggestion.
      */
 
     public void setId(String id) {
@@ -59,10 +59,10 @@ public class Suggestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique UUID (universally unique identifier) of a single query suggestion.
+     * The UUID (universally unique identifier) of a single query suggestion.
      * </p>
      * 
-     * @return The unique UUID (universally unique identifier) of a single query suggestion.
+     * @return The UUID (universally unique identifier) of a single query suggestion.
      */
 
     public String getId() {
@@ -71,11 +71,11 @@ public class Suggestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique UUID (universally unique identifier) of a single query suggestion.
+     * The UUID (universally unique identifier) of a single query suggestion.
      * </p>
      * 
      * @param id
-     *        The unique UUID (universally unique identifier) of a single query suggestion.
+     *        The UUID (universally unique identifier) of a single query suggestion.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,14 +86,14 @@ public class Suggestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the unique UUID (universally unique identifier) of a single query suggestion.
+     * The value for the UUID (universally unique identifier) of a single query suggestion.
      * </p>
      * <p>
      * The value is the text string of a suggestion.
      * </p>
      * 
      * @param value
-     *        The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
+     *        The value for the UUID (universally unique identifier) of a single query suggestion.</p>
      *        <p>
      *        The value is the text string of a suggestion.
      */
@@ -104,13 +104,13 @@ public class Suggestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the unique UUID (universally unique identifier) of a single query suggestion.
+     * The value for the UUID (universally unique identifier) of a single query suggestion.
      * </p>
      * <p>
      * The value is the text string of a suggestion.
      * </p>
      * 
-     * @return The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
+     * @return The value for the UUID (universally unique identifier) of a single query suggestion.</p>
      *         <p>
      *         The value is the text string of a suggestion.
      */
@@ -121,14 +121,14 @@ public class Suggestion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value for the unique UUID (universally unique identifier) of a single query suggestion.
+     * The value for the UUID (universally unique identifier) of a single query suggestion.
      * </p>
      * <p>
      * The value is the text string of a suggestion.
      * </p>
      * 
      * @param value
-     *        The value for the unique UUID (universally unique identifier) of a single query suggestion.</p>
+     *        The value for the UUID (universally unique identifier) of a single query suggestion.</p>
      *        <p>
      *        The value is the text string of a suggestion.
      * @return Returns a reference to this object so that method calls can be chained together.

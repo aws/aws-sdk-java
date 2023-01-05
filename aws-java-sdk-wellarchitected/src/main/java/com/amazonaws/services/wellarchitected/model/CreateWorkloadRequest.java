@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,18 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     */
+    private WorkloadDiscoveryConfig discoveryConfig;
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     */
+    private java.util.List<String> applications;
 
     /**
      * @param workloadName
@@ -639,6 +651,116 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     * 
+     * @param discoveryConfig
+     *        Well-Architected discovery configuration settings associated to the workload.
+     */
+
+    public void setDiscoveryConfig(WorkloadDiscoveryConfig discoveryConfig) {
+        this.discoveryConfig = discoveryConfig;
+    }
+
+    /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     * 
+     * @return Well-Architected discovery configuration settings associated to the workload.
+     */
+
+    public WorkloadDiscoveryConfig getDiscoveryConfig() {
+        return this.discoveryConfig;
+    }
+
+    /**
+     * <p>
+     * Well-Architected discovery configuration settings associated to the workload.
+     * </p>
+     * 
+     * @param discoveryConfig
+     *        Well-Architected discovery configuration settings associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withDiscoveryConfig(WorkloadDiscoveryConfig discoveryConfig) {
+        setDiscoveryConfig(discoveryConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @return List of AppRegistry application ARNs associated to the workload.
+     */
+
+    public java.util.List<String> getApplications() {
+        return applications;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     */
+
+    public void setApplications(java.util.Collection<String> applications) {
+        if (applications == null) {
+            this.applications = null;
+            return;
+        }
+
+        this.applications = new java.util.ArrayList<String>(applications);
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withApplications(String... applications) {
+        if (this.applications == null) {
+            setApplications(new java.util.ArrayList<String>(applications.length));
+        }
+        for (String ele : applications) {
+            this.applications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of AppRegistry application ARNs associated to the workload.
+     * </p>
+     * 
+     * @param applications
+     *        List of AppRegistry application ARNs associated to the workload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkloadRequest withApplications(java.util.Collection<String> applications) {
+        setApplications(applications);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -679,7 +801,11 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getDiscoveryConfig() != null)
+            sb.append("DiscoveryConfig: ").append(getDiscoveryConfig()).append(",");
+        if (getApplications() != null)
+            sb.append("Applications: ").append(getApplications());
         sb.append("}");
         return sb.toString();
     }
@@ -754,6 +880,14 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getDiscoveryConfig() == null ^ this.getDiscoveryConfig() == null)
+            return false;
+        if (other.getDiscoveryConfig() != null && other.getDiscoveryConfig().equals(this.getDiscoveryConfig()) == false)
+            return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
+            return false;
         return true;
     }
 
@@ -777,6 +911,8 @@ public class CreateWorkloadRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getNotes() == null) ? 0 : getNotes().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDiscoveryConfig() == null) ? 0 : getDiscoveryConfig().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         return hashCode;
     }
 

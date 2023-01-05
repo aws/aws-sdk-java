@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -126,14 +126,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      * </p>
      * </li>
      * <li>
@@ -275,14 +267,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba
      * </p>
      * <p>
@@ -355,14 +339,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     *        </p>
-     *        <p>
-     *        <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      *        </p>
      *        </li>
      *        <li>
@@ -447,14 +423,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba
      * </p>
      * <p>
@@ -527,14 +495,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     *         </p>
-     *         <p>
-     *         <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      *         </p>
      *         </li>
      *         <li>
@@ -619,14 +579,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     * </p>
-     * <p>
-     * <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * Service-linked rule name: OrgConfigRule-s3-bucket-versioning-enabled-dbgzf8ba
      * </p>
      * <p>
@@ -699,14 +651,6 @@ public class SourceKeyword implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Service-linked rule name: securityhub-api-gw-cache-encrypted-101104e1
-     *        </p>
-     *        <p>
-     *        <code>keywordValue</code>: <code>Custom_securityhub-api-gw-cache-encrypted</code>
      *        </p>
      *        </li>
      *        <li>

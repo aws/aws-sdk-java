@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.marketplacecatalog.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class ChangeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChangeType").build();
     private static final MarshallingInfo<StructuredPojo> ENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Entity").build();
+    private static final MarshallingInfo<List> ENTITYTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EntityTags").build();
     private static final MarshallingInfo<String> DETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Details").build();
     private static final MarshallingInfo<String> CHANGENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +57,7 @@ public class ChangeMarshaller {
         try {
             protocolMarshaller.marshall(change.getChangeType(), CHANGETYPE_BINDING);
             protocolMarshaller.marshall(change.getEntity(), ENTITY_BINDING);
+            protocolMarshaller.marshall(change.getEntityTags(), ENTITYTAGS_BINDING);
             protocolMarshaller.marshall(change.getDetails(), DETAILS_BINDING);
             protocolMarshaller.marshall(change.getChangeName(), CHANGENAME_BINDING);
         } catch (Exception e) {

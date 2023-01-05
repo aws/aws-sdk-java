@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,16 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
+     * </p>
+     */
+    private String namespaceArn;
     /**
      * <p>
      * The name of the namespace to list recovery points for.
@@ -47,8 +53,8 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results
-     * in the next page.
+     * returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in
+     * the next page.
      * </p>
      */
     private String nextToken;
@@ -102,12 +108,12 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -117,11 +123,11 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @return An optional parameter that specifies the maximum number of results to return. You can use
-     *         <code>nextToken</code> to get the next page of results.
+     *         <code>nextToken</code> to display the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -131,17 +137,57 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListRecoveryPointsRequest withMaxResults(Integer maxResults) {
         setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
+     * </p>
+     * 
+     * @param namespaceArn
+     *        The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
+     */
+
+    public void setNamespaceArn(String namespaceArn) {
+        this.namespaceArn = namespaceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
+     */
+
+    public String getNamespaceArn() {
+        return this.namespaceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
+     * </p>
+     * 
+     * @param namespaceArn
+     *        The Amazon Resource Name (ARN) of the namespace from which to list recovery points.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRecoveryPointsRequest withNamespaceArn(String namespaceArn) {
+        setNamespaceArn(namespaceArn);
         return this;
     }
 
@@ -188,14 +234,14 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results
-     * in the next page.
+     * returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in
+     * the next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can
-     *        include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations,
-     *        which returns results in the next page.
+     *        include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which
+     *        returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -205,12 +251,12 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results
-     * in the next page.
+     * returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in
+     * the next page.
      * </p>
      * 
      * @return If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can
-     *         include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations,
+     *         include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations,
      *         which returns results in the next page.
      */
 
@@ -221,14 +267,14 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations, which returns results
-     * in the next page.
+     * returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which returns results in
+     * the next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial <code>ListRecoveryPoints</code> operation returns a <code>nextToken</code>, you can
-     *        include the returned <code>nextToken</code> in subsequent <code>ListRecoveryPoints</code> operations,
-     *        which returns results in the next page.
+     *        include the returned <code>nextToken</code> in following <code>ListRecoveryPoints</code> operations, which
+     *        returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,6 +339,8 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNamespaceArn() != null)
+            sb.append("NamespaceArn: ").append(getNamespaceArn()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
         if (getNextToken() != null)
@@ -321,6 +369,10 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getNamespaceArn() == null ^ this.getNamespaceArn() == null)
+            return false;
+        if (other.getNamespaceArn() != null && other.getNamespaceArn().equals(this.getNamespaceArn()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
@@ -343,6 +395,7 @@ public class ListRecoveryPointsRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNamespaceArn() == null) ? 0 : getNamespaceArn().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());

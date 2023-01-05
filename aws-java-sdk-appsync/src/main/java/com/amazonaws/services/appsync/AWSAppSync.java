@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -232,6 +232,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.CreateResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateResolver" target="_top">AWS API
      *      Documentation</a>
@@ -419,6 +422,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.DeleteResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteResolver" target="_top">AWS API
      *      Documentation</a>
@@ -472,6 +478,30 @@ public interface AWSAppSync {
      *      Documentation</a>
      */
     DisassociateApiResult disassociateApi(DisassociateApiRequest disassociateApiRequest);
+
+    /**
+     * <p>
+     * Evaluates the given code and returns the response. The code definition requirements depend on the specified
+     * runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request
+     * function takes the incoming request after a GraphQL operation is parsed and converts it into a request
+     * configuration for the selected data source operation. The response function interprets responses from the data
+     * source and maps it to the shape of the GraphQL field output type.
+     * </p>
+     * 
+     * @param evaluateCodeRequest
+     * @return Result of the EvaluateCode operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to perform this operation on this resource.
+     * @throws InternalFailureException
+     *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
+     * @sample AWSAppSync.EvaluateCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/EvaluateCode" target="_top">AWS API
+     *      Documentation</a>
+     */
+    EvaluateCodeResult evaluateCode(EvaluateCodeRequest evaluateCodeRequest);
 
     /**
      * <p>
@@ -1196,6 +1226,9 @@ public interface AWSAppSync {
      *         You aren't authorized to perform this operation.
      * @throws InternalFailureException
      *         An internal AppSync error occurred. Try your request again.
+     * @throws BadRequestException
+     *         The request is not well formed. For example, a value is invalid or a required field is missing. Check the
+     *         field values, and then try again.
      * @sample AWSAppSync.UpdateResolver
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver" target="_top">AWS API
      *      Documentation</a>

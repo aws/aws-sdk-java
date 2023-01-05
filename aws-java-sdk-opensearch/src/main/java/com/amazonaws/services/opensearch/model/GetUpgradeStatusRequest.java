@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the request parameters to the <code> <a>GetUpgradeStatus</a> </code> operation.
+ * Container for the request parameters to the <code>GetUpgradeStatus</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetUpgradeStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The domain of the domain to get upgrade status information for.
+     * </p>
+     */
     private String domainName;
 
     /**
+     * <p>
+     * The domain of the domain to get upgrade status information for.
+     * </p>
+     * 
      * @param domainName
+     *        The domain of the domain to get upgrade status information for.
      */
 
     public void setDomainName(String domainName) {
@@ -36,7 +46,11 @@ public class GetUpgradeStatusRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * @return
+     * <p>
+     * The domain of the domain to get upgrade status information for.
+     * </p>
+     * 
+     * @return The domain of the domain to get upgrade status information for.
      */
 
     public String getDomainName() {
@@ -44,7 +58,12 @@ public class GetUpgradeStatusRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The domain of the domain to get upgrade status information for.
+     * </p>
+     * 
      * @param domainName
+     *        The domain of the domain to get upgrade status information for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

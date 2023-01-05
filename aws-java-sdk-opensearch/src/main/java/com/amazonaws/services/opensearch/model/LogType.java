@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,17 +16,33 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Type of log file. Can be one of the following:
- * <ul>
- * <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log
- * threshold to execute.</li>
- * <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log
- * threshold to execute.</li>
- * <li>ES_APPLICATION_LOGS: OpenSearch application logs contain information about errors and warnings raised during the
- * operation of the service and can be useful for troubleshooting.</li>
- * <li>AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.</li>
- * </ul>
+ * The type of log file. Can be one of the following:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <b>INDEX_SLOW_LOGS</b> - Index slow logs contain insert requests that took more time than the configured index query
+ * log threshold to execute.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>SEARCH_SLOW_LOGS</b> - Search slow logs contain search queries that took more time than the configured search
+ * query log threshold to execute.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>ES_APPLICATION_LOGS</b> - OpenSearch application logs contain information about errors and warnings raised during
+ * the operation of the service and can be useful for troubleshooting.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>AUDIT_LOGS</b> - Audit logs contain records of user requests for access to the domain.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum LogType {

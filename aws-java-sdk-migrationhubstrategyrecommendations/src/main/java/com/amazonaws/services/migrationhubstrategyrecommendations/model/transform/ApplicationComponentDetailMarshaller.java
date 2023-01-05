@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class ApplicationComponentDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("antipatternReportStatusMessage").build();
     private static final MarshallingInfo<String> APPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appType").build();
+    private static final MarshallingInfo<StructuredPojo> APPUNITERROR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("appUnitError").build();
     private static final MarshallingInfo<String> ASSOCIATEDSERVERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("associatedServerId").build();
     private static final MarshallingInfo<StructuredPojo> DATABASECONFIGDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -62,6 +64,10 @@ public class ApplicationComponentDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendationSet").build();
     private static final MarshallingInfo<String> RESOURCESUBTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceSubType").build();
+    private static final MarshallingInfo<String> RUNTIMESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeStatus").build();
+    private static final MarshallingInfo<String> RUNTIMESTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runtimeStatusMessage").build();
     private static final MarshallingInfo<List> SOURCECODEREPOSITORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceCodeRepositories").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -88,6 +94,7 @@ public class ApplicationComponentDetailMarshaller {
             protocolMarshaller.marshall(applicationComponentDetail.getAntipatternReportStatus(), ANTIPATTERNREPORTSTATUS_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getAntipatternReportStatusMessage(), ANTIPATTERNREPORTSTATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getAppType(), APPTYPE_BINDING);
+            protocolMarshaller.marshall(applicationComponentDetail.getAppUnitError(), APPUNITERROR_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getAssociatedServerId(), ASSOCIATEDSERVERID_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getDatabaseConfigDetail(), DATABASECONFIGDETAIL_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getId(), ID_BINDING);
@@ -100,6 +107,8 @@ public class ApplicationComponentDetailMarshaller {
             protocolMarshaller.marshall(applicationComponentDetail.getOsVersion(), OSVERSION_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getRecommendationSet(), RECOMMENDATIONSET_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getResourceSubType(), RESOURCESUBTYPE_BINDING);
+            protocolMarshaller.marshall(applicationComponentDetail.getRuntimeStatus(), RUNTIMESTATUS_BINDING);
+            protocolMarshaller.marshall(applicationComponentDetail.getRuntimeStatusMessage(), RUNTIMESTATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getSourceCodeRepositories(), SOURCECODEREPOSITORIES_BINDING);
             protocolMarshaller.marshall(applicationComponentDetail.getStatusMessage(), STATUSMESSAGE_BINDING);
         } catch (Exception e) {

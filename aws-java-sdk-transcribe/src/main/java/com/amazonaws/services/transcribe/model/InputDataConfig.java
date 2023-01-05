@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,8 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -181,8 +181,8 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -195,8 +195,8 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -214,8 +214,8 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -227,8 +227,8 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *         specified Amazon S3 location, your request fails.</p>
+     *         contains your input files. If the role that you specify doesn’t have the appropriate permissions to
+     *         access the specified Amazon S3 location, your request fails.</p>
      *         <p>
      *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *         example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -246,8 +246,8 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -260,8 +260,8 @@ public class InputDataConfig implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.

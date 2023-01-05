@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,7 +117,7 @@ public class DistributionSummary implements Serializable, Cloneable {
     private Boolean enabled;
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      */
     private ViewerCertificate viewerCertificate;
@@ -160,6 +160,12 @@ public class DistributionSummary implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AliasICPRecordal> aliasICPRecordals;
+    /**
+     * <p>
+     * Whether the primary distribution has a staging distribution enabled.
+     * </p>
+     */
+    private Boolean staging;
 
     /**
      * <p>
@@ -804,11 +810,11 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public void setViewerCertificate(ViewerCertificate viewerCertificate) {
@@ -817,10 +823,10 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
-     * @return A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * @return A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      */
 
     public ViewerCertificate getViewerCertificate() {
@@ -829,11 +835,11 @@ public class DistributionSummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     * A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * </p>
      * 
      * @param viewerCertificate
-     *        A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers.
+     *        A complex type that determines the distribution's SSL/TLS configuration for communicating with viewers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1197,6 +1203,58 @@ public class DistributionSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Whether the primary distribution has a staging distribution enabled.
+     * </p>
+     * 
+     * @param staging
+     *        Whether the primary distribution has a staging distribution enabled.
+     */
+
+    public void setStaging(Boolean staging) {
+        this.staging = staging;
+    }
+
+    /**
+     * <p>
+     * Whether the primary distribution has a staging distribution enabled.
+     * </p>
+     * 
+     * @return Whether the primary distribution has a staging distribution enabled.
+     */
+
+    public Boolean getStaging() {
+        return this.staging;
+    }
+
+    /**
+     * <p>
+     * Whether the primary distribution has a staging distribution enabled.
+     * </p>
+     * 
+     * @param staging
+     *        Whether the primary distribution has a staging distribution enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DistributionSummary withStaging(Boolean staging) {
+        setStaging(staging);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the primary distribution has a staging distribution enabled.
+     * </p>
+     * 
+     * @return Whether the primary distribution has a staging distribution enabled.
+     */
+
+    public Boolean isStaging() {
+        return this.staging;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1247,7 +1305,9 @@ public class DistributionSummary implements Serializable, Cloneable {
         if (getIsIPV6Enabled() != null)
             sb.append("IsIPV6Enabled: ").append(getIsIPV6Enabled()).append(",");
         if (getAliasICPRecordals() != null)
-            sb.append("AliasICPRecordals: ").append(getAliasICPRecordals());
+            sb.append("AliasICPRecordals: ").append(getAliasICPRecordals()).append(",");
+        if (getStaging() != null)
+            sb.append("Staging: ").append(getStaging());
         sb.append("}");
         return sb.toString();
     }
@@ -1342,6 +1402,10 @@ public class DistributionSummary implements Serializable, Cloneable {
             return false;
         if (other.getAliasICPRecordals() != null && other.getAliasICPRecordals().equals(this.getAliasICPRecordals()) == false)
             return false;
+        if (other.getStaging() == null ^ this.getStaging() == null)
+            return false;
+        if (other.getStaging() != null && other.getStaging().equals(this.getStaging()) == false)
+            return false;
         return true;
     }
 
@@ -1370,6 +1434,7 @@ public class DistributionSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getHttpVersion() == null) ? 0 : getHttpVersion().hashCode());
         hashCode = prime * hashCode + ((getIsIPV6Enabled() == null) ? 0 : getIsIPV6Enabled().hashCode());
         hashCode = prime * hashCode + ((getAliasICPRecordals() == null) ? 0 : getAliasICPRecordals().hashCode());
+        hashCode = prime * hashCode + ((getStaging() == null) ? 0 : getStaging().hashCode());
         return hashCode;
     }
 

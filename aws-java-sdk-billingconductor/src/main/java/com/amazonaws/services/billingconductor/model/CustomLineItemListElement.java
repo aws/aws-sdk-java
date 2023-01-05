@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
     private String description;
     /**
      * <p>
-     * The product code associated with the custom line item.
+     * The product code that's associated with the custom line item.
      * </p>
      */
     private String productCode;
@@ -78,7 +78,7 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
     private Long creationTime;
     /**
      * <p>
-     * The most recent time the custom line item was modified.
+     * The most recent time when the custom line item was modified.
      * </p>
      */
     private Long lastModifiedTime;
@@ -310,11 +310,11 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The product code associated with the custom line item.
+     * The product code that's associated with the custom line item.
      * </p>
      * 
      * @param productCode
-     *        The product code associated with the custom line item.
+     *        The product code that's associated with the custom line item.
      */
 
     public void setProductCode(String productCode) {
@@ -323,10 +323,10 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The product code associated with the custom line item.
+     * The product code that's associated with the custom line item.
      * </p>
      * 
-     * @return The product code associated with the custom line item.
+     * @return The product code that's associated with the custom line item.
      */
 
     public String getProductCode() {
@@ -335,11 +335,11 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The product code associated with the custom line item.
+     * The product code that's associated with the custom line item.
      * </p>
      * 
      * @param productCode
-     *        The product code associated with the custom line item.
+     *        The product code that's associated with the custom line item.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,11 +430,11 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The most recent time the custom line item was modified.
+     * The most recent time when the custom line item was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the custom line item was modified.
+     *        The most recent time when the custom line item was modified.
      */
 
     public void setLastModifiedTime(Long lastModifiedTime) {
@@ -443,10 +443,10 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The most recent time the custom line item was modified.
+     * The most recent time when the custom line item was modified.
      * </p>
      * 
-     * @return The most recent time the custom line item was modified.
+     * @return The most recent time when the custom line item was modified.
      */
 
     public Long getLastModifiedTime() {
@@ -455,11 +455,11 @@ public class CustomLineItemListElement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The most recent time the custom line item was modified.
+     * The most recent time when the custom line item was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the custom line item was modified.
+     *        The most recent time when the custom line item was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

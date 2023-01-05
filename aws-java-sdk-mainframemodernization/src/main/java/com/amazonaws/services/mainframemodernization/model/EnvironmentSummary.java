@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains a subset of the possible environment attributes. Used in the environment list.
+ * Contains a subset of the possible runtime environment attributes. Used in the environment list.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/m2-2021-04-28/EnvironmentSummary" target="_top">AWS API
@@ -30,13 +30,13 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the environment was created.
+     * The timestamp when the runtime environment was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The target platform for the environment.
+     * The target platform for the runtime environment.
      * </p>
      */
     private String engineType;
@@ -60,30 +60,30 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
     private String environmentId;
     /**
      * <p>
-     * The instance type of the environment.
+     * The instance type of the runtime environment.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The name of the environment.
+     * The name of the runtime environment.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The status of the environment
+     * The status of the runtime environment
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The timestamp when the environment was created.
+     * The timestamp when the runtime environment was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp when the environment was created.
+     *        The timestamp when the runtime environment was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -92,10 +92,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the environment was created.
+     * The timestamp when the runtime environment was created.
      * </p>
      * 
-     * @return The timestamp when the environment was created.
+     * @return The timestamp when the runtime environment was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -104,11 +104,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the environment was created.
+     * The timestamp when the runtime environment was created.
      * </p>
      * 
      * @param creationTime
-     *        The timestamp when the environment was created.
+     *        The timestamp when the runtime environment was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +119,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target platform for the environment.
+     * The target platform for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The target platform for the environment.
+     *        The target platform for the runtime environment.
      * @see EngineType
      */
 
@@ -133,10 +133,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target platform for the environment.
+     * The target platform for the runtime environment.
      * </p>
      * 
-     * @return The target platform for the environment.
+     * @return The target platform for the runtime environment.
      * @see EngineType
      */
 
@@ -146,11 +146,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target platform for the environment.
+     * The target platform for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The target platform for the environment.
+     *        The target platform for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -162,11 +162,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The target platform for the environment.
+     * The target platform for the runtime environment.
      * </p>
      * 
      * @param engineType
-     *        The target platform for the environment.
+     *        The target platform for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -298,11 +298,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The instance type of the environment.
+     * The instance type of the runtime environment.
      * </p>
      * 
      * @param instanceType
-     *        The instance type of the environment.
+     *        The instance type of the runtime environment.
      */
 
     public void setInstanceType(String instanceType) {
@@ -311,10 +311,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The instance type of the environment.
+     * The instance type of the runtime environment.
      * </p>
      * 
-     * @return The instance type of the environment.
+     * @return The instance type of the runtime environment.
      */
 
     public String getInstanceType() {
@@ -323,11 +323,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The instance type of the environment.
+     * The instance type of the runtime environment.
      * </p>
      * 
      * @param instanceType
-     *        The instance type of the environment.
+     *        The instance type of the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,11 +338,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the environment.
+     * The name of the runtime environment.
      * </p>
      * 
      * @param name
-     *        The name of the environment.
+     *        The name of the runtime environment.
      */
 
     public void setName(String name) {
@@ -351,10 +351,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the environment.
+     * The name of the runtime environment.
      * </p>
      * 
-     * @return The name of the environment.
+     * @return The name of the runtime environment.
      */
 
     public String getName() {
@@ -363,11 +363,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the environment.
+     * The name of the runtime environment.
      * </p>
      * 
      * @param name
-     *        The name of the environment.
+     *        The name of the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,11 +378,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The status of the environment
+     * The status of the runtime environment
      * </p>
      * 
      * @param status
-     *        The status of the environment
+     *        The status of the runtime environment
      * @see EnvironmentLifecycle
      */
 
@@ -392,10 +392,10 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The status of the environment
+     * The status of the runtime environment
      * </p>
      * 
-     * @return The status of the environment
+     * @return The status of the runtime environment
      * @see EnvironmentLifecycle
      */
 
@@ -405,11 +405,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The status of the environment
+     * The status of the runtime environment
      * </p>
      * 
      * @param status
-     *        The status of the environment
+     *        The status of the runtime environment
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentLifecycle
      */
@@ -421,11 +421,11 @@ public class EnvironmentSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The status of the environment
+     * The status of the runtime environment
      * </p>
      * 
      * @param status
-     *        The status of the environment
+     *        The status of the runtime environment
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnvironmentLifecycle
      */

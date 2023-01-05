@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,9 @@ public enum ServerCriteria {
     OS_NAME("OS_NAME"),
     STRATEGY("STRATEGY"),
     DESTINATION("DESTINATION"),
-    SERVER_ID("SERVER_ID");
+    SERVER_ID("SERVER_ID"),
+    ANALYSIS_STATUS("ANALYSIS_STATUS"),
+    ERROR_CATEGORY("ERROR_CATEGORY");
 
     private String value;
 

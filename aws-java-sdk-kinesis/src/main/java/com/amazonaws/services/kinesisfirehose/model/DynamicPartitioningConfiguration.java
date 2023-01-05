@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,9 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by
  * partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3
- * destinations. For more information, see <a
- * href="https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html"
- * >https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html</a>
+ * destinations.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/DynamicPartitioningConfiguration"

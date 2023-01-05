@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,7 +76,7 @@ public class AwsBackupBackupPlanRuleDetails implements Serializable, Cloneable, 
     private Long completionWindowMinutes;
     /**
      * <p>
-     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      * </p>
      */
     private java.util.List<AwsBackupBackupPlanRuleCopyActionsDetails> copyActions;
@@ -407,10 +407,10 @@ public class AwsBackupBackupPlanRuleDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      * </p>
      * 
-     * @return An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * @return An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      */
 
     public java.util.List<AwsBackupBackupPlanRuleCopyActionsDetails> getCopyActions() {
@@ -419,11 +419,11 @@ public class AwsBackupBackupPlanRuleDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      * </p>
      * 
      * @param copyActions
-     *        An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     *        An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      */
 
     public void setCopyActions(java.util.Collection<AwsBackupBackupPlanRuleCopyActionsDetails> copyActions) {
@@ -437,7 +437,7 @@ public class AwsBackupBackupPlanRuleDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -446,7 +446,7 @@ public class AwsBackupBackupPlanRuleDetails implements Serializable, Cloneable, 
      * </p>
      * 
      * @param copyActions
-     *        An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     *        An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,11 +462,11 @@ public class AwsBackupBackupPlanRuleDetails implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     * An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      * </p>
      * 
      * @param copyActions
-     *        An array of <code>CopyAction</code> objects, which contains the details of the copy operation.
+     *        An array of <code>CopyAction</code> objects, each of which contains details of the copy operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

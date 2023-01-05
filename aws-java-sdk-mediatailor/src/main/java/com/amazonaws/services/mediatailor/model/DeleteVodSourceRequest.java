@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class DeleteVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source.
      * </p>
      */
     private String sourceLocationName;
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name of the VOD source.
      * </p>
      */
     private String vodSourceName;
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location associated with this VOD Source.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -53,10 +53,10 @@ public class DeleteVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name of the source location associated with this VOD Source.
      */
 
     public String getSourceLocationName() {
@@ -65,11 +65,11 @@ public class DeleteVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location associated with this VOD Source.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location associated with this VOD Source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name of the VOD source.
      * </p>
      * 
      * @param vodSourceName
-     *        The identifier for the VOD source you are working on.
+     *        The name of the VOD source.
      */
 
     public void setVodSourceName(String vodSourceName) {
@@ -93,10 +93,10 @@ public class DeleteVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name of the VOD source.
      * </p>
      * 
-     * @return The identifier for the VOD source you are working on.
+     * @return The name of the VOD source.
      */
 
     public String getVodSourceName() {
@@ -105,11 +105,11 @@ public class DeleteVodSourceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the VOD source you are working on.
+     * The name of the VOD source.
      * </p>
      * 
      * @param vodSourceName
-     *        The identifier for the VOD source you are working on.
+     *        The name of the VOD source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -286,11 +286,11 @@ public class PutEventsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTrackingId() != null)
             sb.append("TrackingId: ").append(getTrackingId()).append(",");
         if (getUserId() != null)
-            sb.append("UserId: ").append(getUserId()).append(",");
+            sb.append("UserId: ").append("***Sensitive Data Redacted***").append(",");
         if (getSessionId() != null)
             sb.append("SessionId: ").append(getSessionId()).append(",");
         if (getEventList() != null)
-            sb.append("EventList: ").append(getEventList());
+            sb.append("EventList: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

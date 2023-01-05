@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -189,6 +189,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                             new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.KMSDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SnapStartNotReadyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.SnapStartNotReadyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EFSIOException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.EFSIOExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -200,6 +203,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EFSMountFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.EFSMountFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SnapStartException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.SnapStartExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -242,6 +248,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.ServiceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SnapStartTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.SnapStartTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
@@ -496,16 +505,18 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws PolicyLengthExceededException
-     *         The permissions policy for the resource is too large. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     *         The permissions policy for the resource is too large. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @sample AWSLambda.AddLayerVersionPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddLayerVersionPermission"
      *      target="_top">AWS API Documentation</a>
@@ -558,25 +569,25 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Grants an Amazon Web Services service, account, or organization permission to use a function. You can apply the
-     * policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use
-     * a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the
-     * function. Note: Lambda does not support adding policies to version $LATEST.
+     * Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services organization permission to use
+     * a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single
+     * version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that
+     * version or alias to invoke the function. Note: Lambda does not support adding policies to version $LATEST.
      * </p>
      * <p>
      * To grant permission to another account, specify the account ID as the <code>Principal</code>. To grant permission
      * to an organization defined in Organizations, specify the organization ID as the <code>PrincipalOrgID</code>. For
-     * Amazon Web Services services, the principal is a domain-style identifier defined by the service, like
-     * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services services, you can also
-     * specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service
-     * principal without specifying the source, other accounts could potentially configure resources in their account to
-     * invoke your Lambda function.
+     * Amazon Web Services, the principal is a domain-style identifier that the service defines, such as
+     * <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify
+     * the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service principal
+     * without specifying the source, other accounts could potentially configure resources in their account to invoke
+     * your Lambda function.
      * </p>
      * <p>
-     * This action adds a statement to a resource-based permissions policy for the function. For more information about
-     * function policies, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function
-     * Policies</a>.
+     * This operation adds a statement to a resource-based permissions policy for the function. For more information
+     * about function policies, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using resource-based
+     * policies for Lambda</a>.
      * </p>
      * 
      * @param addPermissionRequest
@@ -588,16 +599,18 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws PolicyLengthExceededException
-     *         The permissions policy for the resource is too large. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     *         The permissions policy for the resource is too large. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @sample AWSLambda.AddPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AddPermission" target="_top">AWS API
      *      Documentation</a>
@@ -666,9 +679,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.CreateAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateAlias" target="_top">AWS API
      *      Documentation</a>
@@ -720,7 +735,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
     /**
      * <p>
      * Creates a code signing configuration. A <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a>
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code signing configuration</a>
      * defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if
      * deployment validation checks fail).
      * </p>
@@ -730,7 +745,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @sample AWSLambda.CreateCodeSigningConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig" target="_top">AWS
      *      API Documentation</a>
@@ -900,11 +915,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @sample AWSLambda.CreateEventSourceMapping
@@ -963,30 +980,31 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
      * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
-     * code. The execution role grants the function permission to use Amazon Web Services services, such as Amazon
-     * CloudWatch Logs for log streaming and X-Ray for request tracing.
+     * code. The execution role grants the function permission to use Amazon Web Services, such as Amazon CloudWatch
+     * Logs for log streaming and X-Ray for request tracing.
      * </p>
      * <p>
-     * You set the package type to <code>Image</code> if the deployment package is a <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>. For a container
-     * image, the code property must include the URI of a container image in the Amazon ECR registry. You do not need to
-     * specify the handler and runtime properties.
+     * If the deployment package is a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a>, then you set the
+     * package type to <code>Image</code>. For a container image, the code property must include the URI of a container
+     * image in the Amazon ECR registry. You do not need to specify the handler and runtime properties.
      * </p>
      * <p>
-     * You set the package type to <code>Zip</code> if the deployment package is a <a
+     * If the deployment package is a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
-     * file archive</a>. For a .zip file archive, the code property specifies the location of the .zip file. You must
-     * also specify the handler and runtime properties. The code in the deployment package must be compatible with the
-     * target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>). If you do not
-     * specify the architecture, the default value is <code>x86-64</code>.
+     * file archive</a>, then you set the package type to <code>Zip</code>. For a .zip file archive, the code property
+     * specifies the location of the .zip file. You must also specify the handler and runtime properties. The code in
+     * the deployment package must be compatible with the target instruction set architecture of the function (
+     * <code>x86-64</code> or <code>arm64</code>). If you do not specify the architecture, then the default value is
+     * <code>x86-64</code>.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
      * function connects to a VPC, this process can take a minute or so. During this time, you can't invoke or modify
      * the function. The <code>State</code>, <code>StateReason</code>, and <code>StateReasonCode</code> fields in the
      * response from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke. For more
-     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function
-     * States</a>.
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda function
+     * states</a>.
      * </p>
      * <p>
      * A function has an unpublished version, and can have published versions and aliases. The unpublished version
@@ -1005,19 +1023,19 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
      * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
      * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
-     * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
+     * The code-signing configuration includes set of signing profiles, which define the trusted publishers for this
      * function.
      * </p>
      * <p>
-     * If another account or an Amazon Web Services service invokes your function, use <a>AddPermission</a> to grant
-     * permission by creating a resource-based IAM policy. You can grant permissions at the function level, on a
-     * version, or on an alias.
+     * If another Amazon Web Services account or an Amazon Web Service invokes your function, use <a>AddPermission</a>
+     * to grant permission by creating a resource-based Identity and Access Management (IAM) policy. You can grant
+     * permissions at the function level, on a version, or on an alias.
      * </p>
      * <p>
      * To invoke your function directly, use <a>Invoke</a>. To invoke your function in response to events in other
-     * Amazon Web Services services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a
-     * function trigger in the other service. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Functions</a>.
+     * Amazon Web Services, create an event source mapping (<a>CreateEventSourceMapping</a>), or configure a function
+     * trigger in the other service. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Lambda functions</a>.
      * </p>
      * 
      * @param createFunctionRequest
@@ -1025,22 +1043,24 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws CodeStorageExceededException
-     *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     *         Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @throws CodeVerificationFailedException
      *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
      *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
      * @throws InvalidCodeSignatureException
-     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-     *         fails, even if code signing policy is set to WARN.
+     *         The code signature failed the integrity check. If the integrity check fails, then Lambda blocks
+     *         deployment, even if the code signing policy is set to WARN.
      * @throws CodeSigningConfigNotFoundException
      *         The specified code signing configuration does not exist.
      * @sample AWSLambda.CreateFunction
@@ -1104,11 +1124,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.CreateFunctionUrlConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunctionUrlConfig" target="_top">AWS
      *      API Documentation</a>
@@ -1170,11 +1192,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.DeleteAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteAlias" target="_top">AWS API
      *      Documentation</a>
@@ -1234,7 +1258,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ResourceConflictException
@@ -1306,13 +1330,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceInUseException
-     *         The operation conflicts with the resource's availability. For example, you attempted to update an
-     *         EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING
-     *         state.
+     *         The operation conflicts with the resource's availability. For example, you tried to update an event
+     *         source mapping in the CREATING state, or you tried to delete an event source mapping currently UPDATING.
      * @sample AWSLambda.DeleteEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteEventSourceMapping"
      *      target="_top">AWS API Documentation</a>
@@ -1370,8 +1395,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </p>
      * <p>
      * To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For Amazon
-     * Web Services services and resources that invoke your function directly, delete the trigger in the service where
-     * you originally configured it.
+     * Web Services and resources that invoke your function directly, delete the trigger in the service where you
+     * originally configured it.
      * </p>
      * 
      * @param deleteFunctionRequest
@@ -1381,9 +1406,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.DeleteFunction
@@ -1442,7 +1469,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param deleteFunctionCodeSigningConfigRequest
      * @return Result of the DeleteFunctionCodeSigningConfig operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws CodeSigningConfigNotFoundException
      *         The specified code signing configuration does not exist.
      * @throws ResourceNotFoundException
@@ -1450,7 +1477,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.DeleteFunctionCodeSigningConfig
@@ -1516,9 +1545,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.DeleteFunctionConcurrency
@@ -1586,9 +1617,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.DeleteFunctionEventInvokeConfig
@@ -1657,7 +1690,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.DeleteFunctionUrlConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionUrlConfig" target="_top">AWS
      *      API Documentation</a>
@@ -1720,7 +1755,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.DeleteLayerVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteLayerVersion" target="_top">AWS API
      *      Documentation</a>
@@ -1777,13 +1814,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param deleteProvisionedConcurrencyConfigRequest
      * @return Result of the DeleteProvisionedConcurrencyConfig operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @sample AWSLambda.DeleteProvisionedConcurrencyConfig
@@ -1847,7 +1886,9 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getAccountSettingsRequest
      * @return Result of the GetAccountSettings operation returned by the service.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @sample AWSLambda.GetAccountSettings
@@ -1911,9 +1952,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.GetAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetAlias" target="_top">AWS API
      *      Documentation</a>
@@ -1972,7 +2015,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @sample AWSLambda.GetCodeSigningConfig
@@ -2036,9 +2079,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.GetEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetEventSourceMapping" target="_top">AWS
      *      API Documentation</a>
@@ -2102,9 +2147,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @sample AWSLambda.GetFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction" target="_top">AWS API
      *      Documentation</a>
@@ -2161,13 +2208,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getFunctionCodeSigningConfigRequest
      * @return Result of the GetFunctionCodeSigningConfig operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.GetFunctionCodeSigningConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2227,11 +2276,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getFunctionConcurrencyRequest
      * @return Result of the GetFunctionConcurrency operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @sample AWSLambda.GetFunctionConcurrency
@@ -2299,9 +2350,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @sample AWSLambda.GetFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -2367,9 +2420,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.GetFunctionEventInvokeConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionEventInvokeConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2428,13 +2483,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getFunctionUrlConfigRequest
      * @return Result of the GetFunctionUrlConfig operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.GetFunctionUrlConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionUrlConfig" target="_top">AWS
      *      API Documentation</a>
@@ -2495,9 +2552,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @sample AWSLambda.GetLayerVersion
@@ -2560,9 +2619,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @sample AWSLambda.GetLayerVersionByArn
@@ -2627,9 +2688,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @sample AWSLambda.GetLayerVersionPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetLayerVersionPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -2693,9 +2756,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @sample AWSLambda.GetPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetPolicy" target="_top">AWS API
      *      Documentation</a>
@@ -2752,11 +2817,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param getProvisionedConcurrencyConfigRequest
      * @return Result of the GetProvisionedConcurrencyConfig operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws ProvisionedConcurrencyConfigNotFoundException
@@ -2828,28 +2895,30 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * When an error occurs, your function may be invoked multiple times. Retry behavior varies by error type, client,
      * event source, and invocation type. For example, if you invoke a function asynchronously and it returns an error,
      * Lambda executes the function up to two more times. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry Behavior</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html">Error handling and automatic retries
+     * in Lambda</a>.
      * </p>
      * <p>
      * For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a>,
      * Lambda adds events to a queue before sending them to your function. If your function does not have enough
      * capacity to keep up with the queue, events may be lost. Occasionally, your function may receive the same event
      * multiple times, even if no error occurs. To retain events that were not processed, configure your function with a
-     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter queue</a>.
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">dead-letter
+     * queue</a>.
      * </p>
      * <p>
      * The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that
      * prevent your function from executing, such as permissions errors, <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>, or issues with your function's
-     * code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if executing the
-     * function would cause you to exceed a concurrency limit at either the account level (
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a> errors, or issues with
+     * your function's code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if
+     * running the function would cause you to exceed a concurrency limit at either the account level (
      * <code>ConcurrentInvocationLimitExceeded</code>) or function level (
      * <code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
      * </p>
      * <p>
-     * For functions with a long timeout, your client might be disconnected during synchronous invocation while it waits
-     * for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long
-     * connections with timeout or keep-alive settings.
+     * For functions with a long timeout, your client might disconnect during synchronous invocation while it waits for
+     * a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long connections
+     * with timeout or keep-alive settings.
      * </p>
      * <p>
      * This operation requires permission for the <a
@@ -2868,54 +2937,65 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws InvalidRequestContentException
      *         The request body could not be parsed as JSON.
      * @throws RequestTooLargeException
-     *         The request payload exceeded the <code>Invoke</code> request body JSON input limit. For more information,
-     *         see <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Limits</a>.
+     *         The request payload exceeded the <code>Invoke</code> request body JSON input quota. For more information,
+     *         see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @throws UnsupportedMediaTypeException
      *         The content type of the <code>Invoke</code> request body is not JSON.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws EC2UnexpectedException
-     *         Lambda received an unexpected EC2 client exception while setting up for the Lambda function.
+     *         Lambda received an unexpected Amazon EC2 client exception while setting up for the Lambda function.
      * @throws SubnetIPAddressLimitReachedException
-     *         Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
-     *         has no available IP addresses.
+     *         Lambda couldn't set up VPC access for the Lambda function because one or more configured subnets has no
+     *         available IP addresses.
      * @throws ENILimitReachedException
-     *         Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
-     *         function configuration, because the limit for network interfaces has been reached.
+     *         Lambda couldn't create an elastic network interface in the VPC, specified as part of Lambda function
+     *         configuration, because the limit for network interfaces has been reached. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @throws EFSMountConnectivityException
-     *         The function couldn't make a network connection to the configured file system.
+     *         The Lambda function couldn't make a network connection to the configured file system.
      * @throws EFSMountFailureException
-     *         The function couldn't mount the configured file system due to a permission or configuration issue.
+     *         The Lambda function couldn't mount the configured file system due to a permission or configuration issue.
      * @throws EFSMountTimeoutException
-     *         The function was able to make a network connection to the configured file system, but the mount operation
+     *         The Lambda function made a network connection to the configured file system, but the mount operation
      *         timed out.
      * @throws EFSIOException
      *         An error occurred when reading from or writing to a connected file system.
+     * @throws SnapStartException
+     *         The runtime restore hook encountered an error. For more information, check the Amazon CloudWatch logs.
+     * @throws SnapStartTimeoutException
+     *         The runtime restore hook failed to complete within the timeout limit (2 seconds).
+     * @throws SnapStartNotReadyException
+     *         Lambda is initializing your function. You can invoke the function when the <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function state</a> becomes
+     *         <code>Active</code>.
      * @throws EC2ThrottledException
-     *         Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role
-     *         provided for the Lambda function.
+     *         Amazon EC2 throttled Lambda during Lambda function initialization using the execution role provided for
+     *         the function.
      * @throws EC2AccessDeniedException
      *         Need additional permissions to configure VPC settings.
      * @throws InvalidSubnetIDException
-     *         The Subnet ID provided in the Lambda function VPC configuration is invalid.
+     *         The subnet ID provided in the Lambda function VPC configuration is not valid.
      * @throws InvalidSecurityGroupIDException
-     *         The Security Group ID provided in the Lambda function VPC configuration is invalid.
+     *         The security group ID provided in the Lambda function VPC configuration is not valid.
      * @throws InvalidZipFileException
      *         Lambda could not unzip the deployment package.
      * @throws KMSDisabledException
-     *         Lambda was unable to decrypt the environment variables because the KMS key used is disabled. Check the
-     *         Lambda function's KMS key settings.
+     *         Lambda couldn't decrypt the environment variables because the KMS key used is disabled. Check the Lambda
+     *         function's KMS key settings.
      * @throws KMSInvalidStateException
-     *         Lambda was unable to decrypt the environment variables because the KMS key used is in an invalid state
-     *         for Decrypt. Check the function's KMS key settings.
+     *         Lambda couldn't decrypt the environment variables because the state of the KMS key used is not valid for
+     *         Decrypt. Check the function's KMS key settings.
      * @throws KMSAccessDeniedException
-     *         Lambda was unable to decrypt the environment variables because KMS access was denied. Check the Lambda
+     *         Lambda couldn't decrypt the environment variables because KMS access was denied. Check the Lambda
      *         function's KMS permissions.
      * @throws KMSNotFoundException
-     *         Lambda was unable to decrypt the environment variables because the KMS key was not found. Check the
-     *         function's KMS key settings.
+     *         Lambda couldn't decrypt the environment variables because the KMS key was not found. Check the function's
+     *         KMS key settings.
      * @throws InvalidRuntimeException
      *         The runtime or runtime version specified is not supported.
      * @throws ResourceConflictException
@@ -3057,9 +3137,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.ListAliases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListAliases" target="_top">AWS API
      *      Documentation</a>
@@ -3120,7 +3202,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @sample AWSLambda.ListCodeSigningConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs" target="_top">AWS
      *      API Documentation</a>
@@ -3183,9 +3265,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.ListEventSourceMappings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListEventSourceMappings" target="_top">AWS
      *      API Documentation</a>
@@ -3252,11 +3336,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listFunctionEventInvokeConfigsRequest
      * @return Result of the ListFunctionEventInvokeConfigs operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @sample AWSLambda.ListFunctionEventInvokeConfigs
@@ -3317,13 +3403,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listFunctionUrlConfigsRequest
      * @return Result of the ListFunctionUrlConfigs operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.ListFunctionUrlConfigs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionUrlConfigs" target="_top">AWS
      *      API Documentation</a>
@@ -3384,7 +3472,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * </p>
      * <note>
      * <p>
-     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a> fields. To get the
      * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
      * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
      * </p>
@@ -3395,9 +3483,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @sample AWSLambda.ListFunctions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions" target="_top">AWS API
      *      Documentation</a>
@@ -3462,7 +3552,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @sample AWSLambda.ListFunctionsByCodeSigningConfig
@@ -3530,11 +3620,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.ListLayerVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayerVersions" target="_top">AWS API
      *      Documentation</a>
@@ -3598,9 +3690,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.ListLayers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListLayers" target="_top">AWS API
      *      Documentation</a>
@@ -3657,11 +3751,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param listProvisionedConcurrencyConfigsRequest
      * @return Result of the ListProvisionedConcurrencyConfigs operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @sample AWSLambda.ListProvisionedConcurrencyConfigs
@@ -3728,9 +3824,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListTags" target="_top">AWS API
      *      Documentation</a>
@@ -3792,9 +3890,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.ListVersionsByFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListVersionsByFunction" target="_top">AWS
      *      API Documentation</a>
@@ -3861,12 +3961,14 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws CodeStorageExceededException
-     *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     *         Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @sample AWSLambda.PublishLayerVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PublishLayerVersion" target="_top">AWS API
      *      Documentation</a>
@@ -3937,16 +4039,18 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws CodeStorageExceededException
-     *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     *         Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.PublishVersion
@@ -4008,11 +4112,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws CodeSigningConfigNotFoundException
@@ -4082,7 +4188,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many
      * functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that
      * aren't configured with a per-function limit. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda function scaling</a>.
      * </p>
      * 
      * @param putFunctionConcurrencyRequest
@@ -4090,11 +4196,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.PutFunctionConcurrency
@@ -4174,9 +4282,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.PutFunctionEventInvokeConfig
@@ -4237,13 +4347,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @param putProvisionedConcurrencyConfigRequest
      * @return Result of the PutProvisionedConcurrencyConfig operation returned by the service.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @sample AWSLambda.PutProvisionedConcurrencyConfig
@@ -4311,13 +4423,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @sample AWSLambda.RemoveLayerVersionPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemoveLayerVersionPermission"
      *      target="_top">AWS API Documentation</a>
@@ -4370,8 +4484,8 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
 
     /**
      * <p>
-     * Revokes function-use permission from an Amazon Web Services service or another account. You can get the ID of the
-     * statement from the output of <a>GetPolicy</a>.
+     * Revokes function-use permission from an Amazon Web Service or another Amazon Web Services account. You can get
+     * the ID of the statement from the output of <a>GetPolicy</a>.
      * </p>
      * 
      * @param removePermissionRequest
@@ -4381,13 +4495,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @sample AWSLambda.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/RemovePermission" target="_top">AWS API
      *      Documentation</a>
@@ -4448,9 +4564,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.TagResource
@@ -4513,9 +4631,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.UntagResource
@@ -4579,13 +4699,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.UpdateAlias
@@ -4647,7 +4769,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @sample AWSLambda.UpdateCodeSigningConfig
@@ -4821,15 +4943,16 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws ResourceInUseException
-     *         The operation conflicts with the resource's availability. For example, you attempted to update an
-     *         EventSource Mapping in CREATING, or tried to delete a EventSource mapping currently in the UPDATING
-     *         state.
+     *         The operation conflicts with the resource's availability. For example, you tried to update an event
+     *         source mapping in the CREATING state, or you tried to delete an event source mapping currently UPDATING.
      * @sample AWSLambda.UpdateEventSourceMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping"
      *      target="_top">AWS API Documentation</a>
@@ -4884,15 +5007,17 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * <p>
      * Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by
      * a trusted publisher. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring code signing for
+     * Lambda</a>.
      * </p>
      * <p>
-     * If the function's package type is <code>Image</code>, you must specify the code package in <code>ImageUri</code>
-     * as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in
-     * the Amazon ECR registry.
+     * If the function's package type is <code>Image</code>, then you must specify the code package in
+     * <code>ImageUri</code> as the URI of a <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR
+     * registry.
      * </p>
      * <p>
-     * If the function's package type is <code>Zip</code>, you must specify the deployment package as a <a
+     * If the function's package type is <code>Zip</code>, then you must specify the deployment package as a <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
      * file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location. You can also provide the
      * function code inline using the <code>ZipFile</code> field.
@@ -4919,24 +5044,26 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws CodeStorageExceededException
-     *         You have exceeded your maximum total code size per account. <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     *         Your Amazon Web Services account has exceeded its maximum total code size. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda quotas</a>.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws CodeVerificationFailedException
      *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
      *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
      * @throws InvalidCodeSignatureException
-     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-     *         fails, even if code signing policy is set to WARN.
+     *         The code signature failed the integrity check. If the integrity check fails, then Lambda blocks
+     *         deployment, even if the code signing policy is set to WARN.
      * @throws CodeSigningConfigNotFoundException
      *         The specified code signing configuration does not exist.
      * @sample AWSLambda.UpdateFunctionCode
@@ -4997,15 +5124,15 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * you can still invoke it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and
      * <code>LastUpdateStatusReasonCode</code> fields in the response from <a>GetFunctionConfiguration</a> indicate when
      * the update is complete and the function is processing events with the new configuration. For more information,
-     * see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function States</a>.
+     * see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda function states</a>.
      * </p>
      * <p>
      * These settings can vary between versions of a function and are locked when you publish a version. You can't
      * modify the configuration of a published version, only the unpublished version.
      * </p>
      * <p>
-     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an account
-     * or Amazon Web Services service, use <a>AddPermission</a>.
+     * To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an Amazon
+     * Web Services account or Amazon Web Service, use <a>AddPermission</a>.
      * </p>
      * 
      * @param updateFunctionConfigurationRequest
@@ -5015,21 +5142,23 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @throws PreconditionFailedException
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
-     *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
-     *         resource.
+     *         <code>GetFunction</code> or the <code>GetAlias</code> API operation to retrieve the latest RevisionId for
+     *         your resource.
      * @throws CodeVerificationFailedException
      *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
      *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
      * @throws InvalidCodeSignatureException
-     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
-     *         fails, even if code signing policy is set to WARN.
+     *         The code signature failed the integrity check. If the integrity check fails, then Lambda blocks
+     *         deployment, even if the code signing policy is set to WARN.
      * @throws CodeSigningConfigNotFoundException
      *         The specified code signing configuration does not exist.
      * @sample AWSLambda.UpdateFunctionConfiguration
@@ -5097,9 +5226,11 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
      * @sample AWSLambda.UpdateFunctionEventInvokeConfig
@@ -5165,11 +5296,13 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
      * @throws ResourceNotFoundException
      *         The resource specified in the request does not exist.
      * @throws InvalidParameterValueException
-     *         One of the parameters in the request is invalid.
+     *         One of the parameters in the request is not valid.
      * @throws ServiceException
      *         The Lambda service encountered an internal error.
      * @throws TooManyRequestsException
-     *         The request throughput limit was exceeded.
+     *         The request throughput limit was exceeded. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html#api-requests">Lambda
+     *         quotas</a>.
      * @sample AWSLambda.UpdateFunctionUrlConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionUrlConfig" target="_top">AWS
      *      API Documentation</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,13 +17,28 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Container for information about an OpenSearch Service domain.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainInformationContainer implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Information about an Amazon OpenSearch Service domain.
+     * </p>
+     */
     private AWSDomainInformation aWSDomainInformation;
 
     /**
+     * <p>
+     * Information about an Amazon OpenSearch Service domain.
+     * </p>
+     * 
      * @param aWSDomainInformation
+     *        Information about an Amazon OpenSearch Service domain.
      */
 
     public void setAWSDomainInformation(AWSDomainInformation aWSDomainInformation) {
@@ -31,7 +46,11 @@ public class DomainInformationContainer implements Serializable, Cloneable, Stru
     }
 
     /**
-     * @return
+     * <p>
+     * Information about an Amazon OpenSearch Service domain.
+     * </p>
+     * 
+     * @return Information about an Amazon OpenSearch Service domain.
      */
 
     public AWSDomainInformation getAWSDomainInformation() {
@@ -39,7 +58,12 @@ public class DomainInformationContainer implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Information about an Amazon OpenSearch Service domain.
+     * </p>
+     * 
      * @param aWSDomainInformation
+     *        Information about an Amazon OpenSearch Service domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.glue.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -35,6 +37,8 @@ public class GlueTableMarshaller {
             .marshallLocationName("CatalogId").build();
     private static final MarshallingInfo<String> CONNECTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionName").build();
+    private static final MarshallingInfo<Map> ADDITIONALOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalOptions").build();
 
     private static final GlueTableMarshaller instance = new GlueTableMarshaller();
 
@@ -56,6 +60,7 @@ public class GlueTableMarshaller {
             protocolMarshaller.marshall(glueTable.getTableName(), TABLENAME_BINDING);
             protocolMarshaller.marshall(glueTable.getCatalogId(), CATALOGID_BINDING);
             protocolMarshaller.marshall(glueTable.getConnectionName(), CONNECTIONNAME_BINDING);
+            protocolMarshaller.marshall(glueTable.getAdditionalOptions(), ADDITIONALOPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

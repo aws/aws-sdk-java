@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class CreateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppSecurityGroupManagement").build();
     private static final MarshallingInfo<StructuredPojo> DOMAINSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainSettings").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSpaceSettings").build();
 
     private static final CreateDomainRequestMarshaller instance = new CreateDomainRequestMarshaller();
 
@@ -78,6 +80,7 @@ public class CreateDomainRequestMarshaller {
             protocolMarshaller.marshall(createDomainRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getAppSecurityGroupManagement(), APPSECURITYGROUPMANAGEMENT_BINDING);
             protocolMarshaller.marshall(createDomainRequest.getDomainSettings(), DOMAINSETTINGS_BINDING);
+            protocolMarshaller.marshall(createDomainRequest.getDefaultSpaceSettings(), DEFAULTSPACESETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

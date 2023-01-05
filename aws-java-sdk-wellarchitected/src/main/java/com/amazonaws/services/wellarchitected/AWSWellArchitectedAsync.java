@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,8 +103,9 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * Create a lens share.
      * </p>
      * <p>
-     * The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web
-     * Services Region. Shared access to a lens is not removed until the lens invitation is deleted.
+     * The owner of a lens can share it with other Amazon Web Services accounts, IAM users, an organization, and
+     * organizational units (OUs) in the same Amazon Web Services Region. Shared access to a lens is not removed until
+     * the lens invitation is deleted.
      * </p>
      * <note>
      * <p>
@@ -131,8 +132,9 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * Create a lens share.
      * </p>
      * <p>
-     * The owner of a lens can share it with other Amazon Web Services accounts and IAM users in the same Amazon Web
-     * Services Region. Shared access to a lens is not removed until the lens invitation is deleted.
+     * The owner of a lens can share it with other Amazon Web Services accounts, IAM users, an organization, and
+     * organizational units (OUs) in the same Amazon Web Services Region. Shared access to a lens is not removed until
+     * the lens invitation is deleted.
      * </p>
      * <note>
      * <p>
@@ -244,8 +246,9 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * Create a new workload.
      * </p>
      * <p>
-     * The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users in the same
-     * Amazon Web Services Region. Only the owner of a workload can delete it.
+     * The owner of a workload can share the workload with other Amazon Web Services accounts, IAM users, an
+     * organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload
+     * can delete it.
      * </p>
      * <p>
      * For more information, see <a
@@ -267,8 +270,9 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * Create a new workload.
      * </p>
      * <p>
-     * The owner of a workload can share the workload with other Amazon Web Services accounts and IAM users in the same
-     * Amazon Web Services Region. Only the owner of a workload can delete it.
+     * The owner of a workload can share the workload with other Amazon Web Services accounts, IAM users, an
+     * organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload
+     * can delete it.
      * </p>
      * <p>
      * For more information, see <a
@@ -409,8 +413,9 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * Delete a lens share.
      * </p>
      * <p>
-     * After the lens share is deleted, Amazon Web Services accounts and IAM users that you shared the lens with can
-     * continue to use it, but they will no longer be able to apply it to new workloads.
+     * After the lens share is deleted, Amazon Web Services accounts, IAM users, organizations, and organizational units
+     * (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new
+     * workloads.
      * </p>
      * <note>
      * <p>
@@ -437,8 +442,9 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
      * Delete a lens share.
      * </p>
      * <p>
-     * After the lens share is deleted, Amazon Web Services accounts and IAM users that you shared the lens with can
-     * continue to use it, but they will no longer be able to apply it to new workloads.
+     * After the lens share is deleted, Amazon Web Services accounts, IAM users, organizations, and organizational units
+     * (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new
+     * workloads.
      * </p>
      * <note>
      * <p>
@@ -984,6 +990,68 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
+     * List of Trusted Advisor check details by account related to the workload.
+     * </p>
+     * 
+     * @param listCheckDetailsRequest
+     * @return A Java Future containing the result of the ListCheckDetails operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListCheckDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCheckDetailsResult> listCheckDetailsAsync(ListCheckDetailsRequest listCheckDetailsRequest);
+
+    /**
+     * <p>
+     * List of Trusted Advisor check details by account related to the workload.
+     * </p>
+     * 
+     * @param listCheckDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCheckDetails operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListCheckDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCheckDetailsResult> listCheckDetailsAsync(ListCheckDetailsRequest listCheckDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCheckDetailsRequest, ListCheckDetailsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List of Trusted Advisor checks summarized for all accounts related to the workload.
+     * </p>
+     * 
+     * @param listCheckSummariesRequest
+     * @return A Java Future containing the result of the ListCheckSummaries operation returned by the service.
+     * @sample AWSWellArchitectedAsync.ListCheckSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCheckSummariesResult> listCheckSummariesAsync(ListCheckSummariesRequest listCheckSummariesRequest);
+
+    /**
+     * <p>
+     * List of Trusted Advisor checks summarized for all accounts related to the workload.
+     * </p>
+     * 
+     * @param listCheckSummariesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCheckSummaries operation returned by the service.
+     * @sample AWSWellArchitectedAsyncHandler.ListCheckSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListCheckSummaries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCheckSummariesResult> listCheckSummariesAsync(ListCheckSummariesRequest listCheckSummariesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCheckSummariesRequest, ListCheckSummariesResult> asyncHandler);
+
+    /**
+     * <p>
      * List lens review improvements.
      * </p>
      * 
@@ -1511,8 +1579,14 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * Update a workload invitation.
+     * Update a workload or custom lens share invitation.
      * </p>
+     * <note>
+     * <p>
+     * This API operation can be called independently of any resource. Previous documentation implied that a workload
+     * ARN must be specified.
+     * </p>
+     * </note>
      * 
      * @param updateShareInvitationRequest
      *        Input for Update Share Invitation
@@ -1525,8 +1599,14 @@ public interface AWSWellArchitectedAsync extends AWSWellArchitected {
 
     /**
      * <p>
-     * Update a workload invitation.
+     * Update a workload or custom lens share invitation.
      * </p>
+     * <note>
+     * <p>
+     * This API operation can be called independently of any resource. Previous documentation implied that a workload
+     * ARN must be specified.
+     * </p>
+     * </note>
      * 
      * @param updateShareInvitationRequest
      *        Input for Update Share Invitation

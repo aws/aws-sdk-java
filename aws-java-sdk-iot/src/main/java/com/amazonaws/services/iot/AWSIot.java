@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -339,8 +339,8 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, IAM users,
-     * groups, and roles, Amazon Cognito identities or federated identities.
+     * Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito
+     * identities or federated identities.
      * </p>
      * <p>
      * Requires permission to access the <a href=
@@ -4769,6 +4769,83 @@ public interface AWSIot {
 
     /**
      * <p>
+     * The related resources of an Audit finding. The following resources can be returned from calling this API:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * DEVICE_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CA_CERTIFICATE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IOT_POLICY
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COGNITO_IDENTITY_POOL
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CLIENT_ID
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACCOUNT_SETTINGS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ROLE_ALIAS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * IAM_ROLE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ISSUER_CERTIFICATE
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * This API is similar to DescribeAuditFinding's <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but
+     * provides pagination and is not limited to 10 resources. When calling <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a>
+     * for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You
+     * must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.
+     * </p>
+     * </note>
+     * 
+     * @param listRelatedResourcesForAuditFindingRequest
+     * @return Result of the ListRelatedResourcesForAuditFinding operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListRelatedResourcesForAuditFinding
+     */
+    ListRelatedResourcesForAuditFindingResult listRelatedResourcesForAuditFinding(
+            ListRelatedResourcesForAuditFindingRequest listRelatedResourcesForAuditFindingRequest);
+
+    /**
+     * <p>
      * Lists the role aliases registered in your account.
      * </p>
      * <p>
@@ -5125,7 +5202,9 @@ public interface AWSIot {
      * <p>
      * Lists your things. Use the <b>attributeName</b> and <b>attributeValue</b> parameters to filter your things. For
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
-     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
+     * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/thing-registry.html#list-things">List Things</a> from
+     * the <i>Amazon Web Services IoT Core Developer Guide</i>.
      * </p>
      * <p>
      * Requires permission to access the <a href=

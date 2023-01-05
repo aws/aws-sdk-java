@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,19 @@ public class AbstractAmazonRecycleBinAsync extends AbstractAmazonRecycleBin impl
     }
 
     @Override
+    public java.util.concurrent.Future<LockRuleResult> lockRuleAsync(LockRuleRequest request) {
+
+        return lockRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<LockRuleResult> lockRuleAsync(LockRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<LockRuleRequest, LockRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -101,6 +114,19 @@ public class AbstractAmazonRecycleBinAsync extends AbstractAmazonRecycleBin impl
     @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnlockRuleResult> unlockRuleAsync(UnlockRuleRequest request) {
+
+        return unlockRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UnlockRuleResult> unlockRuleAsync(UnlockRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<UnlockRuleRequest, UnlockRuleResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

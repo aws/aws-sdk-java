@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class GetRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the feature group in which you want to put the records.
+     * The name of the feature group from which you want to retrieve a record.
      * </p>
      */
     private String featureGroupName;
@@ -47,11 +47,11 @@ public class GetRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the feature group in which you want to put the records.
+     * The name of the feature group from which you want to retrieve a record.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group in which you want to put the records.
+     *        The name of the feature group from which you want to retrieve a record.
      */
 
     public void setFeatureGroupName(String featureGroupName) {
@@ -60,10 +60,10 @@ public class GetRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the feature group in which you want to put the records.
+     * The name of the feature group from which you want to retrieve a record.
      * </p>
      * 
-     * @return The name of the feature group in which you want to put the records.
+     * @return The name of the feature group from which you want to retrieve a record.
      */
 
     public String getFeatureGroupName() {
@@ -72,11 +72,11 @@ public class GetRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The name of the feature group in which you want to put the records.
+     * The name of the feature group from which you want to retrieve a record.
      * </p>
      * 
      * @param featureGroupName
-     *        The name of the feature group in which you want to put the records.
+     *        The name of the feature group from which you want to retrieve a record.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

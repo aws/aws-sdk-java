@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,19 +50,6 @@ import com.amazonaws.services.iotfleetwise.model.transform.*;
  * Client for accessing AWS IoT FleetWise. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
- * <note>
- * <p>
- * Amazon Web Services IoT FleetWise is in preview release and is subject to change. We recommend that you use the
- * service only with test data, and not in production environments.
- * </p>
- * <p>
- * While Amazon Web Services IoT FleetWise is in preview, you must download the preview Amazon Web Services SDK and CLI
- * to use the API operations for this service. These API operations aren't available in the public Amazon Web Services
- * SDK or CLI. For more information, see <a
- * href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/preview-sdk-cli.html">Preview Amazon Web
- * Services SDK and CLI</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.
- * </p>
- * </note>
  * <p>
  * Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect, model, and transfer vehicle
  * data to the Amazon Web Services cloud at scale. With Amazon Web Services IoT FleetWise, you can standardize all of
@@ -1641,6 +1628,8 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      *         The request couldn't be completed because the server temporarily failed.
      * @throws ThrottlingException
      *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @sample AWSIoTFleetWise.GetModelManifest
@@ -3623,6 +3612,8 @@ public class AWSIoTFleetWiseClient extends AmazonWebServiceClient implements AWS
      *         branch, sensor, actuator, or attribute.
      * @throws ThrottlingException
      *         The request couldn't be completed due to throttling.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an Amazon Web Services service.
      * @throws InvalidSignalsException
      *         The request couldn't be completed because it contains signals that aren't valid.
      * @throws AccessDeniedException

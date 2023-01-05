@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,8 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
     private String distribution;
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC.
+     * The creation time of the subscription filter, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      */
     private Long creationTime;
@@ -289,13 +289,13 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC.
+     * The creation time of the subscription filter, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970
-     *        00:00:00 UTC.
+     *        The creation time of the subscription filter, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -304,12 +304,12 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC.
+     * The creation time of the subscription filter, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
-     * @return The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return The creation time of the subscription filter, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public Long getCreationTime() {
@@ -318,13 +318,13 @@ public class SubscriptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     * UTC.
+     * The creation time of the subscription filter, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the subscription filter, expressed as the number of milliseconds after Jan 1, 1970
-     *        00:00:00 UTC.
+     *        The creation time of the subscription filter, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

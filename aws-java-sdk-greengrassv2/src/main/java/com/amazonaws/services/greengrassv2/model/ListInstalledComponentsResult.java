@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,14 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs
-     * best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
      * </p>
      * </note>
      */
@@ -48,15 +54,27 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs
-     * best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
      * </p>
      * </note>
      * 
      * @return A list that summarizes each component on the core device.</p> <note>
      *         <p>
-     *         Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It
-     *         performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     *         Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *         response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *         </p>
+     *         </note> <note>
+     *         <p>
+     *         Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *         <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier
+     *         Greengrass nucleus versions.
      *         </p>
      */
 
@@ -70,16 +88,28 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs
-     * best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
      * </p>
      * </note>
      * 
      * @param installedComponents
      *        A list that summarizes each component on the core device.</p> <note>
      *        <p>
-     *        Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It
-     *        performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     *        Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *        <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     *        nucleus versions.
      *        </p>
      */
 
@@ -98,8 +128,14 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs
-     * best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
      * </p>
      * </note>
      * <p>
@@ -111,8 +147,14 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * @param installedComponents
      *        A list that summarizes each component on the core device.</p> <note>
      *        <p>
-     *        Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It
-     *        performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     *        Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *        <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     *        nucleus versions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -133,16 +175,28 @@ public class ListInstalledComponentsResult extends com.amazonaws.AmazonWebServic
      * </p>
      * <note>
      * <p>
-     * Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It performs
-     * best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     * Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     * response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     * </p>
+     * </note> <note>
+     * <p>
+     * Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     * <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     * nucleus versions.
      * </p>
      * </note>
      * 
      * @param installedComponents
      *        A list that summarizes each component on the core device.</p> <note>
      *        <p>
-     *        Accuracy of the <code>lastStatusChangeTimestamp</code> response depends on Greengrass nucleus v2.7.0. It
-     *        performs best on Greengrass nucleus v2.7.0 and can be inaccurate on earlier versions.
+     *        Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+     *        response. This response can be inaccurate in earlier Greengrass nucleus versions.
+     *        </p>
+     *        </note> <note>
+     *        <p>
+     *        Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code> and
+     *        <code>lastReportedTimestamp</code> response. This response can be inaccurate or null in earlier Greengrass
+     *        nucleus versions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

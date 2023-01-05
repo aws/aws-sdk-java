@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>UpdateDomain</a> </code> operation. Specifies the type and number of
- * instances in the domain cluster.
+ * Container for the request parameters to the <code>UpdateDomain</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,19 +27,20 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the domain you're updating.
+     * The name of the domain that you're updating.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The type and number of instances to instantiate for the domain cluster.
+     * Changes that you want to make to the cluster configuration, such as the instance type and number of EC2
+     * instances.
      * </p>
      */
     private ClusterConfig clusterConfig;
     /**
      * <p>
-     * Specify the type and size of the EBS volume to use.
+     * The type and size of the EBS volume to attach to instances in the domain.
      * </p>
      */
     private EBSOptions eBSOptions;
@@ -52,87 +52,116 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
     private SnapshotOptions snapshotOptions;
     /**
      * <p>
-     * Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      */
     private VPCOptions vPCOptions;
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      */
     private CognitoOptions cognitoOptions;
     /**
      * <p>
-     * Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code>
-     * when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      */
     private java.util.Map<String, String> advancedOptions;
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) access policy as a JSON-formatted string.
      * </p>
      */
     private String accessPolicies;
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Options to publish OpenSearch lots to Amazon CloudWatch Logs.
      * </p>
      */
     private java.util.Map<String, LogPublishingOption> logPublishingOptions;
     /**
      * <p>
-     * Specifies encryption of data at rest options.
+     * Encryption at rest options for the domain.
      * </p>
      */
     private EncryptionAtRestOptions encryptionAtRestOptions;
     /**
      * <p>
-     * Options to specify configuration that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      */
     private DomainEndpointOptions domainEndpointOptions;
     /**
      * <p>
-     * Specifies node-to-node encryption options.
+     * Node-To-Node Encryption options for the domain.
      * </p>
      */
     private NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions;
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      */
     private AdvancedSecurityOptionsInput advancedSecurityOptions;
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      */
     private AutoTuneOptions autoTuneOptions;
     /**
      * <p>
      * This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of
-     * validation checks (DryRunResults) without actually applying the change.
+     * validation check without actually applying the change.
      * </p>
      */
     private Boolean dryRun;
 
     /**
      * <p>
-     * The name of the domain you're updating.
+     * The name of the domain that you're updating.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain you're updating.
+     *        The name of the domain that you're updating.
      */
 
     public void setDomainName(String domainName) {
@@ -141,10 +170,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the domain you're updating.
+     * The name of the domain that you're updating.
      * </p>
      * 
-     * @return The name of the domain you're updating.
+     * @return The name of the domain that you're updating.
      */
 
     public String getDomainName() {
@@ -153,11 +182,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The name of the domain you're updating.
+     * The name of the domain that you're updating.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain you're updating.
+     *        The name of the domain that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +197,13 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type and number of instances to instantiate for the domain cluster.
+     * Changes that you want to make to the cluster configuration, such as the instance type and number of EC2
+     * instances.
      * </p>
      * 
      * @param clusterConfig
-     *        The type and number of instances to instantiate for the domain cluster.
+     *        Changes that you want to make to the cluster configuration, such as the instance type and number of EC2
+     *        instances.
      */
 
     public void setClusterConfig(ClusterConfig clusterConfig) {
@@ -181,10 +212,12 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type and number of instances to instantiate for the domain cluster.
+     * Changes that you want to make to the cluster configuration, such as the instance type and number of EC2
+     * instances.
      * </p>
      * 
-     * @return The type and number of instances to instantiate for the domain cluster.
+     * @return Changes that you want to make to the cluster configuration, such as the instance type and number of EC2
+     *         instances.
      */
 
     public ClusterConfig getClusterConfig() {
@@ -193,11 +226,13 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The type and number of instances to instantiate for the domain cluster.
+     * Changes that you want to make to the cluster configuration, such as the instance type and number of EC2
+     * instances.
      * </p>
      * 
      * @param clusterConfig
-     *        The type and number of instances to instantiate for the domain cluster.
+     *        Changes that you want to make to the cluster configuration, such as the instance type and number of EC2
+     *        instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,11 +243,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specify the type and size of the EBS volume to use.
+     * The type and size of the EBS volume to attach to instances in the domain.
      * </p>
      * 
      * @param eBSOptions
-     *        Specify the type and size of the EBS volume to use.
+     *        The type and size of the EBS volume to attach to instances in the domain.
      */
 
     public void setEBSOptions(EBSOptions eBSOptions) {
@@ -221,10 +256,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specify the type and size of the EBS volume to use.
+     * The type and size of the EBS volume to attach to instances in the domain.
      * </p>
      * 
-     * @return Specify the type and size of the EBS volume to use.
+     * @return The type and size of the EBS volume to attach to instances in the domain.
      */
 
     public EBSOptions getEBSOptions() {
@@ -233,11 +268,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specify the type and size of the EBS volume to use.
+     * The type and size of the EBS volume to attach to instances in the domain.
      * </p>
      * 
      * @param eBSOptions
-     *        Specify the type and size of the EBS volume to use.
+     *        The type and size of the EBS volume to attach to instances in the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,15 +326,15 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      * 
      * @param vPCOptions
-     *        Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-     *        target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>.
+     *        Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     *        OpenSearch Service domains using a VPC</a>.
      */
 
     public void setVPCOptions(VPCOptions vPCOptions) {
@@ -308,14 +343,14 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      * 
-     * @return Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-     *         target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>.
+     * @return Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your
+     *         Amazon OpenSearch Service domains using a VPC</a>.
      */
 
     public VPCOptions getVPCOptions() {
@@ -324,15 +359,15 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">Launching
-     * your Amazon OpenSearch Service domains using a VPC </a>.
+     * Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     * OpenSearch Service domains using a VPC</a>.
      * </p>
      * 
      * @param vPCOptions
-     *        Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html"
-     *        target="_blank">Launching your Amazon OpenSearch Service domains using a VPC </a>.
+     *        Options to specify the subnets and security groups for a VPC endpoint. For more information, see <a
+     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon
+     *        OpenSearch Service domains using a VPC</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,16 +378,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
      * @param cognitoOptions
-     *        Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      */
 
     public void setCognitoOptions(CognitoOptions cognitoOptions) {
@@ -361,15 +391,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
-     * @return Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     *         information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *         target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * @return Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      */
 
     public CognitoOptions getCognitoOptions() {
@@ -378,16 +403,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
      * @param cognitoOptions
-     *        Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
-     *        information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Key-value pairs to configure Amazon Cognito authentication for OpenSearch Dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,17 +418,81 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code>
-     * when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      * 
-     * @return Modifies the advanced option to allow references to indices in an HTTP request body. Must be
-     *         <code>false</code> when configuring access to individual sub-resources. By default, the value is
-     *         <code>true</code>. See <a href=
-     *         "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *         target="_blank">Advanced options </a> for more information.
+     * @return Key-value pairs to specify advanced configuration options. The following key-value pairs are
+     *         supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather
+     *         than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP
+     *         requests. If you want to configure access policies for domain sub-resources, such as specific indexes and
+     *         domain APIs, you must disable this property. Default is true.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean.
+     *         Specifies the percentage of heap space allocated to field data. Default is unbounded.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a
+     *         boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024.
+     *         Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a
+     *         boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and
+     *         plugins to continue working with it. Default is false when creating a domain and true when upgrading a
+     *         domain.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *         >Advanced cluster parameters</a>.
      */
 
     public java.util.Map<String, String> getAdvancedOptions() {
@@ -417,18 +501,82 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code>
-     * when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      * 
      * @param advancedOptions
-     *        Modifies the advanced option to allow references to indices in an HTTP request body. Must be
-     *        <code>false</code> when configuring access to individual sub-resources. By default, the value is
-     *        <code>true</code>. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *        target="_blank">Advanced options </a> for more information.
+     *        Key-value pairs to specify advanced configuration options. The following key-value pairs are
+     *        supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather
+     *        than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP
+     *        requests. If you want to configure access policies for domain sub-resources, such as specific indexes and
+     *        domain APIs, you must disable this property. Default is true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean.
+     *        Specifies the percentage of heap space allocated to field data. Default is unbounded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a
+     *        boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024.
+     *        Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a
+     *        boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and
+     *        plugins to continue working with it. Default is false when creating a domain and true when upgrading a
+     *        domain.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *        >Advanced cluster parameters</a>.
      */
 
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
@@ -437,18 +585,82 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Modifies the advanced option to allow references to indices in an HTTP request body. Must be <code>false</code>
-     * when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+     * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you
+     * want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must
+     * disable this property. Default is true.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies
+     * the percentage of heap space allocated to field data. Default is unbounded.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+     * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more
+     * than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+     * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to
+     * continue working with it. Default is false when creating a domain and true when upgrading a domain.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced cluster parameters</a>.
      * </p>
      * 
      * @param advancedOptions
-     *        Modifies the advanced option to allow references to indices in an HTTP request body. Must be
-     *        <code>false</code> when configuring access to individual sub-resources. By default, the value is
-     *        <code>true</code>. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *        target="_blank">Advanced options </a> for more information.
+     *        Key-value pairs to specify advanced configuration options. The following key-value pairs are
+     *        supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather
+     *        than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP
+     *        requests. If you want to configure access policies for domain sub-resources, such as specific indexes and
+     *        domain APIs, you must disable this property. Default is true.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean.
+     *        Specifies the percentage of heap space allocated to field data. Default is unbounded.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a
+     *        boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024.
+     *        Queries with more than the permitted number of clauses result in a <code>TooManyClauses</code> error.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a
+     *        boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and
+     *        plugins to continue working with it. Default is false when creating a domain and true when upgrading a
+     *        domain.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *        >Advanced cluster parameters</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -487,11 +699,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) access policy as a JSON-formatted string.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Identity and Access Management (IAM) access policy as a JSON-formatted string.
      */
 
     public void setAccessPolicies(String accessPolicies) {
@@ -500,10 +712,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) access policy as a JSON-formatted string.
      * </p>
      * 
-     * @return IAM access policy as a JSON-formatted string.
+     * @return Identity and Access Management (IAM) access policy as a JSON-formatted string.
      */
 
     public String getAccessPolicies() {
@@ -512,11 +724,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Identity and Access Management (IAM) access policy as a JSON-formatted string.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Identity and Access Management (IAM) access policy as a JSON-formatted string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -527,12 +739,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Options to publish OpenSearch lots to Amazon CloudWatch Logs.
      * </p>
      * 
-     * @return Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
-     *         given type of OpenSearch log.
+     * @return Options to publish OpenSearch lots to Amazon CloudWatch Logs.
      */
 
     public java.util.Map<String, LogPublishingOption> getLogPublishingOptions() {
@@ -541,13 +751,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Options to publish OpenSearch lots to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
-     *        given type of OpenSearch log.
+     *        Options to publish OpenSearch lots to Amazon CloudWatch Logs.
      */
 
     public void setLogPublishingOptions(java.util.Map<String, LogPublishingOption> logPublishingOptions) {
@@ -556,13 +764,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type
-     * of OpenSearch log.
+     * Options to publish OpenSearch lots to Amazon CloudWatch Logs.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a
-     *        given type of OpenSearch log.
+     *        Options to publish OpenSearch lots to Amazon CloudWatch Logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -601,11 +807,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies encryption of data at rest options.
+     * Encryption at rest options for the domain.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        Specifies encryption of data at rest options.
+     *        Encryption at rest options for the domain.
      */
 
     public void setEncryptionAtRestOptions(EncryptionAtRestOptions encryptionAtRestOptions) {
@@ -614,10 +820,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies encryption of data at rest options.
+     * Encryption at rest options for the domain.
      * </p>
      * 
-     * @return Specifies encryption of data at rest options.
+     * @return Encryption at rest options for the domain.
      */
 
     public EncryptionAtRestOptions getEncryptionAtRestOptions() {
@@ -626,11 +832,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies encryption of data at rest options.
+     * Encryption at rest options for the domain.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        Specifies encryption of data at rest options.
+     *        Encryption at rest options for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -641,11 +847,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify configuration that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        Options to specify configuration that will be applied to the domain endpoint.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public void setDomainEndpointOptions(DomainEndpointOptions domainEndpointOptions) {
@@ -654,10 +860,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify configuration that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
-     * @return Options to specify configuration that will be applied to the domain endpoint.
+     * @return Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public DomainEndpointOptions getDomainEndpointOptions() {
@@ -666,11 +872,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Options to specify configuration that will be applied to the domain endpoint.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        Options to specify configuration that will be applied to the domain endpoint.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,11 +887,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies node-to-node encryption options.
+     * Node-To-Node Encryption options for the domain.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        Specifies node-to-node encryption options.
+     *        Node-To-Node Encryption options for the domain.
      */
 
     public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions nodeToNodeEncryptionOptions) {
@@ -694,10 +900,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies node-to-node encryption options.
+     * Node-To-Node Encryption options for the domain.
      * </p>
      * 
-     * @return Specifies node-to-node encryption options.
+     * @return Node-To-Node Encryption options for the domain.
      */
 
     public NodeToNodeEncryptionOptions getNodeToNodeEncryptionOptions() {
@@ -706,11 +912,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies node-to-node encryption options.
+     * Node-To-Node Encryption options for the domain.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        Specifies node-to-node encryption options.
+     *        Node-To-Node Encryption options for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -721,11 +927,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        Specifies advanced security options.
+     *        Options for fine-grained access control.
      */
 
     public void setAdvancedSecurityOptions(AdvancedSecurityOptionsInput advancedSecurityOptions) {
@@ -734,10 +940,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      * 
-     * @return Specifies advanced security options.
+     * @return Options for fine-grained access control.
      */
 
     public AdvancedSecurityOptionsInput getAdvancedSecurityOptions() {
@@ -746,11 +952,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies advanced security options.
+     * Options for fine-grained access control.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        Specifies advanced security options.
+     *        Options for fine-grained access control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -761,11 +967,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      * 
      * @param autoTuneOptions
-     *        Specifies Auto-Tune options.
+     *        Options for Auto-Tune.
      */
 
     public void setAutoTuneOptions(AutoTuneOptions autoTuneOptions) {
@@ -774,10 +980,10 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      * 
-     * @return Specifies Auto-Tune options.
+     * @return Options for Auto-Tune.
      */
 
     public AutoTuneOptions getAutoTuneOptions() {
@@ -786,11 +992,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies Auto-Tune options.
+     * Options for Auto-Tune.
      * </p>
      * 
      * @param autoTuneOptions
-     *        Specifies Auto-Tune options.
+     *        Options for Auto-Tune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -802,12 +1008,12 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of
-     * validation checks (DryRunResults) without actually applying the change.
+     * validation check without actually applying the change.
      * </p>
      * 
      * @param dryRun
      *        This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the
-     *        results of validation checks (DryRunResults) without actually applying the change.
+     *        results of validation check without actually applying the change.
      */
 
     public void setDryRun(Boolean dryRun) {
@@ -817,11 +1023,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of
-     * validation checks (DryRunResults) without actually applying the change.
+     * validation check without actually applying the change.
      * </p>
      * 
      * @return This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the
-     *         results of validation checks (DryRunResults) without actually applying the change.
+     *         results of validation check without actually applying the change.
      */
 
     public Boolean getDryRun() {
@@ -831,12 +1037,12 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of
-     * validation checks (DryRunResults) without actually applying the change.
+     * validation check without actually applying the change.
      * </p>
      * 
      * @param dryRun
      *        This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the
-     *        results of validation checks (DryRunResults) without actually applying the change.
+     *        results of validation check without actually applying the change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -848,11 +1054,11 @@ public class UpdateDomainConfigRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the results of
-     * validation checks (DryRunResults) without actually applying the change.
+     * validation check without actually applying the change.
      * </p>
      * 
      * @return This flag, when set to True, specifies whether the <code>UpdateDomain</code> request should return the
-     *         results of validation checks (DryRunResults) without actually applying the change.
+     *         results of validation check without actually applying the change.
      */
 
     public Boolean isDryRun() {

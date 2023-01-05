@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,12 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private java.util.Date createdAt;
+    /**
+     * <p>
+     * The response of an Device Advisor test endpoint.
+     * </p>
+     */
+    private String endpoint;
 
     /**
      * <p>
@@ -163,6 +169,46 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The response of an Device Advisor test endpoint.
+     * </p>
+     * 
+     * @param endpoint
+     *        The response of an Device Advisor test endpoint.
+     */
+
+    public void setEndpoint(String endpoint) {
+        this.endpoint = endpoint;
+    }
+
+    /**
+     * <p>
+     * The response of an Device Advisor test endpoint.
+     * </p>
+     * 
+     * @return The response of an Device Advisor test endpoint.
+     */
+
+    public String getEndpoint() {
+        return this.endpoint;
+    }
+
+    /**
+     * <p>
+     * The response of an Device Advisor test endpoint.
+     * </p>
+     * 
+     * @param endpoint
+     *        The response of an Device Advisor test endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartSuiteRunResult withEndpoint(String endpoint) {
+        setEndpoint(endpoint);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,7 +225,9 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getSuiteRunArn() != null)
             sb.append("SuiteRunArn: ").append(getSuiteRunArn()).append(",");
         if (getCreatedAt() != null)
-            sb.append("CreatedAt: ").append(getCreatedAt());
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getEndpoint() != null)
+            sb.append("Endpoint: ").append(getEndpoint());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +254,10 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
             return false;
+        if (other.getEndpoint() == null ^ this.getEndpoint() == null)
+            return false;
+        if (other.getEndpoint() != null && other.getEndpoint().equals(this.getEndpoint()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +269,7 @@ public class StartSuiteRunResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getSuiteRunId() == null) ? 0 : getSuiteRunId().hashCode());
         hashCode = prime * hashCode + ((getSuiteRunArn() == null) ? 0 : getSuiteRunArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -145,6 +145,213 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/lexmodelsv2/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/lexmodelsv2/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Batch create custom vocabulary item for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param batchCreateCustomVocabularyItemRequest
+     * @return Result of the BatchCreateCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchCreateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchCreateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchCreateCustomVocabularyItemResult batchCreateCustomVocabularyItem(BatchCreateCustomVocabularyItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchCreateCustomVocabularyItem(request);
+    }
+
+    @SdkInternalApi
+    final BatchCreateCustomVocabularyItemResult executeBatchCreateCustomVocabularyItem(
+            BatchCreateCustomVocabularyItemRequest batchCreateCustomVocabularyItemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchCreateCustomVocabularyItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchCreateCustomVocabularyItemRequest> request = null;
+        Response<BatchCreateCustomVocabularyItemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchCreateCustomVocabularyItemRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchCreateCustomVocabularyItemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreateCustomVocabularyItem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchCreateCustomVocabularyItemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchCreateCustomVocabularyItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Batch delete custom vocabulary item for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param batchDeleteCustomVocabularyItemRequest
+     * @return Result of the BatchDeleteCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchDeleteCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchDeleteCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchDeleteCustomVocabularyItemResult batchDeleteCustomVocabularyItem(BatchDeleteCustomVocabularyItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDeleteCustomVocabularyItem(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteCustomVocabularyItemResult executeBatchDeleteCustomVocabularyItem(
+            BatchDeleteCustomVocabularyItemRequest batchDeleteCustomVocabularyItemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteCustomVocabularyItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteCustomVocabularyItemRequest> request = null;
+        Response<BatchDeleteCustomVocabularyItemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteCustomVocabularyItemRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchDeleteCustomVocabularyItemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteCustomVocabularyItem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteCustomVocabularyItemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchDeleteCustomVocabularyItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Batch update custom vocabulary item for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param batchUpdateCustomVocabularyItemRequest
+     * @return Result of the BatchUpdateCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchUpdateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchUpdateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchUpdateCustomVocabularyItemResult batchUpdateCustomVocabularyItem(BatchUpdateCustomVocabularyItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchUpdateCustomVocabularyItem(request);
+    }
+
+    @SdkInternalApi
+    final BatchUpdateCustomVocabularyItemResult executeBatchUpdateCustomVocabularyItem(
+            BatchUpdateCustomVocabularyItemRequest batchUpdateCustomVocabularyItemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchUpdateCustomVocabularyItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchUpdateCustomVocabularyItemRequest> request = null;
+        Response<BatchUpdateCustomVocabularyItemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchUpdateCustomVocabularyItemRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchUpdateCustomVocabularyItemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateCustomVocabularyItem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateCustomVocabularyItemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchUpdateCustomVocabularyItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -3313,6 +3520,74 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * List custom vocabulary items for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param listCustomVocabularyItemsRequest
+     * @return Result of the ListCustomVocabularyItems operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListCustomVocabularyItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListCustomVocabularyItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListCustomVocabularyItemsResult listCustomVocabularyItems(ListCustomVocabularyItemsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListCustomVocabularyItems(request);
+    }
+
+    @SdkInternalApi
+    final ListCustomVocabularyItemsResult executeListCustomVocabularyItems(ListCustomVocabularyItemsRequest listCustomVocabularyItemsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listCustomVocabularyItemsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListCustomVocabularyItemsRequest> request = null;
+        Response<ListCustomVocabularyItemsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListCustomVocabularyItemsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listCustomVocabularyItemsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Lex Models V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCustomVocabularyItems");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListCustomVocabularyItemsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListCustomVocabularyItemsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in the list for 7 days.
      * </p>
      * 
@@ -3498,7 +3773,8 @@ public class AmazonLexModelsV2Client extends AmazonWebServiceClient implements A
 
     /**
      * <p>
-     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot.
+     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in
+     * the response are ordered by relevance.
      * </p>
      * 
      * @param listRecommendedIntentsRequest

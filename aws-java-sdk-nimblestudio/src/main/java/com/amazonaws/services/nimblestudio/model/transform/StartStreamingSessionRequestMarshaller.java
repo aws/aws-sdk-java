@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartStreamingSessionRequestMarshaller {
 
+    private static final MarshallingInfo<String> BACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("backupId").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.HEADER).marshallLocationName("X-Amz-Client-Token")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -53,6 +55,7 @@ public class StartStreamingSessionRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(startStreamingSessionRequest.getBackupId(), BACKUPID_BINDING);
             protocolMarshaller.marshall(startStreamingSessionRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(startStreamingSessionRequest.getSessionId(), SESSIONID_BINDING);
             protocolMarshaller.marshall(startStreamingSessionRequest.getStudioId(), STUDIOID_BINDING);

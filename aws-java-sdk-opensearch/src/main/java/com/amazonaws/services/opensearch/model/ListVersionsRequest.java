@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,14 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>ListVersions</a> </code> operation.
- * <p>
- * Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call.
- * </p>
- * <p>
- * Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a
- * NextToken, there are no more results to retrieve.
- * </p>
+ * Container for the request parameters to the <code>ListVersions</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,21 +27,29 @@ public class ListVersionsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the
+     * next page.
+     * </p>
+     */
     private String nextToken;
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. Value must be greater than 10 or it won't be
-     *        honored.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -57,11 +58,12 @@ public class ListVersionsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
-     * @return Set this value to limit the number of results returned. Value must be greater than 10 or it won't be
-     *         honored.
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -70,12 +72,13 @@ public class ListVersionsRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. Value must be greater than 10 or it won't be honored.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. Value must be greater than 10 or it won't be
-     *        honored.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,7 +88,16 @@ public class ListVersionsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the
+     * next page.
+     * </p>
+     * 
      * @param nextToken
+     *        If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the
+     *        returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results
+     *        in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -93,7 +105,15 @@ public class ListVersionsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * @return
+     * <p>
+     * If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the
+     * next page.
+     * </p>
+     * 
+     * @return If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the
+     *         returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results
+     *         in the next page.
      */
 
     public String getNextToken() {
@@ -101,7 +121,16 @@ public class ListVersionsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the
+     * next page.
+     * </p>
+     * 
      * @param nextToken
+     *        If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the
+     *        returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results
+     *        in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

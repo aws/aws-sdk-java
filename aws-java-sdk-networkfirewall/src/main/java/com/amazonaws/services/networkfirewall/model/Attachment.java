@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,11 +47,21 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      * The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the
      * endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this
      * value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When
-     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>,
-     * <code>DELETING</code>, or <code>FAILED</code>.
+     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the
+     * reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to
+     * populate this field. For more information about the errors and solutions available for this field, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html"
+     * >Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+     * </p>
+     */
+    private String statusMessage;
 
     /**
      * <p>
@@ -147,8 +157,8 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      * The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the
      * endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this
      * value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When
-     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>,
-     * <code>DELETING</code>, or <code>FAILED</code>.
+     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.
      * </p>
      * 
      * @param status
@@ -156,7 +166,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      *        the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings.
      *        When this value is <code>READY</code>, the endpoint is available and configured properly to handle network
      *        traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example
-     *        <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.
+     *        <code>CREATING</code> or <code>DELETING</code>.
      * @see AttachmentStatus
      */
 
@@ -169,15 +179,15 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      * The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the
      * endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this
      * value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When
-     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>,
-     * <code>DELETING</code>, or <code>FAILED</code>.
+     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.
      * </p>
      * 
      * @return The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of
      *         the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings.
      *         When this value is <code>READY</code>, the endpoint is available and configured properly to handle
      *         network traffic. When the endpoint isn't available for traffic, this value will reflect its state, for
-     *         example <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.
+     *         example <code>CREATING</code> or <code>DELETING</code>.
      * @see AttachmentStatus
      */
 
@@ -190,8 +200,8 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      * The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the
      * endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this
      * value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When
-     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>,
-     * <code>DELETING</code>, or <code>FAILED</code>.
+     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.
      * </p>
      * 
      * @param status
@@ -199,7 +209,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      *        the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings.
      *        When this value is <code>READY</code>, the endpoint is available and configured properly to handle network
      *        traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example
-     *        <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.
+     *        <code>CREATING</code> or <code>DELETING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentStatus
      */
@@ -214,8 +224,8 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      * The current status of the firewall endpoint in the subnet. This value reflects both the instantiation of the
      * endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings. When this
      * value is <code>READY</code>, the endpoint is available and configured properly to handle network traffic. When
-     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code>,
-     * <code>DELETING</code>, or <code>FAILED</code>.
+     * the endpoint isn't available for traffic, this value will reflect its state, for example <code>CREATING</code> or
+     * <code>DELETING</code>.
      * </p>
      * 
      * @param status
@@ -223,13 +233,80 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
      *        the endpoint in the VPC subnet and the sync states that are reported in the <code>Config</code> settings.
      *        When this value is <code>READY</code>, the endpoint is available and configured properly to handle network
      *        traffic. When the endpoint isn't available for traffic, this value will reflect its state, for example
-     *        <code>CREATING</code>, <code>DELETING</code>, or <code>FAILED</code>.
+     *        <code>CREATING</code> or <code>DELETING</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AttachmentStatus
      */
 
     public Attachment withStatus(AttachmentStatus status) {
         this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the
+     * reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to
+     * populate this field. For more information about the errors and solutions available for this field, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html"
+     * >Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+     * </p>
+     * 
+     * @param statusMessage
+     *        If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with
+     *        the reason for the failure and how to resolve it. Depending on the error, it can take as many as 15
+     *        minutes to populate this field. For more information about the errors and solutions available for this
+     *        field, see <a href=
+     *        "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html"
+     *        >Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the
+     * reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to
+     * populate this field. For more information about the errors and solutions available for this field, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html"
+     * >Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+     * </p>
+     * 
+     * @return If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with
+     *         the reason for the failure and how to resolve it. Depending on the error, it can take as many as 15
+     *         minutes to populate this field. For more information about the errors and solutions available for this
+     *         field, see <a href=
+     *         "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html"
+     *         >Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with the
+     * reason for the failure and how to resolve it. Depending on the error, it can take as many as 15 minutes to
+     * populate this field. For more information about the errors and solutions available for this field, see <a href=
+     * "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html"
+     * >Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+     * </p>
+     * 
+     * @param statusMessage
+     *        If Network Firewall fails to create or delete the firewall endpoint in the subnet, it populates this with
+     *        the reason for the failure and how to resolve it. Depending on the error, it can take as many as 15
+     *        minutes to populate this field. For more information about the errors and solutions available for this
+     *        field, see <a href=
+     *        "https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html"
+     *        >Troubleshooting firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Attachment withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
         return this;
     }
 
@@ -250,7 +327,9 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
         if (getEndpointId() != null)
             sb.append("EndpointId: ").append(getEndpointId()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage());
         sb.append("}");
         return sb.toString();
     }
@@ -277,6 +356,10 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
         return true;
     }
 
@@ -288,6 +371,7 @@ public class Attachment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getEndpointId() == null) ? 0 : getEndpointId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         return hashCode;
     }
 

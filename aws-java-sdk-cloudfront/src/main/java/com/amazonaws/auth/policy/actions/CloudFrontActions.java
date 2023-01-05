@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,14 @@ public enum CloudFrontActions implements Action {
 
     /** Action for the AssociateAlias operation. */
     AssociateAlias("cloudfront:AssociateAlias"),
+    /** Action for the CopyDistribution operation. */
+    CopyDistribution("cloudfront:CopyDistribution"),
     /** Action for the CreateCachePolicy operation. */
     CreateCachePolicy("cloudfront:CreateCachePolicy"),
     /** Action for the CreateCloudFrontOriginAccessIdentity operation. */
     CreateCloudFrontOriginAccessIdentity("cloudfront:CreateCloudFrontOriginAccessIdentity"),
+    /** Action for the CreateContinuousDeploymentPolicy operation. */
+    CreateContinuousDeploymentPolicy("cloudfront:CreateContinuousDeploymentPolicy"),
     /** Action for the CreateDistribution operation. */
     CreateDistribution("cloudfront:CreateDistribution"),
     /** Action for the CreateDistributionWithTags operation. */
@@ -65,6 +69,8 @@ public enum CloudFrontActions implements Action {
     DeleteCachePolicy("cloudfront:DeleteCachePolicy"),
     /** Action for the DeleteCloudFrontOriginAccessIdentity operation. */
     DeleteCloudFrontOriginAccessIdentity("cloudfront:DeleteCloudFrontOriginAccessIdentity"),
+    /** Action for the DeleteContinuousDeploymentPolicy operation. */
+    DeleteContinuousDeploymentPolicy("cloudfront:DeleteContinuousDeploymentPolicy"),
     /** Action for the DeleteDistribution operation. */
     DeleteDistribution("cloudfront:DeleteDistribution"),
     /** Action for the DeleteFieldLevelEncryptionConfig operation. */
@@ -99,6 +105,10 @@ public enum CloudFrontActions implements Action {
     GetCloudFrontOriginAccessIdentity("cloudfront:GetCloudFrontOriginAccessIdentity"),
     /** Action for the GetCloudFrontOriginAccessIdentityConfig operation. */
     GetCloudFrontOriginAccessIdentityConfig("cloudfront:GetCloudFrontOriginAccessIdentityConfig"),
+    /** Action for the GetContinuousDeploymentPolicy operation. */
+    GetContinuousDeploymentPolicy("cloudfront:GetContinuousDeploymentPolicy"),
+    /** Action for the GetContinuousDeploymentPolicyConfig operation. */
+    GetContinuousDeploymentPolicyConfig("cloudfront:GetContinuousDeploymentPolicyConfig"),
     /** Action for the GetDistribution operation. */
     GetDistribution("cloudfront:GetDistribution"),
     /** Action for the GetDistributionConfig operation. */
@@ -149,6 +159,8 @@ public enum CloudFrontActions implements Action {
     ListCloudFrontOriginAccessIdentities("cloudfront:ListCloudFrontOriginAccessIdentities"),
     /** Action for the ListConflictingAliases operation. */
     ListConflictingAliases("cloudfront:ListConflictingAliases"),
+    /** Action for the ListContinuousDeploymentPolicies operation. */
+    ListContinuousDeploymentPolicies("cloudfront:ListContinuousDeploymentPolicies"),
     /** Action for the ListDistributions operation. */
     ListDistributions("cloudfront:ListDistributions"),
     /** Action for the ListDistributionsByCachePolicyId operation. */
@@ -199,8 +211,12 @@ public enum CloudFrontActions implements Action {
     UpdateCachePolicy("cloudfront:UpdateCachePolicy"),
     /** Action for the UpdateCloudFrontOriginAccessIdentity operation. */
     UpdateCloudFrontOriginAccessIdentity("cloudfront:UpdateCloudFrontOriginAccessIdentity"),
+    /** Action for the UpdateContinuousDeploymentPolicy operation. */
+    UpdateContinuousDeploymentPolicy("cloudfront:UpdateContinuousDeploymentPolicy"),
     /** Action for the UpdateDistribution operation. */
     UpdateDistribution("cloudfront:UpdateDistribution"),
+    /** Action for the UpdateDistributionWithStagingConfig operation. */
+    UpdateDistributionWithStagingConfig("cloudfront:UpdateDistributionWithStagingConfig"),
     /** Action for the UpdateFieldLevelEncryptionConfig operation. */
     UpdateFieldLevelEncryptionConfig("cloudfront:UpdateFieldLevelEncryptionConfig"),
     /** Action for the UpdateFieldLevelEncryptionProfile operation. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class QueryResultItemMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> FORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Format").build();
     private static final MarshallingInfo<List> ADDITIONALATTRIBUTES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalAttributes").build();
     private static final MarshallingInfo<String> DOCUMENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,8 @@ public class QueryResultItemMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScoreAttributes").build();
     private static final MarshallingInfo<String> FEEDBACKTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FeedbackToken").build();
+    private static final MarshallingInfo<StructuredPojo> TABLEEXCERPT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TableExcerpt").build();
 
     private static final QueryResultItemMarshaller instance = new QueryResultItemMarshaller();
 
@@ -67,6 +71,7 @@ public class QueryResultItemMarshaller {
         try {
             protocolMarshaller.marshall(queryResultItem.getId(), ID_BINDING);
             protocolMarshaller.marshall(queryResultItem.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(queryResultItem.getFormat(), FORMAT_BINDING);
             protocolMarshaller.marshall(queryResultItem.getAdditionalAttributes(), ADDITIONALATTRIBUTES_BINDING);
             protocolMarshaller.marshall(queryResultItem.getDocumentId(), DOCUMENTID_BINDING);
             protocolMarshaller.marshall(queryResultItem.getDocumentTitle(), DOCUMENTTITLE_BINDING);
@@ -75,6 +80,7 @@ public class QueryResultItemMarshaller {
             protocolMarshaller.marshall(queryResultItem.getDocumentAttributes(), DOCUMENTATTRIBUTES_BINDING);
             protocolMarshaller.marshall(queryResultItem.getScoreAttributes(), SCOREATTRIBUTES_BINDING);
             protocolMarshaller.marshall(queryResultItem.getFeedbackToken(), FEEDBACKTOKEN_BINDING);
+            protocolMarshaller.marshall(queryResultItem.getTableExcerpt(), TABLEEXCERPT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

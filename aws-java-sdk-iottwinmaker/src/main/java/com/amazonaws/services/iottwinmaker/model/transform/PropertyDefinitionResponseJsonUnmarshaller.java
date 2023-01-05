@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,46 +48,50 @@ public class PropertyDefinitionResponseJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("configuration", targetDepth)) {
-                    context.nextToken();
-                    propertyDefinitionResponse.setConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
-                            .getUnmarshaller(String.class)).unmarshall(context));
-                }
                 if (context.testExpression("dataType", targetDepth)) {
                     context.nextToken();
                     propertyDefinitionResponse.setDataType(DataTypeJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("defaultValue", targetDepth)) {
+                if (context.testExpression("isTimeSeries", targetDepth)) {
                     context.nextToken();
-                    propertyDefinitionResponse.setDefaultValue(DataValueJsonUnmarshaller.getInstance().unmarshall(context));
-                }
-                if (context.testExpression("isExternalId", targetDepth)) {
-                    context.nextToken();
-                    propertyDefinitionResponse.setIsExternalId(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("isFinal", targetDepth)) {
-                    context.nextToken();
-                    propertyDefinitionResponse.setIsFinal(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("isImported", targetDepth)) {
-                    context.nextToken();
-                    propertyDefinitionResponse.setIsImported(context.getUnmarshaller(Boolean.class).unmarshall(context));
-                }
-                if (context.testExpression("isInherited", targetDepth)) {
-                    context.nextToken();
-                    propertyDefinitionResponse.setIsInherited(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    propertyDefinitionResponse.setIsTimeSeries(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("isRequiredInEntity", targetDepth)) {
                     context.nextToken();
                     propertyDefinitionResponse.setIsRequiredInEntity(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("isExternalId", targetDepth)) {
+                    context.nextToken();
+                    propertyDefinitionResponse.setIsExternalId(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("isStoredExternally", targetDepth)) {
                     context.nextToken();
                     propertyDefinitionResponse.setIsStoredExternally(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
-                if (context.testExpression("isTimeSeries", targetDepth)) {
+                if (context.testExpression("isImported", targetDepth)) {
                     context.nextToken();
-                    propertyDefinitionResponse.setIsTimeSeries(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    propertyDefinitionResponse.setIsImported(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("isFinal", targetDepth)) {
+                    context.nextToken();
+                    propertyDefinitionResponse.setIsFinal(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("isInherited", targetDepth)) {
+                    context.nextToken();
+                    propertyDefinitionResponse.setIsInherited(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("defaultValue", targetDepth)) {
+                    context.nextToken();
+                    propertyDefinitionResponse.setDefaultValue(DataValueJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("configuration", targetDepth)) {
+                    context.nextToken();
+                    propertyDefinitionResponse.setConfiguration(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("displayName", targetDepth)) {
+                    context.nextToken();
+                    propertyDefinitionResponse.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

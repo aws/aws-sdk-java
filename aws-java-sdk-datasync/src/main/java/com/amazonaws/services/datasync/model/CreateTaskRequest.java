@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,25 +55,21 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String name;
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group ID (GID), file permissions, data integrity verification, and so on.
+     * Specifies the configuration options for a task. Some options include preserving file or object metadata and
+     * verifying data integrity.
      * </p>
      * <p>
-     * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * You can also override these options before starting an individual run of a task (also known as a <i>task
+     * execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
      * </p>
      */
     private Options options;
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      */
     private java.util.List<FilterRule> excludes;
@@ -87,16 +83,18 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private TaskSchedule schedule;
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     * string.
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      * </p>
      */
     private java.util.List<TagListEntry> tags;
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      */
     private java.util.List<FilterRule> includes;
@@ -269,26 +267,23 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group ID (GID), file permissions, data integrity verification, and so on.
+     * Specifies the configuration options for a task. Some options include preserving file or object metadata and
+     * verifying data integrity.
      * </p>
      * <p>
-     * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * You can also override these options before starting an individual run of a task (also known as a <i>task
+     * execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
      * </p>
      * 
      * @param options
-     *        The set of configuration options that control the behavior of a single execution of the task that occurs
-     *        when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such
-     *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+     *        Specifies the configuration options for a task. Some options include preserving file or object metadata
+     *        and verifying data integrity.</p>
      *        <p>
-     *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *        You can also override these options before starting an individual run of a task (also known as a <i>task
+     *        execution</i>). For more information, see <a
      *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
-     *        >StartTaskExecution</a> operation.
+     *        >StartTaskExecution</a>.
      */
 
     public void setOptions(Options options) {
@@ -297,25 +292,22 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group ID (GID), file permissions, data integrity verification, and so on.
+     * Specifies the configuration options for a task. Some options include preserving file or object metadata and
+     * verifying data integrity.
      * </p>
      * <p>
-     * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * You can also override these options before starting an individual run of a task (also known as a <i>task
+     * execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
      * </p>
      * 
-     * @return The set of configuration options that control the behavior of a single execution of the task that occurs
-     *         when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such
-     *         as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+     * @return Specifies the configuration options for a task. Some options include preserving file or object metadata
+     *         and verifying data integrity.</p>
      *         <p>
-     *         For each individual task execution, you can override these options by specifying the
-     *         <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *         You can also override these options before starting an individual run of a task (also known as a <i>task
+     *         execution</i>). For more information, see <a
      *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
-     *         >StartTaskExecution</a> operation.
+     *         >StartTaskExecution</a>.
      */
 
     public Options getOptions() {
@@ -324,26 +316,23 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The set of configuration options that control the behavior of a single execution of the task that occurs when you
-     * call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such as user ID (UID)
-     * and group ID (GID), file permissions, data integrity verification, and so on.
+     * Specifies the configuration options for a task. Some options include preserving file or object metadata and
+     * verifying data integrity.
      * </p>
      * <p>
-     * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting the task execution. For more information, see the <a
-     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
-     * operation.
+     * You can also override these options before starting an individual run of a task (also known as a <i>task
+     * execution</i>). For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
      * </p>
      * 
      * @param options
-     *        The set of configuration options that control the behavior of a single execution of the task that occurs
-     *        when you call <code>StartTaskExecution</code>. You can configure these options to preserve metadata such
-     *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
+     *        Specifies the configuration options for a task. Some options include preserving file or object metadata
+     *        and verifying data integrity.</p>
      *        <p>
-     *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *        You can also override these options before starting an individual run of a task (also known as a <i>task
+     *        execution</i>). For more information, see <a
      *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
-     *        >StartTaskExecution</a> operation.
+     *        >StartTaskExecution</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,17 +343,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *         <p>
+     * @return Specifies a list of filter rules that exclude specific data during your transfer. For more information
+     *         and examples, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     *         DataSync</a>.
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -373,18 +360,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -398,11 +382,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -411,10 +393,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -430,18 +411,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
-     *        <p>
+     *        Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -507,12 +485,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     * string.
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      * </p>
      * 
-     * @return The key-value pair that represents the tag that you want to add to the resource. The value can be an
-     *         empty string.
+     * @return Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+     *         <p>
+     *         <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      */
 
     public java.util.List<TagListEntry> getTags() {
@@ -521,13 +502,16 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     * string.
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     *        string.
+     *        Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+     *        <p>
+     *        <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      */
 
     public void setTags(java.util.Collection<TagListEntry> tags) {
@@ -541,8 +525,10 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     * string.
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -551,8 +537,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     *        string.
+     *        Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+     *        <p>
+     *        <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -568,13 +555,16 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     * string.
+     * Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.
+     * </p>
+     * <p>
+     * <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      * </p>
      * 
      * @param tags
-     *        The key-value pair that represents the tag that you want to add to the resource. The value can be an empty
-     *        string.
+     *        Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing the task.</p>
+     *        <p>
+     *        <i>Tags</i> are key-value pairs that help you manage, filter, and search for your DataSync resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -585,14 +575,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *         single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+     * @return Specifies a list of filter rules that include specific data during your transfer. For more information
+     *         and examples, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     *         DataSync</a>.
      */
 
     public java.util.List<FilterRule> getIncludes() {
@@ -601,15 +592,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that include specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      */
 
     public void setIncludes(java.util.Collection<FilterRule> includes) {
@@ -623,9 +614,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -634,9 +625,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that include specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -652,15 +643,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that include specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

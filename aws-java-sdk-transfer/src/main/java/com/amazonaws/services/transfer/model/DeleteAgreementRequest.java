@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DeleteAgreementRequest extends com.amazonaws.AmazonWebServiceReques
     private String agreementId;
     /**
      * <p>
-     * The server ID associated with the agreement that you are deleting.
+     * The server identifier associated with the agreement that you are deleting.
      * </p>
      */
     private String serverId;
@@ -80,11 +80,11 @@ public class DeleteAgreementRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The server ID associated with the agreement that you are deleting.
+     * The server identifier associated with the agreement that you are deleting.
      * </p>
      * 
      * @param serverId
-     *        The server ID associated with the agreement that you are deleting.
+     *        The server identifier associated with the agreement that you are deleting.
      */
 
     public void setServerId(String serverId) {
@@ -93,10 +93,10 @@ public class DeleteAgreementRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The server ID associated with the agreement that you are deleting.
+     * The server identifier associated with the agreement that you are deleting.
      * </p>
      * 
-     * @return The server ID associated with the agreement that you are deleting.
+     * @return The server identifier associated with the agreement that you are deleting.
      */
 
     public String getServerId() {
@@ -105,11 +105,11 @@ public class DeleteAgreementRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The server ID associated with the agreement that you are deleting.
+     * The server identifier associated with the agreement that you are deleting.
      * </p>
      * 
      * @param serverId
-     *        The server ID associated with the agreement that you are deleting.
+     *        The server identifier associated with the agreement that you are deleting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

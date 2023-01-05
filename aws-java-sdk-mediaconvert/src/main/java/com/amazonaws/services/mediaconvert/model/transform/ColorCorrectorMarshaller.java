@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class ColorCorrectorMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sampleRangeConversion").build();
     private static final MarshallingInfo<Integer> SATURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("saturation").build();
+    private static final MarshallingInfo<Integer> SDRREFERENCEWHITELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sdrReferenceWhiteLevel").build();
 
     private static final ColorCorrectorMarshaller instance = new ColorCorrectorMarshaller();
 
@@ -65,6 +67,7 @@ public class ColorCorrectorMarshaller {
             protocolMarshaller.marshall(colorCorrector.getHue(), HUE_BINDING);
             protocolMarshaller.marshall(colorCorrector.getSampleRangeConversion(), SAMPLERANGECONVERSION_BINDING);
             protocolMarshaller.marshall(colorCorrector.getSaturation(), SATURATION_BINDING);
+            protocolMarshaller.marshall(colorCorrector.getSdrReferenceWhiteLevel(), SDRREFERENCEWHITELEVEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

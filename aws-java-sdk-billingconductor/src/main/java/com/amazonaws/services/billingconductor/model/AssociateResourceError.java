@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,24 @@ public class AssociateResourceError implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The reason the resource association failed.
+     * The reason why the resource association failed.
      * </p>
      */
     private String message;
     /**
      * <p>
-     * A static error code that used to classify the type of failure.
+     * A static error code that's used to classify the type of failure.
      * </p>
      */
     private String reason;
 
     /**
      * <p>
-     * The reason the resource association failed.
+     * The reason why the resource association failed.
      * </p>
      * 
      * @param message
-     *        The reason the resource association failed.
+     *        The reason why the resource association failed.
      */
 
     public void setMessage(String message) {
@@ -56,10 +56,10 @@ public class AssociateResourceError implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The reason the resource association failed.
+     * The reason why the resource association failed.
      * </p>
      * 
-     * @return The reason the resource association failed.
+     * @return The reason why the resource association failed.
      */
 
     public String getMessage() {
@@ -68,11 +68,11 @@ public class AssociateResourceError implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The reason the resource association failed.
+     * The reason why the resource association failed.
      * </p>
      * 
      * @param message
-     *        The reason the resource association failed.
+     *        The reason why the resource association failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class AssociateResourceError implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A static error code that used to classify the type of failure.
+     * A static error code that's used to classify the type of failure.
      * </p>
      * 
      * @param reason
-     *        A static error code that used to classify the type of failure.
+     *        A static error code that's used to classify the type of failure.
      * @see AssociateResourceErrorReason
      */
 
@@ -97,10 +97,10 @@ public class AssociateResourceError implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A static error code that used to classify the type of failure.
+     * A static error code that's used to classify the type of failure.
      * </p>
      * 
-     * @return A static error code that used to classify the type of failure.
+     * @return A static error code that's used to classify the type of failure.
      * @see AssociateResourceErrorReason
      */
 
@@ -110,11 +110,11 @@ public class AssociateResourceError implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A static error code that used to classify the type of failure.
+     * A static error code that's used to classify the type of failure.
      * </p>
      * 
      * @param reason
-     *        A static error code that used to classify the type of failure.
+     *        A static error code that's used to classify the type of failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssociateResourceErrorReason
      */
@@ -126,11 +126,11 @@ public class AssociateResourceError implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A static error code that used to classify the type of failure.
+     * A static error code that's used to classify the type of failure.
      * </p>
      * 
      * @param reason
-     *        A static error code that used to classify the type of failure.
+     *        A static error code that's used to classify the type of failure.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AssociateResourceErrorReason
      */

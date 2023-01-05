@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,10 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                     context.nextToken();
                     dashIsoGroupSettings.setMinFinalSegmentLength(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
+                if (context.testExpression("mpdManifestBandwidthType", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setMpdManifestBandwidthType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("mpdProfile", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setMpdProfile(context.getUnmarshaller(String.class).unmarshall(context));
@@ -118,6 +122,10 @@ public class DashIsoGroupSettingsJsonUnmarshaller implements Unmarshaller<DashIs
                 if (context.testExpression("segmentLengthControl", targetDepth)) {
                     context.nextToken();
                     dashIsoGroupSettings.setSegmentLengthControl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("videoCompositionOffsets", targetDepth)) {
+                    context.nextToken();
+                    dashIsoGroupSettings.setVideoCompositionOffsets(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("writeSegmentTimelineInRepresentation", targetDepth)) {
                     context.nextToken();

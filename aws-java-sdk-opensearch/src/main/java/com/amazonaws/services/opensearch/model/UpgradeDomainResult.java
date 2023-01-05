@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,35 +17,56 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for response returned by <code> <a>UpgradeDomain</a> </code> operation.
+ * Container for the response returned by <code>UpgradeDomain</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The unique identifier of the domain upgrade.
+     * </p>
+     */
     private String upgradeId;
-
+    /**
+     * <p>
+     * The name of the domain that was upgraded.
+     * </p>
+     */
     private String domainName;
     /**
      * <p>
-     * The version of OpenSearch that you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version that the domain was upgraded to.
      * </p>
      */
     private String targetVersion;
     /**
      * <p>
-     * When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the
-     * upgrade.
+     * When true, indicates that an upgrade eligibility check was performed.
      * </p>
      */
     private Boolean performCheckOnly;
-
+    /**
+     * <p>
+     * The advanced options configuration for the domain.
+     * </p>
+     */
     private java.util.Map<String, String> advancedOptions;
-
+    /**
+     * <p>
+     * Container for information about a configuration change happening on a domain.
+     * </p>
+     */
     private ChangeProgressDetails changeProgressDetails;
 
     /**
+     * <p>
+     * The unique identifier of the domain upgrade.
+     * </p>
+     * 
      * @param upgradeId
+     *        The unique identifier of the domain upgrade.
      */
 
     public void setUpgradeId(String upgradeId) {
@@ -53,7 +74,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier of the domain upgrade.
+     * </p>
+     * 
+     * @return The unique identifier of the domain upgrade.
      */
 
     public String getUpgradeId() {
@@ -61,7 +86,12 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The unique identifier of the domain upgrade.
+     * </p>
+     * 
      * @param upgradeId
+     *        The unique identifier of the domain upgrade.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -71,7 +101,12 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The name of the domain that was upgraded.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain that was upgraded.
      */
 
     public void setDomainName(String domainName) {
@@ -79,7 +114,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The name of the domain that was upgraded.
+     * </p>
+     * 
+     * @return The name of the domain that was upgraded.
      */
 
     public String getDomainName() {
@@ -87,7 +126,12 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The name of the domain that was upgraded.
+     * </p>
+     * 
      * @param domainName
+     *        The name of the domain that was upgraded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +142,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The version of OpenSearch that you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version that the domain was upgraded to.
      * </p>
      * 
      * @param targetVersion
-     *        The version of OpenSearch that you intend to upgrade the domain to.
+     *        OpenSearch or Elasticsearch version that the domain was upgraded to.
      */
 
     public void setTargetVersion(String targetVersion) {
@@ -111,10 +155,10 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The version of OpenSearch that you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version that the domain was upgraded to.
      * </p>
      * 
-     * @return The version of OpenSearch that you intend to upgrade the domain to.
+     * @return OpenSearch or Elasticsearch version that the domain was upgraded to.
      */
 
     public String getTargetVersion() {
@@ -123,11 +167,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The version of OpenSearch that you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version that the domain was upgraded to.
      * </p>
      * 
      * @param targetVersion
-     *        The version of OpenSearch that you intend to upgrade the domain to.
+     *        OpenSearch or Elasticsearch version that the domain was upgraded to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,13 +182,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the
-     * upgrade.
+     * When true, indicates that an upgrade eligibility check was performed.
      * </p>
      * 
      * @param performCheckOnly
-     *        When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform
-     *        the upgrade.
+     *        When true, indicates that an upgrade eligibility check was performed.
      */
 
     public void setPerformCheckOnly(Boolean performCheckOnly) {
@@ -153,12 +195,10 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the
-     * upgrade.
+     * When true, indicates that an upgrade eligibility check was performed.
      * </p>
      * 
-     * @return When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform
-     *         the upgrade.
+     * @return When true, indicates that an upgrade eligibility check was performed.
      */
 
     public Boolean getPerformCheckOnly() {
@@ -167,13 +207,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the
-     * upgrade.
+     * When true, indicates that an upgrade eligibility check was performed.
      * </p>
      * 
      * @param performCheckOnly
-     *        When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform
-     *        the upgrade.
+     *        When true, indicates that an upgrade eligibility check was performed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,12 +222,10 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform the
-     * upgrade.
+     * When true, indicates that an upgrade eligibility check was performed.
      * </p>
      * 
-     * @return When true, indicates that an upgrade eligibility check needs to be performed. Does not actually perform
-     *         the upgrade.
+     * @return When true, indicates that an upgrade eligibility check was performed.
      */
 
     public Boolean isPerformCheckOnly() {
@@ -197,7 +233,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * The advanced options configuration for the domain.
+     * </p>
+     * 
+     * @return The advanced options configuration for the domain.
      */
 
     public java.util.Map<String, String> getAdvancedOptions() {
@@ -205,7 +245,12 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The advanced options configuration for the domain.
+     * </p>
+     * 
      * @param advancedOptions
+     *        The advanced options configuration for the domain.
      */
 
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
@@ -213,7 +258,12 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * The advanced options configuration for the domain.
+     * </p>
+     * 
      * @param advancedOptions
+     *        The advanced options configuration for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,7 +301,12 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Container for information about a configuration change happening on a domain.
+     * </p>
+     * 
      * @param changeProgressDetails
+     *        Container for information about a configuration change happening on a domain.
      */
 
     public void setChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
@@ -259,7 +314,11 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * @return
+     * <p>
+     * Container for information about a configuration change happening on a domain.
+     * </p>
+     * 
+     * @return Container for information about a configuration change happening on a domain.
      */
 
     public ChangeProgressDetails getChangeProgressDetails() {
@@ -267,7 +326,12 @@ public class UpgradeDomainResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
+     * <p>
+     * Container for information about a configuration change happening on a domain.
+     * </p>
+     * 
      * @param changeProgressDetails
+     *        Container for information about a configuration change happening on a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

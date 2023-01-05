@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,10 @@ public class DataCollectionDetailsJsonUnmarshaller implements Unmarshaller<DataC
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     dataCollectionDetails.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("statusMessage", targetDepth)) {
+                    context.nextToken();
+                    dataCollectionDetails.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("success", targetDepth)) {
                     context.nextToken();

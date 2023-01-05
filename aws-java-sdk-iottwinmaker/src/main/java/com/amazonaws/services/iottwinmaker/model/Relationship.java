@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,56 +30,16 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the relationship.
-     * </p>
-     */
-    private String relationshipType;
-    /**
-     * <p>
      * The ID of the target component type associated with this relationship.
      * </p>
      */
     private String targetComponentTypeId;
-
     /**
      * <p>
      * The type of the relationship.
      * </p>
-     * 
-     * @param relationshipType
-     *        The type of the relationship.
      */
-
-    public void setRelationshipType(String relationshipType) {
-        this.relationshipType = relationshipType;
-    }
-
-    /**
-     * <p>
-     * The type of the relationship.
-     * </p>
-     * 
-     * @return The type of the relationship.
-     */
-
-    public String getRelationshipType() {
-        return this.relationshipType;
-    }
-
-    /**
-     * <p>
-     * The type of the relationship.
-     * </p>
-     * 
-     * @param relationshipType
-     *        The type of the relationship.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Relationship withRelationshipType(String relationshipType) {
-        setRelationshipType(relationshipType);
-        return this;
-    }
+    private String relationshipType;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of the relationship.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of the relationship.
+     */
+
+    public void setRelationshipType(String relationshipType) {
+        this.relationshipType = relationshipType;
+    }
+
+    /**
+     * <p>
+     * The type of the relationship.
+     * </p>
+     * 
+     * @return The type of the relationship.
+     */
+
+    public String getRelationshipType() {
+        return this.relationshipType;
+    }
+
+    /**
+     * <p>
+     * The type of the relationship.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of the relationship.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Relationship withRelationshipType(String relationshipType) {
+        setRelationshipType(relationshipType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getRelationshipType() != null)
-            sb.append("RelationshipType: ").append(getRelationshipType()).append(",");
         if (getTargetComponentTypeId() != null)
-            sb.append("TargetComponentTypeId: ").append(getTargetComponentTypeId());
+            sb.append("TargetComponentTypeId: ").append(getTargetComponentTypeId()).append(",");
+        if (getRelationshipType() != null)
+            sb.append("RelationshipType: ").append(getRelationshipType());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Relationship == false)
             return false;
         Relationship other = (Relationship) obj;
-        if (other.getRelationshipType() == null ^ this.getRelationshipType() == null)
-            return false;
-        if (other.getRelationshipType() != null && other.getRelationshipType().equals(this.getRelationshipType()) == false)
-            return false;
         if (other.getTargetComponentTypeId() == null ^ this.getTargetComponentTypeId() == null)
             return false;
         if (other.getTargetComponentTypeId() != null && other.getTargetComponentTypeId().equals(this.getTargetComponentTypeId()) == false)
+            return false;
+        if (other.getRelationshipType() == null ^ this.getRelationshipType() == null)
+            return false;
+        if (other.getRelationshipType() != null && other.getRelationshipType().equals(this.getRelationshipType()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class Relationship implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getRelationshipType() == null) ? 0 : getRelationshipType().hashCode());
         hashCode = prime * hashCode + ((getTargetComponentTypeId() == null) ? 0 : getTargetComponentTypeId().hashCode());
+        hashCode = prime * hashCode + ((getRelationshipType() == null) ? 0 : getRelationshipType().hashCode());
         return hashCode;
     }
 

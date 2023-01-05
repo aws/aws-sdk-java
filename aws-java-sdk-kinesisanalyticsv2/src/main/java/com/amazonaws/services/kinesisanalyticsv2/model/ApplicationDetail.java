@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private String applicationName;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      */
     private String runtimeEnvironment;
@@ -259,13 +258,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -275,12 +272,10 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *         <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     * @return The runtime environment for the application.
      * @see RuntimeEnvironment
      */
 
@@ -290,13 +285,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -308,13 +301,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
-     * , or <code>FLINK-1_11</code>).
+     * The runtime environment for the application.
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
-     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
+     *        The runtime environment for the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */

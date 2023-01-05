@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class ReportSettingMarshaller {
             .marshallLocationName("FrameworkArns").build();
     private static final MarshallingInfo<Integer> NUMBEROFFRAMEWORKS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NumberOfFrameworks").build();
+    private static final MarshallingInfo<List> ACCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Accounts").build();
+    private static final MarshallingInfo<List> ORGANIZATIONUNITS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationUnits").build();
+    private static final MarshallingInfo<List> REGIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Regions").build();
 
     private static final ReportSettingMarshaller instance = new ReportSettingMarshaller();
 
@@ -54,6 +60,9 @@ public class ReportSettingMarshaller {
             protocolMarshaller.marshall(reportSetting.getReportTemplate(), REPORTTEMPLATE_BINDING);
             protocolMarshaller.marshall(reportSetting.getFrameworkArns(), FRAMEWORKARNS_BINDING);
             protocolMarshaller.marshall(reportSetting.getNumberOfFrameworks(), NUMBEROFFRAMEWORKS_BINDING);
+            protocolMarshaller.marshall(reportSetting.getAccounts(), ACCOUNTS_BINDING);
+            protocolMarshaller.marshall(reportSetting.getOrganizationUnits(), ORGANIZATIONUNITS_BINDING);
+            protocolMarshaller.marshall(reportSetting.getRegions(), REGIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

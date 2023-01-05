@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,19 @@ public class ListConnectorEntitiesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String apiVersion;
+    /**
+     * <p>
+     * The maximum number of items that the operation returns in the response.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big
+     * for the page size. You specify this token to get the next page of results in paginated response.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -261,6 +274,92 @@ public class ListConnectorEntitiesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The maximum number of items that the operation returns in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of items that the operation returns in the response.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items that the operation returns in the response.
+     * </p>
+     * 
+     * @return The maximum number of items that the operation returns in the response.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items that the operation returns in the response.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of items that the operation returns in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListConnectorEntitiesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big
+     * for the page size. You specify this token to get the next page of results in paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was
+     *        too big for the page size. You specify this token to get the next page of results in paginated response.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big
+     * for the page size. You specify this token to get the next page of results in paginated response.
+     * </p>
+     * 
+     * @return A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was
+     *         too big for the page size. You specify this token to get the next page of results in paginated response.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was too big
+     * for the page size. You specify this token to get the next page of results in paginated response.
+     * </p>
+     * 
+     * @param nextToken
+     *        A token that was provided by your prior <code>ListConnectorEntities</code> operation if the response was
+     *        too big for the page size. You specify this token to get the next page of results in paginated response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListConnectorEntitiesRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -279,7 +378,11 @@ public class ListConnectorEntitiesRequest extends com.amazonaws.AmazonWebService
         if (getEntitiesPath() != null)
             sb.append("EntitiesPath: ").append(getEntitiesPath()).append(",");
         if (getApiVersion() != null)
-            sb.append("ApiVersion: ").append(getApiVersion());
+            sb.append("ApiVersion: ").append(getApiVersion()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -310,6 +413,14 @@ public class ListConnectorEntitiesRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getApiVersion() != null && other.getApiVersion().equals(this.getApiVersion()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +433,8 @@ public class ListConnectorEntitiesRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getConnectorType() == null) ? 0 : getConnectorType().hashCode());
         hashCode = prime * hashCode + ((getEntitiesPath() == null) ? 0 : getEntitiesPath().hashCode());
         hashCode = prime * hashCode + ((getApiVersion() == null) ? 0 : getApiVersion().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

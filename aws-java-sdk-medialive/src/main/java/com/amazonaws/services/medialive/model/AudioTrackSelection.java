@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,11 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
 
     /** Selects one or more unique audio tracks from within a source. */
     private java.util.List<AudioTrack> tracks;
+    /**
+     * Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged
+     * with SMPTE-337
+     */
+    private AudioDolbyEDecode dolbyEDecode;
 
     /**
      * Selects one or more unique audio tracks from within a source.
@@ -92,6 +97,46 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged
+     * with SMPTE-337
+     * 
+     * @param dolbyEDecode
+     *        Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams
+     *        tagged with SMPTE-337
+     */
+
+    public void setDolbyEDecode(AudioDolbyEDecode dolbyEDecode) {
+        this.dolbyEDecode = dolbyEDecode;
+    }
+
+    /**
+     * Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged
+     * with SMPTE-337
+     * 
+     * @return Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams
+     *         tagged with SMPTE-337
+     */
+
+    public AudioDolbyEDecode getDolbyEDecode() {
+        return this.dolbyEDecode;
+    }
+
+    /**
+     * Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged
+     * with SMPTE-337
+     * 
+     * @param dolbyEDecode
+     *        Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams
+     *        tagged with SMPTE-337
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioTrackSelection withDolbyEDecode(AudioDolbyEDecode dolbyEDecode) {
+        setDolbyEDecode(dolbyEDecode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -104,7 +149,9 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTracks() != null)
-            sb.append("Tracks: ").append(getTracks());
+            sb.append("Tracks: ").append(getTracks()).append(",");
+        if (getDolbyEDecode() != null)
+            sb.append("DolbyEDecode: ").append(getDolbyEDecode());
         sb.append("}");
         return sb.toString();
     }
@@ -123,6 +170,10 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTracks() != null && other.getTracks().equals(this.getTracks()) == false)
             return false;
+        if (other.getDolbyEDecode() == null ^ this.getDolbyEDecode() == null)
+            return false;
+        if (other.getDolbyEDecode() != null && other.getDolbyEDecode().equals(this.getDolbyEDecode()) == false)
+            return false;
         return true;
     }
 
@@ -132,6 +183,7 @@ public class AudioTrackSelection implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTracks() == null) ? 0 : getTracks().hashCode());
+        hashCode = prime * hashCode + ((getDolbyEDecode() == null) ? 0 : getDolbyEDecode().hashCode());
         return hashCode;
     }
 

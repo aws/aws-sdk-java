@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class EnvironmentAccountConnectionMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> CODEBUILDROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codebuildRoleArn").build();
     private static final MarshallingInfo<String> COMPONENTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentRoleArn").build();
     private static final MarshallingInfo<String> ENVIRONMENTACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -65,6 +67,7 @@ public class EnvironmentAccountConnectionMarshaller {
 
         try {
             protocolMarshaller.marshall(environmentAccountConnection.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(environmentAccountConnection.getCodebuildRoleArn(), CODEBUILDROLEARN_BINDING);
             protocolMarshaller.marshall(environmentAccountConnection.getComponentRoleArn(), COMPONENTROLEARN_BINDING);
             protocolMarshaller.marshall(environmentAccountConnection.getEnvironmentAccountId(), ENVIRONMENTACCOUNTID_BINDING);
             protocolMarshaller.marshall(environmentAccountConnection.getEnvironmentName(), ENVIRONMENTNAME_BINDING);

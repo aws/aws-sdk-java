@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * List of criteria for assessment.
+     * </p>
+     */
+    private java.util.List<AssessmentTarget> assessmentTargets;
+    /**
+     * <p>
      * The S3 bucket used by the collectors to send analysis data to the service. The bucket name must begin with
      * <code>migrationhub-strategy-</code>.
      * </p>
@@ -39,6 +45,76 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String s3bucketForReportData;
+
+    /**
+     * <p>
+     * List of criteria for assessment.
+     * </p>
+     * 
+     * @return List of criteria for assessment.
+     */
+
+    public java.util.List<AssessmentTarget> getAssessmentTargets() {
+        return assessmentTargets;
+    }
+
+    /**
+     * <p>
+     * List of criteria for assessment.
+     * </p>
+     * 
+     * @param assessmentTargets
+     *        List of criteria for assessment.
+     */
+
+    public void setAssessmentTargets(java.util.Collection<AssessmentTarget> assessmentTargets) {
+        if (assessmentTargets == null) {
+            this.assessmentTargets = null;
+            return;
+        }
+
+        this.assessmentTargets = new java.util.ArrayList<AssessmentTarget>(assessmentTargets);
+    }
+
+    /**
+     * <p>
+     * List of criteria for assessment.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAssessmentTargets(java.util.Collection)} or {@link #withAssessmentTargets(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param assessmentTargets
+     *        List of criteria for assessment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssessmentRequest withAssessmentTargets(AssessmentTarget... assessmentTargets) {
+        if (this.assessmentTargets == null) {
+            setAssessmentTargets(new java.util.ArrayList<AssessmentTarget>(assessmentTargets.length));
+        }
+        for (AssessmentTarget ele : assessmentTargets) {
+            this.assessmentTargets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of criteria for assessment.
+     * </p>
+     * 
+     * @param assessmentTargets
+     *        List of criteria for assessment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartAssessmentRequest withAssessmentTargets(java.util.Collection<AssessmentTarget> assessmentTargets) {
+        setAssessmentTargets(assessmentTargets);
+        return this;
+    }
 
     /**
      * <p>
@@ -144,6 +220,8 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAssessmentTargets() != null)
+            sb.append("AssessmentTargets: ").append(getAssessmentTargets()).append(",");
         if (getS3bucketForAnalysisData() != null)
             sb.append("S3bucketForAnalysisData: ").append(getS3bucketForAnalysisData()).append(",");
         if (getS3bucketForReportData() != null)
@@ -162,6 +240,10 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof StartAssessmentRequest == false)
             return false;
         StartAssessmentRequest other = (StartAssessmentRequest) obj;
+        if (other.getAssessmentTargets() == null ^ this.getAssessmentTargets() == null)
+            return false;
+        if (other.getAssessmentTargets() != null && other.getAssessmentTargets().equals(this.getAssessmentTargets()) == false)
+            return false;
         if (other.getS3bucketForAnalysisData() == null ^ this.getS3bucketForAnalysisData() == null)
             return false;
         if (other.getS3bucketForAnalysisData() != null && other.getS3bucketForAnalysisData().equals(this.getS3bucketForAnalysisData()) == false)
@@ -178,6 +260,7 @@ public class StartAssessmentRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAssessmentTargets() == null) ? 0 : getAssessmentTargets().hashCode());
         hashCode = prime * hashCode + ((getS3bucketForAnalysisData() == null) ? 0 : getS3bucketForAnalysisData().hashCode());
         hashCode = prime * hashCode + ((getS3bucketForReportData() == null) ? 0 : getS3bucketForReportData().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -437,6 +437,16 @@ public class DBClusterStaxUnmarshaller implements Unmarshaller<DBCluster, StaxUn
 
                 if (context.testExpression("NetworkType", targetDepth)) {
                     dBCluster.setNetworkType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DBSystemId", targetDepth)) {
+                    dBCluster.setDBSystemId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MasterUserSecret", targetDepth)) {
+                    dBCluster.setMasterUserSecret(MasterUserSecretStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

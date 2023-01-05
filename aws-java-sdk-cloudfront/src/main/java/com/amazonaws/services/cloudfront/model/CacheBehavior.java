@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ import javax.annotation.Generated;
  * the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * <p>
- * If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don’t
+ * If you don't want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don't
  * include an empty <code>CacheBehavior</code> element because this is invalid.
  * </p>
  * <p>
@@ -98,7 +98,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * key pair in the trusted signer's Amazon Web Services account. The signed URL or cookie contains information about
      * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -153,7 +153,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -540,7 +540,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * key pair in the trusted signer's Amazon Web Services account. The signed URL or cookie contains information about
      * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -558,7 +558,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        <p>
      *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *        CloudFront key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie contains
+     *        CloudFront key pair in the trusted signer's Amazon Web Services account. The signed URL or cookie contains
      *        information about which public key CloudFront should use to verify the signature. For more information,
      *        see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -582,7 +582,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * key pair in the trusted signer's Amazon Web Services account. The signed URL or cookie contains information about
      * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -599,7 +599,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         <p>
      *         When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *         requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *         CloudFront key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie
+     *         CloudFront key pair in the trusted signer's Amazon Web Services account. The signed URL or cookie
      *         contains information about which public key CloudFront should use to verify the signature. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -623,7 +623,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      * requests that match the cache behavior. The URLs or cookies must be signed with the private key of a CloudFront
-     * key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie contains information about
+     * key pair in the trusted signer's Amazon Web Services account. The signed URL or cookie contains information about
      * which public key CloudFront should use to verify the signature. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private
      * content</a> in the <i>Amazon CloudFront Developer Guide</i>.
@@ -641,7 +641,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        <p>
      *        When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies for all
      *        requests that match the cache behavior. The URLs or cookies must be signed with the private key of a
-     *        CloudFront key pair in the trusted signer’s Amazon Web Services account. The signed URL or cookie contains
+     *        CloudFront key pair in the trusted signer's Amazon Web Services account. The signed URL or cookie contains
      *        information about which public key CloudFront should use to verify the signature. For more information,
      *        see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
@@ -773,7 +773,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -814,7 +814,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -861,7 +861,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -901,7 +901,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *         <p>
      *         The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *         never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *         recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means
+     *         recommend that you clear your objects' cache because cached objects are protocol agnostic. That means
      *         that an edge location will return an object from the cache regardless of whether the current request
      *         protocol matches the protocol used previously. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -948,7 +948,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -989,7 +989,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -1038,7 +1038,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -1079,7 +1079,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -1126,7 +1126,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      * <p>
      * The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is never
      * to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we recommend that
-     * you clear your objects’ cache because cached objects are protocol agnostic. That means that an edge location will
+     * you clear your objects' cache because cached objects are protocol agnostic. That means that an edge location will
      * return an object from the cache regardless of whether the current request protocol matches the protocol used
      * previously. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache
@@ -1167,7 +1167,7 @@ public class CacheBehavior implements Serializable, Cloneable {
      *        <p>
      *        The only way to guarantee that viewers retrieve an object that was fetched from the origin using HTTPS is
      *        never to use any other protocol to fetch the object. If you have recently changed from HTTP to HTTPS, we
-     *        recommend that you clear your objects’ cache because cached objects are protocol agnostic. That means that
+     *        recommend that you clear your objects' cache because cached objects are protocol agnostic. That means that
      *        an edge location will return an object from the cache regardless of whether the current request protocol
      *        matches the protocol used previously. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html">Managing Cache

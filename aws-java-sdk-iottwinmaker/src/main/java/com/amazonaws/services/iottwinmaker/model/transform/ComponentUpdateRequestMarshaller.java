@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,14 +29,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ComponentUpdateRequestMarshaller {
 
-    private static final MarshallingInfo<String> COMPONENTTYPEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentTypeId").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
-    private static final MarshallingInfo<Map> PROPERTYUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("propertyUpdates").build();
     private static final MarshallingInfo<String> UPDATETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateType").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> COMPONENTTYPEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentTypeId").build();
+    private static final MarshallingInfo<Map> PROPERTYUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("propertyUpdates").build();
+    private static final MarshallingInfo<Map> PROPERTYGROUPUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propertyGroupUpdates").build();
 
     private static final ComponentUpdateRequestMarshaller instance = new ComponentUpdateRequestMarshaller();
 
@@ -54,10 +56,11 @@ public class ComponentUpdateRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(componentUpdateRequest.getComponentTypeId(), COMPONENTTYPEID_BINDING);
-            protocolMarshaller.marshall(componentUpdateRequest.getDescription(), DESCRIPTION_BINDING);
-            protocolMarshaller.marshall(componentUpdateRequest.getPropertyUpdates(), PROPERTYUPDATES_BINDING);
             protocolMarshaller.marshall(componentUpdateRequest.getUpdateType(), UPDATETYPE_BINDING);
+            protocolMarshaller.marshall(componentUpdateRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(componentUpdateRequest.getComponentTypeId(), COMPONENTTYPEID_BINDING);
+            protocolMarshaller.marshall(componentUpdateRequest.getPropertyUpdates(), PROPERTYUPDATES_BINDING);
+            protocolMarshaller.marshall(componentUpdateRequest.getPropertyGroupUpdates(), PROPERTYGROUPUPDATES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,10 +24,20 @@ import com.amazonaws.AmazonWebServiceResult;
 public class RejectTransitGatewayMulticastDomainAssociationsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the multicast domain associations.
+     * </p>
+     */
     private TransitGatewayMulticastDomainAssociations associations;
 
     /**
+     * <p>
+     * Information about the multicast domain associations.
+     * </p>
+     * 
      * @param associations
+     *        Information about the multicast domain associations.
      */
 
     public void setAssociations(TransitGatewayMulticastDomainAssociations associations) {
@@ -35,7 +45,11 @@ public class RejectTransitGatewayMulticastDomainAssociationsResult extends com.a
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the multicast domain associations.
+     * </p>
+     * 
+     * @return Information about the multicast domain associations.
      */
 
     public TransitGatewayMulticastDomainAssociations getAssociations() {
@@ -43,7 +57,12 @@ public class RejectTransitGatewayMulticastDomainAssociationsResult extends com.a
     }
 
     /**
+     * <p>
+     * Information about the multicast domain associations.
+     * </p>
+     * 
      * @param associations
+     *        Information about the multicast domain associations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -138,6 +138,11 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public ReverseReplicationResult reverseReplication(ReverseReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartFailbackLaunchResult startFailbackLaunch(StartFailbackLaunchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -148,7 +153,17 @@ public class AbstractAWSdrs implements AWSdrs {
     }
 
     @Override
+    public StartReplicationResult startReplication(StartReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopFailbackResult stopFailback(StopFailbackRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopReplicationResult stopReplication(StopReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

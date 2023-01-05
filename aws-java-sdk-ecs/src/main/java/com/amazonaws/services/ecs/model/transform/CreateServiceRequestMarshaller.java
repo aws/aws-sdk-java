@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,8 @@ public class CreateServiceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propagateTags").build();
     private static final MarshallingInfo<Boolean> ENABLEEXECUTECOMMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableExecuteCommand").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICECONNECTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceConnectConfiguration").build();
 
     private static final CreateServiceRequestMarshaller instance = new CreateServiceRequestMarshaller();
 
@@ -111,6 +113,7 @@ public class CreateServiceRequestMarshaller {
             protocolMarshaller.marshall(createServiceRequest.getEnableECSManagedTags(), ENABLEECSMANAGEDTAGS_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getPropagateTags(), PROPAGATETAGS_BINDING);
             protocolMarshaller.marshall(createServiceRequest.getEnableExecuteCommand(), ENABLEEXECUTECOMMAND_BINDING);
+            protocolMarshaller.marshall(createServiceRequest.getServiceConnectConfiguration(), SERVICECONNECTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

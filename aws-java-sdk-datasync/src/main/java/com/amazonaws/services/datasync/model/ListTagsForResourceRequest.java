@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,30 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags to list.
+     * Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The maximum number of locations to return.
+     * Specifies how many results that you want in the response.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of locations.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags to list.
+     * Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource whose tags to list.
+     *        Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -62,10 +62,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags to list.
+     * Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource whose tags to list.
+     * @return Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.
      */
 
     public String getResourceArn() {
@@ -74,11 +74,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource whose tags to list.
+     * Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource whose tags to list.
+     *        Specifies the Amazon Resource Name (ARN) of the resource that you want tag information on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of locations to return.
+     * Specifies how many results that you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of locations to return.
+     *        Specifies how many results that you want in the response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -102,10 +102,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of locations to return.
+     * Specifies how many results that you want in the response.
      * </p>
      * 
-     * @return The maximum number of locations to return.
+     * @return Specifies how many results that you want in the response.
      */
 
     public Integer getMaxResults() {
@@ -114,11 +114,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of locations to return.
+     * Specifies how many results that you want in the response.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of locations to return.
+     *        Specifies how many results that you want in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of locations.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin the next list of locations.
+     *        Specifies an opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public void setNextToken(String nextToken) {
@@ -142,10 +142,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of locations.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin the next list of locations.
+     * @return Specifies an opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public String getNextToken() {
@@ -154,11 +154,11 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin the next list of locations.
+     * Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin the next list of locations.
+     *        Specifies an opaque string that indicates the position to begin the next list of results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public enum ResourceType {
     CLIENT_ID("CLIENT_ID"),
     ACCOUNT_SETTINGS("ACCOUNT_SETTINGS"),
     ROLE_ALIAS("ROLE_ALIAS"),
-    IAM_ROLE("IAM_ROLE");
+    IAM_ROLE("IAM_ROLE"),
+    ISSUER_CERTIFICATE("ISSUER_CERTIFICATE");
 
     private String value;
 

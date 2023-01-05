@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -373,6 +373,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AuthorizeVpcEndpointAccessResult> authorizeVpcEndpointAccessAsync(AuthorizeVpcEndpointAccessRequest request) {
+
+        return authorizeVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AuthorizeVpcEndpointAccessResult> authorizeVpcEndpointAccessAsync(final AuthorizeVpcEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AuthorizeVpcEndpointAccessRequest, AuthorizeVpcEndpointAccessResult> asyncHandler) {
+        final AuthorizeVpcEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AuthorizeVpcEndpointAccessResult>() {
+            @Override
+            public AuthorizeVpcEndpointAccessResult call() throws Exception {
+                AuthorizeVpcEndpointAccessResult result = null;
+
+                try {
+                    result = executeAuthorizeVpcEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelElasticsearchServiceSoftwareUpdateResult> cancelElasticsearchServiceSoftwareUpdateAsync(
             CancelElasticsearchServiceSoftwareUpdateRequest request) {
 
@@ -493,6 +526,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executeCreatePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(CreateVpcEndpointRequest request) {
+
+        return createVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVpcEndpointResult> createVpcEndpointAsync(final CreateVpcEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVpcEndpointRequest, CreateVpcEndpointResult> asyncHandler) {
+        final CreateVpcEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVpcEndpointResult>() {
+            @Override
+            public CreateVpcEndpointResult call() throws Exception {
+                CreateVpcEndpointResult result = null;
+
+                try {
+                    result = executeCreateVpcEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -663,6 +729,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executeDeletePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcEndpointResult> deleteVpcEndpointAsync(DeleteVpcEndpointRequest request) {
+
+        return deleteVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVpcEndpointResult> deleteVpcEndpointAsync(final DeleteVpcEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVpcEndpointRequest, DeleteVpcEndpointResult> asyncHandler) {
+        final DeleteVpcEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVpcEndpointResult>() {
+            @Override
+            public DeleteVpcEndpointResult call() throws Exception {
+                DeleteVpcEndpointResult result = null;
+
+                try {
+                    result = executeDeleteVpcEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1054,6 +1153,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeVpcEndpointsResult> describeVpcEndpointsAsync(DescribeVpcEndpointsRequest request) {
+
+        return describeVpcEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVpcEndpointsResult> describeVpcEndpointsAsync(final DescribeVpcEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVpcEndpointsRequest, DescribeVpcEndpointsResult> asyncHandler) {
+        final DescribeVpcEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVpcEndpointsResult>() {
+            @Override
+            public DescribeVpcEndpointsResult call() throws Exception {
+                DescribeVpcEndpointsResult result = null;
+
+                try {
+                    result = executeDescribeVpcEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DissociatePackageResult> dissociatePackageAsync(DissociatePackageRequest request) {
 
         return dissociatePackageAsync(request, null);
@@ -1420,6 +1552,105 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListVpcEndpointAccessResult> listVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request) {
+
+        return listVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointAccessResult> listVpcEndpointAccessAsync(final ListVpcEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVpcEndpointAccessRequest, ListVpcEndpointAccessResult> asyncHandler) {
+        final ListVpcEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVpcEndpointAccessResult>() {
+            @Override
+            public ListVpcEndpointAccessResult call() throws Exception {
+                ListVpcEndpointAccessResult result = null;
+
+                try {
+                    result = executeListVpcEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsResult> listVpcEndpointsAsync(ListVpcEndpointsRequest request) {
+
+        return listVpcEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsResult> listVpcEndpointsAsync(final ListVpcEndpointsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVpcEndpointsRequest, ListVpcEndpointsResult> asyncHandler) {
+        final ListVpcEndpointsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVpcEndpointsResult>() {
+            @Override
+            public ListVpcEndpointsResult call() throws Exception {
+                ListVpcEndpointsResult result = null;
+
+                try {
+                    result = executeListVpcEndpoints(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsForDomainResult> listVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request) {
+
+        return listVpcEndpointsForDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVpcEndpointsForDomainResult> listVpcEndpointsForDomainAsync(final ListVpcEndpointsForDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVpcEndpointsForDomainRequest, ListVpcEndpointsForDomainResult> asyncHandler) {
+        final ListVpcEndpointsForDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVpcEndpointsForDomainResult>() {
+            @Override
+            public ListVpcEndpointsForDomainResult call() throws Exception {
+                ListVpcEndpointsForDomainResult result = null;
+
+                try {
+                    result = executeListVpcEndpointsForDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PurchaseReservedElasticsearchInstanceOfferingResult> purchaseReservedElasticsearchInstanceOfferingAsync(
             PurchaseReservedElasticsearchInstanceOfferingRequest request) {
 
@@ -1523,6 +1754,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(RevokeVpcEndpointAccessRequest request) {
+
+        return revokeVpcEndpointAccessAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeVpcEndpointAccessResult> revokeVpcEndpointAccessAsync(final RevokeVpcEndpointAccessRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RevokeVpcEndpointAccessRequest, RevokeVpcEndpointAccessResult> asyncHandler) {
+        final RevokeVpcEndpointAccessRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RevokeVpcEndpointAccessResult>() {
+            @Override
+            public RevokeVpcEndpointAccessResult call() throws Exception {
+                RevokeVpcEndpointAccessResult result = null;
+
+                try {
+                    result = executeRevokeVpcEndpointAccess(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartElasticsearchServiceSoftwareUpdateResult> startElasticsearchServiceSoftwareUpdateAsync(
             StartElasticsearchServiceSoftwareUpdateRequest request) {
 
@@ -1610,6 +1874,39 @@ public class AWSElasticsearchAsyncClient extends AWSElasticsearchClient implemen
 
                 try {
                     result = executeUpdatePackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcEndpointResult> updateVpcEndpointAsync(UpdateVpcEndpointRequest request) {
+
+        return updateVpcEndpointAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVpcEndpointResult> updateVpcEndpointAsync(final UpdateVpcEndpointRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVpcEndpointRequest, UpdateVpcEndpointResult> asyncHandler) {
+        final UpdateVpcEndpointRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVpcEndpointResult>() {
+            @Override
+            public UpdateVpcEndpointResult call() throws Exception {
+                UpdateVpcEndpointResult result = null;
+
+                try {
+                    result = executeUpdateVpcEndpoint(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

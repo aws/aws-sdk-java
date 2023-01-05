@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack
  * compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you
- * with a high-level view of the compliance state of your conformance packs, and can be used to identify, investigate,
+ * with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate,
  * and understand the level of compliance in your conformance packs.
  * </p>
  * 

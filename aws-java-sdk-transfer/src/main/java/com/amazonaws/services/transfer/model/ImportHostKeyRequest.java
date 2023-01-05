@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are importing.
+     * The identifier of the server that contains the host key that you are importing.
      * </p>
      */
     private String serverId;
@@ -42,7 +42,7 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String hostKeyBody;
     /**
      * <p>
-     * Enter a text description to identify this host key.
+     * The text description that identifies this host key.
      * </p>
      */
     private String description;
@@ -55,11 +55,11 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are importing.
+     * The identifier of the server that contains the host key that you are importing.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host key that you are importing.
+     *        The identifier of the server that contains the host key that you are importing.
      */
 
     public void setServerId(String serverId) {
@@ -68,10 +68,10 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are importing.
+     * The identifier of the server that contains the host key that you are importing.
      * </p>
      * 
-     * @return Provide the ID of the server that contains the host key that you are importing.
+     * @return The identifier of the server that contains the host key that you are importing.
      */
 
     public String getServerId() {
@@ -80,11 +80,11 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are importing.
+     * The identifier of the server that contains the host key that you are importing.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host key that you are importing.
+     *        The identifier of the server that contains the host key that you are importing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +150,11 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Enter a text description to identify this host key.
+     * The text description that identifies this host key.
      * </p>
      * 
      * @param description
-     *        Enter a text description to identify this host key.
+     *        The text description that identifies this host key.
      */
 
     public void setDescription(String description) {
@@ -163,10 +163,10 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Enter a text description to identify this host key.
+     * The text description that identifies this host key.
      * </p>
      * 
-     * @return Enter a text description to identify this host key.
+     * @return The text description that identifies this host key.
      */
 
     public String getDescription() {
@@ -175,11 +175,11 @@ public class ImportHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Enter a text description to identify this host key.
+     * The text description that identifies this host key.
      * </p>
      * 
      * @param description
-     *        Enter a text description to identify this host key.
+     *        The text description that identifies this host key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

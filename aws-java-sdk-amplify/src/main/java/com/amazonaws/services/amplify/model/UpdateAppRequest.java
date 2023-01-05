@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,9 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String description;
     /**
      * <p>
-     * The platform for an Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      */
     private String platform;
@@ -296,11 +298,15 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The platform for an Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
      * @param platform
-     *        The platform for an Amplify app.
+     *        The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *        dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *        requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @see Platform
      */
 
@@ -310,10 +316,14 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The platform for an Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
-     * @return The platform for an Amplify app.
+     * @return The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *         dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *         requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @see Platform
      */
 
@@ -323,11 +333,15 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The platform for an Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
      * @param platform
-     *        The platform for an Amplify app.
+     *        The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *        dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *        requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -339,11 +353,15 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The platform for an Amplify app.
+     * The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a dynamic
+     * server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app requiring Amplify
+     * Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * </p>
      * 
      * @param platform
-     *        The platform for an Amplify app.
+     *        The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>. For a
+     *        dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>. For an app
+     *        requiring Amplify Hosting's original SSR support only, set the platform type to <code>WEB_DYNAMIC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,24 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private Credentials credentials;
+    /**
+     * <p>
+     * The URL to sign into the user's instance.
+     * </p>
+     */
+    private String signInUrl;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user.
+     * </p>
+     */
+    private String userArn;
+    /**
+     * <p>
+     * The identifier for the user.
+     * </p>
+     */
+    private String userId;
 
     /**
      * <p>
@@ -71,6 +89,126 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The URL to sign into the user's instance.
+     * </p>
+     * 
+     * @param signInUrl
+     *        The URL to sign into the user's instance.
+     */
+
+    public void setSignInUrl(String signInUrl) {
+        this.signInUrl = signInUrl;
+    }
+
+    /**
+     * <p>
+     * The URL to sign into the user's instance.
+     * </p>
+     * 
+     * @return The URL to sign into the user's instance.
+     */
+
+    public String getSignInUrl() {
+        return this.signInUrl;
+    }
+
+    /**
+     * <p>
+     * The URL to sign into the user's instance.
+     * </p>
+     * 
+     * @param signInUrl
+     *        The URL to sign into the user's instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFederationTokenResult withSignInUrl(String signInUrl) {
+        setSignInUrl(signInUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user.
+     * </p>
+     * 
+     * @param userArn
+     *        The Amazon Resource Name (ARN) of the user.
+     */
+
+    public void setUserArn(String userArn) {
+        this.userArn = userArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the user.
+     */
+
+    public String getUserArn() {
+        return this.userArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the user.
+     * </p>
+     * 
+     * @param userArn
+     *        The Amazon Resource Name (ARN) of the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFederationTokenResult withUserArn(String userArn) {
+        setUserArn(userArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for the user.
+     * </p>
+     * 
+     * @param userId
+     *        The identifier for the user.
+     */
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the user.
+     * </p>
+     * 
+     * @return The identifier for the user.
+     */
+
+    public String getUserId() {
+        return this.userId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the user.
+     * </p>
+     * 
+     * @param userId
+     *        The identifier for the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetFederationTokenResult withUserId(String userId) {
+        setUserId(userId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +221,13 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCredentials() != null)
-            sb.append("Credentials: ").append(getCredentials());
+            sb.append("Credentials: ").append(getCredentials()).append(",");
+        if (getSignInUrl() != null)
+            sb.append("SignInUrl: ").append(getSignInUrl()).append(",");
+        if (getUserArn() != null)
+            sb.append("UserArn: ").append(getUserArn()).append(",");
+        if (getUserId() != null)
+            sb.append("UserId: ").append(getUserId());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +246,18 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getCredentials() != null && other.getCredentials().equals(this.getCredentials()) == false)
             return false;
+        if (other.getSignInUrl() == null ^ this.getSignInUrl() == null)
+            return false;
+        if (other.getSignInUrl() != null && other.getSignInUrl().equals(this.getSignInUrl()) == false)
+            return false;
+        if (other.getUserArn() == null ^ this.getUserArn() == null)
+            return false;
+        if (other.getUserArn() != null && other.getUserArn().equals(this.getUserArn()) == false)
+            return false;
+        if (other.getUserId() == null ^ this.getUserId() == null)
+            return false;
+        if (other.getUserId() != null && other.getUserId().equals(this.getUserId()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +267,9 @@ public class GetFederationTokenResult extends com.amazonaws.AmazonWebServiceResu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCredentials() == null) ? 0 : getCredentials().hashCode());
+        hashCode = prime * hashCode + ((getSignInUrl() == null) ? 0 : getSignInUrl().hashCode());
+        hashCode = prime * hashCode + ((getUserArn() == null) ? 0 : getUserArn().hashCode());
+        hashCode = prime * hashCode + ((getUserId() == null) ? 0 : getUserId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,9 @@ public enum ScanStatusReason {
     EC2_INSTANCE_STOPPED("EC2_INSTANCE_STOPPED"),
     PENDING_DISABLE("PENDING_DISABLE"),
     NO_INVENTORY("NO_INVENTORY"),
-    STALE_INVENTORY("STALE_INVENTORY");
+    STALE_INVENTORY("STALE_INVENTORY"),
+    EXCLUDED_BY_TAG("EXCLUDED_BY_TAG"),
+    UNSUPPORTED_RUNTIME("UNSUPPORTED_RUNTIME");
 
     private String value;
 

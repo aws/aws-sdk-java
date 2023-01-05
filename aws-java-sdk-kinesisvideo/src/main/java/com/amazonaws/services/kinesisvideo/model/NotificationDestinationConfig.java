@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class NotificationDestinationConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      */
     private String uri;
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
      * @param uri
-     *        The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     *        The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      */
 
     public void setUri(String uri) {
@@ -50,10 +50,10 @@ public class NotificationDestinationConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
-     * @return The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * @return The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      */
 
     public String getUri() {
@@ -62,11 +62,11 @@ public class NotificationDestinationConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     * The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * </p>
      * 
      * @param uri
-     *        The Uniform Resource Idenifier (URI) that identifies where the images will be delivered.
+     *        The Uniform Resource Identifier (URI) that identifies where the images will be delivered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

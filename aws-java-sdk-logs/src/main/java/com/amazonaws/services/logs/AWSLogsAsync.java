@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,9 @@ import com.amazonaws.services.logs.model.*;
  * <p>
  * <p>
  * You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, CloudTrail, and
- * other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console,
- * CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
+ * other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console.
+ * Alternatively, you can use CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or
+ * CloudWatch Logs SDK.
  * </p>
  * <p>
  * You can use CloudWatch Logs to:
@@ -36,13 +37,13 @@ import com.amazonaws.services.logs.model.*;
  * <ul>
  * <li>
  * <p>
- * <b>Monitor logs from EC2 instances in real-time</b>: You can use CloudWatch Logs to monitor applications and systems
- * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs and
- * send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your
- * log data for monitoring so no code changes are required. For example, you can monitor application logs for specific
- * literal terms (such as "NullReferenceException") or count the number of occurrences of a literal term at a particular
- * position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is
- * found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
+ * <b>Monitor logs from EC2 instances in real time</b>: You can use CloudWatch Logs to monitor applications and systems
+ * using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs.
+ * Then, it can send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch
+ * Logs uses your log data for monitoring so no code changes are required. For example, you can monitor application logs
+ * for specific literal terms (such as "NullReferenceException"). You can also count the number of occurrences of a
+ * literal term at a particular position in log data (such as "404" status codes in an Apache access log). When the term
+ * you are searching for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
  * </p>
  * </li>
  * <li>
@@ -54,9 +55,9 @@ import com.amazonaws.services.logs.model.*;
  * <li>
  * <p>
  * <b>Archive log data</b>: You can use CloudWatch Logs to store your log data in highly durable storage. You can change
- * the log retention setting so that any log events older than this setting are automatically deleted. The CloudWatch
- * Logs agent makes it easy to quickly send both rotated and non-rotated log data off of a host and into the log
- * service. You can then access the raw log data when you need it.
+ * the log retention setting so that any log events earlier than this setting are automatically deleted. The CloudWatch
+ * Logs agent helps to quickly send both rotated and non-rotated log data off of a host and into the log service. You
+ * can then access the raw log data when you need it.
  * </p>
  * </li>
  * </ul>
@@ -66,18 +67,18 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Associates the specified Key Management Service customer master key (CMK) with the specified log group.
+     * Associates the specified KMS key with the specified log group.
      * </p>
      * <p>
-     * Associating an KMS CMK with a log group overrides any existing associations between the log group and a CMK.
-     * After a CMK is associated with a log group, all newly ingested data for the log group is encrypted using the CMK.
-     * This association is stored as long as the data encrypted with the CMK is still within CloudWatch Logs. This
-     * enables CloudWatch Logs to decrypt this data whenever it is requested.
+     * Associating a KMS key with a log group overrides any existing associations between the log group and a KMS key.
+     * After a KMS key is associated with a log group, all newly ingested data for the log group is encrypted using the
+     * KMS key. This association is stored as long as the data encrypted with the KMS keyis still within CloudWatch
+     * Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.
      * </p>
      * <important>
      * <p>
-     * CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric CMK with your log group. For
-     * more information, see <a
+     * CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric KMS key with your log
+     * group. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
      * Asymmetric Keys</a>.
      * </p>
@@ -86,8 +87,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * It can take up to 5 minutes for this operation to take effect.
      * </p>
      * <p>
-     * If you attempt to associate a CMK with a log group but the CMK does not exist or the CMK is disabled, you receive
-     * an <code>InvalidParameterException</code> error.
+     * If you attempt to associate a KMS key with a log group but the KMS key does not exist or the KMS key is disabled,
+     * you receive an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @param associateKmsKeyRequest
@@ -100,18 +101,18 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Associates the specified Key Management Service customer master key (CMK) with the specified log group.
+     * Associates the specified KMS key with the specified log group.
      * </p>
      * <p>
-     * Associating an KMS CMK with a log group overrides any existing associations between the log group and a CMK.
-     * After a CMK is associated with a log group, all newly ingested data for the log group is encrypted using the CMK.
-     * This association is stored as long as the data encrypted with the CMK is still within CloudWatch Logs. This
-     * enables CloudWatch Logs to decrypt this data whenever it is requested.
+     * Associating a KMS key with a log group overrides any existing associations between the log group and a KMS key.
+     * After a KMS key is associated with a log group, all newly ingested data for the log group is encrypted using the
+     * KMS key. This association is stored as long as the data encrypted with the KMS keyis still within CloudWatch
+     * Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.
      * </p>
      * <important>
      * <p>
-     * CloudWatch Logs supports only symmetric CMKs. Do not use an associate an asymmetric CMK with your log group. For
-     * more information, see <a
+     * CloudWatch Logs supports only symmetric KMS keys. Do not use an associate an asymmetric KMS key with your log
+     * group. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
      * Asymmetric Keys</a>.
      * </p>
@@ -120,8 +121,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * It can take up to 5 minutes for this operation to take effect.
      * </p>
      * <p>
-     * If you attempt to associate a CMK with a log group but the CMK does not exist or the CMK is disabled, you receive
-     * an <code>InvalidParameterException</code> error.
+     * If you attempt to associate a KMS key with a log group but the KMS key does not exist or the KMS key is disabled,
+     * you receive an <code>InvalidParameterException</code> error.
      * </p>
      * 
      * @param associateKmsKeyRequest
@@ -176,19 +177,17 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Creates an export task, which allows you to efficiently export data from a log group to an Amazon S3 bucket. When
-     * you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to
-     * the S3 bucket that you specify as the destination.
+     * Creates an export task so that you can efficiently export data from a log group to an Amazon S3 bucket. When you
+     * perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to the
+     * S3 bucket that you specify as the destination.
      * </p>
-     * <important>
      * <p>
-     * Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported. Exporting log data to Amazon
-     * S3 buckets that have S3 Object Lock enabled with a retention period is not supported.
+     * Exporting log data to S3 buckets that are encrypted by KMS is supported. Exporting log data to Amazon S3 buckets
+     * that have S3 Object Lock enabled with a retention period is also supported.
      * </p>
      * <p>
      * Exporting to S3 buckets that are encrypted with AES-256 is supported.
      * </p>
-     * </important>
      * <p>
      * This is an asynchronous call. If all the required information is provided, this operation initiates an export
      * task and responds with the ID of the task. After the task has started, you can use <a
@@ -199,14 +198,13 @@ public interface AWSLogsAsync extends AWSLogs {
      * >CancelExportTask</a>.
      * </p>
      * <p>
-     * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log
-     * data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported
-     * objects.
+     * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate log data
+     * for each export task, specify a prefix to be used as the Amazon S3 key prefix for all exported objects.
      * </p>
      * <note>
      * <p>
      * Time-based sorting on chunks of log data inside an exported file is not guaranteed. You can sort the exported log
-     * fild data by using Linux utilities.
+     * field data by using Linux utilities.
      * </p>
      * </note>
      * 
@@ -220,19 +218,17 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Creates an export task, which allows you to efficiently export data from a log group to an Amazon S3 bucket. When
-     * you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to
-     * the S3 bucket that you specify as the destination.
+     * Creates an export task so that you can efficiently export data from a log group to an Amazon S3 bucket. When you
+     * perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to the
+     * S3 bucket that you specify as the destination.
      * </p>
-     * <important>
      * <p>
-     * Exporting log data to Amazon S3 buckets that are encrypted by KMS is not supported. Exporting log data to Amazon
-     * S3 buckets that have S3 Object Lock enabled with a retention period is not supported.
+     * Exporting log data to S3 buckets that are encrypted by KMS is supported. Exporting log data to Amazon S3 buckets
+     * that have S3 Object Lock enabled with a retention period is also supported.
      * </p>
      * <p>
      * Exporting to S3 buckets that are encrypted with AES-256 is supported.
      * </p>
-     * </important>
      * <p>
      * This is an asynchronous call. If all the required information is provided, this operation initiates an export
      * task and responds with the ID of the task. After the task has started, you can use <a
@@ -243,14 +239,13 @@ public interface AWSLogsAsync extends AWSLogs {
      * >CancelExportTask</a>.
      * </p>
      * <p>
-     * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate out log
-     * data for each export task, you can specify a prefix to be used as the Amazon S3 key prefix for all exported
-     * objects.
+     * You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate log data
+     * for each export task, specify a prefix to be used as the Amazon S3 key prefix for all exported objects.
      * </p>
      * <note>
      * <p>
      * Time-based sorting on chunks of log data inside an exported file is not guaranteed. You can sort the exported log
-     * fild data by using Linux utilities.
+     * field data by using Linux utilities.
      * </p>
      * </note>
      * 
@@ -277,7 +272,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * <ul>
      * <li>
      * <p>
-     * Log group names must be unique within a region for an Amazon Web Services account.
+     * Log group names must be unique within a Region for an Amazon Web Services account.
      * </p>
      * </li>
      * <li>
@@ -293,25 +288,26 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * </ul>
      * <p>
-     * When you create a log group, by default the log events in the log group never expire. To set a retention policy
+     * When you create a log group, by default the log events in the log group do not expire. To set a retention policy
      * so that events expire and are deleted after a specified time, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html"
      * >PutRetentionPolicy</a>.
      * </p>
      * <p>
-     * If you associate a Key Management Service customer master key (CMK) with the log group, ingested data is
-     * encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still within
-     * CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.
+     * If you associate an KMS key with the log group, ingested data is encrypted using the KMS key. This association is
+     * stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch
+     * Logs to decrypt this data whenever it is requested.
      * </p>
      * <p>
-     * If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you
-     * receive an <code>InvalidParameterException</code> error.
+     * If you attempt to associate a KMS key with the log group but the KMS keydoes not exist or the KMS key is
+     * disabled, you receive an <code>InvalidParameterException</code> error.
      * </p>
      * <important>
      * <p>
-     * CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with your log group. For more
-     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * Symmetric and Asymmetric Keys</a>.
+     * CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS key with your log group. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
      * </p>
      * </important>
      * 
@@ -333,7 +329,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * <ul>
      * <li>
      * <p>
-     * Log group names must be unique within a region for an Amazon Web Services account.
+     * Log group names must be unique within a Region for an Amazon Web Services account.
      * </p>
      * </li>
      * <li>
@@ -349,25 +345,26 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * </ul>
      * <p>
-     * When you create a log group, by default the log events in the log group never expire. To set a retention policy
+     * When you create a log group, by default the log events in the log group do not expire. To set a retention policy
      * so that events expire and are deleted after a specified time, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutRetentionPolicy.html"
      * >PutRetentionPolicy</a>.
      * </p>
      * <p>
-     * If you associate a Key Management Service customer master key (CMK) with the log group, ingested data is
-     * encrypted using the CMK. This association is stored as long as the data encrypted with the CMK is still within
-     * CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.
+     * If you associate an KMS key with the log group, ingested data is encrypted using the KMS key. This association is
+     * stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch
+     * Logs to decrypt this data whenever it is requested.
      * </p>
      * <p>
-     * If you attempt to associate a CMK with the log group but the CMK does not exist or the CMK is disabled, you
-     * receive an <code>InvalidParameterException</code> error.
+     * If you attempt to associate a KMS key with the log group but the KMS keydoes not exist or the KMS key is
+     * disabled, you receive an <code>InvalidParameterException</code> error.
      * </p>
      * <important>
      * <p>
-     * CloudWatch Logs supports only symmetric CMKs. Do not associate an asymmetric CMK with your log group. For more
-     * information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * Symmetric and Asymmetric Keys</a>.
+     * CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS key with your log group. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using Symmetric and
+     * Asymmetric Keys</a>.
      * </p>
      * </important>
      * 
@@ -409,7 +406,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The ':' (colon) and '*' (asterisk) characters are not allowed.
+     * Don't use ':' (colon) or '*' (asterisk) characters.
      * </p>
      * </li>
      * </ul>
@@ -447,7 +444,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * The ':' (colon) and '*' (asterisk) characters are not allowed.
+     * Don't use ':' (colon) or '*' (asterisk) characters.
      * </p>
      * </li>
      * </ul>
@@ -464,6 +461,49 @@ public interface AWSLogsAsync extends AWSLogs {
      */
     java.util.concurrent.Future<CreateLogStreamResult> createLogStreamAsync(CreateLogStreamRequest createLogStreamRequest,
             com.amazonaws.handlers.AsyncHandler<CreateLogStreamRequest, CreateLogStreamResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the data protection policy from the specified log group.
+     * </p>
+     * <p>
+     * For more information about data protection policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param deleteDataProtectionPolicyRequest
+     * @return A Java Future containing the result of the DeleteDataProtectionPolicy operation returned by the service.
+     * @sample AWSLogsAsync.DeleteDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDataProtectionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataProtectionPolicyResult> deleteDataProtectionPolicyAsync(
+            DeleteDataProtectionPolicyRequest deleteDataProtectionPolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the data protection policy from the specified log group.
+     * </p>
+     * <p>
+     * For more information about data protection policies, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param deleteDataProtectionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataProtectionPolicy operation returned by the service.
+     * @sample AWSLogsAsyncHandler.DeleteDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteDataProtectionPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataProtectionPolicyResult> deleteDataProtectionPolicyAsync(
+            DeleteDataProtectionPolicyRequest deleteDataProtectionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataProtectionPolicyRequest, DeleteDataProtectionPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -833,6 +873,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
+     * </p>
      * 
      * @param describeLogGroupsRequest
      * @return A Java Future containing the result of the DescribeLogGroups operation returned by the service.
@@ -854,6 +900,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param describeLogGroupsRequest
@@ -892,6 +944,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * This operation has a limit of five transactions per second, after which transactions are throttled.
      * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
+     * </p>
      * 
      * @param describeLogStreamsRequest
      * @return A Java Future containing the result of the DescribeLogStreams operation returned by the service.
@@ -908,6 +966,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * This operation has a limit of five transactions per second, after which transactions are throttled.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param describeLogStreamsRequest
@@ -958,9 +1022,9 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Returns a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently
-     * in this account. You can request all queries or limit it to queries of a specific log group or queries with a
-     * certain status.
+     * Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this
+     * account. You can request all queries or limit it to queries of a specific log group or queries with a certain
+     * status.
      * </p>
      * 
      * @param describeQueriesRequest
@@ -973,9 +1037,9 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Returns a list of CloudWatch Logs Insights queries that are scheduled, executing, or have been executed recently
-     * in this account. You can request all queries or limit it to queries of a specific log group or queries with a
-     * certain status.
+     * Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this
+     * account. You can request all queries or limit it to queries of a specific log group or queries with a certain
+     * status.
      * </p>
      * 
      * @param describeQueriesRequest
@@ -1098,12 +1162,12 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Disassociates the associated Key Management Service customer master key (CMK) from the specified log group.
+     * Disassociates the associated KMS key from the specified log group.
      * </p>
      * <p>
-     * After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for
+     * After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for
      * the log group. All previously ingested data remains encrypted, and CloudWatch Logs requires permissions for the
-     * CMK whenever the encrypted data is requested.
+     * KMS key whenever the encrypted data is requested.
      * </p>
      * <p>
      * Note that it can take up to 5 minutes for this operation to take effect.
@@ -1119,12 +1183,12 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Disassociates the associated Key Management Service customer master key (CMK) from the specified log group.
+     * Disassociates the associated KMS key from the specified log group.
      * </p>
      * <p>
-     * After the KMS CMK is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for
+     * After the KMS key is disassociated from the log group, CloudWatch Logs stops encrypting newly ingested data for
      * the log group. All previously ingested data remains encrypted, and CloudWatch Logs requires permissions for the
-     * CMK whenever the encrypted data is requested.
+     * KMS key whenever the encrypted data is requested.
      * </p>
      * <p>
      * Note that it can take up to 5 minutes for this operation to take effect.
@@ -1149,14 +1213,23 @@ public interface AWSLogsAsync extends AWSLogs {
      * filter pattern, a time range, and the name of the log stream.
      * </p>
      * <p>
+     * You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.
+     * </p>
+     * <p>
      * By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events) or all the
-     * events found within the time range that you specify. If the results include a token, then there are more log
-     * events available, and you can get additional results by specifying the token in a subsequent call. This operation
-     * can return empty results while there are more log events available through the token.
+     * events found within the specified time range. If the results include a token, that means there are more log
+     * events available. You can get additional results by specifying the token in a subsequent call. This operation can
+     * return empty results while there are more log events available through the token.
      * </p>
      * <p>
      * The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch
      * Logs, and the ID of the <code>PutLogEvents</code> request.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param filterLogEventsRequest
@@ -1173,14 +1246,23 @@ public interface AWSLogsAsync extends AWSLogs {
      * filter pattern, a time range, and the name of the log stream.
      * </p>
      * <p>
+     * You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.
+     * </p>
+     * <p>
      * By default, this operation returns as many log events as can fit in 1 MB (up to 10,000 log events) or all the
-     * events found within the time range that you specify. If the results include a token, then there are more log
-     * events available, and you can get additional results by specifying the token in a subsequent call. This operation
-     * can return empty results while there are more log events available through the token.
+     * events found within the specified time range. If the results include a token, that means there are more log
+     * events available. You can get additional results by specifying the token in a subsequent call. This operation can
+     * return empty results while there are more log events available through the token.
      * </p>
      * <p>
      * The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch
      * Logs, and the ID of the <code>PutLogEvents</code> request.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param filterLogEventsRequest
@@ -1198,12 +1280,49 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
+     * Returns information about a log group data protection policy.
+     * </p>
+     * 
+     * @param getDataProtectionPolicyRequest
+     * @return A Java Future containing the result of the GetDataProtectionPolicy operation returned by the service.
+     * @sample AWSLogsAsync.GetDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(GetDataProtectionPolicyRequest getDataProtectionPolicyRequest);
+
+    /**
+     * <p>
+     * Returns information about a log group data protection policy.
+     * </p>
+     * 
+     * @param getDataProtectionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataProtectionPolicy operation returned by the service.
+     * @sample AWSLogsAsyncHandler.GetDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/GetDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataProtectionPolicyResult> getDataProtectionPolicyAsync(GetDataProtectionPolicyRequest getDataProtectionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataProtectionPolicyRequest, GetDataProtectionPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists log events from the specified log stream. You can list all of the log events or filter using a time range.
      * </p>
      * <p>
      * By default, this operation returns as many log events as can fit in a response size of 1MB (up to 10,000 log
      * events). You can get additional log events by specifying one of the tokens in a subsequent call. This operation
      * can return empty results while there are more log events available through the token.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param getLogEventsRequest
@@ -1223,6 +1342,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * events). You can get additional log events by specifying one of the tokens in a subsequent call. This operation
      * can return empty results while there are more log events available through the token.
      * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
+     * </p>
      * 
      * @param getLogEventsRequest
      * @param asyncHandler
@@ -1239,11 +1364,11 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Returns a list of the fields that are included in log events in the specified log group, along with the
-     * percentage of log events that contain each field. The search is limited to a time period that you specify.
+     * Returns a list of the fields that are included in log events in the specified log group. Includes the percentage
+     * of log events that contain each field. The search is limited to a time period that you specify.
      * </p>
      * <p>
-     * In the results, fields that start with @ are fields generated by CloudWatch Logs. For example,
+     * In the results, fields that start with <code>@</code> are fields generated by CloudWatch Logs. For example,
      * <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are
      * generated by CloudWatch logs, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html"
@@ -1251,6 +1376,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * The response results are sorted by the frequency percentage, starting with the highest percentage.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param getLogGroupFieldsRequest
@@ -1263,11 +1394,11 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Returns a list of the fields that are included in log events in the specified log group, along with the
-     * percentage of log events that contain each field. The search is limited to a time period that you specify.
+     * Returns a list of the fields that are included in log events in the specified log group. Includes the percentage
+     * of log events that contain each field. The search is limited to a time period that you specify.
      * </p>
      * <p>
-     * In the results, fields that start with @ are fields generated by CloudWatch Logs. For example,
+     * In the results, fields that start with <code>@</code> are fields generated by CloudWatch Logs. For example,
      * <code>@timestamp</code> is the timestamp of each log event. For more information about the fields that are
      * generated by CloudWatch logs, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html"
@@ -1275,6 +1406,12 @@ public interface AWSLogsAsync extends AWSLogs {
      * </p>
      * <p>
      * The response results are sorted by the frequency percentage, starting with the highest percentage.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and
+     * view data from the linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param getLogGroupFieldsRequest
@@ -1342,13 +1479,19 @@ public interface AWSLogsAsync extends AWSLogs {
      * >GetLogRecord</a> operation to get the full log record.
      * </p>
      * <p>
-     * <code>GetQueryResults</code> does not start a query execution. To run a query, use <a
+     * <code>GetQueryResults</code> does not start running a query. To run a query, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
      * </p>
      * <p>
      * If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only
      * partial results. If you see a value of <code>Scheduled</code> or <code>Running</code> for the status, you can
      * retry the operation later to see the final results.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to
+     * start queries in linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -1370,13 +1513,19 @@ public interface AWSLogsAsync extends AWSLogs {
      * >GetLogRecord</a> operation to get the full log record.
      * </p>
      * <p>
-     * <code>GetQueryResults</code> does not start a query execution. To run a query, use <a
+     * <code>GetQueryResults</code> does not start running a query. To run a query, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
      * </p>
      * <p>
      * If the value of the <code>Status</code> field in the output is <code>Running</code>, this operation returns only
      * partial results. If you see a value of <code>Scheduled</code> or <code>Running</code> for the status, you can
      * retry the operation later to see the final results.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to
+     * start queries in linked source accounts. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>.
      * </p>
      * 
      * @param getQueryResultsRequest
@@ -1394,6 +1543,46 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
+     * Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support
+     * tagging.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSLogsAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support
+     * tagging.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSLogsAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <important>
+     * <p>
+     * The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a> instead.
+     * </p>
+     * </important>
+     * <p>
      * Lists the tags for the specified log group.
      * </p>
      * 
@@ -1403,9 +1592,17 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest);
 
     /**
+     * <important>
+     * <p>
+     * The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Lists the tags for the specified log group.
      * </p>
@@ -1420,8 +1617,84 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/ListTagsLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<ListTagsLogGroupResult> listTagsLogGroupAsync(ListTagsLogGroupRequest listTagsLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsLogGroupRequest, ListTagsLogGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a data protection policy for the specified log group. A data protection policy can help safeguard
+     * sensitive data that's ingested by the log group by auditing and masking the sensitive log data.
+     * </p>
+     * <important>
+     * <p>
+     * Sensitive data is detected and masked when it is ingested into the log group. When you set a data protection
+     * policy, log events ingested into the log group before that time are not masked.
+     * </p>
+     * </important>
+     * <p>
+     * By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks.
+     * A user who has the <code>logs:Unmask</code> permission can use a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html"
+     * >GetLogEvents</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html"
+     * >FilterLogEvents</a> operation with the <code>unmask</code> parameter set to <code>true</code> to view the
+     * unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked data in the CloudWatch Logs
+     * console by running a CloudWatch Logs Insights query with the <code>unmask</code> query command.
+     * </p>
+     * <p>
+     * For more information, including a list of types of data that can be audited and masked, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect sensitive
+     * log data with masking</a>.
+     * </p>
+     * 
+     * @param putDataProtectionPolicyRequest
+     * @return A Java Future containing the result of the PutDataProtectionPolicy operation returned by the service.
+     * @sample AWSLogsAsync.PutDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(PutDataProtectionPolicyRequest putDataProtectionPolicyRequest);
+
+    /**
+     * <p>
+     * Creates a data protection policy for the specified log group. A data protection policy can help safeguard
+     * sensitive data that's ingested by the log group by auditing and masking the sensitive log data.
+     * </p>
+     * <important>
+     * <p>
+     * Sensitive data is detected and masked when it is ingested into the log group. When you set a data protection
+     * policy, log events ingested into the log group before that time are not masked.
+     * </p>
+     * </important>
+     * <p>
+     * By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks.
+     * A user who has the <code>logs:Unmask</code> permission can use a <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html"
+     * >GetLogEvents</a> or <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html"
+     * >FilterLogEvents</a> operation with the <code>unmask</code> parameter set to <code>true</code> to view the
+     * unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked data in the CloudWatch Logs
+     * console by running a CloudWatch Logs Insights query with the <code>unmask</code> query command.
+     * </p>
+     * <p>
+     * For more information, including a list of types of data that can be audited and masked, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect sensitive
+     * log data with masking</a>.
+     * </p>
+     * 
+     * @param putDataProtectionPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutDataProtectionPolicy operation returned by the service.
+     * @sample AWSLogsAsyncHandler.PutDataProtectionPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutDataProtectionPolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutDataProtectionPolicyResult> putDataProtectionPolicyAsync(PutDataProtectionPolicyRequest putDataProtectionPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutDataProtectionPolicyRequest, PutDataProtectionPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -1429,8 +1702,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * subscriptions.
      * </p>
      * <p>
-     * A destination encapsulates a physical resource (such as an Amazon Kinesis stream) and enables you to subscribe to
-     * a real-time stream of log events for a different account, ingested using <a
+     * A destination encapsulates a physical resource (such as an Amazon Kinesis stream). With a destination, you can
+     * subscribe to a real-time stream of log events for a different account, ingested using <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
      * >PutLogEvents</a>.
      * </p>
@@ -1460,8 +1733,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * subscriptions.
      * </p>
      * <p>
-     * A destination encapsulates a physical resource (such as an Amazon Kinesis stream) and enables you to subscribe to
-     * a real-time stream of log events for a different account, ingested using <a
+     * A destination encapsulates a physical resource (such as an Amazon Kinesis stream). With a destination, you can
+     * subscribe to a real-time stream of log events for a different account, ingested using <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
      * >PutLogEvents</a>.
      * </p>
@@ -1496,11 +1769,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM policy document</a> that is
      * used to authorize claims to register a subscription filter against a given destination.
      * </p>
-     * <p>
-     * If multiple Amazon Web Services accounts are sending logs to this destination, each sender account must be listed
-     * separately in the policy. The policy does not support specifying <code>*</code> as the Principal or the use of
-     * the <code>aws:PrincipalOrgId</code> global key.
-     * </p>
      * 
      * @param putDestinationPolicyRequest
      * @return A Java Future containing the result of the PutDestinationPolicy operation returned by the service.
@@ -1515,11 +1783,6 @@ public interface AWSLogsAsync extends AWSLogs {
      * Creates or updates an access policy associated with an existing destination. An access policy is an <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM policy document</a> that is
      * used to authorize claims to register a subscription filter against a given destination.
-     * </p>
-     * <p>
-     * If multiple Amazon Web Services accounts are sending logs to this destination, each sender account must be listed
-     * separately in the policy. The policy does not support specifying <code>*</code> as the Principal or the use of
-     * the <code>aws:PrincipalOrgId</code> global key.
      * </p>
      * 
      * @param putDestinationPolicyRequest
@@ -1539,13 +1802,14 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * Uploads a batch of log events to the specified log stream.
      * </p>
+     * <important>
      * <p>
-     * You must include the sequence token obtained from the response of the previous call. An upload in a newly created
-     * log stream does not require a sequence token. You can also get the sequence token in the
-     * <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>. If you call
-     * <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>,
-     * both calls might be successful or one might be rejected.
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted and never return <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid. You can use parallel
+     * <code>PutLogEvents</code> actions on the same log stream.
      * </p>
+     * </important>
      * <p>
      * The batch of events must satisfy the following constraints:
      * </p>
@@ -1563,16 +1827,16 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * None of the log events in the batch can be older than 14 days or older than the retention period of the log
-     * group.
+     * None of the log events in the batch can be more than 14 days in the past. Also, none of the log events can be
+     * from earlier than the retention period of the log group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological order by their timestamp. The timestamp is the time the
-     * event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services
-     * Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format:
-     * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.)
+     * The log events in the batch must be in chronological order by their timestamp. The timestamp is the time that the
+     * event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon
+     * Web Services Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET
+     * format: <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)
      * </p>
      * </li>
      * <li>
@@ -1585,15 +1849,16 @@ public interface AWSLogsAsync extends AWSLogs {
      * The maximum number of log events in a batch is 10,000.
      * </p>
      * </li>
-     * <li>
+     * <li><important>
      * <p>
-     * There is a quota of 5 requests per second per log stream. Additional requests are throttled. This quota can't be
-     * changed.
+     * The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code> actions
+     * are throttled based on a per-second per-account quota. You can request an increase to the per-second throttling
+     * quota by using the Service Quotas service.
      * </p>
-     * </li>
+     * </important></li>
      * </ul>
      * <p>
-     * If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is an invalid
+     * If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is a non-valid
      * Amazon Web Services access key ID or secret key.
      * </p>
      * 
@@ -1609,13 +1874,14 @@ public interface AWSLogsAsync extends AWSLogs {
      * <p>
      * Uploads a batch of log events to the specified log stream.
      * </p>
+     * <important>
      * <p>
-     * You must include the sequence token obtained from the response of the previous call. An upload in a newly created
-     * log stream does not require a sequence token. You can also get the sequence token in the
-     * <code>expectedSequenceToken</code> field from <code>InvalidSequenceTokenException</code>. If you call
-     * <code>PutLogEvents</code> twice within a narrow time period using the same value for <code>sequenceToken</code>,
-     * both calls might be successful or one might be rejected.
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted and never return <code>InvalidSequenceTokenException</code> or
+     * <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid. You can use parallel
+     * <code>PutLogEvents</code> actions on the same log stream.
      * </p>
+     * </important>
      * <p>
      * The batch of events must satisfy the following constraints:
      * </p>
@@ -1633,16 +1899,16 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * None of the log events in the batch can be older than 14 days or older than the retention period of the log
-     * group.
+     * None of the log events in the batch can be more than 14 days in the past. Also, none of the log events can be
+     * from earlier than the retention period of the log group.
      * </p>
      * </li>
      * <li>
      * <p>
-     * The log events in the batch must be in chronological order by their timestamp. The timestamp is the time the
-     * event occurred, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. (In Amazon Web Services
-     * Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format:
-     * yyyy-mm-ddThh:mm:ss. For example, 2017-09-15T13:45:30.)
+     * The log events in the batch must be in chronological order by their timestamp. The timestamp is the time that the
+     * event occurred, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon
+     * Web Services Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET
+     * format: <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)
      * </p>
      * </li>
      * <li>
@@ -1655,15 +1921,16 @@ public interface AWSLogsAsync extends AWSLogs {
      * The maximum number of log events in a batch is 10,000.
      * </p>
      * </li>
-     * <li>
+     * <li><important>
      * <p>
-     * There is a quota of 5 requests per second per log stream. Additional requests are throttled. This quota can't be
-     * changed.
+     * The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code> actions
+     * are throttled based on a per-second per-account quota. You can request an increase to the per-second throttling
+     * quota by using the Service Quotas service.
      * </p>
-     * </li>
+     * </important></li>
      * </ul>
      * <p>
-     * If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is an invalid
+     * If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most likely cause is a non-valid
      * Amazon Web Services access key ID or secret key.
      * </p>
      * 
@@ -1682,7 +1949,7 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to
+     * Creates or updates a metric filter and associates it with the specified log group. With metric filters, you can
      * configure rules to extract metric data from log events ingested through <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
      * >PutLogEvents</a>.
@@ -1702,8 +1969,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * metric.
      * </p>
      * <p>
-     * To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different
-     * name/value pairs for the dimensions that you have specified within a certain amount of time.
+     * CloudWatch Logs disables a metric filter if it generates 1,000 different name/value pairs for your specified
+     * dimensions within a certain amount of time. This helps to prevent accidental high charges.
      * </p>
      * <p>
      * You can also set up a billing alarm to alert you if your charges are higher than expected. For more information,
@@ -1723,7 +1990,7 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Creates or updates a metric filter and associates it with the specified log group. Metric filters allow you to
+     * Creates or updates a metric filter and associates it with the specified log group. With metric filters, you can
      * configure rules to extract metric data from log events ingested through <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
      * >PutLogEvents</a>.
@@ -1743,8 +2010,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * metric.
      * </p>
      * <p>
-     * To help prevent accidental high charges, Amazon disables a metric filter if it generates 1000 different
-     * name/value pairs for the dimensions that you have specified within a certain amount of time.
+     * CloudWatch Logs disables a metric filter if it generates 1,000 different name/value pairs for your specified
+     * dimensions within a certain amount of time. This helps to prevent accidental high charges.
      * </p>
      * <p>
      * You can also set up a billing alarm to alert you if your charges are higher than expected. For more information,
@@ -1777,7 +2044,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * To update a query definition, specify its <code>queryDefinitionId</code> in your request. The values of
      * <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code> are changed to the values that you
      * specify in your update operation. No current values are retained from the current query definition. For example,
-     * if you update a current query definition that includes log groups, and you don't specify the
+     * imagine updating a current query definition that includes log groups. If you don't specify the
      * <code>logGroupNames</code> parameter in your update operation, the query definition changes to contain no log
      * groups.
      * </p>
@@ -1803,7 +2070,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * To update a query definition, specify its <code>queryDefinitionId</code> in your request. The values of
      * <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code> are changed to the values that you
      * specify in your update operation. No current values are retained from the current query definition. For example,
-     * if you update a current query definition that includes log groups, and you don't specify the
+     * imagine updating a current query definition that includes log groups. If you don't specify the
      * <code>logGroupNames</code> parameter in your update operation, the query definition changes to contain no log
      * groups.
      * </p>
@@ -1859,9 +2126,22 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Sets the retention of the specified log group. A retention policy allows you to configure the number of days for
+     * Sets the retention of the specified log group. With a retention policy, you can configure the number of days for
      * which to retain log events in the specified log group.
      * </p>
+     * <note>
+     * <p>
+     * CloudWatch Logs doesn’t immediately delete log events when they reach their retention setting. It typically takes
+     * up to 72 hours after that before log events are deleted, but in rare situations might take longer.
+     * </p>
+     * <p>
+     * To illustrate, imagine that you change a log group to have a longer retention setting when it contains log events
+     * that are past the expiration date, but haven’t been deleted. Those log events will take up to 72 hours to be
+     * deleted after the new retention date is reached. To make sure that log data is deleted permanently, keep a log
+     * group at its lower retention setting until 72 hours after the previous retention period ends. Alternatively, wait
+     * to change the retention setting until you confirm that the earlier log events are deleted.
+     * </p>
+     * </note>
      * 
      * @param putRetentionPolicyRequest
      * @return A Java Future containing the result of the PutRetentionPolicy operation returned by the service.
@@ -1873,9 +2153,22 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Sets the retention of the specified log group. A retention policy allows you to configure the number of days for
+     * Sets the retention of the specified log group. With a retention policy, you can configure the number of days for
      * which to retain log events in the specified log group.
      * </p>
+     * <note>
+     * <p>
+     * CloudWatch Logs doesn’t immediately delete log events when they reach their retention setting. It typically takes
+     * up to 72 hours after that before log events are deleted, but in rare situations might take longer.
+     * </p>
+     * <p>
+     * To illustrate, imagine that you change a log group to have a longer retention setting when it contains log events
+     * that are past the expiration date, but haven’t been deleted. Those log events will take up to 72 hours to be
+     * deleted after the new retention date is reached. To make sure that log data is deleted permanently, keep a log
+     * group at its lower retention setting until 72 hours after the previous retention period ends. Alternatively, wait
+     * to change the retention setting until you confirm that the earlier log events are deleted.
+     * </p>
+     * </note>
      * 
      * @param putRetentionPolicyRequest
      * @param asyncHandler
@@ -1892,11 +2185,11 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Creates or updates a subscription filter and associates it with the specified log group. Subscription filters
-     * allow you to subscribe to a real-time stream of log events ingested through <a
+     * Creates or updates a subscription filter and associates it with the specified log group. With subscription
+     * filters, you can subscribe to a real-time stream of log events ingested through <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
      * >PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving
-     * service, they are Base64 encoded and compressed with the gzip format.
+     * service, they are Base64 encoded and compressed with the GZIP format.
      * </p>
      * <p>
      * The following destinations are supported for subscription filters:
@@ -1904,7 +2197,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <ul>
      * <li>
      * <p>
-     * An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.
+     * An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account
+     * delivery.
      * </p>
      * </li>
      * <li>
@@ -1914,7 +2208,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose delivery stream that belongs to the same account as the subscription filter, for
+     * An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for
      * same-account delivery.
      * </p>
      * </li>
@@ -1943,11 +2237,11 @@ public interface AWSLogsAsync extends AWSLogs {
 
     /**
      * <p>
-     * Creates or updates a subscription filter and associates it with the specified log group. Subscription filters
-     * allow you to subscribe to a real-time stream of log events ingested through <a
+     * Creates or updates a subscription filter and associates it with the specified log group. With subscription
+     * filters, you can subscribe to a real-time stream of log events ingested through <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html"
      * >PutLogEvents</a> and have them delivered to a specific destination. When log events are sent to the receiving
-     * service, they are Base64 encoded and compressed with the gzip format.
+     * service, they are Base64 encoded and compressed with the GZIP format.
      * </p>
      * <p>
      * The following destinations are supported for subscription filters:
@@ -1955,7 +2249,8 @@ public interface AWSLogsAsync extends AWSLogs {
      * <ul>
      * <li>
      * <p>
-     * An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.
+     * An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account
+     * delivery.
      * </p>
      * </li>
      * <li>
@@ -1965,7 +2260,7 @@ public interface AWSLogsAsync extends AWSLogs {
      * </li>
      * <li>
      * <p>
-     * An Amazon Kinesis Firehose delivery stream that belongs to the same account as the subscription filter, for
+     * An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for
      * same-account delivery.
      * </p>
      * </li>
@@ -2008,8 +2303,19 @@ public interface AWSLogsAsync extends AWSLogs {
      * Query Syntax</a>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of execution. If your queries are timing out, reduce the time range being
+     * Queries time out after 15 minutes of runtime. If your queries are timing out, reduce the time range being
      * searched or partition your query into a number of queries.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to
+     * start a query in a linked source account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>. For a cross-account <code>StartQuery</code> operation, the query
+     * definition must be defined in the monitoring account.
+     * </p>
+     * <p>
+     * You can have up to 20 concurrent CloudWatch Logs insights queries, including queries that have been added to
+     * dashboards.
      * </p>
      * 
      * @param startQueryRequest
@@ -2031,8 +2337,19 @@ public interface AWSLogsAsync extends AWSLogs {
      * Query Syntax</a>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of execution. If your queries are timing out, reduce the time range being
+     * Queries time out after 15 minutes of runtime. If your queries are timing out, reduce the time range being
      * searched or partition your query into a number of queries.
+     * </p>
+     * <p>
+     * If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to
+     * start a query in a linked source account. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html"
+     * >CloudWatch cross-account observability</a>. For a cross-account <code>StartQuery</code> operation, the query
+     * definition must be defined in the monitoring account.
+     * </p>
+     * <p>
+     * You can have up to 20 concurrent CloudWatch Logs insights queries, including queries that have been added to
+     * dashboards.
      * </p>
      * 
      * @param startQueryRequest
@@ -2082,15 +2399,22 @@ public interface AWSLogsAsync extends AWSLogs {
             com.amazonaws.handlers.AsyncHandler<StopQueryRequest, StopQueryResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * The TagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>
+     * instead.
+     * </p>
+     * </important>
      * <p>
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To remove tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
-     * >UntagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a>.
      * </p>
      * <p>
      * For more information about tags, see <a href=
@@ -2111,18 +2435,26 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest);
 
     /**
+     * <important>
+     * <p>
+     * The TagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>
+     * instead.
+     * </p>
+     * </important>
      * <p>
      * Adds or updates the specified tags for the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To remove tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagLogGroup.html"
-     * >UntagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To remove tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a>.
      * </p>
      * <p>
      * For more information about tags, see <a href=
@@ -2147,8 +2479,76 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<TagLogGroupResult> tagLogGroupAsync(TagLogGroupRequest tagLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<TagLogGroupRequest, TagLogGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only
+     * CloudWatch Logs resources that can be tagged are log groups and destinations.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
+     * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
+     * characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key
+     * that is already associated with the alarm, the new tag value that you specify replaces the previous value for
+     * that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a CloudWatch Logs resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLogsAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only
+     * CloudWatch Logs resources that can be tagged are log groups and destinations.
+     * </p>
+     * <p>
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
+     * granting a user permission to access or change only resources with certain tag values.
+     * </p>
+     * <p>
+     * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
+     * characters.
+     * </p>
+     * <p>
+     * You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag
+     * key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key
+     * that is already associated with the alarm, the new tag value that you specify replaces the previous value for
+     * that tag.
+     * </p>
+     * <p>
+     * You can associate as many as 50 tags with a CloudWatch Logs resource.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSLogsAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
 
     /**
      * <p>
@@ -2184,14 +2584,21 @@ public interface AWSLogsAsync extends AWSLogs {
             com.amazonaws.handlers.AsyncHandler<TestMetricFilterRequest, TestMetricFilterResult> asyncHandler);
 
     /**
+     * <important>
+     * <p>
+     * The UntagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To add tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
      * </p>
      * <p>
      * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
@@ -2204,17 +2611,25 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest);
 
     /**
+     * <important>
+     * <p>
+     * The UntagLogGroup operation is on the path to deprecation. We recommend that you use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UntagResource.html"
+     * >UntagResource</a> instead.
+     * </p>
+     * </important>
      * <p>
      * Removes the specified tags from the specified log group.
      * </p>
      * <p>
      * To list the tags for a log group, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsLogGroup.html"
-     * >ListTagsLogGroup</a>. To add tags, use <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagLogGroup.html">TagLogGroup</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_ListTagsForResource.html"
+     * >ListTagsForResource</a>. To add tags, use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_TagResource.html">TagResource</a>.
      * </p>
      * <p>
      * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
@@ -2231,7 +2646,39 @@ public interface AWSLogsAsync extends AWSLogs {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagLogGroup" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<UntagLogGroupResult> untagLogGroupAsync(UntagLogGroupRequest untagLogGroupRequest,
             com.amazonaws.handlers.AsyncHandler<UntagLogGroupRequest, UntagLogGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLogsAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from the specified resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSLogsAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

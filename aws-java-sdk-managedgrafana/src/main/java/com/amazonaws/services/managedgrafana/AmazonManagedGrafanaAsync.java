@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -120,9 +120,10 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
      * 
@@ -136,9 +137,10 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
      * 
@@ -188,7 +190,7 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
      * 
      * @param deleteWorkspaceApiKeyRequest
@@ -201,7 +203,7 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
      * 
      * @param deleteWorkspaceApiKeyRequest
@@ -282,6 +284,41 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
     java.util.concurrent.Future<DescribeWorkspaceAuthenticationResult> describeWorkspaceAuthenticationAsync(
             DescribeWorkspaceAuthenticationRequest describeWorkspaceAuthenticationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceAuthenticationRequest, DescribeWorkspaceAuthenticationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @return A Java Future containing the result of the DescribeWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkspaceConfigurationResult> describeWorkspaceConfigurationAsync(
+            DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeWorkspaceConfigurationResult> describeWorkspaceConfigurationAsync(
+            DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorkspaceConfigurationRequest, DescribeWorkspaceConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -536,8 +573,8 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -559,8 +596,8 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -619,5 +656,40 @@ public interface AmazonManagedGrafanaAsync extends AmazonManagedGrafana {
     java.util.concurrent.Future<UpdateWorkspaceAuthenticationResult> updateWorkspaceAuthenticationAsync(
             UpdateWorkspaceAuthenticationRequest updateWorkspaceAuthenticationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateWorkspaceAuthenticationRequest, UpdateWorkspaceAuthenticationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @return A Java Future containing the result of the UpdateWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsync.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkspaceConfigurationResult> updateWorkspaceConfigurationAsync(
+            UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWorkspaceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonManagedGrafanaAsyncHandler.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWorkspaceConfigurationResult> updateWorkspaceConfigurationAsync(
+            UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorkspaceConfigurationRequest, UpdateWorkspaceConfigurationResult> asyncHandler);
 
 }

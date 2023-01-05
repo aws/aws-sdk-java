@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>CancelServiceSoftwareUpdate</a> </code> operation. Specifies the name
- * of the domain that you wish to cancel a service software update on.
+ * Container for the request parameters to cancel a service software update.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,18 +27,18 @@ public class CancelServiceSoftwareUpdateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the domain that you want to stop the latest service software update on.
+     * Name of the OpenSearch Service domain that you want to cancel the service software update on.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * The name of the domain that you want to stop the latest service software update on.
+     * Name of the OpenSearch Service domain that you want to cancel the service software update on.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain that you want to stop the latest service software update on.
+     *        Name of the OpenSearch Service domain that you want to cancel the service software update on.
      */
 
     public void setDomainName(String domainName) {
@@ -48,10 +47,10 @@ public class CancelServiceSoftwareUpdateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the domain that you want to stop the latest service software update on.
+     * Name of the OpenSearch Service domain that you want to cancel the service software update on.
      * </p>
      * 
-     * @return The name of the domain that you want to stop the latest service software update on.
+     * @return Name of the OpenSearch Service domain that you want to cancel the service software update on.
      */
 
     public String getDomainName() {
@@ -60,11 +59,11 @@ public class CancelServiceSoftwareUpdateRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The name of the domain that you want to stop the latest service software update on.
+     * Name of the OpenSearch Service domain that you want to cancel the service software update on.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain that you want to stop the latest service software update on.
+     *        Name of the OpenSearch Service domain that you want to cancel the service software update on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

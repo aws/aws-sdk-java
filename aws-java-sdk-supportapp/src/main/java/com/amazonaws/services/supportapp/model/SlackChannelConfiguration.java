@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for a Slack channel that you added to an Amazon Web Services account.
+ * The configuration for a Slack channel that you added for your Amazon Web Services account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/SlackChannelConfiguration"
@@ -36,7 +36,8 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
     private String channelId;
     /**
      * <p>
-     * The name of the Slack channel that you configured with the Amazon Web Services Support App.
+     * The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web
+     * Services account.
      * </p>
      */
     private String channelName;
@@ -75,7 +76,7 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
     private Boolean notifyOnResolveCase;
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      */
     private String teamId;
@@ -122,11 +123,13 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the Slack channel that you configured with the Amazon Web Services Support App.
+     * The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web
+     * Services account.
      * </p>
      * 
      * @param channelName
-     *        The name of the Slack channel that you configured with the Amazon Web Services Support App.
+     *        The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon
+     *        Web Services account.
      */
 
     public void setChannelName(String channelName) {
@@ -135,10 +138,12 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the Slack channel that you configured with the Amazon Web Services Support App.
+     * The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web
+     * Services account.
      * </p>
      * 
-     * @return The name of the Slack channel that you configured with the Amazon Web Services Support App.
+     * @return The name of the Slack channel that you configured with the Amazon Web Services Support App for your
+     *         Amazon Web Services account.
      */
 
     public String getChannelName() {
@@ -147,11 +152,13 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The name of the Slack channel that you configured with the Amazon Web Services Support App.
+     * The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon Web
+     * Services account.
      * </p>
      * 
      * @param channelName
-     *        The name of the Slack channel that you configured with the Amazon Web Services Support App.
+     *        The name of the Slack channel that you configured with the Amazon Web Services Support App for your Amazon
+     *        Web Services account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,11 +442,11 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public void setTeamId(String teamId) {
@@ -448,10 +455,10 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
-     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public String getTeamId() {
@@ -460,11 +467,11 @@ public class SlackChannelConfiguration implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

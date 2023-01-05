@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,8 @@ public enum TargetDestination {
     AmazonRelationalDatabaseServiceOnPostgreSQL("Amazon Relational Database Service on PostgreSQL"),
     AmazonDocumentDB("Amazon DocumentDB"),
     AmazonDynamoDB("Amazon DynamoDB"),
-    AmazonRelationalDatabaseService("Amazon Relational Database Service");
+    AmazonRelationalDatabaseService("Amazon Relational Database Service"),
+    BabelfishForAuroraPostgreSQL("Babelfish for Aurora PostgreSQL");
 
     private String value;
 

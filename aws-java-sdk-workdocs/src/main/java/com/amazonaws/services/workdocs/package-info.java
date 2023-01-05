@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,37 @@
  * perform the three use cases above, as well as give users the ability to grant access on a selective basis using the
  * IAM model.
  * </p>
+ * <note>
+ * <p>
+ * The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>READ (Get*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>LIST (Describe*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DELETE*, CANCEL</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For information about Amazon WorkDocs API pricing, see <a href="https://aws.amazon.com/workdocs/pricing/">Amazon
+ * WorkDocs Pricing</a>.
+ * </p>
+ * </note>
  */
 package com.amazonaws.services.workdocs;
 

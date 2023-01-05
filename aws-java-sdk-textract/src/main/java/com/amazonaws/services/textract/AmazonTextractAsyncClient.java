@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -306,6 +306,72 @@ public class AmazonTextractAsyncClient extends AmazonTextractClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetLendingAnalysisResult> getLendingAnalysisAsync(GetLendingAnalysisRequest request) {
+
+        return getLendingAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLendingAnalysisResult> getLendingAnalysisAsync(final GetLendingAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLendingAnalysisRequest, GetLendingAnalysisResult> asyncHandler) {
+        final GetLendingAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLendingAnalysisResult>() {
+            @Override
+            public GetLendingAnalysisResult call() throws Exception {
+                GetLendingAnalysisResult result = null;
+
+                try {
+                    result = executeGetLendingAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLendingAnalysisSummaryResult> getLendingAnalysisSummaryAsync(GetLendingAnalysisSummaryRequest request) {
+
+        return getLendingAnalysisSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLendingAnalysisSummaryResult> getLendingAnalysisSummaryAsync(final GetLendingAnalysisSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLendingAnalysisSummaryRequest, GetLendingAnalysisSummaryResult> asyncHandler) {
+        final GetLendingAnalysisSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLendingAnalysisSummaryResult>() {
+            @Override
+            public GetLendingAnalysisSummaryResult call() throws Exception {
+                GetLendingAnalysisSummaryResult result = null;
+
+                try {
+                    result = executeGetLendingAnalysisSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartDocumentAnalysisResult> startDocumentAnalysisAsync(StartDocumentAnalysisRequest request) {
 
         return startDocumentAnalysisAsync(request, null);
@@ -389,6 +455,39 @@ public class AmazonTextractAsyncClient extends AmazonTextractClient implements A
 
                 try {
                     result = executeStartExpenseAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLendingAnalysisResult> startLendingAnalysisAsync(StartLendingAnalysisRequest request) {
+
+        return startLendingAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartLendingAnalysisResult> startLendingAnalysisAsync(final StartLendingAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartLendingAnalysisRequest, StartLendingAnalysisResult> asyncHandler) {
+        final StartLendingAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartLendingAnalysisResult>() {
+            @Override
+            public StartLendingAnalysisResult call() throws Exception {
+                StartLendingAnalysisResult result = null;
+
+                try {
+                    result = executeStartLendingAnalysis(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

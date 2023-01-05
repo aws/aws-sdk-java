@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class CategoryPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> INPUTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("InputType").build();
 
     private static final CategoryPropertiesMarshaller instance = new CategoryPropertiesMarshaller();
 
@@ -57,6 +59,7 @@ public class CategoryPropertiesMarshaller {
             protocolMarshaller.marshall(categoryProperties.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(categoryProperties.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(categoryProperties.getLastUpdateTime(), LASTUPDATETIME_BINDING);
+            protocolMarshaller.marshall(categoryProperties.getInputType(), INPUTTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,23 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * You requested the <a>CreateKey</a> or <a>GenerateRandom</a> operation in a custom key store that is not connected.
- * These operations are valid only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+ * You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a <code>ConnectionState</code> of
+ * <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
+ * values. To reconnect a custom key store in a <code>FAILED</code> state, disconnect it
+ * (<a>DisconnectCustomKeyStore</a>), then connect it (<code>ConnectCustomKeyStore</code>).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You requested the <a>CreateKey</a> operation in a custom key store that is not connected. This operations is valid
+ * only when the custom key store <code>ConnectionState</code> is <code>CONNECTED</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store with a <code>ConnectionState</code>
+ * of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>. This operation is valid for all other
+ * <code>ConnectionState</code> values.
  * </p>
  * </li>
  * <li>
@@ -38,9 +53,8 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with a <code>ConnectionState</code> of
- * <code>DISCONNECTING</code> or <code>FAILED</code>. This operation is valid for all other <code>ConnectionState</code>
- * values.
+ * You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is not connected. This operation is
+ * valid only when the CloudHSM key store <code>ConnectionState</code> is <code>CONNECTED</code>.
  * </p>
  * </li>
  * </ul>

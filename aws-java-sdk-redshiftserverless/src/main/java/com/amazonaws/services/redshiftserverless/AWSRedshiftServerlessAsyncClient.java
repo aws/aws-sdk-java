@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -683,6 +683,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest request) {
+
+        return getTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(final GetTableRestoreStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetTableRestoreStatusRequest, GetTableRestoreStatusResult> asyncHandler) {
+        final GetTableRestoreStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetTableRestoreStatusResult>() {
+            @Override
+            public GetTableRestoreStatusResult call() throws Exception {
+                GetTableRestoreStatusResult result = null;
+
+                try {
+                    result = executeGetTableRestoreStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUsageLimitResult> getUsageLimitAsync(GetUsageLimitRequest request) {
 
         return getUsageLimitAsync(request, null);
@@ -881,6 +914,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
     }
 
     @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest request) {
+
+        return listTableRestoreStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(final ListTableRestoreStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTableRestoreStatusRequest, ListTableRestoreStatusResult> asyncHandler) {
+        final ListTableRestoreStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTableRestoreStatusResult>() {
+            @Override
+            public ListTableRestoreStatusResult call() throws Exception {
+                ListTableRestoreStatusResult result = null;
+
+                try {
+                    result = executeListTableRestoreStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1063,6 +1129,39 @@ public class AWSRedshiftServerlessAsyncClient extends AWSRedshiftServerlessClien
 
                 try {
                     result = executeRestoreFromSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest request) {
+
+        return restoreTableFromSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(final RestoreTableFromSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreTableFromSnapshotRequest, RestoreTableFromSnapshotResult> asyncHandler) {
+        final RestoreTableFromSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreTableFromSnapshotResult>() {
+            @Override
+            public RestoreTableFromSnapshotResult call() throws Exception {
+                RestoreTableFromSnapshotResult result = null;
+
+                try {
+                    result = executeRestoreTableFromSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

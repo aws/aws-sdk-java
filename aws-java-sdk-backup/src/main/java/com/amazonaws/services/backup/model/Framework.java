@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,9 +57,9 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
     private Integer numberOfControls;
     /**
      * <p>
-     * The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code>
+     * is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00
+     * PM 8 hours behind UTC.
      * </p>
      */
     private java.util.Date creationTime;
@@ -247,15 +247,15 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code>
+     * is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00
+     * PM 8 hours behind UTC.
      * </p>
      * 
      * @param creationTime
-     *        The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The
-     *        value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087
-     *        represents Friday, January 26, 2018 12:11:30.087 AM.
+     *        The date and time that a framework is created, in ISO 8601 representation. The value of
+     *        <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00
+     *        represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -264,14 +264,14 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code>
+     * is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00
+     * PM 8 hours behind UTC.
      * </p>
      * 
-     * @return The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The
-     *         value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087
-     *         represents Friday, January 26, 2018 12:11:30.087 AM.
+     * @return The date and time that a framework is created, in ISO 8601 representation. The value of
+     *         <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00
+     *         represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
      */
 
     public java.util.Date getCreationTime() {
@@ -280,15 +280,15 @@ public class Framework implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     * January 26, 2018 12:11:30.087 AM.
+     * The date and time that a framework is created, in ISO 8601 representation. The value of <code>CreationTime</code>
+     * is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00
+     * PM 8 hours behind UTC.
      * </p>
      * 
      * @param creationTime
-     *        The date and time that a framework is created, in Unix format and Coordinated Universal Time (UTC). The
-     *        value of <code>CreationTime</code> is accurate to milliseconds. For example, the value 1516925490.087
-     *        represents Friday, January 26, 2018 12:11:30.087 AM.
+     *        The date and time that a framework is created, in ISO 8601 representation. The value of
+     *        <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00
+     *        represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

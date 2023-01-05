@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public class UpdateUsageLimitRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new limit amount. For more information about this parameter.
+     * The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If
+     * data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The
+     * value must be a positive number.
      * </p>
      */
     private Long amount;
@@ -46,11 +48,15 @@ public class UpdateUsageLimitRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new limit amount. For more information about this parameter.
+     * The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If
+     * data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The
+     * value must be a positive number.
      * </p>
      * 
      * @param amount
-     *        The new limit amount. For more information about this parameter.
+     *        The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour.
+     *        If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account
+     *        sharing. The value must be a positive number.
      */
 
     public void setAmount(Long amount) {
@@ -59,10 +65,14 @@ public class UpdateUsageLimitRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new limit amount. For more information about this parameter.
+     * The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If
+     * data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The
+     * value must be a positive number.
      * </p>
      * 
-     * @return The new limit amount. For more information about this parameter.
+     * @return The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour.
+     *         If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account
+     *         sharing. The value must be a positive number.
      */
 
     public Long getAmount() {
@@ -71,11 +81,15 @@ public class UpdateUsageLimitRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The new limit amount. For more information about this parameter.
+     * The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour. If
+     * data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account sharing. The
+     * value must be a positive number.
      * </p>
      * 
      * @param amount
-     *        The new limit amount. For more information about this parameter.
+     *        The new limit amount. If time-based, this amount is in Redshift Processing Units (RPU) consumed per hour.
+     *        If data-based, this amount is in terabytes (TB) of data transferred between Regions in cross-account
+     *        sharing. The value must be a positive number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

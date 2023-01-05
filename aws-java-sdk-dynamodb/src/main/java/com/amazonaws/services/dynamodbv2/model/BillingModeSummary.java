@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains the details for the read/write capacity mode.
+ * Contains the details for the read/write capacity mode. This page talks about <code>PROVISIONED</code> and
+ * <code>PAY_PER_REQUEST</code> billing modes. For more information about these modes, see <a
+ * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html"
+ * >Read/write capacity mode</a>.
  * </p>
+ * <note>
+ * <p>
+ * You may need to switch to on-demand mode at least once in order to return a <code>BillingModeSummary</code> response.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BillingModeSummary" target="_top">AWS API
  *      Documentation</a>

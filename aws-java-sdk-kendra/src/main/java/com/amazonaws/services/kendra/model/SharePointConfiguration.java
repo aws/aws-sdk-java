@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,9 +50,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
-     * >Authentication for a SharePoint data source</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
+     * SharePoint data source</a>.
      * </p>
      */
     private String secretArn;
@@ -306,9 +305,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
-     * >Authentication for a SharePoint data source</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
+     * SharePoint data source</a>.
      * </p>
      * 
      * @param secretArn
@@ -319,9 +317,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        SharePoint Data Source</a>.</p>
      *        <p>
      *        You can also provide OAuth authentication credentials of user name, password, client ID, and client
-     *        secret. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
-     *        >Authentication for a SharePoint data source</a>.
+     *        secret. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a SharePoint data
+     *        source</a>.
      */
 
     public void setSecretArn(String secretArn) {
@@ -338,9 +336,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
-     * >Authentication for a SharePoint data source</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
+     * SharePoint data source</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password
@@ -350,9 +347,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *         SharePoint Data Source</a>.</p>
      *         <p>
      *         You can also provide OAuth authentication credentials of user name, password, client ID, and client
-     *         secret. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
-     *         >Authentication for a SharePoint data source</a>.
+     *         secret. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a SharePoint data
+     *         source</a>.
      */
 
     public String getSecretArn() {
@@ -369,9 +366,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * You can also provide OAuth authentication credentials of user name, password, client ID, and client secret. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
-     * >Authentication for a SharePoint data source</a>.
+     * more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
+     * SharePoint data source</a>.
      * </p>
      * 
      * @param secretArn
@@ -382,9 +378,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      *        SharePoint Data Source</a>.</p>
      *        <p>
      *        You can also provide OAuth authentication credentials of user name, password, client ID, and client
-     *        secret. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html#sharepoint-authentication"
-     *        >Authentication for a SharePoint data source</a>.
+     *        secret. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a SharePoint data
+     *        source</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

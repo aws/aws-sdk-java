@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -224,6 +224,25 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Retrieves a list of data quality results for the specified result IDs.
+     * </p>
+     * 
+     * @param batchGetDataQualityResultRequest
+     * @return Result of the BatchGetDataQualityResult operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.BatchGetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResult" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchGetDataQualityResultResult batchGetDataQualityResult(BatchGetDataQualityResultRequest batchGetDataQualityResultRequest);
+
+    /**
+     * <p>
      * Returns a list of resource metadata for a given list of development endpoint names. After calling the
      * <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been
      * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
@@ -374,6 +393,50 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     BatchUpdatePartitionResult batchUpdatePartition(BatchUpdatePartitionRequest batchUpdatePartitionRequest);
+
+    /**
+     * <p>
+     * Cancels the specified recommendation run that was being used to generate rules.
+     * </p>
+     * 
+     * @param cancelDataQualityRuleRecommendationRunRequest
+     * @return Result of the CancelDataQualityRuleRecommendationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.CancelDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelDataQualityRuleRecommendationRunResult cancelDataQualityRuleRecommendationRun(
+            CancelDataQualityRuleRecommendationRunRequest cancelDataQualityRuleRecommendationRunRequest);
+
+    /**
+     * <p>
+     * Cancels a run where a ruleset is being evaluated against a data source.
+     * </p>
+     * 
+     * @param cancelDataQualityRulesetEvaluationRunRequest
+     * @return Result of the CancelDataQualityRulesetEvaluationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.CancelDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelDataQualityRulesetEvaluationRunResult cancelDataQualityRulesetEvaluationRun(
+            CancelDataQualityRulesetEvaluationRunRequest cancelDataQualityRulesetEvaluationRunRequest);
 
     /**
      * <p>
@@ -566,6 +629,33 @@ public interface AWSGlue {
      *      API Documentation</a>
      */
     CreateCustomEntityTypeResult createCustomEntityType(CreateCustomEntityTypeRequest createCustomEntityTypeRequest);
+
+    /**
+     * <p>
+     * Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
+     * </p>
+     * <p>
+     * You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue
+     * developer guide.
+     * </p>
+     * 
+     * @param createDataQualityRulesetRequest
+     * @return Result of the CreateDataQualityRuleset operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @sample AWSGlue.CreateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateDataQualityRulesetResult createDataQualityRuleset(CreateDataQualityRulesetRequest createDataQualityRulesetRequest);
 
     /**
      * <p>
@@ -1143,6 +1233,27 @@ public interface AWSGlue {
      *      API Documentation</a>
      */
     DeleteCustomEntityTypeResult deleteCustomEntityType(DeleteCustomEntityTypeRequest deleteCustomEntityTypeRequest);
+
+    /**
+     * <p>
+     * Deletes a data quality ruleset.
+     * </p>
+     * 
+     * @param deleteDataQualityRulesetRequest
+     * @return Result of the DeleteDataQualityRuleset operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.DeleteDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteDataQualityRulesetResult deleteDataQualityRuleset(DeleteDataQualityRulesetRequest deleteDataQualityRulesetRequest);
 
     /**
      * <p>
@@ -1862,6 +1973,92 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Retrieves the result of a data quality rule evaluation.
+     * </p>
+     * 
+     * @param getDataQualityResultRequest
+     * @return Result of the GetDataQualityResult operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @sample AWSGlue.GetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDataQualityResultResult getDataQualityResult(GetDataQualityResultRequest getDataQualityResultRequest);
+
+    /**
+     * <p>
+     * Gets the specified recommendation run that was used to generate rules.
+     * </p>
+     * 
+     * @param getDataQualityRuleRecommendationRunRequest
+     * @return Result of the GetDataQualityRuleRecommendationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.GetDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDataQualityRuleRecommendationRunResult getDataQualityRuleRecommendationRun(
+            GetDataQualityRuleRecommendationRunRequest getDataQualityRuleRecommendationRunRequest);
+
+    /**
+     * <p>
+     * Returns an existing ruleset by identifier or name.
+     * </p>
+     * 
+     * @param getDataQualityRulesetRequest
+     * @return Result of the GetDataQualityRuleset operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.GetDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDataQualityRulesetResult getDataQualityRuleset(GetDataQualityRulesetRequest getDataQualityRulesetRequest);
+
+    /**
+     * <p>
+     * Retrieves a specific run where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param getDataQualityRulesetEvaluationRunRequest
+     * @return Result of the GetDataQualityRulesetEvaluationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.GetDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDataQualityRulesetEvaluationRunResult getDataQualityRulesetEvaluationRun(
+            GetDataQualityRulesetEvaluationRunRequest getDataQualityRulesetEvaluationRunRequest);
+
+    /**
+     * <p>
      * Retrieves the definition of a specified database.
      * </p>
      * 
@@ -1953,7 +2150,7 @@ public interface AWSGlue {
 
     /**
      * <p>
-     * Retrieves all the development endpoints in this AWS account.
+     * Retrieves all the development endpoints in this Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -2004,6 +2201,29 @@ public interface AWSGlue {
      * <p>
      * Returns information on a job bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getJobBookmarkRequest
      * @return Result of the GetJobBookmark operation returned by the service.
@@ -3018,6 +3238,86 @@ public interface AWSGlue {
 
     /**
      * <p>
+     * Returns all data quality execution results for your account.
+     * </p>
+     * 
+     * @param listDataQualityResultsRequest
+     * @return Result of the ListDataQualityResults operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListDataQualityResultsResult listDataQualityResults(ListDataQualityResultsRequest listDataQualityResultsRequest);
+
+    /**
+     * <p>
+     * Lists the recommendation runs meeting the filter criteria.
+     * </p>
+     * 
+     * @param listDataQualityRuleRecommendationRunsRequest
+     * @return Result of the ListDataQualityRuleRecommendationRuns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityRuleRecommendationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDataQualityRuleRecommendationRunsResult listDataQualityRuleRecommendationRuns(
+            ListDataQualityRuleRecommendationRunsRequest listDataQualityRuleRecommendationRunsRequest);
+
+    /**
+     * <p>
+     * Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param listDataQualityRulesetEvaluationRunsRequest
+     * @return Result of the ListDataQualityRulesetEvaluationRuns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityRulesetEvaluationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDataQualityRulesetEvaluationRunsResult listDataQualityRulesetEvaluationRuns(
+            ListDataQualityRulesetEvaluationRunsRequest listDataQualityRulesetEvaluationRunsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of rulesets for the specified list of Glue tables.
+     * </p>
+     * 
+     * @param listDataQualityRulesetsRequest
+     * @return Result of the ListDataQualityRulesets operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityRulesets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListDataQualityRulesetsResult listDataQualityRulesets(ListDataQualityRulesetsRequest listDataQualityRulesetsRequest);
+
+    /**
+     * <p>
      * Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the
      * resources with the specified tag. This operation allows you to see which resources are available in your account,
      * and their names.
@@ -3431,6 +3731,29 @@ public interface AWSGlue {
      * <p>
      * Resets a bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetJobBookmarkRequest
      * @return Result of the ResetJobBookmark operation returned by the service.
@@ -3600,6 +3923,56 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     StartCrawlerScheduleResult startCrawlerSchedule(StartCrawlerScheduleRequest startCrawlerScheduleRequest);
+
+    /**
+     * <p>
+     * Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data
+     * Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the
+     * ruleset and modify the generated ruleset to your liking.
+     * </p>
+     * 
+     * @param startDataQualityRuleRecommendationRunRequest
+     * @return Result of the StartDataQualityRuleRecommendationRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @sample AWSGlue.StartDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDataQualityRuleRecommendationRunResult startDataQualityRuleRecommendationRun(
+            StartDataQualityRuleRecommendationRunRequest startDataQualityRuleRecommendationRunRequest);
+
+    /**
+     * <p>
+     * Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the
+     * ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the
+     * <code>GetDataQualityResult</code> API.
+     * </p>
+     * 
+     * @param startDataQualityRulesetEvaluationRunRequest
+     * @return Result of the StartDataQualityRulesetEvaluationRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @sample AWSGlue.StartDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDataQualityRulesetEvaluationRunResult startDataQualityRulesetEvaluationRun(
+            StartDataQualityRulesetEvaluationRunRequest startDataQualityRulesetEvaluationRunRequest);
 
     /**
      * <p>
@@ -4146,6 +4519,33 @@ public interface AWSGlue {
      *      Documentation</a>
      */
     UpdateCrawlerScheduleResult updateCrawlerSchedule(UpdateCrawlerScheduleRequest updateCrawlerScheduleRequest);
+
+    /**
+     * <p>
+     * Updates the specified data quality ruleset.
+     * </p>
+     * 
+     * @param updateDataQualityRulesetRequest
+     * @return Result of the UpdateDataQualityRuleset operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws IdempotentParameterMismatchException
+     *         The same unique identifier was associated with two different records.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @sample AWSGlue.UpdateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateDataQualityRulesetResult updateDataQualityRuleset(UpdateDataQualityRulesetRequest updateDataQualityRulesetRequest);
 
     /**
      * <p>

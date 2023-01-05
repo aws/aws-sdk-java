@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,9 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
      * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
-     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select
+     * Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 *
+     * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
      */
     private String colorSpaceConversion;
     /** Contrast level. */
@@ -62,6 +64,15 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     private String sampleRangeConversion;
     /** Saturation level. */
     private Integer saturation;
+    /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels within
+     * HDR10 outputs. The following color metadata must be present in your SDR input: color primaries, transfer
+     * characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you want to correct
+     * input color metadata, manually specify a color space in the input video selector. For 1,000 nit peak brightness
+     * displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to
+     * use the default value of 100, or specify an integer from 100 to 1000.
+     */
+    private Integer sdrReferenceWhiteLevel;
 
     /**
      * Brightness level.
@@ -101,14 +112,18 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
      * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
-     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select
+     * Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 *
+     * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
      * 
      * @param colorSpaceConversion
      *        Specify the color space you want for this output. The service supports conversion between HDR formats,
      *        between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
      *        dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
      *        output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
-     *        manually regrading from HDR to SDR.
+     *        manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the
+     *        following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients:
+     *        BT.709
      * @see ColorSpaceConversion
      */
 
@@ -120,13 +135,17 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
      * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
-     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select
+     * Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 *
+     * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
      * 
      * @return Specify the color space you want for this output. The service supports conversion between HDR formats,
      *         between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
      *         dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
      *         output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
-     *         manually regrading from HDR to SDR.
+     *         manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to
+     *         the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix
+     *         coefficients: BT.709
      * @see ColorSpaceConversion
      */
 
@@ -138,14 +157,18 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
      * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
-     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select
+     * Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 *
+     * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
      * 
      * @param colorSpaceConversion
      *        Specify the color space you want for this output. The service supports conversion between HDR formats,
      *        between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
      *        dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
      *        output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
-     *        manually regrading from HDR to SDR.
+     *        manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the
+     *        following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients:
+     *        BT.709
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */
@@ -159,14 +182,18 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
      * Specify the color space you want for this output. The service supports conversion between HDR formats, between
      * SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The
      * converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion
-     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+     * uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select
+     * Force P3D65 (SDR) to set the output color space metadata to the following: * Color primaries: Display P3 *
+     * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
      * 
      * @param colorSpaceConversion
      *        Specify the color space you want for this output. The service supports conversion between HDR formats,
      *        between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the
      *        dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted
      *        output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of
-     *        manually regrading from HDR to SDR.
+     *        manually regrading from HDR to SDR. Select Force P3D65 (SDR) to set the output color space metadata to the
+     *        following: * Color primaries: Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients:
+     *        BT.709
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ColorSpaceConversion
      */
@@ -457,6 +484,70 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels within
+     * HDR10 outputs. The following color metadata must be present in your SDR input: color primaries, transfer
+     * characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you want to correct
+     * input color metadata, manually specify a color space in the input video selector. For 1,000 nit peak brightness
+     * displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to
+     * use the default value of 100, or specify an integer from 100 to 1000.
+     * 
+     * @param sdrReferenceWhiteLevel
+     *        Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels
+     *        within HDR10 outputs. The following color metadata must be present in your SDR input: color primaries,
+     *        transfer characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you
+     *        want to correct input color metadata, manually specify a color space in the input video selector. For
+     *        1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according
+     *        to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
+     */
+
+    public void setSdrReferenceWhiteLevel(Integer sdrReferenceWhiteLevel) {
+        this.sdrReferenceWhiteLevel = sdrReferenceWhiteLevel;
+    }
+
+    /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels within
+     * HDR10 outputs. The following color metadata must be present in your SDR input: color primaries, transfer
+     * characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you want to correct
+     * input color metadata, manually specify a color space in the input video selector. For 1,000 nit peak brightness
+     * displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to
+     * use the default value of 100, or specify an integer from 100 to 1000.
+     * 
+     * @return Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels
+     *         within HDR10 outputs. The following color metadata must be present in your SDR input: color primaries,
+     *         transfer characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if
+     *         you want to correct input color metadata, manually specify a color space in the input video selector. For
+     *         1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according
+     *         to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
+     */
+
+    public Integer getSdrReferenceWhiteLevel() {
+        return this.sdrReferenceWhiteLevel;
+    }
+
+    /**
+     * Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels within
+     * HDR10 outputs. The following color metadata must be present in your SDR input: color primaries, transfer
+     * characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you want to correct
+     * input color metadata, manually specify a color space in the input video selector. For 1,000 nit peak brightness
+     * displays, we recommend that you set SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to
+     * use the default value of 100, or specify an integer from 100 to 1000.
+     * 
+     * @param sdrReferenceWhiteLevel
+     *        Specify the reference white level, in nits, for all of your SDR inputs. Use to correct brightness levels
+     *        within HDR10 outputs. The following color metadata must be present in your SDR input: color primaries,
+     *        transfer characteristics, and matrix coefficients. If your SDR input has missing color metadata, or if you
+     *        want to correct input color metadata, manually specify a color space in the input video selector. For
+     *        1,000 nit peak brightness displays, we recommend that you set SDR reference white level to 203 (according
+     *        to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an integer from 100 to 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColorCorrector withSdrReferenceWhiteLevel(Integer sdrReferenceWhiteLevel) {
+        setSdrReferenceWhiteLevel(sdrReferenceWhiteLevel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -481,7 +572,9 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
         if (getSampleRangeConversion() != null)
             sb.append("SampleRangeConversion: ").append(getSampleRangeConversion()).append(",");
         if (getSaturation() != null)
-            sb.append("Saturation: ").append(getSaturation());
+            sb.append("Saturation: ").append(getSaturation()).append(",");
+        if (getSdrReferenceWhiteLevel() != null)
+            sb.append("SdrReferenceWhiteLevel: ").append(getSdrReferenceWhiteLevel());
         sb.append("}");
         return sb.toString();
     }
@@ -524,6 +617,10 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSaturation() != null && other.getSaturation().equals(this.getSaturation()) == false)
             return false;
+        if (other.getSdrReferenceWhiteLevel() == null ^ this.getSdrReferenceWhiteLevel() == null)
+            return false;
+        if (other.getSdrReferenceWhiteLevel() != null && other.getSdrReferenceWhiteLevel().equals(this.getSdrReferenceWhiteLevel()) == false)
+            return false;
         return true;
     }
 
@@ -539,6 +636,7 @@ public class ColorCorrector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getHue() == null) ? 0 : getHue().hashCode());
         hashCode = prime * hashCode + ((getSampleRangeConversion() == null) ? 0 : getSampleRangeConversion().hashCode());
         hashCode = prime * hashCode + ((getSaturation() == null) ? 0 : getSaturation().hashCode());
+        hashCode = prime * hashCode + ((getSdrReferenceWhiteLevel() == null) ? 0 : getSdrReferenceWhiteLevel().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update.
+ * Represents the output of a <code>StartServiceSoftwareUpdate</code> operation. Contains the status of the update.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,18 +25,18 @@ public class StartServiceSoftwareUpdateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * The current status of the OpenSearch Service software update.
      * </p>
      */
     private ServiceSoftwareOptions serviceSoftwareOptions;
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * The current status of the OpenSearch Service software update.
      * </p>
      * 
      * @param serviceSoftwareOptions
-     *        The current status of the OpenSearch service software update.
+     *        The current status of the OpenSearch Service software update.
      */
 
     public void setServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
@@ -45,10 +45,10 @@ public class StartServiceSoftwareUpdateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * The current status of the OpenSearch Service software update.
      * </p>
      * 
-     * @return The current status of the OpenSearch service software update.
+     * @return The current status of the OpenSearch Service software update.
      */
 
     public ServiceSoftwareOptions getServiceSoftwareOptions() {
@@ -57,11 +57,11 @@ public class StartServiceSoftwareUpdateResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * The current status of the OpenSearch Service software update.
      * </p>
      * 
      * @param serviceSoftwareOptions
-     *        The current status of the OpenSearch service software update.
+     *        The current status of the OpenSearch Service software update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

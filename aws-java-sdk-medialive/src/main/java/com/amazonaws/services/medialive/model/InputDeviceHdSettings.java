@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class InputDeviceHdSettings implements Serializable, Cloneable, Structure
     private String scanType;
     /** The width of the video source, in pixels. */
     private Integer width;
+    /** The Link device's buffer size (latency) in milliseconds (ms). You can specify this value. */
+    private Integer latencyMs;
 
     /**
      * If you specified Auto as the configured input, specifies which of the sources is currently active (SDI or HDMI).
@@ -388,6 +390,40 @@ public class InputDeviceHdSettings implements Serializable, Cloneable, Structure
     }
 
     /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * 
+     * @param latencyMs
+     *        The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     */
+
+    public void setLatencyMs(Integer latencyMs) {
+        this.latencyMs = latencyMs;
+    }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * 
+     * @return The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     */
+
+    public Integer getLatencyMs() {
+        return this.latencyMs;
+    }
+
+    /**
+     * The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * 
+     * @param latencyMs
+     *        The Link device's buffer size (latency) in milliseconds (ms). You can specify this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceHdSettings withLatencyMs(Integer latencyMs) {
+        setLatencyMs(latencyMs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +450,9 @@ public class InputDeviceHdSettings implements Serializable, Cloneable, Structure
         if (getScanType() != null)
             sb.append("ScanType: ").append(getScanType()).append(",");
         if (getWidth() != null)
-            sb.append("Width: ").append(getWidth());
+            sb.append("Width: ").append(getWidth()).append(",");
+        if (getLatencyMs() != null)
+            sb.append("LatencyMs: ").append(getLatencyMs());
         sb.append("}");
         return sb.toString();
     }
@@ -461,6 +499,10 @@ public class InputDeviceHdSettings implements Serializable, Cloneable, Structure
             return false;
         if (other.getWidth() != null && other.getWidth().equals(this.getWidth()) == false)
             return false;
+        if (other.getLatencyMs() == null ^ this.getLatencyMs() == null)
+            return false;
+        if (other.getLatencyMs() != null && other.getLatencyMs().equals(this.getLatencyMs()) == false)
+            return false;
         return true;
     }
 
@@ -477,6 +519,7 @@ public class InputDeviceHdSettings implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getMaxBitrate() == null) ? 0 : getMaxBitrate().hashCode());
         hashCode = prime * hashCode + ((getScanType() == null) ? 0 : getScanType().hashCode());
         hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode());
+        hashCode = prime * hashCode + ((getLatencyMs() == null) ? 0 : getLatencyMs().hashCode());
         return hashCode;
     }
 

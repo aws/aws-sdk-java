@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class ModifyReplicationInstanceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoMinorVersionUpgrade").build();
     private static final MarshallingInfo<String> REPLICATIONINSTANCEIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstanceIdentifier").build();
+    private static final MarshallingInfo<String> NETWORKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkType").build();
 
     private static final ModifyReplicationInstanceRequestMarshaller instance = new ModifyReplicationInstanceRequestMarshaller();
 
@@ -78,6 +80,7 @@ public class ModifyReplicationInstanceRequestMarshaller {
             protocolMarshaller.marshall(modifyReplicationInstanceRequest.getAllowMajorVersionUpgrade(), ALLOWMAJORVERSIONUPGRADE_BINDING);
             protocolMarshaller.marshall(modifyReplicationInstanceRequest.getAutoMinorVersionUpgrade(), AUTOMINORVERSIONUPGRADE_BINDING);
             protocolMarshaller.marshall(modifyReplicationInstanceRequest.getReplicationInstanceIdentifier(), REPLICATIONINSTANCEIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(modifyReplicationInstanceRequest.getNetworkType(), NETWORKTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

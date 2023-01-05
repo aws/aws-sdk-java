@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,56 +27,16 @@ public class DeleteSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the scene to delete.
-     * </p>
-     */
-    private String sceneId;
-    /**
-     * <p>
      * The ID of the workspace.
      * </p>
      */
     private String workspaceId;
-
     /**
      * <p>
      * The ID of the scene to delete.
      * </p>
-     * 
-     * @param sceneId
-     *        The ID of the scene to delete.
      */
-
-    public void setSceneId(String sceneId) {
-        this.sceneId = sceneId;
-    }
-
-    /**
-     * <p>
-     * The ID of the scene to delete.
-     * </p>
-     * 
-     * @return The ID of the scene to delete.
-     */
-
-    public String getSceneId() {
-        return this.sceneId;
-    }
-
-    /**
-     * <p>
-     * The ID of the scene to delete.
-     * </p>
-     * 
-     * @param sceneId
-     *        The ID of the scene to delete.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteSceneRequest withSceneId(String sceneId) {
-        setSceneId(sceneId);
-        return this;
-    }
+    private String sceneId;
 
     /**
      * <p>
@@ -119,6 +79,46 @@ public class DeleteSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The ID of the scene to delete.
+     * </p>
+     * 
+     * @param sceneId
+     *        The ID of the scene to delete.
+     */
+
+    public void setSceneId(String sceneId) {
+        this.sceneId = sceneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the scene to delete.
+     * </p>
+     * 
+     * @return The ID of the scene to delete.
+     */
+
+    public String getSceneId() {
+        return this.sceneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the scene to delete.
+     * </p>
+     * 
+     * @param sceneId
+     *        The ID of the scene to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteSceneRequest withSceneId(String sceneId) {
+        setSceneId(sceneId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -130,10 +130,10 @@ public class DeleteSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getSceneId() != null)
-            sb.append("SceneId: ").append(getSceneId()).append(",");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getSceneId() != null)
+            sb.append("SceneId: ").append(getSceneId());
         sb.append("}");
         return sb.toString();
     }
@@ -148,13 +148,13 @@ public class DeleteSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof DeleteSceneRequest == false)
             return false;
         DeleteSceneRequest other = (DeleteSceneRequest) obj;
-        if (other.getSceneId() == null ^ this.getSceneId() == null)
-            return false;
-        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
-            return false;
         if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
+        if (other.getSceneId() == null ^ this.getSceneId() == null)
+            return false;
+        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
             return false;
         return true;
     }
@@ -164,8 +164,8 @@ public class DeleteSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getSceneId() == null) ? 0 : getSceneId().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getSceneId() == null) ? 0 : getSceneId().hashCode());
         return hashCode;
     }
 

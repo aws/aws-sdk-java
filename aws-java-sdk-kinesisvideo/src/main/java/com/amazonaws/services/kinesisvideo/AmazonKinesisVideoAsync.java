@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -218,6 +218,41 @@ public interface AmazonKinesisVideoAsync extends AmazonKinesisVideo {
 
     /**
      * <p>
+     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use
+     * this API to get the status of the configuration if the configuration is in sync with the Edge Agent.
+     * </p>
+     * 
+     * @param describeEdgeConfigurationRequest
+     * @return A Java Future containing the result of the DescribeEdgeConfiguration operation returned by the service.
+     * @sample AmazonKinesisVideoAsync.DescribeEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(
+            DescribeEdgeConfigurationRequest describeEdgeConfigurationRequest);
+
+    /**
+     * <p>
+     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use
+     * this API to get the status of the configuration if the configuration is in sync with the Edge Agent.
+     * </p>
+     * 
+     * @param describeEdgeConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEdgeConfiguration operation returned by the service.
+     * @sample AmazonKinesisVideoAsyncHandler.DescribeEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEdgeConfigurationResult> describeEdgeConfigurationAsync(
+            DescribeEdgeConfigurationRequest describeEdgeConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEdgeConfigurationRequest, DescribeEdgeConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the <code>ImageGenerationConfiguration</code> for a given Kinesis video stream.
      * </p>
      * 
@@ -252,6 +287,88 @@ public interface AmazonKinesisVideoAsync extends AmazonKinesisVideo {
     java.util.concurrent.Future<DescribeImageGenerationConfigurationResult> describeImageGenerationConfigurationAsync(
             DescribeImageGenerationConfigurationRequest describeImageGenerationConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeImageGenerationConfigurationRequest, DescribeImageGenerationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the most current information about the stream. Either streamName or streamARN should be provided in the
+     * input.
+     * </p>
+     * <p>
+     * Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code>
+     * should be provided in the input.
+     * </p>
+     * 
+     * @param describeMappedResourceConfigurationRequest
+     * @return A Java Future containing the result of the DescribeMappedResourceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsync.DescribeMappedResourceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMappedResourceConfigurationResult> describeMappedResourceConfigurationAsync(
+            DescribeMappedResourceConfigurationRequest describeMappedResourceConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the most current information about the stream. Either streamName or streamARN should be provided in the
+     * input.
+     * </p>
+     * <p>
+     * Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code>
+     * should be provided in the input.
+     * </p>
+     * 
+     * @param describeMappedResourceConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMappedResourceConfiguration operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsyncHandler.DescribeMappedResourceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMappedResourceConfigurationResult> describeMappedResourceConfigurationAsync(
+            DescribeMappedResourceConfigurationRequest describeMappedResourceConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMappedResourceConfigurationRequest, DescribeMappedResourceConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the most current information about the channel. Specify the <code>ChannelName</code> or
+     * <code>ChannelARN</code> in the input.
+     * </p>
+     * 
+     * @param describeMediaStorageConfigurationRequest
+     * @return A Java Future containing the result of the DescribeMediaStorageConfiguration operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsync.DescribeMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMediaStorageConfigurationResult> describeMediaStorageConfigurationAsync(
+            DescribeMediaStorageConfigurationRequest describeMediaStorageConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the most current information about the channel. Specify the <code>ChannelName</code> or
+     * <code>ChannelARN</code> in the input.
+     * </p>
+     * 
+     * @param describeMediaStorageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMediaStorageConfiguration operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsyncHandler.DescribeMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMediaStorageConfigurationResult> describeMediaStorageConfigurationAsync(
+            DescribeMediaStorageConfigurationRequest describeMediaStorageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMediaStorageConfigurationRequest, DescribeMediaStorageConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -602,6 +719,65 @@ public interface AmazonKinesisVideoAsync extends AmazonKinesisVideo {
 
     /**
      * <p>
+     * An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the
+     * stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at
+     * your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The
+     * <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and synced with the Edge
+     * Agent.
+     * </p>
+     * <p>
+     * If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync
+     * status will be set to <code>SYNCING</code>. You will have to wait for the sync status to reach a terminal state
+     * such as: <code>IN_SYNC</code>, or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API
+     * during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the
+     * stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will
+     * transition into the <code>SYNC_FAILED</code> state.
+     * </p>
+     * 
+     * @param startEdgeConfigurationUpdateRequest
+     * @return A Java Future containing the result of the StartEdgeConfigurationUpdate operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsync.StartEdgeConfigurationUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(
+            StartEdgeConfigurationUpdateRequest startEdgeConfigurationUpdateRequest);
+
+    /**
+     * <p>
+     * An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the
+     * stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at
+     * your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The
+     * <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and synced with the Edge
+     * Agent.
+     * </p>
+     * <p>
+     * If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync
+     * status will be set to <code>SYNCING</code>. You will have to wait for the sync status to reach a terminal state
+     * such as: <code>IN_SYNC</code>, or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API
+     * during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the
+     * stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will
+     * transition into the <code>SYNC_FAILED</code> state.
+     * </p>
+     * 
+     * @param startEdgeConfigurationUpdateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartEdgeConfigurationUpdate operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsyncHandler.StartEdgeConfigurationUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEdgeConfigurationUpdateResult> startEdgeConfigurationUpdateAsync(
+            StartEdgeConfigurationUpdateRequest startEdgeConfigurationUpdateRequest,
+            com.amazonaws.handlers.AsyncHandler<StartEdgeConfigurationUpdateRequest, StartEdgeConfigurationUpdateResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds one or more tags to a signaling channel. A <i>tag</i> is a key-value pair (the value is optional) that you
      * can define and assign to Amazon Web Services resources. If you specify a tag that already exists, the tag value
      * is replaced with the value that you specify in the request. For more information, see <a
@@ -891,6 +1067,69 @@ public interface AmazonKinesisVideoAsync extends AmazonKinesisVideo {
     java.util.concurrent.Future<UpdateImageGenerationConfigurationResult> updateImageGenerationConfigurationAsync(
             UpdateImageGenerationConfigurationRequest updateImageGenerationConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateImageGenerationConfigurationRequest, UpdateImageGenerationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a <code>SignalingChannel</code> to a stream to store the media. There are two signaling modes that can
+     * specified :
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code> parameter
+     * will not be needed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code> provided.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateMediaStorageConfigurationRequest
+     * @return A Java Future containing the result of the UpdateMediaStorageConfiguration operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsync.UpdateMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMediaStorageConfigurationResult> updateMediaStorageConfigurationAsync(
+            UpdateMediaStorageConfigurationRequest updateMediaStorageConfigurationRequest);
+
+    /**
+     * <p>
+     * Associates a <code>SignalingChannel</code> to a stream to store the media. There are two signaling modes that can
+     * specified :
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code> parameter
+     * will not be needed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code> provided.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateMediaStorageConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMediaStorageConfiguration operation returned by the
+     *         service.
+     * @sample AmazonKinesisVideoAsyncHandler.UpdateMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMediaStorageConfigurationResult> updateMediaStorageConfigurationAsync(
+            UpdateMediaStorageConfigurationRequest updateMediaStorageConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMediaStorageConfigurationRequest, UpdateMediaStorageConfigurationResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,7 +76,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The configuration for the URL endpoint type.
+     * The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically
+     * resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.
      * </p>
      */
     private UrlEndpointInput urlEndpoint;
@@ -462,11 +464,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration for the URL endpoint type.
+     * The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically
+     * resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.
      * </p>
      * 
      * @param urlEndpoint
-     *        The configuration for the URL endpoint type.
+     *        The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces
+     *        automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name
+     *        System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.
      */
 
     public void setUrlEndpoint(UrlEndpointInput urlEndpoint) {
@@ -475,10 +481,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration for the URL endpoint type.
+     * The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically
+     * resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.
      * </p>
      * 
-     * @return The configuration for the URL endpoint type.
+     * @return The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces
+     *         automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name
+     *         System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.
      */
 
     public UrlEndpointInput getUrlEndpoint() {
@@ -487,11 +497,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The configuration for the URL endpoint type.
+     * The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically
+     * resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS)
+     * time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.
      * </p>
      * 
      * @param urlEndpoint
-     *        The configuration for the URL endpoint type.
+     *        The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces
+     *        automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name
+     *        System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,10 +22,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
- * Settings for a target-based scaling policy as part of a <a>GameServerGroupAutoScalingPolicy</a>. These settings are
- * used to create a target-based policy that tracks the GameLift FleetIQ metric
- * <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage changes, the
- * policy triggers to adjust the game server group capacity so that the metric returns to the target value.
+ * Settings for a target-based scaling policy as part of a <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameServerGroupAutoScalingPolicy.html"
+ * >GameServerGroupAutoScalingPolicy</a> . These settings are used to create a target-based policy that tracks the
+ * GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As
+ * player usage changes, the policy triggers to adjust the game server group capacity so that the metric returns to the
+ * target value.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TargetTrackingConfiguration"

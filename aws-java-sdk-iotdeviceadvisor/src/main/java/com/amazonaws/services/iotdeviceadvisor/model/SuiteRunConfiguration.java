@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,13 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets the primary device for suite run.
+     * Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.
      * </p>
      */
     private DeviceUnderTest primaryDevice;
     /**
      * <p>
-     * Gets test case list.
+     * Sets test case list.
      * </p>
      */
     private java.util.List<String> selectedTestList;
@@ -49,11 +49,11 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets the primary device for suite run.
+     * Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.
      * </p>
      * 
      * @param primaryDevice
-     *        Gets the primary device for suite run.
+     *        Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.
      */
 
     public void setPrimaryDevice(DeviceUnderTest primaryDevice) {
@@ -62,10 +62,10 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets the primary device for suite run.
+     * Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.
      * </p>
      * 
-     * @return Gets the primary device for suite run.
+     * @return Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.
      */
 
     public DeviceUnderTest getPrimaryDevice() {
@@ -74,11 +74,11 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets the primary device for suite run.
+     * Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.
      * </p>
      * 
      * @param primaryDevice
-     *        Gets the primary device for suite run.
+     *        Sets the primary device for the test suite run. This requires a thing ARN or a certificate ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,10 +89,10 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets test case list.
+     * Sets test case list.
      * </p>
      * 
-     * @return Gets test case list.
+     * @return Sets test case list.
      */
 
     public java.util.List<String> getSelectedTestList() {
@@ -101,11 +101,11 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets test case list.
+     * Sets test case list.
      * </p>
      * 
      * @param selectedTestList
-     *        Gets test case list.
+     *        Sets test case list.
      */
 
     public void setSelectedTestList(java.util.Collection<String> selectedTestList) {
@@ -119,7 +119,7 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets test case list.
+     * Sets test case list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,7 +128,7 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param selectedTestList
-     *        Gets test case list.
+     *        Sets test case list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class SuiteRunConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Gets test case list.
+     * Sets test case list.
      * </p>
      * 
      * @param selectedTestList
-     *        Gets test case list.
+     *        Sets test case list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

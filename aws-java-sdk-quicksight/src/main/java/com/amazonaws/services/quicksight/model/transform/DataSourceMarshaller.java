@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,8 @@ public class DataSourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SslProperties").build();
     private static final MarshallingInfo<StructuredPojo> ERRORINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorInfo").build();
+    private static final MarshallingInfo<String> SECRETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SecretArn").build();
 
     private static final DataSourceMarshaller instance = new DataSourceMarshaller();
 
@@ -81,6 +83,7 @@ public class DataSourceMarshaller {
             protocolMarshaller.marshall(dataSource.getVpcConnectionProperties(), VPCCONNECTIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(dataSource.getSslProperties(), SSLPROPERTIES_BINDING);
             protocolMarshaller.marshall(dataSource.getErrorInfo(), ERRORINFO_BINDING);
+            protocolMarshaller.marshall(dataSource.getSecretArn(), SECRETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

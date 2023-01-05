@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>StartTime</code> and <code>EndTime</code> as a set; that is, if you include one, you must include both.
  * </p>
  * <p>
- * You can use also <code>First</code> to search from the start of the audio until the time you specify, or
- * <code>Last</code> to search from the time you specify until the end of the audio. For example, setting
+ * You can use also <code>First</code> to search from the start of the audio until the time that you specify, or
+ * <code>Last</code> to search from the time that you specify until the end of the audio. For example, setting
  * <code>First</code> to 50000 only searches for your specified criteria in the audio contained between the start of the
  * media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code> independently of each
  * other.
@@ -60,15 +60,15 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
     private Long endTime;
     /**
      * <p>
-     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
-     * Transcribe searches for your specified criteria.
+     * The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe
+     * searches for your specified criteria in this time segment.
      * </p>
      */
     private Long first;
     /**
      * <p>
-     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      */
     private Long last;
@@ -167,13 +167,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
-     * Transcribe searches for your specified criteria.
+     * The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe
+     * searches for your specified criteria in this time segment.
      * </p>
      * 
      * @param first
-     *        The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      */
 
     public void setFirst(Long first) {
@@ -182,12 +182,12 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
-     * Transcribe searches for your specified criteria.
+     * The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe
+     * searches for your specified criteria in this time segment.
      * </p>
      * 
-     * @return The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
-     *         Transcribe searches for your specified criteria.
+     * @return The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe
+     *         searches for your specified criteria in this time segment.
      */
 
     public Long getFirst() {
@@ -196,13 +196,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
-     * Transcribe searches for your specified criteria.
+     * The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe
+     * searches for your specified criteria in this time segment.
      * </p>
      * 
      * @param first
-     *        The time, in milliseconds, from the start of your media file until the value you specify in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in milliseconds, from the start of your media file until the specified value. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,13 +213,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
      * @param last
-     *        The time, in milliseconds, from the value you specify until the end of your media file in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      */
 
     public void setLast(Long last) {
@@ -228,12 +228,12 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
-     * @return The time, in milliseconds, from the value you specify until the end of your media file in which Amazon
-     *         Transcribe searches for your specified criteria.
+     * @return The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe
+     *         searches for your specified criteria in this time segment.
      */
 
     public Long getLast() {
@@ -242,13 +242,13 @@ public class AbsoluteTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in milliseconds, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
      * @param last
-     *        The time, in milliseconds, from the value you specify until the end of your media file in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in milliseconds, from the specified value until the end of your media file. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

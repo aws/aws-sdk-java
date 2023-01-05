@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination
- * folders according to the flow frequency and date.
+ * Specifies elements that Amazon AppFlow includes in the file and folder names in the flow destination.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/PrefixConfig" target="_top">AWS API
@@ -37,10 +36,48 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
     private String prefixType;
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the level of granularity for the date and time that's included in the prefix.
      * </p>
      */
     private String prefixFormat;
+    /**
+     * <p>
+     * Specifies whether the destination file path includes either or both of the following elements:
+     * </p>
+     * <dl>
+     * <dt>EXECUTION_ID</dt>
+     * <dd>
+     * <p>
+     * The ID that Amazon AppFlow assigns to the flow run.
+     * </p>
+     * </dd>
+     * <dt>SCHEMA_VERSION</dt>
+     * <dd>
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     */
+    private java.util.List<String> pathPrefixHierarchy;
 
     /**
      * <p>
@@ -103,11 +140,11 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the level of granularity for the date and time that's included in the prefix.
      * </p>
      * 
      * @param prefixFormat
-     *        Determines the level of granularity that's included in the prefix.
+     *        Determines the level of granularity for the date and time that's included in the prefix.
      * @see PrefixFormat
      */
 
@@ -117,10 +154,10 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the level of granularity for the date and time that's included in the prefix.
      * </p>
      * 
-     * @return Determines the level of granularity that's included in the prefix.
+     * @return Determines the level of granularity for the date and time that's included in the prefix.
      * @see PrefixFormat
      */
 
@@ -130,11 +167,11 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the level of granularity for the date and time that's included in the prefix.
      * </p>
      * 
      * @param prefixFormat
-     *        Determines the level of granularity that's included in the prefix.
+     *        Determines the level of granularity for the date and time that's included in the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrefixFormat
      */
@@ -146,17 +183,430 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Determines the level of granularity that's included in the prefix.
+     * Determines the level of granularity for the date and time that's included in the prefix.
      * </p>
      * 
      * @param prefixFormat
-     *        Determines the level of granularity that's included in the prefix.
+     *        Determines the level of granularity for the date and time that's included in the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrefixFormat
      */
 
     public PrefixConfig withPrefixFormat(PrefixFormat prefixFormat) {
         this.prefixFormat = prefixFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the destination file path includes either or both of the following elements:
+     * </p>
+     * <dl>
+     * <dt>EXECUTION_ID</dt>
+     * <dd>
+     * <p>
+     * The ID that Amazon AppFlow assigns to the flow run.
+     * </p>
+     * </dd>
+     * <dt>SCHEMA_VERSION</dt>
+     * <dd>
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @return Specifies whether the destination file path includes either or both of the following elements:</p>
+     *         <dl>
+     *         <dt>EXECUTION_ID</dt>
+     *         <dd>
+     *         <p>
+     *         The ID that Amazon AppFlow assigns to the flow run.
+     *         </p>
+     *         </dd>
+     *         <dt>SCHEMA_VERSION</dt>
+     *         <dd>
+     *         <p>
+     *         The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *         increases by one when you change any of the following settings in your flow configuration:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Source-to-destination field mappings
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Field data types
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Partition keys
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </dd>
+     * @see PathPrefix
+     */
+
+    public java.util.List<String> getPathPrefixHierarchy() {
+        return pathPrefixHierarchy;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the destination file path includes either or both of the following elements:
+     * </p>
+     * <dl>
+     * <dt>EXECUTION_ID</dt>
+     * <dd>
+     * <p>
+     * The ID that Amazon AppFlow assigns to the flow run.
+     * </p>
+     * </dd>
+     * <dt>SCHEMA_VERSION</dt>
+     * <dd>
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @param pathPrefixHierarchy
+     *        Specifies whether the destination file path includes either or both of the following elements:</p>
+     *        <dl>
+     *        <dt>EXECUTION_ID</dt>
+     *        <dd>
+     *        <p>
+     *        The ID that Amazon AppFlow assigns to the flow run.
+     *        </p>
+     *        </dd>
+     *        <dt>SCHEMA_VERSION</dt>
+     *        <dd>
+     *        <p>
+     *        The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *        increases by one when you change any of the following settings in your flow configuration:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source-to-destination field mappings
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Field data types
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Partition keys
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     * @see PathPrefix
+     */
+
+    public void setPathPrefixHierarchy(java.util.Collection<String> pathPrefixHierarchy) {
+        if (pathPrefixHierarchy == null) {
+            this.pathPrefixHierarchy = null;
+            return;
+        }
+
+        this.pathPrefixHierarchy = new java.util.ArrayList<String>(pathPrefixHierarchy);
+    }
+
+    /**
+     * <p>
+     * Specifies whether the destination file path includes either or both of the following elements:
+     * </p>
+     * <dl>
+     * <dt>EXECUTION_ID</dt>
+     * <dd>
+     * <p>
+     * The ID that Amazon AppFlow assigns to the flow run.
+     * </p>
+     * </dd>
+     * <dt>SCHEMA_VERSION</dt>
+     * <dd>
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPathPrefixHierarchy(java.util.Collection)} or {@link #withPathPrefixHierarchy(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param pathPrefixHierarchy
+     *        Specifies whether the destination file path includes either or both of the following elements:</p>
+     *        <dl>
+     *        <dt>EXECUTION_ID</dt>
+     *        <dd>
+     *        <p>
+     *        The ID that Amazon AppFlow assigns to the flow run.
+     *        </p>
+     *        </dd>
+     *        <dt>SCHEMA_VERSION</dt>
+     *        <dd>
+     *        <p>
+     *        The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *        increases by one when you change any of the following settings in your flow configuration:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source-to-destination field mappings
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Field data types
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Partition keys
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PathPrefix
+     */
+
+    public PrefixConfig withPathPrefixHierarchy(String... pathPrefixHierarchy) {
+        if (this.pathPrefixHierarchy == null) {
+            setPathPrefixHierarchy(new java.util.ArrayList<String>(pathPrefixHierarchy.length));
+        }
+        for (String ele : pathPrefixHierarchy) {
+            this.pathPrefixHierarchy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the destination file path includes either or both of the following elements:
+     * </p>
+     * <dl>
+     * <dt>EXECUTION_ID</dt>
+     * <dd>
+     * <p>
+     * The ID that Amazon AppFlow assigns to the flow run.
+     * </p>
+     * </dd>
+     * <dt>SCHEMA_VERSION</dt>
+     * <dd>
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @param pathPrefixHierarchy
+     *        Specifies whether the destination file path includes either or both of the following elements:</p>
+     *        <dl>
+     *        <dt>EXECUTION_ID</dt>
+     *        <dd>
+     *        <p>
+     *        The ID that Amazon AppFlow assigns to the flow run.
+     *        </p>
+     *        </dd>
+     *        <dt>SCHEMA_VERSION</dt>
+     *        <dd>
+     *        <p>
+     *        The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *        increases by one when you change any of the following settings in your flow configuration:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source-to-destination field mappings
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Field data types
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Partition keys
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PathPrefix
+     */
+
+    public PrefixConfig withPathPrefixHierarchy(java.util.Collection<String> pathPrefixHierarchy) {
+        setPathPrefixHierarchy(pathPrefixHierarchy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the destination file path includes either or both of the following elements:
+     * </p>
+     * <dl>
+     * <dt>EXECUTION_ID</dt>
+     * <dd>
+     * <p>
+     * The ID that Amazon AppFlow assigns to the flow run.
+     * </p>
+     * </dd>
+     * <dt>SCHEMA_VERSION</dt>
+     * <dd>
+     * <p>
+     * The version number of your data schema. Amazon AppFlow assigns this version number. The version number increases
+     * by one when you change any of the following settings in your flow configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Source-to-destination field mappings
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Field data types
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Partition keys
+     * </p>
+     * </li>
+     * </ul>
+     * </dd>
+     * </dl>
+     * 
+     * @param pathPrefixHierarchy
+     *        Specifies whether the destination file path includes either or both of the following elements:</p>
+     *        <dl>
+     *        <dt>EXECUTION_ID</dt>
+     *        <dd>
+     *        <p>
+     *        The ID that Amazon AppFlow assigns to the flow run.
+     *        </p>
+     *        </dd>
+     *        <dt>SCHEMA_VERSION</dt>
+     *        <dd>
+     *        <p>
+     *        The version number of your data schema. Amazon AppFlow assigns this version number. The version number
+     *        increases by one when you change any of the following settings in your flow configuration:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Source-to-destination field mappings
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Field data types
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Partition keys
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PathPrefix
+     */
+
+    public PrefixConfig withPathPrefixHierarchy(PathPrefix... pathPrefixHierarchy) {
+        java.util.ArrayList<String> pathPrefixHierarchyCopy = new java.util.ArrayList<String>(pathPrefixHierarchy.length);
+        for (PathPrefix value : pathPrefixHierarchy) {
+            pathPrefixHierarchyCopy.add(value.toString());
+        }
+        if (getPathPrefixHierarchy() == null) {
+            setPathPrefixHierarchy(pathPrefixHierarchyCopy);
+        } else {
+            getPathPrefixHierarchy().addAll(pathPrefixHierarchyCopy);
+        }
         return this;
     }
 
@@ -175,7 +625,9 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
         if (getPrefixType() != null)
             sb.append("PrefixType: ").append(getPrefixType()).append(",");
         if (getPrefixFormat() != null)
-            sb.append("PrefixFormat: ").append(getPrefixFormat());
+            sb.append("PrefixFormat: ").append(getPrefixFormat()).append(",");
+        if (getPathPrefixHierarchy() != null)
+            sb.append("PathPrefixHierarchy: ").append(getPathPrefixHierarchy());
         sb.append("}");
         return sb.toString();
     }
@@ -198,6 +650,10 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPrefixFormat() != null && other.getPrefixFormat().equals(this.getPrefixFormat()) == false)
             return false;
+        if (other.getPathPrefixHierarchy() == null ^ this.getPathPrefixHierarchy() == null)
+            return false;
+        if (other.getPathPrefixHierarchy() != null && other.getPathPrefixHierarchy().equals(this.getPathPrefixHierarchy()) == false)
+            return false;
         return true;
     }
 
@@ -208,6 +664,7 @@ public class PrefixConfig implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getPrefixType() == null) ? 0 : getPrefixType().hashCode());
         hashCode = prime * hashCode + ((getPrefixFormat() == null) ? 0 : getPrefixFormat().hashCode());
+        hashCode = prime * hashCode + ((getPathPrefixHierarchy() == null) ? 0 : getPathPrefixHierarchy().hashCode());
         return hashCode;
     }
 

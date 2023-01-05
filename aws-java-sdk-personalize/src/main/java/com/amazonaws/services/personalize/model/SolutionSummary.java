@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,12 @@ public class SolutionSummary implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recipe used by the solution.
+     * </p>
+     */
+    private String recipeArn;
 
     /**
      * <p>
@@ -363,6 +369,46 @@ public class SolutionSummary implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recipe used by the solution.
+     * </p>
+     * 
+     * @param recipeArn
+     *        The Amazon Resource Name (ARN) of the recipe used by the solution.
+     */
+
+    public void setRecipeArn(String recipeArn) {
+        this.recipeArn = recipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recipe used by the solution.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the recipe used by the solution.
+     */
+
+    public String getRecipeArn() {
+        return this.recipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recipe used by the solution.
+     * </p>
+     * 
+     * @param recipeArn
+     *        The Amazon Resource Name (ARN) of the recipe used by the solution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SolutionSummary withRecipeArn(String recipeArn) {
+        setRecipeArn(recipeArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -383,7 +429,9 @@ public class SolutionSummary implements Serializable, Cloneable, StructuredPojo 
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getLastUpdatedDateTime() != null)
-            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime());
+            sb.append("LastUpdatedDateTime: ").append(getLastUpdatedDateTime()).append(",");
+        if (getRecipeArn() != null)
+            sb.append("RecipeArn: ").append(getRecipeArn());
         sb.append("}");
         return sb.toString();
     }
@@ -418,6 +466,10 @@ public class SolutionSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getLastUpdatedDateTime() != null && other.getLastUpdatedDateTime().equals(this.getLastUpdatedDateTime()) == false)
             return false;
+        if (other.getRecipeArn() == null ^ this.getRecipeArn() == null)
+            return false;
+        if (other.getRecipeArn() != null && other.getRecipeArn().equals(this.getRecipeArn()) == false)
+            return false;
         return true;
     }
 
@@ -431,6 +483,7 @@ public class SolutionSummary implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
+        hashCode = prime * hashCode + ((getRecipeArn() == null) ? 0 : getRecipeArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class GetRevisionResult extends com.amazonaws.AmazonWebServiceResult<com.
     private java.util.Date createdAt;
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      */
     private String dataSetId;
@@ -223,11 +223,11 @@ public class GetRevisionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      * 
      * @param dataSetId
-     *        The unique identifier for the data set associated with this revision.
+     *        The unique identifier for the data set associated with the data set revision.
      */
 
     public void setDataSetId(String dataSetId) {
@@ -236,10 +236,10 @@ public class GetRevisionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      * 
-     * @return The unique identifier for the data set associated with this revision.
+     * @return The unique identifier for the data set associated with the data set revision.
      */
 
     public String getDataSetId() {
@@ -248,11 +248,11 @@ public class GetRevisionResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The unique identifier for the data set associated with this revision.
+     * The unique identifier for the data set associated with the data set revision.
      * </p>
      * 
      * @param dataSetId
-     *        The unique identifier for the data set associated with this revision.
+     *        The unique identifier for the data set associated with the data set revision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

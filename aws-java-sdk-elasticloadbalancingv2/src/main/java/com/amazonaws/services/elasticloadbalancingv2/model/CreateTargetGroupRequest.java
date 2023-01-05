@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,42 +107,44 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private String healthCheckPath;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
-     * protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE,
-     * the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If
+     * the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target
+     * group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. For target
-     * groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of
-     * TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks.
-     * If the target type is <code>lambda</code>, the default is 30 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The range is
+     * 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a
+     * protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the
+     * default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
      * </p>
      */
     private Integer healthCheckTimeoutSeconds;
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
-     * target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS,
-     * or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
+     * The number of consecutive health check successes required before considering a target healthy. The range is 2-10.
+     * If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      */
     private Integer healthyThresholdCount;
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. If the target
-     * group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be
-     * the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target
-     * type is <code>lambda</code>, the default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The range is
+     * 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups
+     * with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      */
     private Integer unhealthyThresholdCount;
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      */
     private Matcher matcher;
@@ -811,18 +813,17 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
-     * protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE,
-     * the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If
+     * the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target
+     * group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. If the target
-     *        group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP,
-     *        or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group
-     *        protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     *        35 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. The range is
+     *        5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds.
+     *        If the target group protocol is GENEVE, the default is 10 seconds. If the target type is
+     *        <code>lambda</code>, the default is 35 seconds.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -831,17 +832,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
-     * protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE,
-     * the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If
+     * the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target
+     * group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks of an individual target. If the target
-     *         group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS,
-     *         UDP, or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target
-     *         group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the
-     *         default is 35 seconds.
+     * @return The approximate amount of time, in seconds, between health checks of an individual target. The range is
+     *         5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds.
+     *         If the target group protocol is GENEVE, the default is 10 seconds. If the target type is
+     *         <code>lambda</code>, the default is 35 seconds.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -850,18 +850,17 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. If the target group
-     * protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP, or TCP_UDP,
-     * the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group protocol is GENEVE,
-     * the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target. The range is 5-300. If
+     * the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds. If the target
+     * group protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. If the target
-     *        group protocol is HTTP or HTTPS, the default is 30 seconds. If the target group protocol is TCP, TLS, UDP,
-     *        or TCP_UDP, the supported values are 10 and 30 seconds and the default is 30 seconds. If the target group
-     *        protocol is GENEVE, the default is 10 seconds. If the target type is <code>lambda</code>, the default is
-     *        35 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target. The range is
+     *        5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP, HTTP or HTTPS, the default is 30 seconds.
+     *        If the target group protocol is GENEVE, the default is 10 seconds. If the target type is
+     *        <code>lambda</code>, the default is 35 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -872,17 +871,17 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. For target
-     * groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of
-     * TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks.
-     * If the target type is <code>lambda</code>, the default is 30 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The range is
+     * 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a
+     * protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the
+     * default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response from a target means a failed health check. For
-     *        target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with
-     *        a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and
-     *        HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.
+     *        The amount of time, in seconds, during which no response from a target means a failed health check. The
+     *        range is 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target
+     *        groups with a protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol
+     *        of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
      */
 
     public void setHealthCheckTimeoutSeconds(Integer healthCheckTimeoutSeconds) {
@@ -891,16 +890,17 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. For target
-     * groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of
-     * TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks.
-     * If the target type is <code>lambda</code>, the default is 30 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The range is
+     * 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a
+     * protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the
+     * default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
      * </p>
      * 
-     * @return The amount of time, in seconds, during which no response from a target means a failed health check. For
-     *         target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with
-     *         a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and
-     *         HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.
+     * @return The amount of time, in seconds, during which no response from a target means a failed health check. The
+     *         range is 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target
+     *         groups with a protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol
+     *         of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>, the default is 30
+     *         seconds.
      */
 
     public Integer getHealthCheckTimeoutSeconds() {
@@ -909,17 +909,17 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The amount of time, in seconds, during which no response from a target means a failed health check. For target
-     * groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with a protocol of
-     * TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and HTTPS health checks.
-     * If the target type is <code>lambda</code>, the default is 30 seconds.
+     * The amount of time, in seconds, during which no response from a target means a failed health check. The range is
+     * 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target groups with a
+     * protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol of GENEVE, the
+     * default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
      * </p>
      * 
      * @param healthCheckTimeoutSeconds
-     *        The amount of time, in seconds, during which no response from a target means a failed health check. For
-     *        target groups with a protocol of HTTP, HTTPS, or GENEVE, the default is 5 seconds. For target groups with
-     *        a protocol of TCP or TLS, this value must be 6 seconds for HTTP health checks and 10 seconds for TCP and
-     *        HTTPS health checks. If the target type is <code>lambda</code>, the default is 30 seconds.
+     *        The amount of time, in seconds, during which no response from a target means a failed health check. The
+     *        range is 2–120 seconds. For target groups with a protocol of HTTP, the default is 6 seconds. For target
+     *        groups with a protocol of TCP, TLS or HTTPS, the default is 10 seconds. For target groups with a protocol
+     *        of GENEVE, the default is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -930,15 +930,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
-     * target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS,
-     * or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
+     * The number of consecutive health check successes required before considering a target healthy. The range is 2-10.
+     * If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      * 
      * @param healthyThresholdCount
-     *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
-     *        For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of
-     *        TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
+     *        The number of consecutive health check successes required before considering a target healthy. The range
+     *        is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For
+     *        target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the
+     *        default is 5.
      */
 
     public void setHealthyThresholdCount(Integer healthyThresholdCount) {
@@ -947,15 +948,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
-     * target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS,
-     * or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
+     * The number of consecutive health check successes required before considering a target healthy. The range is 2-10.
+     * If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      * 
-     * @return The number of consecutive health checks successes required before considering an unhealthy target
-     *         healthy. For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a
-     *         protocol of TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default
-     *         is 5.
+     * @return The number of consecutive health check successes required before considering a target healthy. The range
+     *         is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For
+     *         target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the
+     *         default is 5.
      */
 
     public Integer getHealthyThresholdCount() {
@@ -964,15 +965,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health checks successes required before considering an unhealthy target healthy. For
-     * target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of TCP, TLS,
-     * or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
+     * The number of consecutive health check successes required before considering a target healthy. The range is 2-10.
+     * If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For target groups with a
+     * protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      * 
      * @param healthyThresholdCount
-     *        The number of consecutive health checks successes required before considering an unhealthy target healthy.
-     *        For target groups with a protocol of HTTP or HTTPS, the default is 5. For target groups with a protocol of
-     *        TCP, TLS, or GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
+     *        The number of consecutive health check successes required before considering a target healthy. The range
+     *        is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 5. For
+     *        target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the
+     *        default is 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -983,17 +985,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. If the target
-     * group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be
-     * the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target
-     * type is <code>lambda</code>, the default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The range is
+     * 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups
+     * with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering a target unhealthy. If the
-     *        target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this
-     *        value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default
-     *        is 3. If the target type is <code>lambda</code>, the default is 2.
+     *        The number of consecutive health check failures required before considering a target unhealthy. The range
+     *        is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For
+     *        target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the
+     *        default is 5.
      */
 
     public void setUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
@@ -1002,16 +1003,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. If the target
-     * group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be
-     * the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target
-     * type is <code>lambda</code>, the default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The range is
+     * 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups
+     * with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      * 
-     * @return The number of consecutive health check failures required before considering a target unhealthy. If the
-     *         target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS,
-     *         this value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the
-     *         default is 3. If the target type is <code>lambda</code>, the default is 2.
+     * @return The number of consecutive health check failures required before considering a target unhealthy. The range
+     *         is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For
+     *         target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the
+     *         default is 5.
      */
 
     public Integer getUnhealthyThresholdCount() {
@@ -1020,17 +1020,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering a target unhealthy. If the target
-     * group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this value must be
-     * the same as the healthy threshold count. If the target group protocol is GENEVE, the default is 3. If the target
-     * type is <code>lambda</code>, the default is 2.
+     * The number of consecutive health check failures required before considering a target unhealthy. The range is
+     * 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For target groups
+     * with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the default is 5.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering a target unhealthy. If the
-     *        target group protocol is HTTP or HTTPS, the default is 2. If the target group protocol is TCP or TLS, this
-     *        value must be the same as the healthy threshold count. If the target group protocol is GENEVE, the default
-     *        is 3. If the target type is <code>lambda</code>, the default is 2.
+     *        The number of consecutive health check failures required before considering a target unhealthy. The range
+     *        is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS, HTTP or HTTPS, the default is 2. For
+     *        target groups with a protocol of GENEVE, the default is 3. If the target type is <code>lambda</code>, the
+     *        default is 5.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1042,11 +1041,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      * 
      * @param matcher
      *        [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
-     *        target.
+     *        target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target
+     *        groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     *        GENEVE, the range is 200-399.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -1056,10 +1060,15 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      * 
      * @return [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
-     *         target.
+     *         target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target
+     *         groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     *         GENEVE, the range is 200-399.
      */
 
     public Matcher getMatcher() {
@@ -1069,11 +1078,16 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      * 
      * @param matcher
      *        [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
-     *        target.
+     *        target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target
+     *        groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     *        GENEVE, the range is 200-399.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

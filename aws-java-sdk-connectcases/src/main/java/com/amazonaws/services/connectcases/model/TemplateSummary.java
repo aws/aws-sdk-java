@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     */
+    private String status;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the template.
@@ -84,6 +90,65 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
 
     public TemplateSummary withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @see TemplateStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @return The status of the template.
+     * @see TemplateStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public TemplateSummary withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public TemplateSummary withStatus(TemplateStatus status) {
+        this.status = status.toString();
         return this;
     }
 
@@ -181,6 +246,8 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getTemplateArn() != null)
             sb.append("TemplateArn: ").append(getTemplateArn()).append(",");
         if (getTemplateId() != null)
@@ -203,6 +270,10 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         if (other.getTemplateArn() == null ^ this.getTemplateArn() == null)
             return false;
         if (other.getTemplateArn() != null && other.getTemplateArn().equals(this.getTemplateArn()) == false)
@@ -220,6 +291,7 @@ public class TemplateSummary implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());
         return hashCode;

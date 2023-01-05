@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,17 +30,20 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
-     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows
+     * instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
      * </p>
      */
     private String ec2SshKey;
     /**
      * <p>
-     * The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but
-     * do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened
-     * to the internet (0.0.0.0/0). For more information, see <a
+     * The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you
+     * specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group,
+     * then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
@@ -49,16 +52,22 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
-     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows
+     * instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
      * </p>
      * 
      * @param ec2SshKey
-     *        The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node
+     *        The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node
      *        group. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
-     *        Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *        Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For
+     *        Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
+     *        Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
      */
 
     public void setEc2SshKey(String ec2SshKey) {
@@ -67,15 +76,21 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
-     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows
+     * instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
      * </p>
      * 
-     * @return The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node
+     * @return The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node
      *         group. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
-     *         Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *         Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For
+     *         Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
+     *         Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
      */
 
     public String getEc2SshKey() {
@@ -84,16 +99,22 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node group. For
-     * more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2
-     * key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node group.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon
+     * EC2 key pairs and Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     * For Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and Windows
+     * instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
      * </p>
      * 
      * @param ec2SshKey
-     *        The Amazon EC2 SSH key that provides access for SSH communication with the nodes in the managed node
+     *        The Amazon EC2 SSH key name that provides access for SSH communication with the nodes in the managed node
      *        group. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
-     *        Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+     *        Linux instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>. For
+     *        Windows, an Amazon EC2 SSH key is used to obtain the RDP password. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2-key-pairs.html">Amazon EC2 key pairs and
+     *        Windows instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Windows Instances</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,16 +125,17 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but
-     * do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened
-     * to the internet (0.0.0.0/0). For more information, see <a
+     * The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you
+     * specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group,
+     * then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
-     * @return The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH
-     *         key but do not specify a source security group when you create a managed node group, then port 22 on the
-     *         nodes is opened to the internet (0.0.0.0/0). For more information, see <a
+     * @return The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389.
+     *         If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed
+     *         node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more
+     *         information, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your
      *         VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -124,17 +146,18 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but
-     * do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened
-     * to the internet (0.0.0.0/0). For more information, see <a
+     * The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you
+     * specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group,
+     * then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param sourceSecurityGroups
-     *        The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH
-     *        key but do not specify a source security group when you create a managed node group, then port 22 on the
-     *        nodes is opened to the internet (0.0.0.0/0). For more information, see <a
+     *        The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389.
+     *        If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed
+     *        node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your
      *        VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      */
@@ -150,9 +173,9 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but
-     * do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened
-     * to the internet (0.0.0.0/0). For more information, see <a
+     * The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you
+     * specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group,
+     * then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
@@ -163,9 +186,10 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param sourceSecurityGroups
-     *        The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH
-     *        key but do not specify a source security group when you create a managed node group, then port 22 on the
-     *        nodes is opened to the internet (0.0.0.0/0). For more information, see <a
+     *        The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389.
+     *        If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed
+     *        node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your
      *        VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -183,17 +207,18 @@ public class RemoteAccessConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH key but
-     * do not specify a source security group when you create a managed node group, then port 22 on the nodes is opened
-     * to the internet (0.0.0.0/0). For more information, see <a
+     * The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389. If you
+     * specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed node group,
+     * then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more information, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your VPC</a>
      * in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * </p>
      * 
      * @param sourceSecurityGroups
-     *        The security groups that are allowed SSH access (port 22) to the nodes. If you specify an Amazon EC2 SSH
-     *        key but do not specify a source security group when you create a managed node group, then port 22 on the
-     *        nodes is opened to the internet (0.0.0.0/0). For more information, see <a
+     *        The security group IDs that are allowed SSH access (port 22) to the nodes. For Windows, the port is 3389.
+     *        If you specify an Amazon EC2 SSH key but don't specify a source security group when you create a managed
+     *        node group, then the port on the nodes is opened to the internet (<code>0.0.0.0/0</code>). For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">Security Groups for Your
      *        VPC</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

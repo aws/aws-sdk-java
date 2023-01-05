@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,19 +48,19 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
     private String description;
     /**
      * <p>
-     * The pricing rules count currently associated with this pricing plan list element.
+     * The pricing rules count that's currently associated with this pricing plan list element.
      * </p>
      */
     private Long size;
     /**
      * <p>
-     * The time the pricing plan was created.
+     * The time when the pricing plan was created.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The most recent time the pricing plan was modified.
+     * The most recent time when the pricing plan was modified.
      * </p>
      */
     private Long lastModifiedTime;
@@ -187,11 +187,11 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The pricing rules count currently associated with this pricing plan list element.
+     * The pricing rules count that's currently associated with this pricing plan list element.
      * </p>
      * 
      * @param size
-     *        The pricing rules count currently associated with this pricing plan list element.
+     *        The pricing rules count that's currently associated with this pricing plan list element.
      */
 
     public void setSize(Long size) {
@@ -200,10 +200,10 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The pricing rules count currently associated with this pricing plan list element.
+     * The pricing rules count that's currently associated with this pricing plan list element.
      * </p>
      * 
-     * @return The pricing rules count currently associated with this pricing plan list element.
+     * @return The pricing rules count that's currently associated with this pricing plan list element.
      */
 
     public Long getSize() {
@@ -212,11 +212,11 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The pricing rules count currently associated with this pricing plan list element.
+     * The pricing rules count that's currently associated with this pricing plan list element.
      * </p>
      * 
      * @param size
-     *        The pricing rules count currently associated with this pricing plan list element.
+     *        The pricing rules count that's currently associated with this pricing plan list element.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time the pricing plan was created.
+     * The time when the pricing plan was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the pricing plan was created.
+     *        The time when the pricing plan was created.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -240,10 +240,10 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time the pricing plan was created.
+     * The time when the pricing plan was created.
      * </p>
      * 
-     * @return The time the pricing plan was created.
+     * @return The time when the pricing plan was created.
      */
 
     public Long getCreationTime() {
@@ -252,11 +252,11 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time the pricing plan was created.
+     * The time when the pricing plan was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the pricing plan was created.
+     *        The time when the pricing plan was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +267,11 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The most recent time the pricing plan was modified.
+     * The most recent time when the pricing plan was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the pricing plan was modified.
+     *        The most recent time when the pricing plan was modified.
      */
 
     public void setLastModifiedTime(Long lastModifiedTime) {
@@ -280,10 +280,10 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The most recent time the pricing plan was modified.
+     * The most recent time when the pricing plan was modified.
      * </p>
      * 
-     * @return The most recent time the pricing plan was modified.
+     * @return The most recent time when the pricing plan was modified.
      */
 
     public Long getLastModifiedTime() {
@@ -292,11 +292,11 @@ public class PricingPlanListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The most recent time the pricing plan was modified.
+     * The most recent time when the pricing plan was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the pricing plan was modified.
+     *        The most recent time when the pricing plan was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

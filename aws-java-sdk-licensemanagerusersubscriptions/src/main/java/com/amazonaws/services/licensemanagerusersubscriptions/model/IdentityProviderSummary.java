@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,13 @@ public class IdentityProviderSummary implements Serializable, Cloneable, Structu
      * </p>
      */
     private String product;
+    /**
+     * <p>
+     * An object that details the registered identity provider’s product related configuration settings such as the
+     * subnets to provision VPC endpoints.
+     * </p>
+     */
+    private Settings settings;
     /**
      * <p>
      * The status of an identity provider.
@@ -176,6 +183,52 @@ public class IdentityProviderSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * An object that details the registered identity provider’s product related configuration settings such as the
+     * subnets to provision VPC endpoints.
+     * </p>
+     * 
+     * @param settings
+     *        An object that details the registered identity provider’s product related configuration settings such as
+     *        the subnets to provision VPC endpoints.
+     */
+
+    public void setSettings(Settings settings) {
+        this.settings = settings;
+    }
+
+    /**
+     * <p>
+     * An object that details the registered identity provider’s product related configuration settings such as the
+     * subnets to provision VPC endpoints.
+     * </p>
+     * 
+     * @return An object that details the registered identity provider’s product related configuration settings such as
+     *         the subnets to provision VPC endpoints.
+     */
+
+    public Settings getSettings() {
+        return this.settings;
+    }
+
+    /**
+     * <p>
+     * An object that details the registered identity provider’s product related configuration settings such as the
+     * subnets to provision VPC endpoints.
+     * </p>
+     * 
+     * @param settings
+     *        An object that details the registered identity provider’s product related configuration settings such as
+     *        the subnets to provision VPC endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IdentityProviderSummary withSettings(Settings settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of an identity provider.
      * </p>
      * 
@@ -232,6 +285,8 @@ public class IdentityProviderSummary implements Serializable, Cloneable, Structu
             sb.append("IdentityProvider: ").append(getIdentityProvider()).append(",");
         if (getProduct() != null)
             sb.append("Product: ").append(getProduct()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus());
         sb.append("}");
@@ -260,6 +315,10 @@ public class IdentityProviderSummary implements Serializable, Cloneable, Structu
             return false;
         if (other.getProduct() != null && other.getProduct().equals(this.getProduct()) == false)
             return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -275,6 +334,7 @@ public class IdentityProviderSummary implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getFailureMessage() == null) ? 0 : getFailureMessage().hashCode());
         hashCode = prime * hashCode + ((getIdentityProvider() == null) ? 0 : getIdentityProvider().hashCode());
         hashCode = prime * hashCode + ((getProduct() == null) ? 0 : getProduct().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }

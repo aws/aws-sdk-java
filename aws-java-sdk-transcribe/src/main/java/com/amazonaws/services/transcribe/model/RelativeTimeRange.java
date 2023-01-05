@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * criteria in the audio contained between the 10 percent mark and the 50 percent mark of your media file.
  * </p>
  * <p>
- * You can use also <code>First</code> to search from the start of the media file until the time you specify, or
- * <code>Last</code> to search from the time you specify until the end of the media file. For example, setting
+ * You can use also <code>First</code> to search from the start of the media file until the time that you specify. Or
+ * use <code>Last</code> to search from the time that you specify until the end of the media file. For example, setting
  * <code>First</code> to 10 only searches for your specified criteria in the audio contained in the first 10 percent of
  * the media file.
  * </p>
@@ -58,15 +58,15 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
     private Integer endPercentage;
     /**
      * <p>
-     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      */
     private Integer first;
     /**
      * <p>
-     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      */
     private Integer last;
@@ -171,13 +171,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
      * @param first
-     *        The time, in percentage, from the start of your media file until the value you specify in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      */
 
     public void setFirst(Integer first) {
@@ -186,12 +186,12 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
-     * @return The time, in percentage, from the start of your media file until the value you specify in which Amazon
-     *         Transcribe searches for your specified criteria.
+     * @return The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe
+     *         searches for your specified criteria in this time segment.
      */
 
     public Integer getFirst() {
@@ -200,13 +200,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in percentage, from the start of your media file until the value you specify in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
      * @param first
-     *        The time, in percentage, from the start of your media file until the value you specify in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in percentage, from the start of your media file until the specified value. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -217,13 +217,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
      * @param last
-     *        The time, in percentage, from the value you specify until the end of your media file in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      */
 
     public void setLast(Integer last) {
@@ -232,12 +232,12 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
-     * @return The time, in percentage, from the value you specify until the end of your media file in which Amazon
-     *         Transcribe searches for your specified criteria.
+     * @return The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe
+     *         searches for your specified criteria in this time segment.
      */
 
     public Integer getLast() {
@@ -246,13 +246,13 @@ public class RelativeTimeRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The time, in percentage, from the value you specify until the end of your media file in which Amazon Transcribe
-     * searches for your specified criteria.
+     * The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe searches
+     * for your specified criteria in this time segment.
      * </p>
      * 
      * @param last
-     *        The time, in percentage, from the value you specify until the end of your media file in which Amazon
-     *        Transcribe searches for your specified criteria.
+     *        The time, in percentage, from the specified value until the end of your media file. Amazon Transcribe
+     *        searches for your specified criteria in this time segment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

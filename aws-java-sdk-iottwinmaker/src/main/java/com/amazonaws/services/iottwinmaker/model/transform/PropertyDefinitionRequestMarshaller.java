@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,20 +29,22 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class PropertyDefinitionRequestMarshaller {
 
-    private static final MarshallingInfo<Map> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("configuration").build();
     private static final MarshallingInfo<StructuredPojo> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataType").build();
-    private static final MarshallingInfo<StructuredPojo> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
-    private static final MarshallingInfo<Boolean> ISEXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isExternalId").build();
     private static final MarshallingInfo<Boolean> ISREQUIREDINENTITY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isRequiredInEntity").build();
+    private static final MarshallingInfo<Boolean> ISEXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isExternalId").build();
     private static final MarshallingInfo<Boolean> ISSTOREDEXTERNALLY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isStoredExternally").build();
     private static final MarshallingInfo<Boolean> ISTIMESERIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isTimeSeries").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
+    private static final MarshallingInfo<Map> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("configuration").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("displayName").build();
 
     private static final PropertyDefinitionRequestMarshaller instance = new PropertyDefinitionRequestMarshaller();
 
@@ -60,13 +62,14 @@ public class PropertyDefinitionRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(propertyDefinitionRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(propertyDefinitionRequest.getDataType(), DATATYPE_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionRequest.getDefaultValue(), DEFAULTVALUE_BINDING);
-            protocolMarshaller.marshall(propertyDefinitionRequest.getIsExternalId(), ISEXTERNALID_BINDING);
             protocolMarshaller.marshall(propertyDefinitionRequest.getIsRequiredInEntity(), ISREQUIREDINENTITY_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionRequest.getIsExternalId(), ISEXTERNALID_BINDING);
             protocolMarshaller.marshall(propertyDefinitionRequest.getIsStoredExternally(), ISSTOREDEXTERNALLY_BINDING);
             protocolMarshaller.marshall(propertyDefinitionRequest.getIsTimeSeries(), ISTIMESERIES_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionRequest.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(propertyDefinitionRequest.getDisplayName(), DISPLAYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

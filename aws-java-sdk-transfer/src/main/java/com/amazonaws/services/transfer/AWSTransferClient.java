@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -253,6 +253,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.CreateAgreement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAgreement" target="_top">AWS API
      *      Documentation</a>
@@ -304,7 +306,10 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
     /**
      * <p>
      * Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The
-     * connector is required for sending files from a customer's non Amazon Web Services server.
+     * connector is required for sending files to an externally hosted AS2 server. For more details about connectors,
+     * see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector"
+     * >Create AS2 connectors</a>.
      * </p>
      * 
      * @param createConnectorRequest
@@ -319,6 +324,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.CreateConnector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateConnector" target="_top">AWS API
      *      Documentation</a>
@@ -369,7 +376,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Creates the profile for the AS2 process. The agreement is between the partner and the AS2 process.
+     * Creates the local or partner profile to use for AS2 transfers.
      * </p>
      * 
      * @param createProfileRequest
@@ -382,6 +389,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.CreateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateProfile" target="_top">AWS API
      *      Documentation</a>
@@ -2068,7 +2077,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Adds a host key to the server specified by the <code>ServerId</code> parameter.
+     * Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
      * </p>
      * 
      * @param importHostKeyRequest
@@ -2538,7 +2547,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Returns a list of host keys for the server specified by the <code>ServerId</code> paramter.
+     * Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.
      * </p>
      * 
      * @param listHostKeysRequest
@@ -3062,8 +3071,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the file paths for where to send
-     * the files.
+     * Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file
+     * paths for where to send the files.
      * </p>
      * 
      * @param startFileTransferRequest
@@ -3533,6 +3542,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.UpdateAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess" target="_top">AWS API
      *      Documentation</a>
@@ -3600,6 +3611,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.UpdateAgreement
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAgreement" target="_top">AWS API
      *      Documentation</a>
@@ -3663,6 +3676,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.UpdateCertificate
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateCertificate" target="_top">AWS API
      *      Documentation</a>
@@ -3729,6 +3744,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         The requested resource does not exist.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.UpdateConnector
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateConnector" target="_top">AWS API
      *      Documentation</a>
@@ -3779,8 +3796,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
 
     /**
      * <p>
-     * Updates the description for the host key specified by the specified by the <code>ServerId</code> and
-     * <code>HostKeyId</code> parameters.
+     * Updates the description for the host key that's specified by the <code>ServerId</code> and <code>HostKeyId</code>
+     * parameters.
      * </p>
      * 
      * @param updateHostKeyRequest
@@ -3859,6 +3876,8 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
      *         This exception is thrown when the client submits a malformed request.
      * @throws ResourceNotFoundException
      *         This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer Family service.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
      * @sample AWSTransfer.UpdateProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateProfile" target="_top">AWS API
      *      Documentation</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      */
     private String channelName;
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      */
 
     public void setChannelName(String channelName) {
@@ -47,10 +47,10 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
-     * @return The identifier for the channel you are working on.
+     * @return The name of the channel.
      */
 
     public String getChannelName() {
@@ -59,11 +59,11 @@ public class DescribeChannelRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The identifier for the channel you are working on.
+     * The name of the channel.
      * </p>
      * 
      * @param channelName
-     *        The identifier for the channel you are working on.
+     *        The name of the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,10 +24,20 @@ import com.amazonaws.AmazonWebServiceResult;
 public class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>
         implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the local gateway route table virtual interface group association.
+     * </p>
+     */
     private LocalGatewayRouteTableVirtualInterfaceGroupAssociation localGatewayRouteTableVirtualInterfaceGroupAssociation;
 
     /**
+     * <p>
+     * Information about the local gateway route table virtual interface group association.
+     * </p>
+     * 
      * @param localGatewayRouteTableVirtualInterfaceGroupAssociation
+     *        Information about the local gateway route table virtual interface group association.
      */
 
     public void setLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
@@ -36,7 +46,11 @@ public class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResult 
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the local gateway route table virtual interface group association.
+     * </p>
+     * 
+     * @return Information about the local gateway route table virtual interface group association.
      */
 
     public LocalGatewayRouteTableVirtualInterfaceGroupAssociation getLocalGatewayRouteTableVirtualInterfaceGroupAssociation() {
@@ -44,7 +58,12 @@ public class CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationResult 
     }
 
     /**
+     * <p>
+     * Information about the local gateway route table virtual interface group association.
+     * </p>
+     * 
      * @param localGatewayRouteTableVirtualInterfaceGroupAssociation
+     *        Information about the local gateway route table virtual interface group association.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

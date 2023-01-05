@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ssmincidents.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -34,6 +35,8 @@ public class CreateTimelineEventRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> EVENTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eventData").build();
+    private static final MarshallingInfo<List> EVENTREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventReferences").build();
     private static final MarshallingInfo<java.util.Date> EVENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EVENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +62,7 @@ public class CreateTimelineEventRequestMarshaller {
         try {
             protocolMarshaller.marshall(createTimelineEventRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createTimelineEventRequest.getEventData(), EVENTDATA_BINDING);
+            protocolMarshaller.marshall(createTimelineEventRequest.getEventReferences(), EVENTREFERENCES_BINDING);
             protocolMarshaller.marshall(createTimelineEventRequest.getEventTime(), EVENTTIME_BINDING);
             protocolMarshaller.marshall(createTimelineEventRequest.getEventType(), EVENTTYPE_BINDING);
             protocolMarshaller.marshall(createTimelineEventRequest.getIncidentRecordArn(), INCIDENTRECORDARN_BINDING);

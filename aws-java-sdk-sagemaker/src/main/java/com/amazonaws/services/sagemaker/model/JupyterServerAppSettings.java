@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,13 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
      * </note>
      */
     private java.util.List<String> lifecycleConfigArns;
+    /**
+     * <p>
+     * A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     * application.
+     * </p>
+     */
+    private java.util.List<CodeRepository> codeRepositories;
 
     /**
      * <p>
@@ -212,6 +219,84 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     * application.
+     * </p>
+     * 
+     * @return A list of Git repositories that SageMaker automatically displays to users for cloning in the
+     *         JupyterServer application.
+     */
+
+    public java.util.List<CodeRepository> getCodeRepositories() {
+        return codeRepositories;
+    }
+
+    /**
+     * <p>
+     * A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     * application.
+     * </p>
+     * 
+     * @param codeRepositories
+     *        A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     *        application.
+     */
+
+    public void setCodeRepositories(java.util.Collection<CodeRepository> codeRepositories) {
+        if (codeRepositories == null) {
+            this.codeRepositories = null;
+            return;
+        }
+
+        this.codeRepositories = new java.util.ArrayList<CodeRepository>(codeRepositories);
+    }
+
+    /**
+     * <p>
+     * A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     * application.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCodeRepositories(java.util.Collection)} or {@link #withCodeRepositories(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param codeRepositories
+     *        A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JupyterServerAppSettings withCodeRepositories(CodeRepository... codeRepositories) {
+        if (this.codeRepositories == null) {
+            setCodeRepositories(new java.util.ArrayList<CodeRepository>(codeRepositories.length));
+        }
+        for (CodeRepository ele : codeRepositories) {
+            this.codeRepositories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     * application.
+     * </p>
+     * 
+     * @param codeRepositories
+     *        A list of Git repositories that SageMaker automatically displays to users for cloning in the JupyterServer
+     *        application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JupyterServerAppSettings withCodeRepositories(java.util.Collection<CodeRepository> codeRepositories) {
+        setCodeRepositories(codeRepositories);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -226,7 +311,9 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
         if (getDefaultResourceSpec() != null)
             sb.append("DefaultResourceSpec: ").append(getDefaultResourceSpec()).append(",");
         if (getLifecycleConfigArns() != null)
-            sb.append("LifecycleConfigArns: ").append(getLifecycleConfigArns());
+            sb.append("LifecycleConfigArns: ").append(getLifecycleConfigArns()).append(",");
+        if (getCodeRepositories() != null)
+            sb.append("CodeRepositories: ").append(getCodeRepositories());
         sb.append("}");
         return sb.toString();
     }
@@ -249,6 +336,10 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
             return false;
         if (other.getLifecycleConfigArns() != null && other.getLifecycleConfigArns().equals(this.getLifecycleConfigArns()) == false)
             return false;
+        if (other.getCodeRepositories() == null ^ this.getCodeRepositories() == null)
+            return false;
+        if (other.getCodeRepositories() != null && other.getCodeRepositories().equals(this.getCodeRepositories()) == false)
+            return false;
         return true;
     }
 
@@ -259,6 +350,7 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
         hashCode = prime * hashCode + ((getDefaultResourceSpec() == null) ? 0 : getDefaultResourceSpec().hashCode());
         hashCode = prime * hashCode + ((getLifecycleConfigArns() == null) ? 0 : getLifecycleConfigArns().hashCode());
+        hashCode = prime * hashCode + ((getCodeRepositories() == null) ? 0 : getCodeRepositories().hashCode());
         return hashCode;
     }
 

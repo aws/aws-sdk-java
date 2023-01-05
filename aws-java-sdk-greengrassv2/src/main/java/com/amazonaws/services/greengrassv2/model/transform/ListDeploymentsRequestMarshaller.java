@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListDeploymentsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("targetArn").build();
     private static final MarshallingInfo<String> HISTORYFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("historyFilter").build();
+    private static final MarshallingInfo<String> PARENTTARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("parentTargetArn").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class ListDeploymentsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listDeploymentsRequest.getTargetArn(), TARGETARN_BINDING);
             protocolMarshaller.marshall(listDeploymentsRequest.getHistoryFilter(), HISTORYFILTER_BINDING);
+            protocolMarshaller.marshall(listDeploymentsRequest.getParentTargetArn(), PARENTTARGETARN_BINDING);
             protocolMarshaller.marshall(listDeploymentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listDeploymentsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

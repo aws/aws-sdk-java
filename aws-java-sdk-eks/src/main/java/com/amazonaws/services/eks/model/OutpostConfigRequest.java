@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,9 +20,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The configuration of your local Amazon EKS cluster on an Amazon Web Services Outpost. Before creating a cluster on an
- * Outpost, review <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-cluster-outpost.html">Creating a
- * local Amazon EKS cluster on an Amazon Web Services Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't
- * available for Amazon EKS clusters on the Amazon Web Services cloud.
+ * Outpost, review <a
+ * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-local-cluster-create.html">Creating a local
+ * cluster on an Outpost</a> in the <i>Amazon EKS User Guide</i>. This API isn't available for Amazon EKS clusters on
+ * the Amazon Web Services cloud.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/OutpostConfigRequest" target="_top">AWS API
@@ -40,37 +41,28 @@ public class OutpostConfigRequest implements Serializable, Cloneable, Structured
     private java.util.List<String> outpostArns;
     /**
      * <p>
-     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance
-     * type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed
-     * after cluster creation.
+     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an
+     * instance type based on the number of nodes that your cluster will have. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
-     * Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:
+     * The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be
+     * changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * 1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For a list of the available Amazon EC2 instance types, see Compute and storage in <a
-     * href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not
-     * automatically scaled by Amazon EKS.
      * </p>
      */
     private String controlPlaneInstanceType;
+    /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     */
+    private ControlPlanePlacementRequest controlPlanePlacement;
 
     /**
      * <p>
@@ -152,65 +144,28 @@ public class OutpostConfigRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance
-     * type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed
-     * after cluster creation.
+     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an
+     * instance type based on the number of nodes that your cluster will have. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
-     * Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:
+     * The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be
+     * changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * 1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For a list of the available Amazon EC2 instance types, see Compute and storage in <a
-     * href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not
-     * automatically scaled by Amazon EKS.
      * </p>
      * 
      * @param controlPlaneInstanceType
-     *        The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The
-     *        instance type that you specify is used for all Kubernetes control plane instances. The instance type can't
-     *        be changed after cluster creation.</p>
+     *        The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an
+     *        instance type based on the number of nodes that your cluster will have. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      *        <p>
-     *        Choose an instance type based on the number of nodes that your cluster will have. If your cluster will
-     *        have:
+     *        The instance type that you specify is used for all Kubernetes control plane instances. The instance type
+     *        can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.
      *        </p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For a list of the available Amazon EC2 instance types, see Compute and storage in <a
-     *        href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not
-     *        automatically scaled by Amazon EKS.
      */
 
     public void setControlPlaneInstanceType(String controlPlaneInstanceType) {
@@ -219,64 +174,28 @@ public class OutpostConfigRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance
-     * type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed
-     * after cluster creation.
+     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an
+     * instance type based on the number of nodes that your cluster will have. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
-     * Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:
+     * The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be
+     * changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * 1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For a list of the available Amazon EC2 instance types, see Compute and storage in <a
-     * href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not
-     * automatically scaled by Amazon EKS.
      * </p>
      * 
-     * @return The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The
-     *         instance type that you specify is used for all Kubernetes control plane instances. The instance type
-     *         can't be changed after cluster creation.</p>
+     * @return The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose
+     *         an instance type based on the number of nodes that your cluster will have. For more information, see <a
+     *         href
+     *         ="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     *         considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      *         <p>
-     *         Choose an instance type based on the number of nodes that your cluster will have. If your cluster will
-     *         have:
+     *         The instance type that you specify is used for all Kubernetes control plane instances. The instance type
+     *         can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.
      *         </p>
-     *         <ul>
-     *         <li>
      *         <p>
-     *         1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         For a list of the available Amazon EC2 instance types, see Compute and storage in <a
-     *         href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not
-     *         automatically scaled by Amazon EKS.
      */
 
     public String getControlPlaneInstanceType() {
@@ -285,70 +204,91 @@ public class OutpostConfigRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The instance
-     * type that you specify is used for all Kubernetes control plane instances. The instance type can't be changed
-     * after cluster creation.
+     * The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an
+     * instance type based on the number of nodes that your cluster will have. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
-     * Choose an instance type based on the number of nodes that your cluster will have. If your cluster will have:
+     * The instance type that you specify is used for all Kubernetes control plane instances. The instance type can't be
+     * changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.
      * </p>
-     * <ul>
-     * <li>
      * <p>
-     * 1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * 101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For a list of the available Amazon EC2 instance types, see Compute and storage in <a
-     * href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not
-     * automatically scaled by Amazon EKS.
      * </p>
      * 
      * @param controlPlaneInstanceType
-     *        The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. The
-     *        instance type that you specify is used for all Kubernetes control plane instances. The instance type can't
-     *        be changed after cluster creation.</p>
+     *        The Amazon EC2 instance type that you want to use for your local Amazon EKS cluster on Outposts. Choose an
+     *        instance type based on the number of nodes that your cluster will have. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.</p>
      *        <p>
-     *        Choose an instance type based on the number of nodes that your cluster will have. If your cluster will
-     *        have:
+     *        The instance type that you specify is used for all Kubernetes control plane instances. The instance type
+     *        can't be changed after cluster creation. The control plane is not automatically scaled by Amazon EKS.
      *        </p>
-     *        <ul>
-     *        <li>
      *        <p>
-     *        1–20 nodes, then we recommend specifying a <code>large</code> instance type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        21–100 nodes, then we recommend specifying an <code>xlarge</code> instance type.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        101–250 nodes, then we recommend specifying a <code>2xlarge</code> instance type.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        For a list of the available Amazon EC2 instance types, see Compute and storage in <a
-     *        href="http://aws.amazon.com/outposts/rack/features/">Outposts rack features</a>. The control plane is not
-     *        automatically scaled by Amazon EKS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutpostConfigRequest withControlPlaneInstanceType(String controlPlaneInstanceType) {
         setControlPlaneInstanceType(controlPlaneInstanceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param controlPlanePlacement
+     *        An object representing the placement configuration for all the control plane instances of your local
+     *        Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.
+     */
+
+    public void setControlPlanePlacement(ControlPlanePlacementRequest controlPlanePlacement) {
+        this.controlPlanePlacement = controlPlanePlacement;
+    }
+
+    /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @return An object representing the placement configuration for all the control plane instances of your local
+     *         Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html"
+     *         >Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.
+     */
+
+    public ControlPlanePlacementRequest getControlPlanePlacement() {
+        return this.controlPlanePlacement;
+    }
+
+    /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param controlPlanePlacement
+     *        An object representing the placement configuration for all the control plane instances of your local
+     *        Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutpostConfigRequest withControlPlanePlacement(ControlPlanePlacementRequest controlPlanePlacement) {
+        setControlPlanePlacement(controlPlanePlacement);
         return this;
     }
 
@@ -367,7 +307,9 @@ public class OutpostConfigRequest implements Serializable, Cloneable, Structured
         if (getOutpostArns() != null)
             sb.append("OutpostArns: ").append(getOutpostArns()).append(",");
         if (getControlPlaneInstanceType() != null)
-            sb.append("ControlPlaneInstanceType: ").append(getControlPlaneInstanceType());
+            sb.append("ControlPlaneInstanceType: ").append(getControlPlaneInstanceType()).append(",");
+        if (getControlPlanePlacement() != null)
+            sb.append("ControlPlanePlacement: ").append(getControlPlanePlacement());
         sb.append("}");
         return sb.toString();
     }
@@ -390,6 +332,10 @@ public class OutpostConfigRequest implements Serializable, Cloneable, Structured
             return false;
         if (other.getControlPlaneInstanceType() != null && other.getControlPlaneInstanceType().equals(this.getControlPlaneInstanceType()) == false)
             return false;
+        if (other.getControlPlanePlacement() == null ^ this.getControlPlanePlacement() == null)
+            return false;
+        if (other.getControlPlanePlacement() != null && other.getControlPlanePlacement().equals(this.getControlPlanePlacement()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +346,7 @@ public class OutpostConfigRequest implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getOutpostArns() == null) ? 0 : getOutpostArns().hashCode());
         hashCode = prime * hashCode + ((getControlPlaneInstanceType() == null) ? 0 : getControlPlaneInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getControlPlanePlacement() == null) ? 0 : getControlPlanePlacement().hashCode());
         return hashCode;
     }
 

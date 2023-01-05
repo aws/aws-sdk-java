@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Internal ID of the package.
+     * The unique identifier of the package.
      * </p>
      */
     private String packageID;
@@ -39,7 +39,7 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     private String packageName;
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      */
     private String packageType;
@@ -51,19 +51,27 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     private String packageDescription;
     /**
      * <p>
-     * Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     * Current status of the package.
      * </p>
      */
     private String packageStatus;
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The timestamp when the package was created.
      * </p>
      */
     private java.util.Date createdAt;
-
+    /**
+     * <p>
+     * Date and time when the package was last updated.
+     * </p>
+     */
     private java.util.Date lastUpdatedAt;
-
+    /**
+     * <p>
+     * The package version.
+     * </p>
+     */
     private String availablePackageVersion;
     /**
      * <p>
@@ -74,11 +82,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Internal ID of the package.
+     * The unique identifier of the package.
      * </p>
      * 
      * @param packageID
-     *        Internal ID of the package.
+     *        The unique identifier of the package.
      */
 
     public void setPackageID(String packageID) {
@@ -87,10 +95,10 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Internal ID of the package.
+     * The unique identifier of the package.
      * </p>
      * 
-     * @return Internal ID of the package.
+     * @return The unique identifier of the package.
      */
 
     public String getPackageID() {
@@ -99,11 +107,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Internal ID of the package.
+     * The unique identifier of the package.
      * </p>
      * 
      * @param packageID
-     *        Internal ID of the package.
+     *        The unique identifier of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +162,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Currently supports only TXT-DICTIONARY.
+     *        The type of package.
      * @see PackageType
      */
 
@@ -168,10 +176,10 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
-     * @return Currently supports only TXT-DICTIONARY.
+     * @return The type of package.
      * @see PackageType
      */
 
@@ -181,11 +189,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Currently supports only TXT-DICTIONARY.
+     *        The type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -197,11 +205,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Currently supports only TXT-DICTIONARY.
+     * The type of package.
      * </p>
      * 
      * @param packageType
-     *        Currently supports only TXT-DICTIONARY.
+     *        The type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -253,11 +261,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     * Current status of the package.
      * </p>
      * 
      * @param packageStatus
-     *        Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     *        Current status of the package.
      * @see PackageStatus
      */
 
@@ -267,10 +275,10 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     * Current status of the package.
      * </p>
      * 
-     * @return Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     * @return Current status of the package.
      * @see PackageStatus
      */
 
@@ -280,11 +288,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     * Current status of the package.
      * </p>
      * 
      * @param packageStatus
-     *        Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     *        Current status of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageStatus
      */
@@ -296,11 +304,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     * Current status of the package.
      * </p>
      * 
      * @param packageStatus
-     *        Current state of the package. Values are COPYING, COPY_FAILED, AVAILABLE, DELETING, and DELETE_FAILED.
+     *        Current status of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageStatus
      */
@@ -312,11 +320,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The timestamp when the package was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp of when the package was created.
+     *        The timestamp when the package was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -325,10 +333,10 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The timestamp when the package was created.
      * </p>
      * 
-     * @return The timestamp of when the package was created.
+     * @return The timestamp when the package was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -337,11 +345,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The timestamp of when the package was created.
+     * The timestamp when the package was created.
      * </p>
      * 
      * @param createdAt
-     *        The timestamp of when the package was created.
+     *        The timestamp when the package was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -351,7 +359,12 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Date and time when the package was last updated.
+     * </p>
+     * 
      * @param lastUpdatedAt
+     *        Date and time when the package was last updated.
      */
 
     public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
@@ -359,7 +372,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Date and time when the package was last updated.
+     * </p>
+     * 
+     * @return Date and time when the package was last updated.
      */
 
     public java.util.Date getLastUpdatedAt() {
@@ -367,7 +384,12 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Date and time when the package was last updated.
+     * </p>
+     * 
      * @param lastUpdatedAt
+     *        Date and time when the package was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,7 +399,12 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The package version.
+     * </p>
+     * 
      * @param availablePackageVersion
+     *        The package version.
      */
 
     public void setAvailablePackageVersion(String availablePackageVersion) {
@@ -385,7 +412,11 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The package version.
+     * </p>
+     * 
+     * @return The package version.
      */
 
     public String getAvailablePackageVersion() {
@@ -393,7 +424,12 @@ public class PackageDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The package version.
+     * </p>
+     * 
      * @param availablePackageVersion
+     *        The package version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

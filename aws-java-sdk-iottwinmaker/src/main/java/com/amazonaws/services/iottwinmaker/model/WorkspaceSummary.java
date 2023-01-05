@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,16 +30,16 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The ID of the workspace.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * The ARN of the workspace.
      * </p>
      */
     private String arn;
-    /**
-     * <p>
-     * The date and time when the workspace was created.
-     * </p>
-     */
-    private java.util.Date creationDateTime;
     /**
      * <p>
      * The description of the workspace.
@@ -48,16 +48,56 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     private String description;
     /**
      * <p>
+     * The date and time when the workspace was created.
+     * </p>
+     */
+    private java.util.Date creationDateTime;
+    /**
+     * <p>
      * The date and time when the workspace was last updated.
      * </p>
      */
     private java.util.Date updateDateTime;
+
     /**
      * <p>
      * The ID of the workspace.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @return The ID of the workspace.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -96,46 +136,6 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     public WorkspaceSummary withArn(String arn) {
         setArn(arn);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The date and time when the workspace was created.
-     * </p>
-     * 
-     * @param creationDateTime
-     *        The date and time when the workspace was created.
-     */
-
-    public void setCreationDateTime(java.util.Date creationDateTime) {
-        this.creationDateTime = creationDateTime;
-    }
-
-    /**
-     * <p>
-     * The date and time when the workspace was created.
-     * </p>
-     * 
-     * @return The date and time when the workspace was created.
-     */
-
-    public java.util.Date getCreationDateTime() {
-        return this.creationDateTime;
-    }
-
-    /**
-     * <p>
-     * The date and time when the workspace was created.
-     * </p>
-     * 
-     * @param creationDateTime
-     *        The date and time when the workspace was created.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WorkspaceSummary withCreationDateTime(java.util.Date creationDateTime) {
-        setCreationDateTime(creationDateTime);
         return this;
     }
 
@@ -181,6 +181,46 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The date and time when the workspace was created.
+     * </p>
+     * 
+     * @param creationDateTime
+     *        The date and time when the workspace was created.
+     */
+
+    public void setCreationDateTime(java.util.Date creationDateTime) {
+        this.creationDateTime = creationDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the workspace was created.
+     * </p>
+     * 
+     * @return The date and time when the workspace was created.
+     */
+
+    public java.util.Date getCreationDateTime() {
+        return this.creationDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the workspace was created.
+     * </p>
+     * 
+     * @param creationDateTime
+     *        The date and time when the workspace was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceSummary withCreationDateTime(java.util.Date creationDateTime) {
+        setCreationDateTime(creationDateTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time when the workspace was last updated.
      * </p>
      * 
@@ -220,46 +260,6 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @return The ID of the workspace.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public WorkspaceSummary withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -271,16 +271,16 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
-        if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getCreationDateTime() != null)
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getUpdateDateTime() != null)
-            sb.append("UpdateDateTime: ").append(getUpdateDateTime()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("UpdateDateTime: ").append(getUpdateDateTime());
         sb.append("}");
         return sb.toString();
     }
@@ -295,25 +295,25 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof WorkspaceSummary == false)
             return false;
         WorkspaceSummary other = (WorkspaceSummary) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
-            return false;
-        if (other.getCreationDateTime() == null ^ this.getCreationDateTime() == null)
-            return false;
-        if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getCreationDateTime() == null ^ this.getCreationDateTime() == null)
+            return false;
+        if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
+            return false;
         if (other.getUpdateDateTime() == null ^ this.getUpdateDateTime() == null)
             return false;
         if (other.getUpdateDateTime() != null && other.getUpdateDateTime().equals(this.getUpdateDateTime()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -323,11 +323,11 @@ public class WorkspaceSummary implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getUpdateDateTime() == null) ? 0 : getUpdateDateTime().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getUpdateDateTime() == null) ? 0 : getUpdateDateTime().hashCode());
         return hashCode;
     }
 

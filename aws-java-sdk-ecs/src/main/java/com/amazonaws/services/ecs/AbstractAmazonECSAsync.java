@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -369,6 +369,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<GetTaskProtectionResult> getTaskProtectionAsync(GetTaskProtectionRequest request) {
+
+        return getTaskProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTaskProtectionResult> getTaskProtectionAsync(GetTaskProtectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTaskProtectionRequest, GetTaskProtectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccountSettingsResult> listAccountSettingsAsync(ListAccountSettingsRequest request) {
 
         return listAccountSettingsAsync(request, null);
@@ -500,6 +513,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
             com.amazonaws.handlers.AsyncHandler<ListServicesRequest, ListServicesResult> asyncHandler) {
 
         return listServicesAsync(new ListServicesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServicesByNamespaceResult> listServicesByNamespaceAsync(ListServicesByNamespaceRequest request) {
+
+        return listServicesByNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListServicesByNamespaceResult> listServicesByNamespaceAsync(ListServicesByNamespaceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListServicesByNamespaceRequest, ListServicesByNamespaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -914,6 +940,19 @@ public class AbstractAmazonECSAsync extends AbstractAmazonECS implements AmazonE
     @Override
     public java.util.concurrent.Future<UpdateServicePrimaryTaskSetResult> updateServicePrimaryTaskSetAsync(UpdateServicePrimaryTaskSetRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateServicePrimaryTaskSetRequest, UpdateServicePrimaryTaskSetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskProtectionResult> updateTaskProtectionAsync(UpdateTaskProtectionRequest request) {
+
+        return updateTaskProtectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskProtectionResult> updateTaskProtectionAsync(UpdateTaskProtectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateTaskProtectionRequest, UpdateTaskProtectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

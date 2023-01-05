@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s value.
+ * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's value.
  * </p>
  * <p>
  * For more information about the <code>X-Frame-Options</code> HTTP response header, see <a
@@ -124,7 +124,7 @@ public class ResponseHeadersPolicyFrameOptions implements Serializable, Cloneabl
      * 
      * @param frameOption
      *        The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and
-     *        <code>SAMEORIGIN</code>. </p>
+     *        <code>SAMEORIGIN</code>.</p>
      *        <p>
      *        For more information about these values, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in
@@ -148,7 +148,7 @@ public class ResponseHeadersPolicyFrameOptions implements Serializable, Cloneabl
      * </p>
      * 
      * @return The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code>
-     *         and <code>SAMEORIGIN</code>. </p>
+     *         and <code>SAMEORIGIN</code>.</p>
      *         <p>
      *         For more information about these values, see <a
      *         href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in
@@ -173,7 +173,7 @@ public class ResponseHeadersPolicyFrameOptions implements Serializable, Cloneabl
      * 
      * @param frameOption
      *        The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and
-     *        <code>SAMEORIGIN</code>. </p>
+     *        <code>SAMEORIGIN</code>.</p>
      *        <p>
      *        For more information about these values, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in
@@ -200,7 +200,7 @@ public class ResponseHeadersPolicyFrameOptions implements Serializable, Cloneabl
      * 
      * @param frameOption
      *        The value of the <code>X-Frame-Options</code> HTTP response header. Valid values are <code>DENY</code> and
-     *        <code>SAMEORIGIN</code>. </p>
+     *        <code>SAMEORIGIN</code>.</p>
      *        <p>
      *        For more information about these values, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in

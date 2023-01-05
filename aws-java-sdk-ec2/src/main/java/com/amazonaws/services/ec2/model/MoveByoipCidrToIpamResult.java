@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,20 @@ import com.amazonaws.AmazonWebServiceResult;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MoveByoipCidrToIpamResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The BYOIP CIDR.
+     * </p>
+     */
     private ByoipCidr byoipCidr;
 
     /**
+     * <p>
+     * The BYOIP CIDR.
+     * </p>
+     * 
      * @param byoipCidr
+     *        The BYOIP CIDR.
      */
 
     public void setByoipCidr(ByoipCidr byoipCidr) {
@@ -34,7 +44,11 @@ public class MoveByoipCidrToIpamResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * @return
+     * <p>
+     * The BYOIP CIDR.
+     * </p>
+     * 
+     * @return The BYOIP CIDR.
      */
 
     public ByoipCidr getByoipCidr() {
@@ -42,7 +56,12 @@ public class MoveByoipCidrToIpamResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
+     * <p>
+     * The BYOIP CIDR.
+     * </p>
+     * 
      * @param byoipCidr
+     *        The BYOIP CIDR.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

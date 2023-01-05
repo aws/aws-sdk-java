@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.config.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -47,6 +48,8 @@ public class ConfigRuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigRuleState").build();
     private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CreatedBy").build();
+    private static final MarshallingInfo<List> EVALUATIONMODES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationModes").build();
 
     private static final ConfigRuleMarshaller instance = new ConfigRuleMarshaller();
 
@@ -74,6 +77,7 @@ public class ConfigRuleMarshaller {
             protocolMarshaller.marshall(configRule.getMaximumExecutionFrequency(), MAXIMUMEXECUTIONFREQUENCY_BINDING);
             protocolMarshaller.marshall(configRule.getConfigRuleState(), CONFIGRULESTATE_BINDING);
             protocolMarshaller.marshall(configRule.getCreatedBy(), CREATEDBY_BINDING);
+            protocolMarshaller.marshall(configRule.getEvaluationModes(), EVALUATIONMODES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

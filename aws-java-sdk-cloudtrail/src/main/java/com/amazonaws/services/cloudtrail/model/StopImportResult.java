@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,13 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private String importId;
     /**
      * <p>
-     * The source S3 bucket.
+     * The source S3 bucket for the import.
      * </p>
      */
     private ImportSource importSource;
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> destinations;
@@ -122,11 +122,11 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The source S3 bucket.
+     * The source S3 bucket for the import.
      * </p>
      * 
      * @param importSource
-     *        The source S3 bucket.
+     *        The source S3 bucket for the import.
      */
 
     public void setImportSource(ImportSource importSource) {
@@ -135,10 +135,10 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The source S3 bucket.
+     * The source S3 bucket for the import.
      * </p>
      * 
-     * @return The source S3 bucket.
+     * @return The source S3 bucket for the import.
      */
 
     public ImportSource getImportSource() {
@@ -147,11 +147,11 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The source S3 bucket.
+     * The source S3 bucket for the import.
      * </p>
      * 
      * @param importSource
-     *        The source S3 bucket.
+     *        The source S3 bucket for the import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,10 +162,10 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
-     * @return The destination event data store.
+     * @return The ARN of the destination event data store.
      */
 
     public java.util.List<String> getDestinations() {
@@ -177,11 +177,11 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
      * @param destinations
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      */
 
     public void setDestinations(java.util.Collection<String> destinations) {
@@ -195,7 +195,7 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,7 +204,7 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param destinations
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,11 @@ public class StopImportResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The destination event data store.
+     * The ARN of the destination event data store.
      * </p>
      * 
      * @param destinations
-     *        The destination event data store.
+     *        The ARN of the destination event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

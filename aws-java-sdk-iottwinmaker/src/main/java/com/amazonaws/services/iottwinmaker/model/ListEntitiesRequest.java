@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The ID of the workspace.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * A list of objects that filter the request.
      * </p>
      * <note>
@@ -38,7 +44,10 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     private java.util.List<ListEntitiesFilter> filters;
     /**
      * <p>
-     * The maximum number of results to display.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      */
     private Integer maxResults;
@@ -48,12 +57,46 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String nextToken;
+
     /**
      * <p>
      * The ID of the workspace.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @return The ID of the workspace.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListEntitiesRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -159,11 +202,16 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to display.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to display.
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -172,10 +220,15 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to display.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
-     * @return The maximum number of results to display.
+     * @return The maximum number of results to return at one time. The default is 25.</p>
+     *         <p>
+     *         Valid Range: Minimum value of 1. Maximum value of 250.
      */
 
     public Integer getMaxResults() {
@@ -184,11 +237,16 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The maximum number of results to display.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to display.
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,46 +296,6 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @return The ID of the workspace.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListEntitiesRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -289,14 +307,14 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -311,6 +329,10 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof ListEntitiesRequest == false)
             return false;
         ListEntitiesRequest other = (ListEntitiesRequest) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
@@ -323,10 +345,6 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
-            return false;
         return true;
     }
 
@@ -335,10 +353,10 @@ public class ListEntitiesRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

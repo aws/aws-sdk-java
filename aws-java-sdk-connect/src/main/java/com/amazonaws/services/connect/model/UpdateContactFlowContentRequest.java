@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
-     * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in
+     * Amazon Connect Flow language</a>.
      * </p>
      */
     private String content;
@@ -129,14 +129,14 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
-     * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in
+     * Amazon Connect Flow language</a>.
      * </p>
      * 
      * @param content
      *        The JSON string that represents flow's content. For an example, see <a
-     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-     *        flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact
+     *        flow in Amazon Connect Flow language</a>.
      */
 
     public void setContent(String content) {
@@ -146,13 +146,13 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
-     * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in
+     * Amazon Connect Flow language</a>.
      * </p>
      * 
      * @return The JSON string that represents flow's content. For an example, see <a
-     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-     *         flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *         href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact
+     *         flow in Amazon Connect Flow language</a>.
      */
 
     public String getContent() {
@@ -162,14 +162,14 @@ public class UpdateContactFlowContentRequest extends com.amazonaws.AmazonWebServ
     /**
      * <p>
      * The JSON string that represents flow's content. For an example, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact flow in
-     * Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact flow in
+     * Amazon Connect Flow language</a>.
      * </p>
      * 
      * @param content
      *        The JSON string that represents flow's content. For an example, see <a
-     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language-example.html">Example contact
-     *        flow in Amazon Connect Flow language</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language-example.html">Example contact
+     *        flow in Amazon Connect Flow language</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

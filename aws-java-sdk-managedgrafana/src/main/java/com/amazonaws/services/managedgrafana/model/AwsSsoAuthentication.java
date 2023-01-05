@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure containing information about how this workspace works with Amazon Web Services SSO.
+ * A structure containing information about how this workspace works with IAM Identity Center.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/AwsSsoAuthentication" target="_top">AWS API
@@ -30,18 +30,18 @@ public class AwsSsoAuthentication implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.
+     * The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.
      * </p>
      */
     private String ssoClientId;
 
     /**
      * <p>
-     * The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.
+     * The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.
      * </p>
      * 
      * @param ssoClientId
-     *        The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.
+     *        The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.
      */
 
     public void setSsoClientId(String ssoClientId) {
@@ -50,10 +50,10 @@ public class AwsSsoAuthentication implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.
+     * The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.
      * </p>
      * 
-     * @return The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.
+     * @return The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.
      */
 
     public String getSsoClientId() {
@@ -62,11 +62,11 @@ public class AwsSsoAuthentication implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.
+     * The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.
      * </p>
      * 
      * @param ssoClientId
-     *        The ID of the Amazon Web Services SSO-managed application that is created by Amazon Managed Grafana.
+     *        The ID of the IAM Identity Center-managed application that is created by Amazon Managed Grafana.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * Information about the interface attachment. If modifying the 'delete on termination' attribute, you must specify
-     * the ID of the interface attachment.
+     * Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you
+     * must specify the ID of the interface attachment.
      * </p>
      */
     private NetworkInterfaceAttachmentChanges attachment;
@@ -65,16 +65,22 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      * </p>
      */
     private Boolean sourceDestCheck;
+    /**
+     * <p>
+     * Updates the ENA Express configuration for the network interface that’s attached to the instance.
+     * </p>
+     */
+    private EnaSrdSpecification enaSrdSpecification;
 
     /**
      * <p>
-     * Information about the interface attachment. If modifying the 'delete on termination' attribute, you must specify
-     * the ID of the interface attachment.
+     * Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you
+     * must specify the ID of the interface attachment.
      * </p>
      * 
      * @param attachment
-     *        Information about the interface attachment. If modifying the 'delete on termination' attribute, you must
-     *        specify the ID of the interface attachment.
+     *        Information about the interface attachment. If modifying the <code>delete on termination</code> attribute,
+     *        you must specify the ID of the interface attachment.
      */
 
     public void setAttachment(NetworkInterfaceAttachmentChanges attachment) {
@@ -83,12 +89,12 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * Information about the interface attachment. If modifying the 'delete on termination' attribute, you must specify
-     * the ID of the interface attachment.
+     * Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you
+     * must specify the ID of the interface attachment.
      * </p>
      * 
-     * @return Information about the interface attachment. If modifying the 'delete on termination' attribute, you must
-     *         specify the ID of the interface attachment.
+     * @return Information about the interface attachment. If modifying the <code>delete on termination</code>
+     *         attribute, you must specify the ID of the interface attachment.
      */
 
     public NetworkInterfaceAttachmentChanges getAttachment() {
@@ -97,13 +103,13 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
 
     /**
      * <p>
-     * Information about the interface attachment. If modifying the 'delete on termination' attribute, you must specify
-     * the ID of the interface attachment.
+     * Information about the interface attachment. If modifying the <code>delete on termination</code> attribute, you
+     * must specify the ID of the interface attachment.
      * </p>
      * 
      * @param attachment
-     *        Information about the interface attachment. If modifying the 'delete on termination' attribute, you must
-     *        specify the ID of the interface attachment.
+     *        Information about the interface attachment. If modifying the <code>delete on termination</code> attribute,
+     *        you must specify the ID of the interface attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -366,6 +372,46 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Updates the ENA Express configuration for the network interface that’s attached to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Updates the ENA Express configuration for the network interface that’s attached to the instance.
+     */
+
+    public void setEnaSrdSpecification(EnaSrdSpecification enaSrdSpecification) {
+        this.enaSrdSpecification = enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Updates the ENA Express configuration for the network interface that’s attached to the instance.
+     * </p>
+     * 
+     * @return Updates the ENA Express configuration for the network interface that’s attached to the instance.
+     */
+
+    public EnaSrdSpecification getEnaSrdSpecification() {
+        return this.enaSrdSpecification;
+    }
+
+    /**
+     * <p>
+     * Updates the ENA Express configuration for the network interface that’s attached to the instance.
+     * </p>
+     * 
+     * @param enaSrdSpecification
+     *        Updates the ENA Express configuration for the network interface that’s attached to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyNetworkInterfaceAttributeRequest withEnaSrdSpecification(EnaSrdSpecification enaSrdSpecification) {
+        setEnaSrdSpecification(enaSrdSpecification);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -397,7 +443,9 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         if (getNetworkInterfaceId() != null)
             sb.append("NetworkInterfaceId: ").append(getNetworkInterfaceId()).append(",");
         if (getSourceDestCheck() != null)
-            sb.append("SourceDestCheck: ").append(getSourceDestCheck());
+            sb.append("SourceDestCheck: ").append(getSourceDestCheck()).append(",");
+        if (getEnaSrdSpecification() != null)
+            sb.append("EnaSrdSpecification: ").append(getEnaSrdSpecification());
         sb.append("}");
         return sb.toString();
     }
@@ -432,6 +480,10 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
             return false;
         if (other.getSourceDestCheck() != null && other.getSourceDestCheck().equals(this.getSourceDestCheck()) == false)
             return false;
+        if (other.getEnaSrdSpecification() == null ^ this.getEnaSrdSpecification() == null)
+            return false;
+        if (other.getEnaSrdSpecification() != null && other.getEnaSrdSpecification().equals(this.getEnaSrdSpecification()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +497,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode());
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode());
         hashCode = prime * hashCode + ((getSourceDestCheck() == null) ? 0 : getSourceDestCheck().hashCode());
+        hashCode = prime * hashCode + ((getEnaSrdSpecification() == null) ? 0 : getEnaSrdSpecification().hashCode());
         return hashCode;
     }
 

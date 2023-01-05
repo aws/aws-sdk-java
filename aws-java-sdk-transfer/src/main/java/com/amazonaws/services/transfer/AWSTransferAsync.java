@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -124,7 +124,10 @@ public interface AWSTransferAsync extends AWSTransfer {
     /**
      * <p>
      * Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The
-     * connector is required for sending files from a customer's non Amazon Web Services server.
+     * connector is required for sending files to an externally hosted AS2 server. For more details about connectors,
+     * see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector"
+     * >Create AS2 connectors</a>.
      * </p>
      * 
      * @param createConnectorRequest
@@ -138,7 +141,10 @@ public interface AWSTransferAsync extends AWSTransfer {
     /**
      * <p>
      * Creates the connector, which captures the parameters for an outbound connection for the AS2 protocol. The
-     * connector is required for sending files from a customer's non Amazon Web Services server.
+     * connector is required for sending files to an externally hosted AS2 server. For more details about connectors,
+     * see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector"
+     * >Create AS2 connectors</a>.
      * </p>
      * 
      * @param createConnectorRequest
@@ -156,7 +162,7 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Creates the profile for the AS2 process. The agreement is between the partner and the AS2 process.
+     * Creates the local or partner profile to use for AS2 transfers.
      * </p>
      * 
      * @param createProfileRequest
@@ -169,7 +175,7 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Creates the profile for the AS2 process. The agreement is between the partner and the AS2 process.
+     * Creates the local or partner profile to use for AS2 transfers.
      * </p>
      * 
      * @param createProfileRequest
@@ -1042,7 +1048,7 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Adds a host key to the server specified by the <code>ServerId</code> parameter.
+     * Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
      * </p>
      * 
      * @param importHostKeyRequest
@@ -1055,7 +1061,7 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Adds a host key to the server specified by the <code>ServerId</code> parameter.
+     * Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
      * </p>
      * 
      * @param importHostKeyRequest
@@ -1281,7 +1287,7 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Returns a list of host keys for the server specified by the <code>ServerId</code> paramter.
+     * Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.
      * </p>
      * 
      * @param listHostKeysRequest
@@ -1294,7 +1300,7 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Returns a list of host keys for the server specified by the <code>ServerId</code> paramter.
+     * Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.
      * </p>
      * 
      * @param listHostKeysRequest
@@ -1547,8 +1553,8 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the file paths for where to send
-     * the files.
+     * Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file
+     * paths for where to send the files.
      * </p>
      * 
      * @param startFileTransferRequest
@@ -1561,8 +1567,8 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Begins an outbound file transfer. You specify the <code>ConnectorId</code> and the file paths for where to send
-     * the files.
+     * Begins an outbound file transfer to a remote AS2 server. You specify the <code>ConnectorId</code> and the file
+     * paths for where to send the files.
      * </p>
      * 
      * @param startFileTransferRequest
@@ -2007,8 +2013,8 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Updates the description for the host key specified by the specified by the <code>ServerId</code> and
-     * <code>HostKeyId</code> parameters.
+     * Updates the description for the host key that's specified by the <code>ServerId</code> and <code>HostKeyId</code>
+     * parameters.
      * </p>
      * 
      * @param updateHostKeyRequest
@@ -2021,8 +2027,8 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Updates the description for the host key specified by the specified by the <code>ServerId</code> and
-     * <code>HostKeyId</code> parameters.
+     * Updates the description for the host key that's specified by the <code>ServerId</code> and <code>HostKeyId</code>
+     * parameters.
      * </p>
      * 
      * @param updateHostKeyRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class SampledHTTPRequestMarshaller {
             .marshallLocationName("Labels").build();
     private static final MarshallingInfo<StructuredPojo> CAPTCHARESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CaptchaResponse").build();
+    private static final MarshallingInfo<StructuredPojo> CHALLENGERESPONSE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ChallengeResponse").build();
+    private static final MarshallingInfo<String> OVERRIDDENACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverriddenAction").build();
 
     private static final SampledHTTPRequestMarshaller instance = new SampledHTTPRequestMarshaller();
 
@@ -72,6 +76,8 @@ public class SampledHTTPRequestMarshaller {
             protocolMarshaller.marshall(sampledHTTPRequest.getResponseCodeSent(), RESPONSECODESENT_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getLabels(), LABELS_BINDING);
             protocolMarshaller.marshall(sampledHTTPRequest.getCaptchaResponse(), CAPTCHARESPONSE_BINDING);
+            protocolMarshaller.marshall(sampledHTTPRequest.getChallengeResponse(), CHALLENGERESPONSE_BINDING);
+            protocolMarshaller.marshall(sampledHTTPRequest.getOverriddenAction(), OVERRIDDENACTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

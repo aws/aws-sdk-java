@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,6 @@ public class BatchPutPropertyError implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
-     * </p>
-     */
-    private PropertyValueEntry entry;
-    /**
-     * <p>
      * The error code.
      * </p>
      */
@@ -46,46 +40,12 @@ public class BatchPutPropertyError implements Serializable, Cloneable, Structure
      * </p>
      */
     private String errorMessage;
-
     /**
      * <p>
      * An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
      * </p>
-     * 
-     * @param entry
-     *        An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
      */
-
-    public void setEntry(PropertyValueEntry entry) {
-        this.entry = entry;
-    }
-
-    /**
-     * <p>
-     * An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
-     * </p>
-     * 
-     * @return An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
-     */
-
-    public PropertyValueEntry getEntry() {
-        return this.entry;
-    }
-
-    /**
-     * <p>
-     * An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
-     * </p>
-     * 
-     * @param entry
-     *        An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public BatchPutPropertyError withEntry(PropertyValueEntry entry) {
-        setEntry(entry);
-        return this;
-    }
+    private PropertyValueEntry entry;
 
     /**
      * <p>
@@ -168,6 +128,46 @@ public class BatchPutPropertyError implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
+     * </p>
+     * 
+     * @param entry
+     *        An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
+     */
+
+    public void setEntry(PropertyValueEntry entry) {
+        this.entry = entry;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
+     * </p>
+     * 
+     * @return An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
+     */
+
+    public PropertyValueEntry getEntry() {
+        return this.entry;
+    }
+
+    /**
+     * <p>
+     * An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
+     * </p>
+     * 
+     * @param entry
+     *        An object that contains information about errors returned by the <code>BatchPutProperty</code> action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchPutPropertyError withEntry(PropertyValueEntry entry) {
+        setEntry(entry);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,12 +179,12 @@ public class BatchPutPropertyError implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getEntry() != null)
-            sb.append("Entry: ").append(getEntry()).append(",");
         if (getErrorCode() != null)
             sb.append("ErrorCode: ").append(getErrorCode()).append(",");
         if (getErrorMessage() != null)
-            sb.append("ErrorMessage: ").append(getErrorMessage());
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
+        if (getEntry() != null)
+            sb.append("Entry: ").append(getEntry());
         sb.append("}");
         return sb.toString();
     }
@@ -199,10 +199,6 @@ public class BatchPutPropertyError implements Serializable, Cloneable, Structure
         if (obj instanceof BatchPutPropertyError == false)
             return false;
         BatchPutPropertyError other = (BatchPutPropertyError) obj;
-        if (other.getEntry() == null ^ this.getEntry() == null)
-            return false;
-        if (other.getEntry() != null && other.getEntry().equals(this.getEntry()) == false)
-            return false;
         if (other.getErrorCode() == null ^ this.getErrorCode() == null)
             return false;
         if (other.getErrorCode() != null && other.getErrorCode().equals(this.getErrorCode()) == false)
@@ -210,6 +206,10 @@ public class BatchPutPropertyError implements Serializable, Cloneable, Structure
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
+            return false;
+        if (other.getEntry() == null ^ this.getEntry() == null)
+            return false;
+        if (other.getEntry() != null && other.getEntry().equals(this.getEntry()) == false)
             return false;
         return true;
     }
@@ -219,9 +219,9 @@ public class BatchPutPropertyError implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getEntry() == null) ? 0 : getEntry().hashCode());
         hashCode = prime * hashCode + ((getErrorCode() == null) ? 0 : getErrorCode().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
+        hashCode = prime * hashCode + ((getEntry() == null) ? 0 : getEntry().hashCode());
         return hashCode;
     }
 

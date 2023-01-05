@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -236,6 +236,12 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String snapshotTarget;
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB snapshot.
+     * </p>
+     */
+    private Integer storageThroughput;
 
     /**
      * <p>
@@ -1715,6 +1721,46 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the storage throughput for the DB snapshot.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the DB snapshot.
+     */
+
+    public void setStorageThroughput(Integer storageThroughput) {
+        this.storageThroughput = storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB snapshot.
+     * </p>
+     * 
+     * @return Specifies the storage throughput for the DB snapshot.
+     */
+
+    public Integer getStorageThroughput() {
+        return this.storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB snapshot.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the DB snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withStorageThroughput(Integer storageThroughput) {
+        setStorageThroughput(storageThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1789,7 +1835,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getSnapshotDatabaseTime() != null)
             sb.append("SnapshotDatabaseTime: ").append(getSnapshotDatabaseTime()).append(",");
         if (getSnapshotTarget() != null)
-            sb.append("SnapshotTarget: ").append(getSnapshotTarget());
+            sb.append("SnapshotTarget: ").append(getSnapshotTarget()).append(",");
+        if (getStorageThroughput() != null)
+            sb.append("StorageThroughput: ").append(getStorageThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -1933,6 +1981,10 @@ public class DBSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getSnapshotTarget() != null && other.getSnapshotTarget().equals(this.getSnapshotTarget()) == false)
             return false;
+        if (other.getStorageThroughput() == null ^ this.getStorageThroughput() == null)
+            return false;
+        if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -1973,6 +2025,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getOriginalSnapshotCreateTime() == null) ? 0 : getOriginalSnapshotCreateTime().hashCode());
         hashCode = prime * hashCode + ((getSnapshotDatabaseTime() == null) ? 0 : getSnapshotDatabaseTime().hashCode());
         hashCode = prime * hashCode + ((getSnapshotTarget() == null) ? 0 : getSnapshotTarget().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
         return hashCode;
     }
 

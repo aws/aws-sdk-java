@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,21 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      */
     private Integer manifestWindowSeconds;
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
      * @param manifestWindowSeconds
-     *        The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     *        The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *        <code>3600</code> seconds.
      */
 
     public void setManifestWindowSeconds(Integer manifestWindowSeconds) {
@@ -50,10 +53,12 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
-     * @return The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * @return The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *         <code>3600</code> seconds.
      */
 
     public Integer getManifestWindowSeconds() {
@@ -62,11 +67,13 @@ public class HlsPlaylistSettings implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     * The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     * <code>3600</code> seconds.
      * </p>
      * 
      * @param manifestWindowSeconds
-     *        The total duration (in seconds) of each manifest. Minimum value: 30 seconds. Maximum value: 3600 seconds.
+     *        The total duration (in seconds) of each manifest. Minimum value: <code>30</code> seconds. Maximum value:
+     *        <code>3600</code> seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

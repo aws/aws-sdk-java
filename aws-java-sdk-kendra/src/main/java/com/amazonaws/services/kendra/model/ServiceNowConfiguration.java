@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
      * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
      * connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password,
      * client ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication"
-     * >Authentication for a ServiceNow data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
      * </p>
      */
     private String secretArn;
@@ -131,16 +131,16 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
      * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
      * connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password,
      * client ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication"
-     * >Authentication for a ServiceNow data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password
      *        required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of
-     *        user name, password, client ID, and client secret. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication"
-     *        >Authentication for a ServiceNow data source</a>.
+     *        user name, password, client ID, and client secret. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     *        source</a>.
      */
 
     public void setSecretArn(String secretArn) {
@@ -152,15 +152,15 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
      * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
      * connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password,
      * client ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication"
-     * >Authentication for a ServiceNow data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password
      *         required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of
-     *         user name, password, client ID, and client secret. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication"
-     *         >Authentication for a ServiceNow data source</a>.
+     *         user name, password, client ID, and client secret. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     *         source</a>.
      */
 
     public String getSecretArn() {
@@ -172,16 +172,16 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
      * The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password required to
      * connect to the ServiceNow instance. You can also provide OAuth authentication credentials of user name, password,
      * client ID, and client secret. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication"
-     * >Authentication for a ServiceNow data source</a>.
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of the Secrets Manager secret that contains the user name and password
      *        required to connect to the ServiceNow instance. You can also provide OAuth authentication credentials of
-     *        user name, password, client ID, and client secret. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html#servicenow-authentication"
-     *        >Authentication for a ServiceNow data source</a>.
+     *        user name, password, client ID, and client secret. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     *        source</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

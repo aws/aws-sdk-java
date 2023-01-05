@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class RecoveryPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+     * </p>
+     */
+    private String namespaceArn;
+    /**
+     * <p>
      * The name of the namespace the recovery point is associated with.
      * </p>
      */
@@ -59,6 +65,46 @@ public class RecoveryPoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String workgroupName;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+     * </p>
+     * 
+     * @param namespaceArn
+     *        The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+     */
+
+    public void setNamespaceArn(String namespaceArn) {
+        this.namespaceArn = namespaceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+     */
+
+    public String getNamespaceArn() {
+        return this.namespaceArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+     * </p>
+     * 
+     * @param namespaceArn
+     *        The Amazon Resource Name (ARN) of the namespace the recovery point is associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RecoveryPoint withNamespaceArn(String namespaceArn) {
+        setNamespaceArn(namespaceArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -272,6 +318,8 @@ public class RecoveryPoint implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getNamespaceArn() != null)
+            sb.append("NamespaceArn: ").append(getNamespaceArn()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
         if (getRecoveryPointCreateTime() != null)
@@ -296,6 +344,10 @@ public class RecoveryPoint implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof RecoveryPoint == false)
             return false;
         RecoveryPoint other = (RecoveryPoint) obj;
+        if (other.getNamespaceArn() == null ^ this.getNamespaceArn() == null)
+            return false;
+        if (other.getNamespaceArn() != null && other.getNamespaceArn().equals(this.getNamespaceArn()) == false)
+            return false;
         if (other.getNamespaceName() == null ^ this.getNamespaceName() == null)
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
@@ -324,6 +376,7 @@ public class RecoveryPoint implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getNamespaceArn() == null) ? 0 : getNamespaceArn().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointCreateTime() == null) ? 0 : getRecoveryPointCreateTime().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointId() == null) ? 0 : getRecoveryPointId().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private String appType;
+    /**
+     * <p>
+     * The error in the analysis of the source code or database.
+     * </p>
+     */
+    private AppUnitError appUnitError;
     /**
      * <p>
      * The ID of the server that the application component is running on.
@@ -130,6 +136,18 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
      * </p>
      */
     private String resourceSubType;
+    /**
+     * <p>
+     * The status of the application unit.
+     * </p>
+     */
+    private String runtimeStatus;
+    /**
+     * <p>
+     * The status message for the application unit.
+     * </p>
+     */
+    private String runtimeStatusMessage;
     /**
      * <p>
      * Details about the source code repository associated with the application component.
@@ -397,6 +415,46 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
 
     public ApplicationComponentDetail withAppType(AppType appType) {
         this.appType = appType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The error in the analysis of the source code or database.
+     * </p>
+     * 
+     * @param appUnitError
+     *        The error in the analysis of the source code or database.
+     */
+
+    public void setAppUnitError(AppUnitError appUnitError) {
+        this.appUnitError = appUnitError;
+    }
+
+    /**
+     * <p>
+     * The error in the analysis of the source code or database.
+     * </p>
+     * 
+     * @return The error in the analysis of the source code or database.
+     */
+
+    public AppUnitError getAppUnitError() {
+        return this.appUnitError;
+    }
+
+    /**
+     * <p>
+     * The error in the analysis of the source code or database.
+     * </p>
+     * 
+     * @param appUnitError
+     *        The error in the analysis of the source code or database.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationComponentDetail withAppUnitError(AppUnitError appUnitError) {
+        setAppUnitError(appUnitError);
         return this;
     }
 
@@ -962,6 +1020,105 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
 
     /**
      * <p>
+     * The status of the application unit.
+     * </p>
+     * 
+     * @param runtimeStatus
+     *        The status of the application unit.
+     * @see RuntimeAnalysisStatus
+     */
+
+    public void setRuntimeStatus(String runtimeStatus) {
+        this.runtimeStatus = runtimeStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the application unit.
+     * </p>
+     * 
+     * @return The status of the application unit.
+     * @see RuntimeAnalysisStatus
+     */
+
+    public String getRuntimeStatus() {
+        return this.runtimeStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the application unit.
+     * </p>
+     * 
+     * @param runtimeStatus
+     *        The status of the application unit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuntimeAnalysisStatus
+     */
+
+    public ApplicationComponentDetail withRuntimeStatus(String runtimeStatus) {
+        setRuntimeStatus(runtimeStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the application unit.
+     * </p>
+     * 
+     * @param runtimeStatus
+     *        The status of the application unit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RuntimeAnalysisStatus
+     */
+
+    public ApplicationComponentDetail withRuntimeStatus(RuntimeAnalysisStatus runtimeStatus) {
+        this.runtimeStatus = runtimeStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status message for the application unit.
+     * </p>
+     * 
+     * @param runtimeStatusMessage
+     *        The status message for the application unit.
+     */
+
+    public void setRuntimeStatusMessage(String runtimeStatusMessage) {
+        this.runtimeStatusMessage = runtimeStatusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message for the application unit.
+     * </p>
+     * 
+     * @return The status message for the application unit.
+     */
+
+    public String getRuntimeStatusMessage() {
+        return this.runtimeStatusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message for the application unit.
+     * </p>
+     * 
+     * @param runtimeStatusMessage
+     *        The status message for the application unit.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationComponentDetail withRuntimeStatusMessage(String runtimeStatusMessage) {
+        setRuntimeStatusMessage(runtimeStatusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
      * Details about the source code repository associated with the application component.
      * </p>
      * 
@@ -1092,6 +1249,8 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
             sb.append("AntipatternReportStatusMessage: ").append(getAntipatternReportStatusMessage()).append(",");
         if (getAppType() != null)
             sb.append("AppType: ").append(getAppType()).append(",");
+        if (getAppUnitError() != null)
+            sb.append("AppUnitError: ").append(getAppUnitError()).append(",");
         if (getAssociatedServerId() != null)
             sb.append("AssociatedServerId: ").append(getAssociatedServerId()).append(",");
         if (getDatabaseConfigDetail() != null)
@@ -1116,6 +1275,10 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
             sb.append("RecommendationSet: ").append(getRecommendationSet()).append(",");
         if (getResourceSubType() != null)
             sb.append("ResourceSubType: ").append(getResourceSubType()).append(",");
+        if (getRuntimeStatus() != null)
+            sb.append("RuntimeStatus: ").append(getRuntimeStatus()).append(",");
+        if (getRuntimeStatusMessage() != null)
+            sb.append("RuntimeStatusMessage: ").append(getRuntimeStatusMessage()).append(",");
         if (getSourceCodeRepositories() != null)
             sb.append("SourceCodeRepositories: ").append(getSourceCodeRepositories()).append(",");
         if (getStatusMessage() != null)
@@ -1154,6 +1317,10 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
         if (other.getAppType() == null ^ this.getAppType() == null)
             return false;
         if (other.getAppType() != null && other.getAppType().equals(this.getAppType()) == false)
+            return false;
+        if (other.getAppUnitError() == null ^ this.getAppUnitError() == null)
+            return false;
+        if (other.getAppUnitError() != null && other.getAppUnitError().equals(this.getAppUnitError()) == false)
             return false;
         if (other.getAssociatedServerId() == null ^ this.getAssociatedServerId() == null)
             return false;
@@ -1204,6 +1371,14 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
             return false;
         if (other.getResourceSubType() != null && other.getResourceSubType().equals(this.getResourceSubType()) == false)
             return false;
+        if (other.getRuntimeStatus() == null ^ this.getRuntimeStatus() == null)
+            return false;
+        if (other.getRuntimeStatus() != null && other.getRuntimeStatus().equals(this.getRuntimeStatus()) == false)
+            return false;
+        if (other.getRuntimeStatusMessage() == null ^ this.getRuntimeStatusMessage() == null)
+            return false;
+        if (other.getRuntimeStatusMessage() != null && other.getRuntimeStatusMessage().equals(this.getRuntimeStatusMessage()) == false)
+            return false;
         if (other.getSourceCodeRepositories() == null ^ this.getSourceCodeRepositories() == null)
             return false;
         if (other.getSourceCodeRepositories() != null && other.getSourceCodeRepositories().equals(this.getSourceCodeRepositories()) == false)
@@ -1225,6 +1400,7 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getAntipatternReportStatus() == null) ? 0 : getAntipatternReportStatus().hashCode());
         hashCode = prime * hashCode + ((getAntipatternReportStatusMessage() == null) ? 0 : getAntipatternReportStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getAppType() == null) ? 0 : getAppType().hashCode());
+        hashCode = prime * hashCode + ((getAppUnitError() == null) ? 0 : getAppUnitError().hashCode());
         hashCode = prime * hashCode + ((getAssociatedServerId() == null) ? 0 : getAssociatedServerId().hashCode());
         hashCode = prime * hashCode + ((getDatabaseConfigDetail() == null) ? 0 : getDatabaseConfigDetail().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
@@ -1237,6 +1413,8 @@ public class ApplicationComponentDetail implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getOsVersion() == null) ? 0 : getOsVersion().hashCode());
         hashCode = prime * hashCode + ((getRecommendationSet() == null) ? 0 : getRecommendationSet().hashCode());
         hashCode = prime * hashCode + ((getResourceSubType() == null) ? 0 : getResourceSubType().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeStatus() == null) ? 0 : getRuntimeStatus().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeStatusMessage() == null) ? 0 : getRuntimeStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getSourceCodeRepositories() == null) ? 0 : getSourceCodeRepositories().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,17 @@ public class AbstractAmazonivschat implements Amazonivschat {
     }
 
     @Override
+    public CreateLoggingConfigurationResult createLoggingConfiguration(CreateLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRoomResult createRoom(CreateRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,7 +63,17 @@ public class AbstractAmazonivschat implements Amazonivschat {
     }
 
     @Override
+    public GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRoomResult getRoom(GetRoomRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLoggingConfigurationsResult listLoggingConfigurations(ListLoggingConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,6 +99,11 @@ public class AbstractAmazonivschat implements Amazonivschat {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLoggingConfigurationResult updateLoggingConfiguration(UpdateLoggingConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
     private Integer captureInterval;
     /** Unit for the frame capture interval. */
     private String captureIntervalUnits;
+    /** Timecode burn-in settings */
+    private TimecodeBurninSettings timecodeBurninSettings;
 
     /**
      * The frequency at which to capture frames for inclusion in the output. May be specified in either seconds or
@@ -126,6 +128,40 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Timecode burn-in settings
+     * 
+     * @param timecodeBurninSettings
+     *        Timecode burn-in settings
+     */
+
+    public void setTimecodeBurninSettings(TimecodeBurninSettings timecodeBurninSettings) {
+        this.timecodeBurninSettings = timecodeBurninSettings;
+    }
+
+    /**
+     * Timecode burn-in settings
+     * 
+     * @return Timecode burn-in settings
+     */
+
+    public TimecodeBurninSettings getTimecodeBurninSettings() {
+        return this.timecodeBurninSettings;
+    }
+
+    /**
+     * Timecode burn-in settings
+     * 
+     * @param timecodeBurninSettings
+     *        Timecode burn-in settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FrameCaptureSettings withTimecodeBurninSettings(TimecodeBurninSettings timecodeBurninSettings) {
+        setTimecodeBurninSettings(timecodeBurninSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -140,7 +176,9 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
         if (getCaptureInterval() != null)
             sb.append("CaptureInterval: ").append(getCaptureInterval()).append(",");
         if (getCaptureIntervalUnits() != null)
-            sb.append("CaptureIntervalUnits: ").append(getCaptureIntervalUnits());
+            sb.append("CaptureIntervalUnits: ").append(getCaptureIntervalUnits()).append(",");
+        if (getTimecodeBurninSettings() != null)
+            sb.append("TimecodeBurninSettings: ").append(getTimecodeBurninSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +201,10 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getCaptureIntervalUnits() != null && other.getCaptureIntervalUnits().equals(this.getCaptureIntervalUnits()) == false)
             return false;
+        if (other.getTimecodeBurninSettings() == null ^ this.getTimecodeBurninSettings() == null)
+            return false;
+        if (other.getTimecodeBurninSettings() != null && other.getTimecodeBurninSettings().equals(this.getTimecodeBurninSettings()) == false)
+            return false;
         return true;
     }
 
@@ -173,6 +215,7 @@ public class FrameCaptureSettings implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getCaptureInterval() == null) ? 0 : getCaptureInterval().hashCode());
         hashCode = prime * hashCode + ((getCaptureIntervalUnits() == null) ? 0 : getCaptureIntervalUnits().hashCode());
+        hashCode = prime * hashCode + ((getTimecodeBurninSettings() == null) ? 0 : getTimecodeBurninSettings().hashCode());
         return hashCode;
     }
 

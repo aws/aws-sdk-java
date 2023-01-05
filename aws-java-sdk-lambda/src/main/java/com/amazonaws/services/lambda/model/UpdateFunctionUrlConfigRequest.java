@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,17 +35,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -64,9 +64,9 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict
-     * access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function
+     * access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function
      * URLs</a>.
      * </p>
      */
@@ -89,17 +89,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -116,17 +116,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code>.
+     *        <b>Function name</b> – <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -149,17 +149,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -175,17 +175,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>my-function</code>.
+     *         <b>Function name</b> – <code>my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -208,17 +208,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -235,17 +235,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code>.
+     *        <b>Function name</b> – <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -303,17 +303,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict
-     * access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function
+     * access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function
      * URLs</a>.
      * </p>
      * 
      * @param authType
      *        The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to
-     *        restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to
-     *        bypass IAM authentication to create a public endpoint. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda
+     *        restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM
+     *        authentication to create a public endpoint. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda
      *        function URLs</a>.
      * @see FunctionUrlAuthType
      */
@@ -325,16 +325,16 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict
-     * access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function
+     * access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function
      * URLs</a>.
      * </p>
      * 
      * @return The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to
-     *         restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to
-     *         bypass IAM authentication to create a public endpoint. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda
+     *         restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM
+     *         authentication to create a public endpoint. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda
      *         function URLs</a>.
      * @see FunctionUrlAuthType
      */
@@ -346,17 +346,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict
-     * access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function
+     * access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function
      * URLs</a>.
      * </p>
      * 
      * @param authType
      *        The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to
-     *        restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to
-     *        bypass IAM authentication to create a public endpoint. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda
+     *        restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM
+     *        authentication to create a public endpoint. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda
      *        function URLs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionUrlAuthType
@@ -370,17 +370,17 @@ public class UpdateFunctionUrlConfigRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to restrict
-     * access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to bypass IAM
-     * authentication to create a public endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda function
+     * access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM authentication to
+     * create a public endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda function
      * URLs</a>.
      * </p>
      * 
      * @param authType
      *        The type of authentication that your function URL uses. Set to <code>AWS_IAM</code> if you want to
-     *        restrict access to authenticated <code>IAM</code> users only. Set to <code>NONE</code> if you want to
-     *        bypass IAM authentication to create a public endpoint. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html"> Security and auth model for Lambda
+     *        restrict access to authenticated IAM users only. Set to <code>NONE</code> if you want to bypass IAM
+     *        authentication to create a public endpoint. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and auth model for Lambda
      *        function URLs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionUrlAuthType

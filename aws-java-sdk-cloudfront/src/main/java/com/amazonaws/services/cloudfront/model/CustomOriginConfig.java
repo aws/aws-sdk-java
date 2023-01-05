@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,7 +80,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * <p>
      * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
      * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
-     * you don’t specify otherwise) is 30 seconds.
+     * you don't specify otherwise) is 30 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -92,7 +92,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
-     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
+     * second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -521,7 +521,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * <p>
      * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
      * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
-     * you don’t specify otherwise) is 30 seconds.
+     * you don't specify otherwise) is 30 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -532,7 +532,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @param originReadTimeout
      *        Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
      *        <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the
-     *        default (if you don’t specify otherwise) is 30 seconds.</p>
+     *        default (if you don't specify otherwise) is 30 seconds.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -547,7 +547,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * <p>
      * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
      * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
-     * you don’t specify otherwise) is 30 seconds.
+     * you don't specify otherwise) is 30 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -557,7 +557,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * 
      * @return Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as
      *         the <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the
-     *         default (if you don’t specify otherwise) is 30 seconds.</p>
+     *         default (if you don't specify otherwise) is 30 seconds.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -572,7 +572,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * <p>
      * Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
      * <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the default (if
-     * you don’t specify otherwise) is 30 seconds.
+     * you don't specify otherwise) is 30 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -583,7 +583,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * @param originReadTimeout
      *        Specifies how long, in seconds, CloudFront waits for a response from the origin. This is also known as the
      *        <i>origin response timeout</i>. The minimum timeout is 1 second, the maximum is 60 seconds, and the
-     *        default (if you don’t specify otherwise) is 30 seconds.</p>
+     *        default (if you don't specify otherwise) is 30 seconds.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginResponseTimeout"
@@ -599,7 +599,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
-     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
+     * second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -609,7 +609,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * 
      * @param originKeepaliveTimeout
      *        Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
-     *        second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.</p>
+     *        second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
@@ -623,7 +623,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
-     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
+     * second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -632,7 +632,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @return Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is
-     *         1 second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.</p>
+     *         1 second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"
@@ -646,7 +646,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
-     * second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.
+     * second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -656,7 +656,7 @@ public class CustomOriginConfig implements Serializable, Cloneable {
      * 
      * @param originKeepaliveTimeout
      *        Specifies how long, in seconds, CloudFront persists its connection to the origin. The minimum timeout is 1
-     *        second, the maximum is 60 seconds, and the default (if you don’t specify otherwise) is 5 seconds.</p>
+     *        second, the maximum is 60 seconds, and the default (if you don't specify otherwise) is 5 seconds.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginKeepaliveTimeout"

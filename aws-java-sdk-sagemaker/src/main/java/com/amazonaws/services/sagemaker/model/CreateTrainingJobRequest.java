@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important>
      */
@@ -190,7 +190,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private DebugHookConfig debugHookConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      */
     private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
@@ -202,7 +202,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     private ProfilerConfig profilerConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
@@ -277,9 +277,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important>
      * 
@@ -292,9 +292,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *         </p>
      *         <important>
      *         <p>
-     *         You must not include any security-sensitive information, such as account access IDs, secrets, and tokens,
-     *         in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns
-     *         an exception error for detected credentials, if such user input is found.
+     *         Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     *         hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject
+     *         your training job request and return an exception error.
      *         </p>
      */
 
@@ -314,9 +314,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important>
      * 
@@ -330,9 +330,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <important>
      *        <p>
-     *        You must not include any security-sensitive information, such as account access IDs, secrets, and tokens,
-     *        in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns
-     *        an exception error for detected credentials, if such user input is found.
+     *        Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     *        hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject
+     *        your training job request and return an exception error.
      *        </p>
      */
 
@@ -352,9 +352,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important>
      * 
@@ -368,9 +368,9 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        </p>
      *        <important>
      *        <p>
-     *        You must not include any security-sensitive information, such as account access IDs, secrets, and tokens,
-     *        in the dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns
-     *        an exception error for detected credentials, if such user input is found.
+     *        Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     *        hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject
+     *        your training job request and return an exception error.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1449,10 +1449,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for debugging output tensors.
+     * @return Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
@@ -1461,11 +1461,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
@@ -1479,7 +1479,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1488,7 +1488,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1504,11 +1504,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1597,10 +1597,10 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
@@ -1609,11 +1609,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
@@ -1627,7 +1627,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1636,7 +1636,7 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1652,11 +1652,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

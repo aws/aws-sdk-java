@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class AmiAggregationResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services account ID that the AMI belongs.
+     * The Amazon Web Services account ID for the AMI.
      * </p>
      */
     private String accountId;
@@ -55,11 +55,11 @@ public class AmiAggregationResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services account ID that the AMI belongs.
+     * The Amazon Web Services account ID for the AMI.
      * </p>
      * 
      * @param accountId
-     *        The Amazon Web Services account ID that the AMI belongs.
+     *        The Amazon Web Services account ID for the AMI.
      */
 
     public void setAccountId(String accountId) {
@@ -68,10 +68,10 @@ public class AmiAggregationResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services account ID that the AMI belongs.
+     * The Amazon Web Services account ID for the AMI.
      * </p>
      * 
-     * @return The Amazon Web Services account ID that the AMI belongs.
+     * @return The Amazon Web Services account ID for the AMI.
      */
 
     public String getAccountId() {
@@ -80,11 +80,11 @@ public class AmiAggregationResponse implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Amazon Web Services account ID that the AMI belongs.
+     * The Amazon Web Services account ID for the AMI.
      * </p>
      * 
      * @param accountId
-     *        The Amazon Web Services account ID that the AMI belongs.
+     *        The Amazon Web Services account ID for the AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

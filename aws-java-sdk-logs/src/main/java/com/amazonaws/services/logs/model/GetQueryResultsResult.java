@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * and <code>Unknown</code>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched or partition your query into a number of queries.
+     * Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range being
+     * searched or partition your query into a number of queries.
      * </p>
      */
     private String status;
@@ -214,8 +214,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * and <code>Unknown</code>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched or partition your query into a number of queries.
+     * Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range being
+     * searched or partition your query into a number of queries.
      * </p>
      * 
      * @param status
@@ -223,8 +223,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      *        <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
      *        <code>Timeout</code>, and <code>Unknown</code>.</p>
      *        <p>
-     *        Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
-     *        range being searched or partition your query into a number of queries.
+     *        Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range
+     *        being searched or partition your query into a number of queries.
      * @see QueryStatus
      */
 
@@ -239,15 +239,15 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * and <code>Unknown</code>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched or partition your query into a number of queries.
+     * Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range being
+     * searched or partition your query into a number of queries.
      * </p>
      * 
      * @return The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
      *         <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
      *         <code>Timeout</code>, and <code>Unknown</code>.</p>
      *         <p>
-     *         Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
+     *         Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time
      *         range being searched or partition your query into a number of queries.
      * @see QueryStatus
      */
@@ -263,8 +263,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * and <code>Unknown</code>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched or partition your query into a number of queries.
+     * Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range being
+     * searched or partition your query into a number of queries.
      * </p>
      * 
      * @param status
@@ -272,8 +272,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      *        <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
      *        <code>Timeout</code>, and <code>Unknown</code>.</p>
      *        <p>
-     *        Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
-     *        range being searched or partition your query into a number of queries.
+     *        Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range
+     *        being searched or partition your query into a number of queries.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryStatus
      */
@@ -290,8 +290,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * and <code>Unknown</code>.
      * </p>
      * <p>
-     * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched or partition your query into a number of queries.
+     * Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range being
+     * searched or partition your query into a number of queries.
      * </p>
      * 
      * @param status
@@ -299,8 +299,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      *        <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
      *        <code>Timeout</code>, and <code>Unknown</code>.</p>
      *        <p>
-     *        Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
-     *        range being searched or partition your query into a number of queries.
+     *        Queries time out after 15 minutes of runtime. To avoid having your queries time out, reduce the time range
+     *        being searched or partition your query into a number of queries.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryStatus
      */

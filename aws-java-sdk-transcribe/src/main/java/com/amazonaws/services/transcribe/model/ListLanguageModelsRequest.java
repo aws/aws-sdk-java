@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class ListLanguageModelsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The maximum number of custom language models to return in each page of results. If there are fewer results than
-     * the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
      * used.
      * </p>
      */
@@ -231,14 +231,14 @@ public class ListLanguageModelsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The maximum number of custom language models to return in each page of results. If there are fewer results than
-     * the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
      * used.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of custom language models to return in each page of results. If there are fewer results
-     *        than the value you specify, only the actual results are returned. If you don't specify a value, a default
-     *        of 5 is used.
+     *        than the value that you specify, only the actual results are returned. If you don't specify a value, a
+     *        default of 5 is used.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -248,13 +248,13 @@ public class ListLanguageModelsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The maximum number of custom language models to return in each page of results. If there are fewer results than
-     * the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
      * used.
      * </p>
      * 
      * @return The maximum number of custom language models to return in each page of results. If there are fewer
-     *         results than the value you specify, only the actual results are returned. If you don't specify a value, a
-     *         default of 5 is used.
+     *         results than the value that you specify, only the actual results are returned. If you don't specify a
+     *         value, a default of 5 is used.
      */
 
     public Integer getMaxResults() {
@@ -264,14 +264,14 @@ public class ListLanguageModelsRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The maximum number of custom language models to return in each page of results. If there are fewer results than
-     * the value you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
+     * the value that you specify, only the actual results are returned. If you don't specify a value, a default of 5 is
      * used.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of custom language models to return in each page of results. If there are fewer results
-     *        than the value you specify, only the actual results are returned. If you don't specify a value, a default
-     *        of 5 is used.
+     *        than the value that you specify, only the actual results are returned. If you don't specify a value, a
+     *        default of 5 is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

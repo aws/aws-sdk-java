@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>DescribeDomains</a> </code> operation. By default, the API returns the
- * status of all domains.
+ * Container for the parameters to the <code>DescribeDomains</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,17 +27,20 @@ public class DescribeDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The domains for which you want information.
+     * Array of OpenSearch Service domain names that you want information about. If you don't specify any domains,
+     * OpenSearch Service returns information about all domains owned by the account.
      * </p>
      */
     private java.util.List<String> domainNames;
 
     /**
      * <p>
-     * The domains for which you want information.
+     * Array of OpenSearch Service domain names that you want information about. If you don't specify any domains,
+     * OpenSearch Service returns information about all domains owned by the account.
      * </p>
      * 
-     * @return The domains for which you want information.
+     * @return Array of OpenSearch Service domain names that you want information about. If you don't specify any
+     *         domains, OpenSearch Service returns information about all domains owned by the account.
      */
 
     public java.util.List<String> getDomainNames() {
@@ -47,11 +49,13 @@ public class DescribeDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The domains for which you want information.
+     * Array of OpenSearch Service domain names that you want information about. If you don't specify any domains,
+     * OpenSearch Service returns information about all domains owned by the account.
      * </p>
      * 
      * @param domainNames
-     *        The domains for which you want information.
+     *        Array of OpenSearch Service domain names that you want information about. If you don't specify any
+     *        domains, OpenSearch Service returns information about all domains owned by the account.
      */
 
     public void setDomainNames(java.util.Collection<String> domainNames) {
@@ -65,7 +69,8 @@ public class DescribeDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The domains for which you want information.
+     * Array of OpenSearch Service domain names that you want information about. If you don't specify any domains,
+     * OpenSearch Service returns information about all domains owned by the account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +79,8 @@ public class DescribeDomainsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param domainNames
-     *        The domains for which you want information.
+     *        Array of OpenSearch Service domain names that you want information about. If you don't specify any
+     *        domains, OpenSearch Service returns information about all domains owned by the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +96,13 @@ public class DescribeDomainsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The domains for which you want information.
+     * Array of OpenSearch Service domain names that you want information about. If you don't specify any domains,
+     * OpenSearch Service returns information about all domains owned by the account.
      * </p>
      * 
      * @param domainNames
-     *        The domains for which you want information.
+     *        Array of OpenSearch Service domain names that you want information about. If you don't specify any
+     *        domains, OpenSearch Service returns information about all domains owned by the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

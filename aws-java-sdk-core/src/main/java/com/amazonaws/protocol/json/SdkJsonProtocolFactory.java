@@ -112,8 +112,7 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
      */
     public HttpResponseHandler<AmazonServiceException> createErrorResponseHandler(
             JsonErrorResponseMetadata errorResponsMetadata) {
-        return getSdkFactory().createErrorResponseHandler(errorUnmarshallers, errorResponsMetadata
-                .getCustomErrorCodeFieldName());
+        return getSdkFactory().createErrorResponseHandler(errorResponsMetadata, errorUnmarshallers);
     }
 
     @SuppressWarnings("unchecked")

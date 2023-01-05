@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,6 +151,12 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.Date plannedEndTime;
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     */
+    private String opsItemArn;
 
     /**
      * <p>
@@ -1129,6 +1135,46 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public void setOpsItemArn(String opsItemArn) {
+        this.opsItemArn = opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @return The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public String getOpsItemArn() {
+        return this.opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withOpsItemArn(String opsItemArn) {
+        setOpsItemArn(opsItemArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1169,7 +1215,9 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPlannedStartTime() != null)
             sb.append("PlannedStartTime: ").append(getPlannedStartTime()).append(",");
         if (getPlannedEndTime() != null)
-            sb.append("PlannedEndTime: ").append(getPlannedEndTime());
+            sb.append("PlannedEndTime: ").append(getPlannedEndTime()).append(",");
+        if (getOpsItemArn() != null)
+            sb.append("OpsItemArn: ").append(getOpsItemArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1244,6 +1292,10 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getPlannedEndTime() != null && other.getPlannedEndTime().equals(this.getPlannedEndTime()) == false)
             return false;
+        if (other.getOpsItemArn() == null ^ this.getOpsItemArn() == null)
+            return false;
+        if (other.getOpsItemArn() != null && other.getOpsItemArn().equals(this.getOpsItemArn()) == false)
+            return false;
         return true;
     }
 
@@ -1267,6 +1319,7 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getActualEndTime() == null) ? 0 : getActualEndTime().hashCode());
         hashCode = prime * hashCode + ((getPlannedStartTime() == null) ? 0 : getPlannedStartTime().hashCode());
         hashCode = prime * hashCode + ((getPlannedEndTime() == null) ? 0 : getPlannedEndTime().hashCode());
+        hashCode = prime * hashCode + ((getOpsItemArn() == null) ? 0 : getOpsItemArn().hashCode());
         return hashCode;
     }
 

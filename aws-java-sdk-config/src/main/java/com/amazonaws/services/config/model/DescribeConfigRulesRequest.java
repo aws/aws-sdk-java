@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.
+     * </p>
+     */
+    private DescribeConfigRulesFilters filters;
 
     /**
      * <p>
@@ -169,6 +175,46 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.
+     * </p>
+     * 
+     * @param filters
+     *        Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.
+     */
+
+    public void setFilters(DescribeConfigRulesFilters filters) {
+        this.filters = filters;
+    }
+
+    /**
+     * <p>
+     * Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.
+     * </p>
+     * 
+     * @return Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.
+     */
+
+    public DescribeConfigRulesFilters getFilters() {
+        return this.filters;
+    }
+
+    /**
+     * <p>
+     * Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.
+     * </p>
+     * 
+     * @param filters
+     *        Returns a list of Detecive or Proactive Config rules. By default, this API returns an unfiltered list.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeConfigRulesRequest withFilters(DescribeConfigRulesFilters filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -183,7 +229,9 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
         if (getConfigRuleNames() != null)
             sb.append("ConfigRuleNames: ").append(getConfigRuleNames()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +254,10 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -216,6 +268,7 @@ public class DescribeConfigRulesRequest extends com.amazonaws.AmazonWebServiceRe
 
         hashCode = prime * hashCode + ((getConfigRuleNames() == null) ? 0 : getConfigRuleNames().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

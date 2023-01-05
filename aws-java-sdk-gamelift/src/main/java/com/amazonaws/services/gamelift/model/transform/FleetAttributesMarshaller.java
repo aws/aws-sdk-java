@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,10 @@ public class FleetAttributesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceRoleArn").build();
     private static final MarshallingInfo<StructuredPojo> CERTIFICATECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateConfiguration").build();
+    private static final MarshallingInfo<String> COMPUTETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeType").build();
+    private static final MarshallingInfo<StructuredPojo> ANYWHERECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnywhereConfiguration").build();
 
     private static final FleetAttributesMarshaller instance = new FleetAttributesMarshaller();
 
@@ -114,6 +118,8 @@ public class FleetAttributesMarshaller {
             protocolMarshaller.marshall(fleetAttributes.getStoppedActions(), STOPPEDACTIONS_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getInstanceRoleArn(), INSTANCEROLEARN_BINDING);
             protocolMarshaller.marshall(fleetAttributes.getCertificateConfiguration(), CERTIFICATECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(fleetAttributes.getComputeType(), COMPUTETYPE_BINDING);
+            protocolMarshaller.marshall(fleetAttributes.getAnywhereConfiguration(), ANYWHERECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

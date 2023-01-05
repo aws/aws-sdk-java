@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appflow.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -41,6 +42,8 @@ public class ExecutionRecordMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataPullStartTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> DATAPULLENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataPullEndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<List> METADATACATALOGDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadataCatalogDetails").build();
 
     private static final ExecutionRecordMarshaller instance = new ExecutionRecordMarshaller();
 
@@ -65,6 +68,7 @@ public class ExecutionRecordMarshaller {
             protocolMarshaller.marshall(executionRecord.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
             protocolMarshaller.marshall(executionRecord.getDataPullStartTime(), DATAPULLSTARTTIME_BINDING);
             protocolMarshaller.marshall(executionRecord.getDataPullEndTime(), DATAPULLENDTIME_BINDING);
+            protocolMarshaller.marshall(executionRecord.getMetadataCatalogDetails(), METADATACATALOGDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

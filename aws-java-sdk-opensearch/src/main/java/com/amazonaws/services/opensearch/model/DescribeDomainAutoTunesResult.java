@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code>DescribeDomainAutoTunes</code> request. See <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune
- * for Amazon OpenSearch Service </a> for more information.
+ * The result of a <code>DescribeDomainAutoTunes</code> request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,29 +25,24 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The list of setting adjustments that Auto-Tune has made to the domain.
      * </p>
      */
     private java.util.List<AutoTune> autoTunes;
     /**
      * <p>
-     * An identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The list of setting adjustments that Auto-Tune has made to the domain.
      * </p>
      * 
-     * @return The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return The list of setting adjustments that Auto-Tune has made to the domain.
      */
 
     public java.util.List<AutoTune> getAutoTunes() {
@@ -58,15 +51,11 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The list of setting adjustments that Auto-Tune has made to the domain.
      * </p>
      * 
      * @param autoTunes
-     *        The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The list of setting adjustments that Auto-Tune has made to the domain.
      */
 
     public void setAutoTunes(java.util.Collection<AutoTune> autoTunes) {
@@ -80,9 +69,7 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The list of setting adjustments that Auto-Tune has made to the domain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,9 +78,7 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param autoTunes
-     *        The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The list of setting adjustments that Auto-Tune has made to the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,15 +94,11 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The list of setting adjustments that Auto-Tune has made to the domain.
      * </p>
      * 
      * @param autoTunes
-     *        The list of setting adjustments that Auto-Tune has made to the domain. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The list of setting adjustments that Auto-Tune has made to the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,11 +109,14 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        An identifier to allow retrieval of paginated results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -141,10 +125,13 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
-     * @return An identifier to allow retrieval of paginated results.
+     * @return When <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -153,11 +140,14 @@ public class DescribeDomainAutoTunesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        An identifier to allow retrieval of paginated results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -197,7 +197,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -278,6 +278,16 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not
+     * scaled activities are activities that aren't completed or started for various reasons, such as preventing
+     * infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
+     * </p>
+     */
+    private Boolean includeNotScaledActivities;
 
     /**
      * <p>
@@ -1080,7 +1090,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1196,7 +1206,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1322,7 +1332,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1437,7 +1447,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1563,7 +1573,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1679,7 +1689,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1807,7 +1817,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1923,7 +1933,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2049,7 +2059,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2165,7 +2175,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2351,6 +2361,94 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not
+     * scaled activities are activities that aren't completed or started for various reasons, such as preventing
+     * infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
+     * </p>
+     * 
+     * @param includeNotScaledActivities
+     *        Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response.
+     *        Not scaled activities are activities that aren't completed or started for various reasons, such as
+     *        preventing infinite scaling loops. For help interpreting the not scaled reason details in the response,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     *        >Scaling activities for Application Auto Scaling</a>.
+     */
+
+    public void setIncludeNotScaledActivities(Boolean includeNotScaledActivities) {
+        this.includeNotScaledActivities = includeNotScaledActivities;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not
+     * scaled activities are activities that aren't completed or started for various reasons, such as preventing
+     * infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
+     * </p>
+     * 
+     * @return Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the
+     *         response. Not scaled activities are activities that aren't completed or started for various reasons, such
+     *         as preventing infinite scaling loops. For help interpreting the not scaled reason details in the
+     *         response, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     *         >Scaling activities for Application Auto Scaling</a>.
+     */
+
+    public Boolean getIncludeNotScaledActivities() {
+        return this.includeNotScaledActivities;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not
+     * scaled activities are activities that aren't completed or started for various reasons, such as preventing
+     * infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
+     * </p>
+     * 
+     * @param includeNotScaledActivities
+     *        Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response.
+     *        Not scaled activities are activities that aren't completed or started for various reasons, such as
+     *        preventing infinite scaling loops. For help interpreting the not scaled reason details in the response,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     *        >Scaling activities for Application Auto Scaling</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeScalingActivitiesRequest withIncludeNotScaledActivities(Boolean includeNotScaledActivities) {
+        setIncludeNotScaledActivities(includeNotScaledActivities);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the response. Not
+     * scaled activities are activities that aren't completed or started for various reasons, such as preventing
+     * infinite scaling loops. For help interpreting the not scaled reason details in the response, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
+     * </p>
+     * 
+     * @return Specifies whether to include activities that aren't scaled (<i>not scaled activities</i>) in the
+     *         response. Not scaled activities are activities that aren't completed or started for various reasons, such
+     *         as preventing infinite scaling loops. For help interpreting the not scaled reason details in the
+     *         response, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     *         >Scaling activities for Application Auto Scaling</a>.
+     */
+
+    public Boolean isIncludeNotScaledActivities() {
+        return this.includeNotScaledActivities;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2371,7 +2469,9 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getIncludeNotScaledActivities() != null)
+            sb.append("IncludeNotScaledActivities: ").append(getIncludeNotScaledActivities());
         sb.append("}");
         return sb.toString();
     }
@@ -2406,6 +2506,10 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getIncludeNotScaledActivities() == null ^ this.getIncludeNotScaledActivities() == null)
+            return false;
+        if (other.getIncludeNotScaledActivities() != null && other.getIncludeNotScaledActivities().equals(this.getIncludeNotScaledActivities()) == false)
+            return false;
         return true;
     }
 
@@ -2419,6 +2523,7 @@ public class DescribeScalingActivitiesRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getScalableDimension() == null) ? 0 : getScalableDimension().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getIncludeNotScaledActivities() == null) ? 0 : getIncludeNotScaledActivities().hashCode());
         return hashCode;
     }
 

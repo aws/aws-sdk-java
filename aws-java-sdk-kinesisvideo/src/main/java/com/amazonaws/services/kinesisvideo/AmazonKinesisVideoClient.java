@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,17 +76,32 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisvideo.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisvideo.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccountStreamLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.AccountStreamLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.VersionMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccountChannelLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.AccountChannelLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ClientLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.ClientLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StreamEdgeConfigurationNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.StreamEdgeConfigurationNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceFormatException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.InvalidResourceFormatExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoDataRetentionException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.NoDataRetentionExceptionUnmarshaller.getInstance()))
@@ -94,29 +109,17 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisvideo.model.transform.VersionMismatchExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDeviceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.InvalidDeviceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagsPerResourceExceededLimitException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.TagsPerResourceExceededLimitExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountChannelLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisvideo.model.transform.AccountChannelLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeviceStreamLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.DeviceStreamLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.NotAuthorizedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClientLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisvideo.model.transform.ClientLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceFormatException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisvideo.model.transform.InvalidResourceFormatExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class));
 
     public static AmazonKinesisVideoClientBuilder builder() {
@@ -184,13 +187,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      *         You have reached the maximum limit of active signaling channels for this Amazon Web Services account in
      *         this region.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws TagsPerResourceExceededLimitException
@@ -271,13 +290,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * @throws DeviceStreamLimitExceededException
      *         Not implemented.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws InvalidDeviceException
      *         Not implemented.
      * @throws InvalidArgumentException
@@ -359,13 +394,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
      *         API.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @sample AmazonKinesisVideo.DeleteSignalingChannel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteSignalingChannel"
      *      target="_top">AWS API Documentation</a>
@@ -450,13 +501,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      *         ="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_DescribeStream.html">DescribeStream</a>
      *         API.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @sample AmazonKinesisVideo.DeleteStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DeleteStream" target="_top">AWS API
      *      Documentation</a>
@@ -495,6 +562,76 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API. Use
+     * this API to get the status of the configuration if the configuration is in sync with the Edge Agent.
+     * </p>
+     * 
+     * @param describeEdgeConfigurationRequest
+     * @return Result of the DescribeEdgeConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws StreamEdgeConfigurationNotFoundException
+     *         The Exception rendered when the Amazon Kinesis Video Stream can't find a stream's edge configuration that
+     *         you specified.
+     * @sample AmazonKinesisVideo.DescribeEdgeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeEdgeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeEdgeConfigurationResult describeEdgeConfiguration(DescribeEdgeConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeEdgeConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeEdgeConfigurationResult executeDescribeEdgeConfiguration(DescribeEdgeConfigurationRequest describeEdgeConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeEdgeConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeEdgeConfigurationRequest> request = null;
+        Response<DescribeEdgeConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeEdgeConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeEdgeConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEdgeConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeEdgeConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeEdgeConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -563,6 +700,146 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeImageGenerationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeImageGenerationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the most current information about the stream. Either streamName or streamARN should be provided in the
+     * input.
+     * </p>
+     * <p>
+     * Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code>
+     * should be provided in the input.
+     * </p>
+     * 
+     * @param describeMappedResourceConfigurationRequest
+     * @return Result of the DescribeMappedResourceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @sample AmazonKinesisVideo.DescribeMappedResourceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMappedResourceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMappedResourceConfigurationResult describeMappedResourceConfiguration(DescribeMappedResourceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMappedResourceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMappedResourceConfigurationResult executeDescribeMappedResourceConfiguration(
+            DescribeMappedResourceConfigurationRequest describeMappedResourceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMappedResourceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMappedResourceConfigurationRequest> request = null;
+        Response<DescribeMappedResourceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMappedResourceConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMappedResourceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMappedResourceConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMappedResourceConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMappedResourceConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the most current information about the channel. Specify the <code>ChannelName</code> or
+     * <code>ChannelARN</code> in the input.
+     * </p>
+     * 
+     * @param describeMediaStorageConfigurationRequest
+     * @return Result of the DescribeMediaStorageConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @sample AmazonKinesisVideo.DescribeMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/DescribeMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMediaStorageConfigurationResult describeMediaStorageConfiguration(DescribeMediaStorageConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMediaStorageConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMediaStorageConfigurationResult executeDescribeMediaStorageConfiguration(
+            DescribeMediaStorageConfigurationRequest describeMediaStorageConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMediaStorageConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMediaStorageConfigurationRequest> request = null;
+        Response<DescribeMediaStorageConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMediaStorageConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMediaStorageConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMediaStorageConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMediaStorageConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMediaStorageConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -875,13 +1152,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @sample AmazonKinesisVideo.GetSignalingChannelEndpoint
@@ -1182,6 +1475,110 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForStreamResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForStreamResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the
+     * stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at
+     * your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The
+     * <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and synced with the Edge
+     * Agent.
+     * </p>
+     * <p>
+     * If this API is invoked for the first time, a new edge configuration will be created for the stream, and the sync
+     * status will be set to <code>SYNCING</code>. You will have to wait for the sync status to reach a terminal state
+     * such as: <code>IN_SYNC</code>, or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API
+     * during the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity of the
+     * stream’s edge configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes, the status will
+     * transition into the <code>SYNC_FAILED</code> state.
+     * </p>
+     * 
+     * @param startEdgeConfigurationUpdateRequest
+     * @return Result of the StartEdgeConfigurationUpdate operation returned by the service.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws NoDataRetentionException
+     *         The Stream data retention in hours is equal to zero.
+     * @throws ResourceInUseException
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @sample AmazonKinesisVideo.StartEdgeConfigurationUpdate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/StartEdgeConfigurationUpdate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartEdgeConfigurationUpdateResult startEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartEdgeConfigurationUpdate(request);
+    }
+
+    @SdkInternalApi
+    final StartEdgeConfigurationUpdateResult executeStartEdgeConfigurationUpdate(StartEdgeConfigurationUpdateRequest startEdgeConfigurationUpdateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startEdgeConfigurationUpdateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartEdgeConfigurationUpdateRequest> request = null;
+        Response<StartEdgeConfigurationUpdateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartEdgeConfigurationUpdateRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startEdgeConfigurationUpdateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartEdgeConfigurationUpdate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartEdgeConfigurationUpdateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartEdgeConfigurationUpdateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1524,13 +1921,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NotAuthorizedException
      *         The caller is not authorized to perform this operation.
      * @throws VersionMismatchException
@@ -1603,13 +2016,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NoDataRetentionException
      *         The Stream data retention in hours is equal to zero.
      * @sample AmazonKinesisVideo.UpdateImageGenerationConfiguration
@@ -1665,6 +2094,113 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Associates a <code>SignalingChannel</code> to a stream to store the media. There are two signaling modes that can
+     * specified :
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code> parameter
+     * will not be needed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code> provided.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateMediaStorageConfigurationRequest
+     * @return Result of the UpdateMediaStorageConfiguration operation returned by the service.
+     * @throws ResourceInUseException
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
+     * @throws InvalidArgumentException
+     *         The value for this input parameter is invalid.
+     * @throws ClientLimitExceededException
+     *         Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client
+     *         calls. Try making the call later.
+     * @throws ResourceNotFoundException
+     *         Amazon Kinesis Video Streams can't find the stream that you specified.
+     * @throws AccessDeniedException
+     *         You do not have required permissions to perform this operation.
+     * @throws NoDataRetentionException
+     *         The Stream data retention in hours is equal to zero.
+     * @sample AmazonKinesisVideo.UpdateMediaStorageConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2017-09-30/UpdateMediaStorageConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMediaStorageConfigurationResult updateMediaStorageConfiguration(UpdateMediaStorageConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMediaStorageConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMediaStorageConfigurationResult executeUpdateMediaStorageConfiguration(
+            UpdateMediaStorageConfigurationRequest updateMediaStorageConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMediaStorageConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMediaStorageConfigurationRequest> request = null;
+        Response<UpdateMediaStorageConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMediaStorageConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMediaStorageConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Video");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMediaStorageConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMediaStorageConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateMediaStorageConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the notification information for a stream.
      * </p>
      * 
@@ -1680,13 +2216,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NoDataRetentionException
      *         The Stream data retention in hours is equal to zero.
      * @sample AmazonKinesisVideo.UpdateNotificationConfiguration
@@ -1760,13 +2312,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws AccessDeniedException
      *         You do not have required permissions to perform this operation.
      * @throws VersionMismatchException
@@ -1849,13 +2417,29 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
      * @throws ResourceNotFoundException
      *         Amazon Kinesis Video Streams can't find the stream that you specified.
      * @throws ResourceInUseException
-     *         The resource is currently not available for this operation. New resources cannot be created with the same
-     *         name as existing resources. Also, resources cannot be updated or deleted unless they are in an
-     *         <code>ACTIVE</code> state.</p>
+     *         When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code> is
+     *         already mapped to a different Kinesis Video Stream resource, or if the provided input
+     *         <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try one of the following :
+     *         </p>
+     *         <ol>
+     *         <li>
      *         <p>
-     *         If this exception is returned, do not use it to determine whether the requested resource already exists.
-     *         Instead, it is recommended you use the resource-specific describe API, for example,
-     *         <code>DescribeStream</code> for video streams.
+     *         The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream given channel is
+     *         mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeMappedResourceConfiguration</code> API to determine the channel that the given stream
+     *         is mapped to.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine the status of
+     *         the resource.
+     *         </p>
+     *         </li>
      * @throws NotAuthorizedException
      *         The caller is not authorized to perform this operation.
      * @throws VersionMismatchException

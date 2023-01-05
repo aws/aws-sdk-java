@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class CreateCertificateAuthorityRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyStorageSecurityStandard").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> USAGEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("UsageMode").build();
 
     private static final CreateCertificateAuthorityRequestMarshaller instance = new CreateCertificateAuthorityRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class CreateCertificateAuthorityRequestMarshaller {
             protocolMarshaller.marshall(createCertificateAuthorityRequest.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(createCertificateAuthorityRequest.getKeyStorageSecurityStandard(), KEYSTORAGESECURITYSTANDARD_BINDING);
             protocolMarshaller.marshall(createCertificateAuthorityRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createCertificateAuthorityRequest.getUsageMode(), USAGEMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String name;
     /**
      * <p>
-     * Configuration information about the function, including an optional comment and the function’s runtime.
+     * Configuration information about the function, including an optional comment and the function's runtime.
      * </p>
      */
     private FunctionConfig functionConfig;
@@ -88,11 +88,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Configuration information about the function, including an optional comment and the function’s runtime.
+     * Configuration information about the function, including an optional comment and the function's runtime.
      * </p>
      * 
      * @param functionConfig
-     *        Configuration information about the function, including an optional comment and the function’s runtime.
+     *        Configuration information about the function, including an optional comment and the function's runtime.
      */
 
     public void setFunctionConfig(FunctionConfig functionConfig) {
@@ -101,10 +101,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Configuration information about the function, including an optional comment and the function’s runtime.
+     * Configuration information about the function, including an optional comment and the function's runtime.
      * </p>
      * 
-     * @return Configuration information about the function, including an optional comment and the function’s runtime.
+     * @return Configuration information about the function, including an optional comment and the function's runtime.
      */
 
     public FunctionConfig getFunctionConfig() {
@@ -113,11 +113,11 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Configuration information about the function, including an optional comment and the function’s runtime.
+     * Configuration information about the function, including an optional comment and the function's runtime.
      * </p>
      * 
      * @param functionConfig
-     *        Configuration information about the function, including an optional comment and the function’s runtime.
+     *        Configuration information about the function, including an optional comment and the function's runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

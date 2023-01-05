@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,14 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String notificationEmail;
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.
+     * </p>
+     */
+    private Boolean terminationProtectionEnabled;
 
     /**
      * <p>
@@ -189,6 +197,78 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.
+     * </p>
+     * 
+     * @param terminationProtectionEnabled
+     *        A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *        <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *        tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the
+     *        account to be deleted.
+     */
+
+    public void setTerminationProtectionEnabled(Boolean terminationProtectionEnabled) {
+        this.terminationProtectionEnabled = terminationProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.
+     * </p>
+     * 
+     * @return A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *         <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *         tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the
+     *         account to be deleted.
+     */
+
+    public Boolean getTerminationProtectionEnabled() {
+        return this.terminationProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.
+     * </p>
+     * 
+     * @param terminationProtectionEnabled
+     *        A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *        <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *        tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the
+     *        account to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAccountSettingsRequest withTerminationProtectionEnabled(Boolean terminationProtectionEnabled) {
+        setTerminationProtectionEnabled(terminationProtectionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the account to be deleted.
+     * </p>
+     * 
+     * @return A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *         <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *         tries to make a <code>DeleteAccountSubscription</code> request. A <code>False</code> value will allow the
+     *         account to be deleted.
+     */
+
+    public Boolean isTerminationProtectionEnabled() {
+        return this.terminationProtectionEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -205,7 +285,9 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
         if (getDefaultNamespace() != null)
             sb.append("DefaultNamespace: ").append(getDefaultNamespace()).append(",");
         if (getNotificationEmail() != null)
-            sb.append("NotificationEmail: ").append(getNotificationEmail());
+            sb.append("NotificationEmail: ").append(getNotificationEmail()).append(",");
+        if (getTerminationProtectionEnabled() != null)
+            sb.append("TerminationProtectionEnabled: ").append(getTerminationProtectionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +314,10 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getNotificationEmail() != null && other.getNotificationEmail().equals(this.getNotificationEmail()) == false)
             return false;
+        if (other.getTerminationProtectionEnabled() == null ^ this.getTerminationProtectionEnabled() == null)
+            return false;
+        if (other.getTerminationProtectionEnabled() != null && other.getTerminationProtectionEnabled().equals(this.getTerminationProtectionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +329,7 @@ public class UpdateAccountSettingsRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getDefaultNamespace() == null) ? 0 : getDefaultNamespace().hashCode());
         hashCode = prime * hashCode + ((getNotificationEmail() == null) ? 0 : getNotificationEmail().hashCode());
+        hashCode = prime * hashCode + ((getTerminationProtectionEnabled() == null) ? 0 : getTerminationProtectionEnabled().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      */
     private String bucket;
@@ -52,11 +52,11 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the assets in the revision.
+     *        The Amazon S3 bucket that is the destination for the assets in the revision.
      */
 
     public void setBucket(String bucket) {
@@ -65,10 +65,10 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      * 
-     * @return The S3 bucket that is the destination for the assets in the revision.
+     * @return The Amazon S3 bucket that is the destination for the assets in the revision.
      */
 
     public String getBucket() {
@@ -77,11 +77,11 @@ public class RevisionDestinationEntry implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the assets in the revision.
+     * The Amazon S3 bucket that is the destination for the assets in the revision.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the assets in the revision.
+     *        The Amazon S3 bucket that is the destination for the assets in the revision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

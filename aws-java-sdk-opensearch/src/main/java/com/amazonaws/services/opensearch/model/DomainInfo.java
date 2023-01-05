@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,29 +17,35 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Information about an OpenSearch Service domain.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>DomainName</code>.
+     * Name of the domain.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * Specifies the <code>EngineType</code> of the domain.
+     * The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     * <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * </p>
      */
     private String engineType;
 
     /**
      * <p>
-     * The <code>DomainName</code>.
+     * Name of the domain.
      * </p>
      * 
      * @param domainName
-     *        The <code>DomainName</code>.
+     *        Name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -48,10 +54,10 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>DomainName</code>.
+     * Name of the domain.
      * </p>
      * 
-     * @return The <code>DomainName</code>.
+     * @return Name of the domain.
      */
 
     public String getDomainName() {
@@ -60,11 +66,11 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>DomainName</code>.
+     * Name of the domain.
      * </p>
      * 
      * @param domainName
-     *        The <code>DomainName</code>.
+     *        Name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,11 +81,13 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the <code>EngineType</code> of the domain.
+     * The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     * <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * </p>
      * 
      * @param engineType
-     *        Specifies the <code>EngineType</code> of the domain.
+     *        The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     *        <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * @see EngineType
      */
 
@@ -89,10 +97,12 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the <code>EngineType</code> of the domain.
+     * The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     * <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * </p>
      * 
-     * @return Specifies the <code>EngineType</code> of the domain.
+     * @return The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     *         <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * @see EngineType
      */
 
@@ -102,11 +112,13 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the <code>EngineType</code> of the domain.
+     * The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     * <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * </p>
      * 
      * @param engineType
-     *        Specifies the <code>EngineType</code> of the domain.
+     *        The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     *        <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -118,11 +130,13 @@ public class DomainInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the <code>EngineType</code> of the domain.
+     * The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     * <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * </p>
      * 
      * @param engineType
-     *        Specifies the <code>EngineType</code> of the domain.
+     *        The type of search engine that the domain is running.<code>OpenSearch</code> for an OpenSearch engine, or
+     *        <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */

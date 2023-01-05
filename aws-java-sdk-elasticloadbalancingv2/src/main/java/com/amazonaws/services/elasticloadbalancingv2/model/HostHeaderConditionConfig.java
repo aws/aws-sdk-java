@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
      * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
      * character).
      * </p>
@@ -40,7 +40,7 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
      * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
      * character).
      * </p>
@@ -48,9 +48,9 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
      * If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      * </p>
      * 
-     * @return One or more host names. The maximum size of each name is 128 characters. The comparison is case
-     *         insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
-     *         (matches exactly 1 character).</p>
+     * @return The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     *         following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     *         character).</p>
      *         <p>
      *         If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      */
@@ -61,7 +61,7 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
      * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
      * character).
      * </p>
@@ -70,9 +70,9 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more host names. The maximum size of each name is 128 characters. The comparison is case
-     *        insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
-     *        (matches exactly 1 character).</p>
+     *        The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     *        following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     *        character).</p>
      *        <p>
      *        If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      */
@@ -88,7 +88,7 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
      * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
      * character).
      * </p>
@@ -102,9 +102,9 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more host names. The maximum size of each name is 128 characters. The comparison is case
-     *        insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
-     *        (matches exactly 1 character).</p>
+     *        The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     *        following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     *        character).</p>
      *        <p>
      *        If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -122,7 +122,7 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     * The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
      * following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
      * character).
      * </p>
@@ -131,9 +131,9 @@ public class HostHeaderConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more host names. The maximum size of each name is 128 characters. The comparison is case
-     *        insensitive. The following wildcard characters are supported: * (matches 0 or more characters) and ?
-     *        (matches exactly 1 character).</p>
+     *        The host names. The maximum size of each name is 128 characters. The comparison is case insensitive. The
+     *        following wildcard characters are supported: * (matches 0 or more characters) and ? (matches exactly 1
+     *        character).</p>
      *        <p>
      *        If you specify multiple strings, the condition is satisfied if one of the strings matches the host name.
      * @return Returns a reference to this object so that method calls can be chained together.

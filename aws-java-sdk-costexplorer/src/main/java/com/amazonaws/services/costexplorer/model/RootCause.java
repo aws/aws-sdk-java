@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The combination of Amazon Web Service, linked account, Region, and usage type where a cost anomaly is observed.
+ * The combination of Amazon Web Service, linked account, linked account name, Region, and usage type where a cost
+ * anomaly is observed. The linked account name will only be available when the account name can be identified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/RootCause" target="_top">AWS API Documentation</a>
@@ -51,6 +52,12 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String usageType;
+    /**
+     * <p>
+     * The member account name value that's associated with the cost anomaly.
+     * </p>
+     */
+    private String linkedAccountName;
 
     /**
      * <p>
@@ -213,6 +220,46 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The member account name value that's associated with the cost anomaly.
+     * </p>
+     * 
+     * @param linkedAccountName
+     *        The member account name value that's associated with the cost anomaly.
+     */
+
+    public void setLinkedAccountName(String linkedAccountName) {
+        this.linkedAccountName = linkedAccountName;
+    }
+
+    /**
+     * <p>
+     * The member account name value that's associated with the cost anomaly.
+     * </p>
+     * 
+     * @return The member account name value that's associated with the cost anomaly.
+     */
+
+    public String getLinkedAccountName() {
+        return this.linkedAccountName;
+    }
+
+    /**
+     * <p>
+     * The member account name value that's associated with the cost anomaly.
+     * </p>
+     * 
+     * @param linkedAccountName
+     *        The member account name value that's associated with the cost anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RootCause withLinkedAccountName(String linkedAccountName) {
+        setLinkedAccountName(linkedAccountName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -231,7 +278,9 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
         if (getLinkedAccount() != null)
             sb.append("LinkedAccount: ").append(getLinkedAccount()).append(",");
         if (getUsageType() != null)
-            sb.append("UsageType: ").append(getUsageType());
+            sb.append("UsageType: ").append(getUsageType()).append(",");
+        if (getLinkedAccountName() != null)
+            sb.append("LinkedAccountName: ").append(getLinkedAccountName());
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +311,10 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUsageType() != null && other.getUsageType().equals(this.getUsageType()) == false)
             return false;
+        if (other.getLinkedAccountName() == null ^ this.getLinkedAccountName() == null)
+            return false;
+        if (other.getLinkedAccountName() != null && other.getLinkedAccountName().equals(this.getLinkedAccountName()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +327,7 @@ public class RootCause implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getLinkedAccount() == null) ? 0 : getLinkedAccount().hashCode());
         hashCode = prime * hashCode + ((getUsageType() == null) ? 0 : getUsageType().hashCode());
+        hashCode = prime * hashCode + ((getLinkedAccountName() == null) ? 0 : getLinkedAccountName().hashCode());
         return hashCode;
     }
 

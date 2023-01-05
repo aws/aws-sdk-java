@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     */
+    private String name;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the solution containing the training configuration information.
@@ -57,6 +63,46 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<Tag> tags;
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @param name
+     *        The name of the solution version.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @return The name of the solution version.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @param name
+     *        The name of the solution version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSolutionVersionRequest withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -348,6 +394,8 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getSolutionArn() != null)
             sb.append("SolutionArn: ").append(getSolutionArn()).append(",");
         if (getTrainingMode() != null)
@@ -368,6 +416,10 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof CreateSolutionVersionRequest == false)
             return false;
         CreateSolutionVersionRequest other = (CreateSolutionVersionRequest) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getSolutionArn() == null ^ this.getSolutionArn() == null)
             return false;
         if (other.getSolutionArn() != null && other.getSolutionArn().equals(this.getSolutionArn()) == false)
@@ -388,6 +440,7 @@ public class CreateSolutionVersionRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSolutionArn() == null) ? 0 : getSolutionArn().hashCode());
         hashCode = prime * hashCode + ((getTrainingMode() == null) ? 0 : getTrainingMode().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode. */
+    /**
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000. Maximum: 128000.
+     * Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding
+     * mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE: Default:
+     * 384000. Minimum: 384000. Maximum: 640000.
+     */
     private Integer bitrate;
     /**
      * Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3
@@ -74,10 +81,20 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer sampleRate;
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000. Maximum: 128000.
+     * Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding
+     * mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE: Default:
+     * 384000. Minimum: 384000. Maximum: 640000.
      * 
      * @param bitrate
-     *        Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     *        Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000
+     *        within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode
+     *        you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000.
+     *        Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000.
+     *        Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for
+     *        coding mode 3/2 with FLE: Default: 384000. Minimum: 384000. Maximum: 640000.
      */
 
     public void setBitrate(Integer bitrate) {
@@ -85,9 +102,19 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000. Maximum: 128000.
+     * Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding
+     * mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE: Default:
+     * 384000. Minimum: 384000. Maximum: 640000.
      * 
-     * @return Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * @return Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000
+     *         within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode
+     *         you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000.
+     *         Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000.
+     *         Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for
+     *         coding mode 3/2 with FLE: Default: 384000. Minimum: 384000. Maximum: 640000.
      */
 
     public Integer getBitrate() {
@@ -95,10 +122,20 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     * Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000 within
+     * the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode you select
+     * according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000. Maximum: 128000.
+     * Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding
+     * mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for coding mode 3/2 with FLE: Default:
+     * 384000. Minimum: 384000. Maximum: 640000.
      * 
      * @param bitrate
-     *        Specify the average bitrate in bits per second. Valid bitrates depend on the coding mode.
+     *        Specify the average bitrate in bits per second. The bitrate that you specify must be a multiple of 8000
+     *        within the allowed minimum and maximum values. Leave blank to use the default bitrate for the coding mode
+     *        you select according ETSI TS 102 366. Valid bitrates for coding mode 1/0: Default: 96000. Minimum: 64000.
+     *        Maximum: 128000. Valid bitrates for coding mode 1/1: Default: 192000. Minimum: 128000. Maximum: 384000.
+     *        Valid bitrates for coding mode 2/0: Default: 192000. Minimum: 128000. Maximum: 384000. Valid bitrates for
+     *        coding mode 3/2 with FLE: Default: 384000. Minimum: 384000. Maximum: 640000.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

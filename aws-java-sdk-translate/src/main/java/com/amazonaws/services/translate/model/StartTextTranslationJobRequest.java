@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,22 +46,30 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate
-     * read access to your input data. For more information, see <a>identity-and-access-management</a>.
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access
+     * management </a>.
      * </p>
      */
     private String dataAccessRoleArn;
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.
-     * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      */
     private String sourceLanguageCode;
     /**
      * <p>
-     * The language code of the output language.
+     * The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into
+     * each target language.
+     * </p>
+     * <p>
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      */
     private java.util.List<String> targetLanguageCodes;
@@ -74,18 +82,26 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * This parameter accepts only one custom terminology resource.
      * </p>
      * <p>
+     * If you specify multiple target languages for the job, translate uses the designated terminology for each
+     * requested target language that has an entry for the source term in the terminology file.
+     * </p>
+     * <p>
      * For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>how-custom-terminology</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      */
     private java.util.List<String> terminologyNames;
     /**
      * <p>
      * The name of a parallel data resource to add to the translation job. This resource consists of examples that show
-     * how you want segments of text to be translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job.
+     * how you want segments of text to be translated. If you specify multiple target languages for the job, the
+     * parallel data file must include translations for all the target languages.
+     * </p>
+     * <p>
+     * When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
      * </p>
      * <p>
      * This parameter accepts only one parallel data resource.
@@ -100,7 +116,9 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>customizing-translations-parallel-data</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing
+     * your translations with parallel data</a>.
      * </p>
      */
     private java.util.List<String> parallelDataNames;
@@ -112,8 +130,8 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     private String clientToken;
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
-     * <code>StartTextTranslationJob</code> does not support the formality setting.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      */
     private TranslationSettings settings;
@@ -241,12 +259,16 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate
-     * read access to your input data. For more information, see <a>identity-and-access-management</a>.
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access
+     * management </a>.
      * </p>
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon
-     *        Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.
+     *        Translate read access to your input data. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and
+     *        access management </a>.
      */
 
     public void setDataAccessRoleArn(String dataAccessRoleArn) {
@@ -256,12 +278,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate
-     * read access to your input data. For more information, see <a>identity-and-access-management</a>.
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access
+     * management </a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon
-     *         Translate read access to your input data. For more information, see
-     *         <a>identity-and-access-management</a>.
+     *         Translate read access to your input data. For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and
+     *         access management </a>.
      */
 
     public String getDataAccessRoleArn() {
@@ -271,12 +296,16 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon Translate
-     * read access to your input data. For more information, see <a>identity-and-access-management</a>.
+     * read access to your input data. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and access
+     * management </a>.
      * </p>
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an AWS Identity Access and Management (IAM) role that grants Amazon
-     *        Translate read access to your input data. For more information, see <a>identity-and-access-management</a>.
+     *        Translate read access to your input data. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/identity-and-access-management.html">Identity and
+     *        access management </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,16 +316,19 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.
-     * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param sourceLanguageCode
-     *        The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-     *        <p>
-     *        Amazon Translate does not automatically detect a source language during batch translation jobs.
+     *        The language code of the input language. Specify the language if all input documents share the same
+     *        language. If you don't know the language of the source files, or your input documents contains different
+     *        source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each
+     *        input document. For a list of supported language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public void setSourceLanguageCode(String sourceLanguageCode) {
@@ -305,15 +337,18 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.
-     * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
-     * @return The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-     *         <p>
-     *         Amazon Translate does not automatically detect a source language during batch translation jobs.
+     * @return The language code of the input language. Specify the language if all input documents share the same
+     *         language. If you don't know the language of the source files, or your input documents contains different
+     *         source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each
+     *         input document. For a list of supported language codes, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public String getSourceLanguageCode() {
@@ -322,16 +357,19 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.
-     * </p>
-     * <p>
-     * Amazon Translate does not automatically detect a source language during batch translation jobs.
+     * The language code of the input language. Specify the language if all input documents share the same language. If
+     * you don't know the language of the source files, or your input documents contains different source languages,
+     * select <code>auto</code>. Amazon Translate auto detects the source language for each input document. For a list
+     * of supported language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param sourceLanguageCode
-     *        The language code of the input language. For a list of language codes, see <a>what-is-languages</a>.</p>
-     *        <p>
-     *        Amazon Translate does not automatically detect a source language during batch translation jobs.
+     *        The language code of the input language. Specify the language if all input documents share the same
+     *        language. If you don't know the language of the source files, or your input documents contains different
+     *        source languages, select <code>auto</code>. Amazon Translate auto detects the source language for each
+     *        input document. For a list of supported language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,10 +380,19 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the output language.
+     * The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into
+     * each target language.
+     * </p>
+     * <p>
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
-     * @return The language code of the output language.
+     * @return The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
+     *         into each target language.</p>
+     *         <p>
+     *         Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public java.util.List<String> getTargetLanguageCodes() {
@@ -354,11 +401,20 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the output language.
+     * The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into
+     * each target language.
+     * </p>
+     * <p>
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param targetLanguageCodes
-     *        The language code of the output language.
+     *        The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
+     *        into each target language.</p>
+     *        <p>
+     *        Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      */
 
     public void setTargetLanguageCodes(java.util.Collection<String> targetLanguageCodes) {
@@ -372,7 +428,12 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the output language.
+     * The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into
+     * each target language.
+     * </p>
+     * <p>
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -381,7 +442,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param targetLanguageCodes
-     *        The language code of the output language.
+     *        The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
+     *        into each target language.</p>
+     *        <p>
+     *        Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +462,20 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The language code of the output language.
+     * The target languages of the translation job. Enter up to 10 language codes. Each input file is translated into
+     * each target language.
+     * </p>
+     * <p>
+     * Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * </p>
      * 
      * @param targetLanguageCodes
-     *        The language code of the output language.
+     *        The target languages of the translation job. Enter up to 10 language codes. Each input file is translated
+     *        into each target language.</p>
+     *        <p>
+     *        Each language code is 2 or 5 characters long. For a list of language codes, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,10 +493,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * This parameter accepts only one custom terminology resource.
      * </p>
      * <p>
+     * If you specify multiple target languages for the job, translate uses the designated terminology for each
+     * requested target language that has an entry for the source term in the terminology file.
+     * </p>
+     * <p>
      * For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>how-custom-terminology</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * 
      * @return The name of a custom terminology resource to add to the translation job. This resource lists examples
@@ -431,10 +510,16 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *         This parameter accepts only one custom terminology resource.
      *         </p>
      *         <p>
+     *         If you specify multiple target languages for the job, translate uses the designated terminology for each
+     *         requested target language that has an entry for the source term in the terminology file.
+     *         </p>
+     *         <p>
      *         For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      *         </p>
      *         <p>
-     *         For more information, see <a>how-custom-terminology</a>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     *         terminology</a>.
      */
 
     public java.util.List<String> getTerminologyNames() {
@@ -450,10 +535,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * This parameter accepts only one custom terminology resource.
      * </p>
      * <p>
+     * If you specify multiple target languages for the job, translate uses the designated terminology for each
+     * requested target language that has an entry for the source term in the terminology file.
+     * </p>
+     * <p>
      * For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>how-custom-terminology</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * 
      * @param terminologyNames
@@ -463,10 +553,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        This parameter accepts only one custom terminology resource.
      *        </p>
      *        <p>
+     *        If you specify multiple target languages for the job, translate uses the designated terminology for each
+     *        requested target language that has an entry for the source term in the terminology file.
+     *        </p>
+     *        <p>
      *        For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      *        </p>
      *        <p>
-     *        For more information, see <a>how-custom-terminology</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      */
 
     public void setTerminologyNames(java.util.Collection<String> terminologyNames) {
@@ -487,10 +582,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * This parameter accepts only one custom terminology resource.
      * </p>
      * <p>
+     * If you specify multiple target languages for the job, translate uses the designated terminology for each
+     * requested target language that has an entry for the source term in the terminology file.
+     * </p>
+     * <p>
      * For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>how-custom-terminology</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -505,10 +605,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        This parameter accepts only one custom terminology resource.
      *        </p>
      *        <p>
+     *        If you specify multiple target languages for the job, translate uses the designated terminology for each
+     *        requested target language that has an entry for the source term in the terminology file.
+     *        </p>
+     *        <p>
      *        For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      *        </p>
      *        <p>
-     *        For more information, see <a>how-custom-terminology</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -531,10 +636,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * This parameter accepts only one custom terminology resource.
      * </p>
      * <p>
+     * If you specify multiple target languages for the job, translate uses the designated terminology for each
+     * requested target language that has an entry for the source term in the terminology file.
+     * </p>
+     * <p>
      * For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>how-custom-terminology</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * </p>
      * 
      * @param terminologyNames
@@ -544,10 +654,15 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        This parameter accepts only one custom terminology resource.
      *        </p>
      *        <p>
+     *        If you specify multiple target languages for the job, translate uses the designated terminology for each
+     *        requested target language that has an entry for the source term in the terminology file.
+     *        </p>
+     *        <p>
      *        For a list of available custom terminology resources, use the <a>ListTerminologies</a> operation.
      *        </p>
      *        <p>
-     *        For more information, see <a>how-custom-terminology</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom terminology</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -559,8 +674,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of a parallel data resource to add to the translation job. This resource consists of examples that show
-     * how you want segments of text to be translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job.
+     * how you want segments of text to be translated. If you specify multiple target languages for the job, the
+     * parallel data file must include translations for all the target languages.
+     * </p>
+     * <p>
+     * When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
      * </p>
      * <p>
      * This parameter accepts only one parallel data resource.
@@ -575,12 +693,17 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>customizing-translations-parallel-data</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing
+     * your translations with parallel data</a>.
      * </p>
      * 
      * @return The name of a parallel data resource to add to the translation job. This resource consists of examples
-     *         that show how you want segments of text to be translated. When you add parallel data to a translation
-     *         job, you create an <i>Active Custom Translation</i> job. </p>
+     *         that show how you want segments of text to be translated. If you specify multiple target languages for
+     *         the job, the parallel data file must include translations for all the target languages.</p>
+     *         <p>
+     *         When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
+     *         </p>
      *         <p>
      *         This parameter accepts only one parallel data resource.
      *         </p>
@@ -595,7 +718,9 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *         For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      *         </p>
      *         <p>
-     *         For more information, see <a>customizing-translations-parallel-data</a>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     *         Customizing your translations with parallel data</a>.
      */
 
     public java.util.List<String> getParallelDataNames() {
@@ -605,8 +730,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of a parallel data resource to add to the translation job. This resource consists of examples that show
-     * how you want segments of text to be translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job.
+     * how you want segments of text to be translated. If you specify multiple target languages for the job, the
+     * parallel data file must include translations for all the target languages.
+     * </p>
+     * <p>
+     * When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
      * </p>
      * <p>
      * This parameter accepts only one parallel data resource.
@@ -621,13 +749,18 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>customizing-translations-parallel-data</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing
+     * your translations with parallel data</a>.
      * </p>
      * 
      * @param parallelDataNames
      *        The name of a parallel data resource to add to the translation job. This resource consists of examples
-     *        that show how you want segments of text to be translated. When you add parallel data to a translation job,
-     *        you create an <i>Active Custom Translation</i> job. </p>
+     *        that show how you want segments of text to be translated. If you specify multiple target languages for the
+     *        job, the parallel data file must include translations for all the target languages.</p>
+     *        <p>
+     *        When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
+     *        </p>
      *        <p>
      *        This parameter accepts only one parallel data resource.
      *        </p>
@@ -641,7 +774,9 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      *        </p>
      *        <p>
-     *        For more information, see <a>customizing-translations-parallel-data</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     *        Customizing your translations with parallel data</a>.
      */
 
     public void setParallelDataNames(java.util.Collection<String> parallelDataNames) {
@@ -656,8 +791,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of a parallel data resource to add to the translation job. This resource consists of examples that show
-     * how you want segments of text to be translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job.
+     * how you want segments of text to be translated. If you specify multiple target languages for the job, the
+     * parallel data file must include translations for all the target languages.
+     * </p>
+     * <p>
+     * When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
      * </p>
      * <p>
      * This parameter accepts only one parallel data resource.
@@ -672,7 +810,9 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>customizing-translations-parallel-data</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing
+     * your translations with parallel data</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -682,8 +822,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param parallelDataNames
      *        The name of a parallel data resource to add to the translation job. This resource consists of examples
-     *        that show how you want segments of text to be translated. When you add parallel data to a translation job,
-     *        you create an <i>Active Custom Translation</i> job. </p>
+     *        that show how you want segments of text to be translated. If you specify multiple target languages for the
+     *        job, the parallel data file must include translations for all the target languages.</p>
+     *        <p>
+     *        When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
+     *        </p>
      *        <p>
      *        This parameter accepts only one parallel data resource.
      *        </p>
@@ -697,7 +840,9 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      *        </p>
      *        <p>
-     *        For more information, see <a>customizing-translations-parallel-data</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     *        Customizing your translations with parallel data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -714,8 +859,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The name of a parallel data resource to add to the translation job. This resource consists of examples that show
-     * how you want segments of text to be translated. When you add parallel data to a translation job, you create an
-     * <i>Active Custom Translation</i> job.
+     * how you want segments of text to be translated. If you specify multiple target languages for the job, the
+     * parallel data file must include translations for all the target languages.
+     * </p>
+     * <p>
+     * When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
      * </p>
      * <p>
      * This parameter accepts only one parallel data resource.
@@ -730,13 +878,18 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      * For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      * </p>
      * <p>
-     * For more information, see <a>customizing-translations-parallel-data</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html"> Customizing
+     * your translations with parallel data</a>.
      * </p>
      * 
      * @param parallelDataNames
      *        The name of a parallel data resource to add to the translation job. This resource consists of examples
-     *        that show how you want segments of text to be translated. When you add parallel data to a translation job,
-     *        you create an <i>Active Custom Translation</i> job. </p>
+     *        that show how you want segments of text to be translated. If you specify multiple target languages for the
+     *        job, the parallel data file must include translations for all the target languages.</p>
+     *        <p>
+     *        When you add parallel data to a translation job, you create an <i>Active Custom Translation</i> job.
+     *        </p>
      *        <p>
      *        This parameter accepts only one parallel data resource.
      *        </p>
@@ -750,7 +903,9 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
      *        For a list of available parallel data resources, use the <a>ListParallelData</a> operation.
      *        </p>
      *        <p>
-     *        For more information, see <a>customizing-translations-parallel-data</a>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-parallel-data.html">
+     *        Customizing your translations with parallel data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -801,13 +956,13 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
-     * <code>StartTextTranslationJob</code> does not support the formality setting.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to mask profane words and phrases.
-     *        <code>StartTextTranslationJob</code> does not support the formality setting.
+     *        Settings to configure your translation output, including the option to set the formality level of the
+     *        output text and the option to mask profane words and phrases.
      */
 
     public void setSettings(TranslationSettings settings) {
@@ -816,12 +971,12 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
-     * <code>StartTextTranslationJob</code> does not support the formality setting.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      * 
-     * @return Settings to configure your translation output, including the option to mask profane words and phrases.
-     *         <code>StartTextTranslationJob</code> does not support the formality setting.
+     * @return Settings to configure your translation output, including the option to set the formality level of the
+     *         output text and the option to mask profane words and phrases.
      */
 
     public TranslationSettings getSettings() {
@@ -830,13 +985,13 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Settings to configure your translation output, including the option to mask profane words and phrases.
-     * <code>StartTextTranslationJob</code> does not support the formality setting.
+     * Settings to configure your translation output, including the option to set the formality level of the output text
+     * and the option to mask profane words and phrases.
      * </p>
      * 
      * @param settings
-     *        Settings to configure your translation output, including the option to mask profane words and phrases.
-     *        <code>StartTextTranslationJob</code> does not support the formality setting.
+     *        Settings to configure your translation output, including the option to set the formality level of the
+     *        output text and the option to mask profane words and phrases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

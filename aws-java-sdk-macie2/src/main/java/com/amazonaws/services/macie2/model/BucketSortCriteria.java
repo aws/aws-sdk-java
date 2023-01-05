@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * The name of the bucket property to sort the results by. This value can be one of the following properties that
      * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.
+     * objectCount, sensitivityScore, or sizeInBytes.
      * </p>
      */
     private String attributeName;
@@ -48,13 +48,13 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * The name of the bucket property to sort the results by. This value can be one of the following properties that
      * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.
+     * objectCount, sensitivityScore, or sizeInBytes.
      * </p>
      * 
      * @param attributeName
      *        The name of the bucket property to sort the results by. This value can be one of the following properties
      *        that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount,
-     *        classifiableSizeInBytes, objectCount, or sizeInBytes.
+     *        classifiableSizeInBytes, objectCount, sensitivityScore, or sizeInBytes.
      */
 
     public void setAttributeName(String attributeName) {
@@ -65,12 +65,12 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * The name of the bucket property to sort the results by. This value can be one of the following properties that
      * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.
+     * objectCount, sensitivityScore, or sizeInBytes.
      * </p>
      * 
      * @return The name of the bucket property to sort the results by. This value can be one of the following properties
      *         that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount,
-     *         classifiableSizeInBytes, objectCount, or sizeInBytes.
+     *         classifiableSizeInBytes, objectCount, sensitivityScore, or sizeInBytes.
      */
 
     public String getAttributeName() {
@@ -81,13 +81,13 @@ public class BucketSortCriteria implements Serializable, Cloneable, StructuredPo
      * <p>
      * The name of the bucket property to sort the results by. This value can be one of the following properties that
      * Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount, classifiableSizeInBytes,
-     * objectCount, or sizeInBytes.
+     * objectCount, sensitivityScore, or sizeInBytes.
      * </p>
      * 
      * @param attributeName
      *        The name of the bucket property to sort the results by. This value can be one of the following properties
      *        that Amazon Macie defines as bucket metadata: accountId, bucketName, classifiableObjectCount,
-     *        classifiableSizeInBytes, objectCount, or sizeInBytes.
+     *        classifiableSizeInBytes, objectCount, sensitivityScore, or sizeInBytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

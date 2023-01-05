@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,6 @@ public class FunctionRequest implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The data connector.
-     * </p>
-     */
-    private DataConnector implementedBy;
-    /**
-     * <p>
      * The required properties of the function.
      * </p>
      */
@@ -46,46 +40,12 @@ public class FunctionRequest implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String scope;
-
     /**
      * <p>
      * The data connector.
      * </p>
-     * 
-     * @param implementedBy
-     *        The data connector.
      */
-
-    public void setImplementedBy(DataConnector implementedBy) {
-        this.implementedBy = implementedBy;
-    }
-
-    /**
-     * <p>
-     * The data connector.
-     * </p>
-     * 
-     * @return The data connector.
-     */
-
-    public DataConnector getImplementedBy() {
-        return this.implementedBy;
-    }
-
-    /**
-     * <p>
-     * The data connector.
-     * </p>
-     * 
-     * @param implementedBy
-     *        The data connector.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public FunctionRequest withImplementedBy(DataConnector implementedBy) {
-        setImplementedBy(implementedBy);
-        return this;
-    }
+    private DataConnector implementedBy;
 
     /**
      * <p>
@@ -217,6 +177,46 @@ public class FunctionRequest implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The data connector.
+     * </p>
+     * 
+     * @param implementedBy
+     *        The data connector.
+     */
+
+    public void setImplementedBy(DataConnector implementedBy) {
+        this.implementedBy = implementedBy;
+    }
+
+    /**
+     * <p>
+     * The data connector.
+     * </p>
+     * 
+     * @return The data connector.
+     */
+
+    public DataConnector getImplementedBy() {
+        return this.implementedBy;
+    }
+
+    /**
+     * <p>
+     * The data connector.
+     * </p>
+     * 
+     * @param implementedBy
+     *        The data connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionRequest withImplementedBy(DataConnector implementedBy) {
+        setImplementedBy(implementedBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -228,12 +228,12 @@ public class FunctionRequest implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getImplementedBy() != null)
-            sb.append("ImplementedBy: ").append(getImplementedBy()).append(",");
         if (getRequiredProperties() != null)
             sb.append("RequiredProperties: ").append(getRequiredProperties()).append(",");
         if (getScope() != null)
-            sb.append("Scope: ").append(getScope());
+            sb.append("Scope: ").append(getScope()).append(",");
+        if (getImplementedBy() != null)
+            sb.append("ImplementedBy: ").append(getImplementedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -248,10 +248,6 @@ public class FunctionRequest implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof FunctionRequest == false)
             return false;
         FunctionRequest other = (FunctionRequest) obj;
-        if (other.getImplementedBy() == null ^ this.getImplementedBy() == null)
-            return false;
-        if (other.getImplementedBy() != null && other.getImplementedBy().equals(this.getImplementedBy()) == false)
-            return false;
         if (other.getRequiredProperties() == null ^ this.getRequiredProperties() == null)
             return false;
         if (other.getRequiredProperties() != null && other.getRequiredProperties().equals(this.getRequiredProperties()) == false)
@@ -259,6 +255,10 @@ public class FunctionRequest implements Serializable, Cloneable, StructuredPojo 
         if (other.getScope() == null ^ this.getScope() == null)
             return false;
         if (other.getScope() != null && other.getScope().equals(this.getScope()) == false)
+            return false;
+        if (other.getImplementedBy() == null ^ this.getImplementedBy() == null)
+            return false;
+        if (other.getImplementedBy() != null && other.getImplementedBy().equals(this.getImplementedBy()) == false)
             return false;
         return true;
     }
@@ -268,9 +268,9 @@ public class FunctionRequest implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getImplementedBy() == null) ? 0 : getImplementedBy().hashCode());
         hashCode = prime * hashCode + ((getRequiredProperties() == null) ? 0 : getRequiredProperties().hashCode());
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
+        hashCode = prime * hashCode + ((getImplementedBy() == null) ? 0 : getImplementedBy().hashCode());
         return hashCode;
     }
 

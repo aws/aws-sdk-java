@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Allows you to redact or flag specified personally identifiable information (PII) in your transcript. If you use
- * <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
+ * Makes it possible to redact or flag specified personally identifiable information (PII) in your transcript. If you
+ * use <code>ContentRedaction</code>, you must also include the sub-parameters: <code>PiiEntityTypes</code>,
  * <code>RedactionOutput</code>, and <code>RedactionType</code>.
  * </p>
  * 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,10 @@ public class UpdateOntapVolumeConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageEfficiencyEnabled").build();
     private static final MarshallingInfo<StructuredPojo> TIERINGPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TieringPolicy").build();
+    private static final MarshallingInfo<String> SNAPSHOTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotPolicy").build();
+    private static final MarshallingInfo<Boolean> COPYTAGSTOBACKUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTagsToBackups").build();
 
     private static final UpdateOntapVolumeConfigurationMarshaller instance = new UpdateOntapVolumeConfigurationMarshaller();
 
@@ -59,6 +63,8 @@ public class UpdateOntapVolumeConfigurationMarshaller {
             protocolMarshaller.marshall(updateOntapVolumeConfiguration.getSizeInMegabytes(), SIZEINMEGABYTES_BINDING);
             protocolMarshaller.marshall(updateOntapVolumeConfiguration.getStorageEfficiencyEnabled(), STORAGEEFFICIENCYENABLED_BINDING);
             protocolMarshaller.marshall(updateOntapVolumeConfiguration.getTieringPolicy(), TIERINGPOLICY_BINDING);
+            protocolMarshaller.marshall(updateOntapVolumeConfiguration.getSnapshotPolicy(), SNAPSHOTPOLICY_BINDING);
+            protocolMarshaller.marshall(updateOntapVolumeConfiguration.getCopyTagsToBackups(), COPYTAGSTOBACKUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

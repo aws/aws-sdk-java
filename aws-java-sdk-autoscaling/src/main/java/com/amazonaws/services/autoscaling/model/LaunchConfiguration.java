@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,19 +67,13 @@ public class LaunchConfiguration implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> securityGroups;
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+     * Available for backward compatibility.
      * </p>
      */
     private String classicLinkVPCId;
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     * Available for backward compatibility.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> classicLinkVPCSecurityGroups;
@@ -495,16 +489,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+     * Available for backward compatibility.
      * </p>
      * 
      * @param classicLinkVPCId
-     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-     *        <p>
-     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+     *        Available for backward compatibility.
      */
 
     public void setClassicLinkVPCId(String classicLinkVPCId) {
@@ -513,15 +502,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+     * Available for backward compatibility.
      * </p>
      * 
-     * @return <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-     *         <p>
-     *         The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+     * @return Available for backward compatibility.
      */
 
     public String getClassicLinkVPCId() {
@@ -530,16 +514,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+     * Available for backward compatibility.
      * </p>
      * 
      * @param classicLinkVPCId
-     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-     *        <p>
-     *        The ID of a ClassicLink-enabled VPC to link your EC2-Classic instances to.
+     *        Available for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -550,15 +529,10 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     * Available for backward compatibility.
      * </p>
      * 
-     * @return <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-     *         <p>
-     *         The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     * @return Available for backward compatibility.
      */
 
     public java.util.List<String> getClassicLinkVPCSecurityGroups() {
@@ -570,16 +544,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     * Available for backward compatibility.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-     *        <p>
-     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     *        Available for backward compatibility.
      */
 
     public void setClassicLinkVPCSecurityGroups(java.util.Collection<String> classicLinkVPCSecurityGroups) {
@@ -593,10 +562,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     * Available for backward compatibility.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -605,9 +571,7 @@ public class LaunchConfiguration implements Serializable, Cloneable {
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-     *        <p>
-     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     *        Available for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -623,16 +587,11 @@ public class LaunchConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i>
-     * </p>
-     * <p>
-     * The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     * Available for backward compatibility.
      * </p>
      * 
      * @param classicLinkVPCSecurityGroups
-     *        <i>EC2-Classic retires on August 15, 2022. This property is not supported after that date.</i> </p>
-     *        <p>
-     *        The IDs of one or more security groups for the VPC specified in <code>ClassicLinkVPCId</code>.
+     *        Available for backward compatibility.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

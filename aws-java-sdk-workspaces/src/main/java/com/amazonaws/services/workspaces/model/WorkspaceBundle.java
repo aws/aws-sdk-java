@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,18 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The state of the WorkSpace bundle.
+     * </p>
+     */
+    private String state;
+    /**
+     * <p>
+     * The type of WorkSpace bundle.
+     * </p>
+     */
+    private String bundleType;
 
     /**
      * <p>
@@ -504,6 +516,124 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The state of the WorkSpace bundle.
+     * </p>
+     * 
+     * @param state
+     *        The state of the WorkSpace bundle.
+     * @see WorkspaceBundleState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state of the WorkSpace bundle.
+     * </p>
+     * 
+     * @return The state of the WorkSpace bundle.
+     * @see WorkspaceBundleState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state of the WorkSpace bundle.
+     * </p>
+     * 
+     * @param state
+     *        The state of the WorkSpace bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkspaceBundleState
+     */
+
+    public WorkspaceBundle withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the WorkSpace bundle.
+     * </p>
+     * 
+     * @param state
+     *        The state of the WorkSpace bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WorkspaceBundleState
+     */
+
+    public WorkspaceBundle withState(WorkspaceBundleState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of WorkSpace bundle.
+     * </p>
+     * 
+     * @param bundleType
+     *        The type of WorkSpace bundle.
+     * @see BundleType
+     */
+
+    public void setBundleType(String bundleType) {
+        this.bundleType = bundleType;
+    }
+
+    /**
+     * <p>
+     * The type of WorkSpace bundle.
+     * </p>
+     * 
+     * @return The type of WorkSpace bundle.
+     * @see BundleType
+     */
+
+    public String getBundleType() {
+        return this.bundleType;
+    }
+
+    /**
+     * <p>
+     * The type of WorkSpace bundle.
+     * </p>
+     * 
+     * @param bundleType
+     *        The type of WorkSpace bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BundleType
+     */
+
+    public WorkspaceBundle withBundleType(String bundleType) {
+        setBundleType(bundleType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of WorkSpace bundle.
+     * </p>
+     * 
+     * @param bundleType
+     *        The type of WorkSpace bundle.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BundleType
+     */
+
+    public WorkspaceBundle withBundleType(BundleType bundleType) {
+        this.bundleType = bundleType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -534,7 +664,11 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState()).append(",");
+        if (getBundleType() != null)
+            sb.append("BundleType: ").append(getBundleType());
         sb.append("}");
         return sb.toString();
     }
@@ -589,6 +723,14 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getBundleType() == null ^ this.getBundleType() == null)
+            return false;
+        if (other.getBundleType() != null && other.getBundleType().equals(this.getBundleType()) == false)
+            return false;
         return true;
     }
 
@@ -607,6 +749,8 @@ public class WorkspaceBundle implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getBundleType() == null) ? 0 : getBundleType().hashCode());
         return hashCode;
     }
 

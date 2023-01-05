@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class OutpostConfigRequestMarshaller {
             .marshallLocationName("outpostArns").build();
     private static final MarshallingInfo<String> CONTROLPLANEINSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("controlPlaneInstanceType").build();
+    private static final MarshallingInfo<StructuredPojo> CONTROLPLANEPLACEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("controlPlanePlacement").build();
 
     private static final OutpostConfigRequestMarshaller instance = new OutpostConfigRequestMarshaller();
 
@@ -51,6 +53,7 @@ public class OutpostConfigRequestMarshaller {
         try {
             protocolMarshaller.marshall(outpostConfigRequest.getOutpostArns(), OUTPOSTARNS_BINDING);
             protocolMarshaller.marshall(outpostConfigRequest.getControlPlaneInstanceType(), CONTROLPLANEINSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(outpostConfigRequest.getControlPlanePlacement(), CONTROLPLANEPLACEMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

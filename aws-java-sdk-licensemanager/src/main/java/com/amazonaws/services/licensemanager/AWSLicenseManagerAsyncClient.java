@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1281,6 +1281,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListReceivedGrantsForOrganizationResult> listReceivedGrantsForOrganizationAsync(
+            ListReceivedGrantsForOrganizationRequest request) {
+
+        return listReceivedGrantsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedGrantsForOrganizationResult> listReceivedGrantsForOrganizationAsync(
+            final ListReceivedGrantsForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReceivedGrantsForOrganizationRequest, ListReceivedGrantsForOrganizationResult> asyncHandler) {
+        final ListReceivedGrantsForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReceivedGrantsForOrganizationResult>() {
+            @Override
+            public ListReceivedGrantsForOrganizationResult call() throws Exception {
+                ListReceivedGrantsForOrganizationResult result = null;
+
+                try {
+                    result = executeListReceivedGrantsForOrganization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListReceivedLicensesResult> listReceivedLicensesAsync(ListReceivedLicensesRequest request) {
 
         return listReceivedLicensesAsync(request, null);
@@ -1298,6 +1333,41 @@ public class AWSLicenseManagerAsyncClient extends AWSLicenseManagerClient implem
 
                 try {
                     result = executeListReceivedLicenses(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedLicensesForOrganizationResult> listReceivedLicensesForOrganizationAsync(
+            ListReceivedLicensesForOrganizationRequest request) {
+
+        return listReceivedLicensesForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedLicensesForOrganizationResult> listReceivedLicensesForOrganizationAsync(
+            final ListReceivedLicensesForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListReceivedLicensesForOrganizationRequest, ListReceivedLicensesForOrganizationResult> asyncHandler) {
+        final ListReceivedLicensesForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListReceivedLicensesForOrganizationResult>() {
+            @Override
+            public ListReceivedLicensesForOrganizationResult call() throws Exception {
+                ListReceivedLicensesForOrganizationResult result = null;
+
+                try {
+                    result = executeListReceivedLicensesForOrganization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

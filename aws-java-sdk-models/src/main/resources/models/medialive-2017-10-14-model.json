@@ -3279,6 +3279,20 @@
         "USE_CONFIGURED"
       ]
     },
+    "AudioDolbyEDecode": {
+      "type": "structure",
+      "members": {
+        "ProgramSelection": {
+          "shape": "DolbyEProgramSelection",
+          "locationName": "programSelection",
+          "documentation": "Applies only to Dolby E. Enter the program ID (according to the metadata in the audio) of the Dolby E program to extract from the specified track. One program extracted per audio selector. To select multiple programs, create multiple selectors with the same Track and different Program numbers. \u201cAll channels\u201d means to ignore the program IDs and include all the channels in this selector; useful if metadata is known to be incorrect."
+        }
+      },
+      "documentation": "Audio Dolby EDecode",
+      "required": [
+        "ProgramSelection"
+      ]
+    },
     "AudioHlsRenditionSelection": {
       "type": "structure",
       "members": {
@@ -3501,6 +3515,11 @@
           "shape": "__listOfAudioTrack",
           "locationName": "tracks",
           "documentation": "Selects one or more unique audio tracks from within a source."
+        },
+        "DolbyEDecode": {
+          "shape": "AudioDolbyEDecode",
+          "locationName": "dolbyEDecode",
+          "documentation": "Configure decoding options for Dolby E streams - these should be Dolby E frames carried in PCM streams tagged with SMPTE-337"
         }
       },
       "documentation": "Audio Track Selection",
@@ -3604,6 +3623,10 @@
     "AvailSettings": {
       "type": "structure",
       "members": {
+        "Esam": {
+          "shape": "Esam",
+          "locationName": "esam"
+        },
         "Scte35SpliceInsert": {
           "shape": "Scte35SpliceInsert",
           "locationName": "scte35SpliceInsert"
@@ -6550,11 +6573,26 @@
         "UPDATING"
       ]
     },
+    "DolbyEProgramSelection": {
+      "type": "string",
+      "documentation": "Dolby EProgram Selection",
+      "enum": [
+        "ALL_CHANNELS",
+        "PROGRAM_1",
+        "PROGRAM_2",
+        "PROGRAM_3",
+        "PROGRAM_4",
+        "PROGRAM_5",
+        "PROGRAM_6",
+        "PROGRAM_7",
+        "PROGRAM_8"
+      ]
+    },
     "DolbyVision81Settings": {
       "type": "structure",
       "members": {
       },
-      "documentation": "Dolby Vision Profile 8.1 Settings"
+      "documentation": "Dolby Vision81 Settings"
     },
     "DvbNitSettings": {
       "type": "structure",
@@ -7285,6 +7323,46 @@
         "TimecodeConfig"
       ]
     },
+    "Esam": {
+      "type": "structure",
+      "members": {
+        "AcquisitionPointId": {
+          "shape": "__stringMax256",
+          "locationName": "acquisitionPointId",
+          "documentation": "Sent as acquisitionPointIdentity to identify the MediaLive channel to the POIS."
+        },
+        "AdAvailOffset": {
+          "shape": "__integerMinNegative1000Max1000",
+          "locationName": "adAvailOffset",
+          "documentation": "When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages."
+        },
+        "PasswordParam": {
+          "shape": "__string",
+          "locationName": "passwordParam",
+          "documentation": "Documentation update needed"
+        },
+        "PoisEndpoint": {
+          "shape": "__stringMax2048",
+          "locationName": "poisEndpoint",
+          "documentation": "The URL of the signal conditioner endpoint on the Placement Opportunity Information System (POIS). MediaLive sends SignalProcessingEvents here when SCTE-35 messages are read."
+        },
+        "Username": {
+          "shape": "__string",
+          "locationName": "username",
+          "documentation": "Documentation update needed"
+        },
+        "ZoneIdentity": {
+          "shape": "__stringMax256",
+          "locationName": "zoneIdentity",
+          "documentation": "Optional data sent as zoneIdentity to identify the MediaLive channel to the POIS."
+        }
+      },
+      "documentation": "Esam",
+      "required": [
+        "AcquisitionPointId",
+        "PoisEndpoint"
+      ]
+    },
     "FailoverCondition": {
       "type": "structure",
       "members": {
@@ -7560,6 +7638,11 @@
           "shape": "FrameCaptureIntervalUnit",
           "locationName": "captureIntervalUnits",
           "documentation": "Unit for the frame capture interval."
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "Frame Capture Settings"
@@ -8036,6 +8119,11 @@
           "shape": "H264TimecodeInsertionBehavior",
           "locationName": "timecodeInsertion",
           "documentation": "Determines how timecodes should be inserted into the video elementary stream.\n- 'disabled': Do not include timecodes\n- 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config"
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "H264 Settings"
@@ -8370,6 +8458,11 @@
           "shape": "H265TimecodeInsertionBehavior",
           "locationName": "timecodeInsertion",
           "documentation": "Determines how timecodes should be inserted into the video elementary stream.\n- 'disabled': Do not include timecodes\n- 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config"
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "H265 Settings",
@@ -8715,7 +8808,7 @@
         "MinSegmentLength": {
           "shape": "__integerMin0",
           "locationName": "minSegmentLength",
-          "documentation": "When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed."
+          "documentation": "Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed."
         },
         "Mode": {
           "shape": "HlsMode",
@@ -8750,7 +8843,7 @@
         "SegmentLength": {
           "shape": "__integerMin1",
           "locationName": "segmentLength",
-          "documentation": "Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer."
+          "documentation": "Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe after this duration, so actual segment length may be longer."
         },
         "SegmentationMode": {
           "shape": "HlsSegmentationMode",
@@ -9482,6 +9575,11 @@
           "shape": "__integer",
           "locationName": "maxBitrate",
           "documentation": "The maximum bitrate in bits per second. Set a value here to throttle the bitrate of the source video."
+        },
+        "LatencyMs": {
+          "shape": "__integer",
+          "locationName": "latencyMs",
+          "documentation": "The Link device's buffer size (latency) in milliseconds (ms)."
         }
       },
       "documentation": "Configurable settings for the input device."
@@ -9561,6 +9659,11 @@
           "shape": "__integer",
           "locationName": "width",
           "documentation": "The width of the video source, in pixels."
+        },
+        "LatencyMs": {
+          "shape": "__integer",
+          "locationName": "latencyMs",
+          "documentation": "The Link device's buffer size (latency) in milliseconds (ms). You can specify this value."
         }
       },
       "documentation": "Settings that describe the active source from the input device, and the video characteristics of that source."
@@ -9720,7 +9823,8 @@
       "type": "string",
       "documentation": "The type of the input device. For an AWS Elemental Link device that outputs resolutions up to 1080, choose \"HD\".",
       "enum": [
-        "HD"
+        "HD",
+        "UHD"
       ]
     },
     "InputDeviceUhdSettings": {
@@ -9765,6 +9869,11 @@
           "shape": "__integer",
           "locationName": "width",
           "documentation": "The width of the video source, in pixels."
+        },
+        "LatencyMs": {
+          "shape": "__integer",
+          "locationName": "latencyMs",
+          "documentation": "The Link device's buffer size (latency) in milliseconds (ms). You can specify this value."
         }
       },
       "documentation": "Settings that describe the active source from the input device, and the video characteristics of that source."
@@ -11777,6 +11886,11 @@
           "shape": "Mpeg2TimecodeInsertionBehavior",
           "locationName": "timecodeInsertion",
           "documentation": "Determines how MediaLive inserts timecodes in the output video. For detailed information about setting up the input and the output for a timecode, see the section on \\\"MediaLive Features - Timecode configuration\\\" in the MediaLive User Guide.\nDISABLED: do not include timecodes.\nGOP_TIMECODE: Include timecode metadata in the GOP header."
+        },
+        "TimecodeBurninSettings": {
+          "shape": "TimecodeBurninSettings",
+          "locationName": "timecodeBurninSettings",
+          "documentation": "Timecode burn-in settings"
         }
       },
       "documentation": "Mpeg2 Settings",
@@ -13533,6 +13647,11 @@
           "locationName": "pauseStateSettings",
           "documentation": "Action to pause or unpause one or both channel pipelines"
         },
+        "Scte35InputSettings": {
+          "shape": "Scte35InputScheduleActionSettings",
+          "locationName": "scte35InputSettings",
+          "documentation": "Action to specify scte35 input"
+        },
         "Scte35ReturnToNetworkSettings": {
           "shape": "Scte35ReturnToNetworkScheduleActionSettings",
           "locationName": "scte35ReturnToNetworkSettings",
@@ -13763,6 +13882,33 @@
         "RESTRICT_GROUP0",
         "RESTRICT_GROUP1",
         "RESTRICT_GROUP2"
+      ]
+    },
+    "Scte35InputMode": {
+      "type": "string",
+      "documentation": "Whether the SCTE-35 input should be the active input or a fixed input.",
+      "enum": [
+        "FIXED",
+        "FOLLOW_ACTIVE"
+      ]
+    },
+    "Scte35InputScheduleActionSettings": {
+      "type": "structure",
+      "members": {
+        "InputAttachmentNameReference": {
+          "shape": "__string",
+          "locationName": "inputAttachmentNameReference",
+          "documentation": "In fixed mode, enter the name of the input attachment that you want to use as a SCTE-35 input. (Don't enter the ID of the input.)\""
+        },
+        "Mode": {
+          "shape": "Scte35InputMode",
+          "locationName": "mode",
+          "documentation": "Whether the SCTE-35 input should be the active input or a fixed input."
+        }
+      },
+      "documentation": "Scte35Input Schedule Action Settings",
+      "required": [
+        "Mode"
       ]
     },
     "Scte35NoRegionalBlackoutFlag": {
@@ -14659,6 +14805,56 @@
         }
       },
       "documentation": "The binary data for the thumbnail that the Link device has most recently sent to MediaLive."
+    },
+    "TimecodeBurninFontSize": {
+      "type": "string",
+      "documentation": "Timecode Burnin Font Size",
+      "enum": [
+        "EXTRA_SMALL_10",
+        "LARGE_48",
+        "MEDIUM_32",
+        "SMALL_16"
+      ]
+    },
+    "TimecodeBurninPosition": {
+      "type": "string",
+      "documentation": "Timecode Burnin Position",
+      "enum": [
+        "BOTTOM_CENTER",
+        "BOTTOM_LEFT",
+        "BOTTOM_RIGHT",
+        "MIDDLE_CENTER",
+        "MIDDLE_LEFT",
+        "MIDDLE_RIGHT",
+        "TOP_CENTER",
+        "TOP_LEFT",
+        "TOP_RIGHT"
+      ]
+    },
+    "TimecodeBurninSettings": {
+      "type": "structure",
+      "members": {
+        "FontSize": {
+          "shape": "TimecodeBurninFontSize",
+          "locationName": "fontSize",
+          "documentation": "Choose a timecode burn-in font size"
+        },
+        "Position": {
+          "shape": "TimecodeBurninPosition",
+          "locationName": "position",
+          "documentation": "Choose a timecode burn-in output position"
+        },
+        "Prefix": {
+          "shape": "__stringMax255",
+          "locationName": "prefix",
+          "documentation": "Create a timecode burn-in prefix (optional)"
+        }
+      },
+      "documentation": "Timecode Burnin Settings",
+      "required": [
+        "Position",
+        "FontSize"
+      ]
     },
     "TimecodeConfig": {
       "type": "structure",

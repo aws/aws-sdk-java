@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,9 +35,9 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      * </p>
      */
     private String engineName;
@@ -62,8 +62,8 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
     private String replicationInstanceEngineMinimumVersion;
     /**
      * <p>
-     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
-     * value would be "Amazon Aurora MySQL."
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this
+     * value would be "Amazon Aurora MySQL".
      * </p>
      */
     private String engineDisplayName;
@@ -73,18 +73,18 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      * </p>
      * 
      * @param engineName
      *        The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
      *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     *        <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     *        <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     *        <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     *        <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -96,17 +96,18 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      * </p>
      * 
      * @return The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
      *         <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      *         <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     *         <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     *         <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     *         <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     *         <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     *         <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     *         <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>
+     *         .
      */
 
     public String getEngineName() {
@@ -118,18 +119,18 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
      * The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     * <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     * <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     * <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      * </p>
      * 
      * @param engineName
      *        The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
      *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-     *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     *        <code>"sqlserver"</code>, and <code>"neptune"</code>.
+     *        <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
+     *        <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
+     *        <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -311,13 +312,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
-     * value would be "Amazon Aurora MySQL."
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this
+     * value would be "Amazon Aurora MySQL".
      * </p>
      * 
      * @param engineDisplayName
-     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
-     *        this value would be "Amazon Aurora MySQL."
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora",
+     *        this value would be "Amazon Aurora MySQL".
      */
 
     public void setEngineDisplayName(String engineDisplayName) {
@@ -326,12 +327,12 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
-     * value would be "Amazon Aurora MySQL."
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this
+     * value would be "Amazon Aurora MySQL".
      * </p>
      * 
-     * @return The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
-     *         this value would be "Amazon Aurora MySQL."
+     * @return The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora",
+     *         this value would be "Amazon Aurora MySQL".
      */
 
     public String getEngineDisplayName() {
@@ -340,13 +341,13 @@ public class SupportedEndpointType implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora," this
-     * value would be "Amazon Aurora MySQL."
+     * The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora", this
+     * value would be "Amazon Aurora MySQL".
      * </p>
      * 
      * @param engineDisplayName
-     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora,"
-     *        this value would be "Amazon Aurora MySQL."
+     *        The expanded name for the engine name. For example, if the <code>EngineName</code> parameter is "aurora",
+     *        this value would be "Amazon Aurora MySQL".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

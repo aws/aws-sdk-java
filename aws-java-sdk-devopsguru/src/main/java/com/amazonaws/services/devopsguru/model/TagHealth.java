@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,13 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private InsightHealth insight;
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     */
+    private Long analyzedResourceCount;
 
     /**
      * <p>
@@ -320,6 +327,52 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *        Services tag.
+     */
+
+    public void setAnalyzedResourceCount(Long analyzedResourceCount) {
+        this.analyzedResourceCount = analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     * 
+     * @return Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *         Services tag.
+     */
+
+    public Long getAnalyzedResourceCount() {
+        return this.analyzedResourceCount;
+    }
+
+    /**
+     * <p>
+     * Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services
+     * tag.
+     * </p>
+     * 
+     * @param analyzedResourceCount
+     *        Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web
+     *        Services tag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TagHealth withAnalyzedResourceCount(Long analyzedResourceCount) {
+        setAnalyzedResourceCount(analyzedResourceCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -336,7 +389,9 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
         if (getTagValue() != null)
             sb.append("TagValue: ").append(getTagValue()).append(",");
         if (getInsight() != null)
-            sb.append("Insight: ").append(getInsight());
+            sb.append("Insight: ").append(getInsight()).append(",");
+        if (getAnalyzedResourceCount() != null)
+            sb.append("AnalyzedResourceCount: ").append(getAnalyzedResourceCount());
         sb.append("}");
         return sb.toString();
     }
@@ -363,6 +418,10 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInsight() != null && other.getInsight().equals(this.getInsight()) == false)
             return false;
+        if (other.getAnalyzedResourceCount() == null ^ this.getAnalyzedResourceCount() == null)
+            return false;
+        if (other.getAnalyzedResourceCount() != null && other.getAnalyzedResourceCount().equals(this.getAnalyzedResourceCount()) == false)
+            return false;
         return true;
     }
 
@@ -374,6 +433,7 @@ public class TagHealth implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAppBoundaryKey() == null) ? 0 : getAppBoundaryKey().hashCode());
         hashCode = prime * hashCode + ((getTagValue() == null) ? 0 : getTagValue().hashCode());
         hashCode = prime * hashCode + ((getInsight() == null) ? 0 : getInsight().hashCode());
+        hashCode = prime * hashCode + ((getAnalyzedResourceCount() == null) ? 0 : getAnalyzedResourceCount().hashCode());
         return hashCode;
     }
 

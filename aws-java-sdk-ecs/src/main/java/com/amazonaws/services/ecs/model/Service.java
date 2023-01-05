@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -231,8 +231,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String schedulingStrategy;
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      */
     private DeploymentController deploymentController;
@@ -1996,13 +1995,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *        omitted if the service uses the <code>ECS</code> deployment controller type.
+     *        The deployment controller type the service is using.
      */
 
     public void setDeploymentController(DeploymentController deploymentController) {
@@ -2011,12 +2008,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      * 
-     * @return The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *         omitted if the service uses the <code>ECS</code> deployment controller type.
+     * @return The deployment controller type the service is using.
      */
 
     public DeploymentController getDeploymentController() {
@@ -2025,13 +2020,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The deployment controller type the service is using. When using the DescribeServices API, this field is omitted
-     * if the service uses the <code>ECS</code> deployment controller type.
+     * The deployment controller type the service is using.
      * </p>
      * 
      * @param deploymentController
-     *        The deployment controller type the service is using. When using the DescribeServices API, this field is
-     *        omitted if the service uses the <code>ECS</code> deployment controller type.
+     *        The deployment controller type the service is using.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

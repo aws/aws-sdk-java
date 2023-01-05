@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,13 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private EncryptionKey encryptionKey;
-
+    /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
@@ -291,7 +297,15 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
+     * @return Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource.
+     *         Each tag key for the resource must be unique. For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -299,7 +313,16 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
      * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -313,12 +336,20 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -333,7 +364,16 @@ public class ImportTerminologyRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each tag
+     * key for the resource must be unique. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
      * @param tags
+     *        Tags to be associated with this resource. A tag is a key-value pair that adds metadata to a resource. Each
+     *        tag key for the resource must be unique. For more information, see <a
+     *        href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

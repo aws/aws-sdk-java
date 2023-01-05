@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * systems, managed file systems, and license server configurations, as well as instance types and Amazon Machine Images
  * (AMIs).
  * </p>
- * 
- * <pre>
- * <code> &lt;p&gt;Studio administrators create launch profiles in the Nimble Studio console. Artists can use their launch profiles to launch an instance from the Nimble Studio portal. Each user’s launch profile defines how they can launch a streaming session. By default, studio admins can use all launch profiles.&lt;/p&gt; </code>
- * </pre>
+ * <p>
+ * Studio administrators create launch profiles in the Nimble Studio console. Artists can use their launch profiles to
+ * launch an instance from the Nimble Studio portal. Each user’s launch profile defines how they can launch a streaming
+ * session. By default, studio admins can use all launch profiles.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/LaunchProfile" target="_top">AWS API
  *      Documentation</a>
@@ -36,13 +37,14 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -66,7 +68,7 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> ec2SubnetIds;
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      */
     private String launchProfileId;
@@ -114,13 +116,13 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> studioComponentIds;
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -139,11 +141,13 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      */
 
     public void setArn(String arn) {
@@ -152,10 +156,12 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *         unique across all Regions.
      */
 
     public String getArn() {
@@ -164,11 +170,13 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +187,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -192,10 +200,10 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was created.
+     * @return The ISO timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -204,11 +212,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -369,11 +377,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The ID of the launch profile used to control access from the streaming session.
      */
 
     public void setLaunchProfileId(String launchProfileId) {
@@ -382,10 +390,10 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
-     * @return The launch profile ID.
+     * @return The ID of the launch profile used to control access from the streaming session.
      */
 
     public String getLaunchProfileId() {
@@ -394,11 +402,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
      * @param launchProfileId
-     *        The launch profile ID.
+     *        The ID of the launch profile used to control access from the streaming session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -791,10 +799,10 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
-     * @return A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * @return A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -803,11 +811,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -816,11 +824,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -859,11 +867,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -872,10 +880,10 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was updated.
+     * @return The ISO timestamp in seconds for when the resource was updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -884,11 +892,11 @@ public class LaunchProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

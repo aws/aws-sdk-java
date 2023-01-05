@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,17 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Additional information that's used by a managed rule group. Most managed rule groups don't require this.
+ * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
  * </p>
  * <p>
- * Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to provide
- * information about the sign-in page of your application.
- * </p>
- * <p>
- * You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration, for
- * example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends on the
- * needs of the managed rule group. For the ATP managed rule group, you provide the following individual configuration
- * objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.
+ * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that you
+ * want the Bot Control rule group to use.
  * </p>
  * <p>
  * For example specifications, see the examples section of <a>CreateWebACL</a>.
@@ -66,6 +60,16 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
      * </p>
      */
     private PasswordField passwordField;
+    /**
+     * <p>
+     * Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level
+     * that you want to use. For information about using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control
+     * rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot
+     * Control</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     */
+    private AWSManagedRulesBotControlRuleSet aWSManagedRulesBotControlRuleSet;
 
     /**
      * <p>
@@ -253,6 +257,73 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level
+     * that you want to use. For information about using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control
+     * rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot
+     * Control</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param aWSManagedRulesBotControlRuleSet
+     *        Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection
+     *        level that you want to use. For information about using the Bot Control managed rule group, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot
+     *        Control rule group</a> and <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in
+     *        the <i>WAF Developer Guide</i>.
+     */
+
+    public void setAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSet aWSManagedRulesBotControlRuleSet) {
+        this.aWSManagedRulesBotControlRuleSet = aWSManagedRulesBotControlRuleSet;
+    }
+
+    /**
+     * <p>
+     * Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level
+     * that you want to use. For information about using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control
+     * rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot
+     * Control</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @return Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection
+     *         level that you want to use. For information about using the Bot Control managed rule group, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot
+     *         Control rule group</a> and <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in
+     *         the <i>WAF Developer Guide</i>.
+     */
+
+    public AWSManagedRulesBotControlRuleSet getAWSManagedRulesBotControlRuleSet() {
+        return this.aWSManagedRulesBotControlRuleSet;
+    }
+
+    /**
+     * <p>
+     * Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection level
+     * that you want to use. For information about using the Bot Control managed rule group, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot Control
+     * rule group</a> and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot
+     * Control</a> in the <i>WAF Developer Guide</i>.
+     * </p>
+     * 
+     * @param aWSManagedRulesBotControlRuleSet
+     *        Additional configuration for using the Bot Control managed rule group. Use this to specify the inspection
+     *        level that you want to use. For information about using the Bot Control managed rule group, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF Bot
+     *        Control rule group</a> and <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-bot-control.html">WAF Bot Control</a> in
+     *        the <i>WAF Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedRuleGroupConfig withAWSManagedRulesBotControlRuleSet(AWSManagedRulesBotControlRuleSet aWSManagedRulesBotControlRuleSet) {
+        setAWSManagedRulesBotControlRuleSet(aWSManagedRulesBotControlRuleSet);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -271,7 +342,9 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
         if (getUsernameField() != null)
             sb.append("UsernameField: ").append(getUsernameField()).append(",");
         if (getPasswordField() != null)
-            sb.append("PasswordField: ").append(getPasswordField());
+            sb.append("PasswordField: ").append(getPasswordField()).append(",");
+        if (getAWSManagedRulesBotControlRuleSet() != null)
+            sb.append("AWSManagedRulesBotControlRuleSet: ").append(getAWSManagedRulesBotControlRuleSet());
         sb.append("}");
         return sb.toString();
     }
@@ -302,6 +375,11 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
             return false;
         if (other.getPasswordField() != null && other.getPasswordField().equals(this.getPasswordField()) == false)
             return false;
+        if (other.getAWSManagedRulesBotControlRuleSet() == null ^ this.getAWSManagedRulesBotControlRuleSet() == null)
+            return false;
+        if (other.getAWSManagedRulesBotControlRuleSet() != null
+                && other.getAWSManagedRulesBotControlRuleSet().equals(this.getAWSManagedRulesBotControlRuleSet()) == false)
+            return false;
         return true;
     }
 
@@ -314,6 +392,7 @@ public class ManagedRuleGroupConfig implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getPayloadType() == null) ? 0 : getPayloadType().hashCode());
         hashCode = prime * hashCode + ((getUsernameField() == null) ? 0 : getUsernameField().hashCode());
         hashCode = prime * hashCode + ((getPasswordField() == null) ? 0 : getPasswordField().hashCode());
+        hashCode = prime * hashCode + ((getAWSManagedRulesBotControlRuleSet() == null) ? 0 : getAWSManagedRulesBotControlRuleSet().hashCode());
         return hashCode;
     }
 

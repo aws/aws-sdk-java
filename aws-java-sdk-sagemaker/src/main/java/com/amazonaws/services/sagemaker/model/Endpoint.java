@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     * production traffic replicated from the proudction variant.
+     * </p>
+     */
+    private java.util.List<ProductionVariantSummary> shadowProductionVariants;
 
     /**
      * <p>
@@ -658,6 +665,84 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     * production traffic replicated from the proudction variant.
+     * </p>
+     * 
+     * @return A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     *         production traffic replicated from the proudction variant.
+     */
+
+    public java.util.List<ProductionVariantSummary> getShadowProductionVariants() {
+        return shadowProductionVariants;
+    }
+
+    /**
+     * <p>
+     * A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     * production traffic replicated from the proudction variant.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     *        production traffic replicated from the proudction variant.
+     */
+
+    public void setShadowProductionVariants(java.util.Collection<ProductionVariantSummary> shadowProductionVariants) {
+        if (shadowProductionVariants == null) {
+            this.shadowProductionVariants = null;
+            return;
+        }
+
+        this.shadowProductionVariants = new java.util.ArrayList<ProductionVariantSummary>(shadowProductionVariants);
+    }
+
+    /**
+     * <p>
+     * A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     * production traffic replicated from the proudction variant.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setShadowProductionVariants(java.util.Collection)} or
+     * {@link #withShadowProductionVariants(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     *        production traffic replicated from the proudction variant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withShadowProductionVariants(ProductionVariantSummary... shadowProductionVariants) {
+        if (this.shadowProductionVariants == null) {
+            setShadowProductionVariants(new java.util.ArrayList<ProductionVariantSummary>(shadowProductionVariants.length));
+        }
+        for (ProductionVariantSummary ele : shadowProductionVariants) {
+            this.shadowProductionVariants.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     * production traffic replicated from the proudction variant.
+     * </p>
+     * 
+     * @param shadowProductionVariants
+     *        A list of the shadow variants hosted on the endpoint. Each shadow variant is a model in shadow mode with
+     *        production traffic replicated from the proudction variant.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withShadowProductionVariants(java.util.Collection<ProductionVariantSummary> shadowProductionVariants) {
+        setShadowProductionVariants(shadowProductionVariants);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -690,7 +775,9 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getMonitoringSchedules() != null)
             sb.append("MonitoringSchedules: ").append(getMonitoringSchedules()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getShadowProductionVariants() != null)
+            sb.append("ShadowProductionVariants: ").append(getShadowProductionVariants());
         sb.append("}");
         return sb.toString();
     }
@@ -749,6 +836,10 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getShadowProductionVariants() == null ^ this.getShadowProductionVariants() == null)
+            return false;
+        if (other.getShadowProductionVariants() != null && other.getShadowProductionVariants().equals(this.getShadowProductionVariants()) == false)
+            return false;
         return true;
     }
 
@@ -768,6 +859,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getMonitoringSchedules() == null) ? 0 : getMonitoringSchedules().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getShadowProductionVariants() == null) ? 0 : getShadowProductionVariants().hashCode());
         return hashCode;
     }
 

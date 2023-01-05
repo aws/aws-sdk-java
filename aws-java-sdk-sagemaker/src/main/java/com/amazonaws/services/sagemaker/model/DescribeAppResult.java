@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,12 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private ResourceSpec resourceSpec;
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     */
+    private String spaceName;
 
     /**
      * <p>
@@ -583,6 +589,46 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public void setSpaceName(String spaceName) {
+        this.spaceName = spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public String getSpaceName() {
+        return this.spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAppResult withSpaceName(String spaceName) {
+        setSpaceName(spaceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -615,7 +661,9 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getResourceSpec() != null)
-            sb.append("ResourceSpec: ").append(getResourceSpec());
+            sb.append("ResourceSpec: ").append(getResourceSpec()).append(",");
+        if (getSpaceName() != null)
+            sb.append("SpaceName: ").append(getSpaceName());
         sb.append("}");
         return sb.toString();
     }
@@ -674,6 +722,10 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getResourceSpec() != null && other.getResourceSpec().equals(this.getResourceSpec()) == false)
             return false;
+        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
+            return false;
+        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
+            return false;
         return true;
     }
 
@@ -693,6 +745,7 @@ public class DescribeAppResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getResourceSpec() == null) ? 0 : getResourceSpec().hashCode());
+        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         return hashCode;
     }
 

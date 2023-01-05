@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,11 +64,11 @@ public class CreateFindingAggregatorRequest extends com.amazonaws.AmazonWebServi
     private String regionLinkingMode;
     /**
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated
+     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated
      * list of Regions that do not aggregate findings to the aggregation Region.
      * </p>
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of
+     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of
      * Regions that do aggregate findings to the aggregation Region.
      * </p>
      */
@@ -299,18 +299,18 @@ public class CreateFindingAggregatorRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated
+     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated
      * list of Regions that do not aggregate findings to the aggregation Region.
      * </p>
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of
+     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of
      * Regions that do aggregate findings to the aggregation Region.
      * </p>
      * 
      * @return If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a
-     *         comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+     *         space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
      *         <p>
-     *         If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list
+     *         If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list
      *         of Regions that do aggregate findings to the aggregation Region.
      */
 
@@ -320,19 +320,19 @@ public class CreateFindingAggregatorRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated
+     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated
      * list of Regions that do not aggregate findings to the aggregation Region.
      * </p>
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of
+     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of
      * Regions that do aggregate findings to the aggregation Region.
      * </p>
      * 
      * @param regions
      *        If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a
-     *        comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+     *        space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
      *        <p>
-     *        If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list
+     *        If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list
      *        of Regions that do aggregate findings to the aggregation Region.
      */
 
@@ -347,11 +347,11 @@ public class CreateFindingAggregatorRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated
+     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated
      * list of Regions that do not aggregate findings to the aggregation Region.
      * </p>
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of
+     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of
      * Regions that do aggregate findings to the aggregation Region.
      * </p>
      * <p>
@@ -362,9 +362,9 @@ public class CreateFindingAggregatorRequest extends com.amazonaws.AmazonWebServi
      * 
      * @param regions
      *        If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a
-     *        comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+     *        space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
      *        <p>
-     *        If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list
+     *        If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list
      *        of Regions that do aggregate findings to the aggregation Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -381,19 +381,19 @@ public class CreateFindingAggregatorRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a comma-separated
+     * If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a space-separated
      * list of Regions that do not aggregate findings to the aggregation Region.
      * </p>
      * <p>
-     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list of
+     * If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list of
      * Regions that do aggregate findings to the aggregation Region.
      * </p>
      * 
      * @param regions
      *        If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then this is a
-     *        comma-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
+     *        space-separated list of Regions that do not aggregate findings to the aggregation Region.</p>
      *        <p>
-     *        If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a comma-separated list
+     *        If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is a space-separated list
      *        of Regions that do aggregate findings to the aggregation Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

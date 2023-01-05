@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class DeploymentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStatus").build();
     private static final MarshallingInfo<Boolean> ISLATESTFORTARGET_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isLatestForTarget").build();
+    private static final MarshallingInfo<String> PARENTTARGETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parentTargetArn").build();
 
     private static final DeploymentMarshaller instance = new DeploymentMarshaller();
 
@@ -65,6 +67,7 @@ public class DeploymentMarshaller {
             protocolMarshaller.marshall(deployment.getCreationTimestamp(), CREATIONTIMESTAMP_BINDING);
             protocolMarshaller.marshall(deployment.getDeploymentStatus(), DEPLOYMENTSTATUS_BINDING);
             protocolMarshaller.marshall(deployment.getIsLatestForTarget(), ISLATESTFORTARGET_BINDING);
+            protocolMarshaller.marshall(deployment.getParentTargetArn(), PARENTTARGETARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

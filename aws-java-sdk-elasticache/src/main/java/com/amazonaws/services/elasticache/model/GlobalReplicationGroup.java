@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,9 +101,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
     private Boolean authTokenEnabled;
     /**
      * <p>
-     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
-     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * A flag that enables in-transit encryption when set to true.
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
@@ -645,9 +643,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
-     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * A flag that enables in-transit encryption when set to true.
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
@@ -655,9 +651,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param transitEncryptionEnabled
-     *        A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     *        <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
-     *        cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     *        A flag that enables in-transit encryption when set to true.</p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *        <code>3.2.6</code>, <code>4.x</code> or later.
@@ -669,18 +663,14 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
-     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * A flag that enables in-transit encryption when set to true.
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * 
-     * @return A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     *         <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
-     *         cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     * @return A flag that enables in-transit encryption when set to true.</p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *         <code>3.2.6</code>, <code>4.x</code> or later.
@@ -692,9 +682,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
-     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * A flag that enables in-transit encryption when set to true.
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
@@ -702,9 +690,7 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
      * </p>
      * 
      * @param transitEncryptionEnabled
-     *        A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     *        <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
-     *        cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     *        A flag that enables in-transit encryption when set to true.</p>
      *        <p>
      *        <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *        <code>3.2.6</code>, <code>4.x</code> or later.
@@ -718,18 +704,14 @@ public class GlobalReplicationGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     * <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a cluster
-     * you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster.
+     * A flag that enables in-transit encryption when set to true.
      * </p>
      * <p>
      * <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      * <code>3.2.6</code>, <code>4.x</code> or later.
      * </p>
      * 
-     * @return A flag that enables in-transit encryption when set to true. You cannot modify the value of
-     *         <code>TransitEncryptionEnabled</code> after the cluster is created. To enable in-transit encryption on a
-     *         cluster you must set <code>TransitEncryptionEnabled</code> to true when you create a cluster. </p>
+     * @return A flag that enables in-transit encryption when set to true.</p>
      *         <p>
      *         <b>Required:</b> Only available when creating a replication group in an Amazon VPC using redis version
      *         <code>3.2.6</code>, <code>4.x</code> or later.

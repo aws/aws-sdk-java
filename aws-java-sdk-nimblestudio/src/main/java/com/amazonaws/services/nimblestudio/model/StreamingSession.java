@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,44 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * Indicates if a streaming session created from this launch profile should be terminated automatically or retained
+     * without termination after being in a <code>STOPPED</code> state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed,
+     * the default value for this parameter is <code>DEACTIVATED</code>.
+     * </p>
+     */
+    private String automaticTerminationMode;
+    /**
+     * <p>
+     * Shows the current backup setting of the session.
+     * </p>
+     */
+    private String backupMode;
+    /**
+     * <p>
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -60,6 +91,13 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
     private String launchProfileId;
     /**
      * <p>
+     * The maximum number of backups of a streaming session that you can have. When the maximum number of backups is
+     * reached, the oldest backup is deleted.
+     * </p>
+     */
+    private Integer maxBackupsToRetain;
+    /**
+     * <p>
      * The user ID of the user that owns the streaming session. The user that owns the session will be logging into the
      * session and interacting with the virtual workstation.
      * </p>
@@ -73,7 +111,14 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
     private String sessionId;
     /**
      * <p>
-     * The time the session entered START_IN_PROGRESS state.
+     * Determine if a streaming session created from this launch profile can configure persistent storage. This means
+     * that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * </p>
+     */
+    private String sessionPersistenceMode;
+    /**
+     * <p>
+     * The time the session entered <code>START_IN_PROGRESS</code> state.
      * </p>
      */
     private java.util.Date startedAt;
@@ -83,6 +128,12 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String startedBy;
+    /**
+     * <p>
+     * The backup ID used to restore a streaming session.
+     * </p>
+     */
+    private String startedFromBackupId;
     /**
      * <p>
      * The current state.
@@ -109,7 +160,7 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
     private java.util.Date stopAt;
     /**
      * <p>
-     * The time the session entered STOP_IN_PROGRESS state.
+     * The time the session entered <code>STOP_IN_PROGRESS</code> state.
      * </p>
      */
     private java.util.Date stoppedAt;
@@ -127,7 +178,7 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
     private String streamingImageId;
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -139,7 +190,7 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
     private java.util.Date terminateAt;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -149,14 +200,31 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String updatedBy;
+    /**
+     * <p>
+     * Custom volume configuration for the root volumes that are attached to streaming sessions.
+     * </p>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * </p>
+     */
+    private VolumeConfiguration volumeConfiguration;
+    /**
+     * <p>
+     * Determine if an EBS volume created from this streaming session will be backed up.
+     * </p>
+     */
+    private String volumeRetentionMode;
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      */
 
     public void setArn(String arn) {
@@ -165,10 +233,12 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *         unique across all Regions.
      */
 
     public String getArn() {
@@ -177,11 +247,13 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,11 +264,273 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * Indicates if a streaming session created from this launch profile should be terminated automatically or retained
+     * without termination after being in a <code>STOPPED</code> state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed,
+     * the default value for this parameter is <code>DEACTIVATED</code>.
+     * </p>
+     * 
+     * @param automaticTerminationMode
+     *        Indicates if a streaming session created from this launch profile should be terminated automatically or
+     *        retained without termination after being in a <code>STOPPED</code> state.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     *        <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state
+     *        indefinitely.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When
+     *        allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+     * @see AutomaticTerminationMode
+     */
+
+    public void setAutomaticTerminationMode(String automaticTerminationMode) {
+        this.automaticTerminationMode = automaticTerminationMode;
+    }
+
+    /**
+     * <p>
+     * Indicates if a streaming session created from this launch profile should be terminated automatically or retained
+     * without termination after being in a <code>STOPPED</code> state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed,
+     * the default value for this parameter is <code>DEACTIVATED</code>.
+     * </p>
+     * 
+     * @return Indicates if a streaming session created from this launch profile should be terminated automatically or
+     *         retained without termination after being in a <code>STOPPED</code> state.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     *         <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state
+     *         indefinitely.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When
+     *         allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+     * @see AutomaticTerminationMode
+     */
+
+    public String getAutomaticTerminationMode() {
+        return this.automaticTerminationMode;
+    }
+
+    /**
+     * <p>
+     * Indicates if a streaming session created from this launch profile should be terminated automatically or retained
+     * without termination after being in a <code>STOPPED</code> state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed,
+     * the default value for this parameter is <code>DEACTIVATED</code>.
+     * </p>
+     * 
+     * @param automaticTerminationMode
+     *        Indicates if a streaming session created from this launch profile should be terminated automatically or
+     *        retained without termination after being in a <code>STOPPED</code> state.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     *        <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state
+     *        indefinitely.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When
+     *        allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomaticTerminationMode
+     */
+
+    public StreamingSession withAutomaticTerminationMode(String automaticTerminationMode) {
+        setAutomaticTerminationMode(automaticTerminationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if a streaming session created from this launch profile should be terminated automatically or retained
+     * without termination after being in a <code>STOPPED</code> state.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     * <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state indefinitely.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When allowed,
+     * the default value for this parameter is <code>DEACTIVATED</code>.
+     * </p>
+     * 
+     * @param automaticTerminationMode
+     *        Indicates if a streaming session created from this launch profile should be terminated automatically or
+     *        retained without termination after being in a <code>STOPPED</code> state.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        When <code>ACTIVATED</code>, the streaming session is scheduled for termination after being in the
+     *        <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code> state
+     *        indefinitely.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>. When
+     *        allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomaticTerminationMode
+     */
+
+    public StreamingSession withAutomaticTerminationMode(AutomaticTerminationMode automaticTerminationMode) {
+        this.automaticTerminationMode = automaticTerminationMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows the current backup setting of the session.
+     * </p>
+     * 
+     * @param backupMode
+     *        Shows the current backup setting of the session.
+     * @see SessionBackupMode
+     */
+
+    public void setBackupMode(String backupMode) {
+        this.backupMode = backupMode;
+    }
+
+    /**
+     * <p>
+     * Shows the current backup setting of the session.
+     * </p>
+     * 
+     * @return Shows the current backup setting of the session.
+     * @see SessionBackupMode
+     */
+
+    public String getBackupMode() {
+        return this.backupMode;
+    }
+
+    /**
+     * <p>
+     * Shows the current backup setting of the session.
+     * </p>
+     * 
+     * @param backupMode
+     *        Shows the current backup setting of the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SessionBackupMode
+     */
+
+    public StreamingSession withBackupMode(String backupMode) {
+        setBackupMode(backupMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Shows the current backup setting of the session.
+     * </p>
+     * 
+     * @param backupMode
+     *        Shows the current backup setting of the session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SessionBackupMode
+     */
+
+    public StreamingSession withBackupMode(SessionBackupMode backupMode) {
+        this.backupMode = backupMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -205,10 +539,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was created.
+     * @return The ISO timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -217,11 +551,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,6 +686,52 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The maximum number of backups of a streaming session that you can have. When the maximum number of backups is
+     * reached, the oldest backup is deleted.
+     * </p>
+     * 
+     * @param maxBackupsToRetain
+     *        The maximum number of backups of a streaming session that you can have. When the maximum number of backups
+     *        is reached, the oldest backup is deleted.
+     */
+
+    public void setMaxBackupsToRetain(Integer maxBackupsToRetain) {
+        this.maxBackupsToRetain = maxBackupsToRetain;
+    }
+
+    /**
+     * <p>
+     * The maximum number of backups of a streaming session that you can have. When the maximum number of backups is
+     * reached, the oldest backup is deleted.
+     * </p>
+     * 
+     * @return The maximum number of backups of a streaming session that you can have. When the maximum number of
+     *         backups is reached, the oldest backup is deleted.
+     */
+
+    public Integer getMaxBackupsToRetain() {
+        return this.maxBackupsToRetain;
+    }
+
+    /**
+     * <p>
+     * The maximum number of backups of a streaming session that you can have. When the maximum number of backups is
+     * reached, the oldest backup is deleted.
+     * </p>
+     * 
+     * @param maxBackupsToRetain
+     *        The maximum number of backups of a streaming session that you can have. When the maximum number of backups
+     *        is reached, the oldest backup is deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withMaxBackupsToRetain(Integer maxBackupsToRetain) {
+        setMaxBackupsToRetain(maxBackupsToRetain);
+        return this;
+    }
+
+    /**
+     * <p>
      * The user ID of the user that owns the streaming session. The user that owns the session will be logging into the
      * session and interacting with the virtual workstation.
      * </p>
@@ -438,11 +818,78 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the session entered START_IN_PROGRESS state.
+     * Determine if a streaming session created from this launch profile can configure persistent storage. This means
+     * that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * </p>
+     * 
+     * @param sessionPersistenceMode
+     *        Determine if a streaming session created from this launch profile can configure persistent storage. This
+     *        means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * @see SessionPersistenceMode
+     */
+
+    public void setSessionPersistenceMode(String sessionPersistenceMode) {
+        this.sessionPersistenceMode = sessionPersistenceMode;
+    }
+
+    /**
+     * <p>
+     * Determine if a streaming session created from this launch profile can configure persistent storage. This means
+     * that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * </p>
+     * 
+     * @return Determine if a streaming session created from this launch profile can configure persistent storage. This
+     *         means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * @see SessionPersistenceMode
+     */
+
+    public String getSessionPersistenceMode() {
+        return this.sessionPersistenceMode;
+    }
+
+    /**
+     * <p>
+     * Determine if a streaming session created from this launch profile can configure persistent storage. This means
+     * that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * </p>
+     * 
+     * @param sessionPersistenceMode
+     *        Determine if a streaming session created from this launch profile can configure persistent storage. This
+     *        means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SessionPersistenceMode
+     */
+
+    public StreamingSession withSessionPersistenceMode(String sessionPersistenceMode) {
+        setSessionPersistenceMode(sessionPersistenceMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determine if a streaming session created from this launch profile can configure persistent storage. This means
+     * that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * </p>
+     * 
+     * @param sessionPersistenceMode
+     *        Determine if a streaming session created from this launch profile can configure persistent storage. This
+     *        means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code> are configured.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SessionPersistenceMode
+     */
+
+    public StreamingSession withSessionPersistenceMode(SessionPersistenceMode sessionPersistenceMode) {
+        this.sessionPersistenceMode = sessionPersistenceMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time the session entered <code>START_IN_PROGRESS</code> state.
      * </p>
      * 
      * @param startedAt
-     *        The time the session entered START_IN_PROGRESS state.
+     *        The time the session entered <code>START_IN_PROGRESS</code> state.
      */
 
     public void setStartedAt(java.util.Date startedAt) {
@@ -451,10 +898,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the session entered START_IN_PROGRESS state.
+     * The time the session entered <code>START_IN_PROGRESS</code> state.
      * </p>
      * 
-     * @return The time the session entered START_IN_PROGRESS state.
+     * @return The time the session entered <code>START_IN_PROGRESS</code> state.
      */
 
     public java.util.Date getStartedAt() {
@@ -463,11 +910,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the session entered START_IN_PROGRESS state.
+     * The time the session entered <code>START_IN_PROGRESS</code> state.
      * </p>
      * 
      * @param startedAt
-     *        The time the session entered START_IN_PROGRESS state.
+     *        The time the session entered <code>START_IN_PROGRESS</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,6 +960,46 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     public StreamingSession withStartedBy(String startedBy) {
         setStartedBy(startedBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The backup ID used to restore a streaming session.
+     * </p>
+     * 
+     * @param startedFromBackupId
+     *        The backup ID used to restore a streaming session.
+     */
+
+    public void setStartedFromBackupId(String startedFromBackupId) {
+        this.startedFromBackupId = startedFromBackupId;
+    }
+
+    /**
+     * <p>
+     * The backup ID used to restore a streaming session.
+     * </p>
+     * 
+     * @return The backup ID used to restore a streaming session.
+     */
+
+    public String getStartedFromBackupId() {
+        return this.startedFromBackupId;
+    }
+
+    /**
+     * <p>
+     * The backup ID used to restore a streaming session.
+     * </p>
+     * 
+     * @param startedFromBackupId
+     *        The backup ID used to restore a streaming session.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withStartedFromBackupId(String startedFromBackupId) {
+        setStartedFromBackupId(startedFromBackupId);
         return this;
     }
 
@@ -719,11 +1206,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the session entered STOP_IN_PROGRESS state.
+     * The time the session entered <code>STOP_IN_PROGRESS</code> state.
      * </p>
      * 
      * @param stoppedAt
-     *        The time the session entered STOP_IN_PROGRESS state.
+     *        The time the session entered <code>STOP_IN_PROGRESS</code> state.
      */
 
     public void setStoppedAt(java.util.Date stoppedAt) {
@@ -732,10 +1219,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the session entered STOP_IN_PROGRESS state.
+     * The time the session entered <code>STOP_IN_PROGRESS</code> state.
      * </p>
      * 
-     * @return The time the session entered STOP_IN_PROGRESS state.
+     * @return The time the session entered <code>STOP_IN_PROGRESS</code> state.
      */
 
     public java.util.Date getStoppedAt() {
@@ -744,11 +1231,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the session entered STOP_IN_PROGRESS state.
+     * The time the session entered <code>STOP_IN_PROGRESS</code> state.
      * </p>
      * 
      * @param stoppedAt
-     *        The time the session entered STOP_IN_PROGRESS state.
+     *        The time the session entered <code>STOP_IN_PROGRESS</code> state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -839,10 +1326,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
-     * @return A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * @return A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -851,11 +1338,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -864,11 +1351,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -947,11 +1434,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -960,10 +1447,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was updated.
+     * @return The ISO timestamp in seconds for when the resource was updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -972,11 +1459,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1026,6 +1513,120 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Custom volume configuration for the root volumes that are attached to streaming sessions.
+     * </p>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * </p>
+     * 
+     * @param volumeConfiguration
+     *        Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+     *        <p>
+     *        This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     */
+
+    public void setVolumeConfiguration(VolumeConfiguration volumeConfiguration) {
+        this.volumeConfiguration = volumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * Custom volume configuration for the root volumes that are attached to streaming sessions.
+     * </p>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * </p>
+     * 
+     * @return Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+     *         <p>
+     *         This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     */
+
+    public VolumeConfiguration getVolumeConfiguration() {
+        return this.volumeConfiguration;
+    }
+
+    /**
+     * <p>
+     * Custom volume configuration for the root volumes that are attached to streaming sessions.
+     * </p>
+     * <p>
+     * This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * </p>
+     * 
+     * @param volumeConfiguration
+     *        Custom volume configuration for the root volumes that are attached to streaming sessions.</p>
+     *        <p>
+     *        This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StreamingSession withVolumeConfiguration(VolumeConfiguration volumeConfiguration) {
+        setVolumeConfiguration(volumeConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determine if an EBS volume created from this streaming session will be backed up.
+     * </p>
+     * 
+     * @param volumeRetentionMode
+     *        Determine if an EBS volume created from this streaming session will be backed up.
+     * @see VolumeRetentionMode
+     */
+
+    public void setVolumeRetentionMode(String volumeRetentionMode) {
+        this.volumeRetentionMode = volumeRetentionMode;
+    }
+
+    /**
+     * <p>
+     * Determine if an EBS volume created from this streaming session will be backed up.
+     * </p>
+     * 
+     * @return Determine if an EBS volume created from this streaming session will be backed up.
+     * @see VolumeRetentionMode
+     */
+
+    public String getVolumeRetentionMode() {
+        return this.volumeRetentionMode;
+    }
+
+    /**
+     * <p>
+     * Determine if an EBS volume created from this streaming session will be backed up.
+     * </p>
+     * 
+     * @param volumeRetentionMode
+     *        Determine if an EBS volume created from this streaming session will be backed up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeRetentionMode
+     */
+
+    public StreamingSession withVolumeRetentionMode(String volumeRetentionMode) {
+        setVolumeRetentionMode(volumeRetentionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determine if an EBS volume created from this streaming session will be backed up.
+     * </p>
+     * 
+     * @param volumeRetentionMode
+     *        Determine if an EBS volume created from this streaming session will be backed up.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeRetentionMode
+     */
+
+    public StreamingSession withVolumeRetentionMode(VolumeRetentionMode volumeRetentionMode) {
+        this.volumeRetentionMode = volumeRetentionMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1039,6 +1640,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getAutomaticTerminationMode() != null)
+            sb.append("AutomaticTerminationMode: ").append(getAutomaticTerminationMode()).append(",");
+        if (getBackupMode() != null)
+            sb.append("BackupMode: ").append(getBackupMode()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getCreatedBy() != null)
@@ -1047,14 +1652,20 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
             sb.append("Ec2InstanceType: ").append(getEc2InstanceType()).append(",");
         if (getLaunchProfileId() != null)
             sb.append("LaunchProfileId: ").append(getLaunchProfileId()).append(",");
+        if (getMaxBackupsToRetain() != null)
+            sb.append("MaxBackupsToRetain: ").append(getMaxBackupsToRetain()).append(",");
         if (getOwnedBy() != null)
             sb.append("OwnedBy: ").append(getOwnedBy()).append(",");
         if (getSessionId() != null)
             sb.append("SessionId: ").append(getSessionId()).append(",");
+        if (getSessionPersistenceMode() != null)
+            sb.append("SessionPersistenceMode: ").append(getSessionPersistenceMode()).append(",");
         if (getStartedAt() != null)
             sb.append("StartedAt: ").append(getStartedAt()).append(",");
         if (getStartedBy() != null)
             sb.append("StartedBy: ").append(getStartedBy()).append(",");
+        if (getStartedFromBackupId() != null)
+            sb.append("StartedFromBackupId: ").append(getStartedFromBackupId()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStatusCode() != null)
@@ -1076,7 +1687,11 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
         if (getUpdatedAt() != null)
             sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
         if (getUpdatedBy() != null)
-            sb.append("UpdatedBy: ").append(getUpdatedBy());
+            sb.append("UpdatedBy: ").append(getUpdatedBy()).append(",");
+        if (getVolumeConfiguration() != null)
+            sb.append("VolumeConfiguration: ").append(getVolumeConfiguration()).append(",");
+        if (getVolumeRetentionMode() != null)
+            sb.append("VolumeRetentionMode: ").append(getVolumeRetentionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -1095,6 +1710,14 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getAutomaticTerminationMode() == null ^ this.getAutomaticTerminationMode() == null)
+            return false;
+        if (other.getAutomaticTerminationMode() != null && other.getAutomaticTerminationMode().equals(this.getAutomaticTerminationMode()) == false)
+            return false;
+        if (other.getBackupMode() == null ^ this.getBackupMode() == null)
+            return false;
+        if (other.getBackupMode() != null && other.getBackupMode().equals(this.getBackupMode()) == false)
+            return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
@@ -1111,6 +1734,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getLaunchProfileId() != null && other.getLaunchProfileId().equals(this.getLaunchProfileId()) == false)
             return false;
+        if (other.getMaxBackupsToRetain() == null ^ this.getMaxBackupsToRetain() == null)
+            return false;
+        if (other.getMaxBackupsToRetain() != null && other.getMaxBackupsToRetain().equals(this.getMaxBackupsToRetain()) == false)
+            return false;
         if (other.getOwnedBy() == null ^ this.getOwnedBy() == null)
             return false;
         if (other.getOwnedBy() != null && other.getOwnedBy().equals(this.getOwnedBy()) == false)
@@ -1119,6 +1746,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSessionId() != null && other.getSessionId().equals(this.getSessionId()) == false)
             return false;
+        if (other.getSessionPersistenceMode() == null ^ this.getSessionPersistenceMode() == null)
+            return false;
+        if (other.getSessionPersistenceMode() != null && other.getSessionPersistenceMode().equals(this.getSessionPersistenceMode()) == false)
+            return false;
         if (other.getStartedAt() == null ^ this.getStartedAt() == null)
             return false;
         if (other.getStartedAt() != null && other.getStartedAt().equals(this.getStartedAt()) == false)
@@ -1126,6 +1757,10 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
         if (other.getStartedBy() == null ^ this.getStartedBy() == null)
             return false;
         if (other.getStartedBy() != null && other.getStartedBy().equals(this.getStartedBy()) == false)
+            return false;
+        if (other.getStartedFromBackupId() == null ^ this.getStartedFromBackupId() == null)
+            return false;
+        if (other.getStartedFromBackupId() != null && other.getStartedFromBackupId().equals(this.getStartedFromBackupId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
@@ -1171,6 +1806,14 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getUpdatedBy() != null && other.getUpdatedBy().equals(this.getUpdatedBy()) == false)
             return false;
+        if (other.getVolumeConfiguration() == null ^ this.getVolumeConfiguration() == null)
+            return false;
+        if (other.getVolumeConfiguration() != null && other.getVolumeConfiguration().equals(this.getVolumeConfiguration()) == false)
+            return false;
+        if (other.getVolumeRetentionMode() == null ^ this.getVolumeRetentionMode() == null)
+            return false;
+        if (other.getVolumeRetentionMode() != null && other.getVolumeRetentionMode().equals(this.getVolumeRetentionMode()) == false)
+            return false;
         return true;
     }
 
@@ -1180,14 +1823,19 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getAutomaticTerminationMode() == null) ? 0 : getAutomaticTerminationMode().hashCode());
+        hashCode = prime * hashCode + ((getBackupMode() == null) ? 0 : getBackupMode().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getEc2InstanceType() == null) ? 0 : getEc2InstanceType().hashCode());
         hashCode = prime * hashCode + ((getLaunchProfileId() == null) ? 0 : getLaunchProfileId().hashCode());
+        hashCode = prime * hashCode + ((getMaxBackupsToRetain() == null) ? 0 : getMaxBackupsToRetain().hashCode());
         hashCode = prime * hashCode + ((getOwnedBy() == null) ? 0 : getOwnedBy().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
+        hashCode = prime * hashCode + ((getSessionPersistenceMode() == null) ? 0 : getSessionPersistenceMode().hashCode());
         hashCode = prime * hashCode + ((getStartedAt() == null) ? 0 : getStartedAt().hashCode());
         hashCode = prime * hashCode + ((getStartedBy() == null) ? 0 : getStartedBy().hashCode());
+        hashCode = prime * hashCode + ((getStartedFromBackupId() == null) ? 0 : getStartedFromBackupId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
@@ -1199,6 +1847,8 @@ public class StreamingSession implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getTerminateAt() == null) ? 0 : getTerminateAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedBy() == null) ? 0 : getUpdatedBy().hashCode());
+        hashCode = prime * hashCode + ((getVolumeConfiguration() == null) ? 0 : getVolumeConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getVolumeRetentionMode() == null) ? 0 : getVolumeRetentionMode().hashCode());
         return hashCode;
     }
 

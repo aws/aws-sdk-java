@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,6 +151,12 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                             new JsonErrorShapeMetadata().withErrorCode("S3BucketDoesNotExistException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.S3BucketDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NoManagementAccountSLRExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.NoManagementAccountSLRExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CannotDelegateManagementAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.CannotDelegateManagementAccountExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagsLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.TagsLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -162,6 +168,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KmsKeyNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.KmsKeyNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccountRegisteredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.AccountRegisteredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.OperationNotPermittedExceptionUnmarshaller.getInstance()))
@@ -205,11 +214,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTimeRangeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEventSelectorsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.InvalidEventSelectorsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTimeRangeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ChannelARNInvalidException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.ChannelARNInvalidExceptionUnmarshaller.getInstance()))
@@ -220,8 +229,14 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEventDataStoreStatusException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.InvalidEventDataStoreStatusExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccountNotRegisteredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.AccountNotRegisteredExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ImportNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.ImportNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccountNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.AccountNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.InvalidParameterCombinationExceptionUnmarshaller.getInstance()))
@@ -259,6 +274,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                             new JsonErrorShapeMetadata().withErrorCode("TrailNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.TrailNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DelegatedAdminAccountLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.DelegatedAdminAccountLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MaximumNumberOfTrailsExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.MaximumNumberOfTrailsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -276,6 +294,9 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientSnsTopicPolicyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.InsufficientSnsTopicPolicyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotOrganizationManagementAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.NotOrganizationManagementAccountExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ChannelNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.ChannelNotFoundExceptionUnmarshaller.getInstance()))
@@ -569,6 +590,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws ConflictException
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
@@ -648,6 +671,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws ConflictException
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
@@ -711,6 +736,40 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         An event data store with that name already exists.
      * @throws EventDataStoreMaxLimitExceededException
      *         Your account has used the maximum number of event data stores.
+     * @throws InvalidEventSelectorsException
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
+     *         event selectors, advanced event selectors, or data resources that is not valid. The combination of event
+     *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
+     *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
+     *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+     *         <p>
+     *         You can:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of event selectors (1 to 5) for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
+     *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
+     *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify up to 500 values for all conditions in all advanced event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter
+     *         with a value of <code>read-only</code> is not valid.
+     *         </p>
+     *         </li>
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws InvalidTagParameterException
@@ -724,6 +783,18 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
      *         you try to run an operation on a resource before CloudTrail has time to fully load the resource. If this
      *         exception occurs, wait a few minutes, and then try the operation again.
+     * @throws InsufficientEncryptionPolicyException
+     *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
+     *         for the operation.
+     * @throws InvalidKmsKeyIdException
+     *         This exception is thrown when the KMS key ARN is not valid.
+     * @throws KmsKeyNotFoundException
+     *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
+     *         the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
+     *         in the same region.
+     * @throws KmsException
+     *         This exception is thrown when there is an issue with the specified KMS key and the trail or event data
+     *         store can't be updated.
      * @throws CloudTrailAccessNotEnabledException
      *         This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations.
      *         For more information, see <a
@@ -749,6 +820,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
      *         be enabled in Organizations to support creating an organization trail or event data store.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.CreateEventDataStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateEventDataStore"
      *      target="_top">AWS API Documentation</a>
@@ -816,7 +889,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws InsufficientSnsTopicPolicyException
      *         This exception is thrown when the policy on the Amazon SNS topic is not sufficient.
      * @throws InsufficientEncryptionPolicyException
-     *         This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+     *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
+     *         for the operation.
      * @throws InvalidS3BucketNameException
      *         This exception is thrown when the provided S3 bucket name is not valid.
      * @throws InvalidS3PrefixException
@@ -857,6 +931,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         </li>
      * @throws TrailNotProvidedException
      *         This exception is no longer in use.
+     * @throws TagsLimitExceededException
+     *         The number of tags per trail has exceeded the permitted amount. Currently, the limit is 50.
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws KmsKeyNotFoundException
@@ -866,8 +942,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
-     *         This exception is thrown when there is an issue with the specified KMS key and the trail can’t be
-     *         updated.
+     *         This exception is thrown when there is an issue with the specified KMS key and the trail or event data
+     *         store can't be updated.
      * @throws InvalidCloudWatchLogsLogGroupArnException
      *         This exception is thrown when the provided CloudWatch Logs log group is not valid.
      * @throws InvalidCloudWatchLogsRoleArnException
@@ -906,6 +982,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
      *         be enabled in Organizations to support creating an organization trail or event data store.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws CloudTrailInvalidClientTokenIdException
      *         This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This
      *         can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is
@@ -988,6 +1066,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws EventDataStoreHasOngoingImportException
      *         This exception is thrown when you try to update or delete an event data store that currently has an
      *         import in progress.
+     * @throws InactiveEventDataStoreException
+     *         The event data store is inactive.
      * @throws InvalidParameterException
      *         The request includes a parameter that is not valid.
      * @throws OperationNotPermittedException
@@ -1002,6 +1082,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
      *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
      *         one or more required permissions for creating an organization resource in a required service.
@@ -1095,6 +1177,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
@@ -1110,6 +1197,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
      *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
      *         one or more required permissions for creating an organization resource in a required service.
@@ -1167,6 +1256,97 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
+     * Removes CloudTrail delegated administrator permissions from a member account in an organization.
+     * </p>
+     * 
+     * @param deregisterOrganizationDelegatedAdminRequest
+     *        Removes CloudTrail delegated administrator permissions from a specified member account in an organization
+     *        that is currently designated as a delegated administrator.
+     * @return Result of the DeregisterOrganizationDelegatedAdmin operation returned by the service.
+     * @throws AccountNotFoundException
+     *         This exception is thrown when when the specified account is not found or not part of an organization.
+     * @throws AccountNotRegisteredException
+     *         This exception is thrown when the specified account is not registered as the CloudTrail delegated
+     *         administrator.
+     * @throws CloudTrailAccessNotEnabledException
+     *         This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+     *         Trusted Access with Other Amazon Web Services Services</a> and <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws NotOrganizationManagementAccountException
+     *         This exception is thrown when the account making the request is not the organization's management
+     *         account.
+     * @throws OrganizationNotInAllFeaturesModeException
+     *         This exception is thrown when Organizations is not configured to support all features. All features must
+     *         be enabled in Organizations to support creating an organization trail or event data store.
+     * @throws OrganizationsNotInUseException
+     *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
+     *         member of an organization. To make this request, sign in using the credentials of an account that belongs
+     *         to an organization.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @sample AWSCloudTrail.DeregisterOrganizationDelegatedAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeregisterOrganizationDelegatedAdmin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeregisterOrganizationDelegatedAdminResult deregisterOrganizationDelegatedAdmin(DeregisterOrganizationDelegatedAdminRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeregisterOrganizationDelegatedAdmin(request);
+    }
+
+    @SdkInternalApi
+    final DeregisterOrganizationDelegatedAdminResult executeDeregisterOrganizationDelegatedAdmin(
+            DeregisterOrganizationDelegatedAdminRequest deregisterOrganizationDelegatedAdminRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deregisterOrganizationDelegatedAdminRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeregisterOrganizationDelegatedAdminRequest> request = null;
+        Response<DeregisterOrganizationDelegatedAdminResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeregisterOrganizationDelegatedAdminRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deregisterOrganizationDelegatedAdminRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterOrganizationDelegatedAdmin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeregisterOrganizationDelegatedAdminResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeregisterOrganizationDelegatedAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched,
      * and query status. You must specify an ARN for <code>EventDataStore</code>, and a value for <code>QueryID</code>.
      * </p>
@@ -1187,6 +1367,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.DescribeQuery
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeQuery" target="_top">AWS API
      *      Documentation</a>
@@ -1277,6 +1459,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.DescribeTrails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DescribeTrails" target="_top">AWS API
      *      Documentation</a>
@@ -1332,14 +1516,16 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Returns the specified CloudTrail service-linked channel. Amazon Web Services services create service-linked
-     * channels to view CloudTrail events.
+     * Returns information about a specific channel. Amazon Web Services services create service-linked channels to get
+     * information about CloudTrail events on your behalf. For more information about service-linked channels, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+     * service-linked channels for CloudTrail by using the CLI</a>.
      * </p>
      * 
      * @param getChannelRequest
      * @return Result of the GetChannel operation returned by the service.
      * @throws ChannelARNInvalidException
-     *         The specified channel ARN is not valid or does not map to a channel in your account.
+     *         This exception is thrown when the specified value of <code>ChannelARN</code> is not valid.
      * @throws ChannelNotFoundException
      *         The specified channel was not found.
      * @throws OperationNotPermittedException
@@ -1411,6 +1597,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.GetEventDataStore
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventDataStore" target="_top">AWS
      *      API Documentation</a>
@@ -1536,10 +1724,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.GetEventSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -1590,7 +1785,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Returns information for the specified import.
+     * Returns information about a specific import.
      * </p>
      * 
      * @param getImportRequest
@@ -1698,6 +1893,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -1705,6 +1905,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws InsightNotEnabledException
      *         If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the
      *         operation throws the exception <code>InsightNotEnabledException</code>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.GetInsightSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetInsightSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -1776,10 +1978,15 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         The request includes a parameter that is not valid.
      * @throws QueryIdNotFoundException
      *         The query ID does not exist or does not map to a query.
+     * @throws InsufficientEncryptionPolicyException
+     *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
+     *         for the operation.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.GetQueryResults
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetQueryResults" target="_top">AWS API
      *      Documentation</a>
@@ -1835,11 +2042,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * 
      * @param getTrailRequest
      * @return Result of the GetTrail operation returned by the service.
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
-     *         requirements:</p>
+     *         requirements:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1930,11 +2143,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @param getTrailStatusRequest
      *        The name of a trail about which you want the current status.
      * @return Result of the GetTrailStatus operation returned by the service.
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
-     *         requirements:</p>
+     *         requirements:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2016,7 +2235,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Returns all CloudTrail channels.
+     * Lists the channels in the current account, and their source names. Amazon Web Services services create
+     * service-linked channels get information about CloudTrail events on your behalf. For more information about
+     * service-linked channels, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/viewing-service-linked-channels.html">Viewing
+     * service-linked channels for CloudTrail by using the CLI</a>.
      * </p>
      * 
      * @param listChannelsRequest
@@ -2092,6 +2315,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.ListEventDataStores
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListEventDataStores" target="_top">AWS
      *      API Documentation</a>
@@ -2383,6 +2608,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.ListQueries
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListQueries" target="_top">AWS API
      *      Documentation</a>
@@ -2489,6 +2716,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws InvalidTokenException
      *         Reserved for future use.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ListTags" target="_top">AWS API
      *      Documentation</a>
@@ -2849,6 +3078,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
@@ -2858,7 +3092,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
      *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
      *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
-     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.
+     *         </p>
      *         <p>
      *         You can:
      *         </p>
@@ -2898,6 +3133,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
      *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
      *         one or more required permissions for creating an organization resource in a required service.
@@ -2991,22 +3228,28 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @throws InvalidInsightSelectorsException
-     *         The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your
-     *         <code>PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the
-     *         specified insight type in the <code>InsightSelectors</code> statement is not a valid insight type.
+     *         The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your <code>
+     *         PutInsightSelectors</code> or <code>GetInsightSelectors</code> request is not valid, or the specified
+     *         insight type in the <code>InsightSelectors</code> statement is not a valid insight type.
      * @throws InsufficientS3BucketPolicyException
      *         This exception is thrown when the policy on the S3 bucket is not sufficient.
      * @throws InsufficientEncryptionPolicyException
-     *         This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+     *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
+     *         for the operation.
      * @throws S3BucketDoesNotExistException
      *         This exception is thrown when the specified S3 bucket does not exist.
      * @throws KmsException
-     *         This exception is thrown when there is an issue with the specified KMS key and the trail can’t be
-     *         updated.
+     *         This exception is thrown when there is an issue with the specified KMS key and the trail or event data
+     *         store can't be updated.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -3019,6 +3262,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.PutInsightSelectors
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors" target="_top">AWS
      *      API Documentation</a>
@@ -3057,6 +3302,101 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
             HttpResponseHandler<AmazonWebServiceResponse<PutInsightSelectorsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutInsightSelectorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Registers an organization’s member account as the CloudTrail delegated administrator.
+     * </p>
+     * 
+     * @param registerOrganizationDelegatedAdminRequest
+     *        Specifies an organization member account ID as a CloudTrail delegated administrator.
+     * @return Result of the RegisterOrganizationDelegatedAdmin operation returned by the service.
+     * @throws AccountRegisteredException
+     *         This exception is thrown when the account is already registered as the CloudTrail delegated
+     *         administrator.
+     * @throws AccountNotFoundException
+     *         This exception is thrown when when the specified account is not found or not part of an organization.
+     * @throws InsufficientDependencyServiceAccessPermissionException
+     *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
+     *         one or more required permissions for creating an organization resource in a required service.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
+     * @throws CannotDelegateManagementAccountException
+     *         This exception is thrown when the management account of an organization is registered as the CloudTrail
+     *         delegated administrator.
+     * @throws CloudTrailAccessNotEnabledException
+     *         This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html">Enabling
+     *         Trusted Access with Other Amazon Web Services Services</a> and <a href=
+     *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
+     *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws DelegatedAdminAccountLimitExceededException
+     *         This exception is thrown when the maximum number of CloudTrail delegated administrators is reached.
+     * @throws NotOrganizationManagementAccountException
+     *         This exception is thrown when the account making the request is not the organization's management
+     *         account.
+     * @throws OrganizationNotInAllFeaturesModeException
+     *         This exception is thrown when Organizations is not configured to support all features. All features must
+     *         be enabled in Organizations to support creating an organization trail or event data store.
+     * @throws OrganizationsNotInUseException
+     *         This exception is thrown when the request is made from an Amazon Web Services account that is not a
+     *         member of an organization. To make this request, sign in using the credentials of an account that belongs
+     *         to an organization.
+     * @throws UnsupportedOperationException
+     *         This exception is thrown when the requested operation is not supported.
+     * @throws OperationNotPermittedException
+     *         This exception is thrown when the requested operation is not permitted.
+     * @sample AWSCloudTrail.RegisterOrganizationDelegatedAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RegisterOrganizationDelegatedAdmin"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RegisterOrganizationDelegatedAdminResult registerOrganizationDelegatedAdmin(RegisterOrganizationDelegatedAdminRequest request) {
+        request = beforeClientExecution(request);
+        return executeRegisterOrganizationDelegatedAdmin(request);
+    }
+
+    @SdkInternalApi
+    final RegisterOrganizationDelegatedAdminResult executeRegisterOrganizationDelegatedAdmin(
+            RegisterOrganizationDelegatedAdminRequest registerOrganizationDelegatedAdminRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(registerOrganizationDelegatedAdminRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RegisterOrganizationDelegatedAdminRequest> request = null;
+        Response<RegisterOrganizationDelegatedAdminResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RegisterOrganizationDelegatedAdminRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(registerOrganizationDelegatedAdminRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudTrail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterOrganizationDelegatedAdmin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RegisterOrganizationDelegatedAdminResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RegisterOrganizationDelegatedAdminResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3134,6 +3474,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.RemoveTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/RemoveTags" target="_top">AWS API
      *      Documentation</a>
@@ -3227,6 +3569,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
      *         be enabled in Organizations to support creating an organization trail or event data store.
@@ -3281,7 +3625,13 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
 
     /**
      * <p>
-     * Starts an import of logged trail events from a source S3 bucket to a destination event data store.
+     * Starts an import of logged trail events from a source S3 bucket to a destination event data store. By default,
+     * CloudTrail only imports events contained in the S3 bucket's <code>CloudTrail</code> prefix and the prefixes
+     * inside the <code>CloudTrail</code> prefix, and does not check prefixes for other Amazon Web Services services. If
+     * you want to import CloudTrail events contained in another prefix, you must include the prefix in the
+     * <code>S3LocationUri</code>. For more considerations about importing trail events, see <a href=
+     * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-copy-trail-to-lake.html#cloudtrail-trail-copy-considerations"
+     * >Considerations</a>.
      * </p>
      * <p>
      * When you start a new import, the <code>Destinations</code> and <code>ImportSource</code> parameters are required.
@@ -3305,7 +3655,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws InvalidEventDataStoreStatusException
      *         The event data store is not in a status that supports the operation.
      * @throws InvalidEventDataStoreCategoryException
-     *         This exception is thrown when the event data store category is not valid for the import.
+     *         This exception is thrown when event categories of specified event data stores are not valid.
      * @throws InactiveEventDataStoreException
      *         The event data store is inactive.
      * @throws InvalidImportSourceException
@@ -3381,11 +3731,17 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @param startLoggingRequest
      *        The request to CloudTrail to start logging Amazon Web Services API calls for an account.
      * @return Result of the StartLogging operation returned by the service.
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidTrailNameException
      *         This exception is thrown when the provided trail name is not valid. Trail names must meet the following
-     *         requirements:</p>
+     *         requirements:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -3428,6 +3784,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
      *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
      *         one or more required permissions for creating an organization resource in a required service.
@@ -3482,7 +3840,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
     /**
      * <p>
      * Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter provides your SQL query,
-     * enclosed in single quotation marks.
+     * enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query
+     * results to an S3 bucket.
      * </p>
      * 
      * @param startQueryRequest
@@ -3503,10 +3862,23 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws MaxConcurrentQueriesException
      *         You are already running the maximum number of concurrent queries. Wait a minute for some queries to
      *         finish, and then run the query again.
+     * @throws InsufficientEncryptionPolicyException
+     *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
+     *         for the operation.
+     * @throws InvalidS3PrefixException
+     *         This exception is thrown when the provided S3 prefix is not valid.
+     * @throws InvalidS3BucketNameException
+     *         This exception is thrown when the provided S3 bucket name is not valid.
+     * @throws InsufficientS3BucketPolicyException
+     *         This exception is thrown when the policy on the S3 bucket is not sufficient.
+     * @throws S3BucketDoesNotExistException
+     *         This exception is thrown when the specified S3 bucket does not exist.
      * @throws OperationNotPermittedException
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @sample AWSCloudTrail.StartQuery
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartQuery" target="_top">AWS API
      *      Documentation</a>
@@ -3662,6 +4034,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         Not be in IP address format (for example, 192.168.5.4)
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidHomeRegionException
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
@@ -3677,6 +4054,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws InsufficientDependencyServiceAccessPermissionException
      *         This exception is thrown when the IAM user or role that is used to create the organization resource lacks
      *         one or more required permissions for creating an organization resource in a required service.
@@ -3744,6 +4123,40 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         The specified event data store ARN is not valid or does not map to an event data store in your account.
      * @throws EventDataStoreNotFoundException
      *         The specified event data store was not found.
+     * @throws InvalidEventSelectorsException
+     *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
+     *         event selectors, advanced event selectors, or data resources that is not valid. The combination of event
+     *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
+     *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
+     *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
+     *         <p>
+     *         You can:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of event selectors (1 to 5) for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
+     *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
+     *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify up to 500 values for all conditions in all advanced event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter
+     *         with a value of <code>read-only</code> is not valid.
+     *         </p>
+     *         </li>
      * @throws EventDataStoreHasOngoingImportException
      *         This exception is thrown when you try to update or delete an event data store that currently has an
      *         import in progress.
@@ -3755,6 +4168,18 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         This exception is thrown when the requested operation is not permitted.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
+     * @throws InsufficientEncryptionPolicyException
+     *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
+     *         for the operation.
+     * @throws InvalidKmsKeyIdException
+     *         This exception is thrown when the KMS key ARN is not valid.
+     * @throws KmsKeyNotFoundException
+     *         This exception is thrown when the KMS key does not exist, when the S3 bucket and the KMS key are not in
+     *         the same region, or when the KMS key associated with the Amazon SNS topic either does not exist or is not
+     *         in the same region.
+     * @throws KmsException
+     *         This exception is thrown when there is an issue with the specified KMS key and the trail or event data
+     *         store can't be updated.
      * @throws CloudTrailAccessNotEnabledException
      *         This exception is thrown when trusted access has not been enabled between CloudTrail and Organizations.
      *         For more information, see <a
@@ -3777,6 +4202,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         >Prepare For Creating a Trail For Your Organization</a> or <a
      *         href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create an
      *         event data store</a>.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
      *         be enabled in Organizations to support creating an organization trail or event data store.
@@ -3847,7 +4274,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws InsufficientSnsTopicPolicyException
      *         This exception is thrown when the policy on the Amazon SNS topic is not sufficient.
      * @throws InsufficientEncryptionPolicyException
-     *         This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+     *         This exception is thrown when the policy on the S3 bucket or KMS key does not have sufficient permissions
+     *         for the operation.
      * @throws TrailNotFoundException
      *         This exception is thrown when the trail with the given name is not found.
      * @throws InvalidS3BucketNameException
@@ -3924,6 +4352,11 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      *         with a value of <code>read-only</code> is not valid.
      *         </p>
      *         </li>
+     * @throws CloudTrailARNInvalidException
+     *         This exception is thrown when an operation is called with a trail ARN that is not valid. The following is
+     *         the format of a trail ARN.</p>
+     *         <p>
+     *         <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws InvalidHomeRegionException
@@ -3936,8 +4369,8 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
-     *         This exception is thrown when there is an issue with the specified KMS key and the trail can’t be
-     *         updated.
+     *         This exception is thrown when there is an issue with the specified KMS key and the trail or event data
+     *         store can't be updated.
      * @throws InvalidCloudWatchLogsLogGroupArnException
      *         This exception is thrown when the provided CloudWatch Logs log group is not valid.
      * @throws InvalidCloudWatchLogsRoleArnException
@@ -3973,10 +4406,14 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
      * @throws OrganizationNotInAllFeaturesModeException
      *         This exception is thrown when Organizations is not configured to support all features. All features must
      *         be enabled in Organizations to support creating an organization trail or event data store.
+     * @throws NoManagementAccountSLRExistsException
+     *         This exception is thrown when the management account does not have a service-linked role.
      * @throws CloudTrailInvalidClientTokenIdException
      *         This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This
      *         can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is
      *         in a suspended Amazon Web Services account.
+     * @throws InvalidParameterException
+     *         The request includes a parameter that is not valid.
      * @sample AWSCloudTrail.UpdateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail" target="_top">AWS API
      *      Documentation</a>

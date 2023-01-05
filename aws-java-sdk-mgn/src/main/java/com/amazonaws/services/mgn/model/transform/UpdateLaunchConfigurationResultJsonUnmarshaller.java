@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class UpdateLaunchConfigurationResultJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     updateLaunchConfigurationResult.setEc2LaunchTemplateID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("enableMapAutoTagging", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationResult.setEnableMapAutoTagging(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("launchDisposition", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationResult.setLaunchDisposition(context.getUnmarshaller(String.class).unmarshall(context));
@@ -71,6 +75,10 @@ public class UpdateLaunchConfigurationResultJsonUnmarshaller implements Unmarsha
                 if (context.testExpression("licensing", targetDepth)) {
                     context.nextToken();
                     updateLaunchConfigurationResult.setLicensing(LicensingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapAutoTaggingMpeID", targetDepth)) {
+                    context.nextToken();
+                    updateLaunchConfigurationResult.setMapAutoTaggingMpeID(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();

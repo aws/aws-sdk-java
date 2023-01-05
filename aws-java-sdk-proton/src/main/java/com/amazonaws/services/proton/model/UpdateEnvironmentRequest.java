@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     */
+    private String codebuildRoleArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
@@ -146,6 +153,52 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String templateMinorVersion;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *        using CodeBuild-based provisioning on your behalf.
+     */
+
+    public void setCodebuildRoleArn(String codebuildRoleArn) {
+        this.codebuildRoleArn = codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *         using CodeBuild-based provisioning on your behalf.
+     */
+
+    public String getCodebuildRoleArn() {
+        return this.codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure using
+     * CodeBuild-based provisioning on your behalf.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM service role that allows Proton to provision infrastructure
+     *        using CodeBuild-based provisioning on your behalf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEnvironmentRequest withCodebuildRoleArn(String codebuildRoleArn) {
+        setCodebuildRoleArn(codebuildRoleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -1032,6 +1085,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCodebuildRoleArn() != null)
+            sb.append("CodebuildRoleArn: ").append(getCodebuildRoleArn()).append(",");
         if (getComponentRoleArn() != null)
             sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getDeploymentType() != null)
@@ -1066,6 +1121,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         if (obj instanceof UpdateEnvironmentRequest == false)
             return false;
         UpdateEnvironmentRequest other = (UpdateEnvironmentRequest) obj;
+        if (other.getCodebuildRoleArn() == null ^ this.getCodebuildRoleArn() == null)
+            return false;
+        if (other.getCodebuildRoleArn() != null && other.getCodebuildRoleArn().equals(this.getCodebuildRoleArn()) == false)
+            return false;
         if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
             return false;
         if (other.getComponentRoleArn() != null && other.getComponentRoleArn().equals(this.getComponentRoleArn()) == false)
@@ -1115,6 +1174,7 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCodebuildRoleArn() == null) ? 0 : getCodebuildRoleArn().hashCode());
         hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDeploymentType() == null) ? 0 : getDeploymentType().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());

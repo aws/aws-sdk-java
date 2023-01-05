@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -160,6 +160,41 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> attributes;
+    /**
+     * <p>
+     * A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.
+     * </p>
+     * <p>
+     * If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The profile included in the response matched all of the search keys specified in the request.
+     * The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as
+     * this is a requirement of <code>AND</code> search logic).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the
+     * request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request.
+     * </p>
+     */
+    private java.util.List<FoundByKeyValue> foundByItems;
 
     /**
      * <p>
@@ -1108,6 +1143,309 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.
+     * </p>
+     * <p>
+     * If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The profile included in the response matched all of the search keys specified in the request.
+     * The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as
+     * this is a requirement of <code>AND</code> search logic).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the
+     * request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request.
+     * </p>
+     * 
+     * @return A list of items used to find a profile returned in a <a
+     *         href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *         >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the
+     *         profile.</p>
+     *         <p>
+     *         If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     *         href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *         >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     *         <code>LogicalOperator</code> used in the request:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AND</code> - The profile included in the response matched all of the search keys specified in the
+     *         request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in
+     *         the request (as this is a requirement of <code>AND</code> search logic).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OR</code> - The profile included in the response matched at least one of the search keys specified
+     *         in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the
+     *         profile was found by.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is
+     *         not included in the <a
+     *         href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *         >SearchProfiles</a> request.
+     */
+
+    public java.util.List<FoundByKeyValue> getFoundByItems() {
+        return foundByItems;
+    }
+
+    /**
+     * <p>
+     * A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.
+     * </p>
+     * <p>
+     * If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The profile included in the response matched all of the search keys specified in the request.
+     * The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as
+     * this is a requirement of <code>AND</code> search logic).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the
+     * request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request.
+     * </p>
+     * 
+     * @param foundByItems
+     *        A list of items used to find a profile returned in a <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
+     *        <p>
+     *        If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     *        <code>LogicalOperator</code> used in the request:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - The profile included in the response matched all of the search keys specified in the
+     *        request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in
+     *        the request (as this is a requirement of <code>AND</code> search logic).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - The profile included in the response matched at least one of the search keys specified
+     *        in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile
+     *        was found by.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is
+     *        not included in the <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> request.
+     */
+
+    public void setFoundByItems(java.util.Collection<FoundByKeyValue> foundByItems) {
+        if (foundByItems == null) {
+            this.foundByItems = null;
+            return;
+        }
+
+        this.foundByItems = new java.util.ArrayList<FoundByKeyValue>(foundByItems);
+    }
+
+    /**
+     * <p>
+     * A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.
+     * </p>
+     * <p>
+     * If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The profile included in the response matched all of the search keys specified in the request.
+     * The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as
+     * this is a requirement of <code>AND</code> search logic).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the
+     * request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFoundByItems(java.util.Collection)} or {@link #withFoundByItems(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param foundByItems
+     *        A list of items used to find a profile returned in a <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
+     *        <p>
+     *        If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     *        <code>LogicalOperator</code> used in the request:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - The profile included in the response matched all of the search keys specified in the
+     *        request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in
+     *        the request (as this is a requirement of <code>AND</code> search logic).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - The profile included in the response matched at least one of the search keys specified
+     *        in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile
+     *        was found by.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is
+     *        not included in the <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Profile withFoundByItems(FoundByKeyValue... foundByItems) {
+        if (this.foundByItems == null) {
+            setFoundByItems(new java.util.ArrayList<FoundByKeyValue>(foundByItems.length));
+        }
+        for (FoundByKeyValue ele : foundByItems) {
+            this.foundByItems.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of items used to find a profile returned in a <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.
+     * </p>
+     * <p>
+     * If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     * <code>LogicalOperator</code> used in the request:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The profile included in the response matched all of the search keys specified in the request.
+     * The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in the request (as
+     * this is a requirement of <code>AND</code> search logic).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The profile included in the response matched at least one of the search keys specified in the
+     * request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile was found by.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is not
+     * included in the <a
+     * href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     * >SearchProfiles</a> request.
+     * </p>
+     * 
+     * @param foundByItems
+     *        A list of items used to find a profile returned in a <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> response. An item is a key-value(s) pair that matches an attribute in the profile.</p>
+     *        <p>
+     *        If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> request, the <code>FoundByItems</code> list should be interpreted based on the
+     *        <code>LogicalOperator</code> used in the request:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - The profile included in the response matched all of the search keys specified in the
+     *        request. The <code>FoundByItems</code> will include all of the key-value(s) pairs that were specified in
+     *        the request (as this is a requirement of <code>AND</code> search logic).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - The profile included in the response matched at least one of the search keys specified
+     *        in the request. The <code>FoundByItems</code> will include each of the key-value(s) pairs that the profile
+     *        was found by.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code> parameter is
+     *        not included in the <a
+     *        href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html"
+     *        >SearchProfiles</a> request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Profile withFoundByItems(java.util.Collection<FoundByKeyValue> foundByItems) {
+        setFoundByItems(foundByItems);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1162,7 +1500,9 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
         if (getBillingAddress() != null)
             sb.append("BillingAddress: ").append(getBillingAddress()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getFoundByItems() != null)
+            sb.append("FoundByItems: ").append(getFoundByItems());
         sb.append("}");
         return sb.toString();
     }
@@ -1265,6 +1605,10 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getFoundByItems() == null ^ this.getFoundByItems() == null)
+            return false;
+        if (other.getFoundByItems() != null && other.getFoundByItems().equals(this.getFoundByItems()) == false)
+            return false;
         return true;
     }
 
@@ -1295,6 +1639,7 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMailingAddress() == null) ? 0 : getMailingAddress().hashCode());
         hashCode = prime * hashCode + ((getBillingAddress() == null) ? 0 : getBillingAddress().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getFoundByItems() == null) ? 0 : getFoundByItems().hashCode());
         return hashCode;
     }
 

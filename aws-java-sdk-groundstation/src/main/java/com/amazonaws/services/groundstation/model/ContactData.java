@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
     private String contactStatus;
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      */
     private java.util.Date endTime;
@@ -97,7 +97,7 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
     private String satelliteArn;
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      */
     private java.util.Date startTime;
@@ -209,11 +209,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      * 
      * @param endTime
-     *        End time of a contact.
+     *        End time of a contact in UTC.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -222,10 +222,10 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      * 
-     * @return End time of a contact.
+     * @return End time of a contact in UTC.
      */
 
     public java.util.Date getEndTime() {
@@ -234,11 +234,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End time of a contact.
+     * End time of a contact in UTC.
      * </p>
      * 
      * @param endTime
-     *        End time of a contact.
+     *        End time of a contact in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -578,11 +578,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      * 
      * @param startTime
-     *        Start time of a contact.
+     *        Start time of a contact in UTC.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -591,10 +591,10 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      * 
-     * @return Start time of a contact.
+     * @return Start time of a contact in UTC.
      */
 
     public java.util.Date getStartTime() {
@@ -603,11 +603,11 @@ public class ContactData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start time of a contact.
+     * Start time of a contact in UTC.
      * </p>
      * 
      * @param startTime
-     *        Start time of a contact.
+     *        Start time of a contact in UTC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

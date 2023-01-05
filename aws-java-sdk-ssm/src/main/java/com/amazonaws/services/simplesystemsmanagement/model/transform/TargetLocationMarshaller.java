@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class TargetLocationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocationMaxErrors").build();
     private static final MarshallingInfo<String> EXECUTIONROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleName").build();
+    private static final MarshallingInfo<StructuredPojo> TARGETLOCATIONALARMCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLocationAlarmConfiguration").build();
 
     private static final TargetLocationMarshaller instance = new TargetLocationMarshaller();
 
@@ -60,6 +62,7 @@ public class TargetLocationMarshaller {
             protocolMarshaller.marshall(targetLocation.getTargetLocationMaxConcurrency(), TARGETLOCATIONMAXCONCURRENCY_BINDING);
             protocolMarshaller.marshall(targetLocation.getTargetLocationMaxErrors(), TARGETLOCATIONMAXERRORS_BINDING);
             protocolMarshaller.marshall(targetLocation.getExecutionRoleName(), EXECUTIONROLENAME_BINDING);
+            protocolMarshaller.marshall(targetLocation.getTargetLocationAlarmConfiguration(), TARGETLOCATIONALARMCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

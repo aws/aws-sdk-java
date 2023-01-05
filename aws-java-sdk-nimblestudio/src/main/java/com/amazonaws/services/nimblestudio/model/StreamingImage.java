@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Amazon provides a number of streaming images that include popular 3rd-party software.
  * </p>
  * <p>
- * You can create your own streaming images using an Amazon Elastic Compute Cloud (Amazon EC2) machine image that you
- * create for this purpose. You can also include software that your users require.
+ * You can create your own streaming images using an Amazon EC2 machine image that you create for this purpose. You can
+ * also include software that your users require.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StreamingImage" target="_top">AWS API
@@ -41,7 +41,8 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      */
     private String arn;
@@ -77,14 +78,14 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images
-     * that are provided by Amazon Nimble Studio.
+     * The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or
+     * <code>amazon</code> for images that are provided by Amazon Nimble Studio.
      * </p>
      */
     private String owner;
     /**
      * <p>
-     * The platform of the streaming image, either WINDOWS or LINUX.
+     * The platform of the streaming image, either Windows or Linux.
      * </p>
      */
     private String platform;
@@ -114,18 +115,20 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
     private String streamingImageId;
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      */
 
     public void setArn(String arn) {
@@ -134,10 +137,12 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *         unique across all Regions.
      */
 
     public String getArn() {
@@ -146,11 +151,13 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,13 +402,13 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images
-     * that are provided by Amazon Nimble Studio.
+     * The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or
+     * <code>amazon</code> for images that are provided by Amazon Nimble Studio.
      * </p>
      * 
      * @param owner
-     *        The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for
-     *        images that are provided by Amazon Nimble Studio.
+     *        The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or
+     *        <code>amazon</code> for images that are provided by Amazon Nimble Studio.
      */
 
     public void setOwner(String owner) {
@@ -410,12 +417,12 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images
-     * that are provided by Amazon Nimble Studio.
+     * The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or
+     * <code>amazon</code> for images that are provided by Amazon Nimble Studio.
      * </p>
      * 
-     * @return The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for
-     *         images that are provided by Amazon Nimble Studio.
+     * @return The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or
+     *         <code>amazon</code> for images that are provided by Amazon Nimble Studio.
      */
 
     public String getOwner() {
@@ -424,13 +431,13 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for images
-     * that are provided by Amazon Nimble Studio.
+     * The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or
+     * <code>amazon</code> for images that are provided by Amazon Nimble Studio.
      * </p>
      * 
      * @param owner
-     *        The owner of the streaming image, either the studioId that contains the streaming image, or 'amazon' for
-     *        images that are provided by Amazon Nimble Studio.
+     *        The owner of the streaming image, either the <code>studioId</code> that contains the streaming image, or
+     *        <code>amazon</code> for images that are provided by Amazon Nimble Studio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,11 +448,11 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the streaming image, either WINDOWS or LINUX.
+     * The platform of the streaming image, either Windows or Linux.
      * </p>
      * 
      * @param platform
-     *        The platform of the streaming image, either WINDOWS or LINUX.
+     *        The platform of the streaming image, either Windows or Linux.
      */
 
     public void setPlatform(String platform) {
@@ -454,10 +461,10 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the streaming image, either WINDOWS or LINUX.
+     * The platform of the streaming image, either Windows or Linux.
      * </p>
      * 
-     * @return The platform of the streaming image, either WINDOWS or LINUX.
+     * @return The platform of the streaming image, either Windows or Linux.
      */
 
     public String getPlatform() {
@@ -466,11 +473,11 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The platform of the streaming image, either WINDOWS or LINUX.
+     * The platform of the streaming image, either Windows or Linux.
      * </p>
      * 
      * @param platform
-     *        The platform of the streaming image, either WINDOWS or LINUX.
+     *        The platform of the streaming image, either Windows or Linux.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -679,10 +686,10 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
-     * @return A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * @return A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -691,11 +698,11 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -704,11 +711,11 @@ public class StreamingImage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

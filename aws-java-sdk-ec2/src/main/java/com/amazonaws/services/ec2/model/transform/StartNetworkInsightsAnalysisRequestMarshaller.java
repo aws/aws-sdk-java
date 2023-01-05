@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,21 @@ public class StartNetworkInsightsAnalysisRequestMarshaller implements
 
         if (startNetworkInsightsAnalysisRequest.getNetworkInsightsPathId() != null) {
             request.addParameter("NetworkInsightsPathId", StringUtils.fromString(startNetworkInsightsAnalysisRequest.getNetworkInsightsPathId()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<String> startNetworkInsightsAnalysisRequestAdditionalAccountsList = (com.amazonaws.internal.SdkInternalList<String>) startNetworkInsightsAnalysisRequest
+                .getAdditionalAccounts();
+        if (!startNetworkInsightsAnalysisRequestAdditionalAccountsList.isEmpty()
+                || !startNetworkInsightsAnalysisRequestAdditionalAccountsList.isAutoConstruct()) {
+            int additionalAccountsListIndex = 1;
+
+            for (String startNetworkInsightsAnalysisRequestAdditionalAccountsListValue : startNetworkInsightsAnalysisRequestAdditionalAccountsList) {
+                if (startNetworkInsightsAnalysisRequestAdditionalAccountsListValue != null) {
+                    request.addParameter("AdditionalAccount." + additionalAccountsListIndex,
+                            StringUtils.fromString(startNetworkInsightsAnalysisRequestAdditionalAccountsListValue));
+                }
+                additionalAccountsListIndex++;
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<String> startNetworkInsightsAnalysisRequestFilterInArnsList = (com.amazonaws.internal.SdkInternalList<String>) startNetworkInsightsAnalysisRequest

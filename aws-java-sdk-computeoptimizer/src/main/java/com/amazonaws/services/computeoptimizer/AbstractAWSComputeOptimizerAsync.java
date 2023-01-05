@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,21 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     }
 
     @Override
+    public java.util.concurrent.Future<ExportECSServiceRecommendationsResult> exportECSServiceRecommendationsAsync(
+            ExportECSServiceRecommendationsRequest request) {
+
+        return exportECSServiceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportECSServiceRecommendationsResult> exportECSServiceRecommendationsAsync(
+            ExportECSServiceRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExportECSServiceRecommendationsRequest, ExportECSServiceRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportLambdaFunctionRecommendationsResult> exportLambdaFunctionRecommendationsAsync(
             ExportLambdaFunctionRecommendationsRequest request) {
 
@@ -167,6 +182,34 @@ public class AbstractAWSComputeOptimizerAsync extends AbstractAWSComputeOptimize
     public java.util.concurrent.Future<GetEC2RecommendationProjectedMetricsResult> getEC2RecommendationProjectedMetricsAsync(
             GetEC2RecommendationProjectedMetricsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEC2RecommendationProjectedMetricsRequest, GetEC2RecommendationProjectedMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationProjectedMetricsResult> getECSServiceRecommendationProjectedMetricsAsync(
+            GetECSServiceRecommendationProjectedMetricsRequest request) {
+
+        return getECSServiceRecommendationProjectedMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationProjectedMetricsResult> getECSServiceRecommendationProjectedMetricsAsync(
+            GetECSServiceRecommendationProjectedMetricsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetECSServiceRecommendationProjectedMetricsRequest, GetECSServiceRecommendationProjectedMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationsResult> getECSServiceRecommendationsAsync(GetECSServiceRecommendationsRequest request) {
+
+        return getECSServiceRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetECSServiceRecommendationsResult> getECSServiceRecommendationsAsync(GetECSServiceRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetECSServiceRecommendationsRequest, GetECSServiceRecommendationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

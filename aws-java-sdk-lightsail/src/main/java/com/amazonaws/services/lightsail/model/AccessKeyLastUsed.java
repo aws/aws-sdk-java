@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
     private java.util.Date lastUsedDate;
     /**
      * <p>
-     * The AWS Region where this access key was most recently used.
+     * The Amazon Web Services Region where this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
@@ -55,7 +55,7 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
     private String region;
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used.
+     * The name of the Amazon Web Services service with which this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
@@ -120,14 +120,14 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS Region where this access key was most recently used.
+     * The Amazon Web Services Region where this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
      * </p>
      * 
      * @param region
-     *        The AWS Region where this access key was most recently used.</p>
+     *        The Amazon Web Services Region where this access key was most recently used.</p>
      *        <p>
      *        This value is <code>N/A</code> if the access key has not been used.
      */
@@ -138,13 +138,13 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS Region where this access key was most recently used.
+     * The Amazon Web Services Region where this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
      * </p>
      * 
-     * @return The AWS Region where this access key was most recently used.</p>
+     * @return The Amazon Web Services Region where this access key was most recently used.</p>
      *         <p>
      *         This value is <code>N/A</code> if the access key has not been used.
      */
@@ -155,14 +155,14 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS Region where this access key was most recently used.
+     * The Amazon Web Services Region where this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
      * </p>
      * 
      * @param region
-     *        The AWS Region where this access key was most recently used.</p>
+     *        The Amazon Web Services Region where this access key was most recently used.</p>
      *        <p>
      *        This value is <code>N/A</code> if the access key has not been used.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -175,14 +175,14 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used.
+     * The name of the Amazon Web Services service with which this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service with which this access key was most recently used.</p>
+     *        The name of the Amazon Web Services service with which this access key was most recently used.</p>
      *        <p>
      *        This value is <code>N/A</code> if the access key has not been used.
      */
@@ -193,13 +193,13 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used.
+     * The name of the Amazon Web Services service with which this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
      * </p>
      * 
-     * @return The name of the AWS service with which this access key was most recently used.</p>
+     * @return The name of the Amazon Web Services service with which this access key was most recently used.</p>
      *         <p>
      *         This value is <code>N/A</code> if the access key has not been used.
      */
@@ -210,14 +210,14 @@ public class AccessKeyLastUsed implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the AWS service with which this access key was most recently used.
+     * The name of the Amazon Web Services service with which this access key was most recently used.
      * </p>
      * <p>
      * This value is <code>N/A</code> if the access key has not been used.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service with which this access key was most recently used.</p>
+     *        The name of the Amazon Web Services service with which this access key was most recently used.</p>
      *        <p>
      *        This value is <code>N/A</code> if the access key has not been used.
      * @return Returns a reference to this object so that method calls can be chained together.

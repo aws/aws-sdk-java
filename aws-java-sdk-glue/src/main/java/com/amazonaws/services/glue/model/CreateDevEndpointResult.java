@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,7 +97,7 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
     private Integer numberOfWorkers;
     /**
      * <p>
-     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+     * The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      */
     private String availabilityZone;
@@ -688,11 +688,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+     * The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      * 
      * @param availabilityZone
-     *        The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+     *        The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -701,10 +701,10 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+     * The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      * 
-     * @return The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+     * @return The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
      */
 
     public String getAvailabilityZone() {
@@ -713,11 +713,11 @@ public class CreateDevEndpointResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+     * The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
      * </p>
      * 
      * @param availabilityZone
-     *        The AWS Availability Zone where this <code>DevEndpoint</code> is located.
+     *        The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,23 +26,23 @@ import com.amazonaws.services.billingconductor.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Web Services Billing Conductor is a fully managed service that you can use to customize a <a href=
- * "https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/understanding-eb.html#eb-other-definitions"
- * >pro forma</a> version of your billing data each month, to accurately show or chargeback your end customers. Amazon
- * Web Services Billing Conductor doesn't change the way you're billed by Amazon Web Services each month by design.
- * Instead, it provides you with a mechanism to configure, generate, and display rates to certain customers over a given
- * billing period. You can also analyze the difference between the rates you apply to your accounting groupings relative
- * to your actual rates from Amazon Web Services. As a result of your Amazon Web Services Billing Conductor
- * configuration, the payer account can also see the custom rate applied on the billing details page of the <a
+ * Amazon Web Services Billing Conductor is a fully managed service that you can use to customize a <a
+ * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/understanding-eb.html#eb-other-definitions">pro
+ * forma</a> version of your billing data each month, to accurately show or chargeback your end customers. Amazon Web
+ * Services Billing Conductor doesn't change the way you're billed by Amazon Web Services each month by design. Instead,
+ * it provides you with a mechanism to configure, generate, and display rates to certain customers over a given billing
+ * period. You can also analyze the difference between the rates you apply to your accounting groupings relative to your
+ * actual rates from Amazon Web Services. As a result of your Amazon Web Services Billing Conductor configuration, the
+ * payer account can also see the custom rate applied on the billing details page of the <a
  * href="https://console.aws.amazon.com/billing">Amazon Web Services Billing console</a>, or configure a cost and usage
  * report per billing group.
  * </p>
  * <p>
  * This documentation shows how you can configure Amazon Web Services Billing Conductor using its API. For more
- * information about using the <a href="https://console.aws.amazon.com/enterprisebilling/">Amazon Web Services Billing
- * Conductor</a> user interface, see the <a href=
- * "https://docs.aws.amazon.com/enterprisebilling/6b7c01c5-b592-467e-9769-90052eaf359c/userguide/what-is-enterprisebilling.html"
- * > Amazon Web Services Enterprise Billing Console User Guide</a>.
+ * information about using the <a href="https://console.aws.amazon.com/billingconductor/">Amazon Web Services Billing
+ * Conductor</a> user interface, see the <a
+ * href="https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html"> Amazon Web
+ * Services Billing Conductor User Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -413,7 +413,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * Deletes the pricing rule identified by the input Amazon Resource Name (ARN).
+     * Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN).
      * </p>
      * 
      * @param deletePricingRuleRequest
@@ -426,7 +426,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * Deletes the pricing rule identified by the input Amazon Resource Name (ARN).
+     * Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN).
      * </p>
      * 
      * @param deletePricingRuleRequest
@@ -506,14 +506,9 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * <i> <b>Amazon Web Services Billing Conductor is in beta release and is subject to change. Your use of Amazon Web
-     * Services Billing Conductor is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * <p>
      * This is a paginated call to list linked accounts that are linked to the payer account for the specified time
      * period. If no information is provided, the current billing period is used. The response will optionally include
-     * the billing group associated with the linked account.
+     * the billing group that's associated with the linked account.
      * </p>
      * 
      * @param listAccountAssociationsRequest
@@ -526,14 +521,9 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * <i> <b>Amazon Web Services Billing Conductor is in beta release and is subject to change. Your use of Amazon Web
-     * Services Billing Conductor is subject to the Beta Service Participation terms of the <a
-     * href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i>
-     * </p>
-     * <p>
      * This is a paginated call to list linked accounts that are linked to the payer account for the specified time
      * period. If no information is provided, the current billing period is used. The response will optionally include
-     * the billing group associated with the linked account.
+     * the billing group that's associated with the linked account.
      * </p>
      * 
      * @param listAccountAssociationsRequest
@@ -619,6 +609,39 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
+     * A paginated call to get a list of all custom line item versions.
+     * </p>
+     * 
+     * @param listCustomLineItemVersionsRequest
+     * @return A Java Future containing the result of the ListCustomLineItemVersions operation returned by the service.
+     * @sample AWSBillingConductorAsync.ListCustomLineItemVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomLineItemVersionsResult> listCustomLineItemVersionsAsync(
+            ListCustomLineItemVersionsRequest listCustomLineItemVersionsRequest);
+
+    /**
+     * <p>
+     * A paginated call to get a list of all custom line item versions.
+     * </p>
+     * 
+     * @param listCustomLineItemVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCustomLineItemVersions operation returned by the service.
+     * @sample AWSBillingConductorAsyncHandler.ListCustomLineItemVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/billingconductor-2021-07-30/ListCustomLineItemVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCustomLineItemVersionsResult> listCustomLineItemVersionsAsync(
+            ListCustomLineItemVersionsRequest listCustomLineItemVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCustomLineItemVersionsRequest, ListCustomLineItemVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * A paginated call to get a list of all custom line items (FFLIs) for the given billing period. If you don't
      * provide a billing period, the current billing period is used.
      * </p>
@@ -685,7 +708,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * A list of the pricing plans associated with a pricing rule.
+     * A list of the pricing plans that are associated with a pricing rule.
      * </p>
      * 
      * @param listPricingPlansAssociatedWithPricingRuleRequest
@@ -701,7 +724,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * A list of the pricing plans associated with a pricing rule.
+     * A list of the pricing plans that are associated with a pricing rule.
      * </p>
      * 
      * @param listPricingPlansAssociatedWithPricingRuleRequest
@@ -753,7 +776,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * Lists the pricing rules associated with a pricing plan.
+     * Lists the pricing rules that are associated with a pricing plan.
      * </p>
      * 
      * @param listPricingRulesAssociatedToPricingPlanRequest
@@ -769,7 +792,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * Lists the pricing rules associated with a pricing plan.
+     * Lists the pricing rules that are associated with a pricing plan.
      * </p>
      * 
      * @param listPricingRulesAssociatedToPricingPlanRequest
@@ -790,7 +813,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * List the resources associated to a custom line item.
+     * List the resources that are associated to a custom line item.
      * </p>
      * 
      * @param listResourcesAssociatedToCustomLineItemRequest
@@ -806,7 +829,7 @@ public interface AWSBillingConductorAsync extends AWSBillingConductor {
 
     /**
      * <p>
-     * List the resources associated to a custom line item.
+     * List the resources that are associated to a custom line item.
      * </p>
      * 
      * @param listResourcesAssociatedToCustomLineItemRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,12 @@ public class DataCollectionDetails implements Serializable, Cloneable, Structure
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * The status message of the assessment.
+     * </p>
+     */
+    private String statusMessage;
     /**
      * <p>
      * The number of successful servers in the assessment.
@@ -332,6 +338,46 @@ public class DataCollectionDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The status message of the assessment.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The status message of the assessment.
+     */
+
+    public void setStatusMessage(String statusMessage) {
+        this.statusMessage = statusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message of the assessment.
+     * </p>
+     * 
+     * @return The status message of the assessment.
+     */
+
+    public String getStatusMessage() {
+        return this.statusMessage;
+    }
+
+    /**
+     * <p>
+     * The status message of the assessment.
+     * </p>
+     * 
+     * @param statusMessage
+     *        The status message of the assessment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataCollectionDetails withStatusMessage(String statusMessage) {
+        setStatusMessage(statusMessage);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of successful servers in the assessment.
      * </p>
      * 
@@ -394,6 +440,8 @@ public class DataCollectionDetails implements Serializable, Cloneable, Structure
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getStatusMessage() != null)
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
         if (getSuccess() != null)
             sb.append("Success: ").append(getSuccess());
         sb.append("}");
@@ -434,6 +482,10 @@ public class DataCollectionDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getStatusMessage() == null ^ this.getStatusMessage() == null)
+            return false;
+        if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
+            return false;
         if (other.getSuccess() == null ^ this.getSuccess() == null)
             return false;
         if (other.getSuccess() != null && other.getSuccess().equals(this.getSuccess()) == false)
@@ -452,6 +504,7 @@ public class DataCollectionDetails implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getServers() == null) ? 0 : getServers().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getSuccess() == null) ? 0 : getSuccess().hashCode());
         return hashCode;
     }

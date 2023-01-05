@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the update.
+ * Container for the response to a <code>CancelServiceSoftwareUpdate</code> operation. Contains the status of the
+ * update.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,18 +26,18 @@ public class CancelServiceSoftwareUpdateResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * Container for the state of your domain relative to the latest service software.
      * </p>
      */
     private ServiceSoftwareOptions serviceSoftwareOptions;
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * Container for the state of your domain relative to the latest service software.
      * </p>
      * 
      * @param serviceSoftwareOptions
-     *        The current status of the OpenSearch service software update.
+     *        Container for the state of your domain relative to the latest service software.
      */
 
     public void setServiceSoftwareOptions(ServiceSoftwareOptions serviceSoftwareOptions) {
@@ -45,10 +46,10 @@ public class CancelServiceSoftwareUpdateResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * Container for the state of your domain relative to the latest service software.
      * </p>
      * 
-     * @return The current status of the OpenSearch service software update.
+     * @return Container for the state of your domain relative to the latest service software.
      */
 
     public ServiceSoftwareOptions getServiceSoftwareOptions() {
@@ -57,11 +58,11 @@ public class CancelServiceSoftwareUpdateResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The current status of the OpenSearch service software update.
+     * Container for the state of your domain relative to the latest service software.
      * </p>
      * 
      * @param serviceSoftwareOptions
-     *        The current status of the OpenSearch service software update.
+     *        Container for the state of your domain relative to the latest service software.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

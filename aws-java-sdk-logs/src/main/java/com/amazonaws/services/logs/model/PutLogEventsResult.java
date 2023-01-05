@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,17 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The next sequence token.
      * </p>
+     * <important>
+     * <p>
+     * This field has been deprecated.
+     * </p>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions
+     * on the same log stream and you do not need to wait for the response of a previous <code>PutLogEvents</code>
+     * action to obtain the <code>nextSequenceToken</code> value.
+     * </p>
+     * </important>
      */
     private String nextSequenceToken;
     /**
@@ -40,9 +51,29 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The next sequence token.
      * </p>
+     * <important>
+     * <p>
+     * This field has been deprecated.
+     * </p>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions
+     * on the same log stream and you do not need to wait for the response of a previous <code>PutLogEvents</code>
+     * action to obtain the <code>nextSequenceToken</code> value.
+     * </p>
+     * </important>
      * 
      * @param nextSequenceToken
-     *        The next sequence token.
+     *        The next sequence token.</p> <important>
+     *        <p>
+     *        This field has been deprecated.
+     *        </p>
+     *        <p>
+     *        The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions
+     *        are always accepted even if the sequence token is not valid. You can use parallel
+     *        <code>PutLogEvents</code> actions on the same log stream and you do not need to wait for the response of a
+     *        previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code> value.
+     *        </p>
      */
 
     public void setNextSequenceToken(String nextSequenceToken) {
@@ -53,8 +84,28 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The next sequence token.
      * </p>
+     * <important>
+     * <p>
+     * This field has been deprecated.
+     * </p>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions
+     * on the same log stream and you do not need to wait for the response of a previous <code>PutLogEvents</code>
+     * action to obtain the <code>nextSequenceToken</code> value.
+     * </p>
+     * </important>
      * 
-     * @return The next sequence token.
+     * @return The next sequence token.</p> <important>
+     *         <p>
+     *         This field has been deprecated.
+     *         </p>
+     *         <p>
+     *         The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions
+     *         are always accepted even if the sequence token is not valid. You can use parallel
+     *         <code>PutLogEvents</code> actions on the same log stream and you do not need to wait for the response of
+     *         a previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code> value.
+     *         </p>
      */
 
     public String getNextSequenceToken() {
@@ -65,9 +116,29 @@ public class PutLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
      * <p>
      * The next sequence token.
      * </p>
+     * <important>
+     * <p>
+     * This field has been deprecated.
+     * </p>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted even if the sequence token is not valid. You can use parallel <code>PutLogEvents</code> actions
+     * on the same log stream and you do not need to wait for the response of a previous <code>PutLogEvents</code>
+     * action to obtain the <code>nextSequenceToken</code> value.
+     * </p>
+     * </important>
      * 
      * @param nextSequenceToken
-     *        The next sequence token.
+     *        The next sequence token.</p> <important>
+     *        <p>
+     *        This field has been deprecated.
+     *        </p>
+     *        <p>
+     *        The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions
+     *        are always accepted even if the sequence token is not valid. You can use parallel
+     *        <code>PutLogEvents</code> actions on the same log stream and you do not need to wait for the response of a
+     *        previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code> value.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

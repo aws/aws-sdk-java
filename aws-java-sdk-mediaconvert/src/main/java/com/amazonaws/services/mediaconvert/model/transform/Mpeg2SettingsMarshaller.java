@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,8 @@ public class Mpeg2SettingsMarshaller {
             .marshallLocationName("gopSize").build();
     private static final MarshallingInfo<String> GOPSIZEUNITS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("gopSizeUnits").build();
+    private static final MarshallingInfo<Integer> HRDBUFFERFINALFILLPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hrdBufferFinalFillPercentage").build();
     private static final MarshallingInfo<Integer> HRDBUFFERINITIALFILLPERCENTAGE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hrdBufferInitialFillPercentage").build();
     private static final MarshallingInfo<Integer> HRDBUFFERSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -120,6 +122,7 @@ public class Mpeg2SettingsMarshaller {
             protocolMarshaller.marshall(mpeg2Settings.getGopClosedCadence(), GOPCLOSEDCADENCE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getGopSize(), GOPSIZE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getGopSizeUnits(), GOPSIZEUNITS_BINDING);
+            protocolMarshaller.marshall(mpeg2Settings.getHrdBufferFinalFillPercentage(), HRDBUFFERFINALFILLPERCENTAGE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getHrdBufferInitialFillPercentage(), HRDBUFFERINITIALFILLPERCENTAGE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getHrdBufferSize(), HRDBUFFERSIZE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getInterlaceMode(), INTERLACEMODE_BINDING);

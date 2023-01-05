@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,12 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
     private java.util.List<AntipatternSeveritySummary> listAntipatternSeveritySummary;
     /**
      * <p>
+     * List of status summaries of the analyzed application components.
+     * </p>
+     */
+    private java.util.List<ApplicationComponentStatusSummary> listApplicationComponentStatusSummary;
+    /**
+     * <p>
      * List of ApplicationComponentStrategySummary.
      * </p>
      */
@@ -70,6 +76,12 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<ApplicationComponentSummary> listApplicationComponentSummary;
+    /**
+     * <p>
+     * List of status summaries of the analyzed servers.
+     * </p>
+     */
+    private java.util.List<ServerStatusSummary> listServerStatusSummary;
     /**
      * <p>
      * List of ServerStrategySummary.
@@ -334,6 +346,78 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * List of status summaries of the analyzed application components.
+     * </p>
+     * 
+     * @return List of status summaries of the analyzed application components.
+     */
+
+    public java.util.List<ApplicationComponentStatusSummary> getListApplicationComponentStatusSummary() {
+        return listApplicationComponentStatusSummary;
+    }
+
+    /**
+     * <p>
+     * List of status summaries of the analyzed application components.
+     * </p>
+     * 
+     * @param listApplicationComponentStatusSummary
+     *        List of status summaries of the analyzed application components.
+     */
+
+    public void setListApplicationComponentStatusSummary(java.util.Collection<ApplicationComponentStatusSummary> listApplicationComponentStatusSummary) {
+        if (listApplicationComponentStatusSummary == null) {
+            this.listApplicationComponentStatusSummary = null;
+            return;
+        }
+
+        this.listApplicationComponentStatusSummary = new java.util.ArrayList<ApplicationComponentStatusSummary>(listApplicationComponentStatusSummary);
+    }
+
+    /**
+     * <p>
+     * List of status summaries of the analyzed application components.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setListApplicationComponentStatusSummary(java.util.Collection)} or
+     * {@link #withListApplicationComponentStatusSummary(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param listApplicationComponentStatusSummary
+     *        List of status summaries of the analyzed application components.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentSummary withListApplicationComponentStatusSummary(ApplicationComponentStatusSummary... listApplicationComponentStatusSummary) {
+        if (this.listApplicationComponentStatusSummary == null) {
+            setListApplicationComponentStatusSummary(new java.util.ArrayList<ApplicationComponentStatusSummary>(listApplicationComponentStatusSummary.length));
+        }
+        for (ApplicationComponentStatusSummary ele : listApplicationComponentStatusSummary) {
+            this.listApplicationComponentStatusSummary.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of status summaries of the analyzed application components.
+     * </p>
+     * 
+     * @param listApplicationComponentStatusSummary
+     *        List of status summaries of the analyzed application components.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentSummary withListApplicationComponentStatusSummary(
+            java.util.Collection<ApplicationComponentStatusSummary> listApplicationComponentStatusSummary) {
+        setListApplicationComponentStatusSummary(listApplicationComponentStatusSummary);
+        return this;
+    }
+
+    /**
+     * <p>
      * List of ApplicationComponentStrategySummary.
      * </p>
      * 
@@ -470,6 +554,76 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
 
     public AssessmentSummary withListApplicationComponentSummary(java.util.Collection<ApplicationComponentSummary> listApplicationComponentSummary) {
         setListApplicationComponentSummary(listApplicationComponentSummary);
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of status summaries of the analyzed servers.
+     * </p>
+     * 
+     * @return List of status summaries of the analyzed servers.
+     */
+
+    public java.util.List<ServerStatusSummary> getListServerStatusSummary() {
+        return listServerStatusSummary;
+    }
+
+    /**
+     * <p>
+     * List of status summaries of the analyzed servers.
+     * </p>
+     * 
+     * @param listServerStatusSummary
+     *        List of status summaries of the analyzed servers.
+     */
+
+    public void setListServerStatusSummary(java.util.Collection<ServerStatusSummary> listServerStatusSummary) {
+        if (listServerStatusSummary == null) {
+            this.listServerStatusSummary = null;
+            return;
+        }
+
+        this.listServerStatusSummary = new java.util.ArrayList<ServerStatusSummary>(listServerStatusSummary);
+    }
+
+    /**
+     * <p>
+     * List of status summaries of the analyzed servers.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setListServerStatusSummary(java.util.Collection)} or
+     * {@link #withListServerStatusSummary(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param listServerStatusSummary
+     *        List of status summaries of the analyzed servers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentSummary withListServerStatusSummary(ServerStatusSummary... listServerStatusSummary) {
+        if (this.listServerStatusSummary == null) {
+            setListServerStatusSummary(new java.util.ArrayList<ServerStatusSummary>(listServerStatusSummary.length));
+        }
+        for (ServerStatusSummary ele : listServerStatusSummary) {
+            this.listServerStatusSummary.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of status summaries of the analyzed servers.
+     * </p>
+     * 
+     * @param listServerStatusSummary
+     *        List of status summaries of the analyzed servers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssessmentSummary withListServerStatusSummary(java.util.Collection<ServerStatusSummary> listServerStatusSummary) {
+        setListServerStatusSummary(listServerStatusSummary);
         return this;
     }
 
@@ -635,10 +789,14 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
             sb.append("LastAnalyzedTimestamp: ").append(getLastAnalyzedTimestamp()).append(",");
         if (getListAntipatternSeveritySummary() != null)
             sb.append("ListAntipatternSeveritySummary: ").append(getListAntipatternSeveritySummary()).append(",");
+        if (getListApplicationComponentStatusSummary() != null)
+            sb.append("ListApplicationComponentStatusSummary: ").append(getListApplicationComponentStatusSummary()).append(",");
         if (getListApplicationComponentStrategySummary() != null)
             sb.append("ListApplicationComponentStrategySummary: ").append(getListApplicationComponentStrategySummary()).append(",");
         if (getListApplicationComponentSummary() != null)
             sb.append("ListApplicationComponentSummary: ").append(getListApplicationComponentSummary()).append(",");
+        if (getListServerStatusSummary() != null)
+            sb.append("ListServerStatusSummary: ").append(getListServerStatusSummary()).append(",");
         if (getListServerStrategySummary() != null)
             sb.append("ListServerStrategySummary: ").append(getListServerStrategySummary()).append(",");
         if (getListServerSummary() != null)
@@ -679,6 +837,11 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
         if (other.getListAntipatternSeveritySummary() != null
                 && other.getListAntipatternSeveritySummary().equals(this.getListAntipatternSeveritySummary()) == false)
             return false;
+        if (other.getListApplicationComponentStatusSummary() == null ^ this.getListApplicationComponentStatusSummary() == null)
+            return false;
+        if (other.getListApplicationComponentStatusSummary() != null
+                && other.getListApplicationComponentStatusSummary().equals(this.getListApplicationComponentStatusSummary()) == false)
+            return false;
         if (other.getListApplicationComponentStrategySummary() == null ^ this.getListApplicationComponentStrategySummary() == null)
             return false;
         if (other.getListApplicationComponentStrategySummary() != null
@@ -688,6 +851,10 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getListApplicationComponentSummary() != null
                 && other.getListApplicationComponentSummary().equals(this.getListApplicationComponentSummary()) == false)
+            return false;
+        if (other.getListServerStatusSummary() == null ^ this.getListServerStatusSummary() == null)
+            return false;
+        if (other.getListServerStatusSummary() != null && other.getListServerStatusSummary().equals(this.getListServerStatusSummary()) == false)
             return false;
         if (other.getListServerStrategySummary() == null ^ this.getListServerStrategySummary() == null)
             return false;
@@ -710,8 +877,10 @@ public class AssessmentSummary implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getAntipatternReportStatusMessage() == null) ? 0 : getAntipatternReportStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getLastAnalyzedTimestamp() == null) ? 0 : getLastAnalyzedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getListAntipatternSeveritySummary() == null) ? 0 : getListAntipatternSeveritySummary().hashCode());
+        hashCode = prime * hashCode + ((getListApplicationComponentStatusSummary() == null) ? 0 : getListApplicationComponentStatusSummary().hashCode());
         hashCode = prime * hashCode + ((getListApplicationComponentStrategySummary() == null) ? 0 : getListApplicationComponentStrategySummary().hashCode());
         hashCode = prime * hashCode + ((getListApplicationComponentSummary() == null) ? 0 : getListApplicationComponentSummary().hashCode());
+        hashCode = prime * hashCode + ((getListServerStatusSummary() == null) ? 0 : getListServerStatusSummary().hashCode());
         hashCode = prime * hashCode + ((getListServerStrategySummary() == null) ? 0 : getListServerStrategySummary().hashCode());
         hashCode = prime * hashCode + ((getListServerSummary() == null) ? 0 : getListServerSummary().hashCode());
         return hashCode;

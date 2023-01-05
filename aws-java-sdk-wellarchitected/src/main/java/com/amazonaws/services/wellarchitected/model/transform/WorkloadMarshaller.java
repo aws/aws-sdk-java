@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,10 @@ public class WorkloadMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareInvitationId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<StructuredPojo> DISCOVERYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DiscoveryConfig").build();
+    private static final MarshallingInfo<List> APPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Applications").build();
 
     private static final WorkloadMarshaller instance = new WorkloadMarshaller();
 
@@ -115,6 +119,8 @@ public class WorkloadMarshaller {
             protocolMarshaller.marshall(workload.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(workload.getShareInvitationId(), SHAREINVITATIONID_BINDING);
             protocolMarshaller.marshall(workload.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(workload.getDiscoveryConfig(), DISCOVERYCONFIG_BINDING);
+            protocolMarshaller.marshall(workload.getApplications(), APPLICATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

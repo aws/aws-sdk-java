@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -169,6 +169,27 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     DeleteGroupResult deleteGroup(DeleteGroupRequest deleteGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a resource policy from the target Amazon Web Services account.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return Result of the DeleteResourcePolicy operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws InvalidPolicyRevisionIdException
+     *         A policy revision id was provided which does not match the latest policy revision. This exception is also
+     *         if a policy revision id of 0 is provided via <code>PutResourcePolicy</code> and a policy with the same
+     *         name already exists.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
 
     /**
      * <p>
@@ -455,6 +476,23 @@ public interface AWSXRay {
 
     /**
      * <p>
+     * Returns the list of resource policies in the target Amazon Web Services account.
+     * </p>
+     * 
+     * @param listResourcePoliciesRequest
+     * @return Result of the ListResourcePolicies operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.ListResourcePolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListResourcePolicies" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListResourcePoliciesResult listResourcePolicies(ListResourcePoliciesRequest listResourcePoliciesRequest);
+
+    /**
+     * <p>
      * Returns a list of tags that are applied to the specified Amazon Web Services X-Ray group or sampling rule.
      * </p>
      * 
@@ -489,6 +527,37 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     PutEncryptionConfigResult putEncryptionConfig(PutEncryptionConfigRequest putEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Sets the resource policy to grant one or more Amazon Web Services services and accounts permissions to access
+     * X-Ray. Each resource policy will be associated with a specific Amazon Web Services account. Each Amazon Web
+     * Services account can have a maximum of 5 resource policies, and each policy name must be unique within that
+     * account. The maximum size of each resource policy is 5KB.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return Result of the PutResourcePolicy operation returned by the service.
+     * @throws MalformedPolicyDocumentException
+     *         Invalid policy document provided in request.
+     * @throws LockoutPreventionException
+     *         The provided resource policy would prevent the caller of this request from calling PutResourcePolicy in
+     *         the future.
+     * @throws InvalidPolicyRevisionIdException
+     *         A policy revision id was provided which does not match the latest policy revision. This exception is also
+     *         if a policy revision id of 0 is provided via <code>PutResourcePolicy</code> and a policy with the same
+     *         name already exists.
+     * @throws PolicySizeLimitExceededException
+     *         Exceeded the maximum size for a resource policy.
+     * @throws PolicyCountLimitExceededException
+     *         Exceeded the maximum number of resource policies for a target Amazon Web Services account.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/PutResourcePolicy" target="_top">AWS API
+     *      Documentation</a>
+     */
+    PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest putResourcePolicyRequest);
 
     /**
      * <p>

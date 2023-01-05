@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,17 +35,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -71,10 +71,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String role;
     /**
      * <p>
-     * The name of the method within your code that Lambda calls to execute your function. Handler is required if the
+     * The name of the method within your code that Lambda calls to run your function. Handler is required if the
      * deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and
      * other qualifiers, depending on the runtime. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.
      * </p>
      */
     private String handler;
@@ -93,16 +93,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3
-     * seconds. The maximum allowed value is 900 seconds. For additional information, see <a
+     * seconds. The maximum allowed value is 900 seconds. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      */
     private Integer timeout;
     /**
      * <p>
-     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
-     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
-     * value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
+     * >memory available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     * allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      */
     private Integer memorySize;
@@ -115,24 +116,25 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
-     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
-     * Settings</a>.
+     * in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to
+     * access resources in a VPC</a>.
      * </p>
      */
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for
+     * .zip file archive.
      * </p>
      */
     private String packageType;
     /**
      * <p>
-     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.
      * </p>
      */
     private DeadLetterConfig deadLetterConfig;
@@ -144,8 +146,8 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private Environment environment;
     /**
      * <p>
-     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
-     * environment variables. If it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
+     * it's not provided, Lambda uses a default service key.
      * </p>
      */
     private String kMSKeyArn;
@@ -199,11 +201,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> architectures;
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      */
     private EphemeralStorage ephemeralStorage;
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.
+     * </p>
+     */
+    private SnapStart snapStart;
 
     /**
      * <p>
@@ -215,17 +223,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -242,17 +250,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code>.
+     *        <b>Function name</b> – <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -275,17 +283,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -301,17 +309,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>my-function</code>.
+     *         <b>Function name</b> – <code>my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -334,17 +342,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code>.
+     * <b>Function name</b> – <code>my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -361,17 +369,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code>.
+     *        <b>Function name</b> – <code>my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -521,17 +529,18 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the method within your code that Lambda calls to execute your function. Handler is required if the
+     * The name of the method within your code that Lambda calls to run your function. Handler is required if the
      * deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and
      * other qualifiers, depending on the runtime. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.
      * </p>
      * 
      * @param handler
-     *        The name of the method within your code that Lambda calls to execute your function. Handler is required if
-     *        the deployment package is a .zip file archive. The format includes the file name. It can also include
+     *        The name of the method within your code that Lambda calls to run your function. Handler is required if the
+     *        deployment package is a .zip file archive. The format includes the file name. It can also include
      *        namespaces and other qualifiers, depending on the runtime. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming
+     *        model</a>.
      */
 
     public void setHandler(String handler) {
@@ -540,16 +549,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the method within your code that Lambda calls to execute your function. Handler is required if the
+     * The name of the method within your code that Lambda calls to run your function. Handler is required if the
      * deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and
      * other qualifiers, depending on the runtime. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.
      * </p>
      * 
-     * @return The name of the method within your code that Lambda calls to execute your function. Handler is required
-     *         if the deployment package is a .zip file archive. The format includes the file name. It can also include
+     * @return The name of the method within your code that Lambda calls to run your function. Handler is required if
+     *         the deployment package is a .zip file archive. The format includes the file name. It can also include
      *         namespaces and other qualifiers, depending on the runtime. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming
+     *         model</a>.
      */
 
     public String getHandler() {
@@ -558,17 +568,18 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the method within your code that Lambda calls to execute your function. Handler is required if the
+     * The name of the method within your code that Lambda calls to run your function. Handler is required if the
      * deployment package is a .zip file archive. The format includes the file name. It can also include namespaces and
      * other qualifiers, depending on the runtime. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming model</a>.
      * </p>
      * 
      * @param handler
-     *        The name of the method within your code that Lambda calls to execute your function. Handler is required if
-     *        the deployment package is a .zip file archive. The format includes the file name. It can also include
+     *        The name of the method within your code that Lambda calls to run your function. Handler is required if the
+     *        deployment package is a .zip file archive. The format includes the file name. It can also include
      *        namespaces and other qualifiers, depending on the runtime. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/programming-model-v2.html">Programming Model</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html">Lambda programming
+     *        model</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -660,13 +671,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3
-     * seconds. The maximum allowed value is 900 seconds. For additional information, see <a
+     * seconds. The maximum allowed value is 900 seconds. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      * 
      * @param timeout
      *        The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3
-     *        seconds. The maximum allowed value is 900 seconds. For additional information, see <a
+     *        seconds. The maximum allowed value is 900 seconds. For more information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution
      *        environment</a>.
      */
@@ -678,12 +689,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3
-     * seconds. The maximum allowed value is 900 seconds. For additional information, see <a
+     * seconds. The maximum allowed value is 900 seconds. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      * 
      * @return The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3
-     *         seconds. The maximum allowed value is 900 seconds. For additional information, see <a
+     *         seconds. The maximum allowed value is 900 seconds. For more information, see <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution
      *         environment</a>.
      */
@@ -695,13 +706,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3
-     * seconds. The maximum allowed value is 900 seconds. For additional information, see <a
+     * seconds. The maximum allowed value is 900 seconds. For more information, see <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.
      * </p>
      * 
      * @param timeout
      *        The amount of time (in seconds) that Lambda allows a function to run before stopping it. The default is 3
-     *        seconds. The maximum allowed value is 900 seconds. For additional information, see <a
+     *        seconds. The maximum allowed value is 900 seconds. For more information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution
      *        environment</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -714,14 +725,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
-     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
-     * value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
+     * >memory available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     * allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
-     *        available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     *        The amount of <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
+     *        >memory available to the function</a> at runtime. Increasing the function memory also increases its CPU
      *        allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
@@ -731,13 +744,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
-     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
-     * value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
+     * >memory available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     * allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
-     * @return The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
-     *         available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     * @return The amount of <a href=
+     *         "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
+     *         >memory available to the function</a> at runtime. Increasing the function memory also increases its CPU
      *         allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
@@ -747,14 +762,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available
-     * to the function</a> at runtime. Increasing the function memory also increases its CPU allocation. The default
-     * value is 128 MB. The value can be any multiple of 1 MB.
+     * The amount of <a href=
+     * "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
+     * >memory available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     * allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory
-     *        available to the function</a> at runtime. Increasing the function memory also increases its CPU
+     *        The amount of <a href=
+     *        "https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-memory-console"
+     *        >memory available to the function</a> at runtime. Increasing the function memory also increases its CPU
      *        allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -819,16 +836,18 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
-     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
-     * Settings</a>.
+     * in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to
+     * access resources in a VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and
-     *        subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet
+     *        subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only
      *        through that VPC. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function
+     *        to access resources in a VPC</a>.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -838,15 +857,17 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
-     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
-     * Settings</a>.
+     * in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to
+     * access resources in a VPC</a>.
      * </p>
      * 
      * @return For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and
-     *         subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet
+     *         subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only
      *         through that VPC. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function
+     *         to access resources in a VPC</a>.
      */
 
     public VpcConfig getVpcConfig() {
@@ -856,16 +877,18 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets
-     * in the VPC. When you connect a function to a VPC, it can only access resources and the internet through that VPC.
-     * For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC
-     * Settings</a>.
+     * in the VPC. When you connect a function to a VPC, it can access resources and the internet only through that VPC.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function to
+     * access resources in a VPC</a>.
      * </p>
      * 
      * @param vpcConfig
      *        For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and
-     *        subnets in the VPC. When you connect a function to a VPC, it can only access resources and the internet
+     *        subnets in the VPC. When you connect a function to a VPC, it can access resources and the internet only
      *        through that VPC. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">Configuring a Lambda function
+     *        to access resources in a VPC</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -876,13 +899,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for
+     * .zip file archive.
      * </p>
      * 
      * @param packageType
-     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code>
+     *        for .zip file archive.
      * @see PackageType
      */
 
@@ -892,12 +915,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for
+     * .zip file archive.
      * </p>
      * 
-     * @return The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code>
-     *         for ZIP archive.
+     * @return The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code>
+     *         for .zip file archive.
      * @see PackageType
      */
 
@@ -907,13 +930,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for
+     * .zip file archive.
      * </p>
      * 
      * @param packageType
-     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code>
+     *        for .zip file archive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -925,13 +948,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for
+     * .zip file archive.
      * </p>
      * 
      * @param packageType
-     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code>
+     *        for .zip file archive.
      * @see PackageType
      */
 
@@ -941,13 +964,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for ZIP
-     * archive.
+     * The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code> for
+     * .zip file archive.
      * </p>
      * 
      * @param packageType
-     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
-     *        ZIP archive.
+     *        The type of deployment package. Set to <code>Image</code> for container image and set to <code>Zip</code>
+     *        for .zip file archive.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -959,15 +982,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.
      * </p>
      * 
      * @param deadLetterConfig
-     *        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
+     *        A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
      *        when they fail processing. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter
+     *        queues</a>.
      */
 
     public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
@@ -976,14 +1000,15 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.
      * </p>
      * 
-     * @return A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous
+     * @return A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous
      *         events when they fail processing. For more information, see <a
-     *         href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter
+     *         queues</a>.
      */
 
     public DeadLetterConfig getDeadLetterConfig() {
@@ -992,15 +1017,16 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
+     * A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when
      * they fail processing. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter queues</a>.
      * </p>
      * 
      * @param deadLetterConfig
-     *        A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
+     *        A dead-letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events
      *        when they fail processing. For more information, see <a
-     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">Dead Letter Queues</a>.
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">Dead-letter
+     *        queues</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1051,13 +1077,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
-     * environment variables. If it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
+     * it's not provided, Lambda uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
-     *        environment variables. If it's not provided, Lambda uses a default service key.
+     *        The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment
+     *        variables. If it's not provided, Lambda uses a default service key.
      */
 
     public void setKMSKeyArn(String kMSKeyArn) {
@@ -1066,12 +1092,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
-     * environment variables. If it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
+     * it's not provided, Lambda uses a default service key.
      * </p>
      * 
-     * @return The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your
-     *         function's environment variables. If it's not provided, Lambda uses a default service key.
+     * @return The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment
+     *         variables. If it's not provided, Lambda uses a default service key.
      */
 
     public String getKMSKeyArn() {
@@ -1080,13 +1106,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
-     * environment variables. If it's not provided, Lambda uses a default service key.
+     * The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment variables. If
+     * it's not provided, Lambda uses a default service key.
      * </p>
      * 
      * @param kMSKeyArn
-     *        The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's
-     *        environment variables. If it's not provided, Lambda uses a default service key.
+     *        The ARN of the Key Management Service (KMS) key that's used to encrypt your function's environment
+     *        variables. If it's not provided, Lambda uses a default service key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1584,13 +1610,13 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      * 
      * @param ephemeralStorage
-     *        The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number
-     *        between 512 and 10240 MB.
+     *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
+     *        whole number between 512 and 10,240 MB.
      */
 
     public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
@@ -1599,12 +1625,12 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      * 
-     * @return The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number
-     *         between 512 and 10240 MB.
+     * @return The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
+     *         whole number between 512 and 10,240 MB.
      */
 
     public EphemeralStorage getEphemeralStorage() {
@@ -1613,18 +1639,61 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number between
-     * 512 and 10240 MB.
+     * The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any whole
+     * number between 512 and 10,240 MB.
      * </p>
      * 
      * @param ephemeralStorage
-     *        The size of the function’s /tmp directory in MB. The default value is 512, but can be any whole number
-     *        between 512 and 10240 MB.
+     *        The size of the function's <code>/tmp</code> directory in MB. The default value is 512, but can be any
+     *        whole number between 512 and 10,240 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFunctionRequest withEphemeralStorage(EphemeralStorage ephemeralStorage) {
         setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.
+     * </p>
+     * 
+     * @param snapStart
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a>
+     *        setting.
+     */
+
+    public void setSnapStart(SnapStart snapStart) {
+        this.snapStart = snapStart;
+    }
+
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.
+     * </p>
+     * 
+     * @return The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a>
+     *         setting.
+     */
+
+    public SnapStart getSnapStart() {
+        return this.snapStart;
+    }
+
+    /**
+     * <p>
+     * The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a> setting.
+     * </p>
+     * 
+     * @param snapStart
+     *        The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">SnapStart</a>
+     *        setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFunctionRequest withSnapStart(SnapStart snapStart) {
+        setSnapStart(snapStart);
         return this;
     }
 
@@ -1683,7 +1752,9 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getArchitectures() != null)
             sb.append("Architectures: ").append(getArchitectures()).append(",");
         if (getEphemeralStorage() != null)
-            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage()).append(",");
+        if (getSnapStart() != null)
+            sb.append("SnapStart: ").append(getSnapStart());
         sb.append("}");
         return sb.toString();
     }
@@ -1786,6 +1857,10 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
             return false;
+        if (other.getSnapStart() == null ^ this.getSnapStart() == null)
+            return false;
+        if (other.getSnapStart() != null && other.getSnapStart().equals(this.getSnapStart()) == false)
+            return false;
         return true;
     }
 
@@ -1816,6 +1891,7 @@ public class CreateFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCodeSigningConfigArn() == null) ? 0 : getCodeSigningConfigArn().hashCode());
         hashCode = prime * hashCode + ((getArchitectures() == null) ? 0 : getArchitectures().hashCode());
         hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
+        hashCode = prime * hashCode + ((getSnapStart() == null) ? 0 : getSnapStart().hashCode());
         return hashCode;
     }
 

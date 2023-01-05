@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,36 +25,36 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite UUID.
+     * The UUID of the test suite created.
      * </p>
      */
     private String suiteDefinitionId;
     /**
      * <p>
-     * Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the test suite.
      * </p>
      */
     private String suiteDefinitionArn;
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite definition name.
+     * The suite definition name of the test suite. This is a required parameter.
      * </p>
      */
     private String suiteDefinitionName;
     /**
      * <p>
-     * Creates a Device Advisor test suite with TimeStamp of when it was created.
+     * The timestamp of when the test suite was created.
      * </p>
      */
     private java.util.Date createdAt;
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite UUID.
+     * The UUID of the test suite created.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Creates a Device Advisor test suite with suite UUID.
+     *        The UUID of the test suite created.
      */
 
     public void setSuiteDefinitionId(String suiteDefinitionId) {
@@ -63,10 +63,10 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite UUID.
+     * The UUID of the test suite created.
      * </p>
      * 
-     * @return Creates a Device Advisor test suite with suite UUID.
+     * @return The UUID of the test suite created.
      */
 
     public String getSuiteDefinitionId() {
@@ -75,11 +75,11 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite UUID.
+     * The UUID of the test suite created.
      * </p>
      * 
      * @param suiteDefinitionId
-     *        Creates a Device Advisor test suite with suite UUID.
+     *        The UUID of the test suite created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the test suite.
      * </p>
      * 
      * @param suiteDefinitionArn
-     *        Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the test suite.
      */
 
     public void setSuiteDefinitionArn(String suiteDefinitionArn) {
@@ -103,10 +103,10 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the test suite.
      * </p>
      * 
-     * @return Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+     * @return The Amazon Resource Name (ARN) of the test suite.
      */
 
     public String getSuiteDefinitionArn() {
@@ -115,11 +115,11 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+     * The Amazon Resource Name (ARN) of the test suite.
      * </p>
      * 
      * @param suiteDefinitionArn
-     *        Creates a Device Advisor test suite with Amazon Resource Name (ARN).
+     *        The Amazon Resource Name (ARN) of the test suite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite definition name.
+     * The suite definition name of the test suite. This is a required parameter.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Creates a Device Advisor test suite with suite definition name.
+     *        The suite definition name of the test suite. This is a required parameter.
      */
 
     public void setSuiteDefinitionName(String suiteDefinitionName) {
@@ -143,10 +143,10 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite definition name.
+     * The suite definition name of the test suite. This is a required parameter.
      * </p>
      * 
-     * @return Creates a Device Advisor test suite with suite definition name.
+     * @return The suite definition name of the test suite. This is a required parameter.
      */
 
     public String getSuiteDefinitionName() {
@@ -155,11 +155,11 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with suite definition name.
+     * The suite definition name of the test suite. This is a required parameter.
      * </p>
      * 
      * @param suiteDefinitionName
-     *        Creates a Device Advisor test suite with suite definition name.
+     *        The suite definition name of the test suite. This is a required parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with TimeStamp of when it was created.
+     * The timestamp of when the test suite was created.
      * </p>
      * 
      * @param createdAt
-     *        Creates a Device Advisor test suite with TimeStamp of when it was created.
+     *        The timestamp of when the test suite was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -183,10 +183,10 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with TimeStamp of when it was created.
+     * The timestamp of when the test suite was created.
      * </p>
      * 
-     * @return Creates a Device Advisor test suite with TimeStamp of when it was created.
+     * @return The timestamp of when the test suite was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -195,11 +195,11 @@ public class CreateSuiteDefinitionResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Creates a Device Advisor test suite with TimeStamp of when it was created.
+     * The timestamp of when the test suite was created.
      * </p>
      * 
      * @param createdAt
-     *        Creates a Device Advisor test suite with TimeStamp of when it was created.
+     *        The timestamp of when the test suite was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -627,6 +627,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest request) {
+
+        return listAssetModelPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssetModelPropertiesRequest, ListAssetModelPropertiesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest request) {
 
         return listAssetModelsAsync(request, null);
@@ -635,6 +648,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssetModelsRequest, ListAssetModelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest request) {
+
+        return listAssetPropertiesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssetPropertiesRequest, ListAssetPropertiesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

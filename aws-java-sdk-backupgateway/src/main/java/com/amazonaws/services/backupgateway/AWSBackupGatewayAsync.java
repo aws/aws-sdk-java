@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -215,6 +215,45 @@ public interface AWSBackupGatewayAsync extends AWSBackupGateway {
 
     /**
      * <p>
+     * Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to get a gateway's bandwidth
+     * rate limit schedule.
+     * </p>
+     * 
+     * @param getBandwidthRateLimitScheduleRequest
+     * @return A Java Future containing the result of the GetBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsync.GetBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBandwidthRateLimitScheduleResult> getBandwidthRateLimitScheduleAsync(
+            GetBandwidthRateLimitScheduleRequest getBandwidthRateLimitScheduleRequest);
+
+    /**
+     * <p>
+     * Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to get a gateway's bandwidth
+     * rate limit schedule.
+     * </p>
+     * 
+     * @param getBandwidthRateLimitScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsyncHandler.GetBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetBandwidthRateLimitScheduleResult> getBandwidthRateLimitScheduleAsync(
+            GetBandwidthRateLimitScheduleRequest getBandwidthRateLimitScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<GetBandwidthRateLimitScheduleRequest, GetBandwidthRateLimitScheduleResult> asyncHandler);
+
+    /**
+     * <p>
      * By providing the ARN (Amazon Resource Name), this API returns the gateway.
      * </p>
      * 
@@ -243,6 +282,78 @@ public interface AWSBackupGatewayAsync extends AWSBackupGateway {
      */
     java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest getGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<GetGatewayRequest, GetGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action requests information about the specified hypervisor to which the gateway will connect. A hypervisor
+     * is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.
+     * </p>
+     * 
+     * @param getHypervisorRequest
+     * @return A Java Future containing the result of the GetHypervisor operation returned by the service.
+     * @sample AWSBackupGatewayAsync.GetHypervisor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHypervisorResult> getHypervisorAsync(GetHypervisorRequest getHypervisorRequest);
+
+    /**
+     * <p>
+     * This action requests information about the specified hypervisor to which the gateway will connect. A hypervisor
+     * is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.
+     * </p>
+     * 
+     * @param getHypervisorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetHypervisor operation returned by the service.
+     * @sample AWSBackupGatewayAsyncHandler.GetHypervisor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHypervisorResult> getHypervisorAsync(GetHypervisorRequest getHypervisorRequest,
+            com.amazonaws.handlers.AsyncHandler<GetHypervisorRequest, GetHypervisorResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays
+     * the relationship of entity properties available from the on-premises hypervisor to the properties available in
+     * Amazon Web Services.
+     * </p>
+     * 
+     * @param getHypervisorPropertyMappingsRequest
+     * @return A Java Future containing the result of the GetHypervisorPropertyMappings operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsync.GetHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHypervisorPropertyMappingsResult> getHypervisorPropertyMappingsAsync(
+            GetHypervisorPropertyMappingsRequest getHypervisorPropertyMappingsRequest);
+
+    /**
+     * <p>
+     * This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays
+     * the relationship of entity properties available from the on-premises hypervisor to the properties available in
+     * Amazon Web Services.
+     * </p>
+     * 
+     * @param getHypervisorPropertyMappingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetHypervisorPropertyMappings operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsyncHandler.GetHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHypervisorPropertyMappingsResult> getHypervisorPropertyMappingsAsync(
+            GetHypervisorPropertyMappingsRequest getHypervisorPropertyMappingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetHypervisorPropertyMappingsRequest, GetHypervisorPropertyMappingsResult> asyncHandler);
 
     /**
      * <p>
@@ -438,6 +549,84 @@ public interface AWSBackupGatewayAsync extends AWSBackupGateway {
 
     /**
      * <p>
+     * This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a
+     * bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a
+     * gateway's bandwidth rate limit schedule.
+     * </p>
+     * 
+     * @param putBandwidthRateLimitScheduleRequest
+     * @return A Java Future containing the result of the PutBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsync.PutBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutBandwidthRateLimitScheduleResult> putBandwidthRateLimitScheduleAsync(
+            PutBandwidthRateLimitScheduleRequest putBandwidthRateLimitScheduleRequest);
+
+    /**
+     * <p>
+     * This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a
+     * bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a
+     * gateway's bandwidth rate limit schedule.
+     * </p>
+     * 
+     * @param putBandwidthRateLimitScheduleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutBandwidthRateLimitSchedule operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsyncHandler.PutBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutBandwidthRateLimitScheduleResult> putBandwidthRateLimitScheduleAsync(
+            PutBandwidthRateLimitScheduleRequest putBandwidthRateLimitScheduleRequest,
+            com.amazonaws.handlers.AsyncHandler<PutBandwidthRateLimitScheduleRequest, PutBandwidthRateLimitScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the
+     * relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon
+     * Web Services.
+     * </p>
+     * 
+     * @param putHypervisorPropertyMappingsRequest
+     * @return A Java Future containing the result of the PutHypervisorPropertyMappings operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsync.PutHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutHypervisorPropertyMappingsResult> putHypervisorPropertyMappingsAsync(
+            PutHypervisorPropertyMappingsRequest putHypervisorPropertyMappingsRequest);
+
+    /**
+     * <p>
+     * This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the
+     * relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon
+     * Web Services.
+     * </p>
+     * 
+     * @param putHypervisorPropertyMappingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutHypervisorPropertyMappings operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsyncHandler.PutHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutHypervisorPropertyMappingsResult> putHypervisorPropertyMappingsAsync(
+            PutHypervisorPropertyMappingsRequest putHypervisorPropertyMappingsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutHypervisorPropertyMappingsRequest, PutHypervisorPropertyMappingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Set the maintenance start time for a gateway.
      * </p>
      * 
@@ -466,6 +655,41 @@ public interface AWSBackupGatewayAsync extends AWSBackupGateway {
      */
     java.util.concurrent.Future<PutMaintenanceStartTimeResult> putMaintenanceStartTimeAsync(PutMaintenanceStartTimeRequest putMaintenanceStartTimeRequest,
             com.amazonaws.handlers.AsyncHandler<PutMaintenanceStartTimeRequest, PutMaintenanceStartTimeResult> asyncHandler);
+
+    /**
+     * <p>
+     * This action sends a request to sync metadata across the specified virtual machines.
+     * </p>
+     * 
+     * @param startVirtualMachinesMetadataSyncRequest
+     * @return A Java Future containing the result of the StartVirtualMachinesMetadataSync operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsync.StartVirtualMachinesMetadataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartVirtualMachinesMetadataSyncResult> startVirtualMachinesMetadataSyncAsync(
+            StartVirtualMachinesMetadataSyncRequest startVirtualMachinesMetadataSyncRequest);
+
+    /**
+     * <p>
+     * This action sends a request to sync metadata across the specified virtual machines.
+     * </p>
+     * 
+     * @param startVirtualMachinesMetadataSyncRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartVirtualMachinesMetadataSync operation returned by the
+     *         service.
+     * @sample AWSBackupGatewayAsyncHandler.StartVirtualMachinesMetadataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartVirtualMachinesMetadataSyncResult> startVirtualMachinesMetadataSyncAsync(
+            StartVirtualMachinesMetadataSyncRequest startVirtualMachinesMetadataSyncRequest,
+            com.amazonaws.handlers.AsyncHandler<StartVirtualMachinesMetadataSyncRequest, StartVirtualMachinesMetadataSyncResult> asyncHandler);
 
     /**
      * <p>

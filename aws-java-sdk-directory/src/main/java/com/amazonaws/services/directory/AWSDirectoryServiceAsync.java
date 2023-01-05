@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1376,6 +1376,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Describes the updates of a directory for a particular update type.
+     * </p>
+     * 
+     * @param describeUpdateDirectoryRequest
+     * @return A Java Future containing the result of the DescribeUpdateDirectory operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DescribeUpdateDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(DescribeUpdateDirectoryRequest describeUpdateDirectoryRequest);
+
+    /**
+     * <p>
+     * Describes the updates of a directory for a particular update type.
+     * </p>
+     * 
+     * @param describeUpdateDirectoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeUpdateDirectory operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DescribeUpdateDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(DescribeUpdateDirectoryRequest describeUpdateDirectoryRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeUpdateDirectoryRequest, DescribeUpdateDirectoryResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables alternative client authentication methods for the specified directory.
      * </p>
      * 
@@ -2361,6 +2392,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
     java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(
             UpdateConditionalForwarderRequest updateConditionalForwarderRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the directory for a particular update type.
+     * </p>
+     * 
+     * @param updateDirectorySetupRequest
+     * @return A Java Future containing the result of the UpdateDirectorySetup operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.UpdateDirectorySetup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(UpdateDirectorySetupRequest updateDirectorySetupRequest);
+
+    /**
+     * <p>
+     * Updates the directory for a particular update type.
+     * </p>
+     * 
+     * @param updateDirectorySetupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDirectorySetup operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.UpdateDirectorySetup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(UpdateDirectorySetupRequest updateDirectorySetupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDirectorySetupRequest, UpdateDirectorySetupResult> asyncHandler);
 
     /**
      * <p>

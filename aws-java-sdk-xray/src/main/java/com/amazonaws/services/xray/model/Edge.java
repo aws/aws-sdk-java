@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a connection between two services.
+ * Information about a connection between two services. An edge can be a synchronous connection, such as typical call
+ * between client and service, or an asynchronous link, such as a Lambda function which retrieves an event from an SNS
+ * queue.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/Edge" target="_top">AWS API Documentation</a>
@@ -53,7 +55,7 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
     private EdgeStatistics summaryStatistics;
     /**
      * <p>
-     * A histogram that maps the spread of client response times on an edge.
+     * A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.
      * </p>
      */
     private java.util.List<HistogramEntry> responseTimeHistogram;
@@ -63,6 +65,19 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Alias> aliases;
+    /**
+     * <p>
+     * Describes an asynchronous connection, with a value of <code>link</code>.
+     * </p>
+     */
+    private String edgeType;
+    /**
+     * <p>
+     * A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is
+     * received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     * </p>
+     */
+    private java.util.List<HistogramEntry> receivedEventAgeHistogram;
 
     /**
      * <p>
@@ -226,10 +241,11 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A histogram that maps the spread of client response times on an edge.
+     * A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.
      * </p>
      * 
-     * @return A histogram that maps the spread of client response times on an edge.
+     * @return A histogram that maps the spread of client response times on an edge. Only populated for synchronous
+     *         edges.
      */
 
     public java.util.List<HistogramEntry> getResponseTimeHistogram() {
@@ -238,11 +254,12 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A histogram that maps the spread of client response times on an edge.
+     * A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.
      * </p>
      * 
      * @param responseTimeHistogram
-     *        A histogram that maps the spread of client response times on an edge.
+     *        A histogram that maps the spread of client response times on an edge. Only populated for synchronous
+     *        edges.
      */
 
     public void setResponseTimeHistogram(java.util.Collection<HistogramEntry> responseTimeHistogram) {
@@ -256,7 +273,7 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A histogram that maps the spread of client response times on an edge.
+     * A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -265,7 +282,8 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param responseTimeHistogram
-     *        A histogram that maps the spread of client response times on an edge.
+     *        A histogram that maps the spread of client response times on an edge. Only populated for synchronous
+     *        edges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,11 +299,12 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A histogram that maps the spread of client response times on an edge.
+     * A histogram that maps the spread of client response times on an edge. Only populated for synchronous edges.
      * </p>
      * 
      * @param responseTimeHistogram
-     *        A histogram that maps the spread of client response times on an edge.
+     *        A histogram that maps the spread of client response times on an edge. Only populated for synchronous
+     *        edges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -365,6 +384,124 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes an asynchronous connection, with a value of <code>link</code>.
+     * </p>
+     * 
+     * @param edgeType
+     *        Describes an asynchronous connection, with a value of <code>link</code>.
+     */
+
+    public void setEdgeType(String edgeType) {
+        this.edgeType = edgeType;
+    }
+
+    /**
+     * <p>
+     * Describes an asynchronous connection, with a value of <code>link</code>.
+     * </p>
+     * 
+     * @return Describes an asynchronous connection, with a value of <code>link</code>.
+     */
+
+    public String getEdgeType() {
+        return this.edgeType;
+    }
+
+    /**
+     * <p>
+     * Describes an asynchronous connection, with a value of <code>link</code>.
+     * </p>
+     * 
+     * @param edgeType
+     *        Describes an asynchronous connection, with a value of <code>link</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Edge withEdgeType(String edgeType) {
+        setEdgeType(edgeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is
+     * received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     * </p>
+     * 
+     * @return A histogram that maps the spread of event age when received by consumers. Age is calculated each time an
+     *         event is received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     */
+
+    public java.util.List<HistogramEntry> getReceivedEventAgeHistogram() {
+        return receivedEventAgeHistogram;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is
+     * received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     * </p>
+     * 
+     * @param receivedEventAgeHistogram
+     *        A histogram that maps the spread of event age when received by consumers. Age is calculated each time an
+     *        event is received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     */
+
+    public void setReceivedEventAgeHistogram(java.util.Collection<HistogramEntry> receivedEventAgeHistogram) {
+        if (receivedEventAgeHistogram == null) {
+            this.receivedEventAgeHistogram = null;
+            return;
+        }
+
+        this.receivedEventAgeHistogram = new java.util.ArrayList<HistogramEntry>(receivedEventAgeHistogram);
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is
+     * received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReceivedEventAgeHistogram(java.util.Collection)} or
+     * {@link #withReceivedEventAgeHistogram(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param receivedEventAgeHistogram
+     *        A histogram that maps the spread of event age when received by consumers. Age is calculated each time an
+     *        event is received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Edge withReceivedEventAgeHistogram(HistogramEntry... receivedEventAgeHistogram) {
+        if (this.receivedEventAgeHistogram == null) {
+            setReceivedEventAgeHistogram(new java.util.ArrayList<HistogramEntry>(receivedEventAgeHistogram.length));
+        }
+        for (HistogramEntry ele : receivedEventAgeHistogram) {
+            this.receivedEventAgeHistogram.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A histogram that maps the spread of event age when received by consumers. Age is calculated each time an event is
+     * received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     * </p>
+     * 
+     * @param receivedEventAgeHistogram
+     *        A histogram that maps the spread of event age when received by consumers. Age is calculated each time an
+     *        event is received. Only populated when <i>EdgeType</i> is <code>link</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Edge withReceivedEventAgeHistogram(java.util.Collection<HistogramEntry> receivedEventAgeHistogram) {
+        setReceivedEventAgeHistogram(receivedEventAgeHistogram);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -387,7 +524,11 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
         if (getResponseTimeHistogram() != null)
             sb.append("ResponseTimeHistogram: ").append(getResponseTimeHistogram()).append(",");
         if (getAliases() != null)
-            sb.append("Aliases: ").append(getAliases());
+            sb.append("Aliases: ").append(getAliases()).append(",");
+        if (getEdgeType() != null)
+            sb.append("EdgeType: ").append(getEdgeType()).append(",");
+        if (getReceivedEventAgeHistogram() != null)
+            sb.append("ReceivedEventAgeHistogram: ").append(getReceivedEventAgeHistogram());
         sb.append("}");
         return sb.toString();
     }
@@ -426,6 +567,14 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false)
             return false;
+        if (other.getEdgeType() == null ^ this.getEdgeType() == null)
+            return false;
+        if (other.getEdgeType() != null && other.getEdgeType().equals(this.getEdgeType()) == false)
+            return false;
+        if (other.getReceivedEventAgeHistogram() == null ^ this.getReceivedEventAgeHistogram() == null)
+            return false;
+        if (other.getReceivedEventAgeHistogram() != null && other.getReceivedEventAgeHistogram().equals(this.getReceivedEventAgeHistogram()) == false)
+            return false;
         return true;
     }
 
@@ -440,6 +589,8 @@ public class Edge implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSummaryStatistics() == null) ? 0 : getSummaryStatistics().hashCode());
         hashCode = prime * hashCode + ((getResponseTimeHistogram() == null) ? 0 : getResponseTimeHistogram().hashCode());
         hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
+        hashCode = prime * hashCode + ((getEdgeType() == null) ? 0 : getEdgeType().hashCode());
+        hashCode = prime * hashCode + ((getReceivedEventAgeHistogram() == null) ? 0 : getReceivedEventAgeHistogram().hashCode());
         return hashCode;
     }
 

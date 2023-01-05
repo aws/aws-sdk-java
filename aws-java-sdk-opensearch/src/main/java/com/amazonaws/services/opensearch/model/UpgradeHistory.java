@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * History of the last 10 upgrades and upgrade eligibility checks.
+ * History of the last 10 upgrades and upgrade eligibility checks for an Amazon OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,43 +27,58 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that briefly describes the upgrade.
+     * A string that describes the upgrade.
      * </p>
      */
     private String upgradeName;
     /**
      * <p>
-     * UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+     * UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
      * </p>
      */
     private java.util.Date startTimestamp;
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      */
     private String upgradeStatus;
     /**
      * <p>
-     * A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as part of a
-     * specific upgrade or upgrade eligibility check.
+     * A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      * </p>
      */
     private java.util.List<UpgradeStepItem> stepsList;
 
     /**
      * <p>
-     * A string that briefly describes the upgrade.
+     * A string that describes the upgrade.
      * </p>
      * 
      * @param upgradeName
-     *        A string that briefly describes the upgrade.
+     *        A string that describes the upgrade.
      */
 
     public void setUpgradeName(String upgradeName) {
@@ -72,10 +87,10 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that briefly describes the upgrade.
+     * A string that describes the upgrade.
      * </p>
      * 
-     * @return A string that briefly describes the upgrade.
+     * @return A string that describes the upgrade.
      */
 
     public String getUpgradeName() {
@@ -84,11 +99,11 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string that briefly describes the upgrade.
+     * A string that describes the upgrade.
      * </p>
      * 
      * @param upgradeName
-     *        A string that briefly describes the upgrade.
+     *        A string that describes the upgrade.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +114,11 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+     * UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
      * </p>
      * 
      * @param startTimestamp
-     *        UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+     *        UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
      */
 
     public void setStartTimestamp(java.util.Date startTimestamp) {
@@ -112,10 +127,10 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+     * UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
      * </p>
      * 
-     * @return UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+     * @return UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
      */
 
     public java.util.Date getStartTimestamp() {
@@ -124,11 +139,11 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+     * UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
      * </p>
      * 
      * @param startTimestamp
-     *        UTC timestamp at which the upgrade API call was made in "yyyy-MM-ddTHH:mm:ssZ" format.
+     *        UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,22 +155,53 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStatus
-     *        The current status of the upgrade. The status can take one of the following values:
+     *        The current status of the upgrade. The status can take one of the following values: </p>
      *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        In Progress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded with Issues
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
      * @see UpgradeStatus
      */
 
@@ -166,21 +212,52 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The current status of the upgrade. The status can take one of the following values:
+     * @return The current status of the upgrade. The status can take one of the following values: </p>
      *         <ul>
-     *         <li>In Progress</li>
-     *         <li>Succeeded</li>
-     *         <li>Succeeded with Issues</li>
-     *         <li>Failed</li>
-     *         </ul>
+     *         <li>
+     *         <p>
+     *         In Progress
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Succeeded with Issues
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Failed
+     *         </p>
+     *         </li>
      * @see UpgradeStatus
      */
 
@@ -191,22 +268,53 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStatus
-     *        The current status of the upgrade. The status can take one of the following values:
+     *        The current status of the upgrade. The status can take one of the following values: </p>
      *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        In Progress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded with Issues
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStatus
      */
@@ -219,22 +327,53 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The current status of the upgrade. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * In Progress
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Succeeded with Issues
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Failed
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param upgradeStatus
-     *        The current status of the upgrade. The status can take one of the following values:
+     *        The current status of the upgrade. The status can take one of the following values: </p>
      *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        In Progress
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Succeeded with Issues
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Failed
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStatus
      */
@@ -246,12 +385,10 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as part of a
-     * specific upgrade or upgrade eligibility check.
+     * A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      * </p>
      * 
-     * @return A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as
-     *         part of a specific upgrade or upgrade eligibility check.
+     * @return A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      */
 
     public java.util.List<UpgradeStepItem> getStepsList() {
@@ -260,13 +397,11 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as part of a
-     * specific upgrade or upgrade eligibility check.
+     * A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      * </p>
      * 
      * @param stepsList
-     *        A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as
-     *        part of a specific upgrade or upgrade eligibility check.
+     *        A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      */
 
     public void setStepsList(java.util.Collection<UpgradeStepItem> stepsList) {
@@ -280,8 +415,7 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as part of a
-     * specific upgrade or upgrade eligibility check.
+     * A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -290,8 +424,7 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param stepsList
-     *        A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as
-     *        part of a specific upgrade or upgrade eligibility check.
+     *        A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -307,13 +440,11 @@ public class UpgradeHistory implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as part of a
-     * specific upgrade or upgrade eligibility check.
+     * A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      * </p>
      * 
      * @param stepsList
-     *        A list of <code> <a>UpgradeStepItem</a> </code> s representing information about each step performed as
-     *        part of a specific upgrade or upgrade eligibility check.
+     *        A list of each step performed as part of a specific upgrade or upgrade eligibility check.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

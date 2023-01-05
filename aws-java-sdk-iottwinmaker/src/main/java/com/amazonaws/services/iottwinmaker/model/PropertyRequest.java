@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,16 +36,16 @@ public class PropertyRequest implements Serializable, Cloneable, StructuredPojo 
     private PropertyDefinitionRequest definition;
     /**
      * <p>
-     * The update type of the update property request.
-     * </p>
-     */
-    private String updateType;
-    /**
-     * <p>
      * The value of the property.
      * </p>
      */
     private DataValue value;
+    /**
+     * <p>
+     * The update type of the update property request.
+     * </p>
+     */
+    private String updateType;
 
     /**
      * <p>
@@ -84,6 +84,46 @@ public class PropertyRequest implements Serializable, Cloneable, StructuredPojo 
 
     public PropertyRequest withDefinition(PropertyDefinitionRequest definition) {
         setDefinition(definition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value of the property.
+     * </p>
+     * 
+     * @param value
+     *        The value of the property.
+     */
+
+    public void setValue(DataValue value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * The value of the property.
+     * </p>
+     * 
+     * @return The value of the property.
+     */
+
+    public DataValue getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * The value of the property.
+     * </p>
+     * 
+     * @param value
+     *        The value of the property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PropertyRequest withValue(DataValue value) {
+        setValue(value);
         return this;
     }
 
@@ -147,46 +187,6 @@ public class PropertyRequest implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The value of the property.
-     * </p>
-     * 
-     * @param value
-     *        The value of the property.
-     */
-
-    public void setValue(DataValue value) {
-        this.value = value;
-    }
-
-    /**
-     * <p>
-     * The value of the property.
-     * </p>
-     * 
-     * @return The value of the property.
-     */
-
-    public DataValue getValue() {
-        return this.value;
-    }
-
-    /**
-     * <p>
-     * The value of the property.
-     * </p>
-     * 
-     * @param value
-     *        The value of the property.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PropertyRequest withValue(DataValue value) {
-        setValue(value);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -200,10 +200,10 @@ public class PropertyRequest implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getDefinition() != null)
             sb.append("Definition: ").append(getDefinition()).append(",");
-        if (getUpdateType() != null)
-            sb.append("UpdateType: ").append(getUpdateType()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getUpdateType() != null)
+            sb.append("UpdateType: ").append(getUpdateType());
         sb.append("}");
         return sb.toString();
     }
@@ -222,13 +222,13 @@ public class PropertyRequest implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
             return false;
-        if (other.getUpdateType() == null ^ this.getUpdateType() == null)
-            return false;
-        if (other.getUpdateType() != null && other.getUpdateType().equals(this.getUpdateType()) == false)
-            return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
+            return false;
+        if (other.getUpdateType() == null ^ this.getUpdateType() == null)
+            return false;
+        if (other.getUpdateType() != null && other.getUpdateType().equals(this.getUpdateType()) == false)
             return false;
         return true;
     }
@@ -239,8 +239,8 @@ public class PropertyRequest implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
-        hashCode = prime * hashCode + ((getUpdateType() == null) ? 0 : getUpdateType().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getUpdateType() == null) ? 0 : getUpdateType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,26 +52,35 @@ public class ComponentResponseJsonUnmarshaller implements Unmarshaller<Component
                     context.nextToken();
                     componentResponse.setComponentName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("description", targetDepth)) {
+                    context.nextToken();
+                    componentResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("componentTypeId", targetDepth)) {
                     context.nextToken();
                     componentResponse.setComponentTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("status", targetDepth)) {
+                    context.nextToken();
+                    componentResponse.setStatus(StatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("definedIn", targetDepth)) {
                     context.nextToken();
                     componentResponse.setDefinedIn(context.getUnmarshaller(String.class).unmarshall(context));
-                }
-                if (context.testExpression("description", targetDepth)) {
-                    context.nextToken();
-                    componentResponse.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
                     context.nextToken();
                     componentResponse.setProperties(new MapUnmarshaller<String, PropertyResponse>(context.getUnmarshaller(String.class),
                             PropertyResponseJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
-                if (context.testExpression("status", targetDepth)) {
+                if (context.testExpression("propertyGroups", targetDepth)) {
                     context.nextToken();
-                    componentResponse.setStatus(StatusJsonUnmarshaller.getInstance().unmarshall(context));
+                    componentResponse.setPropertyGroups(new MapUnmarshaller<String, ComponentPropertyGroupResponse>(context.getUnmarshaller(String.class),
+                            ComponentPropertyGroupResponseJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("syncSource", targetDepth)) {
+                    context.nextToken();
+                    componentResponse.setSyncSource(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

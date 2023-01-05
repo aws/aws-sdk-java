@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,11 +96,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
     private String kmsKeyId;
     /**
      * <p>
-     * Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If
-     * you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than
-     * 24 hours since the last decrease or throughput mode change. For more information, see <a
+     * Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     * <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you
+     * create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes, with certain time restrictions. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput
      * with provisioned mode</a> in the <i>Amazon EFS User Guide</i>.
      * </p>
@@ -670,11 +670,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If
-     * you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than
-     * 24 hours since the last decrease or throughput mode change. For more information, see <a
+     * Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     * <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you
+     * create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes, with certain time restrictions. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput
      * with provisioned mode</a> in the <i>Amazon EFS User Guide</i>.
      * </p>
@@ -683,12 +683,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param throughputMode
-     *        Specifies the throughput mode for the file system, either <code>bursting</code> or
-     *        <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must
-     *        also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more
-     *        information, see <a
+     *        Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     *        <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After
+     *        you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode
+     *        or change between the throughput modes, with certain time restrictions. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      *        throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      *        <p>
@@ -702,11 +701,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If
-     * you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than
-     * 24 hours since the last decrease or throughput mode change. For more information, see <a
+     * Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     * <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you
+     * create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes, with certain time restrictions. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput
      * with provisioned mode</a> in the <i>Amazon EFS User Guide</i>.
      * </p>
@@ -714,12 +713,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * Default is <code>bursting</code>.
      * </p>
      * 
-     * @return Specifies the throughput mode for the file system, either <code>bursting</code> or
-     *         <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must
-     *         also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-     *         decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *         modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For
-     *         more information, see <a
+     * @return Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     *         <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     *         <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After
+     *         you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode
+     *         or change between the throughput modes, with certain time restrictions. For more information, see <a
      *         href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      *         throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      *         <p>
@@ -733,11 +731,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If
-     * you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than
-     * 24 hours since the last decrease or throughput mode change. For more information, see <a
+     * Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     * <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you
+     * create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes, with certain time restrictions. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput
      * with provisioned mode</a> in the <i>Amazon EFS User Guide</i>.
      * </p>
@@ -746,12 +744,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param throughputMode
-     *        Specifies the throughput mode for the file system, either <code>bursting</code> or
-     *        <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must
-     *        also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more
-     *        information, see <a
+     *        Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     *        <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After
+     *        you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode
+     *        or change between the throughput modes, with certain time restrictions. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      *        throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      *        <p>
@@ -767,11 +764,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If
-     * you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than
-     * 24 hours since the last decrease or throughput mode change. For more information, see <a
+     * Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     * <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you
+     * create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes, with certain time restrictions. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput
      * with provisioned mode</a> in the <i>Amazon EFS User Guide</i>.
      * </p>
@@ -780,12 +777,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param throughputMode
-     *        Specifies the throughput mode for the file system, either <code>bursting</code> or
-     *        <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must
-     *        also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more
-     *        information, see <a
+     *        Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     *        <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After
+     *        you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode
+     *        or change between the throughput modes, with certain time restrictions. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      *        throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      *        <p>
@@ -799,11 +795,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies the throughput mode for the file system, either <code>bursting</code> or <code>provisioned</code>. If
-     * you set <code>ThroughputMode</code> to <code>provisioned</code>, you must also set a value for
-     * <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can decrease your file system's
-     * throughput in Provisioned Throughput mode or change between the throughput modes, as long as it’s been more than
-     * 24 hours since the last decrease or throughput mode change. For more information, see <a
+     * Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     * <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     * <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After you
+     * create the file system, you can decrease your file system's throughput in Provisioned Throughput mode or change
+     * between the throughput modes, with certain time restrictions. For more information, see <a
      * href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying throughput
      * with provisioned mode</a> in the <i>Amazon EFS User Guide</i>.
      * </p>
@@ -812,12 +808,11 @@ public class CreateFileSystemRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param throughputMode
-     *        Specifies the throughput mode for the file system, either <code>bursting</code> or
-     *        <code>provisioned</code>. If you set <code>ThroughputMode</code> to <code>provisioned</code>, you must
-     *        also set a value for <code>ProvisionedThroughputInMibps</code>. After you create the file system, you can
-     *        decrease your file system's throughput in Provisioned Throughput mode or change between the throughput
-     *        modes, as long as it’s been more than 24 hours since the last decrease or throughput mode change. For more
-     *        information, see <a
+     *        Specifies the throughput mode for the file system. The mode can be <code>bursting</code>,
+     *        <code>provisioned</code>, or <code>elastic</code>. If you set <code>ThroughputMode</code> to
+     *        <code>provisioned</code>, you must also set a value for <code>ProvisionedThroughputInMibps</code>. After
+     *        you create the file system, you can decrease your file system's throughput in Provisioned Throughput mode
+     *        or change between the throughput modes, with certain time restrictions. For more information, see <a
      *        href="https://docs.aws.amazon.com/efs/latest/ug/performance.html#provisioned-throughput">Specifying
      *        throughput with provisioned mode</a> in the <i>Amazon EFS User Guide</i>. </p>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,8 @@ public enum DeviceAggregatedStatus {
     ONLINE("ONLINE"),
     OFFLINE("OFFLINE"),
     LEASE_EXPIRED("LEASE_EXPIRED"),
-    UPDATE_NEEDED("UPDATE_NEEDED");
+    UPDATE_NEEDED("UPDATE_NEEDED"),
+    REBOOTING("REBOOTING");
 
     private String value;
 

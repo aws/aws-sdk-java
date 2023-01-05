@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -305,7 +305,7 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<DBInstanceStatusInfo> statusInfos;
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      */
     private String storageType;
@@ -578,8 +578,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      */
     private Boolean customerOwnedIpEnabled;
@@ -711,6 +711,33 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private String activityStreamPolicyStatus;
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     * <p>
+     * This setting applies only to the <code>gp3</code> storage type.
+     * </p>
+     */
+    private Integer storageThroughput;
+    /**
+     * <p>
+     * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
+     * This setting is valid for RDS Custom only.
+     * </p>
+     */
+    private String dBSystemId;
+    /**
+     * <p>
+     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    private MasterUserSecret masterUserSecret;
 
     /**
      * <p>
@@ -2798,11 +2825,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with DB instance.
+     *        Specifies the storage type associated with the DB instance.
      */
 
     public void setStorageType(String storageType) {
@@ -2811,10 +2838,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      * 
-     * @return Specifies the storage type associated with DB instance.
+     * @return Specifies the storage type associated with the DB instance.
      */
 
     public String getStorageType() {
@@ -2823,11 +2850,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the storage type associated with DB instance.
+     * Specifies the storage type associated with the DB instance.
      * </p>
      * 
      * @param storageType
-     *        Specifies the storage type associated with DB instance.
+     *        Specifies the storage type associated with the DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4812,8 +4839,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param customerOwnedIpEnabled
@@ -4829,9 +4856,9 @@ public class DBInstance implements Serializable, Cloneable {
      *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        For more information about CoIPs, see <a href=
-     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *        For more information about CoIPs, see <a
+     *        href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *        addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public void setCustomerOwnedIpEnabled(Boolean customerOwnedIpEnabled) {
@@ -4854,8 +4881,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
@@ -4870,9 +4897,9 @@ public class DBInstance implements Serializable, Cloneable {
      *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         For more information about CoIPs, see <a href=
-     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *         For more information about CoIPs, see <a
+     *         href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *         addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean getCustomerOwnedIpEnabled() {
@@ -4895,8 +4922,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param customerOwnedIpEnabled
@@ -4912,9 +4939,9 @@ public class DBInstance implements Serializable, Cloneable {
      *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        For more information about CoIPs, see <a href=
-     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *        For more information about CoIPs, see <a
+     *        href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *        addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4939,8 +4966,8 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
@@ -4955,9 +4982,9 @@ public class DBInstance implements Serializable, Cloneable {
      *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         For more information about CoIPs, see <a href=
-     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *         For more information about CoIPs, see <a
+     *         href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *         addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean isCustomerOwnedIpEnabled() {
@@ -5876,6 +5903,177 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     * <p>
+     * This setting applies only to the <code>gp3</code> storage type.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the DB instance.</p>
+     *        <p>
+     *        This setting applies only to the <code>gp3</code> storage type.
+     */
+
+    public void setStorageThroughput(Integer storageThroughput) {
+        this.storageThroughput = storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     * <p>
+     * This setting applies only to the <code>gp3</code> storage type.
+     * </p>
+     * 
+     * @return Specifies the storage throughput for the DB instance.</p>
+     *         <p>
+     *         This setting applies only to the <code>gp3</code> storage type.
+     */
+
+    public Integer getStorageThroughput() {
+        return this.storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput for the DB instance.
+     * </p>
+     * <p>
+     * This setting applies only to the <code>gp3</code> storage type.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput for the DB instance.</p>
+     *        <p>
+     *        This setting applies only to the <code>gp3</code> storage type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withStorageThroughput(Integer storageThroughput) {
+        setStorageThroughput(storageThroughput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
+     * This setting is valid for RDS Custom only.
+     * </p>
+     * 
+     * @param dBSystemId
+     *        The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the
+     *        CDB. This setting is valid for RDS Custom only.
+     */
+
+    public void setDBSystemId(String dBSystemId) {
+        this.dBSystemId = dBSystemId;
+    }
+
+    /**
+     * <p>
+     * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
+     * This setting is valid for RDS Custom only.
+     * </p>
+     * 
+     * @return The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the
+     *         CDB. This setting is valid for RDS Custom only.
+     */
+
+    public String getDBSystemId() {
+        return this.dBSystemId;
+    }
+
+    /**
+     * <p>
+     * The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the CDB.
+     * This setting is valid for RDS Custom only.
+     * </p>
+     * 
+     * @param dBSystemId
+     *        The Oracle system ID (Oracle SID) for a container database (CDB). The Oracle SID is also the name of the
+     *        CDB. This setting is valid for RDS Custom only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDBSystemId(String dBSystemId) {
+        setDBSystemId(dBSystemId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param masterUserSecret
+     *        Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user
+     *        password.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
+     *        with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public void setMasterUserSecret(MasterUserSecret masterUserSecret) {
+        this.masterUserSecret = masterUserSecret;
+    }
+
+    /**
+     * <p>
+     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user
+     *         password.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password
+     *         management with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public MasterUserSecret getMasterUserSecret() {
+        return this.masterUserSecret;
+    }
+
+    /**
+     * <p>
+     * Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user password.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management with
+     * Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param masterUserSecret
+     *        Contains the secret managed by RDS in Amazon Web Services Secrets Manager for the master user
+     *        password.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html">Password management
+     *        with Amazon Web Services Secrets Manager</a> in the <i>Amazon RDS User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withMasterUserSecret(MasterUserSecret masterUserSecret) {
+        setMasterUserSecret(masterUserSecret);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6038,7 +6236,13 @@ public class DBInstance implements Serializable, Cloneable {
         if (getNetworkType() != null)
             sb.append("NetworkType: ").append(getNetworkType()).append(",");
         if (getActivityStreamPolicyStatus() != null)
-            sb.append("ActivityStreamPolicyStatus: ").append(getActivityStreamPolicyStatus());
+            sb.append("ActivityStreamPolicyStatus: ").append(getActivityStreamPolicyStatus()).append(",");
+        if (getStorageThroughput() != null)
+            sb.append("StorageThroughput: ").append(getStorageThroughput()).append(",");
+        if (getDBSystemId() != null)
+            sb.append("DBSystemId: ").append(getDBSystemId()).append(",");
+        if (getMasterUserSecret() != null)
+            sb.append("MasterUserSecret: ").append(getMasterUserSecret());
         sb.append("}");
         return sb.toString();
     }
@@ -6366,6 +6570,18 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getActivityStreamPolicyStatus() != null && other.getActivityStreamPolicyStatus().equals(this.getActivityStreamPolicyStatus()) == false)
             return false;
+        if (other.getStorageThroughput() == null ^ this.getStorageThroughput() == null)
+            return false;
+        if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
+            return false;
+        if (other.getDBSystemId() == null ^ this.getDBSystemId() == null)
+            return false;
+        if (other.getDBSystemId() != null && other.getDBSystemId().equals(this.getDBSystemId()) == false)
+            return false;
+        if (other.getMasterUserSecret() == null ^ this.getMasterUserSecret() == null)
+            return false;
+        if (other.getMasterUserSecret() != null && other.getMasterUserSecret().equals(this.getMasterUserSecret()) == false)
+            return false;
         return true;
     }
 
@@ -6451,6 +6667,9 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         hashCode = prime * hashCode + ((getActivityStreamPolicyStatus() == null) ? 0 : getActivityStreamPolicyStatus().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getDBSystemId() == null) ? 0 : getDBSystemId().hashCode());
+        hashCode = prime * hashCode + ((getMasterUserSecret() == null) ? 0 : getMasterUserSecret().hashCode());
         return hashCode;
     }
 

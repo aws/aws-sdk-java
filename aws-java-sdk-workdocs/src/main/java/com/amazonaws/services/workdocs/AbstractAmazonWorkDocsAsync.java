@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -192,6 +192,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     @Override
     public java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(DeleteDocumentVersionRequest request) {
+
+        return deleteDocumentVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(DeleteDocumentVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDocumentVersionRequest, DeleteDocumentVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -506,6 +519,19 @@ public class AbstractAmazonWorkDocsAsync extends AbstractAmazonWorkDocs implemen
     @Override
     public java.util.concurrent.Future<RemoveResourcePermissionResult> removeResourcePermissionAsync(RemoveResourcePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveResourcePermissionRequest, RemoveResourcePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(RestoreDocumentVersionsRequest request) {
+
+        return restoreDocumentVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(RestoreDocumentVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<RestoreDocumentVersionsRequest, RestoreDocumentVersionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

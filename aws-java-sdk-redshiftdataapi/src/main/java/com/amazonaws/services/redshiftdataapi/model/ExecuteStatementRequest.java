@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     */
+    private String clientToken;
     /**
      * <p>
      * The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either
@@ -84,6 +90,46 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String workgroupName;
+
+    /**
+     * <p>
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecuteStatementRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
 
     /**
      * <p>
@@ -533,6 +579,8 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getClusterIdentifier() != null)
             sb.append("ClusterIdentifier: ").append(getClusterIdentifier()).append(",");
         if (getDatabase() != null)
@@ -565,6 +613,10 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         if (obj instanceof ExecuteStatementRequest == false)
             return false;
         ExecuteStatementRequest other = (ExecuteStatementRequest) obj;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         if (other.getClusterIdentifier() == null ^ this.getClusterIdentifier() == null)
             return false;
         if (other.getClusterIdentifier() != null && other.getClusterIdentifier().equals(this.getClusterIdentifier()) == false)
@@ -609,6 +661,7 @@ public class ExecuteStatementRequest extends com.amazonaws.AmazonWebServiceReque
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getClusterIdentifier() == null) ? 0 : getClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
         hashCode = prime * hashCode + ((getDbUser() == null) ? 0 : getDbUser().hashCode());

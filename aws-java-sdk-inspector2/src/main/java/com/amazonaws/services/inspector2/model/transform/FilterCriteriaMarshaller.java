@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,8 @@ public class FilterCriteriaMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrImageRepositoryName").build();
     private static final MarshallingInfo<List> ECRIMAGETAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ecrImageTags").build();
+    private static final MarshallingInfo<List> EXPLOITAVAILABLE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exploitAvailable").build();
     private static final MarshallingInfo<List> FINDINGARN_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("findingArn").build();
     private static final MarshallingInfo<List> FINDINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -64,6 +66,16 @@ public class FilterCriteriaMarshaller {
             .marshallLocationName("fixAvailable").build();
     private static final MarshallingInfo<List> INSPECTORSCORE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inspectorScore").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONEXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionExecutionRoleArn").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONLASTMODIFIEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionLastModifiedAt").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONLAYERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionLayers").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionName").build();
+    private static final MarshallingInfo<List> LAMBDAFUNCTIONRUNTIME_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionRuntime").build();
     private static final MarshallingInfo<List> LASTOBSERVEDAT_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastObservedAt").build();
     private static final MarshallingInfo<List> NETWORKPROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -121,12 +133,18 @@ public class FilterCriteriaMarshaller {
             protocolMarshaller.marshall(filterCriteria.getEcrImageRegistry(), ECRIMAGEREGISTRY_BINDING);
             protocolMarshaller.marshall(filterCriteria.getEcrImageRepositoryName(), ECRIMAGEREPOSITORYNAME_BINDING);
             protocolMarshaller.marshall(filterCriteria.getEcrImageTags(), ECRIMAGETAGS_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getExploitAvailable(), EXPLOITAVAILABLE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFindingArn(), FINDINGARN_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFindingStatus(), FINDINGSTATUS_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFindingType(), FINDINGTYPE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFirstObservedAt(), FIRSTOBSERVEDAT_BINDING);
             protocolMarshaller.marshall(filterCriteria.getFixAvailable(), FIXAVAILABLE_BINDING);
             protocolMarshaller.marshall(filterCriteria.getInspectorScore(), INSPECTORSCORE_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getLambdaFunctionExecutionRoleArn(), LAMBDAFUNCTIONEXECUTIONROLEARN_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getLambdaFunctionLastModifiedAt(), LAMBDAFUNCTIONLASTMODIFIEDAT_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getLambdaFunctionLayers(), LAMBDAFUNCTIONLAYERS_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getLambdaFunctionName(), LAMBDAFUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(filterCriteria.getLambdaFunctionRuntime(), LAMBDAFUNCTIONRUNTIME_BINDING);
             protocolMarshaller.marshall(filterCriteria.getLastObservedAt(), LASTOBSERVEDAT_BINDING);
             protocolMarshaller.marshall(filterCriteria.getNetworkProtocol(), NETWORKPROTOCOL_BINDING);
             protocolMarshaller.marshall(filterCriteria.getPortRange(), PORTRANGE_BINDING);

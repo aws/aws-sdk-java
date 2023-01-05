@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the request parameters to <code> <a>GetCompatibleVersions</a> </code> operation.
+ * Container for the request parameters to <code>GetCompatibleVersions</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetCompatibleVersionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of an existing domain. Provide this parameter to limit the results to a single domain.
+     * </p>
+     */
     private String domainName;
 
     /**
+     * <p>
+     * The name of an existing domain. Provide this parameter to limit the results to a single domain.
+     * </p>
+     * 
      * @param domainName
+     *        The name of an existing domain. Provide this parameter to limit the results to a single domain.
      */
 
     public void setDomainName(String domainName) {
@@ -36,7 +46,11 @@ public class GetCompatibleVersionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The name of an existing domain. Provide this parameter to limit the results to a single domain.
+     * </p>
+     * 
+     * @return The name of an existing domain. Provide this parameter to limit the results to a single domain.
      */
 
     public String getDomainName() {
@@ -44,7 +58,12 @@ public class GetCompatibleVersionsRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The name of an existing domain. Provide this parameter to limit the results to a single domain.
+     * </p>
+     * 
      * @param domainName
+     *        The name of an existing domain. Provide this parameter to limit the results to a single domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

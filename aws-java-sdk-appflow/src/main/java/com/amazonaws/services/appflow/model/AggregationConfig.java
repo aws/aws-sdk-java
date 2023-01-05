@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,14 @@ public class AggregationConfig implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String aggregationType;
+    /**
+     * <p>
+     * The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each
+     * file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this
+     * target based on the number and size of the records that each file contains.
+     * </p>
+     */
+    private Long targetFileSize;
 
     /**
      * <p>
@@ -99,6 +107,58 @@ public class AggregationConfig implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each
+     * file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this
+     * target based on the number and size of the records that each file contains.
+     * </p>
+     * 
+     * @param targetFileSize
+     *        The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For
+     *        each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might
+     *        differ from this target based on the number and size of the records that each file contains.
+     */
+
+    public void setTargetFileSize(Long targetFileSize) {
+        this.targetFileSize = targetFileSize;
+    }
+
+    /**
+     * <p>
+     * The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each
+     * file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this
+     * target based on the number and size of the records that each file contains.
+     * </p>
+     * 
+     * @return The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination.
+     *         For each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might
+     *         differ from this target based on the number and size of the records that each file contains.
+     */
+
+    public Long getTargetFileSize() {
+        return this.targetFileSize;
+    }
+
+    /**
+     * <p>
+     * The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For each
+     * file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might differ from this
+     * target based on the number and size of the records that each file contains.
+     * </p>
+     * 
+     * @param targetFileSize
+     *        The desired file size, in MB, for each output file that Amazon AppFlow writes to the flow destination. For
+     *        each file, Amazon AppFlow attempts to achieve the size that you specify. The actual file sizes might
+     *        differ from this target based on the number and size of the records that each file contains.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AggregationConfig withTargetFileSize(Long targetFileSize) {
+        setTargetFileSize(targetFileSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -111,7 +171,9 @@ public class AggregationConfig implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAggregationType() != null)
-            sb.append("AggregationType: ").append(getAggregationType());
+            sb.append("AggregationType: ").append(getAggregationType()).append(",");
+        if (getTargetFileSize() != null)
+            sb.append("TargetFileSize: ").append(getTargetFileSize());
         sb.append("}");
         return sb.toString();
     }
@@ -130,6 +192,10 @@ public class AggregationConfig implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getAggregationType() != null && other.getAggregationType().equals(this.getAggregationType()) == false)
             return false;
+        if (other.getTargetFileSize() == null ^ this.getTargetFileSize() == null)
+            return false;
+        if (other.getTargetFileSize() != null && other.getTargetFileSize().equals(this.getTargetFileSize()) == false)
+            return false;
         return true;
     }
 
@@ -139,6 +205,7 @@ public class AggregationConfig implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAggregationType() == null) ? 0 : getAggregationType().hashCode());
+        hashCode = prime * hashCode + ((getTargetFileSize() == null) ? 0 : getTargetFileSize().hashCode());
         return hashCode;
     }
 

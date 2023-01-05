@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,10 +35,32 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
     private Double maxImpact;
     /**
      * <p>
-     * The cumulative dollar value that's observed for an anomaly.
+     * The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as
+     * <code>TotalActualSpend - TotalExpectedSpend</code>.
      * </p>
      */
     private Double totalImpact;
+    /**
+     * <p>
+     * The cumulative dollar amount that was actually spent during the anomaly.
+     * </p>
+     */
+    private Double totalActualSpend;
+    /**
+     * <p>
+     * The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced
+     * machine learning models to determine the typical spending pattern based on historical data for a customer.
+     * </p>
+     */
+    private Double totalExpectedSpend;
+    /**
+     * <p>
+     * The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as
+     * <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field
+     * is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.
+     * </p>
+     */
+    private Double totalImpactPercentage;
 
     /**
      * <p>
@@ -82,11 +104,13 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cumulative dollar value that's observed for an anomaly.
+     * The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as
+     * <code>TotalActualSpend - TotalExpectedSpend</code>.
      * </p>
      * 
      * @param totalImpact
-     *        The cumulative dollar value that's observed for an anomaly.
+     *        The cumulative dollar difference between the total actual spend and total expected spend. It is calculated
+     *        as <code>TotalActualSpend - TotalExpectedSpend</code>.
      */
 
     public void setTotalImpact(Double totalImpact) {
@@ -95,10 +119,12 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cumulative dollar value that's observed for an anomaly.
+     * The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as
+     * <code>TotalActualSpend - TotalExpectedSpend</code>.
      * </p>
      * 
-     * @return The cumulative dollar value that's observed for an anomaly.
+     * @return The cumulative dollar difference between the total actual spend and total expected spend. It is
+     *         calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.
      */
 
     public Double getTotalImpact() {
@@ -107,16 +133,162 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cumulative dollar value that's observed for an anomaly.
+     * The cumulative dollar difference between the total actual spend and total expected spend. It is calculated as
+     * <code>TotalActualSpend - TotalExpectedSpend</code>.
      * </p>
      * 
      * @param totalImpact
-     *        The cumulative dollar value that's observed for an anomaly.
+     *        The cumulative dollar difference between the total actual spend and total expected spend. It is calculated
+     *        as <code>TotalActualSpend - TotalExpectedSpend</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Impact withTotalImpact(Double totalImpact) {
         setTotalImpact(totalImpact);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cumulative dollar amount that was actually spent during the anomaly.
+     * </p>
+     * 
+     * @param totalActualSpend
+     *        The cumulative dollar amount that was actually spent during the anomaly.
+     */
+
+    public void setTotalActualSpend(Double totalActualSpend) {
+        this.totalActualSpend = totalActualSpend;
+    }
+
+    /**
+     * <p>
+     * The cumulative dollar amount that was actually spent during the anomaly.
+     * </p>
+     * 
+     * @return The cumulative dollar amount that was actually spent during the anomaly.
+     */
+
+    public Double getTotalActualSpend() {
+        return this.totalActualSpend;
+    }
+
+    /**
+     * <p>
+     * The cumulative dollar amount that was actually spent during the anomaly.
+     * </p>
+     * 
+     * @param totalActualSpend
+     *        The cumulative dollar amount that was actually spent during the anomaly.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Impact withTotalActualSpend(Double totalActualSpend) {
+        setTotalActualSpend(totalActualSpend);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced
+     * machine learning models to determine the typical spending pattern based on historical data for a customer.
+     * </p>
+     * 
+     * @param totalExpectedSpend
+     *        The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using
+     *        advanced machine learning models to determine the typical spending pattern based on historical data for a
+     *        customer.
+     */
+
+    public void setTotalExpectedSpend(Double totalExpectedSpend) {
+        this.totalExpectedSpend = totalExpectedSpend;
+    }
+
+    /**
+     * <p>
+     * The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced
+     * machine learning models to determine the typical spending pattern based on historical data for a customer.
+     * </p>
+     * 
+     * @return The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using
+     *         advanced machine learning models to determine the typical spending pattern based on historical data for a
+     *         customer.
+     */
+
+    public Double getTotalExpectedSpend() {
+        return this.totalExpectedSpend;
+    }
+
+    /**
+     * <p>
+     * The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using advanced
+     * machine learning models to determine the typical spending pattern based on historical data for a customer.
+     * </p>
+     * 
+     * @param totalExpectedSpend
+     *        The cumulative dollar amount that was expected to be spent during the anomaly. It is calculated using
+     *        advanced machine learning models to determine the typical spending pattern based on historical data for a
+     *        customer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Impact withTotalExpectedSpend(Double totalExpectedSpend) {
+        setTotalExpectedSpend(totalExpectedSpend);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as
+     * <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field
+     * is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.
+     * </p>
+     * 
+     * @param totalImpactPercentage
+     *        The cumulative percentage difference between the total actual spend and total expected spend. It is
+     *        calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code>
+     *        is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a
+     *        service for the first time.
+     */
+
+    public void setTotalImpactPercentage(Double totalImpactPercentage) {
+        this.totalImpactPercentage = totalImpactPercentage;
+    }
+
+    /**
+     * <p>
+     * The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as
+     * <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field
+     * is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.
+     * </p>
+     * 
+     * @return The cumulative percentage difference between the total actual spend and total expected spend. It is
+     *         calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code>
+     *         is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a
+     *         service for the first time.
+     */
+
+    public Double getTotalImpactPercentage() {
+        return this.totalImpactPercentage;
+    }
+
+    /**
+     * <p>
+     * The cumulative percentage difference between the total actual spend and total expected spend. It is calculated as
+     * <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code> is zero, this field
+     * is omitted. Expected spend can be zero in situations such as when you start to use a service for the first time.
+     * </p>
+     * 
+     * @param totalImpactPercentage
+     *        The cumulative percentage difference between the total actual spend and total expected spend. It is
+     *        calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>. When <code>TotalExpectedSpend</code>
+     *        is zero, this field is omitted. Expected spend can be zero in situations such as when you start to use a
+     *        service for the first time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Impact withTotalImpactPercentage(Double totalImpactPercentage) {
+        setTotalImpactPercentage(totalImpactPercentage);
         return this;
     }
 
@@ -135,7 +307,13 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
         if (getMaxImpact() != null)
             sb.append("MaxImpact: ").append(getMaxImpact()).append(",");
         if (getTotalImpact() != null)
-            sb.append("TotalImpact: ").append(getTotalImpact());
+            sb.append("TotalImpact: ").append(getTotalImpact()).append(",");
+        if (getTotalActualSpend() != null)
+            sb.append("TotalActualSpend: ").append(getTotalActualSpend()).append(",");
+        if (getTotalExpectedSpend() != null)
+            sb.append("TotalExpectedSpend: ").append(getTotalExpectedSpend()).append(",");
+        if (getTotalImpactPercentage() != null)
+            sb.append("TotalImpactPercentage: ").append(getTotalImpactPercentage());
         sb.append("}");
         return sb.toString();
     }
@@ -158,6 +336,18 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTotalImpact() != null && other.getTotalImpact().equals(this.getTotalImpact()) == false)
             return false;
+        if (other.getTotalActualSpend() == null ^ this.getTotalActualSpend() == null)
+            return false;
+        if (other.getTotalActualSpend() != null && other.getTotalActualSpend().equals(this.getTotalActualSpend()) == false)
+            return false;
+        if (other.getTotalExpectedSpend() == null ^ this.getTotalExpectedSpend() == null)
+            return false;
+        if (other.getTotalExpectedSpend() != null && other.getTotalExpectedSpend().equals(this.getTotalExpectedSpend()) == false)
+            return false;
+        if (other.getTotalImpactPercentage() == null ^ this.getTotalImpactPercentage() == null)
+            return false;
+        if (other.getTotalImpactPercentage() != null && other.getTotalImpactPercentage().equals(this.getTotalImpactPercentage()) == false)
+            return false;
         return true;
     }
 
@@ -168,6 +358,9 @@ public class Impact implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getMaxImpact() == null) ? 0 : getMaxImpact().hashCode());
         hashCode = prime * hashCode + ((getTotalImpact() == null) ? 0 : getTotalImpact().hashCode());
+        hashCode = prime * hashCode + ((getTotalActualSpend() == null) ? 0 : getTotalActualSpend().hashCode());
+        hashCode = prime * hashCode + ((getTotalExpectedSpend() == null) ? 0 : getTotalExpectedSpend().hashCode());
+        hashCode = prime * hashCode + ((getTotalImpactPercentage() == null) ? 0 : getTotalImpactPercentage().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,16 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public BatchAssociateResourceResult batchAssociateResource(BatchAssociateResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDisassociateResourceResult batchDisassociateResource(BatchDisassociateResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteAppsListResult deleteAppsList(DeleteAppsListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +64,11 @@ public class AbstractAWSFMS implements AWSFMS {
 
     @Override
     public DeleteProtocolsListResult deleteProtocolsList(DeleteProtocolsListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteResourceSetResult deleteResourceSet(DeleteResourceSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,6 +118,11 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public GetResourceSetResult getResourceSet(GetResourceSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetThirdPartyFirewallAssociationStatusResult getThirdPartyFirewallAssociationStatus(GetThirdPartyFirewallAssociationStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +143,11 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListMemberAccountsResult listMemberAccounts(ListMemberAccountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -134,6 +159,16 @@ public class AbstractAWSFMS implements AWSFMS {
 
     @Override
     public ListProtocolsListsResult listProtocolsLists(ListProtocolsListsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceSetResourcesResult listResourceSetResources(ListResourceSetResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceSetsResult listResourceSets(ListResourceSetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -164,6 +199,11 @@ public class AbstractAWSFMS implements AWSFMS {
 
     @Override
     public PutProtocolsListResult putProtocolsList(PutProtocolsListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourceSetResult putResourceSet(PutResourceSetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

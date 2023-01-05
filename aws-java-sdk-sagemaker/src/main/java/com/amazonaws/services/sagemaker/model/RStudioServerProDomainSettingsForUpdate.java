@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,18 @@ public class RStudioServerProDomainSettingsForUpdate implements Serializable, Cl
     private String domainExecutionRoleArn;
 
     private ResourceSpec defaultResourceSpec;
+    /**
+     * <p>
+     * A URL pointing to an RStudio Connect server.
+     * </p>
+     */
+    private String rStudioConnectUrl;
+    /**
+     * <p>
+     * A URL pointing to an RStudio Package Manager server.
+     * </p>
+     */
+    private String rStudioPackageManagerUrl;
 
     /**
      * <p>
@@ -105,6 +117,86 @@ public class RStudioServerProDomainSettingsForUpdate implements Serializable, Cl
     }
 
     /**
+     * <p>
+     * A URL pointing to an RStudio Connect server.
+     * </p>
+     * 
+     * @param rStudioConnectUrl
+     *        A URL pointing to an RStudio Connect server.
+     */
+
+    public void setRStudioConnectUrl(String rStudioConnectUrl) {
+        this.rStudioConnectUrl = rStudioConnectUrl;
+    }
+
+    /**
+     * <p>
+     * A URL pointing to an RStudio Connect server.
+     * </p>
+     * 
+     * @return A URL pointing to an RStudio Connect server.
+     */
+
+    public String getRStudioConnectUrl() {
+        return this.rStudioConnectUrl;
+    }
+
+    /**
+     * <p>
+     * A URL pointing to an RStudio Connect server.
+     * </p>
+     * 
+     * @param rStudioConnectUrl
+     *        A URL pointing to an RStudio Connect server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RStudioServerProDomainSettingsForUpdate withRStudioConnectUrl(String rStudioConnectUrl) {
+        setRStudioConnectUrl(rStudioConnectUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A URL pointing to an RStudio Package Manager server.
+     * </p>
+     * 
+     * @param rStudioPackageManagerUrl
+     *        A URL pointing to an RStudio Package Manager server.
+     */
+
+    public void setRStudioPackageManagerUrl(String rStudioPackageManagerUrl) {
+        this.rStudioPackageManagerUrl = rStudioPackageManagerUrl;
+    }
+
+    /**
+     * <p>
+     * A URL pointing to an RStudio Package Manager server.
+     * </p>
+     * 
+     * @return A URL pointing to an RStudio Package Manager server.
+     */
+
+    public String getRStudioPackageManagerUrl() {
+        return this.rStudioPackageManagerUrl;
+    }
+
+    /**
+     * <p>
+     * A URL pointing to an RStudio Package Manager server.
+     * </p>
+     * 
+     * @param rStudioPackageManagerUrl
+     *        A URL pointing to an RStudio Package Manager server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RStudioServerProDomainSettingsForUpdate withRStudioPackageManagerUrl(String rStudioPackageManagerUrl) {
+        setRStudioPackageManagerUrl(rStudioPackageManagerUrl);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -119,7 +211,11 @@ public class RStudioServerProDomainSettingsForUpdate implements Serializable, Cl
         if (getDomainExecutionRoleArn() != null)
             sb.append("DomainExecutionRoleArn: ").append(getDomainExecutionRoleArn()).append(",");
         if (getDefaultResourceSpec() != null)
-            sb.append("DefaultResourceSpec: ").append(getDefaultResourceSpec());
+            sb.append("DefaultResourceSpec: ").append(getDefaultResourceSpec()).append(",");
+        if (getRStudioConnectUrl() != null)
+            sb.append("RStudioConnectUrl: ").append(getRStudioConnectUrl()).append(",");
+        if (getRStudioPackageManagerUrl() != null)
+            sb.append("RStudioPackageManagerUrl: ").append(getRStudioPackageManagerUrl());
         sb.append("}");
         return sb.toString();
     }
@@ -142,6 +238,14 @@ public class RStudioServerProDomainSettingsForUpdate implements Serializable, Cl
             return false;
         if (other.getDefaultResourceSpec() != null && other.getDefaultResourceSpec().equals(this.getDefaultResourceSpec()) == false)
             return false;
+        if (other.getRStudioConnectUrl() == null ^ this.getRStudioConnectUrl() == null)
+            return false;
+        if (other.getRStudioConnectUrl() != null && other.getRStudioConnectUrl().equals(this.getRStudioConnectUrl()) == false)
+            return false;
+        if (other.getRStudioPackageManagerUrl() == null ^ this.getRStudioPackageManagerUrl() == null)
+            return false;
+        if (other.getRStudioPackageManagerUrl() != null && other.getRStudioPackageManagerUrl().equals(this.getRStudioPackageManagerUrl()) == false)
+            return false;
         return true;
     }
 
@@ -152,6 +256,8 @@ public class RStudioServerProDomainSettingsForUpdate implements Serializable, Cl
 
         hashCode = prime * hashCode + ((getDomainExecutionRoleArn() == null) ? 0 : getDomainExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getDefaultResourceSpec() == null) ? 0 : getDefaultResourceSpec().hashCode());
+        hashCode = prime * hashCode + ((getRStudioConnectUrl() == null) ? 0 : getRStudioConnectUrl().hashCode());
+        hashCode = prime * hashCode + ((getRStudioPackageManagerUrl() == null) ? 0 : getRStudioPackageManagerUrl().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -173,7 +173,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * </p>
      * <p>
      * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
-     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * is met. For example, the criteria might be that at least one routing control state is On after the transaction so
      * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      * scenario.
      * </p>
@@ -207,7 +207,7 @@ public interface AWSRoute53RecoveryControlConfigAsync extends AWSRoute53Recovery
      * </p>
      * <p>
      * Assertion rule: An assertion rule enforces that, when you change a routing control state, that a certain criteria
-     * is met. For example, the criteria might be that at least one routing control state is On after the transation so
+     * is met. For example, the criteria might be that at least one routing control state is On after the transaction so
      * that traffic continues to flow to at least one cell for the application. This ensures that you avoid a fail-open
      * scenario.
      * </p>

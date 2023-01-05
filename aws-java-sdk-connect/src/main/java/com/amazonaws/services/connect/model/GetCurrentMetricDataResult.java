@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,12 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Date dataSnapshotTime;
+    /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     */
+    private Long approximateTotalCount;
 
     /**
      * <p>
@@ -218,6 +224,46 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     * 
+     * @param approximateTotalCount
+     *        The total count of the result, regardless of the current page size.
+     */
+
+    public void setApproximateTotalCount(Long approximateTotalCount) {
+        this.approximateTotalCount = approximateTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     * 
+     * @return The total count of the result, regardless of the current page size.
+     */
+
+    public Long getApproximateTotalCount() {
+        return this.approximateTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     * 
+     * @param approximateTotalCount
+     *        The total count of the result, regardless of the current page size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCurrentMetricDataResult withApproximateTotalCount(Long approximateTotalCount) {
+        setApproximateTotalCount(approximateTotalCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,7 +280,9 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
         if (getMetricResults() != null)
             sb.append("MetricResults: ").append(getMetricResults()).append(",");
         if (getDataSnapshotTime() != null)
-            sb.append("DataSnapshotTime: ").append(getDataSnapshotTime());
+            sb.append("DataSnapshotTime: ").append(getDataSnapshotTime()).append(",");
+        if (getApproximateTotalCount() != null)
+            sb.append("ApproximateTotalCount: ").append(getApproximateTotalCount());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +309,10 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getDataSnapshotTime() != null && other.getDataSnapshotTime().equals(this.getDataSnapshotTime()) == false)
             return false;
+        if (other.getApproximateTotalCount() == null ^ this.getApproximateTotalCount() == null)
+            return false;
+        if (other.getApproximateTotalCount() != null && other.getApproximateTotalCount().equals(this.getApproximateTotalCount()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +324,7 @@ public class GetCurrentMetricDataResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMetricResults() == null) ? 0 : getMetricResults().hashCode());
         hashCode = prime * hashCode + ((getDataSnapshotTime() == null) ? 0 : getDataSnapshotTime().hashCode());
+        hashCode = prime * hashCode + ((getApproximateTotalCount() == null) ? 0 : getApproximateTotalCount().hashCode());
         return hashCode;
     }
 

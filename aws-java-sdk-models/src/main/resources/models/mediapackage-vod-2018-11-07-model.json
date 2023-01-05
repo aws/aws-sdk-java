@@ -1114,7 +1114,7 @@
           "shape": "Profile"
         },
         "ScteMarkersSource": {
-          "documentation": "The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content.",
+          "documentation": "The source of scte markers used. When set to SEGMENTS, the scte markers are sourced from the segments of the ingested content. When set to MANIFEST, the scte markers are sourced from the manifest of the ingested content. The MANIFEST value is compatible with source HLS playlists using the SCTE-35 Enhanced syntax (#EXT-OATCLS-SCTE35 tags). SCTE-35 Elemental and SCTE-35 Daterange syntaxes are not supported with this option.",
           "locationName": "scteMarkersSource",
           "shape": "ScteMarkersSource"
         },
@@ -1140,6 +1140,11 @@
         "IncludeEncoderConfigurationInSegments": {
           "documentation": "When includeEncoderConfigurationInSegments is set to true, MediaPackage places your encoder's Sequence Parameter Set (SPS), Picture Parameter Set (PPS), and Video Parameter Set (VPS) metadata in every video segment instead of in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.\n",
           "locationName": "includeEncoderConfigurationInSegments",
+          "shape": "__boolean"
+        },
+        "IncludeIframeOnlyStream": {
+          "documentation": "When enabled, an I-Frame only stream will be included in the output.",
+          "locationName": "includeIframeOnlyStream",
           "shape": "__boolean"
         },
         "PeriodTriggers": {
@@ -1350,6 +1355,11 @@
     },
     "DescribePackagingGroupResponse": {
       "members": {
+        "ApproximateAssetCount": {
+          "documentation": "The approximate asset count of the PackagingGroup.",
+          "locationName": "approximateAssetCount",
+          "shape": "__integer"
+        },
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",
@@ -1410,6 +1420,26 @@
           "shape": "__string"
         }
       },
+      "type": "structure"
+    },
+    "EncryptionContractConfiguration": {
+      "documentation": "Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. \nThe encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. \nTo configure the encryption contract, specify which audio and video encryption presets to use.\nNote the following considerations when using encryptionContractConfiguration:\nencryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.\nYou must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.\n",
+      "members": {
+        "PresetSpeke20Audio": {
+          "documentation": "A collection of audio encryption presets.",
+          "locationName": "presetSpeke20Audio",
+          "shape": "PresetSpeke20Audio"
+        },
+        "PresetSpeke20Video": {
+          "documentation": "A collection of video encryption presets.",
+          "locationName": "presetSpeke20Video",
+          "shape": "PresetSpeke20Video"
+        }
+      },
+      "required": [
+        "PresetSpeke20Audio",
+        "PresetSpeke20Video"
+      ],
       "type": "structure"
     },
     "EncryptionMethod": {
@@ -1847,6 +1877,11 @@
     "PackagingGroup": {
       "documentation": "A MediaPackage VOD PackagingGroup resource.",
       "members": {
+        "ApproximateAssetCount": {
+          "documentation": "The approximate asset count of the PackagingGroup.",
+          "locationName": "approximateAssetCount",
+          "shape": "__integer"
+        },
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",
@@ -1929,6 +1964,31 @@
       },
       "type": "structure"
     },
+    "PresetSpeke20Audio": {
+      "enum": [
+        "PRESET-AUDIO-1",
+        "PRESET-AUDIO-2",
+        "PRESET-AUDIO-3",
+        "SHARED",
+        "UNENCRYPTED"
+      ],
+      "type": "string"
+    },
+    "PresetSpeke20Video": {
+      "enum": [
+        "PRESET-VIDEO-1",
+        "PRESET-VIDEO-2",
+        "PRESET-VIDEO-3",
+        "PRESET-VIDEO-4",
+        "PRESET-VIDEO-5",
+        "PRESET-VIDEO-6",
+        "PRESET-VIDEO-7",
+        "PRESET-VIDEO-8",
+        "SHARED",
+        "UNENCRYPTED"
+      ],
+      "type": "string"
+    },
     "Profile": {
       "enum": [
         "NONE",
@@ -1968,6 +2028,10 @@
     "SpekeKeyProvider": {
       "documentation": "A configuration for accessing an external Secure Packager and Encoder Key Exchange (SPEKE) service that will provide encryption keys.",
       "members": {
+        "EncryptionContractConfiguration": {
+          "locationName": "encryptionContractConfiguration",
+          "shape": "EncryptionContractConfiguration"
+        },
         "RoleArn": {
           "documentation": "An Amazon Resource Name (ARN) of an IAM role that AWS Elemental\nMediaPackage will assume when accessing the key provider service.\n",
           "locationName": "roleArn",
@@ -2133,6 +2197,11 @@
     },
     "UpdatePackagingGroupResponse": {
       "members": {
+        "ApproximateAssetCount": {
+          "documentation": "The approximate asset count of the PackagingGroup.",
+          "locationName": "approximateAssetCount",
+          "shape": "__integer"
+        },
         "Arn": {
           "documentation": "The ARN of the PackagingGroup.",
           "locationName": "arn",

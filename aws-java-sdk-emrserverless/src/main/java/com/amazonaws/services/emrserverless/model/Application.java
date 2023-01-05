@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -120,6 +120,12 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NetworkConfiguration networkConfiguration;
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     */
+    private String architecture;
 
     /**
      * <p>
@@ -809,6 +815,65 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @return The CPU architecture of an application.
+     * @see Architecture
+     */
+
+    public String getArchitecture() {
+        return this.architecture;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public Application withArchitecture(String architecture) {
+        setArchitecture(architecture);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The CPU architecture of an application.
+     * </p>
+     * 
+     * @param architecture
+     *        The CPU architecture of an application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Architecture
+     */
+
+    public Application withArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -849,7 +914,9 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         if (getAutoStopConfiguration() != null)
             sb.append("AutoStopConfiguration: ").append(getAutoStopConfiguration()).append(",");
         if (getNetworkConfiguration() != null)
-            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration());
+            sb.append("NetworkConfiguration: ").append(getNetworkConfiguration()).append(",");
+        if (getArchitecture() != null)
+            sb.append("Architecture: ").append(getArchitecture());
         sb.append("}");
         return sb.toString();
     }
@@ -924,6 +991,10 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkConfiguration() != null && other.getNetworkConfiguration().equals(this.getNetworkConfiguration()) == false)
             return false;
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null)
+            return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false)
+            return false;
         return true;
     }
 
@@ -947,6 +1018,7 @@ public class Application implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAutoStartConfiguration() == null) ? 0 : getAutoStartConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAutoStopConfiguration() == null) ? 0 : getAutoStopConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         return hashCode;
     }
 

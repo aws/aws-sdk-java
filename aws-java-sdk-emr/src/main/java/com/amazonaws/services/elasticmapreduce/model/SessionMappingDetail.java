@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class SessionMappingDetail implements Serializable, Cloneable, Structured
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
-     * >DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+     * >DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.
      * </p>
      */
     private String identityName;
@@ -161,7 +161,7 @@ public class SessionMappingDetail implements Serializable, Cloneable, Structured
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
-     * >DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+     * >DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.
      * </p>
      * 
      * @param identityName
@@ -169,7 +169,7 @@ public class SessionMappingDetail implements Serializable, Cloneable, Structured
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *        >UserName</a> and <a href=
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
-     *        >DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+     *        >DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.
      */
 
     public void setIdentityName(String identityName) {
@@ -182,14 +182,14 @@ public class SessionMappingDetail implements Serializable, Cloneable, Structured
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
-     * >DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+     * >DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.
      * </p>
      * 
      * @return The name of the user or group. For more information, see <a href=
      *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *         >UserName</a> and <a href=
      *         "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
-     *         >DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+     *         >DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.
      */
 
     public String getIdentityName() {
@@ -202,7 +202,7 @@ public class SessionMappingDetail implements Serializable, Cloneable, Structured
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      * >UserName</a> and <a href=
      * "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
-     * >DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+     * >DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.
      * </p>
      * 
      * @param identityName
@@ -210,7 +210,7 @@ public class SessionMappingDetail implements Serializable, Cloneable, Structured
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName"
      *        >UserName</a> and <a href=
      *        "https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName"
-     *        >DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
+     *        >DisplayName</a> in the <i>IAM Identity Center Identity Store API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

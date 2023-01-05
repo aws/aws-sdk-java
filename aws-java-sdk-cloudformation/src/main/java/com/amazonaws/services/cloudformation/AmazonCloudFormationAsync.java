@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -3045,7 +3045,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * Once you've initiated testing on an extension using <code>TestType</code>, you can use <a
+     * Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned
+     * <code>TypeVersionArn</code> into <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
      * to monitor the current test status and test status description for the extension.
      * </p>
@@ -3094,7 +3095,8 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
      * </p>
      * <p>
-     * Once you've initiated testing on an extension using <code>TestType</code>, you can use <a
+     * Once you've initiated testing on an extension using <code>TestType</code>, you can pass the returned
+     * <code>TypeVersionArn</code> into <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
      * to monitor the current test status and test status description for the extension.
      * </p>

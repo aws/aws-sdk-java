@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,39 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelLegalHoldResult> cancelLegalHoldAsync(CancelLegalHoldRequest request) {
+
+        return cancelLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelLegalHoldResult> cancelLegalHoldAsync(final CancelLegalHoldRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelLegalHoldRequest, CancelLegalHoldResult> asyncHandler) {
+        final CancelLegalHoldRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelLegalHoldResult>() {
+            @Override
+            public CancelLegalHoldResult call() throws Exception {
+                CancelLegalHoldResult result = null;
+
+                try {
+                    result = executeCancelLegalHold(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -193,6 +226,39 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
 
                 try {
                     result = executeCreateFramework(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLegalHoldResult> createLegalHoldAsync(CreateLegalHoldRequest request) {
+
+        return createLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLegalHoldResult> createLegalHoldAsync(final CreateLegalHoldRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLegalHoldRequest, CreateLegalHoldResult> asyncHandler) {
+        final CreateLegalHoldRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLegalHoldResult>() {
+            @Override
+            public CreateLegalHoldResult call() throws Exception {
+                CreateLegalHoldResult result = null;
+
+                try {
+                    result = executeCreateLegalHold(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -939,6 +1005,41 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointFromParentResult> disassociateRecoveryPointFromParentAsync(
+            DisassociateRecoveryPointFromParentRequest request) {
+
+        return disassociateRecoveryPointFromParentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateRecoveryPointFromParentResult> disassociateRecoveryPointFromParentAsync(
+            final DisassociateRecoveryPointFromParentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateRecoveryPointFromParentRequest, DisassociateRecoveryPointFromParentResult> asyncHandler) {
+        final DisassociateRecoveryPointFromParentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateRecoveryPointFromParentResult>() {
+            @Override
+            public DisassociateRecoveryPointFromParentResult call() throws Exception {
+                DisassociateRecoveryPointFromParentResult result = null;
+
+                try {
+                    result = executeDisassociateRecoveryPointFromParent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ExportBackupPlanTemplateResult> exportBackupPlanTemplateAsync(ExportBackupPlanTemplateRequest request) {
 
         return exportBackupPlanTemplateAsync(request, null);
@@ -1154,6 +1255,39 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
 
                 try {
                     result = executeGetBackupVaultNotifications(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLegalHoldResult> getLegalHoldAsync(GetLegalHoldRequest request) {
+
+        return getLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLegalHoldResult> getLegalHoldAsync(final GetLegalHoldRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLegalHoldRequest, GetLegalHoldResult> asyncHandler) {
+        final GetLegalHoldRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLegalHoldResult>() {
+            @Override
+            public GetLegalHoldResult call() throws Exception {
+                GetLegalHoldResult result = null;
+
+                try {
+                    result = executeGetLegalHold(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1502,6 +1636,39 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListLegalHoldsResult> listLegalHoldsAsync(ListLegalHoldsRequest request) {
+
+        return listLegalHoldsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLegalHoldsResult> listLegalHoldsAsync(final ListLegalHoldsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLegalHoldsRequest, ListLegalHoldsResult> asyncHandler) {
+        final ListLegalHoldsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLegalHoldsResult>() {
+            @Override
+            public ListLegalHoldsResult call() throws Exception {
+                ListLegalHoldsResult result = null;
+
+                try {
+                    result = executeListLegalHolds(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListProtectedResourcesResult> listProtectedResourcesAsync(ListProtectedResourcesRequest request) {
 
         return listProtectedResourcesAsync(request, null);
@@ -1554,6 +1721,40 @@ public class AWSBackupAsyncClient extends AWSBackupClient implements AWSBackupAs
 
                 try {
                     result = executeListRecoveryPointsByBackupVault(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecoveryPointsByLegalHoldResult> listRecoveryPointsByLegalHoldAsync(ListRecoveryPointsByLegalHoldRequest request) {
+
+        return listRecoveryPointsByLegalHoldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRecoveryPointsByLegalHoldResult> listRecoveryPointsByLegalHoldAsync(
+            final ListRecoveryPointsByLegalHoldRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRecoveryPointsByLegalHoldRequest, ListRecoveryPointsByLegalHoldResult> asyncHandler) {
+        final ListRecoveryPointsByLegalHoldRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRecoveryPointsByLegalHoldResult>() {
+            @Override
+            public ListRecoveryPointsByLegalHoldResult call() throws Exception {
+                ListRecoveryPointsByLegalHoldResult result = null;
+
+                try {
+                    result = executeListRecoveryPointsByLegalHold(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

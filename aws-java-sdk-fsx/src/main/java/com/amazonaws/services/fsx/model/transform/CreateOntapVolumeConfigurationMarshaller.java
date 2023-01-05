@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class CreateOntapVolumeConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StorageVirtualMachineId").build();
     private static final MarshallingInfo<StructuredPojo> TIERINGPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TieringPolicy").build();
+    private static final MarshallingInfo<String> ONTAPVOLUMETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OntapVolumeType").build();
+    private static final MarshallingInfo<String> SNAPSHOTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapshotPolicy").build();
+    private static final MarshallingInfo<Boolean> COPYTAGSTOBACKUPS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTagsToBackups").build();
 
     private static final CreateOntapVolumeConfigurationMarshaller instance = new CreateOntapVolumeConfigurationMarshaller();
 
@@ -62,6 +68,9 @@ public class CreateOntapVolumeConfigurationMarshaller {
             protocolMarshaller.marshall(createOntapVolumeConfiguration.getStorageEfficiencyEnabled(), STORAGEEFFICIENCYENABLED_BINDING);
             protocolMarshaller.marshall(createOntapVolumeConfiguration.getStorageVirtualMachineId(), STORAGEVIRTUALMACHINEID_BINDING);
             protocolMarshaller.marshall(createOntapVolumeConfiguration.getTieringPolicy(), TIERINGPOLICY_BINDING);
+            protocolMarshaller.marshall(createOntapVolumeConfiguration.getOntapVolumeType(), ONTAPVOLUMETYPE_BINDING);
+            protocolMarshaller.marshall(createOntapVolumeConfiguration.getSnapshotPolicy(), SNAPSHOTPOLICY_BINDING);
+            protocolMarshaller.marshall(createOntapVolumeConfiguration.getCopyTagsToBackups(), COPYTAGSTOBACKUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

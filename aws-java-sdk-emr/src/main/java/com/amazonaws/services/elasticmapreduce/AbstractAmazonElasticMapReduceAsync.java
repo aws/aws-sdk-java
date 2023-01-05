@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -312,6 +312,19 @@ public class AbstractAmazonElasticMapReduceAsync extends AbstractAmazonElasticMa
     public java.util.concurrent.Future<GetBlockPublicAccessConfigurationResult> getBlockPublicAccessConfigurationAsync(
             GetBlockPublicAccessConfigurationRequest request,
             com.amazonaws.handlers.AsyncHandler<GetBlockPublicAccessConfigurationRequest, GetBlockPublicAccessConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterSessionCredentialsResult> getClusterSessionCredentialsAsync(GetClusterSessionCredentialsRequest request) {
+
+        return getClusterSessionCredentialsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClusterSessionCredentialsResult> getClusterSessionCredentialsAsync(GetClusterSessionCredentialsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetClusterSessionCredentialsRequest, GetClusterSessionCredentialsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,8 @@ public enum MatchOption {
     ENDS_WITH("ENDS_WITH"),
     CONTAINS("CONTAINS"),
     CASE_SENSITIVE("CASE_SENSITIVE"),
-    CASE_INSENSITIVE("CASE_INSENSITIVE");
+    CASE_INSENSITIVE("CASE_INSENSITIVE"),
+    GREATER_THAN_OR_EQUAL("GREATER_THAN_OR_EQUAL");
 
     private String value;
 

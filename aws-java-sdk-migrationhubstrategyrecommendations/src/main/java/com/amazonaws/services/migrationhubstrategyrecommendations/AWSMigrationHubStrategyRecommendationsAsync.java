@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -172,6 +172,37 @@ public interface AWSMigrationHubStrategyRecommendationsAsync extends AWSMigratio
      */
     java.util.concurrent.Future<GetImportFileTaskResult> getImportFileTaskAsync(GetImportFileTaskRequest getImportFileTaskRequest,
             com.amazonaws.handlers.AsyncHandler<GetImportFileTaskRequest, GetImportFileTaskResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieve the latest ID of a specific assessment task.
+     * </p>
+     * 
+     * @param getLatestAssessmentIdRequest
+     * @return A Java Future containing the result of the GetLatestAssessmentId operation returned by the service.
+     * @sample AWSMigrationHubStrategyRecommendationsAsync.GetLatestAssessmentId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLatestAssessmentIdResult> getLatestAssessmentIdAsync(GetLatestAssessmentIdRequest getLatestAssessmentIdRequest);
+
+    /**
+     * <p>
+     * Retrieve the latest ID of a specific assessment task.
+     * </p>
+     * 
+     * @param getLatestAssessmentIdRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLatestAssessmentId operation returned by the service.
+     * @sample AWSMigrationHubStrategyRecommendationsAsyncHandler.GetLatestAssessmentId
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/GetLatestAssessmentId"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLatestAssessmentIdResult> getLatestAssessmentIdAsync(GetLatestAssessmentIdRequest getLatestAssessmentIdRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLatestAssessmentIdRequest, GetLatestAssessmentIdResult> asyncHandler);
 
     /**
      * <p>

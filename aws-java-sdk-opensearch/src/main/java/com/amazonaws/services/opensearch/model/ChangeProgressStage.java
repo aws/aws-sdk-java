@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A progress stage details of a specific domain configuration change.
+ * Progress details for each stage of a domain update.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,36 +27,36 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the specific progress stage.
+     * The name of the stage.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The overall status of a specific progress stage.
+     * The status of the stage.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The description of the progress stage.
+     * The description of the stage.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The last updated timestamp of the progress stage.
+     * The most recent updated timestamp of the stage.
      * </p>
      */
     private java.util.Date lastUpdated;
 
     /**
      * <p>
-     * The name of the specific progress stage.
+     * The name of the stage.
      * </p>
      * 
      * @param name
-     *        The name of the specific progress stage.
+     *        The name of the stage.
      */
 
     public void setName(String name) {
@@ -65,10 +65,10 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the specific progress stage.
+     * The name of the stage.
      * </p>
      * 
-     * @return The name of the specific progress stage.
+     * @return The name of the stage.
      */
 
     public String getName() {
@@ -77,11 +77,11 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the specific progress stage.
+     * The name of the stage.
      * </p>
      * 
      * @param name
-     *        The name of the specific progress stage.
+     *        The name of the stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The overall status of a specific progress stage.
+     * The status of the stage.
      * </p>
      * 
      * @param status
-     *        The overall status of a specific progress stage.
+     *        The status of the stage.
      */
 
     public void setStatus(String status) {
@@ -105,10 +105,10 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The overall status of a specific progress stage.
+     * The status of the stage.
      * </p>
      * 
-     * @return The overall status of a specific progress stage.
+     * @return The status of the stage.
      */
 
     public String getStatus() {
@@ -117,11 +117,11 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The overall status of a specific progress stage.
+     * The status of the stage.
      * </p>
      * 
      * @param status
-     *        The overall status of a specific progress stage.
+     *        The status of the stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The description of the progress stage.
+     * The description of the stage.
      * </p>
      * 
      * @param description
-     *        The description of the progress stage.
+     *        The description of the stage.
      */
 
     public void setDescription(String description) {
@@ -145,10 +145,10 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The description of the progress stage.
+     * The description of the stage.
      * </p>
      * 
-     * @return The description of the progress stage.
+     * @return The description of the stage.
      */
 
     public String getDescription() {
@@ -157,11 +157,11 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The description of the progress stage.
+     * The description of the stage.
      * </p>
      * 
      * @param description
-     *        The description of the progress stage.
+     *        The description of the stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -172,11 +172,11 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last updated timestamp of the progress stage.
+     * The most recent updated timestamp of the stage.
      * </p>
      * 
      * @param lastUpdated
-     *        The last updated timestamp of the progress stage.
+     *        The most recent updated timestamp of the stage.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -185,10 +185,10 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last updated timestamp of the progress stage.
+     * The most recent updated timestamp of the stage.
      * </p>
      * 
-     * @return The last updated timestamp of the progress stage.
+     * @return The most recent updated timestamp of the stage.
      */
 
     public java.util.Date getLastUpdated() {
@@ -197,11 +197,11 @@ public class ChangeProgressStage implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last updated timestamp of the progress stage.
+     * The most recent updated timestamp of the stage.
      * </p>
      * 
      * @param lastUpdated
-     *        The last updated timestamp of the progress stage.
+     *        The most recent updated timestamp of the stage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

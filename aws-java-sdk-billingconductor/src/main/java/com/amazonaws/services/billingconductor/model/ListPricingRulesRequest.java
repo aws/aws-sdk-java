@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class ListPricingRulesRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer maxResults;
     /**
      * <p>
-     * The pagination token used on subsequent call to get pricing rules.
+     * The pagination token that's used on subsequent call to get pricing rules.
      * </p>
      */
     private String nextToken;
@@ -179,11 +179,11 @@ public class ListPricingRulesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token used on subsequent call to get pricing rules.
+     * The pagination token that's used on subsequent call to get pricing rules.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent call to get pricing rules.
+     *        The pagination token that's used on subsequent call to get pricing rules.
      */
 
     public void setNextToken(String nextToken) {
@@ -192,10 +192,10 @@ public class ListPricingRulesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token used on subsequent call to get pricing rules.
+     * The pagination token that's used on subsequent call to get pricing rules.
      * </p>
      * 
-     * @return The pagination token used on subsequent call to get pricing rules.
+     * @return The pagination token that's used on subsequent call to get pricing rules.
      */
 
     public String getNextToken() {
@@ -204,11 +204,11 @@ public class ListPricingRulesRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The pagination token used on subsequent call to get pricing rules.
+     * The pagination token that's used on subsequent call to get pricing rules.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent call to get pricing rules.
+     *        The pagination token that's used on subsequent call to get pricing rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

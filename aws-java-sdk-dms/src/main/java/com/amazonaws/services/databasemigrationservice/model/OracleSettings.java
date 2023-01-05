@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -170,7 +170,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      */
     private Boolean archivedLogsOnly;
@@ -395,7 +395,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private String secretsManagerSecretId;
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -416,9 +416,9 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     private String secretsManagerOracleAsmAccessRoleArn;
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      */
     private String secretsManagerOracleAsmSecretId;
@@ -1516,12 +1516,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @param archivedLogsOnly
      *        When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *        logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *        logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *        privileges.
      */
 
     public void setArchivedLogsOnly(Boolean archivedLogsOnly) {
@@ -1531,11 +1532,12 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @return When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *         logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *         logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *         privileges.
      */
 
     public Boolean getArchivedLogsOnly() {
@@ -1545,12 +1547,13 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @param archivedLogsOnly
      *        When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *        logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *        logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *        privileges.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1562,11 +1565,12 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo logs are
-     * stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     * stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM privileges.
      * </p>
      * 
      * @return When this field is set to <code>Y</code>, DMS only accesses the archived redo logs. If the archived redo
-     *         logs are stored on Oracle ASM only, the DMS user account needs to be granted ASM privileges.
+     *         logs are stored on Automatic Storage Management (ASM) only, the DMS user account needs to be granted ASM
+     *         privileges.
      */
 
     public Boolean isArchivedLogsOnly() {
@@ -3108,7 +3112,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -3127,8 +3131,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param secretsManagerOracleAsmAccessRoleArn
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *        that specifies DMS as the trusted entity and grants the required permissions to access the
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM
+     *        role that specifies DMS as the trusted entity and grants the required permissions to access the
      *        <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret
      *        value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *        <p>
@@ -3150,7 +3154,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -3168,8 +3172,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </note>
      * 
-     * @return Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *         that specifies DMS as the trusted entity and grants the required permissions to access the
+     * @return Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM
+     *         role that specifies DMS as the trusted entity and grants the required permissions to access the
      *         <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the
      *         secret value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *         <p>
@@ -3191,7 +3195,7 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role that
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM role that
      * specifies DMS as the trusted entity and grants the required permissions to access the
      * <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret value
      * that allows access to the Oracle ASM of the endpoint.
@@ -3210,8 +3214,8 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * 
      * @param secretsManagerOracleAsmAccessRoleArn
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN of the IAM role
-     *        that specifies DMS as the trusted entity and grants the required permissions to access the
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN of the IAM
+     *        role that specifies DMS as the trusted entity and grants the required permissions to access the
      *        <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code> has the secret
      *        value that allows access to the Oracle ASM of the endpoint.</p> <note>
      *        <p>
@@ -3235,14 +3239,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      * 
      * @param secretsManagerOracleAsmSecretId
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or
-     *        friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN,
+     *        or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
      *        details for the Oracle endpoint.
      */
 
@@ -3252,14 +3256,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      * 
-     * @return Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or
-     *         friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
-     *         details for the Oracle endpoint.
+     * @return Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN,
+     *         or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM
+     *         connection details for the Oracle endpoint.
      */
 
     public String getSecretsManagerOracleAsmSecretId() {
@@ -3268,14 +3272,14 @@ public class OracleSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or friendly
-     * name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details for the
-     * Oracle endpoint.
+     * Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN, or
+     * friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection details
+     * for the Oracle endpoint.
      * </p>
      * 
      * @param secretsManagerOracleAsmSecretId
-     *        Required only if your Oracle endpoint uses Advanced Storage Manager (ASM). The full ARN, partial ARN, or
-     *        friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
+     *        Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The full ARN, partial ARN,
+     *        or friendly name of the <code>SecretsManagerOracleAsmSecret</code> that contains the Oracle ASM connection
      *        details for the Oracle endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

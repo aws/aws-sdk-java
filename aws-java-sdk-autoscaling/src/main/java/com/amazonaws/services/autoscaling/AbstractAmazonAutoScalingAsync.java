@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
             com.amazonaws.handlers.AsyncHandler<AttachLoadBalancersRequest, AttachLoadBalancersResult> asyncHandler) {
 
         return attachLoadBalancersAsync(new AttachLoadBalancersRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachTrafficSourcesResult> attachTrafficSourcesAsync(AttachTrafficSourcesRequest request) {
+
+        return attachTrafficSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachTrafficSourcesResult> attachTrafficSourcesAsync(AttachTrafficSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<AttachTrafficSourcesRequest, AttachTrafficSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -891,6 +904,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeTrafficSourcesResult> describeTrafficSourcesAsync(DescribeTrafficSourcesRequest request) {
+
+        return describeTrafficSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTrafficSourcesResult> describeTrafficSourcesAsync(DescribeTrafficSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficSourcesRequest, DescribeTrafficSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeWarmPoolResult> describeWarmPoolAsync(DescribeWarmPoolRequest request) {
 
         return describeWarmPoolAsync(request, null);
@@ -963,6 +989,19 @@ public class AbstractAmazonAutoScalingAsync extends AbstractAmazonAutoScaling im
             com.amazonaws.handlers.AsyncHandler<DetachLoadBalancersRequest, DetachLoadBalancersResult> asyncHandler) {
 
         return detachLoadBalancersAsync(new DetachLoadBalancersRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachTrafficSourcesResult> detachTrafficSourcesAsync(DetachTrafficSourcesRequest request) {
+
+        return detachTrafficSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachTrafficSourcesResult> detachTrafficSourcesAsync(DetachTrafficSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DetachTrafficSourcesRequest, DetachTrafficSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

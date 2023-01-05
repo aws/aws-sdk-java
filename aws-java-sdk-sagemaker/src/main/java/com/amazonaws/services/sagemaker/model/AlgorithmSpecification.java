@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,6 +130,23 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
      * </ul>
      */
     private Boolean enableSageMakerMetricsTimeSeries;
+    /**
+     * <p>
+     * The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used
+     * to run a training job. This script takes precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for more information.
+     * </p>
+     */
+    private java.util.List<String> containerEntrypoint;
+    /**
+     * <p>
+     * The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for additional information.
+     * </p>
+     */
+    private java.util.List<String> containerArguments;
 
     /**
      * <p>
@@ -854,6 +871,190 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used
+     * to run a training job. This script takes precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for more information.
+     * </p>
+     * 
+     * @return The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker
+     *         container</a> used to run a training job. This script takes precedence over the default train processing
+     *         instructions. See <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *         Amazon SageMaker Runs Your Training Image</a> for more information.
+     */
+
+    public java.util.List<String> getContainerEntrypoint() {
+        return containerEntrypoint;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used
+     * to run a training job. This script takes precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for more information.
+     * </p>
+     * 
+     * @param containerEntrypoint
+     *        The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker
+     *        container</a> used to run a training job. This script takes precedence over the default train processing
+     *        instructions. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *        Amazon SageMaker Runs Your Training Image</a> for more information.
+     */
+
+    public void setContainerEntrypoint(java.util.Collection<String> containerEntrypoint) {
+        if (containerEntrypoint == null) {
+            this.containerEntrypoint = null;
+            return;
+        }
+
+        this.containerEntrypoint = new java.util.ArrayList<String>(containerEntrypoint);
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used
+     * to run a training job. This script takes precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for more information.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContainerEntrypoint(java.util.Collection)} or {@link #withContainerEntrypoint(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param containerEntrypoint
+     *        The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker
+     *        container</a> used to run a training job. This script takes precedence over the default train processing
+     *        instructions. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *        Amazon SageMaker Runs Your Training Image</a> for more information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withContainerEntrypoint(String... containerEntrypoint) {
+        if (this.containerEntrypoint == null) {
+            setContainerEntrypoint(new java.util.ArrayList<String>(containerEntrypoint.length));
+        }
+        for (String ele : containerEntrypoint) {
+            this.containerEntrypoint.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker container</a> used
+     * to run a training job. This script takes precedence over the default train processing instructions. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for more information.
+     * </p>
+     * 
+     * @param containerEntrypoint
+     *        The <a href="https://docs.docker.com/engine/reference/builder/">entrypoint script for a Docker
+     *        container</a> used to run a training job. This script takes precedence over the default train processing
+     *        instructions. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *        Amazon SageMaker Runs Your Training Image</a> for more information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withContainerEntrypoint(java.util.Collection<String> containerEntrypoint) {
+        setContainerEntrypoint(containerEntrypoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for additional information.
+     * </p>
+     * 
+     * @return The arguments for a container used to run a training job. See <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *         Amazon SageMaker Runs Your Training Image</a> for additional information.
+     */
+
+    public java.util.List<String> getContainerArguments() {
+        return containerArguments;
+    }
+
+    /**
+     * <p>
+     * The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for additional information.
+     * </p>
+     * 
+     * @param containerArguments
+     *        The arguments for a container used to run a training job. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *        Amazon SageMaker Runs Your Training Image</a> for additional information.
+     */
+
+    public void setContainerArguments(java.util.Collection<String> containerArguments) {
+        if (containerArguments == null) {
+            this.containerArguments = null;
+            return;
+        }
+
+        this.containerArguments = new java.util.ArrayList<String>(containerArguments);
+    }
+
+    /**
+     * <p>
+     * The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for additional information.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setContainerArguments(java.util.Collection)} or {@link #withContainerArguments(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param containerArguments
+     *        The arguments for a container used to run a training job. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *        Amazon SageMaker Runs Your Training Image</a> for additional information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withContainerArguments(String... containerArguments) {
+        if (this.containerArguments == null) {
+            setContainerArguments(new java.util.ArrayList<String>(containerArguments.length));
+        }
+        for (String ele : containerArguments) {
+            this.containerArguments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The arguments for a container used to run a training job. See <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How Amazon
+     * SageMaker Runs Your Training Image</a> for additional information.
+     * </p>
+     * 
+     * @param containerArguments
+     *        The arguments for a container used to run a training job. See <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
+     *        Amazon SageMaker Runs Your Training Image</a> for additional information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AlgorithmSpecification withContainerArguments(java.util.Collection<String> containerArguments) {
+        setContainerArguments(containerArguments);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -874,7 +1075,11 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         if (getMetricDefinitions() != null)
             sb.append("MetricDefinitions: ").append(getMetricDefinitions()).append(",");
         if (getEnableSageMakerMetricsTimeSeries() != null)
-            sb.append("EnableSageMakerMetricsTimeSeries: ").append(getEnableSageMakerMetricsTimeSeries());
+            sb.append("EnableSageMakerMetricsTimeSeries: ").append(getEnableSageMakerMetricsTimeSeries()).append(",");
+        if (getContainerEntrypoint() != null)
+            sb.append("ContainerEntrypoint: ").append(getContainerEntrypoint()).append(",");
+        if (getContainerArguments() != null)
+            sb.append("ContainerArguments: ").append(getContainerArguments());
         sb.append("}");
         return sb.toString();
     }
@@ -910,6 +1115,14 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         if (other.getEnableSageMakerMetricsTimeSeries() != null
                 && other.getEnableSageMakerMetricsTimeSeries().equals(this.getEnableSageMakerMetricsTimeSeries()) == false)
             return false;
+        if (other.getContainerEntrypoint() == null ^ this.getContainerEntrypoint() == null)
+            return false;
+        if (other.getContainerEntrypoint() != null && other.getContainerEntrypoint().equals(this.getContainerEntrypoint()) == false)
+            return false;
+        if (other.getContainerArguments() == null ^ this.getContainerArguments() == null)
+            return false;
+        if (other.getContainerArguments() != null && other.getContainerArguments().equals(this.getContainerArguments()) == false)
+            return false;
         return true;
     }
 
@@ -923,6 +1136,8 @@ public class AlgorithmSpecification implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getTrainingInputMode() == null) ? 0 : getTrainingInputMode().hashCode());
         hashCode = prime * hashCode + ((getMetricDefinitions() == null) ? 0 : getMetricDefinitions().hashCode());
         hashCode = prime * hashCode + ((getEnableSageMakerMetricsTimeSeries() == null) ? 0 : getEnableSageMakerMetricsTimeSeries().hashCode());
+        hashCode = prime * hashCode + ((getContainerEntrypoint() == null) ? 0 : getContainerEntrypoint().hashCode());
+        hashCode = prime * hashCode + ((getContainerArguments() == null) ? 0 : getContainerArguments().hashCode());
         return hashCode;
     }
 

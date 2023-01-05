@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,20 +46,22 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     private HyperParameterTuningJobStrategyConfig strategyConfig;
     /**
      * <p>
-     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the performance of
+     * training jobs launched by this tuning job.
      * </p>
      */
     private HyperParameterTuningJobObjective hyperParameterTuningJobObjective;
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that
+     * can be used for this hyperparameter tuning job.
      * </p>
      */
     private ResourceLimits resourceLimits;
     /**
      * <p>
-     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over
+     * to find the optimal configuration for the highest model performance against your chosen objective metric.
      * </p>
      */
     private ParameterRanges parameterRanges;
@@ -95,6 +97,14 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
      * </p>
      */
     private TuningJobCompletionCriteria tuningJobCompletionCriteria;
+    /**
+     * <p>
+     * A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later
+     * for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter
+     * configuration between the two runs.
+     * </p>
+     */
+    private Integer randomSeed;
 
     /**
      * <p>
@@ -228,12 +238,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the performance of
+     * training jobs launched by this tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobObjective
-     *        The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning
-     *        job.
+     *        The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the
+     *        performance of training jobs launched by this tuning job.
      */
 
     public void setHyperParameterTuningJobObjective(HyperParameterTuningJobObjective hyperParameterTuningJobObjective) {
@@ -242,11 +253,12 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the performance of
+     * training jobs launched by this tuning job.
      * </p>
      * 
-     * @return The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning
-     *         job.
+     * @return The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the
+     *         performance of training jobs launched by this tuning job.
      */
 
     public HyperParameterTuningJobObjective getHyperParameterTuningJobObjective() {
@@ -255,12 +267,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning job.
+     * The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the performance of
+     * training jobs launched by this tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobObjective
-     *        The <a>HyperParameterTuningJobObjective</a> object that specifies the objective metric for this tuning
-     *        job.
+     *        The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to evaluate the
+     *        performance of training jobs launched by this tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -271,13 +284,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that
+     * can be used for this hyperparameter tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
-     *        jobs for this tuning job.
+     *        The <a>ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs
+     *        that can be used for this hyperparameter tuning job.
      */
 
     public void setResourceLimits(ResourceLimits resourceLimits) {
@@ -286,12 +299,12 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that
+     * can be used for this hyperparameter tuning job.
      * </p>
      * 
-     * @return The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
-     *         jobs for this tuning job.
+     * @return The <a>ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs
+     *         that can be used for this hyperparameter tuning job.
      */
 
     public ResourceLimits getResourceLimits() {
@@ -300,13 +313,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training jobs
-     * for this tuning job.
+     * The <a>ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs that
+     * can be used for this hyperparameter tuning job.
      * </p>
      * 
      * @param resourceLimits
-     *        The <a>ResourceLimits</a> object that specifies the maximum number of training jobs and parallel training
-     *        jobs for this tuning job.
+     *        The <a>ResourceLimits</a> object that specifies the maximum number of training and parallel training jobs
+     *        that can be used for this hyperparameter tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,12 +330,14 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over
+     * to find the optimal configuration for the highest model performance against your chosen objective metric.
      * </p>
      * 
      * @param parameterRanges
      *        The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job
-     *        searches.
+     *        searches over to find the optimal configuration for the highest model performance against your chosen
+     *        objective metric.
      */
 
     public void setParameterRanges(ParameterRanges parameterRanges) {
@@ -331,11 +346,13 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over
+     * to find the optimal configuration for the highest model performance against your chosen objective metric.
      * </p>
      * 
      * @return The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job
-     *         searches.
+     *         searches over to find the optimal configuration for the highest model performance against your chosen
+     *         objective metric.
      */
 
     public ParameterRanges getParameterRanges() {
@@ -344,12 +361,14 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches.
+     * The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job searches over
+     * to find the optimal configuration for the highest model performance against your chosen objective metric.
      * </p>
      * 
      * @param parameterRanges
      *        The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that this tuning job
-     *        searches.
+     *        searches over to find the optimal configuration for the highest model performance against your chosen
+     *        objective metric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,6 +633,58 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later
+     * for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter
+     * configuration between the two runs.
+     * </p>
+     * 
+     * @param randomSeed
+     *        A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed
+     *        later for the same tuning job will allow hyperparameter optimization to find more a consistent
+     *        hyperparameter configuration between the two runs.
+     */
+
+    public void setRandomSeed(Integer randomSeed) {
+        this.randomSeed = randomSeed;
+    }
+
+    /**
+     * <p>
+     * A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later
+     * for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter
+     * configuration between the two runs.
+     * </p>
+     * 
+     * @return A value used to initialize a pseudo-random number generator. Setting a random seed and using the same
+     *         seed later for the same tuning job will allow hyperparameter optimization to find more a consistent
+     *         hyperparameter configuration between the two runs.
+     */
+
+    public Integer getRandomSeed() {
+        return this.randomSeed;
+    }
+
+    /**
+     * <p>
+     * A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed later
+     * for the same tuning job will allow hyperparameter optimization to find more a consistent hyperparameter
+     * configuration between the two runs.
+     * </p>
+     * 
+     * @param randomSeed
+     *        A value used to initialize a pseudo-random number generator. Setting a random seed and using the same seed
+     *        later for the same tuning job will allow hyperparameter optimization to find more a consistent
+     *        hyperparameter configuration between the two runs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HyperParameterTuningJobConfig withRandomSeed(Integer randomSeed) {
+        setRandomSeed(randomSeed);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -638,7 +709,9 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
         if (getTrainingJobEarlyStoppingType() != null)
             sb.append("TrainingJobEarlyStoppingType: ").append(getTrainingJobEarlyStoppingType()).append(",");
         if (getTuningJobCompletionCriteria() != null)
-            sb.append("TuningJobCompletionCriteria: ").append(getTuningJobCompletionCriteria());
+            sb.append("TuningJobCompletionCriteria: ").append(getTuningJobCompletionCriteria()).append(",");
+        if (getRandomSeed() != null)
+            sb.append("RandomSeed: ").append(getRandomSeed());
         sb.append("}");
         return sb.toString();
     }
@@ -682,6 +755,10 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
             return false;
         if (other.getTuningJobCompletionCriteria() != null && other.getTuningJobCompletionCriteria().equals(this.getTuningJobCompletionCriteria()) == false)
             return false;
+        if (other.getRandomSeed() == null ^ this.getRandomSeed() == null)
+            return false;
+        if (other.getRandomSeed() != null && other.getRandomSeed().equals(this.getRandomSeed()) == false)
+            return false;
         return true;
     }
 
@@ -697,6 +774,7 @@ public class HyperParameterTuningJobConfig implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getParameterRanges() == null) ? 0 : getParameterRanges().hashCode());
         hashCode = prime * hashCode + ((getTrainingJobEarlyStoppingType() == null) ? 0 : getTrainingJobEarlyStoppingType().hashCode());
         hashCode = prime * hashCode + ((getTuningJobCompletionCriteria() == null) ? 0 : getTuningJobCompletionCriteria().hashCode());
+        hashCode = prime * hashCode + ((getRandomSeed() == null) ? 0 : getRandomSeed().hashCode());
         return hashCode;
     }
 

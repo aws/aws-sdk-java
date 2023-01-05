@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -897,6 +897,10 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         Alternately, you can suppress this warning by adding the following tag to the resource that you provide
      *         to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>, value:
      *         <code>true</code>).
+     * @throws WAFExpiredManagedRuleGroupVersionException
+     *         The operation failed because the specified version for the managed rule group has expired. You can
+     *         retrieve the available versions for the managed rule group by calling
+     *         <a>ListAvailableManagedRuleGroupVersions</a>.
      * @sample AWSWAFV2.CreateWebACL
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL" target="_top">AWS API
      *      Documentation</a>
@@ -1883,8 +1887,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </p>
      * <p>
      * The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish
-     * and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
-     * For more information, see <a
+     * and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -2261,8 +2264,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </p>
      * <p>
      * The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish
-     * and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
-     * For more information, see <a
+     * and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -3457,8 +3459,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * </p>
      * <p>
      * The mobile SDK is not generally available. Customers who have access to the mobile SDK can use it to establish
-     * and manage Security Token Service (STS) security tokens for use in HTTP(S) requests from a mobile device to WAF.
-     * For more information, see <a
+     * and manage WAF tokens for use in HTTP(S) requests from a mobile device to WAF. For more information, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF client
      * application integration</a> in the <i>WAF Developer Guide</i>.
      * </p>
@@ -4008,10 +4009,16 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * <li>
      * <p>
      * Create your logging destination. You can use an Amazon CloudWatch Logs log group, an Amazon Simple Storage
-     * Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose. For information about configuring logging
-     * destinations and the permissions that are required for each, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic information</a>
-     * in the <i>WAF Developer Guide</i>.
+     * Service (Amazon S3) bucket, or an Amazon Kinesis Data Firehose.
+     * </p>
+     * <p>
+     * The name that you give the destination must start with <code>aws-waf-logs-</code>. Depending on the type of
+     * destination, you might need to configure additional settings or permissions.
+     * </p>
+     * <p>
+     * For configuration requirements and pricing information for each destination type, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging web ACL traffic</a> in the
+     * <i>WAF Developer Guide</i>.
      * </p>
      * </li>
      * <li>

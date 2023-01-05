@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,18 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The job template ID to be used to start the job run.
+     * </p>
+     */
+    private String jobTemplateId;
+    /**
+     * <p>
+     * The values of job template parameters to start a job run.
+     * </p>
+     */
+    private java.util.Map<String, String> jobTemplateParameters;
 
     /**
      * <p>
@@ -423,6 +435,114 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The job template ID to be used to start the job run.
+     * </p>
+     * 
+     * @param jobTemplateId
+     *        The job template ID to be used to start the job run.
+     */
+
+    public void setJobTemplateId(String jobTemplateId) {
+        this.jobTemplateId = jobTemplateId;
+    }
+
+    /**
+     * <p>
+     * The job template ID to be used to start the job run.
+     * </p>
+     * 
+     * @return The job template ID to be used to start the job run.
+     */
+
+    public String getJobTemplateId() {
+        return this.jobTemplateId;
+    }
+
+    /**
+     * <p>
+     * The job template ID to be used to start the job run.
+     * </p>
+     * 
+     * @param jobTemplateId
+     *        The job template ID to be used to start the job run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartJobRunRequest withJobTemplateId(String jobTemplateId) {
+        setJobTemplateId(jobTemplateId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The values of job template parameters to start a job run.
+     * </p>
+     * 
+     * @return The values of job template parameters to start a job run.
+     */
+
+    public java.util.Map<String, String> getJobTemplateParameters() {
+        return jobTemplateParameters;
+    }
+
+    /**
+     * <p>
+     * The values of job template parameters to start a job run.
+     * </p>
+     * 
+     * @param jobTemplateParameters
+     *        The values of job template parameters to start a job run.
+     */
+
+    public void setJobTemplateParameters(java.util.Map<String, String> jobTemplateParameters) {
+        this.jobTemplateParameters = jobTemplateParameters;
+    }
+
+    /**
+     * <p>
+     * The values of job template parameters to start a job run.
+     * </p>
+     * 
+     * @param jobTemplateParameters
+     *        The values of job template parameters to start a job run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartJobRunRequest withJobTemplateParameters(java.util.Map<String, String> jobTemplateParameters) {
+        setJobTemplateParameters(jobTemplateParameters);
+        return this;
+    }
+
+    /**
+     * Add a single JobTemplateParameters entry
+     *
+     * @see StartJobRunRequest#withJobTemplateParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartJobRunRequest addJobTemplateParametersEntry(String key, String value) {
+        if (null == this.jobTemplateParameters) {
+            this.jobTemplateParameters = new java.util.HashMap<String, String>();
+        }
+        if (this.jobTemplateParameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.jobTemplateParameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into JobTemplateParameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartJobRunRequest clearJobTemplateParametersEntries() {
+        this.jobTemplateParameters = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -449,7 +569,11 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getConfigurationOverrides() != null)
             sb.append("ConfigurationOverrides: ").append(getConfigurationOverrides()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getJobTemplateId() != null)
+            sb.append("JobTemplateId: ").append(getJobTemplateId()).append(",");
+        if (getJobTemplateParameters() != null)
+            sb.append("JobTemplateParameters: ").append(getJobTemplateParameters());
         sb.append("}");
         return sb.toString();
     }
@@ -496,6 +620,14 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getJobTemplateId() == null ^ this.getJobTemplateId() == null)
+            return false;
+        if (other.getJobTemplateId() != null && other.getJobTemplateId().equals(this.getJobTemplateId()) == false)
+            return false;
+        if (other.getJobTemplateParameters() == null ^ this.getJobTemplateParameters() == null)
+            return false;
+        if (other.getJobTemplateParameters() != null && other.getJobTemplateParameters().equals(this.getJobTemplateParameters()) == false)
+            return false;
         return true;
     }
 
@@ -512,6 +644,8 @@ public class StartJobRunRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getJobDriver() == null) ? 0 : getJobDriver().hashCode());
         hashCode = prime * hashCode + ((getConfigurationOverrides() == null) ? 0 : getConfigurationOverrides().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getJobTemplateId() == null) ? 0 : getJobTemplateId().hashCode());
+        hashCode = prime * hashCode + ((getJobTemplateParameters() == null) ? 0 : getJobTemplateParameters().hashCode());
         return hashCode;
     }
 

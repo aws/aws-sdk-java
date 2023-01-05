@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("GenerationExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.GenerationExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnresolvableUsageUnitException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.UnresolvableUsageUnitExceptionUnmarshaller.getInstance()))
@@ -235,9 +238,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
-     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
-     * notifications.
+     * Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define
+     * subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a
+     * time frequency for receiving notifications.
      * </p>
      * 
      * @param createAnomalySubscriptionRequest
@@ -610,7 +613,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
     /**
      * <p>
      * Retrieves all of the cost anomalies detected on your account during the time period that's specified by the
-     * <code>DateInterval</code> object.
+     * <code>DateInterval</code> object. Anomalies are available for up to 90 days.
      * </p>
      * 
      * @param getAnomaliesRequest
@@ -1587,7 +1590,9 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
-     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * Retrieves the Savings Plans recommendations for your account. First use
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then
+     * use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them.
      * </p>
      * 
      * @param getSavingsPlansPurchaseRecommendationRequest
@@ -2045,6 +2050,70 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
 
     /**
      * <p>
+     * Retrieves a list of your historical recommendation generations within the past 30 days.
+     * </p>
+     * 
+     * @param listSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return Result of the ListSavingsPlansPurchaseRecommendationGeneration operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.ListSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSavingsPlansPurchaseRecommendationGenerationResult listSavingsPlansPurchaseRecommendationGeneration(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSavingsPlansPurchaseRecommendationGeneration(request);
+    }
+
+    @SdkInternalApi
+    final ListSavingsPlansPurchaseRecommendationGenerationResult executeListSavingsPlansPurchaseRecommendationGeneration(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest listSavingsPlansPurchaseRecommendationGenerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSavingsPlansPurchaseRecommendationGenerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSavingsPlansPurchaseRecommendationGenerationRequest> request = null;
+        Response<ListSavingsPlansPurchaseRecommendationGenerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSavingsPlansPurchaseRecommendationGenerationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSavingsPlansPurchaseRecommendationGenerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSavingsPlansPurchaseRecommendationGeneration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSavingsPlansPurchaseRecommendationGenerationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListSavingsPlansPurchaseRecommendationGenerationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN).
      * </p>
      * 
@@ -2150,6 +2219,81 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<ProvideAnomalyFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ProvideAnomalyFeedbackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans
+     * recommendations that takes your latest usage data and current Savings Plans inventory into account. You can
+     * refresh Savings Plans recommendations up to three times daily for a consolidated billing family.
+     * </p>
+     * <note>
+     * <p>
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters
+     * are needed to support this operation.
+     * </p>
+     * </note>
+     * 
+     * @param startSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return Result of the StartSavingsPlansPurchaseRecommendationGeneration operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws ServiceQuotaExceededException
+     *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
+     *         resource.
+     * @throws GenerationExistsException
+     *         A request to generate a recommendation is already in progress.
+     * @sample AWSCostExplorer.StartSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartSavingsPlansPurchaseRecommendationGenerationResult startSavingsPlansPurchaseRecommendationGeneration(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartSavingsPlansPurchaseRecommendationGeneration(request);
+    }
+
+    @SdkInternalApi
+    final StartSavingsPlansPurchaseRecommendationGenerationResult executeStartSavingsPlansPurchaseRecommendationGeneration(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest startSavingsPlansPurchaseRecommendationGenerationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startSavingsPlansPurchaseRecommendationGenerationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartSavingsPlansPurchaseRecommendationGenerationRequest> request = null;
+        Response<StartSavingsPlansPurchaseRecommendationGenerationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartSavingsPlansPurchaseRecommendationGenerationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startSavingsPlansPurchaseRecommendationGenerationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost Explorer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSavingsPlansPurchaseRecommendationGeneration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartSavingsPlansPurchaseRecommendationGenerationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartSavingsPlansPurchaseRecommendationGenerationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

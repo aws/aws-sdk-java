@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,15 +60,15 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
     private com.amazonaws.internal.SdkInternalList<MetricStreamFilter> excludeFilters;
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis
-     * Firehose delivery stream must already exist and must be in the same account as the metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis
+     * Data Firehose delivery stream must already exist and must be in the same account as the metric stream.
      * </p>
      */
     private String firehoseArn;
     /**
      * <p>
-     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM
-     * role must already exist and must be in the same account as the metric stream. This IAM role must include the
+     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This
+     * IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the
      * following permissions:
      * </p>
      * <ul>
@@ -126,7 +126,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can
-     * stream percentile statistics such as p95, p99.9 and so on.
+     * stream percentile statistics such as p95, p99.9, and so on.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<MetricStreamStatisticsConfiguration> statisticsConfigurations;
@@ -414,13 +414,14 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis
-     * Firehose delivery stream must already exist and must be in the same account as the metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis
+     * Data Firehose delivery stream must already exist and must be in the same account as the metric stream.
      * </p>
      * 
      * @param firehoseArn
-     *        The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis
-     *        Firehose delivery stream must already exist and must be in the same account as the metric stream.
+     *        The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon
+     *        Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric
+     *        stream.
      */
 
     public void setFirehoseArn(String firehoseArn) {
@@ -429,12 +430,13 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis
-     * Firehose delivery stream must already exist and must be in the same account as the metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis
+     * Data Firehose delivery stream must already exist and must be in the same account as the metric stream.
      * </p>
      * 
-     * @return The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis
-     *         Firehose delivery stream must already exist and must be in the same account as the metric stream.
+     * @return The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon
+     *         Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric
+     *         stream.
      */
 
     public String getFirehoseArn() {
@@ -443,13 +445,14 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis
-     * Firehose delivery stream must already exist and must be in the same account as the metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon Kinesis
+     * Data Firehose delivery stream must already exist and must be in the same account as the metric stream.
      * </p>
      * 
      * @param firehoseArn
-     *        The ARN of the Amazon Kinesis Firehose delivery stream to use for this metric stream. This Amazon Kinesis
-     *        Firehose delivery stream must already exist and must be in the same account as the metric stream.
+     *        The ARN of the Amazon Kinesis Data Firehose delivery stream to use for this metric stream. This Amazon
+     *        Kinesis Data Firehose delivery stream must already exist and must be in the same account as the metric
+     *        stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -460,8 +463,8 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM
-     * role must already exist and must be in the same account as the metric stream. This IAM role must include the
+     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This
+     * IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the
      * following permissions:
      * </p>
      * <ul>
@@ -478,8 +481,8 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This
-     *        IAM role must already exist and must be in the same account as the metric stream. This IAM role must
+     *        The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources.
+     *        This IAM role must already exist and must be in the same account as the metric stream. This IAM role must
      *        include the following permissions:</p>
      *        <ul>
      *        <li>
@@ -500,8 +503,8 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM
-     * role must already exist and must be in the same account as the metric stream. This IAM role must include the
+     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This
+     * IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the
      * following permissions:
      * </p>
      * <ul>
@@ -517,8 +520,8 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This
-     *         IAM role must already exist and must be in the same account as the metric stream. This IAM role must
+     * @return The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources.
+     *         This IAM role must already exist and must be in the same account as the metric stream. This IAM role must
      *         include the following permissions:</p>
      *         <ul>
      *         <li>
@@ -539,8 +542,8 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This IAM
-     * role must already exist and must be in the same account as the metric stream. This IAM role must include the
+     * The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources. This
+     * IAM role must already exist and must be in the same account as the metric stream. This IAM role must include the
      * following permissions:
      * </p>
      * <ul>
@@ -557,8 +560,8 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param roleArn
-     *        The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Firehose resources. This
-     *        IAM role must already exist and must be in the same account as the metric stream. This IAM role must
+     *        The ARN of an IAM role that this metric stream will use to access Amazon Kinesis Data Firehose resources.
+     *        This IAM role must already exist and must be in the same account as the metric stream. This IAM role must
      *        include the following permissions:</p>
      *        <ul>
      *        <li>
@@ -852,7 +855,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can
-     * stream percentile statistics such as p95, p99.9 and so on.
+     * stream percentile statistics such as p95, p99.9, and so on.
      * </p>
      * 
      * @return By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>, and
@@ -866,7 +869,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      *         additional statistic that is supported by CloudWatch, listed in <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      *         CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>,
-     *         you can stream percentile statistics such as p95, p99.9 and so on.
+     *         you can stream percentile statistics such as p95, p99.9, and so on.
      */
 
     public java.util.List<MetricStreamStatisticsConfiguration> getStatisticsConfigurations() {
@@ -889,7 +892,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can
-     * stream percentile statistics such as p95, p99.9 and so on.
+     * stream percentile statistics such as p95, p99.9, and so on.
      * </p>
      * 
      * @param statisticsConfigurations
@@ -904,7 +907,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      *        additional statistic that is supported by CloudWatch, listed in <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      *        CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>,
-     *        you can stream percentile statistics such as p95, p99.9 and so on.
+     *        you can stream percentile statistics such as p95, p99.9, and so on.
      */
 
     public void setStatisticsConfigurations(java.util.Collection<MetricStreamStatisticsConfiguration> statisticsConfigurations) {
@@ -929,7 +932,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can
-     * stream percentile statistics such as p95, p99.9 and so on.
+     * stream percentile statistics such as p95, p99.9, and so on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -949,7 +952,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      *        additional statistic that is supported by CloudWatch, listed in <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      *        CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>,
-     *        you can stream percentile statistics such as p95, p99.9 and so on.
+     *        you can stream percentile statistics such as p95, p99.9, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -976,7 +979,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      * CloudWatch, listed in <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      * CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>, you can
-     * stream percentile statistics such as p95, p99.9 and so on.
+     * stream percentile statistics such as p95, p99.9, and so on.
      * </p>
      * 
      * @param statisticsConfigurations
@@ -991,7 +994,7 @@ public class PutMetricStreamRequest extends com.amazonaws.AmazonWebServiceReques
      *        additional statistic that is supported by CloudWatch, listed in <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
      *        CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry0.7</code>,
-     *        you can stream percentile statistics such as p95, p99.9 and so on.
+     *        you can stream percentile statistics such as p95, p99.9, and so on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class ListComponentTypesResultJsonUnmarshaller implements Unmarshaller<Li
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("workspaceId", targetDepth)) {
+                    context.nextToken();
+                    listComponentTypesResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("componentTypeSummaries", targetDepth)) {
                     context.nextToken();
                     listComponentTypesResult.setComponentTypeSummaries(new ListUnmarshaller<ComponentTypeSummary>(ComponentTypeSummaryJsonUnmarshaller
@@ -55,17 +59,13 @@ public class ListComponentTypesResultJsonUnmarshaller implements Unmarshaller<Li
 
                     .unmarshall(context));
                 }
-                if (context.testExpression("maxResults", targetDepth)) {
-                    context.nextToken();
-                    listComponentTypesResult.setMaxResults(context.getUnmarshaller(Integer.class).unmarshall(context));
-                }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();
                     listComponentTypesResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("workspaceId", targetDepth)) {
+                if (context.testExpression("maxResults", targetDepth)) {
                     context.nextToken();
-                    listComponentTypesResult.setWorkspaceId(context.getUnmarshaller(String.class).unmarshall(context));
+                    listComponentTypesResult.setMaxResults(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

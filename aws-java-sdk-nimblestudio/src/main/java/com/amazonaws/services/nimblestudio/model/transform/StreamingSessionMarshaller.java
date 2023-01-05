@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class StreamingSessionMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> AUTOMATICTERMINATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("automaticTerminationMode").build();
+    private static final MarshallingInfo<String> BACKUPMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("backupMode").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> CREATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -39,14 +43,20 @@ public class StreamingSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ec2InstanceType").build();
     private static final MarshallingInfo<String> LAUNCHPROFILEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchProfileId").build();
+    private static final MarshallingInfo<Integer> MAXBACKUPSTORETAIN_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxBackupsToRetain").build();
     private static final MarshallingInfo<String> OWNEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ownedBy").build();
     private static final MarshallingInfo<String> SESSIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("sessionId").build();
+    private static final MarshallingInfo<String> SESSIONPERSISTENCEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sessionPersistenceMode").build();
     private static final MarshallingInfo<java.util.Date> STARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> STARTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("startedBy").build();
+    private static final MarshallingInfo<String> STARTEDFROMBACKUPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("startedFromBackupId").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("state").build();
     private static final MarshallingInfo<String> STATUSCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -69,6 +79,10 @@ public class StreamingSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatedAt").timestampFormat("iso8601").build();
     private static final MarshallingInfo<String> UPDATEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("updatedBy").build();
+    private static final MarshallingInfo<StructuredPojo> VOLUMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeConfiguration").build();
+    private static final MarshallingInfo<String> VOLUMERETENTIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeRetentionMode").build();
 
     private static final StreamingSessionMarshaller instance = new StreamingSessionMarshaller();
 
@@ -87,14 +101,19 @@ public class StreamingSessionMarshaller {
 
         try {
             protocolMarshaller.marshall(streamingSession.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(streamingSession.getAutomaticTerminationMode(), AUTOMATICTERMINATIONMODE_BINDING);
+            protocolMarshaller.marshall(streamingSession.getBackupMode(), BACKUPMODE_BINDING);
             protocolMarshaller.marshall(streamingSession.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(streamingSession.getCreatedBy(), CREATEDBY_BINDING);
             protocolMarshaller.marshall(streamingSession.getEc2InstanceType(), EC2INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(streamingSession.getLaunchProfileId(), LAUNCHPROFILEID_BINDING);
+            protocolMarshaller.marshall(streamingSession.getMaxBackupsToRetain(), MAXBACKUPSTORETAIN_BINDING);
             protocolMarshaller.marshall(streamingSession.getOwnedBy(), OWNEDBY_BINDING);
             protocolMarshaller.marshall(streamingSession.getSessionId(), SESSIONID_BINDING);
+            protocolMarshaller.marshall(streamingSession.getSessionPersistenceMode(), SESSIONPERSISTENCEMODE_BINDING);
             protocolMarshaller.marshall(streamingSession.getStartedAt(), STARTEDAT_BINDING);
             protocolMarshaller.marshall(streamingSession.getStartedBy(), STARTEDBY_BINDING);
+            protocolMarshaller.marshall(streamingSession.getStartedFromBackupId(), STARTEDFROMBACKUPID_BINDING);
             protocolMarshaller.marshall(streamingSession.getState(), STATE_BINDING);
             protocolMarshaller.marshall(streamingSession.getStatusCode(), STATUSCODE_BINDING);
             protocolMarshaller.marshall(streamingSession.getStatusMessage(), STATUSMESSAGE_BINDING);
@@ -106,6 +125,8 @@ public class StreamingSessionMarshaller {
             protocolMarshaller.marshall(streamingSession.getTerminateAt(), TERMINATEAT_BINDING);
             protocolMarshaller.marshall(streamingSession.getUpdatedAt(), UPDATEDAT_BINDING);
             protocolMarshaller.marshall(streamingSession.getUpdatedBy(), UPDATEDBY_BINDING);
+            protocolMarshaller.marshall(streamingSession.getVolumeConfiguration(), VOLUMECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(streamingSession.getVolumeRetentionMode(), VOLUMERETENTIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,25 @@ public class CoverageFilterCriteriaJsonUnmarshaller implements Unmarshaller<Cove
                 if (context.testExpression("ecrRepositoryName", targetDepth)) {
                     context.nextToken();
                     coverageFilterCriteria.setEcrRepositoryName(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionName", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLambdaFunctionName(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionRuntime", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLambdaFunctionRuntime(new ListUnmarshaller<CoverageStringFilter>(CoverageStringFilterJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionTags", targetDepth)) {
+                    context.nextToken();
+                    coverageFilterCriteria.setLambdaFunctionTags(new ListUnmarshaller<CoverageMapFilter>(CoverageMapFilterJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

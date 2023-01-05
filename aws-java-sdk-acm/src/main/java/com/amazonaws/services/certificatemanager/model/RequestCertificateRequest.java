@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,7 +115,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private
      * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
@@ -129,6 +129,20 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the
+     * default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller,
+     * offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported
+     * by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the
+     * requirements for the AWS service where you plan to deploy your certificate.
+     * </p>
+     * <p>
+     * Default: RSA_2048
+     * </p>
+     */
+    private String keyAlgorithm;
 
     /**
      * <p>
@@ -812,7 +826,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private
      * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
@@ -823,7 +837,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *        attempt to issue a public certificate. For more information about private CAs, see the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     *        href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private
      *        Certificate Authority</a> user guide. The ARN must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -838,7 +852,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private
      * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
@@ -848,7 +862,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *         certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *         attempt to issue a public certificate. For more information about private CAs, see the <a
-     *         href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     *         href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private
      *         Certificate Authority</a> user guide. The ARN must have the following form: </p>
      *         <p>
      *         <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -863,7 +877,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      * certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt
      * to issue a public certificate. For more information about private CAs, see the <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private
      * Certificate Authority</a> user guide. The ARN must have the following form:
      * </p>
      * <p>
@@ -874,7 +888,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the
      *        certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will
      *        attempt to issue a public certificate. For more information about private CAs, see the <a
-     *        href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html">Certificate Manager Private
+     *        href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html">Amazon Web Services Private
      *        Certificate Authority</a> user guide. The ARN must have the following form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
@@ -957,6 +971,129 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the
+     * default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller,
+     * offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported
+     * by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the
+     * requirements for the AWS service where you plan to deploy your certificate.
+     * </p>
+     * <p>
+     * Default: RSA_2048
+     * </p>
+     * 
+     * @param keyAlgorithm
+     *        Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA
+     *        is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys
+     *        are smaller, offering security comparable to RSA keys but with greater computing efficiency. However,
+     *        ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support
+     *        ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that
+     *        compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your
+     *        certificate.</p>
+     *        <p>
+     *        Default: RSA_2048
+     * @see KeyAlgorithm
+     */
+
+    public void setKeyAlgorithm(String keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the
+     * default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller,
+     * offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported
+     * by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the
+     * requirements for the AWS service where you plan to deploy your certificate.
+     * </p>
+     * <p>
+     * Default: RSA_2048
+     * </p>
+     * 
+     * @return Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data.
+     *         RSA is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA)
+     *         keys are smaller, offering security comparable to RSA keys but with greater computing efficiency.
+     *         However, ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only
+     *         support ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to
+     *         ensure that compatibility is not broken. Check the requirements for the AWS service where you plan to
+     *         deploy your certificate.</p>
+     *         <p>
+     *         Default: RSA_2048
+     * @see KeyAlgorithm
+     */
+
+    public String getKeyAlgorithm() {
+        return this.keyAlgorithm;
+    }
+
+    /**
+     * <p>
+     * Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the
+     * default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller,
+     * offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported
+     * by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the
+     * requirements for the AWS service where you plan to deploy your certificate.
+     * </p>
+     * <p>
+     * Default: RSA_2048
+     * </p>
+     * 
+     * @param keyAlgorithm
+     *        Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA
+     *        is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys
+     *        are smaller, offering security comparable to RSA keys but with greater computing efficiency. However,
+     *        ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support
+     *        ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that
+     *        compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your
+     *        certificate.</p>
+     *        <p>
+     *        Default: RSA_2048
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyAlgorithm
+     */
+
+    public RequestCertificateRequest withKeyAlgorithm(String keyAlgorithm) {
+        setKeyAlgorithm(keyAlgorithm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA is the
+     * default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys are smaller,
+     * offering security comparable to RSA keys but with greater computing efficiency. However, ECDSA is not supported
+     * by all network clients. Some AWS services may require RSA keys, or only support ECDSA keys of a particular size,
+     * while others allow the use of either RSA and ECDSA keys to ensure that compatibility is not broken. Check the
+     * requirements for the AWS service where you plan to deploy your certificate.
+     * </p>
+     * <p>
+     * Default: RSA_2048
+     * </p>
+     * 
+     * @param keyAlgorithm
+     *        Specifies the algorithm of the public and private key pair that your certificate uses to encrypt data. RSA
+     *        is the default key algorithm for ACM certificates. Elliptic Curve Digital Signature Algorithm (ECDSA) keys
+     *        are smaller, offering security comparable to RSA keys but with greater computing efficiency. However,
+     *        ECDSA is not supported by all network clients. Some AWS services may require RSA keys, or only support
+     *        ECDSA keys of a particular size, while others allow the use of either RSA and ECDSA keys to ensure that
+     *        compatibility is not broken. Check the requirements for the AWS service where you plan to deploy your
+     *        certificate.</p>
+     *        <p>
+     *        Default: RSA_2048
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyAlgorithm
+     */
+
+    public RequestCertificateRequest withKeyAlgorithm(KeyAlgorithm keyAlgorithm) {
+        this.keyAlgorithm = keyAlgorithm.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -983,7 +1120,9 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
         if (getCertificateAuthorityArn() != null)
             sb.append("CertificateAuthorityArn: ").append(getCertificateAuthorityArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getKeyAlgorithm() != null)
+            sb.append("KeyAlgorithm: ").append(getKeyAlgorithm());
         sb.append("}");
         return sb.toString();
     }
@@ -1030,6 +1169,10 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getKeyAlgorithm() == null ^ this.getKeyAlgorithm() == null)
+            return false;
+        if (other.getKeyAlgorithm() != null && other.getKeyAlgorithm().equals(this.getKeyAlgorithm()) == false)
+            return false;
         return true;
     }
 
@@ -1046,6 +1189,7 @@ public class RequestCertificateRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         hashCode = prime * hashCode + ((getCertificateAuthorityArn() == null) ? 0 : getCertificateAuthorityArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getKeyAlgorithm() == null) ? 0 : getKeyAlgorithm().hashCode());
         return hashCode;
     }
 

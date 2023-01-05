@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,11 +86,22 @@ import com.amazonaws.services.supportapp.model.*;
  * href="https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html">Authorize a Slack workspace
  * to enable the Amazon Web Services Support App</a>.
  * </p>
+ * <note>
+ * <ul>
+ * <li>
+ * <p>
+ * You must have a Business or Enterprise Support plan to use the Amazon Web Services Support App API.
  * </p>
- * 
- * <pre>
- * <code> &lt;note&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You must have a Business or Enterprise Support plan to use the Amazon Web Services Support App API. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;For more information about the Amazon Web Services Support App endpoints, see the &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region&quot;&gt;Amazon Web Services Support App in Slack endpoints&lt;/a&gt; in the &lt;i&gt;Amazon Web Services General Reference&lt;/i&gt;.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/note&gt; </code>
- * </pre>
+ * </li>
+ * <li>
+ * <p>
+ * For more information about the Amazon Web Services Support App endpoints, see the <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region">Amazon Web Services
+ * Support App in Slack endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+ * </p>
+ * </li>
+ * </ul>
+ * </note></p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSupportApp {
@@ -165,6 +176,18 @@ public interface AWSSupportApp {
      *         Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that
+     *         doesn't belong to an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management
+     *         account hasn't registered that workspace yet for the organization.
+     *         </p>
+     *         </li>
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @throws InternalServerException
@@ -187,8 +210,8 @@ public interface AWSSupportApp {
      * @param deleteAccountAliasRequest
      * @return Result of the DeleteAccountAlias operation returned by the service.
      * @throws ResourceNotFoundException
-     *         The specified resource is missing or doesn't exist, such as an account alias or Slack channel
-     *         configuration.
+     *         The specified resource is missing or doesn't exist, such as an account alias, Slack channel
+     *         configuration, or Slack workspace configuration.
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @throws InternalServerException
@@ -231,9 +254,21 @@ public interface AWSSupportApp {
      *         Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that
+     *         doesn't belong to an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management
+     *         account hasn't registered that workspace yet for the organization.
+     *         </p>
+     *         </li>
      * @throws ResourceNotFoundException
-     *         The specified resource is missing or doesn't exist, such as an account alias or Slack channel
-     *         configuration.
+     *         The specified resource is missing or doesn't exist, such as an account alias, Slack channel
+     *         configuration, or Slack workspace configuration.
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @throws InternalServerException
@@ -278,9 +313,21 @@ public interface AWSSupportApp {
      *         Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that
+     *         doesn't belong to an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management
+     *         account hasn't registered that workspace yet for the organization.
+     *         </p>
+     *         </li>
      * @throws ResourceNotFoundException
-     *         The specified resource is missing or doesn't exist, such as an account alias or Slack channel
-     *         configuration.
+     *         The specified resource is missing or doesn't exist, such as an account alias, Slack channel
+     *         configuration, or Slack workspace configuration.
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @throws InternalServerException
@@ -367,6 +414,112 @@ public interface AWSSupportApp {
 
     /**
      * <p>
+     * Registers a Slack workspace for your Amazon Web Services account. To call this API, your account must be part of
+     * an organization in Organizations.
+     * </p>
+     * <p>
+     * If you're the <i>management account</i> and you want to register Slack workspaces for your organization, you must
+     * complete the following tasks:
+     * </p>
+     * <ol>
+     * <li>
+     * <p>
+     * Sign in to the <a href="https://console.aws.amazon.com/support/app">Amazon Web Services Support Center</a> and
+     * authorize the Slack workspaces where you want your organization to have access to. See <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html">Authorize a Slack
+     * workspace</a> in the <i>Amazon Web Services Support User Guide</i>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Call the <code>RegisterSlackWorkspaceForOrganization</code> API to authorize each Slack workspace for the
+     * organization.
+     * </p>
+     * </li>
+     * </ol>
+     * <p>
+     * After the management account authorizes the Slack workspace, member accounts can call this API to authorize the
+     * same Slack workspace for their individual accounts. Member accounts don't need to authorize the Slack workspace
+     * manually through the <a href="https://console.aws.amazon.com/support/app">Amazon Web Services Support Center</a>.
+     * </p>
+     * <p>
+     * To use the Amazon Web Services Support App, each account must then complete the following tasks:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Create an Identity and Access Management (IAM) role with the required permission. For more information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the
+     * Amazon Web Services Support App</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Configure a Slack channel to use the Amazon Web Services Support App for support cases for that account. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/user/add-your-slack-channel.html">Configuring a Slack
+     * channel</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param registerSlackWorkspaceForOrganizationRequest
+     * @return Result of the RegisterSlackWorkspaceForOrganization operation returned by the service.
+     * @throws ConflictException
+     *         Your request has a conflict. For example, you might receive this error if you try the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Add, update, or delete a Slack channel configuration before you add a Slack workspace to your Amazon Web
+     *         Services account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Add a Slack channel configuration that already exists in your Amazon Web Services account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Delete a Slack channel configuration for a live chat channel.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that
+     *         doesn't belong to an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management
+     *         account hasn't registered that workspace yet for the organization.
+     *         </p>
+     *         </li>
+     * @throws ResourceNotFoundException
+     *         The specified resource is missing or doesn't exist, such as an account alias, Slack channel
+     *         configuration, or Slack workspace configuration.
+     * @throws AccessDeniedException
+     *         You don't have sufficient permission to perform this action.
+     * @throws InternalServerException
+     *         We can’t process your request right now because of a server issue. Try again later.
+     * @throws ValidationException
+     *         Your request input doesn't meet the constraints that the Amazon Web Services Support App specifies.
+     * @sample AWSSupportApp.RegisterSlackWorkspaceForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/RegisterSlackWorkspaceForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RegisterSlackWorkspaceForOrganizationResult registerSlackWorkspaceForOrganization(
+            RegisterSlackWorkspaceForOrganizationRequest registerSlackWorkspaceForOrganizationRequest);
+
+    /**
+     * <p>
      * Updates the configuration for a Slack channel, such as case update notifications.
      * </p>
      * 
@@ -396,9 +549,21 @@ public interface AWSSupportApp {
      *         Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that
+     *         doesn't belong to an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management
+     *         account hasn't registered that workspace yet for the organization.
+     *         </p>
+     *         </li>
      * @throws ResourceNotFoundException
-     *         The specified resource is missing or doesn't exist, such as an account alias or Slack channel
-     *         configuration.
+     *         The specified resource is missing or doesn't exist, such as an account alias, Slack channel
+     *         configuration, or Slack workspace configuration.
      * @throws AccessDeniedException
      *         You don't have sufficient permission to perform this action.
      * @throws InternalServerException

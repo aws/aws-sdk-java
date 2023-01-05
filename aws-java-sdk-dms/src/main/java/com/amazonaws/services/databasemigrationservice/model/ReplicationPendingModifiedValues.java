@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,13 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
      * </p>
      */
     private String engineVersion;
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     */
+    private String networkType;
 
     /**
      * <p>
@@ -279,6 +286,52 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
     }
 
     /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param networkType
+     *        The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *        supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @return The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *         supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param networkType
+     *        The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *        supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationPendingModifiedValues withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +350,9 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
         if (getMultiAZ() != null)
             sb.append("MultiAZ: ").append(getMultiAZ()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType());
         sb.append("}");
         return sb.toString();
     }
@@ -328,6 +383,10 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
         return true;
     }
 
@@ -340,6 +399,7 @@ public class ReplicationPendingModifiedValues implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
         hashCode = prime * hashCode + ((getMultiAZ() == null) ? 0 : getMultiAZ().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         return hashCode;
     }
 

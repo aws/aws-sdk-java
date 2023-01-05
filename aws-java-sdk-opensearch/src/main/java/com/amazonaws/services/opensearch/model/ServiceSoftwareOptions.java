@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The current options of an domain service software options.
+ * The current status of the service software for an Amazon OpenSearch Service domain. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service software
+ * updates in Amazon OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -33,34 +35,33 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
     private String currentVersion;
     /**
      * <p>
-     * The new service software version if one is available.
+     * The new service software version, if one is available.
      * </p>
      */
     private String newVersion;
     /**
      * <p>
-     * <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update
-     * your service software version.
+     * True if you're able to update your service software version. False if you can't update your service software
+     * version.
      * </p>
      */
     private Boolean updateAvailable;
     /**
      * <p>
-     * <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't
-     * cancel your service software update.
+     * True if you're able to cancel your service software version update. False if you can't cancel your service
+     * software update.
      * </p>
      */
     private Boolean cancellable;
     /**
      * <p>
-     * The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>,
-     * <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>.
+     * The status of your service software update.
      * </p>
      */
     private String updateStatus;
     /**
      * <p>
-     * The description of the <code>UpdateStatus</code>.
+     * A description of the service software update status.
      * </p>
      */
     private String description;
@@ -73,8 +74,8 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
     private java.util.Date automatedUpdateDate;
     /**
      * <p>
-     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
-     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * True if a service software is never automatically updated. False if a service software is automatically updated
+     * after the automated update date.
      * </p>
      */
     private Boolean optionalDeployment;
@@ -121,11 +122,11 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The new service software version if one is available.
+     * The new service software version, if one is available.
      * </p>
      * 
      * @param newVersion
-     *        The new service software version if one is available.
+     *        The new service software version, if one is available.
      */
 
     public void setNewVersion(String newVersion) {
@@ -134,10 +135,10 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The new service software version if one is available.
+     * The new service software version, if one is available.
      * </p>
      * 
-     * @return The new service software version if one is available.
+     * @return The new service software version, if one is available.
      */
 
     public String getNewVersion() {
@@ -146,11 +147,11 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The new service software version if one is available.
+     * The new service software version, if one is available.
      * </p>
      * 
      * @param newVersion
-     *        The new service software version if one is available.
+     *        The new service software version, if one is available.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,13 +162,13 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update
-     * your service software version.
+     * True if you're able to update your service software version. False if you can't update your service software
+     * version.
      * </p>
      * 
      * @param updateAvailable
-     *        <code>True</code> if you're able to update your service software version. <code>False</code> if you can't
-     *        update your service software version.
+     *        True if you're able to update your service software version. False if you can't update your service
+     *        software version.
      */
 
     public void setUpdateAvailable(Boolean updateAvailable) {
@@ -176,12 +177,12 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update
-     * your service software version.
+     * True if you're able to update your service software version. False if you can't update your service software
+     * version.
      * </p>
      * 
-     * @return <code>True</code> if you're able to update your service software version. <code>False</code> if you can't
-     *         update your service software version.
+     * @return True if you're able to update your service software version. False if you can't update your service
+     *         software version.
      */
 
     public Boolean getUpdateAvailable() {
@@ -190,13 +191,13 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update
-     * your service software version.
+     * True if you're able to update your service software version. False if you can't update your service software
+     * version.
      * </p>
      * 
      * @param updateAvailable
-     *        <code>True</code> if you're able to update your service software version. <code>False</code> if you can't
-     *        update your service software version.
+     *        True if you're able to update your service software version. False if you can't update your service
+     *        software version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,12 +208,12 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to update your service software version. <code>False</code> if you can't update
-     * your service software version.
+     * True if you're able to update your service software version. False if you can't update your service software
+     * version.
      * </p>
      * 
-     * @return <code>True</code> if you're able to update your service software version. <code>False</code> if you can't
-     *         update your service software version.
+     * @return True if you're able to update your service software version. False if you can't update your service
+     *         software version.
      */
 
     public Boolean isUpdateAvailable() {
@@ -221,13 +222,13 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't
-     * cancel your service software update.
+     * True if you're able to cancel your service software version update. False if you can't cancel your service
+     * software update.
      * </p>
      * 
      * @param cancellable
-     *        <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you
-     *        can't cancel your service software update.
+     *        True if you're able to cancel your service software version update. False if you can't cancel your service
+     *        software update.
      */
 
     public void setCancellable(Boolean cancellable) {
@@ -236,12 +237,12 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't
-     * cancel your service software update.
+     * True if you're able to cancel your service software version update. False if you can't cancel your service
+     * software update.
      * </p>
      * 
-     * @return <code>True</code> if you're able to cancel your service software version update. <code>False</code> if
-     *         you can't cancel your service software update.
+     * @return True if you're able to cancel your service software version update. False if you can't cancel your
+     *         service software update.
      */
 
     public Boolean getCancellable() {
@@ -250,13 +251,13 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't
-     * cancel your service software update.
+     * True if you're able to cancel your service software version update. False if you can't cancel your service
+     * software update.
      * </p>
      * 
      * @param cancellable
-     *        <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you
-     *        can't cancel your service software update.
+     *        True if you're able to cancel your service software version update. False if you can't cancel your service
+     *        software update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,12 +268,12 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if you're able to cancel your service software version update. <code>False</code> if you can't
-     * cancel your service software update.
+     * True if you're able to cancel your service software version update. False if you can't cancel your service
+     * software update.
      * </p>
      * 
-     * @return <code>True</code> if you're able to cancel your service software version update. <code>False</code> if
-     *         you can't cancel your service software update.
+     * @return True if you're able to cancel your service software version update. False if you can't cancel your
+     *         service software update.
      */
 
     public Boolean isCancellable() {
@@ -281,14 +282,11 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>,
-     * <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>.
+     * The status of your service software update.
      * </p>
      * 
      * @param updateStatus
-     *        The status of your service software update. This field can take the following values:
-     *        <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and
-     *        <code> NOT_ELIGIBLE</code>.
+     *        The status of your service software update.
      * @see DeploymentStatus
      */
 
@@ -298,13 +296,10 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>,
-     * <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>.
+     * The status of your service software update.
      * </p>
      * 
-     * @return The status of your service software update. This field can take the following values:
-     *         <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     *         and <code> NOT_ELIGIBLE</code>.
+     * @return The status of your service software update.
      * @see DeploymentStatus
      */
 
@@ -314,14 +309,11 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>,
-     * <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>.
+     * The status of your service software update.
      * </p>
      * 
      * @param updateStatus
-     *        The status of your service software update. This field can take the following values:
-     *        <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and
-     *        <code> NOT_ELIGIBLE</code>.
+     *        The status of your service software update.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentStatus
      */
@@ -333,14 +325,11 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The status of your service software update. This field can take the following values: <code> ELIGIBLE</code>,
-     * <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code> NOT_ELIGIBLE</code>.
+     * The status of your service software update.
      * </p>
      * 
      * @param updateStatus
-     *        The status of your service software update. This field can take the following values:
-     *        <code> ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and
-     *        <code> NOT_ELIGIBLE</code>.
+     *        The status of your service software update.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DeploymentStatus
      */
@@ -352,11 +341,11 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The description of the <code>UpdateStatus</code>.
+     * A description of the service software update status.
      * </p>
      * 
      * @param description
-     *        The description of the <code>UpdateStatus</code>.
+     *        A description of the service software update status.
      */
 
     public void setDescription(String description) {
@@ -365,10 +354,10 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The description of the <code>UpdateStatus</code>.
+     * A description of the service software update status.
      * </p>
      * 
-     * @return The description of the <code>UpdateStatus</code>.
+     * @return A description of the service software update status.
      */
 
     public String getDescription() {
@@ -377,11 +366,11 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The description of the <code>UpdateStatus</code>.
+     * A description of the service software update status.
      * </p>
      * 
      * @param description
-     *        The description of the <code>UpdateStatus</code>.
+     *        A description of the service software update status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -438,13 +427,13 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
-     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * True if a service software is never automatically updated. False if a service software is automatically updated
+     * after the automated update date.
      * </p>
      * 
      * @param optionalDeployment
-     *        <code>True</code> if a service software is never automatically updated. <code>False</code> if a service
-     *        software is automatically updated after <code>AutomatedUpdateDate</code>.
+     *        True if a service software is never automatically updated. False if a service software is automatically
+     *        updated after the automated update date.
      */
 
     public void setOptionalDeployment(Boolean optionalDeployment) {
@@ -453,12 +442,12 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
-     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * True if a service software is never automatically updated. False if a service software is automatically updated
+     * after the automated update date.
      * </p>
      * 
-     * @return <code>True</code> if a service software is never automatically updated. <code>False</code> if a service
-     *         software is automatically updated after <code>AutomatedUpdateDate</code>.
+     * @return True if a service software is never automatically updated. False if a service software is automatically
+     *         updated after the automated update date.
      */
 
     public Boolean getOptionalDeployment() {
@@ -467,13 +456,13 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
-     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * True if a service software is never automatically updated. False if a service software is automatically updated
+     * after the automated update date.
      * </p>
      * 
      * @param optionalDeployment
-     *        <code>True</code> if a service software is never automatically updated. <code>False</code> if a service
-     *        software is automatically updated after <code>AutomatedUpdateDate</code>.
+     *        True if a service software is never automatically updated. False if a service software is automatically
+     *        updated after the automated update date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,12 +473,12 @@ public class ServiceSoftwareOptions implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * <code>True</code> if a service software is never automatically updated. <code>False</code> if a service software
-     * is automatically updated after <code>AutomatedUpdateDate</code>.
+     * True if a service software is never automatically updated. False if a service software is automatically updated
+     * after the automated update date.
      * </p>
      * 
-     * @return <code>True</code> if a service software is never automatically updated. <code>False</code> if a service
-     *         software is automatically updated after <code>AutomatedUpdateDate</code>.
+     * @return True if a service software is never automatically updated. False if a service software is automatically
+     *         updated after the automated update date.
      */
 
     public Boolean isOptionalDeployment() {

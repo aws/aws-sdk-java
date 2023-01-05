@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class DocumentClass implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Float score;
+    /**
+     * <p>
+     * Page number in the input document. This field is present in the response only if your request includes the
+     * <code>Byte</code> parameter.
+     * </p>
+     */
+    private Integer page;
 
     /**
      * <p>
@@ -122,6 +129,52 @@ public class DocumentClass implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Page number in the input document. This field is present in the response only if your request includes the
+     * <code>Byte</code> parameter.
+     * </p>
+     * 
+     * @param page
+     *        Page number in the input document. This field is present in the response only if your request includes the
+     *        <code>Byte</code> parameter.
+     */
+
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    /**
+     * <p>
+     * Page number in the input document. This field is present in the response only if your request includes the
+     * <code>Byte</code> parameter.
+     * </p>
+     * 
+     * @return Page number in the input document. This field is present in the response only if your request includes
+     *         the <code>Byte</code> parameter.
+     */
+
+    public Integer getPage() {
+        return this.page;
+    }
+
+    /**
+     * <p>
+     * Page number in the input document. This field is present in the response only if your request includes the
+     * <code>Byte</code> parameter.
+     * </p>
+     * 
+     * @param page
+     *        Page number in the input document. This field is present in the response only if your request includes the
+     *        <code>Byte</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentClass withPage(Integer page) {
+        setPage(page);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +189,9 @@ public class DocumentClass implements Serializable, Cloneable, StructuredPojo {
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getScore() != null)
-            sb.append("Score: ").append(getScore());
+            sb.append("Score: ").append(getScore()).append(",");
+        if (getPage() != null)
+            sb.append("Page: ").append(getPage());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +214,10 @@ public class DocumentClass implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getScore() != null && other.getScore().equals(this.getScore()) == false)
             return false;
+        if (other.getPage() == null ^ this.getPage() == null)
+            return false;
+        if (other.getPage() != null && other.getPage().equals(this.getPage()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +228,7 @@ public class DocumentClass implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getScore() == null) ? 0 : getScore().hashCode());
+        hashCode = prime * hashCode + ((getPage() == null) ? 0 : getPage().hashCode());
         return hashCode;
     }
 

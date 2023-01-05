@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,29 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String kmsKey;
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * <p>
+     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
+     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
+     * organization.
+     * </p>
+     * </important>
+     */
+    private Boolean evidenceFinderEnabled;
 
     /**
      * <p>
@@ -241,6 +264,186 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * <p>
+     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
+     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
+     * organization.
+     * </p>
+     * </important>
+     * 
+     * @param evidenceFinderEnabled
+     *        Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *        evidence finder.</p> <important>
+     *        <p>
+     *        When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *        used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *        again. Your only alternative is to <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *        >deregister</a> and then <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *        >re-register</a> Audit Manager.
+     *        </p>
+     *        <p>
+     *        Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
+     *        using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
+     *        accounts in your organization.
+     *        </p>
+     */
+
+    public void setEvidenceFinderEnabled(Boolean evidenceFinderEnabled) {
+        this.evidenceFinderEnabled = evidenceFinderEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * <p>
+     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
+     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
+     * organization.
+     * </p>
+     * </important>
+     * 
+     * @return Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *         evidence finder.</p> <important>
+     *         <p>
+     *         When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *         used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *         again. Your only alternative is to <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *         >deregister</a> and then <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *         >re-register</a> Audit Manager.
+     *         </p>
+     *         <p>
+     *         Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
+     *         using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
+     *         accounts in your organization.
+     *         </p>
+     */
+
+    public Boolean getEvidenceFinderEnabled() {
+        return this.evidenceFinderEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * <p>
+     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
+     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
+     * organization.
+     * </p>
+     * </important>
+     * 
+     * @param evidenceFinderEnabled
+     *        Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *        evidence finder.</p> <important>
+     *        <p>
+     *        When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *        used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *        again. Your only alternative is to <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *        >deregister</a> and then <a
+     *        href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *        >re-register</a> Audit Manager.
+     *        </p>
+     *        <p>
+     *        Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
+     *        using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
+     *        accounts in your organization.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSettingsRequest withEvidenceFinderEnabled(Boolean evidenceFinderEnabled) {
+        setEvidenceFinderEnabled(evidenceFinderEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence
+     * finder.
+     * </p>
+     * <important>
+     * <p>
+     * When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to
+     * query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only
+     * alternative is to <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html">deregister</a>
+     * and then <a
+     * href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html">re-register</a>
+     * Audit Manager.
+     * </p>
+     * <p>
+     * Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re using
+     * Audit Manager as a delegated administrator, keep in mind that this action applies to all member accounts in your
+     * organization.
+     * </p>
+     * </important>
+     * 
+     * @return Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable
+     *         evidence finder.</p> <important>
+     *         <p>
+     *         When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s
+     *         used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature
+     *         again. Your only alternative is to <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html"
+     *         >deregister</a> and then <a
+     *         href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html"
+     *         >re-register</a> Audit Manager.
+     *         </p>
+     *         <p>
+     *         Disabling evidence finder is permanent, so consider this decision carefully before you proceed. If you’re
+     *         using Audit Manager as a delegated administrator, keep in mind that this action applies to all member
+     *         accounts in your organization.
+     *         </p>
+     */
+
+    public Boolean isEvidenceFinderEnabled() {
+        return this.evidenceFinderEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -259,7 +462,9 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDefaultProcessOwners() != null)
             sb.append("DefaultProcessOwners: ").append(getDefaultProcessOwners()).append(",");
         if (getKmsKey() != null)
-            sb.append("KmsKey: ").append(getKmsKey());
+            sb.append("KmsKey: ").append(getKmsKey()).append(",");
+        if (getEvidenceFinderEnabled() != null)
+            sb.append("EvidenceFinderEnabled: ").append(getEvidenceFinderEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +496,10 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getKmsKey() != null && other.getKmsKey().equals(this.getKmsKey()) == false)
             return false;
+        if (other.getEvidenceFinderEnabled() == null ^ this.getEvidenceFinderEnabled() == null)
+            return false;
+        if (other.getEvidenceFinderEnabled() != null && other.getEvidenceFinderEnabled().equals(this.getEvidenceFinderEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -303,6 +512,7 @@ public class UpdateSettingsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDefaultAssessmentReportsDestination() == null) ? 0 : getDefaultAssessmentReportsDestination().hashCode());
         hashCode = prime * hashCode + ((getDefaultProcessOwners() == null) ? 0 : getDefaultProcessOwners().hashCode());
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
+        hashCode = prime * hashCode + ((getEvidenceFinderEnabled() == null) ? 0 : getEvidenceFinderEnabled().hashCode());
         return hashCode;
     }
 

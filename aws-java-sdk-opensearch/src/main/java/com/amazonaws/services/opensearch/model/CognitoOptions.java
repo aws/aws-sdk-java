@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options to specify the Cognito user and identity pools for OpenSearch Dashboards authentication. For more
- * information, see <a href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
- * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+ * Container for the parameters required to enable Cognito authentication for an OpenSearch Service domain. For more
+ * information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring Amazon
+ * Cognito authentication for OpenSearch Dashboards</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,36 +30,38 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The option to enable Cognito for OpenSearch Dashboards authentication.
+     * Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The Cognito user pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch Dashboards authentication.
      * </p>
      */
     private String userPoolId;
     /**
      * <p>
-     * The Cognito identity pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     * authentication.
      * </p>
      */
     private String identityPoolId;
     /**
      * <p>
-     * The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+     * The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch Service to configure your user
+     * pool and identity pool.
      * </p>
      */
     private String roleArn;
 
     /**
      * <p>
-     * The option to enable Cognito for OpenSearch Dashboards authentication.
+     * Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
      * @param enabled
-     *        The option to enable Cognito for OpenSearch Dashboards authentication.
+     *        Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -67,10 +70,10 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The option to enable Cognito for OpenSearch Dashboards authentication.
+     * Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
-     * @return The option to enable Cognito for OpenSearch Dashboards authentication.
+     * @return Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      */
 
     public Boolean getEnabled() {
@@ -79,11 +82,11 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The option to enable Cognito for OpenSearch Dashboards authentication.
+     * Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
      * @param enabled
-     *        The option to enable Cognito for OpenSearch Dashboards authentication.
+     *        Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +97,10 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The option to enable Cognito for OpenSearch Dashboards authentication.
+     * Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      * </p>
      * 
-     * @return The option to enable Cognito for OpenSearch Dashboards authentication.
+     * @return Whether to enable or disable Amazon Cognito authentication for OpenSearch Dashboards.
      */
 
     public Boolean isEnabled() {
@@ -106,11 +109,12 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cognito user pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch Dashboards authentication.
      * </p>
      * 
      * @param userPoolId
-     *        The Cognito user pool ID for OpenSearch Dashboards authentication.
+     *        The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     *        authentication.
      */
 
     public void setUserPoolId(String userPoolId) {
@@ -119,10 +123,11 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cognito user pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch Dashboards authentication.
      * </p>
      * 
-     * @return The Cognito user pool ID for OpenSearch Dashboards authentication.
+     * @return The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     *         authentication.
      */
 
     public String getUserPoolId() {
@@ -131,11 +136,12 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cognito user pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch Dashboards authentication.
      * </p>
      * 
      * @param userPoolId
-     *        The Cognito user pool ID for OpenSearch Dashboards authentication.
+     *        The Amazon Cognito user pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     *        authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,11 +152,13 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cognito identity pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     * authentication.
      * </p>
      * 
      * @param identityPoolId
-     *        The Cognito identity pool ID for OpenSearch Dashboards authentication.
+     *        The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     *        authentication.
      */
 
     public void setIdentityPoolId(String identityPoolId) {
@@ -159,10 +167,12 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cognito identity pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     * authentication.
      * </p>
      * 
-     * @return The Cognito identity pool ID for OpenSearch Dashboards authentication.
+     * @return The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     *         authentication.
      */
 
     public String getIdentityPoolId() {
@@ -171,11 +181,13 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Cognito identity pool ID for OpenSearch Dashboards authentication.
+     * The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     * authentication.
      * </p>
      * 
      * @param identityPoolId
-     *        The Cognito identity pool ID for OpenSearch Dashboards authentication.
+     *        The Amazon Cognito identity pool ID that you want OpenSearch Service to use for OpenSearch Dashboards
+     *        authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,11 +198,13 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+     * The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch Service to configure your user
+     * pool and identity pool.
      * </p>
      * 
      * @param roleArn
-     *        The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+     *        The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch Service to configure
+     *        your user pool and identity pool.
      */
 
     public void setRoleArn(String roleArn) {
@@ -199,10 +213,12 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+     * The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch Service to configure your user
+     * pool and identity pool.
      * </p>
      * 
-     * @return The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+     * @return The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch Service to configure
+     *         your user pool and identity pool.
      */
 
     public String getRoleArn() {
@@ -211,11 +227,13 @@ public class CognitoOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+     * The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch Service to configure your user
+     * pool and identity pool.
      * </p>
      * 
      * @param roleArn
-     *        The role ARN that provides OpenSearch permissions for accessing Cognito resources.
+     *        The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch Service to configure
+     *        your user pool and identity pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private ContactDetail techContact;
+    /**
+     * <p>
+     * Customer's consent for the owner change request.
+     * </p>
+     */
+    private Consent consent;
 
     /**
      * <p>
@@ -214,6 +220,46 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Customer's consent for the owner change request.
+     * </p>
+     * 
+     * @param consent
+     *        Customer's consent for the owner change request.
+     */
+
+    public void setConsent(Consent consent) {
+        this.consent = consent;
+    }
+
+    /**
+     * <p>
+     * Customer's consent for the owner change request.
+     * </p>
+     * 
+     * @return Customer's consent for the owner change request.
+     */
+
+    public Consent getConsent() {
+        return this.consent;
+    }
+
+    /**
+     * <p>
+     * Customer's consent for the owner change request.
+     * </p>
+     * 
+     * @param consent
+     *        Customer's consent for the owner change request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainContactRequest withConsent(Consent consent) {
+        setConsent(consent);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +278,9 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
         if (getRegistrantContact() != null)
             sb.append("RegistrantContact: ").append("***Sensitive Data Redacted***").append(",");
         if (getTechContact() != null)
-            sb.append("TechContact: ").append("***Sensitive Data Redacted***");
+            sb.append("TechContact: ").append("***Sensitive Data Redacted***").append(",");
+        if (getConsent() != null)
+            sb.append("Consent: ").append(getConsent());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +311,10 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getTechContact() != null && other.getTechContact().equals(this.getTechContact()) == false)
             return false;
+        if (other.getConsent() == null ^ this.getConsent() == null)
+            return false;
+        if (other.getConsent() != null && other.getConsent().equals(this.getConsent()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +327,7 @@ public class UpdateDomainContactRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getAdminContact() == null) ? 0 : getAdminContact().hashCode());
         hashCode = prime * hashCode + ((getRegistrantContact() == null) ? 0 : getRegistrantContact().hashCode());
         hashCode = prime * hashCode + ((getTechContact() == null) ? 0 : getTechContact().hashCode());
+        hashCode = prime * hashCode + ((getConsent() == null) ? 0 : getConsent().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RelationshipValueMarshaller {
 
-    private static final MarshallingInfo<String> TARGETCOMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetComponentName").build();
     private static final MarshallingInfo<String> TARGETENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetEntityId").build();
+    private static final MarshallingInfo<String> TARGETCOMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetComponentName").build();
 
     private static final RelationshipValueMarshaller instance = new RelationshipValueMarshaller();
 
@@ -48,8 +48,8 @@ public class RelationshipValueMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(relationshipValue.getTargetComponentName(), TARGETCOMPONENTNAME_BINDING);
             protocolMarshaller.marshall(relationshipValue.getTargetEntityId(), TARGETENTITYID_BINDING);
+            protocolMarshaller.marshall(relationshipValue.getTargetComponentName(), TARGETCOMPONENTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

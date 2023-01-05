@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,9 +59,15 @@ import com.amazonaws.services.ivschat.model.*;
  * <b>Resources</b>
  * </p>
  * <p>
- * The following resource is part of Amazon IVS Chat:
+ * The following resources are part of Amazon IVS Chat:
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <b>LoggingConfiguration</b> — A configuration that allows customers to store and record sent messages in a chat room.
+ * See the Logging Configuration endpoints for more information.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See
@@ -191,9 +197,10 @@ import com.amazonaws.services.ivschat.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateChatToken</a> — Creates an encrypted token that is used to establish an individual WebSocket connection to a
- * room. The token is valid for one minute, and a connection (session) established with the token is valid for the
- * specified duration.
+ * <a>CreateChatToken</a> — Creates an encrypted token that is used by a chat participant to establish an individual
+ * WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the
+ * session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in
+ * the response.
  * </p>
  * </li>
  * </ul>
@@ -225,6 +232,38 @@ import com.amazonaws.services.ivschat.model.*;
  * <li>
  * <p>
  * <a>UpdateRoom</a> — Updates a room’s configuration.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Logging Configuration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateLoggingConfiguration</a> — Creates a logging configuration that allows clients to store and record sent
+ * messages.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteLoggingConfiguration</a> — Deletes the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetLoggingConfiguration</a> — Gets the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListLoggingConfigurations</a> — Gets summary information about all your logging configurations in the AWS region
+ * where the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateLoggingConfiguration</a> — Updates a specified logging configuration.
  * </p>
  * </li>
  * </ul>
@@ -267,8 +306,18 @@ public interface Amazonivschat {
 
     /**
      * <p>
-     * Creates an encrypted token that is used to establish an individual WebSocket connection to a room. The token is
-     * valid for one minute, and a connection (session) established with the token is valid for the specified duration.
+     * Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat
+     * connection to a room. When the token is used to connect to chat, the connection is valid for the session duration
+     * specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.
+     * </p>
+     * <p>
+     * Use the <code>capabilities</code> field to permit an end user to send messages or moderate a room.
+     * </p>
+     * <p>
+     * The <code>attributes</code> field securely attaches structured data to the chat session; the data is included
+     * within each message sent by the end user and received by other participants in the room. Common use cases for
+     * attributes include passing end-user profile data like an icon, display name, colors, badges, and other display
+     * features.
      * </p>
      * <p>
      * Encryption keys are owned by Amazon IVS Chat and never used directly by your application.
@@ -285,6 +334,25 @@ public interface Amazonivschat {
      *      Documentation</a>
      */
     CreateChatTokenResult createChatToken(CreateChatTokenRequest createChatTokenRequest);
+
+    /**
+     * <p>
+     * Creates a logging configuration that allows clients to store and record sent messages.
+     * </p>
+     * 
+     * @param createLoggingConfigurationRequest
+     * @return Result of the CreateLoggingConfiguration operation returned by the service.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws ServiceQuotaExceededException
+     * @throws PendingVerificationException
+     * @throws ValidationException
+     * @sample Amazonivschat.CreateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateLoggingConfigurationResult createLoggingConfiguration(CreateLoggingConfigurationRequest createLoggingConfigurationRequest);
 
     /**
      * <p>
@@ -307,6 +375,24 @@ public interface Amazonivschat {
 
     /**
      * <p>
+     * Deletes the specified logging configuration.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @return Result of the DeleteLoggingConfiguration operation returned by the service.
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
+     * @throws ValidationException
+     * @sample Amazonivschat.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteLoggingConfigurationResult deleteLoggingConfiguration(DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
+
+    /**
+     * <p>
      * Sends an event to a specific room which directs clients to delete a specific message; that is, unrender it from
      * view and delete it from the client’s chat history. This event’s <code>EventName</code> is
      * <code>aws:DELETE_MESSAGE</code>. This replicates the <a
@@ -319,6 +405,7 @@ public interface Amazonivschat {
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.DeleteMessage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteMessage" target="_top">AWS API
@@ -355,12 +442,29 @@ public interface Amazonivschat {
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.DisconnectUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DisconnectUser" target="_top">AWS API
      *      Documentation</a>
      */
     DisconnectUserResult disconnectUser(DisconnectUserRequest disconnectUserRequest);
+
+    /**
+     * <p>
+     * Gets the specified logging configuration.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @return Result of the GetLoggingConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws ValidationException
+     * @sample Amazonivschat.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetLoggingConfigurationResult getLoggingConfiguration(GetLoggingConfigurationRequest getLoggingConfigurationRequest);
 
     /**
      * <p>
@@ -377,6 +481,22 @@ public interface Amazonivschat {
      *      Documentation</a>
      */
     GetRoomResult getRoom(GetRoomRequest getRoomRequest);
+
+    /**
+     * <p>
+     * Gets summary information about all your logging configurations in the AWS region where the API request is
+     * processed.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @return Result of the ListLoggingConfigurations operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ValidationException
+     * @sample Amazonivschat.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListLoggingConfigurationsResult listLoggingConfigurations(ListLoggingConfigurationsRequest listLoggingConfigurationsRequest);
 
     /**
      * <p>
@@ -422,6 +542,7 @@ public interface Amazonivschat {
      * @throws ThrottlingException
      * @throws AccessDeniedException
      * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
      * @throws ValidationException
      * @sample Amazonivschat.SendEvent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/SendEvent" target="_top">AWS API
@@ -460,6 +581,23 @@ public interface Amazonivschat {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates a specified logging configuration.
+     * </p>
+     * 
+     * @param updateLoggingConfigurationRequest
+     * @return Result of the UpdateLoggingConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws PendingVerificationException
+     * @throws ValidationException
+     * @sample Amazonivschat.UpdateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateLoggingConfigurationResult updateLoggingConfiguration(UpdateLoggingConfigurationRequest updateLoggingConfigurationRequest);
 
     /**
      * <p>

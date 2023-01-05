@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the AWS Region.
+ * Describes the Amazon Web Services Region.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/Region" target="_top">AWS API
@@ -36,7 +36,7 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
     private String continentCode;
     /**
      * <p>
-     * The description of the AWS Region (e.g.,
+     * The description of the Amazon Web Services Region (e.g.,
      * <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).
      * </p>
      */
@@ -108,12 +108,12 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the AWS Region (e.g.,
+     * The description of the Amazon Web Services Region (e.g.,
      * <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).
      * </p>
      * 
      * @param description
-     *        The description of the AWS Region (e.g.,
+     *        The description of the Amazon Web Services Region (e.g.,
      *        <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).
      */
 
@@ -123,11 +123,11 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the AWS Region (e.g.,
+     * The description of the Amazon Web Services Region (e.g.,
      * <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).
      * </p>
      * 
-     * @return The description of the AWS Region (e.g.,
+     * @return The description of the Amazon Web Services Region (e.g.,
      *         <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).
      */
 
@@ -137,12 +137,12 @@ public class Region implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the AWS Region (e.g.,
+     * The description of the Amazon Web Services Region (e.g.,
      * <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).
      * </p>
      * 
      * @param description
-     *        The description of the AWS Region (e.g.,
+     *        The description of the Amazon Web Services Region (e.g.,
      *        <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,15 +31,15 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     private String vocabularyName;
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      */
     private String vocabularyState;
@@ -56,15 +56,15 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the medical vocabulary request failed. See also: <a
+     * the custom medical vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      */
     private String failureReason;
     /**
      * <p>
-     * The S3 location where the specified medical vocabulary is stored; use this URI to view or download the
-     * vocabulary.
+     * The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the
+     * custom vocabulary.
      * </p>
      */
     private String downloadUri;
@@ -111,13 +111,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *        language supported with Amazon Transcribe Medical.
+     *        The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *        only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -127,12 +127,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *         language supported with Amazon Transcribe Medical.
+     * @return The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *         only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -142,13 +142,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *        language supported with Amazon Transcribe Medical.
+     *        The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *        only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -160,13 +160,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *        language supported with Amazon Transcribe Medical.
+     *        The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *        only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -179,12 +179,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *        the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *        the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -195,11 +195,11 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @return The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *         the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *         the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -210,12 +210,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *        the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *        the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -228,12 +228,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *        the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *        the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -307,13 +307,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the medical vocabulary request failed. See also: <a
+     * the custom medical vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
      *        If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
-     *        about why the medical vocabulary request failed. See also: <a
+     *        about why the custom medical vocabulary request failed. See also: <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
@@ -324,12 +324,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the medical vocabulary request failed. See also: <a
+     * the custom medical vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @return If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
-     *         about why the medical vocabulary request failed. See also: <a
+     *         about why the custom medical vocabulary request failed. See also: <a
      *         href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
@@ -340,13 +340,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the medical vocabulary request failed. See also: <a
+     * the custom medical vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
      *        If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
-     *        about why the medical vocabulary request failed. See also: <a
+     *        about why the custom medical vocabulary request failed. See also: <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -358,13 +358,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The S3 location where the specified medical vocabulary is stored; use this URI to view or download the
-     * vocabulary.
+     * The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the
+     * custom vocabulary.
      * </p>
      * 
      * @param downloadUri
-     *        The S3 location where the specified medical vocabulary is stored; use this URI to view or download the
-     *        vocabulary.
+     *        The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download
+     *        the custom vocabulary.
      */
 
     public void setDownloadUri(String downloadUri) {
@@ -373,12 +373,12 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The S3 location where the specified medical vocabulary is stored; use this URI to view or download the
-     * vocabulary.
+     * The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the
+     * custom vocabulary.
      * </p>
      * 
-     * @return The S3 location where the specified medical vocabulary is stored; use this URI to view or download the
-     *         vocabulary.
+     * @return The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download
+     *         the custom vocabulary.
      */
 
     public String getDownloadUri() {
@@ -387,13 +387,13 @@ public class GetMedicalVocabularyResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The S3 location where the specified medical vocabulary is stored; use this URI to view or download the
-     * vocabulary.
+     * The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download the
+     * custom vocabulary.
      * </p>
      * 
      * @param downloadUri
-     *        The S3 location where the specified medical vocabulary is stored; use this URI to view or download the
-     *        vocabulary.
+     *        The S3 location where the specified custom medical vocabulary is stored; use this URI to view or download
+     *        the custom vocabulary.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

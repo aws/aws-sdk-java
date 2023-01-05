@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -385,6 +385,21 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest request) {
+
+        return listSavingsPlansPurchaseRecommendationGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSavingsPlansPurchaseRecommendationGenerationRequest, ListSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -406,6 +421,21 @@ public class AbstractAWSCostExplorerAsync extends AbstractAWSCostExplorer implem
     @Override
     public java.util.concurrent.Future<ProvideAnomalyFeedbackResult> provideAnomalyFeedbackAsync(ProvideAnomalyFeedbackRequest request,
             com.amazonaws.handlers.AsyncHandler<ProvideAnomalyFeedbackRequest, ProvideAnomalyFeedbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest request) {
+
+        return startSavingsPlansPurchaseRecommendationGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartSavingsPlansPurchaseRecommendationGenerationRequest, StartSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

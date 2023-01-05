@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class FieldInputConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
     private static final MarshallingInfo<String> DESCRIPTIVETEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("descriptiveText").build();
+    private static final MarshallingInfo<Boolean> ISARRAY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("isArray").build();
     private static final MarshallingInfo<Float> MAXVALUE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("maxValue").build();
     private static final MarshallingInfo<Float> MINVALUE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
@@ -76,6 +78,7 @@ public class FieldInputConfigMarshaller {
             protocolMarshaller.marshall(fieldInputConfig.getDefaultCountryCode(), DEFAULTCOUNTRYCODE_BINDING);
             protocolMarshaller.marshall(fieldInputConfig.getDefaultValue(), DEFAULTVALUE_BINDING);
             protocolMarshaller.marshall(fieldInputConfig.getDescriptiveText(), DESCRIPTIVETEXT_BINDING);
+            protocolMarshaller.marshall(fieldInputConfig.getIsArray(), ISARRAY_BINDING);
             protocolMarshaller.marshall(fieldInputConfig.getMaxValue(), MAXVALUE_BINDING);
             protocolMarshaller.marshall(fieldInputConfig.getMinValue(), MINVALUE_BINDING);
             protocolMarshaller.marshall(fieldInputConfig.getName(), NAME_BINDING);

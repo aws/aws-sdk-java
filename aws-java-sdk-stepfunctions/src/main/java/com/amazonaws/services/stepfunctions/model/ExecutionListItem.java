@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,6 +97,23 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date stopDate;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     */
+    private String mapRunArn;
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     */
+    private Integer itemCount;
 
     /**
      * <p>
@@ -567,6 +584,116 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was
+     *        specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     *        <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     */
+
+    public void setMapRunArn(String mapRunArn) {
+        this.mapRunArn = mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was
+     *         specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     *         <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     */
+
+    public String getMapRunArn() {
+        return this.mapRunArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was specified
+     * in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     * <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * </p>
+     * 
+     * @param mapRunArn
+     *        The Amazon Resource Name (ARN) of a Map Run. This field is returned only if <code>mapRunArn</code> was
+     *        specified in the <code>ListExecutions</code> API action. If <code>stateMachineArn</code> was specified in
+     *        <code>ListExecutions</code>, the <code>mapRunArn</code> isn't returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withMapRunArn(String mapRunArn) {
+        setMapRunArn(mapRunArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     * 
+     * @param itemCount
+     *        The total number of items processed in a child workflow execution. This field is returned only if
+     *        <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     *        <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code>
+     *        field isn't returned.
+     */
+
+    public void setItemCount(Integer itemCount) {
+        this.itemCount = itemCount;
+    }
+
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     * 
+     * @return The total number of items processed in a child workflow execution. This field is returned only if
+     *         <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     *         <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code>
+     *         field isn't returned.
+     */
+
+    public Integer getItemCount() {
+        return this.itemCount;
+    }
+
+    /**
+     * <p>
+     * The total number of items processed in a child workflow execution. This field is returned only if
+     * <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     * <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code> field isn't
+     * returned.
+     * </p>
+     * 
+     * @param itemCount
+     *        The total number of items processed in a child workflow execution. This field is returned only if
+     *        <code>mapRunArn</code> was specified in the <code>ListExecutions</code> API action. If
+     *        <code>stateMachineArn</code> was specified in <code>ListExecutions</code>, the <code>itemCount</code>
+     *        field isn't returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionListItem withItemCount(Integer itemCount) {
+        setItemCount(itemCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -589,7 +716,11 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
         if (getStartDate() != null)
             sb.append("StartDate: ").append(getStartDate()).append(",");
         if (getStopDate() != null)
-            sb.append("StopDate: ").append(getStopDate());
+            sb.append("StopDate: ").append(getStopDate()).append(",");
+        if (getMapRunArn() != null)
+            sb.append("MapRunArn: ").append(getMapRunArn()).append(",");
+        if (getItemCount() != null)
+            sb.append("ItemCount: ").append(getItemCount());
         sb.append("}");
         return sb.toString();
     }
@@ -628,6 +759,14 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getStopDate() != null && other.getStopDate().equals(this.getStopDate()) == false)
             return false;
+        if (other.getMapRunArn() == null ^ this.getMapRunArn() == null)
+            return false;
+        if (other.getMapRunArn() != null && other.getMapRunArn().equals(this.getMapRunArn()) == false)
+            return false;
+        if (other.getItemCount() == null ^ this.getItemCount() == null)
+            return false;
+        if (other.getItemCount() != null && other.getItemCount().equals(this.getItemCount()) == false)
+            return false;
         return true;
     }
 
@@ -642,6 +781,8 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
         hashCode = prime * hashCode + ((getStopDate() == null) ? 0 : getStopDate().hashCode());
+        hashCode = prime * hashCode + ((getMapRunArn() == null) ? 0 : getMapRunArn().hashCode());
+        hashCode = prime * hashCode + ((getItemCount() == null) ? 0 : getItemCount().hashCode());
         return hashCode;
     }
 

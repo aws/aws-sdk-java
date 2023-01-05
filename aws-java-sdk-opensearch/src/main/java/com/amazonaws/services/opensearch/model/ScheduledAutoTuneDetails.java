@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies details about the scheduled Auto-Tune action. See <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune
- * for Amazon OpenSearch Service </a> for more information.
+ * Specifies details about a scheduled Auto-Tune action. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,36 +29,37 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune action scheduled for the domain.
+     * The date and time when the Auto-Tune action is scheduled for the domain.
      * </p>
      */
     private java.util.Date date;
     /**
      * <p>
-     * The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     * The type of Auto-Tune action.
      * </p>
      */
     private String actionType;
     /**
      * <p>
-     * The Auto-Tune action description.
+     * A description of the Auto-Tune action.
      * </p>
      */
     private String action;
     /**
      * <p>
-     * The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     * The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     * <code>HIGH</code>.
      * </p>
      */
     private String severity;
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune action scheduled for the domain.
+     * The date and time when the Auto-Tune action is scheduled for the domain.
      * </p>
      * 
      * @param date
-     *        The timestamp of the Auto-Tune action scheduled for the domain.
+     *        The date and time when the Auto-Tune action is scheduled for the domain.
      */
 
     public void setDate(java.util.Date date) {
@@ -67,10 +68,10 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune action scheduled for the domain.
+     * The date and time when the Auto-Tune action is scheduled for the domain.
      * </p>
      * 
-     * @return The timestamp of the Auto-Tune action scheduled for the domain.
+     * @return The date and time when the Auto-Tune action is scheduled for the domain.
      */
 
     public java.util.Date getDate() {
@@ -79,11 +80,11 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The timestamp of the Auto-Tune action scheduled for the domain.
+     * The date and time when the Auto-Tune action is scheduled for the domain.
      * </p>
      * 
      * @param date
-     *        The timestamp of the Auto-Tune action scheduled for the domain.
+     *        The date and time when the Auto-Tune action is scheduled for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +95,11 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     * The type of Auto-Tune action.
      * </p>
      * 
      * @param actionType
-     *        The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     *        The type of Auto-Tune action.
      * @see ScheduledAutoTuneActionType
      */
 
@@ -108,10 +109,10 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     * The type of Auto-Tune action.
      * </p>
      * 
-     * @return The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     * @return The type of Auto-Tune action.
      * @see ScheduledAutoTuneActionType
      */
 
@@ -121,11 +122,11 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     * The type of Auto-Tune action.
      * </p>
      * 
      * @param actionType
-     *        The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     *        The type of Auto-Tune action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduledAutoTuneActionType
      */
@@ -137,11 +138,11 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     * The type of Auto-Tune action.
      * </p>
      * 
      * @param actionType
-     *        The Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
+     *        The type of Auto-Tune action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduledAutoTuneActionType
      */
@@ -153,11 +154,11 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action description.
+     * A description of the Auto-Tune action.
      * </p>
      * 
      * @param action
-     *        The Auto-Tune action description.
+     *        A description of the Auto-Tune action.
      */
 
     public void setAction(String action) {
@@ -166,10 +167,10 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action description.
+     * A description of the Auto-Tune action.
      * </p>
      * 
-     * @return The Auto-Tune action description.
+     * @return A description of the Auto-Tune action.
      */
 
     public String getAction() {
@@ -178,11 +179,11 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action description.
+     * A description of the Auto-Tune action.
      * </p>
      * 
      * @param action
-     *        The Auto-Tune action description.
+     *        A description of the Auto-Tune action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +194,13 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     * The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     * <code>HIGH</code>.
      * </p>
      * 
      * @param severity
-     *        The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     *        The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     *        <code>HIGH</code>.
      * @see ScheduledAutoTuneSeverityType
      */
 
@@ -207,10 +210,12 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     * The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     * <code>HIGH</code>.
      * </p>
      * 
-     * @return The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     * @return The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     *         <code>HIGH</code>.
      * @see ScheduledAutoTuneSeverityType
      */
 
@@ -220,11 +225,13 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     * The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     * <code>HIGH</code>.
      * </p>
      * 
      * @param severity
-     *        The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     *        The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     *        <code>HIGH</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduledAutoTuneSeverityType
      */
@@ -236,11 +243,13 @@ public class ScheduledAutoTuneDetails implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     * The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     * <code>HIGH</code>.
      * </p>
      * 
      * @param severity
-     *        The Auto-Tune action severity. Valid values are LOW, MEDIUM, and HIGH.
+     *        The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>, and
+     *        <code>HIGH</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScheduledAutoTuneSeverityType
      */

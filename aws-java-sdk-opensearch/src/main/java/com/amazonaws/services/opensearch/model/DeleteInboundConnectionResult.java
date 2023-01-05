@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code> <a>DeleteInboundConnection</a> </code> operation. Contains details about the deleted inbound
+ * The results of a <code>DeleteInboundConnection</code> operation. Contains details about the deleted inbound
  * connection.
  * </p>
  */
@@ -26,18 +26,18 @@ public class DeleteInboundConnectionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code> <a>InboundConnection</a> </code> of the deleted inbound connection.
+     * The deleted inbound connection.
      * </p>
      */
     private InboundConnection connection;
 
     /**
      * <p>
-     * The <code> <a>InboundConnection</a> </code> of the deleted inbound connection.
+     * The deleted inbound connection.
      * </p>
      * 
      * @param connection
-     *        The <code> <a>InboundConnection</a> </code> of the deleted inbound connection.
+     *        The deleted inbound connection.
      */
 
     public void setConnection(InboundConnection connection) {
@@ -46,10 +46,10 @@ public class DeleteInboundConnectionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code> <a>InboundConnection</a> </code> of the deleted inbound connection.
+     * The deleted inbound connection.
      * </p>
      * 
-     * @return The <code> <a>InboundConnection</a> </code> of the deleted inbound connection.
+     * @return The deleted inbound connection.
      */
 
     public InboundConnection getConnection() {
@@ -58,11 +58,11 @@ public class DeleteInboundConnectionResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The <code> <a>InboundConnection</a> </code> of the deleted inbound connection.
+     * The deleted inbound connection.
      * </p>
      * 
      * @param connection
-     *        The <code> <a>InboundConnection</a> </code> of the deleted inbound connection.
+     *        The deleted inbound connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

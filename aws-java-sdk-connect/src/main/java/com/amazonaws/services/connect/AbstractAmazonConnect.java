@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -128,12 +128,22 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public CreateRuleResult createRule(CreateRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateSecurityProfileResult createSecurityProfile(CreateSecurityProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateTaskTemplateResult createTaskTemplate(CreateTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTrafficDistributionGroupResult createTrafficDistributionGroup(CreateTrafficDistributionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,12 +198,22 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSecurityProfileResult deleteSecurityProfile(DeleteSecurityProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteTaskTemplateResult deleteTaskTemplate(DeleteTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTrafficDistributionGroupResult deleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -278,7 +298,17 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DescribeRuleResult describeRule(DescribeRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSecurityProfileResult describeSecurityProfile(DescribeSecurityProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTrafficDistributionGroupResult describeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -348,6 +378,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public DismissUserContactResult dismissUserContact(DismissUserContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetContactAttributesResult getContactAttributes(GetContactAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -374,6 +409,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
 
     @Override
     public GetTaskTemplateResult getTaskTemplate(GetTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTrafficDistributionResult getTrafficDistribution(GetTrafficDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -488,6 +528,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListRulesResult listRules(ListRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSecurityKeysResult listSecurityKeys(ListSecurityKeysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -513,6 +558,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public ListTrafficDistributionGroupsResult listTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUseCasesResult listUseCases(ListUseCasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -528,12 +578,22 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public MonitorContactResult monitorContact(MonitorContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutUserStatusResult putUserStatus(PutUserStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ReleasePhoneNumberResult releasePhoneNumber(ReleasePhoneNumberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ReplicateInstanceResult replicateInstance(ReplicateInstanceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -693,6 +753,11 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public UpdateParticipantRoleConfigResult updateParticipantRoleConfig(UpdateParticipantRoleConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdatePhoneNumberResult updatePhoneNumber(UpdatePhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -753,12 +818,22 @@ public class AbstractAmazonConnect implements AmazonConnect {
     }
 
     @Override
+    public UpdateRuleResult updateRule(UpdateRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateSecurityProfileResult updateSecurityProfile(UpdateSecurityProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateTaskTemplateResult updateTaskTemplate(UpdateTaskTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTrafficDistributionResult updateTrafficDistribution(UpdateTrafficDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

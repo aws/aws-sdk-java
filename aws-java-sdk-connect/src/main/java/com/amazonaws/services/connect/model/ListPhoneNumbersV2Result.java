@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class ListPhoneNumbersV2Result extends com.amazonaws.AmazonWebServiceResu
     private String nextToken;
     /**
      * <p>
-     * Information about phone numbers that have been claimed to your Amazon Connect instances.
+     * Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution
+     * groups.
      * </p>
      */
     private java.util.List<ListPhoneNumbersSummary> listPhoneNumbersSummaryList;
@@ -78,10 +79,12 @@ public class ListPhoneNumbersV2Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about phone numbers that have been claimed to your Amazon Connect instances.
+     * Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution
+     * groups.
      * </p>
      * 
-     * @return Information about phone numbers that have been claimed to your Amazon Connect instances.
+     * @return Information about phone numbers that have been claimed to your Amazon Connect instances or traffic
+     *         distribution groups.
      */
 
     public java.util.List<ListPhoneNumbersSummary> getListPhoneNumbersSummaryList() {
@@ -90,11 +93,13 @@ public class ListPhoneNumbersV2Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about phone numbers that have been claimed to your Amazon Connect instances.
+     * Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution
+     * groups.
      * </p>
      * 
      * @param listPhoneNumbersSummaryList
-     *        Information about phone numbers that have been claimed to your Amazon Connect instances.
+     *        Information about phone numbers that have been claimed to your Amazon Connect instances or traffic
+     *        distribution groups.
      */
 
     public void setListPhoneNumbersSummaryList(java.util.Collection<ListPhoneNumbersSummary> listPhoneNumbersSummaryList) {
@@ -108,7 +113,8 @@ public class ListPhoneNumbersV2Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about phone numbers that have been claimed to your Amazon Connect instances.
+     * Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution
+     * groups.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +123,8 @@ public class ListPhoneNumbersV2Result extends com.amazonaws.AmazonWebServiceResu
      * </p>
      * 
      * @param listPhoneNumbersSummaryList
-     *        Information about phone numbers that have been claimed to your Amazon Connect instances.
+     *        Information about phone numbers that have been claimed to your Amazon Connect instances or traffic
+     *        distribution groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +140,13 @@ public class ListPhoneNumbersV2Result extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Information about phone numbers that have been claimed to your Amazon Connect instances.
+     * Information about phone numbers that have been claimed to your Amazon Connect instances or traffic distribution
+     * groups.
      * </p>
      * 
      * @param listPhoneNumbersSummaryList
-     *        Information about phone numbers that have been claimed to your Amazon Connect instances.
+     *        Information about phone numbers that have been claimed to your Amazon Connect instances or traffic
+     *        distribution groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Allows additional optional settings in your request, including channel identification, alternative transcriptions,
- * and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.
+ * and speaker partitioning. You can use that to apply custom vocabularies to your medical transcription job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/MedicalTranscriptionSetting"
@@ -31,30 +31,30 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
+     * You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
      * Including both parameters returns a <code>BadRequestException</code>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      */
     private Boolean showSpeakerLabels;
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
@@ -120,49 +120,50 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
     private Integer maxAlternatives;
     /**
      * <p>
-     * The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary
-     * names are case sensitive.
+     * The name of the custom vocabulary you want to use when processing your medical transcription job. Custom
+     * vocabulary names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified vocabulary must match the language code you specify in your transcription request.
-     * If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a
-     * language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.
+     * The language of the specified custom vocabulary must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or
+     * warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for
+     * Amazon Transcribe Medical.
      * </p>
      */
     private String vocabularyName;
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
+     * You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
      * Including both parameters returns a <code>BadRequestException</code>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
      * @param showSpeakerLabels
-     *        Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *        the speech from individual speakers in your media file.</p>
+     *        Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *        speech from individual speakers in your media file.</p>
      *        <p>
      *        If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *        <code>MaxSpeakerLabels</code>.
      *        </p>
      *        <p>
-     *        You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *        You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
      *        request. Including both parameters returns a <code>BadRequestException</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *        (diarization)</a>.
      */
 
@@ -172,35 +173,35 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
+     * You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
      * Including both parameters returns a <code>BadRequestException</code>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
-     * @return Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *         the speech from individual speakers in your media file.</p>
+     * @return Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *         speech from individual speakers in your media file.</p>
      *         <p>
      *         If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *         <code>MaxSpeakerLabels</code>.
      *         </p>
      *         <p>
-     *         You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *         You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
      *         request. Including both parameters returns a <code>BadRequestException</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *         (diarization)</a>.
      */
 
@@ -210,36 +211,36 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
+     * You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
      * Including both parameters returns a <code>BadRequestException</code>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
      * @param showSpeakerLabels
-     *        Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *        the speech from individual speakers in your media file.</p>
+     *        Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *        speech from individual speakers in your media file.</p>
      *        <p>
      *        If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *        <code>MaxSpeakerLabels</code>.
      *        </p>
      *        <p>
-     *        You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *        You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
      *        request. Including both parameters returns a <code>BadRequestException</code>.
      *        </p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *        (diarization)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -251,35 +252,35 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Enables speaker identification (diarization) in your transcription output. Speaker identification labels the
-     * speech from individual speakers in your media file.
+     * Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the speech
+     * from individual speakers in your media file.
      * </p>
      * <p>
      * If you enable <code>ShowSpeakerLabels</code> in your request, you must also include <code>MaxSpeakerLabels</code>
      * .
      * </p>
      * <p>
-     * You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
+     * You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same request.
      * Including both parameters returns a <code>BadRequestException</code>.
      * </p>
      * <p>
-     * For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying
-     * speakers (diarization)</a>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers (diarization)</a>.
      * </p>
      * 
-     * @return Enables speaker identification (diarization) in your transcription output. Speaker identification labels
-     *         the speech from individual speakers in your media file.</p>
+     * @return Enables speaker partitioning (diarization) in your transcription output. Speaker partitioning labels the
+     *         speech from individual speakers in your media file.</p>
      *         <p>
      *         If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
      *         <code>MaxSpeakerLabels</code>.
      *         </p>
      *         <p>
-     *         You can't include both <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
+     *         You can't include <code>ShowSpeakerLabels</code> and <code>ChannelIdentification</code> in the same
      *         request. Including both parameters returns a <code>BadRequestException</code>.
      *         </p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Identifying speakers
+     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning speakers
      *         (diarization)</a>.
      */
 
@@ -289,11 +290,11 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
@@ -301,10 +302,10 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param maxSpeakerLabels
-     *        Specify the maximum number of speakers you want to identify in your media.</p>
+     *        Specify the maximum number of speakers you want to partition in your media.</p>
      *        <p>
-     *        Note that if your media contains more speakers than the specified number, multiple speakers will be
-     *        identified as a single speaker.
+     *        Note that if your media contains more speakers than the specified number, multiple speakers are treated as
+     *        a single speaker.
      *        </p>
      *        <p>
      *        If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
@@ -317,21 +318,21 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
      * true.
      * </p>
      * 
-     * @return Specify the maximum number of speakers you want to identify in your media.</p>
+     * @return Specify the maximum number of speakers you want to partition in your media.</p>
      *         <p>
-     *         Note that if your media contains more speakers than the specified number, multiple speakers will be
-     *         identified as a single speaker.
+     *         Note that if your media contains more speakers than the specified number, multiple speakers are treated
+     *         as a single speaker.
      *         </p>
      *         <p>
      *         If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
@@ -344,11 +345,11 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specify the maximum number of speakers you want to identify in your media.
+     * Specify the maximum number of speakers you want to partition in your media.
      * </p>
      * <p>
-     * Note that if your media contains more speakers than the specified number, multiple speakers will be identified as
-     * a single speaker.
+     * Note that if your media contains more speakers than the specified number, multiple speakers are treated as a
+     * single speaker.
      * </p>
      * <p>
      * If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code> field to
@@ -356,10 +357,10 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param maxSpeakerLabels
-     *        Specify the maximum number of speakers you want to identify in your media.</p>
+     *        Specify the maximum number of speakers you want to partition in your media.</p>
      *        <p>
-     *        Note that if your media contains more speakers than the specified number, multiple speakers will be
-     *        identified as a single speaker.
+     *        Note that if your media contains more speakers than the specified number, multiple speakers are treated as
+     *        a single speaker.
      *        </p>
      *        <p>
      *        If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
@@ -796,23 +797,24 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary
-     * names are case sensitive.
+     * The name of the custom vocabulary you want to use when processing your medical transcription job. Custom
+     * vocabulary names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified vocabulary must match the language code you specify in your transcription request.
-     * If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a
-     * language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.
+     * The language of the specified custom vocabulary must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or
+     * warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for
+     * Amazon Transcribe Medical.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the custom vocabulary you want to use when processing your medical transcription job.
-     *        Vocabulary names are case sensitive.</p>
+     *        The name of the custom vocabulary you want to use when processing your medical transcription job. Custom
+     *        vocabulary names are case sensitive.</p>
      *        <p>
-     *        The language of the specified vocabulary must match the language code you specify in your transcription
-     *        request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings
-     *        associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon
-     *        Transcribe Medical.
+     *        The language of the specified custom vocabulary must match the language code that you specify in your
+     *        transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no
+     *        errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid
+     *        language for Amazon Transcribe Medical.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -821,22 +823,23 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary
-     * names are case sensitive.
+     * The name of the custom vocabulary you want to use when processing your medical transcription job. Custom
+     * vocabulary names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified vocabulary must match the language code you specify in your transcription request.
-     * If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a
-     * language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.
+     * The language of the specified custom vocabulary must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or
+     * warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for
+     * Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The name of the custom vocabulary you want to use when processing your medical transcription job.
-     *         Vocabulary names are case sensitive.</p>
+     * @return The name of the custom vocabulary you want to use when processing your medical transcription job. Custom
+     *         vocabulary names are case sensitive.</p>
      *         <p>
-     *         The language of the specified vocabulary must match the language code you specify in your transcription
-     *         request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings
-     *         associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for
-     *         Amazon Transcribe Medical.
+     *         The language of the specified custom vocabulary must match the language code that you specify in your
+     *         transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no
+     *         errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid
+     *         language for Amazon Transcribe Medical.
      */
 
     public String getVocabularyName() {
@@ -845,23 +848,24 @@ public class MedicalTranscriptionSetting implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the custom vocabulary you want to use when processing your medical transcription job. Vocabulary
-     * names are case sensitive.
+     * The name of the custom vocabulary you want to use when processing your medical transcription job. Custom
+     * vocabulary names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified vocabulary must match the language code you specify in your transcription request.
-     * If the languages don't match, the vocabulary isn't applied. There are no errors or warnings associated with a
-     * language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe Medical.
+     * The language of the specified custom vocabulary must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no errors or
+     * warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for
+     * Amazon Transcribe Medical.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the custom vocabulary you want to use when processing your medical transcription job.
-     *        Vocabulary names are case sensitive.</p>
+     *        The name of the custom vocabulary you want to use when processing your medical transcription job. Custom
+     *        vocabulary names are case sensitive.</p>
      *        <p>
-     *        The language of the specified vocabulary must match the language code you specify in your transcription
-     *        request. If the languages don't match, the vocabulary isn't applied. There are no errors or warnings
-     *        associated with a language mismatch. US English (<code>en-US</code>) is the only valid language for Amazon
-     *        Transcribe Medical.
+     *        The language of the specified custom vocabulary must match the language code that you specify in your
+     *        transcription request. If the languages don't match, the custom vocabulary isn't applied. There are no
+     *        errors or warnings associated with a language mismatch. US English (<code>en-US</code>) is the only valid
+     *        language for Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

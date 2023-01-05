@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetAttributes" target="_top">AWS API
  *      Documentation</a>
@@ -49,7 +46,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
+     * exist are not affected. You can set protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .
      * </p>
      * <ul>
      * <li>
@@ -80,6 +79,12 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<String> metricGroups;
+    /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     */
+    private AnywhereConfiguration anywhereConfiguration;
 
     /**
      * <p>
@@ -207,7 +212,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
+     * exist are not affected. You can set protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .
      * </p>
      * <ul>
      * <li>
@@ -225,8 +232,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param newGameSessionProtectionPolicy
      *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.</p>
+     *        already exist are not affected. You can set protection for individual instances using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
+     *        >UpdateGameSession</a> .</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -249,7 +257,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
+     * exist are not affected. You can set protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .
      * </p>
      * <ul>
      * <li>
@@ -266,8 +276,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @return The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *         already exist are not affected. You can set protection for individual instances using
-     *         <a>UpdateGameSession</a>.</p>
+     *         already exist are not affected. You can set protection for individual instances using <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
+     *         >UpdateGameSession</a> .</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -290,7 +301,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
+     * exist are not affected. You can set protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .
      * </p>
      * <ul>
      * <li>
@@ -308,8 +321,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param newGameSessionProtectionPolicy
      *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.</p>
+     *        already exist are not affected. You can set protection for individual instances using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
+     *        >UpdateGameSession</a> .</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -334,7 +348,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
+     * exist are not affected. You can set protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .
      * </p>
      * <ul>
      * <li>
@@ -352,8 +368,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param newGameSessionProtectionPolicy
      *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.</p>
+     *        already exist are not affected. You can set protection for individual instances using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
+     *        >UpdateGameSession</a> .</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -376,7 +393,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The game session protection policy to apply to all new instances created in this fleet. Instances that already
-     * exist are not affected. You can set protection for individual instances using <a>UpdateGameSession</a>.
+     * exist are not affected. You can set protection for individual instances using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+     * .
      * </p>
      * <ul>
      * <li>
@@ -394,8 +413,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
      * 
      * @param newGameSessionProtectionPolicy
      *        The game session protection policy to apply to all new instances created in this fleet. Instances that
-     *        already exist are not affected. You can set protection for individual instances using
-     *        <a>UpdateGameSession</a>.</p>
+     *        already exist are not affected. You can set protection for individual instances using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html"
+     *        >UpdateGameSession</a> .</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -547,6 +567,46 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     * 
+     * @param anywhereConfiguration
+     *        GameLift Anywhere configuration options.
+     */
+
+    public void setAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        this.anywhereConfiguration = anywhereConfiguration;
+    }
+
+    /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     * 
+     * @return GameLift Anywhere configuration options.
+     */
+
+    public AnywhereConfiguration getAnywhereConfiguration() {
+        return this.anywhereConfiguration;
+    }
+
+    /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     * 
+     * @param anywhereConfiguration
+     *        GameLift Anywhere configuration options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetAttributesRequest withAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        setAnywhereConfiguration(anywhereConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -569,7 +629,9 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
         if (getResourceCreationLimitPolicy() != null)
             sb.append("ResourceCreationLimitPolicy: ").append(getResourceCreationLimitPolicy()).append(",");
         if (getMetricGroups() != null)
-            sb.append("MetricGroups: ").append(getMetricGroups());
+            sb.append("MetricGroups: ").append(getMetricGroups()).append(",");
+        if (getAnywhereConfiguration() != null)
+            sb.append("AnywhereConfiguration: ").append(getAnywhereConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -609,6 +671,10 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getMetricGroups() != null && other.getMetricGroups().equals(this.getMetricGroups()) == false)
             return false;
+        if (other.getAnywhereConfiguration() == null ^ this.getAnywhereConfiguration() == null)
+            return false;
+        if (other.getAnywhereConfiguration() != null && other.getAnywhereConfiguration().equals(this.getAnywhereConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -623,6 +689,7 @@ public class UpdateFleetAttributesRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getNewGameSessionProtectionPolicy() == null) ? 0 : getNewGameSessionProtectionPolicy().hashCode());
         hashCode = prime * hashCode + ((getResourceCreationLimitPolicy() == null) ? 0 : getResourceCreationLimitPolicy().hashCode());
         hashCode = prime * hashCode + ((getMetricGroups() == null) ? 0 : getMetricGroups().hashCode());
+        hashCode = prime * hashCode + ((getAnywhereConfiguration() == null) ? 0 : getAnywhereConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * A key-value pair that adds as a metadata to a resource used by Amazon Translate.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/Tag" target="_top">AWS API
  *      Documentation</a>
@@ -25,12 +28,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Tag implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The initial part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     */
     private String key;
-
+    /**
+     * <p>
+     * The second part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     */
     private String value;
 
     /**
+     * <p>
+     * The initial part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     * 
      * @param key
+     *        The initial part of a key-value pair that forms a tag associated with a given resource.
      */
 
     public void setKey(String key) {
@@ -38,7 +55,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The initial part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     * 
+     * @return The initial part of a key-value pair that forms a tag associated with a given resource.
      */
 
     public String getKey() {
@@ -46,7 +67,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The initial part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     * 
      * @param key
+     *        The initial part of a key-value pair that forms a tag associated with a given resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +82,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The second part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     * 
      * @param value
+     *        The second part of a key-value pair that forms a tag associated with a given resource.
      */
 
     public void setValue(String value) {
@@ -64,7 +95,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The second part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     * 
+     * @return The second part of a key-value pair that forms a tag associated with a given resource.
      */
 
     public String getValue() {
@@ -72,7 +107,12 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The second part of a key-value pair that forms a tag associated with a given resource.
+     * </p>
+     * 
      * @param value
+     *        The second part of a key-value pair that forms a tag associated with a given resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

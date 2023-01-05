@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,8 @@ public class ThemeConfiguration implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private SheetStyle sheet;
+
+    private Typography typography;
 
     /**
      * <p>
@@ -168,6 +170,32 @@ public class ThemeConfiguration implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param typography
+     */
+
+    public void setTypography(Typography typography) {
+        this.typography = typography;
+    }
+
+    /**
+     * @return
+     */
+
+    public Typography getTypography() {
+        return this.typography;
+    }
+
+    /**
+     * @param typography
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ThemeConfiguration withTypography(Typography typography) {
+        setTypography(typography);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +212,9 @@ public class ThemeConfiguration implements Serializable, Cloneable, StructuredPo
         if (getUIColorPalette() != null)
             sb.append("UIColorPalette: ").append(getUIColorPalette()).append(",");
         if (getSheet() != null)
-            sb.append("Sheet: ").append(getSheet());
+            sb.append("Sheet: ").append(getSheet()).append(",");
+        if (getTypography() != null)
+            sb.append("Typography: ").append(getTypography());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +241,10 @@ public class ThemeConfiguration implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getSheet() != null && other.getSheet().equals(this.getSheet()) == false)
             return false;
+        if (other.getTypography() == null ^ this.getTypography() == null)
+            return false;
+        if (other.getTypography() != null && other.getTypography().equals(this.getTypography()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +256,7 @@ public class ThemeConfiguration implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getDataColorPalette() == null) ? 0 : getDataColorPalette().hashCode());
         hashCode = prime * hashCode + ((getUIColorPalette() == null) ? 0 : getUIColorPalette().hashCode());
         hashCode = prime * hashCode + ((getSheet() == null) ? 0 : getSheet().hashCode());
+        hashCode = prime * hashCode + ((getTypography() == null) ? 0 : getTypography().hashCode());
         return hashCode;
     }
 

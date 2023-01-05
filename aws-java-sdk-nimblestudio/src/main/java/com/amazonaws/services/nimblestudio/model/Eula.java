@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
     private String content;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -53,7 +53,7 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -100,11 +100,11 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -113,10 +113,10 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was created.
+     * @return The ISO timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -125,11 +125,11 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,11 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -233,10 +233,10 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was updated.
+     * @return The ISO timestamp in seconds for when the resource was updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -245,11 +245,11 @@ public class Eula implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

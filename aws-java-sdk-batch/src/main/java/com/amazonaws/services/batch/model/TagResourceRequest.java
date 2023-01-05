@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are
      * compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.
+     * and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      */
     private String resourceArn;
@@ -50,13 +50,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are
      * compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.
+     * and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags
      *        are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs
-     *        of array and multi-node parallel (MNP) jobs are not supported.
+     *        of array and multi-node parallel (MNP) jobs aren't supported.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -67,12 +67,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are
      * compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.
+     * and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags
      *         are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs
-     *         of array and multi-node parallel (MNP) jobs are not supported.
+     *         of array and multi-node parallel (MNP) jobs aren't supported.
      */
 
     public String getResourceArn() {
@@ -83,13 +83,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags are
      * compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs of array
-     * and multi-node parallel (MNP) jobs are not supported.
+     * and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) of the resource that tags are added to. Batch resources that support tags
      *        are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child jobs
-     *        of array and multi-node parallel (MNP) jobs are not supported.
+     *        of array and multi-node parallel (MNP) jobs aren't supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

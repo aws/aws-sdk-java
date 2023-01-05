@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -259,25 +259,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -356,7 +337,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     private String cacheNodeType;
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      */
     private String engine;
@@ -607,11 +589,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -678,6 +655,39 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean dataTieringEnabled;
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private String networkType;
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private String ipDiscovery;
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     */
+    private String transitEncryptionMode;
 
     /**
      * <p>
@@ -1814,25 +1824,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -1991,25 +1982,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        <b>C1 node types:</b> <code>cache.c1.xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -2186,25 +2158,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -2362,25 +2315,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         <b>C1 node types:</b> <code>cache.c1.xlarge</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Memory optimized with data tiering:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Current generation:
-     *         </p>
-     *         <p>
-     *         <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *         </p>
-     *         <p>
-     *         <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *         <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -2557,25 +2491,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * Memory optimized with data tiering:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Current generation:
-     * </p>
-     * <p>
-     * <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     * </p>
-     * <p>
-     * <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     * <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     * </p>
-     * </li>
-     * </ul>
-     * </li>
-     * <li>
-     * <p>
      * Memory optimized:
      * </p>
      * <ul>
@@ -2740,25 +2655,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        Memory optimized with data tiering:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Current generation:
-     *        </p>
-     *        <p>
-     *        <b>R6gd node types</b> (available only for Redis engine version 6.2 onward).
-     *        </p>
-     *        <p>
-     *        <code>cache.r6gd.xlarge</code>, <code>cache.r6gd.2xlarge</code>, <code>cache.r6gd.4xlarge</code>,
-     *        <code>cache.r6gd.8xlarge</code>, <code>cache.r6gd.12xlarge</code>, <code>cache.r6gd.16xlarge</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        </li>
-     *        <li>
-     *        <p>
      *        Memory optimized:
      *        </p>
      *        <ul>
@@ -2845,11 +2741,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     *        The name of the cache engine to be used for the clusters in this replication group. The value must be set
+     *        to <code>Redis</code>.
      */
 
     public void setEngine(String engine) {
@@ -2858,10 +2756,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      * 
-     * @return The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * @return The name of the cache engine to be used for the clusters in this replication group. The value must be set
+     *         to <code>Redis</code>.
      */
 
     public String getEngine() {
@@ -2870,11 +2770,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     * The name of the cache engine to be used for the clusters in this replication group. The value must be set to
+     * <code>Redis</code>.
      * </p>
      * 
      * @param engine
-     *        The name of the cache engine to be used for the clusters in this replication group. Must be Redis.
+     *        The name of the cache engine to be used for the clusters in this replication group. The value must be set
+     *        to <code>Redis</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4542,11 +4444,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4570,11 +4467,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param transitEncryptionEnabled
      *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *        <p>
-     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *        <code>true</code> when you create a cluster.
-     *        </p>
      *        <p>
      *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *        <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -4606,11 +4498,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4633,11 +4520,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </important>
      * 
      * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *         <p>
-     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *         <code>true</code> when you create a cluster.
-     *         </p>
      *         <p>
      *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *         <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -4669,11 +4551,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4697,11 +4574,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param transitEncryptionEnabled
      *        A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *        <p>
-     *        You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *        enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *        <code>true</code> when you create a cluster.
-     *        </p>
      *        <p>
      *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *        <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -4735,11 +4607,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * A flag that enables in-transit encryption when set to <code>true</code>.
      * </p>
      * <p>
-     * You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To enable
-     * in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to <code>true</code> when
-     * you create a cluster.
-     * </p>
-     * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
      * created in an Amazon VPC.
@@ -4762,11 +4629,6 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </important>
      * 
      * @return A flag that enables in-transit encryption when set to <code>true</code>.</p>
-     *         <p>
-     *         You cannot modify the value of <code>TransitEncryptionEnabled</code> after the cluster is created. To
-     *         enable in-transit encryption on a cluster you must set <code>TransitEncryptionEnabled</code> to
-     *         <code>true</code> when you create a cluster.
-     *         </p>
      *         <p>
      *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
      *         <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
@@ -5192,6 +5054,303 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *         workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *         on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public CreateReplicationGroupRequest withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     * using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param networkType
+     *        Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for
+     *        workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built
+     *        on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public CreateReplicationGroupRequest withNetworkType(NetworkType networkType) {
+        this.networkType = networkType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *        <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *        engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     *        system</a>.
+     * @see IpDiscovery
+     */
+
+    public void setIpDiscovery(String ipDiscovery) {
+        this.ipDiscovery = ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *         <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *         engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     *         system</a>.
+     * @see IpDiscovery
+     */
+
+    public String getIpDiscovery() {
+        return this.ipDiscovery;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *        <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *        engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     *        system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public CreateReplicationGroupRequest withIpDiscovery(String ipDiscovery) {
+        setIpDiscovery(ipDiscovery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The network type you choose when creating a replication group, either <code>ipv4</code> | <code>ipv6</code>. IPv6
+     * is supported for workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
+     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param ipDiscovery
+     *        The network type you choose when creating a replication group, either <code>ipv4</code> |
+     *        <code>ipv6</code>. IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
+     *        engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     *        system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpDiscovery
+     */
+
+    public CreateReplicationGroupRequest withIpDiscovery(IpDiscovery ipDiscovery) {
+        this.ipDiscovery = ipDiscovery.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *        <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *        and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *        connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
+     *        can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @see TransitEncryptionMode
+     */
+
+    public void setTransitEncryptionMode(String transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @return A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *         <p>
+     *         When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *         <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *         and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *         connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *         </p>
+     *         <p>
+     *         Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *         you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
+     *         can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @see TransitEncryptionMode
+     */
+
+    public String getTransitEncryptionMode() {
+        return this.transitEncryptionMode;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *        <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *        and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *        connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
+     *        can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public CreateReplicationGroupRequest withTransitEncryptionMode(String transitEncryptionMode) {
+        setTransitEncryptionMode(transitEncryptionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.
+     * </p>
+     * <p>
+     * When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     * <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted and
+     * unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted connections
+     * you can modify the value to <code>required</code> to allow encrypted connections only.
+     * </p>
+     * <p>
+     * Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires you to
+     * first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you can set
+     * <code>TransitEncryptionMode</code> to <code>required</code>.
+     * </p>
+     * 
+     * @param transitEncryptionMode
+     *        A setting that allows you to migrate your clients to use in-transit encryption, with no downtime.</p>
+     *        <p>
+     *        When setting <code>TransitEncryptionEnabled</code> to <code>true</code>, you can set your
+     *        <code>TransitEncryptionMode</code> to <code>preferred</code> in the same request, to allow both encrypted
+     *        and unencrypted connections at the same time. Once you migrate all your Redis clients to use encrypted
+     *        connections you can modify the value to <code>required</code> to allow encrypted connections only.
+     *        </p>
+     *        <p>
+     *        Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step process that requires
+     *        you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that you
+     *        can set <code>TransitEncryptionMode</code> to <code>required</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TransitEncryptionMode
+     */
+
+    public CreateReplicationGroupRequest withTransitEncryptionMode(TransitEncryptionMode transitEncryptionMode) {
+        this.transitEncryptionMode = transitEncryptionMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -5270,7 +5429,13 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getLogDeliveryConfigurations() != null)
             sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations()).append(",");
         if (getDataTieringEnabled() != null)
-            sb.append("DataTieringEnabled: ").append(getDataTieringEnabled());
+            sb.append("DataTieringEnabled: ").append(getDataTieringEnabled()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getIpDiscovery() != null)
+            sb.append("IpDiscovery: ").append(getIpDiscovery()).append(",");
+        if (getTransitEncryptionMode() != null)
+            sb.append("TransitEncryptionMode: ").append(getTransitEncryptionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -5421,6 +5586,18 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDataTieringEnabled() != null && other.getDataTieringEnabled().equals(this.getDataTieringEnabled()) == false)
             return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
+            return false;
+        if (other.getIpDiscovery() == null ^ this.getIpDiscovery() == null)
+            return false;
+        if (other.getIpDiscovery() != null && other.getIpDiscovery().equals(this.getIpDiscovery()) == false)
+            return false;
+        if (other.getTransitEncryptionMode() == null ^ this.getTransitEncryptionMode() == null)
+            return false;
+        if (other.getTransitEncryptionMode() != null && other.getTransitEncryptionMode().equals(this.getTransitEncryptionMode()) == false)
+            return false;
         return true;
     }
 
@@ -5463,6 +5640,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getUserGroupIds() == null) ? 0 : getUserGroupIds().hashCode());
         hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         hashCode = prime * hashCode + ((getDataTieringEnabled() == null) ? 0 : getDataTieringEnabled().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getIpDiscovery() == null) ? 0 : getIpDiscovery().hashCode());
+        hashCode = prime * hashCode + ((getTransitEncryptionMode() == null) ? 0 : getTransitEncryptionMode().hashCode());
         return hashCode;
     }
 

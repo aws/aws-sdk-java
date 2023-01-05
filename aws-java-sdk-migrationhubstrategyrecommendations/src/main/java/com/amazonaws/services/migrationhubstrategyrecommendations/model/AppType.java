@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,23 @@ public enum AppType {
     SQLServer("SQLServer"),
     IIS("IIS"),
     Oracle("Oracle"),
-    Other("Other");
+    Other("Other"),
+    Tomcat("Tomcat"),
+    JBoss("JBoss"),
+    Spring("Spring"),
+    MongoDB("Mongo DB"),
+    DB2("DB2"),
+    MariaDB("Maria DB"),
+    MySQL("MySQL"),
+    Sybase("Sybase"),
+    PostgreSQLServer("PostgreSQLServer"),
+    Cassandra("Cassandra"),
+    IBMWebSphere("IBM WebSphere"),
+    OracleWebLogic("Oracle WebLogic"),
+    VisualBasic("Visual Basic"),
+    Unknown("Unknown"),
+    DotnetCore("DotnetCore"),
+    Dotnet("Dotnet");
 
     private String value;
 

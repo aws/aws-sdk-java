@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,12 +25,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags.
+     * </p>
+     */
     private String resourceArn;
-
+    /**
+     * <p>
+     * Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing
+     * and pending) associated with a specific resource.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags.
+     * </p>
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the
+     *        tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -38,7 +54,12 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the
+     *         tags.
      */
 
     public String getResourceArn() {
@@ -46,7 +67,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags.
+     * </p>
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the
+     *        tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +83,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * @return
+     * <p>
+     * Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing
+     * and pending) associated with a specific resource.
+     * </p>
+     * 
+     * @return Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both
+     *         existing and pending) associated with a specific resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -64,7 +97,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing
+     * and pending) associated with a specific resource.
+     * </p>
+     * 
      * @param tags
+     *        Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both
+     *        existing and pending) associated with a specific resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -78,12 +118,18 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing
+     * and pending) associated with a specific resource.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both
+     *        existing and pending) associated with a specific resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +144,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing
+     * and pending) associated with a specific resource.
+     * </p>
+     * 
      * @param tags
+     *        Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both
+     *        existing and pending) associated with a specific resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

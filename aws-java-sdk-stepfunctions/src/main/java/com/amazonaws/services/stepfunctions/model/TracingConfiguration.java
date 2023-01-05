@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Selects whether or not the state machine's AWS X-Ray tracing is enabled. Default is <code>false</code>
+ * Selects whether or not the state machine's X-Ray tracing is enabled. Default is <code>false</code>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/TracingConfiguration" target="_top">AWS API
@@ -30,18 +30,18 @@ public class TracingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     * When set to <code>true</code>, X-Ray tracing is enabled.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     * When set to <code>true</code>, X-Ray tracing is enabled.
      * </p>
      * 
      * @param enabled
-     *        When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     *        When set to <code>true</code>, X-Ray tracing is enabled.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -50,10 +50,10 @@ public class TracingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     * When set to <code>true</code>, X-Ray tracing is enabled.
      * </p>
      * 
-     * @return When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     * @return When set to <code>true</code>, X-Ray tracing is enabled.
      */
 
     public Boolean getEnabled() {
@@ -62,11 +62,11 @@ public class TracingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     * When set to <code>true</code>, X-Ray tracing is enabled.
      * </p>
      * 
      * @param enabled
-     *        When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     *        When set to <code>true</code>, X-Ray tracing is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,10 +77,10 @@ public class TracingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     * When set to <code>true</code>, X-Ray tracing is enabled.
      * </p>
      * 
-     * @return When set to <code>true</code>, AWS X-Ray tracing is enabled.
+     * @return When set to <code>true</code>, X-Ray tracing is enabled.
      */
 
     public Boolean isEnabled() {

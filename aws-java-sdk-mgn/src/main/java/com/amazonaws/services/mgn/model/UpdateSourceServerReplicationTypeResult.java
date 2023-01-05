@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,12 @@ import javax.annotation.Generated;
 public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * Source server application ID.
+     * </p>
+     */
+    private String applicationID;
     /**
      * <p>
      * Source server ARN.
@@ -84,6 +90,46 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
      * </p>
      */
     private String vcenterClientID;
+
+    /**
+     * <p>
+     * Source server application ID.
+     * </p>
+     * 
+     * @param applicationID
+     *        Source server application ID.
+     */
+
+    public void setApplicationID(String applicationID) {
+        this.applicationID = applicationID;
+    }
+
+    /**
+     * <p>
+     * Source server application ID.
+     * </p>
+     * 
+     * @return Source server application ID.
+     */
+
+    public String getApplicationID() {
+        return this.applicationID;
+    }
+
+    /**
+     * <p>
+     * Source server application ID.
+     * </p>
+     * 
+     * @param applicationID
+     *        Source server application ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSourceServerReplicationTypeResult withApplicationID(String applicationID) {
+        setApplicationID(applicationID);
+        return this;
+    }
 
     /**
      * <p>
@@ -556,6 +602,8 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationID() != null)
+            sb.append("ApplicationID: ").append(getApplicationID()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getDataReplicationInfo() != null)
@@ -590,6 +638,10 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
         if (obj instanceof UpdateSourceServerReplicationTypeResult == false)
             return false;
         UpdateSourceServerReplicationTypeResult other = (UpdateSourceServerReplicationTypeResult) obj;
+        if (other.getApplicationID() == null ^ this.getApplicationID() == null)
+            return false;
+        if (other.getApplicationID() != null && other.getApplicationID().equals(this.getApplicationID()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -638,6 +690,7 @@ public class UpdateSourceServerReplicationTypeResult extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApplicationID() == null) ? 0 : getApplicationID().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getDataReplicationInfo() == null) ? 0 : getDataReplicationInfo().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());

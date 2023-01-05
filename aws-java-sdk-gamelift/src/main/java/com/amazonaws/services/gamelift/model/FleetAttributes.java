@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,9 +23,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * <b>Related actions</b>
- * </p>
- * <p>
- * <a>CreateFleet</a> | <a>DescribeFleetAttributes</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/FleetAttributes" target="_top">AWS API
@@ -51,7 +48,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private String fleetArn;
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     * <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * </p>
      */
     private String fleetType;
@@ -159,15 +159,16 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private String scriptArn;
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.
      * </p>
      */
     private String serverLaunchPath;
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter instead continue to be valid.
      * </p>
      */
     private String serverLaunchParameters;
@@ -206,11 +207,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String operatingSystem;
-    /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     */
+
     private ResourceCreationLimitPolicy resourceCreationLimitPolicy;
     /**
      * <p>
@@ -221,7 +218,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> metricGroups;
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> .
+     * This includes fleet auto-scaling.
      * </p>
      */
     private java.util.List<String> stoppedActions;
@@ -237,12 +236,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String instanceRoleArn;
+
+    private CertificateConfiguration certificateConfiguration;
     /**
      * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
      * </p>
      */
-    private CertificateConfiguration certificateConfiguration;
+    private String computeType;
+
+    private AnywhereConfiguration anywhereConfiguration;
 
     /**
      * <p>
@@ -347,11 +351,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     * <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -361,10 +371,16 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     * <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * </p>
      * 
-     * @return The kind of instances, On-Demand or Spot, that this fleet uses.
+     * @return Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     *         <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *         > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -374,11 +390,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     * <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -390,11 +412,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     * <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * @see FleetType
      */
 
@@ -404,11 +432,17 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The kind of instances, On-Demand or Spot, that this fleet uses.
+     * Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     * <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     * > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * </p>
      * 
      * @param fleetType
-     *        The kind of instances, On-Demand or Spot, that this fleet uses.
+     *        Indicates whether to use On-Demand or Spot instances for this fleet. By default, this property is set to
+     *        <code>ON_DEMAND</code>. Learn more about when to use <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot"
+     *        > On-Demand versus Spot Instances</a>. This property cannot be changed after the fleet is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetType
      */
@@ -1283,13 +1317,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.
      * </p>
      * 
      * @param serverLaunchPath
-     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     *        >RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.
      */
 
     public void setServerLaunchPath(String serverLaunchPath) {
@@ -1298,12 +1334,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.
      * </p>
      * 
-     * @return <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     *         <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * @return <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     *         >RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.
      */
 
     public String getServerLaunchPath() {
@@ -1312,13 +1350,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     * >RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.
      * </p>
      * 
      * @param serverLaunchPath
-     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        <b>This parameter is no longer used.</b> Server launch paths are now defined using the fleet's <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/RuntimeConfiguration.html"
+     *        >RuntimeConfiguration</a> . Requests that use this parameter instead continue to be valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1329,13 +1369,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter instead continue to be valid.
      * </p>
      * 
      * @param serverLaunchParameters
      *        <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        runtime configuration . Requests that use this parameter instead continue to be valid.
      */
 
     public void setServerLaunchParameters(String serverLaunchParameters) {
@@ -1344,12 +1384,12 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter instead continue to be valid.
      * </p>
      * 
      * @return <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     *         <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *         runtime configuration . Requests that use this parameter instead continue to be valid.
      */
 
     public String getServerLaunchParameters() {
@@ -1358,13 +1398,13 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     * <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     * <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's runtime
+     * configuration . Requests that use this parameter instead continue to be valid.
      * </p>
      * 
      * @param serverLaunchParameters
      *        <b>This parameter is no longer used.</b> Server launch parameters are now defined using the fleet's
-     *        <a>RuntimeConfiguration</a> parameter. Requests that use this parameter instead continue to be valid.
+     *        runtime configuration . Requests that use this parameter instead continue to be valid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1749,13 +1789,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     * 
      * @param resourceCreationLimitPolicy
-     *        The fleet policy that limits the number of game sessions an individual player can create over a span of
-     *        time.
      */
 
     public void setResourceCreationLimitPolicy(ResourceCreationLimitPolicy resourceCreationLimitPolicy) {
@@ -1763,12 +1797,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     * 
-     * @return The fleet policy that limits the number of game sessions an individual player can create over a span of
-     *         time.
+     * @return
      */
 
     public ResourceCreationLimitPolicy getResourceCreationLimitPolicy() {
@@ -1776,13 +1805,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * The fleet policy that limits the number of game sessions an individual player can create over a span of time.
-     * </p>
-     * 
      * @param resourceCreationLimitPolicy
-     *        The fleet policy that limits the number of game sessions an individual player can create over a span of
-     *        time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1875,11 +1898,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> .
+     * This includes fleet auto-scaling.
      * </p>
      * 
-     * @return A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *         auto-scaling.
+     * @return A list of fleet activity that has been suspended using <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *         >StopFleetActions</a> . This includes fleet auto-scaling.
      * @see FleetAction
      */
 
@@ -1889,12 +1915,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> .
+     * This includes fleet auto-scaling.
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a> . This includes fleet auto-scaling.
      * @see FleetAction
      */
 
@@ -1909,7 +1938,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> .
+     * This includes fleet auto-scaling.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1918,8 +1949,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a> . This includes fleet auto-scaling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -1936,12 +1968,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> .
+     * This includes fleet auto-scaling.
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a> . This includes fleet auto-scaling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -1953,12 +1988,15 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet auto-scaling.
+     * A list of fleet activity that has been suspended using <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a> .
+     * This includes fleet auto-scaling.
      * </p>
      * 
      * @param stoppedActions
-     *        A list of fleet activity that has been suspended using <a>StopFleetActions</a>. This includes fleet
-     *        auto-scaling.
+     *        A list of fleet activity that has been suspended using <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html"
+     *        >StopFleetActions</a> . This includes fleet auto-scaling.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FleetAction
      */
@@ -2053,12 +2091,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
-     * </p>
-     * 
      * @param certificateConfiguration
-     *        Indicates whether a TLS/SSL certificate was generated for the fleet.
      */
 
     public void setCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
@@ -2066,11 +2099,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
-     * </p>
-     * 
-     * @return Indicates whether a TLS/SSL certificate was generated for the fleet.
+     * @return
      */
 
     public CertificateConfiguration getCertificateConfiguration() {
@@ -2078,17 +2107,121 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * Indicates whether a TLS/SSL certificate was generated for the fleet.
-     * </p>
-     * 
      * @param certificateConfiguration
-     *        Indicates whether a TLS/SSL certificate was generated for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FleetAttributes withCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
         setCertificateConfiguration(certificateConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @see ComputeType
+     */
+
+    public void setComputeType(String computeType) {
+        this.computeType = computeType;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @return The type of compute resource used to host your game servers. You can use your own compute resources with
+     *         GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @see ComputeType
+     */
+
+    public String getComputeType() {
+        return this.computeType;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeType
+     */
+
+    public FleetAttributes withComputeType(String computeType) {
+        setComputeType(computeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @see ComputeType
+     */
+
+    public void setComputeType(ComputeType computeType) {
+        withComputeType(computeType);
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeType
+     */
+
+    public FleetAttributes withComputeType(ComputeType computeType) {
+        this.computeType = computeType.toString();
+        return this;
+    }
+
+    /**
+     * @param anywhereConfiguration
+     */
+
+    public void setAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        this.anywhereConfiguration = anywhereConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public AnywhereConfiguration getAnywhereConfiguration() {
+        return this.anywhereConfiguration;
+    }
+
+    /**
+     * @param anywhereConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        setAnywhereConfiguration(anywhereConfiguration);
         return this;
     }
 
@@ -2149,7 +2282,11 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         if (getInstanceRoleArn() != null)
             sb.append("InstanceRoleArn: ").append(getInstanceRoleArn()).append(",");
         if (getCertificateConfiguration() != null)
-            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration());
+            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration()).append(",");
+        if (getComputeType() != null)
+            sb.append("ComputeType: ").append(getComputeType()).append(",");
+        if (getAnywhereConfiguration() != null)
+            sb.append("AnywhereConfiguration: ").append(getAnywhereConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -2257,6 +2394,14 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCertificateConfiguration() != null && other.getCertificateConfiguration().equals(this.getCertificateConfiguration()) == false)
             return false;
+        if (other.getComputeType() == null ^ this.getComputeType() == null)
+            return false;
+        if (other.getComputeType() != null && other.getComputeType().equals(this.getComputeType()) == false)
+            return false;
+        if (other.getAnywhereConfiguration() == null ^ this.getAnywhereConfiguration() == null)
+            return false;
+        if (other.getAnywhereConfiguration() != null && other.getAnywhereConfiguration().equals(this.getAnywhereConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -2288,6 +2433,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getStoppedActions() == null) ? 0 : getStoppedActions().hashCode());
         hashCode = prime * hashCode + ((getInstanceRoleArn() == null) ? 0 : getInstanceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getCertificateConfiguration() == null) ? 0 : getCertificateConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
+        hashCode = prime * hashCode + ((getAnywhereConfiguration() == null) ? 0 : getAnywhereConfiguration().hashCode());
         return hashCode;
     }
 

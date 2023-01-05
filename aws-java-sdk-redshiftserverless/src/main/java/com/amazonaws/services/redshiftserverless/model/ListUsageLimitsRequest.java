@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class ListUsageLimitsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in
+     * returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in
      * the next page.
      * </p>
      */
@@ -102,13 +102,13 @@ public class ListUsageLimitsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in
+     * returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in
      * the next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include
-     *        the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns
+     *        the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns
      *        results in the next page.
      */
 
@@ -119,12 +119,12 @@ public class ListUsageLimitsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in
+     * returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in
      * the next page.
      * </p>
      * 
      * @return If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include
-     *         the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns
+     *         the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns
      *         results in the next page.
      */
 
@@ -135,13 +135,13 @@ public class ListUsageLimitsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns results in
+     * returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns results in
      * the next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial <code>ListUsageLimits</code> operation returns a <code>nextToken</code>, you can include
-     *        the returned <code>nextToken</code> in subsequent <code>ListUsageLimits</code> operations, which returns
+     *        the returned <code>nextToken</code> in following <code>ListUsageLimits</code> operations, which returns
      *        results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

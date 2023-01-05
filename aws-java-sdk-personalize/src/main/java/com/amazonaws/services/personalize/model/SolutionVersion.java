@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class SolutionVersion implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     */
+    private String name;
     /**
      * <p>
      * The ARN of the solution version.
@@ -169,6 +175,46 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @param name
+     *        The name of the solution version.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @return The name of the solution version.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the solution version.
+     * </p>
+     * 
+     * @param name
+     *        The name of the solution version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SolutionVersion withName(String name) {
+        setName(name);
+        return this;
+    }
 
     /**
      * <p>
@@ -1154,6 +1200,8 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
         if (getSolutionVersionArn() != null)
             sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
         if (getSolutionArn() != null)
@@ -1198,6 +1246,10 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof SolutionVersion == false)
             return false;
         SolutionVersion other = (SolutionVersion) obj;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
         if (other.getSolutionVersionArn() == null ^ this.getSolutionVersionArn() == null)
             return false;
         if (other.getSolutionVersionArn() != null && other.getSolutionVersionArn().equals(this.getSolutionVersionArn()) == false)
@@ -1266,6 +1318,7 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getSolutionArn() == null) ? 0 : getSolutionArn().hashCode());
         hashCode = prime * hashCode + ((getPerformHPO() == null) ? 0 : getPerformHPO().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>ListTags</a> </code> operation. Specify the <code>ARN</code> of the
- * domain that the tags you want to view are attached to.
+ * Container for the parameters to the <code>ListTags</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,18 +27,18 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+     * Amazon Resource Name (ARN) for the domain to view tags for.
      * </p>
      */
     private String aRN;
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+     * Amazon Resource Name (ARN) for the domain to view tags for.
      * </p>
      * 
      * @param aRN
-     *        Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+     *        Amazon Resource Name (ARN) for the domain to view tags for.
      */
 
     public void setARN(String aRN) {
@@ -48,10 +47,10 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+     * Amazon Resource Name (ARN) for the domain to view tags for.
      * </p>
      * 
-     * @return Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+     * @return Amazon Resource Name (ARN) for the domain to view tags for.
      */
 
     public String getARN() {
@@ -60,11 +59,11 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+     * Amazon Resource Name (ARN) for the domain to view tags for.
      * </p>
      * 
      * @param aRN
-     *        Specify the <code>ARN</code> of the domain that the tags you want to view are attached to.
+     *        Amazon Resource Name (ARN) for the domain to view tags for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

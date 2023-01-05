@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -570,6 +570,35 @@ public interface AWSdrs {
 
     /**
      * <p>
+     * Start replication to origin / target region - applies only to protected instances that originated in EC2. For
+     * recovery instances on target region - starts replication back to origin region. For failback instances on origin
+     * region - starts replication to target region to re-protect them.
+     * </p>
+     * 
+     * @param reverseReplicationRequest
+     * @return Result of the ReverseReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by the AWS service.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.ReverseReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ReverseReplicationResult reverseReplication(ReverseReplicationRequest reverseReplicationRequest);
+
+    /**
+     * <p>
      * Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This
      * will run conversion on the failback client and will reboot your machine, thus completing the failback process.
      * </p>
@@ -620,6 +649,30 @@ public interface AWSdrs {
 
     /**
      * <p>
+     * Starts replication for a stopped Source Server. This action would make the Source Server protected again and
+     * restart billing for it.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @return Result of the StartReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartReplicationResult startReplication(StartReplicationRequest startReplicationRequest);
+
+    /**
+     * <p>
      * Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery
      * Instance back to FAILBACK_NOT_STARTED.
      * </p>
@@ -639,6 +692,30 @@ public interface AWSdrs {
      *      Documentation</a>
      */
     StopFailbackResult stopFailback(StopFailbackRequest stopFailbackRequest);
+
+    /**
+     * <p>
+     * Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing
+     * snapshots and stop billing for it.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return Result of the StopReplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource for this operation was not found.
+     * @throws InternalServerException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws ConflictException
+     *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws UninitializedAccountException
+     *         The account performing the request has not been initialized.
+     * @sample AWSdrs.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopReplicationResult stopReplication(StopReplicationRequest stopReplicationRequest);
 
     /**
      * <p>

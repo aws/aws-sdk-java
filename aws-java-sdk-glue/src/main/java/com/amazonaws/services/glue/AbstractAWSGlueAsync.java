@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,6 +131,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetDataQualityResultResult> batchGetDataQualityResultAsync(BatchGetDataQualityResultRequest request) {
+
+        return batchGetDataQualityResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetDataQualityResultResult> batchGetDataQualityResultAsync(BatchGetDataQualityResultRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDataQualityResultRequest, BatchGetDataQualityResultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetDevEndpointsResult> batchGetDevEndpointsAsync(BatchGetDevEndpointsRequest request) {
 
         return batchGetDevEndpointsAsync(request, null);
@@ -217,6 +230,36 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<BatchUpdatePartitionResult> batchUpdatePartitionAsync(BatchUpdatePartitionRequest request,
             com.amazonaws.handlers.AsyncHandler<BatchUpdatePartitionRequest, BatchUpdatePartitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDataQualityRuleRecommendationRunResult> cancelDataQualityRuleRecommendationRunAsync(
+            CancelDataQualityRuleRecommendationRunRequest request) {
+
+        return cancelDataQualityRuleRecommendationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDataQualityRuleRecommendationRunResult> cancelDataQualityRuleRecommendationRunAsync(
+            CancelDataQualityRuleRecommendationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelDataQualityRuleRecommendationRunRequest, CancelDataQualityRuleRecommendationRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDataQualityRulesetEvaluationRunResult> cancelDataQualityRulesetEvaluationRunAsync(
+            CancelDataQualityRulesetEvaluationRunRequest request) {
+
+        return cancelDataQualityRulesetEvaluationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDataQualityRulesetEvaluationRunResult> cancelDataQualityRulesetEvaluationRunAsync(
+            CancelDataQualityRulesetEvaluationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelDataQualityRulesetEvaluationRunRequest, CancelDataQualityRulesetEvaluationRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -321,6 +364,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<CreateCustomEntityTypeResult> createCustomEntityTypeAsync(CreateCustomEntityTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateCustomEntityTypeRequest, CreateCustomEntityTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataQualityRulesetResult> createDataQualityRulesetAsync(CreateDataQualityRulesetRequest request) {
+
+        return createDataQualityRulesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDataQualityRulesetResult> createDataQualityRulesetAsync(CreateDataQualityRulesetRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateDataQualityRulesetRequest, CreateDataQualityRulesetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -609,6 +665,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<DeleteCustomEntityTypeResult> deleteCustomEntityTypeAsync(DeleteCustomEntityTypeRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteCustomEntityTypeRequest, DeleteCustomEntityTypeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataQualityRulesetResult> deleteDataQualityRulesetAsync(DeleteDataQualityRulesetRequest request) {
+
+        return deleteDataQualityRulesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDataQualityRulesetResult> deleteDataQualityRulesetAsync(DeleteDataQualityRulesetRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataQualityRulesetRequest, DeleteDataQualityRulesetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1029,6 +1098,62 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     public java.util.concurrent.Future<GetDataCatalogEncryptionSettingsResult> getDataCatalogEncryptionSettingsAsync(
             GetDataCatalogEncryptionSettingsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetDataCatalogEncryptionSettingsRequest, GetDataCatalogEncryptionSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityResultResult> getDataQualityResultAsync(GetDataQualityResultRequest request) {
+
+        return getDataQualityResultAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityResultResult> getDataQualityResultAsync(GetDataQualityResultRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityResultRequest, GetDataQualityResultResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityRuleRecommendationRunResult> getDataQualityRuleRecommendationRunAsync(
+            GetDataQualityRuleRecommendationRunRequest request) {
+
+        return getDataQualityRuleRecommendationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityRuleRecommendationRunResult> getDataQualityRuleRecommendationRunAsync(
+            GetDataQualityRuleRecommendationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityRuleRecommendationRunRequest, GetDataQualityRuleRecommendationRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityRulesetResult> getDataQualityRulesetAsync(GetDataQualityRulesetRequest request) {
+
+        return getDataQualityRulesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityRulesetResult> getDataQualityRulesetAsync(GetDataQualityRulesetRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityRulesetRequest, GetDataQualityRulesetResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityRulesetEvaluationRunResult> getDataQualityRulesetEvaluationRunAsync(
+            GetDataQualityRulesetEvaluationRunRequest request) {
+
+        return getDataQualityRulesetEvaluationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDataQualityRulesetEvaluationRunResult> getDataQualityRulesetEvaluationRunAsync(
+            GetDataQualityRulesetEvaluationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityRulesetEvaluationRunRequest, GetDataQualityRulesetEvaluationRunResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1699,6 +1824,62 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ListDataQualityResultsResult> listDataQualityResultsAsync(ListDataQualityResultsRequest request) {
+
+        return listDataQualityResultsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataQualityResultsResult> listDataQualityResultsAsync(ListDataQualityResultsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityResultsRequest, ListDataQualityResultsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataQualityRuleRecommendationRunsResult> listDataQualityRuleRecommendationRunsAsync(
+            ListDataQualityRuleRecommendationRunsRequest request) {
+
+        return listDataQualityRuleRecommendationRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataQualityRuleRecommendationRunsResult> listDataQualityRuleRecommendationRunsAsync(
+            ListDataQualityRuleRecommendationRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityRuleRecommendationRunsRequest, ListDataQualityRuleRecommendationRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataQualityRulesetEvaluationRunsResult> listDataQualityRulesetEvaluationRunsAsync(
+            ListDataQualityRulesetEvaluationRunsRequest request) {
+
+        return listDataQualityRulesetEvaluationRunsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataQualityRulesetEvaluationRunsResult> listDataQualityRulesetEvaluationRunsAsync(
+            ListDataQualityRulesetEvaluationRunsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityRulesetEvaluationRunsRequest, ListDataQualityRulesetEvaluationRunsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataQualityRulesetsResult> listDataQualityRulesetsAsync(ListDataQualityRulesetsRequest request) {
+
+        return listDataQualityRulesetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDataQualityRulesetsResult> listDataQualityRulesetsAsync(ListDataQualityRulesetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityRulesetsRequest, ListDataQualityRulesetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDevEndpointsResult> listDevEndpointsAsync(ListDevEndpointsRequest request) {
 
         return listDevEndpointsAsync(request, null);
@@ -2013,6 +2194,36 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<StartDataQualityRuleRecommendationRunResult> startDataQualityRuleRecommendationRunAsync(
+            StartDataQualityRuleRecommendationRunRequest request) {
+
+        return startDataQualityRuleRecommendationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDataQualityRuleRecommendationRunResult> startDataQualityRuleRecommendationRunAsync(
+            StartDataQualityRuleRecommendationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDataQualityRuleRecommendationRunRequest, StartDataQualityRuleRecommendationRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDataQualityRulesetEvaluationRunResult> startDataQualityRulesetEvaluationRunAsync(
+            StartDataQualityRulesetEvaluationRunRequest request) {
+
+        return startDataQualityRulesetEvaluationRunAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDataQualityRulesetEvaluationRunResult> startDataQualityRulesetEvaluationRunAsync(
+            StartDataQualityRulesetEvaluationRunRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartDataQualityRulesetEvaluationRunRequest, StartDataQualityRulesetEvaluationRunResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartExportLabelsTaskRunResult> startExportLabelsTaskRunAsync(StartExportLabelsTaskRunRequest request) {
 
         return startExportLabelsTaskRunAsync(request, null);
@@ -2285,6 +2496,19 @@ public class AbstractAWSGlueAsync extends AbstractAWSGlue implements AWSGlueAsyn
     @Override
     public java.util.concurrent.Future<UpdateCrawlerScheduleResult> updateCrawlerScheduleAsync(UpdateCrawlerScheduleRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCrawlerScheduleRequest, UpdateCrawlerScheduleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataQualityRulesetResult> updateDataQualityRulesetAsync(UpdateDataQualityRulesetRequest request) {
+
+        return updateDataQualityRulesetAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDataQualityRulesetResult> updateDataQualityRulesetAsync(UpdateDataQualityRulesetRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataQualityRulesetRequest, UpdateDataQualityRulesetResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

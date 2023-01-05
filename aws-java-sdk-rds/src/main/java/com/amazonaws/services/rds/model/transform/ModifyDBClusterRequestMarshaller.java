@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -263,6 +263,18 @@ public class ModifyDBClusterRequestMarshaller implements Marshaller<Request<Modi
 
         if (modifyDBClusterRequest.getNetworkType() != null) {
             request.addParameter("NetworkType", StringUtils.fromString(modifyDBClusterRequest.getNetworkType()));
+        }
+
+        if (modifyDBClusterRequest.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(modifyDBClusterRequest.getManageMasterUserPassword()));
+        }
+
+        if (modifyDBClusterRequest.getRotateMasterUserPassword() != null) {
+            request.addParameter("RotateMasterUserPassword", StringUtils.fromBoolean(modifyDBClusterRequest.getRotateMasterUserPassword()));
+        }
+
+        if (modifyDBClusterRequest.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(modifyDBClusterRequest.getMasterUserSecretKmsKeyId()));
         }
 
         return request;

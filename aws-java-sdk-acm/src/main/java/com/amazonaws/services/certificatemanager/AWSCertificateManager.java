@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -164,6 +164,13 @@ public interface AWSCertificateManager {
      * @throws ResourceInUseException
      *         The certificate is in use by another Amazon Web Services service in the caller's account. Remove the
      *         association and try again.
+     * @throws AccessDeniedException
+     *         You do not have access required to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded a quota.
+     * @throws ConflictException
+     *         You are trying to update a resource or configuration that is already being created or updated. Wait for
+     *         the previous operation to finish and try again.
      * @throws InvalidArnException
      *         The requested Amazon Resource Name (ARN) does not refer to an existing resource.
      * @sample AWSCertificateManager.DeleteCertificate
@@ -396,6 +403,8 @@ public interface AWSCertificateManager {
      * @return Result of the ListCertificates operation returned by the service.
      * @throws InvalidArgsException
      *         One or more of of request parameters specified is not valid.
+     * @throws ValidationException
+     *         The supplied input failed to satisfy constraints of an Amazon Web Services service.
      * @sample AWSCertificateManager.ListCertificates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificates" target="_top">AWS API
      *      Documentation</a>
@@ -486,8 +495,8 @@ public interface AWSCertificateManager {
     /**
      * <p>
      * Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this
-     * operation. In order to renew your ACM Private CA certificates with ACM, you must first <a
-     * href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal
+     * operation. In order to renew your Amazon Web Services Private CA certificates with ACM, you must first <a
+     * href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant the ACM service principal
      * permission to do so</a>. For more information, see <a
      * href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the
      * ACM User Guide.

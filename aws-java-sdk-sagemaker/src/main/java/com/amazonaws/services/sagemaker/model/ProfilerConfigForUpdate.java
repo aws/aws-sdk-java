@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration information for updating the Debugger profile parameters, system and framework metrics configurations,
- * and storage paths.
+ * Configuration information for updating the Amazon SageMaker Debugger profile parameters, system and framework metrics
+ * configurations, and storage paths.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProfilerConfigForUpdate" target="_top">AWS
@@ -56,7 +56,8 @@ public class ProfilerConfigForUpdate implements Serializable, Cloneable, Structu
     private java.util.Map<String, String> profilingParameters;
     /**
      * <p>
-     * To disable Debugger monitoring and profiling, set to <code>True</code>.
+     * To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set to
+     * <code>True</code>.
      * </p>
      */
     private Boolean disableProfiler;
@@ -253,11 +254,13 @@ public class ProfilerConfigForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To disable Debugger monitoring and profiling, set to <code>True</code>.
+     * To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set to
+     * <code>True</code>.
      * </p>
      * 
      * @param disableProfiler
-     *        To disable Debugger monitoring and profiling, set to <code>True</code>.
+     *        To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set to
+     *        <code>True</code>.
      */
 
     public void setDisableProfiler(Boolean disableProfiler) {
@@ -266,10 +269,12 @@ public class ProfilerConfigForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To disable Debugger monitoring and profiling, set to <code>True</code>.
+     * To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set to
+     * <code>True</code>.
      * </p>
      * 
-     * @return To disable Debugger monitoring and profiling, set to <code>True</code>.
+     * @return To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set
+     *         to <code>True</code>.
      */
 
     public Boolean getDisableProfiler() {
@@ -278,11 +283,13 @@ public class ProfilerConfigForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To disable Debugger monitoring and profiling, set to <code>True</code>.
+     * To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set to
+     * <code>True</code>.
      * </p>
      * 
      * @param disableProfiler
-     *        To disable Debugger monitoring and profiling, set to <code>True</code>.
+     *        To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set to
+     *        <code>True</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,10 +300,12 @@ public class ProfilerConfigForUpdate implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * To disable Debugger monitoring and profiling, set to <code>True</code>.
+     * To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set to
+     * <code>True</code>.
      * </p>
      * 
-     * @return To disable Debugger monitoring and profiling, set to <code>True</code>.
+     * @return To turn off Amazon SageMaker Debugger monitoring and profiling while a training job is in progress, set
+     *         to <code>True</code>.
      */
 
     public Boolean isDisableProfiler() {

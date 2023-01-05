@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the configuration for cold storage options such as enabled
+ * Container for the parameters required to enable cold storage for an OpenSearch Service domain. For more information,
+ * see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cold-storage.html">Cold storage for
+ * Amazon OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +29,18 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enable cold storage option. Accepted values true or false
+     * Whether to enable or disable cold storage on the domain.
      * </p>
      */
     private Boolean enabled;
 
     /**
      * <p>
-     * Enable cold storage option. Accepted values true or false
+     * Whether to enable or disable cold storage on the domain.
      * </p>
      * 
      * @param enabled
-     *        Enable cold storage option. Accepted values true or false
+     *        Whether to enable or disable cold storage on the domain.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -47,10 +49,10 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enable cold storage option. Accepted values true or false
+     * Whether to enable or disable cold storage on the domain.
      * </p>
      * 
-     * @return Enable cold storage option. Accepted values true or false
+     * @return Whether to enable or disable cold storage on the domain.
      */
 
     public Boolean getEnabled() {
@@ -59,11 +61,11 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enable cold storage option. Accepted values true or false
+     * Whether to enable or disable cold storage on the domain.
      * </p>
      * 
      * @param enabled
-     *        Enable cold storage option. Accepted values true or false
+     *        Whether to enable or disable cold storage on the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,10 +76,10 @@ public class ColdStorageOptions implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Enable cold storage option. Accepted values true or false
+     * Whether to enable or disable cold storage on the domain.
      * </p>
      * 
-     * @return Enable cold storage option. Accepted values true or false
+     * @return Whether to enable or disable cold storage on the domain.
      */
 
     public Boolean isEnabled() {

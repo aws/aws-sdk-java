@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      */
     private String clientRequestToken;
@@ -44,6 +44,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <li>
      * <p>
      * <code>n-ethereum-mainnet</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>n-ethereum-goerli</code>
      * </p>
      * </li>
      * <li>
@@ -96,14 +101,14 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
      *        idempotent operation completes no more than one time. This identifier is required only if you make a
-     *        service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *        AWS CLI.
+     *        service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *        Services SDK or the CLI.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -114,13 +119,13 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      * 
      * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
      *         idempotent operation completes no more than one time. This identifier is required only if you make a
-     *         service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *         AWS CLI.
+     *         service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *         Services SDK or the CLI.
      */
 
     public String getClientRequestToken() {
@@ -131,14 +136,14 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent
      * operation completes no more than one time. This identifier is required only if you make a service request
-     * directly using an HTTP client. It is generated automatically if you use an AWS SDK or the AWS CLI.
+     * directly using an HTTP client. It is generated automatically if you use an Amazon Web Services SDK or the CLI.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An
      *        idempotent operation completes no more than one time. This identifier is required only if you make a
-     *        service request directly using an HTTP client. It is generated automatically if you use an AWS SDK or the
-     *        AWS CLI.
+     *        service request directly using an HTTP client. It is generated automatically if you use an Amazon Web
+     *        Services SDK or the CLI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,6 +167,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
+     * <code>n-ethereum-goerli</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>n-ethereum-rinkeby</code>
      * </p>
      * </li>
@@ -181,6 +191,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>n-ethereum-mainnet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-goerli</code>
      *        </p>
      *        </li>
      *        <li>
@@ -214,6 +229,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
+     * <code>n-ethereum-goerli</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>n-ethereum-rinkeby</code>
      * </p>
      * </li>
@@ -232,6 +252,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <li>
      *         <p>
      *         <code>n-ethereum-mainnet</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>n-ethereum-goerli</code>
      *         </p>
      *         </li>
      *         <li>
@@ -265,6 +290,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
+     * <code>n-ethereum-goerli</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>n-ethereum-rinkeby</code>
      * </p>
      * </li>
@@ -284,6 +314,11 @@ public class CreateNodeRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <li>
      *        <p>
      *        <code>n-ethereum-mainnet</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>n-ethereum-goerli</code>
      *        </p>
      *        </li>
      *        <li>

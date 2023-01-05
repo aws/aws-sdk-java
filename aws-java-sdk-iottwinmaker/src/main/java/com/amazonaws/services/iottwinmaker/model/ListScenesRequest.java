@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class ListScenesRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
+     * The ID of the workspace that contains the scenes.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * Specifies the maximum number of results to display.
      * </p>
      */
@@ -37,12 +43,46 @@ public class ListScenesRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String nextToken;
+
     /**
      * <p>
      * The ID of the workspace that contains the scenes.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the scenes.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the scenes.
+     * </p>
+     * 
+     * @return The ID of the workspace that contains the scenes.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the scenes.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the scenes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListScenesRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -125,46 +165,6 @@ public class ListScenesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p>
-     * The ID of the workspace that contains the scenes.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the scenes.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the scenes.
-     * </p>
-     * 
-     * @return The ID of the workspace that contains the scenes.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the scenes.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the scenes.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListScenesRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,12 +176,12 @@ public class ListScenesRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +196,10 @@ public class ListScenesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (obj instanceof ListScenesRequest == false)
             return false;
         ListScenesRequest other = (ListScenesRequest) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -203,10 +207,6 @@ public class ListScenesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -216,9 +216,9 @@ public class ListScenesRequest extends com.amazonaws.AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

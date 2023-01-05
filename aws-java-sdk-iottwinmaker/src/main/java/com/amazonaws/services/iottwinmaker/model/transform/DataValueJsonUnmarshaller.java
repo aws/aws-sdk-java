@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,23 +56,23 @@ public class DataValueJsonUnmarshaller implements Unmarshaller<DataValue, JsonUn
                     context.nextToken();
                     dataValue.setDoubleValue(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
-                if (context.testExpression("expression", targetDepth)) {
-                    context.nextToken();
-                    dataValue.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("integerValue", targetDepth)) {
                     context.nextToken();
                     dataValue.setIntegerValue(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("longValue", targetDepth)) {
+                    context.nextToken();
+                    dataValue.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("stringValue", targetDepth)) {
+                    context.nextToken();
+                    dataValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("listValue", targetDepth)) {
                     context.nextToken();
                     dataValue.setListValue(new ListUnmarshaller<DataValue>(DataValueJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
-                }
-                if (context.testExpression("longValue", targetDepth)) {
-                    context.nextToken();
-                    dataValue.setLongValue(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("mapValue", targetDepth)) {
                     context.nextToken();
@@ -84,9 +84,9 @@ public class DataValueJsonUnmarshaller implements Unmarshaller<DataValue, JsonUn
                     context.nextToken();
                     dataValue.setRelationshipValue(RelationshipValueJsonUnmarshaller.getInstance().unmarshall(context));
                 }
-                if (context.testExpression("stringValue", targetDepth)) {
+                if (context.testExpression("expression", targetDepth)) {
                     context.nextToken();
-                    dataValue.setStringValue(context.getUnmarshaller(String.class).unmarshall(context));
+                    dataValue.setExpression(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

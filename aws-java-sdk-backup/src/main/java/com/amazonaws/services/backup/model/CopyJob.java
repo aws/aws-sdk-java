@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,6 +125,40 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     */
+    private String parentJobId;
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) copy job.
+     * </p>
+     */
+    private Boolean isParent;
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     */
+    private String compositeMemberIdentifier;
+    /**
+     * <p>
+     * This is the number of child (nested) copy jobs.
+     * </p>
+     */
+    private Long numberOfChildJobs;
+    /**
+     * <p>
+     * This returns the statistics of the included child (nested) copy jobs.
+     * </p>
+     */
+    private java.util.Map<String, Long> childJobsInState;
 
     /**
      * <p>
@@ -798,6 +832,270 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @param parentJobId
+     *        This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite)
+     *        job ID.
+     */
+
+    public void setParentJobId(String parentJobId) {
+        this.parentJobId = parentJobId;
+    }
+
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @return This uniquely identifies a request to Backup to copy a resource. The return will be the parent
+     *         (composite) job ID.
+     */
+
+    public String getParentJobId() {
+        return this.parentJobId;
+    }
+
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @param parentJobId
+     *        This uniquely identifies a request to Backup to copy a resource. The return will be the parent (composite)
+     *        job ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob withParentJobId(String parentJobId) {
+        setParentJobId(parentJobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) copy job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) copy job.
+     */
+
+    public void setIsParent(Boolean isParent) {
+        this.isParent = isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) copy job.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) copy job.
+     */
+
+    public Boolean getIsParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) copy job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) copy job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob withIsParent(Boolean isParent) {
+        setIsParent(isParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) copy job.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) copy job.
+     */
+
+    public Boolean isParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @param compositeMemberIdentifier
+     *        This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *        belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *        > logical ID</a> within a stack.
+     */
+
+    public void setCompositeMemberIdentifier(String compositeMemberIdentifier) {
+        this.compositeMemberIdentifier = compositeMemberIdentifier;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @return This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *         belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *         > logical ID</a> within a stack.
+     */
+
+    public String getCompositeMemberIdentifier() {
+        return this.compositeMemberIdentifier;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @param compositeMemberIdentifier
+     *        This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *        belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *        > logical ID</a> within a stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob withCompositeMemberIdentifier(String compositeMemberIdentifier) {
+        setCompositeMemberIdentifier(compositeMemberIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the number of child (nested) copy jobs.
+     * </p>
+     * 
+     * @param numberOfChildJobs
+     *        This is the number of child (nested) copy jobs.
+     */
+
+    public void setNumberOfChildJobs(Long numberOfChildJobs) {
+        this.numberOfChildJobs = numberOfChildJobs;
+    }
+
+    /**
+     * <p>
+     * This is the number of child (nested) copy jobs.
+     * </p>
+     * 
+     * @return This is the number of child (nested) copy jobs.
+     */
+
+    public Long getNumberOfChildJobs() {
+        return this.numberOfChildJobs;
+    }
+
+    /**
+     * <p>
+     * This is the number of child (nested) copy jobs.
+     * </p>
+     * 
+     * @param numberOfChildJobs
+     *        This is the number of child (nested) copy jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob withNumberOfChildJobs(Long numberOfChildJobs) {
+        setNumberOfChildJobs(numberOfChildJobs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This returns the statistics of the included child (nested) copy jobs.
+     * </p>
+     * 
+     * @return This returns the statistics of the included child (nested) copy jobs.
+     */
+
+    public java.util.Map<String, Long> getChildJobsInState() {
+        return childJobsInState;
+    }
+
+    /**
+     * <p>
+     * This returns the statistics of the included child (nested) copy jobs.
+     * </p>
+     * 
+     * @param childJobsInState
+     *        This returns the statistics of the included child (nested) copy jobs.
+     */
+
+    public void setChildJobsInState(java.util.Map<String, Long> childJobsInState) {
+        this.childJobsInState = childJobsInState;
+    }
+
+    /**
+     * <p>
+     * This returns the statistics of the included child (nested) copy jobs.
+     * </p>
+     * 
+     * @param childJobsInState
+     *        This returns the statistics of the included child (nested) copy jobs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob withChildJobsInState(java.util.Map<String, Long> childJobsInState) {
+        setChildJobsInState(childJobsInState);
+        return this;
+    }
+
+    /**
+     * Add a single ChildJobsInState entry
+     *
+     * @see CopyJob#withChildJobsInState
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob addChildJobsInStateEntry(String key, Long value) {
+        if (null == this.childJobsInState) {
+            this.childJobsInState = new java.util.HashMap<String, Long>();
+        }
+        if (this.childJobsInState.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.childJobsInState.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into ChildJobsInState.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob clearChildJobsInStateEntries() {
+        this.childJobsInState = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -838,7 +1136,17 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedBy() != null)
             sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: ").append(getResourceType());
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getParentJobId() != null)
+            sb.append("ParentJobId: ").append(getParentJobId()).append(",");
+        if (getIsParent() != null)
+            sb.append("IsParent: ").append(getIsParent()).append(",");
+        if (getCompositeMemberIdentifier() != null)
+            sb.append("CompositeMemberIdentifier: ").append(getCompositeMemberIdentifier()).append(",");
+        if (getNumberOfChildJobs() != null)
+            sb.append("NumberOfChildJobs: ").append(getNumberOfChildJobs()).append(",");
+        if (getChildJobsInState() != null)
+            sb.append("ChildJobsInState: ").append(getChildJobsInState());
         sb.append("}");
         return sb.toString();
     }
@@ -913,6 +1221,26 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getParentJobId() == null ^ this.getParentJobId() == null)
+            return false;
+        if (other.getParentJobId() != null && other.getParentJobId().equals(this.getParentJobId()) == false)
+            return false;
+        if (other.getIsParent() == null ^ this.getIsParent() == null)
+            return false;
+        if (other.getIsParent() != null && other.getIsParent().equals(this.getIsParent()) == false)
+            return false;
+        if (other.getCompositeMemberIdentifier() == null ^ this.getCompositeMemberIdentifier() == null)
+            return false;
+        if (other.getCompositeMemberIdentifier() != null && other.getCompositeMemberIdentifier().equals(this.getCompositeMemberIdentifier()) == false)
+            return false;
+        if (other.getNumberOfChildJobs() == null ^ this.getNumberOfChildJobs() == null)
+            return false;
+        if (other.getNumberOfChildJobs() != null && other.getNumberOfChildJobs().equals(this.getNumberOfChildJobs()) == false)
+            return false;
+        if (other.getChildJobsInState() == null ^ this.getChildJobsInState() == null)
+            return false;
+        if (other.getChildJobsInState() != null && other.getChildJobsInState().equals(this.getChildJobsInState()) == false)
+            return false;
         return true;
     }
 
@@ -936,6 +1264,11 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getParentJobId() == null) ? 0 : getParentJobId().hashCode());
+        hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
+        hashCode = prime * hashCode + ((getCompositeMemberIdentifier() == null) ? 0 : getCompositeMemberIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getNumberOfChildJobs() == null) ? 0 : getNumberOfChildJobs().hashCode());
+        hashCode = prime * hashCode + ((getChildJobsInState() == null) ? 0 : getChildJobsInState().hashCode());
         return hashCode;
     }
 

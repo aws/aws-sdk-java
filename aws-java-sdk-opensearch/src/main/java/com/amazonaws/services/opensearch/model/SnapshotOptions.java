@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is
+ * The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain. Default is
  * <code>0</code> hours.
  * </p>
  */
@@ -28,20 +28,20 @@ public class SnapshotOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is
-     * <code>0</code> hours.
+     * The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain.
+     * Default is <code>0</code> hours.
      * </p>
      */
     private Integer automatedSnapshotStartHour;
 
     /**
      * <p>
-     * The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is
-     * <code>0</code> hours.
+     * The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain.
+     * Default is <code>0</code> hours.
      * </p>
      * 
      * @param automatedSnapshotStartHour
-     *        The time, in UTC format, when the service takes a daily automated snapshot of the specified domain.
+     *        The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain.
      *        Default is <code>0</code> hours.
      */
 
@@ -51,12 +51,12 @@ public class SnapshotOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is
-     * <code>0</code> hours.
+     * The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain.
+     * Default is <code>0</code> hours.
      * </p>
      * 
-     * @return The time, in UTC format, when the service takes a daily automated snapshot of the specified domain.
-     *         Default is <code>0</code> hours.
+     * @return The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified
+     *         domain. Default is <code>0</code> hours.
      */
 
     public Integer getAutomatedSnapshotStartHour() {
@@ -65,12 +65,12 @@ public class SnapshotOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The time, in UTC format, when the service takes a daily automated snapshot of the specified domain. Default is
-     * <code>0</code> hours.
+     * The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain.
+     * Default is <code>0</code> hours.
      * </p>
      * 
      * @param automatedSnapshotStartHour
-     *        The time, in UTC format, when the service takes a daily automated snapshot of the specified domain.
+     *        The time, in UTC format, when OpenSearch Service takes a daily automated snapshot of the specified domain.
      *        Default is <code>0</code> hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

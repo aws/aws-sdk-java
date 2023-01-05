@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,9 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value
      * limits the results to tasks that were started with that value.
+     * </p>
+     * <p>
+     * When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.
      * </p>
      */
     private String startedBy;
@@ -411,10 +414,15 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value
      * limits the results to tasks that were started with that value.
      * </p>
+     * <p>
+     * When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.
+     * </p>
      * 
      * @param startedBy
      *        The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code>
-     *        value limits the results to tasks that were started with that value.
+     *        value limits the results to tasks that were started with that value.</p>
+     *        <p>
+     *        When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.
      */
 
     public void setStartedBy(String startedBy) {
@@ -426,9 +434,14 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value
      * limits the results to tasks that were started with that value.
      * </p>
+     * <p>
+     * When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.
+     * </p>
      * 
      * @return The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code>
-     *         value limits the results to tasks that were started with that value.
+     *         value limits the results to tasks that were started with that value.</p>
+     *         <p>
+     *         When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.
      */
 
     public String getStartedBy() {
@@ -440,10 +453,15 @@ public class ListTasksRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code> value
      * limits the results to tasks that were started with that value.
      * </p>
+     * <p>
+     * When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.
+     * </p>
      * 
      * @param startedBy
      *        The <code>startedBy</code> value to filter the task results with. Specifying a <code>startedBy</code>
-     *        value limits the results to tasks that were started with that value.
+     *        value limits the results to tasks that were started with that value.</p>
+     *        <p>
+     *        When you specify <code>startedBy</code> as the filter, it must be the only filter that you use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,13 @@ public class RuleGroupReferenceStatementJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ExcludedRules", targetDepth)) {
                     context.nextToken();
                     ruleGroupReferenceStatement.setExcludedRules(new ListUnmarshaller<ExcludedRule>(ExcludedRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("RuleActionOverrides", targetDepth)) {
+                    context.nextToken();
+                    ruleGroupReferenceStatement.setRuleActionOverrides(new ListUnmarshaller<RuleActionOverride>(RuleActionOverrideJsonUnmarshaller
+                            .getInstance())
 
                     .unmarshall(context));
                 }

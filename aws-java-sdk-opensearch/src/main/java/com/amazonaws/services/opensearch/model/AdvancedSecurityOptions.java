@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The advanced security configuration: whether advanced security is enabled, whether the internal database option is
- * enabled.
+ * Container for fine-grained access control settings.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,7 +27,7 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True if fine-grained access control is enabled.
      * </p>
      */
     private Boolean enabled;
@@ -40,31 +39,35 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
     private Boolean internalUserDatabaseEnabled;
     /**
      * <p>
-     * Describes the SAML application configured for a domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      */
     private SAMLOptionsOutput sAMLOptions;
     /**
      * <p>
-     * Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+     * Date and time when the migration period will be disabled. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      */
     private java.util.Date anonymousAuthDisableDate;
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     * necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      */
     private Boolean anonymousAuthEnabled;
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True if fine-grained access control is enabled.
      * </p>
      * 
      * @param enabled
-     *        True if advanced security is enabled.
+     *        True if fine-grained access control is enabled.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -73,10 +76,10 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True if fine-grained access control is enabled.
      * </p>
      * 
-     * @return True if advanced security is enabled.
+     * @return True if fine-grained access control is enabled.
      */
 
     public Boolean getEnabled() {
@@ -85,11 +88,11 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True if fine-grained access control is enabled.
      * </p>
      * 
      * @param enabled
-     *        True if advanced security is enabled.
+     *        True if fine-grained access control is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,10 +103,10 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True if fine-grained access control is enabled.
      * </p>
      * 
-     * @return True if advanced security is enabled.
+     * @return True if fine-grained access control is enabled.
      */
 
     public Boolean isEnabled() {
@@ -164,11 +167,11 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes the SAML application configured for a domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      * 
      * @param sAMLOptions
-     *        Describes the SAML application configured for a domain.
+     *        Container for information about the SAML configuration for OpenSearch Dashboards.
      */
 
     public void setSAMLOptions(SAMLOptionsOutput sAMLOptions) {
@@ -177,10 +180,10 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes the SAML application configured for a domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      * 
-     * @return Describes the SAML application configured for a domain.
+     * @return Container for information about the SAML configuration for OpenSearch Dashboards.
      */
 
     public SAMLOptionsOutput getSAMLOptions() {
@@ -189,11 +192,11 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Describes the SAML application configured for a domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      * 
      * @param sAMLOptions
-     *        Describes the SAML application configured for a domain.
+     *        Container for information about the SAML configuration for OpenSearch Dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +207,15 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+     * Date and time when the migration period will be disabled. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
      * @param anonymousAuthDisableDate
-     *        Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+     *        Date and time when the migration period will be disabled. Only necessary when <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *        >enabling fine-grained access control on an existing domain</a>.
      */
 
     public void setAnonymousAuthDisableDate(java.util.Date anonymousAuthDisableDate) {
@@ -217,10 +224,14 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+     * Date and time when the migration period will be disabled. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
-     * @return Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+     * @return Date and time when the migration period will be disabled. Only necessary when <a
+     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *         >enabling fine-grained access control on an existing domain</a>.
      */
 
     public java.util.Date getAnonymousAuthDisableDate() {
@@ -229,11 +240,15 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+     * Date and time when the migration period will be disabled. Only necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
      * @param anonymousAuthDisableDate
-     *        Specifies the Anonymous Auth Disable Date when Anonymous Auth is enabled.
+     *        Date and time when the migration period will be disabled. Only necessary when <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *        >enabling fine-grained access control on an existing domain</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,13 +259,17 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     * necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
      * @param anonymousAuthEnabled
-     *        True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *        existing domains.
+     *        True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     *        necessary when <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *        >enabling fine-grained access control on an existing domain</a>.
      */
 
     public void setAnonymousAuthEnabled(Boolean anonymousAuthEnabled) {
@@ -259,12 +278,16 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     * necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
-     * @return True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *         existing domains.
+     * @return True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     *         necessary when <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *         >enabling fine-grained access control on an existing domain</a>.
      */
 
     public Boolean getAnonymousAuthEnabled() {
@@ -273,13 +296,17 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     * necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
      * @param anonymousAuthEnabled
-     *        True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *        existing domains.
+     *        True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     *        necessary when <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *        >enabling fine-grained access control on an existing domain</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,12 +317,16 @@ public class AdvancedSecurityOptions implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     * necessary when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
-     * @return True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *         existing domains.
+     * @return True if a 30-day migration period is enabled, during which administrators can create role mappings. Only
+     *         necessary when <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *         >enabling fine-grained access control on an existing domain</a>.
      */
 
     public Boolean isAnonymousAuthEnabled() {

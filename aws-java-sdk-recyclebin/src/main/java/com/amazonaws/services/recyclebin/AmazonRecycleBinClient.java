@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,9 @@ public class AmazonRecycleBinClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.recyclebin.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.recyclebin.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.recyclebin.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
@@ -230,6 +233,8 @@ public class AmazonRecycleBinClient extends AmazonWebServiceClient implements Am
      *         The specified resource was not found.
      * @throws ValidationException
      *         One or more of the parameters in the request is not valid.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
      * @sample AmazonRecycleBin.DeleteRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/DeleteRule" target="_top">AWS API
      *      Documentation</a>
@@ -461,6 +466,69 @@ public class AmazonRecycleBinClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
+     * Locks a retention rule. A locked retention rule can't be modified or deleted.
+     * </p>
+     * 
+     * @param lockRuleRequest
+     * @return Result of the LockRule operation returned by the service.
+     * @throws InternalServerException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ValidationException
+     *         One or more of the parameters in the request is not valid.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
+     * @sample AmazonRecycleBin.LockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/LockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public LockRuleResult lockRule(LockRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeLockRule(request);
+    }
+
+    @SdkInternalApi
+    final LockRuleResult executeLockRule(LockRuleRequest lockRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(lockRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<LockRuleRequest> request = null;
+        Response<LockRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new LockRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(lockRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "rbin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LockRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<LockRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new LockRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Assigns tags to the specified retention rule.
      * </p>
      * 
@@ -512,6 +580,70 @@ public class AmazonRecycleBinClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock
+     * delay period expires.
+     * </p>
+     * 
+     * @param unlockRuleRequest
+     * @return Result of the UnlockRule operation returned by the service.
+     * @throws InternalServerException
+     *         The service could not respond to the request due to an internal problem.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ValidationException
+     *         One or more of the parameters in the request is not valid.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
+     * @sample AmazonRecycleBin.UnlockRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UnlockRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UnlockRuleResult unlockRule(UnlockRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnlockRule(request);
+    }
+
+    @SdkInternalApi
+    final UnlockRuleResult executeUnlockRule(UnlockRuleRequest unlockRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unlockRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnlockRuleRequest> request = null;
+        Response<UnlockRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnlockRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unlockRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "rbin");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlockRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnlockRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnlockRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -585,7 +717,9 @@ public class AmazonRecycleBinClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Updates an existing Recycle Bin retention rule. For more information, see <a href=
+     * Updates an existing Recycle Bin retention rule. You can update a retention rule's description, resource tags, and
+     * retention period at any time after creation. You can't update a retention rule's resource type after creation.
+     * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"
      * > Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
@@ -598,6 +732,8 @@ public class AmazonRecycleBinClient extends AmazonWebServiceClient implements Am
      *         The service could not respond to the request due to an internal problem.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
+     * @throws ConflictException
+     *         The specified retention rule lock request can't be completed.
      * @sample AmazonRecycleBin.UpdateRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rbin-2021-06-15/UpdateRule" target="_top">AWS API
      *      Documentation</a>

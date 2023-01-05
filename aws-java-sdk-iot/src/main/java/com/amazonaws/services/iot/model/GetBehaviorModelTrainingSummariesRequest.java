@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class GetBehaviorModelTrainingSummariesRequest extends com.amazonaws.Amaz
     private String securityProfileName;
     /**
      * <p>
-     * The maximum number of results to return at one time. The default is 25.
+     * The maximum number of results to return at one time. The default is 10.
      * </p>
      */
     private Integer maxResults;
@@ -81,11 +81,11 @@ public class GetBehaviorModelTrainingSummariesRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The maximum number of results to return at one time. The default is 25.
+     * The maximum number of results to return at one time. The default is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return at one time. The default is 25.
+     *        The maximum number of results to return at one time. The default is 10.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -94,10 +94,10 @@ public class GetBehaviorModelTrainingSummariesRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The maximum number of results to return at one time. The default is 25.
+     * The maximum number of results to return at one time. The default is 10.
      * </p>
      * 
-     * @return The maximum number of results to return at one time. The default is 25.
+     * @return The maximum number of results to return at one time. The default is 10.
      */
 
     public Integer getMaxResults() {
@@ -106,11 +106,11 @@ public class GetBehaviorModelTrainingSummariesRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The maximum number of results to return at one time. The default is 25.
+     * The maximum number of results to return at one time. The default is 10.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return at one time. The default is 25.
+     *        The maximum number of results to return at one time. The default is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

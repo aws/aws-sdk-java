@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      */
     private Integer versionId;
@@ -46,11 +46,11 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      * 
      * @param versionId
-     *        The ID of the fleet privisioning template version.
+     *        The ID of the fleet provisioning template version.
      */
 
     public void setVersionId(Integer versionId) {
@@ -59,10 +59,10 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      * 
-     * @return The ID of the fleet privisioning template version.
+     * @return The ID of the fleet provisioning template version.
      */
 
     public Integer getVersionId() {
@@ -71,11 +71,11 @@ public class ProvisioningTemplateVersionSummary implements Serializable, Cloneab
 
     /**
      * <p>
-     * The ID of the fleet privisioning template version.
+     * The ID of the fleet provisioning template version.
      * </p>
      * 
      * @param versionId
-     *        The ID of the fleet privisioning template version.
+     *        The ID of the fleet provisioning template version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The zone awareness configuration for the domain cluster, such as the number of availability zones.
+ * The zone awareness configuration for an Amazon OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,21 +27,24 @@ public class ZoneAwarenessConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-     * should be equal to number of subnets if VPC endpoints is enabled.
+     * If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use.
+     * Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be
+     * equal to number of subnets.
      * </p>
      */
     private Integer availabilityZoneCount;
 
     /**
      * <p>
-     * An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-     * should be equal to number of subnets if VPC endpoints is enabled.
+     * If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use.
+     * Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be
+     * equal to number of subnets.
      * </p>
      * 
      * @param availabilityZoneCount
-     *        An integer value to indicate the number of availability zones for a domain when zone awareness is enabled.
-     *        This should be equal to number of subnets if VPC endpoints is enabled.
+     *        If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to
+     *        use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this
+     *        value be equal to number of subnets.
      */
 
     public void setAvailabilityZoneCount(Integer availabilityZoneCount) {
@@ -50,12 +53,14 @@ public class ZoneAwarenessConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-     * should be equal to number of subnets if VPC endpoints is enabled.
+     * If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use.
+     * Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be
+     * equal to number of subnets.
      * </p>
      * 
-     * @return An integer value to indicate the number of availability zones for a domain when zone awareness is
-     *         enabled. This should be equal to number of subnets if VPC endpoints is enabled.
+     * @return If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to
+     *         use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this
+     *         value be equal to number of subnets.
      */
 
     public Integer getAvailabilityZoneCount() {
@@ -64,13 +69,15 @@ public class ZoneAwarenessConfig implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * An integer value to indicate the number of availability zones for a domain when zone awareness is enabled. This
-     * should be equal to number of subnets if VPC endpoints is enabled.
+     * If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to use.
+     * Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this value be
+     * equal to number of subnets.
      * </p>
      * 
      * @param availabilityZoneCount
-     *        An integer value to indicate the number of availability zones for a domain when zone awareness is enabled.
-     *        This should be equal to number of subnets if VPC endpoints is enabled.
+     *        If you enabled multiple Availability Zones, this value is the number of zones that you want the domain to
+     *        use. Valid values are <code>2</code> and <code>3</code>. If your domain is provisioned within a VPC, this
+     *        value be equal to number of subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

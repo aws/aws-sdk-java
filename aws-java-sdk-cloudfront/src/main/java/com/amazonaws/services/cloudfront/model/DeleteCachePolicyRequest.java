@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class DeleteCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     private String id;
     /**
      * <p>
-     * The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value,
+     * The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value,
      * which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.
      * </p>
@@ -89,13 +89,13 @@ public class DeleteCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value,
+     * The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value,
      * which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code>
+     *        The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code>
      *        value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      *        <code>GetCachePolicyConfig</code>.
      */
@@ -106,12 +106,12 @@ public class DeleteCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value,
+     * The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value,
      * which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.
      * </p>
      * 
-     * @return The version of the cache policy that you are deleting. The version is the cache policy’s
+     * @return The version of the cache policy that you are deleting. The version is the cache policy's
      *         <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>,
      *         <code>GetCachePolicy</code>, or <code>GetCachePolicyConfig</code>.
      */
@@ -122,13 +122,13 @@ public class DeleteCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code> value,
+     * The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code> value,
      * which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      * <code>GetCachePolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the cache policy that you are deleting. The version is the cache policy’s <code>ETag</code>
+     *        The version of the cache policy that you are deleting. The version is the cache policy's <code>ETag</code>
      *        value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>, or
      *        <code>GetCachePolicyConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

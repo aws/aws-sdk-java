@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,14 @@ public class StreamingSessionJsonUnmarshaller implements Unmarshaller<StreamingS
                     context.nextToken();
                     streamingSession.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("automaticTerminationMode", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setAutomaticTerminationMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("backupMode", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setBackupMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     streamingSession.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -68,6 +76,10 @@ public class StreamingSessionJsonUnmarshaller implements Unmarshaller<StreamingS
                     context.nextToken();
                     streamingSession.setLaunchProfileId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("maxBackupsToRetain", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setMaxBackupsToRetain(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("ownedBy", targetDepth)) {
                     context.nextToken();
                     streamingSession.setOwnedBy(context.getUnmarshaller(String.class).unmarshall(context));
@@ -76,6 +88,10 @@ public class StreamingSessionJsonUnmarshaller implements Unmarshaller<StreamingS
                     context.nextToken();
                     streamingSession.setSessionId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("sessionPersistenceMode", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setSessionPersistenceMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("startedAt", targetDepth)) {
                     context.nextToken();
                     streamingSession.setStartedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -83,6 +99,10 @@ public class StreamingSessionJsonUnmarshaller implements Unmarshaller<StreamingS
                 if (context.testExpression("startedBy", targetDepth)) {
                     context.nextToken();
                     streamingSession.setStartedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("startedFromBackupId", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setStartedFromBackupId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("state", targetDepth)) {
                     context.nextToken();
@@ -128,6 +148,14 @@ public class StreamingSessionJsonUnmarshaller implements Unmarshaller<StreamingS
                 if (context.testExpression("updatedBy", targetDepth)) {
                     context.nextToken();
                     streamingSession.setUpdatedBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("volumeConfiguration", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setVolumeConfiguration(VolumeConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("volumeRetentionMode", targetDepth)) {
+                    context.nextToken();
+                    streamingSession.setVolumeRetentionMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class GetResponseHeadersPolicyConfigRequest extends com.amazonaws.AmazonW
      * The identifier for the response headers policy.
      * </p>
      * <p>
-     * If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * If the response headers policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy
      * is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
@@ -42,7 +42,7 @@ public class GetResponseHeadersPolicyConfigRequest extends com.amazonaws.AmazonW
      * The identifier for the response headers policy.
      * </p>
      * <p>
-     * If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * If the response headers policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy
      * is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
@@ -50,7 +50,7 @@ public class GetResponseHeadersPolicyConfigRequest extends com.amazonaws.AmazonW
      * @param id
      *        The identifier for the response headers policy.</p>
      *        <p>
-     *        If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s
+     *        If the response headers policy is attached to a distribution's cache behavior, you can get the policy's
      *        identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers
      *        policy is not attached to a cache behavior, you can get the identifier using
      *        <code>ListResponseHeadersPolicies</code>.
@@ -65,14 +65,14 @@ public class GetResponseHeadersPolicyConfigRequest extends com.amazonaws.AmazonW
      * The identifier for the response headers policy.
      * </p>
      * <p>
-     * If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * If the response headers policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy
      * is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
      * 
      * @return The identifier for the response headers policy.</p>
      *         <p>
-     *         If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s
+     *         If the response headers policy is attached to a distribution's cache behavior, you can get the policy's
      *         identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers
      *         policy is not attached to a cache behavior, you can get the identifier using
      *         <code>ListResponseHeadersPolicies</code>.
@@ -87,7 +87,7 @@ public class GetResponseHeadersPolicyConfigRequest extends com.amazonaws.AmazonW
      * The identifier for the response headers policy.
      * </p>
      * <p>
-     * If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s
+     * If the response headers policy is attached to a distribution's cache behavior, you can get the policy's
      * identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers policy
      * is not attached to a cache behavior, you can get the identifier using <code>ListResponseHeadersPolicies</code>.
      * </p>
@@ -95,7 +95,7 @@ public class GetResponseHeadersPolicyConfigRequest extends com.amazonaws.AmazonW
      * @param id
      *        The identifier for the response headers policy.</p>
      *        <p>
-     *        If the response headers policy is attached to a distribution’s cache behavior, you can get the policy’s
+     *        If the response headers policy is attached to a distribution's cache behavior, you can get the policy's
      *        identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the response headers
      *        policy is not attached to a cache behavior, you can get the identifier using
      *        <code>ListResponseHeadersPolicies</code>.

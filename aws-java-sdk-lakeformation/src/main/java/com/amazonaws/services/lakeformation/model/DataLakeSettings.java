@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -79,6 +79,13 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<PrincipalPermissions> createTableDefaultPermissions;
+    /**
+     * <p>
+     * A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.
+     * </p>
+     */
+    private java.util.Map<String, String> parameters;
     /**
      * <p>
      * A list of the resource-owning account IDs that the caller's account can use to share their user access details
@@ -198,7 +205,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -217,7 +224,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @return Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *         exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *         exclusively by IAM permissions.</p>
      *         <p>
      *         A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *         IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -241,7 +248,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -261,7 +268,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * 
      * @param createDatabaseDefaultPermissions
      *        Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *        exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *        exclusively by IAM permissions.</p>
      *        <p>
      *        A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *        IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -290,7 +297,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -315,7 +322,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * 
      * @param createDatabaseDefaultPermissions
      *        Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *        exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *        exclusively by IAM permissions.</p>
      *        <p>
      *        A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *        IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -346,7 +353,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     * exclusively by IAM permissions. You can override this default setting when you create a database.
+     * exclusively by IAM permissions.
      * </p>
      * <p>
      * A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
@@ -366,7 +373,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
      * 
      * @param createDatabaseDefaultPermissions
      *        Specifies whether access control on newly created database is managed by Lake Formation permissions or
-     *        exclusively by IAM permissions. You can override this default setting when you create a database.</p>
+     *        exclusively by IAM permissions.</p>
      *        <p>
      *        A null value indicates access control by Lake Formation permissions. A value that assigns ALL to
      *        IAM_ALLOWED_PRINCIPALS indicates access control by IAM permissions. This is referred to as the setting
@@ -580,6 +587,83 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
 
     public DataLakeSettings withCreateTableDefaultPermissions(java.util.Collection<PrincipalPermissions> createTableDefaultPermissions) {
         setCreateTableDefaultPermissions(createTableDefaultPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.
+     * </p>
+     * 
+     * @return A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the
+     *         key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2,
+     *         and 3.
+     */
+
+    public java.util.Map<String, String> getParameters() {
+        return parameters;
+    }
+
+    /**
+     * <p>
+     * A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.
+     * </p>
+     * 
+     * @param parameters
+     *        A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the
+     *        key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2,
+     *        and 3.
+     */
+
+    public void setParameters(java.util.Map<String, String> parameters) {
+        this.parameters = parameters;
+    }
+
+    /**
+     * <p>
+     * A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the key you
+     * can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2, and 3.
+     * </p>
+     * 
+     * @param parameters
+     *        A key-value map that provides an additional configuration on your data lake. CrossAccountVersion is the
+     *        key you can configure in the Parameters field. Accepted values for the CrossAccountVersion key are 1, 2,
+     *        and 3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings withParameters(java.util.Map<String, String> parameters) {
+        setParameters(parameters);
+        return this;
+    }
+
+    /**
+     * Add a single Parameters entry
+     *
+     * @see DataLakeSettings#withParameters
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings addParametersEntry(String key, String value) {
+        if (null == this.parameters) {
+            this.parameters = new java.util.HashMap<String, String>();
+        }
+        if (this.parameters.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.parameters.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Parameters.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLakeSettings clearParametersEntries() {
+        this.parameters = null;
         return this;
     }
 
@@ -1027,6 +1111,8 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("CreateDatabaseDefaultPermissions: ").append(getCreateDatabaseDefaultPermissions()).append(",");
         if (getCreateTableDefaultPermissions() != null)
             sb.append("CreateTableDefaultPermissions: ").append(getCreateTableDefaultPermissions()).append(",");
+        if (getParameters() != null)
+            sb.append("Parameters: ").append(getParameters()).append(",");
         if (getTrustedResourceOwners() != null)
             sb.append("TrustedResourceOwners: ").append(getTrustedResourceOwners()).append(",");
         if (getAllowExternalDataFiltering() != null)
@@ -1063,6 +1149,10 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getCreateTableDefaultPermissions() != null
                 && other.getCreateTableDefaultPermissions().equals(this.getCreateTableDefaultPermissions()) == false)
             return false;
+        if (other.getParameters() == null ^ this.getParameters() == null)
+            return false;
+        if (other.getParameters() != null && other.getParameters().equals(this.getParameters()) == false)
+            return false;
         if (other.getTrustedResourceOwners() == null ^ this.getTrustedResourceOwners() == null)
             return false;
         if (other.getTrustedResourceOwners() != null && other.getTrustedResourceOwners().equals(this.getTrustedResourceOwners()) == false)
@@ -1092,6 +1182,7 @@ public class DataLakeSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDataLakeAdmins() == null) ? 0 : getDataLakeAdmins().hashCode());
         hashCode = prime * hashCode + ((getCreateDatabaseDefaultPermissions() == null) ? 0 : getCreateDatabaseDefaultPermissions().hashCode());
         hashCode = prime * hashCode + ((getCreateTableDefaultPermissions() == null) ? 0 : getCreateTableDefaultPermissions().hashCode());
+        hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getTrustedResourceOwners() == null) ? 0 : getTrustedResourceOwners().hashCode());
         hashCode = prime * hashCode + ((getAllowExternalDataFiltering() == null) ? 0 : getAllowExternalDataFiltering().hashCode());
         hashCode = prime * hashCode + ((getExternalDataFilteringAllowList() == null) ? 0 : getExternalDataFilteringAllowList().hashCode());

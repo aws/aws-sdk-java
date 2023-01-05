@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,7 @@ public enum OperatingSystem {
     WINDOWS("WINDOWS"),
     AMAZON_LINUX("AMAZON_LINUX"),
     AMAZON_LINUX_2("AMAZON_LINUX_2"),
+    AMAZON_LINUX_2022("AMAZON_LINUX_2022"),
     UBUNTU("UBUNTU"),
     REDHAT_ENTERPRISE_LINUX("REDHAT_ENTERPRISE_LINUX"),
     SUSE("SUSE"),

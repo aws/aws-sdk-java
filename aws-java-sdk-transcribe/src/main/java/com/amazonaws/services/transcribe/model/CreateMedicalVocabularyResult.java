@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,15 +31,15 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     private String vocabularyName;
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      */
     private String vocabularyState;
@@ -104,13 +104,13 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *        language supported with Amazon Transcribe Medical.
+     *        The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *        only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -120,12 +120,12 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
-     * @return The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *         language supported with Amazon Transcribe Medical.
+     * @return The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *         only language supported with Amazon Transcribe Medical.
      * @see LanguageCode
      */
 
@@ -135,13 +135,13 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *        language supported with Amazon Transcribe Medical.
+     *        The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *        only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -153,13 +153,13 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only language
-     * supported with Amazon Transcribe Medical.
+     * The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the only
+     * language supported with Amazon Transcribe Medical.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your medical vocabulary. US English (<code>en-US</code>) is the only
-     *        language supported with Amazon Transcribe Medical.
+     *        The language code you selected for your custom medical vocabulary. US English (<code>en-US</code>) is the
+     *        only language supported with Amazon Transcribe Medical.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -172,12 +172,12 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *        the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *        the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -188,11 +188,11 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @return The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *         the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *         the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -203,12 +203,12 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *        the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *        the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -221,12 +221,12 @@ public class CreateMedicalVocabularyResult extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use the
-     * vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     * custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
      *        The processing state of your custom medical vocabulary. If the state is <code>READY</code>, you can use
-     *        the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
+     *        the custom vocabulary in a <code>StartMedicalTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,17 +21,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Configuration for a game session placement mechanism that processes requests for new game sessions. A queue can be
  * used on its own or as part of a matchmaking solution.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateGameSessionQueue.html">
- * CreateGameSessionQueue</a> | <a
- * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionQueues.html"
- * >DescribeGameSessionQueues</a> | <a
- * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSessionQueue.html"
- * >UpdateGameSessionQueue</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueue" target="_top">AWS API

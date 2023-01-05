@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,10 +56,52 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
      * <p>
      * The case severity for a support case that you want to receive notifications.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <p>
+     * If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the
+     * following parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you don't specify these parameters in your request, they default to <code>false</code>.
+     * </p>
+     * </note>
      */
     private String notifyOnCaseSeverity;
     /**
@@ -76,7 +118,7 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
     private Boolean notifyOnResolveCase;
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      */
     private String teamId;
@@ -275,16 +317,100 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
      * <p>
      * The case severity for a support case that you want to receive notifications.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <p>
+     * If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the
+     * following parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you don't specify these parameters in your request, they default to <code>false</code>.
+     * </p>
+     * </note>
      * 
      * @param notifyOnCaseSeverity
      *        The case severity for a support case that you want to receive notifications.</p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
+     *        <p>
+     *        If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one
+     *        of the following parameters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnAddCorrespondenceToCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnCreateOrReopenCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnResolveCase</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnAddCorrespondenceToCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnCreateOrReopenCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnResolveCase</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you don't specify these parameters in your request, they default to <code>false</code>.
+     *        </p>
      * @see NotificationSeverityLevel
      */
 
@@ -296,15 +422,99 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
      * <p>
      * The case severity for a support case that you want to receive notifications.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <p>
+     * If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the
+     * following parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you don't specify these parameters in your request, they default to <code>false</code>.
+     * </p>
+     * </note>
      * 
      * @return The case severity for a support case that you want to receive notifications.</p>
-     * 
-     *         <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
+     *         <p>
+     *         If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one
+     *         of the following parameters:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>notifyOnAddCorrespondenceToCase</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>notifyOnCreateOrReopenCase</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>notifyOnResolveCase</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>notifyOnAddCorrespondenceToCase</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>notifyOnCreateOrReopenCase</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>notifyOnResolveCase</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         If you don't specify these parameters in your request, they default to <code>false</code>.
+     *         </p>
      * @see NotificationSeverityLevel
      */
 
@@ -316,16 +526,100 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
      * <p>
      * The case severity for a support case that you want to receive notifications.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <p>
+     * If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the
+     * following parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you don't specify these parameters in your request, they default to <code>false</code>.
+     * </p>
+     * </note>
      * 
      * @param notifyOnCaseSeverity
      *        The case severity for a support case that you want to receive notifications.</p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
+     *        <p>
+     *        If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one
+     *        of the following parameters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnAddCorrespondenceToCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnCreateOrReopenCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnResolveCase</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnAddCorrespondenceToCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnCreateOrReopenCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnResolveCase</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you don't specify these parameters in your request, they default to <code>false</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationSeverityLevel
      */
@@ -339,16 +633,100 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
      * <p>
      * The case severity for a support case that you want to receive notifications.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
-     * </pre>
+     * <p>
+     * If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one of the
+     * following parameters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>notifyOnAddCorrespondenceToCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnCreateOrReopenCase</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>notifyOnResolveCase</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you don't specify these parameters in your request, they default to <code>false</code>.
+     * </p>
+     * </note>
      * 
      * @param notifyOnCaseSeverity
      *        The case severity for a support case that you want to receive notifications.</p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;If you specify &lt;code&gt;high&lt;/code&gt; or &lt;code&gt;all&lt;/code&gt;, you must specify &lt;code&gt;true&lt;/code&gt; for at least one of the following parameters:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;p&gt;If you specify &lt;code&gt;none&lt;/code&gt;, the following parameters must be null or &lt;code&gt;false&lt;/code&gt;:&lt;/p&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnAddCorrespondenceToCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnCreateOrReopenCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;notifyOnResolveCase&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;note&gt; &lt;p&gt;If you don't specify these parameters in your request, they default to &lt;code&gt;false&lt;/code&gt;.&lt;/p&gt; &lt;/note&gt; </code>
+     *        <p>
+     *        If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code> for at least one
+     *        of the following parameters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnAddCorrespondenceToCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnCreateOrReopenCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnResolveCase</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnAddCorrespondenceToCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnCreateOrReopenCase</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>notifyOnResolveCase</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        If you don't specify these parameters in your request, they default to <code>false</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NotificationSeverityLevel
      */
@@ -464,11 +842,11 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public void setTeamId(String teamId) {
@@ -477,10 +855,10 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
-     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public String getTeamId() {
@@ -489,11 +867,11 @@ public class CreateSlackChannelConfigurationRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

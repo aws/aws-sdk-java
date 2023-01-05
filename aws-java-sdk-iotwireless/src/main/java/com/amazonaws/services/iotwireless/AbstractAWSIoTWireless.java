@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -254,12 +254,19 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public GetPositionResult getPosition(GetPositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    @Deprecated
     public GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetPositionEstimateResult getPositionEstimate(GetPositionEstimateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -270,6 +277,11 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
 
     @Override
     public GetResourceLogLevelResult getResourceLogLevel(GetResourceLogLevelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourcePositionResult getResourcePosition(GetResourcePositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -364,6 +376,7 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -399,6 +412,7 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -501,12 +515,18 @@ public class AbstractAWSIoTWireless implements AWSIoTWireless {
     }
 
     @Override
+    @Deprecated
     public UpdatePositionResult updatePosition(UpdatePositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateResourceEventConfigurationResult updateResourceEventConfiguration(UpdateResourceEventConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateResourcePositionResult updateResourcePosition(UpdateResourcePositionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

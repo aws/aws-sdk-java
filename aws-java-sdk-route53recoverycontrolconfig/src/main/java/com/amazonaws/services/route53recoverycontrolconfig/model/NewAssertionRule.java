@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,8 +52,8 @@ public class NewAssertionRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The criteria that you set for specific assertion controls (routing controls) that designate how many control
      * states must be ON as the result of a transaction. For example, if you have three assertion controls, you might
-     * specify ATLEAST 2for your rule configuration. This means that at least two assertion controls must be ON, so that
-     * at least two Amazon Web Services Regions have traffic flowing to them.
+     * specify ATLEAST 2 for your rule configuration. This means that at least two assertion controls must be ON, so
+     * that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      */
     private RuleConfig ruleConfig;
@@ -236,14 +236,14 @@ public class NewAssertionRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The criteria that you set for specific assertion controls (routing controls) that designate how many control
      * states must be ON as the result of a transaction. For example, if you have three assertion controls, you might
-     * specify ATLEAST 2for your rule configuration. This means that at least two assertion controls must be ON, so that
-     * at least two Amazon Web Services Regions have traffic flowing to them.
+     * specify ATLEAST 2 for your rule configuration. This means that at least two assertion controls must be ON, so
+     * that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      * 
      * @param ruleConfig
      *        The criteria that you set for specific assertion controls (routing controls) that designate how many
      *        control states must be ON as the result of a transaction. For example, if you have three assertion
-     *        controls, you might specify ATLEAST 2for your rule configuration. This means that at least two assertion
+     *        controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion
      *        controls must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.
      */
 
@@ -255,13 +255,13 @@ public class NewAssertionRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The criteria that you set for specific assertion controls (routing controls) that designate how many control
      * states must be ON as the result of a transaction. For example, if you have three assertion controls, you might
-     * specify ATLEAST 2for your rule configuration. This means that at least two assertion controls must be ON, so that
-     * at least two Amazon Web Services Regions have traffic flowing to them.
+     * specify ATLEAST 2 for your rule configuration. This means that at least two assertion controls must be ON, so
+     * that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      * 
      * @return The criteria that you set for specific assertion controls (routing controls) that designate how many
      *         control states must be ON as the result of a transaction. For example, if you have three assertion
-     *         controls, you might specify ATLEAST 2for your rule configuration. This means that at least two assertion
+     *         controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion
      *         controls must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.
      */
 
@@ -273,14 +273,14 @@ public class NewAssertionRule implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The criteria that you set for specific assertion controls (routing controls) that designate how many control
      * states must be ON as the result of a transaction. For example, if you have three assertion controls, you might
-     * specify ATLEAST 2for your rule configuration. This means that at least two assertion controls must be ON, so that
-     * at least two Amazon Web Services Regions have traffic flowing to them.
+     * specify ATLEAST 2 for your rule configuration. This means that at least two assertion controls must be ON, so
+     * that at least two Amazon Web Services Regions have traffic flowing to them.
      * </p>
      * 
      * @param ruleConfig
      *        The criteria that you set for specific assertion controls (routing controls) that designate how many
      *        control states must be ON as the result of a transaction. For example, if you have three assertion
-     *        controls, you might specify ATLEAST 2for your rule configuration. This means that at least two assertion
+     *        controls, you might specify ATLEAST 2 for your rule configuration. This means that at least two assertion
      *        controls must be ON, so that at least two Amazon Web Services Regions have traffic flowing to them.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

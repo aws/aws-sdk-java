@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,11 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name that you want to assign to this namespace.
      * </p>
+     * <note>
+     * <p>
+     * Do not include sensitive information in the name. The name is publicly available using DNS queries.
+     * </p>
+     * </note>
      */
     private String name;
     /**
@@ -63,9 +68,17 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name that you want to assign to this namespace.
      * </p>
+     * <note>
+     * <p>
+     * Do not include sensitive information in the name. The name is publicly available using DNS queries.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name that you want to assign to this namespace.
+     *        The name that you want to assign to this namespace.</p> <note>
+     *        <p>
+     *        Do not include sensitive information in the name. The name is publicly available using DNS queries.
+     *        </p>
      */
 
     public void setName(String name) {
@@ -76,8 +89,16 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name that you want to assign to this namespace.
      * </p>
+     * <note>
+     * <p>
+     * Do not include sensitive information in the name. The name is publicly available using DNS queries.
+     * </p>
+     * </note>
      * 
-     * @return The name that you want to assign to this namespace.
+     * @return The name that you want to assign to this namespace.</p> <note>
+     *         <p>
+     *         Do not include sensitive information in the name. The name is publicly available using DNS queries.
+     *         </p>
      */
 
     public String getName() {
@@ -88,9 +109,17 @@ public class CreatePublicDnsNamespaceRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The name that you want to assign to this namespace.
      * </p>
+     * <note>
+     * <p>
+     * Do not include sensitive information in the name. The name is publicly available using DNS queries.
+     * </p>
+     * </note>
      * 
      * @param name
-     *        The name that you want to assign to this namespace.
+     *        The name that you want to assign to this namespace.</p> <note>
+     *        <p>
+     *        Do not include sensitive information in the name. The name is publicly available using DNS queries.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

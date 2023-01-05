@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class VulnerablePackageMarshaller {
             .marshallLocationName("release").build();
     private static final MarshallingInfo<String> REMEDIATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("remediation").build();
+    private static final MarshallingInfo<String> SOURCELAMBDALAYERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceLambdaLayerArn").build();
     private static final MarshallingInfo<String> SOURCELAYERHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceLayerHash").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -72,6 +74,7 @@ public class VulnerablePackageMarshaller {
             protocolMarshaller.marshall(vulnerablePackage.getPackageManager(), PACKAGEMANAGER_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getRelease(), RELEASE_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getRemediation(), REMEDIATION_BINDING);
+            protocolMarshaller.marshall(vulnerablePackage.getSourceLambdaLayerArn(), SOURCELAMBDALAYERARN_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getSourceLayerHash(), SOURCELAYERHASH_BINDING);
             protocolMarshaller.marshall(vulnerablePackage.getVersion(), VERSION_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class EbsVolumesResult implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.
+     * </p>
+     */
+    private String reason;
 
     /**
      * <p>
@@ -95,6 +101,46 @@ public class EbsVolumesResult implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.
+     * </p>
+     * 
+     * @param reason
+     *        Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.
+     */
+
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.
+     * </p>
+     * 
+     * @return Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.
+     */
+
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.
+     * </p>
+     * 
+     * @param reason
+     *        Specifies the reason why scanning EBS volumes (Malware Protection) was not enabled as a data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EbsVolumesResult withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -107,7 +153,9 @@ public class EbsVolumesResult implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getReason() != null)
+            sb.append("Reason: ").append(getReason());
         sb.append("}");
         return sb.toString();
     }
@@ -126,6 +174,10 @@ public class EbsVolumesResult implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getReason() == null ^ this.getReason() == null)
+            return false;
+        if (other.getReason() != null && other.getReason().equals(this.getReason()) == false)
+            return false;
         return true;
     }
 
@@ -135,6 +187,7 @@ public class EbsVolumesResult implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());
         return hashCode;
     }
 

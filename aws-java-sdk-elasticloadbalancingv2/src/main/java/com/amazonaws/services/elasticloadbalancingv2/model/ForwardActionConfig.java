@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ForwardActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more target groups. For Network Load Balancers, you can specify a single target group.
+     * The target groups. For Network Load Balancers, you can specify a single target group.
      * </p>
      */
     private java.util.List<TargetGroupTuple> targetGroups;
@@ -41,10 +41,10 @@ public class ForwardActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more target groups. For Network Load Balancers, you can specify a single target group.
+     * The target groups. For Network Load Balancers, you can specify a single target group.
      * </p>
      * 
-     * @return One or more target groups. For Network Load Balancers, you can specify a single target group.
+     * @return The target groups. For Network Load Balancers, you can specify a single target group.
      */
 
     public java.util.List<TargetGroupTuple> getTargetGroups() {
@@ -53,11 +53,11 @@ public class ForwardActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more target groups. For Network Load Balancers, you can specify a single target group.
+     * The target groups. For Network Load Balancers, you can specify a single target group.
      * </p>
      * 
      * @param targetGroups
-     *        One or more target groups. For Network Load Balancers, you can specify a single target group.
+     *        The target groups. For Network Load Balancers, you can specify a single target group.
      */
 
     public void setTargetGroups(java.util.Collection<TargetGroupTuple> targetGroups) {
@@ -71,7 +71,7 @@ public class ForwardActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more target groups. For Network Load Balancers, you can specify a single target group.
+     * The target groups. For Network Load Balancers, you can specify a single target group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class ForwardActionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param targetGroups
-     *        One or more target groups. For Network Load Balancers, you can specify a single target group.
+     *        The target groups. For Network Load Balancers, you can specify a single target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ForwardActionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more target groups. For Network Load Balancers, you can specify a single target group.
+     * The target groups. For Network Load Balancers, you can specify a single target group.
      * </p>
      * 
      * @param targetGroups
-     *        One or more target groups. For Network Load Balancers, you can specify a single target group.
+     *        The target groups. For Network Load Balancers, you can specify a single target group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

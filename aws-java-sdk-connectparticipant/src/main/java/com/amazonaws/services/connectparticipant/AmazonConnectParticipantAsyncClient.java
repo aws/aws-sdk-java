@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,8 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact
- * center and provide reliable customer engagement at any scale.
- * </p>
- * <p>
- * Amazon Connect enables customer contacts through voice or chat.
- * </p>
- * <p>
- * The APIs described here are used by chat participants, such as agents and customers.
+ * center. Amazon Connect enables customer contacts through voice or chat. Use the Amazon Connect Participant Service to
+ * manage chat participants, such as agents and customers.
  * </p>
  */
 @ThreadSafe

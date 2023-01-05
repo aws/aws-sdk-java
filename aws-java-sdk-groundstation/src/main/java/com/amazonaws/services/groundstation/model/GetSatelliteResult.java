@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,12 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
+     * The current ephemeris being used to compute the trajectory of the satellite.
+     * </p>
+     */
+    private EphemerisMetaData currentEphemeris;
+    /**
+     * <p>
      * A list of ground stations to which the satellite is on-boarded.
      * </p>
      */
@@ -48,6 +54,46 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      */
     private String satelliteId;
+
+    /**
+     * <p>
+     * The current ephemeris being used to compute the trajectory of the satellite.
+     * </p>
+     * 
+     * @param currentEphemeris
+     *        The current ephemeris being used to compute the trajectory of the satellite.
+     */
+
+    public void setCurrentEphemeris(EphemerisMetaData currentEphemeris) {
+        this.currentEphemeris = currentEphemeris;
+    }
+
+    /**
+     * <p>
+     * The current ephemeris being used to compute the trajectory of the satellite.
+     * </p>
+     * 
+     * @return The current ephemeris being used to compute the trajectory of the satellite.
+     */
+
+    public EphemerisMetaData getCurrentEphemeris() {
+        return this.currentEphemeris;
+    }
+
+    /**
+     * <p>
+     * The current ephemeris being used to compute the trajectory of the satellite.
+     * </p>
+     * 
+     * @param currentEphemeris
+     *        The current ephemeris being used to compute the trajectory of the satellite.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSatelliteResult withCurrentEphemeris(EphemerisMetaData currentEphemeris) {
+        setCurrentEphemeris(currentEphemeris);
+        return this;
+    }
 
     /**
      * <p>
@@ -251,6 +297,8 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCurrentEphemeris() != null)
+            sb.append("CurrentEphemeris: ").append(getCurrentEphemeris()).append(",");
         if (getGroundStations() != null)
             sb.append("GroundStations: ").append(getGroundStations()).append(",");
         if (getNoradSatelliteID() != null)
@@ -273,6 +321,10 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof GetSatelliteResult == false)
             return false;
         GetSatelliteResult other = (GetSatelliteResult) obj;
+        if (other.getCurrentEphemeris() == null ^ this.getCurrentEphemeris() == null)
+            return false;
+        if (other.getCurrentEphemeris() != null && other.getCurrentEphemeris().equals(this.getCurrentEphemeris()) == false)
+            return false;
         if (other.getGroundStations() == null ^ this.getGroundStations() == null)
             return false;
         if (other.getGroundStations() != null && other.getGroundStations().equals(this.getGroundStations()) == false)
@@ -297,6 +349,7 @@ public class GetSatelliteResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCurrentEphemeris() == null) ? 0 : getCurrentEphemeris().hashCode());
         hashCode = prime * hashCode + ((getGroundStations() == null) ? 0 : getGroundStations().hashCode());
         hashCode = prime * hashCode + ((getNoradSatelliteID() == null) ? 0 : getNoradSatelliteID().hashCode());
         hashCode = prime * hashCode + ((getSatelliteArn() == null) ? 0 : getSatelliteArn().hashCode());

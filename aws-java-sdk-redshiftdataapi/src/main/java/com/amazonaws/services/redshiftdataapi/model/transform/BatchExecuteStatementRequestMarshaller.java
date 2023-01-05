@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,8 @@ import javax.annotation.Generated;
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.redshiftdataapi.model.*;
 
+import com.amazonaws.util.IdempotentUtils;
+
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
 
@@ -28,6 +30,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BatchExecuteStatementRequestMarshaller {
 
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<String> CLUSTERIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClusterIdentifier").build();
     private static final MarshallingInfo<String> DATABASE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -61,6 +66,7 @@ public class BatchExecuteStatementRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(batchExecuteStatementRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getClusterIdentifier(), CLUSTERIDENTIFIER_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getDatabase(), DATABASE_BINDING);
             protocolMarshaller.marshall(batchExecuteStatementRequest.getDbUser(), DBUSER_BINDING);

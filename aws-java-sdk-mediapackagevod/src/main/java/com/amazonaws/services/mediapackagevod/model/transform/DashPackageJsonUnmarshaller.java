@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,10 @@ public class DashPackageJsonUnmarshaller implements Unmarshaller<DashPackage, Js
                 if (context.testExpression("includeEncoderConfigurationInSegments", targetDepth)) {
                     context.nextToken();
                     dashPackage.setIncludeEncoderConfigurationInSegments(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("includeIframeOnlyStream", targetDepth)) {
+                    context.nextToken();
+                    dashPackage.setIncludeIframeOnlyStream(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("periodTriggers", targetDepth)) {
                     context.nextToken();

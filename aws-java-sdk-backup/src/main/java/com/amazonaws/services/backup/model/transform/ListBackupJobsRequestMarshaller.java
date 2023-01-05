@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,8 @@ public class ListBackupJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeAfter").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> BYCOMPLETEBEFORE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("completeBefore").timestampFormat("iso8601").build();
+    private static final MarshallingInfo<String> BYPARENTJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("parentJobId").build();
 
     private static final ListBackupJobsRequestMarshaller instance = new ListBackupJobsRequestMarshaller();
 
@@ -77,6 +79,7 @@ public class ListBackupJobsRequestMarshaller {
             protocolMarshaller.marshall(listBackupJobsRequest.getByAccountId(), BYACCOUNTID_BINDING);
             protocolMarshaller.marshall(listBackupJobsRequest.getByCompleteAfter(), BYCOMPLETEAFTER_BINDING);
             protocolMarshaller.marshall(listBackupJobsRequest.getByCompleteBefore(), BYCOMPLETEBEFORE_BINDING);
+            protocolMarshaller.marshall(listBackupJobsRequest.getByParentJobId(), BYPARENTJOBID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

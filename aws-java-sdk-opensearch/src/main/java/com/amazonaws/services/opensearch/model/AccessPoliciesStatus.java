@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configured access rules for the domain's document and search endpoints, and the current status of those rules.
+ * The configured access rules for the domain's search endpoint, and the current status of those rules.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,34 +27,33 @@ public class AccessPoliciesStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See
-     * <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-     * target="_blank"> Configuring access policies</a>for more information.
+     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
+     * >Configuring access policies</a>.
      * </p>
      */
     private String options;
     /**
      * <p>
-     * The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's
-     * included.
+     * The status of the access policy for the domain.
      * </p>
      */
     private OptionStatus status;
 
     /**
      * <p>
-     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See
-     * <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-     * target="_blank"> Configuring access policies</a>for more information.
+     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
+     * >Configuring access policies</a>.
      * </p>
      * 
      * @param options
      *        The access policy configured for the domain. Access policies can be resource-based, IP-based, or
-     *        IAM-based. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-     *        target="_blank"> Configuring access policies</a>for more information.
+     *        IAM-based. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
+     *        >Configuring access policies</a>.
      */
 
     public void setOptions(String options) {
@@ -63,16 +62,16 @@ public class AccessPoliciesStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See
-     * <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-     * target="_blank"> Configuring access policies</a>for more information.
+     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
+     * >Configuring access policies</a>.
      * </p>
      * 
      * @return The access policy configured for the domain. Access policies can be resource-based, IP-based, or
-     *         IAM-based. See <a href=
-     *         "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-     *         target="_blank"> Configuring access policies</a>for more information.
+     *         IAM-based. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
+     *         >Configuring access policies</a>.
      */
 
     public String getOptions() {
@@ -81,17 +80,17 @@ public class AccessPoliciesStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. See
-     * <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-     * target="_blank"> Configuring access policies</a>for more information.
+     * The access policy configured for the domain. Access policies can be resource-based, IP-based, or IAM-based. For
+     * more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
+     * >Configuring access policies</a>.
      * </p>
      * 
      * @param options
      *        The access policy configured for the domain. Access policies can be resource-based, IP-based, or
-     *        IAM-based. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
-     *        target="_blank"> Configuring access policies</a>for more information.
+     *        IAM-based. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies"
+     *        >Configuring access policies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,13 +101,11 @@ public class AccessPoliciesStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's
-     * included.
+     * The status of the access policy for the domain.
      * </p>
      * 
      * @param status
-     *        The status of the access policy for the domain. See <code>OptionStatus</code> for the status information
-     *        that's included.
+     *        The status of the access policy for the domain.
      */
 
     public void setStatus(OptionStatus status) {
@@ -117,12 +114,10 @@ public class AccessPoliciesStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's
-     * included.
+     * The status of the access policy for the domain.
      * </p>
      * 
-     * @return The status of the access policy for the domain. See <code>OptionStatus</code> for the status information
-     *         that's included.
+     * @return The status of the access policy for the domain.
      */
 
     public OptionStatus getStatus() {
@@ -131,13 +126,11 @@ public class AccessPoliciesStatus implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The status of the access policy for the domain. See <code>OptionStatus</code> for the status information that's
-     * included.
+     * The status of the access policy for the domain.
      * </p>
      * 
      * @param status
-     *        The status of the access policy for the domain. See <code>OptionStatus</code> for the status information
-     *        that's included.
+     *        The status of the access policy for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

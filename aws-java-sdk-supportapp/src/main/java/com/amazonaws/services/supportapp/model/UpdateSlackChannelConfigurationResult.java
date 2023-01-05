@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,7 +71,7 @@ public class UpdateSlackChannelConfigurationResult extends com.amazonaws.AmazonW
     private Boolean notifyOnResolveCase;
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      */
     private String teamId;
@@ -431,11 +431,11 @@ public class UpdateSlackChannelConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public void setTeamId(String teamId) {
@@ -444,10 +444,10 @@ public class UpdateSlackChannelConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
-     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public String getTeamId() {
@@ -456,11 +456,11 @@ public class UpdateSlackChannelConfigurationResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

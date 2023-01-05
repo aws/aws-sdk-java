@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      */
     private String targetArn;
@@ -71,16 +71,23 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean isLatestForTarget;
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     */
+    private String parentTargetArn;
 
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      * 
      * @param targetArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        target IoT thing or thing group.
+     *        target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      */
 
     public void setTargetArn(String targetArn) {
@@ -90,11 +97,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         target IoT thing or thing group.
+     *         target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      */
 
     public String getTargetArn() {
@@ -104,12 +111,12 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      * 
      * @param targetArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        target IoT thing or thing group.
+     *        target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,6 +397,55 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     */
+
+    public void setParentTargetArn(String parentTargetArn) {
+        this.parentTargetArn = parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @return The parent deployment's target <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *         subdeployment.
+     */
+
+    public String getParentTargetArn() {
+        return this.parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withParentTargetArn(String parentTargetArn) {
+        setParentTargetArn(parentTargetArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -414,7 +470,9 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         if (getDeploymentStatus() != null)
             sb.append("DeploymentStatus: ").append(getDeploymentStatus()).append(",");
         if (getIsLatestForTarget() != null)
-            sb.append("IsLatestForTarget: ").append(getIsLatestForTarget());
+            sb.append("IsLatestForTarget: ").append(getIsLatestForTarget()).append(",");
+        if (getParentTargetArn() != null)
+            sb.append("ParentTargetArn: ").append(getParentTargetArn());
         sb.append("}");
         return sb.toString();
     }
@@ -457,6 +515,10 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIsLatestForTarget() != null && other.getIsLatestForTarget().equals(this.getIsLatestForTarget()) == false)
             return false;
+        if (other.getParentTargetArn() == null ^ this.getParentTargetArn() == null)
+            return false;
+        if (other.getParentTargetArn() != null && other.getParentTargetArn().equals(this.getParentTargetArn()) == false)
+            return false;
         return true;
     }
 
@@ -472,6 +534,7 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getDeploymentStatus() == null) ? 0 : getDeploymentStatus().hashCode());
         hashCode = prime * hashCode + ((getIsLatestForTarget() == null) ? 0 : getIsLatestForTarget().hashCode());
+        hashCode = prime * hashCode + ((getParentTargetArn() == null) ? 0 : getParentTargetArn().hashCode());
         return hashCode;
     }
 

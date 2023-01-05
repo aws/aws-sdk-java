@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,7 +102,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -575,7 +575,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -590,8 +590,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        specify a value for this setting, the default value of one hour is applied. This setting can have a value
      *        from 1 hour to 12 hours.</p>
      *        <p>
-     *        Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
-     *        <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *        Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or
+     *        the <code>duration-seconds</code> CLI parameter to request a longer session. The
      *        <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
      *        <code>DurationSeconds</code> parameter. If users don't specify a value for the
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This
@@ -612,7 +612,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -626,8 +626,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         specify a value for this setting, the default value of one hour is applied. This setting can have a value
      *         from 1 hour to 12 hours.</p>
      *         <p>
-     *         Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
-     *         <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *         Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or
+     *         the <code>duration-seconds</code> CLI parameter to request a longer session. The
      *         <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
      *         <code>DurationSeconds</code> parameter. If users don't specify a value for the
      *         <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default.
@@ -648,7 +648,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * hours.
      * </p>
      * <p>
-     * Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
+     * Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or the
      * <code>duration-seconds</code> CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
      * setting determines the maximum duration that can be requested using the <code>DurationSeconds</code> parameter.
      * If users don't specify a value for the <code>DurationSeconds</code> parameter, their security credentials are
@@ -663,8 +663,8 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        specify a value for this setting, the default value of one hour is applied. This setting can have a value
      *        from 1 hour to 12 hours.</p>
      *        <p>
-     *        Anyone who assumes the role from the or API can use the <code>DurationSeconds</code> API parameter or the
-     *        <code>duration-seconds</code> CLI parameter to request a longer session. The
+     *        Anyone who assumes the role from the CLI or API can use the <code>DurationSeconds</code> API parameter or
+     *        the <code>duration-seconds</code> CLI parameter to request a longer session. The
      *        <code>MaxSessionDuration</code> setting determines the maximum duration that can be requested using the
      *        <code>DurationSeconds</code> parameter. If users don't specify a value for the
      *        <code>DurationSeconds</code> parameter, their security credentials are valid for one hour by default. This

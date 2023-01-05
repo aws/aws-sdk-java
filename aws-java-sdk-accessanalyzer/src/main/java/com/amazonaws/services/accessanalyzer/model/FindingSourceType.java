@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,8 @@ public enum FindingSourceType {
 
     POLICY("POLICY"),
     BUCKET_ACL("BUCKET_ACL"),
-    S3_ACCESS_POINT("S3_ACCESS_POINT");
+    S3_ACCESS_POINT("S3_ACCESS_POINT"),
+    S3_ACCESS_POINT_ACCOUNT("S3_ACCESS_POINT_ACCOUNT");
 
     private String value;
 

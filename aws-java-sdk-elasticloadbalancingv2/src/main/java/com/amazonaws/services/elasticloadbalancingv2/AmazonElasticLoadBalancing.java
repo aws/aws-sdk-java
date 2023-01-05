@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -954,10 +954,6 @@ public interface AmazonElasticLoadBalancing {
      * <p>
      * Modifies the health checks used when evaluating the health state of the targets in the specified target group.
      * </p>
-     * <p>
-     * If the protocol of the target group is TCP, TLS, UDP, or TCP_UDP, you can't modify the health check protocol,
-     * interval, timeout, or success codes.
-     * </p>
      * 
      * @param modifyTargetGroupRequest
      * @return Result of the ModifyTargetGroup operation returned by the service.
@@ -1069,8 +1065,7 @@ public interface AmazonElasticLoadBalancing {
 
     /**
      * <p>
-     * Sets the type of IP addresses used by the subnets of the specified Application Load Balancer or Network Load
-     * Balancer.
+     * Sets the type of IP addresses used by the subnets of the specified load balancer.
      * </p>
      * 
      * @param setIpAddressTypeRequest

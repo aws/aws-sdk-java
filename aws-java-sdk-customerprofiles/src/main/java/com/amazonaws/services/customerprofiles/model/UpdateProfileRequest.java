@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -163,6 +163,18 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.Map<String, String> attributes;
+    /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     */
+    private String partyTypeString;
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     */
+    private String genderString;
 
     /**
      * <p>
@@ -1151,6 +1163,86 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param partyTypeString
+     *        An alternative to <code>PartyType</code> which accepts any string as input.
+     */
+
+    public void setPartyTypeString(String partyTypeString) {
+        this.partyTypeString = partyTypeString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     * 
+     * @return An alternative to <code>PartyType</code> which accepts any string as input.
+     */
+
+    public String getPartyTypeString() {
+        return this.partyTypeString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>PartyType</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param partyTypeString
+     *        An alternative to <code>PartyType</code> which accepts any string as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProfileRequest withPartyTypeString(String partyTypeString) {
+        setPartyTypeString(partyTypeString);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param genderString
+     *        An alternative to <code>Gender</code> which accepts any string as input.
+     */
+
+    public void setGenderString(String genderString) {
+        this.genderString = genderString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     * 
+     * @return An alternative to <code>Gender</code> which accepts any string as input.
+     */
+
+    public String getGenderString() {
+        return this.genderString;
+    }
+
+    /**
+     * <p>
+     * An alternative to <code>Gender</code> which accepts any string as input.
+     * </p>
+     * 
+     * @param genderString
+     *        An alternative to <code>Gender</code> which accepts any string as input.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProfileRequest withGenderString(String genderString) {
+        setGenderString(genderString);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1207,7 +1299,11 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getBillingAddress() != null)
             sb.append("BillingAddress: ").append(getBillingAddress()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getPartyTypeString() != null)
+            sb.append("PartyTypeString: ").append(getPartyTypeString()).append(",");
+        if (getGenderString() != null)
+            sb.append("GenderString: ").append(getGenderString());
         sb.append("}");
         return sb.toString();
     }
@@ -1314,6 +1410,14 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getPartyTypeString() == null ^ this.getPartyTypeString() == null)
+            return false;
+        if (other.getPartyTypeString() != null && other.getPartyTypeString().equals(this.getPartyTypeString()) == false)
+            return false;
+        if (other.getGenderString() == null ^ this.getGenderString() == null)
+            return false;
+        if (other.getGenderString() != null && other.getGenderString().equals(this.getGenderString()) == false)
+            return false;
         return true;
     }
 
@@ -1345,6 +1449,8 @@ public class UpdateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMailingAddress() == null) ? 0 : getMailingAddress().hashCode());
         hashCode = prime * hashCode + ((getBillingAddress() == null) ? 0 : getBillingAddress().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getPartyTypeString() == null) ? 0 : getPartyTypeString().hashCode());
+        hashCode = prime * hashCode + ((getGenderString() == null) ? 0 : getGenderString().hashCode());
         return hashCode;
     }
 

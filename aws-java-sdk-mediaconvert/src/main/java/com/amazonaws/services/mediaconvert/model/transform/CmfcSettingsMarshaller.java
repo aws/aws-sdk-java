@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,12 +41,20 @@ public class CmfcSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("iFrameOnlyManifest").build();
     private static final MarshallingInfo<String> KLVMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("klvMetadata").build();
+    private static final MarshallingInfo<String> MANIFESTMETADATASIGNALING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("manifestMetadataSignaling").build();
     private static final MarshallingInfo<String> SCTE35ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35Esam").build();
     private static final MarshallingInfo<String> SCTE35SOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35Source").build();
     private static final MarshallingInfo<String> TIMEDMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadata").build();
+    private static final MarshallingInfo<String> TIMEDMETADATABOXVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataBoxVersion").build();
+    private static final MarshallingInfo<String> TIMEDMETADATASCHEMEIDURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataSchemeIdUri").build();
+    private static final MarshallingInfo<String> TIMEDMETADATAVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timedMetadataValue").build();
 
     private static final CmfcSettingsMarshaller instance = new CmfcSettingsMarshaller();
 
@@ -71,9 +79,13 @@ public class CmfcSettingsMarshaller {
             protocolMarshaller.marshall(cmfcSettings.getDescriptiveVideoServiceFlag(), DESCRIPTIVEVIDEOSERVICEFLAG_BINDING);
             protocolMarshaller.marshall(cmfcSettings.getIFrameOnlyManifest(), IFRAMEONLYMANIFEST_BINDING);
             protocolMarshaller.marshall(cmfcSettings.getKlvMetadata(), KLVMETADATA_BINDING);
+            protocolMarshaller.marshall(cmfcSettings.getManifestMetadataSignaling(), MANIFESTMETADATASIGNALING_BINDING);
             protocolMarshaller.marshall(cmfcSettings.getScte35Esam(), SCTE35ESAM_BINDING);
             protocolMarshaller.marshall(cmfcSettings.getScte35Source(), SCTE35SOURCE_BINDING);
             protocolMarshaller.marshall(cmfcSettings.getTimedMetadata(), TIMEDMETADATA_BINDING);
+            protocolMarshaller.marshall(cmfcSettings.getTimedMetadataBoxVersion(), TIMEDMETADATABOXVERSION_BINDING);
+            protocolMarshaller.marshall(cmfcSettings.getTimedMetadataSchemeIdUri(), TIMEDMETADATASCHEMEIDURI_BINDING);
+            protocolMarshaller.marshall(cmfcSettings.getTimedMetadataValue(), TIMEDMETADATAVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

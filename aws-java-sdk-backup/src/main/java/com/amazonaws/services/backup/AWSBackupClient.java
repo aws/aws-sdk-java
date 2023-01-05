@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,9 +84,6 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                             new JsonErrorShapeMetadata().withErrorCode("MissingParameterValueException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.MissingParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.backup.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -96,17 +93,20 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                             new JsonErrorShapeMetadata().withErrorCode("DependencyFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.DependencyFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.backup.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.backup.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.AlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.backup.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.backup.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.backup.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
@@ -156,6 +156,73 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/backup/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/backup/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * This action removes the specified legal hold on a recovery point. This action can only be performed by a user
+     * with sufficient permissions.
+     * </p>
+     * 
+     * @param cancelLegalHoldRequest
+     * @return Result of the CancelLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidResourceStateException
+     *         Backup is already performing an action on this recovery point. It can't perform the action you requested
+     *         until the first action finishes. Try again later.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @sample AWSBackup.CancelLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CancelLegalHoldResult cancelLegalHold(CancelLegalHoldRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelLegalHold(request);
+    }
+
+    @SdkInternalApi
+    final CancelLegalHoldResult executeCancelLegalHold(CancelLegalHoldRequest cancelLegalHoldRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelLegalHoldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelLegalHoldRequest> request = null;
+        Response<CancelLegalHoldResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelLegalHoldRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelLegalHoldRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelLegalHold");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelLegalHoldResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CancelLegalHoldResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -424,6 +491,71 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateFrameworkResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateFrameworkResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or
+     * deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a
+     * recovery point will fail with an error if one or more active legal holds are on the recovery point.
+     * </p>
+     * 
+     * @param createLegalHoldRequest
+     * @return Result of the CreateLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @sample AWSBackup.CreateLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateLegalHoldResult createLegalHold(CreateLegalHoldRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLegalHold(request);
+    }
+
+    @SdkInternalApi
+    final CreateLegalHoldResult executeCreateLegalHold(CreateLegalHoldRequest createLegalHoldRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLegalHoldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLegalHoldRequest> request = null;
+        Response<CreateLegalHoldResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLegalHoldRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLegalHoldRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLegalHold");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLegalHoldResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLegalHoldResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -980,6 +1112,20 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <p>
      * If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous
      * backup and stops future continuous backup.
+     * </p>
+     * <p>
+     * When an IAM role's permissions are insufficient to call this API, the service sends back an HTTP 200 response
+     * with an empty HTTP body, but the recovery point is not deleted. Instead, it enters an <code>EXPIRED</code> state.
+     * </p>
+     * <p>
+     * <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role has the
+     * <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding this role, see <a href=
+     * "https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+     * Troubleshooting manual deletions</a>.
+     * </p>
+     * <p>
+     * If the user or role is deleted or the permission within the role is removed, the deletion will not be successful
+     * and will enter an <code>EXPIRED</code> state.
      * </p>
      * 
      * @param deleteRecoveryPointRequest
@@ -1888,6 +2034,76 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * This action to a specific child (nested) recovery point removes the relationship between the specified recovery
+     * point and its parent (composite) recovery point.
+     * </p>
+     * 
+     * @param disassociateRecoveryPointFromParentRequest
+     * @return Result of the DisassociateRecoveryPointFromParent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.DisassociateRecoveryPointFromParent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateRecoveryPointFromParentResult disassociateRecoveryPointFromParent(DisassociateRecoveryPointFromParentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateRecoveryPointFromParent(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateRecoveryPointFromParentResult executeDisassociateRecoveryPointFromParent(
+            DisassociateRecoveryPointFromParentRequest disassociateRecoveryPointFromParentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateRecoveryPointFromParentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateRecoveryPointFromParentRequest> request = null;
+        Response<DisassociateRecoveryPointFromParentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateRecoveryPointFromParentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateRecoveryPointFromParentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRecoveryPointFromParent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateRecoveryPointFromParentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateRecoveryPointFromParentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the backup plan that is specified by the plan ID as a backup template.
      * </p>
      * 
@@ -2331,6 +2547,70 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
             HttpResponseHandler<AmazonWebServiceResponse<GetBackupVaultNotificationsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetBackupVaultNotificationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format,
+     * in addition to metadata.
+     * </p>
+     * 
+     * @param getLegalHoldRequest
+     * @return Result of the GetLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @sample AWSBackup.GetLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetLegalHoldResult getLegalHold(GetLegalHoldRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLegalHold(request);
+    }
+
+    @SdkInternalApi
+    final GetLegalHoldResult executeGetLegalHold(GetLegalHoldRequest getLegalHoldRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLegalHoldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLegalHoldRequest> request = null;
+        Response<GetLegalHoldResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLegalHoldRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLegalHoldRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLegalHold");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLegalHoldResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLegalHoldResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2969,6 +3249,65 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * This action returns metadata about active and previous legal holds.
+     * </p>
+     * 
+     * @param listLegalHoldsRequest
+     * @return Result of the ListLegalHolds operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListLegalHolds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListLegalHoldsResult listLegalHolds(ListLegalHoldsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLegalHolds(request);
+    }
+
+    @SdkInternalApi
+    final ListLegalHoldsResult executeListLegalHolds(ListLegalHoldsRequest listLegalHoldsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLegalHoldsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLegalHoldsRequest> request = null;
+        Response<ListLegalHoldsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLegalHoldsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLegalHoldsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLegalHolds");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLegalHoldsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLegalHoldsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns an array of resources successfully backed up by Backup, including the time the resource was saved, an
      * Amazon Resource Name (ARN) of the resource, and a resource type.
      * </p>
@@ -3096,6 +3435,69 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * This action returns recovery point ARNs (Amazon Resource Names) of the specified legal hold.
+     * </p>
+     * 
+     * @param listRecoveryPointsByLegalHoldRequest
+     * @return Result of the ListRecoveryPointsByLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListRecoveryPointsByLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListRecoveryPointsByLegalHoldResult listRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRecoveryPointsByLegalHold(request);
+    }
+
+    @SdkInternalApi
+    final ListRecoveryPointsByLegalHoldResult executeListRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest listRecoveryPointsByLegalHoldRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRecoveryPointsByLegalHoldRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRecoveryPointsByLegalHoldRequest> request = null;
+        Response<ListRecoveryPointsByLegalHoldResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRecoveryPointsByLegalHoldRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listRecoveryPointsByLegalHoldRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecoveryPointsByLegalHold");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRecoveryPointsByLegalHoldResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListRecoveryPointsByLegalHoldResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns detailed information about all the recovery points of the type specified by a resource Amazon Resource
      * Name (ARN).
      * </p>
@@ -3176,6 +3578,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
      * @sample AWSBackup.ListReportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportJobs" target="_top">AWS API
      *      Documentation</a>
@@ -3893,6 +4297,11 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
     /**
      * <p>
      * Attempts to cancel a job to create a one-time backup of a resource.
+     * </p>
+     * <p>
+     * This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for
+     * Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
+     * Amazon Aurora, and Amazon Neptune.
      * </p>
      * 
      * @param stopBackupJobRequest

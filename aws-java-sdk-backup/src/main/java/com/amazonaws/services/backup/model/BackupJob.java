@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -175,6 +175,19 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String backupType;
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     */
+    private String parentJobId;
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     */
+    private Boolean isParent;
 
     /**
      * <p>
@@ -1186,6 +1199,104 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @param parentJobId
+     *        This uniquely identifies a request to Backup to back up a resource. The return will be the parent
+     *        (composite) job ID.
+     */
+
+    public void setParentJobId(String parentJobId) {
+        this.parentJobId = parentJobId;
+    }
+
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @return This uniquely identifies a request to Backup to back up a resource. The return will be the parent
+     *         (composite) job ID.
+     */
+
+    public String getParentJobId() {
+        return this.parentJobId;
+    }
+
+    /**
+     * <p>
+     * This uniquely identifies a request to Backup to back up a resource. The return will be the parent (composite) job
+     * ID.
+     * </p>
+     * 
+     * @param parentJobId
+     *        This uniquely identifies a request to Backup to back up a resource. The return will be the parent
+     *        (composite) job ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withParentJobId(String parentJobId) {
+        setParentJobId(parentJobId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public void setIsParent(Boolean isParent) {
+        this.isParent = isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public Boolean getIsParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @param isParent
+     *        This is a boolean value indicating this is a parent (composite) backup job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupJob withIsParent(Boolean isParent) {
+        setIsParent(isParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is a boolean value indicating this is a parent (composite) backup job.
+     * </p>
+     * 
+     * @return This is a boolean value indicating this is a parent (composite) backup job.
+     */
+
+    public Boolean isParent() {
+        return this.isParent;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1236,7 +1347,11 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         if (getBackupOptions() != null)
             sb.append("BackupOptions: ").append(getBackupOptions()).append(",");
         if (getBackupType() != null)
-            sb.append("BackupType: ").append(getBackupType());
+            sb.append("BackupType: ").append(getBackupType()).append(",");
+        if (getParentJobId() != null)
+            sb.append("ParentJobId: ").append(getParentJobId()).append(",");
+        if (getIsParent() != null)
+            sb.append("IsParent: ").append(getIsParent());
         sb.append("}");
         return sb.toString();
     }
@@ -1331,6 +1446,14 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getBackupType() != null && other.getBackupType().equals(this.getBackupType()) == false)
             return false;
+        if (other.getParentJobId() == null ^ this.getParentJobId() == null)
+            return false;
+        if (other.getParentJobId() != null && other.getParentJobId().equals(this.getParentJobId()) == false)
+            return false;
+        if (other.getIsParent() == null ^ this.getIsParent() == null)
+            return false;
+        if (other.getIsParent() != null && other.getIsParent().equals(this.getIsParent()) == false)
+            return false;
         return true;
     }
 
@@ -1359,6 +1482,8 @@ public class BackupJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBytesTransferred() == null) ? 0 : getBytesTransferred().hashCode());
         hashCode = prime * hashCode + ((getBackupOptions() == null) ? 0 : getBackupOptions().hashCode());
         hashCode = prime * hashCode + ((getBackupType() == null) ? 0 : getBackupType().hashCode());
+        hashCode = prime * hashCode + ((getParentJobId() == null) ? 0 : getParentJobId().hashCode());
+        hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
         return hashCode;
     }
 

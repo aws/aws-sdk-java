@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the request parameters to <code> <a>UpgradeDomain</a> </code> operation.
+ * Container for the request parameters to the <code>UpgradeDomain</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Name of the OpenSearch Service domain that you want to upgrade.
+     * </p>
+     */
     private String domainName;
     /**
      * <p>
-     * The version of OpenSearch you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or
+     * Elasticsearch_X.Y.
      * </p>
      */
     private String targetVersion;
@@ -39,11 +45,22 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean performCheckOnly;
-
+    /**
+     * <p>
+     * Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can
+     * only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its
+     * version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.
+     * </p>
+     */
     private java.util.Map<String, String> advancedOptions;
 
     /**
+     * <p>
+     * Name of the OpenSearch Service domain that you want to upgrade.
+     * </p>
+     * 
      * @param domainName
+     *        Name of the OpenSearch Service domain that you want to upgrade.
      */
 
     public void setDomainName(String domainName) {
@@ -51,7 +68,11 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Name of the OpenSearch Service domain that you want to upgrade.
+     * </p>
+     * 
+     * @return Name of the OpenSearch Service domain that you want to upgrade.
      */
 
     public String getDomainName() {
@@ -59,7 +80,12 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Name of the OpenSearch Service domain that you want to upgrade.
+     * </p>
+     * 
      * @param domainName
+     *        Name of the OpenSearch Service domain that you want to upgrade.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -70,11 +96,13 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version of OpenSearch you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or
+     * Elasticsearch_X.Y.
      * </p>
      * 
      * @param targetVersion
-     *        The version of OpenSearch you intend to upgrade the domain to.
+     *        OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or
+     *        Elasticsearch_X.Y.
      */
 
     public void setTargetVersion(String targetVersion) {
@@ -83,10 +111,12 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version of OpenSearch you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or
+     * Elasticsearch_X.Y.
      * </p>
      * 
-     * @return The version of OpenSearch you intend to upgrade the domain to.
+     * @return OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or
+     *         Elasticsearch_X.Y.
      */
 
     public String getTargetVersion() {
@@ -95,11 +125,13 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The version of OpenSearch you intend to upgrade the domain to.
+     * OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or
+     * Elasticsearch_X.Y.
      * </p>
      * 
      * @param targetVersion
-     *        The version of OpenSearch you intend to upgrade the domain to.
+     *        OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or
+     *        Elasticsearch_X.Y.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,7 +201,15 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can
+     * only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its
+     * version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.
+     * </p>
+     * 
+     * @return Only supports the <code>override_main_response_version</code> parameter and not other advanced options.
+     *         You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain
+     *         reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.
      */
 
     public java.util.Map<String, String> getAdvancedOptions() {
@@ -177,7 +217,16 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can
+     * only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its
+     * version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.
+     * </p>
+     * 
      * @param advancedOptions
+     *        Only supports the <code>override_main_response_version</code> parameter and not other advanced options.
+     *        You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain
+     *        reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.
      */
 
     public void setAdvancedOptions(java.util.Map<String, String> advancedOptions) {
@@ -185,7 +234,16 @@ public class UpgradeDomainRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Only supports the <code>override_main_response_version</code> parameter and not other advanced options. You can
+     * only include this option when upgrading to an OpenSearch version. Specifies whether the domain reports its
+     * version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.
+     * </p>
+     * 
      * @param advancedOptions
+     *        Only supports the <code>override_main_response_version</code> parameter and not other advanced options.
+     *        You can only include this option when upgrading to an OpenSearch version. Specifies whether the domain
+     *        reports its version as 7.10 so that it continues to work with Elasticsearch OSS clients and plugins.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

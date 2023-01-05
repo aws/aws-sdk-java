@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class GetSceneRequestMarshaller {
 
-    private static final MarshallingInfo<String> SCENEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("sceneId").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<String> SCENEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("sceneId").build();
 
     private static final GetSceneRequestMarshaller instance = new GetSceneRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class GetSceneRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(getSceneRequest.getSceneId(), SCENEID_BINDING);
             protocolMarshaller.marshall(getSceneRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(getSceneRequest.getSceneId(), SCENEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

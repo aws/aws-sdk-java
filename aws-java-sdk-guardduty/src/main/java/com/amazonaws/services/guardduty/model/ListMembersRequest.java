@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,10 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>.
      * </p>
      */
     private String onlyAssociated;
@@ -195,12 +198,18 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>.
      * </p>
      * 
      * @param onlyAssociated
      *        Specifies whether to only return associated members or to return all members (including members who
-     *        haven't been invited yet or have been disassociated).
+     *        haven't been invited yet or have been disassociated). Member accounts must have been previously associated
+     *        with the GuardDuty administrator account using <a
+     *        href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     *        <code>Create Members</code> </a>.
      */
 
     public void setOnlyAssociated(String onlyAssociated) {
@@ -210,11 +219,17 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>.
      * </p>
      * 
      * @return Specifies whether to only return associated members or to return all members (including members who
-     *         haven't been invited yet or have been disassociated).
+     *         haven't been invited yet or have been disassociated). Member accounts must have been previously
+     *         associated with the GuardDuty administrator account using <a
+     *         href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     *         <code>Create Members</code> </a>.
      */
 
     public String getOnlyAssociated() {
@@ -224,12 +239,18 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies whether to only return associated members or to return all members (including members who haven't been
-     * invited yet or have been disassociated).
+     * invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty
+     * administrator account using <a
+     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     * <code>Create Members</code> </a>.
      * </p>
      * 
      * @param onlyAssociated
      *        Specifies whether to only return associated members or to return all members (including members who
-     *        haven't been invited yet or have been disassociated).
+     *        haven't been invited yet or have been disassociated). Member accounts must have been previously associated
+     *        with the GuardDuty administrator account using <a
+     *        href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
+     *        <code>Create Members</code> </a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

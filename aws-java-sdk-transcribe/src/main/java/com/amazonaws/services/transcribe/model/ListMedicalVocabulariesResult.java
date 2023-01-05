@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,8 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
-     * creation date, with the newest vocabulary first.
+     * Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are
+     * ordered by creation date, with the newest vocabulary first.
      * </p>
      */
     private String status;
@@ -48,13 +48,13 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
-     * creation date, with the newest vocabulary first.
+     * Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are
+     * ordered by creation date, with the newest vocabulary first.
      * </p>
      * 
      * @param status
-     *        Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
-     *        ordered by creation date, with the newest vocabulary first.
+     *        Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies
+     *        are ordered by creation date, with the newest vocabulary first.
      * @see VocabularyState
      */
 
@@ -64,12 +64,12 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
-     * creation date, with the newest vocabulary first.
+     * Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are
+     * ordered by creation date, with the newest vocabulary first.
      * </p>
      * 
-     * @return Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
-     *         ordered by creation date, with the newest vocabulary first.
+     * @return Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies
+     *         are ordered by creation date, with the newest vocabulary first.
      * @see VocabularyState
      */
 
@@ -79,13 +79,13 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
-     * creation date, with the newest vocabulary first.
+     * Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are
+     * ordered by creation date, with the newest vocabulary first.
      * </p>
      * 
      * @param status
-     *        Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
-     *        ordered by creation date, with the newest vocabulary first.
+     *        Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies
+     *        are ordered by creation date, with the newest vocabulary first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */
@@ -97,13 +97,13 @@ public class ListMedicalVocabulariesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are ordered by
-     * creation date, with the newest vocabulary first.
+     * Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies are
+     * ordered by creation date, with the newest vocabulary first.
      * </p>
      * 
      * @param status
-     *        Lists all custom medical vocabularies that have the status specified in your request. Vocabularies are
-     *        ordered by creation date, with the newest vocabulary first.
+     *        Lists all custom medical vocabularies that have the status specified in your request. Custom vocabularies
+     *        are ordered by creation date, with the newest vocabulary first.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
      */

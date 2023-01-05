@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,11 +52,17 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
@@ -243,21 +249,31 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param releaseVersion
      *        The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
-     *        AMI version for the node group's Kubernetes version is used. For more information, see <a
+     *        AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
-     *        Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
-     *        <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     *        Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support
+     *        the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     *        Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     *        <p>
+     *        If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
      *        <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
      *        templates with Amazon EKS, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
@@ -271,22 +287,32 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @return The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
-     *         AMI version for the node group's Kubernetes version is used. For more information, see <a
+     *         AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
-     *         Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
-     *         <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
-     *         <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
-     *         templates with Amazon EKS, see <a
+     *         Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support
+     *         the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS
+     *         optimized Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     *         <p>
+     *         If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't
+     *         specify <code>releaseVersion</code>, or the node group update will fail. For more information about using
+     *         launch templates with Amazon EKS, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
      *         in the <i>Amazon EKS User Guide</i>.
      */
@@ -298,21 +324,31 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
-     * version for the node group's Kubernetes version is used. For more information, see <a
+     * version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
-     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
-     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
-     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support the November
+     * 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     * Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * <p>
+     * If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     * <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     * templates with Amazon EKS, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
      * <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param releaseVersion
      *        The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
-     *        AMI version for the node group's Kubernetes version is used. For more information, see <a
+     *        AMI version for the node group's Kubernetes version is used. For information about Linux versions, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
-     *        Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
-     *        <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     *        Amazon Linux AMI versions</a> in the <i>Amazon EKS User Guide</i>. Amazon EKS managed node groups support
+     *        the November 2022 and later releases of the Windows AMIs. For information about Windows versions, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-ami-versions-windows.html">Amazon EKS optimized
+     *        Windows AMI versions</a> in the <i>Amazon EKS User Guide</i>.</p>
+     *        <p>
+     *        If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
      *        <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
      *        templates with Amazon EKS, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>

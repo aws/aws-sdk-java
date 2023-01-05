@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -294,6 +294,41 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateDelegationSignerToDomainResult> associateDelegationSignerToDomainAsync(
+            AssociateDelegationSignerToDomainRequest request) {
+
+        return associateDelegationSignerToDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateDelegationSignerToDomainResult> associateDelegationSignerToDomainAsync(
+            final AssociateDelegationSignerToDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AssociateDelegationSignerToDomainRequest, AssociateDelegationSignerToDomainResult> asyncHandler) {
+        final AssociateDelegationSignerToDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AssociateDelegationSignerToDomainResult>() {
+            @Override
+            public AssociateDelegationSignerToDomainResult call() throws Exception {
+                AssociateDelegationSignerToDomainResult result = null;
+
+                try {
+                    result = executeAssociateDelegationSignerToDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelDomainTransferToAnotherAwsAccountResult> cancelDomainTransferToAnotherAwsAccountAsync(
             CancelDomainTransferToAnotherAwsAccountRequest request) {
 
@@ -511,6 +546,41 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
 
                 try {
                     result = executeDisableDomainTransferLock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDelegationSignerFromDomainResult> disassociateDelegationSignerFromDomainAsync(
+            DisassociateDelegationSignerFromDomainRequest request) {
+
+        return disassociateDelegationSignerFromDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateDelegationSignerFromDomainResult> disassociateDelegationSignerFromDomainAsync(
+            final DisassociateDelegationSignerFromDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DisassociateDelegationSignerFromDomainRequest, DisassociateDelegationSignerFromDomainResult> asyncHandler) {
+        final DisassociateDelegationSignerFromDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DisassociateDelegationSignerFromDomainResult>() {
+            @Override
+            public DisassociateDelegationSignerFromDomainResult call() throws Exception {
+                DisassociateDelegationSignerFromDomainResult result = null;
+
+                try {
+                    result = executeDisassociateDelegationSignerFromDomain(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -903,6 +973,39 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
     }
 
     @Override
+    public java.util.concurrent.Future<PushDomainResult> pushDomainAsync(PushDomainRequest request) {
+
+        return pushDomainAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PushDomainResult> pushDomainAsync(final PushDomainRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PushDomainRequest, PushDomainResult> asyncHandler) {
+        final PushDomainRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PushDomainResult>() {
+            @Override
+            public PushDomainResult call() throws Exception {
+                PushDomainResult result = null;
+
+                try {
+                    result = executePushDomain(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterDomainResult> registerDomainAsync(RegisterDomainRequest request) {
 
         return registerDomainAsync(request, null);
@@ -1022,6 +1125,39 @@ public class AmazonRoute53DomainsAsyncClient extends AmazonRoute53DomainsClient 
 
                 try {
                     result = executeResendContactReachabilityEmail(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendOperationAuthorizationResult> resendOperationAuthorizationAsync(ResendOperationAuthorizationRequest request) {
+
+        return resendOperationAuthorizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResendOperationAuthorizationResult> resendOperationAuthorizationAsync(final ResendOperationAuthorizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResendOperationAuthorizationRequest, ResendOperationAuthorizationResult> asyncHandler) {
+        final ResendOperationAuthorizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResendOperationAuthorizationResult>() {
+            @Override
+            public ResendOperationAuthorizationResult call() throws Exception {
+                ResendOperationAuthorizationResult result = null;
+
+                try {
+                    result = executeResendOperationAuthorization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

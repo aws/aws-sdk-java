@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>DescribeInboundConnections</a> </code> operation.
+ * Container for the parameters to the <code>DescribeInboundConnections</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,54 +27,32 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of filters used to match properties for inbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> values are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>local-domain-info.domain-name</li>
-     * <li>local-domain-info.owner-id</li>
-     * <li>local-domain-info.region</li>
-     * <li>remote-domain-info.domain-name</li>
-     * </ul>
+     * A list of filters used to match properties for inbound cross-cluster connections.
      * </p>
      */
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of filters used to match properties for inbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> values are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>local-domain-info.domain-name</li>
-     * <li>local-domain-info.owner-id</li>
-     * <li>local-domain-info.region</li>
-     * <li>remote-domain-info.domain-name</li>
-     * </ul>
+     * A list of filters used to match properties for inbound cross-cluster connections.
      * </p>
      * 
-     * @return A list of filters used to match properties for inbound cross-cluster connections. Available
-     *         <code> <a>Filter</a> </code> values are:
-     *         <ul>
-     *         <li>connection-id</li>
-     *         <li>local-domain-info.domain-name</li>
-     *         <li>local-domain-info.owner-id</li>
-     *         <li>local-domain-info.region</li>
-     *         <li>remote-domain-info.domain-name</li>
-     *         </ul>
+     * @return A list of filters used to match properties for inbound cross-cluster connections.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -83,27 +61,11 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of filters used to match properties for inbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> values are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>local-domain-info.domain-name</li>
-     * <li>local-domain-info.owner-id</li>
-     * <li>local-domain-info.region</li>
-     * <li>remote-domain-info.domain-name</li>
-     * </ul>
+     * A list of filters used to match properties for inbound cross-cluster connections.
      * </p>
      * 
      * @param filters
-     *        A list of filters used to match properties for inbound cross-cluster connections. Available
-     *        <code> <a>Filter</a> </code> values are:
-     *        <ul>
-     *        <li>connection-id</li>
-     *        <li>local-domain-info.domain-name</li>
-     *        <li>local-domain-info.owner-id</li>
-     *        <li>local-domain-info.region</li>
-     *        <li>remote-domain-info.domain-name</li>
-     *        </ul>
+     *        A list of filters used to match properties for inbound cross-cluster connections.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -117,15 +79,7 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of filters used to match properties for inbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> values are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>local-domain-info.domain-name</li>
-     * <li>local-domain-info.owner-id</li>
-     * <li>local-domain-info.region</li>
-     * <li>remote-domain-info.domain-name</li>
-     * </ul>
+     * A list of filters used to match properties for inbound cross-cluster connections.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -134,15 +88,7 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param filters
-     *        A list of filters used to match properties for inbound cross-cluster connections. Available
-     *        <code> <a>Filter</a> </code> values are:
-     *        <ul>
-     *        <li>connection-id</li>
-     *        <li>local-domain-info.domain-name</li>
-     *        <li>local-domain-info.owner-id</li>
-     *        <li>local-domain-info.region</li>
-     *        <li>remote-domain-info.domain-name</li>
-     *        </ul>
+     *        A list of filters used to match properties for inbound cross-cluster connections.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,27 +104,11 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of filters used to match properties for inbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> values are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>local-domain-info.domain-name</li>
-     * <li>local-domain-info.owner-id</li>
-     * <li>local-domain-info.region</li>
-     * <li>remote-domain-info.domain-name</li>
-     * </ul>
+     * A list of filters used to match properties for inbound cross-cluster connections.
      * </p>
      * 
      * @param filters
-     *        A list of filters used to match properties for inbound cross-cluster connections. Available
-     *        <code> <a>Filter</a> </code> values are:
-     *        <ul>
-     *        <li>connection-id</li>
-     *        <li>local-domain-info.domain-name</li>
-     *        <li>local-domain-info.owner-id</li>
-     *        <li>local-domain-info.region</li>
-     *        <li>remote-domain-info.domain-name</li>
-     *        </ul>
+     *        A list of filters used to match properties for inbound cross-cluster connections.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,11 +119,13 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. If not specified, defaults to 100.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -202,10 +134,12 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
-     * @return Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -214,11 +148,13 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. If not specified, defaults to 100.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,13 +165,15 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        If more results are available and NextToken is present, make the next request to the same API with the
-     *        received NextToken to paginate the remaining results.
+     *        If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you
+     *        can include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code>
+     *        operations, which returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -244,12 +182,14 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      * 
-     * @return If more results are available and NextToken is present, make the next request to the same API with the
-     *         received NextToken to paginate the remaining results.
+     * @return If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you
+     *         can include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code>
+     *         operations, which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -258,13 +198,15 @@ public class DescribeInboundConnectionsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * If more results are available and NextToken is present, make the next request to the same API with the received
-     * NextToken to paginate the remaining results.
+     * If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        If more results are available and NextToken is present, make the next request to the same API with the
-     *        received NextToken to paginate the remaining results.
+     *        If your initial <code>DescribeInboundConnections</code> operation returns a <code>nextToken</code>, you
+     *        can include the returned <code>nextToken</code> in subsequent <code>DescribeInboundConnections</code>
+     *        operations, which returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

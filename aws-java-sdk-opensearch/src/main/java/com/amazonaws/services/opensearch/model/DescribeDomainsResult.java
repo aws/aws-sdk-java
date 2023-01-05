@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code>DescribeDomains</code> request. Contains the status of the specified domains or all domains
- * owned by the account.
+ * Contains the status of the specified domains or all domains owned by the account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -26,17 +25,17 @@ public class DescribeDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the domains requested in the <code>DescribeDomains</code> request.
+     * The status of the requested domains.
      * </p>
      */
     private java.util.List<DomainStatus> domainStatusList;
 
     /**
      * <p>
-     * The status of the domains requested in the <code>DescribeDomains</code> request.
+     * The status of the requested domains.
      * </p>
      * 
-     * @return The status of the domains requested in the <code>DescribeDomains</code> request.
+     * @return The status of the requested domains.
      */
 
     public java.util.List<DomainStatus> getDomainStatusList() {
@@ -45,11 +44,11 @@ public class DescribeDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the domains requested in the <code>DescribeDomains</code> request.
+     * The status of the requested domains.
      * </p>
      * 
      * @param domainStatusList
-     *        The status of the domains requested in the <code>DescribeDomains</code> request.
+     *        The status of the requested domains.
      */
 
     public void setDomainStatusList(java.util.Collection<DomainStatus> domainStatusList) {
@@ -63,7 +62,7 @@ public class DescribeDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the domains requested in the <code>DescribeDomains</code> request.
+     * The status of the requested domains.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -72,7 +71,7 @@ public class DescribeDomainsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param domainStatusList
-     *        The status of the domains requested in the <code>DescribeDomains</code> request.
+     *        The status of the requested domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,11 +87,11 @@ public class DescribeDomainsResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The status of the domains requested in the <code>DescribeDomains</code> request.
+     * The status of the requested domains.
      * </p>
      * 
      * @param domainStatusList
-     *        The status of the domains requested in the <code>DescribeDomains</code> request.
+     *        The status of the requested domains.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

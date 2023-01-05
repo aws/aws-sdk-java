@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,14 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
      * </p>
      */
     private String aRN;
+    /**
+     * <p>
+     * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedNetworkTypes;
 
     /**
      * <p>
@@ -303,6 +311,128 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @return Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     *         using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     *         href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public java.util.List<String> getSupportedNetworkTypes() {
+        if (supportedNetworkTypes == null) {
+            supportedNetworkTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedNetworkTypes;
+    }
+
+    /**
+     * <p>
+     * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param supportedNetworkTypes
+     *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @see NetworkType
+     */
+
+    public void setSupportedNetworkTypes(java.util.Collection<String> supportedNetworkTypes) {
+        if (supportedNetworkTypes == null) {
+            this.supportedNetworkTypes = null;
+            return;
+        }
+
+        this.supportedNetworkTypes = new com.amazonaws.internal.SdkInternalList<String>(supportedNetworkTypes);
+    }
+
+    /**
+     * <p>
+     * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedNetworkTypes(java.util.Collection)} or
+     * {@link #withSupportedNetworkTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedNetworkTypes
+     *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public CacheSubnetGroup withSupportedNetworkTypes(String... supportedNetworkTypes) {
+        if (this.supportedNetworkTypes == null) {
+            setSupportedNetworkTypes(new com.amazonaws.internal.SdkInternalList<String>(supportedNetworkTypes.length));
+        }
+        for (String ele : supportedNetworkTypes) {
+            this.supportedNetworkTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param supportedNetworkTypes
+     *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public CacheSubnetGroup withSupportedNetworkTypes(java.util.Collection<String> supportedNetworkTypes) {
+        setSupportedNetworkTypes(supportedNetworkTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads using
+     * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * </p>
+     * 
+     * @param supportedNetworkTypes
+     *        Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6 is supported for workloads
+     *        using Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all instances built on the <a
+     *        href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NetworkType
+     */
+
+    public CacheSubnetGroup withSupportedNetworkTypes(NetworkType... supportedNetworkTypes) {
+        com.amazonaws.internal.SdkInternalList<String> supportedNetworkTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                supportedNetworkTypes.length);
+        for (NetworkType value : supportedNetworkTypes) {
+            supportedNetworkTypesCopy.add(value.toString());
+        }
+        if (getSupportedNetworkTypes() == null) {
+            setSupportedNetworkTypes(supportedNetworkTypesCopy);
+        } else {
+            getSupportedNetworkTypes().addAll(supportedNetworkTypesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -323,7 +453,9 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
         if (getSubnets() != null)
             sb.append("Subnets: ").append(getSubnets()).append(",");
         if (getARN() != null)
-            sb.append("ARN: ").append(getARN());
+            sb.append("ARN: ").append(getARN()).append(",");
+        if (getSupportedNetworkTypes() != null)
+            sb.append("SupportedNetworkTypes: ").append(getSupportedNetworkTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +490,10 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
             return false;
         if (other.getARN() != null && other.getARN().equals(this.getARN()) == false)
             return false;
+        if (other.getSupportedNetworkTypes() == null ^ this.getSupportedNetworkTypes() == null)
+            return false;
+        if (other.getSupportedNetworkTypes() != null && other.getSupportedNetworkTypes().equals(this.getSupportedNetworkTypes()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +507,7 @@ public class CacheSubnetGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         hashCode = prime * hashCode + ((getARN() == null) ? 0 : getARN().hashCode());
+        hashCode = prime * hashCode + ((getSupportedNetworkTypes() == null) ? 0 : getSupportedNetworkTypes().hashCode());
         return hashCode;
     }
 

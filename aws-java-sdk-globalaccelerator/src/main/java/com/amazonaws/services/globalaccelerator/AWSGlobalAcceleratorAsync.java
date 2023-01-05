@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -163,6 +163,81 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
     java.util.concurrent.Future<AddCustomRoutingEndpointsResult> addCustomRoutingEndpointsAsync(
             AddCustomRoutingEndpointsRequest addCustomRoutingEndpointsRequest,
             com.amazonaws.handlers.AsyncHandler<AddCustomRoutingEndpointsRequest, AddCustomRoutingEndpointsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is the recommended option for
+     * adding endpoints. The alternative options are to add endpoints when you create an endpoint group (with the <a
+     * href
+     * ="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+     * API) or when you update an endpoint group (with the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API).
+     * </p>
+     * <p>
+     * There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's more convenient, because you don't need to specify all of the current endpoints that are already in the
+     * endpoint group in addition to the new endpoints that you want to add.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param addEndpointsRequest
+     * @return A Java Future containing the result of the AddEndpoints operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsync.AddEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(AddEndpointsRequest addEndpointsRequest);
+
+    /**
+     * <p>
+     * Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is the recommended option for
+     * adding endpoints. The alternative options are to add endpoints when you create an endpoint group (with the <a
+     * href
+     * ="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+     * API) or when you update an endpoint group (with the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API).
+     * </p>
+     * <p>
+     * There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's more convenient, because you don't need to specify all of the current endpoints that are already in the
+     * endpoint group in addition to the new endpoints that you want to add.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param addEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddEndpoints operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.AddEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(AddEndpointsRequest addEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<AddEndpointsRequest, AddEndpointsResult> asyncHandler);
 
     /**
      * <p>
@@ -1619,6 +1694,83 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
     java.util.concurrent.Future<RemoveCustomRoutingEndpointsResult> removeCustomRoutingEndpointsAsync(
             RemoveCustomRoutingEndpointsRequest removeCustomRoutingEndpointsRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveCustomRoutingEndpointsRequest, RemoveCustomRoutingEndpointsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove endpoints from an endpoint group.
+     * </p>
+     * <p>
+     * The <code>RemoveEndpoints</code> API operation is the recommended option for removing endpoints. The alternative
+     * is to remove endpoints by updating an endpoint group by using the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API operation. There are two advantages to using <code>AddEndpoints</code> to remove
+     * endpoints instead:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's more convenient, because you only need to specify the endpoints that you want to remove. With the
+     * <code>UpdateEndpointGroup</code> API operation, you must specify all of the endpoints in the endpoint group
+     * except the ones that you want to remove from the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator doesn't need to resolve any endpoints. With the
+     * <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve all of the endpoints that remain
+     * in the group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param removeEndpointsRequest
+     * @return A Java Future containing the result of the RemoveEndpoints operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsync.RemoveEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(RemoveEndpointsRequest removeEndpointsRequest);
+
+    /**
+     * <p>
+     * Remove endpoints from an endpoint group.
+     * </p>
+     * <p>
+     * The <code>RemoveEndpoints</code> API operation is the recommended option for removing endpoints. The alternative
+     * is to remove endpoints by updating an endpoint group by using the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API operation. There are two advantages to using <code>AddEndpoints</code> to remove
+     * endpoints instead:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's more convenient, because you only need to specify the endpoints that you want to remove. With the
+     * <code>UpdateEndpointGroup</code> API operation, you must specify all of the endpoints in the endpoint group
+     * except the ones that you want to remove from the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator doesn't need to resolve any endpoints. With the
+     * <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve all of the endpoints that remain
+     * in the group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param removeEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveEndpoints operation returned by the service.
+     * @sample AWSGlobalAcceleratorAsyncHandler.RemoveEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(RemoveEndpointsRequest removeEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveEndpointsRequest, RemoveEndpointsResult> asyncHandler);
 
     /**
      * <p>

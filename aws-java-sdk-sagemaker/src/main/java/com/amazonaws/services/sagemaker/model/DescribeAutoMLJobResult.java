@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,8 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     private AutoMLOutputDataConfig outputDataConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the
+     * input data location and write permission to the output data location in Amazon S3.
      * </p>
      */
     private String roleArn;
@@ -104,7 +104,9 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
     private java.util.List<AutoMLPartialFailureReason> partialFailureReasons;
     /**
      * <p>
-     * Returns the job's best <code>AutoMLCandidate</code>.
+     * The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for
+     * an experiment.
      * </p>
      */
     private AutoMLCandidate bestCandidate;
@@ -346,14 +348,13 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the
+     * input data location and write permission to the output data location in Amazon S3.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
-     *        has read permission to the input data location and write permission to the output data location in Amazon
-     *        S3.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission
+     *        to the input data location and write permission to the output data location in Amazon S3.
      */
 
     public void setRoleArn(String roleArn) {
@@ -362,13 +363,12 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the
+     * input data location and write permission to the output data location in Amazon S3.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
-     *         has read permission to the input data location and write permission to the output data location in Amazon
-     *         S3.
+     * @return The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission
+     *         to the input data location and write permission to the output data location in Amazon S3.
      */
 
     public String getRoleArn() {
@@ -377,14 +377,13 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read
-     * permission to the input data location and write permission to the output data location in Amazon S3.
+     * The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission to the
+     * input data location and write permission to the output data location in Amazon S3.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
-     *        has read permission to the input data location and write permission to the output data location in Amazon
-     *        S3.
+     *        The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that has read permission
+     *        to the input data location and write permission to the output data location in Amazon S3.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -764,11 +763,15 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's best <code>AutoMLCandidate</code>.
+     * The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for
+     * an experiment.
      * </p>
      * 
      * @param bestCandidate
-     *        Returns the job's best <code>AutoMLCandidate</code>.
+     *        The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest
+     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">
+     *        InferenceLatency</a> for an experiment.
      */
 
     public void setBestCandidate(AutoMLCandidate bestCandidate) {
@@ -777,10 +780,14 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's best <code>AutoMLCandidate</code>.
+     * The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for
+     * an experiment.
      * </p>
      * 
-     * @return Returns the job's best <code>AutoMLCandidate</code>.
+     * @return The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest
+     *         <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">
+     *         InferenceLatency</a> for an experiment.
      */
 
     public AutoMLCandidate getBestCandidate() {
@@ -789,11 +796,15 @@ public class DescribeAutoMLJobResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * Returns the job's best <code>AutoMLCandidate</code>.
+     * The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">InferenceLatency</a> for
+     * an experiment.
      * </p>
      * 
      * @param bestCandidate
-     *        Returns the job's best <code>AutoMLCandidate</code>.
+     *        The best model candidate selected by SageMaker Autopilot using both the best objective metric and lowest
+     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">
+     *        InferenceLatency</a> for an experiment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

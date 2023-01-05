@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<RequiredField> requiredFields;
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     */
+    private String status;
     /**
      * <p>
      * A unique identifier for the template.
@@ -294,6 +300,65 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @see TemplateStatus
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @return The status of the template.
+     * @see TemplateStatus
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public UpdateTemplateRequest withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the template.
+     * </p>
+     * 
+     * @param status
+     *        The status of the template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TemplateStatus
+     */
+
+    public UpdateTemplateRequest withStatus(TemplateStatus status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * A unique identifier for the template.
      * </p>
      * 
@@ -354,6 +419,8 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
             sb.append("Name: ").append(getName()).append(",");
         if (getRequiredFields() != null)
             sb.append("RequiredFields: ").append(getRequiredFields()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus()).append(",");
         if (getTemplateId() != null)
             sb.append("TemplateId: ").append(getTemplateId());
         sb.append("}");
@@ -390,6 +457,10 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getRequiredFields() != null && other.getRequiredFields().equals(this.getRequiredFields()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         if (other.getTemplateId() == null ^ this.getTemplateId() == null)
             return false;
         if (other.getTemplateId() != null && other.getTemplateId().equals(this.getTemplateId()) == false)
@@ -407,6 +478,7 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getLayoutConfiguration() == null) ? 0 : getLayoutConfiguration().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRequiredFields() == null) ? 0 : getRequiredFields().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());
         return hashCode;
     }

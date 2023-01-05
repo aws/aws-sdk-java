@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A filter used to limit results when describing inbound or outbound cross-cluster connections. Multiple values can be
- * specified per filter. A cross-cluster connection must match at least one of the specified values for it to be
+ * A filter used to limit results when describing inbound or outbound cross-cluster connections. You can specify
+ * multiple values per filter. A cross-cluster connection must match at least one of the specified values for it to be
  * returned from an operation.
  * </p>
  */
@@ -35,7 +35,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Contains one or more values for the filter.
+     * One or more values for the filter.
      * </p>
      */
     private java.util.List<String> values;
@@ -82,10 +82,10 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains one or more values for the filter.
+     * One or more values for the filter.
      * </p>
      * 
-     * @return Contains one or more values for the filter.
+     * @return One or more values for the filter.
      */
 
     public java.util.List<String> getValues() {
@@ -94,11 +94,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains one or more values for the filter.
+     * One or more values for the filter.
      * </p>
      * 
      * @param values
-     *        Contains one or more values for the filter.
+     *        One or more values for the filter.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -112,7 +112,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains one or more values for the filter.
+     * One or more values for the filter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,7 +121,7 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param values
-     *        Contains one or more values for the filter.
+     *        One or more values for the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains one or more values for the filter.
+     * One or more values for the filter.
      * </p>
      * 
      * @param values
-     *        Contains one or more values for the filter.
+     *        One or more values for the filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

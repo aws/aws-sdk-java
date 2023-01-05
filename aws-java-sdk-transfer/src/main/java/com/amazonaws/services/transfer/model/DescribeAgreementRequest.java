@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribeAgreementRequest extends com.amazonaws.AmazonWebServiceRequ
     private String agreementId;
     /**
      * <p>
-     * The server ID that's associated with the agreement.
+     * The server identifier that's associated with the agreement.
      * </p>
      */
     private String serverId;
@@ -80,11 +80,11 @@ public class DescribeAgreementRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The server ID that's associated with the agreement.
+     * The server identifier that's associated with the agreement.
      * </p>
      * 
      * @param serverId
-     *        The server ID that's associated with the agreement.
+     *        The server identifier that's associated with the agreement.
      */
 
     public void setServerId(String serverId) {
@@ -93,10 +93,10 @@ public class DescribeAgreementRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The server ID that's associated with the agreement.
+     * The server identifier that's associated with the agreement.
      * </p>
      * 
-     * @return The server ID that's associated with the agreement.
+     * @return The server identifier that's associated with the agreement.
      */
 
     public String getServerId() {
@@ -105,11 +105,11 @@ public class DescribeAgreementRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The server ID that's associated with the agreement.
+     * The server identifier that's associated with the agreement.
      * </p>
      * 
      * @param serverId
-     *        The server ID that's associated with the agreement.
+     *        The server identifier that's associated with the agreement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

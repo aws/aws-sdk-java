@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -376,6 +376,37 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
+     * Creates a Standby WorkSpace in a secondary region.
+     * </p>
+     * 
+     * @param createStandbyWorkspacesRequest
+     * @return A Java Future containing the result of the CreateStandbyWorkspaces operation returned by the service.
+     * @sample AmazonWorkspacesAsync.CreateStandbyWorkspaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateStandbyWorkspaces"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStandbyWorkspacesResult> createStandbyWorkspacesAsync(CreateStandbyWorkspacesRequest createStandbyWorkspacesRequest);
+
+    /**
+     * <p>
+     * Creates a Standby WorkSpace in a secondary region.
+     * </p>
+     * 
+     * @param createStandbyWorkspacesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateStandbyWorkspaces operation returned by the service.
+     * @sample AmazonWorkspacesAsyncHandler.CreateStandbyWorkspaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/CreateStandbyWorkspaces"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateStandbyWorkspacesResult> createStandbyWorkspacesAsync(CreateStandbyWorkspacesRequest createStandbyWorkspacesRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateStandbyWorkspacesRequest, CreateStandbyWorkspacesResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates the specified tags for the specified WorkSpaces resource.
      * </p>
      * 
@@ -565,6 +596,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team
+     * to be allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param createWorkspacesRequest
      * @return A Java Future containing the result of the CreateWorkspaces operation returned by the service.
@@ -581,6 +619,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * <p>
      * This operation is asynchronous and returns before the WorkSpaces are created.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team
+     * to be allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param createWorkspacesRequest
      * @param asyncHandler
@@ -1731,9 +1776,9 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an
-     * already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For
-     * more information about creating BYOL images, see <a
+     * Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016 BYOL image into Amazon
+     * WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account,
+     * and you must own the image. For more information about creating BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
@@ -1748,9 +1793,9 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
 
     /**
      * <p>
-     * Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an
-     * already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For
-     * more information about creating BYOL images, see <a
+     * Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016 BYOL image into Amazon
+     * WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account,
+     * and you must own the image. For more information about creating BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
      * Desktop Licenses</a>.
      * </p>
@@ -1908,6 +1953,41 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      */
     java.util.concurrent.Future<ModifyAccountResult> modifyAccountAsync(ModifyAccountRequest modifyAccountRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyAccountRequest, ModifyAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.
+     * </p>
+     * 
+     * @param modifyCertificateBasedAuthPropertiesRequest
+     * @return A Java Future containing the result of the ModifyCertificateBasedAuthProperties operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsync.ModifyCertificateBasedAuthProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyCertificateBasedAuthProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCertificateBasedAuthPropertiesResult> modifyCertificateBasedAuthPropertiesAsync(
+            ModifyCertificateBasedAuthPropertiesRequest modifyCertificateBasedAuthPropertiesRequest);
+
+    /**
+     * <p>
+     * Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.
+     * </p>
+     * 
+     * @param modifyCertificateBasedAuthPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyCertificateBasedAuthProperties operation returned by the
+     *         service.
+     * @sample AmazonWorkspacesAsyncHandler.ModifyCertificateBasedAuthProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModifyCertificateBasedAuthProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyCertificateBasedAuthPropertiesResult> modifyCertificateBasedAuthPropertiesAsync(
+            ModifyCertificateBasedAuthPropertiesRequest modifyCertificateBasedAuthPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyCertificateBasedAuthPropertiesRequest, ModifyCertificateBasedAuthPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -2094,6 +2174,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
      * Modify a WorkSpace</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team
+     * to be allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param modifyWorkspacePropertiesRequest
      * @return A Java Future containing the result of the ModifyWorkspaceProperties operation returned by the service.
@@ -2110,6 +2197,13 @@ public interface AmazonWorkspacesAsync extends AmazonWorkspaces {
      * and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html">
      * Modify a WorkSpace</a>.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces Core. Contact your account team
+     * to be allow-listed to use this value. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+     * </p>
+     * </note>
      * 
      * @param modifyWorkspacePropertiesRequest
      * @param asyncHandler

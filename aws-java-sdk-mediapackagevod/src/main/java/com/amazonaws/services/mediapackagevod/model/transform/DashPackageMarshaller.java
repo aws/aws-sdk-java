@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class DashPackageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<Boolean> INCLUDEENCODERCONFIGURATIONINSEGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeEncoderConfigurationInSegments").build();
+    private static final MarshallingInfo<Boolean> INCLUDEIFRAMEONLYSTREAM_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeIframeOnlyStream").build();
     private static final MarshallingInfo<List> PERIODTRIGGERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("periodTriggers").build();
     private static final MarshallingInfo<Integer> SEGMENTDURATIONSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -60,6 +62,7 @@ public class DashPackageMarshaller {
             protocolMarshaller.marshall(dashPackage.getDashManifests(), DASHMANIFESTS_BINDING);
             protocolMarshaller.marshall(dashPackage.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(dashPackage.getIncludeEncoderConfigurationInSegments(), INCLUDEENCODERCONFIGURATIONINSEGMENTS_BINDING);
+            protocolMarshaller.marshall(dashPackage.getIncludeIframeOnlyStream(), INCLUDEIFRAMEONLYSTREAM_BINDING);
             protocolMarshaller.marshall(dashPackage.getPeriodTriggers(), PERIODTRIGGERS_BINDING);
             protocolMarshaller.marshall(dashPackage.getSegmentDurationSeconds(), SEGMENTDURATIONSECONDS_BINDING);
             protocolMarshaller.marshall(dashPackage.getSegmentTemplateFormat(), SEGMENTTEMPLATEFORMAT_BINDING);

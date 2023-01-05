@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,17 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
     private String subscriptionArn;
     /**
      * <p>
+     * (deprecated)
+     * </p>
+     * <p>
      * The update to the threshold value for receiving notifications.
      * </p>
+     * <p>
+     * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
+     * be treated as shorthand syntax for a ThresholdExpression.
+     * </p>
      */
+    @Deprecated
     private Double threshold;
     /**
      * <p>
@@ -61,6 +69,47 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String subscriptionName;
+    /**
+     * <p>
+     * The update to the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
+     * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
+     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
+     * 0 and 10,000,000,000.
+     * </p>
+     * <p>
+     * The following are examples of valid ThresholdExpressions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Absolute threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Percentage threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AND</code> two thresholds together:
+     * <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> two thresholds together:
+     * <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private Expression thresholdExpression;
 
     /**
      * <p>
@@ -104,39 +153,78 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * (deprecated)
+     * </p>
+     * <p>
      * The update to the threshold value for receiving notifications.
+     * </p>
+     * <p>
+     * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
+     * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
      * 
      * @param threshold
+     *        (deprecated)</p>
+     *        <p>
      *        The update to the threshold value for receiving notifications.
+     *        </p>
+     *        <p>
+     *        This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold
+     *        will be treated as shorthand syntax for a ThresholdExpression.
      */
-
+    @Deprecated
     public void setThreshold(Double threshold) {
         this.threshold = threshold;
     }
 
     /**
      * <p>
+     * (deprecated)
+     * </p>
+     * <p>
      * The update to the threshold value for receiving notifications.
      * </p>
+     * <p>
+     * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
+     * be treated as shorthand syntax for a ThresholdExpression.
+     * </p>
      * 
-     * @return The update to the threshold value for receiving notifications.
+     * @return (deprecated)</p>
+     *         <p>
+     *         The update to the threshold value for receiving notifications.
+     *         </p>
+     *         <p>
+     *         This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of
+     *         Threshold will be treated as shorthand syntax for a ThresholdExpression.
      */
-
+    @Deprecated
     public Double getThreshold() {
         return this.threshold;
     }
 
     /**
      * <p>
+     * (deprecated)
+     * </p>
+     * <p>
      * The update to the threshold value for receiving notifications.
+     * </p>
+     * <p>
+     * This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold will
+     * be treated as shorthand syntax for a ThresholdExpression.
      * </p>
      * 
      * @param threshold
+     *        (deprecated)</p>
+     *        <p>
      *        The update to the threshold value for receiving notifications.
+     *        </p>
+     *        <p>
+     *        This field has been deprecated. To update a threshold, use ThresholdExpression. Continued use of Threshold
+     *        will be treated as shorthand syntax for a ThresholdExpression.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateAnomalySubscriptionRequest withThreshold(Double threshold) {
         setThreshold(threshold);
         return this;
@@ -382,6 +470,253 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The update to the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
+     * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
+     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
+     * 0 and 10,000,000,000.
+     * </p>
+     * <p>
+     * The following are examples of valid ThresholdExpressions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Absolute threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Percentage threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AND</code> two thresholds together:
+     * <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> two thresholds together:
+     * <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param thresholdExpression
+     *        The update to the <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        >Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
+     *        dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
+     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are
+     *        <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required.
+     *        Values must be numbers between 0 and 10,000,000,000.</p>
+     *        <p>
+     *        The following are examples of valid ThresholdExpressions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Absolute threshold:
+     *        <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Percentage threshold:
+     *        <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> two thresholds together:
+     *        <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> two thresholds together:
+     *        <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setThresholdExpression(Expression thresholdExpression) {
+        this.thresholdExpression = thresholdExpression;
+    }
+
+    /**
+     * <p>
+     * The update to the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
+     * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
+     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
+     * 0 and 10,000,000,000.
+     * </p>
+     * <p>
+     * The following are examples of valid ThresholdExpressions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Absolute threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Percentage threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AND</code> two thresholds together:
+     * <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> two thresholds together:
+     * <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The update to the <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *         >Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
+     *         dimensions and nested expressions. The supported dimensions are
+     *         <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The
+     *         supported nested expression types are <code>AND</code> and <code>OR</code>. The match option
+     *         <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between 0 and 10,000,000,000.</p>
+     *         <p>
+     *         The following are examples of valid ThresholdExpressions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Absolute threshold:
+     *         <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Percentage threshold:
+     *         <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AND</code> two thresholds together:
+     *         <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OR</code> two thresholds together:
+     *         <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     *         </p>
+     *         </li>
+     */
+
+    public Expression getThresholdExpression() {
+        return this.thresholdExpression;
+    }
+
+    /**
+     * <p>
+     * The update to the <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+     * object used to specify the anomalies that you want to generate alerts for. This supports dimensions and nested
+     * expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and
+     * <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are <code>AND</code> and
+     * <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required. Values must be numbers between
+     * 0 and 10,000,000,000.
+     * </p>
+     * <p>
+     * The following are examples of valid ThresholdExpressions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Absolute threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Percentage threshold:
+     * <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AND</code> two thresholds together:
+     * <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> two thresholds together:
+     * <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param thresholdExpression
+     *        The update to the <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html"
+     *        >Expression</a> object used to specify the anomalies that you want to generate alerts for. This supports
+     *        dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
+     *        and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>. The supported nested expression types are
+     *        <code>AND</code> and <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required.
+     *        Values must be numbers between 0 and 10,000,000,000.</p>
+     *        <p>
+     *        The following are examples of valid ThresholdExpressions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Absolute threshold:
+     *        <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Percentage threshold:
+     *        <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> two thresholds together:
+     *        <code>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> two thresholds together:
+     *        <code>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAnomalySubscriptionRequest withThresholdExpression(Expression thresholdExpression) {
+        setThresholdExpression(thresholdExpression);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -404,7 +739,9 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
         if (getSubscribers() != null)
             sb.append("Subscribers: ").append(getSubscribers()).append(",");
         if (getSubscriptionName() != null)
-            sb.append("SubscriptionName: ").append(getSubscriptionName());
+            sb.append("SubscriptionName: ").append(getSubscriptionName()).append(",");
+        if (getThresholdExpression() != null)
+            sb.append("ThresholdExpression: ").append(getThresholdExpression());
         sb.append("}");
         return sb.toString();
     }
@@ -443,6 +780,10 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getSubscriptionName() != null && other.getSubscriptionName().equals(this.getSubscriptionName()) == false)
             return false;
+        if (other.getThresholdExpression() == null ^ this.getThresholdExpression() == null)
+            return false;
+        if (other.getThresholdExpression() != null && other.getThresholdExpression().equals(this.getThresholdExpression()) == false)
+            return false;
         return true;
     }
 
@@ -457,6 +798,7 @@ public class UpdateAnomalySubscriptionRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getMonitorArnList() == null) ? 0 : getMonitorArnList().hashCode());
         hashCode = prime * hashCode + ((getSubscribers() == null) ? 0 : getSubscribers().hashCode());
         hashCode = prime * hashCode + ((getSubscriptionName() == null) ? 0 : getSubscriptionName().hashCode());
+        hashCode = prime * hashCode + ((getThresholdExpression() == null) ? 0 : getThresholdExpression().hashCode());
         return hashCode;
     }
 

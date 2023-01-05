@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class DataSourcesFreeTrial implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+     * Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.
      * </p>
      */
     private DataSourceFreeTrial cloudTrail;
@@ -67,11 +67,11 @@ public class DataSourcesFreeTrial implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+     * Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.
      * </p>
      * 
      * @param cloudTrail
-     *        Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+     *        Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.
      */
 
     public void setCloudTrail(DataSourceFreeTrial cloudTrail) {
@@ -80,10 +80,10 @@ public class DataSourcesFreeTrial implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+     * Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.
      * </p>
      * 
-     * @return Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+     * @return Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.
      */
 
     public DataSourceFreeTrial getCloudTrail() {
@@ -92,11 +92,11 @@ public class DataSourcesFreeTrial implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+     * Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.
      * </p>
      * 
      * @param cloudTrail
-     *        Describes whether any AWS CloudTrail management event logs are enabled as data sources.
+     *        Describes whether any Amazon Web Services CloudTrail management event logs are enabled as data sources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

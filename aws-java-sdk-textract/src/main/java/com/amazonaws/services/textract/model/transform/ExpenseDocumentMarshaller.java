@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class ExpenseDocumentMarshaller {
             .marshallLocationName("SummaryFields").build();
     private static final MarshallingInfo<List> LINEITEMGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LineItemGroups").build();
+    private static final MarshallingInfo<List> BLOCKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Blocks").build();
 
     private static final ExpenseDocumentMarshaller instance = new ExpenseDocumentMarshaller();
 
@@ -54,6 +56,7 @@ public class ExpenseDocumentMarshaller {
             protocolMarshaller.marshall(expenseDocument.getExpenseIndex(), EXPENSEINDEX_BINDING);
             protocolMarshaller.marshall(expenseDocument.getSummaryFields(), SUMMARYFIELDS_BINDING);
             protocolMarshaller.marshall(expenseDocument.getLineItemGroups(), LINEITEMGROUPS_BINDING);
+            protocolMarshaller.marshall(expenseDocument.getBlocks(), BLOCKS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

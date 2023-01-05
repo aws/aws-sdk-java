@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class DomainMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<List> DOMAINENTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("domainEntries").build();
+    private static final MarshallingInfo<StructuredPojo> REGISTEREDDOMAINDELEGATIONINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("registeredDomainDelegationInfo").build();
 
     private static final DomainMarshaller instance = new DomainMarshaller();
 
@@ -69,6 +71,7 @@ public class DomainMarshaller {
             protocolMarshaller.marshall(domain.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(domain.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(domain.getDomainEntries(), DOMAINENTRIES_BINDING);
+            protocolMarshaller.marshall(domain.getRegisteredDomainDelegationInfo(), REGISTEREDDOMAINDELEGATIONINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

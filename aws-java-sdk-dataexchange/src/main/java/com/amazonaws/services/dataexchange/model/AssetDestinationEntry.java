@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class AssetDestinationEntry implements Serializable, Cloneable, Structure
     private String assetId;
     /**
      * <p>
-     * The S3 bucket that is the destination for the asset.
+     * The Amazon S3 bucket that is the destination for the asset.
      * </p>
      */
     private String bucket;
@@ -89,11 +89,11 @@ public class AssetDestinationEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the asset.
+     * The Amazon S3 bucket that is the destination for the asset.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the asset.
+     *        The Amazon S3 bucket that is the destination for the asset.
      */
 
     public void setBucket(String bucket) {
@@ -102,10 +102,10 @@ public class AssetDestinationEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the asset.
+     * The Amazon S3 bucket that is the destination for the asset.
      * </p>
      * 
-     * @return The S3 bucket that is the destination for the asset.
+     * @return The Amazon S3 bucket that is the destination for the asset.
      */
 
     public String getBucket() {
@@ -114,11 +114,11 @@ public class AssetDestinationEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The S3 bucket that is the destination for the asset.
+     * The Amazon S3 bucket that is the destination for the asset.
      * </p>
      * 
      * @param bucket
-     *        The S3 bucket that is the destination for the asset.
+     *        The Amazon S3 bucket that is the destination for the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

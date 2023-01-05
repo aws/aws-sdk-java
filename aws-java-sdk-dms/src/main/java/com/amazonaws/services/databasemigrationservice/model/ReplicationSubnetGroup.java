@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,13 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.List<Subnet> subnets;
+    /**
+     * <p>
+     * The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such
+     * as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     */
+    private java.util.List<String> supportedNetworkTypes;
 
     /**
      * <p>
@@ -290,6 +297,88 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such
+     * as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @return The IP addressing protocol supported by the subnet group. This is used by a replication instance with
+     *         values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet
+     *         supported.
+     */
+
+    public java.util.List<String> getSupportedNetworkTypes() {
+        return supportedNetworkTypes;
+    }
+
+    /**
+     * <p>
+     * The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such
+     * as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param supportedNetworkTypes
+     *        The IP addressing protocol supported by the subnet group. This is used by a replication instance with
+     *        values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet
+     *        supported.
+     */
+
+    public void setSupportedNetworkTypes(java.util.Collection<String> supportedNetworkTypes) {
+        if (supportedNetworkTypes == null) {
+            this.supportedNetworkTypes = null;
+            return;
+        }
+
+        this.supportedNetworkTypes = new java.util.ArrayList<String>(supportedNetworkTypes);
+    }
+
+    /**
+     * <p>
+     * The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such
+     * as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedNetworkTypes(java.util.Collection)} or
+     * {@link #withSupportedNetworkTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedNetworkTypes
+     *        The IP addressing protocol supported by the subnet group. This is used by a replication instance with
+     *        values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationSubnetGroup withSupportedNetworkTypes(String... supportedNetworkTypes) {
+        if (this.supportedNetworkTypes == null) {
+            setSupportedNetworkTypes(new java.util.ArrayList<String>(supportedNetworkTypes.length));
+        }
+        for (String ele : supportedNetworkTypes) {
+            this.supportedNetworkTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP addressing protocol supported by the subnet group. This is used by a replication instance with values such
+     * as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param supportedNetworkTypes
+     *        The IP addressing protocol supported by the subnet group. This is used by a replication instance with
+     *        values such as IPv4 only or Dual-stack that supports both IPv4 and IPv6 addressing. IPv6 only is not yet
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationSubnetGroup withSupportedNetworkTypes(java.util.Collection<String> supportedNetworkTypes) {
+        setSupportedNetworkTypes(supportedNetworkTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -310,7 +399,9 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
         if (getSubnetGroupStatus() != null)
             sb.append("SubnetGroupStatus: ").append(getSubnetGroupStatus()).append(",");
         if (getSubnets() != null)
-            sb.append("Subnets: ").append(getSubnets());
+            sb.append("Subnets: ").append(getSubnets()).append(",");
+        if (getSupportedNetworkTypes() != null)
+            sb.append("SupportedNetworkTypes: ").append(getSupportedNetworkTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -347,6 +438,10 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
             return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
             return false;
+        if (other.getSupportedNetworkTypes() == null ^ this.getSupportedNetworkTypes() == null)
+            return false;
+        if (other.getSupportedNetworkTypes() != null && other.getSupportedNetworkTypes().equals(this.getSupportedNetworkTypes()) == false)
+            return false;
         return true;
     }
 
@@ -360,6 +455,7 @@ public class ReplicationSubnetGroup implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getSubnetGroupStatus() == null) ? 0 : getSubnetGroupStatus().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
+        hashCode = prime * hashCode + ((getSupportedNetworkTypes() == null) ? 0 : getSupportedNetworkTypes().hashCode());
         return hashCode;
     }
 

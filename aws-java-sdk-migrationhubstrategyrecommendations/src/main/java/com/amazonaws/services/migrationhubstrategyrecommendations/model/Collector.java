@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class Collector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String collectorVersion;
+    /**
+     * <p>
+     * Summary of the collector configuration.
+     * </p>
+     */
+    private ConfigurationSummary configurationSummary;
     /**
      * <p>
      * Hostname of the server that is hosting the collector.
@@ -207,6 +213,46 @@ public class Collector implements Serializable, Cloneable, StructuredPojo {
 
     public Collector withCollectorVersion(String collectorVersion) {
         setCollectorVersion(collectorVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Summary of the collector configuration.
+     * </p>
+     * 
+     * @param configurationSummary
+     *        Summary of the collector configuration.
+     */
+
+    public void setConfigurationSummary(ConfigurationSummary configurationSummary) {
+        this.configurationSummary = configurationSummary;
+    }
+
+    /**
+     * <p>
+     * Summary of the collector configuration.
+     * </p>
+     * 
+     * @return Summary of the collector configuration.
+     */
+
+    public ConfigurationSummary getConfigurationSummary() {
+        return this.configurationSummary;
+    }
+
+    /**
+     * <p>
+     * Summary of the collector configuration.
+     * </p>
+     * 
+     * @param configurationSummary
+     *        Summary of the collector configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Collector withConfigurationSummary(ConfigurationSummary configurationSummary) {
+        setConfigurationSummary(configurationSummary);
         return this;
     }
 
@@ -388,6 +434,8 @@ public class Collector implements Serializable, Cloneable, StructuredPojo {
             sb.append("CollectorId: ").append(getCollectorId()).append(",");
         if (getCollectorVersion() != null)
             sb.append("CollectorVersion: ").append(getCollectorVersion()).append(",");
+        if (getConfigurationSummary() != null)
+            sb.append("ConfigurationSummary: ").append(getConfigurationSummary()).append(",");
         if (getHostName() != null)
             sb.append("HostName: ").append(getHostName()).append(",");
         if (getIpAddress() != null)
@@ -422,6 +470,10 @@ public class Collector implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCollectorVersion() != null && other.getCollectorVersion().equals(this.getCollectorVersion()) == false)
             return false;
+        if (other.getConfigurationSummary() == null ^ this.getConfigurationSummary() == null)
+            return false;
+        if (other.getConfigurationSummary() != null && other.getConfigurationSummary().equals(this.getConfigurationSummary()) == false)
+            return false;
         if (other.getHostName() == null ^ this.getHostName() == null)
             return false;
         if (other.getHostName() != null && other.getHostName().equals(this.getHostName()) == false)
@@ -449,6 +501,7 @@ public class Collector implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCollectorHealth() == null) ? 0 : getCollectorHealth().hashCode());
         hashCode = prime * hashCode + ((getCollectorId() == null) ? 0 : getCollectorId().hashCode());
         hashCode = prime * hashCode + ((getCollectorVersion() == null) ? 0 : getCollectorVersion().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationSummary() == null) ? 0 : getConfigurationSummary().hashCode());
         hashCode = prime * hashCode + ((getHostName() == null) ? 0 : getHostName().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getLastActivityTimeStamp() == null) ? 0 : getLastActivityTimeStamp().hashCode());

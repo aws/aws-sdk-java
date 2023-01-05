@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,21 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     @Override
     public java.util.concurrent.Future<DeleteTrailResult> deleteTrailAsync(DeleteTrailRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteTrailRequest, DeleteTrailResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            DeregisterOrganizationDelegatedAdminRequest request) {
+
+        return deregisterOrganizationDelegatedAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            DeregisterOrganizationDelegatedAdminRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeregisterOrganizationDelegatedAdminRequest, DeregisterOrganizationDelegatedAdminResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -443,6 +458,21 @@ public class AbstractAWSCloudTrailAsync extends AbstractAWSCloudTrail implements
     @Override
     public java.util.concurrent.Future<PutInsightSelectorsResult> putInsightSelectorsAsync(PutInsightSelectorsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutInsightSelectorsRequest, PutInsightSelectorsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            RegisterOrganizationDelegatedAdminRequest request) {
+
+        return registerOrganizationDelegatedAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            RegisterOrganizationDelegatedAdminRequest request,
+            com.amazonaws.handlers.AsyncHandler<RegisterOrganizationDelegatedAdminRequest, RegisterOrganizationDelegatedAdminResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

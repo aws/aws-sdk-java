@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -355,8 +355,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -606,8 +606,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -1667,8 +1667,8 @@ public interface AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1690,6 +1690,34 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     ListAccessPoliciesResult listAccessPolicies(ListAccessPoliciesRequest listAccessPoliciesRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @return Result of the ListAssetModelProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetModelPropertiesResult listAssetModelProperties(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest);
 
     /**
      * <p>
@@ -1715,6 +1743,34 @@ public interface AWSIoTSiteWise {
      *      API Documentation</a>
      */
     ListAssetModelsResult listAssetModels(ListAssetModelsRequest listAssetModelsRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @return Result of the ListAssetProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAssetPropertiesResult listAssetProperties(ListAssetPropertiesRequest listAssetPropertiesRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.ssmincidents.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class EventSummaryMarshaller {
 
     private static final MarshallingInfo<String> EVENTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eventId").build();
+    private static final MarshallingInfo<List> EVENTREFERENCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventReferences").build();
     private static final MarshallingInfo<java.util.Date> EVENTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eventTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> EVENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +58,7 @@ public class EventSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(eventSummary.getEventId(), EVENTID_BINDING);
+            protocolMarshaller.marshall(eventSummary.getEventReferences(), EVENTREFERENCES_BINDING);
             protocolMarshaller.marshall(eventSummary.getEventTime(), EVENTTIME_BINDING);
             protocolMarshaller.marshall(eventSummary.getEventType(), EVENTTYPE_BINDING);
             protocolMarshaller.marshall(eventSummary.getEventUpdatedTime(), EVENTUPDATEDTIME_BINDING);

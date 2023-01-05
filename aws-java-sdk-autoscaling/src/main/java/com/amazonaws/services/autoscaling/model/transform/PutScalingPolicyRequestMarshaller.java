@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -173,6 +173,104 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
                         if (customizedMetricSpecification.getUnit() != null) {
                             request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Unit",
                                     StringUtils.fromString(customizedMetricSpecification.getUnit()));
+                        }
+
+                        if (!customizedMetricSpecification.getMetrics().isEmpty()
+                                || !((com.amazonaws.internal.SdkInternalList<TargetTrackingMetricDataQuery>) customizedMetricSpecification.getMetrics())
+                                        .isAutoConstruct()) {
+                            com.amazonaws.internal.SdkInternalList<TargetTrackingMetricDataQuery> metricsList = (com.amazonaws.internal.SdkInternalList<TargetTrackingMetricDataQuery>) customizedMetricSpecification
+                                    .getMetrics();
+                            int metricsListIndex = 1;
+
+                            for (TargetTrackingMetricDataQuery metricsListValue : metricsList) {
+                                if (metricsListValue != null) {
+
+                                    if (metricsListValue.getId() != null) {
+                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member." + metricsListIndex
+                                                + ".Id", StringUtils.fromString(metricsListValue.getId()));
+                                    }
+
+                                    if (metricsListValue.getExpression() != null) {
+                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member." + metricsListIndex
+                                                + ".Expression", StringUtils.fromString(metricsListValue.getExpression()));
+                                    }
+
+                                    {
+                                        TargetTrackingMetricStat metricStat = metricsListValue.getMetricStat();
+                                        if (metricStat != null) {
+
+                                            {
+                                                Metric metric = metricStat.getMetric();
+                                                if (metric != null) {
+
+                                                    if (metric.getNamespace() != null) {
+                                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member."
+                                                                + metricsListIndex + ".MetricStat.Metric.Namespace",
+                                                                StringUtils.fromString(metric.getNamespace()));
+                                                    }
+
+                                                    if (metric.getMetricName() != null) {
+                                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member."
+                                                                + metricsListIndex + ".MetricStat.Metric.MetricName",
+                                                                StringUtils.fromString(metric.getMetricName()));
+                                                    }
+
+                                                    if (!metric.getDimensions().isEmpty()
+                                                            || !((com.amazonaws.internal.SdkInternalList<MetricDimension>) metric.getDimensions())
+                                                                    .isAutoConstruct()) {
+                                                        com.amazonaws.internal.SdkInternalList<MetricDimension> dimensionsList = (com.amazonaws.internal.SdkInternalList<MetricDimension>) metric
+                                                                .getDimensions();
+                                                        int dimensionsListIndex = 1;
+
+                                                        for (MetricDimension dimensionsListValue : dimensionsList) {
+                                                            if (dimensionsListValue != null) {
+
+                                                                if (dimensionsListValue.getName() != null) {
+                                                                    request.addParameter(
+                                                                            "TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member."
+                                                                                    + metricsListIndex + ".MetricStat.Metric.Dimensions.member."
+                                                                                    + dimensionsListIndex + ".Name",
+                                                                            StringUtils.fromString(dimensionsListValue.getName()));
+                                                                }
+
+                                                                if (dimensionsListValue.getValue() != null) {
+                                                                    request.addParameter(
+                                                                            "TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member."
+                                                                                    + metricsListIndex + ".MetricStat.Metric.Dimensions.member."
+                                                                                    + dimensionsListIndex + ".Value",
+                                                                            StringUtils.fromString(dimensionsListValue.getValue()));
+                                                                }
+                                                            }
+                                                            dimensionsListIndex++;
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            if (metricStat.getStat() != null) {
+                                                request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member."
+                                                        + metricsListIndex + ".MetricStat.Stat", StringUtils.fromString(metricStat.getStat()));
+                                            }
+
+                                            if (metricStat.getUnit() != null) {
+                                                request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member."
+                                                        + metricsListIndex + ".MetricStat.Unit", StringUtils.fromString(metricStat.getUnit()));
+                                            }
+                                        }
+                                    }
+
+                                    if (metricsListValue.getLabel() != null) {
+                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member." + metricsListIndex
+                                                + ".Label", StringUtils.fromString(metricsListValue.getLabel()));
+                                    }
+
+                                    if (metricsListValue.getReturnData() != null) {
+                                        request.addParameter("TargetTrackingConfiguration.CustomizedMetricSpecification.Metrics.member." + metricsListIndex
+                                                + ".ReturnData", StringUtils.fromBoolean(metricsListValue.getReturnData()));
+                                    }
+                                }
+                                metricsListIndex++;
+                            }
                         }
                     }
                 }

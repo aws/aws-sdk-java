@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,18 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private java.util.List<TagListEntry> tags;
+    /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     */
+    private java.nio.ByteBuffer serverCertificate;
 
     /**
      * <p>
@@ -570,6 +582,106 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     *        (before Base64 encoding).</p>
+     *        <p>
+     *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     */
+
+    public void setServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        this.serverCertificate = serverCertificate;
+    }
+
+    /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
+     * </p>
+     * 
+     * @return Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     *         certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     *         <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768
+     *         bytes (before Base64 encoding).</p>
+     *         <p>
+     *         To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     */
+
+    public java.nio.ByteBuffer getServerCertificate() {
+        return this.serverCertificate;
+    }
+
+    /**
+     * <p>
+     * Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     * certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     * <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     * (before Base64 encoding).
+     * </p>
+     * <p>
+     * To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        Specifies a certificate to authenticate with an object storage system that uses a private or self-signed
+     *        certificate authority (CA). You must specify a Base64-encoded <code>.pem</code> file (for example,
+     *        <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>). The certificate can be up to 32768 bytes
+     *        (before Base64 encoding).</p>
+     *        <p>
+     *        To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateLocationObjectStorageRequest withServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        setServerCertificate(serverCertificate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -598,7 +710,9 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
         if (getAgentArns() != null)
             sb.append("AgentArns: ").append(getAgentArns()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getServerCertificate() != null)
+            sb.append("ServerCertificate: ").append(getServerCertificate());
         sb.append("}");
         return sb.toString();
     }
@@ -649,6 +763,10 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getServerCertificate() == null ^ this.getServerCertificate() == null)
+            return false;
+        if (other.getServerCertificate() != null && other.getServerCertificate().equals(this.getServerCertificate()) == false)
+            return false;
         return true;
     }
 
@@ -666,6 +784,7 @@ public class CreateLocationObjectStorageRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getSecretKey() == null) ? 0 : getSecretKey().hashCode());
         hashCode = prime * hashCode + ((getAgentArns() == null) ? 0 : getAgentArns().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getServerCertificate() == null) ? 0 : getServerCertificate().hashCode());
         return hashCode;
     }
 

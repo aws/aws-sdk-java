@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,7 +61,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
     private String languageCode;
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      */
     private Integer mediaSampleRateHertz;
@@ -145,7 +145,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.
+     * 16,000 and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -180,16 +180,15 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
     private String failureReason;
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      */
     private MedicalTranscriptionSetting settings;
     /**
      * <p>
-     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
-     * in a transcription</a>.
+     * Indicates whether content identification was enabled for your transcription request.
      * </p>
      */
     private String contentIdentificationType;
@@ -423,11 +422,11 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.
+     *        The sample rate, in hertz, of the audio track in your input media file.
      */
 
     public void setMediaSampleRateHertz(Integer mediaSampleRateHertz) {
@@ -436,10 +435,10 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
-     * @return The sample rate, in Hertz, of the audio track in your input media file.
+     * @return The sample rate, in hertz, of the audio track in your input media file.
      */
 
     public Integer getMediaSampleRateHertz() {
@@ -448,11 +447,11 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in your input media file.
+     * The sample rate, in hertz, of the audio track in your input media file.
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in your input media file.
+     *        The sample rate, in hertz, of the audio track in your input media file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -820,7 +819,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.
+     * 16,000 and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -883,7 +882,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *        </p>
      *        <p>
      *        The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *        between 16,000 and 48,000 Hertz.
+     *        between 16,000 and 48,000 hertz.
      *        </p>
      *        </li>
      *        <li>
@@ -954,7 +953,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.
+     * 16,000 and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -1016,7 +1015,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *         </p>
      *         <p>
      *         The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *         between 16,000 and 48,000 Hertz.
+     *         between 16,000 and 48,000 hertz.
      *         </p>
      *         </li>
      *         <li>
@@ -1088,7 +1087,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      * </p>
      * <p>
      * The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be between
-     * 16,000 and 48,000 Hertz.
+     * 16,000 and 48,000 hertz.
      * </p>
      * </li>
      * <li>
@@ -1151,7 +1150,7 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
      *        </p>
      *        <p>
      *        The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample rate must be
-     *        between 16,000 and 48,000 Hertz.
+     *        between 16,000 and 48,000 hertz.
      *        </p>
      *        </li>
      *        <li>
@@ -1193,14 +1192,15 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * 
      * @param settings
-     *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical
-     *        transcription job.
+     *        Provides information on any additional settings that were included in your request. Additional settings
+     *        include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and
+     *        custom vocabulary filters.
      */
 
     public void setSettings(MedicalTranscriptionSetting settings) {
@@ -1209,13 +1209,14 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * 
-     * @return Specify additional optional settings in your request, including channel identification, alternative
-     *         transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical
-     *         transcription job.
+     * @return Provides information on any additional settings that were included in your request. Additional settings
+     *         include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies,
+     *         and custom vocabulary filters.
      */
 
     public MedicalTranscriptionSetting getSettings() {
@@ -1224,14 +1225,15 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specify additional optional settings in your request, including channel identification, alternative
-     * transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical transcription job.
+     * Provides information on any additional settings that were included in your request. Additional settings include
+     * channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and custom
+     * vocabulary filters.
      * </p>
      * 
      * @param settings
-     *        Specify additional optional settings in your request, including channel identification, alternative
-     *        transcriptions, and speaker labeling; allows you to apply custom vocabularies to your medical
-     *        transcription job.
+     *        Provides information on any additional settings that were included in your request. Additional settings
+     *        include channel identification, alternative transcriptions, speaker partitioning, custom vocabularies, and
+     *        custom vocabulary filters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1242,15 +1244,11 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
-     * in a transcription</a>.
+     * Indicates whether content identification was enabled for your transcription request.
      * </p>
      * 
      * @param contentIdentificationType
-     *        Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
-     *        information (PHI) in a transcription</a>.
+     *        Indicates whether content identification was enabled for your transcription request.
      * @see MedicalContentIdentificationType
      */
 
@@ -1260,14 +1258,10 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
-     * in a transcription</a>.
+     * Indicates whether content identification was enabled for your transcription request.
      * </p>
      * 
-     * @return Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     *         href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
-     *         information (PHI) in a transcription</a>.
+     * @return Indicates whether content identification was enabled for your transcription request.
      * @see MedicalContentIdentificationType
      */
 
@@ -1277,15 +1271,11 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
-     * in a transcription</a>.
+     * Indicates whether content identification was enabled for your transcription request.
      * </p>
      * 
      * @param contentIdentificationType
-     *        Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
-     *        information (PHI) in a transcription</a>.
+     *        Indicates whether content identification was enabled for your transcription request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MedicalContentIdentificationType
      */
@@ -1297,15 +1287,11 @@ public class MedicalTranscriptionJob implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health information (PHI)
-     * in a transcription</a>.
+     * Indicates whether content identification was enabled for your transcription request.
      * </p>
      * 
      * @param contentIdentificationType
-     *        Labels all personal health information (PHI) identified in your transcript. For more information, see <a
-     *        href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying personal health
-     *        information (PHI) in a transcription</a>.
+     *        Indicates whether content identification was enabled for your transcription request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MedicalContentIdentificationType
      */

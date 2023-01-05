@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,15 +48,15 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
     private String logGroupName;
     /**
      * <p>
-     * The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * before this time are not exported.
+     * The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with
+     * a timestamp before this time are not exported.
      * </p>
      */
     private Long from;
     /**
      * <p>
-     * The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.
      * </p>
      */
     private Long to;
@@ -207,13 +207,13 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * before this time are not exported.
+     * The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with
+     * a timestamp before this time are not exported.
      * </p>
      * 
      * @param from
-     *        The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp before this time are not exported.
+     *        The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     *        Events with a timestamp before this time are not exported.
      */
 
     public void setFrom(Long from) {
@@ -222,12 +222,12 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * before this time are not exported.
+     * The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with
+     * a timestamp before this time are not exported.
      * </p>
      * 
-     * @return The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     *         timestamp before this time are not exported.
+     * @return The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     *         Events with a timestamp before this time are not exported.
      */
 
     public Long getFrom() {
@@ -236,13 +236,13 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * before this time are not exported.
+     * The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with
+     * a timestamp before this time are not exported.
      * </p>
      * 
      * @param from
-     *        The start time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp before this time are not exported.
+     *        The start time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     *        Events with a timestamp before this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,13 +253,13 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.
      * </p>
      * 
      * @param to
-     *        The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp later than this time are not exported.
+     *        The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events
+     *        with a timestamp later than this time are not exported.
      */
 
     public void setTo(Long to) {
@@ -268,12 +268,12 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.
      * </p>
      * 
-     * @return The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     *         timestamp later than this time are not exported.
+     * @return The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events
+     *         with a timestamp later than this time are not exported.
      */
 
     public Long getTo() {
@@ -282,13 +282,13 @@ public class ExportTask implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a timestamp
-     * later than this time are not exported.
+     * The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a
+     * timestamp later than this time are not exported.
      * </p>
      * 
      * @param to
-     *        The end time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     *        timestamp later than this time are not exported.
+     *        The end time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. Events
+     *        with a timestamp later than this time are not exported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

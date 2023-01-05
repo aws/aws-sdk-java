@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,8 @@ public class ApprovalThresholdPolicy implements Serializable, Cloneable, Structu
      * <p>
      * The duration from the time that a proposal is created until it expires. If members cast neither the required
      * number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to
-     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> are
-     * not carried out.
+     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code>
+     * aren't carried out.
      * </p>
      */
     private Integer proposalDurationInHours;
@@ -135,15 +135,15 @@ public class ApprovalThresholdPolicy implements Serializable, Cloneable, Structu
      * <p>
      * The duration from the time that a proposal is created until it expires. If members cast neither the required
      * number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to
-     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> are
-     * not carried out.
+     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code>
+     * aren't carried out.
      * </p>
      * 
      * @param proposalDurationInHours
      *        The duration from the time that a proposal is created until it expires. If members cast neither the
      *        required number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes
      *        required to reject it before the duration expires, the proposal is <code>EXPIRED</code> and
-     *        <code>ProposalActions</code> are not carried out.
+     *        <code>ProposalActions</code> aren't carried out.
      */
 
     public void setProposalDurationInHours(Integer proposalDurationInHours) {
@@ -154,14 +154,14 @@ public class ApprovalThresholdPolicy implements Serializable, Cloneable, Structu
      * <p>
      * The duration from the time that a proposal is created until it expires. If members cast neither the required
      * number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to
-     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> are
-     * not carried out.
+     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code>
+     * aren't carried out.
      * </p>
      * 
      * @return The duration from the time that a proposal is created until it expires. If members cast neither the
      *         required number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes
      *         required to reject it before the duration expires, the proposal is <code>EXPIRED</code> and
-     *         <code>ProposalActions</code> are not carried out.
+     *         <code>ProposalActions</code> aren't carried out.
      */
 
     public Integer getProposalDurationInHours() {
@@ -172,15 +172,15 @@ public class ApprovalThresholdPolicy implements Serializable, Cloneable, Structu
      * <p>
      * The duration from the time that a proposal is created until it expires. If members cast neither the required
      * number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes required to
-     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> are
-     * not carried out.
+     * reject it before the duration expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code>
+     * aren't carried out.
      * </p>
      * 
      * @param proposalDurationInHours
      *        The duration from the time that a proposal is created until it expires. If members cast neither the
      *        required number of <code>YES</code> votes to approve the proposal nor the number of <code>NO</code> votes
      *        required to reject it before the duration expires, the proposal is <code>EXPIRED</code> and
-     *        <code>ProposalActions</code> are not carried out.
+     *        <code>ProposalActions</code> aren't carried out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

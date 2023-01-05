@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Returns properties of the host key that is specified.
+ * Returns properties of the host key that's specified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListedHostKey" target="_top">AWS API
@@ -30,11 +30,15 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the host key.
+     * The unique Amazon Resource Name (ARN) of the host key.
      * </p>
      */
     private String arn;
-    /** <p/> */
+    /**
+     * <p>
+     * A unique identifier for the host key.
+     * </p>
+     */
     private String hostKeyId;
     /**
      * <p>
@@ -51,32 +55,33 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
@@ -91,11 +96,11 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the host key.
+     * The unique Amazon Resource Name (ARN) of the host key.
      * </p>
      * 
      * @param arn
-     *        Specifies the unique Amazon Resource Name (ARN) of the host key.
+     *        The unique Amazon Resource Name (ARN) of the host key.
      */
 
     public void setArn(String arn) {
@@ -104,10 +109,10 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the host key.
+     * The unique Amazon Resource Name (ARN) of the host key.
      * </p>
      * 
-     * @return Specifies the unique Amazon Resource Name (ARN) of the host key.
+     * @return The unique Amazon Resource Name (ARN) of the host key.
      */
 
     public String getArn() {
@@ -116,11 +121,11 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) of the host key.
+     * The unique Amazon Resource Name (ARN) of the host key.
      * </p>
      * 
      * @param arn
-     *        Specifies the unique Amazon Resource Name (ARN) of the host key.
+     *        The unique Amazon Resource Name (ARN) of the host key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,9 +135,12 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A unique identifier for the host key.
+     * </p>
      * 
      * @param hostKeyId
+     *        A unique identifier for the host key.
      */
 
     public void setHostKeyId(String hostKeyId) {
@@ -140,9 +148,11 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A unique identifier for the host key.
+     * </p>
      * 
-     * @return
+     * @return A unique identifier for the host key.
      */
 
     public String getHostKeyId() {
@@ -150,9 +160,12 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * A unique identifier for the host key.
+     * </p>
      * 
      * @param hostKeyId
+     *        A unique identifier for the host key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,62 +262,64 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+     *        The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by
+     *        using one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ssh-rsa
+     *        <code>ssh-rsa</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ssh-ed25519
+     *        <code>ssh-ed25519</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp256
+     *        <code>ecdsa-sha2-nistp256</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp384
+     *        <code>ecdsa-sha2-nistp384</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp521
+     *        <code>ecdsa-sha2-nistp521</code>
      *        </p>
      *        </li>
      */
@@ -315,61 +330,63 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+     * @return The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by
+     *         using one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         ssh-rsa
+     *         <code>ssh-rsa</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ssh-ed25519
+     *         <code>ssh-ed25519</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ecdsa-sha2-nistp256
+     *         <code>ecdsa-sha2-nistp256</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ecdsa-sha2-nistp384
+     *         <code>ecdsa-sha2-nistp384</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ecdsa-sha2-nistp521
+     *         <code>ecdsa-sha2-nistp521</code>
      *         </p>
      *         </li>
      */
@@ -380,62 +397,64 @@ public class ListedHostKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+     *        The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by
+     *        using one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ssh-rsa
+     *        <code>ssh-rsa</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ssh-ed25519
+     *        <code>ssh-ed25519</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp256
+     *        <code>ecdsa-sha2-nistp256</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp384
+     *        <code>ecdsa-sha2-nistp384</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp521
+     *        <code>ecdsa-sha2-nistp521</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

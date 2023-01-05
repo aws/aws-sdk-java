@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,6 +130,12 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
      * <p>
      * Checks out the specified license.
      * </p>
+     * <note>
+     * <p>
+     * If the account that created the license is the same that is performing the check out, you must specify the
+     * account as the beneficiary.
+     * </p>
+     * </note>
      * 
      * @param checkoutLicenseRequest
      * @return A Java Future containing the result of the CheckoutLicense operation returned by the service.
@@ -143,6 +149,12 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
      * <p>
      * Checks out the specified license.
      * </p>
+     * <note>
+     * <p>
+     * If the account that created the license is the same that is performing the check out, you must specify the
+     * account as the beneficiary.
+     * </p>
+     * </note>
      * 
      * @param checkoutLicenseRequest
      * @param asyncHandler
@@ -1251,6 +1263,43 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
 
     /**
      * <p>
+     * Lists the grants received for all accounts in the organization.
+     * </p>
+     * 
+     * @param listReceivedGrantsForOrganizationRequest
+     * @return A Java Future containing the result of the ListReceivedGrantsForOrganization operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsync.ListReceivedGrantsForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrantsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReceivedGrantsForOrganizationResult> listReceivedGrantsForOrganizationAsync(
+            ListReceivedGrantsForOrganizationRequest listReceivedGrantsForOrganizationRequest);
+
+    /**
+     * <p>
+     * Lists the grants received for all accounts in the organization.
+     * </p>
+     * 
+     * @param listReceivedGrantsForOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReceivedGrantsForOrganization operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsyncHandler.ListReceivedGrantsForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedGrantsForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReceivedGrantsForOrganizationResult> listReceivedGrantsForOrganizationAsync(
+            ListReceivedGrantsForOrganizationRequest listReceivedGrantsForOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReceivedGrantsForOrganizationRequest, ListReceivedGrantsForOrganizationResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists received licenses.
      * </p>
      * 
@@ -1279,6 +1328,43 @@ public interface AWSLicenseManagerAsync extends AWSLicenseManager {
      */
     java.util.concurrent.Future<ListReceivedLicensesResult> listReceivedLicensesAsync(ListReceivedLicensesRequest listReceivedLicensesRequest,
             com.amazonaws.handlers.AsyncHandler<ListReceivedLicensesRequest, ListReceivedLicensesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the licenses received for all accounts in the organization.
+     * </p>
+     * 
+     * @param listReceivedLicensesForOrganizationRequest
+     * @return A Java Future containing the result of the ListReceivedLicensesForOrganization operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsync.ListReceivedLicensesForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReceivedLicensesForOrganizationResult> listReceivedLicensesForOrganizationAsync(
+            ListReceivedLicensesForOrganizationRequest listReceivedLicensesForOrganizationRequest);
+
+    /**
+     * <p>
+     * Lists the licenses received for all accounts in the organization.
+     * </p>
+     * 
+     * @param listReceivedLicensesForOrganizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReceivedLicensesForOrganization operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerAsyncHandler.ListReceivedLicensesForOrganization
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-2018-08-01/ListReceivedLicensesForOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListReceivedLicensesForOrganizationResult> listReceivedLicensesForOrganizationAsync(
+            ListReceivedLicensesForOrganizationRequest listReceivedLicensesForOrganizationRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReceivedLicensesForOrganizationRequest, ListReceivedLicensesForOrganizationResult> asyncHandler);
 
     /**
      * <p>

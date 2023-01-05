@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String kmsKey;
+    /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     */
+    private EvidenceFinderEnablement evidenceFinderEnablement;
 
     /**
      * <p>
@@ -302,6 +308,46 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     * 
+     * @param evidenceFinderEnablement
+     *        The current evidence finder status and event data store details.
+     */
+
+    public void setEvidenceFinderEnablement(EvidenceFinderEnablement evidenceFinderEnablement) {
+        this.evidenceFinderEnablement = evidenceFinderEnablement;
+    }
+
+    /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     * 
+     * @return The current evidence finder status and event data store details.
+     */
+
+    public EvidenceFinderEnablement getEvidenceFinderEnablement() {
+        return this.evidenceFinderEnablement;
+    }
+
+    /**
+     * <p>
+     * The current evidence finder status and event data store details.
+     * </p>
+     * 
+     * @param evidenceFinderEnablement
+     *        The current evidence finder status and event data store details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Settings withEvidenceFinderEnablement(EvidenceFinderEnablement evidenceFinderEnablement) {
+        setEvidenceFinderEnablement(evidenceFinderEnablement);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -322,7 +368,9 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         if (getDefaultProcessOwners() != null)
             sb.append("DefaultProcessOwners: ").append(getDefaultProcessOwners()).append(",");
         if (getKmsKey() != null)
-            sb.append("KmsKey: ").append(getKmsKey());
+            sb.append("KmsKey: ").append(getKmsKey()).append(",");
+        if (getEvidenceFinderEnablement() != null)
+            sb.append("EvidenceFinderEnablement: ").append(getEvidenceFinderEnablement());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +406,10 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKmsKey() != null && other.getKmsKey().equals(this.getKmsKey()) == false)
             return false;
+        if (other.getEvidenceFinderEnablement() == null ^ this.getEvidenceFinderEnablement() == null)
+            return false;
+        if (other.getEvidenceFinderEnablement() != null && other.getEvidenceFinderEnablement().equals(this.getEvidenceFinderEnablement()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +423,7 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDefaultAssessmentReportsDestination() == null) ? 0 : getDefaultAssessmentReportsDestination().hashCode());
         hashCode = prime * hashCode + ((getDefaultProcessOwners() == null) ? 0 : getDefaultProcessOwners().hashCode());
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
+        hashCode = prime * hashCode + ((getEvidenceFinderEnablement() == null) ? 0 : getEvidenceFinderEnablement().hashCode());
         return hashCode;
     }
 

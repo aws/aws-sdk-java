@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class JobOperation implements Serializable, Cloneable {
     private S3CopyObjectOperation s3PutObjectCopy;
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
+     * Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.
      * </p>
      */
     private S3SetObjectAclOperation s3PutObjectAcl;
@@ -158,11 +158,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
+     * Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectAcl
-     *        Directs the specified job to run a PUT Object acl call on every object in the manifest.
+     *        Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.
      */
 
     public void setS3PutObjectAcl(S3SetObjectAclOperation s3PutObjectAcl) {
@@ -171,10 +171,10 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
+     * Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.
      * </p>
      * 
-     * @return Directs the specified job to run a PUT Object acl call on every object in the manifest.
+     * @return Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.
      */
 
     public S3SetObjectAclOperation getS3PutObjectAcl() {
@@ -183,11 +183,11 @@ public class JobOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Directs the specified job to run a PUT Object acl call on every object in the manifest.
+     * Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.
      * </p>
      * 
      * @param s3PutObjectAcl
-     *        Directs the specified job to run a PUT Object acl call on every object in the manifest.
+     *        Directs the specified job to run a <code>PutObjectAcl</code> call on every object in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

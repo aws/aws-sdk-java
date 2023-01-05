@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -235,12 +235,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2608,12 +2602,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2652,12 +2640,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
@@ -2704,12 +2687,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2747,12 +2724,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * @return <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *         this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *         EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *         on the record type.</p> <note>
-     *         <p>
-     *         Although creating latency and latency alias resource record sets in a private hosted zone is allowed,
-     *         it's not supported.
-     *         </p>
-     *         </note>
+     *         on the record type.</p>
      *         <p>
      *         When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *         resource record sets, Route 53 selects the latency resource record set that has the lowest latency
@@ -2799,12 +2771,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2843,12 +2809,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
@@ -2897,12 +2858,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -2941,12 +2896,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between
@@ -2993,12 +2943,6 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      * resource record set refers to. The resource typically is an Amazon Web Services resource, such as an EC2 instance
      * or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending on the record type.
      * </p>
-     * <note>
-     * <p>
-     * Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's not
-     * supported.
-     * </p>
-     * </note>
      * <p>
      * When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency resource
      * record sets, Route 53 selects the latency resource record set that has the lowest latency between the end user
@@ -3037,12 +2981,7 @@ public class ResourceRecordSet implements Serializable, Cloneable {
      *        <i>Latency-based resource record sets only:</i> The Amazon EC2 Region where you created the resource that
      *        this resource record set refers to. The resource typically is an Amazon Web Services resource, such as an
      *        EC2 instance or an ELB load balancer, and is referred to by an IP address or a DNS domain name, depending
-     *        on the record type.</p> <note>
-     *        <p>
-     *        Although creating latency and latency alias resource record sets in a private hosted zone is allowed, it's
-     *        not supported.
-     *        </p>
-     *        </note>
+     *        on the record type.</p>
      *        <p>
      *        When Amazon Route 53 receives a DNS query for a domain name and type for which you have created latency
      *        resource record sets, Route 53 selects the latency resource record set that has the lowest latency between

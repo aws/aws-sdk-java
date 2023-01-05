@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,13 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
+ * <code>VOLUME_RESTORE</code> - An Amazon FSx for OpenZFS volume is returned to the state saved by the specified
+ * snapshot, initiated from an API (<code>RestoreVolumeFromSnapshot</code>) or CLI (
+ * <code>restore-volume-from-snapshot</code>).
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <code>SNAPSHOT_UPDATE</code> - A snapshot update to an Amazon FSx for OpenZFS volume initiated from the Amazon FSx
  * console, API (<code>UpdateSnapshot</code>), or CLI (<code>update-snapshot</code>).
  * </p>
@@ -99,7 +106,8 @@ public enum AdministrativeActionType {
     FILE_SYSTEM_ALIAS_DISASSOCIATION("FILE_SYSTEM_ALIAS_DISASSOCIATION"),
     VOLUME_UPDATE("VOLUME_UPDATE"),
     SNAPSHOT_UPDATE("SNAPSHOT_UPDATE"),
-    RELEASE_NFS_V3_LOCKS("RELEASE_NFS_V3_LOCKS");
+    RELEASE_NFS_V3_LOCKS("RELEASE_NFS_V3_LOCKS"),
+    VOLUME_RESTORE("VOLUME_RESTORE");
 
     private String value;
 

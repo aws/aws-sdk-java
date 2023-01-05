@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,32 +54,33 @@ public class DescribedHostKey implements Serializable, Cloneable, StructuredPojo
     private String description;
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
@@ -260,62 +261,64 @@ public class DescribedHostKey implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+     *        The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by
+     *        using one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ssh-rsa
+     *        <code>ssh-rsa</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ssh-ed25519
+     *        <code>ssh-ed25519</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp256
+     *        <code>ecdsa-sha2-nistp256</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp384
+     *        <code>ecdsa-sha2-nistp384</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp521
+     *        <code>ecdsa-sha2-nistp521</code>
      *        </p>
      *        </li>
      */
@@ -326,61 +329,63 @@ public class DescribedHostKey implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+     * @return The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by
+     *         using one of the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         ssh-rsa
+     *         <code>ssh-rsa</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ssh-ed25519
+     *         <code>ssh-ed25519</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ecdsa-sha2-nistp256
+     *         <code>ecdsa-sha2-nistp256</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ecdsa-sha2-nistp384
+     *         <code>ecdsa-sha2-nistp384</code>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ecdsa-sha2-nistp521
+     *         <code>ecdsa-sha2-nistp521</code>
      *         </p>
      *         </li>
      */
@@ -391,62 +396,64 @@ public class DescribedHostKey implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:
+     * The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by using one
+     * of the following values:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ssh-rsa
+     * <code>ssh-rsa</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ssh-ed25519
+     * <code>ssh-ed25519</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp256
+     * <code>ecdsa-sha2-nistp256</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp384
+     * <code>ecdsa-sha2-nistp384</code>
      * </p>
      * </li>
      * <li>
      * <p>
-     * ecdsa-sha2-nistp521
+     * <code>ecdsa-sha2-nistp521</code>
      * </p>
      * </li>
      * </ul>
      * 
      * @param type
-     *        The encryption algorithm used for the host key. The <code>Type</code> is one of the following values:</p>
+     *        The encryption algorithm that is used for the host key. The <code>Type</code> parameter is specified by
+     *        using one of the following values:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ssh-rsa
+     *        <code>ssh-rsa</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ssh-ed25519
+     *        <code>ssh-ed25519</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp256
+     *        <code>ecdsa-sha2-nistp256</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp384
+     *        <code>ecdsa-sha2-nistp384</code>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ecdsa-sha2-nistp521
+     *        <code>ecdsa-sha2-nistp521</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

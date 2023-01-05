@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,18 @@ public class RelatedItem implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A unique ID for a <code>RelatedItem</code>.
+     * </p>
+     * <important>
+     * <p>
+     * Don't specify this parameter when you add a <code>RelatedItem</code> by using the <a>UpdateRelatedItems</a> API
+     * action.
+     * </p>
+     * </important>
+     */
+    private String generatedId;
+    /**
+     * <p>
      * Details about the related item.
      * </p>
      */
@@ -40,6 +52,76 @@ public class RelatedItem implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String title;
+
+    /**
+     * <p>
+     * A unique ID for a <code>RelatedItem</code>.
+     * </p>
+     * <important>
+     * <p>
+     * Don't specify this parameter when you add a <code>RelatedItem</code> by using the <a>UpdateRelatedItems</a> API
+     * action.
+     * </p>
+     * </important>
+     * 
+     * @param generatedId
+     *        A unique ID for a <code>RelatedItem</code>.</p> <important>
+     *        <p>
+     *        Don't specify this parameter when you add a <code>RelatedItem</code> by using the
+     *        <a>UpdateRelatedItems</a> API action.
+     *        </p>
+     */
+
+    public void setGeneratedId(String generatedId) {
+        this.generatedId = generatedId;
+    }
+
+    /**
+     * <p>
+     * A unique ID for a <code>RelatedItem</code>.
+     * </p>
+     * <important>
+     * <p>
+     * Don't specify this parameter when you add a <code>RelatedItem</code> by using the <a>UpdateRelatedItems</a> API
+     * action.
+     * </p>
+     * </important>
+     * 
+     * @return A unique ID for a <code>RelatedItem</code>.</p> <important>
+     *         <p>
+     *         Don't specify this parameter when you add a <code>RelatedItem</code> by using the
+     *         <a>UpdateRelatedItems</a> API action.
+     *         </p>
+     */
+
+    public String getGeneratedId() {
+        return this.generatedId;
+    }
+
+    /**
+     * <p>
+     * A unique ID for a <code>RelatedItem</code>.
+     * </p>
+     * <important>
+     * <p>
+     * Don't specify this parameter when you add a <code>RelatedItem</code> by using the <a>UpdateRelatedItems</a> API
+     * action.
+     * </p>
+     * </important>
+     * 
+     * @param generatedId
+     *        A unique ID for a <code>RelatedItem</code>.</p> <important>
+     *        <p>
+     *        Don't specify this parameter when you add a <code>RelatedItem</code> by using the
+     *        <a>UpdateRelatedItems</a> API action.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RelatedItem withGeneratedId(String generatedId) {
+        setGeneratedId(generatedId);
+        return this;
+    }
 
     /**
      * <p>
@@ -133,6 +215,8 @@ public class RelatedItem implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getGeneratedId() != null)
+            sb.append("GeneratedId: ").append(getGeneratedId()).append(",");
         if (getIdentifier() != null)
             sb.append("Identifier: ").append(getIdentifier()).append(",");
         if (getTitle() != null)
@@ -151,6 +235,10 @@ public class RelatedItem implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof RelatedItem == false)
             return false;
         RelatedItem other = (RelatedItem) obj;
+        if (other.getGeneratedId() == null ^ this.getGeneratedId() == null)
+            return false;
+        if (other.getGeneratedId() != null && other.getGeneratedId().equals(this.getGeneratedId()) == false)
+            return false;
         if (other.getIdentifier() == null ^ this.getIdentifier() == null)
             return false;
         if (other.getIdentifier() != null && other.getIdentifier().equals(this.getIdentifier()) == false)
@@ -167,6 +255,7 @@ public class RelatedItem implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getGeneratedId() == null) ? 0 : getGeneratedId().hashCode());
         hashCode = prime * hashCode + ((getIdentifier() == null) ? 0 : getIdentifier().hashCode());
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         return hashCode;

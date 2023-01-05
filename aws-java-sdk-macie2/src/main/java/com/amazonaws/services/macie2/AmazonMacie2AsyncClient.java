@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,12 +26,7 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern
- * matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as
- * PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie
- * also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects
- * sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as
- * necessary.
+ * Amazon Macie
  * </p>
  */
 @ThreadSafe
@@ -979,6 +974,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetAutomatedDiscoveryConfigurationResult> getAutomatedDiscoveryConfigurationAsync(
+            GetAutomatedDiscoveryConfigurationRequest request) {
+
+        return getAutomatedDiscoveryConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAutomatedDiscoveryConfigurationResult> getAutomatedDiscoveryConfigurationAsync(
+            final GetAutomatedDiscoveryConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAutomatedDiscoveryConfigurationRequest, GetAutomatedDiscoveryConfigurationResult> asyncHandler) {
+        final GetAutomatedDiscoveryConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAutomatedDiscoveryConfigurationResult>() {
+            @Override
+            public GetAutomatedDiscoveryConfigurationResult call() throws Exception {
+                GetAutomatedDiscoveryConfigurationResult result = null;
+
+                try {
+                    result = executeGetAutomatedDiscoveryConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBucketStatisticsResult> getBucketStatisticsAsync(GetBucketStatisticsRequest request) {
 
         return getBucketStatisticsAsync(request, null);
@@ -1031,6 +1061,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeGetClassificationExportConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClassificationScopeResult> getClassificationScopeAsync(GetClassificationScopeRequest request) {
+
+        return getClassificationScopeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetClassificationScopeResult> getClassificationScopeAsync(final GetClassificationScopeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetClassificationScopeRequest, GetClassificationScopeResult> asyncHandler) {
+        final GetClassificationScopeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetClassificationScopeResult>() {
+            @Override
+            public GetClassificationScopeResult call() throws Exception {
+                GetClassificationScopeResult result = null;
+
+                try {
+                    result = executeGetClassificationScope(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1346,6 +1409,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceProfileResult> getResourceProfileAsync(GetResourceProfileRequest request) {
+
+        return getResourceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceProfileResult> getResourceProfileAsync(final GetResourceProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourceProfileRequest, GetResourceProfileResult> asyncHandler) {
+        final GetResourceProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourceProfileResult>() {
+            @Override
+            public GetResourceProfileResult call() throws Exception {
+                GetResourceProfileResult result = null;
+
+                try {
+                    result = executeGetResourceProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRevealConfigurationResult> getRevealConfigurationAsync(GetRevealConfigurationRequest request) {
 
         return getRevealConfigurationAsync(request, null);
@@ -1431,6 +1527,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeGetSensitiveDataOccurrencesAvailability(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitivityInspectionTemplateResult> getSensitivityInspectionTemplateAsync(
+            GetSensitivityInspectionTemplateRequest request) {
+
+        return getSensitivityInspectionTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSensitivityInspectionTemplateResult> getSensitivityInspectionTemplateAsync(
+            final GetSensitivityInspectionTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSensitivityInspectionTemplateRequest, GetSensitivityInspectionTemplateResult> asyncHandler) {
+        final GetSensitivityInspectionTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSensitivityInspectionTemplateResult>() {
+            @Override
+            public GetSensitivityInspectionTemplateResult call() throws Exception {
+                GetSensitivityInspectionTemplateResult result = null;
+
+                try {
+                    result = executeGetSensitivityInspectionTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1563,6 +1694,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeListClassificationJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClassificationScopesResult> listClassificationScopesAsync(ListClassificationScopesRequest request) {
+
+        return listClassificationScopesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListClassificationScopesResult> listClassificationScopesAsync(final ListClassificationScopesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListClassificationScopesRequest, ListClassificationScopesResult> asyncHandler) {
+        final ListClassificationScopesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListClassificationScopesResult>() {
+            @Override
+            public ListClassificationScopesResult call() throws Exception {
+                ListClassificationScopesResult result = null;
+
+                try {
+                    result = executeListClassificationScopes(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1795,6 +1959,108 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeListOrganizationAdminAccounts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceProfileArtifactsResult> listResourceProfileArtifactsAsync(ListResourceProfileArtifactsRequest request) {
+
+        return listResourceProfileArtifactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceProfileArtifactsResult> listResourceProfileArtifactsAsync(final ListResourceProfileArtifactsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceProfileArtifactsRequest, ListResourceProfileArtifactsResult> asyncHandler) {
+        final ListResourceProfileArtifactsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceProfileArtifactsResult>() {
+            @Override
+            public ListResourceProfileArtifactsResult call() throws Exception {
+                ListResourceProfileArtifactsResult result = null;
+
+                try {
+                    result = executeListResourceProfileArtifacts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceProfileDetectionsResult> listResourceProfileDetectionsAsync(ListResourceProfileDetectionsRequest request) {
+
+        return listResourceProfileDetectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceProfileDetectionsResult> listResourceProfileDetectionsAsync(
+            final ListResourceProfileDetectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceProfileDetectionsRequest, ListResourceProfileDetectionsResult> asyncHandler) {
+        final ListResourceProfileDetectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceProfileDetectionsResult>() {
+            @Override
+            public ListResourceProfileDetectionsResult call() throws Exception {
+                ListResourceProfileDetectionsResult result = null;
+
+                try {
+                    result = executeListResourceProfileDetections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSensitivityInspectionTemplatesResult> listSensitivityInspectionTemplatesAsync(
+            ListSensitivityInspectionTemplatesRequest request) {
+
+        return listSensitivityInspectionTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSensitivityInspectionTemplatesResult> listSensitivityInspectionTemplatesAsync(
+            final ListSensitivityInspectionTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSensitivityInspectionTemplatesRequest, ListSensitivityInspectionTemplatesResult> asyncHandler) {
+        final ListSensitivityInspectionTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSensitivityInspectionTemplatesResult>() {
+            @Override
+            public ListSensitivityInspectionTemplatesResult call() throws Exception {
+                ListSensitivityInspectionTemplatesResult result = null;
+
+                try {
+                    result = executeListSensitivityInspectionTemplates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2079,6 +2345,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateAutomatedDiscoveryConfigurationResult> updateAutomatedDiscoveryConfigurationAsync(
+            UpdateAutomatedDiscoveryConfigurationRequest request) {
+
+        return updateAutomatedDiscoveryConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAutomatedDiscoveryConfigurationResult> updateAutomatedDiscoveryConfigurationAsync(
+            final UpdateAutomatedDiscoveryConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAutomatedDiscoveryConfigurationRequest, UpdateAutomatedDiscoveryConfigurationResult> asyncHandler) {
+        final UpdateAutomatedDiscoveryConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAutomatedDiscoveryConfigurationResult>() {
+            @Override
+            public UpdateAutomatedDiscoveryConfigurationResult call() throws Exception {
+                UpdateAutomatedDiscoveryConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateAutomatedDiscoveryConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateClassificationJobResult> updateClassificationJobAsync(UpdateClassificationJobRequest request) {
 
         return updateClassificationJobAsync(request, null);
@@ -2096,6 +2397,39 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeUpdateClassificationJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClassificationScopeResult> updateClassificationScopeAsync(UpdateClassificationScopeRequest request) {
+
+        return updateClassificationScopeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateClassificationScopeResult> updateClassificationScopeAsync(final UpdateClassificationScopeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateClassificationScopeRequest, UpdateClassificationScopeResult> asyncHandler) {
+        final UpdateClassificationScopeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateClassificationScopeResult>() {
+            @Override
+            public UpdateClassificationScopeResult call() throws Exception {
+                UpdateClassificationScopeResult result = null;
+
+                try {
+                    result = executeUpdateClassificationScope(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2246,6 +2580,74 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateResourceProfileResult> updateResourceProfileAsync(UpdateResourceProfileRequest request) {
+
+        return updateResourceProfileAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceProfileResult> updateResourceProfileAsync(final UpdateResourceProfileRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourceProfileRequest, UpdateResourceProfileResult> asyncHandler) {
+        final UpdateResourceProfileRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourceProfileResult>() {
+            @Override
+            public UpdateResourceProfileResult call() throws Exception {
+                UpdateResourceProfileResult result = null;
+
+                try {
+                    result = executeUpdateResourceProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceProfileDetectionsResult> updateResourceProfileDetectionsAsync(
+            UpdateResourceProfileDetectionsRequest request) {
+
+        return updateResourceProfileDetectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourceProfileDetectionsResult> updateResourceProfileDetectionsAsync(
+            final UpdateResourceProfileDetectionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourceProfileDetectionsRequest, UpdateResourceProfileDetectionsResult> asyncHandler) {
+        final UpdateResourceProfileDetectionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourceProfileDetectionsResult>() {
+            @Override
+            public UpdateResourceProfileDetectionsResult call() throws Exception {
+                UpdateResourceProfileDetectionsResult result = null;
+
+                try {
+                    result = executeUpdateResourceProfileDetections(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateRevealConfigurationResult> updateRevealConfigurationAsync(UpdateRevealConfigurationRequest request) {
 
         return updateRevealConfigurationAsync(request, null);
@@ -2263,6 +2665,41 @@ public class AmazonMacie2AsyncClient extends AmazonMacie2Client implements Amazo
 
                 try {
                     result = executeUpdateRevealConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSensitivityInspectionTemplateResult> updateSensitivityInspectionTemplateAsync(
+            UpdateSensitivityInspectionTemplateRequest request) {
+
+        return updateSensitivityInspectionTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSensitivityInspectionTemplateResult> updateSensitivityInspectionTemplateAsync(
+            final UpdateSensitivityInspectionTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSensitivityInspectionTemplateRequest, UpdateSensitivityInspectionTemplateResult> asyncHandler) {
+        final UpdateSensitivityInspectionTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSensitivityInspectionTemplateResult>() {
+            @Override
+            public UpdateSensitivityInspectionTemplateResult call() throws Exception {
+                UpdateSensitivityInspectionTemplateResult result = null;
+
+                try {
+                    result = executeUpdateSensitivityInspectionTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

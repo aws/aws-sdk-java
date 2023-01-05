@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -172,6 +172,12 @@ public class StackSetOperation implements Serializable, Cloneable {
      * </p>
      */
     private String statusReason;
+    /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     */
+    private StackSetOperationStatusDetails statusDetails;
 
     /**
      * <p>
@@ -1346,6 +1352,46 @@ public class StackSetOperation implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the StackSet operation.
+     */
+
+    public void setStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        this.statusDetails = statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     * 
+     * @return Detailed information about the StackSet operation.
+     */
+
+    public StackSetOperationStatusDetails getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the StackSet operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the StackSet operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperation withStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        setStatusDetails(statusDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1382,7 +1428,9 @@ public class StackSetOperation implements Serializable, Cloneable {
         if (getStackSetDriftDetectionDetails() != null)
             sb.append("StackSetDriftDetectionDetails: ").append(getStackSetDriftDetectionDetails()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason());
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: ").append(getStatusDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1450,6 +1498,10 @@ public class StackSetOperation implements Serializable, Cloneable {
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1471,6 +1523,7 @@ public class StackSetOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeploymentTargets() == null) ? 0 : getDeploymentTargets().hashCode());
         hashCode = prime * hashCode + ((getStackSetDriftDetectionDetails() == null) ? 0 : getStackSetDriftDetectionDetails().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
         return hashCode;
     }
 

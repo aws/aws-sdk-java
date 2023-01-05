@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,7 +69,11 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
      * </p>
      */
     private String resourceType;
-
+    /**
+     * <p>
+     * The resource tag.
+     * </p>
+     */
     private RequestIpamResourceTag resourceTag;
     /**
      * <p>
@@ -419,7 +423,12 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * The resource tag.
+     * </p>
+     * 
      * @param resourceTag
+     *        The resource tag.
      */
 
     public void setResourceTag(RequestIpamResourceTag resourceTag) {
@@ -427,7 +436,11 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
-     * @return
+     * <p>
+     * The resource tag.
+     * </p>
+     * 
+     * @return The resource tag.
      */
 
     public RequestIpamResourceTag getResourceTag() {
@@ -435,7 +448,12 @@ public class GetIpamResourceCidrsRequest extends AmazonWebServiceRequest impleme
     }
 
     /**
+     * <p>
+     * The resource tag.
+     * </p>
+     * 
      * @param resourceTag
+     *        The resource tag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

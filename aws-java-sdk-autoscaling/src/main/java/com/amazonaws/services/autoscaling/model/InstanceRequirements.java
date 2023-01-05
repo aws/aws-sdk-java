@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,15 +17,46 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * When you specify multiple parameters, you get instance types that satisfy all of the specified parameters. If you
- * specify multiple values for a parameter, you get instance types that satisfy any of the specified values.
+ * The attributes for the instance types for a mixed instances policy. Amazon EC2 Auto Scaling uses your specified
+ * requirements to identify instance types. Then, it uses your On-Demand and Spot allocation strategies to launch
+ * instances from these instance types.
  * </p>
  * <p>
- * Represents requirements for the types of instances that can be launched. You must specify <code>VCpuCount</code> and
- * <code>MemoryMiB</code>, but all other parameters are optional. For more information, see <a
+ * When you specify multiple attributes, you get instance types that satisfy all of the specified attributes. If you
+ * specify multiple values for an attribute, you get instance types that satisfy any of the specified values.
+ * </p>
+ * <p>
+ * To limit the list of instance types from which Amazon EC2 Auto Scaling can identify matching instance types, you can
+ * use one of the following parameters, but not both in the same request:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>AllowedInstanceTypes</code> - The instance types to include in the list. All other instance types are ignored,
+ * even if they match your specified attributes.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list, even if they match your specified
+ * attributes.
+ * </p>
+ * </li>
+ * </ul>
+ * <note>
+ * <p>
+ * You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes are optional. Any
+ * unspecified optional attribute is set to its default.
+ * </p>
+ * </note>
+ * <p>
+ * For more information, see <a
  * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating an
  * Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon EC2 Auto Scaling User
- * Guide</i>.
+ * Guide</i>. For help determining which instance types match your attributes before you apply them to your Auto Scaling
+ * group, see <a href=
+ * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-get-instance-types-from-instance-requirements"
+ * >Preview instance types with specified attributes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/InstanceRequirements" target="_top">AWS
@@ -83,21 +114,26 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum amount of memory per vCPU for an instance type, in GiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      */
     private MemoryGiBPerVCpuRequest memoryGiBPerVCpu;
     /**
      * <p>
-     * Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     * asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>.
+     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
+     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all
-     * C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance types, but
-     * not the M5n instance types.
+     * C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a
+     * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
@@ -197,7 +233,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum number of network interfaces for an instance type.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      */
     private NetworkInterfaceCountRequest networkInterfaceCount;
@@ -238,7 +274,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total local storage size for an instance type, in GB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      */
     private TotalLocalStorageGBRequest totalLocalStorageGB;
@@ -249,7 +285,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      */
     private BaselineEbsBandwidthMbpsRequest baselineEbsBandwidthMbps;
@@ -288,7 +324,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      */
     private AcceleratorCountRequest acceleratorCount;
@@ -374,10 +410,44 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total memory size for the accelerators on an instance type, in MiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      */
     private AcceleratorTotalMemoryMiBRequest acceleratorTotalMemoryMiB;
+    /**
+     * <p>
+     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     */
+    private NetworkBandwidthGbpsRequest networkBandwidthGbps;
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family,
+     * which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     * allow all the M5a instance types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> allowedInstanceTypes;
 
     /**
      * <p>
@@ -825,13 +895,13 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum amount of memory per vCPU for an instance type, in GiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param memoryGiBPerVCpu
      *        The minimum and maximum amount of memory per vCPU for an instance type, in GiB.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      */
 
     public void setMemoryGiBPerVCpu(MemoryGiBPerVCpuRequest memoryGiBPerVCpu) {
@@ -843,12 +913,12 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum amount of memory per vCPU for an instance type, in GiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @return The minimum and maximum amount of memory per vCPU for an instance type, in GiB.</p>
      *         <p>
-     *         Default: No minimum or maximum
+     *         Default: No minimum or maximum limits
      */
 
     public MemoryGiBPerVCpuRequest getMemoryGiBPerVCpu() {
@@ -860,13 +930,13 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum amount of memory per vCPU for an instance type, in GiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param memoryGiBPerVCpu
      *        The minimum and maximum amount of memory per vCPU for an instance type, in GiB.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -877,27 +947,38 @@ public class InstanceRequirements implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     * asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>.
+     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
+     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all
-     * C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance types, but
-     * not the M5n instance types.
+     * C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a
+     * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
      * 
-     * @return Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     *         asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>,
-     *         <code>r*</code>, <code>*3*</code>. </p>
+     * @return The instance types to exclude. You can use strings with one or more wild cards, represented by an
+     *         asterisk (<code>*</code>), to exclude an instance family, type, size, or generation. The following are
+     *         examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>,
+     *         <code>*3*</code>. </p>
      *         <p>
      *         For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which
-     *         includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a
-     *         instance types, but not the M5n instance types.
+     *         includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     *         exclude all the M5a instance types, but not the M5n instance types.
      *         </p>
+     *         <note>
+     *         <p>
+     *         If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: No excluded instance types
      */
@@ -911,28 +992,38 @@ public class InstanceRequirements implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     * asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>.
+     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
+     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all
-     * C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance types, but
-     * not the M5n instance types.
+     * C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a
+     * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
      * 
      * @param excludedInstanceTypes
-     *        Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     *        asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>,
-     *        <code>r*</code>, <code>*3*</code>. </p>
+     *        The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk
+     *        (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     *        <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>. </p>
      *        <p>
      *        For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which
-     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a
-     *        instance types, but not the M5n instance types.
+     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     *        exclude all the M5a instance types, but not the M5n instance types.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: No excluded instance types
      */
@@ -948,15 +1039,20 @@ public class InstanceRequirements implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     * asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>.
+     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
+     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all
-     * C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance types, but
-     * not the M5n instance types.
+     * C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a
+     * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
@@ -967,14 +1063,19 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * </p>
      * 
      * @param excludedInstanceTypes
-     *        Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     *        asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>,
-     *        <code>r*</code>, <code>*3*</code>. </p>
+     *        The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk
+     *        (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     *        <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>. </p>
      *        <p>
      *        For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which
-     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a
-     *        instance types, but not the M5n instance types.
+     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     *        exclude all the M5a instance types, but not the M5n instance types.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: No excluded instance types
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -992,28 +1093,38 @@ public class InstanceRequirements implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     * asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>, <code>r*</code>,
-     * <code>*3*</code>.
+     * The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk (
+     * <code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     * <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
      * </p>
      * <p>
      * For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which includes all
-     * C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a instance types, but
-     * not the M5n instance types.
+     * C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will exclude all the M5a
+     * instance types, but not the M5n instance types.
      * </p>
+     * <note>
+     * <p>
+     * If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     * </p>
+     * </note>
      * <p>
      * Default: No excluded instance types
      * </p>
      * 
      * @param excludedInstanceTypes
-     *        Lists which instance types to exclude. You can use strings with one or more wild cards, represented by an
-     *        asterisk (<code>*</code>). The following are examples: <code>c5*</code>, <code>m5a.*</code>,
-     *        <code>r*</code>, <code>*3*</code>. </p>
+     *        The instance types to exclude. You can use strings with one or more wild cards, represented by an asterisk
+     *        (<code>*</code>), to exclude an instance family, type, size, or generation. The following are examples:
+     *        <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>. </p>
      *        <p>
      *        For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance family, which
-     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, you are excluding all the M5a
-     *        instance types, but not the M5n instance types.
+     *        includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     *        exclude all the M5a instance types, but not the M5n instance types.
      *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: No excluded instance types
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1786,13 +1897,13 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum number of network interfaces for an instance type.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param networkInterfaceCount
      *        The minimum and maximum number of network interfaces for an instance type.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      */
 
     public void setNetworkInterfaceCount(NetworkInterfaceCountRequest networkInterfaceCount) {
@@ -1804,12 +1915,12 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum number of network interfaces for an instance type.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @return The minimum and maximum number of network interfaces for an instance type.</p>
      *         <p>
-     *         Default: No minimum or maximum
+     *         Default: No minimum or maximum limits
      */
 
     public NetworkInterfaceCountRequest getNetworkInterfaceCount() {
@@ -1821,13 +1932,13 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum number of network interfaces for an instance type.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param networkInterfaceCount
      *        The minimum and maximum number of network interfaces for an instance type.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2183,13 +2294,13 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total local storage size for an instance type, in GB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param totalLocalStorageGB
      *        The minimum and maximum total local storage size for an instance type, in GB.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      */
 
     public void setTotalLocalStorageGB(TotalLocalStorageGBRequest totalLocalStorageGB) {
@@ -2201,12 +2312,12 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total local storage size for an instance type, in GB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @return The minimum and maximum total local storage size for an instance type, in GB.</p>
      *         <p>
-     *         Default: No minimum or maximum
+     *         Default: No minimum or maximum limits
      */
 
     public TotalLocalStorageGBRequest getTotalLocalStorageGB() {
@@ -2218,13 +2329,13 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total local storage size for an instance type, in GB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param totalLocalStorageGB
      *        The minimum and maximum total local storage size for an instance type, in GB.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2240,7 +2351,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param baselineEbsBandwidthMbps
@@ -2248,7 +2359,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      *        EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      */
 
     public void setBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsRequest baselineEbsBandwidthMbps) {
@@ -2262,14 +2373,14 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @return The minimum and maximum baseline bandwidth performance for an instance type, in Mbps. For more
      *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      *         EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
-     *         Default: No minimum or maximum
+     *         Default: No minimum or maximum limits
      */
 
     public BaselineEbsBandwidthMbpsRequest getBaselineEbsBandwidthMbps() {
@@ -2283,7 +2394,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param baselineEbsBandwidthMbps
@@ -2291,7 +2402,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html">Amazon
      *        EBS–optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2605,7 +2716,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param acceleratorCount
@@ -2615,7 +2726,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
      *        </p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      */
 
     public void setAcceleratorCount(AcceleratorCountRequest acceleratorCount) {
@@ -2631,7 +2742,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @return The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services Inferentia chips) for
@@ -2640,7 +2751,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *         To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
      *         </p>
      *         <p>
-     *         Default: No minimum or maximum
+     *         Default: No minimum or maximum limits
      */
 
     public AcceleratorCountRequest getAcceleratorCount() {
@@ -2656,7 +2767,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param acceleratorCount
@@ -2666,7 +2777,7 @@ public class InstanceRequirements implements Serializable, Cloneable {
      *        To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
      *        </p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3523,13 +3634,13 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total memory size for the accelerators on an instance type, in MiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param acceleratorTotalMemoryMiB
      *        The minimum and maximum total memory size for the accelerators on an instance type, in MiB.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      */
 
     public void setAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBRequest acceleratorTotalMemoryMiB) {
@@ -3541,12 +3652,12 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total memory size for the accelerators on an instance type, in MiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @return The minimum and maximum total memory size for the accelerators on an instance type, in MiB.</p>
      *         <p>
-     *         Default: No minimum or maximum
+     *         Default: No minimum or maximum limits
      */
 
     public AcceleratorTotalMemoryMiBRequest getAcceleratorTotalMemoryMiB() {
@@ -3558,18 +3669,294 @@ public class InstanceRequirements implements Serializable, Cloneable {
      * The minimum and maximum total memory size for the accelerators on an instance type, in MiB.
      * </p>
      * <p>
-     * Default: No minimum or maximum
+     * Default: No minimum or maximum limits
      * </p>
      * 
      * @param acceleratorTotalMemoryMiB
      *        The minimum and maximum total memory size for the accelerators on an instance type, in MiB.</p>
      *        <p>
-     *        Default: No minimum or maximum
+     *        Default: No minimum or maximum limits
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceRequirements withAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBRequest acceleratorTotalMemoryMiB) {
         setAcceleratorTotalMemoryMiB(acceleratorTotalMemoryMiB);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     * 
+     * @param networkBandwidthGbps
+     *        The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+     *        <p>
+     *        Default: No minimum or maximum limits
+     */
+
+    public void setNetworkBandwidthGbps(NetworkBandwidthGbpsRequest networkBandwidthGbps) {
+        this.networkBandwidthGbps = networkBandwidthGbps;
+    }
+
+    /**
+     * <p>
+     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     * 
+     * @return The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+     *         <p>
+     *         Default: No minimum or maximum limits
+     */
+
+    public NetworkBandwidthGbpsRequest getNetworkBandwidthGbps() {
+        return this.networkBandwidthGbps;
+    }
+
+    /**
+     * <p>
+     * The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).
+     * </p>
+     * <p>
+     * Default: No minimum or maximum limits
+     * </p>
+     * 
+     * @param networkBandwidthGbps
+     *        The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
+     *        <p>
+     *        Default: No minimum or maximum limits
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRequirements withNetworkBandwidthGbps(NetworkBandwidthGbpsRequest networkBandwidthGbps) {
+        setNetworkBandwidthGbps(networkBandwidthGbps);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family,
+     * which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     * allow all the M5a instance types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * 
+     * @return The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *         if they match your specified attributes.</p>
+     *         <p>
+     *         You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *         instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *         <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *         </p>
+     *         <p>
+     *         For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     *         family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto
+     *         Scaling will allow all the M5a instance types, but not the M5n instance types.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Default: All instance types
+     */
+
+    public java.util.List<String> getAllowedInstanceTypes() {
+        if (allowedInstanceTypes == null) {
+            allowedInstanceTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return allowedInstanceTypes;
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family,
+     * which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     * allow all the M5a instance types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * 
+     * @param allowedInstanceTypes
+     *        The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *        if they match your specified attributes.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *        instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
+     *        <p>
+     *        For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     *        family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto
+     *        Scaling will allow all the M5a instance types, but not the M5n instance types.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: All instance types
+     */
+
+    public void setAllowedInstanceTypes(java.util.Collection<String> allowedInstanceTypes) {
+        if (allowedInstanceTypes == null) {
+            this.allowedInstanceTypes = null;
+            return;
+        }
+
+        this.allowedInstanceTypes = new com.amazonaws.internal.SdkInternalList<String>(allowedInstanceTypes);
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family,
+     * which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     * allow all the M5a instance types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAllowedInstanceTypes(java.util.Collection)} or {@link #withAllowedInstanceTypes(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param allowedInstanceTypes
+     *        The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *        if they match your specified attributes.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *        instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
+     *        <p>
+     *        For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     *        family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto
+     *        Scaling will allow all the M5a instance types, but not the M5n instance types.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: All instance types
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRequirements withAllowedInstanceTypes(String... allowedInstanceTypes) {
+        if (this.allowedInstanceTypes == null) {
+            setAllowedInstanceTypes(new com.amazonaws.internal.SdkInternalList<String>(allowedInstanceTypes.length));
+        }
+        for (String ele : allowedInstanceTypes) {
+            this.allowedInstanceTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instance types to apply your specified attributes against. All other instance types are ignored, even if they
+     * match your specified attributes.
+     * </p>
+     * <p>
+     * You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     * instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>,
+     * <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance family,
+     * which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto Scaling will
+     * allow all the M5a instance types, but not the M5n instance types.
+     * </p>
+     * <note>
+     * <p>
+     * If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     * </p>
+     * </note>
+     * <p>
+     * Default: All instance types
+     * </p>
+     * 
+     * @param allowedInstanceTypes
+     *        The instance types to apply your specified attributes against. All other instance types are ignored, even
+     *        if they match your specified attributes.</p>
+     *        <p>
+     *        You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to allow an
+     *        instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
+     *        <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+     *        </p>
+     *        <p>
+     *        For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the entire C5 instance
+     *        family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 Auto
+     *        Scaling will allow all the M5a instance types, but not the M5n instance types.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        Default: All instance types
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceRequirements withAllowedInstanceTypes(java.util.Collection<String> allowedInstanceTypes) {
+        setAllowedInstanceTypes(allowedInstanceTypes);
         return this;
     }
 
@@ -3626,7 +4013,11 @@ public class InstanceRequirements implements Serializable, Cloneable {
         if (getAcceleratorNames() != null)
             sb.append("AcceleratorNames: ").append(getAcceleratorNames()).append(",");
         if (getAcceleratorTotalMemoryMiB() != null)
-            sb.append("AcceleratorTotalMemoryMiB: ").append(getAcceleratorTotalMemoryMiB());
+            sb.append("AcceleratorTotalMemoryMiB: ").append(getAcceleratorTotalMemoryMiB()).append(",");
+        if (getNetworkBandwidthGbps() != null)
+            sb.append("NetworkBandwidthGbps: ").append(getNetworkBandwidthGbps()).append(",");
+        if (getAllowedInstanceTypes() != null)
+            sb.append("AllowedInstanceTypes: ").append(getAllowedInstanceTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -3727,6 +4118,14 @@ public class InstanceRequirements implements Serializable, Cloneable {
             return false;
         if (other.getAcceleratorTotalMemoryMiB() != null && other.getAcceleratorTotalMemoryMiB().equals(this.getAcceleratorTotalMemoryMiB()) == false)
             return false;
+        if (other.getNetworkBandwidthGbps() == null ^ this.getNetworkBandwidthGbps() == null)
+            return false;
+        if (other.getNetworkBandwidthGbps() != null && other.getNetworkBandwidthGbps().equals(this.getNetworkBandwidthGbps()) == false)
+            return false;
+        if (other.getAllowedInstanceTypes() == null ^ this.getAllowedInstanceTypes() == null)
+            return false;
+        if (other.getAllowedInstanceTypes() != null && other.getAllowedInstanceTypes().equals(this.getAllowedInstanceTypes()) == false)
+            return false;
         return true;
     }
 
@@ -3757,6 +4156,8 @@ public class InstanceRequirements implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAcceleratorManufacturers() == null) ? 0 : getAcceleratorManufacturers().hashCode());
         hashCode = prime * hashCode + ((getAcceleratorNames() == null) ? 0 : getAcceleratorNames().hashCode());
         hashCode = prime * hashCode + ((getAcceleratorTotalMemoryMiB() == null) ? 0 : getAcceleratorTotalMemoryMiB().hashCode());
+        hashCode = prime * hashCode + ((getNetworkBandwidthGbps() == null) ? 0 : getNetworkBandwidthGbps().hashCode());
+        hashCode = prime * hashCode + ((getAllowedInstanceTypes() == null) ? 0 : getAllowedInstanceTypes().hashCode());
         return hashCode;
     }
 

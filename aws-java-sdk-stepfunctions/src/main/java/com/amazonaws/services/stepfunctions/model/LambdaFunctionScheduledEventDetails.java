@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains details about a lambda function scheduled during an execution.
+ * Contains details about a Lambda function scheduled during an execution.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/LambdaFunctionScheduledEventDetails"
@@ -30,13 +30,13 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the scheduled lambda function.
+     * The Amazon Resource Name (ARN) of the scheduled Lambda function.
      * </p>
      */
     private String resource;
     /**
      * <p>
-     * The JSON data input to the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      */
@@ -49,18 +49,24 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
     private HistoryEventExecutionDataDetails inputDetails;
     /**
      * <p>
-     * The maximum allowed duration of the lambda function.
+     * The maximum allowed duration of the Lambda function.
      * </p>
      */
     private Long timeoutInSeconds;
+    /**
+     * <p>
+     * The credentials that Step Functions uses for the task.
+     * </p>
+     */
+    private TaskCredentials taskCredentials;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the scheduled lambda function.
+     * The Amazon Resource Name (ARN) of the scheduled Lambda function.
      * </p>
      * 
      * @param resource
-     *        The Amazon Resource Name (ARN) of the scheduled lambda function.
+     *        The Amazon Resource Name (ARN) of the scheduled Lambda function.
      */
 
     public void setResource(String resource) {
@@ -69,10 +75,10 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the scheduled lambda function.
+     * The Amazon Resource Name (ARN) of the scheduled Lambda function.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the scheduled lambda function.
+     * @return The Amazon Resource Name (ARN) of the scheduled Lambda function.
      */
 
     public String getResource() {
@@ -81,11 +87,11 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the scheduled lambda function.
+     * The Amazon Resource Name (ARN) of the scheduled Lambda function.
      * </p>
      * 
      * @param resource
-     *        The Amazon Resource Name (ARN) of the scheduled lambda function.
+     *        The Amazon Resource Name (ARN) of the scheduled Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,12 +102,12 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The JSON data input to the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The JSON data input to the lambda function. Length constraints apply to the payload size, and are
+     *        The JSON data input to the Lambda function. Length constraints apply to the payload size, and are
      *        expressed as bytes in UTF-8 encoding.
      */
 
@@ -111,11 +117,11 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The JSON data input to the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The JSON data input to the lambda function. Length constraints apply to the payload size, and are
+     * @return The JSON data input to the Lambda function. Length constraints apply to the payload size, and are
      *         expressed as bytes in UTF-8 encoding.
      */
 
@@ -125,12 +131,12 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The JSON data input to the lambda function. Length constraints apply to the payload size, and are expressed as
+     * The JSON data input to the Lambda function. Length constraints apply to the payload size, and are expressed as
      * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The JSON data input to the lambda function. Length constraints apply to the payload size, and are
+     *        The JSON data input to the Lambda function. Length constraints apply to the payload size, and are
      *        expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -182,11 +188,11 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The maximum allowed duration of the lambda function.
+     * The maximum allowed duration of the Lambda function.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        The maximum allowed duration of the lambda function.
+     *        The maximum allowed duration of the Lambda function.
      */
 
     public void setTimeoutInSeconds(Long timeoutInSeconds) {
@@ -195,10 +201,10 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The maximum allowed duration of the lambda function.
+     * The maximum allowed duration of the Lambda function.
      * </p>
      * 
-     * @return The maximum allowed duration of the lambda function.
+     * @return The maximum allowed duration of the Lambda function.
      */
 
     public Long getTimeoutInSeconds() {
@@ -207,16 +213,56 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
 
     /**
      * <p>
-     * The maximum allowed duration of the lambda function.
+     * The maximum allowed duration of the Lambda function.
      * </p>
      * 
      * @param timeoutInSeconds
-     *        The maximum allowed duration of the lambda function.
+     *        The maximum allowed duration of the Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LambdaFunctionScheduledEventDetails withTimeoutInSeconds(Long timeoutInSeconds) {
         setTimeoutInSeconds(timeoutInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The credentials that Step Functions uses for the task.
+     * </p>
+     * 
+     * @param taskCredentials
+     *        The credentials that Step Functions uses for the task.
+     */
+
+    public void setTaskCredentials(TaskCredentials taskCredentials) {
+        this.taskCredentials = taskCredentials;
+    }
+
+    /**
+     * <p>
+     * The credentials that Step Functions uses for the task.
+     * </p>
+     * 
+     * @return The credentials that Step Functions uses for the task.
+     */
+
+    public TaskCredentials getTaskCredentials() {
+        return this.taskCredentials;
+    }
+
+    /**
+     * <p>
+     * The credentials that Step Functions uses for the task.
+     * </p>
+     * 
+     * @param taskCredentials
+     *        The credentials that Step Functions uses for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LambdaFunctionScheduledEventDetails withTaskCredentials(TaskCredentials taskCredentials) {
+        setTaskCredentials(taskCredentials);
         return this;
     }
 
@@ -239,7 +285,9 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
         if (getInputDetails() != null)
             sb.append("InputDetails: ").append(getInputDetails()).append(",");
         if (getTimeoutInSeconds() != null)
-            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds());
+            sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds()).append(",");
+        if (getTaskCredentials() != null)
+            sb.append("TaskCredentials: ").append(getTaskCredentials());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +318,10 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
             return false;
         if (other.getTimeoutInSeconds() != null && other.getTimeoutInSeconds().equals(this.getTimeoutInSeconds()) == false)
             return false;
+        if (other.getTaskCredentials() == null ^ this.getTaskCredentials() == null)
+            return false;
+        if (other.getTaskCredentials() != null && other.getTaskCredentials().equals(this.getTaskCredentials()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +334,7 @@ public class LambdaFunctionScheduledEventDetails implements Serializable, Clonea
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
         hashCode = prime * hashCode + ((getInputDetails() == null) ? 0 : getInputDetails().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getTaskCredentials() == null) ? 0 : getTaskCredentials().hashCode());
         return hashCode;
     }
 

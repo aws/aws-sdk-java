@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
      * </p>
      * </li>
      * </ul>
@@ -127,6 +132,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -150,6 +160,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon MQ</b> - The ARN of the broker.
      *        </p>
      *        </li>
      */
@@ -183,6 +198,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of the event source.</p>
@@ -205,6 +225,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *         <li>
      *         <p>
      *         <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon MQ</b> - The ARN of the broker.
      *         </p>
      *         </li>
      */
@@ -238,6 +263,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -261,6 +291,11 @@ public class ListEventSourceMappingsRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon MQ</b> - The ARN of the broker.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

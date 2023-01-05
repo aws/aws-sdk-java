@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,62 +30,22 @@ public class PropertyFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The operator associated with this property filter.
-     * </p>
-     */
-    private String operator;
-    /**
-     * <p>
      * The property name associated with this property filter.
      * </p>
      */
     private String propertyName;
     /**
      * <p>
+     * The operator associated with this property filter.
+     * </p>
+     */
+    private String operator;
+    /**
+     * <p>
      * The value associated with this property filter.
      * </p>
      */
     private DataValue value;
-
-    /**
-     * <p>
-     * The operator associated with this property filter.
-     * </p>
-     * 
-     * @param operator
-     *        The operator associated with this property filter.
-     */
-
-    public void setOperator(String operator) {
-        this.operator = operator;
-    }
-
-    /**
-     * <p>
-     * The operator associated with this property filter.
-     * </p>
-     * 
-     * @return The operator associated with this property filter.
-     */
-
-    public String getOperator() {
-        return this.operator;
-    }
-
-    /**
-     * <p>
-     * The operator associated with this property filter.
-     * </p>
-     * 
-     * @param operator
-     *        The operator associated with this property filter.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PropertyFilter withOperator(String operator) {
-        setOperator(operator);
-        return this;
-    }
 
     /**
      * <p>
@@ -124,6 +84,46 @@ public class PropertyFilter implements Serializable, Cloneable, StructuredPojo {
 
     public PropertyFilter withPropertyName(String propertyName) {
         setPropertyName(propertyName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The operator associated with this property filter.
+     * </p>
+     * 
+     * @param operator
+     *        The operator associated with this property filter.
+     */
+
+    public void setOperator(String operator) {
+        this.operator = operator;
+    }
+
+    /**
+     * <p>
+     * The operator associated with this property filter.
+     * </p>
+     * 
+     * @return The operator associated with this property filter.
+     */
+
+    public String getOperator() {
+        return this.operator;
+    }
+
+    /**
+     * <p>
+     * The operator associated with this property filter.
+     * </p>
+     * 
+     * @param operator
+     *        The operator associated with this property filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PropertyFilter withOperator(String operator) {
+        setOperator(operator);
         return this;
     }
 
@@ -179,10 +179,10 @@ public class PropertyFilter implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getOperator() != null)
-            sb.append("Operator: ").append(getOperator()).append(",");
         if (getPropertyName() != null)
             sb.append("PropertyName: ").append(getPropertyName()).append(",");
+        if (getOperator() != null)
+            sb.append("Operator: ").append(getOperator()).append(",");
         if (getValue() != null)
             sb.append("Value: ").append(getValue());
         sb.append("}");
@@ -199,13 +199,13 @@ public class PropertyFilter implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PropertyFilter == false)
             return false;
         PropertyFilter other = (PropertyFilter) obj;
-        if (other.getOperator() == null ^ this.getOperator() == null)
-            return false;
-        if (other.getOperator() != null && other.getOperator().equals(this.getOperator()) == false)
-            return false;
         if (other.getPropertyName() == null ^ this.getPropertyName() == null)
             return false;
         if (other.getPropertyName() != null && other.getPropertyName().equals(this.getPropertyName()) == false)
+            return false;
+        if (other.getOperator() == null ^ this.getOperator() == null)
+            return false;
+        if (other.getOperator() != null && other.getOperator().equals(this.getOperator()) == false)
             return false;
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
@@ -219,8 +219,8 @@ public class PropertyFilter implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getOperator() == null) ? 0 : getOperator().hashCode());
         hashCode = prime * hashCode + ((getPropertyName() == null) ? 0 : getPropertyName().hashCode());
+        hashCode = prime * hashCode + ((getOperator() == null) ? 0 : getOperator().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
         return hashCode;
     }

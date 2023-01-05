@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,21 @@ public class OptionGroupStaxUnmarshaller implements Unmarshaller<OptionGroup, St
 
                 if (context.testExpression("OptionGroupArn", targetDepth)) {
                     optionGroup.setOptionGroupArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SourceOptionGroup", targetDepth)) {
+                    optionGroup.setSourceOptionGroup(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("SourceAccountId", targetDepth)) {
+                    optionGroup.setSourceAccountId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CopyTimestamp", targetDepth)) {
+                    optionGroup.setCopyTimestamp(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

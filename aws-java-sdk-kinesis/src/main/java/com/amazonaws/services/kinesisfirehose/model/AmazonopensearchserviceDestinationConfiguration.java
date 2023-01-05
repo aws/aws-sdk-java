@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes the configuration of a destination in Amazon OpenSearch Service
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonopensearchserviceDestinationConfiguration"
@@ -26,22 +29,72 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonopensearchserviceDestinationConfiguration implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     */
     private String roleARN;
-
+    /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for
+     * DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming
+     * the role specified in RoleARN.
+     * </p>
+     */
     private String domainARN;
-
+    /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     */
     private String clusterEndpoint;
-
+    /**
+     * <p>
+     * The ElasticsearAmazon OpenSearch Service index name.
+     * </p>
+     */
     private String indexName;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during run time.
+     * </p>
+     */
     private String typeName;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     */
     private String indexRotationPeriod;
-
+    /**
+     * <p>
+     * The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are
+     * used.
+     * </p>
+     */
     private AmazonopensearchserviceBufferingHints bufferingHints;
-
+    /**
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     */
     private AmazonopensearchserviceRetryOptions retryOptions;
-
+    /**
+     * <p>
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
+     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     * appended to the prefix.
+     * </p>
+     */
     private String s3BackupMode;
 
     private S3DestinationConfiguration s3Configuration;
@@ -53,7 +106,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     private VpcConfiguration vpcConfiguration;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     * 
      * @param roleARN
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *        Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public void setRoleARN(String roleARN) {
@@ -61,7 +121,13 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *         Amazon OpenSearch Service Configuration API and for indexing documents.
      */
 
     public String getRoleARN() {
@@ -69,7 +135,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the Amazon
+     * OpenSearch Service Configuration API and for indexing documents.
+     * </p>
+     * 
      * @param roleARN
+     *        The Amazon Resource Name (ARN) of the IAM role to be assumed by Kinesis Data Firehose for calling the
+     *        Amazon OpenSearch Service Configuration API and for indexing documents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +152,16 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for
+     * DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming
+     * the role specified in RoleARN.
+     * </p>
+     * 
      * @param domainARN
+     *        The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for
+     *        DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after
+     *        assuming the role specified in RoleARN.
      */
 
     public void setDomainARN(String domainARN) {
@@ -87,7 +169,15 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for
+     * DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming
+     * the role specified in RoleARN.
+     * </p>
+     * 
+     * @return The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for
+     *         DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after
+     *         assuming the role specified in RoleARN.
      */
 
     public String getDomainARN() {
@@ -95,7 +185,16 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for
+     * DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after assuming
+     * the role specified in RoleARN.
+     * </p>
+     * 
      * @param domainARN
+     *        The ARN of the Amazon OpenSearch Service domain. The IAM role must have permissions for
+     *        DescribeElasticsearchDomain, DescribeElasticsearchDomains, and DescribeElasticsearchDomainConfig after
+     *        assuming the role specified in RoleARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +204,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     * 
      * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the
+     *        DomainARN field.
      */
 
     public void setClusterEndpoint(String clusterEndpoint) {
@@ -113,7 +219,13 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     * 
+     * @return The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the
+     *         DomainARN field.
      */
 
     public String getClusterEndpoint() {
@@ -121,7 +233,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the DomainARN
+     * field.
+     * </p>
+     * 
      * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Specify either this ClusterEndpoint or the
+     *        DomainARN field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +250,12 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The ElasticsearAmazon OpenSearch Service index name.
+     * </p>
+     * 
      * @param indexName
+     *        The ElasticsearAmazon OpenSearch Service index name.
      */
 
     public void setIndexName(String indexName) {
@@ -139,7 +263,11 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The ElasticsearAmazon OpenSearch Service index name.
+     * </p>
+     * 
+     * @return The ElasticsearAmazon OpenSearch Service index name.
      */
 
     public String getIndexName() {
@@ -147,7 +275,12 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The ElasticsearAmazon OpenSearch Service index name.
+     * </p>
+     * 
      * @param indexName
+     *        The ElasticsearAmazon OpenSearch Service index name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +290,16 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during run time.
+     * </p>
+     * 
      * @param typeName
+     *        The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
+     *        you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
+     *        returns an error during run time.
      */
 
     public void setTypeName(String typeName) {
@@ -165,7 +307,15 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during run time.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
+     *         you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
+     *         returns an error during run time.
      */
 
     public String getTypeName() {
@@ -173,7 +323,16 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If you try
+     * to specify a new type for an existing index that already has another type, Kinesis Data Firehose returns an error
+     * during run time.
+     * </p>
+     * 
      * @param typeName
+     *        The Amazon OpenSearch Service type name. For Elasticsearch 6.x, there can be only one type per index. If
+     *        you try to specify a new type for an existing index that already has another type, Kinesis Data Firehose
+     *        returns an error during run time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,7 +342,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName
+     *        to facilitate the expiration of old data.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
 
@@ -192,7 +358,13 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName
+     *         to facilitate the expiration of old data.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
 
@@ -201,7 +373,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName
+     *        to facilitate the expiration of old data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
@@ -212,7 +391,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName to
+     * facilitate the expiration of old data.
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period. Index rotation appends a timestamp to the IndexName
+     *        to facilitate the expiration of old data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
@@ -223,7 +409,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are
+     * used.
+     * </p>
+     * 
      * @param bufferingHints
+     *        The buffering options. If no value is specified, the default values for
+     *        AmazonopensearchserviceBufferingHints are used.
      */
 
     public void setBufferingHints(AmazonopensearchserviceBufferingHints bufferingHints) {
@@ -231,7 +424,13 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are
+     * used.
+     * </p>
+     * 
+     * @return The buffering options. If no value is specified, the default values for
+     *         AmazonopensearchserviceBufferingHints are used.
      */
 
     public AmazonopensearchserviceBufferingHints getBufferingHints() {
@@ -239,7 +438,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The buffering options. If no value is specified, the default values for AmazonopensearchserviceBufferingHints are
+     * used.
+     * </p>
+     * 
      * @param bufferingHints
+     *        The buffering options. If no value is specified, the default values for
+     *        AmazonopensearchserviceBufferingHints are used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,7 +455,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
      * @param retryOptions
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
+     *        Service. The default value is 300 (5 minutes).
      */
 
     public void setRetryOptions(AmazonopensearchserviceRetryOptions retryOptions) {
@@ -257,7 +470,13 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
+     * @return The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
+     *         Service. The default value is 300 (5 minutes).
      */
 
     public AmazonopensearchserviceRetryOptions getRetryOptions() {
@@ -265,7 +484,14 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch Service. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
      * @param retryOptions
+     *        The retry behavior in case Kinesis Data Firehose is unable to deliver documents to Amazon OpenSearch
+     *        Service. The default value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,7 +501,20 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
+     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     * appended to the prefix.
+     * </p>
+     * 
      * @param s3BackupMode
+     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
+     *        Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
+     *        Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     *        AmazonOpenSearchService-failed/ appended to the prefix.
      * @see AmazonopensearchserviceS3BackupMode
      */
 
@@ -284,7 +523,19 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
-     * @return
+     * <p>
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
+     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     * appended to the prefix.
+     * </p>
+     * 
+     * @return Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
+     *         Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination,
+     *         with AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
+     *         Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     *         AmazonOpenSearchService-failed/ appended to the prefix.
      * @see AmazonopensearchserviceS3BackupMode
      */
 
@@ -293,7 +544,20 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
+     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     * appended to the prefix.
+     * </p>
+     * 
      * @param s3BackupMode
+     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
+     *        Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
+     *        Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     *        AmazonOpenSearchService-failed/ appended to the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceS3BackupMode
      */
@@ -304,7 +568,20 @@ public class AmazonopensearchserviceDestinationConfiguration implements Serializ
     }
 
     /**
+     * <p>
+     * Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis Data
+     * Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     * AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data Firehose
+     * delivers all incoming records to Amazon S3, and also writes failed documents with AmazonOpenSearchService-failed/
+     * appended to the prefix.
+     * </p>
+     * 
      * @param s3BackupMode
+     *        Defines how documents should be delivered to Amazon S3. When it is set to FailedDocumentsOnly, Kinesis
+     *        Data Firehose writes any documents that could not be indexed to the configured Amazon S3 destination, with
+     *        AmazonOpenSearchService-failed/ appended to the key prefix. When set to AllDocuments, Kinesis Data
+     *        Firehose delivers all incoming records to Amazon S3, and also writes failed documents with
+     *        AmazonOpenSearchService-failed/ appended to the prefix.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceS3BackupMode
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,17 @@ public class AppMonitor implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String created;
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     */
+    private CustomEvents customEvents;
     /**
      * <p>
      * A structure that contains information about whether this app monitor stores a copy of the telemetry data that RUM
@@ -162,6 +173,73 @@ public class AppMonitor implements Serializable, Cloneable, StructuredPojo {
 
     public AppMonitor withCreated(String created) {
         setCreated(created);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @param customEvents
+     *        Specifies whether this app monitor allows the web client to define and send custom events.</p>
+     *        <p>
+     *        For more information about custom events, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *        >Send custom events</a>.
+     */
+
+    public void setCustomEvents(CustomEvents customEvents) {
+        this.customEvents = customEvents;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @return Specifies whether this app monitor allows the web client to define and send custom events.</p>
+     *         <p>
+     *         For more information about custom events, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *         >Send custom events</a>.
+     */
+
+    public CustomEvents getCustomEvents() {
+        return this.customEvents;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @param customEvents
+     *        Specifies whether this app monitor allows the web client to define and send custom events.</p>
+     *        <p>
+     *        For more information about custom events, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *        >Send custom events</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppMonitor withCustomEvents(CustomEvents customEvents) {
+        setCustomEvents(customEvents);
         return this;
     }
 
@@ -514,6 +592,8 @@ public class AppMonitor implements Serializable, Cloneable, StructuredPojo {
             sb.append("AppMonitorConfiguration: ").append(getAppMonitorConfiguration()).append(",");
         if (getCreated() != null)
             sb.append("Created: ").append(getCreated()).append(",");
+        if (getCustomEvents() != null)
+            sb.append("CustomEvents: ").append(getCustomEvents()).append(",");
         if (getDataStorage() != null)
             sb.append("DataStorage: ").append(getDataStorage()).append(",");
         if (getDomain() != null)
@@ -549,6 +629,10 @@ public class AppMonitor implements Serializable, Cloneable, StructuredPojo {
         if (other.getCreated() == null ^ this.getCreated() == null)
             return false;
         if (other.getCreated() != null && other.getCreated().equals(this.getCreated()) == false)
+            return false;
+        if (other.getCustomEvents() == null ^ this.getCustomEvents() == null)
+            return false;
+        if (other.getCustomEvents() != null && other.getCustomEvents().equals(this.getCustomEvents()) == false)
             return false;
         if (other.getDataStorage() == null ^ this.getDataStorage() == null)
             return false;
@@ -588,6 +672,7 @@ public class AppMonitor implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAppMonitorConfiguration() == null) ? 0 : getAppMonitorConfiguration().hashCode());
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
+        hashCode = prime * hashCode + ((getCustomEvents() == null) ? 0 : getCustomEvents().hashCode());
         hashCode = prime * hashCode + ((getDataStorage() == null) ? 0 : getDataStorage().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());

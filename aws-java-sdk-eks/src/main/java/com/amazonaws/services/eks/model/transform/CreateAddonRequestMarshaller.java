@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,8 @@ public class CreateAddonRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> CONFIGURATIONVALUES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configurationValues").build();
 
     private static final CreateAddonRequestMarshaller instance = new CreateAddonRequestMarshaller();
 
@@ -70,6 +72,7 @@ public class CreateAddonRequestMarshaller {
             protocolMarshaller.marshall(createAddonRequest.getResolveConflicts(), RESOLVECONFLICTS_BINDING);
             protocolMarshaller.marshall(createAddonRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createAddonRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createAddonRequest.getConfigurationValues(), CONFIGURATIONVALUES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

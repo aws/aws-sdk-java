@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,13 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private String connectivityType;
+    /**
+     * <p>
+     * The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address
+     * will be automatically assigned.
+     * </p>
+     */
+    private String privateIpAddress;
 
     /**
      * <p>
@@ -366,6 +373,52 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address
+     * will be automatically assigned.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4
+     *        address will be automatically assigned.
+     */
+
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address
+     * will be automatically assigned.
+     * </p>
+     * 
+     * @return The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4
+     *         address will be automatically assigned.
+     */
+
+    public String getPrivateIpAddress() {
+        return this.privateIpAddress;
+    }
+
+    /**
+     * <p>
+     * The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4 address
+     * will be automatically assigned.
+     * </p>
+     * 
+     * @param privateIpAddress
+     *        The private IPv4 address to assign to the NAT gateway. If you don't provide an address, a private IPv4
+     *        address will be automatically assigned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNatGatewayRequest withPrivateIpAddress(String privateIpAddress) {
+        setPrivateIpAddress(privateIpAddress);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -397,7 +450,9 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getConnectivityType() != null)
-            sb.append("ConnectivityType: ").append(getConnectivityType());
+            sb.append("ConnectivityType: ").append(getConnectivityType()).append(",");
+        if (getPrivateIpAddress() != null)
+            sb.append("PrivateIpAddress: ").append(getPrivateIpAddress());
         sb.append("}");
         return sb.toString();
     }
@@ -432,6 +487,10 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getConnectivityType() != null && other.getConnectivityType().equals(this.getConnectivityType()) == false)
             return false;
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null)
+            return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false)
+            return false;
         return true;
     }
 
@@ -445,6 +504,7 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getConnectivityType() == null) ? 0 : getConnectivityType().hashCode());
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -127,6 +127,10 @@ public class CodeGenConfigurationNodeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OracleSQLCatalogTarget").build();
     private static final MarshallingInfo<StructuredPojo> POSTGRESQLCATALOGTARGET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PostgreSQLCatalogTarget").build();
+    private static final MarshallingInfo<StructuredPojo> DYNAMICTRANSFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DynamicTransform").build();
+    private static final MarshallingInfo<StructuredPojo> EVALUATEDATAQUALITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluateDataQuality").build();
 
     private static final CodeGenConfigurationNodeMarshaller instance = new CodeGenConfigurationNodeMarshaller();
 
@@ -194,6 +198,8 @@ public class CodeGenConfigurationNodeMarshaller {
             protocolMarshaller.marshall(codeGenConfigurationNode.getMySQLCatalogTarget(), MYSQLCATALOGTARGET_BINDING);
             protocolMarshaller.marshall(codeGenConfigurationNode.getOracleSQLCatalogTarget(), ORACLESQLCATALOGTARGET_BINDING);
             protocolMarshaller.marshall(codeGenConfigurationNode.getPostgreSQLCatalogTarget(), POSTGRESQLCATALOGTARGET_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getDynamicTransform(), DYNAMICTRANSFORM_BINDING);
+            protocolMarshaller.marshall(codeGenConfigurationNode.getEvaluateDataQuality(), EVALUATEDATAQUALITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>DescribeDomain</a> </code> operation.
+ * Container for the parameters to the <code>DescribeDomain</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class DescribeDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the domain for which you want information.
+     * The name of the domain that you want information about.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * The name of the domain for which you want information.
+     * The name of the domain that you want information about.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain for which you want information.
+     *        The name of the domain that you want information about.
      */
 
     public void setDomainName(String domainName) {
@@ -47,10 +47,10 @@ public class DescribeDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the domain for which you want information.
+     * The name of the domain that you want information about.
      * </p>
      * 
-     * @return The name of the domain for which you want information.
+     * @return The name of the domain that you want information about.
      */
 
     public String getDomainName() {
@@ -59,11 +59,11 @@ public class DescribeDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the domain for which you want information.
+     * The name of the domain that you want information about.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain for which you want information.
+     *        The name of the domain that you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

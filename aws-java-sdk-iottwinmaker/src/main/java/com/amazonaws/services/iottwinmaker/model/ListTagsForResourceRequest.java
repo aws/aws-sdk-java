@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,16 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results to display.
+     * The ARN of the resource.
+     * </p>
+     */
+    private String resourceARN;
+    /**
+     * <p>
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      */
     private Integer maxResults;
@@ -37,20 +46,59 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String nextToken;
+
     /**
      * <p>
      * The ARN of the resource.
      * </p>
+     * 
+     * @param resourceARN
+     *        The ARN of the resource.
      */
-    private String resourceARN;
+
+    public void setResourceARN(String resourceARN) {
+        this.resourceARN = resourceARN;
+    }
 
     /**
      * <p>
-     * The maximum number of results to display.
+     * The ARN of the resource.
+     * </p>
+     * 
+     * @return The ARN of the resource.
+     */
+
+    public String getResourceARN() {
+        return this.resourceARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the resource.
+     * </p>
+     * 
+     * @param resourceARN
+     *        The ARN of the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListTagsForResourceRequest withResourceARN(String resourceARN) {
+        setResourceARN(resourceARN);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to display.
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -59,10 +107,15 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results to display.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
-     * @return The maximum number of results to display.
+     * @return The maximum number of results to return at one time. The default is 25.</p>
+     *         <p>
+     *         Valid Range: Minimum value of 1. Maximum value of 250.
      */
 
     public Integer getMaxResults() {
@@ -71,11 +124,16 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of results to display.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to display.
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,46 +183,6 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * <p>
-     * The ARN of the resource.
-     * </p>
-     * 
-     * @param resourceARN
-     *        The ARN of the resource.
-     */
-
-    public void setResourceARN(String resourceARN) {
-        this.resourceARN = resourceARN;
-    }
-
-    /**
-     * <p>
-     * The ARN of the resource.
-     * </p>
-     * 
-     * @return The ARN of the resource.
-     */
-
-    public String getResourceARN() {
-        return this.resourceARN;
-    }
-
-    /**
-     * <p>
-     * The ARN of the resource.
-     * </p>
-     * 
-     * @param resourceARN
-     *        The ARN of the resource.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListTagsForResourceRequest withResourceARN(String resourceARN) {
-        setResourceARN(resourceARN);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,12 +194,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getResourceARN() != null)
+            sb.append("ResourceARN: ").append(getResourceARN()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getResourceARN() != null)
-            sb.append("ResourceARN: ").append(getResourceARN());
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +214,10 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof ListTagsForResourceRequest == false)
             return false;
         ListTagsForResourceRequest other = (ListTagsForResourceRequest) obj;
+        if (other.getResourceARN() == null ^ this.getResourceARN() == null)
+            return false;
+        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -203,10 +225,6 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
-        if (other.getResourceARN() == null ^ this.getResourceARN() == null)
-            return false;
-        if (other.getResourceARN() != null && other.getResourceARN().equals(this.getResourceARN()) == false)
             return false;
         return true;
     }
@@ -216,9 +234,9 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
-        hashCode = prime * hashCode + ((getResourceARN() == null) ? 0 : getResourceARN().hashCode());
         return hashCode;
     }
 

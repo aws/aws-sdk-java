@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,16 +28,16 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DataTypeMarshaller {
 
-    private static final MarshallingInfo<List> ALLOWEDVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("allowedValues").build();
-    private static final MarshallingInfo<StructuredPojo> NESTEDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nestedType").build();
-    private static final MarshallingInfo<StructuredPojo> RELATIONSHIP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationship").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
+    private static final MarshallingInfo<StructuredPojo> NESTEDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nestedType").build();
+    private static final MarshallingInfo<List> ALLOWEDVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("allowedValues").build();
     private static final MarshallingInfo<String> UNITOFMEASURE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("unitOfMeasure").build();
+    private static final MarshallingInfo<StructuredPojo> RELATIONSHIP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("relationship").build();
 
     private static final DataTypeMarshaller instance = new DataTypeMarshaller();
 
@@ -55,11 +55,11 @@ public class DataTypeMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(dataType.getAllowedValues(), ALLOWEDVALUES_BINDING);
-            protocolMarshaller.marshall(dataType.getNestedType(), NESTEDTYPE_BINDING);
-            protocolMarshaller.marshall(dataType.getRelationship(), RELATIONSHIP_BINDING);
             protocolMarshaller.marshall(dataType.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(dataType.getNestedType(), NESTEDTYPE_BINDING);
+            protocolMarshaller.marshall(dataType.getAllowedValues(), ALLOWEDVALUES_BINDING);
             protocolMarshaller.marshall(dataType.getUnitOfMeasure(), UNITOFMEASURE_BINDING);
+            protocolMarshaller.marshall(dataType.getRelationship(), RELATIONSHIP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

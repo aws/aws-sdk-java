@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The advanced security configuration: whether advanced security is enabled, whether the internal database option is
- * enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled).
+ * Options for enabling and configuring fine-grained access control. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html">Fine-grained access control in
+ * Amazon OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,43 +29,45 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True to enable fine-grained access control.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * True if the internal user database is enabled.
+     * True to enable the internal user database.
      * </p>
      */
     private Boolean internalUserDatabaseEnabled;
     /**
      * <p>
-     * Credentials for the master user: username and password, ARN, or both.
+     * Container for information about the master user.
      * </p>
      */
     private MasterUserOptions masterUserOptions;
     /**
      * <p>
-     * The SAML application configuration for the domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      */
     private SAMLOptionsInput sAMLOptions;
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True to enable a 30-day migration period during which administrators can create role mappings. Only necessary
+     * when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      */
     private Boolean anonymousAuthEnabled;
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True to enable fine-grained access control.
      * </p>
      * 
      * @param enabled
-     *        True if advanced security is enabled.
+     *        True to enable fine-grained access control.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -73,10 +76,10 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True to enable fine-grained access control.
      * </p>
      * 
-     * @return True if advanced security is enabled.
+     * @return True to enable fine-grained access control.
      */
 
     public Boolean getEnabled() {
@@ -85,11 +88,11 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True to enable fine-grained access control.
      * </p>
      * 
      * @param enabled
-     *        True if advanced security is enabled.
+     *        True to enable fine-grained access control.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,10 +103,10 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if advanced security is enabled.
+     * True to enable fine-grained access control.
      * </p>
      * 
-     * @return True if advanced security is enabled.
+     * @return True to enable fine-grained access control.
      */
 
     public Boolean isEnabled() {
@@ -112,11 +115,11 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if the internal user database is enabled.
+     * True to enable the internal user database.
      * </p>
      * 
      * @param internalUserDatabaseEnabled
-     *        True if the internal user database is enabled.
+     *        True to enable the internal user database.
      */
 
     public void setInternalUserDatabaseEnabled(Boolean internalUserDatabaseEnabled) {
@@ -125,10 +128,10 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if the internal user database is enabled.
+     * True to enable the internal user database.
      * </p>
      * 
-     * @return True if the internal user database is enabled.
+     * @return True to enable the internal user database.
      */
 
     public Boolean getInternalUserDatabaseEnabled() {
@@ -137,11 +140,11 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if the internal user database is enabled.
+     * True to enable the internal user database.
      * </p>
      * 
      * @param internalUserDatabaseEnabled
-     *        True if the internal user database is enabled.
+     *        True to enable the internal user database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,10 +155,10 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if the internal user database is enabled.
+     * True to enable the internal user database.
      * </p>
      * 
-     * @return True if the internal user database is enabled.
+     * @return True to enable the internal user database.
      */
 
     public Boolean isInternalUserDatabaseEnabled() {
@@ -164,11 +167,11 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Credentials for the master user: username and password, ARN, or both.
+     * Container for information about the master user.
      * </p>
      * 
      * @param masterUserOptions
-     *        Credentials for the master user: username and password, ARN, or both.
+     *        Container for information about the master user.
      */
 
     public void setMasterUserOptions(MasterUserOptions masterUserOptions) {
@@ -177,10 +180,10 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Credentials for the master user: username and password, ARN, or both.
+     * Container for information about the master user.
      * </p>
      * 
-     * @return Credentials for the master user: username and password, ARN, or both.
+     * @return Container for information about the master user.
      */
 
     public MasterUserOptions getMasterUserOptions() {
@@ -189,11 +192,11 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * Credentials for the master user: username and password, ARN, or both.
+     * Container for information about the master user.
      * </p>
      * 
      * @param masterUserOptions
-     *        Credentials for the master user: username and password, ARN, or both.
+     *        Container for information about the master user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +207,11 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The SAML application configuration for the domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      * 
      * @param sAMLOptions
-     *        The SAML application configuration for the domain.
+     *        Container for information about the SAML configuration for OpenSearch Dashboards.
      */
 
     public void setSAMLOptions(SAMLOptionsInput sAMLOptions) {
@@ -217,10 +220,10 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The SAML application configuration for the domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      * 
-     * @return The SAML application configuration for the domain.
+     * @return Container for information about the SAML configuration for OpenSearch Dashboards.
      */
 
     public SAMLOptionsInput getSAMLOptions() {
@@ -229,11 +232,11 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The SAML application configuration for the domain.
+     * Container for information about the SAML configuration for OpenSearch Dashboards.
      * </p>
      * 
      * @param sAMLOptions
-     *        The SAML application configuration for the domain.
+     *        Container for information about the SAML configuration for OpenSearch Dashboards.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,13 +247,17 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True to enable a 30-day migration period during which administrators can create role mappings. Only necessary
+     * when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
      * @param anonymousAuthEnabled
-     *        True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *        existing domains.
+     *        True to enable a 30-day migration period during which administrators can create role mappings. Only
+     *        necessary when <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *        >enabling fine-grained access control on an existing domain</a>.
      */
 
     public void setAnonymousAuthEnabled(Boolean anonymousAuthEnabled) {
@@ -259,12 +266,16 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True to enable a 30-day migration period during which administrators can create role mappings. Only necessary
+     * when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
-     * @return True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *         existing domains.
+     * @return True to enable a 30-day migration period during which administrators can create role mappings. Only
+     *         necessary when <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *         >enabling fine-grained access control on an existing domain</a>.
      */
 
     public Boolean getAnonymousAuthEnabled() {
@@ -273,13 +284,17 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True to enable a 30-day migration period during which administrators can create role mappings. Only necessary
+     * when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
      * @param anonymousAuthEnabled
-     *        True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *        existing domains.
+     *        True to enable a 30-day migration period during which administrators can create role mappings. Only
+     *        necessary when <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *        >enabling fine-grained access control on an existing domain</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,12 +305,16 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     * existing domains.
+     * True to enable a 30-day migration period during which administrators can create role mappings. Only necessary
+     * when <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     * >enabling fine-grained access control on an existing domain</a>.
      * </p>
      * 
-     * @return True if Anonymous auth is enabled. Anonymous auth can be enabled only when AdvancedSecurity is enabled on
-     *         existing domains.
+     * @return True to enable a 30-day migration period during which administrators can create role mappings. Only
+     *         necessary when <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/fgac.html#fgac-enabling-existing"
+     *         >enabling fine-grained access control on an existing domain</a>.
      */
 
     public Boolean isAnonymousAuthEnabled() {

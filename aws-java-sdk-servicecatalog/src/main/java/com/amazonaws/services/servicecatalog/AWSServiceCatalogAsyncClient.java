@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,9 +30,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * representing the asynchronous operation; overloads which accept an {@code AsyncHandler} can be used to receive
  * notification when an asynchronous operation completes.
  * <p>
- * <fullname>AWS Service Catalog</fullname>
+ * <fullname>Service Catalog</fullname>
  * <p>
- * <a href="https://aws.amazon.com/servicecatalog/">Service Catalog</a> enables organizations to create and manage
+ * <a href="http://aws.amazon.com/servicecatalog">Service Catalog</a> enables organizations to create and manage
  * catalogs of IT services that are approved for Amazon Web Services. To get the most out of this documentation, you
  * should be familiar with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">Service Catalog

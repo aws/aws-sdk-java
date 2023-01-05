@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -157,7 +157,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String endpointType;
     /**
      * <p>
-     * The RSA, ECDSA, or ED25519 private key to use for your server.
+     * The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in
+     * case you want to rotate keys, or have a set of active keys that use different algorithms.
      * </p>
      * <p>
      * Use the following command to generate an RSA 2048 bit key with no passphrase:
@@ -195,7 +196,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+     * >Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
      * </p>
      */
     private String hostKey;
@@ -314,6 +315,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
      * workflow.
+     * </p>
+     * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
      * </p>
      * <p>
      * To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the
@@ -1177,7 +1183,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The RSA, ECDSA, or ED25519 private key to use for your server.
+     * The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in
+     * case you want to rotate keys, or have a set of active keys that use different algorithms.
      * </p>
      * <p>
      * Use the following command to generate an RSA 2048 bit key with no passphrase:
@@ -1215,11 +1222,12 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+     * >Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
      * </p>
      * 
      * @param hostKey
-     *        The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+     *        The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host
+     *        keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
      *        <p>
      *        Use the following command to generate an RSA 2048 bit key with no passphrase:
      *        </p>
@@ -1257,7 +1265,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *        >Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+     *        >Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
      */
 
     public void setHostKey(String hostKey) {
@@ -1266,7 +1274,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The RSA, ECDSA, or ED25519 private key to use for your server.
+     * The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in
+     * case you want to rotate keys, or have a set of active keys that use different algorithms.
      * </p>
      * <p>
      * Use the following command to generate an RSA 2048 bit key with no passphrase:
@@ -1304,10 +1313,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+     * >Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
      * </p>
      * 
-     * @return The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+     * @return The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host
+     *         keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
      *         <p>
      *         Use the following command to generate an RSA 2048 bit key with no passphrase:
      *         </p>
@@ -1345,7 +1355,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *         >Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+     *         >Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
      */
 
     public String getHostKey() {
@@ -1354,7 +1364,8 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The RSA, ECDSA, or ED25519 private key to use for your server.
+     * The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host keys, in
+     * case you want to rotate keys, or have a set of active keys that use different algorithms.
      * </p>
      * <p>
      * Use the following command to generate an RSA 2048 bit key with no passphrase:
@@ -1392,11 +1403,12 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     * >Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+     * >Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
      * </p>
      * 
      * @param hostKey
-     *        The RSA, ECDSA, or ED25519 private key to use for your server.</p>
+     *        The RSA, ECDSA, or ED25519 private key to use for your SFTP-enabled server. You can add multiple host
+     *        keys, in case you want to rotate keys, or have a set of active keys that use different algorithms.</p>
      *        <p>
      *        Use the following command to generate an RSA 2048 bit key with no passphrase:
      *        </p>
@@ -1434,7 +1446,7 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/transfer/latest/userguide/edit-server-config.html#configuring-servers-change-host-key"
-     *        >Change the host key for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
+     *        >Update host keys for your SFTP-enabled server</a> in the <i>Transfer Family User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2420,6 +2432,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * workflow.
      * </p>
      * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
+     * </p>
+     * <p>
      * To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.
      * </p>
@@ -2430,6 +2447,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param workflowDetails
      *        Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
      *        workflow.</p>
+     *        <p>
+     *        In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *        also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
+     *        upload occurs when a file is open when the session disconnects.
+     *        </p>
      *        <p>
      *        To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as
      *        in the following example.
@@ -2448,6 +2470,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * workflow.
      * </p>
      * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
+     * </p>
+     * <p>
      * To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.
      * </p>
@@ -2457,6 +2484,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @return Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
      *         workflow.</p>
+     *         <p>
+     *         In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *         also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
+     *         upload occurs when a file is open when the session disconnects.
+     *         </p>
      *         <p>
      *         To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as
      *         in the following example.
@@ -2475,6 +2507,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * workflow.
      * </p>
      * <p>
+     * In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can also
+     * contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial upload occurs
+     * when a file is open when the session disconnects.
+     * </p>
+     * <p>
      * To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as in the
      * following example.
      * </p>
@@ -2485,6 +2522,11 @@ public class UpdateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * @param workflowDetails
      *        Specifies the workflow ID for the workflow to assign and the execution role that's used for executing the
      *        workflow.</p>
+     *        <p>
+     *        In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code> can
+     *        also contain a workflow ID (and execution role) for a workflow to execute on partial upload. A partial
+     *        upload occurs when a file is open when the session disconnects.
+     *        </p>
      *        <p>
      *        To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code> object, as
      *        in the following example.

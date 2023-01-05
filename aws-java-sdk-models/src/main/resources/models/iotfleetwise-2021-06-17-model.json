@@ -387,6 +387,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
         {"shape":"AccessDeniedException"}
       ],
       "documentation":"<p> Retrieves information about a vehicle model (model manifest). </p>"
@@ -883,6 +884,7 @@
         {"shape":"LimitExceededException"},
         {"shape":"InvalidNodeException"},
         {"shape":"ThrottlingException"},
+        {"shape":"ValidationException"},
         {"shape":"InvalidSignalsException"},
         {"shape":"AccessDeniedException"}
       ],
@@ -955,7 +957,9 @@
         },
         "assignedValue":{
           "shape":"string",
-          "documentation":"<p>A specified value for the actuator.</p>"
+          "documentation":"<p>A specified value for the actuator.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"assignedValue is no longer in use"
         }
       },
       "documentation":"<p>A signal that represents a vehicle device such as the engine, heater, and door locks. Data from an actuator reports the state of a certain vehicle device.</p> <note> <p> Updating actuator data can change the state of a device. For example, you can turn on or off the heater by updating its actuator data.</p> </note>"
@@ -1024,7 +1028,9 @@
         },
         "assignedValue":{
           "shape":"string",
-          "documentation":"<p>A specified value for the attribute.</p>"
+          "documentation":"<p>A specified value for the attribute.</p>",
+          "deprecated":true,
+          "deprecatedMessage":"assignedValue is no longer in use"
         },
         "defaultValue":{
           "shape":"string",
@@ -1361,7 +1367,7 @@
         },
         "expiryTime":{
           "shape":"timestamp",
-          "documentation":"<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402243200 (December 31, 9999, 00:00:00 UTC)</p>"
+          "documentation":"<p> (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970 at midnight UTC time). Vehicle data won't be collected after the campaign expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>"
         },
         "postTriggerCollectionDuration":{
           "shape":"uint32",
@@ -1393,7 +1399,7 @@
         },
         "dataExtraDimensions":{
           "shape":"DataExtraDimensionNodePathList",
-          "documentation":"<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Default: An empty array</p>"
+          "documentation":"<p> (Optional) A list of vehicle attributes to associate with a campaign. </p> <p>Enrich the data with specified vehicle attributes. For example, add <code>make</code> and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will associate the data with those attributes as dimensions in Amazon Timestream. You can then query the data against <code>make</code> and <code>model</code>.</p> <p>Default: An empty array</p>"
         },
         "tags":{
           "shape":"TagList",
@@ -1768,7 +1774,8 @@
         "invalidNetworkInterfaces":{
           "shape":"InvalidNetworkInterfaces",
           "documentation":"<p>The request couldn't be completed because of invalid network interfaces in the request.</p>"
-        }
+        },
+        "message":{"shape":"string"}
       },
       "documentation":"<p>The request couldn't be completed because it contains signal decoders with one or more validation errors.</p>",
       "exception":true
@@ -2586,7 +2593,8 @@
         "reason":{
           "shape":"string",
           "documentation":"<p>The reason the node validation failed.</p>"
-        }
+        },
+        "message":{"shape":"string"}
       },
       "documentation":"<p>The specified node type doesn't match the expected node type for a node. You can specify the node type as branch, sensor, actuator, or attribute.</p>",
       "exception":true
@@ -4441,5 +4449,5 @@
       "pattern":"[\\w|*|-]+(\\.[\\w|*|-]+)*"
     }
   },
-  "documentation":"<note> <p>Amazon Web Services IoT FleetWise is in preview release and is subject to change. We recommend that you use the service only with test data, and not in production environments.</p> <p>While Amazon Web Services IoT FleetWise is in preview, you must download the preview Amazon Web Services SDK and CLI to use the API operations for this service. These API operations aren't available in the public Amazon Web Services SDK or CLI. For more information, see <a href=\"https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/preview-sdk-cli.html\">Preview Amazon Web Services SDK and CLI</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p> </note> <p>Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect, model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon Web Services IoT FleetWise, you can standardize all of your vehicle data models, independent of the in-vehicle communication architecture, and define data collection rules to transfer only high-value data to the cloud. </p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/\">What is Amazon Web Services IoT FleetWise?</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>"
+  "documentation":"<p>Amazon Web Services IoT FleetWise is a fully managed service that you can use to collect, model, and transfer vehicle data to the Amazon Web Services cloud at scale. With Amazon Web Services IoT FleetWise, you can standardize all of your vehicle data models, independent of the in-vehicle communication architecture, and define data collection rules to transfer only high-value data to the cloud. </p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/\">What is Amazon Web Services IoT FleetWise?</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p>"
 }

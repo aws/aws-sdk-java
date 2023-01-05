@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String resourceArn;
     /**
      * <p>
-     * The name of the tag you're removing from the response plan.
+     * The name of the tag to remove from the response plan.
      * </p>
      */
     private java.util.List<String> tagKeys;
@@ -80,10 +80,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the tag you're removing from the response plan.
+     * The name of the tag to remove from the response plan.
      * </p>
      * 
-     * @return The name of the tag you're removing from the response plan.
+     * @return The name of the tag to remove from the response plan.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -92,11 +92,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the tag you're removing from the response plan.
+     * The name of the tag to remove from the response plan.
      * </p>
      * 
      * @param tagKeys
-     *        The name of the tag you're removing from the response plan.
+     *        The name of the tag to remove from the response plan.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -110,7 +110,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the tag you're removing from the response plan.
+     * The name of the tag to remove from the response plan.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +119,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param tagKeys
-     *        The name of the tag you're removing from the response plan.
+     *        The name of the tag to remove from the response plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The name of the tag you're removing from the response plan.
+     * The name of the tag to remove from the response plan.
      * </p>
      * 
      * @param tagKeys
-     *        The name of the tag you're removing from the response plan.
+     *        The name of the tag to remove from the response plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

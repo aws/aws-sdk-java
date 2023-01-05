@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,8 +98,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The weekly time range during which system maintenance can occur on your database.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Constraints:
@@ -624,8 +624,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The weekly time range during which system maintenance can occur on your database.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Constraints:
@@ -661,8 +661,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur on your database.</p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week.
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region, occurring on a random day of the week.
      *        </p>
      *        <p>
      *        Constraints:
@@ -704,8 +704,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The weekly time range during which system maintenance can occur on your database.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Constraints:
@@ -740,8 +740,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * 
      * @return The weekly time range during which system maintenance can occur on your database.</p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *         occurring on a random day of the week.
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *         Services Region, occurring on a random day of the week.
      *         </p>
      *         <p>
      *         Constraints:
@@ -783,8 +783,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The weekly time range during which system maintenance can occur on your database.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week.
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services
+     * Region, occurring on a random day of the week.
      * </p>
      * <p>
      * Constraints:
@@ -820,8 +820,8 @@ public class UpdateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * @param preferredMaintenanceWindow
      *        The weekly time range during which system maintenance can occur on your database.</p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
-     *        occurring on a random day of the week.
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web
+     *        Services Region, occurring on a random day of the week.
      *        </p>
      *        <p>
      *        Constraints:

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,6 +135,51 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
      * </ul>
      */
     private String ontapVolumeType;
+    /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+     * </p>
+     */
+    private String snapshotPolicy;
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     */
+    private Boolean copyTagsToBackups;
 
     /**
      * <p>
@@ -986,6 +1031,301 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+     * </p>
+     * 
+     * @param snapshotPolicy
+     *        Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes
+     *        past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     *        midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it
+     *        only retains one snapshot from the weekly schedule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to
+     *        prevent automatic snapshots from being taken.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     *        policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+     */
+
+    public void setSnapshotPolicy(String snapshotPolicy) {
+        this.snapshotPolicy = snapshotPolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes
+     *         past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     *         midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it
+     *         only retains one snapshot from the weekly schedule.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to
+     *         prevent automatic snapshots from being taken.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     *         policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+     */
+
+    public String getSnapshotPolicy() {
+        return this.snapshotPolicy;
+    }
+
+    /**
+     * <p>
+     * Specifies the snapshot policy for the volume. There are three built-in snapshot policies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes past the
+     * hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after midnight. A maximum of
+     * two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it only
+     * retains one snapshot from the weekly schedule.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to prevent
+     * automatic snapshots from being taken.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+     * </p>
+     * 
+     * @param snapshotPolicy
+     *        Specifies the snapshot policy for the volume. There are three built-in snapshot policies:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>default</code>: This is the default policy. A maximum of six hourly snapshots taken five minutes
+     *        past the hour. A maximum of two daily snapshots taken Monday through Saturday at 10 minutes after
+     *        midnight. A maximum of two weekly snapshots taken every Sunday at 15 minutes after midnight.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>default-1weekly</code>: This policy is the same as the <code>default</code> policy except that it
+     *        only retains one snapshot from the weekly schedule.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>none</code>: This policy does not take any snapshots. This policy can be assigned to volumes to
+     *        prevent automatic snapshots from being taken.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You can also provide the name of a custom policy that you created with the ONTAP CLI or REST API.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
+     *        policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withSnapshotPolicy(String snapshotPolicy) {
+        setSnapshotPolicy(snapshotPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *        false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups
+     *        where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the volume, regardless of this value.
+     */
+
+    public void setCopyTagsToBackups(Boolean copyTagsToBackups) {
+        this.copyTagsToBackups = copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *         false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated
+     *         backups where the user doesn't specify tags. If this value is true, and you specify one or more tags,
+     *         only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the volume, regardless of this value.
+     */
+
+    public Boolean getCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @param copyTagsToBackups
+     *        A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *        false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups
+     *        where the user doesn't specify tags. If this value is true, and you specify one or more tags, only the
+     *        specified tags are copied to backups. If you specify one or more tags when creating a user-initiated
+     *        backup, no tags are copied from the volume, regardless of this value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OntapVolumeConfiguration withCopyTagsToBackups(Boolean copyTagsToBackups) {
+        setCopyTagsToBackups(copyTagsToBackups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to false.
+     * If it's set to true, all tags for the volume are copied to all automatic and user-initiated backups where the
+     * user doesn't specify tags. If this value is true, and you specify one or more tags, only the specified tags are
+     * copied to backups. If you specify one or more tags when creating a user-initiated backup, no tags are copied from
+     * the volume, regardless of this value.
+     * </p>
+     * 
+     * @return A boolean flag indicating whether tags for the volume should be copied to backups. This value defaults to
+     *         false. If it's set to true, all tags for the volume are copied to all automatic and user-initiated
+     *         backups where the user doesn't specify tags. If this value is true, and you specify one or more tags,
+     *         only the specified tags are copied to backups. If you specify one or more tags when creating a
+     *         user-initiated backup, no tags are copied from the volume, regardless of this value.
+     */
+
+    public Boolean isCopyTagsToBackups() {
+        return this.copyTagsToBackups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1016,7 +1356,11 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
         if (getUUID() != null)
             sb.append("UUID: ").append(getUUID()).append(",");
         if (getOntapVolumeType() != null)
-            sb.append("OntapVolumeType: ").append(getOntapVolumeType());
+            sb.append("OntapVolumeType: ").append(getOntapVolumeType()).append(",");
+        if (getSnapshotPolicy() != null)
+            sb.append("SnapshotPolicy: ").append(getSnapshotPolicy()).append(",");
+        if (getCopyTagsToBackups() != null)
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
         sb.append("}");
         return sb.toString();
     }
@@ -1071,6 +1415,14 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getOntapVolumeType() != null && other.getOntapVolumeType().equals(this.getOntapVolumeType()) == false)
             return false;
+        if (other.getSnapshotPolicy() == null ^ this.getSnapshotPolicy() == null)
+            return false;
+        if (other.getSnapshotPolicy() != null && other.getSnapshotPolicy().equals(this.getSnapshotPolicy()) == false)
+            return false;
+        if (other.getCopyTagsToBackups() == null ^ this.getCopyTagsToBackups() == null)
+            return false;
+        if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
+            return false;
         return true;
     }
 
@@ -1089,6 +1441,8 @@ public class OntapVolumeConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getTieringPolicy() == null) ? 0 : getTieringPolicy().hashCode());
         hashCode = prime * hashCode + ((getUUID() == null) ? 0 : getUUID().hashCode());
         hashCode = prime * hashCode + ((getOntapVolumeType() == null) ? 0 : getOntapVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getSnapshotPolicy() == null) ? 0 : getSnapshotPolicy().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
         return hashCode;
     }
 

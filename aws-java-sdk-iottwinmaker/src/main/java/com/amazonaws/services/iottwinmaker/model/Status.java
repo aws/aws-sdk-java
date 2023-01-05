@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,56 +30,16 @@ public class Status implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The error message.
-     * </p>
-     */
-    private ErrorDetails error;
-    /**
-     * <p>
      * The current state of the entity, component, component type, or workspace.
      * </p>
      */
     private String state;
-
     /**
      * <p>
      * The error message.
      * </p>
-     * 
-     * @param error
-     *        The error message.
      */
-
-    public void setError(ErrorDetails error) {
-        this.error = error;
-    }
-
-    /**
-     * <p>
-     * The error message.
-     * </p>
-     * 
-     * @return The error message.
-     */
-
-    public ErrorDetails getError() {
-        return this.error;
-    }
-
-    /**
-     * <p>
-     * The error message.
-     * </p>
-     * 
-     * @param error
-     *        The error message.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public Status withError(ErrorDetails error) {
-        setError(error);
-        return this;
-    }
+    private ErrorDetails error;
 
     /**
      * <p>
@@ -141,6 +101,46 @@ public class Status implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The error message.
+     * </p>
+     * 
+     * @param error
+     *        The error message.
+     */
+
+    public void setError(ErrorDetails error) {
+        this.error = error;
+    }
+
+    /**
+     * <p>
+     * The error message.
+     * </p>
+     * 
+     * @return The error message.
+     */
+
+    public ErrorDetails getError() {
+        return this.error;
+    }
+
+    /**
+     * <p>
+     * The error message.
+     * </p>
+     * 
+     * @param error
+     *        The error message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Status withError(ErrorDetails error) {
+        setError(error);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,10 +152,10 @@ public class Status implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getError() != null)
-            sb.append("Error: ").append(getError()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getError() != null)
+            sb.append("Error: ").append(getError());
         sb.append("}");
         return sb.toString();
     }
@@ -170,13 +170,13 @@ public class Status implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Status == false)
             return false;
         Status other = (Status) obj;
-        if (other.getError() == null ^ this.getError() == null)
-            return false;
-        if (other.getError() != null && other.getError().equals(this.getError()) == false)
-            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
+        if (other.getError() == null ^ this.getError() == null)
+            return false;
+        if (other.getError() != null && other.getError().equals(this.getError()) == false)
             return false;
         return true;
     }
@@ -186,8 +186,8 @@ public class Status implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getError() == null) ? 0 : getError().hashCode());
         return hashCode;
     }
 

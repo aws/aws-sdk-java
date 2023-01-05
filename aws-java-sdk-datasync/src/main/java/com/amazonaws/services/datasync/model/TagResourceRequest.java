@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,24 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to apply the tag to.
+     * Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * The tags to apply.
+     * Specifies the tags that you want to apply to the resource.
      * </p>
      */
     private java.util.List<TagListEntry> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to apply the tag to.
+     * Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to apply the tag to.
+     *        Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,10 +56,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to apply the tag to.
+     * Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the resource to apply the tag to.
+     * @return Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
      */
 
     public String getResourceArn() {
@@ -68,11 +68,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the resource to apply the tag to.
+     * Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the resource to apply the tag to.
+     *        Specifies the Amazon Resource Name (ARN) of the resource to apply the tag to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to apply.
+     * Specifies the tags that you want to apply to the resource.
      * </p>
      * 
-     * @return The tags to apply.
+     * @return Specifies the tags that you want to apply to the resource.
      */
 
     public java.util.List<TagListEntry> getTags() {
@@ -95,11 +95,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to apply.
+     * Specifies the tags that you want to apply to the resource.
      * </p>
      * 
      * @param tags
-     *        The tags to apply.
+     *        Specifies the tags that you want to apply to the resource.
      */
 
     public void setTags(java.util.Collection<TagListEntry> tags) {
@@ -113,7 +113,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to apply.
+     * Specifies the tags that you want to apply to the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        The tags to apply.
+     *        Specifies the tags that you want to apply to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to apply.
+     * Specifies the tags that you want to apply to the resource.
      * </p>
      * 
      * @param tags
-     *        The tags to apply.
+     *        Specifies the tags that you want to apply to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

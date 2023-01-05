@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,41 +17,102 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Results of a dry run performed in an update domain request.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DryRunResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are
-     * <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green
-     * required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type;
-     * try again after the update is complete), and <code>None</code> (the request doesn't include any configuration
-     * changes).
+     * Specifies the way in which OpenSearch Service will apply an update. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Blue/Green</b> - The update requires a blue/green deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DynamicUpdate</b> - No blue/green deployment required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again
+     * after the update is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>None</b> - The request doesn't include any configuration changes.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String deploymentType;
     /**
      * <p>
-     * Contains an optional message associated with the DryRunResults.
+     * A message corresponding to the deployment type.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are
-     * <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green
-     * required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type;
-     * try again after the update is complete), and <code>None</code> (the request doesn't include any configuration
-     * changes).
+     * Specifies the way in which OpenSearch Service will apply an update. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Blue/Green</b> - The update requires a blue/green deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DynamicUpdate</b> - No blue/green deployment required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again
+     * after the update is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>None</b> - The request doesn't include any configuration changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deploymentType
-     *        Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are
-     *        <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no
-     *        blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the
-     *        deployment type; try again after the update is complete), and <code>None</code> (the request doesn't
-     *        include any configuration changes).
+     *        Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Blue/Green</b> - The update requires a blue/green deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DynamicUpdate</b> - No blue/green deployment required
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try
+     *        again after the update is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>None</b> - The request doesn't include any configuration changes.
+     *        </p>
+     *        </li>
      */
 
     public void setDeploymentType(String deploymentType) {
@@ -60,18 +121,55 @@ public class DryRunResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are
-     * <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green
-     * required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type;
-     * try again after the update is complete), and <code>None</code> (the request doesn't include any configuration
-     * changes).
+     * Specifies the way in which OpenSearch Service will apply an update. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Blue/Green</b> - The update requires a blue/green deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DynamicUpdate</b> - No blue/green deployment required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again
+     * after the update is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>None</b> - The request doesn't include any configuration changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are
-     *         <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no
-     *         blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the
-     *         deployment type; try again after the update is complete), and <code>None</code> (the request doesn't
-     *         include any configuration changes).
+     * @return Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Blue/Green</b> - The update requires a blue/green deployment.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DynamicUpdate</b> - No blue/green deployment required
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try
+     *         again after the update is complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>None</b> - The request doesn't include any configuration changes.
+     *         </p>
+     *         </li>
      */
 
     public String getDeploymentType() {
@@ -80,19 +178,56 @@ public class DryRunResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are
-     * <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no blue/green
-     * required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the deployment type;
-     * try again after the update is complete), and <code>None</code> (the request doesn't include any configuration
-     * changes).
+     * Specifies the way in which OpenSearch Service will apply an update. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Blue/Green</b> - The update requires a blue/green deployment.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DynamicUpdate</b> - No blue/green deployment required
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try again
+     * after the update is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>None</b> - The request doesn't include any configuration changes.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deploymentType
-     *        Specifies the way in which Amazon OpenSearch Service applies the update. Possible responses are
-     *        <code>Blue/Green</code> (the update requires a blue/green deployment), <code>DynamicUpdate</code> (no
-     *        blue/green required), <code>Undetermined</code> (the domain is undergoing an update and can't predict the
-     *        deployment type; try again after the update is complete), and <code>None</code> (the request doesn't
-     *        include any configuration changes).
+     *        Specifies the way in which OpenSearch Service will apply an update. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Blue/Green</b> - The update requires a blue/green deployment.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DynamicUpdate</b> - No blue/green deployment required
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Undetermined</b> - The domain is in the middle of an update and can't predict the deployment type. Try
+     *        again after the update is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>None</b> - The request doesn't include any configuration changes.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,11 +238,11 @@ public class DryRunResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains an optional message associated with the DryRunResults.
+     * A message corresponding to the deployment type.
      * </p>
      * 
      * @param message
-     *        Contains an optional message associated with the DryRunResults.
+     *        A message corresponding to the deployment type.
      */
 
     public void setMessage(String message) {
@@ -116,10 +251,10 @@ public class DryRunResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains an optional message associated with the DryRunResults.
+     * A message corresponding to the deployment type.
      * </p>
      * 
-     * @return Contains an optional message associated with the DryRunResults.
+     * @return A message corresponding to the deployment type.
      */
 
     public String getMessage() {
@@ -128,11 +263,11 @@ public class DryRunResults implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Contains an optional message associated with the DryRunResults.
+     * A message corresponding to the deployment type.
      * </p>
      * 
      * @param message
-     *        Contains an optional message associated with the DryRunResults.
+     *        A message corresponding to the deployment type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

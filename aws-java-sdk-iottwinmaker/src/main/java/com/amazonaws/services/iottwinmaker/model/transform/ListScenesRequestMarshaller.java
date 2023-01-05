@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListScenesRequestMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
 
     private static final ListScenesRequestMarshaller instance = new ListScenesRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class ListScenesRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listScenesRequest.getWorkspaceId(), WORKSPACEID_BINDING);
             protocolMarshaller.marshall(listScenesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listScenesRequest.getNextToken(), NEXTTOKEN_BINDING);
-            protocolMarshaller.marshall(listScenesRequest.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

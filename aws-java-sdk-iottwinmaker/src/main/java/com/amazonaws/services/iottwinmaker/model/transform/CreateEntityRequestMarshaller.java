@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,20 +29,20 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class CreateEntityRequestMarshaller {
 
-    private static final MarshallingInfo<Map> COMPONENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("components").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
     private static final MarshallingInfo<String> ENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("entityId").build();
     private static final MarshallingInfo<String> ENTITYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entityName").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Map> COMPONENTS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("components").build();
     private static final MarshallingInfo<String> PARENTENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("parentEntityId").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
 
     private static final CreateEntityRequestMarshaller instance = new CreateEntityRequestMarshaller();
 
@@ -60,13 +60,13 @@ public class CreateEntityRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(createEntityRequest.getComponents(), COMPONENTS_BINDING);
-            protocolMarshaller.marshall(createEntityRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createEntityRequest.getWorkspaceId(), WORKSPACEID_BINDING);
             protocolMarshaller.marshall(createEntityRequest.getEntityId(), ENTITYID_BINDING);
             protocolMarshaller.marshall(createEntityRequest.getEntityName(), ENTITYNAME_BINDING);
+            protocolMarshaller.marshall(createEntityRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createEntityRequest.getComponents(), COMPONENTS_BINDING);
             protocolMarshaller.marshall(createEntityRequest.getParentEntityId(), PARENTENTITYID_BINDING);
             protocolMarshaller.marshall(createEntityRequest.getTags(), TAGS_BINDING);
-            protocolMarshaller.marshall(createEntityRequest.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

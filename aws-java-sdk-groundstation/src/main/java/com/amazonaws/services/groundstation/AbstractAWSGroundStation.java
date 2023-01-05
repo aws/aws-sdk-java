@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public CreateEphemerisResult createEphemeris(CreateEphemerisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMissionProfileResult createMissionProfile(CreateMissionProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -58,12 +63,22 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public DeleteEphemerisResult deleteEphemeris(DeleteEphemerisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteMissionProfileResult deleteMissionProfile(DeleteMissionProfileRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeContactResult describeContact(DescribeContactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEphemerisResult describeEphemeris(DescribeEphemerisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -108,6 +123,11 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
     }
 
     @Override
+    public ListEphemeridesResult listEphemerides(ListEphemeridesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListGroundStationsResult listGroundStations(ListGroundStationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +164,11 @@ public class AbstractAWSGroundStation implements AWSGroundStation {
 
     @Override
     public UpdateConfigResult updateConfig(UpdateConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateEphemerisResult updateEphemeris(UpdateEphemerisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

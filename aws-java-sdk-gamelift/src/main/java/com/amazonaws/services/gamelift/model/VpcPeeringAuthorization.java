@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>Related actions</b>
  * </p>
  * <p>
- * <a>CreateVpcPeeringAuthorization</a> | <a>DescribeVpcPeeringAuthorizations</a> | <a>DeleteVpcPeeringAuthorization</a>
- * | <a>CreateVpcPeeringConnection</a> | <a>DescribeVpcPeeringConnections</a> | <a>DeleteVpcPeeringConnection</a> | <a
- * href=
+ * <a href=
  * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
  * >All APIs by task</a>
  * </p>
@@ -47,7 +45,11 @@ public class VpcPeeringAuthorization implements Serializable, Cloneable, Structu
      * </p>
      */
     private String gameLiftAwsAccountId;
-    /** <p/> */
+    /**
+     * <p>
+     * The authorization's peer VPC Amazon Web Services account ID.
+     * </p>
+     */
     private String peerVpcAwsAccountId;
     /**
      * <p>
@@ -121,9 +123,12 @@ public class VpcPeeringAuthorization implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The authorization's peer VPC Amazon Web Services account ID.
+     * </p>
      * 
      * @param peerVpcAwsAccountId
+     *        The authorization's peer VPC Amazon Web Services account ID.
      */
 
     public void setPeerVpcAwsAccountId(String peerVpcAwsAccountId) {
@@ -131,9 +136,11 @@ public class VpcPeeringAuthorization implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The authorization's peer VPC Amazon Web Services account ID.
+     * </p>
      * 
-     * @return
+     * @return The authorization's peer VPC Amazon Web Services account ID.
      */
 
     public String getPeerVpcAwsAccountId() {
@@ -141,9 +148,12 @@ public class VpcPeeringAuthorization implements Serializable, Cloneable, Structu
     }
 
     /**
-     * <p/>
+     * <p>
+     * The authorization's peer VPC Amazon Web Services account ID.
+     * </p>
      * 
      * @param peerVpcAwsAccountId
+     *        The authorization's peer VPC Amazon Web Services account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

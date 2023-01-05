@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -798,45 +798,6 @@ public interface AmazonConnectWisdomAsync extends AmazonConnectWisdom {
     java.util.concurrent.Future<NotifyRecommendationsReceivedResult> notifyRecommendationsReceivedAsync(
             NotifyRecommendationsReceivedRequest notifyRecommendationsReceivedRequest,
             com.amazonaws.handlers.AsyncHandler<NotifyRecommendationsReceivedRequest, NotifyRecommendationsReceivedResult> asyncHandler);
-
-    /**
-     * <p>
-     * Submits feedback to Wisdom. The feedback is used to improve future recommendations from <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-     * or results from <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
-     * Feedback can be resubmitted up to 6 hours after submission.
-     * </p>
-     * 
-     * @param putFeedbackRequest
-     * @return A Java Future containing the result of the PutFeedback operation returned by the service.
-     * @sample AmazonConnectWisdomAsync.PutFeedback
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<PutFeedbackResult> putFeedbackAsync(PutFeedbackRequest putFeedbackRequest);
-
-    /**
-     * <p>
-     * Submits feedback to Wisdom. The feedback is used to improve future recommendations from <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-     * or results from <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
-     * Feedback can be resubmitted up to 6 hours after submission.
-     * </p>
-     * 
-     * @param putFeedbackRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the PutFeedback operation returned by the service.
-     * @sample AmazonConnectWisdomAsyncHandler.PutFeedback
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<PutFeedbackResult> putFeedbackAsync(PutFeedbackRequest putFeedbackRequest,
-            com.amazonaws.handlers.AsyncHandler<PutFeedbackRequest, PutFeedbackResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -784,6 +784,35 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         + ".InstanceRequirements.AcceleratorTotalMemoryMiB.Max", StringUtils.fromInteger(acceleratorTotalMemoryMiB.getMax()));
                             }
                         }
+
+                        NetworkBandwidthGbps networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                        if (networkBandwidthGbps != null) {
+
+                            if (networkBandwidthGbps.getMin() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                        + ".InstanceRequirements.NetworkBandwidthGbps.Min", StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                            }
+
+                            if (networkBandwidthGbps.getMax() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                        + ".InstanceRequirements.NetworkBandwidthGbps.Max", StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                            }
+                        }
+
+                        com.amazonaws.internal.SdkInternalList<String> instanceRequirementsAllowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                                .getAllowedInstanceTypes();
+                        if (!instanceRequirementsAllowedInstanceTypesList.isEmpty() || !instanceRequirementsAllowedInstanceTypesList.isAutoConstruct()) {
+                            int allowedInstanceTypesListIndex = 1;
+
+                            for (String instanceRequirementsAllowedInstanceTypesListValue : instanceRequirementsAllowedInstanceTypesList) {
+                                if (instanceRequirementsAllowedInstanceTypesListValue != null) {
+                                    request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                            + ".InstanceRequirements.AllowedInstanceTypeSet." + allowedInstanceTypesListIndex,
+                                            StringUtils.fromString(instanceRequirementsAllowedInstanceTypesListValue));
+                                }
+                                allowedInstanceTypesListIndex++;
+                            }
+                        }
                     }
                     launchSpecificationsListIndex++;
                 }
@@ -1127,6 +1156,37 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         request.addParameter("SpotFleetRequestConfig.LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides."
                                                 + overridesListIndex + ".InstanceRequirements.AcceleratorTotalMemoryMiB.Max",
                                                 StringUtils.fromInteger(acceleratorTotalMemoryMiB.getMax()));
+                                    }
+                                }
+
+                                NetworkBandwidthGbps networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                                if (networkBandwidthGbps != null) {
+
+                                    if (networkBandwidthGbps.getMin() != null) {
+                                        request.addParameter("SpotFleetRequestConfig.LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides."
+                                                + overridesListIndex + ".InstanceRequirements.NetworkBandwidthGbps.Min",
+                                                StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                                    }
+
+                                    if (networkBandwidthGbps.getMax() != null) {
+                                        request.addParameter("SpotFleetRequestConfig.LaunchTemplateConfigs." + launchTemplateConfigsListIndex + ".Overrides."
+                                                + overridesListIndex + ".InstanceRequirements.NetworkBandwidthGbps.Max",
+                                                StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                                    }
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<String> instanceRequirementsAllowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                                        .getAllowedInstanceTypes();
+                                if (!instanceRequirementsAllowedInstanceTypesList.isEmpty() || !instanceRequirementsAllowedInstanceTypesList.isAutoConstruct()) {
+                                    int allowedInstanceTypesListIndex = 1;
+
+                                    for (String instanceRequirementsAllowedInstanceTypesListValue : instanceRequirementsAllowedInstanceTypesList) {
+                                        if (instanceRequirementsAllowedInstanceTypesListValue != null) {
+                                            request.addParameter("SpotFleetRequestConfig.LaunchTemplateConfigs." + launchTemplateConfigsListIndex
+                                                    + ".Overrides." + overridesListIndex + ".InstanceRequirements.AllowedInstanceTypeSet."
+                                                    + allowedInstanceTypesListIndex, StringUtils.fromString(instanceRequirementsAllowedInstanceTypesListValue));
+                                        }
+                                        allowedInstanceTypesListIndex++;
                                     }
                                 }
                             }

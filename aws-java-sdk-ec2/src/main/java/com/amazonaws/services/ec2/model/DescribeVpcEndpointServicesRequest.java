@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,12 +41,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
+     * <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
      * <li>
@@ -168,12 +174,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
+     * <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
      * <li>
@@ -201,12 +213,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *         <ul>
      *         <li>
      *         <p>
+     *         <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>service-name</code> - The name of the service.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     *         <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     *         <code>GatewayLoadBalancer</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -244,12 +262,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
+     * <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
      * <li>
@@ -278,12 +302,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     *        <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     *        <code>GatewayLoadBalancer</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -323,12 +353,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
+     * <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
      * <li>
@@ -362,12 +398,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     *        <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     *        <code>GatewayLoadBalancer</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -409,12 +451,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
+     * <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>service-name</code> - The name of the service.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     * <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     * <code>GatewayLoadBalancer</code>).
      * </p>
      * </li>
      * <li>
@@ -443,12 +491,18 @@ public class DescribeVpcEndpointServicesRequest extends AmazonWebServiceRequest 
      *        <ul>
      *        <li>
      *        <p>
+     *        <code>owner</code> - The ID or alias of the Amazon Web Services account that owns the service.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>service-name</code> - The name of the service.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code>).
+     *        <code>service-type</code> - The type of service (<code>Interface</code> | <code>Gateway</code> |
+     *        <code>GatewayLoadBalancer</code>).
      *        </p>
      *        </li>
      *        <li>

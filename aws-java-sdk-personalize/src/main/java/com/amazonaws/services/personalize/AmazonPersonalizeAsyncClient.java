@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -374,6 +374,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMetricAttributionResult> createMetricAttributionAsync(CreateMetricAttributionRequest request) {
+
+        return createMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMetricAttributionResult> createMetricAttributionAsync(final CreateMetricAttributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateMetricAttributionRequest, CreateMetricAttributionResult> asyncHandler) {
+        final CreateMetricAttributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateMetricAttributionResult>() {
+            @Override
+            public CreateMetricAttributionResult call() throws Exception {
+                CreateMetricAttributionResult result = null;
+
+                try {
+                    result = executeCreateMetricAttribution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRecommenderResult> createRecommenderAsync(CreateRecommenderRequest request) {
 
         return createRecommenderAsync(request, null);
@@ -655,6 +688,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
 
                 try {
                     result = executeDeleteFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricAttributionResult> deleteMetricAttributionAsync(DeleteMetricAttributionRequest request) {
+
+        return deleteMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricAttributionResult> deleteMetricAttributionAsync(final DeleteMetricAttributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteMetricAttributionRequest, DeleteMetricAttributionResult> asyncHandler) {
+        final DeleteMetricAttributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteMetricAttributionResult>() {
+            @Override
+            public DeleteMetricAttributionResult call() throws Exception {
+                DeleteMetricAttributionResult result = null;
+
+                try {
+                    result = executeDeleteMetricAttribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1118,6 +1184,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
 
                 try {
                     result = executeDescribeFilter(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMetricAttributionResult> describeMetricAttributionAsync(DescribeMetricAttributionRequest request) {
+
+        return describeMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMetricAttributionResult> describeMetricAttributionAsync(final DescribeMetricAttributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeMetricAttributionRequest, DescribeMetricAttributionResult> asyncHandler) {
+        final DescribeMetricAttributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeMetricAttributionResult>() {
+            @Override
+            public DescribeMetricAttributionResult call() throws Exception {
+                DescribeMetricAttributionResult result = null;
+
+                try {
+                    result = executeDescribeMetricAttribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1629,6 +1728,72 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListMetricAttributionMetricsResult> listMetricAttributionMetricsAsync(ListMetricAttributionMetricsRequest request) {
+
+        return listMetricAttributionMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricAttributionMetricsResult> listMetricAttributionMetricsAsync(final ListMetricAttributionMetricsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMetricAttributionMetricsRequest, ListMetricAttributionMetricsResult> asyncHandler) {
+        final ListMetricAttributionMetricsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMetricAttributionMetricsResult>() {
+            @Override
+            public ListMetricAttributionMetricsResult call() throws Exception {
+                ListMetricAttributionMetricsResult result = null;
+
+                try {
+                    result = executeListMetricAttributionMetrics(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricAttributionsResult> listMetricAttributionsAsync(ListMetricAttributionsRequest request) {
+
+        return listMetricAttributionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricAttributionsResult> listMetricAttributionsAsync(final ListMetricAttributionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMetricAttributionsRequest, ListMetricAttributionsResult> asyncHandler) {
+        final ListMetricAttributionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMetricAttributionsResult>() {
+            @Override
+            public ListMetricAttributionsResult call() throws Exception {
+                ListMetricAttributionsResult result = null;
+
+                try {
+                    result = executeListMetricAttributions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRecipesResult> listRecipesAsync(ListRecipesRequest request) {
 
         return listRecipesAsync(request, null);
@@ -2009,6 +2174,39 @@ public class AmazonPersonalizeAsyncClient extends AmazonPersonalizeClient implem
 
                 try {
                     result = executeUpdateCampaign(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetricAttributionResult> updateMetricAttributionAsync(UpdateMetricAttributionRequest request) {
+
+        return updateMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetricAttributionResult> updateMetricAttributionAsync(final UpdateMetricAttributionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMetricAttributionRequest, UpdateMetricAttributionResult> asyncHandler) {
+        final UpdateMetricAttributionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMetricAttributionResult>() {
+            @Override
+            public UpdateMetricAttributionResult call() throws Exception {
+                UpdateMetricAttributionResult result = null;
+
+                try {
+                    result = executeUpdateMetricAttribution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

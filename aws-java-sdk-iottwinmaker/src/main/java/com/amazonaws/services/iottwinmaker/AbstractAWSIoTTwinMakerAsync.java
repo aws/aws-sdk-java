@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,19 @@ public class AbstractAWSIoTTwinMakerAsync extends AbstractAWSIoTTwinMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSyncJobResult> createSyncJobAsync(CreateSyncJobRequest request) {
+
+        return createSyncJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSyncJobResult> createSyncJobAsync(CreateSyncJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateSyncJobRequest, CreateSyncJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspaceResult> createWorkspaceAsync(CreateWorkspaceRequest request) {
 
         return createWorkspaceAsync(request, null);
@@ -132,6 +145,19 @@ public class AbstractAWSIoTTwinMakerAsync extends AbstractAWSIoTTwinMaker implem
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSyncJobResult> deleteSyncJobAsync(DeleteSyncJobRequest request) {
+
+        return deleteSyncJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSyncJobResult> deleteSyncJobAsync(DeleteSyncJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteSyncJobRequest, DeleteSyncJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWorkspaceResult> deleteWorkspaceAsync(DeleteWorkspaceRequest request) {
 
         return deleteWorkspaceAsync(request, null);
@@ -140,6 +166,19 @@ public class AbstractAWSIoTTwinMakerAsync extends AbstractAWSIoTTwinMaker implem
     @Override
     public java.util.concurrent.Future<DeleteWorkspaceResult> deleteWorkspaceAsync(DeleteWorkspaceRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkspaceRequest, DeleteWorkspaceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest request) {
+
+        return executeQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest request,
+            com.amazonaws.handlers.AsyncHandler<ExecuteQueryRequest, ExecuteQueryResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -166,6 +205,19 @@ public class AbstractAWSIoTTwinMakerAsync extends AbstractAWSIoTTwinMaker implem
     @Override
     public java.util.concurrent.Future<GetEntityResult> getEntityAsync(GetEntityRequest request,
             com.amazonaws.handlers.AsyncHandler<GetEntityRequest, GetEntityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPricingPlanResult> getPricingPlanAsync(GetPricingPlanRequest request) {
+
+        return getPricingPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPricingPlanResult> getPricingPlanAsync(GetPricingPlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPricingPlanRequest, GetPricingPlanResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -205,6 +257,19 @@ public class AbstractAWSIoTTwinMakerAsync extends AbstractAWSIoTTwinMaker implem
     @Override
     public java.util.concurrent.Future<GetSceneResult> getSceneAsync(GetSceneRequest request,
             com.amazonaws.handlers.AsyncHandler<GetSceneRequest, GetSceneResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncJobResult> getSyncJobAsync(GetSyncJobRequest request) {
+
+        return getSyncJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncJobResult> getSyncJobAsync(GetSyncJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetSyncJobRequest, GetSyncJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -257,6 +322,32 @@ public class AbstractAWSIoTTwinMakerAsync extends AbstractAWSIoTTwinMaker implem
     @Override
     public java.util.concurrent.Future<ListScenesResult> listScenesAsync(ListScenesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListScenesRequest, ListScenesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncJobsResult> listSyncJobsAsync(ListSyncJobsRequest request) {
+
+        return listSyncJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncJobsResult> listSyncJobsAsync(ListSyncJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSyncJobsRequest, ListSyncJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncResourcesResult> listSyncResourcesAsync(ListSyncResourcesRequest request) {
+
+        return listSyncResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncResourcesResult> listSyncResourcesAsync(ListSyncResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListSyncResourcesRequest, ListSyncResourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -335,6 +426,19 @@ public class AbstractAWSIoTTwinMakerAsync extends AbstractAWSIoTTwinMaker implem
     @Override
     public java.util.concurrent.Future<UpdateEntityResult> updateEntityAsync(UpdateEntityRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateEntityRequest, UpdateEntityResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePricingPlanResult> updatePricingPlanAsync(UpdatePricingPlanRequest request) {
+
+        return updatePricingPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePricingPlanResult> updatePricingPlanAsync(UpdatePricingPlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdatePricingPlanRequest, UpdatePricingPlanResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

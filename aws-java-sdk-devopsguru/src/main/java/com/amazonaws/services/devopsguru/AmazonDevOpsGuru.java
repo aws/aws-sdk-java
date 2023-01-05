@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -743,9 +743,9 @@ public interface AmazonDevOpsGuru {
     /**
      * <p>
      * Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by
-     * their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one
-     * or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (
-     * <code>REACTIVE</code> or <code>PROACTIVE</code>).
+     * their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (
+     * <code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or
+     * <code>PROACTIVE</code>).
      * </p>
      * <p>
      * Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the

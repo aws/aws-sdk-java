@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,7 +159,8 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     private String hsmConfigurationIdentifier;
     /**
      * <p>
-     * The elastic IP (EIP) address for the cluster.
+     * The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible
+     * cluster with availability zone relocation turned on.
      * </p>
      */
     private String elasticIp;
@@ -1241,11 +1242,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The elastic IP (EIP) address for the cluster.
+     * The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible
+     * cluster with availability zone relocation turned on.
      * </p>
      * 
      * @param elasticIp
-     *        The elastic IP (EIP) address for the cluster.
+     *        The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly
+     *        accessible cluster with availability zone relocation turned on.
      */
 
     public void setElasticIp(String elasticIp) {
@@ -1254,10 +1257,12 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The elastic IP (EIP) address for the cluster.
+     * The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible
+     * cluster with availability zone relocation turned on.
      * </p>
      * 
-     * @return The elastic IP (EIP) address for the cluster.
+     * @return The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly
+     *         accessible cluster with availability zone relocation turned on.
      */
 
     public String getElasticIp() {
@@ -1266,11 +1271,13 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The elastic IP (EIP) address for the cluster.
+     * The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly accessible
+     * cluster with availability zone relocation turned on.
      * </p>
      * 
      * @param elasticIp
-     *        The elastic IP (EIP) address for the cluster.
+     *        The Elastic IP (EIP) address for the cluster. Don't specify the Elastic IP address for a publicly
+     *        accessible cluster with availability zone relocation turned on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

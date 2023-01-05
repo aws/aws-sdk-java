@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AvailSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ESAM_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("esam").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35SPLICEINSERT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scte35SpliceInsert").build();
     private static final MarshallingInfo<StructuredPojo> SCTE35TIMESIGNALAPOS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class AvailSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(availSettings.getEsam(), ESAM_BINDING);
             protocolMarshaller.marshall(availSettings.getScte35SpliceInsert(), SCTE35SPLICEINSERT_BINDING);
             protocolMarshaller.marshall(availSettings.getScte35TimeSignalApos(), SCTE35TIMESIGNALAPOS_BINDING);
         } catch (Exception e) {

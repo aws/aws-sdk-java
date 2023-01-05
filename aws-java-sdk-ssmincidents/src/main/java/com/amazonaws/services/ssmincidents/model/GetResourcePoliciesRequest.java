@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      */
     private Integer maxResults;
@@ -46,11 +46,11 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resource policies to display per page of results.
+     *        The maximum number of resource policies to display for each page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -59,10 +59,10 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      * 
-     * @return The maximum number of resource policies to display per page of results.
+     * @return The maximum number of resource policies to display for each page of results.
      */
 
     public Integer getMaxResults() {
@@ -71,11 +71,11 @@ public class GetResourcePoliciesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum number of resource policies to display per page of results.
+     * The maximum number of resource policies to display for each page of results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resource policies to display per page of results.
+     *        The maximum number of resource policies to display for each page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

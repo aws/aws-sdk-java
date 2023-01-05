@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class ProfilerConfigMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilingIntervalInMilliseconds").build();
     private static final MarshallingInfo<Map> PROFILINGPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilingParameters").build();
+    private static final MarshallingInfo<Boolean> DISABLEPROFILER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableProfiler").build();
 
     private static final ProfilerConfigMarshaller instance = new ProfilerConfigMarshaller();
 
@@ -55,6 +57,7 @@ public class ProfilerConfigMarshaller {
             protocolMarshaller.marshall(profilerConfig.getS3OutputPath(), S3OUTPUTPATH_BINDING);
             protocolMarshaller.marshall(profilerConfig.getProfilingIntervalInMilliseconds(), PROFILINGINTERVALINMILLISECONDS_BINDING);
             protocolMarshaller.marshall(profilerConfig.getProfilingParameters(), PROFILINGPARAMETERS_BINDING);
+            protocolMarshaller.marshall(profilerConfig.getDisableProfiler(), DISABLEPROFILER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

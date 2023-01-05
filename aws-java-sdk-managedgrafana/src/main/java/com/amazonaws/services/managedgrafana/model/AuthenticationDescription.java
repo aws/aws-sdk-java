@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,14 +30,14 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A structure containing information about how this workspace works with Amazon Web Services SSO.
+     * A structure containing information about how this workspace works with IAM Identity Center.
      * </p>
      */
     private AwsSsoAuthentication awsSso;
     /**
      * <p>
-     * Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use
-     * the Grafana console in the Amazon Managed Grafana workspace.
+     * Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the
+     * Grafana console in the Amazon Managed Grafana workspace.
      * </p>
      */
     private java.util.List<String> providers;
@@ -51,11 +51,11 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A structure containing information about how this workspace works with Amazon Web Services SSO.
+     * A structure containing information about how this workspace works with IAM Identity Center.
      * </p>
      * 
      * @param awsSso
-     *        A structure containing information about how this workspace works with Amazon Web Services SSO.
+     *        A structure containing information about how this workspace works with IAM Identity Center.
      */
 
     public void setAwsSso(AwsSsoAuthentication awsSso) {
@@ -64,10 +64,10 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A structure containing information about how this workspace works with Amazon Web Services SSO.
+     * A structure containing information about how this workspace works with IAM Identity Center.
      * </p>
      * 
-     * @return A structure containing information about how this workspace works with Amazon Web Services SSO.
+     * @return A structure containing information about how this workspace works with IAM Identity Center.
      */
 
     public AwsSsoAuthentication getAwsSso() {
@@ -76,11 +76,11 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A structure containing information about how this workspace works with Amazon Web Services SSO.
+     * A structure containing information about how this workspace works with IAM Identity Center.
      * </p>
      * 
      * @param awsSso
-     *        A structure containing information about how this workspace works with Amazon Web Services SSO.
+     *        A structure containing information about how this workspace works with IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,12 +91,12 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use
-     * the Grafana console in the Amazon Managed Grafana workspace.
+     * Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the
+     * Grafana console in the Amazon Managed Grafana workspace.
      * </p>
      * 
-     * @return Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate
-     *         users to use the Grafana console in the Amazon Managed Grafana workspace.
+     * @return Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to
+     *         use the Grafana console in the Amazon Managed Grafana workspace.
      * @see AuthenticationProviderTypes
      */
 
@@ -106,13 +106,13 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use
-     * the Grafana console in the Amazon Managed Grafana workspace.
+     * Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the
+     * Grafana console in the Amazon Managed Grafana workspace.
      * </p>
      * 
      * @param providers
-     *        Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users
-     *        to use the Grafana console in the Amazon Managed Grafana workspace.
+     *        Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to
+     *        use the Grafana console in the Amazon Managed Grafana workspace.
      * @see AuthenticationProviderTypes
      */
 
@@ -127,8 +127,8 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use
-     * the Grafana console in the Amazon Managed Grafana workspace.
+     * Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the
+     * Grafana console in the Amazon Managed Grafana workspace.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,8 +137,8 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param providers
-     *        Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users
-     *        to use the Grafana console in the Amazon Managed Grafana workspace.
+     *        Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to
+     *        use the Grafana console in the Amazon Managed Grafana workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationProviderTypes
      */
@@ -155,13 +155,13 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use
-     * the Grafana console in the Amazon Managed Grafana workspace.
+     * Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the
+     * Grafana console in the Amazon Managed Grafana workspace.
      * </p>
      * 
      * @param providers
-     *        Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users
-     *        to use the Grafana console in the Amazon Managed Grafana workspace.
+     *        Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to
+     *        use the Grafana console in the Amazon Managed Grafana workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationProviderTypes
      */
@@ -173,13 +173,13 @@ public class AuthenticationDescription implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users to use
-     * the Grafana console in the Amazon Managed Grafana workspace.
+     * Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to use the
+     * Grafana console in the Amazon Managed Grafana workspace.
      * </p>
      * 
      * @param providers
-     *        Specifies whether this workspace uses Amazon Web Services SSO, SAML, or both methods to authenticate users
-     *        to use the Grafana console in the Amazon Managed Grafana workspace.
+     *        Specifies whether this workspace uses IAM Identity Center, SAML, or both methods to authenticate users to
+     *        use the Grafana console in the Amazon Managed Grafana workspace.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationProviderTypes
      */

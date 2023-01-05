@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -255,6 +255,8 @@ public interface AmazonRDS {
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
      *         specified Amazon Web Services Region.
+     * @throws BlueGreenDeploymentNotFoundException
+     *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
      * @sample AmazonRDS.AddTagsToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AddTagsToResource" target="_top">AWS API
      *      Documentation</a>
@@ -545,53 +547,63 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Creates a custom DB engine version (CEV). A CEV is a binary volume snapshot of a database engine and specific
-     * AMI. The supported engines are the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Oracle Database 12.1 Enterprise Edition with the January 2021 or later RU/RUR
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Oracle Database 19c Enterprise Edition with the January 2021 or later RU/RUR
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * Amazon RDS, which is a fully managed service, supplies the Amazon Machine Image (AMI) and database software. The
-     * Amazon RDS database software is preinstalled, so you need only select a DB engine and version, and create your
-     * database. With Amazon RDS Custom for Oracle, you upload your database installation files in Amazon S3.
+     * Creates a blue/green deployment.
      * </p>
      * <p>
-     * When you create a custom engine version, you specify the files in a JSON document called a CEV manifest. This
-     * document describes installation .zip files stored in Amazon S3. RDS Custom creates your CEV from the installation
-     * files that you provided. This service model is called Bring Your Own Media (BYOM).
+     * A blue/green deployment creates a staging environment that copies the production environment. In a blue/green
+     * deployment, the blue environment is the current production environment. The green environment is the staging
+     * environment. The staging environment stays in sync with the current production environment using logical
+     * replication.
      * </p>
      * <p>
-     * Creation takes approximately two hours. If creation fails, RDS Custom issues <code>RDS-EVENT-0196</code> with the
-     * message <code>Creation failed for custom engine version</code>, and includes details about the failure. For
-     * example, the event prints missing files.
+     * You can make changes to the databases in the green environment without affecting production workloads. For
+     * example, you can upgrade the major or minor DB engine version, change database parameters, or make schema changes
+     * in the staging environment. You can thoroughly test changes in the green environment. When ready, you can switch
+     * over the environments to promote the green environment to be the new production environment. The switchover
+     * typically takes under a minute.
      * </p>
-     * <p>
-     * After you create the CEV, it is available for use. You can create multiple CEVs, and create multiple RDS Custom
-     * instances from any CEV. You can also change the status of a CEV to make it available or inactive.
-     * </p>
-     * <note>
-     * <p>
-     * The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated with Amazon Web
-     * Services CloudTrail. If you turn on data logging for Amazon RDS in CloudTrail, calls to the
-     * <code>CreateCustomDbEngineVersion</code> event aren't logged. However, you might see calls from the API gateway
-     * that accesses your Amazon S3 bucket. These calls originate from the MediaImport service for the
-     * <code>CreateCustomDbEngineVersion</code> event.
-     * </p>
-     * </note>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.html#custom-cev.create"> Creating a
-     * CEV</a> in the <i>Amazon RDS User Guide</i>.
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param createBlueGreenDeploymentRequest
+     * @return Result of the CreateBlueGreenDeployment operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @throws SourceDatabaseNotSupportedException
+     *         The source DB instance isn't supported for a blue/green deployment.
+     * @throws SourceClusterNotSupportedException
+     *         The source DB cluster isn't supported for a blue/green deployment.
+     * @throws BlueGreenDeploymentAlreadyExistsException
+     *         A blue/green deployment with the specified name already exists.
+     * @throws DBParameterGroupNotFoundException
+     *         <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+     * @throws DBClusterParameterGroupNotFoundException
+     *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
+     * @throws InstanceQuotaExceededException
+     *         The request would result in the user exceeding the allowed number of DB instances.
+     * @throws DBClusterQuotaExceededException
+     *         The user attempted to create a new DB cluster and the user has already reached the maximum allowed DB
+     *         cluster quota.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @sample AmazonRDS.CreateBlueGreenDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateBlueGreenDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateBlueGreenDeploymentResult createBlueGreenDeployment(CreateBlueGreenDeploymentRequest createBlueGreenDeploymentRequest);
+
+    /**
+     * <p>
+     * Creates a custom DB engine version (CEV).
      * </p>
      * 
      * @param createCustomDBEngineVersionRequest
@@ -600,6 +612,8 @@ public interface AmazonRDS {
      *         A CEV with the specified name already exists.
      * @throws CustomDBEngineVersionQuotaExceededException
      *         You have exceeded your CEV quota.
+     * @throws Ec2ImagePropertiesNotSupportedException
+     *         The AMI configuration prerequisite has not been met.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an Amazon Web Services KMS key.
      * @sample AmazonRDS.CreateCustomDBEngineVersion
@@ -1218,6 +1232,31 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Deletes a blue/green deployment.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param deleteBlueGreenDeploymentRequest
+     * @return Result of the DeleteBlueGreenDeployment operation returned by the service.
+     * @throws BlueGreenDeploymentNotFoundException
+     *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
+     * @throws InvalidBlueGreenDeploymentStateException
+     *         The blue/green deployment can't be switched over or deleted because there is an invalid configuration in
+     *         the green environment.
+     * @sample AmazonRDS.DeleteBlueGreenDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteBlueGreenDeployment" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteBlueGreenDeploymentResult deleteBlueGreenDeployment(DeleteBlueGreenDeploymentRequest deleteBlueGreenDeploymentRequest);
+
+    /**
+     * <p>
      * Deletes a custom engine version. To run this command, make sure you meet the following prerequisites:
      * </p>
      * <ul>
@@ -1702,6 +1741,28 @@ public interface AmazonRDS {
      * @see #describeAccountAttributes(DescribeAccountAttributesRequest)
      */
     DescribeAccountAttributesResult describeAccountAttributes();
+
+    /**
+     * <p>
+     * Returns information about blue/green deployments.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param describeBlueGreenDeploymentsRequest
+     * @return Result of the DescribeBlueGreenDeployments operation returned by the service.
+     * @throws BlueGreenDeploymentNotFoundException
+     *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
+     * @sample AmazonRDS.DescribeBlueGreenDeployments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeBlueGreenDeployments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBlueGreenDeploymentsResult describeBlueGreenDeployments(DescribeBlueGreenDeploymentsRequest describeBlueGreenDeploymentsRequest);
 
     /**
      * <p>
@@ -2705,6 +2766,8 @@ public interface AmazonRDS {
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
      *         specified Amazon Web Services Region.
+     * @throws BlueGreenDeploymentNotFoundException
+     *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
      * @sample AmazonRDS.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -3640,6 +3703,8 @@ public interface AmazonRDS {
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your Amazon Web Services account in the
      *         specified Amazon Web Services Region.
+     * @throws BlueGreenDeploymentNotFoundException
+     *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
      * @sample AmazonRDS.RemoveTagsFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RemoveTagsFromResource" target="_top">AWS API
      *      Documentation</a>
@@ -3845,6 +3910,8 @@ public interface AmazonRDS {
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws DBClusterParameterGroupNotFoundException
      *         <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster parameter group.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.RestoreDBClusterFromSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -3999,6 +4066,8 @@ public interface AmazonRDS {
      * @throws NetworkTypeNotSupportedException
      *         The network type is invalid for the DB instance. Valid nework type values are <code>IPV4</code> and
      *         <code>DUAL</code>.
+     * @throws DBClusterSnapshotNotFoundException
+     *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
      * @sample AmazonRDS.RestoreDBInstanceFromDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -4339,6 +4408,8 @@ public interface AmazonRDS {
      *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
      * @throws DBClusterSnapshotNotFoundException
      *         <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster snapshot.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws ExportTaskAlreadyExistsException
      *         You can't start an export task that's already running.
      * @throws InvalidS3BucketException
@@ -4482,6 +4553,35 @@ public interface AmazonRDS {
      */
     DBInstanceAutomatedBackup stopDBInstanceAutomatedBackupsReplication(
             StopDBInstanceAutomatedBackupsReplicationRequest stopDBInstanceAutomatedBackupsReplicationRequest);
+
+    /**
+     * <p>
+     * Switches over a blue/green deployment.
+     * </p>
+     * <p>
+     * Before you switch over, production traffic is routed to the databases in the blue environment. After you switch
+     * over, production traffic is routed to the databases in the green environment.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html"> Using Amazon RDS
+     * Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param switchoverBlueGreenDeploymentRequest
+     * @return Result of the SwitchoverBlueGreenDeployment operation returned by the service.
+     * @throws BlueGreenDeploymentNotFoundException
+     *         <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green deployment.
+     * @throws InvalidBlueGreenDeploymentStateException
+     *         The blue/green deployment can't be switched over or deleted because there is an invalid configuration in
+     *         the green environment.
+     * @sample AmazonRDS.SwitchoverBlueGreenDeployment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/SwitchoverBlueGreenDeployment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    SwitchoverBlueGreenDeploymentResult switchoverBlueGreenDeployment(SwitchoverBlueGreenDeploymentRequest switchoverBlueGreenDeploymentRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListSecretsRequestMarshaller {
 
+    private static final MarshallingInfo<Boolean> INCLUDEPLANNEDDELETION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludePlannedDeletion").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class ListSecretsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listSecretsRequest.getIncludePlannedDeletion(), INCLUDEPLANNEDDELETION_BINDING);
             protocolMarshaller.marshall(listSecretsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listSecretsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listSecretsRequest.getFilters(), FILTERS_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,6 +103,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
     }
 
     @Override
+    public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeregisterDelegatedAdministratorResult deregisterDelegatedAdministrator(DeregisterDelegatedAdministratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +144,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
 
     @Override
     public DescribePolicyResult describePolicy(DescribePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeResourcePolicyResult describeResourcePolicy(DescribeResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -264,6 +274,11 @@ public class AbstractAWSOrganizations implements AWSOrganizations {
 
     @Override
     public MoveAccountResult moveAccount(MoveAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutResourcePolicyResult putResourcePolicy(PutResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

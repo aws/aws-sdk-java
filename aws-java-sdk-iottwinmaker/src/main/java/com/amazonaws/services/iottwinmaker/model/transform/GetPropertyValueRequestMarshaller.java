@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,14 @@ public class GetPropertyValueRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("selectedProperties").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
+    private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("nextToken").build();
+    private static final MarshallingInfo<String> PROPERTYGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propertyGroupName").build();
+    private static final MarshallingInfo<StructuredPojo> TABULARCONDITIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tabularConditions").build();
 
     private static final GetPropertyValueRequestMarshaller instance = new GetPropertyValueRequestMarshaller();
 
@@ -60,6 +68,10 @@ public class GetPropertyValueRequestMarshaller {
             protocolMarshaller.marshall(getPropertyValueRequest.getEntityId(), ENTITYID_BINDING);
             protocolMarshaller.marshall(getPropertyValueRequest.getSelectedProperties(), SELECTEDPROPERTIES_BINDING);
             protocolMarshaller.marshall(getPropertyValueRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(getPropertyValueRequest.getMaxResults(), MAXRESULTS_BINDING);
+            protocolMarshaller.marshall(getPropertyValueRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(getPropertyValueRequest.getPropertyGroupName(), PROPERTYGROUPNAME_BINDING);
+            protocolMarshaller.marshall(getPropertyValueRequest.getTabularConditions(), TABULARCONDITIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -296,9 +296,10 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
      * 
@@ -436,7 +437,7 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
      * 
      * @param deleteWorkspaceApiKeyRequest
@@ -625,6 +626,71 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkspaceAuthenticationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeWorkspaceAuthenticationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @return Result of the DescribeWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeWorkspaceConfigurationResult describeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeWorkspaceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeWorkspaceConfigurationResult executeDescribeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeWorkspaceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeWorkspaceConfigurationRequest> request = null;
+        Response<DescribeWorkspaceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeWorkspaceConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeWorkspaceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeWorkspaceConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeWorkspaceConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeWorkspaceConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1107,8 +1173,8 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -1239,6 +1305,75 @@ public class AmazonManagedGrafanaClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkspaceAuthenticationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateWorkspaceAuthenticationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @return Result of the UpdateWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateWorkspaceConfigurationResult updateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateWorkspaceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateWorkspaceConfigurationResult executeUpdateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateWorkspaceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateWorkspaceConfigurationRequest> request = null;
+        Response<UpdateWorkspaceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateWorkspaceConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateWorkspaceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "grafana");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWorkspaceConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateWorkspaceConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateWorkspaceConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

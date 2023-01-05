@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,23 +36,27 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of objects.
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      */
     private String allowsUnencryptedObjectUploads;
     /**
@@ -106,23 +110,27 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of objects.
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @param allowsUnencryptedObjectUploads
      *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
@@ -131,23 +139,26 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        a valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *        aws:kms.
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *        valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
      *        objects.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *        and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @see AllowsUnencryptedObjectUploads
      */
 
@@ -163,23 +174,27 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of objects.
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @return Specifies whether the bucket policy for the bucket requires server-side encryption of objects when
      *         objects are uploaded to the bucket. Possible values are:</p>
@@ -187,23 +202,26 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *         the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *         a valid server-side encryption header.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *         encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include
-     *         the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *         aws:kms.
+     *         encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *         valid server-side encryption header.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of
+     *         UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
      *         objects.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *         and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @see AllowsUnencryptedObjectUploads
      */
 
@@ -219,23 +237,27 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of objects.
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @param allowsUnencryptedObjectUploads
      *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
@@ -244,23 +266,26 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        a valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *        aws:kms.
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *        valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
      *        objects.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *        and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllowsUnencryptedObjectUploads
      */
@@ -278,23 +303,27 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
-     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
      * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a valid
+     * server-side encryption header.
      * </p>
      * </li>
      * <li>
      * <p>
-     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of objects.
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms, and
+     * x-amz-server-side-encryption-customer-algorithm with a value of AES256.
+     * </p>
      * 
      * @param allowsUnencryptedObjectUploads
      *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
@@ -303,23 +332,26 @@ public class S3Bucket implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
-     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        a valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
-     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
-     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
-     *        aws:kms.
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include a
+     *        valid server-side encryption header.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
      *        objects.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Valid server-side encryption headers are: x-amz-server-side-encryption with a value of AES256 or aws:kms,
+     *        and x-amz-server-side-encryption-customer-algorithm with a value of AES256.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AllowsUnencryptedObjectUploads
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartMatchmaking" target="_top">AWS API
  *      Documentation</a>
@@ -47,6 +44,9 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
      * Information on each player to be matched. This information must include a player ID, and may contain player
      * attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code>
      * objects contain the name of the team the player is assigned to.
+     * </p>
+     * <p>
+     * You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
      * </p>
      */
     private java.util.List<Player> players;
@@ -152,10 +152,15 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
      * attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code>
      * objects contain the name of the team the player is assigned to.
      * </p>
+     * <p>
+     * You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
+     * </p>
      * 
      * @return Information on each player to be matched. This information must include a player ID, and may contain
      *         player attributes and latency data to be used in the matchmaking process. After a successful match,
-     *         <code>Player</code> objects contain the name of the team the player is assigned to.
+     *         <code>Player</code> objects contain the name of the team the player is assigned to.</p>
+     *         <p>
+     *         You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
      */
 
     public java.util.List<Player> getPlayers() {
@@ -168,11 +173,16 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
      * attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code>
      * objects contain the name of the team the player is assigned to.
      * </p>
+     * <p>
+     * You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
+     * </p>
      * 
      * @param players
      *        Information on each player to be matched. This information must include a player ID, and may contain
      *        player attributes and latency data to be used in the matchmaking process. After a successful match,
-     *        <code>Player</code> objects contain the name of the team the player is assigned to.
+     *        <code>Player</code> objects contain the name of the team the player is assigned to.</p>
+     *        <p>
+     *        You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
      */
 
     public void setPlayers(java.util.Collection<Player> players) {
@@ -191,6 +201,9 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
      * objects contain the name of the team the player is assigned to.
      * </p>
      * <p>
+     * You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setPlayers(java.util.Collection)} or {@link #withPlayers(java.util.Collection)} if you want to override
      * the existing values.
@@ -199,7 +212,9 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
      * @param players
      *        Information on each player to be matched. This information must include a player ID, and may contain
      *        player attributes and latency data to be used in the matchmaking process. After a successful match,
-     *        <code>Player</code> objects contain the name of the team the player is assigned to.
+     *        <code>Player</code> objects contain the name of the team the player is assigned to.</p>
+     *        <p>
+     *        You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +234,16 @@ public class StartMatchmakingRequest extends com.amazonaws.AmazonWebServiceReque
      * attributes and latency data to be used in the matchmaking process. After a successful match, <code>Player</code>
      * objects contain the name of the team the player is assigned to.
      * </p>
+     * <p>
+     * You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
+     * </p>
      * 
      * @param players
      *        Information on each player to be matched. This information must include a player ID, and may contain
      *        player attributes and latency data to be used in the matchmaking process. After a successful match,
-     *        <code>Player</code> objects contain the name of the team the player is assigned to.
+     *        <code>Player</code> objects contain the name of the team the player is assigned to.</p>
+     *        <p>
+     *        You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

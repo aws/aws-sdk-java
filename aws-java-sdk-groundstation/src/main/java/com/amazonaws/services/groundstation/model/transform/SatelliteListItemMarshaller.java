@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SatelliteListItemMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CURRENTEPHEMERIS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("currentEphemeris").build();
     private static final MarshallingInfo<List> GROUNDSTATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("groundStations").build();
     private static final MarshallingInfo<Integer> NORADSATELLITEID_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -53,6 +55,7 @@ public class SatelliteListItemMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(satelliteListItem.getCurrentEphemeris(), CURRENTEPHEMERIS_BINDING);
             protocolMarshaller.marshall(satelliteListItem.getGroundStations(), GROUNDSTATIONS_BINDING);
             protocolMarshaller.marshall(satelliteListItem.getNoradSatelliteID(), NORADSATELLITEID_BINDING);
             protocolMarshaller.marshall(satelliteListItem.getSatelliteArn(), SATELLITEARN_BINDING);

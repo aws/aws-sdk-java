@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,22 +33,9 @@ public class MedicalTranscript implements Serializable, Cloneable, StructuredPoj
      * The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.
      * </p>
      * <p>
-     * If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket.
-     * If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in
-     * your request.
+     * Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code>
+     * parameter.
      * </p>
-     * <p>
-     * If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored
-     * in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for
-     * secure access to your transcript.
-     * </p>
-     * <note>
-     * <p>
-     * Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an
-     * <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
-     * <code>ListTranscriptionJob</code> request.
-     * </p>
-     * </note>
      */
     private String transcriptFileUri;
 
@@ -57,41 +44,15 @@ public class MedicalTranscript implements Serializable, Cloneable, StructuredPoj
      * The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.
      * </p>
      * <p>
-     * If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket.
-     * If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in
-     * your request.
+     * Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code>
+     * parameter.
      * </p>
-     * <p>
-     * If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored
-     * in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for
-     * secure access to your transcript.
-     * </p>
-     * <note>
-     * <p>
-     * Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an
-     * <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
-     * <code>ListTranscriptionJob</code> request.
-     * </p>
-     * </note>
      * 
      * @param transcriptFileUri
      *        The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
      *        <p>
-     *        If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that
-     *        bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path
-     *        you specified in your request.
-     *        </p>
-     *        <p>
-     *        If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is
-     *        stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI
-     *        you can use for secure access to your transcript.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an
-     *        <code>AccesDenied</code> error, you can get a new temporary URI by running a
-     *        <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.
-     *        </p>
+     *        Note that this is the Amazon S3 location you specified in your request using the
+     *        <code>OutputBucketName</code> parameter.
      */
 
     public void setTranscriptFileUri(String transcriptFileUri) {
@@ -103,41 +64,15 @@ public class MedicalTranscript implements Serializable, Cloneable, StructuredPoj
      * The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.
      * </p>
      * <p>
-     * If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket.
-     * If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in
-     * your request.
+     * Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code>
+     * parameter.
      * </p>
-     * <p>
-     * If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored
-     * in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for
-     * secure access to your transcript.
-     * </p>
-     * <note>
-     * <p>
-     * Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an
-     * <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
-     * <code>ListTranscriptionJob</code> request.
-     * </p>
-     * </note>
      * 
      * @return The Amazon S3 location of your transcript. You can use this URI to access or download your
      *         transcript.</p>
      *         <p>
-     *         If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that
-     *         bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path
-     *         you specified in your request.
-     *         </p>
-     *         <p>
-     *         If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is
-     *         stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI
-     *         you can use for secure access to your transcript.
-     *         </p>
-     *         <note>
-     *         <p>
-     *         Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an
-     *         <code>AccesDenied</code> error, you can get a new temporary URI by running a
-     *         <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.
-     *         </p>
+     *         Note that this is the Amazon S3 location you specified in your request using the
+     *         <code>OutputBucketName</code> parameter.
      */
 
     public String getTranscriptFileUri() {
@@ -149,41 +84,15 @@ public class MedicalTranscript implements Serializable, Cloneable, StructuredPoj
      * The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.
      * </p>
      * <p>
-     * If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that bucket.
-     * If you also included <code>OutputKey</code> in your request, your output is located in the path you specified in
-     * your request.
+     * Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code>
+     * parameter.
      * </p>
-     * <p>
-     * If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is stored
-     * in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI you can use for
-     * secure access to your transcript.
-     * </p>
-     * <note>
-     * <p>
-     * Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an
-     * <code>AccesDenied</code> error, you can get a new temporary URI by running a <code>GetTranscriptionJob</code> or
-     * <code>ListTranscriptionJob</code> request.
-     * </p>
-     * </note>
      * 
      * @param transcriptFileUri
      *        The Amazon S3 location of your transcript. You can use this URI to access or download your transcript.</p>
      *        <p>
-     *        If you included <code>OutputBucketName</code> in your transcription job request, this is the URI of that
-     *        bucket. If you also included <code>OutputKey</code> in your request, your output is located in the path
-     *        you specified in your request.
-     *        </p>
-     *        <p>
-     *        If you didn't include <code>OutputBucketName</code> in your transcription job request, your transcript is
-     *        stored in a service-managed bucket, and <code>TranscriptFileUri</code> provides you with a temporary URI
-     *        you can use for secure access to your transcript.
-     *        </p>
-     *        <note>
-     *        <p>
-     *        Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes. If you get an
-     *        <code>AccesDenied</code> error, you can get a new temporary URI by running a
-     *        <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.
-     *        </p>
+     *        Note that this is the Amazon S3 location you specified in your request using the
+     *        <code>OutputBucketName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

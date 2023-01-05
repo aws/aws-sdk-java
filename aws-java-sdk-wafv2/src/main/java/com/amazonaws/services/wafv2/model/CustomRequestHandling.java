@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling
- * for the rule actions allow and count.
+ * for WAF to use when the rule action doesn't block the request. For example, <code>CaptchaAction</code> for requests
+ * with valid t okens, and <code>AllowAction</code>.
  * </p>
  * <p>
  * For information about customizing web requests and responses, see <a

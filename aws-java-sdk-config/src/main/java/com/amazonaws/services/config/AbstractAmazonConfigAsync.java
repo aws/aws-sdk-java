@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1107,6 +1107,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(GetResourceEvaluationSummaryRequest request) {
+
+        return getResourceEvaluationSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(GetResourceEvaluationSummaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetResourceEvaluationSummaryRequest, GetResourceEvaluationSummaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStoredQueryResult> getStoredQueryAsync(GetStoredQueryRequest request) {
 
         return getStoredQueryAsync(request, null);
@@ -1158,6 +1171,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     @Override
     public java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(ListResourceEvaluationsRequest request) {
+
+        return listResourceEvaluationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(ListResourceEvaluationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListResourceEvaluationsRequest, ListResourceEvaluationsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1444,6 +1470,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     @Override
     public java.util.concurrent.Future<StartRemediationExecutionResult> startRemediationExecutionAsync(StartRemediationExecutionRequest request,
             com.amazonaws.handlers.AsyncHandler<StartRemediationExecutionRequest, StartRemediationExecutionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(StartResourceEvaluationRequest request) {
+
+        return startResourceEvaluationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(StartResourceEvaluationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartResourceEvaluationRequest, StartResourceEvaluationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

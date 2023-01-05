@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options
- * and list of maintenance schedules.
+ * Auto-Tune settings when updating a domain. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,32 +29,33 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      */
     private String desiredState;
     /**
      * <p>
-     * The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+     * When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     * <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     * <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise,
+     * OpenSearch Service is unable to perform the rollback.
      * </p>
      */
     private String rollbackOnDisable;
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      */
     private java.util.List<AutoTuneMaintenanceSchedule> maintenanceSchedules;
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @see AutoTuneDesiredState
      */
 
@@ -63,10 +65,10 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
-     * @return The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * @return Whether Auto-Tune is enabled or disabled.
      * @see AutoTuneDesiredState
      */
 
@@ -76,11 +78,11 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneDesiredState
      */
@@ -92,11 +94,11 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneDesiredState
      */
@@ -108,12 +110,17 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+     * When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     * <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     * <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise,
+     * OpenSearch Service is unable to perform the rollback.
      * </p>
      * 
      * @param rollbackOnDisable
-     *        The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and
-     *        DEFAULT_ROLLBACK.
+     *        When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     *        <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     *        <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request.
+     *        Otherwise, OpenSearch Service is unable to perform the rollback.
      * @see RollbackOnDisable
      */
 
@@ -123,11 +130,16 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+     * When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     * <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     * <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise,
+     * OpenSearch Service is unable to perform the rollback.
      * </p>
      * 
-     * @return The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and
-     *         DEFAULT_ROLLBACK.
+     * @return When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     *         <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     *         <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request.
+     *         Otherwise, OpenSearch Service is unable to perform the rollback.
      * @see RollbackOnDisable
      */
 
@@ -137,12 +149,17 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+     * When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     * <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     * <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise,
+     * OpenSearch Service is unable to perform the rollback.
      * </p>
      * 
      * @param rollbackOnDisable
-     *        The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and
-     *        DEFAULT_ROLLBACK.
+     *        When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     *        <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     *        <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request.
+     *        Otherwise, OpenSearch Service is unable to perform the rollback.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RollbackOnDisable
      */
@@ -154,12 +171,17 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and DEFAULT_ROLLBACK.
+     * When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     * <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     * <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request. Otherwise,
+     * OpenSearch Service is unable to perform the rollback.
      * </p>
      * 
      * @param rollbackOnDisable
-     *        The rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK and
-     *        DEFAULT_ROLLBACK.
+     *        When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune settings or
+     *        <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults. If you specify
+     *        <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code> in the request.
+     *        Otherwise, OpenSearch Service is unable to perform the rollback.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RollbackOnDisable
      */
@@ -171,14 +193,10 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * 
-     * @return A list of maintenance schedules. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return A list of maintenance schedules during which Auto-Tune can deploy changes.
      */
 
     public java.util.List<AutoTuneMaintenanceSchedule> getMaintenanceSchedules() {
@@ -187,15 +205,11 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes.
      */
 
     public void setMaintenanceSchedules(java.util.Collection<AutoTuneMaintenanceSchedule> maintenanceSchedules) {
@@ -209,9 +223,7 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -220,9 +232,7 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,15 +248,11 @@ public class AutoTuneOptions implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes.
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

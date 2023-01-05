@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,13 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
 
     /** Specify the images that you want to overlay on your video. The images must be PNG or TGA files. */
     private java.util.List<InsertableImage> insertableImages;
+    /**
+     * Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness
+     * levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference
+     * white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an
+     * integer from 100 to 1000.
+     */
+    private Integer sdrReferenceWhiteLevel;
 
     /**
      * Specify the images that you want to overlay on your video. The images must be PNG or TGA files.
@@ -94,6 +101,58 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness
+     * levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference
+     * white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an
+     * integer from 100 to 1000.
+     * 
+     * @param sdrReferenceWhiteLevel
+     *        Specify the reference white level, in nits, for all of your image inserter images. Use to correct
+     *        brightness levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set
+     *        SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of
+     *        100, or specify an integer from 100 to 1000.
+     */
+
+    public void setSdrReferenceWhiteLevel(Integer sdrReferenceWhiteLevel) {
+        this.sdrReferenceWhiteLevel = sdrReferenceWhiteLevel;
+    }
+
+    /**
+     * Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness
+     * levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference
+     * white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an
+     * integer from 100 to 1000.
+     * 
+     * @return Specify the reference white level, in nits, for all of your image inserter images. Use to correct
+     *         brightness levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set
+     *         SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of
+     *         100, or specify an integer from 100 to 1000.
+     */
+
+    public Integer getSdrReferenceWhiteLevel() {
+        return this.sdrReferenceWhiteLevel;
+    }
+
+    /**
+     * Specify the reference white level, in nits, for all of your image inserter images. Use to correct brightness
+     * levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set SDR reference
+     * white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of 100, or specify an
+     * integer from 100 to 1000.
+     * 
+     * @param sdrReferenceWhiteLevel
+     *        Specify the reference white level, in nits, for all of your image inserter images. Use to correct
+     *        brightness levels within HDR10 outputs. For 1,000 nit peak brightness displays, we recommend that you set
+     *        SDR reference white level to 203 (according to ITU-R BT.2408). Leave blank to use the default value of
+     *        100, or specify an integer from 100 to 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageInserter withSdrReferenceWhiteLevel(Integer sdrReferenceWhiteLevel) {
+        setSdrReferenceWhiteLevel(sdrReferenceWhiteLevel);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -106,7 +165,9 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInsertableImages() != null)
-            sb.append("InsertableImages: ").append(getInsertableImages());
+            sb.append("InsertableImages: ").append(getInsertableImages()).append(",");
+        if (getSdrReferenceWhiteLevel() != null)
+            sb.append("SdrReferenceWhiteLevel: ").append(getSdrReferenceWhiteLevel());
         sb.append("}");
         return sb.toString();
     }
@@ -125,6 +186,10 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInsertableImages() != null && other.getInsertableImages().equals(this.getInsertableImages()) == false)
             return false;
+        if (other.getSdrReferenceWhiteLevel() == null ^ this.getSdrReferenceWhiteLevel() == null)
+            return false;
+        if (other.getSdrReferenceWhiteLevel() != null && other.getSdrReferenceWhiteLevel().equals(this.getSdrReferenceWhiteLevel()) == false)
+            return false;
         return true;
     }
 
@@ -134,6 +199,7 @@ public class ImageInserter implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInsertableImages() == null) ? 0 : getInsertableImages().hashCode());
+        hashCode = prime * hashCode + ((getSdrReferenceWhiteLevel() == null) ? 0 : getSdrReferenceWhiteLevel().hashCode());
         return hashCode;
     }
 

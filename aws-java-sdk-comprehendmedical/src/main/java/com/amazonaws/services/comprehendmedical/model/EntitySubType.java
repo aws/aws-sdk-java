@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,14 @@ public enum EntitySubType {
     TIME_TO_DX_NAME("TIME_TO_DX_NAME"),
     TIME_TO_TEST_NAME("TIME_TO_TEST_NAME"),
     TIME_TO_PROCEDURE_NAME("TIME_TO_PROCEDURE_NAME"),
-    TIME_TO_TREATMENT_NAME("TIME_TO_TREATMENT_NAME");
+    TIME_TO_TREATMENT_NAME("TIME_TO_TREATMENT_NAME"),
+    AMOUNT("AMOUNT"),
+    GENDER("GENDER"),
+    RACE_ETHNICITY("RACE_ETHNICITY"),
+    ALLERGIES("ALLERGIES"),
+    TOBACCO_USE("TOBACCO_USE"),
+    ALCOHOL_CONSUMPTION("ALCOHOL_CONSUMPTION"),
+    REC_DRUG_USE("REC_DRUG_USE");
 
     private String value;
 

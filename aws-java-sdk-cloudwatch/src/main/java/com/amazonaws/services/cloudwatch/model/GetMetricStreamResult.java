@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,7 @@ public class GetMetricStreamResult extends com.amazonaws.AmazonWebServiceResult<
     private com.amazonaws.internal.SdkInternalList<MetricStreamFilter> excludeFilters;
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.
      * </p>
      */
     private String firehoseArn;
@@ -351,11 +351,11 @@ public class GetMetricStreamResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.
      * </p>
      * 
      * @param firehoseArn
-     *        The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.
+     *        The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.
      */
 
     public void setFirehoseArn(String firehoseArn) {
@@ -364,10 +364,10 @@ public class GetMetricStreamResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.
      * </p>
      * 
-     * @return The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.
+     * @return The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.
      */
 
     public String getFirehoseArn() {
@@ -376,11 +376,11 @@ public class GetMetricStreamResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.
+     * The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.
      * </p>
      * 
      * @param firehoseArn
-     *        The ARN of the Amazon Kinesis Firehose delivery stream that is used by this metric stream.
+     *        The ARN of the Amazon Kinesis Data Firehose delivery stream that is used by this metric stream.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

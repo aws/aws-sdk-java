@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,14 @@ public class UpdateClusterSettingsRequest extends com.amazonaws.AmazonWebService
      * a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
+     * <important>
+     * <p>
+     * Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a
+     * new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned
+     * on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait
+     * 7 days before you can re-create it.
+     * </p>
+     * </important>
      */
     private com.amazonaws.internal.SdkInternalList<ClusterSetting> settings;
 
@@ -86,10 +94,24 @@ public class UpdateClusterSettingsRequest extends com.amazonaws.AmazonWebService
      * a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
+     * <important>
+     * <p>
+     * Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a
+     * new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned
+     * on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait
+     * 7 days before you can re-create it.
+     * </p>
+     * </important>
      * 
      * @return The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container
      *         Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value
-     *         set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *         set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> <important>
+     *         <p>
+     *         Currently, if you delete an existing cluster that does not have Container Insights turned on, and then
+     *         create a new cluster with the same name with Container Insights tuned on, Container Insights will not
+     *         actually be turned on. If you want to preserve the same name for your existing cluster and turn on
+     *         Container Insights, you must wait 7 days before you can re-create it.
+     *         </p>
      */
 
     public java.util.List<ClusterSetting> getSettings() {
@@ -105,11 +127,25 @@ public class UpdateClusterSettingsRequest extends com.amazonaws.AmazonWebService
      * a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
+     * <important>
+     * <p>
+     * Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a
+     * new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned
+     * on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait
+     * 7 days before you can re-create it.
+     * </p>
+     * </important>
      * 
      * @param settings
      *        The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container
      *        Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value
-     *        set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> <important>
+     *        <p>
+     *        Currently, if you delete an existing cluster that does not have Container Insights turned on, and then
+     *        create a new cluster with the same name with Container Insights tuned on, Container Insights will not
+     *        actually be turned on. If you want to preserve the same name for your existing cluster and turn on
+     *        Container Insights, you must wait 7 days before you can re-create it.
+     *        </p>
      */
 
     public void setSettings(java.util.Collection<ClusterSetting> settings) {
@@ -127,6 +163,14 @@ public class UpdateClusterSettingsRequest extends com.amazonaws.AmazonWebService
      * a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
+     * <important>
+     * <p>
+     * Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a
+     * new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned
+     * on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait
+     * 7 days before you can re-create it.
+     * </p>
+     * </important>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSettings(java.util.Collection)} or {@link #withSettings(java.util.Collection)} if you want to override
@@ -136,7 +180,13 @@ public class UpdateClusterSettingsRequest extends com.amazonaws.AmazonWebService
      * @param settings
      *        The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container
      *        Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value
-     *        set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> <important>
+     *        <p>
+     *        Currently, if you delete an existing cluster that does not have Container Insights turned on, and then
+     *        create a new cluster with the same name with Container Insights tuned on, Container Insights will not
+     *        actually be turned on. If you want to preserve the same name for your existing cluster and turn on
+     *        Container Insights, you must wait 7 days before you can re-create it.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +206,25 @@ public class UpdateClusterSettingsRequest extends com.amazonaws.AmazonWebService
      * a cluster. If this value is specified, it overrides the <code>containerInsights</code> value set with
      * <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
      * </p>
+     * <important>
+     * <p>
+     * Currently, if you delete an existing cluster that does not have Container Insights turned on, and then create a
+     * new cluster with the same name with Container Insights tuned on, Container Insights will not actually be turned
+     * on. If you want to preserve the same name for your existing cluster and turn on Container Insights, you must wait
+     * 7 days before you can re-create it.
+     * </p>
+     * </important>
      * 
      * @param settings
      *        The setting to use by default for a cluster. This parameter is used to turn on CloudWatch Container
      *        Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code> value
-     *        set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
+     *        set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.</p> <important>
+     *        <p>
+     *        Currently, if you delete an existing cluster that does not have Container Insights turned on, and then
+     *        create a new cluster with the same name with Container Insights tuned on, Container Insights will not
+     *        actually be turned on. If you want to preserve the same name for your existing cluster and turn on
+     *        Container Insights, you must wait 7 days before you can re-create it.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

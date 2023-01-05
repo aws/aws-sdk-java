@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,38 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RetentionPeriod retentionPeriod;
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String lockState;
 
     /**
      * <p>
@@ -168,6 +200,270 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockState
+     *        The lock state for the retention rule.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     *        period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *        the required permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *        can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *        transition back to <code>null</code>.
+     *        </p>
+     *        </li>
+     * @see LockState
+     */
+
+    public void setLockState(String lockState) {
+        this.lockState = lockState;
+    }
+
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The lock state for the retention rule.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock
+     *         delay period. The retention rule can be modified or deleted only after the unlock delay period has
+     *         expired.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *         the required permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *         can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *         transition back to <code>null</code>.
+     *         </p>
+     *         </li>
+     * @see LockState
+     */
+
+    public String getLockState() {
+        return this.lockState;
+    }
+
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockState
+     *        The lock state for the retention rule.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     *        period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *        the required permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *        can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *        transition back to <code>null</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LockState
+     */
+
+    public RuleSummary withLockState(String lockState) {
+        setLockState(lockState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The lock state for the retention rule.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     * period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with the
+     * required permissions.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it can
+     * transition between the <code>locked</code> and <code>unlocked</code> states only; it can never transition back to
+     * <code>null</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param lockState
+     *        The lock state for the retention rule.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>pending_unlock</code> - The retention rule has been unlocked but it is still within the unlock delay
+     *        period. The retention rule can be modified or deleted only after the unlock delay period has expired.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>unlocked</code> - The retention rule is unlocked and it can be modified or deleted by any user with
+     *        the required permissions.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>null</code> - The retention rule has never been locked. Once a retention rule has been locked, it
+     *        can transition between the <code>locked</code> and <code>unlocked</code> states only; it can never
+     *        transition back to <code>null</code>.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LockState
+     */
+
+    public RuleSummary withLockState(LockState lockState) {
+        this.lockState = lockState.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +480,9 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getRetentionPeriod() != null)
-            sb.append("RetentionPeriod: ").append(getRetentionPeriod());
+            sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
+        if (getLockState() != null)
+            sb.append("LockState: ").append(getLockState());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +509,10 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRetentionPeriod() != null && other.getRetentionPeriod().equals(this.getRetentionPeriod()) == false)
             return false;
+        if (other.getLockState() == null ^ this.getLockState() == null)
+            return false;
+        if (other.getLockState() != null && other.getLockState().equals(this.getLockState()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +524,7 @@ public class RuleSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIdentifier() == null) ? 0 : getIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getLockState() == null) ? 0 : getLockState().hashCode());
         return hashCode;
     }
 

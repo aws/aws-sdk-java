@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,10 @@ public class NetworkBindingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostPort").build();
     private static final MarshallingInfo<String> PROTOCOL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("protocol").build();
+    private static final MarshallingInfo<String> CONTAINERPORTRANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerPortRange").build();
+    private static final MarshallingInfo<String> HOSTPORTRANGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("hostPortRange").build();
 
     private static final NetworkBindingMarshaller instance = new NetworkBindingMarshaller();
 
@@ -56,6 +60,8 @@ public class NetworkBindingMarshaller {
             protocolMarshaller.marshall(networkBinding.getContainerPort(), CONTAINERPORT_BINDING);
             protocolMarshaller.marshall(networkBinding.getHostPort(), HOSTPORT_BINDING);
             protocolMarshaller.marshall(networkBinding.getProtocol(), PROTOCOL_BINDING);
+            protocolMarshaller.marshall(networkBinding.getContainerPortRange(), CONTAINERPORTRANGE_BINDING);
+            protocolMarshaller.marshall(networkBinding.getHostPortRange(), HOSTPORTRANGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

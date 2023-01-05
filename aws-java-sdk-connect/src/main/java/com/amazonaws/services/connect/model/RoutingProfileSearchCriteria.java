@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The search criteria to be used to return routing profiles.
  * </p>
+ * <note>
+ * <p>
+ * The <code>name</code> and <code>description</code> fields support "contains" queries with a minimum of 2 characters
+ * and a maximum of 25 characters. Any queries with character lengths outside of this range will throw invalid results.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/RoutingProfileSearchCriteria"
  *      target="_top">AWS API Documentation</a>

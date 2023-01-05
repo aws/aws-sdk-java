@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,20 +29,24 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UpdateComponentTypeRequestMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<Boolean> ISSINGLETON_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isSingleton").build();
     private static final MarshallingInfo<String> COMPONENTTYPEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("componentTypeId").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<Map> PROPERTYDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propertyDefinitions").build();
     private static final MarshallingInfo<List> EXTENDSFROM_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("extendsFrom").build();
     private static final MarshallingInfo<Map> FUNCTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("functions").build();
-    private static final MarshallingInfo<Boolean> ISSINGLETON_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isSingleton").build();
-    private static final MarshallingInfo<Map> PROPERTYDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propertyDefinitions").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<Map> PROPERTYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("propertyGroups").build();
+    private static final MarshallingInfo<String> COMPONENTTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentTypeName").build();
 
     private static final UpdateComponentTypeRequestMarshaller instance = new UpdateComponentTypeRequestMarshaller();
 
@@ -60,13 +64,15 @@ public class UpdateComponentTypeRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(updateComponentTypeRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(updateComponentTypeRequest.getIsSingleton(), ISSINGLETON_BINDING);
             protocolMarshaller.marshall(updateComponentTypeRequest.getComponentTypeId(), COMPONENTTYPEID_BINDING);
             protocolMarshaller.marshall(updateComponentTypeRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(updateComponentTypeRequest.getPropertyDefinitions(), PROPERTYDEFINITIONS_BINDING);
             protocolMarshaller.marshall(updateComponentTypeRequest.getExtendsFrom(), EXTENDSFROM_BINDING);
             protocolMarshaller.marshall(updateComponentTypeRequest.getFunctions(), FUNCTIONS_BINDING);
-            protocolMarshaller.marshall(updateComponentTypeRequest.getIsSingleton(), ISSINGLETON_BINDING);
-            protocolMarshaller.marshall(updateComponentTypeRequest.getPropertyDefinitions(), PROPERTYDEFINITIONS_BINDING);
-            protocolMarshaller.marshall(updateComponentTypeRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(updateComponentTypeRequest.getPropertyGroups(), PROPERTYGROUPS_BINDING);
+            protocolMarshaller.marshall(updateComponentTypeRequest.getComponentTypeName(), COMPONENTTYPENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

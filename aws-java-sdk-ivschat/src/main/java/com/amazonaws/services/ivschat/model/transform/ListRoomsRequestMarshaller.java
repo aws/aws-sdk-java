@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ListRoomsRequestMarshaller {
 
+    private static final MarshallingInfo<String> LOGGINGCONFIGURATIONIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingConfigurationIdentifier").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> MESSAGEREVIEWHANDLERURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class ListRoomsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(listRoomsRequest.getLoggingConfigurationIdentifier(), LOGGINGCONFIGURATIONIDENTIFIER_BINDING);
             protocolMarshaller.marshall(listRoomsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listRoomsRequest.getMessageReviewHandlerUri(), MESSAGEREVIEWHANDLERURI_BINDING);
             protocolMarshaller.marshall(listRoomsRequest.getName(), NAME_BINDING);

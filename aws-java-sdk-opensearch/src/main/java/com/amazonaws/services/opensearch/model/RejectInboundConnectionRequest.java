@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>RejectInboundConnection</a> </code> operation.
+ * Container for the request parameters to the <code>RejectInboundConnection</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class RejectInboundConnectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the inbound connection to reject.
+     * The unique identifier of the inbound connection to reject.
      * </p>
      */
     private String connectionId;
 
     /**
      * <p>
-     * The ID of the inbound connection to reject.
+     * The unique identifier of the inbound connection to reject.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the inbound connection to reject.
+     *        The unique identifier of the inbound connection to reject.
      */
 
     public void setConnectionId(String connectionId) {
@@ -47,10 +47,10 @@ public class RejectInboundConnectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the inbound connection to reject.
+     * The unique identifier of the inbound connection to reject.
      * </p>
      * 
-     * @return The ID of the inbound connection to reject.
+     * @return The unique identifier of the inbound connection to reject.
      */
 
     public String getConnectionId() {
@@ -59,11 +59,11 @@ public class RejectInboundConnectionRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The ID of the inbound connection to reject.
+     * The unique identifier of the inbound connection to reject.
      * </p>
      * 
      * @param connectionId
-     *        The ID of the inbound connection to reject.
+     *        The unique identifier of the inbound connection to reject.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

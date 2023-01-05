@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,9 +107,10 @@ public interface AmazonManagedGrafana {
 
     /**
      * <p>
-     * Creates an API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP
-     * API. See <a href=" https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">
-     * https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
+     * Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the
+     * workspace's HTTP API. See <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https
+     * ://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example
      * requests.
      * </p>
      * 
@@ -162,7 +163,7 @@ public interface AmazonManagedGrafana {
 
     /**
      * <p>
-     * Deletes an API key for a workspace.
+     * Deletes a Grafana API key for the workspace.
      * </p>
      * 
      * @param deleteWorkspaceApiKeyRequest
@@ -230,6 +231,27 @@ public interface AmazonManagedGrafana {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeWorkspaceAuthenticationResult describeWorkspaceAuthentication(DescribeWorkspaceAuthenticationRequest describeWorkspaceAuthenticationRequest);
+
+    /**
+     * <p>
+     * Gets the current configuration string for the given workspace.
+     * </p>
+     * 
+     * @param describeWorkspaceConfigurationRequest
+     * @return Result of the DescribeWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.DescribeWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/DescribeWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeWorkspaceConfigurationResult describeWorkspaceConfiguration(DescribeWorkspaceConfigurationRequest describeWorkspaceConfigurationRequest);
 
     /**
      * <p>
@@ -409,8 +431,8 @@ public interface AmazonManagedGrafana {
      * parameters, the existing values of those parameters are not changed.
      * </p>
      * <p>
-     * To modify the user authentication methods that the workspace uses, such as SAML or Amazon Web Services SSO, use
-     * <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
+     * To modify the user authentication methods that the workspace uses, such as SAML or IAM Identity Center, use <a
+     * href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspaceAuthentication.html">
      * UpdateWorkspaceAuthentication</a>.
      * </p>
      * <p>
@@ -464,6 +486,31 @@ public interface AmazonManagedGrafana {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateWorkspaceAuthenticationResult updateWorkspaceAuthentication(UpdateWorkspaceAuthenticationRequest updateWorkspaceAuthenticationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration string for the given workspace
+     * </p>
+     * 
+     * @param updateWorkspaceConfigurationRequest
+     * @return Result of the UpdateWorkspaceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request references a resource that does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because of request throttling. Retry the request.
+     * @throws ConflictException
+     *         A resource was in an inconsistent state during an update or a deletion.
+     * @throws ValidationException
+     *         The value of a parameter in the request caused an error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServerException
+     *         Unexpected error while processing the request. Retry the request.
+     * @sample AmazonManagedGrafana.UpdateWorkspaceConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/UpdateWorkspaceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateWorkspaceConfigurationResult updateWorkspaceConfiguration(UpdateWorkspaceConfigurationRequest updateWorkspaceConfigurationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

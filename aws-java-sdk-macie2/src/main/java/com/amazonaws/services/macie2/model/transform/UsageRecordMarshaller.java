@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class UsageRecordMarshaller {
 
     private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("accountId").build();
+    private static final MarshallingInfo<java.util.Date> AUTOMATEDDISCOVERYFREETRIALSTARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("automatedDiscoveryFreeTrialStartDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> FREETRIALSTARTDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("freeTrialStartDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<List> USAGE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -52,6 +54,7 @@ public class UsageRecordMarshaller {
 
         try {
             protocolMarshaller.marshall(usageRecord.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(usageRecord.getAutomatedDiscoveryFreeTrialStartDate(), AUTOMATEDDISCOVERYFREETRIALSTARTDATE_BINDING);
             protocolMarshaller.marshall(usageRecord.getFreeTrialStartDate(), FREETRIALSTARTDATE_BINDING);
             protocolMarshaller.marshall(usageRecord.getUsage(), USAGE_BINDING);
         } catch (Exception e) {

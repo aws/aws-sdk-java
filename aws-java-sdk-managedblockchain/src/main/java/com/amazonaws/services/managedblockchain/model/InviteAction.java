@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is
- * carried out when a <code>Proposal</code> is <code>APPROVED</code>.
+ * An action to invite a specific Amazon Web Services account to create a member and join the network. The
+ * <code>InviteAction</code> is carried out when a <code>Proposal</code> is <code>APPROVED</code>.
  * </p>
  * <p>
  * Applies only to Hyperledger Fabric.
@@ -34,18 +34,18 @@ public class InviteAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID to invite.
+     * The Amazon Web Services account ID to invite.
      * </p>
      */
     private String principal;
 
     /**
      * <p>
-     * The AWS account ID to invite.
+     * The Amazon Web Services account ID to invite.
      * </p>
      * 
      * @param principal
-     *        The AWS account ID to invite.
+     *        The Amazon Web Services account ID to invite.
      */
 
     public void setPrincipal(String principal) {
@@ -54,10 +54,10 @@ public class InviteAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID to invite.
+     * The Amazon Web Services account ID to invite.
      * </p>
      * 
-     * @return The AWS account ID to invite.
+     * @return The Amazon Web Services account ID to invite.
      */
 
     public String getPrincipal() {
@@ -66,11 +66,11 @@ public class InviteAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS account ID to invite.
+     * The Amazon Web Services account ID to invite.
      * </p>
      * 
      * @param principal
-     *        The AWS account ID to invite.
+     *        The Amazon Web Services account ID to invite.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

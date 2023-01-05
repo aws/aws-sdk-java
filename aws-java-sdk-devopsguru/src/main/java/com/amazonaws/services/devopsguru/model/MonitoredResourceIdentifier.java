@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,14 @@ public class MonitoredResourceIdentifier implements Serializable, Cloneable, Str
      * </p>
      */
     private String resourcePermission;
+    /**
+     * <p>
+     * The time at which DevOps Guru last updated this resource.
+     * </p>
+     */
+    private java.util.Date lastUpdated;
+
+    private ResourceCollection resourceCollection;
 
     /**
      * <p>
@@ -188,6 +196,72 @@ public class MonitoredResourceIdentifier implements Serializable, Cloneable, Str
     }
 
     /**
+     * <p>
+     * The time at which DevOps Guru last updated this resource.
+     * </p>
+     * 
+     * @param lastUpdated
+     *        The time at which DevOps Guru last updated this resource.
+     */
+
+    public void setLastUpdated(java.util.Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
+
+    /**
+     * <p>
+     * The time at which DevOps Guru last updated this resource.
+     * </p>
+     * 
+     * @return The time at which DevOps Guru last updated this resource.
+     */
+
+    public java.util.Date getLastUpdated() {
+        return this.lastUpdated;
+    }
+
+    /**
+     * <p>
+     * The time at which DevOps Guru last updated this resource.
+     * </p>
+     * 
+     * @param lastUpdated
+     *        The time at which DevOps Guru last updated this resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoredResourceIdentifier withLastUpdated(java.util.Date lastUpdated) {
+        setLastUpdated(lastUpdated);
+        return this;
+    }
+
+    /**
+     * @param resourceCollection
+     */
+
+    public void setResourceCollection(ResourceCollection resourceCollection) {
+        this.resourceCollection = resourceCollection;
+    }
+
+    /**
+     * @return
+     */
+
+    public ResourceCollection getResourceCollection() {
+        return this.resourceCollection;
+    }
+
+    /**
+     * @param resourceCollection
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoredResourceIdentifier withResourceCollection(ResourceCollection resourceCollection) {
+        setResourceCollection(resourceCollection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -204,7 +278,11 @@ public class MonitoredResourceIdentifier implements Serializable, Cloneable, Str
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getResourcePermission() != null)
-            sb.append("ResourcePermission: ").append(getResourcePermission());
+            sb.append("ResourcePermission: ").append(getResourcePermission()).append(",");
+        if (getLastUpdated() != null)
+            sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
+        if (getResourceCollection() != null)
+            sb.append("ResourceCollection: ").append(getResourceCollection());
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +309,14 @@ public class MonitoredResourceIdentifier implements Serializable, Cloneable, Str
             return false;
         if (other.getResourcePermission() != null && other.getResourcePermission().equals(this.getResourcePermission()) == false)
             return false;
+        if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
+            return false;
+        if (other.getLastUpdated() != null && other.getLastUpdated().equals(this.getLastUpdated()) == false)
+            return false;
+        if (other.getResourceCollection() == null ^ this.getResourceCollection() == null)
+            return false;
+        if (other.getResourceCollection() != null && other.getResourceCollection().equals(this.getResourceCollection()) == false)
+            return false;
         return true;
     }
 
@@ -242,6 +328,8 @@ public class MonitoredResourceIdentifier implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getMonitoredResourceName() == null) ? 0 : getMonitoredResourceName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getResourcePermission() == null) ? 0 : getResourcePermission().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
+        hashCode = prime * hashCode + ((getResourceCollection() == null) ? 0 : getResourceCollection().hashCode());
         return hashCode;
     }
 

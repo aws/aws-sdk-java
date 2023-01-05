@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      */
     private String clientToken;
@@ -41,7 +41,7 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     private String description;
     /**
      * <p>
-     * The Launch Profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      */
     private String launchProfileId;
@@ -79,14 +79,14 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -96,13 +96,13 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *         ensure idempotency.
+     *         specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it
+     *         for the request to ensure idempotency.
      */
 
     public String getClientToken() {
@@ -112,14 +112,14 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Launch Profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
      * @param launchProfileId
-     *        The Launch Profile ID.
+     *        The ID of the launch profile used to control access from the streaming session.
      */
 
     public void setLaunchProfileId(String launchProfileId) {
@@ -183,10 +183,10 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Launch Profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
-     * @return The Launch Profile ID.
+     * @return The ID of the launch profile used to control access from the streaming session.
      */
 
     public String getLaunchProfileId() {
@@ -195,11 +195,11 @@ public class UpdateLaunchProfileRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Launch Profile ID.
+     * The ID of the launch profile used to control access from the streaming session.
      * </p>
      * 
      * @param launchProfileId
-     *        The Launch Profile ID.
+     *        The ID of the launch profile used to control access from the streaming session.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,7 +82,9 @@ public enum ParameterExceptionField {
     HEADER_MATCH_PATTERN("HEADER_MATCH_PATTERN"),
     COOKIE_MATCH_PATTERN("COOKIE_MATCH_PATTERN"),
     MAP_MATCH_SCOPE("MAP_MATCH_SCOPE"),
-    OVERSIZE_HANDLING("OVERSIZE_HANDLING");
+    OVERSIZE_HANDLING("OVERSIZE_HANDLING"),
+    CHALLENGE_CONFIG("CHALLENGE_CONFIG"),
+    TOKEN_DOMAIN("TOKEN_DOMAIN");
 
     private String value;
 

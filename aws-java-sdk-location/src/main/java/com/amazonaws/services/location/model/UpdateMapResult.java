@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class UpdateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -58,7 +58,7 @@ public class UpdateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -68,7 +68,7 @@ public class UpdateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *        Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      *        </p>
      *        </li>
      */
@@ -84,7 +84,7 @@ public class UpdateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -93,7 +93,7 @@ public class UpdateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *         <ul>
      *         <li>
      *         <p>
-     *         Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *         Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      *         </p>
      *         </li>
      */
@@ -109,7 +109,7 @@ public class UpdateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * <ul>
      * <li>
      * <p>
-     * Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     * Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      * </p>
      * </li>
      * </ul>
@@ -119,7 +119,7 @@ public class UpdateMapResult extends com.amazonaws.AmazonWebServiceResult<com.am
      *        <ul>
      *        <li>
      *        <p>
-     *        Format example: <code>arn:aws:geo:region:account-id:maps/ExampleMap</code>
+     *        Format example: <code>arn:aws:geo:region:account-id:map/ExampleMap</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

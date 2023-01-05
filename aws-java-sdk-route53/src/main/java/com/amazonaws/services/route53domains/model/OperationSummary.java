@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,65 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Date submittedDate;
+    /**
+     * <p>
+     * Name of the domain.
+     * </p>
+     */
+    private String domainName;
+    /**
+     * <p>
+     * Message about the operation.
+     * </p>
+     */
+    private String message;
+    /**
+     * <p>
+     * Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String statusFlag;
+    /**
+     * <p>
+     * The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     */
+    private java.util.Date lastUpdatedDate;
 
     /**
      * <p>
@@ -280,6 +339,554 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Name of the domain.
+     * </p>
+     * 
+     * @param domainName
+     *        Name of the domain.
+     */
+
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
+    }
+
+    /**
+     * <p>
+     * Name of the domain.
+     * </p>
+     * 
+     * @return Name of the domain.
+     */
+
+    public String getDomainName() {
+        return this.domainName;
+    }
+
+    /**
+     * <p>
+     * Name of the domain.
+     * </p>
+     * 
+     * @param domainName
+     *        Name of the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OperationSummary withDomainName(String domainName) {
+        setDomainName(domainName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Message about the operation.
+     * </p>
+     * 
+     * @param message
+     *        Message about the operation.
+     */
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * <p>
+     * Message about the operation.
+     * </p>
+     * 
+     * @return Message about the operation.
+     */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * Message about the operation.
+     * </p>
+     * 
+     * @param message
+     *        Message about the operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OperationSummary withMessage(String message) {
+        setMessage(message);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     *        </p>
+     *        <p>
+     *        Valid values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @see StatusFlag
+     */
+
+    public void setStatusFlag(String statusFlag) {
+        this.statusFlag = statusFlag;
+    }
+
+    /**
+     * <p>
+     * Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     *         </p>
+     *         <p>
+     *         Valid values are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *         receiving the domain.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example,
+     *         returning an email.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *         >ResendOperationAuthorization</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *         resolution.
+     *         </p>
+     *         </li>
+     * @see StatusFlag
+     */
+
+    public String getStatusFlag() {
+        return this.statusFlag;
+    }
+
+    /**
+     * <p>
+     * Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     *        </p>
+     *        <p>
+     *        Valid values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusFlag
+     */
+
+    public OperationSummary withStatusFlag(String statusFlag) {
+        setStatusFlag(statusFlag);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     *        </p>
+     *        <p>
+     *        Valid values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @see StatusFlag
+     */
+
+    public void setStatusFlag(StatusFlag statusFlag) {
+        withStatusFlag(statusFlag);
+    }
+
+    /**
+     * <p>
+     * Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     * </p>
+     * <p>
+     * Valid values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is receiving the
+     * domain.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning an
+     * email.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     * >ResendOperationAuthorization</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its resolution.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param statusFlag
+     *        Automatically checks whether there are no outstanding operations on domains that need customer attention.
+     *        </p>
+     *        <p>
+     *        Valid values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the account that is
+     *        receiving the domain.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action, for example, returning
+     *        an email.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html"
+     *        >ResendOperationAuthorization</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment method to validate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting for its
+     *        resolution.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StatusFlag
+     */
+
+    public OperationSummary withStatusFlag(StatusFlag statusFlag) {
+        this.statusFlag = statusFlag.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param lastUpdatedDate
+     *        The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).
+     */
+
+    public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    /**
+     * <p>
+     * The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @return The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).
+     */
+
+    public java.util.Date getLastUpdatedDate() {
+        return this.lastUpdatedDate;
+    }
+
+    /**
+     * <p>
+     * The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).
+     * </p>
+     * 
+     * @param lastUpdatedDate
+     *        The date when the last change was made in Unix time format and Coordinated Universal Time (UTC).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OperationSummary withLastUpdatedDate(java.util.Date lastUpdatedDate) {
+        setLastUpdatedDate(lastUpdatedDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -298,7 +905,15 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getSubmittedDate() != null)
-            sb.append("SubmittedDate: ").append(getSubmittedDate());
+            sb.append("SubmittedDate: ").append(getSubmittedDate()).append(",");
+        if (getDomainName() != null)
+            sb.append("DomainName: ").append(getDomainName()).append(",");
+        if (getMessage() != null)
+            sb.append("Message: ").append(getMessage()).append(",");
+        if (getStatusFlag() != null)
+            sb.append("StatusFlag: ").append(getStatusFlag()).append(",");
+        if (getLastUpdatedDate() != null)
+            sb.append("LastUpdatedDate: ").append(getLastUpdatedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -329,6 +944,22 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getSubmittedDate() != null && other.getSubmittedDate().equals(this.getSubmittedDate()) == false)
             return false;
+        if (other.getDomainName() == null ^ this.getDomainName() == null)
+            return false;
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false)
+            return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
+            return false;
+        if (other.getStatusFlag() == null ^ this.getStatusFlag() == null)
+            return false;
+        if (other.getStatusFlag() != null && other.getStatusFlag().equals(this.getStatusFlag()) == false)
+            return false;
+        if (other.getLastUpdatedDate() == null ^ this.getLastUpdatedDate() == null)
+            return false;
+        if (other.getLastUpdatedDate() != null && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
+            return false;
         return true;
     }
 
@@ -341,6 +972,10 @@ public class OperationSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getSubmittedDate() == null) ? 0 : getSubmittedDate().hashCode());
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getStatusFlag() == null) ? 0 : getStatusFlag().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;
     }
 

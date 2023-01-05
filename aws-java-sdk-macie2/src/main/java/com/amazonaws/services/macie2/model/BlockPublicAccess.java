@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Provides information about the block public access settings for an S3 bucket. These settings can apply to a bucket at
- * the account level or bucket level. For detailed information about each setting, see <a
+ * the account or bucket level. For detailed information about each setting, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking public
  * access to your Amazon S3 storage</a> in the <i>Amazon Simple Storage Service User Guide</i>.
  * </p>

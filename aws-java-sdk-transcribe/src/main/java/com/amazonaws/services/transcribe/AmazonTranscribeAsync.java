@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,9 +57,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new Call Analytics category.
      * </p>
      * <p>
-     * All categories are automatically applied to your Call Analytics jobs. Note that in order to apply your categories
-     * to your jobs, you must create them before submitting your job request, as categories cannot be applied
-     * retroactively.
+     * All categories are automatically applied to your Call Analytics transcriptions. Note that in order to apply
+     * categories to your transcriptions, you must create them before submitting your transcription request, as
+     * categories cannot be applied retroactively.
+     * </p>
+     * <p>
+     * When creating a new category, you can use the <code>InputType</code> parameter to label the category as a batch
+     * category (<code>POST_CALL</code>) or a streaming category (<code>REAL_TIME</code>). Batch categories can only be
+     * applied to batch transcriptions and streaming categories can only be applied to streaming transcriptions. If you
+     * do not include <code>InputType</code>, your category is created as a batch category by default.
      * </p>
      * <p>
      * Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules
@@ -69,30 +75,12 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * To update an existing category, see .
      * </p>
      * <p>
-     * To learn more about:
+     * To learn more about Call Analytics categories, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for batch
+     * transcriptions</a> and <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for
+     * streaming transcriptions</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Call Analytics categories, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-     * categories</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Using rules, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
-     * >Rule criteria</a> and refer to the data type
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call
-     * center audio with Call Analytics</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createCallAnalyticsCategoryRequest
      * @return A Java Future containing the result of the CreateCallAnalyticsCategory operation returned by the service.
@@ -108,9 +96,15 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new Call Analytics category.
      * </p>
      * <p>
-     * All categories are automatically applied to your Call Analytics jobs. Note that in order to apply your categories
-     * to your jobs, you must create them before submitting your job request, as categories cannot be applied
-     * retroactively.
+     * All categories are automatically applied to your Call Analytics transcriptions. Note that in order to apply
+     * categories to your transcriptions, you must create them before submitting your transcription request, as
+     * categories cannot be applied retroactively.
+     * </p>
+     * <p>
+     * When creating a new category, you can use the <code>InputType</code> parameter to label the category as a batch
+     * category (<code>POST_CALL</code>) or a streaming category (<code>REAL_TIME</code>). Batch categories can only be
+     * applied to batch transcriptions and streaming categories can only be applied to streaming transcriptions. If you
+     * do not include <code>InputType</code>, your category is created as a batch category by default.
      * </p>
      * <p>
      * Call Analytics categories are composed of rules. For each category, you must create between 1 and 20 rules. Rules
@@ -120,30 +114,12 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * To update an existing category, see .
      * </p>
      * <p>
-     * To learn more about:
+     * To learn more about Call Analytics categories, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for batch
+     * transcriptions</a> and <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for
+     * streaming transcriptions</a>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Call Analytics categories, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-     * categories</a>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Using rules, see <a href=
-     * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
-     * >Rule criteria</a> and refer to the data type
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Call Analytics, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call
-     * center audio with Call Analytics</a>
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param createCallAnalyticsCategoryRequest
      * @param asyncHandler
@@ -164,7 +140,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom language model.
      * </p>
      * <p>
-     * When creating a new language model, you must specify:
+     * When creating a new custom language model, you must specify:
      * </p>
      * <ul>
      * <li>
@@ -189,10 +165,6 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.
-     * </p>
      * 
      * @param createLanguageModelRequest
      * @return A Java Future containing the result of the CreateLanguageModel operation returned by the service.
@@ -207,7 +179,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom language model.
      * </p>
      * <p>
-     * When creating a new language model, you must specify:
+     * When creating a new custom language model, you must specify:
      * </p>
      * <ul>
      * <li>
@@ -232,10 +204,6 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom language models</a>.
-     * </p>
      * 
      * @param createLanguageModelRequest
      * @param asyncHandler
@@ -255,21 +223,20 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom medical vocabulary.
      * </p>
      * <p>
-     * Prior to creating a new medical vocabulary, you must first upload a text file that contains your new entries,
-     * phrases, and terms into an Amazon S3 bucket. Note that this differs from , where you can include a list of terms
-     * within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
-     * the <code>Phrases</code> flag.
+     * Before creating a new custom medical vocabulary, you must first upload a text file that contains your new
+     * entries, phrases, and terms into an Amazon S3 bucket. Note that this differs from , where you can include a list
+     * of terms within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not
+     * support the <code>Phrases</code> flag.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary request fails. Refer to <a
+     * unsupported characters, your custom vocabulary request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
-     * vocabulary</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.
      * </p>
      * 
      * @param createMedicalVocabularyRequest
@@ -285,21 +252,20 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom medical vocabulary.
      * </p>
      * <p>
-     * Prior to creating a new medical vocabulary, you must first upload a text file that contains your new entries,
-     * phrases, and terms into an Amazon S3 bucket. Note that this differs from , where you can include a list of terms
-     * within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not support
-     * the <code>Phrases</code> flag.
+     * Before creating a new custom medical vocabulary, you must first upload a text file that contains your new
+     * entries, phrases, and terms into an Amazon S3 bucket. Note that this differs from , where you can include a list
+     * of terms within your request using the <code>Phrases</code> flag; <code>CreateMedicalVocabulary</code> does not
+     * support the <code>Phrases</code> flag.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary request fails. Refer to <a
+     * unsupported characters, your custom vocabulary request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
-     * vocabulary</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.
      * </p>
      * 
      * @param createMedicalVocabularyRequest
@@ -320,20 +286,19 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom vocabulary.
      * </p>
      * <p>
-     * When creating a new vocabulary, you can either upload a text file that contains your new entries, phrases, and
-     * terms into an Amazon S3 bucket and include the URI in your request, or you can include a list of terms directly
-     * in your request using the <code>Phrases</code> flag.
+     * When creating a new custom vocabulary, you can either upload a text file that contains your new entries, phrases,
+     * and terms into an Amazon S3 bucket and include the URI in your request. Or you can include a list of terms
+     * directly in your request using the <code>Phrases</code> flag.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary request fails. Refer to <a
+     * unsupported characters, your custom vocabulary request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
-     * vocabulary</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.
      * </p>
      * 
      * @param createVocabularyRequest
@@ -349,20 +314,19 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom vocabulary.
      * </p>
      * <p>
-     * When creating a new vocabulary, you can either upload a text file that contains your new entries, phrases, and
-     * terms into an Amazon S3 bucket and include the URI in your request, or you can include a list of terms directly
-     * in your request using the <code>Phrases</code> flag.
+     * When creating a new custom vocabulary, you can either upload a text file that contains your new entries, phrases,
+     * and terms into an Amazon S3 bucket and include the URI in your request. Or you can include a list of terms
+     * directly in your request using the <code>Phrases</code> flag.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary request fails. Refer to <a
+     * unsupported characters, your custom vocabulary request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary-create.html">Creating a custom
-     * vocabulary</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom vocabularies</a>.
      * </p>
      * 
      * @param createVocabularyRequest
@@ -383,19 +347,18 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom vocabulary filter.
      * </p>
      * <p>
-     * You can use vocabulary filters to mask, delete, or flag specific words from your transcript. Vocabulary filters
-     * are commonly used to mask profanity in transcripts.
+     * You can use custom vocabulary filters to mask, delete, or flag specific words from your transcript. Custom
+     * vocabulary filters are commonly used to mask profanity in transcripts.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * unsupported characters, your custom vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with
-     * unwanted words</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Vocabulary filtering</a>.
      * </p>
      * 
      * @param createVocabularyFilterRequest
@@ -411,19 +374,18 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Creates a new custom vocabulary filter.
      * </p>
      * <p>
-     * You can use vocabulary filters to mask, delete, or flag specific words from your transcript. Vocabulary filters
-     * are commonly used to mask profanity in transcripts.
+     * You can use custom vocabulary filters to mask, delete, or flag specific words from your transcript. Custom
+     * vocabulary filters are commonly used to mask profanity in transcripts.
      * </p>
      * <p>
      * Each language has a character set that contains all allowed characters for that specific language. If you use
-     * unsupported characters, your vocabulary filter request fails. Refer to <a
+     * unsupported characters, your custom vocabulary filter request fails. Refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html">Character Sets for Custom Vocabularies</a>
      * to get the character set for your language.
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using vocabulary filtering with
-     * unwanted words</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Vocabulary filtering</a>.
      * </p>
      * 
      * @param createVocabularyFilterRequest
@@ -510,7 +472,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom language model. To use this operation, specify the name of the language model you want to delete
-     * using <code>ModelName</code>. Language model names are case sensitive.
+     * using <code>ModelName</code>. custom language model names are case sensitive.
      * </p>
      * 
      * @param deleteLanguageModelRequest
@@ -524,7 +486,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Deletes a custom language model. To use this operation, specify the name of the language model you want to delete
-     * using <code>ModelName</code>. Language model names are case sensitive.
+     * using <code>ModelName</code>. custom language model names are case sensitive.
      * </p>
      * 
      * @param deleteLanguageModelRequest
@@ -579,8 +541,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a custom medical vocabulary. To use this operation, specify the name of the vocabulary you want to delete
-     * using <code>VocabularyName</code>. Vocabulary names are case sensitive.
+     * Deletes a custom medical vocabulary. To use this operation, specify the name of the custom vocabulary you want to
+     * delete using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteMedicalVocabularyRequest
@@ -593,8 +555,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a custom medical vocabulary. To use this operation, specify the name of the vocabulary you want to delete
-     * using <code>VocabularyName</code>. Vocabulary names are case sensitive.
+     * Deletes a custom medical vocabulary. To use this operation, specify the name of the custom vocabulary you want to
+     * delete using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteMedicalVocabularyRequest
@@ -645,8 +607,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary you want to delete using
-     * <code>VocabularyName</code>. Vocabulary names are case sensitive.
+     * Deletes a custom vocabulary. To use this operation, specify the name of the custom vocabulary you want to delete
+     * using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyRequest
@@ -659,8 +621,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a custom vocabulary. To use this operation, specify the name of the vocabulary you want to delete using
-     * <code>VocabularyName</code>. Vocabulary names are case sensitive.
+     * Deletes a custom vocabulary. To use this operation, specify the name of the custom vocabulary you want to delete
+     * using <code>VocabularyName</code>. Custom vocabulary names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyRequest
@@ -678,8 +640,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary filter you want to delete
-     * using <code>VocabularyFilterName</code>. Vocabulary filter names are case sensitive.
+     * Deletes a custom vocabulary filter. To use this operation, specify the name of the custom vocabulary filter you
+     * want to delete using <code>VocabularyFilterName</code>. Custom vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyFilterRequest
@@ -692,8 +654,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
 
     /**
      * <p>
-     * Deletes a vocabulary filter. To use this operation, specify the name of the vocabulary filter you want to delete
-     * using <code>VocabularyFilterName</code>. Vocabulary filter names are case sensitive.
+     * Deletes a custom vocabulary filter. To use this operation, specify the name of the custom vocabulary filter you
+     * want to delete using <code>VocabularyFilterName</code>. Custom vocabulary filter names are case sensitive.
      * </p>
      * 
      * @param deleteVocabularyFilterRequest
@@ -714,16 +676,13 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Provides information about the specified custom language model.
      * </p>
      * <p>
-     * This operation also shows if the base language model you used to create your custom language model has been
+     * This operation also shows if the base language model that you used to create your custom language model has been
      * updated. If Amazon Transcribe has updated the base model, you can create a new custom language model using the
      * updated base model.
      * </p>
      * <p>
      * If you tried to create a new custom language model and the request wasn't successful, you can use
      * <code>DescribeLanguageModel</code> to help identify the reason for this failure.
-     * </p>
-     * <p>
-     * To get a list of your custom language models, use the operation.
      * </p>
      * 
      * @param describeLanguageModelRequest
@@ -739,16 +698,13 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Provides information about the specified custom language model.
      * </p>
      * <p>
-     * This operation also shows if the base language model you used to create your custom language model has been
+     * This operation also shows if the base language model that you used to create your custom language model has been
      * updated. If Amazon Transcribe has updated the base model, you can create a new custom language model using the
      * updated base model.
      * </p>
      * <p>
      * If you tried to create a new custom language model and the request wasn't successful, you can use
      * <code>DescribeLanguageModel</code> to help identify the reason for this failure.
-     * </p>
-     * <p>
-     * To get a list of your custom language models, use the operation.
      * </p>
      * 
      * @param describeLanguageModelRequest
@@ -872,7 +828,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </p>
      * <p>
      * To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
-     * field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * field. If the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location
      * specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code>
      * provides details on why your transcription job failed.
      * </p>
@@ -895,7 +851,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </p>
      * <p>
      * To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
-     * field. If the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location
+     * field. If the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location
      * specified in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code>
      * provides details on why your transcription job failed.
      * </p>
@@ -922,9 +878,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Provides information about the specified custom medical vocabulary.
      * </p>
      * <p>
-     * To view the status of the specified medical vocabulary, check the <code>VocabularyState</code> field. If the
-     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * To view the status of the specified custom medical vocabulary, check the <code>VocabularyState</code> field. If
+     * the status is <code>READY</code>, your custom vocabulary is available to use. If the status is
+     * <code>FAILED</code>, <code>FailureReason</code> provides details on why your vocabulary failed.
      * </p>
      * <p>
      * To get a list of your custom medical vocabularies, use the operation.
@@ -943,9 +899,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Provides information about the specified custom medical vocabulary.
      * </p>
      * <p>
-     * To view the status of the specified medical vocabulary, check the <code>VocabularyState</code> field. If the
-     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * To view the status of the specified custom medical vocabulary, check the <code>VocabularyState</code> field. If
+     * the status is <code>READY</code>, your custom vocabulary is available to use. If the status is
+     * <code>FAILED</code>, <code>FailureReason</code> provides details on why your vocabulary failed.
      * </p>
      * <p>
      * To get a list of your custom medical vocabularies, use the operation.
@@ -970,9 +926,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </p>
      * <p>
      * To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If
-     * the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified
-     * in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides
-     * details on why your transcription job failed.
+     * the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location specified in
+     * <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     * on why your transcription job failed.
      * </p>
      * <p>
      * If you enabled content redaction, the redacted transcript can be found at the location specified in
@@ -996,9 +952,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </p>
      * <p>
      * To view the status of the specified transcription job, check the <code>TranscriptionJobStatus</code> field. If
-     * the status is <code>COMPLETED</code>, the job is finished and you can find the results at the location specified
-     * in <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides
-     * details on why your transcription job failed.
+     * the status is <code>COMPLETED</code>, the job is finished. You can find the results at the location specified in
+     * <code>TranscriptFileUri</code>. If the status is <code>FAILED</code>, <code>FailureReason</code> provides details
+     * on why your transcription job failed.
      * </p>
      * <p>
      * If you enabled content redaction, the redacted transcript can be found at the location specified in
@@ -1026,9 +982,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Provides information about the specified custom vocabulary.
      * </p>
      * <p>
-     * To view the status of the specified vocabulary, check the <code>VocabularyState</code> field. If the status is
-     * <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * To view the status of the specified custom vocabulary, check the <code>VocabularyState</code> field. If the
+     * status is <code>READY</code>, your custom vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your custom vocabulary failed.
      * </p>
      * <p>
      * To get a list of your custom vocabularies, use the operation.
@@ -1047,9 +1003,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Provides information about the specified custom vocabulary.
      * </p>
      * <p>
-     * To view the status of the specified vocabulary, check the <code>VocabularyState</code> field. If the status is
-     * <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary failed.
+     * To view the status of the specified custom vocabulary, check the <code>VocabularyState</code> field. If the
+     * status is <code>READY</code>, your custom vocabulary is available to use. If the status is <code>FAILED</code>,
+     * <code>FailureReason</code> provides details on why your custom vocabulary failed.
      * </p>
      * <p>
      * To get a list of your custom vocabularies, use the operation.
@@ -1073,11 +1029,6 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * Provides information about the specified custom vocabulary filter.
      * </p>
      * <p>
-     * To view the status of the specified vocabulary filter, check the <code>VocabularyState</code> field. If the
-     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary filter failed.
-     * </p>
-     * <p>
      * To get a list of your custom vocabulary filters, use the operation.
      * </p>
      * 
@@ -1092,11 +1043,6 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Provides information about the specified custom vocabulary filter.
-     * </p>
-     * <p>
-     * To view the status of the specified vocabulary filter, check the <code>VocabularyState</code> field. If the
-     * status is <code>READY</code>, your vocabulary is available to use. If the status is <code>FAILED</code>,
-     * <code>FailureReason</code> provides details on why your vocabulary filter failed.
      * </p>
      * <p>
      * To get a list of your custom vocabulary filters, use the operation.
@@ -1196,7 +1142,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Provides a list of custom language models that match the specified criteria. If no criteria are specified, all
-     * language models are returned.
+     * custom language models are returned.
      * </p>
      * <p>
      * To get detailed information about a specific custom language model, use the operation.
@@ -1213,7 +1159,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Provides a list of custom language models that match the specified criteria. If no criteria are specified, all
-     * language models are returned.
+     * custom language models are returned.
      * </p>
      * <p>
      * To get detailed information about a specific custom language model, use the operation.
@@ -1476,18 +1422,20 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * include in your request.
      * </p>
      * <p>
-     * In addition to many of the standard transcription features, Call Analytics provides you with call
-     * characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your
-     * audio file. You can also apply custom categories to flag specified conditions. To learn more about these features
-     * and insights, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
-     * call center audio with Call Analytics</a>.
+     * In addition to many standard transcription features, Call Analytics provides you with call characteristics, call
+     * summarization, speaker sentiment, and optional redaction of your text transcript and your audio file. You can
+     * also apply custom categories to flag specified conditions. To learn more about these features and insights, refer
+     * to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio
+     * with Call Analytics</a>.
      * </p>
      * <p>
      * If you want to apply categories to your Call Analytics job, you must create them before submitting your job
      * request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To
      * learn more about Call Analytics categories, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-     * categories</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for batch
+     * transcriptions</a> and <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for
+     * streaming transcriptions</a>.
      * </p>
      * <p>
      * To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media file into an Amazon S3
@@ -1506,8 +1454,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </li>
      * <li>
      * <p>
-     * <code>CallAnalyticsJobName</code>: A custom name you create for your transcription job that is unique within your
-     * Amazon Web Services account.
+     * <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription job that's unique within
+     * your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
@@ -1546,18 +1494,20 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * include in your request.
      * </p>
      * <p>
-     * In addition to many of the standard transcription features, Call Analytics provides you with call
-     * characteristics, call summarization, speaker sentiment, and optional redaction of your text transcript and your
-     * audio file. You can also apply custom categories to flag specified conditions. To learn more about these features
-     * and insights, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing
-     * call center audio with Call Analytics</a>.
+     * In addition to many standard transcription features, Call Analytics provides you with call characteristics, call
+     * summarization, speaker sentiment, and optional redaction of your text transcript and your audio file. You can
+     * also apply custom categories to flag specified conditions. To learn more about these features and insights, refer
+     * to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics.html">Analyzing call center audio
+     * with Call Analytics</a>.
      * </p>
      * <p>
      * If you want to apply categories to your Call Analytics job, you must create them before submitting your job
      * request. Categories cannot be retroactively applied to a job. To create a new category, use the operation. To
      * learn more about Call Analytics categories, see <a
-     * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
-     * categories</a>.
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for batch
+     * transcriptions</a> and <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating categories for
+     * streaming transcriptions</a>.
      * </p>
      * <p>
      * To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media file into an Amazon S3
@@ -1576,8 +1526,8 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * </li>
      * <li>
      * <p>
-     * <code>CallAnalyticsJobName</code>: A custom name you create for your transcription job that is unique within your
-     * Amazon Web Services account.
+     * <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription job that's unique within
+     * your Amazon Web Services account.
      * </p>
      * </li>
      * <li>
@@ -1621,9 +1571,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * choose to include in your request.
      * </p>
      * <p>
-     * In addition to many of the standard transcription features, Amazon Transcribe Medical provides you with a robust
-     * medical vocabulary and, optionally, content identification, which adds flags to personal health information
-     * (PHI). To learn more about these features, refer to <a
+     * In addition to many standard transcription features, Amazon Transcribe Medical provides you with a robust medical
+     * vocabulary and, optionally, content identification, which adds flags to personal health information (PHI). To
+     * learn more about these features, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How Amazon Transcribe Medical
      * works</a>.
      * </p>
@@ -1692,9 +1642,9 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
      * choose to include in your request.
      * </p>
      * <p>
-     * In addition to many of the standard transcription features, Amazon Transcribe Medical provides you with a robust
-     * medical vocabulary and, optionally, content identification, which adds flags to personal health information
-     * (PHI). To learn more about these features, refer to <a
+     * In addition to many standard transcription features, Amazon Transcribe Medical provides you with a robust medical
+     * vocabulary and, optionally, content identification, which adds flags to personal health information (PHI). To
+     * learn more about these features, refer to <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works-med.html">How Amazon Transcribe Medical
      * works</a>.
      * </p>
@@ -1993,7 +1943,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom medical vocabulary with new values. This operation overwrites all existing information
-     * with your new values; you cannot append new terms onto an existing vocabulary.
+     * with your new values; you cannot append new terms onto an existing custom vocabulary.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest
@@ -2007,7 +1957,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom medical vocabulary with new values. This operation overwrites all existing information
-     * with your new values; you cannot append new terms onto an existing vocabulary.
+     * with your new values; you cannot append new terms onto an existing custom vocabulary.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest
@@ -2026,7 +1976,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom vocabulary with new values. This operation overwrites all existing information with
-     * your new values; you cannot append new terms onto an existing vocabulary.
+     * your new values; you cannot append new terms onto an existing custom vocabulary.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -2040,7 +1990,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom vocabulary with new values. This operation overwrites all existing information with
-     * your new values; you cannot append new terms onto an existing vocabulary.
+     * your new values; you cannot append new terms onto an existing custom vocabulary.
      * </p>
      * 
      * @param updateVocabularyRequest
@@ -2059,7 +2009,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all
-     * previous entries; you cannot append new terms onto an existing vocabulary filter.
+     * previous entries; you cannot append new terms onto an existing custom vocabulary filter.
      * </p>
      * 
      * @param updateVocabularyFilterRequest
@@ -2073,7 +2023,7 @@ public interface AmazonTranscribeAsync extends AmazonTranscribe {
     /**
      * <p>
      * Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all
-     * previous entries; you cannot append new terms onto an existing vocabulary filter.
+     * previous entries; you cannot append new terms onto an existing custom vocabulary filter.
      * </p>
      * 
      * @param updateVocabularyFilterRequest

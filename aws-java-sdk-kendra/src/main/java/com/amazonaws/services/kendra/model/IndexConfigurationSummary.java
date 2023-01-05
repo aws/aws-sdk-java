@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,20 +30,20 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of the index.
+     * The name of the index.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A unique identifier for the index. Use this to identify the index when you are using APIs such as
-     * <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
+     * A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>,
+     * <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * </p>
      */
     private String edition;
@@ -68,11 +68,11 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of the index.
+     * The name of the index.
      * </p>
      * 
      * @param name
-     *        The identifier of the index.
+     *        The name of the index.
      */
 
     public void setName(String name) {
@@ -81,10 +81,10 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of the index.
+     * The name of the index.
      * </p>
      * 
-     * @return The identifier of the index.
+     * @return The name of the index.
      */
 
     public String getName() {
@@ -93,11 +93,11 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The identifier of the index.
+     * The name of the index.
      * </p>
      * 
      * @param name
-     *        The identifier of the index.
+     *        The name of the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,12 +108,12 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A unique identifier for the index. Use this to identify the index when you are using APIs such as
-     * <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
+     * A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>,
+     * <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the index. Use this to identify the index when you are using APIs such as
+     *        A identifier for the index. Use this to identify the index when you are using APIs such as
      *        <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
      */
 
@@ -123,11 +123,11 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A unique identifier for the index. Use this to identify the index when you are using APIs such as
-     * <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
+     * A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>,
+     * <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
      * </p>
      * 
-     * @return A unique identifier for the index. Use this to identify the index when you are using APIs such as
+     * @return A identifier for the index. Use this to identify the index when you are using APIs such as
      *         <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
      */
 
@@ -137,12 +137,12 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A unique identifier for the index. Use this to identify the index when you are using APIs such as
-     * <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
+     * A identifier for the index. Use this to identify the index when you are using APIs such as <code>Query</code>,
+     * <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
      * </p>
      * 
      * @param id
-     *        A unique identifier for the index. Use this to identify the index when you are using APIs such as
+     *        A identifier for the index. Use this to identify the index when you are using APIs such as
      *        <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>, and <code>DeleteIndex</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -154,11 +154,11 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * </p>
      * 
      * @param edition
-     *        Indicates whether the index is a enterprise edition index or a developer edition index.
+     *        Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * @see IndexEdition
      */
 
@@ -168,10 +168,10 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * </p>
      * 
-     * @return Indicates whether the index is a enterprise edition index or a developer edition index.
+     * @return Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * @see IndexEdition
      */
 
@@ -181,11 +181,11 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * </p>
      * 
      * @param edition
-     *        Indicates whether the index is a enterprise edition index or a developer edition index.
+     *        Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */
@@ -197,11 +197,11 @@ public class IndexConfigurationSummary implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Indicates whether the index is a enterprise edition index or a developer edition index.
+     * Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * </p>
      * 
      * @param edition
-     *        Indicates whether the index is a enterprise edition index or a developer edition index.
+     *        Indicates whether the index is a Enterprise Edition index or a Developer Edition index.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */

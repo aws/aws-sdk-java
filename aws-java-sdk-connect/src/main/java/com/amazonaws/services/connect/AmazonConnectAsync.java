@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,12 +44,6 @@ import com.amazonaws.services.connect.model.*;
  * endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect
  * Endpoints</a>.
  * </p>
- * <note>
- * <p>
- * Working with flows? Check out the <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
- * </p>
- * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonConnectAsync extends AmazonConnect {
@@ -294,6 +288,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Associates a flow with a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param associatePhoneNumberContactFlowRequest
      * @return A Java Future containing the result of the AssociatePhoneNumberContactFlow operation returned by the
@@ -309,6 +313,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Associates a flow with a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param associatePhoneNumberContactFlowRequest
      * @param asyncHandler
@@ -438,8 +452,28 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Claims an available phone number to your Amazon Connect instance.
+     * Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this
+     * API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group
+     * was created.
      * </p>
+     * <p>
+     * For more information about how to use this operation, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim a phone number in your
+     * country</a> and <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html"
+     * >Claim phone numbers to traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * You can call the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html"
+     * >SearchAvailablePhoneNumbers</a> API for available phone numbers that you can claim. Call the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html"
+     * >DescribePhoneNumber</a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param claimPhoneNumberRequest
      * @return A Java Future containing the result of the ClaimPhoneNumber operation returned by the service.
@@ -451,8 +485,28 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Claims an available phone number to your Amazon Connect instance.
+     * Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this
+     * API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group
+     * was created.
      * </p>
+     * <p>
+     * For more information about how to use this operation, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim a phone number in your
+     * country</a> and <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html"
+     * >Claim phone numbers to traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * You can call the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html"
+     * >SearchAvailablePhoneNumbers</a> API for available phone numbers that you can claim. Call the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html"
+     * >DescribePhoneNumber</a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param claimPhoneNumberRequest
      * @param asyncHandler
@@ -510,7 +564,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param createContactFlowRequest
@@ -527,7 +582,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param createContactFlowRequest
@@ -706,6 +762,18 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Creates a new queue for the specified Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param createQueueRequest
      * @return A Java Future containing the result of the CreateQueue operation returned by the service.
@@ -722,6 +790,18 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Creates a new queue for the specified Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param createQueueRequest
      * @param asyncHandler
@@ -800,6 +880,45 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Creates a rule for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+     * Function language</a> to code conditions for the rule.
+     * </p>
+     * 
+     * @param createRuleRequest
+     * @return A Java Future containing the result of the CreateRule operation returned by the service.
+     * @sample AmazonConnectAsync.CreateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRuleResult> createRuleAsync(CreateRuleRequest createRuleRequest);
+
+    /**
+     * <p>
+     * Creates a rule for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+     * Function language</a> to code conditions for the rule.
+     * </p>
+     * 
+     * @param createRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateRule operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.CreateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateRuleResult> createRuleAsync(CreateRuleRequest createRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateRuleRequest, CreateRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -865,6 +984,51 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<CreateTaskTemplateResult> createTaskTemplateAsync(CreateTaskTemplateRequest createTaskTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTaskTemplateRequest, CreateTaskTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a traffic distribution group given an Amazon Connect instance that has been replicated.
+     * </p>
+     * <p>
+     * For more information about creating traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set up
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createTrafficDistributionGroupRequest
+     * @return A Java Future containing the result of the CreateTrafficDistributionGroup operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.CreateTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficDistributionGroupResult> createTrafficDistributionGroupAsync(
+            CreateTrafficDistributionGroupRequest createTrafficDistributionGroupRequest);
+
+    /**
+     * <p>
+     * Creates a traffic distribution group given an Amazon Connect instance that has been replicated.
+     * </p>
+     * <p>
+     * For more information about creating traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set up
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createTrafficDistributionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTrafficDistributionGroup operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.CreateTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateTrafficDistributionGroupResult> createTrafficDistributionGroupAsync(
+            CreateTrafficDistributionGroupRequest createTrafficDistributionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateTrafficDistributionGroupRequest, CreateTrafficDistributionGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1222,6 +1386,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Deletes a rule for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteRuleRequest
+     * @return A Java Future containing the result of the DeleteRule operation returned by the service.
+     * @sample AmazonConnectAsync.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a rule for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteRule operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest deleteRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -1287,6 +1482,53 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DeleteTaskTemplateResult> deleteTaskTemplateAsync(DeleteTaskTemplateRequest deleteTaskTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteTaskTemplateRequest, DeleteTaskTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution
+     * group is created.
+     * </p>
+     * <p>
+     * For more information about deleting traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteTrafficDistributionGroupRequest
+     * @return A Java Future containing the result of the DeleteTrafficDistributionGroup operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.DeleteTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficDistributionGroupResult> deleteTrafficDistributionGroupAsync(
+            DeleteTrafficDistributionGroupRequest deleteTrafficDistributionGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution
+     * group is created.
+     * </p>
+     * <p>
+     * For more information about deleting traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteTrafficDistributionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTrafficDistributionGroup operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.DeleteTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteTrafficDistributionGroupResult> deleteTrafficDistributionGroupAsync(
+            DeleteTrafficDistributionGroupRequest deleteTrafficDistributionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteTrafficDistributionGroupRequest, DeleteTrafficDistributionGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -1520,7 +1762,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param describeContactFlowRequest
@@ -1537,7 +1780,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param describeContactFlowRequest
@@ -1752,8 +1996,19 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling in the Amazon Web Services Region
+     * where the traffic distribution group was created, you can use either a phone number ARN or UUID value for the
+     * <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution
+     * group and you are calling this API in the alternate Amazon Web Services Region associated with the traffic
+     * distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will
+     * receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param describePhoneNumberRequest
      * @return A Java Future containing the result of the DescribePhoneNumber operation returned by the service.
@@ -1765,8 +2020,19 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling in the Amazon Web Services Region
+     * where the traffic distribution group was created, you can use either a phone number ARN or UUID value for the
+     * <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution
+     * group and you are calling this API in the alternate Amazon Web Services Region associated with the traffic
+     * distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will
+     * receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param describePhoneNumberRequest
      * @param asyncHandler
@@ -1882,6 +2148,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Describes a rule for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param describeRuleRequest
+     * @return A Java Future containing the result of the DescribeRule operation returned by the service.
+     * @sample AmazonConnectAsync.DescribeRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest describeRuleRequest);
+
+    /**
+     * <p>
+     * Describes a rule for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param describeRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRule operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DescribeRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest describeRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRuleRequest, DescribeRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -1916,6 +2213,41 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DescribeSecurityProfileResult> describeSecurityProfileAsync(DescribeSecurityProfileRequest describeSecurityProfileRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeSecurityProfileRequest, DescribeSecurityProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets details and status of a traffic distribution group.
+     * </p>
+     * 
+     * @param describeTrafficDistributionGroupRequest
+     * @return A Java Future containing the result of the DescribeTrafficDistributionGroup operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.DescribeTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficDistributionGroupResult> describeTrafficDistributionGroupAsync(
+            DescribeTrafficDistributionGroupRequest describeTrafficDistributionGroupRequest);
+
+    /**
+     * <p>
+     * Gets details and status of a traffic distribution group.
+     * </p>
+     * 
+     * @param describeTrafficDistributionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTrafficDistributionGroup operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.DescribeTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeTrafficDistributionGroupResult> describeTrafficDistributionGroupAsync(
+            DescribeTrafficDistributionGroupRequest describeTrafficDistributionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeTrafficDistributionGroupRequest, DescribeTrafficDistributionGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -2244,9 +2576,18 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Removes the flow association from a phone number claimed to your Amazon Connect instance, if a flow association
-     * exists.
+     * Removes the flow association from a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param disassociatePhoneNumberContactFlowRequest
      * @return A Java Future containing the result of the DisassociatePhoneNumberContactFlow operation returned by the
@@ -2260,9 +2601,18 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Removes the flow association from a phone number claimed to your Amazon Connect instance, if a flow association
-     * exists.
+     * Removes the flow association from a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param disassociatePhoneNumberContactFlowRequest
      * @param asyncHandler
@@ -2391,6 +2741,43 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<DisassociateSecurityKeyResult> disassociateSecurityKeyAsync(DisassociateSecurityKeyRequest disassociateSecurityKeyRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateSecurityKeyRequest, DisassociateSecurityKeyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Dismisses contacts from an agent’s CCP and returns the agent to an available state, which allows the agent to
+     * receive a new routed contact. Contacts can only be dismissed if they are in a <code>MISSED</code>,
+     * <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code> state in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent Event Stream</a>.
+     * </p>
+     * 
+     * @param dismissUserContactRequest
+     * @return A Java Future containing the result of the DismissUserContact operation returned by the service.
+     * @sample AmazonConnectAsync.DismissUserContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DismissUserContactResult> dismissUserContactAsync(DismissUserContactRequest dismissUserContactRequest);
+
+    /**
+     * <p>
+     * Dismisses contacts from an agent’s CCP and returns the agent to an available state, which allows the agent to
+     * receive a new routed contact. Contacts can only be dismissed if they are in a <code>MISSED</code>,
+     * <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code> state in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent Event Stream</a>.
+     * </p>
+     * 
+     * @param dismissUserContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DismissUserContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.DismissUserContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DismissUserContactResult> dismissUserContactAsync(DismissUserContactRequest dismissUserContactRequest,
+            com.amazonaws.handlers.AsyncHandler<DismissUserContactRequest, DismissUserContactResult> asyncHandler);
 
     /**
      * <p>
@@ -2618,6 +3005,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Retrieves the current traffic distribution for a given traffic distribution group.
+     * </p>
+     * 
+     * @param getTrafficDistributionRequest
+     * @return A Java Future containing the result of the GetTrafficDistribution operation returned by the service.
+     * @sample AmazonConnectAsync.GetTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrafficDistributionResult> getTrafficDistributionAsync(GetTrafficDistributionRequest getTrafficDistributionRequest);
+
+    /**
+     * <p>
+     * Retrieves the current traffic distribution for a given traffic distribution group.
+     * </p>
+     * 
+     * @param getTrafficDistributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTrafficDistribution operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.GetTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTrafficDistributionResult> getTrafficDistributionAsync(GetTrafficDistributionRequest getTrafficDistributionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTrafficDistributionRequest, GetTrafficDistributionResult> asyncHandler);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -2766,7 +3184,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * <p>
      * For more information about flows, see <a
@@ -2788,7 +3207,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * <p>
      * For more information about flows, see <a
@@ -3159,6 +3579,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone
      * Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * The phone number <code>Arn</code> value that is returned from each of the items in the <a href=
+     * "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList"
+     * >PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a
+     * <code>ResourceNotFoundException</code>. Instead, use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * API. It returns the new phone number ARN that can be used to tag phone number resources.
+     * </p>
+     * </important>
      * 
      * @param listPhoneNumbersRequest
      * @return A Java Future containing the result of the ListPhoneNumbers operation returned by the service.
@@ -3177,6 +3607,16 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone
      * Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * The phone number <code>Arn</code> value that is returned from each of the items in the <a href=
+     * "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList"
+     * >PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a
+     * <code>ResourceNotFoundException</code>. Instead, use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * API. It returns the new phone number ARN that can be used to tag phone number resources.
+     * </p>
+     * </important>
      * 
      * @param listPhoneNumbersRequest
      * @param asyncHandler
@@ -3193,7 +3633,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Lists phone numbers claimed to your Amazon Connect instance.
+     * Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided
+     * <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions
+     * associated with traffic distribution group.
      * </p>
      * <p>
      * For more information about phone numbers, see <a
@@ -3211,7 +3653,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Lists phone numbers claimed to your Amazon Connect instance.
+     * Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided
+     * <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions
+     * associated with traffic distribution group.
      * </p>
      * <p>
      * For more information about phone numbers, see <a
@@ -3458,6 +3902,37 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * List all rules for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listRulesRequest
+     * @return A Java Future containing the result of the ListRules operation returned by the service.
+     * @sample AmazonConnectAsync.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest);
+
+    /**
+     * <p>
+     * List all rules for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListRules operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListRulesResult> listRulesAsync(ListRulesRequest listRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListRulesRequest, ListRulesResult> asyncHandler);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -3649,6 +4124,41 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Lists traffic distribution groups.
+     * </p>
+     * 
+     * @param listTrafficDistributionGroupsRequest
+     * @return A Java Future containing the result of the ListTrafficDistributionGroups operation returned by the
+     *         service.
+     * @sample AmazonConnectAsync.ListTrafficDistributionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrafficDistributionGroupsResult> listTrafficDistributionGroupsAsync(
+            ListTrafficDistributionGroupsRequest listTrafficDistributionGroupsRequest);
+
+    /**
+     * <p>
+     * Lists traffic distribution groups.
+     * </p>
+     * 
+     * @param listTrafficDistributionGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTrafficDistributionGroups operation returned by the
+     *         service.
+     * @sample AmazonConnectAsyncHandler.ListTrafficDistributionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTrafficDistributionGroupsResult> listTrafficDistributionGroupsAsync(
+            ListTrafficDistributionGroupsRequest listTrafficDistributionGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTrafficDistributionGroupsRequest, ListTrafficDistributionGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the use cases for the integration association.
      * </p>
      * 
@@ -3754,6 +4264,39 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by <i>userId</i>
+     * will be set to silent monitoring mode on the contact.
+     * </p>
+     * 
+     * @param monitorContactRequest
+     * @return A Java Future containing the result of the MonitorContact operation returned by the service.
+     * @sample AmazonConnectAsync.MonitorContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<MonitorContactResult> monitorContactAsync(MonitorContactRequest monitorContactRequest);
+
+    /**
+     * <p>
+     * Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by <i>userId</i>
+     * will be set to silent monitoring mode on the contact.
+     * </p>
+     * 
+     * @param monitorContactRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the MonitorContact operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.MonitorContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<MonitorContactResult> monitorContactAsync(MonitorContactRequest monitorContactRequest,
+            com.amazonaws.handlers.AsyncHandler<MonitorContactRequest, MonitorContactResult> asyncHandler);
+
+    /**
+     * <p>
      * Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact,
      * this sets the agent's next status.
      * </p>
@@ -3799,8 +4342,20 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Releases a phone number previously claimed to an Amazon Connect instance.
+     * Releases a phone number previously claimed to an Amazon Connect instance or traffic distribution group. You can
+     * call this API only in the Amazon Web Services Region where the number was claimed.
      * </p>
+     * <important>
+     * <p>
+     * To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code> API, not the
+     * Amazon Connect console.
+     * </p>
+     * <p>
+     * After releasing a phone number, the phone number enters into a cooldown period of 30 days. It cannot be searched
+     * for or claimed again until the period has ended. If you accidentally release a phone number, contact Amazon Web
+     * Services Support.
+     * </p>
+     * </important>
      * 
      * @param releasePhoneNumberRequest
      * @return A Java Future containing the result of the ReleasePhoneNumber operation returned by the service.
@@ -3812,8 +4367,20 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Releases a phone number previously claimed to an Amazon Connect instance.
+     * Releases a phone number previously claimed to an Amazon Connect instance or traffic distribution group. You can
+     * call this API only in the Amazon Web Services Region where the number was claimed.
      * </p>
+     * <important>
+     * <p>
+     * To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code> API, not the
+     * Amazon Connect console.
+     * </p>
+     * <p>
+     * After releasing a phone number, the phone number enters into a cooldown period of 30 days. It cannot be searched
+     * for or claimed again until the period has ended. If you accidentally release a phone number, contact Amazon Web
+     * Services Support.
+     * </p>
+     * </important>
      * 
      * @param releasePhoneNumberRequest
      * @param asyncHandler
@@ -3827,6 +4394,47 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<ReleasePhoneNumberResult> releasePhoneNumberAsync(ReleasePhoneNumberRequest releasePhoneNumberRequest,
             com.amazonaws.handlers.AsyncHandler<ReleasePhoneNumberRequest, ReleasePhoneNumberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about replicating an Amazon Connect instance, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a
+     * replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param replicateInstanceRequest
+     * @return A Java Future containing the result of the ReplicateInstance operation returned by the service.
+     * @sample AmazonConnectAsync.ReplicateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReplicateInstanceResult> replicateInstanceAsync(ReplicateInstanceRequest replicateInstanceRequest);
+
+    /**
+     * <p>
+     * Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about replicating an Amazon Connect instance, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a
+     * replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param replicateInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReplicateInstance operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.ReplicateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReplicateInstanceResult> replicateInstanceAsync(ReplicateInstanceRequest replicateInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<ReplicateInstanceRequest, ReplicateInstanceResult> asyncHandler);
 
     /**
      * <p>
@@ -3869,7 +4477,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Searches for available phone numbers that you can claim to your Amazon Connect instance.
+     * Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both
+     * Amazon Web Services Regions associated with the traffic distribution group.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -3883,7 +4493,9 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Searches for available phone numbers that you can claim to your Amazon Connect instance.
+     * Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both
+     * Amazon Web Services Regions associated with the traffic distribution group.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -4015,6 +4627,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Searches users in an Amazon Connect instance, with optional filtering.
      * </p>
+     * <note>
+     * <p>
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
+     * </p>
+     * </note>
      * 
      * @param searchUsersRequest
      * @return A Java Future containing the result of the SearchUsers operation returned by the service.
@@ -4028,6 +4645,11 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Searches users in an Amazon Connect instance, with optional filtering.
      * </p>
+     * <note>
+     * <p>
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
+     * </p>
+     * </note>
      * 
      * @param searchUsersRequest
      * @param asyncHandler
@@ -4930,7 +5552,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param updateContactFlowContentRequest
@@ -4947,7 +5570,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param updateContactFlowContentRequest
@@ -5072,7 +5696,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param updateContactFlowNameRequest
@@ -5089,7 +5714,8 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param updateContactFlowNameRequest
@@ -5251,9 +5877,107 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Updates your claimed phone number from its current Amazon Connect instance to another Amazon Connect instance in
-     * the same Region.
+     * Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically
+     * disconnected from a chat due to idleness. You can set four timers:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Customer idle timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Customer auto-disconnect timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agent idle timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agent auto-disconnect timeout
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how chat timeouts work, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for
+     * human participants</a>.
+     * </p>
+     * 
+     * @param updateParticipantRoleConfigRequest
+     * @return A Java Future containing the result of the UpdateParticipantRoleConfig operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateParticipantRoleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateParticipantRoleConfigResult> updateParticipantRoleConfigAsync(
+            UpdateParticipantRoleConfigRequest updateParticipantRoleConfigRequest);
+
+    /**
+     * <p>
+     * Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically
+     * disconnected from a chat due to idleness. You can set four timers:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Customer idle timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Customer auto-disconnect timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agent idle timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agent auto-disconnect timeout
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how chat timeouts work, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for
+     * human participants</a>.
+     * </p>
+     * 
+     * @param updateParticipantRoleConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateParticipantRoleConfig operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateParticipantRoleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateParticipantRoleConfigResult> updateParticipantRoleConfigAsync(
+            UpdateParticipantRoleConfigRequest updateParticipantRoleConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateParticipantRoleConfigRequest, UpdateParticipantRoleConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to
+     * another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region.
+     * </p>
+     * <important>
+     * <p>
+     * You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber
+     * </a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param updatePhoneNumberRequest
      * @return A Java Future containing the result of the UpdatePhoneNumber operation returned by the service.
@@ -5265,9 +5989,18 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
-     * Updates your claimed phone number from its current Amazon Connect instance to another Amazon Connect instance in
-     * the same Region.
+     * Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to
+     * another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region.
      * </p>
+     * <important>
+     * <p>
+     * You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber
+     * </a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param updatePhoneNumberRequest
      * @param asyncHandler
@@ -5404,6 +6137,18 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param updateQueueOutboundCallerConfigRequest
      * @return A Java Future containing the result of the UpdateQueueOutboundCallerConfig operation returned by the
@@ -5422,6 +6167,18 @@ public interface AmazonConnectAsync extends AmazonConnect {
      * <p>
      * Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param updateQueueOutboundCallerConfigRequest
      * @param asyncHandler
@@ -5677,6 +6434,45 @@ public interface AmazonConnectAsync extends AmazonConnect {
 
     /**
      * <p>
+     * Updates a rule for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+     * Function language</a> to code conditions for the rule.
+     * </p>
+     * 
+     * @param updateRuleRequest
+     * @return A Java Future containing the result of the UpdateRule operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(UpdateRuleRequest updateRuleRequest);
+
+    /**
+     * <p>
+     * Updates a rule for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+     * Function language</a> to code conditions for the rule.
+     * </p>
+     * 
+     * @param updateRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateRule operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateRuleResult> updateRuleAsync(UpdateRuleRequest updateRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateRuleRequest, UpdateRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -5744,6 +6540,51 @@ public interface AmazonConnectAsync extends AmazonConnect {
      */
     java.util.concurrent.Future<UpdateTaskTemplateResult> updateTaskTemplateAsync(UpdateTaskTemplateRequest updateTaskTemplateRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTaskTemplateRequest, UpdateTaskTemplateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the traffic distribution for a given traffic distribution group.
+     * </p>
+     * <p>
+     * For more information about updating a traffic distribution group, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+     * telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateTrafficDistributionRequest
+     * @return A Java Future containing the result of the UpdateTrafficDistribution operation returned by the service.
+     * @sample AmazonConnectAsync.UpdateTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrafficDistributionResult> updateTrafficDistributionAsync(
+            UpdateTrafficDistributionRequest updateTrafficDistributionRequest);
+
+    /**
+     * <p>
+     * Updates the traffic distribution for a given traffic distribution group.
+     * </p>
+     * <p>
+     * For more information about updating a traffic distribution group, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+     * telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateTrafficDistributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTrafficDistribution operation returned by the service.
+     * @sample AmazonConnectAsyncHandler.UpdateTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateTrafficDistributionResult> updateTrafficDistributionAsync(
+            UpdateTrafficDistributionRequest updateTrafficDistributionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateTrafficDistributionRequest, UpdateTrafficDistributionResult> asyncHandler);
 
     /**
      * <p>

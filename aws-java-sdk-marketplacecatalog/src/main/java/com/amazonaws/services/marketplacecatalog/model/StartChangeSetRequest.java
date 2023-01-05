@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String clientRequestToken;
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     */
+    private java.util.List<Tag> changeSetTags;
 
     /**
      * <p>
@@ -248,6 +254,76 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * 
+     * @return A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     */
+
+    public java.util.List<Tag> getChangeSetTags() {
+        return changeSetTags;
+    }
+
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * 
+     * @param changeSetTags
+     *        A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     */
+
+    public void setChangeSetTags(java.util.Collection<Tag> changeSetTags) {
+        if (changeSetTags == null) {
+            this.changeSetTags = null;
+            return;
+        }
+
+        this.changeSetTags = new java.util.ArrayList<Tag>(changeSetTags);
+    }
+
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setChangeSetTags(java.util.Collection)} or {@link #withChangeSetTags(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param changeSetTags
+     *        A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChangeSetRequest withChangeSetTags(Tag... changeSetTags) {
+        if (this.changeSetTags == null) {
+            setChangeSetTags(new java.util.ArrayList<Tag>(changeSetTags.length));
+        }
+        for (Tag ele : changeSetTags) {
+            this.changeSetTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * </p>
+     * 
+     * @param changeSetTags
+     *        A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartChangeSetRequest withChangeSetTags(java.util.Collection<Tag> changeSetTags) {
+        setChangeSetTags(changeSetTags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -266,7 +342,9 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getChangeSetName() != null)
             sb.append("ChangeSetName: ").append(getChangeSetName()).append(",");
         if (getClientRequestToken() != null)
-            sb.append("ClientRequestToken: ").append(getClientRequestToken());
+            sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
+        if (getChangeSetTags() != null)
+            sb.append("ChangeSetTags: ").append(getChangeSetTags());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +375,10 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
             return false;
+        if (other.getChangeSetTags() == null ^ this.getChangeSetTags() == null)
+            return false;
+        if (other.getChangeSetTags() != null && other.getChangeSetTags().equals(this.getChangeSetTags()) == false)
+            return false;
         return true;
     }
 
@@ -309,6 +391,7 @@ public class StartChangeSetRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getChangeSet() == null) ? 0 : getChangeSet().hashCode());
         hashCode = prime * hashCode + ((getChangeSetName() == null) ? 0 : getChangeSetName().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
+        hashCode = prime * hashCode + ((getChangeSetTags() == null) ? 0 : getChangeSetTags().hashCode());
         return hashCode;
     }
 

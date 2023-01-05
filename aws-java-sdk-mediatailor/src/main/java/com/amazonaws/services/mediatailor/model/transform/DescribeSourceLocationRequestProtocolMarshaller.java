@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeSourceLocationRequestProtocolMarshaller implements Marshaller<Request<DescribeSourceLocationRequest>, DescribeSourceLocationRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON)
-            .requestUri("/sourceLocation/{sourceLocationName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
+            .requestUri("/sourceLocation/{SourceLocationName}").httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false)
             .serviceName("AWSMediaTailor").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;

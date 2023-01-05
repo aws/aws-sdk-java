@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class RecoveryInstanceMarshaller {
             .marshallLocationName("isDrill").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobID").build();
+    private static final MarshallingInfo<String> ORIGINENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("originEnvironment").build();
     private static final MarshallingInfo<String> POINTINTIMESNAPSHOTDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pointInTimeSnapshotDateTime").build();
     private static final MarshallingInfo<String> RECOVERYINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -77,6 +79,7 @@ public class RecoveryInstanceMarshaller {
             protocolMarshaller.marshall(recoveryInstance.getFailback(), FAILBACK_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getIsDrill(), ISDRILL_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getJobID(), JOBID_BINDING);
+            protocolMarshaller.marshall(recoveryInstance.getOriginEnvironment(), ORIGINENVIRONMENT_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getPointInTimeSnapshotDateTime(), POINTINTIMESNAPSHOTDATETIME_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getRecoveryInstanceID(), RECOVERYINSTANCEID_BINDING);
             protocolMarshaller.marshall(recoveryInstance.getRecoveryInstanceProperties(), RECOVERYINSTANCEPROPERTIES_BINDING);

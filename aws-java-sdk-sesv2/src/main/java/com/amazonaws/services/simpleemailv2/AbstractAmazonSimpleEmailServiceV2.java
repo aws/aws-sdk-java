@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,11 @@ import com.amazonaws.*;
 public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServiceV2 {
 
     protected AbstractAmazonSimpleEmailServiceV2() {
+    }
+
+    @Override
+    public BatchGetMetricDataResult batchGetMetricData(BatchGetMetricDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -173,6 +178,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public GetDedicatedIpPoolResult getDedicatedIpPool(GetDedicatedIpPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDedicatedIpsResult getDedicatedIps(GetDedicatedIpsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -273,6 +283,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public ListRecommendationsResult listRecommendations(ListRecommendationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListSuppressedDestinationsResult listSuppressedDestinations(ListSuppressedDestinationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -303,6 +318,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
     }
 
     @Override
+    public PutAccountVdmAttributesResult putAccountVdmAttributes(PutAccountVdmAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutConfigurationSetDeliveryOptionsResult putConfigurationSetDeliveryOptions(PutConfigurationSetDeliveryOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -324,6 +344,11 @@ public class AbstractAmazonSimpleEmailServiceV2 implements AmazonSimpleEmailServ
 
     @Override
     public PutConfigurationSetTrackingOptionsResult putConfigurationSetTrackingOptions(PutConfigurationSetTrackingOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutConfigurationSetVdmOptionsResult putConfigurationSetVdmOptions(PutConfigurationSetVdmOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

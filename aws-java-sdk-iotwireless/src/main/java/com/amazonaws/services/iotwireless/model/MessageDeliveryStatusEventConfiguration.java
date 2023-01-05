@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class MessageDeliveryStatusEventConfiguration implements Serializable, Cl
     private SidewalkEventNotificationConfigurations sidewalk;
     /**
      * <p>
-     * Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     * Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * </p>
      */
     private String wirelessDeviceIdEventTopic;
@@ -64,11 +64,11 @@ public class MessageDeliveryStatusEventConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     * Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceIdEventTopic
-     *        Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     *        Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -78,10 +78,10 @@ public class MessageDeliveryStatusEventConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     * Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * </p>
      * 
-     * @return Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     * @return Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * @see EventNotificationTopicStatus
      */
 
@@ -91,11 +91,11 @@ public class MessageDeliveryStatusEventConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     * Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceIdEventTopic
-     *        Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     *        Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */
@@ -107,11 +107,11 @@ public class MessageDeliveryStatusEventConfiguration implements Serializable, Cl
 
     /**
      * <p>
-     * Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     * Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * </p>
      * 
      * @param wirelessDeviceIdEventTopic
-     *        Denotes whether the wireless device ID device registration state event topic is enabled or disabled.
+     *        Denotes whether the wireless device ID message delivery status event topic is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventNotificationTopicStatus
      */

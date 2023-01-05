@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class AppSummaryMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Double> RESILIENCYSCORE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resiliencyScore").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
 
     private static final AppSummaryMarshaller instance = new AppSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class AppSummaryMarshaller {
             protocolMarshaller.marshall(appSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(appSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(appSummary.getResiliencyScore(), RESILIENCYSCORE_BINDING);
+            protocolMarshaller.marshall(appSummary.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

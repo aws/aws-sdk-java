@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,6 +81,13 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String hostResourceGroupArn;
+    /**
+     * <p>
+     * The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in
+     * a shared placement group.
+     * </p>
+     */
+    private String groupId;
 
     /**
      * <p>
@@ -522,6 +529,52 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in
+     * a shared placement group.
+     * </p>
+     * 
+     * @param groupId
+     *        The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an
+     *        instance in a shared placement group.
+     */
+
+    public void setGroupId(String groupId) {
+        this.groupId = groupId;
+    }
+
+    /**
+     * <p>
+     * The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in
+     * a shared placement group.
+     * </p>
+     * 
+     * @return The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an
+     *         instance in a shared placement group.
+     */
+
+    public String getGroupId() {
+        return this.groupId;
+    }
+
+    /**
+     * <p>
+     * The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an instance in
+     * a shared placement group.
+     * </p>
+     * 
+     * @param groupId
+     *        The Group Id of a placement group. You must specify the Placement Group <b>Group Id</b> to launch an
+     *        instance in a shared placement group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyInstancePlacementRequest withGroupId(String groupId) {
+        setGroupId(groupId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -557,7 +610,9 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         if (getPartitionNumber() != null)
             sb.append("PartitionNumber: ").append(getPartitionNumber()).append(",");
         if (getHostResourceGroupArn() != null)
-            sb.append("HostResourceGroupArn: ").append(getHostResourceGroupArn());
+            sb.append("HostResourceGroupArn: ").append(getHostResourceGroupArn()).append(",");
+        if (getGroupId() != null)
+            sb.append("GroupId: ").append(getGroupId());
         sb.append("}");
         return sb.toString();
     }
@@ -600,6 +655,10 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getHostResourceGroupArn() != null && other.getHostResourceGroupArn().equals(this.getHostResourceGroupArn()) == false)
             return false;
+        if (other.getGroupId() == null ^ this.getGroupId() == null)
+            return false;
+        if (other.getGroupId() != null && other.getGroupId().equals(this.getGroupId()) == false)
+            return false;
         return true;
     }
 
@@ -615,6 +674,7 @@ public class ModifyInstancePlacementRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getTenancy() == null) ? 0 : getTenancy().hashCode());
         hashCode = prime * hashCode + ((getPartitionNumber() == null) ? 0 : getPartitionNumber().hashCode());
         hashCode = prime * hashCode + ((getHostResourceGroupArn() == null) ? 0 : getHostResourceGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getGroupId() == null) ? 0 : getGroupId().hashCode());
         return hashCode;
     }
 

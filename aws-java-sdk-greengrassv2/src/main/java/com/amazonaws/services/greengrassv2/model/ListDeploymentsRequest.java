@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,13 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String historyFilter;
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     */
+    private String parentTargetArn;
     /**
      * <p>
      * The maximum number of results to be returned per paginated request.
@@ -289,6 +296,55 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     */
+
+    public void setParentTargetArn(String parentTargetArn) {
+        this.parentTargetArn = parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @return The parent deployment's target <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *         subdeployment.
+     */
+
+    public String getParentTargetArn() {
+        return this.parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListDeploymentsRequest withParentTargetArn(String parentTargetArn) {
+        setParentTargetArn(parentTargetArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
      * 
@@ -383,6 +439,8 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("TargetArn: ").append(getTargetArn()).append(",");
         if (getHistoryFilter() != null)
             sb.append("HistoryFilter: ").append(getHistoryFilter()).append(",");
+        if (getParentTargetArn() != null)
+            sb.append("ParentTargetArn: ").append(getParentTargetArn()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
@@ -409,6 +467,10 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getHistoryFilter() != null && other.getHistoryFilter().equals(this.getHistoryFilter()) == false)
             return false;
+        if (other.getParentTargetArn() == null ^ this.getParentTargetArn() == null)
+            return false;
+        if (other.getParentTargetArn() != null && other.getParentTargetArn().equals(this.getParentTargetArn()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -427,6 +489,7 @@ public class ListDeploymentsRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getTargetArn() == null) ? 0 : getTargetArn().hashCode());
         hashCode = prime * hashCode + ((getHistoryFilter() == null) ? 0 : getHistoryFilter().hashCode());
+        hashCode = prime * hashCode + ((getParentTargetArn() == null) ? 0 : getParentTargetArn().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;

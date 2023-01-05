@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,9 +42,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * See <a href=
- * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
- * >Rule criteria</a> for examples.
+ * See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+ * criteria for batch categories</a> and <a
+ * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html#tca-rules-stream">Rule criteria for
+ * streaming categories</a> for usage examples.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptFilter" target="_top">AWS API
@@ -55,8 +56,8 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase
-     * "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
+     * Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the
+     * phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
      * </p>
      * <p>
      * Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager",
@@ -66,42 +67,43 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
     private String transcriptFilterType;
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      */
     private AbsoluteTimeRange absoluteTimeRange;
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      */
     private RelativeTimeRange relativeTimeRange;
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      */
     private String participantRole;
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     * <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     * Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     * <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      * </p>
      */
     private Boolean negate;
     /**
      * <p>
-     * Specify the phrases you want to flag.
+     * Specify the phrases that you want to flag.
      * </p>
      */
     private java.util.List<String> targets;
 
     /**
      * <p>
-     * Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase
-     * "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
+     * Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the
+     * phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
      * </p>
      * <p>
      * Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager",
@@ -109,8 +111,9 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param transcriptFilterType
-     *        Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the
-     *        phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+     *        Flag the presence or absence of an exact match to the phrases that you specify. For example, if you
+     *        specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is
+     *        flagged.</p>
      *        <p>
      *        Note that semantic matching is not supported. For example, if your customer says
      *        "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.
@@ -123,16 +126,16 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase
-     * "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
+     * Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the
+     * phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
      * </p>
      * <p>
      * Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager",
      * instead of "speak to <i>a</i> manager", your content is not flagged.
      * </p>
      * 
-     * @return Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify
-     *         the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is
+     * @return Flag the presence or absence of an exact match to the phrases that you specify. For example, if you
+     *         specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is
      *         flagged.</p>
      *         <p>
      *         Note that semantic matching is not supported. For example, if your customer says
@@ -146,8 +149,8 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase
-     * "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
+     * Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the
+     * phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
      * </p>
      * <p>
      * Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager",
@@ -155,8 +158,9 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param transcriptFilterType
-     *        Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the
-     *        phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+     *        Flag the presence or absence of an exact match to the phrases that you specify. For example, if you
+     *        specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is
+     *        flagged.</p>
      *        <p>
      *        Note that semantic matching is not supported. For example, if your customer says
      *        "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.
@@ -171,8 +175,8 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the phrase
-     * "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
+     * Flag the presence or absence of an exact match to the phrases that you specify. For example, if you specify the
+     * phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.
      * </p>
      * <p>
      * Note that semantic matching is not supported. For example, if your customer says "speak to <i>the</i> manager",
@@ -180,8 +184,9 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param transcriptFilterType
-     *        Flag the presence or absence of an exact match to the phrases you specify. For example, if you specify the
-     *        phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is flagged.</p>
+     *        Flag the presence or absence of an exact match to the phrases that you specify. For example, if you
+     *        specify the phrase "speak to a manager" as your <code>Targets</code> value, only that exact phrase is
+     *        flagged.</p>
      *        <p>
      *        Note that semantic matching is not supported. For example, if your customer says
      *        "speak to <i>the</i> manager", instead of "speak to <i>a</i> manager", your content is not flagged.
@@ -196,13 +201,13 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
-     *        the specified key words or phrases. See for more detail.
+     *        Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search
+     *        for the specified key words or phrases. See for more detail.
      */
 
     public void setAbsoluteTimeRange(AbsoluteTimeRange absoluteTimeRange) {
@@ -211,12 +216,12 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      * 
-     * @return Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
-     *         the specified key words or phrases. See for more detail.
+     * @return Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to
+     *         search for the specified key words or phrases. See for more detail.
      */
 
     public AbsoluteTimeRange getAbsoluteTimeRange() {
@@ -225,13 +230,13 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
-     *        the specified key words or phrases. See for more detail.
+     *        Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search
+     *        for the specified key words or phrases. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,13 +247,13 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
-     *        the specified key words or phrases. See for more detail.
+     *        Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *        search for the specified key words or phrases. See for more detail.
      */
 
     public void setRelativeTimeRange(RelativeTimeRange relativeTimeRange) {
@@ -257,12 +262,12 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      * 
-     * @return Allows you to specify a time range (in percentage) in your media file, during which you want to search
-     *         for the specified key words or phrases. See for more detail.
+     * @return Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *         search for the specified key words or phrases. See for more detail.
      */
 
     public RelativeTimeRange getRelativeTimeRange() {
@@ -271,13 +276,13 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified key words or phrases. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified key words or phrases. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
-     *        the specified key words or phrases. See for more detail.
+     *        Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *        search for the specified key words or phrases. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +293,12 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @see ParticipantRole
      */
@@ -303,10 +309,11 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
-     * @return Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     * @return Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *         participants.
      * @see ParticipantRole
      */
@@ -317,11 +324,12 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
@@ -334,11 +342,12 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
@@ -351,13 +360,13 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     * <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     * Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     * <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     *        <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     *        Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     *        <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      */
 
     public void setNegate(Boolean negate) {
@@ -366,12 +375,12 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     * <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     * Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     * <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     *         <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     * @return Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     *         <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      */
 
     public Boolean getNegate() {
@@ -380,13 +389,13 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     * <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     * Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     * <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     *        <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     *        Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     *        <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,12 +406,12 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     * <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     * Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     * <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to flag the absence of the phrase you specified in your request. Set to
-     *         <code>FALSE</code> to flag the presence of the phrase you specified in your request.
+     * @return Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your request. Set to
+     *         <code>FALSE</code> to flag the presence of the phrase that you specified in your request.
      */
 
     public Boolean isNegate() {
@@ -411,10 +420,10 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the phrases you want to flag.
+     * Specify the phrases that you want to flag.
      * </p>
      * 
-     * @return Specify the phrases you want to flag.
+     * @return Specify the phrases that you want to flag.
      */
 
     public java.util.List<String> getTargets() {
@@ -423,11 +432,11 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the phrases you want to flag.
+     * Specify the phrases that you want to flag.
      * </p>
      * 
      * @param targets
-     *        Specify the phrases you want to flag.
+     *        Specify the phrases that you want to flag.
      */
 
     public void setTargets(java.util.Collection<String> targets) {
@@ -441,7 +450,7 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the phrases you want to flag.
+     * Specify the phrases that you want to flag.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -450,7 +459,7 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param targets
-     *        Specify the phrases you want to flag.
+     *        Specify the phrases that you want to flag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -466,11 +475,11 @@ public class TranscriptFilter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Specify the phrases you want to flag.
+     * Specify the phrases that you want to flag.
      * </p>
      * 
      * @param targets
-     *        Specify the phrases you want to flag.
+     *        Specify the phrases that you want to flag.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

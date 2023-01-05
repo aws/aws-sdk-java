@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,12 @@ public class VirtualMachineDetails implements Serializable, Cloneable, Structure
      * </p>
      */
     private String resourceArn;
+    /**
+     * <p>
+     * These are the details of the VMware tags associated with the specified virtual machine.
+     * </p>
+     */
+    private java.util.List<VmwareTag> vmwareTags;
 
     /**
      * <p>
@@ -313,6 +319,76 @@ public class VirtualMachineDetails implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * These are the details of the VMware tags associated with the specified virtual machine.
+     * </p>
+     * 
+     * @return These are the details of the VMware tags associated with the specified virtual machine.
+     */
+
+    public java.util.List<VmwareTag> getVmwareTags() {
+        return vmwareTags;
+    }
+
+    /**
+     * <p>
+     * These are the details of the VMware tags associated with the specified virtual machine.
+     * </p>
+     * 
+     * @param vmwareTags
+     *        These are the details of the VMware tags associated with the specified virtual machine.
+     */
+
+    public void setVmwareTags(java.util.Collection<VmwareTag> vmwareTags) {
+        if (vmwareTags == null) {
+            this.vmwareTags = null;
+            return;
+        }
+
+        this.vmwareTags = new java.util.ArrayList<VmwareTag>(vmwareTags);
+    }
+
+    /**
+     * <p>
+     * These are the details of the VMware tags associated with the specified virtual machine.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setVmwareTags(java.util.Collection)} or {@link #withVmwareTags(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param vmwareTags
+     *        These are the details of the VMware tags associated with the specified virtual machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualMachineDetails withVmwareTags(VmwareTag... vmwareTags) {
+        if (this.vmwareTags == null) {
+            setVmwareTags(new java.util.ArrayList<VmwareTag>(vmwareTags.length));
+        }
+        for (VmwareTag ele : vmwareTags) {
+            this.vmwareTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * These are the details of the VMware tags associated with the specified virtual machine.
+     * </p>
+     * 
+     * @param vmwareTags
+     *        These are the details of the VMware tags associated with the specified virtual machine.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VirtualMachineDetails withVmwareTags(java.util.Collection<VmwareTag> vmwareTags) {
+        setVmwareTags(vmwareTags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,7 +411,9 @@ public class VirtualMachineDetails implements Serializable, Cloneable, Structure
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
         if (getResourceArn() != null)
-            sb.append("ResourceArn: ").append(getResourceArn());
+            sb.append("ResourceArn: ").append(getResourceArn()).append(",");
+        if (getVmwareTags() != null)
+            sb.append("VmwareTags: ").append(getVmwareTags());
         sb.append("}");
         return sb.toString();
     }
@@ -374,6 +452,10 @@ public class VirtualMachineDetails implements Serializable, Cloneable, Structure
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
             return false;
+        if (other.getVmwareTags() == null ^ this.getVmwareTags() == null)
+            return false;
+        if (other.getVmwareTags() != null && other.getVmwareTags().equals(this.getVmwareTags()) == false)
+            return false;
         return true;
     }
 
@@ -388,6 +470,7 @@ public class VirtualMachineDetails implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getVmwareTags() == null) ? 0 : getVmwareTags().hashCode());
         return hashCode;
     }
 

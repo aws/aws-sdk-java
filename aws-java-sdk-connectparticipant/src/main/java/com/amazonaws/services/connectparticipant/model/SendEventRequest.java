@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,18 +40,35 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * application/vnd.amazonaws.connect.event.connection.acknowledged
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.delivered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.read
+     * </p>
+     * </li>
      * </ul>
      */
     private String contentType;
     /**
      * <p>
-     * The content of the event to be sent (for example, message text). This is not yet supported.
+     * The content of the event to be sent (for example, message text). For content related to message receipts, this is
+     * supported in the form of a JSON string.
+     * </p>
+     * <p>
+     * Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"
      * </p>
      */
     private String content;
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      */
     private String clientToken;
@@ -77,6 +94,16 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * application/vnd.amazonaws.connect.event.connection.acknowledged
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.delivered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.read
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param contentType
@@ -90,6 +117,16 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        <li>
      *        <p>
      *        application/vnd.amazonaws.connect.event.connection.acknowledged
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        application/vnd.amazonaws.connect.event.message.delivered
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        application/vnd.amazonaws.connect.event.message.read
      *        </p>
      *        </li>
      */
@@ -113,6 +150,16 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * application/vnd.amazonaws.connect.event.connection.acknowledged
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.delivered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.read
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The content type of the request. Supported types are:</p>
@@ -125,6 +172,16 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *         <li>
      *         <p>
      *         application/vnd.amazonaws.connect.event.connection.acknowledged
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         application/vnd.amazonaws.connect.event.message.delivered
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         application/vnd.amazonaws.connect.event.message.read
      *         </p>
      *         </li>
      */
@@ -148,6 +205,16 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * application/vnd.amazonaws.connect.event.connection.acknowledged
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.delivered
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * application/vnd.amazonaws.connect.event.message.read
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param contentType
@@ -163,6 +230,16 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        application/vnd.amazonaws.connect.event.connection.acknowledged
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        application/vnd.amazonaws.connect.event.message.delivered
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        application/vnd.amazonaws.connect.event.message.read
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,11 +250,18 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The content of the event to be sent (for example, message text). This is not yet supported.
+     * The content of the event to be sent (for example, message text). For content related to message receipts, this is
+     * supported in the form of a JSON string.
+     * </p>
+     * <p>
+     * Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"
      * </p>
      * 
      * @param content
-     *        The content of the event to be sent (for example, message text). This is not yet supported.
+     *        The content of the event to be sent (for example, message text). For content related to message receipts,
+     *        this is supported in the form of a JSON string.</p>
+     *        <p>
+     *        Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"
      */
 
     public void setContent(String content) {
@@ -186,10 +270,17 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The content of the event to be sent (for example, message text). This is not yet supported.
+     * The content of the event to be sent (for example, message text). For content related to message receipts, this is
+     * supported in the form of a JSON string.
+     * </p>
+     * <p>
+     * Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"
      * </p>
      * 
-     * @return The content of the event to be sent (for example, message text). This is not yet supported.
+     * @return The content of the event to be sent (for example, message text). For content related to message receipts,
+     *         this is supported in the form of a JSON string.</p>
+     *         <p>
+     *         Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"
      */
 
     public String getContent() {
@@ -198,11 +289,18 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The content of the event to be sent (for example, message text). This is not yet supported.
+     * The content of the event to be sent (for example, message text). For content related to message receipts, this is
+     * supported in the form of a JSON string.
+     * </p>
+     * <p>
+     * Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"
      * </p>
      * 
      * @param content
-     *        The content of the event to be sent (for example, message text). This is not yet supported.
+     *        The content of the event to be sent (for example, message text). For content related to message receipts,
+     *        this is supported in the form of a JSON string.</p>
+     *        <p>
+     *        Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,11 +311,17 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      */
 
     public void setClientToken(String clientToken) {
@@ -226,10 +330,16 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *         provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see
+     *         <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     *         retries safe with idempotent APIs</a>.
      */
 
     public String getClientToken() {
@@ -238,11 +348,17 @@ public class SendEventRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided,
+     * the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with
+     * idempotent APIs</a>.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not
+     *        provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a
+     *        href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries
+     *        safe with idempotent APIs</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

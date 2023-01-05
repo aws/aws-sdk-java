@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,14 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Integer qos;
+    /**
+     * <p>
+     * MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT
+     * Core Developer Guide.
+     * </p>
+     */
+    private MqttHeaders headers;
 
     /**
      * <p>
@@ -165,6 +173,58 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT
+     * Core Developer Guide.
+     * </p>
+     * 
+     * @param headers
+     *        MQTT Version 5.0 headers information. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web
+     *        Services IoT Core Developer Guide.
+     */
+
+    public void setHeaders(MqttHeaders headers) {
+        this.headers = headers;
+    }
+
+    /**
+     * <p>
+     * MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT
+     * Core Developer Guide.
+     * </p>
+     * 
+     * @return MQTT Version 5.0 headers information. For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web
+     *         Services IoT Core Developer Guide.
+     */
+
+    public MqttHeaders getHeaders() {
+        return this.headers;
+    }
+
+    /**
+     * <p>
+     * MQTT Version 5.0 headers information. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web Services IoT
+     * Core Developer Guide.
+     * </p>
+     * 
+     * @param headers
+     *        MQTT Version 5.0 headers information. For more information, see <a
+     *        href="https://docs.aws.amazon.com/iot/latest/developerguide/mqtt.html"> MQTT</a> from the Amazon Web
+     *        Services IoT Core Developer Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepublishAction withHeaders(MqttHeaders headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +241,9 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
         if (getTopic() != null)
             sb.append("Topic: ").append(getTopic()).append(",");
         if (getQos() != null)
-            sb.append("Qos: ").append(getQos());
+            sb.append("Qos: ").append(getQos()).append(",");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +270,10 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getQos() != null && other.getQos().equals(this.getQos()) == false)
             return false;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +285,7 @@ public class RepublishAction implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTopic() == null) ? 0 : getTopic().hashCode());
         hashCode = prime * hashCode + ((getQos() == null) ? 0 : getQos().hashCode());
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
         return hashCode;
     }
 

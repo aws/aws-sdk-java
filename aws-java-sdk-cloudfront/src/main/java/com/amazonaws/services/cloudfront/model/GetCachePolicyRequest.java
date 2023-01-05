@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class GetCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior,
-     * you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+     * The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior,
+     * you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
      * cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>
      * .
      * </p>
@@ -37,15 +37,15 @@ public class GetCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior,
-     * you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+     * The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior,
+     * you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
      * cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>
      * .
      * </p>
      * 
      * @param id
-     *        The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache
-     *        behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     *        The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache
+     *        behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      *        <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the
      *        identifier using <code>ListCachePolicies</code>.
      */
@@ -56,14 +56,14 @@ public class GetCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior,
-     * you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+     * The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior,
+     * you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
      * cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>
      * .
      * </p>
      * 
-     * @return The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache
-     *         behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     * @return The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache
+     *         behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      *         <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the
      *         identifier using <code>ListCachePolicies</code>.
      */
@@ -74,15 +74,15 @@ public class GetCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache behavior,
-     * you can get the policy’s identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
+     * The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache behavior,
+     * you can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If the
      * cache policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>
      * .
      * </p>
      * 
      * @param id
-     *        The unique identifier for the cache policy. If the cache policy is attached to a distribution’s cache
-     *        behavior, you can get the policy’s identifier using <code>ListDistributions</code> or
+     *        The unique identifier for the cache policy. If the cache policy is attached to a distribution's cache
+     *        behavior, you can get the policy's identifier using <code>ListDistributions</code> or
      *        <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the
      *        identifier using <code>ListCachePolicies</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

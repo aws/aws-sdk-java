@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,12 +44,22 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public CopyDistributionResult copyDistribution(CopyDistributionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateCachePolicyResult createCachePolicy(CreateCachePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateContinuousDeploymentPolicyResult createContinuousDeploymentPolicy(CreateContinuousDeploymentPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -139,6 +149,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public DeleteContinuousDeploymentPolicyResult deleteContinuousDeploymentPolicy(DeleteContinuousDeploymentPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDistributionResult deleteDistribution(DeleteDistributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -220,6 +235,16 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
 
     @Override
     public GetCloudFrontOriginAccessIdentityConfigResult getCloudFrontOriginAccessIdentityConfig(GetCloudFrontOriginAccessIdentityConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContinuousDeploymentPolicyResult getContinuousDeploymentPolicy(GetContinuousDeploymentPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContinuousDeploymentPolicyConfigResult getContinuousDeploymentPolicyConfig(GetContinuousDeploymentPolicyConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -349,6 +374,11 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public ListContinuousDeploymentPoliciesResult listContinuousDeploymentPolicies(ListContinuousDeploymentPoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDistributionsResult listDistributions(ListDistributionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -474,7 +504,17 @@ public class AbstractAmazonCloudFront implements AmazonCloudFront {
     }
 
     @Override
+    public UpdateContinuousDeploymentPolicyResult updateContinuousDeploymentPolicy(UpdateContinuousDeploymentPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateDistributionResult updateDistribution(UpdateDistributionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDistributionWithStagingConfigResult updateDistributionWithStagingConfig(UpdateDistributionWithStagingConfigRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class ProvisioningArtifactDetailMarshaller {
             .marshallLocationName("Active").build();
     private static final MarshallingInfo<String> GUIDANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Guidance").build();
+    private static final MarshallingInfo<String> SOURCEREVISION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceRevision").build();
 
     private static final ProvisioningArtifactDetailMarshaller instance = new ProvisioningArtifactDetailMarshaller();
 
@@ -65,6 +67,7 @@ public class ProvisioningArtifactDetailMarshaller {
             protocolMarshaller.marshall(provisioningArtifactDetail.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(provisioningArtifactDetail.getActive(), ACTIVE_BINDING);
             protocolMarshaller.marshall(provisioningArtifactDetail.getGuidance(), GUIDANCE_BINDING);
+            protocolMarshaller.marshall(provisioningArtifactDetail.getSourceRevision(), SOURCEREVISION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ResourceStatusMarshaller {
             .marshallLocationName("ec2").build();
     private static final MarshallingInfo<String> ECR_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ecr").build();
+    private static final MarshallingInfo<String> LAMBDA_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lambda").build();
 
     private static final ResourceStatusMarshaller instance = new ResourceStatusMarshaller();
 
@@ -50,6 +52,7 @@ public class ResourceStatusMarshaller {
         try {
             protocolMarshaller.marshall(resourceStatus.getEc2(), EC2_BINDING);
             protocolMarshaller.marshall(resourceStatus.getEcr(), ECR_BINDING);
+            protocolMarshaller.marshall(resourceStatus.getLambda(), LAMBDA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

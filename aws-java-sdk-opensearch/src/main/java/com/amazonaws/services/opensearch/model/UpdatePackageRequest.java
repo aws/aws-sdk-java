@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for request parameters to the <code> <a>UpdatePackage</a> </code> operation.
+ * Container for request parameters to the <code>UpdatePackage</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -31,7 +31,11 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String packageID;
-
+    /**
+     * <p>
+     * Amazon S3 bucket and key for the package.
+     * </p>
+     */
     private PackageSource packageSource;
     /**
      * <p>
@@ -41,7 +45,7 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String packageDescription;
     /**
      * <p>
-     * A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
+     * Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
      * </p>
      */
     private String commitMessage;
@@ -87,7 +91,12 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Amazon S3 bucket and key for the package.
+     * </p>
+     * 
      * @param packageSource
+     *        Amazon S3 bucket and key for the package.
      */
 
     public void setPackageSource(PackageSource packageSource) {
@@ -95,7 +104,11 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * Amazon S3 bucket and key for the package.
+     * </p>
+     * 
+     * @return Amazon S3 bucket and key for the package.
      */
 
     public PackageSource getPackageSource() {
@@ -103,7 +116,12 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * Amazon S3 bucket and key for the package.
+     * </p>
+     * 
      * @param packageSource
+     *        Amazon S3 bucket and key for the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +172,11 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
+     * Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
      * </p>
      * 
      * @param commitMessage
-     *        A commit message for the new version which is shown as part of
+     *        Commit message for the updated file, which is shown as part of
      *        <code>GetPackageVersionHistoryResponse</code>.
      */
 
@@ -168,10 +186,10 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
+     * Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
      * </p>
      * 
-     * @return A commit message for the new version which is shown as part of
+     * @return Commit message for the updated file, which is shown as part of
      *         <code>GetPackageVersionHistoryResponse</code>.
      */
 
@@ -181,11 +199,11 @@ public class UpdatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A commit message for the new version which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
+     * Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
      * </p>
      * 
      * @param commitMessage
-     *        A commit message for the new version which is shown as part of
+     *        Commit message for the updated file, which is shown as part of
      *        <code>GetPackageVersionHistoryResponse</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

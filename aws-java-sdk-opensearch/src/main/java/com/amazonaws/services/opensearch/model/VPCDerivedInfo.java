@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Options to specify the subnets and security groups for the VPC endpoint. For more information, see <a
- * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching your
- * Amazon OpenSearch Service domains using a VPC</a>.
+ * Information about the subnets and security groups for an Amazon OpenSearch Service domain provisioned within a
+ * virtual private cloud (VPC). For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching your Amazon OpenSearch
+ * Service domains using a VPC</a>. This information only exists if the domain was created with <code>VPCOptions</code>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,36 +30,36 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The ID for your VPC. Amazon VPC generates this value when you create a VPC.
      * </p>
      */
     private String vPCId;
     /**
      * <p>
-     * The subnets for the VPC endpoint.
+     * A list of subnet IDs associated with the VPC endpoints for the domain.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The list of Availability Zones associated with the VPC subnets.
      * </p>
      */
     private java.util.List<String> availabilityZones;
     /**
      * <p>
-     * The security groups for the VPC endpoint.
+     * The list of security group IDs associated with the VPC endpoints for the domain.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
 
     /**
      * <p>
-     * The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The ID for your VPC. Amazon VPC generates this value when you create a VPC.
      * </p>
      * 
      * @param vPCId
-     *        The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     *        The ID for your VPC. Amazon VPC generates this value when you create a VPC.
      */
 
     public void setVPCId(String vPCId) {
@@ -67,10 +68,10 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The ID for your VPC. Amazon VPC generates this value when you create a VPC.
      * </p>
      * 
-     * @return The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * @return The ID for your VPC. Amazon VPC generates this value when you create a VPC.
      */
 
     public String getVPCId() {
@@ -79,11 +80,11 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The ID for your VPC. Amazon VPC generates this value when you create a VPC.
      * </p>
      * 
      * @param vPCId
-     *        The VPC ID for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     *        The ID for your VPC. Amazon VPC generates this value when you create a VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,10 +95,10 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets for the VPC endpoint.
+     * A list of subnet IDs associated with the VPC endpoints for the domain.
      * </p>
      * 
-     * @return The subnets for the VPC endpoint.
+     * @return A list of subnet IDs associated with the VPC endpoints for the domain.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -106,11 +107,11 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets for the VPC endpoint.
+     * A list of subnet IDs associated with the VPC endpoints for the domain.
      * </p>
      * 
      * @param subnetIds
-     *        The subnets for the VPC endpoint.
+     *        A list of subnet IDs associated with the VPC endpoints for the domain.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -124,7 +125,7 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets for the VPC endpoint.
+     * A list of subnet IDs associated with the VPC endpoints for the domain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -133,7 +134,7 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnetIds
-     *        The subnets for the VPC endpoint.
+     *        A list of subnet IDs associated with the VPC endpoints for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -149,11 +150,11 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets for the VPC endpoint.
+     * A list of subnet IDs associated with the VPC endpoints for the domain.
      * </p>
      * 
      * @param subnetIds
-     *        The subnets for the VPC endpoint.
+     *        A list of subnet IDs associated with the VPC endpoints for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -164,11 +165,10 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The list of Availability Zones associated with the VPC subnets.
      * </p>
      * 
-     * @return The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>
-     *         .
+     * @return The list of Availability Zones associated with the VPC subnets.
      */
 
     public java.util.List<String> getAvailabilityZones() {
@@ -177,11 +177,11 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The list of Availability Zones associated with the VPC subnets.
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     *        The list of Availability Zones associated with the VPC subnets.
      */
 
     public void setAvailabilityZones(java.util.Collection<String> availabilityZones) {
@@ -195,7 +195,7 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The list of Availability Zones associated with the VPC subnets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,7 +204,7 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     *        The list of Availability Zones associated with the VPC subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,11 +220,11 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     * The list of Availability Zones associated with the VPC subnets.
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones for the domain. Exists only if the domain was created with <code>VPCOptions</code>.
+     *        The list of Availability Zones associated with the VPC subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,10 +235,10 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the VPC endpoint.
+     * The list of security group IDs associated with the VPC endpoints for the domain.
      * </p>
      * 
-     * @return The security groups for the VPC endpoint.
+     * @return The list of security group IDs associated with the VPC endpoints for the domain.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -247,11 +247,11 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the VPC endpoint.
+     * The list of security group IDs associated with the VPC endpoints for the domain.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups for the VPC endpoint.
+     *        The list of security group IDs associated with the VPC endpoints for the domain.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -265,7 +265,7 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the VPC endpoint.
+     * The list of security group IDs associated with the VPC endpoints for the domain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -274,7 +274,7 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups for the VPC endpoint.
+     *        The list of security group IDs associated with the VPC endpoints for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -290,11 +290,11 @@ public class VPCDerivedInfo implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The security groups for the VPC endpoint.
+     * The list of security group IDs associated with the VPC endpoints for the domain.
      * </p>
      * 
      * @param securityGroupIds
-     *        The security groups for the VPC endpoint.
+     *        The list of security group IDs associated with the VPC endpoints for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

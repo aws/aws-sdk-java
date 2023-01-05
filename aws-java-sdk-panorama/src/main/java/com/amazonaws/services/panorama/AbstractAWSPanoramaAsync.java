@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -419,6 +419,21 @@ public class AbstractAWSPanoramaAsync extends AbstractAWSPanorama implements AWS
     @Override
     public java.util.concurrent.Future<RemoveApplicationInstanceResult> removeApplicationInstanceAsync(RemoveApplicationInstanceRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveApplicationInstanceRequest, RemoveApplicationInstanceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            SignalApplicationInstanceNodeInstancesRequest request) {
+
+        return signalApplicationInstanceNodeInstancesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SignalApplicationInstanceNodeInstancesResult> signalApplicationInstanceNodeInstancesAsync(
+            SignalApplicationInstanceNodeInstancesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SignalApplicationInstanceNodeInstancesRequest, SignalApplicationInstanceNodeInstancesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

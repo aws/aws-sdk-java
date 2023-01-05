@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of a reserved OpenSearch instance offering.
+ * Details of an OpenSearch Reserved Instance offering.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The OpenSearch reserved instance offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      */
     private String reservedInstanceOfferingId;
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by the Reserved Instance offering.
      * </p>
      */
     private String instanceType;
@@ -45,42 +45,42 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
     private Integer duration;
     /**
      * <p>
-     * The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
      * </p>
      */
     private Double fixedPrice;
     /**
      * <p>
-     * The rate you are charged for each hour the domain that is using the offering is running.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      */
     private Double usagePrice;
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the Reserved Instance offering.
      * </p>
      */
     private String currencyCode;
     /**
      * <p>
-     * Payment option for the reserved OpenSearch instance offering
+     * Payment option for the Reserved Instance offering
      * </p>
      */
     private String paymentOption;
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you creates any domains using the offering.
      * </p>
      */
     private java.util.List<RecurringCharge> recurringCharges;
 
     /**
      * <p>
-     * The OpenSearch reserved instance offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      * 
      * @param reservedInstanceOfferingId
-     *        The OpenSearch reserved instance offering identifier.
+     *        The unique identifier of the Reserved Instance offering.
      */
 
     public void setReservedInstanceOfferingId(String reservedInstanceOfferingId) {
@@ -89,10 +89,10 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The OpenSearch reserved instance offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      * 
-     * @return The OpenSearch reserved instance offering identifier.
+     * @return The unique identifier of the Reserved Instance offering.
      */
 
     public String getReservedInstanceOfferingId() {
@@ -101,11 +101,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The OpenSearch reserved instance offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      * 
      * @param reservedInstanceOfferingId
-     *        The OpenSearch reserved instance offering identifier.
+     *        The unique identifier of the Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,11 +116,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by the Reserved Instance offering.
      * </p>
      * 
      * @param instanceType
-     *        The OpenSearch instance type offered by the reserved instance offering.
+     *        The OpenSearch instance type offered by the Reserved Instance offering.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -130,10 +130,10 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by the Reserved Instance offering.
      * </p>
      * 
-     * @return The OpenSearch instance type offered by the reserved instance offering.
+     * @return The OpenSearch instance type offered by the Reserved Instance offering.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -143,11 +143,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by the Reserved Instance offering.
      * </p>
      * 
      * @param instanceType
-     *        The OpenSearch instance type offered by the reserved instance offering.
+     *        The OpenSearch instance type offered by the Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -159,11 +159,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by the Reserved Instance offering.
      * </p>
      * 
      * @param instanceType
-     *        The OpenSearch instance type offered by the reserved instance offering.
+     *        The OpenSearch instance type offered by the Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -215,11 +215,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
      * </p>
      * 
      * @param fixedPrice
-     *        The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.
+     *        The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
      */
 
     public void setFixedPrice(Double fixedPrice) {
@@ -228,10 +228,10 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
      * </p>
      * 
-     * @return The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.
+     * @return The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
      */
 
     public Double getFixedPrice() {
@@ -240,11 +240,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
      * </p>
      * 
      * @param fixedPrice
-     *        The upfront fixed charge you will pay to purchase the specific reserved OpenSearch instance offering.
+     *        The upfront fixed charge you will pay to purchase the specific Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +255,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The rate you are charged for each hour the domain that is using the offering is running.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      * 
      * @param usagePrice
-     *        The rate you are charged for each hour the domain that is using the offering is running.
+     *        The hourly rate at which you're charged for the domain using this Reserved Instance.
      */
 
     public void setUsagePrice(Double usagePrice) {
@@ -268,10 +268,10 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The rate you are charged for each hour the domain that is using the offering is running.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      * 
-     * @return The rate you are charged for each hour the domain that is using the offering is running.
+     * @return The hourly rate at which you're charged for the domain using this Reserved Instance.
      */
 
     public Double getUsagePrice() {
@@ -280,11 +280,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The rate you are charged for each hour the domain that is using the offering is running.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      * 
      * @param usagePrice
-     *        The rate you are charged for each hour the domain that is using the offering is running.
+     *        The hourly rate at which you're charged for the domain using this Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,11 +295,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the Reserved Instance offering.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code for the reserved OpenSearch instance offering.
+     *        The currency code for the Reserved Instance offering.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -308,10 +308,10 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the Reserved Instance offering.
      * </p>
      * 
-     * @return The currency code for the reserved OpenSearch instance offering.
+     * @return The currency code for the Reserved Instance offering.
      */
 
     public String getCurrencyCode() {
@@ -320,11 +320,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the Reserved Instance offering.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code for the reserved OpenSearch instance offering.
+     *        The currency code for the Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +335,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Payment option for the reserved OpenSearch instance offering
+     * Payment option for the Reserved Instance offering
      * </p>
      * 
      * @param paymentOption
-     *        Payment option for the reserved OpenSearch instance offering
+     *        Payment option for the Reserved Instance offering
      * @see ReservedInstancePaymentOption
      */
 
@@ -349,10 +349,10 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Payment option for the reserved OpenSearch instance offering
+     * Payment option for the Reserved Instance offering
      * </p>
      * 
-     * @return Payment option for the reserved OpenSearch instance offering
+     * @return Payment option for the Reserved Instance offering
      * @see ReservedInstancePaymentOption
      */
 
@@ -362,11 +362,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Payment option for the reserved OpenSearch instance offering
+     * Payment option for the Reserved Instance offering
      * </p>
      * 
      * @param paymentOption
-     *        Payment option for the reserved OpenSearch instance offering
+     *        Payment option for the Reserved Instance offering
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedInstancePaymentOption
      */
@@ -378,11 +378,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Payment option for the reserved OpenSearch instance offering
+     * Payment option for the Reserved Instance offering
      * </p>
      * 
      * @param paymentOption
-     *        Payment option for the reserved OpenSearch instance offering
+     *        Payment option for the Reserved Instance offering
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedInstancePaymentOption
      */
@@ -394,11 +394,10 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you creates any domains using the offering.
      * </p>
      * 
-     * @return The charge to your account regardless of whether you are creating any domains using the instance
-     *         offering.
+     * @return The recurring charge to your account, regardless of whether you creates any domains using the offering.
      */
 
     public java.util.List<RecurringCharge> getRecurringCharges() {
@@ -407,11 +406,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you creates any domains using the offering.
      * </p>
      * 
      * @param recurringCharges
-     *        The charge to your account regardless of whether you are creating any domains using the instance offering.
+     *        The recurring charge to your account, regardless of whether you creates any domains using the offering.
      */
 
     public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
@@ -425,7 +424,7 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you creates any domains using the offering.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -434,7 +433,7 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
      * </p>
      * 
      * @param recurringCharges
-     *        The charge to your account regardless of whether you are creating any domains using the instance offering.
+     *        The recurring charge to your account, regardless of whether you creates any domains using the offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,11 +449,11 @@ public class ReservedInstanceOffering implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you creates any domains using the offering.
      * </p>
      * 
      * @param recurringCharges
-     *        The charge to your account regardless of whether you are creating any domains using the instance offering.
+     *        The recurring charge to your account, regardless of whether you creates any domains using the offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

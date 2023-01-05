@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,15 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
      * If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in
-     * the next page.
+     * returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the
+     * next page.
      * </p>
      */
     private String nextToken;
@@ -44,12 +44,12 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -59,11 +59,11 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @return An optional parameter that specifies the maximum number of results to return. You can use
-     *         <code>nextToken</code> to get the next page of results.
+     *         <code>nextToken</code> to display the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -73,12 +73,12 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,13 +90,13 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in
-     * the next page.
+     * returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the
+     * next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include
-     *        the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns
+     *        the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns
      *        results in the next page.
      */
 
@@ -107,12 +107,12 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in
-     * the next page.
+     * returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the
+     * next page.
      * </p>
      * 
      * @return If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include
-     *         the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns
+     *         the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns
      *         results in the next page.
      */
 
@@ -123,13 +123,13 @@ public class ListNamespacesRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include the
-     * returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns results in
-     * the next page.
+     * returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns results in the
+     * next page.
      * </p>
      * 
      * @param nextToken
      *        If your initial <code>ListNamespaces</code> operation returns a <code>nextToken</code>, you can include
-     *        the returned <code>nextToken</code> in subsequent <code>ListNamespaces</code> operations, which returns
+     *        the returned <code>nextToken</code> in following <code>ListNamespaces</code> operations, which returns
      *        results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

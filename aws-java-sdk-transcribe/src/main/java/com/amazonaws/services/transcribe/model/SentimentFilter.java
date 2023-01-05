@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * See <a href=
- * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
- * >Rule criteria</a> for examples.
+ * See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+ * criteria for batch categories</a> for usage examples.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/SentimentFilter" target="_top">AWS API
@@ -60,44 +59,45 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the sentiments you want to flag.
+     * Specify the sentiments that you want to flag.
      * </p>
      */
     private java.util.List<String> sentiments;
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      */
     private AbsoluteTimeRange absoluteTimeRange;
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      */
     private RelativeTimeRange relativeTimeRange;
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      */
     private String participantRole;
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to
-     * flag the sentiments you specified in your request.
+     * Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     * <code>FALSE</code> to flag the sentiments that you specified in your request.
      * </p>
      */
     private Boolean negate;
 
     /**
      * <p>
-     * Specify the sentiments you want to flag.
+     * Specify the sentiments that you want to flag.
      * </p>
      * 
-     * @return Specify the sentiments you want to flag.
+     * @return Specify the sentiments that you want to flag.
      * @see SentimentValue
      */
 
@@ -107,11 +107,11 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the sentiments you want to flag.
+     * Specify the sentiments that you want to flag.
      * </p>
      * 
      * @param sentiments
-     *        Specify the sentiments you want to flag.
+     *        Specify the sentiments that you want to flag.
      * @see SentimentValue
      */
 
@@ -126,7 +126,7 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the sentiments you want to flag.
+     * Specify the sentiments that you want to flag.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -135,7 +135,7 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param sentiments
-     *        Specify the sentiments you want to flag.
+     *        Specify the sentiments that you want to flag.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SentimentValue
      */
@@ -152,11 +152,11 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the sentiments you want to flag.
+     * Specify the sentiments that you want to flag.
      * </p>
      * 
      * @param sentiments
-     *        Specify the sentiments you want to flag.
+     *        Specify the sentiments that you want to flag.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SentimentValue
      */
@@ -168,11 +168,11 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the sentiments you want to flag.
+     * Specify the sentiments that you want to flag.
      * </p>
      * 
      * @param sentiments
-     *        Specify the sentiments you want to flag.
+     *        Specify the sentiments that you want to flag.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SentimentValue
      */
@@ -192,13 +192,13 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
-     *        the specified sentiments. See for more detail.
+     *        Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search
+     *        for the specified sentiments. See for more detail.
      */
 
     public void setAbsoluteTimeRange(AbsoluteTimeRange absoluteTimeRange) {
@@ -207,12 +207,12 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      * 
-     * @return Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
-     *         the specified sentiments. See for more detail.
+     * @return Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to
+     *         search for the specified sentiments. See for more detail.
      */
 
     public AbsoluteTimeRange getAbsoluteTimeRange() {
@@ -221,13 +221,13 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
-     *        the specified sentiments. See for more detail.
+     *        Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search
+     *        for the specified sentiments. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,13 +238,13 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
-     *        the specified sentiments. See for more detail.
+     *        Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *        search for the specified sentiments. See for more detail.
      */
 
     public void setRelativeTimeRange(RelativeTimeRange relativeTimeRange) {
@@ -253,12 +253,12 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      * 
-     * @return Allows you to specify a time range (in percentage) in your media file, during which you want to search
-     *         for the specified sentiments. See for more detail.
+     * @return Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *         search for the specified sentiments. See for more detail.
      */
 
     public RelativeTimeRange getRelativeTimeRange() {
@@ -267,13 +267,13 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for the
-     * specified sentiments. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * the specified sentiments. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
-     *        the specified sentiments. See for more detail.
+     *        Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *        search for the specified sentiments. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,11 +284,12 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @see ParticipantRole
      */
@@ -299,10 +300,11 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
-     * @return Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     * @return Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *         participants.
      * @see ParticipantRole
      */
@@ -313,11 +315,12 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
@@ -330,11 +333,12 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the participant you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the participant that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
@@ -347,13 +351,13 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to
-     * flag the sentiments you specified in your request.
+     * Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     * <code>FALSE</code> to flag the sentiments that you specified in your request.
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to
-     *        <code>FALSE</code> to flag the sentiments you specified in your request.
+     *        Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     *        <code>FALSE</code> to flag the sentiments that you specified in your request.
      */
 
     public void setNegate(Boolean negate) {
@@ -362,12 +366,12 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to
-     * flag the sentiments you specified in your request.
+     * Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     * <code>FALSE</code> to flag the sentiments that you specified in your request.
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to
-     *         <code>FALSE</code> to flag the sentiments you specified in your request.
+     * @return Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     *         <code>FALSE</code> to flag the sentiments that you specified in your request.
      */
 
     public Boolean getNegate() {
@@ -376,13 +380,13 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to
-     * flag the sentiments you specified in your request.
+     * Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     * <code>FALSE</code> to flag the sentiments that you specified in your request.
      * </p>
      * 
      * @param negate
-     *        Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to
-     *        <code>FALSE</code> to flag the sentiments you specified in your request.
+     *        Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     *        <code>FALSE</code> to flag the sentiments that you specified in your request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,12 +397,12 @@ public class SentimentFilter implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to <code>FALSE</code> to
-     * flag the sentiments you specified in your request.
+     * Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     * <code>FALSE</code> to flag the sentiments that you specified in your request.
      * </p>
      * 
-     * @return Set to <code>TRUE</code> to flag the sentiments you didn't include in your request. Set to
-     *         <code>FALSE</code> to flag the sentiments you specified in your request.
+     * @return Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request. Set to
+     *         <code>FALSE</code> to flag the sentiments that you specified in your request.
      */
 
     public Boolean isNegate() {

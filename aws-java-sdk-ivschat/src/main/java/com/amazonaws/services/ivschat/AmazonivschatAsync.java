@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,9 +58,15 @@ import com.amazonaws.services.ivschat.model.*;
  * <b>Resources</b>
  * </p>
  * <p>
- * The following resource is part of Amazon IVS Chat:
+ * The following resources are part of Amazon IVS Chat:
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <b>LoggingConfiguration</b> — A configuration that allows customers to store and record sent messages in a chat room.
+ * See the Logging Configuration endpoints for more information.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See
@@ -190,9 +196,10 @@ import com.amazonaws.services.ivschat.model.*;
  * <ul>
  * <li>
  * <p>
- * <a>CreateChatToken</a> — Creates an encrypted token that is used to establish an individual WebSocket connection to a
- * room. The token is valid for one minute, and a connection (session) established with the token is valid for the
- * specified duration.
+ * <a>CreateChatToken</a> — Creates an encrypted token that is used by a chat participant to establish an individual
+ * WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the
+ * session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in
+ * the response.
  * </p>
  * </li>
  * </ul>
@@ -228,6 +235,38 @@ import com.amazonaws.services.ivschat.model.*;
  * </li>
  * </ul>
  * <p>
+ * <b>Logging Configuration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateLoggingConfiguration</a> — Creates a logging configuration that allows clients to store and record sent
+ * messages.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteLoggingConfiguration</a> — Deletes the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetLoggingConfiguration</a> — Gets the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListLoggingConfigurations</a> — Gets summary information about all your logging configurations in the AWS region
+ * where the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateLoggingConfiguration</a> — Updates a specified logging configuration.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * <b>Tags Endpoints</b>
  * </p>
  * <ul>
@@ -258,8 +297,18 @@ public interface AmazonivschatAsync extends Amazonivschat {
 
     /**
      * <p>
-     * Creates an encrypted token that is used to establish an individual WebSocket connection to a room. The token is
-     * valid for one minute, and a connection (session) established with the token is valid for the specified duration.
+     * Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat
+     * connection to a room. When the token is used to connect to chat, the connection is valid for the session duration
+     * specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.
+     * </p>
+     * <p>
+     * Use the <code>capabilities</code> field to permit an end user to send messages or moderate a room.
+     * </p>
+     * <p>
+     * The <code>attributes</code> field securely attaches structured data to the chat session; the data is included
+     * within each message sent by the end user and received by other participants in the room. Common use cases for
+     * attributes include passing end-user profile data like an icon, display name, colors, badges, and other display
+     * features.
      * </p>
      * <p>
      * Encryption keys are owned by Amazon IVS Chat and never used directly by your application.
@@ -275,8 +324,18 @@ public interface AmazonivschatAsync extends Amazonivschat {
 
     /**
      * <p>
-     * Creates an encrypted token that is used to establish an individual WebSocket connection to a room. The token is
-     * valid for one minute, and a connection (session) established with the token is valid for the specified duration.
+     * Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat
+     * connection to a room. When the token is used to connect to chat, the connection is valid for the session duration
+     * specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.
+     * </p>
+     * <p>
+     * Use the <code>capabilities</code> field to permit an end user to send messages or moderate a room.
+     * </p>
+     * <p>
+     * The <code>attributes</code> field securely attaches structured data to the chat session; the data is included
+     * within each message sent by the end user and received by other participants in the room. Common use cases for
+     * attributes include passing end-user profile data like an icon, display name, colors, badges, and other display
+     * features.
      * </p>
      * <p>
      * Encryption keys are owned by Amazon IVS Chat and never used directly by your application.
@@ -294,6 +353,39 @@ public interface AmazonivschatAsync extends Amazonivschat {
      */
     java.util.concurrent.Future<CreateChatTokenResult> createChatTokenAsync(CreateChatTokenRequest createChatTokenRequest,
             com.amazonaws.handlers.AsyncHandler<CreateChatTokenRequest, CreateChatTokenResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a logging configuration that allows clients to store and record sent messages.
+     * </p>
+     * 
+     * @param createLoggingConfigurationRequest
+     * @return A Java Future containing the result of the CreateLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsync.CreateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLoggingConfigurationResult> createLoggingConfigurationAsync(
+            CreateLoggingConfigurationRequest createLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a logging configuration that allows clients to store and record sent messages.
+     * </p>
+     * 
+     * @param createLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsyncHandler.CreateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/CreateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLoggingConfigurationResult> createLoggingConfigurationAsync(
+            CreateLoggingConfigurationRequest createLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLoggingConfigurationRequest, CreateLoggingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -325,6 +417,39 @@ public interface AmazonivschatAsync extends Amazonivschat {
      */
     java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest createRoomRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoomRequest, CreateRoomResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified logging configuration.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsync.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified logging configuration.
+     * </p>
+     * 
+     * @param deleteLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsyncHandler.DeleteLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/DeleteLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(
+            DeleteLoggingConfigurationRequest deleteLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -433,6 +558,37 @@ public interface AmazonivschatAsync extends Amazonivschat {
 
     /**
      * <p>
+     * Gets the specified logging configuration.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @return A Java Future containing the result of the GetLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsync.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the specified logging configuration.
+     * </p>
+     * 
+     * @param getLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsyncHandler.GetLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/GetLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest getLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetLoggingConfigurationRequest, GetLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the specified room.
      * </p>
      * 
@@ -461,6 +617,41 @@ public interface AmazonivschatAsync extends Amazonivschat {
      */
     java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest getRoomRequest,
             com.amazonaws.handlers.AsyncHandler<GetRoomRequest, GetRoomResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets summary information about all your logging configurations in the AWS region where the API request is
+     * processed.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @return A Java Future containing the result of the ListLoggingConfigurations operation returned by the service.
+     * @sample AmazonivschatAsync.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(
+            ListLoggingConfigurationsRequest listLoggingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Gets summary information about all your logging configurations in the AWS region where the API request is
+     * processed.
+     * </p>
+     * 
+     * @param listLoggingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListLoggingConfigurations operation returned by the service.
+     * @sample AmazonivschatAsyncHandler.ListLoggingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/ListLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(
+            ListLoggingConfigurationsRequest listLoggingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListLoggingConfigurationsRequest, ListLoggingConfigurationsResult> asyncHandler);
 
     /**
      * <p>
@@ -620,6 +811,39 @@ public interface AmazonivschatAsync extends Amazonivschat {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a specified logging configuration.
+     * </p>
+     * 
+     * @param updateLoggingConfigurationRequest
+     * @return A Java Future containing the result of the UpdateLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsync.UpdateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLoggingConfigurationResult> updateLoggingConfigurationAsync(
+            UpdateLoggingConfigurationRequest updateLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates a specified logging configuration.
+     * </p>
+     * 
+     * @param updateLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateLoggingConfiguration operation returned by the service.
+     * @sample AmazonivschatAsyncHandler.UpdateLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ivschat-2020-07-14/UpdateLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateLoggingConfigurationResult> updateLoggingConfigurationAsync(
+            UpdateLoggingConfigurationRequest updateLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateLoggingConfigurationRequest, UpdateLoggingConfigurationResult> asyncHandler);
 
     /**
      * <p>

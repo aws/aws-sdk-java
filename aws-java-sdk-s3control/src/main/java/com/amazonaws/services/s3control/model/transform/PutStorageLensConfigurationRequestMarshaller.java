@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -150,6 +150,78 @@ public class PutStorageLensConfigurationRequestMarshaller implements
                                                 }
                                                 xmlWriter.endElement();
                                             }
+                                        }
+
+                                        {
+                                            AdvancedCostOptimizationMetrics advancedCostOptimizationMetrics = bucketLevel.getAdvancedCostOptimizationMetrics();
+                                            if (advancedCostOptimizationMetrics != null) {
+                                                xmlWriter.startElement("AdvancedCostOptimizationMetrics");
+
+                                                if (advancedCostOptimizationMetrics.getIsEnabled() != null) {
+                                                    xmlWriter.startElement("IsEnabled").value(advancedCostOptimizationMetrics.getIsEnabled()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        {
+                                            AdvancedDataProtectionMetrics advancedDataProtectionMetrics = bucketLevel.getAdvancedDataProtectionMetrics();
+                                            if (advancedDataProtectionMetrics != null) {
+                                                xmlWriter.startElement("AdvancedDataProtectionMetrics");
+
+                                                if (advancedDataProtectionMetrics.getIsEnabled() != null) {
+                                                    xmlWriter.startElement("IsEnabled").value(advancedDataProtectionMetrics.getIsEnabled()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+
+                                        {
+                                            DetailedStatusCodesMetrics detailedStatusCodesMetrics = bucketLevel.getDetailedStatusCodesMetrics();
+                                            if (detailedStatusCodesMetrics != null) {
+                                                xmlWriter.startElement("DetailedStatusCodesMetrics");
+
+                                                if (detailedStatusCodesMetrics.getIsEnabled() != null) {
+                                                    xmlWriter.startElement("IsEnabled").value(detailedStatusCodesMetrics.getIsEnabled()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    AdvancedCostOptimizationMetrics advancedCostOptimizationMetrics = accountLevel.getAdvancedCostOptimizationMetrics();
+                                    if (advancedCostOptimizationMetrics != null) {
+                                        xmlWriter.startElement("AdvancedCostOptimizationMetrics");
+
+                                        if (advancedCostOptimizationMetrics.getIsEnabled() != null) {
+                                            xmlWriter.startElement("IsEnabled").value(advancedCostOptimizationMetrics.getIsEnabled()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    AdvancedDataProtectionMetrics advancedDataProtectionMetrics = accountLevel.getAdvancedDataProtectionMetrics();
+                                    if (advancedDataProtectionMetrics != null) {
+                                        xmlWriter.startElement("AdvancedDataProtectionMetrics");
+
+                                        if (advancedDataProtectionMetrics.getIsEnabled() != null) {
+                                            xmlWriter.startElement("IsEnabled").value(advancedDataProtectionMetrics.getIsEnabled()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    DetailedStatusCodesMetrics detailedStatusCodesMetrics = accountLevel.getDetailedStatusCodesMetrics();
+                                    if (detailedStatusCodesMetrics != null) {
+                                        xmlWriter.startElement("DetailedStatusCodesMetrics");
+
+                                        if (detailedStatusCodesMetrics.getIsEnabled() != null) {
+                                            xmlWriter.startElement("IsEnabled").value(detailedStatusCodesMetrics.getIsEnabled()).endElement();
                                         }
                                         xmlWriter.endElement();
                                     }

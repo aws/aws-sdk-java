@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,11 @@ public class AbstractAWSLogs implements AWSLogs {
 
     @Override
     public CreateLogStreamResult createLogStream(CreateLogStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDataProtectionPolicyResult deleteDataProtectionPolicy(DeleteDataProtectionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,6 +173,11 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public GetDataProtectionPolicyResult getDataProtectionPolicy(GetDataProtectionPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetLogEventsResult getLogEvents(GetLogEventsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -188,7 +198,18 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    @Deprecated
     public ListTagsLogGroupResult listTagsLogGroup(ListTagsLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutDataProtectionPolicyResult putDataProtectionPolicy(PutDataProtectionPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -243,7 +264,13 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    @Deprecated
     public TagLogGroupResult tagLogGroup(TagLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -253,7 +280,13 @@ public class AbstractAWSLogs implements AWSLogs {
     }
 
     @Override
+    @Deprecated
     public UntagLogGroupResult untagLogGroup(UntagLogGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

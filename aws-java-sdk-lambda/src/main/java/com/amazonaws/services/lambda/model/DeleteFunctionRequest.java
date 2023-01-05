@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,17 +35,17 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -57,7 +57,7 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
     private String functionName;
     /**
      * <p>
-     * Specify a version to delete. You can't delete a version that's referenced by an alias.
+     * Specify a version to delete. You can't delete a version that an alias references.
      * </p>
      */
     private String qualifier;
@@ -72,17 +72,17 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -99,17 +99,17 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
+     *        <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -132,17 +132,17 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -158,17 +158,17 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
+     *         <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -191,17 +191,17 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -218,17 +218,17 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
+     *        <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -245,11 +245,11 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a version to delete. You can't delete a version that's referenced by an alias.
+     * Specify a version to delete. You can't delete a version that an alias references.
      * </p>
      * 
      * @param qualifier
-     *        Specify a version to delete. You can't delete a version that's referenced by an alias.
+     *        Specify a version to delete. You can't delete a version that an alias references.
      */
 
     public void setQualifier(String qualifier) {
@@ -258,10 +258,10 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a version to delete. You can't delete a version that's referenced by an alias.
+     * Specify a version to delete. You can't delete a version that an alias references.
      * </p>
      * 
-     * @return Specify a version to delete. You can't delete a version that's referenced by an alias.
+     * @return Specify a version to delete. You can't delete a version that an alias references.
      */
 
     public String getQualifier() {
@@ -270,11 +270,11 @@ public class DeleteFunctionRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Specify a version to delete. You can't delete a version that's referenced by an alias.
+     * Specify a version to delete. You can't delete a version that an alias references.
      * </p>
      * 
      * @param qualifier
-     *        Specify a version to delete. You can't delete a version that's referenced by an alias.
+     *        Specify a version to delete. You can't delete a version that an alias references.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

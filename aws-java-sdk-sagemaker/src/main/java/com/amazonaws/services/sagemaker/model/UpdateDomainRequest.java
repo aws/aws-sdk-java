@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,20 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private DomainSettingsForUpdate domainSettingsForUpdate;
+    /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     */
+    private DefaultSpaceSettings defaultSpaceSettings;
+    /**
+     * <p>
+     * The entity that creates and manages the required security groups for inter-app communication in
+     * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * </p>
+     */
+    private String appSecurityGroupManagement;
 
     /**
      * <p>
@@ -165,6 +179,125 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     * 
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space within the Domain.
+     */
+
+    public void setDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        this.defaultSpaceSettings = defaultSpaceSettings;
+    }
+
+    /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     * 
+     * @return The default settings used to create a space within the Domain.
+     */
+
+    public DefaultSpaceSettings getDefaultSpaceSettings() {
+        return this.defaultSpaceSettings;
+    }
+
+    /**
+     * <p>
+     * The default settings used to create a space within the Domain.
+     * </p>
+     * 
+     * @param defaultSpaceSettings
+     *        The default settings used to create a space within the Domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDomainRequest withDefaultSpaceSettings(DefaultSpaceSettings defaultSpaceSettings) {
+        setDefaultSpaceSettings(defaultSpaceSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The entity that creates and manages the required security groups for inter-app communication in
+     * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * </p>
+     * 
+     * @param appSecurityGroupManagement
+     *        The entity that creates and manages the required security groups for inter-app communication in
+     *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
+     *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     *        is provided.
+     * @see AppSecurityGroupManagement
+     */
+
+    public void setAppSecurityGroupManagement(String appSecurityGroupManagement) {
+        this.appSecurityGroupManagement = appSecurityGroupManagement;
+    }
+
+    /**
+     * <p>
+     * The entity that creates and manages the required security groups for inter-app communication in
+     * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * </p>
+     * 
+     * @return The entity that creates and manages the required security groups for inter-app communication in
+     *         <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
+     *         <code>VPCOnly</code> and
+     *         <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * @see AppSecurityGroupManagement
+     */
+
+    public String getAppSecurityGroupManagement() {
+        return this.appSecurityGroupManagement;
+    }
+
+    /**
+     * <p>
+     * The entity that creates and manages the required security groups for inter-app communication in
+     * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * </p>
+     * 
+     * @param appSecurityGroupManagement
+     *        The entity that creates and manages the required security groups for inter-app communication in
+     *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
+     *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     *        is provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppSecurityGroupManagement
+     */
+
+    public UpdateDomainRequest withAppSecurityGroupManagement(String appSecurityGroupManagement) {
+        setAppSecurityGroupManagement(appSecurityGroupManagement);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The entity that creates and manages the required security groups for inter-app communication in
+     * <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code>
+     * and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code> is provided.
+     * </p>
+     * 
+     * @param appSecurityGroupManagement
+     *        The entity that creates and manages the required security groups for inter-app communication in
+     *        <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code> is
+     *        <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+     *        is provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppSecurityGroupManagement
+     */
+
+    public UpdateDomainRequest withAppSecurityGroupManagement(AppSecurityGroupManagement appSecurityGroupManagement) {
+        this.appSecurityGroupManagement = appSecurityGroupManagement.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +314,11 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getDefaultUserSettings() != null)
             sb.append("DefaultUserSettings: ").append(getDefaultUserSettings()).append(",");
         if (getDomainSettingsForUpdate() != null)
-            sb.append("DomainSettingsForUpdate: ").append(getDomainSettingsForUpdate());
+            sb.append("DomainSettingsForUpdate: ").append(getDomainSettingsForUpdate()).append(",");
+        if (getDefaultSpaceSettings() != null)
+            sb.append("DefaultSpaceSettings: ").append(getDefaultSpaceSettings()).append(",");
+        if (getAppSecurityGroupManagement() != null)
+            sb.append("AppSecurityGroupManagement: ").append(getAppSecurityGroupManagement());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +345,14 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getDomainSettingsForUpdate() != null && other.getDomainSettingsForUpdate().equals(this.getDomainSettingsForUpdate()) == false)
             return false;
+        if (other.getDefaultSpaceSettings() == null ^ this.getDefaultSpaceSettings() == null)
+            return false;
+        if (other.getDefaultSpaceSettings() != null && other.getDefaultSpaceSettings().equals(this.getDefaultSpaceSettings()) == false)
+            return false;
+        if (other.getAppSecurityGroupManagement() == null ^ this.getAppSecurityGroupManagement() == null)
+            return false;
+        if (other.getAppSecurityGroupManagement() != null && other.getAppSecurityGroupManagement().equals(this.getAppSecurityGroupManagement()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +364,8 @@ public class UpdateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getDefaultUserSettings() == null) ? 0 : getDefaultUserSettings().hashCode());
         hashCode = prime * hashCode + ((getDomainSettingsForUpdate() == null) ? 0 : getDomainSettingsForUpdate().hashCode());
+        hashCode = prime * hashCode + ((getDefaultSpaceSettings() == null) ? 0 : getDefaultSpaceSettings().hashCode());
+        hashCode = prime * hashCode + ((getAppSecurityGroupManagement() == null) ? 0 : getAppSecurityGroupManagement().hashCode());
         return hashCode;
     }
 

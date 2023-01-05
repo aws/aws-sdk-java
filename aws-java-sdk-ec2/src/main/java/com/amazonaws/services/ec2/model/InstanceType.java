@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -588,7 +588,12 @@ public enum InstanceType {
     R6a48xlarge("r6a.48xlarge"),
     R6aMetal("r6a.metal"),
     P4de24xlarge("p4de.24xlarge"),
-    U3tb156xlarge("u-3tb1.56xlarge");
+    U3tb156xlarge("u-3tb1.56xlarge"),
+    U18tb1112xlarge("u-18tb1.112xlarge"),
+    U24tb1112xlarge("u-24tb1.112xlarge"),
+    Trn12xlarge("trn1.2xlarge"),
+    Trn132xlarge("trn1.32xlarge"),
+    Hpc6id32xlarge("hpc6id.32xlarge");
 
     private String value;
 

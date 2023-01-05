@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,11 @@ public enum Runtime {
     NODEJS_14("NODEJS_14"),
     CORRETTO_8("CORRETTO_8"),
     CORRETTO_11("CORRETTO_11"),
-    NODEJS_16("NODEJS_16");
+    NODEJS_16("NODEJS_16"),
+    GO_1("GO_1"),
+    DOTNET_6("DOTNET_6"),
+    PHP_81("PHP_81"),
+    RUBY_31("RUBY_31");
 
     private String value;
 

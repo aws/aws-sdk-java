@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -275,6 +275,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteAccountSubscriptionResult> deleteAccountSubscriptionAsync(DeleteAccountSubscriptionRequest request) {
+
+        return deleteAccountSubscriptionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountSubscriptionResult> deleteAccountSubscriptionAsync(DeleteAccountSubscriptionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountSubscriptionRequest, DeleteAccountSubscriptionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteAnalysisResult> deleteAnalysisAsync(DeleteAnalysisRequest request) {
 
         return deleteAnalysisAsync(request, null);
@@ -535,6 +548,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAnalysisDefinitionResult> describeAnalysisDefinitionAsync(DescribeAnalysisDefinitionRequest request) {
+
+        return describeAnalysisDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAnalysisDefinitionResult> describeAnalysisDefinitionAsync(DescribeAnalysisDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAnalysisDefinitionRequest, DescribeAnalysisDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeAnalysisPermissionsResult> describeAnalysisPermissionsAsync(DescribeAnalysisPermissionsRequest request) {
 
         return describeAnalysisPermissionsAsync(request, null);
@@ -556,6 +582,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DescribeDashboardResult> describeDashboardAsync(DescribeDashboardRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeDashboardRequest, DescribeDashboardResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDashboardDefinitionResult> describeDashboardDefinitionAsync(DescribeDashboardDefinitionRequest request) {
+
+        return describeDashboardDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDashboardDefinitionResult> describeDashboardDefinitionAsync(DescribeDashboardDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDashboardDefinitionRequest, DescribeDashboardDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -766,6 +805,19 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<DescribeTemplateAliasResult> describeTemplateAliasAsync(DescribeTemplateAliasRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeTemplateAliasRequest, DescribeTemplateAliasResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTemplateDefinitionResult> describeTemplateDefinitionAsync(DescribeTemplateDefinitionRequest request) {
+
+        return describeTemplateDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeTemplateDefinitionResult> describeTemplateDefinitionAsync(DescribeTemplateDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeTemplateDefinitionRequest, DescribeTemplateDefinitionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1227,6 +1279,32 @@ public class AbstractAmazonQuickSightAsync extends AbstractAmazonQuickSight impl
     @Override
     public java.util.concurrent.Future<SearchDashboardsResult> searchDashboardsAsync(SearchDashboardsRequest request,
             com.amazonaws.handlers.AsyncHandler<SearchDashboardsRequest, SearchDashboardsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDataSetsResult> searchDataSetsAsync(SearchDataSetsRequest request) {
+
+        return searchDataSetsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDataSetsResult> searchDataSetsAsync(SearchDataSetsRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchDataSetsRequest, SearchDataSetsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDataSourcesResult> searchDataSourcesAsync(SearchDataSourcesRequest request) {
+
+        return searchDataSourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDataSourcesResult> searchDataSourcesAsync(SearchDataSourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SearchDataSourcesRequest, SearchDataSourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

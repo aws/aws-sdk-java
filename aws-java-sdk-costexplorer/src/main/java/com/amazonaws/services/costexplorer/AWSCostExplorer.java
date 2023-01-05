@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,9 +77,9 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Adds a subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with
-     * email or SNS notifications. Email subscribers can set a dollar threshold and a time frequency for receiving
-     * notifications.
+     * Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define
+     * subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a
+     * time frequency for receiving notifications.
      * </p>
      * 
      * @param createAnomalySubscriptionRequest
@@ -190,7 +190,7 @@ public interface AWSCostExplorer {
     /**
      * <p>
      * Retrieves all of the cost anomalies detected on your account during the time period that's specified by the
-     * <code>DateInterval</code> object.
+     * <code>DateInterval</code> object. Anomalies are available for up to 90 days.
      * </p>
      * 
      * @param getAnomaliesRequest
@@ -608,7 +608,9 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
-     * Retrieves your request parameters, Savings Plan Recommendations Summary and Details.
+     * Retrieves the Savings Plans recommendations for your account. First use
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> to generate a new set of recommendations, and then
+     * use <code>GetSavingsPlansPurchaseRecommendation</code> to retrieve them.
      * </p>
      * 
      * @param getSavingsPlansPurchaseRecommendationRequest
@@ -762,6 +764,25 @@ public interface AWSCostExplorer {
 
     /**
      * <p>
+     * Retrieves a list of your historical recommendation generations within the past 30 days.
+     * </p>
+     * 
+     * @param listSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return Result of the ListSavingsPlansPurchaseRecommendationGeneration operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid. Try again without a pagination token.
+     * @sample AWSCostExplorer.ListSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ListSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSavingsPlansPurchaseRecommendationGenerationResult listSavingsPlansPurchaseRecommendationGeneration(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest listSavingsPlansPurchaseRecommendationGenerationRequest);
+
+    /**
+     * <p>
      * Returns a list of resource tags associated with the resource specified by the Amazon Resource Name (ARN).
      * </p>
      * 
@@ -791,6 +812,36 @@ public interface AWSCostExplorer {
      *      Documentation</a>
      */
     ProvideAnomalyFeedbackResult provideAnomalyFeedback(ProvideAnomalyFeedbackRequest provideAnomalyFeedbackRequest);
+
+    /**
+     * <p>
+     * Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans
+     * recommendations that takes your latest usage data and current Savings Plans inventory into account. You can
+     * refresh Savings Plans recommendations up to three times daily for a consolidated billing family.
+     * </p>
+     * <note>
+     * <p>
+     * <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax because no input parameters
+     * are needed to support this operation.
+     * </p>
+     * </note>
+     * 
+     * @param startSavingsPlansPurchaseRecommendationGenerationRequest
+     * @return Result of the StartSavingsPlansPurchaseRecommendationGeneration operation returned by the service.
+     * @throws LimitExceededException
+     *         You made too many calls in a short period of time. Try again later.
+     * @throws ServiceQuotaExceededException
+     *         You've reached the limit on the number of resources you can create, or exceeded the size of an individual
+     *         resource.
+     * @throws GenerationExistsException
+     *         A request to generate a recommendation is already in progress.
+     * @sample AWSCostExplorer.StartSavingsPlansPurchaseRecommendationGeneration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/StartSavingsPlansPurchaseRecommendationGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartSavingsPlansPurchaseRecommendationGenerationResult startSavingsPlansPurchaseRecommendationGeneration(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest startSavingsPlansPurchaseRecommendationGenerationRequest);
 
     /**
      * <p>

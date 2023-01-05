@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,7 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     private String addonVersion;
     /**
      * <p>
-     * An object representing the health of the add-on.
+     * An object that represents the health of the add-on.
      * </p>
      */
     private AddonHealth health;
@@ -79,8 +79,8 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date modifiedAt;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the
-     * add-on.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
+     * uses.
      * </p>
      */
     private String serviceAccountRoleArn;
@@ -92,6 +92,30 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     */
+    private String publisher;
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     */
+    private String owner;
+    /**
+     * <p>
+     * Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+     * </p>
+     */
+    private MarketplaceInformation marketplaceInformation;
+    /**
+     * <p>
+     * The configuration values that you provided.
+     * </p>
+     */
+    private String configurationValues;
 
     /**
      * <p>
@@ -274,11 +298,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the health of the add-on.
+     * An object that represents the health of the add-on.
      * </p>
      * 
      * @param health
-     *        An object representing the health of the add-on.
+     *        An object that represents the health of the add-on.
      */
 
     public void setHealth(AddonHealth health) {
@@ -287,10 +311,10 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the health of the add-on.
+     * An object that represents the health of the add-on.
      * </p>
      * 
-     * @return An object representing the health of the add-on.
+     * @return An object that represents the health of the add-on.
      */
 
     public AddonHealth getHealth() {
@@ -299,11 +323,11 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An object representing the health of the add-on.
+     * An object that represents the health of the add-on.
      * </p>
      * 
      * @param health
-     *        An object representing the health of the add-on.
+     *        An object that represents the health of the add-on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,13 +458,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the
-     * add-on.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
+     * uses.
      * </p>
      * 
      * @param serviceAccountRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the
-     *        add-on.
+     *        The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the
+     *        add-on uses.
      */
 
     public void setServiceAccountRoleArn(String serviceAccountRoleArn) {
@@ -449,12 +473,12 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the
-     * add-on.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
+     * uses.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by
-     *         the add-on.
+     * @return The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the
+     *         add-on uses.
      */
 
     public String getServiceAccountRoleArn() {
@@ -463,13 +487,13 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the
-     * add-on.
+     * The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the add-on
+     * uses.
      * </p>
      * 
      * @param serviceAccountRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that is bound to the Kubernetes service account used by the
-     *        add-on.
+     *        The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes service account that the
+     *        add-on uses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -559,6 +583,166 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     * 
+     * @param publisher
+     *        The publisher of the add-on.
+     */
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     * 
+     * @return The publisher of the add-on.
+     */
+
+    public String getPublisher() {
+        return this.publisher;
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     * 
+     * @param publisher
+     *        The publisher of the add-on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Addon withPublisher(String publisher) {
+        setPublisher(publisher);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of the add-on.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     * 
+     * @return The owner of the add-on.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of the add-on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Addon withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param marketplaceInformation
+     *        Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+     */
+
+    public void setMarketplaceInformation(MarketplaceInformation marketplaceInformation) {
+        this.marketplaceInformation = marketplaceInformation;
+    }
+
+    /**
+     * <p>
+     * Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @return Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+     */
+
+    public MarketplaceInformation getMarketplaceInformation() {
+        return this.marketplaceInformation;
+    }
+
+    /**
+     * <p>
+     * Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param marketplaceInformation
+     *        Information about an Amazon EKS add-on from the Amazon Web Services Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Addon withMarketplaceInformation(MarketplaceInformation marketplaceInformation) {
+        setMarketplaceInformation(marketplaceInformation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration values that you provided.
+     * </p>
+     * 
+     * @param configurationValues
+     *        The configuration values that you provided.
+     */
+
+    public void setConfigurationValues(String configurationValues) {
+        this.configurationValues = configurationValues;
+    }
+
+    /**
+     * <p>
+     * The configuration values that you provided.
+     * </p>
+     * 
+     * @return The configuration values that you provided.
+     */
+
+    public String getConfigurationValues() {
+        return this.configurationValues;
+    }
+
+    /**
+     * <p>
+     * The configuration values that you provided.
+     * </p>
+     * 
+     * @param configurationValues
+     *        The configuration values that you provided.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Addon withConfigurationValues(String configurationValues) {
+        setConfigurationValues(configurationValues);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -589,7 +773,15 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
         if (getServiceAccountRoleArn() != null)
             sb.append("ServiceAccountRoleArn: ").append(getServiceAccountRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getPublisher() != null)
+            sb.append("Publisher: ").append(getPublisher()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner()).append(",");
+        if (getMarketplaceInformation() != null)
+            sb.append("MarketplaceInformation: ").append(getMarketplaceInformation()).append(",");
+        if (getConfigurationValues() != null)
+            sb.append("ConfigurationValues: ").append(getConfigurationValues());
         sb.append("}");
         return sb.toString();
     }
@@ -644,6 +836,22 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getPublisher() == null ^ this.getPublisher() == null)
+            return false;
+        if (other.getPublisher() != null && other.getPublisher().equals(this.getPublisher()) == false)
+            return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
+        if (other.getMarketplaceInformation() == null ^ this.getMarketplaceInformation() == null)
+            return false;
+        if (other.getMarketplaceInformation() != null && other.getMarketplaceInformation().equals(this.getMarketplaceInformation()) == false)
+            return false;
+        if (other.getConfigurationValues() == null ^ this.getConfigurationValues() == null)
+            return false;
+        if (other.getConfigurationValues() != null && other.getConfigurationValues().equals(this.getConfigurationValues()) == false)
+            return false;
         return true;
     }
 
@@ -662,6 +870,10 @@ public class Addon implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getServiceAccountRoleArn() == null) ? 0 : getServiceAccountRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getPublisher() == null) ? 0 : getPublisher().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getMarketplaceInformation() == null) ? 0 : getMarketplaceInformation().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationValues() == null) ? 0 : getConfigurationValues().hashCode());
         return hashCode;
     }
 

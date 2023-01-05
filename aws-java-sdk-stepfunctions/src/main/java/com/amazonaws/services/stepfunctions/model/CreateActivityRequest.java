@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
-     * more information, see <a
+     * The name of the activity to create. This name must be unique for your Amazon Web Services account and region for
+     * 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -74,7 +74,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -86,10 +86,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
-     * more information, see <a
+     * The name of the activity to create. This name must be unique for your Amazon Web Services account and region for
+     * 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -126,10 +126,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param name
-     *        The name of the activity to create. This name must be unique for your AWS account and region for 90 days.
-     *        For more information, see <a href=
+     *        The name of the activity to create. This name must be unique for your Amazon Web Services account and
+     *        region for 90 days. For more information, see <a href=
      *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
-     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -170,10 +170,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
-     * more information, see <a
+     * The name of the activity to create. This name must be unique for your Amazon Web Services account and region for
+     * 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -209,10 +209,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * To enable logging with CloudWatch Logs, the name should only contain 0-9, A-Z, a-z, - and _.
      * </p>
      * 
-     * @return The name of the activity to create. This name must be unique for your AWS account and region for 90 days.
-     *         For more information, see <a href=
+     * @return The name of the activity to create. This name must be unique for your Amazon Web Services account and
+     *         region for 90 days. For more information, see <a href=
      *         "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
-     *         > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *         > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
      *         <p>
      *         A name must <i>not</i> contain:
      *         </p>
@@ -253,10 +253,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The name of the activity to create. This name must be unique for your AWS account and region for 90 days. For
-     * more information, see <a
+     * The name of the activity to create. This name must be unique for your Amazon Web Services account and region for
+     * 90 days. For more information, see <a
      * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
-     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.
+     * Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.
      * </p>
      * <p>
      * A name must <i>not</i> contain:
@@ -293,10 +293,10 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param name
-     *        The name of the activity to create. This name must be unique for your AWS account and region for 90 days.
-     *        For more information, see <a href=
+     *        The name of the activity to create. This name must be unique for your Amazon Web Services account and
+     *        region for 90 days. For more information, see <a href=
      *        "https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions"
-     *        > Limits Related to State Machine Executions</a> in the <i>AWS Step Functions Developer Guide</i>.</p>
+     *        > Limits Related to State Machine Executions</a> in the <i>Step Functions Developer Guide</i>.</p>
      *        <p>
      *        A name must <i>not</i> contain:
      *        </p>
@@ -344,7 +344,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -356,7 +356,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         An array of key-value pairs. For more information, see <a
      *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *         Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *         Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *         Tags</a>.
      *         </p>
@@ -376,7 +376,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -389,7 +389,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      *        </p>
@@ -413,7 +413,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -431,7 +431,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      *        </p>
@@ -457,7 +457,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * An array of key-value pairs. For more information, see <a
      * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      * Tags</a>.
      * </p>
@@ -470,7 +470,7 @@ public class CreateActivityRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        An array of key-value pairs. For more information, see <a
      *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        Allocation Tags</a> in the <i>Amazon Web Services Billing and Cost Management User Guide</i>, and <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
      *        Tags</a>.
      *        </p>

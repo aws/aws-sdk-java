@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,6 +130,12 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ModificationState> modificationStates;
+    /**
+     * <p>
+     * The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<RelatedWorkspaceProperties> relatedWorkspaces;
 
     /**
      * <p>
@@ -928,6 +934,79 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     * </p>
+     * 
+     * @return The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     */
+
+    public java.util.List<RelatedWorkspaceProperties> getRelatedWorkspaces() {
+        if (relatedWorkspaces == null) {
+            relatedWorkspaces = new com.amazonaws.internal.SdkInternalList<RelatedWorkspaceProperties>();
+        }
+        return relatedWorkspaces;
+    }
+
+    /**
+     * <p>
+     * The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     * </p>
+     * 
+     * @param relatedWorkspaces
+     *        The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     */
+
+    public void setRelatedWorkspaces(java.util.Collection<RelatedWorkspaceProperties> relatedWorkspaces) {
+        if (relatedWorkspaces == null) {
+            this.relatedWorkspaces = null;
+            return;
+        }
+
+        this.relatedWorkspaces = new com.amazonaws.internal.SdkInternalList<RelatedWorkspaceProperties>(relatedWorkspaces);
+    }
+
+    /**
+     * <p>
+     * The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRelatedWorkspaces(java.util.Collection)} or {@link #withRelatedWorkspaces(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param relatedWorkspaces
+     *        The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workspace withRelatedWorkspaces(RelatedWorkspaceProperties... relatedWorkspaces) {
+        if (this.relatedWorkspaces == null) {
+            setRelatedWorkspaces(new com.amazonaws.internal.SdkInternalList<RelatedWorkspaceProperties>(relatedWorkspaces.length));
+        }
+        for (RelatedWorkspaceProperties ele : relatedWorkspaces) {
+            this.relatedWorkspaces.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     * </p>
+     * 
+     * @param relatedWorkspaces
+     *        The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workspace withRelatedWorkspaces(java.util.Collection<RelatedWorkspaceProperties> relatedWorkspaces) {
+        setRelatedWorkspaces(relatedWorkspaces);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -968,7 +1047,9 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
         if (getWorkspaceProperties() != null)
             sb.append("WorkspaceProperties: ").append(getWorkspaceProperties()).append(",");
         if (getModificationStates() != null)
-            sb.append("ModificationStates: ").append(getModificationStates());
+            sb.append("ModificationStates: ").append(getModificationStates()).append(",");
+        if (getRelatedWorkspaces() != null)
+            sb.append("RelatedWorkspaces: ").append(getRelatedWorkspaces());
         sb.append("}");
         return sb.toString();
     }
@@ -1043,6 +1124,10 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getModificationStates() != null && other.getModificationStates().equals(this.getModificationStates()) == false)
             return false;
+        if (other.getRelatedWorkspaces() == null ^ this.getRelatedWorkspaces() == null)
+            return false;
+        if (other.getRelatedWorkspaces() != null && other.getRelatedWorkspaces().equals(this.getRelatedWorkspaces()) == false)
+            return false;
         return true;
     }
 
@@ -1066,6 +1151,7 @@ public class Workspace implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRootVolumeEncryptionEnabled() == null) ? 0 : getRootVolumeEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceProperties() == null) ? 0 : getWorkspaceProperties().hashCode());
         hashCode = prime * hashCode + ((getModificationStates() == null) ? 0 : getModificationStates().hashCode());
+        hashCode = prime * hashCode + ((getRelatedWorkspaces() == null) ? 0 : getRelatedWorkspaces().hashCode());
         return hashCode;
     }
 

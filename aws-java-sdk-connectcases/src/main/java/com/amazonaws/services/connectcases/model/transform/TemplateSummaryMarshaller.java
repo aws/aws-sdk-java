@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class TemplateSummaryMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
     private static final MarshallingInfo<String> TEMPLATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("templateArn").build();
     private static final MarshallingInfo<String> TEMPLATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class TemplateSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(templateSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(templateSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(templateSummary.getTemplateArn(), TEMPLATEARN_BINDING);
             protocolMarshaller.marshall(templateSummary.getTemplateId(), TEMPLATEID_BINDING);
         } catch (Exception e) {

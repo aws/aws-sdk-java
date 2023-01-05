@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AccountSettingsMarshaller {
 
+    private static final MarshallingInfo<String> PIPELINECODEBUILDROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineCodebuildRoleArn").build();
     private static final MarshallingInfo<StructuredPojo> PIPELINEPROVISIONINGREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineProvisioningRepository").build();
     private static final MarshallingInfo<String> PIPELINESERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class AccountSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(accountSettings.getPipelineCodebuildRoleArn(), PIPELINECODEBUILDROLEARN_BINDING);
             protocolMarshaller.marshall(accountSettings.getPipelineProvisioningRepository(), PIPELINEPROVISIONINGREPOSITORY_BINDING);
             protocolMarshaller.marshall(accountSettings.getPipelineServiceRoleArn(), PIPELINESERVICEROLEARN_BINDING);
         } catch (Exception e) {

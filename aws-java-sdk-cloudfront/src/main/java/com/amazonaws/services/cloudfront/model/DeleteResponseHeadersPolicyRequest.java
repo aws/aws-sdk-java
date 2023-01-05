@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class DeleteResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are deleting.
      * </p>
      * <p>
-     * The version is the response headers policy’s <code>ETag</code> value, which you can get using
+     * The version is the response headers policy's <code>ETag</code> value, which you can get using
      * <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
@@ -106,7 +106,7 @@ public class DeleteResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are deleting.
      * </p>
      * <p>
-     * The version is the response headers policy’s <code>ETag</code> value, which you can get using
+     * The version is the response headers policy's <code>ETag</code> value, which you can get using
      * <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
@@ -114,7 +114,7 @@ public class DeleteResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * @param ifMatch
      *        The version of the response headers policy that you are deleting.</p>
      *        <p>
-     *        The version is the response headers policy’s <code>ETag</code> value, which you can get using
+     *        The version is the response headers policy's <code>ETag</code> value, which you can get using
      *        <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or
      *        <code>GetResponseHeadersPolicyConfig</code>.
      */
@@ -128,14 +128,14 @@ public class DeleteResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are deleting.
      * </p>
      * <p>
-     * The version is the response headers policy’s <code>ETag</code> value, which you can get using
+     * The version is the response headers policy's <code>ETag</code> value, which you can get using
      * <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
      * 
      * @return The version of the response headers policy that you are deleting.</p>
      *         <p>
-     *         The version is the response headers policy’s <code>ETag</code> value, which you can get using
+     *         The version is the response headers policy's <code>ETag</code> value, which you can get using
      *         <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or
      *         <code>GetResponseHeadersPolicyConfig</code>.
      */
@@ -149,7 +149,7 @@ public class DeleteResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * The version of the response headers policy that you are deleting.
      * </p>
      * <p>
-     * The version is the response headers policy’s <code>ETag</code> value, which you can get using
+     * The version is the response headers policy's <code>ETag</code> value, which you can get using
      * <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or
      * <code>GetResponseHeadersPolicyConfig</code>.
      * </p>
@@ -157,7 +157,7 @@ public class DeleteResponseHeadersPolicyRequest extends com.amazonaws.AmazonWebS
      * @param ifMatch
      *        The version of the response headers policy that you are deleting.</p>
      *        <p>
-     *        The version is the response headers policy’s <code>ETag</code> value, which you can get using
+     *        The version is the response headers policy's <code>ETag</code> value, which you can get using
      *        <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>, or
      *        <code>GetResponseHeadersPolicyConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,9 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The maximum number of objects returned per page.
      * </p>
+     * <p>
+     * The default is 20 if this parameter is not included in the request.
+     * </p>
      */
     private Integer maxResults;
     /**
@@ -59,6 +62,42 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.List<String> values;
+    /**
+     * <p>
+     * A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     * <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     * associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in
+     * conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code>
+     * parameters to search for profiles that satisfy the search criteria.
+     * </p>
+     */
+    private java.util.List<AdditionalSearchKey> additionalSearchKeys;
+    /**
+     * <p>
+     * Relationship between all specified search keys that will be used to search for profiles. This includes the
+     * required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.
+     * </p>
+     * <p>
+     * This parameter influences which profiles will be returned in the response in the following manner:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The response only includes profiles that match all of the search keys.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * </p>
+     */
+    private String logicalOperator;
 
     /**
      * <p>
@@ -104,9 +143,14 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The maximum number of objects returned per page.
      * </p>
+     * <p>
+     * The default is 20 if this parameter is not included in the request.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of objects returned per page.
+     *        The maximum number of objects returned per page.</p>
+     *        <p>
+     *        The default is 20 if this parameter is not included in the request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -117,8 +161,13 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The maximum number of objects returned per page.
      * </p>
+     * <p>
+     * The default is 20 if this parameter is not included in the request.
+     * </p>
      * 
-     * @return The maximum number of objects returned per page.
+     * @return The maximum number of objects returned per page.</p>
+     *         <p>
+     *         The default is 20 if this parameter is not included in the request.
      */
 
     public Integer getMaxResults() {
@@ -129,9 +178,14 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The maximum number of objects returned per page.
      * </p>
+     * <p>
+     * The default is 20 if this parameter is not included in the request.
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of objects returned per page.
+     *        The maximum number of objects returned per page.</p>
+     *        <p>
+     *        The default is 20 if this parameter is not included in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,6 +369,325 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     * <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     * associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in
+     * conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code>
+     * parameters to search for profiles that satisfy the search criteria.
+     * </p>
+     * 
+     * @return A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile.
+     *         Each <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of
+     *         <code>Values</code> associated with that specific key (i.e., a key-value(s) pair). These additional
+     *         search keys will be used in conjunction with the <code>LogicalOperator</code> and the required
+     *         <code>KeyName</code> and <code>Values</code> parameters to search for profiles that satisfy the search
+     *         criteria.
+     */
+
+    public java.util.List<AdditionalSearchKey> getAdditionalSearchKeys() {
+        return additionalSearchKeys;
+    }
+
+    /**
+     * <p>
+     * A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     * <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     * associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in
+     * conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code>
+     * parameters to search for profiles that satisfy the search criteria.
+     * </p>
+     * 
+     * @param additionalSearchKeys
+     *        A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     *        <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     *        associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used
+     *        in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and
+     *        <code>Values</code> parameters to search for profiles that satisfy the search criteria.
+     */
+
+    public void setAdditionalSearchKeys(java.util.Collection<AdditionalSearchKey> additionalSearchKeys) {
+        if (additionalSearchKeys == null) {
+            this.additionalSearchKeys = null;
+            return;
+        }
+
+        this.additionalSearchKeys = new java.util.ArrayList<AdditionalSearchKey>(additionalSearchKeys);
+    }
+
+    /**
+     * <p>
+     * A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     * <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     * associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in
+     * conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code>
+     * parameters to search for profiles that satisfy the search criteria.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalSearchKeys(java.util.Collection)} or {@link #withAdditionalSearchKeys(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalSearchKeys
+     *        A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     *        <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     *        associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used
+     *        in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and
+     *        <code>Values</code> parameters to search for profiles that satisfy the search criteria.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchProfilesRequest withAdditionalSearchKeys(AdditionalSearchKey... additionalSearchKeys) {
+        if (this.additionalSearchKeys == null) {
+            setAdditionalSearchKeys(new java.util.ArrayList<AdditionalSearchKey>(additionalSearchKeys.length));
+        }
+        for (AdditionalSearchKey ele : additionalSearchKeys) {
+            this.additionalSearchKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     * <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     * associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in
+     * conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and <code>Values</code>
+     * parameters to search for profiles that satisfy the search criteria.
+     * </p>
+     * 
+     * @param additionalSearchKeys
+     *        A list of <code>AdditionalSearchKey</code> objects that are each searchable identifiers of a profile. Each
+     *        <code>AdditionalSearchKey</code> object contains a <code>KeyName</code> and a list of <code>Values</code>
+     *        associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used
+     *        in conjunction with the <code>LogicalOperator</code> and the required <code>KeyName</code> and
+     *        <code>Values</code> parameters to search for profiles that satisfy the search criteria.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchProfilesRequest withAdditionalSearchKeys(java.util.Collection<AdditionalSearchKey> additionalSearchKeys) {
+        setAdditionalSearchKeys(additionalSearchKeys);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Relationship between all specified search keys that will be used to search for profiles. This includes the
+     * required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.
+     * </p>
+     * <p>
+     * This parameter influences which profiles will be returned in the response in the following manner:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The response only includes profiles that match all of the search keys.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * </p>
+     * 
+     * @param logicalOperator
+     *        Relationship between all specified search keys that will be used to search for profiles. This includes the
+     *        required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs
+     *        specified in the <code>AdditionalSearchKeys</code> list.</p>
+     *        <p>
+     *        This parameter influences which profiles will be returned in the response in the following manner:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - The response only includes profiles that match all of the search keys.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * @see LogicalOperator
+     */
+
+    public void setLogicalOperator(String logicalOperator) {
+        this.logicalOperator = logicalOperator;
+    }
+
+    /**
+     * <p>
+     * Relationship between all specified search keys that will be used to search for profiles. This includes the
+     * required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.
+     * </p>
+     * <p>
+     * This parameter influences which profiles will be returned in the response in the following manner:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The response only includes profiles that match all of the search keys.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * </p>
+     * 
+     * @return Relationship between all specified search keys that will be used to search for profiles. This includes
+     *         the required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs
+     *         specified in the <code>AdditionalSearchKeys</code> list.</p>
+     *         <p>
+     *         This parameter influences which profiles will be returned in the response in the following manner:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>AND</code> - The response only includes profiles that match all of the search keys.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         The <code>OR</code> relationship is the default behavior if this parameter is not included in the
+     *         request.
+     * @see LogicalOperator
+     */
+
+    public String getLogicalOperator() {
+        return this.logicalOperator;
+    }
+
+    /**
+     * <p>
+     * Relationship between all specified search keys that will be used to search for profiles. This includes the
+     * required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.
+     * </p>
+     * <p>
+     * This parameter influences which profiles will be returned in the response in the following manner:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The response only includes profiles that match all of the search keys.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * </p>
+     * 
+     * @param logicalOperator
+     *        Relationship between all specified search keys that will be used to search for profiles. This includes the
+     *        required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs
+     *        specified in the <code>AdditionalSearchKeys</code> list.</p>
+     *        <p>
+     *        This parameter influences which profiles will be returned in the response in the following manner:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - The response only includes profiles that match all of the search keys.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogicalOperator
+     */
+
+    public SearchProfilesRequest withLogicalOperator(String logicalOperator) {
+        setLogicalOperator(logicalOperator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Relationship between all specified search keys that will be used to search for profiles. This includes the
+     * required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs specified in
+     * the <code>AdditionalSearchKeys</code> list.
+     * </p>
+     * <p>
+     * This parameter influences which profiles will be returned in the response in the following manner:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AND</code> - The response only includes profiles that match all of the search keys.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * </p>
+     * 
+     * @param logicalOperator
+     *        Relationship between all specified search keys that will be used to search for profiles. This includes the
+     *        required <code>KeyName</code> and <code>Values</code> parameters as well as any key-value(s) pairs
+     *        specified in the <code>AdditionalSearchKeys</code> list.</p>
+     *        <p>
+     *        This parameter influences which profiles will be returned in the response in the following manner:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>AND</code> - The response only includes profiles that match all of the search keys.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>OR</code> - The response includes profiles that match at least one of the search keys.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        The <code>OR</code> relationship is the default behavior if this parameter is not included in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LogicalOperator
+     */
+
+    public SearchProfilesRequest withLogicalOperator(LogicalOperator logicalOperator) {
+        this.logicalOperator = logicalOperator.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -335,7 +708,11 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getKeyName() != null)
             sb.append("KeyName: ").append(getKeyName()).append(",");
         if (getValues() != null)
-            sb.append("Values: ").append(getValues());
+            sb.append("Values: ").append(getValues()).append(",");
+        if (getAdditionalSearchKeys() != null)
+            sb.append("AdditionalSearchKeys: ").append(getAdditionalSearchKeys()).append(",");
+        if (getLogicalOperator() != null)
+            sb.append("LogicalOperator: ").append(getLogicalOperator());
         sb.append("}");
         return sb.toString();
     }
@@ -370,6 +747,14 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getValues() != null && other.getValues().equals(this.getValues()) == false)
             return false;
+        if (other.getAdditionalSearchKeys() == null ^ this.getAdditionalSearchKeys() == null)
+            return false;
+        if (other.getAdditionalSearchKeys() != null && other.getAdditionalSearchKeys().equals(this.getAdditionalSearchKeys()) == false)
+            return false;
+        if (other.getLogicalOperator() == null ^ this.getLogicalOperator() == null)
+            return false;
+        if (other.getLogicalOperator() != null && other.getLogicalOperator().equals(this.getLogicalOperator()) == false)
+            return false;
         return true;
     }
 
@@ -383,6 +768,8 @@ public class SearchProfilesRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getKeyName() == null) ? 0 : getKeyName().hashCode());
         hashCode = prime * hashCode + ((getValues() == null) ? 0 : getValues().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalSearchKeys() == null) ? 0 : getAdditionalSearchKeys().hashCode());
+        hashCode = prime * hashCode + ((getLogicalOperator() == null) ? 0 : getLogicalOperator().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -790,6 +790,41 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Start replication to origin / target region - applies only to protected instances that originated in EC2. For
+     * recovery instances on target region - starts replication back to origin region. For failback instances on origin
+     * region - starts replication to target region to re-protect them.
+     * </p>
+     * 
+     * @param reverseReplicationRequest
+     * @return A Java Future containing the result of the ReverseReplication operation returned by the service.
+     * @sample AWSdrsAsync.ReverseReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(ReverseReplicationRequest reverseReplicationRequest);
+
+    /**
+     * <p>
+     * Start replication to origin / target region - applies only to protected instances that originated in EC2. For
+     * recovery instances on target region - starts replication back to origin region. For failback instances on origin
+     * region - starts replication to target region to re-protect them.
+     * </p>
+     * 
+     * @param reverseReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ReverseReplication operation returned by the service.
+     * @sample AWSdrsAsyncHandler.ReverseReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReverseReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(ReverseReplicationRequest reverseReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<ReverseReplicationRequest, ReverseReplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This
      * will run conversion on the failback client and will reboot your machine, thus completing the failback process.
      * </p>
@@ -856,6 +891,39 @@ public interface AWSdrsAsync extends AWSdrs {
 
     /**
      * <p>
+     * Starts replication for a stopped Source Server. This action would make the Source Server protected again and
+     * restart billing for it.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @return A Java Future containing the result of the StartReplication operation returned by the service.
+     * @sample AWSdrsAsync.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest startReplicationRequest);
+
+    /**
+     * <p>
+     * Starts replication for a stopped Source Server. This action would make the Source Server protected again and
+     * restart billing for it.
+     * </p>
+     * 
+     * @param startReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartReplication operation returned by the service.
+     * @sample AWSdrsAsyncHandler.StartReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest startReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationRequest, StartReplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery
      * Instance back to FAILBACK_NOT_STARTED.
      * </p>
@@ -886,6 +954,39 @@ public interface AWSdrsAsync extends AWSdrs {
      */
     java.util.concurrent.Future<StopFailbackResult> stopFailbackAsync(StopFailbackRequest stopFailbackRequest,
             com.amazonaws.handlers.AsyncHandler<StopFailbackRequest, StopFailbackResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing
+     * snapshots and stop billing for it.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @return A Java Future containing the result of the StopReplication operation returned by the service.
+     * @sample AWSdrsAsync.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest stopReplicationRequest);
+
+    /**
+     * <p>
+     * Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing
+     * snapshots and stop billing for it.
+     * </p>
+     * 
+     * @param stopReplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopReplication operation returned by the service.
+     * @sample AWSdrsAsyncHandler.StopReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StopReplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest stopReplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details about a function's configuration.
+ * Details about an Lambda function's configuration.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsLambdaFunctionDetails"
@@ -142,6 +142,20 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
      * </p>
      */
     private String version;
+    /**
+     * <p>
+     * The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     * <code>arm64</code>.
+     * </p>
+     */
+    private java.util.List<String> architectures;
+    /**
+     * <p>
+     * The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a
+     * container image and <code>Zip</code> for a .zip file archive.
+     * </p>
+     */
+    private String packageType;
 
     /**
      * <p>
@@ -927,6 +941,130 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     * <code>arm64</code>.
+     * </p>
+     * 
+     * @return The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     *         <code>arm64</code>.
+     */
+
+    public java.util.List<String> getArchitectures() {
+        return architectures;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     * <code>arm64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     *        <code>arm64</code>.
+     */
+
+    public void setArchitectures(java.util.Collection<String> architectures) {
+        if (architectures == null) {
+            this.architectures = null;
+            return;
+        }
+
+        this.architectures = new java.util.ArrayList<String>(architectures);
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     * <code>arm64</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setArchitectures(java.util.Collection)} or {@link #withArchitectures(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     *        <code>arm64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsLambdaFunctionDetails withArchitectures(String... architectures) {
+        if (this.architectures == null) {
+            setArchitectures(new java.util.ArrayList<String>(architectures.length));
+        }
+        for (String ele : architectures) {
+            this.architectures.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     * <code>arm64</code>.
+     * </p>
+     * 
+     * @param architectures
+     *        The instruction set architecture that the function uses. Valid values are <code>x86_64</code> or
+     *        <code>arm64</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsLambdaFunctionDetails withArchitectures(java.util.Collection<String> architectures) {
+        setArchitectures(architectures);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a
+     * container image and <code>Zip</code> for a .zip file archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package that's used to deploy the function code to Lambda. Set to
+     *        <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.
+     */
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a
+     * container image and <code>Zip</code> for a .zip file archive.
+     * </p>
+     * 
+     * @return The type of deployment package that's used to deploy the function code to Lambda. Set to
+     *         <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.
+     */
+
+    public String getPackageType() {
+        return this.packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package that's used to deploy the function code to Lambda. Set to <code>Image</code> for a
+     * container image and <code>Zip</code> for a .zip file archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package that's used to deploy the function code to Lambda. Set to
+     *        <code>Image</code> for a container image and <code>Zip</code> for a .zip file archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsLambdaFunctionDetails withPackageType(String packageType) {
+        setPackageType(packageType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -973,7 +1111,11 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getArchitectures() != null)
+            sb.append("Architectures: ").append(getArchitectures()).append(",");
+        if (getPackageType() != null)
+            sb.append("PackageType: ").append(getPackageType());
         sb.append("}");
         return sb.toString();
     }
@@ -1060,6 +1202,14 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getArchitectures() == null ^ this.getArchitectures() == null)
+            return false;
+        if (other.getArchitectures() != null && other.getArchitectures().equals(this.getArchitectures()) == false)
+            return false;
+        if (other.getPackageType() == null ^ this.getPackageType() == null)
+            return false;
+        if (other.getPackageType() != null && other.getPackageType().equals(this.getPackageType()) == false)
+            return false;
         return true;
     }
 
@@ -1086,6 +1236,8 @@ public class AwsLambdaFunctionDetails implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getArchitectures() == null) ? 0 : getArchitectures().hashCode());
+        hashCode = prime * hashCode + ((getPackageType() == null) ? 0 : getPackageType().hashCode());
         return hashCode;
     }
 

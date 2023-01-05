@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -210,7 +210,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an environment member from an Cloud9 development environment.
+     * Deletes an environment member from a development environment.
      * </p>
      * 
      * @param deleteEnvironmentMembershipRequest
@@ -224,7 +224,7 @@ public interface AWSCloud9Async extends AWSCloud9 {
 
     /**
      * <p>
-     * Deletes an environment member from an Cloud9 development environment.
+     * Deletes an environment member from a development environment.
      * </p>
      * 
      * @param deleteEnvironmentMembershipRequest

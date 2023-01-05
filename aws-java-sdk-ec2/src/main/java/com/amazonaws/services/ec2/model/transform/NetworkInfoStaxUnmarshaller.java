@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,11 @@ public class NetworkInfoStaxUnmarshaller implements Unmarshaller<NetworkInfo, St
 
                 if (context.testExpression("encryptionInTransitSupported", targetDepth)) {
                     networkInfo.setEncryptionInTransitSupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("enaSrdSupported", targetDepth)) {
+                    networkInfo.setEnaSrdSupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

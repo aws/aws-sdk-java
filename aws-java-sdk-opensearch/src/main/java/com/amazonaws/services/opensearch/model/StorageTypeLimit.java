@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Limits that are applicable for the given storage type.
+ * Limits that are applicable for the given Amazon OpenSearch Service storage type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,69 +27,140 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of storage limits that are applicable for the given storage type. If <code> <a>StorageType</a> </code> is
-     * "ebs", the following storage options are applicable:
-     * <ol>
-     * <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * </ol>
+     * Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is
+     * <code>ebs</code>, the following options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String limitName;
     /**
      * <p>
-     * Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     * The limit values.
      * </p>
      */
     private java.util.List<String> limitValues;
 
     /**
      * <p>
-     * Name of storage limits that are applicable for the given storage type. If <code> <a>StorageType</a> </code> is
-     * "ebs", the following storage options are applicable:
-     * <ol>
-     * <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * </ol>
+     * Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is
+     * <code>ebs</code>, the following options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param limitName
-     *        Name of storage limits that are applicable for the given storage type. If
-     *        <code> <a>StorageType</a> </code> is "ebs", the following storage options are applicable:
-     *        <ol>
-     *        <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type.
+     *        Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is
+     *        <code>ebs</code>, the following options are available:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type.
      *        Can be empty if not applicable.
-     *        <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type.
      *        Can be empty if not applicable.
-     *        <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if
-     *        not applicable.
-     *        <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if
-     *        not applicable.
-     *        <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can
-     *        be empty if not applicable.
-     *        <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can
-     *        be empty if not applicable.
-     *        </ol>
+     *        </p>
+     *        </li>
      */
 
     public void setLimitName(String limitName) {
@@ -98,40 +169,87 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of storage limits that are applicable for the given storage type. If <code> <a>StorageType</a> </code> is
-     * "ebs", the following storage options are applicable:
-     * <ol>
-     * <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * </ol>
+     * Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is
+     * <code>ebs</code>, the following options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Name of storage limits that are applicable for the given storage type. If
-     *         <code> <a>StorageType</a> </code> is "ebs", the following storage options are applicable:
-     *         <ol>
-     *         <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type.
-     *         Can be empty if not applicable.
-     *         <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type.
-     *         Can be empty if not applicable.
-     *         <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty
+     * @return Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is
+     *         <code>ebs</code>, the following options are available:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty
      *         if not applicable.
-     *         <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty
      *         if not applicable.
-     *         <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be
+     *         empty if not applicable.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be
+     *         empty if not applicable.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type.
      *         Can be empty if not applicable.
-     *         <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type.
      *         Can be empty if not applicable.
-     *         </ol>
+     *         </p>
+     *         </li>
      */
 
     public String getLimitName() {
@@ -140,41 +258,88 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of storage limits that are applicable for the given storage type. If <code> <a>StorageType</a> </code> is
-     * "ebs", the following storage options are applicable:
-     * <ol>
-     * <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type. Can be
-     * empty if not applicable.
-     * <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if not
-     * applicable.
-     * <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can be
-     * empty if not applicable.
-     * </ol>
+     * Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is
+     * <code>ebs</code>, the following options are available:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty if not
+     * applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type. Can be
+     * empty if not applicable.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param limitName
-     *        Name of storage limits that are applicable for the given storage type. If
-     *        <code> <a>StorageType</a> </code> is "ebs", the following storage options are applicable:
-     *        <ol>
-     *        <li>MinimumVolumeSize</li> Minimum amount of volume size that is applicable for the given storage type.
+     *        Name of storage limits that are applicable for the given storage type. If <code>StorageType</code> is
+     *        <code>ebs</code>, the following options are available:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>MinimumVolumeSize</b> - Minimum volume size that is available for the given storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MaximumVolumeSize</b> - Maximum volume size that is available for the given storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MaximumIops</b> - Maximum amount of IOPS that is available for the given the storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MinimumIops</b> - Minimum amount of IOPS that is available for the given the storage type. Can be empty
+     *        if not applicable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MaximumThroughput</b> - Maximum amount of throughput that is available for the given the storage type.
      *        Can be empty if not applicable.
-     *        <li>MaximumVolumeSize</li> Maximum amount of volume size that is applicable for the given storage type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>MinimumThroughput</b> - Minimum amount of throughput that is available for the given the storage type.
      *        Can be empty if not applicable.
-     *        <li>MaximumIops</li> Maximum amount of Iops that is applicable for given the storage type. Can be empty if
-     *        not applicable.
-     *        <li>MinimumIops</li> Minimum amount of Iops that is applicable for given the storage type. Can be empty if
-     *        not applicable.
-     *        <li>MaximumThroughput</li> Maximum amount of Throughput that is applicable for given the storage type. Can
-     *        be empty if not applicable.
-     *        <li>MinimumThroughput</li> Minimum amount of Throughput that is applicable for given the storage type. Can
-     *        be empty if not applicable.
-     *        </ol>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,10 +350,10 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     * The limit values.
      * </p>
      * 
-     * @return Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     * @return The limit values.
      */
 
     public java.util.List<String> getLimitValues() {
@@ -197,11 +362,11 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     * The limit values.
      * </p>
      * 
      * @param limitValues
-     *        Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     *        The limit values.
      */
 
     public void setLimitValues(java.util.Collection<String> limitValues) {
@@ -215,7 +380,7 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     * The limit values.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -224,7 +389,7 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param limitValues
-     *        Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     *        The limit values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,11 +405,11 @@ public class StorageTypeLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     * The limit values.
      * </p>
      * 
      * @param limitValues
-     *        Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> .
+     *        The limit values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

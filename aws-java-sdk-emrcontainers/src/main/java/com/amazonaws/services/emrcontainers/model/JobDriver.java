@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specify the driver that the job runs on.
+ * Specify the driver that the job runs on. Exactly one of the two available job drivers is required, either
+ * sparkSqlJobDriver or sparkSubmitJobDriver.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/JobDriver" target="_top">AWS API

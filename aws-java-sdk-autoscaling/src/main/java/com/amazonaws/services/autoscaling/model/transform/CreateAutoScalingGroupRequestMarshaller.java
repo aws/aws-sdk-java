@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -436,6 +436,41 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                                                     }
                                                 }
                                             }
+
+                                            {
+                                                NetworkBandwidthGbpsRequest networkBandwidthGbps = instanceRequirements.getNetworkBandwidthGbps();
+                                                if (networkBandwidthGbps != null) {
+
+                                                    if (networkBandwidthGbps.getMin() != null) {
+                                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                                + ".InstanceRequirements.NetworkBandwidthGbps.Min",
+                                                                StringUtils.fromDouble(networkBandwidthGbps.getMin()));
+                                                    }
+
+                                                    if (networkBandwidthGbps.getMax() != null) {
+                                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                                + ".InstanceRequirements.NetworkBandwidthGbps.Max",
+                                                                StringUtils.fromDouble(networkBandwidthGbps.getMax()));
+                                                    }
+                                                }
+                                            }
+
+                                            if (!instanceRequirements.getAllowedInstanceTypes().isEmpty()
+                                                    || !((com.amazonaws.internal.SdkInternalList<String>) instanceRequirements.getAllowedInstanceTypes())
+                                                            .isAutoConstruct()) {
+                                                com.amazonaws.internal.SdkInternalList<String> allowedInstanceTypesList = (com.amazonaws.internal.SdkInternalList<String>) instanceRequirements
+                                                        .getAllowedInstanceTypes();
+                                                int allowedInstanceTypesListIndex = 1;
+
+                                                for (String allowedInstanceTypesListValue : allowedInstanceTypesList) {
+                                                    if (allowedInstanceTypesListValue != null) {
+                                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                                + ".InstanceRequirements.AllowedInstanceTypes.member." + allowedInstanceTypesListIndex,
+                                                                StringUtils.fromString(allowedInstanceTypesListValue));
+                                                    }
+                                                    allowedInstanceTypesListIndex++;
+                                                }
+                                            }
                                         }
                                     }
                                 }
@@ -684,6 +719,24 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
 
         if (createAutoScalingGroupRequest.getDefaultInstanceWarmup() != null) {
             request.addParameter("DefaultInstanceWarmup", StringUtils.fromInteger(createAutoScalingGroupRequest.getDefaultInstanceWarmup()));
+        }
+
+        if (!createAutoScalingGroupRequest.getTrafficSources().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>) createAutoScalingGroupRequest.getTrafficSources()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier> trafficSourcesList = (com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>) createAutoScalingGroupRequest
+                    .getTrafficSources();
+            int trafficSourcesListIndex = 1;
+
+            for (TrafficSourceIdentifier trafficSourcesListValue : trafficSourcesList) {
+                if (trafficSourcesListValue != null) {
+
+                    if (trafficSourcesListValue.getIdentifier() != null) {
+                        request.addParameter("TrafficSources.member." + trafficSourcesListIndex + ".Identifier",
+                                StringUtils.fromString(trafficSourcesListValue.getIdentifier()));
+                    }
+                }
+                trafficSourcesListIndex++;
+            }
         }
 
         return request;

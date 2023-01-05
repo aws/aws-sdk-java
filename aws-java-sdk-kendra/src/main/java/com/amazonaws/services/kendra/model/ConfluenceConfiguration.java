@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,14 +40,11 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
      * connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
-     * source</a>.
      * </p>
      * <p>
      * You can also provide authentication credentials in the form of a personal access token. For more information, see
-     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">
-     * Authentication for a Confluence data source</a>.
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
+     * source</a>.
      * </p>
      */
     private String secretArn;
@@ -192,27 +189,21 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
      * connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
-     * source</a>.
      * </p>
      * <p>
      * You can also provide authentication credentials in the form of a personal access token. For more information, see
-     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">
-     * Authentication for a Confluence data source</a>.
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
+     * source</a>.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password
      *        required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token
-     *        as the password. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
-     *        source</a>.</p>
+     *        as the password.</p>
      *        <p>
      *        You can also provide authentication credentials in the form of a personal access token. For more
-     *        information, see <a href=
-     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication"
-     *        >Authentication for a Confluence data source</a>.
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     *        a Confluence data source</a>.
      */
 
     public void setSecretArn(String secretArn) {
@@ -223,26 +214,20 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
      * connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
-     * source</a>.
      * </p>
      * <p>
      * You can also provide authentication credentials in the form of a personal access token. For more information, see
-     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">
-     * Authentication for a Confluence data source</a>.
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
+     * source</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password
      *         required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API
-     *         token as the password. For more information, see <a
-     *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
-     *         source</a>.</p>
+     *         token as the password.</p>
      *         <p>
      *         You can also provide authentication credentials in the form of a personal access token. For more
-     *         information, see <a href=
-     *         "https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication"
-     *         >Authentication for a Confluence data source</a>.
+     *         information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     *         a Confluence data source</a>.
      */
 
     public String getSecretArn() {
@@ -253,27 +238,21 @@ public class ConfluenceConfiguration implements Serializable, Cloneable, Structu
      * <p>
      * The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password required to
      * connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token as the password.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
-     * source</a>.
      * </p>
      * <p>
      * You can also provide authentication credentials in the form of a personal access token. For more information, see
-     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication">
-     * Authentication for a Confluence data source</a>.
+     * <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
+     * source</a>.
      * </p>
      * 
      * @param secretArn
      *        The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the user name and password
      *        required to connect to the Confluence instance. If you use Confluence Cloud, you use a generated API token
-     *        as the password. For more information, see <a
-     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using a Confluence data
-     *        source</a>.</p>
+     *        as the password.</p>
      *        <p>
      *        You can also provide authentication credentials in the form of a personal access token. For more
-     *        information, see <a href=
-     *        "https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html#confluence-authentication"
-     *        >Authentication for a Confluence data source</a>.
+     *        information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-confluence.html">Using
+     *        a Confluence data source</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

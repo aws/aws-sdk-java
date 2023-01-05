@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * This exception is thrown when there is an issue with the specified KMS key and the trail can’t be updated.
+ * This exception is thrown when there is an issue with the specified KMS key and the trail or event data store can't be
+ * updated.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

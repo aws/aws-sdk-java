@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,8 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
     private Boolean isBootDisk;
     /**
      * <p>
-     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
-     * This is a read-only field.
+     * When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it
+     * is constantly updated by the service. This is a read-only field.
      * </p>
      */
     private String optimizedStagingDiskType;
@@ -200,13 +200,13 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
 
     /**
      * <p>
-     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
-     * This is a read-only field.
+     * When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it
+     * is constantly updated by the service. This is a read-only field.
      * </p>
      * 
      * @param optimizedStagingDiskType
-     *        The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to
-     *        Auto. This is a read-only field.
+     *        When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume
+     *        type as it is constantly updated by the service. This is a read-only field.
      * @see ReplicationConfigurationReplicatedDiskStagingDiskType
      */
 
@@ -216,12 +216,12 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
 
     /**
      * <p>
-     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
-     * This is a read-only field.
+     * When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it
+     * is constantly updated by the service. This is a read-only field.
      * </p>
      * 
-     * @return The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set
-     *         to Auto. This is a read-only field.
+     * @return When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume
+     *         type as it is constantly updated by the service. This is a read-only field.
      * @see ReplicationConfigurationReplicatedDiskStagingDiskType
      */
 
@@ -231,13 +231,13 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
 
     /**
      * <p>
-     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
-     * This is a read-only field.
+     * When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it
+     * is constantly updated by the service. This is a read-only field.
      * </p>
      * 
      * @param optimizedStagingDiskType
-     *        The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to
-     *        Auto. This is a read-only field.
+     *        When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume
+     *        type as it is constantly updated by the service. This is a read-only field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationConfigurationReplicatedDiskStagingDiskType
      */
@@ -249,13 +249,13 @@ public class ReplicationConfigurationReplicatedDisk implements Serializable, Clo
 
     /**
      * <p>
-     * The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to Auto.
-     * This is a read-only field.
+     * When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume type as it
+     * is constantly updated by the service. This is a read-only field.
      * </p>
      * 
      * @param optimizedStagingDiskType
-     *        The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code> is set to
-     *        Auto. This is a read-only field.
+     *        When <code>stagingDiskType</code> is set to Auto, this field shows the current staging disk EBS volume
+     *        type as it is constantly updated by the service. This is a read-only field.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReplicationConfigurationReplicatedDiskStagingDiskType
      */

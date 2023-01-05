@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class SalesforceDestinationPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorHandlingConfig").build();
     private static final MarshallingInfo<String> WRITEOPERATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeOperationType").build();
+    private static final MarshallingInfo<String> DATATRANSFERAPI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTransferApi").build();
 
     private static final SalesforceDestinationPropertiesMarshaller instance = new SalesforceDestinationPropertiesMarshaller();
 
@@ -57,6 +59,7 @@ public class SalesforceDestinationPropertiesMarshaller {
             protocolMarshaller.marshall(salesforceDestinationProperties.getIdFieldNames(), IDFIELDNAMES_BINDING);
             protocolMarshaller.marshall(salesforceDestinationProperties.getErrorHandlingConfig(), ERRORHANDLINGCONFIG_BINDING);
             protocolMarshaller.marshall(salesforceDestinationProperties.getWriteOperationType(), WRITEOPERATIONTYPE_BINDING);
+            protocolMarshaller.marshall(salesforceDestinationProperties.getDataTransferApi(), DATATRANSFERAPI_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

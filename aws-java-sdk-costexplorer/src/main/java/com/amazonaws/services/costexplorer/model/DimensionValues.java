@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,21 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
-     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
-     * CostCategoryRule</a>.
+     * returns a list of Availability Zones.
+     * </p>
+     * <p>
+     * Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is
+     * supported.
+     * </p>
+     * <p>
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule</a>.
+     * </p>
+     * <p>
+     * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in
+     * <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
+     * AnomalySubscriptions</a>.
      * </p>
      */
     private String key;
@@ -47,9 +59,14 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> values;
     /**
      * <p>
-     * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.
+     * The match options that you can use to filter your results.
+     * </p>
+     * <p>
+     * <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions.
+     * Refer to the documentation for each specific API to see what is supported.
+     * </p>
+     * <p>
+     * The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * </p>
      */
     private java.util.List<String> matchOptions;
@@ -57,17 +74,40 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
-     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
-     * CostCategoryRule</a>.
+     * returns a list of Availability Zones.
+     * </p>
+     * <p>
+     * Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is
+     * supported.
+     * </p>
+     * <p>
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule</a>.
+     * </p>
+     * <p>
+     * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in
+     * <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
+     * AnomalySubscriptions</a>.
      * </p>
      * 
      * @param key
      *        The names of the metadata types that you can use to filter and group your results. For example,
-     *        <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
-     *        <code>SERVICE_CODE</code> can only be used in <a
-     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *        <code>AZ</code> returns a list of Availability Zones.</p>
+     *        <p>
+     *        Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what
+     *        is supported.
+     *        </p>
+     *        <p>
+     *        <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
      *        >CostCategoryRule</a>.
+     *        </p>
+     *        <p>
+     *        <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be
+     *        used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"
+     *        >AnomalySubscriptions</a>.
      * @see Dimension
      */
 
@@ -78,16 +118,39 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
-     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
-     * CostCategoryRule</a>.
+     * returns a list of Availability Zones.
+     * </p>
+     * <p>
+     * Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is
+     * supported.
+     * </p>
+     * <p>
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule</a>.
+     * </p>
+     * <p>
+     * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in
+     * <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
+     * AnomalySubscriptions</a>.
      * </p>
      * 
      * @return The names of the metadata types that you can use to filter and group your results. For example,
-     *         <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
-     *         <code>SERVICE_CODE</code> can only be used in <a
-     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *         <code>AZ</code> returns a list of Availability Zones.</p>
+     *         <p>
+     *         Not all dimensions are supported in each API. Refer to the documentation for each specific API to see
+     *         what is supported.
+     *         </p>
+     *         <p>
+     *         <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
      *         >CostCategoryRule</a>.
+     *         </p>
+     *         <p>
+     *         <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be
+     *         used in <a
+     *         href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"
+     *         >AnomalySubscriptions</a>.
      * @see Dimension
      */
 
@@ -98,17 +161,40 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
-     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
-     * CostCategoryRule</a>.
+     * returns a list of Availability Zones.
+     * </p>
+     * <p>
+     * Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is
+     * supported.
+     * </p>
+     * <p>
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule</a>.
+     * </p>
+     * <p>
+     * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in
+     * <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
+     * AnomalySubscriptions</a>.
      * </p>
      * 
      * @param key
      *        The names of the metadata types that you can use to filter and group your results. For example,
-     *        <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
-     *        <code>SERVICE_CODE</code> can only be used in <a
-     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *        <code>AZ</code> returns a list of Availability Zones.</p>
+     *        <p>
+     *        Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what
+     *        is supported.
+     *        </p>
+     *        <p>
+     *        <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
      *        >CostCategoryRule</a>.
+     *        </p>
+     *        <p>
+     *        <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be
+     *        used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"
+     *        >AnomalySubscriptions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
      */
@@ -121,17 +207,40 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The names of the metadata types that you can use to filter and group your results. For example, <code>AZ</code>
-     * returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be
-     * used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">
-     * CostCategoryRule</a>.
+     * returns a list of Availability Zones.
+     * </p>
+     * <p>
+     * Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what is
+     * supported.
+     * </p>
+     * <p>
+     * <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
+     * >CostCategoryRule</a>.
+     * </p>
+     * <p>
+     * <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be used in
+     * <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">
+     * AnomalySubscriptions</a>.
      * </p>
      * 
      * @param key
      *        The names of the metadata types that you can use to filter and group your results. For example,
-     *        <code>AZ</code> returns a list of Availability Zones. <code>LINK_ACCOUNT_NAME</code> and
-     *        <code>SERVICE_CODE</code> can only be used in <a
-     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html"
+     *        <code>AZ</code> returns a list of Availability Zones.</p>
+     *        <p>
+     *        Not all dimensions are supported in each API. Refer to the documentation for each specific API to see what
+     *        is supported.
+     *        </p>
+     *        <p>
+     *        <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html"
      *        >CostCategoryRule</a>.
+     *        </p>
+     *        <p>
+     *        <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code> can only be
+     *        used in <a
+     *        href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html"
+     *        >AnomalySubscriptions</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Dimension
      */
@@ -221,14 +330,23 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.
+     * The match options that you can use to filter your results.
+     * </p>
+     * <p>
+     * <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions.
+     * Refer to the documentation for each specific API to see what is supported.
+     * </p>
+     * <p>
+     * The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * </p>
      * 
-     * @return The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *         for actions related to Cost Category. The default values for <code>MatchOptions</code> are
-     *         <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     * @return The match options that you can use to filter your results.</p>
+     *         <p>
+     *         <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly
+     *         Subscriptions. Refer to the documentation for each specific API to see what is supported.
+     *         </p>
+     *         <p>
+     *         The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @see MatchOption
      */
 
@@ -238,15 +356,24 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.
+     * The match options that you can use to filter your results.
+     * </p>
+     * <p>
+     * <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions.
+     * Refer to the documentation for each specific API to see what is supported.
+     * </p>
+     * <p>
+     * The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results.</p>
+     *        <p>
+     *        <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly
+     *        Subscriptions. Refer to the documentation for each specific API to see what is supported.
+     *        </p>
+     *        <p>
+     *        The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @see MatchOption
      */
 
@@ -261,9 +388,14 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.
+     * The match options that you can use to filter your results.
+     * </p>
+     * <p>
+     * <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions.
+     * Refer to the documentation for each specific API to see what is supported.
+     * </p>
+     * <p>
+     * The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -272,9 +404,13 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results.</p>
+     *        <p>
+     *        <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly
+     *        Subscriptions. Refer to the documentation for each specific API to see what is supported.
+     *        </p>
+     *        <p>
+     *        The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
      */
@@ -291,15 +427,24 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.
+     * The match options that you can use to filter your results.
+     * </p>
+     * <p>
+     * <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions.
+     * Refer to the documentation for each specific API to see what is supported.
+     * </p>
+     * <p>
+     * The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results.</p>
+     *        <p>
+     *        <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly
+     *        Subscriptions. Refer to the documentation for each specific API to see what is supported.
+     *        </p>
+     *        <p>
+     *        The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
      */
@@ -311,15 +456,24 @@ public class DimensionValues implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable for
-     * actions related to Cost Category. The default values for <code>MatchOptions</code> are <code>EQUALS</code> and
-     * <code>CASE_SENSITIVE</code>.
+     * The match options that you can use to filter your results.
+     * </p>
+     * <p>
+     * <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly Subscriptions.
+     * Refer to the documentation for each specific API to see what is supported.
+     * </p>
+     * <p>
+     * The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * </p>
      * 
      * @param matchOptions
-     *        The match options that you can use to filter your results. <code>MatchOptions</code> is only applicable
-     *        for actions related to Cost Category. The default values for <code>MatchOptions</code> are
-     *        <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+     *        The match options that you can use to filter your results.</p>
+     *        <p>
+     *        <code>MatchOptions</code> is only applicable for actions related to Cost Category and Anomaly
+     *        Subscriptions. Refer to the documentation for each specific API to see what is supported.
+     *        </p>
+     *        <p>
+     *        The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MatchOption
      */

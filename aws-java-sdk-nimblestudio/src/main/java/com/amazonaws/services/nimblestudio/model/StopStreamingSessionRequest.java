@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,14 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The streaming session ID for the StopStreamingSessionRequest.
+     * The streaming session ID for the <code>StopStreamingSessionRequest</code>.
      * </p>
      */
     private String sessionId;
@@ -45,18 +45,25 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String studioId;
+    /**
+     * <p>
+     * Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the
+     * EBS volumes.
+     * </p>
+     */
+    private String volumeRetentionMode;
 
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -66,13 +73,13 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *         ensure idempotency.
+     *         specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it
+     *         for the request to ensure idempotency.
      */
 
     public String getClientToken() {
@@ -82,14 +89,14 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +107,11 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The streaming session ID for the StopStreamingSessionRequest.
+     * The streaming session ID for the <code>StopStreamingSessionRequest</code>.
      * </p>
      * 
      * @param sessionId
-     *        The streaming session ID for the StopStreamingSessionRequest.
+     *        The streaming session ID for the <code>StopStreamingSessionRequest</code>.
      */
 
     public void setSessionId(String sessionId) {
@@ -113,10 +120,10 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The streaming session ID for the StopStreamingSessionRequest.
+     * The streaming session ID for the <code>StopStreamingSessionRequest</code>.
      * </p>
      * 
-     * @return The streaming session ID for the StopStreamingSessionRequest.
+     * @return The streaming session ID for the <code>StopStreamingSessionRequest</code>.
      */
 
     public String getSessionId() {
@@ -125,11 +132,11 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The streaming session ID for the StopStreamingSessionRequest.
+     * The streaming session ID for the <code>StopStreamingSessionRequest</code>.
      * </p>
      * 
      * @param sessionId
-     *        The streaming session ID for the StopStreamingSessionRequest.
+     *        The streaming session ID for the <code>StopStreamingSessionRequest</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,6 +186,73 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the
+     * EBS volumes.
+     * </p>
+     * 
+     * @param volumeRetentionMode
+     *        Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete
+     *        the EBS volumes.
+     * @see VolumeRetentionMode
+     */
+
+    public void setVolumeRetentionMode(String volumeRetentionMode) {
+        this.volumeRetentionMode = volumeRetentionMode;
+    }
+
+    /**
+     * <p>
+     * Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the
+     * EBS volumes.
+     * </p>
+     * 
+     * @return Adds additional instructions to a streaming session stop action to either retain the EBS volumes or
+     *         delete the EBS volumes.
+     * @see VolumeRetentionMode
+     */
+
+    public String getVolumeRetentionMode() {
+        return this.volumeRetentionMode;
+    }
+
+    /**
+     * <p>
+     * Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the
+     * EBS volumes.
+     * </p>
+     * 
+     * @param volumeRetentionMode
+     *        Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete
+     *        the EBS volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeRetentionMode
+     */
+
+    public StopStreamingSessionRequest withVolumeRetentionMode(String volumeRetentionMode) {
+        setVolumeRetentionMode(volumeRetentionMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete the
+     * EBS volumes.
+     * </p>
+     * 
+     * @param volumeRetentionMode
+     *        Adds additional instructions to a streaming session stop action to either retain the EBS volumes or delete
+     *        the EBS volumes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VolumeRetentionMode
+     */
+
+    public StopStreamingSessionRequest withVolumeRetentionMode(VolumeRetentionMode volumeRetentionMode) {
+        this.volumeRetentionMode = volumeRetentionMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -195,7 +269,9 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
         if (getSessionId() != null)
             sb.append("SessionId: ").append(getSessionId()).append(",");
         if (getStudioId() != null)
-            sb.append("StudioId: ").append(getStudioId());
+            sb.append("StudioId: ").append(getStudioId()).append(",");
+        if (getVolumeRetentionMode() != null)
+            sb.append("VolumeRetentionMode: ").append(getVolumeRetentionMode());
         sb.append("}");
         return sb.toString();
     }
@@ -222,6 +298,10 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getStudioId() != null && other.getStudioId().equals(this.getStudioId()) == false)
             return false;
+        if (other.getVolumeRetentionMode() == null ^ this.getVolumeRetentionMode() == null)
+            return false;
+        if (other.getVolumeRetentionMode() != null && other.getVolumeRetentionMode().equals(this.getVolumeRetentionMode()) == false)
+            return false;
         return true;
     }
 
@@ -233,6 +313,7 @@ public class StopStreamingSessionRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
         hashCode = prime * hashCode + ((getStudioId() == null) ? 0 : getStudioId().hashCode());
+        hashCode = prime * hashCode + ((getVolumeRetentionMode() == null) ? 0 : getVolumeRetentionMode().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1280,6 +1280,34 @@ public interface AWSKafka {
      *      Documentation</a>
      */
     UpdateSecurityResult updateSecurity(UpdateSecurityRequest updateSecurityRequest);
+
+    /**
+     * Updates cluster broker volume size (or) sets cluster storage mode to TIERED.
+     * 
+     * @param updateStorageRequest
+     *        <p>
+     *        Request object for UpdateStorage api. Its used to update the storage attributes for the cluster.
+     *        </p>
+     * @return Result of the UpdateStorage operation returned by the service.
+     * @throws BadRequestException
+     *         HTTP Status Code 400: Bad request due to incorrect input. Correct your request and then retry it.
+     * @throws UnauthorizedException
+     *         HTTP Status Code 401: Unauthorized request. The provided credentials couldn't be validated.
+     * @throws InternalServerErrorException
+     *         HTTP Status Code 500: Unexpected internal server error. Retrying your request might resolve the issue.
+     * @throws ForbiddenException
+     *         HTTP Status Code 403: Access forbidden. Correct your credentials and then retry your request.
+     * @throws NotFoundException
+     *         HTTP Status Code 404: Resource not found due to incorrect input. Correct your request and then retry it.
+     * @throws ServiceUnavailableException
+     *         HTTP Status Code 503: Service Unavailable. Retrying your request in some time might resolve the issue.
+     * @throws TooManyRequestsException
+     *         HTTP Status Code 429: Limit exceeded. Resource limit reached.
+     * @sample AWSKafka.UpdateStorage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/UpdateStorage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateStorageResult updateStorage(UpdateStorageRequest updateStorageRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

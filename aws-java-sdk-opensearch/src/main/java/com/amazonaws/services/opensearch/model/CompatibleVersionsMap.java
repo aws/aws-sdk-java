@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A map from an <code> <a>EngineVersion</a> </code> to a list of compatible <code> <a>EngineVersion</a> </code> s to
- * which the domain can be upgraded.
+ * A map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,20 +27,24 @@ public class CompatibleVersionsMap implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The current version of OpenSearch a domain is on.
+     * The current version that the OpenSearch Service domain is running.
      * </p>
      */
     private String sourceVersion;
-
+    /**
+     * <p>
+     * The possible versions that you can upgrade the domain to.
+     * </p>
+     */
     private java.util.List<String> targetVersions;
 
     /**
      * <p>
-     * The current version of OpenSearch a domain is on.
+     * The current version that the OpenSearch Service domain is running.
      * </p>
      * 
      * @param sourceVersion
-     *        The current version of OpenSearch a domain is on.
+     *        The current version that the OpenSearch Service domain is running.
      */
 
     public void setSourceVersion(String sourceVersion) {
@@ -50,10 +53,10 @@ public class CompatibleVersionsMap implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The current version of OpenSearch a domain is on.
+     * The current version that the OpenSearch Service domain is running.
      * </p>
      * 
-     * @return The current version of OpenSearch a domain is on.
+     * @return The current version that the OpenSearch Service domain is running.
      */
 
     public String getSourceVersion() {
@@ -62,11 +65,11 @@ public class CompatibleVersionsMap implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The current version of OpenSearch a domain is on.
+     * The current version that the OpenSearch Service domain is running.
      * </p>
      * 
      * @param sourceVersion
-     *        The current version of OpenSearch a domain is on.
+     *        The current version that the OpenSearch Service domain is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -76,7 +79,11 @@ public class CompatibleVersionsMap implements Serializable, Cloneable, Structure
     }
 
     /**
-     * @return
+     * <p>
+     * The possible versions that you can upgrade the domain to.
+     * </p>
+     * 
+     * @return The possible versions that you can upgrade the domain to.
      */
 
     public java.util.List<String> getTargetVersions() {
@@ -84,7 +91,12 @@ public class CompatibleVersionsMap implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The possible versions that you can upgrade the domain to.
+     * </p>
+     * 
      * @param targetVersions
+     *        The possible versions that you can upgrade the domain to.
      */
 
     public void setTargetVersions(java.util.Collection<String> targetVersions) {
@@ -98,12 +110,16 @@ public class CompatibleVersionsMap implements Serializable, Cloneable, Structure
 
     /**
      * <p>
+     * The possible versions that you can upgrade the domain to.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTargetVersions(java.util.Collection)} or {@link #withTargetVersions(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param targetVersions
+     *        The possible versions that you can upgrade the domain to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,7 +134,12 @@ public class CompatibleVersionsMap implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The possible versions that you can upgrade the domain to.
+     * </p>
+     * 
      * @param targetVersions
+     *        The possible versions that you can upgrade the domain to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

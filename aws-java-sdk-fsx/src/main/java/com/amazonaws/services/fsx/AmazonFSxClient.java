@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -3503,6 +3503,8 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
      * @throws IncompatibleParameterErrorException
      *         The error returned when a second request is received with the same client request token but different
      *         parameters settings. A client request token should always uniquely identify a single request.
+     * @throws InvalidNetworkSettingsException
+     *         One or more network settings specified in the request are invalid.
      * @throws InternalServerErrorException
      *         A generic error indicating a server-side failure.
      * @throws FileSystemNotFoundException

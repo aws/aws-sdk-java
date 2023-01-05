@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,17 @@ public class EffectiveRecommendationPreferences implements Serializable, Cloneab
      * </p>
      */
     private String inferredWorkloadTypes;
+    /**
+     * <p>
+     * An object that describes the external metrics recommendation preference.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     */
+    private ExternalMetricsPreference externalMetricsPreference;
 
     /**
      * <p>
@@ -621,6 +632,73 @@ public class EffectiveRecommendationPreferences implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * An object that describes the external metrics recommendation preference.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     * 
+     * @param externalMetricsPreference
+     *        An object that describes the external metrics recommendation preference. </p>
+     *        <p>
+     *        If the preference is applied in the latest recommendation refresh, an object with a valid
+     *        <code>source</code> value appears in the response. If the preference isn't applied to the recommendations
+     *        already, then this object doesn't appear in the response.
+     */
+
+    public void setExternalMetricsPreference(ExternalMetricsPreference externalMetricsPreference) {
+        this.externalMetricsPreference = externalMetricsPreference;
+    }
+
+    /**
+     * <p>
+     * An object that describes the external metrics recommendation preference.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     * 
+     * @return An object that describes the external metrics recommendation preference. </p>
+     *         <p>
+     *         If the preference is applied in the latest recommendation refresh, an object with a valid
+     *         <code>source</code> value appears in the response. If the preference isn't applied to the recommendations
+     *         already, then this object doesn't appear in the response.
+     */
+
+    public ExternalMetricsPreference getExternalMetricsPreference() {
+        return this.externalMetricsPreference;
+    }
+
+    /**
+     * <p>
+     * An object that describes the external metrics recommendation preference.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     * 
+     * @param externalMetricsPreference
+     *        An object that describes the external metrics recommendation preference. </p>
+     *        <p>
+     *        If the preference is applied in the latest recommendation refresh, an object with a valid
+     *        <code>source</code> value appears in the response. If the preference isn't applied to the recommendations
+     *        already, then this object doesn't appear in the response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EffectiveRecommendationPreferences withExternalMetricsPreference(ExternalMetricsPreference externalMetricsPreference) {
+        setExternalMetricsPreference(externalMetricsPreference);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -637,7 +715,9 @@ public class EffectiveRecommendationPreferences implements Serializable, Cloneab
         if (getEnhancedInfrastructureMetrics() != null)
             sb.append("EnhancedInfrastructureMetrics: ").append(getEnhancedInfrastructureMetrics()).append(",");
         if (getInferredWorkloadTypes() != null)
-            sb.append("InferredWorkloadTypes: ").append(getInferredWorkloadTypes());
+            sb.append("InferredWorkloadTypes: ").append(getInferredWorkloadTypes()).append(",");
+        if (getExternalMetricsPreference() != null)
+            sb.append("ExternalMetricsPreference: ").append(getExternalMetricsPreference());
         sb.append("}");
         return sb.toString();
     }
@@ -665,6 +745,10 @@ public class EffectiveRecommendationPreferences implements Serializable, Cloneab
             return false;
         if (other.getInferredWorkloadTypes() != null && other.getInferredWorkloadTypes().equals(this.getInferredWorkloadTypes()) == false)
             return false;
+        if (other.getExternalMetricsPreference() == null ^ this.getExternalMetricsPreference() == null)
+            return false;
+        if (other.getExternalMetricsPreference() != null && other.getExternalMetricsPreference().equals(this.getExternalMetricsPreference()) == false)
+            return false;
         return true;
     }
 
@@ -676,6 +760,7 @@ public class EffectiveRecommendationPreferences implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getCpuVendorArchitectures() == null) ? 0 : getCpuVendorArchitectures().hashCode());
         hashCode = prime * hashCode + ((getEnhancedInfrastructureMetrics() == null) ? 0 : getEnhancedInfrastructureMetrics().hashCode());
         hashCode = prime * hashCode + ((getInferredWorkloadTypes() == null) ? 0 : getInferredWorkloadTypes().hashCode());
+        hashCode = prime * hashCode + ((getExternalMetricsPreference() == null) ? 0 : getExternalMetricsPreference().hashCode());
         return hashCode;
     }
 

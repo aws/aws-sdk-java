@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The S3 object that is the asset.
+ * The Amazon S3 object that is the asset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/S3SnapshotAsset" target="_top">AWS API
@@ -30,18 +30,18 @@ public class S3SnapshotAsset implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The size of the S3 object that is the object.
+     * The size of the Amazon S3 object that is the object.
      * </p>
      */
     private Double size;
 
     /**
      * <p>
-     * The size of the S3 object that is the object.
+     * The size of the Amazon S3 object that is the object.
      * </p>
      * 
      * @param size
-     *        The size of the S3 object that is the object.
+     *        The size of the Amazon S3 object that is the object.
      */
 
     public void setSize(Double size) {
@@ -50,10 +50,10 @@ public class S3SnapshotAsset implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The size of the S3 object that is the object.
+     * The size of the Amazon S3 object that is the object.
      * </p>
      * 
-     * @return The size of the S3 object that is the object.
+     * @return The size of the Amazon S3 object that is the object.
      */
 
     public Double getSize() {
@@ -62,11 +62,11 @@ public class S3SnapshotAsset implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The size of the S3 object that is the object.
+     * The size of the Amazon S3 object that is the object.
      * </p>
      * 
      * @param size
-     *        The size of the S3 object that is the object.
+     *        The size of the Amazon S3 object that is the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

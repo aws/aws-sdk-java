@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,18 +19,28 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies details about the Auto-Tune action. See <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune
- * for Amazon OpenSearch Service </a> for more information.
+ * Specifies details about a scheduled Auto-Tune action. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AutoTuneDetails implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Container for details about a scheduled Auto-Tune action.
+     * </p>
+     */
     private ScheduledAutoTuneDetails scheduledAutoTuneDetails;
 
     /**
+     * <p>
+     * Container for details about a scheduled Auto-Tune action.
+     * </p>
+     * 
      * @param scheduledAutoTuneDetails
+     *        Container for details about a scheduled Auto-Tune action.
      */
 
     public void setScheduledAutoTuneDetails(ScheduledAutoTuneDetails scheduledAutoTuneDetails) {
@@ -38,7 +48,11 @@ public class AutoTuneDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * @return
+     * <p>
+     * Container for details about a scheduled Auto-Tune action.
+     * </p>
+     * 
+     * @return Container for details about a scheduled Auto-Tune action.
      */
 
     public ScheduledAutoTuneDetails getScheduledAutoTuneDetails() {
@@ -46,7 +60,12 @@ public class AutoTuneDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Container for details about a scheduled Auto-Tune action.
+     * </p>
+     * 
      * @param scheduledAutoTuneDetails
+     *        Container for details about a scheduled Auto-Tune action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

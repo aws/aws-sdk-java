@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -380,7 +380,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ExperimentConfig experimentConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      */
     private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
@@ -388,7 +388,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private TensorBoardOutputConfig tensorBoardOutputConfig;
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      */
     private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
@@ -396,13 +396,13 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ProfilerConfig profilerConfig;
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      */
     private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      */
     private java.util.List<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses;
@@ -3221,10 +3221,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for debugging output tensors.
+     * @return Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
@@ -3233,11 +3233,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      */
 
     public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
@@ -3251,7 +3251,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3260,7 +3260,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3276,11 +3276,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for debugging output tensors.
+     * Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for Debugger rules for debugging output tensors.
+     *        Configuration information for Amazon SageMaker Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3317,10 +3317,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * 
-     * @return Evaluation status of Debugger rules for debugging on a training job.
+     * @return Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      */
 
     public java.util.List<DebugRuleEvaluationStatus> getDebugRuleEvaluationStatuses() {
@@ -3329,11 +3329,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for debugging on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      */
 
     public void setDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
@@ -3347,7 +3347,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3356,7 +3356,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for debugging on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3372,11 +3372,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for debugging on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for debugging on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3413,10 +3413,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
-     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
@@ -3425,11 +3425,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      */
 
     public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
@@ -3443,7 +3443,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3452,7 +3452,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3468,11 +3468,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * </p>
      * 
      * @param profilerRuleConfigurations
-     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     *        Configuration information for Amazon SageMaker Debugger rules for profiling system and framework metrics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3483,10 +3483,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * 
-     * @return Evaluation status of Debugger rules for profiling on a training job.
+     * @return Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      */
 
     public java.util.List<ProfilerRuleEvaluationStatus> getProfilerRuleEvaluationStatuses() {
@@ -3495,11 +3495,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * 
      * @param profilerRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for profiling on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      */
 
     public void setProfilerRuleEvaluationStatuses(java.util.Collection<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses) {
@@ -3513,7 +3513,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3522,7 +3522,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param profilerRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for profiling on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3538,11 +3538,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Evaluation status of Debugger rules for profiling on a training job.
+     * Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * </p>
      * 
      * @param profilerRuleEvaluationStatuses
-     *        Evaluation status of Debugger rules for profiling on a training job.
+     *        Evaluation status of Amazon SageMaker Debugger rules for profiling on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

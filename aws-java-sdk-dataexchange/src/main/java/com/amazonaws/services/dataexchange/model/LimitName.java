@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,13 @@ public enum LimitName {
     AmazonRedshiftDatashareAssetsPerRevision("Amazon Redshift datashare assets per revision"),
     ConcurrentInProgressJobsToImportAssetsFromAnAPIGatewayAPI("Concurrent in progress jobs to import assets from an API Gateway API"),
     AmazonAPIGatewayAPIAssetsPerRevision("Amazon API Gateway API assets per revision"),
-    RevisionsPerAmazonAPIGatewayAPIDataSet("Revisions per Amazon API Gateway API data set");
+    RevisionsPerAmazonAPIGatewayAPIDataSet("Revisions per Amazon API Gateway API data set"),
+    ConcurrentInProgressJobsToImportAssetsFromAnAWSLakeFormationTagPolicy("Concurrent in progress jobs to import assets from an AWS Lake Formation tag policy"),
+    AWSLakeFormationDataPermissionAssetsPerRevision("AWS Lake Formation data permission assets per revision"),
+    RevisionsPerAWSLakeFormationDataPermissionDataSet("Revisions per AWS Lake Formation data permission data set"),
+    RevisionsPerAmazonS3DataAccessDataSet("Revisions per Amazon S3 data access data set"),
+    AmazonS3DataAccessAssetsPerRevision("Amazon S3 data access assets per revision"),
+    ConcurrentInProgressJobsToCreateAmazonS3DataAccessAssetsFromS3Buckets("Concurrent in progress jobs to create Amazon S3 data access assets from S3 buckets");
 
     private String value;
 

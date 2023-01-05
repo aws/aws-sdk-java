@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -105,8 +105,8 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
     private LifecycleTransitionReason lifecycleTransitionReason;
     /**
      * <p>
-     * A list of administrative actions for the file system that are in process or waiting to be processed.
-     * Administrative actions describe changes to the Amazon FSx system that you initiated.
+     * A list of administrative actions for the volume that are in process or waiting to be processed. Administrative
+     * actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.
      * </p>
      */
     private java.util.List<AdministrativeAction> administrativeActions;
@@ -805,12 +805,13 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of administrative actions for the file system that are in process or waiting to be processed.
-     * Administrative actions describe changes to the Amazon FSx system that you initiated.
+     * A list of administrative actions for the volume that are in process or waiting to be processed. Administrative
+     * actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.
      * </p>
      * 
-     * @return A list of administrative actions for the file system that are in process or waiting to be processed.
-     *         Administrative actions describe changes to the Amazon FSx system that you initiated.
+     * @return A list of administrative actions for the volume that are in process or waiting to be processed.
+     *         Administrative actions describe changes to the volume that you have initiated using the
+     *         <code>UpdateVolume</code> action.
      */
 
     public java.util.List<AdministrativeAction> getAdministrativeActions() {
@@ -819,13 +820,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of administrative actions for the file system that are in process or waiting to be processed.
-     * Administrative actions describe changes to the Amazon FSx system that you initiated.
+     * A list of administrative actions for the volume that are in process or waiting to be processed. Administrative
+     * actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.
      * </p>
      * 
      * @param administrativeActions
-     *        A list of administrative actions for the file system that are in process or waiting to be processed.
-     *        Administrative actions describe changes to the Amazon FSx system that you initiated.
+     *        A list of administrative actions for the volume that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the volume that you have initiated using the
+     *        <code>UpdateVolume</code> action.
      */
 
     public void setAdministrativeActions(java.util.Collection<AdministrativeAction> administrativeActions) {
@@ -839,8 +841,8 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of administrative actions for the file system that are in process or waiting to be processed.
-     * Administrative actions describe changes to the Amazon FSx system that you initiated.
+     * A list of administrative actions for the volume that are in process or waiting to be processed. Administrative
+     * actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -849,8 +851,9 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param administrativeActions
-     *        A list of administrative actions for the file system that are in process or waiting to be processed.
-     *        Administrative actions describe changes to the Amazon FSx system that you initiated.
+     *        A list of administrative actions for the volume that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the volume that you have initiated using the
+     *        <code>UpdateVolume</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -866,13 +869,14 @@ public class Volume implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of administrative actions for the file system that are in process or waiting to be processed.
-     * Administrative actions describe changes to the Amazon FSx system that you initiated.
+     * A list of administrative actions for the volume that are in process or waiting to be processed. Administrative
+     * actions describe changes to the volume that you have initiated using the <code>UpdateVolume</code> action.
      * </p>
      * 
      * @param administrativeActions
-     *        A list of administrative actions for the file system that are in process or waiting to be processed.
-     *        Administrative actions describe changes to the Amazon FSx system that you initiated.
+     *        A list of administrative actions for the volume that are in process or waiting to be processed.
+     *        Administrative actions describe changes to the volume that you have initiated using the
+     *        <code>UpdateVolume</code> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

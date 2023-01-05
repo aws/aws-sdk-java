@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Specifies the starting point in a Kinesis stream to start processing. You can use the producer timestamp or the
- * fragment number. For more information, see <a
+ * fragment number. One of either producer timestamp or fragment number is required. If you use the producer timestamp,
+ * you must put the time in milliseconds. For more information about fragment numbers, see <a
  * href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html">Fragment</a>.
  * </p>
  */
@@ -29,7 +30,7 @@ public class KinesisVideoStreamStartSelector implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The timestamp from the producer corresponding to the fragment.
+     * The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format.
      * </p>
      */
     private Long producerTimestamp;
@@ -42,11 +43,12 @@ public class KinesisVideoStreamStartSelector implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The timestamp from the producer corresponding to the fragment.
+     * The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format.
      * </p>
      * 
      * @param producerTimestamp
-     *        The timestamp from the producer corresponding to the fragment.
+     *        The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time
+     *        format.
      */
 
     public void setProducerTimestamp(Long producerTimestamp) {
@@ -55,10 +57,11 @@ public class KinesisVideoStreamStartSelector implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The timestamp from the producer corresponding to the fragment.
+     * The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format.
      * </p>
      * 
-     * @return The timestamp from the producer corresponding to the fragment.
+     * @return The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time
+     *         format.
      */
 
     public Long getProducerTimestamp() {
@@ -67,11 +70,12 @@ public class KinesisVideoStreamStartSelector implements Serializable, Cloneable,
 
     /**
      * <p>
-     * The timestamp from the producer corresponding to the fragment.
+     * The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time format.
      * </p>
      * 
      * @param producerTimestamp
-     *        The timestamp from the producer corresponding to the fragment.
+     *        The timestamp from the producer corresponding to the fragment, in milliseconds, expressed in unix time
+     *        format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

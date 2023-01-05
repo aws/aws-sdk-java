@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,20 +39,19 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
     private java.util.Date startTime;
     /**
      * <p>
-     * The overall status of the domain configuration change. This field can take the following values:
-     * <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     * The overall status of the domain configuration change.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are still in pending.
+     * The list of properties in the domain configuration change that are still pending.
      * </p>
      */
     private java.util.List<String> pendingProperties;
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are completed.
+     * The list of properties in the domain configuration change that have completed.
      * </p>
      */
     private java.util.List<String> completedProperties;
@@ -151,13 +150,11 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The overall status of the domain configuration change. This field can take the following values:
-     * <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     * The overall status of the domain configuration change.
      * </p>
      * 
      * @param status
-     *        The overall status of the domain configuration change. This field can take the following values:
-     *        <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     *        The overall status of the domain configuration change.
      * @see OverallChangeStatus
      */
 
@@ -167,12 +164,10 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The overall status of the domain configuration change. This field can take the following values:
-     * <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     * The overall status of the domain configuration change.
      * </p>
      * 
-     * @return The overall status of the domain configuration change. This field can take the following values:
-     *         <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     * @return The overall status of the domain configuration change.
      * @see OverallChangeStatus
      */
 
@@ -182,13 +177,11 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The overall status of the domain configuration change. This field can take the following values:
-     * <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     * The overall status of the domain configuration change.
      * </p>
      * 
      * @param status
-     *        The overall status of the domain configuration change. This field can take the following values:
-     *        <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     *        The overall status of the domain configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OverallChangeStatus
      */
@@ -200,13 +193,11 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The overall status of the domain configuration change. This field can take the following values:
-     * <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     * The overall status of the domain configuration change.
      * </p>
      * 
      * @param status
-     *        The overall status of the domain configuration change. This field can take the following values:
-     *        <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and <code>FAILED</code>
+     *        The overall status of the domain configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OverallChangeStatus
      */
@@ -218,10 +209,10 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are still in pending.
+     * The list of properties in the domain configuration change that are still pending.
      * </p>
      * 
-     * @return The list of properties involved in the domain configuration change that are still in pending.
+     * @return The list of properties in the domain configuration change that are still pending.
      */
 
     public java.util.List<String> getPendingProperties() {
@@ -230,11 +221,11 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are still in pending.
+     * The list of properties in the domain configuration change that are still pending.
      * </p>
      * 
      * @param pendingProperties
-     *        The list of properties involved in the domain configuration change that are still in pending.
+     *        The list of properties in the domain configuration change that are still pending.
      */
 
     public void setPendingProperties(java.util.Collection<String> pendingProperties) {
@@ -248,7 +239,7 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are still in pending.
+     * The list of properties in the domain configuration change that are still pending.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -257,7 +248,7 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param pendingProperties
-     *        The list of properties involved in the domain configuration change that are still in pending.
+     *        The list of properties in the domain configuration change that are still pending.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +264,11 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are still in pending.
+     * The list of properties in the domain configuration change that are still pending.
      * </p>
      * 
      * @param pendingProperties
-     *        The list of properties involved in the domain configuration change that are still in pending.
+     *        The list of properties in the domain configuration change that are still pending.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,10 +279,10 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are completed.
+     * The list of properties in the domain configuration change that have completed.
      * </p>
      * 
-     * @return The list of properties involved in the domain configuration change that are completed.
+     * @return The list of properties in the domain configuration change that have completed.
      */
 
     public java.util.List<String> getCompletedProperties() {
@@ -300,11 +291,11 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are completed.
+     * The list of properties in the domain configuration change that have completed.
      * </p>
      * 
      * @param completedProperties
-     *        The list of properties involved in the domain configuration change that are completed.
+     *        The list of properties in the domain configuration change that have completed.
      */
 
     public void setCompletedProperties(java.util.Collection<String> completedProperties) {
@@ -318,7 +309,7 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are completed.
+     * The list of properties in the domain configuration change that have completed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -327,7 +318,7 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param completedProperties
-     *        The list of properties involved in the domain configuration change that are completed.
+     *        The list of properties in the domain configuration change that have completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -343,11 +334,11 @@ public class ChangeProgressStatusDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The list of properties involved in the domain configuration change that are completed.
+     * The list of properties in the domain configuration change that have completed.
      * </p>
      * 
      * @param completedProperties
-     *        The list of properties involved in the domain configuration change that are completed.
+     *        The list of properties in the domain configuration change that have completed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

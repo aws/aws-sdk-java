@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,15 +31,15 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.
      * </p>
      */
     private String keyARN;
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
@@ -61,7 +61,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
      * information about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      */
@@ -70,14 +70,14 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.
      * </p>
      * 
      * @param keyARN
      *        If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource
-     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data
-     *        Firehose uses a service-account CMK.
+     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>,
+     *        Kinesis Data Firehose uses a service-account CMK.
      */
 
     public void setKeyARN(String keyARN) {
@@ -87,13 +87,13 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.
      * </p>
      * 
      * @return If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon
-     *         Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis
-     *         Data Firehose uses a service-account CMK.
+     *         Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to
+     *         <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.
      */
 
     public String getKeyARN() {
@@ -103,14 +103,14 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource Name
-     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data Firehose uses a
-     * service-account CMK.
+     * (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Kinesis Data
+     * Firehose uses a service-account CMK.
      * </p>
      * 
      * @param keyARN
      *        If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify the Amazon Resource
-     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>AWS_OWNED_CMK</code>, Kinesis Data
-     *        Firehose uses a service-account CMK.
+     *        Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>,
+     *        Kinesis Data Firehose uses a service-account CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,7 +122,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
@@ -144,13 +144,13 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
      * information about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
@@ -172,7 +172,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      *        To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
      *        CMKs. For information about symmetric and asymmetric CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *        Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *        Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *        </p>
      * @see KeyType
      */
@@ -184,7 +184,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
@@ -206,12 +206,12 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
      * information about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @return Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *         <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *         <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *         Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      *         <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
@@ -233,7 +233,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      *         To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
      *         CMKs. For information about symmetric and asymmetric CMKs, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *         Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *         Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *         </p>
      * @see KeyType
      */
@@ -245,7 +245,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
@@ -267,13 +267,13 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
      * information about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
@@ -295,7 +295,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      *        To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
      *        CMKs. For information about symmetric and asymmetric CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *        Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *        Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyType
@@ -309,7 +309,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
     /**
      * <p>
      * Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      * <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation <a
@@ -331,13 +331,13 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      * To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric CMKs. For
      * information about symmetric and asymmetric CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     * Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     * Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      * </p>
      * </important>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) to use for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> with
      *        <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the Amazon KMS operation
@@ -359,7 +359,7 @@ public class DeliveryStreamEncryptionConfigurationInput implements Serializable,
      *        To encrypt your delivery stream, use symmetric CMKs. Kinesis Data Firehose doesn't support asymmetric
      *        CMKs. For information about symmetric and asymmetric CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html">About Symmetric and
-     *        Asymmetric CMKs</a> in the AWS Key Management Service developer guide.
+     *        Asymmetric CMKs</a> in the Amazon Web Services Key Management Service developer guide.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyType

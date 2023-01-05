@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,21 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<AssociateTrustStoreResult> associateTrustStoreAsync(AssociateTrustStoreRequest request,
             com.amazonaws.handlers.AsyncHandler<AssociateTrustStoreRequest, AssociateTrustStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateUserAccessLoggingSettingsResult> associateUserAccessLoggingSettingsAsync(
+            AssociateUserAccessLoggingSettingsRequest request) {
+
+        return associateUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateUserAccessLoggingSettingsResult> associateUserAccessLoggingSettingsAsync(
+            AssociateUserAccessLoggingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateUserAccessLoggingSettingsRequest, AssociateUserAccessLoggingSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -145,6 +160,21 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     }
 
     @Override
+    public java.util.concurrent.Future<CreateUserAccessLoggingSettingsResult> createUserAccessLoggingSettingsAsync(
+            CreateUserAccessLoggingSettingsRequest request) {
+
+        return createUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateUserAccessLoggingSettingsResult> createUserAccessLoggingSettingsAsync(
+            CreateUserAccessLoggingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateUserAccessLoggingSettingsRequest, CreateUserAccessLoggingSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserSettingsResult> createUserSettingsAsync(CreateUserSettingsRequest request) {
 
         return createUserSettingsAsync(request, null);
@@ -223,6 +253,21 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteUserAccessLoggingSettingsResult> deleteUserAccessLoggingSettingsAsync(
+            DeleteUserAccessLoggingSettingsRequest request) {
+
+        return deleteUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteUserAccessLoggingSettingsResult> deleteUserAccessLoggingSettingsAsync(
+            DeleteUserAccessLoggingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteUserAccessLoggingSettingsRequest, DeleteUserAccessLoggingSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserSettingsResult> deleteUserSettingsAsync(DeleteUserSettingsRequest request) {
 
         return deleteUserSettingsAsync(request, null);
@@ -270,6 +315,21 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<DisassociateTrustStoreResult> disassociateTrustStoreAsync(DisassociateTrustStoreRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateTrustStoreRequest, DisassociateTrustStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateUserAccessLoggingSettingsResult> disassociateUserAccessLoggingSettingsAsync(
+            DisassociateUserAccessLoggingSettingsRequest request) {
+
+        return disassociateUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateUserAccessLoggingSettingsResult> disassociateUserAccessLoggingSettingsAsync(
+            DisassociateUserAccessLoggingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateUserAccessLoggingSettingsRequest, DisassociateUserAccessLoggingSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -381,6 +441,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     }
 
     @Override
+    public java.util.concurrent.Future<GetUserAccessLoggingSettingsResult> getUserAccessLoggingSettingsAsync(GetUserAccessLoggingSettingsRequest request) {
+
+        return getUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetUserAccessLoggingSettingsResult> getUserAccessLoggingSettingsAsync(GetUserAccessLoggingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetUserAccessLoggingSettingsRequest, GetUserAccessLoggingSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetUserSettingsResult> getUserSettingsAsync(GetUserSettingsRequest request) {
 
         return getUserSettingsAsync(request, null);
@@ -485,6 +558,19 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     }
 
     @Override
+    public java.util.concurrent.Future<ListUserAccessLoggingSettingsResult> listUserAccessLoggingSettingsAsync(ListUserAccessLoggingSettingsRequest request) {
+
+        return listUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListUserAccessLoggingSettingsResult> listUserAccessLoggingSettingsAsync(ListUserAccessLoggingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListUserAccessLoggingSettingsRequest, ListUserAccessLoggingSettingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserSettingsResult> listUserSettingsAsync(ListUserSettingsRequest request) {
 
         return listUserSettingsAsync(request, null);
@@ -584,6 +670,21 @@ public class AbstractAmazonWorkSpacesWebAsync extends AbstractAmazonWorkSpacesWe
     @Override
     public java.util.concurrent.Future<UpdateTrustStoreResult> updateTrustStoreAsync(UpdateTrustStoreRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateTrustStoreRequest, UpdateTrustStoreResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserAccessLoggingSettingsResult> updateUserAccessLoggingSettingsAsync(
+            UpdateUserAccessLoggingSettingsRequest request) {
+
+        return updateUserAccessLoggingSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateUserAccessLoggingSettingsResult> updateUserAccessLoggingSettingsAsync(
+            UpdateUserAccessLoggingSettingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateUserAccessLoggingSettingsRequest, UpdateUserAccessLoggingSettingsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

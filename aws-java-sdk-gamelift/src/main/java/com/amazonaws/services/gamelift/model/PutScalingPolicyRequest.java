@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy" target="_top">AWS API
  *      Documentation</a>
@@ -50,7 +47,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer scalingAdjustment;
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count:
      * </p>
      * <ul>
      * <li>
@@ -315,7 +312,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count:
      * </p>
      * <ul>
      * <li>
@@ -339,7 +336,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -368,7 +365,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count:
      * </p>
      * <ul>
      * <li>
@@ -391,7 +388,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     * @return The type of adjustment to make to a fleet's instance count:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -420,7 +417,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count:
      * </p>
      * <ul>
      * <li>
@@ -444,7 +441,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -475,7 +472,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count:
      * </p>
      * <ul>
      * <li>
@@ -499,7 +496,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -528,7 +525,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):
+     * The type of adjustment to make to a fleet's instance count:
      * </p>
      * <ul>
      * <li>
@@ -552,7 +549,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param scalingAdjustmentType
-     *        The type of adjustment to make to a fleet's instance count (see <a>FleetCapacity</a>):</p>
+     *        The type of adjustment to make to a fleet's instance count:</p>
      *        <ul>
      *        <li>
      *        <p>

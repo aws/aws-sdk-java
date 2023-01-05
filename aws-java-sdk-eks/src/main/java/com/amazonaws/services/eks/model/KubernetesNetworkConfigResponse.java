@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,9 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
      * <p>
      * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
-     * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
-     * this was specified, then it was specified when the cluster was created and it can't be changed.
+     * the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or
+     * <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created
+     * and it can't be changed.
      * </p>
      */
     private String serviceIpv4Cidr;
@@ -60,16 +61,17 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
      * <p>
      * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
-     * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
-     * this was specified, then it was specified when the cluster was created and it can't be changed.
+     * the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or
+     * <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created
+     * and it can't be changed.
      * </p>
      * 
      * @param serviceIpv4Cidr
      *        The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns
      *        addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR
-     *        block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     *        172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and
-     *        it can't be changed.
+     *        block when you created the cluster, then Kubernetes assigns addresses from either the
+     *        <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was
+     *        specified when the cluster was created and it can't be changed.
      */
 
     public void setServiceIpv4Cidr(String serviceIpv4Cidr) {
@@ -80,15 +82,16 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
      * <p>
      * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
-     * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
-     * this was specified, then it was specified when the cluster was created and it can't be changed.
+     * the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or
+     * <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created
+     * and it can't be changed.
      * </p>
      * 
      * @return The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns
      *         addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR
-     *         block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     *         172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and
-     *         it can't be changed.
+     *         block when you created the cluster, then Kubernetes assigns addresses from either the
+     *         <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was
+     *         specified when the cluster was created and it can't be changed.
      */
 
     public String getServiceIpv4Cidr() {
@@ -99,16 +102,17 @@ public class KubernetesNetworkConfigResponse implements Serializable, Cloneable,
      * <p>
      * The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns addresses from
      * an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR block when you created
-     * the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or 172.20.0.0/16 CIDR blocks. If
-     * this was specified, then it was specified when the cluster was created and it can't be changed.
+     * the cluster, then Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or
+     * <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was specified when the cluster was created
+     * and it can't be changed.
      * </p>
      * 
      * @param serviceIpv4Cidr
      *        The CIDR block that Kubernetes pod and service IP addresses are assigned from. Kubernetes assigns
      *        addresses from an IPv4 CIDR block assigned to a subnet that the node is in. If you didn't specify a CIDR
-     *        block when you created the cluster, then Kubernetes assigns addresses from either the 10.100.0.0/16 or
-     *        172.20.0.0/16 CIDR blocks. If this was specified, then it was specified when the cluster was created and
-     *        it can't be changed.
+     *        block when you created the cluster, then Kubernetes assigns addresses from either the
+     *        <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code> CIDR blocks. If this was specified, then it was
+     *        specified when the cluster was created and it can't be changed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

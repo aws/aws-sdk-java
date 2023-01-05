@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,18 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
     private AppMonitorConfiguration appMonitorConfiguration;
     /**
      * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. If you omit this
+     * parameter, custom events are <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     */
+    private CustomEvents customEvents;
+    /**
+     * <p>
      * Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a
      * copy of this telemetry data to Amazon CloudWatch Logs in your account. This enables you to keep the telemetry
      * data for more than 30 days, but it does incur Amazon CloudWatch Logs charges.
@@ -74,10 +86,13 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an app monitor.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      */
     private java.util.Map<String, String> tags;
 
@@ -166,6 +181,79 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
 
     public CreateAppMonitorRequest withAppMonitorConfiguration(AppMonitorConfiguration appMonitorConfiguration) {
         setAppMonitorConfiguration(appMonitorConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. If you omit this
+     * parameter, custom events are <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @param customEvents
+     *        Specifies whether this app monitor allows the web client to define and send custom events. If you omit
+     *        this parameter, custom events are <code>DISABLED</code>.</p>
+     *        <p>
+     *        For more information about custom events, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *        >Send custom events</a>.
+     */
+
+    public void setCustomEvents(CustomEvents customEvents) {
+        this.customEvents = customEvents;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. If you omit this
+     * parameter, custom events are <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @return Specifies whether this app monitor allows the web client to define and send custom events. If you omit
+     *         this parameter, custom events are <code>DISABLED</code>.</p>
+     *         <p>
+     *         For more information about custom events, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *         >Send custom events</a>.
+     */
+
+    public CustomEvents getCustomEvents() {
+        return this.customEvents;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. If you omit this
+     * parameter, custom events are <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @param customEvents
+     *        Specifies whether this app monitor allows the web client to define and send custom events. If you omit
+     *        this parameter, custom events are <code>DISABLED</code>.</p>
+     *        <p>
+     *        For more information about custom events, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *        >Send custom events</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppMonitorRequest withCustomEvents(CustomEvents customEvents) {
+        setCustomEvents(customEvents);
         return this;
     }
 
@@ -349,10 +437,13 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an app monitor.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @return Assigns one or more tags (key-value pairs) to the app monitor.</p>
      *         <p>
@@ -363,8 +454,13 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      *         Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *         characters.
      *         </p>
-     * 
-     * <pre><code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *         <p>
+     *         You can associate as many as 50 tags with an app monitor.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -383,10 +479,13 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an app monitor.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @param tags
      *        Assigns one or more tags (key-value pairs) to the app monitor.</p>
@@ -398,8 +497,12 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      *        Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *        characters.
      *        </p>
-     * 
-     * <pre><code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        You can associate as many as 50 tags with an app monitor.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     *        Amazon Web Services resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -418,10 +521,13 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      * Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      * characters.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can associate as many as 50 tags with an app monitor.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+     * Web Services resources</a>.
+     * </p>
      * 
      * @param tags
      *        Assigns one or more tags (key-value pairs) to the app monitor.</p>
@@ -433,9 +539,12 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      *        Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of
      *        characters.
      *        </p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;You can associate as many as 50 tags with an app monitor.&lt;/p&gt; &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code>
+     *        <p>
+     *        You can associate as many as 50 tags with an app monitor.
+     *        </p>
+     *        <p>
+     *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     *        Amazon Web Services resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,6 +595,8 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getAppMonitorConfiguration() != null)
             sb.append("AppMonitorConfiguration: ").append(getAppMonitorConfiguration()).append(",");
+        if (getCustomEvents() != null)
+            sb.append("CustomEvents: ").append(getCustomEvents()).append(",");
         if (getCwLogEnabled() != null)
             sb.append("CwLogEnabled: ").append(getCwLogEnabled()).append(",");
         if (getDomain() != null)
@@ -512,6 +623,10 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAppMonitorConfiguration() != null && other.getAppMonitorConfiguration().equals(this.getAppMonitorConfiguration()) == false)
             return false;
+        if (other.getCustomEvents() == null ^ this.getCustomEvents() == null)
+            return false;
+        if (other.getCustomEvents() != null && other.getCustomEvents().equals(this.getCustomEvents()) == false)
+            return false;
         if (other.getCwLogEnabled() == null ^ this.getCwLogEnabled() == null)
             return false;
         if (other.getCwLogEnabled() != null && other.getCwLogEnabled().equals(this.getCwLogEnabled()) == false)
@@ -537,6 +652,7 @@ public class CreateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppMonitorConfiguration() == null) ? 0 : getAppMonitorConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCustomEvents() == null) ? 0 : getCustomEvents().hashCode());
         hashCode = prime * hashCode + ((getCwLogEnabled() == null) ? 0 : getCwLogEnabled().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

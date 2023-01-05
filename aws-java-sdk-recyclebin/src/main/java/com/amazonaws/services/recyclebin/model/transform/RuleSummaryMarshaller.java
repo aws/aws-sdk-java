@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class RuleSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<StructuredPojo> RETENTIONPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetentionPeriod").build();
+    private static final MarshallingInfo<String> LOCKSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("LockState").build();
 
     private static final RuleSummaryMarshaller instance = new RuleSummaryMarshaller();
 
@@ -53,6 +55,7 @@ public class RuleSummaryMarshaller {
             protocolMarshaller.marshall(ruleSummary.getIdentifier(), IDENTIFIER_BINDING);
             protocolMarshaller.marshall(ruleSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(ruleSummary.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
+            protocolMarshaller.marshall(ruleSummary.getLockState(), LOCKSTATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

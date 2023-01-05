@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class DeleteOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     private String id;
     /**
      * <p>
-     * The version of the origin request policy that you are deleting. The version is the origin request policy’s
+     * The version of the origin request policy that you are deleting. The version is the origin request policy's
      * <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
      * <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.
      * </p>
@@ -89,13 +89,13 @@ public class DeleteOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The version of the origin request policy that you are deleting. The version is the origin request policy’s
+     * The version of the origin request policy that you are deleting. The version is the origin request policy's
      * <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
      * <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the origin request policy that you are deleting. The version is the origin request policy’s
+     *        The version of the origin request policy that you are deleting. The version is the origin request policy's
      *        <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
      *        <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.
      */
@@ -106,13 +106,13 @@ public class DeleteOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The version of the origin request policy that you are deleting. The version is the origin request policy’s
+     * The version of the origin request policy that you are deleting. The version is the origin request policy's
      * <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
      * <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.
      * </p>
      * 
      * @return The version of the origin request policy that you are deleting. The version is the origin request
-     *         policy’s <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
+     *         policy's <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
      *         <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.
      */
 
@@ -122,13 +122,13 @@ public class DeleteOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The version of the origin request policy that you are deleting. The version is the origin request policy’s
+     * The version of the origin request policy that you are deleting. The version is the origin request policy's
      * <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
      * <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the origin request policy that you are deleting. The version is the origin request policy’s
+     *        The version of the origin request policy that you are deleting. The version is the origin request policy's
      *        <code>ETag</code> value, which you can get using <code>ListOriginRequestPolicies</code>,
      *        <code>GetOriginRequestPolicy</code>, or <code>GetOriginRequestPolicyConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.

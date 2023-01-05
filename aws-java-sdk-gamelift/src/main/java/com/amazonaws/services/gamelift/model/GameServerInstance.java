@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>CreateGameServerGroup</a> | <a>ListGameServerGroups</a> | <a>DescribeGameServerGroup</a> |
- * <a>UpdateGameServerGroup</a> | <a>DeleteGameServerGroup</a> | <a>ResumeGameServerGroup</a> |
- * <a>SuspendGameServerGroup</a> | <a>DescribeGameServerInstances</a> | <a
- * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/reference-awssdk-fleetiq.html">All APIs by task</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerInstance" target="_top">AWS API
@@ -67,29 +58,8 @@ public class GameServerInstance implements Serializable, Cloneable, StructuredPo
     private String instanceId;
     /**
      * <p>
-     * Current status of the game server instance.
+     * Current status of the game server instance
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process
-     * of ending, and new game servers are not started on this instance unless no other resources are available. When
-     * the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED
-     * game servers, it will be terminated in favor of the new instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption.
-     * No new game servers are started on this instance.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String instanceStatus;
 
@@ -230,52 +200,11 @@ public class GameServerInstance implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Current status of the game server instance.
+     * Current status of the game server instance
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process
-     * of ending, and new game servers are not started on this instance unless no other resources are available. When
-     * the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED
-     * game servers, it will be terminated in favor of the new instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption.
-     * No new game servers are started on this instance.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param instanceStatus
-     *        Current status of the game server instance. </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the
-     *        process of ending, and new game servers are not started on this instance unless no other resources are
-     *        available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the
-     *        instance has no UTILIZED game servers, it will be terminated in favor of the new instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance
-     *        interruption. No new game servers are started on this instance.
-     *        </p>
-     *        </li>
+     *        Current status of the game server instance
      * @see GameServerInstanceStatus
      */
 
@@ -285,51 +214,10 @@ public class GameServerInstance implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Current status of the game server instance.
+     * Current status of the game server instance
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process
-     * of ending, and new game servers are not started on this instance unless no other resources are available. When
-     * the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED
-     * game servers, it will be terminated in favor of the new instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption.
-     * No new game servers are started on this instance.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Current status of the game server instance. </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the
-     *         process of ending, and new game servers are not started on this instance unless no other resources are
-     *         available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the
-     *         instance has no UTILIZED game servers, it will be terminated in favor of the new instance.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance
-     *         interruption. No new game servers are started on this instance.
-     *         </p>
-     *         </li>
+     * @return Current status of the game server instance
      * @see GameServerInstanceStatus
      */
 
@@ -339,52 +227,11 @@ public class GameServerInstance implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Current status of the game server instance.
+     * Current status of the game server instance
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process
-     * of ending, and new game servers are not started on this instance unless no other resources are available. When
-     * the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED
-     * game servers, it will be terminated in favor of the new instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption.
-     * No new game servers are started on this instance.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param instanceStatus
-     *        Current status of the game server instance. </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the
-     *        process of ending, and new game servers are not started on this instance unless no other resources are
-     *        available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the
-     *        instance has no UTILIZED game servers, it will be terminated in favor of the new instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance
-     *        interruption. No new game servers are started on this instance.
-     *        </p>
-     *        </li>
+     *        Current status of the game server instance
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerInstanceStatus
      */
@@ -396,52 +243,11 @@ public class GameServerInstance implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Current status of the game server instance.
+     * Current status of the game server instance
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the process
-     * of ending, and new game servers are not started on this instance unless no other resources are available. When
-     * the instance is put in DRAINING, a new instance is started up to replace it. Once the instance has no UTILIZED
-     * game servers, it will be terminated in favor of the new instance.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance interruption.
-     * No new game servers are started on this instance.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param instanceStatus
-     *        Current status of the game server instance. </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <b>ACTIVE</b> -- The instance is viable for hosting game servers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>DRAINING</b> -- The instance is not viable for hosting game servers. Existing game servers are in the
-     *        process of ending, and new game servers are not started on this instance unless no other resources are
-     *        available. When the instance is put in DRAINING, a new instance is started up to replace it. Once the
-     *        instance has no UTILIZED game servers, it will be terminated in favor of the new instance.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <b>SPOT_TERMINATING</b> -- The instance is in the process of shutting down due to a Spot instance
-     *        interruption. No new game servers are started on this instance.
-     *        </p>
-     *        </li>
+     *        Current status of the game server instance
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see GameServerInstanceStatus
      */

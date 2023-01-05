@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,41 @@ import com.amazonaws.services.ec2.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonEC2Async extends AmazonEC2 {
+
+    /**
+     * <p>
+     * Accepts an Elastic IP address transfer. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept"
+     * >Accept a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param acceptAddressTransferRequest
+     * @return A Java Future containing the result of the AcceptAddressTransfer operation returned by the service.
+     * @sample AmazonEC2Async.AcceptAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptAddressTransferResult> acceptAddressTransferAsync(AcceptAddressTransferRequest acceptAddressTransferRequest);
+
+    /**
+     * <p>
+     * Accepts an Elastic IP address transfer. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept"
+     * >Accept a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param acceptAddressTransferRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptAddressTransfer operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.AcceptAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptAddressTransferResult> acceptAddressTransferAsync(AcceptAddressTransferRequest acceptAddressTransferRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptAddressTransferRequest, AcceptAddressTransferResult> asyncHandler);
 
     /**
      * <p>
@@ -1565,6 +1600,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. One or more trust providers can be attached to an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param attachVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the AttachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.AttachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVerifiedAccessTrustProviderResult> attachVerifiedAccessTrustProviderAsync(
+            AttachVerifiedAccessTrustProviderRequest attachVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. One or more trust providers can be attached to an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param attachVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AttachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.AttachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AttachVerifiedAccessTrustProviderResult> attachVerifiedAccessTrustProviderAsync(
+            AttachVerifiedAccessTrustProviderRequest attachVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<AttachVerifiedAccessTrustProviderRequest, AttachVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Attaches an EBS volume to a running or stopped instance and exposes it to the instance with the specified device
      * name.
      * </p>
@@ -2196,6 +2268,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information,
+     * see <a href="https://docs.aws.amazon.com/">Cancel having an AMI shared with your Amazon Web Services account</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param cancelImageLaunchPermissionRequest
+     * @return A Java Future containing the result of the CancelImageLaunchPermission operation returned by the service.
+     * @sample AmazonEC2Async.CancelImageLaunchPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelImageLaunchPermissionResult> cancelImageLaunchPermissionAsync(
+            CancelImageLaunchPermissionRequest cancelImageLaunchPermissionRequest);
+
+    /**
+     * <p>
+     * Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information,
+     * see <a href="https://docs.aws.amazon.com/">Cancel having an AMI shared with your Amazon Web Services account</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param cancelImageLaunchPermissionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelImageLaunchPermission operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CancelImageLaunchPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelImageLaunchPermissionResult> cancelImageLaunchPermissionAsync(
+            CancelImageLaunchPermissionRequest cancelImageLaunchPermissionRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelImageLaunchPermissionRequest, CancelImageLaunchPermissionResult> asyncHandler);
+
+    /**
+     * <p>
      * Cancels an in-process import virtual machine or import snapshot task.
      * </p>
      * 
@@ -2465,12 +2574,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
      * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
      * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
-     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an AMI</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -2502,12 +2611,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
      * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
      * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
-     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an AMI</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -3416,8 +3525,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating Amazon EBS-Backed
-     * Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createImageRequest
@@ -3452,8 +3561,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating Amazon EBS-Backed
-     * Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createImageRequest
@@ -4635,13 +4744,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a root volume replacement task for an Amazon EC2 instance. The root volume can either be restored to its
-     * initial launch state, or it can be restored using a specific snapshot.
+     * Replaces the EBS-backed root volume for a <code>running</code> instance with a new volume that is restored to the
+     * original root volume's launch state, that is restored to a specific snapshot taken from the original root volume,
+     * or that is restored from an AMI that has the same key characteristics as that of the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
+     * a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createReplaceRootVolumeTaskRequest
@@ -4655,13 +4764,13 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Creates a root volume replacement task for an Amazon EC2 instance. The root volume can either be restored to its
-     * initial launch state, or it can be restored using a specific snapshot.
+     * Replaces the EBS-backed root volume for a <code>running</code> instance with a new volume that is restored to the
+     * original root volume's launch state, that is restored to a specific snapshot taken from the original root volume,
+     * or that is restored from an AMI that has the same key characteristics as that of the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
+     * a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createReplaceRootVolumeTaskRequest
@@ -4774,12 +4883,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createRestoreImageTaskRequest
@@ -4799,12 +4908,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createRestoreImageTaskRequest
@@ -5263,12 +5372,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createStoreImageTaskRequest
@@ -5286,12 +5395,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createStoreImageTaskRequest
@@ -6184,6 +6293,160 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<CreateTransitGatewayVpcAttachmentResult> createTransitGatewayVpcAttachmentAsync(
             CreateTransitGatewayVpcAttachmentRequest createTransitGatewayVpcAttachmentRequest,
             com.amazonaws.handlers.AsyncHandler<CreateTransitGatewayVpcAttachmentRequest, CreateTransitGatewayVpcAttachmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access endpoint is where you define your application along with an optional
+     * endpoint-level access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessEndpointRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessEndpointResult> createVerifiedAccessEndpointAsync(
+            CreateVerifiedAccessEndpointRequest createVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access endpoint is where you define your application along with an optional
+     * endpoint-level access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessEndpointResult> createVerifiedAccessEndpointAsync(
+            CreateVerifiedAccessEndpointRequest createVerifiedAccessEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessEndpointRequest, CreateVerifiedAccessEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
+     * who's associated applications have similar security requirements. Each instance within an Amazon Web Services
+     * Verified Access group shares an Amazon Web Services Verified Access policy. For example, you can group all Amazon
+     * Web Services Verified Access instances associated with “sales” applications together and use one common Amazon
+     * Web Services Verified Access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessGroupRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessGroupResult> createVerifiedAccessGroupAsync(
+            CreateVerifiedAccessGroupRequest createVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
+     * who's associated applications have similar security requirements. Each instance within an Amazon Web Services
+     * Verified Access group shares an Amazon Web Services Verified Access policy. For example, you can group all Amazon
+     * Web Services Verified Access instances associated with “sales” applications together and use one common Amazon
+     * Web Services Verified Access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessGroupResult> createVerifiedAccessGroupAsync(
+            CreateVerifiedAccessGroupRequest createVerifiedAccessGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessGroupRequest, CreateVerifiedAccessGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and
+     * grants access only when your security requirements are met.
+     * </p>
+     * 
+     * @param createVerifiedAccessInstanceRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessInstanceResult> createVerifiedAccessInstanceAsync(
+            CreateVerifiedAccessInstanceRequest createVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and
+     * grants access only when your security requirements are met.
+     * </p>
+     * 
+     * @param createVerifiedAccessInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessInstanceResult> createVerifiedAccessInstanceAsync(
+            CreateVerifiedAccessInstanceRequest createVerifiedAccessInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessInstanceRequest, CreateVerifiedAccessInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. When an application request is made, the identity information sent by the trust provider will be
+     * evaluated by Amazon Web Services Verified Access, before allowing or denying the application request.
+     * </p>
+     * 
+     * @param createVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the CreateVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.CreateVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessTrustProviderResult> createVerifiedAccessTrustProviderAsync(
+            CreateVerifiedAccessTrustProviderRequest createVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. When an application request is made, the identity information sent by the trust provider will be
+     * evaluated by Amazon Web Services Verified Access, before allowing or denying the application request.
+     * </p>
+     * 
+     * @param createVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.CreateVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateVerifiedAccessTrustProviderResult> createVerifiedAccessTrustProviderAsync(
+            CreateVerifiedAccessTrustProviderRequest createVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateVerifiedAccessTrustProviderRequest, CreateVerifiedAccessTrustProviderResult> asyncHandler);
 
     /**
      * <p>
@@ -8960,6 +9223,144 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Delete an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessEndpointRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessEndpointResult> deleteVerifiedAccessEndpointAsync(
+            DeleteVerifiedAccessEndpointRequest deleteVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessEndpointResult> deleteVerifiedAccessEndpointAsync(
+            DeleteVerifiedAccessEndpointRequest deleteVerifiedAccessEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessEndpointRequest, DeleteVerifiedAccessEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access group.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessGroupRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessGroupResult> deleteVerifiedAccessGroupAsync(
+            DeleteVerifiedAccessGroupRequest deleteVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access group.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessGroupResult> deleteVerifiedAccessGroupAsync(
+            DeleteVerifiedAccessGroupRequest deleteVerifiedAccessGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessGroupRequest, DeleteVerifiedAccessGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessInstanceRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessInstanceResult> deleteVerifiedAccessInstanceAsync(
+            DeleteVerifiedAccessInstanceRequest deleteVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessInstanceResult> deleteVerifiedAccessInstanceAsync(
+            DeleteVerifiedAccessInstanceRequest deleteVerifiedAccessInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessInstanceRequest, DeleteVerifiedAccessInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the DeleteVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DeleteVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessTrustProviderResult> deleteVerifiedAccessTrustProviderAsync(
+            DeleteVerifiedAccessTrustProviderRequest deleteVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DeleteVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVerifiedAccessTrustProviderResult> deleteVerifiedAccessTrustProviderAsync(
+            DeleteVerifiedAccessTrustProviderRequest deleteVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVerifiedAccessTrustProviderRequest, DeleteVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified EBS volume. The volume must be in the <code>available</code> state (not attached to an
      * instance).
      * </p>
@@ -9525,8 +9926,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained in the Recycle Bin for
      * the specified retention period. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * <p>
      * When you deregister an AMI, it doesn't affect any instances that you've already launched from the AMI. You'll
@@ -9554,8 +9955,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained in the Recycle Bin for
      * the specified retention period. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * <p>
      * When you deregister an AMI, it doesn't affect any instances that you've already launched from the AMI. You'll
@@ -9836,6 +10237,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Describes an Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeAddressTransfersRequest
+     * @return A Java Future containing the result of the DescribeAddressTransfers operation returned by the service.
+     * @sample AmazonEC2Async.DescribeAddressTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddressTransfersResult> describeAddressTransfersAsync(DescribeAddressTransfersRequest describeAddressTransfersRequest);
+
+    /**
+     * <p>
+     * Describes an Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeAddressTransfersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAddressTransfers operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeAddressTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddressTransfersResult> describeAddressTransfersAsync(DescribeAddressTransfersRequest describeAddressTransfersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddressTransfersRequest, DescribeAddressTransfersResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
      * </p>
      * <p>
@@ -10067,6 +10503,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DescribeAvailabilityZonesResult> describeAvailabilityZonesAsync(
             com.amazonaws.handlers.AsyncHandler<DescribeAvailabilityZonesRequest, DescribeAvailabilityZonesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the current Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param describeAwsNetworkPerformanceMetricSubscriptionsRequest
+     * @return A Java Future containing the result of the DescribeAwsNetworkPerformanceMetricSubscriptions operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.DescribeAwsNetworkPerformanceMetricSubscriptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAwsNetworkPerformanceMetricSubscriptionsResult> describeAwsNetworkPerformanceMetricSubscriptionsAsync(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest describeAwsNetworkPerformanceMetricSubscriptionsRequest);
+
+    /**
+     * <p>
+     * Describes the current Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param describeAwsNetworkPerformanceMetricSubscriptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAwsNetworkPerformanceMetricSubscriptions operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeAwsNetworkPerformanceMetricSubscriptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAwsNetworkPerformanceMetricSubscriptionsResult> describeAwsNetworkPerformanceMetricSubscriptionsAsync(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest describeAwsNetworkPerformanceMetricSubscriptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAwsNetworkPerformanceMetricSubscriptionsRequest, DescribeAwsNetworkPerformanceMetricSubscriptionsResult> asyncHandler);
 
     /**
      * <p>
@@ -13408,8 +13881,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes a root volume replacement task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeReplaceRootVolumeTasksRequest
@@ -13425,8 +13898,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Describes a root volume replacement task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeReplaceRootVolumeTasksRequest
@@ -14388,7 +14861,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon
-     * EventBridge</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * EventBridge</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -14413,7 +14886,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon
-     * EventBridge</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * EventBridge</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -14689,12 +15162,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeStoreImageTasksRequest
@@ -14721,12 +15194,12 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeStoreImageTasksRequest
@@ -15362,6 +15835,183 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<DescribeTrunkInterfaceAssociationsResult> describeTrunkInterfaceAssociationsAsync(
             DescribeTrunkInterfaceAssociationsRequest describeTrunkInterfaceAssociationsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeTrunkInterfaceAssociationsRequest, DescribeTrunkInterfaceAssociationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describe Amazon Web Services Verified Access endpoints.
+     * </p>
+     * 
+     * @param describeVerifiedAccessEndpointsRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessEndpoints operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessEndpointsResult> describeVerifiedAccessEndpointsAsync(
+            DescribeVerifiedAccessEndpointsRequest describeVerifiedAccessEndpointsRequest);
+
+    /**
+     * <p>
+     * Describe Amazon Web Services Verified Access endpoints.
+     * </p>
+     * 
+     * @param describeVerifiedAccessEndpointsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessEndpoints operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessEndpointsResult> describeVerifiedAccessEndpointsAsync(
+            DescribeVerifiedAccessEndpointsRequest describeVerifiedAccessEndpointsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessEndpointsRequest, DescribeVerifiedAccessEndpointsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access groups.
+     * </p>
+     * 
+     * @param describeVerifiedAccessGroupsRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessGroups operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessGroupsResult> describeVerifiedAccessGroupsAsync(
+            DescribeVerifiedAccessGroupsRequest describeVerifiedAccessGroupsRequest);
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access groups.
+     * </p>
+     * 
+     * @param describeVerifiedAccessGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessGroups operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessGroupsResult> describeVerifiedAccessGroupsAsync(
+            DescribeVerifiedAccessGroupsRequest describeVerifiedAccessGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessGroupsRequest, DescribeVerifiedAccessGroupsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the current logging configuration for the Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstanceLoggingConfigurations operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessInstanceLoggingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstanceLoggingConfigurationsResult> describeVerifiedAccessInstanceLoggingConfigurationsAsync(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest describeVerifiedAccessInstanceLoggingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Describes the current logging configuration for the Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstanceLoggingConfigurations operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessInstanceLoggingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstanceLoggingConfigurationsResult> describeVerifiedAccessInstanceLoggingConfigurationsAsync(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest describeVerifiedAccessInstanceLoggingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessInstanceLoggingConfigurationsRequest, DescribeVerifiedAccessInstanceLoggingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describe Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstancesRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstances operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstancesResult> describeVerifiedAccessInstancesAsync(
+            DescribeVerifiedAccessInstancesRequest describeVerifiedAccessInstancesRequest);
+
+    /**
+     * <p>
+     * Describe Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessInstances operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessInstancesResult> describeVerifiedAccessInstancesAsync(
+            DescribeVerifiedAccessInstancesRequest describeVerifiedAccessInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessInstancesRequest, DescribeVerifiedAccessInstancesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access trust providers.
+     * </p>
+     * 
+     * @param describeVerifiedAccessTrustProvidersRequest
+     * @return A Java Future containing the result of the DescribeVerifiedAccessTrustProviders operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DescribeVerifiedAccessTrustProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessTrustProvidersResult> describeVerifiedAccessTrustProvidersAsync(
+            DescribeVerifiedAccessTrustProvidersRequest describeVerifiedAccessTrustProvidersRequest);
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access trust providers.
+     * </p>
+     * 
+     * @param describeVerifiedAccessTrustProvidersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeVerifiedAccessTrustProviders operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DescribeVerifiedAccessTrustProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeVerifiedAccessTrustProvidersResult> describeVerifiedAccessTrustProvidersAsync(
+            DescribeVerifiedAccessTrustProvidersRequest describeVerifiedAccessTrustProvidersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeVerifiedAccessTrustProvidersRequest, DescribeVerifiedAccessTrustProvidersResult> asyncHandler);
 
     /**
      * <p>
@@ -16374,6 +17024,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Detach a trust provider from an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param detachVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the DetachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.DetachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVerifiedAccessTrustProviderResult> detachVerifiedAccessTrustProviderAsync(
+            DetachVerifiedAccessTrustProviderRequest detachVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * Detach a trust provider from an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param detachVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetachVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.DetachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DetachVerifiedAccessTrustProviderResult> detachVerifiedAccessTrustProviderAsync(
+            DetachVerifiedAccessTrustProviderRequest detachVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<DetachVerifiedAccessTrustProviderRequest, DetachVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * Detaches an EBS volume from an instance. Make sure to unmount any file systems on the device within your
      * operating system before detaching the volume. Failure to do so can result in the volume becoming stuck in the
      * <code>busy</code> state while detaching. If this happens, detachment can be delayed indefinitely until you
@@ -16475,6 +17160,78 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     java.util.concurrent.Future<DetachVpnGatewayResult> detachVpnGatewayAsync(DetachVpnGatewayRequest detachVpnGatewayRequest,
             com.amazonaws.handlers.AsyncHandler<DetachVpnGatewayRequest, DetachVpnGatewayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableAddressTransferRequest
+     * @return A Java Future containing the result of the DisableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2Async.DisableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAddressTransferResult> disableAddressTransferAsync(DisableAddressTransferRequest disableAddressTransferRequest);
+
+    /**
+     * <p>
+     * Disables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableAddressTransferRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAddressTransferResult> disableAddressTransferAsync(DisableAddressTransferRequest disableAddressTransferRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableAddressTransferRequest, DisableAddressTransferResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disables Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param disableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return A Java Future containing the result of the DisableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.DisableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAwsNetworkPerformanceMetricSubscriptionResult> disableAwsNetworkPerformanceMetricSubscriptionAsync(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest disableAwsNetworkPerformanceMetricSubscriptionRequest);
+
+    /**
+     * <p>
+     * Disables Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param disableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.DisableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableAwsNetworkPerformanceMetricSubscriptionResult> disableAwsNetworkPerformanceMetricSubscriptionAsync(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest disableAwsNetworkPerformanceMetricSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableAwsNetworkPerformanceMetricSubscriptionRequest, DisableAwsNetworkPerformanceMetricSubscriptionResult> asyncHandler);
 
     /**
      * <p>
@@ -16618,7 +17375,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param disableImageDeprecationRequest
@@ -16636,7 +17393,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param disableImageDeprecationRequest
@@ -17450,6 +18207,78 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Enables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableAddressTransferRequest
+     * @return A Java Future containing the result of the EnableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2Async.EnableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAddressTransferResult> enableAddressTransferAsync(EnableAddressTransferRequest enableAddressTransferRequest);
+
+    /**
+     * <p>
+     * Enables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableAddressTransferRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAddressTransferResult> enableAddressTransferAsync(EnableAddressTransferRequest enableAddressTransferRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableAddressTransferRequest, EnableAddressTransferResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables Infrastructure Performance subscriptions.
+     * </p>
+     * 
+     * @param enableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return A Java Future containing the result of the EnableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.EnableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAwsNetworkPerformanceMetricSubscriptionResult> enableAwsNetworkPerformanceMetricSubscriptionAsync(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest enableAwsNetworkPerformanceMetricSubscriptionRequest);
+
+    /**
+     * <p>
+     * Enables Infrastructure Performance subscriptions.
+     * </p>
+     * 
+     * @param enableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableAwsNetworkPerformanceMetricSubscription operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableAwsNetworkPerformanceMetricSubscriptionResult> enableAwsNetworkPerformanceMetricSubscriptionAsync(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest enableAwsNetworkPerformanceMetricSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableAwsNetworkPerformanceMetricSubscriptionRequest, EnableAwsNetworkPerformanceMetricSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
@@ -17630,7 +18459,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param enableImageDeprecationRequest
@@ -17648,7 +18477,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param enableImageDeprecationRequest
@@ -17704,6 +18533,53 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<EnableIpamOrganizationAdminAccountResult> enableIpamOrganizationAdminAccountAsync(
             EnableIpamOrganizationAdminAccountRequest enableIpamOrganizationAdminAccountRequest,
             com.amazonaws.handlers.AsyncHandler<EnableIpamOrganizationAdminAccountRequest, EnableIpamOrganizationAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Establishes a trust relationship between Reachability Analyzer and Organizations. This operation must be
+     * performed by the management account for the organization.
+     * </p>
+     * <p>
+     * After you establish a trust relationship, a user in the management account or a delegated administrator account
+     * can run a cross-account analysis using resources from the member accounts.
+     * </p>
+     * 
+     * @param enableReachabilityAnalyzerOrganizationSharingRequest
+     * @return A Java Future containing the result of the EnableReachabilityAnalyzerOrganizationSharing operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.EnableReachabilityAnalyzerOrganizationSharing
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableReachabilityAnalyzerOrganizationSharingResult> enableReachabilityAnalyzerOrganizationSharingAsync(
+            EnableReachabilityAnalyzerOrganizationSharingRequest enableReachabilityAnalyzerOrganizationSharingRequest);
+
+    /**
+     * <p>
+     * Establishes a trust relationship between Reachability Analyzer and Organizations. This operation must be
+     * performed by the management account for the organization.
+     * </p>
+     * <p>
+     * After you establish a trust relationship, a user in the management account or a delegated administrator account
+     * can run a cross-account analysis using resources from the member accounts.
+     * </p>
+     * 
+     * @param enableReachabilityAnalyzerOrganizationSharingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableReachabilityAnalyzerOrganizationSharing operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.EnableReachabilityAnalyzerOrganizationSharing
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableReachabilityAnalyzerOrganizationSharingResult> enableReachabilityAnalyzerOrganizationSharingAsync(
+            EnableReachabilityAnalyzerOrganizationSharingRequest enableReachabilityAnalyzerOrganizationSharingRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableReachabilityAnalyzerOrganizationSharingRequest, EnableReachabilityAnalyzerOrganizationSharingResult> asyncHandler);
 
     /**
      * <p>
@@ -18196,6 +19072,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<GetAssociatedIpv6PoolCidrsResult> getAssociatedIpv6PoolCidrsAsync(
             GetAssociatedIpv6PoolCidrsRequest getAssociatedIpv6PoolCidrsRequest,
             com.amazonaws.handlers.AsyncHandler<GetAssociatedIpv6PoolCidrsRequest, GetAssociatedIpv6PoolCidrsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets network performance data.
+     * </p>
+     * 
+     * @param getAwsNetworkPerformanceDataRequest
+     * @return A Java Future containing the result of the GetAwsNetworkPerformanceData operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetAwsNetworkPerformanceData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAwsNetworkPerformanceDataResult> getAwsNetworkPerformanceDataAsync(
+            GetAwsNetworkPerformanceDataRequest getAwsNetworkPerformanceDataRequest);
+
+    /**
+     * <p>
+     * Gets network performance data.
+     * </p>
+     * 
+     * @param getAwsNetworkPerformanceDataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAwsNetworkPerformanceData operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetAwsNetworkPerformanceData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAwsNetworkPerformanceDataResult> getAwsNetworkPerformanceDataAsync(
+            GetAwsNetworkPerformanceDataRequest getAwsNetworkPerformanceDataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAwsNetworkPerformanceDataRequest, GetAwsNetworkPerformanceDataResult> asyncHandler);
 
     /**
      * <p>
@@ -19592,6 +20503,76 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Get the Verified Access policy associated with the endpoint.
+     * </p>
+     * 
+     * @param getVerifiedAccessEndpointPolicyRequest
+     * @return A Java Future containing the result of the GetVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessEndpointPolicyResult> getVerifiedAccessEndpointPolicyAsync(
+            GetVerifiedAccessEndpointPolicyRequest getVerifiedAccessEndpointPolicyRequest);
+
+    /**
+     * <p>
+     * Get the Verified Access policy associated with the endpoint.
+     * </p>
+     * 
+     * @param getVerifiedAccessEndpointPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessEndpointPolicyResult> getVerifiedAccessEndpointPolicyAsync(
+            GetVerifiedAccessEndpointPolicyRequest getVerifiedAccessEndpointPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVerifiedAccessEndpointPolicyRequest, GetVerifiedAccessEndpointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Shows the contents of the Verified Access policy associated with the group.
+     * </p>
+     * 
+     * @param getVerifiedAccessGroupPolicyRequest
+     * @return A Java Future containing the result of the GetVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.GetVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessGroupPolicyResult> getVerifiedAccessGroupPolicyAsync(
+            GetVerifiedAccessGroupPolicyRequest getVerifiedAccessGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Shows the contents of the Verified Access policy associated with the group.
+     * </p>
+     * 
+     * @param getVerifiedAccessGroupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.GetVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVerifiedAccessGroupPolicyResult> getVerifiedAccessGroupPolicyAsync(
+            GetVerifiedAccessGroupPolicyRequest getVerifiedAccessGroupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVerifiedAccessGroupPolicyRequest, GetVerifiedAccessGroupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Download an Amazon Web Services-provided sample configuration file to be used with the customer gateway device
      * specified for your Site-to-Site VPN connection.
      * </p>
@@ -20002,8 +20983,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Lists one or more AMIs that are currently in the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param listImagesInRecycleBinRequest
@@ -20017,8 +20998,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Lists one or more AMIs that are currently in the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param listImagesInRecycleBinRequest
@@ -22121,6 +23102,251 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointResult> modifyVerifiedAccessEndpointAsync(
+            ModifyVerifiedAccessEndpointRequest modifyVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpoint operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointResult> modifyVerifiedAccessEndpointAsync(
+            ModifyVerifiedAccessEndpointRequest modifyVerifiedAccessEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessEndpointRequest, ModifyVerifiedAccessEndpointResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access endpoint policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointPolicyRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointPolicyResult> modifyVerifiedAccessEndpointPolicyAsync(
+            ModifyVerifiedAccessEndpointPolicyRequest modifyVerifiedAccessEndpointPolicyRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access endpoint policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessEndpointPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessEndpointPolicyResult> modifyVerifiedAccessEndpointPolicyAsync(
+            ModifyVerifiedAccessEndpointPolicyRequest modifyVerifiedAccessEndpointPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessEndpointPolicyRequest, ModifyVerifiedAccessEndpointPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group configuration.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupResult> modifyVerifiedAccessGroupAsync(
+            ModifyVerifiedAccessGroupRequest modifyVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group configuration.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupResult> modifyVerifiedAccessGroupAsync(
+            ModifyVerifiedAccessGroupRequest modifyVerifiedAccessGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessGroupRequest, ModifyVerifiedAccessGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupPolicyRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupPolicyResult> modifyVerifiedAccessGroupPolicyAsync(
+            ModifyVerifiedAccessGroupPolicyRequest modifyVerifiedAccessGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessGroupPolicy operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessGroupPolicyResult> modifyVerifiedAccessGroupPolicyAsync(
+            ModifyVerifiedAccessGroupPolicyRequest modifyVerifiedAccessGroupPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessGroupPolicyRequest, ModifyVerifiedAccessGroupPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceResult> modifyVerifiedAccessInstanceAsync(
+            ModifyVerifiedAccessInstanceRequest modifyVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstance operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceResult> modifyVerifiedAccessInstanceAsync(
+            ModifyVerifiedAccessInstanceRequest modifyVerifiedAccessInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessInstanceRequest, ModifyVerifiedAccessInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceLoggingConfigurationRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstanceLoggingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessInstanceLoggingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceLoggingConfigurationResult> modifyVerifiedAccessInstanceLoggingConfigurationAsync(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest modifyVerifiedAccessInstanceLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessInstanceLoggingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessInstanceLoggingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessInstanceLoggingConfigurationResult> modifyVerifiedAccessInstanceLoggingConfigurationAsync(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest modifyVerifiedAccessInstanceLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessInstanceLoggingConfigurationRequest, ModifyVerifiedAccessInstanceLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessTrustProviderRequest
+     * @return A Java Future containing the result of the ModifyVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2Async.ModifyVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessTrustProviderResult> modifyVerifiedAccessTrustProviderAsync(
+            ModifyVerifiedAccessTrustProviderRequest modifyVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessTrustProviderRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVerifiedAccessTrustProvider operation returned by the
+     *         service.
+     * @sample AmazonEC2AsyncHandler.ModifyVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVerifiedAccessTrustProviderResult> modifyVerifiedAccessTrustProviderAsync(
+            ModifyVerifiedAccessTrustProviderRequest modifyVerifiedAccessTrustProviderRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVerifiedAccessTrustProviderRequest, ModifyVerifiedAccessTrustProviderResult> asyncHandler);
+
+    /**
+     * <p>
      * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
      * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you might be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
@@ -23437,7 +24663,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an
      * instance from the AMI. For more information about creating AMIs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating your own AMIs</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <note>
@@ -23502,8 +24728,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
      * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     * billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param registerImageRequest
@@ -23519,7 +24745,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an
      * instance from the AMI. For more information about creating AMIs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating your own AMIs</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <note>
@@ -23584,8 +24810,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
      * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     * billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param registerImageRequest
@@ -24465,14 +25691,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
-     * the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <important>
      * <p>
      * We strongly discourage using the RequestSpotFleet API because it is a legacy API with no planned investment. For
      * options for requesting Spot Instances, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
-     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -24516,14 +25742,14 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
-     * the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <important>
      * <p>
      * We strongly discourage using the RequestSpotFleet API because it is a legacy API with no planned investment. For
      * options for requesting Spot Instances, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
-     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -24935,8 +26161,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Restores an AMI from the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param restoreImageFromRecycleBinRequest
@@ -24951,8 +26177,8 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Restores an AMI from the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param restoreImageFromRecycleBinRequest

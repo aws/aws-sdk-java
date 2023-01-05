@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import com.amazonaws.services.translate.model.*;
  * </p>
  * <p>
  * <p>
- * Provides translation between one source language and another of the same set of languages.
+ * Provides translation of the input content from the source language to the target language.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -63,6 +63,7 @@ public interface AmazonTranslate {
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again.
      * @throws TooManyTagsException
+     *         You have added too many tags to this resource. The maximum is 50 tags.
      * @throws ConflictException
      *         There was a conflict processing the request. Try your request again.
      * @throws ConcurrentModificationException
@@ -216,6 +217,7 @@ public interface AmazonTranslate {
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again.
      * @throws TooManyTagsException
+     *         You have added too many tags to this resource. The maximum is 50 tags.
      * @throws ConcurrentModificationException
      *         Another modification is being made. That modification must complete before you can make your change.
      * @throws InternalServerException
@@ -271,6 +273,11 @@ public interface AmazonTranslate {
     ListParallelDataResult listParallelData(ListParallelDataRequest listParallelDataRequest);
 
     /**
+     * <p>
+     * Lists all tags associated with a given Amazon Translate resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws InvalidParameterValueException
@@ -333,18 +340,16 @@ public interface AmazonTranslate {
 
     /**
      * <p>
-     * Starts an asynchronous batch translation job. Batch translation jobs can be used to translate large volumes of
-     * text across multiple documents at once. For more information, see <a>async</a>.
+     * Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text
+     * across multiple documents at once. For batch translation, you can input documents with different source languages
+     * (specify <code>auto</code> as the source language). You can specify one or more target languages. Batch
+     * translation translates each input document into each of the target languages. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>.
      * </p>
      * <p>
      * Batch translation jobs can be described with the <a>DescribeTextTranslationJob</a> operation, listed with the
      * <a>ListTextTranslationJobs</a> operation, and stopped with the <a>StopTextTranslationJob</a> operation.
      * </p>
-     * <note>
-     * <p>
-     * Amazon Translate does not support batch translation of multiple source languages at once.
-     * </p>
-     * </note>
      * 
      * @param startTextTranslationJobRequest
      * @return Result of the StartTextTranslationJob operation returned by the service.
@@ -353,7 +358,8 @@ public interface AmazonTranslate {
      *         request again.
      * @throws UnsupportedLanguagePairException
      *         Amazon Translate does not support translation from the language of the source text into the requested
-     *         target language. For more information, see <a>how-to-error-msg</a>.
+     *         target language. For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>.
      * @throws InvalidRequestException
      *         The request that you made is not valid. Check your request to determine why it's not valid and then retry
      *         the request.
@@ -403,6 +409,12 @@ public interface AmazonTranslate {
     StopTextTranslationJobResult stopTextTranslationJob(StopTextTranslationJobRequest stopTextTranslationJobRequest);
 
     /**
+     * <p>
+     * Associates a specific tag with a resource. A tag is a key-value pair that adds as a metadata to a resource. For
+     * more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your
+     * resources</a>.
+     * </p>
+     * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws InvalidParameterValueException
@@ -414,6 +426,7 @@ public interface AmazonTranslate {
      *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
      *         different resource will accomplish your needs before retrying the revised request.
      * @throws TooManyTagsException
+     *         You have added too many tags to this resource. The maximum is 50 tags.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonTranslate.TagResource
@@ -425,7 +438,8 @@ public interface AmazonTranslate {
     /**
      * <p>
      * Translates input text from the source language to the target language. For a list of available languages and
-     * language codes, see <a>what-is-languages</a>.
+     * language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.
      * </p>
      * 
      * @param translateTextRequest
@@ -441,7 +455,8 @@ public interface AmazonTranslate {
      *         request again.
      * @throws UnsupportedLanguagePairException
      *         Amazon Translate does not support translation from the language of the source text into the requested
-     *         target language. For more information, see <a>how-to-error-msg</a>.
+     *         target language. For more information, see <a
+     *         href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error messages</a>.
      * @throws DetectedLanguageLowConfidenceException
      *         The confidence that Amazon Comprehend accurately detected the source language is low. If a low confidence
      *         level is acceptable for your application, you can use the language in the exception to call Amazon
@@ -462,6 +477,11 @@ public interface AmazonTranslate {
     TranslateTextResult translateText(TranslateTextRequest translateTextRequest);
 
     /**
+     * <p>
+     * Removes a specific tag associated with an Amazon Translate resource. For more information, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/tagging.html"> Tagging your resources</a>.
+     * </p>
+     * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws InvalidParameterValueException

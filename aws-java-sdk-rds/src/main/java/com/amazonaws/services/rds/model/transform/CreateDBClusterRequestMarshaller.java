@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -307,6 +307,18 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
 
         if (createDBClusterRequest.getNetworkType() != null) {
             request.addParameter("NetworkType", StringUtils.fromString(createDBClusterRequest.getNetworkType()));
+        }
+
+        if (createDBClusterRequest.getDBSystemId() != null) {
+            request.addParameter("DBSystemId", StringUtils.fromString(createDBClusterRequest.getDBSystemId()));
+        }
+
+        if (createDBClusterRequest.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(createDBClusterRequest.getManageMasterUserPassword()));
+        }
+
+        if (createDBClusterRequest.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(createDBClusterRequest.getMasterUserSecretKmsKeyId()));
         }
 
         if (createDBClusterRequest.getSourceRegion() != null) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -505,6 +505,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(DescribeUpdateDirectoryRequest request) {
+
+        return describeUpdateDirectoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeUpdateDirectoryResult> describeUpdateDirectoryAsync(DescribeUpdateDirectoryRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeUpdateDirectoryRequest, DescribeUpdateDirectoryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(DisableClientAuthenticationRequest request) {
 
         return disableClientAuthenticationAsync(request, null);
@@ -874,6 +887,19 @@ public class AbstractAWSDirectoryServiceAsync extends AbstractAWSDirectoryServic
     @Override
     public java.util.concurrent.Future<UpdateConditionalForwarderResult> updateConditionalForwarderAsync(UpdateConditionalForwarderRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateConditionalForwarderRequest, UpdateConditionalForwarderResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(UpdateDirectorySetupRequest request) {
+
+        return updateDirectorySetupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDirectorySetupResult> updateDirectorySetupAsync(UpdateDirectorySetupRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateDirectorySetupRequest, UpdateDirectorySetupResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

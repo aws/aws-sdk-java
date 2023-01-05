@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,7 +97,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
      * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
      * Alexa top 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web
+     * Services Support.
      * </p>
      * <note>
      * <p>
@@ -121,7 +122,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you see this error and your domain is not included in the VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.
      * </p>
      * </li>
      * <li>
@@ -614,7 +615,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
      * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
      * Alexa top 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web
+     * Services Support.
      * </p>
      * <note>
      * <p>
@@ -638,7 +640,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you see this error and your domain is not included in the VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.
      * </p>
      * </li>
      * <li>
@@ -677,7 +679,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      *        <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to
      *        process this certificate request. This can happen as a fraud-protection measure, such as when the domain
      *        ranks within the Alexa top 1000 websites. To provide the required information, use the <a
-     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     *        href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact
+     *        Amazon Web Services Support.
      *        </p>
      *        <note>
      *        <p>
@@ -702,7 +705,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        If you see this error and your domain is not included in the VirusTotal list, visit the <a
-     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     *        href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a
+     *        case.
      *        </p>
      *        </li>
      *        <li>
@@ -747,7 +751,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
      * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
      * Alexa top 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web
+     * Services Support.
      * </p>
      * <note>
      * <p>
@@ -771,7 +776,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you see this error and your domain is not included in the VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.
      * </p>
      * </li>
      * <li>
@@ -809,7 +814,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      *         <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to
      *         process this certificate request. This can happen as a fraud-protection measure, such as when the domain
      *         ranks within the Alexa top 1000 websites. To provide the required information, use the <a
-     *         href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     *         href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact
+     *         Amazon Web Services Support.
      *         </p>
      *         <note>
      *         <p>
@@ -834,7 +840,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         If you see this error and your domain is not included in the VirusTotal list, visit the <a
-     *         href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     *         href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a
+     *         case.
      *         </p>
      *         </li>
      *         <li>
@@ -879,7 +886,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to process
      * this certificate request. This can happen as a fraud-protection measure, such as when the domain ranks within the
      * Alexa top 1000 websites. To provide the required information, use the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact Amazon Web
+     * Services Support.
      * </p>
      * <note>
      * <p>
@@ -903,7 +911,7 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * If you see this error and your domain is not included in the VirusTotal list, visit the <a
-     * href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     * href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a case.
      * </p>
      * </li>
      * <li>
@@ -942,7 +950,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      *        <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional information to
      *        process this certificate request. This can happen as a fraud-protection measure, such as when the domain
      *        ranks within the Alexa top 1000 websites. To provide the required information, use the <a
-     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> to contact AWS Support.
+     *        href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> to contact
+     *        Amazon Web Services Support.
      *        </p>
      *        <note>
      *        <p>
@@ -967,7 +976,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        If you see this error and your domain is not included in the VirusTotal list, visit the <a
-     *        href="https://console.aws.amazon.com/support/home">AWS Support Center</a> and create a case.
+     *        href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a> and create a
+     *        case.
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,53 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean terminationProtectionEnabled;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tagsList;
+    /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -481,6 +528,286 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias
+     *        name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p> <important>
+     *        <p>
+     *        Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     *        logging events to the event data store, and prevents users from querying the data in the event data store
+     *        that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key
+     *        cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data
+     *        store, delete or back up your event data store.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias
+     *         name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *         or a globally unique identifier.</p> <important>
+     *         <p>
+     *         Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail
+     *         from logging events to the event data store, and prevents users from querying the data in the event data
+     *         store that was encrypted with the key. After you associate an event data store with a KMS key, the KMS
+     *         key cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event
+     *         data store, delete or back up your event data store.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *         multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+     *         </p>
+     *         <p>
+     *         Examples:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>12345678-1234-1234-1234-123456789012</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias name
+     * prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key, or a globally
+     * unique identifier.
+     * </p>
+     * <important>
+     * <p>
+     * Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     * logging events to the event data store, and prevents users from querying the data in the event data store that
+     * was encrypted with the key. After you associate an event data store with a KMS key, the KMS key cannot be removed
+     * or changed. Before you disable or delete a KMS key that you are using with an event data store, delete or back up
+     * your event data store.
+     * </p>
+     * </important>
+     * <p>
+     * CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region
+     * keys</a> in the <i>Key Management Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * Examples:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The value can be an alias
+     *        name prefixed by <code>alias/</code>, a fully specified ARN to an alias, a fully specified ARN to a key,
+     *        or a globally unique identifier.</p> <important>
+     *        <p>
+     *        Disabling or deleting the KMS key, or removing CloudTrail permissions on the key, prevents CloudTrail from
+     *        logging events to the event data store, and prevents users from querying the data in the event data store
+     *        that was encrypted with the key. After you associate an event data store with a KMS key, the KMS key
+     *        cannot be removed or changed. Before you disable or delete a KMS key that you are using with an event data
+     *        store, delete or back up your event data store.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        CloudTrail also supports KMS multi-Region keys. For more information about multi-Region keys, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using
+     *        multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.
+     *        </p>
+     *        <p>
+     *        Examples:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>12345678-1234-1234-1234-123456789012</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventDataStoreRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -505,7 +832,9 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
         if (getTerminationProtectionEnabled() != null)
             sb.append("TerminationProtectionEnabled: ").append(getTerminationProtectionEnabled()).append(",");
         if (getTagsList() != null)
-            sb.append("TagsList: ").append(getTagsList());
+            sb.append("TagsList: ").append(getTagsList()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -548,6 +877,10 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTagsList() != null && other.getTagsList().equals(this.getTagsList()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -563,6 +896,7 @@ public class CreateEventDataStoreRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getTerminationProtectionEnabled() == null) ? 0 : getTerminationProtectionEnabled().hashCode());
         hashCode = prime * hashCode + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

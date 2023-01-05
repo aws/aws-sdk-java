@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
     private String stringValue;
     /**
      * <p>
-     * A list of strings.
+     * A list of strings. The default maximum length or number of strings is 10.
      * </p>
      */
     private java.util.List<String> stringListValue;
@@ -100,10 +100,10 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of strings.
+     * A list of strings. The default maximum length or number of strings is 10.
      * </p>
      * 
-     * @return A list of strings.
+     * @return A list of strings. The default maximum length or number of strings is 10.
      */
 
     public java.util.List<String> getStringListValue() {
@@ -112,11 +112,11 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of strings.
+     * A list of strings. The default maximum length or number of strings is 10.
      * </p>
      * 
      * @param stringListValue
-     *        A list of strings.
+     *        A list of strings. The default maximum length or number of strings is 10.
      */
 
     public void setStringListValue(java.util.Collection<String> stringListValue) {
@@ -130,7 +130,7 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of strings.
+     * A list of strings. The default maximum length or number of strings is 10.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -139,7 +139,7 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param stringListValue
-     *        A list of strings.
+     *        A list of strings. The default maximum length or number of strings is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +155,11 @@ public class DocumentAttributeValue implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * A list of strings.
+     * A list of strings. The default maximum length or number of strings is 10.
      * </p>
      * 
      * @param stringListValue
-     *        A list of strings.
+     *        A list of strings. The default maximum length or number of strings is 10.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

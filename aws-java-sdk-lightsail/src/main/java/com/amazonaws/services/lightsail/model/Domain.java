@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,12 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<DomainEntry> domainEntries;
+    /**
+     * <p>
+     * An object that describes the state of the Route 53 domain delegation to a Lightsail DNS zone.
+     * </p>
+     */
+    private RegisteredDomainDelegationInfo registeredDomainDelegationInfo;
 
     /**
      * <p>
@@ -526,6 +532,46 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that describes the state of the Route 53 domain delegation to a Lightsail DNS zone.
+     * </p>
+     * 
+     * @param registeredDomainDelegationInfo
+     *        An object that describes the state of the Route 53 domain delegation to a Lightsail DNS zone.
+     */
+
+    public void setRegisteredDomainDelegationInfo(RegisteredDomainDelegationInfo registeredDomainDelegationInfo) {
+        this.registeredDomainDelegationInfo = registeredDomainDelegationInfo;
+    }
+
+    /**
+     * <p>
+     * An object that describes the state of the Route 53 domain delegation to a Lightsail DNS zone.
+     * </p>
+     * 
+     * @return An object that describes the state of the Route 53 domain delegation to a Lightsail DNS zone.
+     */
+
+    public RegisteredDomainDelegationInfo getRegisteredDomainDelegationInfo() {
+        return this.registeredDomainDelegationInfo;
+    }
+
+    /**
+     * <p>
+     * An object that describes the state of the Route 53 domain delegation to a Lightsail DNS zone.
+     * </p>
+     * 
+     * @param registeredDomainDelegationInfo
+     *        An object that describes the state of the Route 53 domain delegation to a Lightsail DNS zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Domain withRegisteredDomainDelegationInfo(RegisteredDomainDelegationInfo registeredDomainDelegationInfo) {
+        setRegisteredDomainDelegationInfo(registeredDomainDelegationInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -552,7 +598,9 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getDomainEntries() != null)
-            sb.append("DomainEntries: ").append(getDomainEntries());
+            sb.append("DomainEntries: ").append(getDomainEntries()).append(",");
+        if (getRegisteredDomainDelegationInfo() != null)
+            sb.append("RegisteredDomainDelegationInfo: ").append(getRegisteredDomainDelegationInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -599,6 +647,11 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDomainEntries() != null && other.getDomainEntries().equals(this.getDomainEntries()) == false)
             return false;
+        if (other.getRegisteredDomainDelegationInfo() == null ^ this.getRegisteredDomainDelegationInfo() == null)
+            return false;
+        if (other.getRegisteredDomainDelegationInfo() != null
+                && other.getRegisteredDomainDelegationInfo().equals(this.getRegisteredDomainDelegationInfo()) == false)
+            return false;
         return true;
     }
 
@@ -615,6 +668,7 @@ public class Domain implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDomainEntries() == null) ? 0 : getDomainEntries().hashCode());
+        hashCode = prime * hashCode + ((getRegisteredDomainDelegationInfo() == null) ? 0 : getRegisteredDomainDelegationInfo().hashCode());
         return hashCode;
     }
 

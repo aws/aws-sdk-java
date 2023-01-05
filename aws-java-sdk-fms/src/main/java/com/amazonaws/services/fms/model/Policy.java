@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -189,6 +189,18 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      */
     private java.util.Map<String, java.util.List<String>> excludeMap;
+    /**
+     * <p>
+     * The unique identifiers of the resource sets used by the policy.
+     * </p>
+     */
+    private java.util.List<String> resourceSetIds;
+    /**
+     * <p>
+     * The definition of the Network Firewall firewall policy.
+     * </p>
+     */
+    private String policyDescription;
 
     /**
      * <p>
@@ -1384,6 +1396,116 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The unique identifiers of the resource sets used by the policy.
+     * </p>
+     * 
+     * @return The unique identifiers of the resource sets used by the policy.
+     */
+
+    public java.util.List<String> getResourceSetIds() {
+        return resourceSetIds;
+    }
+
+    /**
+     * <p>
+     * The unique identifiers of the resource sets used by the policy.
+     * </p>
+     * 
+     * @param resourceSetIds
+     *        The unique identifiers of the resource sets used by the policy.
+     */
+
+    public void setResourceSetIds(java.util.Collection<String> resourceSetIds) {
+        if (resourceSetIds == null) {
+            this.resourceSetIds = null;
+            return;
+        }
+
+        this.resourceSetIds = new java.util.ArrayList<String>(resourceSetIds);
+    }
+
+    /**
+     * <p>
+     * The unique identifiers of the resource sets used by the policy.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setResourceSetIds(java.util.Collection)} or {@link #withResourceSetIds(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param resourceSetIds
+     *        The unique identifiers of the resource sets used by the policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy withResourceSetIds(String... resourceSetIds) {
+        if (this.resourceSetIds == null) {
+            setResourceSetIds(new java.util.ArrayList<String>(resourceSetIds.length));
+        }
+        for (String ele : resourceSetIds) {
+            this.resourceSetIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The unique identifiers of the resource sets used by the policy.
+     * </p>
+     * 
+     * @param resourceSetIds
+     *        The unique identifiers of the resource sets used by the policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy withResourceSetIds(java.util.Collection<String> resourceSetIds) {
+        setResourceSetIds(resourceSetIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The definition of the Network Firewall firewall policy.
+     * </p>
+     * 
+     * @param policyDescription
+     *        The definition of the Network Firewall firewall policy.
+     */
+
+    public void setPolicyDescription(String policyDescription) {
+        this.policyDescription = policyDescription;
+    }
+
+    /**
+     * <p>
+     * The definition of the Network Firewall firewall policy.
+     * </p>
+     * 
+     * @return The definition of the Network Firewall firewall policy.
+     */
+
+    public String getPolicyDescription() {
+        return this.policyDescription;
+    }
+
+    /**
+     * <p>
+     * The definition of the Network Firewall firewall policy.
+     * </p>
+     * 
+     * @param policyDescription
+     *        The definition of the Network Firewall firewall policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Policy withPolicyDescription(String policyDescription) {
+        setPolicyDescription(policyDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1418,7 +1540,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
         if (getIncludeMap() != null)
             sb.append("IncludeMap: ").append(getIncludeMap()).append(",");
         if (getExcludeMap() != null)
-            sb.append("ExcludeMap: ").append(getExcludeMap());
+            sb.append("ExcludeMap: ").append(getExcludeMap()).append(",");
+        if (getResourceSetIds() != null)
+            sb.append("ResourceSetIds: ").append(getResourceSetIds()).append(",");
+        if (getPolicyDescription() != null)
+            sb.append("PolicyDescription: ").append(getPolicyDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -1482,6 +1608,14 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExcludeMap() != null && other.getExcludeMap().equals(this.getExcludeMap()) == false)
             return false;
+        if (other.getResourceSetIds() == null ^ this.getResourceSetIds() == null)
+            return false;
+        if (other.getResourceSetIds() != null && other.getResourceSetIds().equals(this.getResourceSetIds()) == false)
+            return false;
+        if (other.getPolicyDescription() == null ^ this.getPolicyDescription() == null)
+            return false;
+        if (other.getPolicyDescription() != null && other.getPolicyDescription().equals(this.getPolicyDescription()) == false)
+            return false;
         return true;
     }
 
@@ -1502,6 +1636,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDeleteUnusedFMManagedResources() == null) ? 0 : getDeleteUnusedFMManagedResources().hashCode());
         hashCode = prime * hashCode + ((getIncludeMap() == null) ? 0 : getIncludeMap().hashCode());
         hashCode = prime * hashCode + ((getExcludeMap() == null) ? 0 : getExcludeMap().hashCode());
+        hashCode = prime * hashCode + ((getResourceSetIds() == null) ? 0 : getResourceSetIds().hashCode());
+        hashCode = prime * hashCode + ((getPolicyDescription() == null) ? 0 : getPolicyDescription().hashCode());
         return hashCode;
     }
 

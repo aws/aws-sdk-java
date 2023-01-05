@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<Compatibility> compatibilities;
+    /**
+     * <p>
+     * Whether the add-on requires configuration.
+     * </p>
+     */
+    private Boolean requiresConfiguration;
 
     /**
      * <p>
@@ -228,6 +234,58 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Whether the add-on requires configuration.
+     * </p>
+     * 
+     * @param requiresConfiguration
+     *        Whether the add-on requires configuration.
+     */
+
+    public void setRequiresConfiguration(Boolean requiresConfiguration) {
+        this.requiresConfiguration = requiresConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether the add-on requires configuration.
+     * </p>
+     * 
+     * @return Whether the add-on requires configuration.
+     */
+
+    public Boolean getRequiresConfiguration() {
+        return this.requiresConfiguration;
+    }
+
+    /**
+     * <p>
+     * Whether the add-on requires configuration.
+     * </p>
+     * 
+     * @param requiresConfiguration
+     *        Whether the add-on requires configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddonVersionInfo withRequiresConfiguration(Boolean requiresConfiguration) {
+        setRequiresConfiguration(requiresConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the add-on requires configuration.
+     * </p>
+     * 
+     * @return Whether the add-on requires configuration.
+     */
+
+    public Boolean isRequiresConfiguration() {
+        return this.requiresConfiguration;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -244,7 +302,9 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
         if (getArchitecture() != null)
             sb.append("Architecture: ").append(getArchitecture()).append(",");
         if (getCompatibilities() != null)
-            sb.append("Compatibilities: ").append(getCompatibilities());
+            sb.append("Compatibilities: ").append(getCompatibilities()).append(",");
+        if (getRequiresConfiguration() != null)
+            sb.append("RequiresConfiguration: ").append(getRequiresConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -271,6 +331,10 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getCompatibilities() != null && other.getCompatibilities().equals(this.getCompatibilities()) == false)
             return false;
+        if (other.getRequiresConfiguration() == null ^ this.getRequiresConfiguration() == null)
+            return false;
+        if (other.getRequiresConfiguration() != null && other.getRequiresConfiguration().equals(this.getRequiresConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -282,6 +346,7 @@ public class AddonVersionInfo implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getAddonVersion() == null) ? 0 : getAddonVersion().hashCode());
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode());
         hashCode = prime * hashCode + ((getCompatibilities() == null) ? 0 : getCompatibilities().hashCode());
+        hashCode = prime * hashCode + ((getRequiresConfiguration() == null) ? 0 : getRequiresConfiguration().hashCode());
         return hashCode;
     }
 

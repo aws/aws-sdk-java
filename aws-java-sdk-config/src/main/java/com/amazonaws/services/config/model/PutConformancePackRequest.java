@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
-     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
      * the conformance pack.
      * </p>
      * <note>
@@ -51,7 +51,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
      * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
@@ -137,7 +137,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
-     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
      * the conformance pack.
      * </p>
      * <note>
@@ -149,7 +149,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * @param templateS3Uri
      *        The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must
      *        point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
-     *        region as the conformance pack. </p> <note>
+     *        Region as the conformance pack. </p> <note>
      *        <p>
      *        You must have access to read Amazon S3 bucket.
      *        </p>
@@ -162,7 +162,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
-     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
      * the conformance pack.
      * </p>
      * <note>
@@ -173,7 +173,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * 
      * @return The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must
      *         point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the
-     *         same region as the conformance pack. </p> <note>
+     *         same Region as the conformance pack. </p> <note>
      *         <p>
      *         You must have access to read Amazon S3 bucket.
      *         </p>
@@ -186,7 +186,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must point
-     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same region as
+     * to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same Region as
      * the conformance pack.
      * </p>
      * <note>
@@ -198,7 +198,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * @param templateS3Uri
      *        The location of the file containing the template body (<code>s3://bucketname/prefix</code>). The uri must
      *        point to a conformance pack template (max size: 300 KB) that is located in an Amazon S3 bucket in the same
-     *        region as the conformance pack. </p> <note>
+     *        Region as the conformance pack. </p> <note>
      *        <p>
      *        You must have access to read Amazon S3 bucket.
      *        </p>
@@ -217,7 +217,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
      * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
@@ -226,9 +226,8 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      *        A string containing the full conformance pack template body. The structure containing the template body
      *        has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
      *        <p>
-     *        You can only use a YAML template with two resource types: Config rule (
-     *        <code>AWS::Config::ConfigRule</code>) and remediation action (
-     *        <code>AWS::Config::RemediationConfiguration</code>).
+     *        You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
+     *        and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      *        </p>
      */
 
@@ -243,7 +242,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
      * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
@@ -251,9 +250,8 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * @return A string containing the full conformance pack template body. The structure containing the template body
      *         has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
      *         <p>
-     *         You can only use a YAML template with two resource types: Config rule (
-     *         <code>AWS::Config::ConfigRule</code>) and remediation action (
-     *         <code>AWS::Config::RemediationConfiguration</code>).
+     *         You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
+     *         and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      *         </p>
      */
 
@@ -268,7 +266,7 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <note>
      * <p>
-     * You can only use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
+     * You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>) and
      * remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      * </p>
      * </note>
@@ -277,9 +275,8 @@ public class PutConformancePackRequest extends com.amazonaws.AmazonWebServiceReq
      *        A string containing the full conformance pack template body. The structure containing the template body
      *        has a minimum length of 1 byte and a maximum length of 51,200 bytes.</p> <note>
      *        <p>
-     *        You can only use a YAML template with two resource types: Config rule (
-     *        <code>AWS::Config::ConfigRule</code>) and remediation action (
-     *        <code>AWS::Config::RemediationConfiguration</code>).
+     *        You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
+     *        and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

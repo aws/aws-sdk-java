@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,13 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String namespaceName;
+    /**
+     * <p>
+     * The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default
+     * is 5439.
+     * </p>
+     */
+    private Integer port;
     /**
      * <p>
      * A value that specifies whether the workgroup can be accessed from a public network.
@@ -301,6 +308,52 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateWorkgroupRequest withNamespaceName(String namespaceName) {
         setNamespaceName(namespaceName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default
+     * is 5439.
+     * </p>
+     * 
+     * @param port
+     *        The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The
+     *        default is 5439.
+     */
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    /**
+     * <p>
+     * The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default
+     * is 5439.
+     * </p>
+     * 
+     * @return The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The
+     *         default is 5439.
+     */
+
+    public Integer getPort() {
+        return this.port;
+    }
+
+    /**
+     * <p>
+     * The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The default
+     * is 5439.
+     * </p>
+     * 
+     * @param port
+     *        The custom port to use when connecting to a workgroup. Valid port ranges are 5431-5455 and 8191-8215. The
+     *        default is 5439.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkgroupRequest withPort(Integer port) {
+        setPort(port);
         return this;
     }
 
@@ -626,6 +679,8 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("EnhancedVpcRouting: ").append(getEnhancedVpcRouting()).append(",");
         if (getNamespaceName() != null)
             sb.append("NamespaceName: ").append(getNamespaceName()).append(",");
+        if (getPort() != null)
+            sb.append("Port: ").append(getPort()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecurityGroupIds() != null)
@@ -666,6 +721,10 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getNamespaceName() != null && other.getNamespaceName().equals(this.getNamespaceName()) == false)
             return false;
+        if (other.getPort() == null ^ this.getPort() == null)
+            return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
@@ -698,6 +757,7 @@ public class CreateWorkgroupRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getConfigParameters() == null) ? 0 : getConfigParameters().hashCode());
         hashCode = prime * hashCode + ((getEnhancedVpcRouting() == null) ? 0 : getEnhancedVpcRouting().hashCode());
         hashCode = prime * hashCode + ((getNamespaceName() == null) ? 0 : getNamespaceName().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());

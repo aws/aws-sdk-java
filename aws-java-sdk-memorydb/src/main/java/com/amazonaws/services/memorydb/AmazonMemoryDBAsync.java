@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -705,6 +705,72 @@ public interface AmazonMemoryDBAsync extends AmazonMemoryDB {
 
     /**
      * <p>
+     * Returns information about reserved nodes for this account, or about a specified reserved node.
+     * </p>
+     * 
+     * @param describeReservedNodesRequest
+     * @return A Java Future containing the result of the DescribeReservedNodes operation returned by the service.
+     * @sample AmazonMemoryDBAsync.DescribeReservedNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest describeReservedNodesRequest);
+
+    /**
+     * <p>
+     * Returns information about reserved nodes for this account, or about a specified reserved node.
+     * </p>
+     * 
+     * @param describeReservedNodesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReservedNodes operation returned by the service.
+     * @sample AmazonMemoryDBAsyncHandler.DescribeReservedNodes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservedNodesResult> describeReservedNodesAsync(DescribeReservedNodesRequest describeReservedNodesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesRequest, DescribeReservedNodesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists available reserved node offerings.
+     * </p>
+     * 
+     * @param describeReservedNodesOfferingsRequest
+     * @return A Java Future containing the result of the DescribeReservedNodesOfferings operation returned by the
+     *         service.
+     * @sample AmazonMemoryDBAsync.DescribeReservedNodesOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservedNodesOfferingsResult> describeReservedNodesOfferingsAsync(
+            DescribeReservedNodesOfferingsRequest describeReservedNodesOfferingsRequest);
+
+    /**
+     * <p>
+     * Lists available reserved node offerings.
+     * </p>
+     * 
+     * @param describeReservedNodesOfferingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReservedNodesOfferings operation returned by the
+     *         service.
+     * @sample AmazonMemoryDBAsyncHandler.DescribeReservedNodesOfferings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/DescribeReservedNodesOfferings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReservedNodesOfferingsResult> describeReservedNodesOfferingsAsync(
+            DescribeReservedNodesOfferingsRequest describeReservedNodesOfferingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReservedNodesOfferingsRequest, DescribeReservedNodesOfferingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns details of the service updates
      * </p>
      * 
@@ -833,7 +899,10 @@ public interface AmazonMemoryDBAsync extends AmazonMemoryDB {
 
     /**
      * <p>
-     * Used to failover a shard
+     * Used to failover a shard. This API is designed for testing the behavior of your application in case of MemoryDB
+     * failover. It is not designed to be used as a production-level tool for initiating a failover to overcome a
+     * problem you may have with the cluster. Moreover, in certain conditions such as large scale operational events,
+     * Amazon may block this API.
      * </p>
      * 
      * @param failoverShardRequest
@@ -846,7 +915,10 @@ public interface AmazonMemoryDBAsync extends AmazonMemoryDB {
 
     /**
      * <p>
-     * Used to failover a shard
+     * Used to failover a shard. This API is designed for testing the behavior of your application in case of MemoryDB
+     * failover. It is not designed to be used as a production-level tool for initiating a failover to overcome a
+     * problem you may have with the cluster. Moreover, in certain conditions such as large scale operational events,
+     * Amazon may block this API.
      * </p>
      * 
      * @param failoverShardRequest
@@ -935,6 +1007,43 @@ public interface AmazonMemoryDBAsync extends AmazonMemoryDB {
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to purchase a reserved node offering. Reserved nodes are not eligible for cancellation and are
+     * non-refundable.
+     * </p>
+     * 
+     * @param purchaseReservedNodesOfferingRequest
+     * @return A Java Future containing the result of the PurchaseReservedNodesOffering operation returned by the
+     *         service.
+     * @sample AmazonMemoryDBAsync.PurchaseReservedNodesOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseReservedNodesOfferingResult> purchaseReservedNodesOfferingAsync(
+            PurchaseReservedNodesOfferingRequest purchaseReservedNodesOfferingRequest);
+
+    /**
+     * <p>
+     * Allows you to purchase a reserved node offering. Reserved nodes are not eligible for cancellation and are
+     * non-refundable.
+     * </p>
+     * 
+     * @param purchaseReservedNodesOfferingRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PurchaseReservedNodesOffering operation returned by the
+     *         service.
+     * @sample AmazonMemoryDBAsyncHandler.PurchaseReservedNodesOffering
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/memorydb-2021-01-01/PurchaseReservedNodesOffering"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PurchaseReservedNodesOfferingResult> purchaseReservedNodesOfferingAsync(
+            PurchaseReservedNodesOfferingRequest purchaseReservedNodesOfferingRequest,
+            com.amazonaws.handlers.AsyncHandler<PurchaseReservedNodesOfferingRequest, PurchaseReservedNodesOfferingResult> asyncHandler);
 
     /**
      * <p>

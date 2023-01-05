@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,12 +33,14 @@ public class ComponentTypeSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentTypeId").build();
     private static final MarshallingInfo<java.util.Date> CREATIONDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> UPDATEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
-    private static final MarshallingInfo<java.util.Date> UPDATEDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateDateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> COMPONENTTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentTypeName").build();
 
     private static final ComponentTypeSummaryMarshaller instance = new ComponentTypeSummaryMarshaller();
 
@@ -59,9 +61,10 @@ public class ComponentTypeSummaryMarshaller {
             protocolMarshaller.marshall(componentTypeSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(componentTypeSummary.getComponentTypeId(), COMPONENTTYPEID_BINDING);
             protocolMarshaller.marshall(componentTypeSummary.getCreationDateTime(), CREATIONDATETIME_BINDING);
+            protocolMarshaller.marshall(componentTypeSummary.getUpdateDateTime(), UPDATEDATETIME_BINDING);
             protocolMarshaller.marshall(componentTypeSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(componentTypeSummary.getStatus(), STATUS_BINDING);
-            protocolMarshaller.marshall(componentTypeSummary.getUpdateDateTime(), UPDATEDATETIME_BINDING);
+            protocolMarshaller.marshall(componentTypeSummary.getComponentTypeName(), COMPONENTTYPENAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

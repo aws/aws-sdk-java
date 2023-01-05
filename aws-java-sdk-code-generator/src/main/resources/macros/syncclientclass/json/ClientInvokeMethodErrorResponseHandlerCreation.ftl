@@ -9,5 +9,8 @@
            <#if customizationConfig.customErrorCodeFieldName?? >
                .withCustomErrorCodeFieldName("${customizationConfig.customErrorCodeFieldName}")
            </#if>
+           <#if metadata.awsQueryCompatible?? >
+               .withAwsQueryCompatible(true)
+           </#if>
        );
 </#macro>

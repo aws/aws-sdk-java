@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,9 @@ public enum AggregationType {
     AWS_EC2_INSTANCE("AWS_EC2_INSTANCE"),
     AWS_ECR_CONTAINER("AWS_ECR_CONTAINER"),
     IMAGE_LAYER("IMAGE_LAYER"),
-    ACCOUNT("ACCOUNT");
+    ACCOUNT("ACCOUNT"),
+    AWS_LAMBDA_FUNCTION("AWS_LAMBDA_FUNCTION"),
+    LAMBDA_LAYER("LAMBDA_LAYER");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,14 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private java.util.Date lastUpdateTime;
+    /**
+     * <p>
+     * The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     * applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.
+     * </p>
+     */
+    private String inputType;
 
     /**
      * <p>
@@ -302,6 +310,81 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     * applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.
+     * </p>
+     * 
+     * @param inputType
+     *        The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     *        applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     *        transcriptions.
+     * @see InputType
+     */
+
+    public void setInputType(String inputType) {
+        this.inputType = inputType;
+    }
+
+    /**
+     * <p>
+     * The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     * applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.
+     * </p>
+     * 
+     * @return The input type associated with the specified category. <code>POST_CALL</code> refers to a category that
+     *         is applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to
+     *         streaming transcriptions.
+     * @see InputType
+     */
+
+    public String getInputType() {
+        return this.inputType;
+    }
+
+    /**
+     * <p>
+     * The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     * applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.
+     * </p>
+     * 
+     * @param inputType
+     *        The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     *        applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     *        transcriptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputType
+     */
+
+    public CategoryProperties withInputType(String inputType) {
+        setInputType(inputType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     * applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     * transcriptions.
+     * </p>
+     * 
+     * @param inputType
+     *        The input type associated with the specified category. <code>POST_CALL</code> refers to a category that is
+     *        applied to batch transcriptions; <code>REAL_TIME</code> refers to a category that is applied to streaming
+     *        transcriptions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputType
+     */
+
+    public CategoryProperties withInputType(InputType inputType) {
+        this.inputType = inputType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -320,7 +403,9 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
         if (getCreateTime() != null)
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getLastUpdateTime() != null)
-            sb.append("LastUpdateTime: ").append(getLastUpdateTime());
+            sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
+        if (getInputType() != null)
+            sb.append("InputType: ").append(getInputType());
         sb.append("}");
         return sb.toString();
     }
@@ -351,6 +436,10 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
             return false;
+        if (other.getInputType() == null ^ this.getInputType() == null)
+            return false;
+        if (other.getInputType() != null && other.getInputType().equals(this.getInputType()) == false)
+            return false;
         return true;
     }
 
@@ -363,6 +452,7 @@ public class CategoryProperties implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getInputType() == null) ? 0 : getInputType().hashCode());
         return hashCode;
     }
 

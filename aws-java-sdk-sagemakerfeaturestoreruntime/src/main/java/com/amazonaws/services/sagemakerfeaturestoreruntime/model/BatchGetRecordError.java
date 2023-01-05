@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class BatchGetRecordError implements Serializable, Cloneable, StructuredP
      * The error code of an error that has occured when attempting to retrieve a batch of Records. For more information
      * on errors, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"
-     * > Errors</a>.
+     * >Errors</a>.
      * </p>
      */
     private String errorCode;
@@ -148,14 +148,14 @@ public class BatchGetRecordError implements Serializable, Cloneable, StructuredP
      * The error code of an error that has occured when attempting to retrieve a batch of Records. For more information
      * on errors, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"
-     * > Errors</a>.
+     * >Errors</a>.
      * </p>
      * 
      * @param errorCode
      *        The error code of an error that has occured when attempting to retrieve a batch of Records. For more
      *        information on errors, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"
-     *        > Errors</a>.
+     *        >Errors</a>.
      */
 
     public void setErrorCode(String errorCode) {
@@ -167,13 +167,13 @@ public class BatchGetRecordError implements Serializable, Cloneable, StructuredP
      * The error code of an error that has occured when attempting to retrieve a batch of Records. For more information
      * on errors, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"
-     * > Errors</a>.
+     * >Errors</a>.
      * </p>
      * 
      * @return The error code of an error that has occured when attempting to retrieve a batch of Records. For more
      *         information on errors, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"
-     *         > Errors</a>.
+     *         >Errors</a>.
      */
 
     public String getErrorCode() {
@@ -185,14 +185,14 @@ public class BatchGetRecordError implements Serializable, Cloneable, StructuredP
      * The error code of an error that has occured when attempting to retrieve a batch of Records. For more information
      * on errors, see <a href=
      * "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"
-     * > Errors</a>.
+     * >Errors</a>.
      * </p>
      * 
      * @param errorCode
      *        The error code of an error that has occured when attempting to retrieve a batch of Records. For more
      *        information on errors, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_GetRecord.html#API_feature_store_GetRecord_Errors"
-     *        > Errors</a>.
+     *        >Errors</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

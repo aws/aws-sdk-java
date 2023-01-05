@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -377,8 +377,7 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
-     * Creates and returns a URL that you can use to connect to an application's extension. Currently, the only
-     * available extension is the Apache Flink dashboard.
+     * Creates and returns a URL that you can use to connect to an application's extension.
      * </p>
      * <p>
      * The IAM role or user used to call this API defines the permissions to access the extension. After the presigned
@@ -409,8 +408,7 @@ public interface AmazonKinesisAnalyticsV2Async extends AmazonKinesisAnalyticsV2 
 
     /**
      * <p>
-     * Creates and returns a URL that you can use to connect to an application's extension. Currently, the only
-     * available extension is the Apache Flink dashboard.
+     * Creates and returns a URL that you can use to connect to an application's extension.
      * </p>
      * <p>
      * The IAM role or user used to call this API defines the permissions to access the extension. After the presigned

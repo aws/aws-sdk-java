@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class BucketMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("errorMessage").build();
     private static final MarshallingInfo<StructuredPojo> JOBDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobDetails").build();
+    private static final MarshallingInfo<java.util.Date> LASTAUTOMATEDDISCOVERYTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastAutomatedDiscoveryTime").timestampFormat("iso8601").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdated").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Long> OBJECTCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +62,8 @@ public class BucketMetadataMarshaller {
             .marshallLocationName("region").build();
     private static final MarshallingInfo<StructuredPojo> REPLICATIONDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationDetails").build();
+    private static final MarshallingInfo<Integer> SENSITIVITYSCORE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sensitivityScore").build();
     private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serverSideEncryption").build();
     private static final MarshallingInfo<String> SHAREDACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -103,12 +107,14 @@ public class BucketMetadataMarshaller {
             protocolMarshaller.marshall(bucketMetadata.getErrorCode(), ERRORCODE_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getJobDetails(), JOBDETAILS_BINDING);
+            protocolMarshaller.marshall(bucketMetadata.getLastAutomatedDiscoveryTime(), LASTAUTOMATEDDISCOVERYTIME_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getObjectCount(), OBJECTCOUNT_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getObjectCountByEncryptionType(), OBJECTCOUNTBYENCRYPTIONTYPE_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getPublicAccess(), PUBLICACCESS_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getReplicationDetails(), REPLICATIONDETAILS_BINDING);
+            protocolMarshaller.marshall(bucketMetadata.getSensitivityScore(), SENSITIVITYSCORE_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getServerSideEncryption(), SERVERSIDEENCRYPTION_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getSharedAccess(), SHAREDACCESS_BINDING);
             protocolMarshaller.marshall(bucketMetadata.getSizeInBytes(), SIZEINBYTES_BINDING);

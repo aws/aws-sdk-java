@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all
  * cryptographic operations with a <a
- * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric
- * encryption KMS key</a>. Grant constraints are not applied to operations that do not support an encryption context,
- * such as cryptographic operations with HMAC KMS keys or asymmetric KMS keys, and management operations, such as
- * <a>DescribeKey</a> or <a>RetireGrant</a>.
+ * href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks">symmetric KMS
+ * key</a>. Grant constraints are not applied to operations that do not support an encryption context, such as
+ * cryptographic operations with asymmetric KMS keys and management operations, such as <a>DescribeKey</a> or
+ * <a>RetireGrant</a>.
  * </p>
  * <important>
  * <p>

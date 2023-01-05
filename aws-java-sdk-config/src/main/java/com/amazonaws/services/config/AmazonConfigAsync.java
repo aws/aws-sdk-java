@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -479,9 +479,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * organization.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator account can delete an organization Config rule. When calling
-     * this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
-     * permissions are added.
+     * Only a management account and a delegated administrator account can delete an organization Config rule. When
+     * calling this API with a delegated administrator, you must ensure Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
@@ -504,9 +504,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * organization.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator account can delete an organization Config rule. When calling
-     * this API with a delegated administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code>
-     * permissions are added.
+     * Only a management account and a delegated administrator account can delete an organization Config rule. When
+     * calling this API with a delegated administrator, you must ensure Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a rule
@@ -534,7 +534,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * member accounts in that organization.
      * </p>
      * <p>
-     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * Only a management account or a delegated administrator account can delete an organization conformance pack. When
      * calling this API with a delegated administrator, you must ensure Organizations
      * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
@@ -559,7 +559,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * member accounts in that organization.
      * </p>
      * <p>
-     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * Only a management account or a delegated administrator account can delete an organization conformance pack. When
      * calling this API with a delegated administrator, you must ensure Organizations
      * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
@@ -2557,7 +2557,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config
-     * rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with
+     * rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with
      * each rule.
      * </p>
      * 
@@ -2574,7 +2574,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config
-     * rules were used to evaluate the resource, when each rule was last used, and whether the resource complies with
+     * rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with
      * each rule.
      * </p>
      * 
@@ -3145,6 +3145,47 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Returns a summary of resource evaluation for the specified resource evaluation ID from the proactive rules that
+     * were run. The results indicate which evaluation context was used to evaluate the rules, which resource details
+     * were evaluated, the evaluation mode that was run, and whether the resource details comply with the configuration
+     * of the proactive rules.
+     * </p>
+     * 
+     * @param getResourceEvaluationSummaryRequest
+     * @return A Java Future containing the result of the GetResourceEvaluationSummary operation returned by the
+     *         service.
+     * @sample AmazonConfigAsync.GetResourceEvaluationSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(
+            GetResourceEvaluationSummaryRequest getResourceEvaluationSummaryRequest);
+
+    /**
+     * <p>
+     * Returns a summary of resource evaluation for the specified resource evaluation ID from the proactive rules that
+     * were run. The results indicate which evaluation context was used to evaluate the rules, which resource details
+     * were evaluated, the evaluation mode that was run, and whether the resource details comply with the configuration
+     * of the proactive rules.
+     * </p>
+     * 
+     * @param getResourceEvaluationSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceEvaluationSummary operation returned by the
+     *         service.
+     * @sample AmazonConfigAsyncHandler.GetResourceEvaluationSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceEvaluationSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(
+            GetResourceEvaluationSummaryRequest getResourceEvaluationSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceEvaluationSummaryRequest, GetResourceEvaluationSummaryResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the details of a specific stored query.
      * </p>
      * 
@@ -3230,7 +3271,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of
      * compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource
      * combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of
-     * your conformance packs, and can be used to identify, investigate, and understand the level of compliance in your
+     * your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your
      * conformance packs.
      * </p>
      * <note>
@@ -3254,7 +3295,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of
      * compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource
      * combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of
-     * your conformance packs, and can be used to identify, investigate, and understand the level of compliance in your
+     * your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your
      * conformance packs.
      * </p>
      * <note>
@@ -3334,6 +3375,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of proactive resource evaluations.
+     * </p>
+     * 
+     * @param listResourceEvaluationsRequest
+     * @return A Java Future containing the result of the ListResourceEvaluations operation returned by the service.
+     * @sample AmazonConfigAsync.ListResourceEvaluations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(ListResourceEvaluationsRequest listResourceEvaluationsRequest);
+
+    /**
+     * <p>
+     * Returns a list of proactive resource evaluations.
+     * </p>
+     * 
+     * @param listResourceEvaluationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceEvaluations operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.ListResourceEvaluations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListResourceEvaluations" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(ListResourceEvaluationsRequest listResourceEvaluationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceEvaluationsRequest, ListResourceEvaluationsResult> asyncHandler);
 
     /**
      * <p>
@@ -3680,10 +3752,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
-     * deployed in an account and a region and across Amazon Web Services Organization. For information on how many
-     * conformance packs you can have per account, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
-     * the Config Developer Guide.
+     * deployed in an account and a region and across an organization. For information on how many conformance packs you
+     * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+     * <b>Service Limits</b> </a> in the Config Developer Guide.
      * </p>
      * <p>
      * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
@@ -3691,8 +3762,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code> or
-     * <code>TemplateSSMDocumentDetails</code> parameters.
+     * You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code> or
+     * <code>TemplateSSMDocumentDetails</code>.
      * </p>
      * </note>
      * 
@@ -3707,10 +3778,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily
-     * deployed in an account and a region and across Amazon Web Services Organization. For information on how many
-     * conformance packs you can have per account, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in
-     * the Config Developer Guide.
+     * deployed in an account and a region and across an organization. For information on how many conformance packs you
+     * can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
+     * <b>Service Limits</b> </a> in the Config Developer Guide.
      * </p>
      * <p>
      * This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The
@@ -3718,8 +3788,8 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
-     * You must specify one and only one of the<code>TemplateS3Uri</code>, <code>TemplateBody</code> or
-     * <code>TemplateSSMDocumentDetails</code> parameters.
+     * You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code> or
+     * <code>TemplateSSMDocumentDetails</code>.
      * </p>
      * </note>
      * 
@@ -3873,14 +3943,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can create or update an organization Config rule. When
+     * Only a management account and a delegated administrator can create or update an organization Config rule. When
      * calling this API with a delegated administrator, you must ensure Organizations
      * <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated
      * administrators.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+     * service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated
      * administrator account of your organization. The service-linked role is created only when the role does not exist
      * in the caller account. Config verifies the existence of role with <code>GetRole</code> action.
      * </p>
@@ -3898,7 +3968,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
      * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
      * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
-     * need to create an Lambda function in the master account or a delegated administrator that the rule invokes to
+     * need to create an Lambda function in the management account or a delegated administrator that the rule invokes to
      * evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the
      * Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you
      * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
@@ -3937,14 +4007,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Limits</b> </a> in the <i>Config Developer Guide</i>.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can create or update an organization Config rule. When
+     * Only a management account and a delegated administrator can create or update an organization Config rule. When
      * calling this API with a delegated administrator, you must ensure Organizations
      * <code>ListDelegatedAdministrator</code> permissions are added. An organization can have up to 3 delegated
      * administrators.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+     * service-linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated
      * administrator account of your organization. The service-linked role is created only when the role does not exist
      * in the caller account. Config verifies the existence of role with <code>GetRole</code> action.
      * </p>
@@ -3962,7 +4032,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * href="https://github.com/aws-cloudformation/cloudformation-guard">Guard GitHub Repository</a>) is a
      * policy-as-code language that allows you to write policies that are enforced by Config Custom Policy rules. Lambda
      * uses custom code that you upload to evaluate a custom rule. If you are adding a new Custom Lambda rule, you first
-     * need to create an Lambda function in the master account or a delegated administrator that the rule invokes to
+     * need to create an Lambda function in the management account or a delegated administrator that the rule invokes to
      * evaluate your resources. You also need to create an IAM role in the managed account that can be assumed by the
      * Lambda function. When you use <code>PutOrganizationConfigRule</code> to add a Custom Lambda rule to Config, you
      * must specify the Amazon Resource Name (ARN) that Lambda assigns to the function.
@@ -4006,16 +4076,16 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * the Config Developer Guide.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
+     * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
      * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An
      * organization can have up to 3 delegated administrators.
      * </p>
      * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
      * <code>EnableAWSServiceAccess</code> action and creates a service-linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
-     * organization. The service-linked role is created only when the role does not exist in the caller account. To use
-     * this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of
+     * your organization. The service-linked role is created only when the role does not exist in the caller account. To
+     * use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
      * Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
@@ -4051,16 +4121,16 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * the Config Developer Guide.
      * </p>
      * <p>
-     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
+     * Only a management account and a delegated administrator can call this API. When calling this API with a delegated
      * administrator, you must ensure Organizations <code>ListDelegatedAdministrator</code> permissions are added. An
      * organization can have up to 3 delegated administrators.
      * </p>
      * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
      * <code>EnableAWSServiceAccess</code> action and creates a service-linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
-     * organization. The service-linked role is created only when the role does not exist in the caller account. To use
-     * this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the management or delegated administrator account of
+     * your organization. The service-linked role is created only when the role does not exist in the caller account. To
+     * use this API with delegated administrator, register a delegated administrator by calling Amazon Web Services
      * Organization <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
@@ -4186,6 +4256,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Config generates a remediation exception when a problem occurs executing a remediation action to a specific
      * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
      * </p>
+     * </note> <note>
+     * <p>
+     * To place an exception on an Amazon Web Services resource, ensure remediation is set as manual remediation.
+     * </p>
      * </note>
      * 
      * @param putRemediationExceptionsRequest
@@ -4205,6 +4279,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Config generates a remediation exception when a problem occurs executing a remediation action to a specific
      * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note> <note>
+     * <p>
+     * To place an exception on an Amazon Web Services resource, ensure remediation is set as manual remediation.
      * </p>
      * </note>
      * 
@@ -4700,6 +4778,53 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<StartRemediationExecutionResult> startRemediationExecutionAsync(
             StartRemediationExecutionRequest startRemediationExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StartRemediationExecutionRequest, StartRemediationExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply
+     * with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation
+     * context. It runs an execution against the resource details with all of the Config rules in your account that
+     * match with the specified proactive mode and resource type.
+     * </p>
+     * <note>
+     * <p>
+     * Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema.
+     * </p>
+     * </note>
+     * 
+     * @param startResourceEvaluationRequest
+     * @return A Java Future containing the result of the StartResourceEvaluation operation returned by the service.
+     * @sample AmazonConfigAsync.StartResourceEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(StartResourceEvaluationRequest startResourceEvaluationRequest);
+
+    /**
+     * <p>
+     * Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply
+     * with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation
+     * context. It runs an execution against the resource details with all of the Config rules in your account that
+     * match with the specified proactive mode and resource type.
+     * </p>
+     * <note>
+     * <p>
+     * Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate the resource type schema.
+     * </p>
+     * </note>
+     * 
+     * @param startResourceEvaluationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartResourceEvaluation operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.StartResourceEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/StartResourceEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(StartResourceEvaluationRequest startResourceEvaluationRequest,
+            com.amazonaws.handlers.AsyncHandler<StartResourceEvaluationRequest, StartResourceEvaluationResult> asyncHandler);
 
     /**
      * <p>

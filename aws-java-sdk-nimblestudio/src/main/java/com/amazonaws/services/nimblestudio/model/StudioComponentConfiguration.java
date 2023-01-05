@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class StudioComponentConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+     * The configuration for a Directory Service for Microsoft Active Directory studio resource.
      * </p>
      */
     private ActiveDirectoryConfiguration activeDirectoryConfiguration;
@@ -55,11 +55,11 @@ public class StudioComponentConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+     * The configuration for a Directory Service for Microsoft Active Directory studio resource.
      * </p>
      * 
      * @param activeDirectoryConfiguration
-     *        The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+     *        The configuration for a Directory Service for Microsoft Active Directory studio resource.
      */
 
     public void setActiveDirectoryConfiguration(ActiveDirectoryConfiguration activeDirectoryConfiguration) {
@@ -68,10 +68,10 @@ public class StudioComponentConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+     * The configuration for a Directory Service for Microsoft Active Directory studio resource.
      * </p>
      * 
-     * @return The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+     * @return The configuration for a Directory Service for Microsoft Active Directory studio resource.
      */
 
     public ActiveDirectoryConfiguration getActiveDirectoryConfiguration() {
@@ -80,11 +80,11 @@ public class StudioComponentConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+     * The configuration for a Directory Service for Microsoft Active Directory studio resource.
      * </p>
      * 
      * @param activeDirectoryConfiguration
-     *        The configuration for a Microsoft Active Directory (Microsoft AD) studio resource.
+     *        The configuration for a Directory Service for Microsoft Active Directory studio resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,10 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteComponentTypeRequestMarshaller {
 
-    private static final MarshallingInfo<String> COMPONENTTYPEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("componentTypeId").build();
     private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("workspaceId").build();
+    private static final MarshallingInfo<String> COMPONENTTYPEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("componentTypeId").build();
 
     private static final DeleteComponentTypeRequestMarshaller instance = new DeleteComponentTypeRequestMarshaller();
 
@@ -48,8 +48,8 @@ public class DeleteComponentTypeRequestMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(deleteComponentTypeRequest.getComponentTypeId(), COMPONENTTYPEID_BINDING);
             protocolMarshaller.marshall(deleteComponentTypeRequest.getWorkspaceId(), WORKSPACEID_BINDING);
+            protocolMarshaller.marshall(deleteComponentTypeRequest.getComponentTypeId(), COMPONENTTYPEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

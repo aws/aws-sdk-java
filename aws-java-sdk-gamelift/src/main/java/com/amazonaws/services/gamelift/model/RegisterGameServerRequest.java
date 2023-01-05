@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,7 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      */
     private String gameServerGroupName;
@@ -56,20 +55,18 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      */
     private String gameServerData;
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A unique identifier for the game server group where the game server is running. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group where the game server is running.
      */
 
     public void setGameServerGroupName(String gameServerGroupName) {
@@ -78,12 +75,10 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      * 
-     * @return A unique identifier for the game server group where the game server is running. Use either the
-     *         <a>GameServerGroup</a> name or ARN value.
+     * @return A unique identifier for the game server group where the game server is running.
      */
 
     public String getGameServerGroupName() {
@@ -92,13 +87,11 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A unique identifier for the game server group where the game server is running. Use either the
-     * <a>GameServerGroup</a> name or ARN value.
+     * A unique identifier for the game server group where the game server is running.
      * </p>
      * 
      * @param gameServerGroupName
-     *        A unique identifier for the game server group where the game server is running. Use either the
-     *        <a>GameServerGroup</a> name or ARN value.
+     *        A unique identifier for the game server group where the game server is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,13 +244,12 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
-     *        <a>ClaimGameServer</a>.
+     *        client or service when it requests information on game servers.
      */
 
     public void setGameServerData(String gameServerData) {
@@ -267,12 +259,11 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      * 
      * @return A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *         client or service when it requests information on game servers using <a>ListGameServers</a> or
-     *         <a>ClaimGameServer</a>.
+     *         client or service when it requests information on game servers.
      */
 
     public String getGameServerData() {
@@ -282,13 +273,12 @@ public class RegisterGameServerRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A set of custom game server properties, formatted as a single string value. This data is passed to a game client
-     * or service when it requests information on game servers using <a>ListGameServers</a> or <a>ClaimGameServer</a>.
+     * or service when it requests information on game servers.
      * </p>
      * 
      * @param gameServerData
      *        A set of custom game server properties, formatted as a single string value. This data is passed to a game
-     *        client or service when it requests information on game servers using <a>ListGameServers</a> or
-     *        <a>ClaimGameServer</a>.
+     *        client or service when it requests information on game servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

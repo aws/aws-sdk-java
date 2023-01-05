@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,8 @@ public class UpdateFunctionConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageConfig").build();
     private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EphemeralStorage").build();
+    private static final MarshallingInfo<StructuredPojo> SNAPSTART_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapStart").build();
 
     private static final UpdateFunctionConfigurationRequestMarshaller instance = new UpdateFunctionConfigurationRequestMarshaller();
 
@@ -96,6 +98,7 @@ public class UpdateFunctionConfigurationRequestMarshaller {
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getFileSystemConfigs(), FILESYSTEMCONFIGS_BINDING);
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getImageConfig(), IMAGECONFIG_BINDING);
             protocolMarshaller.marshall(updateFunctionConfigurationRequest.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
+            protocolMarshaller.marshall(updateFunctionConfigurationRequest.getSnapStart(), SNAPSTART_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,8 @@ public enum RuntimeEnvironment {
     ZEPPELINFLINK1_0("ZEPPELIN-FLINK-1_0"),
     FLINK1_11("FLINK-1_11"),
     FLINK1_13("FLINK-1_13"),
-    ZEPPELINFLINK2_0("ZEPPELIN-FLINK-2_0");
+    ZEPPELINFLINK2_0("ZEPPELIN-FLINK-2_0"),
+    FLINK1_15("FLINK-1_15");
 
     private String value;
 

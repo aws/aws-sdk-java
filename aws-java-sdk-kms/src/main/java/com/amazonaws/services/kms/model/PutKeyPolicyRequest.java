@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -113,7 +113,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
-     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
      * the <i> <i>Identity and Access Management User Guide</i> </i>.
      * </p>
@@ -402,7 +402,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
-     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
      * the <i> <i>Identity and Access Management User Guide</i> </i>.
      * </p>
@@ -461,7 +461,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about key policies, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in
-     *        the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document,
+     *        the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document,
      *        see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy
      *        Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
      */
@@ -525,7 +525,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
-     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
      * the <i> <i>Identity and Access Management User Guide</i> </i>.
      * </p>
@@ -583,9 +583,9 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         <p>
      *         For information about key policies, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in
-     *         the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy
-     *         document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM
-     *         JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
+     *         the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document,
+     *         see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON
+     *         Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
      */
 
     public String getPolicy() {
@@ -647,7 +647,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * For information about key policies, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the
-     * <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document, see the <a
+     * <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in
      * the <i> <i>Identity and Access Management User Guide</i> </i>.
      * </p>
@@ -706,7 +706,7 @@ public class PutKeyPolicyRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        <p>
      *        For information about key policies, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in
-     *        the <i>Key Management Service Developer Guide</i>. For help writing and formatting a JSON policy document,
+     *        the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document,
      *        see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy
      *        Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
-     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
-     * name.
+     * The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web
+     * Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple
+     * delivery streams with the same name.
      * </p>
      */
     private String deliveryStreamName;
@@ -90,7 +90,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private ElasticsearchDestinationConfiguration elasticsearchDestinationConfiguration;
-
+    /**
+     * <p>
+     * The destination in Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     */
     private AmazonopensearchserviceDestinationConfiguration amazonopensearchserviceDestinationConfiguration;
     /**
      * <p>
@@ -107,29 +111,35 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     private HttpEndpointDestinationConfiguration httpEndpointDestinationConfiguration;
     /**
      * <p>
-     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
-     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
-     * information that can help you distinguish the delivery stream. For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to
+     * Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or
+     * other types of information that can help you distinguish the delivery stream. For more information about tags,
+     * see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     * Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.
      * </p>
      * <p>
      * You can specify up to 50 tags when creating a delivery stream.
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     */
+    private AmazonOpenSearchServerlessDestinationConfiguration amazonOpenSearchServerlessDestinationConfiguration;
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
-     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
-     * name.
+     * The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web
+     * Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple
+     * delivery streams with the same name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the
-     *        delivery streams are in different accounts or different Regions, you can have multiple delivery streams
-     *        with the same name.
+     *        The name of the delivery stream. This name must be unique per Amazon Web Services account in the same
+     *        Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you
+     *        can have multiple delivery streams with the same name.
      */
 
     public void setDeliveryStreamName(String deliveryStreamName) {
@@ -138,14 +148,14 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
-     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
-     * name.
+     * The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web
+     * Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple
+     * delivery streams with the same name.
      * </p>
      * 
-     * @return The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the
-     *         delivery streams are in different accounts or different Regions, you can have multiple delivery streams
-     *         with the same name.
+     * @return The name of the delivery stream. This name must be unique per Amazon Web Services account in the same
+     *         Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you
+     *         can have multiple delivery streams with the same name.
      */
 
     public String getDeliveryStreamName() {
@@ -154,15 +164,15 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the delivery
-     * streams are in different accounts or different Regions, you can have multiple delivery streams with the same
-     * name.
+     * The name of the delivery stream. This name must be unique per Amazon Web Services account in the same Amazon Web
+     * Services Region. If the delivery streams are in different accounts or different Regions, you can have multiple
+     * delivery streams with the same name.
      * </p>
      * 
      * @param deliveryStreamName
-     *        The name of the delivery stream. This name must be unique per AWS account in the same AWS Region. If the
-     *        delivery streams are in different accounts or different Regions, you can have multiple delivery streams
-     *        with the same name.
+     *        The name of the delivery stream. This name must be unique per Amazon Web Services account in the same
+     *        Amazon Web Services Region. If the delivery streams are in different accounts or different Regions, you
+     *        can have multiple delivery streams with the same name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,7 +589,12 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The destination in Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     * 
      * @param amazonopensearchserviceDestinationConfiguration
+     *        The destination in Amazon OpenSearch Service. You can specify only one destination.
      */
 
     public void setAmazonopensearchserviceDestinationConfiguration(
@@ -588,7 +603,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * The destination in Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     * 
+     * @return The destination in Amazon OpenSearch Service. You can specify only one destination.
      */
 
     public AmazonopensearchserviceDestinationConfiguration getAmazonopensearchserviceDestinationConfiguration() {
@@ -596,7 +615,12 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The destination in Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     * 
      * @param amazonopensearchserviceDestinationConfiguration
+     *        The destination in Amazon OpenSearch Service. You can specify only one destination.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -694,21 +718,22 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
-     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
-     * information that can help you distinguish the delivery stream. For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to
+     * Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or
+     * other types of information that can help you distinguish the delivery stream. For more information about tags,
+     * see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     * Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.
      * </p>
      * <p>
      * You can specify up to 50 tags when creating a delivery stream.
      * </p>
      * 
      * @return A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
-     *         to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
-     *         types of information that can help you distinguish the delivery stream. For more information about tags,
-     *         see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
-     *         Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *         to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and
+     *         descriptions or other types of information that can help you distinguish the delivery stream. For more
+     *         information about tags, see <a
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *         Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
      *         <p>
      *         You can specify up to 50 tags when creating a delivery stream.
      */
@@ -719,11 +744,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
-     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
-     * information that can help you distinguish the delivery stream. For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to
+     * Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or
+     * other types of information that can help you distinguish the delivery stream. For more information about tags,
+     * see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     * Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.
      * </p>
      * <p>
      * You can specify up to 50 tags when creating a delivery stream.
@@ -731,10 +756,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param tags
      *        A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
-     *        to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
-     *        types of information that can help you distinguish the delivery stream. For more information about tags,
-     *        see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *        to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and
+     *        descriptions or other types of information that can help you distinguish the delivery stream. For more
+     *        information about tags, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
      *        <p>
      *        You can specify up to 50 tags when creating a delivery stream.
      */
@@ -750,11 +776,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
-     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
-     * information that can help you distinguish the delivery stream. For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to
+     * Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or
+     * other types of information that can help you distinguish the delivery stream. For more information about tags,
+     * see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     * Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.
      * </p>
      * <p>
      * You can specify up to 50 tags when creating a delivery stream.
@@ -767,10 +793,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param tags
      *        A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
-     *        to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
-     *        types of information that can help you distinguish the delivery stream. For more information about tags,
-     *        see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *        to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and
+     *        descriptions or other types of information that can help you distinguish the delivery stream. For more
+     *        information about tags, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
      *        <p>
      *        You can specify up to 50 tags when creating a delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -788,11 +815,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to AWS
-     * resources. Tags are metadata. For example, you can add friendly names and descriptions or other types of
-     * information that can help you distinguish the delivery stream. For more information about tags, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the AWS Billing and Cost Management User Guide.
+     * A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign to
+     * Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and descriptions or
+     * other types of information that can help you distinguish the delivery stream. For more information about tags,
+     * see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     * Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.
      * </p>
      * <p>
      * You can specify up to 50 tags when creating a delivery stream.
@@ -800,10 +827,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param tags
      *        A set of tags to assign to the delivery stream. A tag is a key-value pair that you can define and assign
-     *        to AWS resources. Tags are metadata. For example, you can add friendly names and descriptions or other
-     *        types of information that can help you distinguish the delivery stream. For more information about tags,
-     *        see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     *        to Amazon Web Services resources. Tags are metadata. For example, you can add friendly names and
+     *        descriptions or other types of information that can help you distinguish the delivery stream. For more
+     *        information about tags, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the Amazon Web Services Billing and Cost Management User Guide.</p>
      *        <p>
      *        You can specify up to 50 tags when creating a delivery stream.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -811,6 +839,51 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
 
     public CreateDeliveryStreamRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     * 
+     * @param amazonOpenSearchServerlessDestinationConfiguration
+     *        The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one
+     *        destination.
+     */
+
+    public void setAmazonOpenSearchServerlessDestinationConfiguration(
+            AmazonOpenSearchServerlessDestinationConfiguration amazonOpenSearchServerlessDestinationConfiguration) {
+        this.amazonOpenSearchServerlessDestinationConfiguration = amazonOpenSearchServerlessDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     * 
+     * @return The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one
+     *         destination.
+     */
+
+    public AmazonOpenSearchServerlessDestinationConfiguration getAmazonOpenSearchServerlessDestinationConfiguration() {
+        return this.amazonOpenSearchServerlessDestinationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one destination.
+     * </p>
+     * 
+     * @param amazonOpenSearchServerlessDestinationConfiguration
+     *        The destination in the Serverless offering for Amazon OpenSearch Service. You can specify only one
+     *        destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeliveryStreamRequest withAmazonOpenSearchServerlessDestinationConfiguration(
+            AmazonOpenSearchServerlessDestinationConfiguration amazonOpenSearchServerlessDestinationConfiguration) {
+        setAmazonOpenSearchServerlessDestinationConfiguration(amazonOpenSearchServerlessDestinationConfiguration);
         return this;
     }
 
@@ -849,7 +922,9 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         if (getHttpEndpointDestinationConfiguration() != null)
             sb.append("HttpEndpointDestinationConfiguration: ").append(getHttpEndpointDestinationConfiguration()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAmazonOpenSearchServerlessDestinationConfiguration() != null)
+            sb.append("AmazonOpenSearchServerlessDestinationConfiguration: ").append(getAmazonOpenSearchServerlessDestinationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -920,6 +995,11 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAmazonOpenSearchServerlessDestinationConfiguration() == null ^ this.getAmazonOpenSearchServerlessDestinationConfiguration() == null)
+            return false;
+        if (other.getAmazonOpenSearchServerlessDestinationConfiguration() != null
+                && other.getAmazonOpenSearchServerlessDestinationConfiguration().equals(this.getAmazonOpenSearchServerlessDestinationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -942,6 +1022,8 @@ public class CreateDeliveryStreamRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getSplunkDestinationConfiguration() == null) ? 0 : getSplunkDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getHttpEndpointDestinationConfiguration() == null) ? 0 : getHttpEndpointDestinationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode
+                + ((getAmazonOpenSearchServerlessDestinationConfiguration() == null) ? 0 : getAmazonOpenSearchServerlessDestinationConfiguration().hashCode());
         return hashCode;
     }
 

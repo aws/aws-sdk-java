@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class RelevanceFeedback implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the search result that the user provided relevance feedback for.
+     * The identifier of the search result that the user provided relevance feedback for.
      * </p>
      */
     private String resultId;
@@ -44,11 +44,11 @@ public class RelevanceFeedback implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the search result that the user provided relevance feedback for.
+     * The identifier of the search result that the user provided relevance feedback for.
      * </p>
      * 
      * @param resultId
-     *        The unique identifier of the search result that the user provided relevance feedback for.
+     *        The identifier of the search result that the user provided relevance feedback for.
      */
 
     public void setResultId(String resultId) {
@@ -57,10 +57,10 @@ public class RelevanceFeedback implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the search result that the user provided relevance feedback for.
+     * The identifier of the search result that the user provided relevance feedback for.
      * </p>
      * 
-     * @return The unique identifier of the search result that the user provided relevance feedback for.
+     * @return The identifier of the search result that the user provided relevance feedback for.
      */
 
     public String getResultId() {
@@ -69,11 +69,11 @@ public class RelevanceFeedback implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the search result that the user provided relevance feedback for.
+     * The identifier of the search result that the user provided relevance feedback for.
      * </p>
      * 
      * @param resultId
-     *        The unique identifier of the search result that the user provided relevance feedback for.
+     *        The identifier of the search result that the user provided relevance feedback for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

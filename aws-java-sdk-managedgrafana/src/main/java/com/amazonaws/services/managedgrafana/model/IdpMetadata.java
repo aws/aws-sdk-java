@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A structure containing the identity provider (IdP) metadata used to integrate the identity provider with this
  * workspace. You can specify the metadata either by providing a URL to its location in the <code>url</code> parameter,
- * or by specifying the full metadata in XML format in the <code>xml</code> parameter.
+ * or by specifying the full metadata in XML format in the <code>xml</code> parameter. Specifying both will cause an
+ * error.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/IdpMetadata" target="_top">AWS API
@@ -32,24 +33,24 @@ public class IdpMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the location containing the metadata.
+     * The URL of the location containing the IdP metadata.
      * </p>
      */
     private String url;
     /**
      * <p>
-     * The actual full metadata file, in XML format.
+     * The full IdP metadata, in XML format.
      * </p>
      */
     private String xml;
 
     /**
      * <p>
-     * The URL of the location containing the metadata.
+     * The URL of the location containing the IdP metadata.
      * </p>
      * 
      * @param url
-     *        The URL of the location containing the metadata.
+     *        The URL of the location containing the IdP metadata.
      */
 
     public void setUrl(String url) {
@@ -58,10 +59,10 @@ public class IdpMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the location containing the metadata.
+     * The URL of the location containing the IdP metadata.
      * </p>
      * 
-     * @return The URL of the location containing the metadata.
+     * @return The URL of the location containing the IdP metadata.
      */
 
     public String getUrl() {
@@ -70,11 +71,11 @@ public class IdpMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of the location containing the metadata.
+     * The URL of the location containing the IdP metadata.
      * </p>
      * 
      * @param url
-     *        The URL of the location containing the metadata.
+     *        The URL of the location containing the IdP metadata.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,11 +86,11 @@ public class IdpMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The actual full metadata file, in XML format.
+     * The full IdP metadata, in XML format.
      * </p>
      * 
      * @param xml
-     *        The actual full metadata file, in XML format.
+     *        The full IdP metadata, in XML format.
      */
 
     public void setXml(String xml) {
@@ -98,10 +99,10 @@ public class IdpMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The actual full metadata file, in XML format.
+     * The full IdP metadata, in XML format.
      * </p>
      * 
-     * @return The actual full metadata file, in XML format.
+     * @return The full IdP metadata, in XML format.
      */
 
     public String getXml() {
@@ -110,11 +111,11 @@ public class IdpMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The actual full metadata file, in XML format.
+     * The full IdP metadata, in XML format.
      * </p>
      * 
      * @param xml
-     *        The actual full metadata file, in XML format.
+     *        The full IdP metadata, in XML format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

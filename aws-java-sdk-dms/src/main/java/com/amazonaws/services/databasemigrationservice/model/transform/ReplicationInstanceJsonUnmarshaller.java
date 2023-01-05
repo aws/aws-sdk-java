@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,6 +131,12 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
 
                     .unmarshall(context));
                 }
+                if (context.testExpression("ReplicationInstanceIpv6Addresses", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance.setReplicationInstanceIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("PubliclyAccessible", targetDepth)) {
                     context.nextToken();
                     replicationInstance.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -146,6 +152,10 @@ public class ReplicationInstanceJsonUnmarshaller implements Unmarshaller<Replica
                 if (context.testExpression("DnsNameServers", targetDepth)) {
                     context.nextToken();
                     replicationInstance.setDnsNameServers(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("NetworkType", targetDepth)) {
+                    context.nextToken();
+                    replicationInstance.setNetworkType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

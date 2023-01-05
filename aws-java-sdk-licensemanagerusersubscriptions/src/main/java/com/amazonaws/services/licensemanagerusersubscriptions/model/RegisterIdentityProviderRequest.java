@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,13 @@ public class RegisterIdentityProviderRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String product;
+    /**
+     * <p>
+     * The registered identity provider’s product related configuration settings such as the subnets to provision VPC
+     * endpoints.
+     * </p>
+     */
+    private Settings settings;
 
     /**
      * <p>
@@ -120,6 +127,52 @@ public class RegisterIdentityProviderRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The registered identity provider’s product related configuration settings such as the subnets to provision VPC
+     * endpoints.
+     * </p>
+     * 
+     * @param settings
+     *        The registered identity provider’s product related configuration settings such as the subnets to provision
+     *        VPC endpoints.
+     */
+
+    public void setSettings(Settings settings) {
+        this.settings = settings;
+    }
+
+    /**
+     * <p>
+     * The registered identity provider’s product related configuration settings such as the subnets to provision VPC
+     * endpoints.
+     * </p>
+     * 
+     * @return The registered identity provider’s product related configuration settings such as the subnets to
+     *         provision VPC endpoints.
+     */
+
+    public Settings getSettings() {
+        return this.settings;
+    }
+
+    /**
+     * <p>
+     * The registered identity provider’s product related configuration settings such as the subnets to provision VPC
+     * endpoints.
+     * </p>
+     * 
+     * @param settings
+     *        The registered identity provider’s product related configuration settings such as the subnets to provision
+     *        VPC endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterIdentityProviderRequest withSettings(Settings settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -134,7 +187,9 @@ public class RegisterIdentityProviderRequest extends com.amazonaws.AmazonWebServ
         if (getIdentityProvider() != null)
             sb.append("IdentityProvider: ").append(getIdentityProvider()).append(",");
         if (getProduct() != null)
-            sb.append("Product: ").append(getProduct());
+            sb.append("Product: ").append(getProduct()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +212,10 @@ public class RegisterIdentityProviderRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getProduct() != null && other.getProduct().equals(this.getProduct()) == false)
             return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +226,7 @@ public class RegisterIdentityProviderRequest extends com.amazonaws.AmazonWebServ
 
         hashCode = prime * hashCode + ((getIdentityProvider() == null) ? 0 : getIdentityProvider().hashCode());
         hashCode = prime * hashCode + ((getProduct() == null) ? 0 : getProduct().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }
 

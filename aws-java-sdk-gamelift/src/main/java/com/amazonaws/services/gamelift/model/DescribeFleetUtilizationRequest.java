@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetUtilization" target="_top">AWS
  *      API Documentation</a>
@@ -30,8 +27,8 @@ public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-     * value. To retrieve attributes for all current fleets, do not include this parameter.
+     * A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value.
+     * To retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      */
     private java.util.List<String> fleetIds;
@@ -53,11 +50,11 @@ public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-     * value. To retrieve attributes for all current fleets, do not include this parameter.
+     * A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value.
+     * To retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * 
-     * @return A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or
+     * @return A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or
      *         ARN value. To retrieve attributes for all current fleets, do not include this parameter.
      */
 
@@ -67,13 +64,13 @@ public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-     * value. To retrieve attributes for all current fleets, do not include this parameter.
+     * A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value.
+     * To retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or
-     *        ARN value. To retrieve attributes for all current fleets, do not include this parameter.
+     *        A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN
+     *        value. To retrieve attributes for all current fleets, do not include this parameter.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -87,8 +84,8 @@ public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-     * value. To retrieve attributes for all current fleets, do not include this parameter.
+     * A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value.
+     * To retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,8 +94,8 @@ public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or
-     *        ARN value. To retrieve attributes for all current fleets, do not include this parameter.
+     *        A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN
+     *        value. To retrieve attributes for all current fleets, do not include this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +111,13 @@ public class DescribeFleetUtilizationRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or ARN
-     * value. To retrieve attributes for all current fleets, do not include this parameter.
+     * A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN value.
+     * To retrieve attributes for all current fleets, do not include this parameter.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for the fleet(s) to retrieve utilization data for. You can use either the fleet ID or
-     *        ARN value. To retrieve attributes for all current fleets, do not include this parameter.
+     *        A unique identifier for the fleet to retrieve utilization data for. You can use either the fleet ID or ARN
+     *        value. To retrieve attributes for all current fleets, do not include this parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

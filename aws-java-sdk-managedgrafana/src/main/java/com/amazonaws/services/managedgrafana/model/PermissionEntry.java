@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure containing the identity of one user or group and the <code>Admin</code> or <code>Editor</code> role that
- * they have.
+ * A structure containing the identity of one user or group and the <code>Admin</code>, <code>Editor</code>, or
+ * <code>Viewer</code> role that they have.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/grafana-2020-08-18/PermissionEntry" target="_top">AWS API
@@ -31,7 +31,7 @@ public class PermissionEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     * Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.
      * </p>
      */
     private String role;
@@ -44,11 +44,12 @@ public class PermissionEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     * Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.
      * </p>
      * 
      * @param role
-     *        Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     *        Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or
+     *        <code>Viewer</code> role.
      * @see Role
      */
 
@@ -58,10 +59,11 @@ public class PermissionEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     * Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.
      * </p>
      * 
-     * @return Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     * @return Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or
+     *         <code>Viewer</code> role.
      * @see Role
      */
 
@@ -71,11 +73,12 @@ public class PermissionEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     * Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.
      * </p>
      * 
      * @param role
-     *        Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     *        Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or
+     *        <code>Viewer</code> role.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Role
      */
@@ -87,11 +90,12 @@ public class PermissionEntry implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     * Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or <code>Viewer</code> role.
      * </p>
      * 
      * @param role
-     *        Specifies whether the user or group has the <code>Admin</code> or <code>Editor</code> role.
+     *        Specifies whether the user or group has the <code>Admin</code>, <code>Editor</code>, or
+     *        <code>Viewer</code> role.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Role
      */

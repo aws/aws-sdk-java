@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
-     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
-     * characters) and ? (matches exactly 1 character).
+     * The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The
+     * comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
@@ -42,9 +42,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
-     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
-     * characters) and ? (matches exactly 1 character).
+     * The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The
+     * comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
@@ -52,9 +52,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
      * use <a>QueryStringConditionConfig</a>.
      * </p>
      * 
-     * @return One or more path patterns to compare against the request URL. The maximum size of each string is 128
-     *         characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
-     *         0 or more characters) and ? (matches exactly 1 character).</p>
+     * @return The path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     *         The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     *         characters) and ? (matches exactly 1 character).</p>
      *         <p>
      *         If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
      *         path pattern is compared only to the path of the URL, not to its query string. To compare against the
@@ -67,9 +67,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
-     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
-     * characters) and ? (matches exactly 1 character).
+     * The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The
+     * comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
@@ -78,9 +78,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more path patterns to compare against the request URL. The maximum size of each string is 128
-     *        characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
-     *        0 or more characters) and ? (matches exactly 1 character).</p>
+     *        The path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     *        The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     *        characters) and ? (matches exactly 1 character).</p>
      *        <p>
      *        If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
      *        path pattern is compared only to the path of the URL, not to its query string. To compare against the
@@ -98,9 +98,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
-     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
-     * characters) and ? (matches exactly 1 character).
+     * The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The
+     * comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
@@ -114,9 +114,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more path patterns to compare against the request URL. The maximum size of each string is 128
-     *        characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
-     *        0 or more characters) and ? (matches exactly 1 character).</p>
+     *        The path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     *        The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     *        characters) and ? (matches exactly 1 character).</p>
      *        <p>
      *        If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
      *        path pattern is compared only to the path of the URL, not to its query string. To compare against the
@@ -136,9 +136,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more path patterns to compare against the request URL. The maximum size of each string is 128 characters.
-     * The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
-     * characters) and ? (matches exactly 1 character).
+     * The path patterns to compare against the request URL. The maximum size of each string is 128 characters. The
+     * comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more characters)
+     * and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The path
@@ -147,9 +147,9 @@ public class PathPatternConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more path patterns to compare against the request URL. The maximum size of each string is 128
-     *        characters. The comparison is case sensitive. The following wildcard characters are supported: * (matches
-     *        0 or more characters) and ? (matches exactly 1 character).</p>
+     *        The path patterns to compare against the request URL. The maximum size of each string is 128 characters.
+     *        The comparison is case sensitive. The following wildcard characters are supported: * (matches 0 or more
+     *        characters) and ? (matches exactly 1 character).</p>
      *        <p>
      *        If you specify multiple strings, the condition is satisfied if one of them matches the request URL. The
      *        path pattern is compared only to the path of the URL, not to its query string. To compare against the

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -198,8 +198,20 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * <li>
      * <p>
-     * Queries.A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that
-     * connect it to the query asked. This Block also contains a location and attached confidence score.
+     * Signatures. A SIGNATURE <code>Block</code> object contains the location information of a signature in a document.
+     * If used in conjunction with forms or tables, a signature can be given a Key-Value pairing or be detected in the
+     * cell of a table.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Query Result. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the
+     * query asked. This Block also contains a confidence score.
      * </p>
      * </li>
      * </ul>
@@ -310,7 +322,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      * between text.
      * </p>
      * <p>
-     * Information is returned as <code>ExpenseDocuments</code> and seperated as follows.
+     * Information is returned as <code>ExpenseDocuments</code> and seperated as follows:
      * </p>
      * <ul>
      * <li>
@@ -495,8 +507,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
     /**
      * <p>
      * Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of
-     * text. The input document must be an image in JPEG, PNG, PDF, or TIFF format. <code>DetectDocumentText</code>
-     * returns the detected text in an array of <a>Block</a> objects.
+     * text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF.
+     * <code>DetectDocumentText</code> returns the detected text in an array of <a>Block</a> objects.
      * </p>
      * <p>
      * Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE <code>Block</code> object is
@@ -633,11 +645,23 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * <li>
      * <p>
-     * Queries. A QUERIES_RESULT Block object contains the answer to the query, the alias associated and an ID that
-     * connect it to the query asked. This Block also contains a location and attached confidence score
+     * Query. A QUERY Block object contains the query text, alias and link to the associated Query results block object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Query Results. A QUERY_RESULT Block object contains the answer to the query and an ID that connects it to the
+     * query asked. This Block also contains a confidence score.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <p>
+     * While processing a document with queries, look out for <code>INVALID_REQUEST_PARAMETERS</code> output. This
+     * indicates that either the per page query limit has been exceeded or that the operation is trying to query a page
+     * in the document which doesn’t exist.
+     * </p>
+     * </note>
      * <p>
      * Selection elements such as check boxes and option buttons (radio buttons) can be detected in form data and in
      * tables. A SELECTION_ELEMENT <code>Block</code> object contains information about a selection element, including
@@ -669,7 +693,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
      * @throws InvalidJobIdException
-     *         An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
      * @throws InternalServerErrorException
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
@@ -779,7 +803,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
      * @throws InvalidJobIdException
-     *         An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
      * @throws InternalServerErrorException
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
@@ -882,7 +906,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
      * @throws InvalidJobIdException
-     *         An invalid job identifier was passed to <a>GetDocumentAnalysis</a> or to <a>GetDocumentAnalysis</a>.
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
      * @throws InternalServerErrorException
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
@@ -933,6 +957,193 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<GetExpenseAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetExpenseAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the results for an Amazon Textract asynchronous operation that analyzes text in a lending document.
+     * </p>
+     * <p>
+     * You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>, which returns a job identifier
+     * (<code>JobId</code>). When the text analysis operation finishes, Amazon Textract publishes a completion status to
+     * the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to
+     * <code>StartLendingAnalysis</code>.
+     * </p>
+     * <p>
+     * To get the results of the text analysis operation, first check that the status value published to the Amazon SNS
+     * topic is SUCCEEDED. If so, call GetLendingAnalysis, and pass the job identifier (<code>JobId</code>) from the
+     * initial call to <code>StartLendingAnalysis</code>.
+     * </p>
+     * 
+     * @param getLendingAnalysisRequest
+     * @return Result of the GetLendingAnalysis operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InvalidJobIdException
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @sample AmazonTextract.GetLendingAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetLendingAnalysisResult getLendingAnalysis(GetLendingAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLendingAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final GetLendingAnalysisResult executeGetLendingAnalysis(GetLendingAnalysisRequest getLendingAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLendingAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLendingAnalysisRequest> request = null;
+        Response<GetLendingAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLendingAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLendingAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLendingAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLendingAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLendingAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets summarized results for the <code>StartLendingAnalysis</code> operation, which analyzes text in a lending
+     * document. The returned summary consists of information about documents grouped together by a common document
+     * type. Information like detected signatures, page numbers, and split documents is returned with respect to the
+     * type of grouped document.
+     * </p>
+     * <p>
+     * You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>, which returns a job identifier
+     * (<code>JobId</code>). When the text analysis operation finishes, Amazon Textract publishes a completion status to
+     * the Amazon Simple Notification Service (Amazon SNS) topic that's registered in the initial call to
+     * <code>StartLendingAnalysis</code>.
+     * </p>
+     * <p>
+     * To get the results of the text analysis operation, first check that the status value published to the Amazon SNS
+     * topic is SUCCEEDED. If so, call <code>GetLendingAnalysisSummary</code>, and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.
+     * </p>
+     * 
+     * @param getLendingAnalysisSummaryRequest
+     * @return Result of the GetLendingAnalysisSummary operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InvalidJobIdException
+     *         An invalid job identifier was passed to an asynchronous analysis operation.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @sample AmazonTextract.GetLendingAnalysisSummary
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetLendingAnalysisSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetLendingAnalysisSummaryResult getLendingAnalysisSummary(GetLendingAnalysisSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLendingAnalysisSummary(request);
+    }
+
+    @SdkInternalApi
+    final GetLendingAnalysisSummaryResult executeGetLendingAnalysisSummary(GetLendingAnalysisSummaryRequest getLendingAnalysisSummaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLendingAnalysisSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLendingAnalysisSummaryRequest> request = null;
+        Response<GetLendingAnalysisSummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLendingAnalysisSummaryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getLendingAnalysisSummaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLendingAnalysisSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLendingAnalysisSummaryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetLendingAnalysisSummaryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1276,6 +1487,136 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<StartExpenseAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartExpenseAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the classification and analysis of an input document. <code>StartLendingAnalysis</code> initiates the
+     * classification and analysis of a packet of lending documents. <code>StartLendingAnalysis</code> operates on a
+     * document file located in an Amazon S3 bucket.
+     * </p>
+     * <p>
+     * <code>StartLendingAnalysis</code> can analyze text in documents that are in one of the following formats: JPEG,
+     * PNG, TIFF, PDF. Use <code>DocumentLocation</code> to specify the bucket name and the file name of the document.
+     * </p>
+     * <p>
+     * <code>StartLendingAnalysis</code> returns a job identifier (<code>JobId</code>) that you use to get the results
+     * of the operation. When the text analysis is finished, Amazon Textract publishes a completion status to the Amazon
+     * Simple Notification Service (Amazon SNS) topic that you specify in <code>NotificationChannel</code>. To get the
+     * results of the text analysis operation, first check that the status value published to the Amazon SNS topic is
+     * SUCCEEDED. If the status is SUCCEEDED you can call either <code>GetLendingAnalysis</code> or
+     * <code>GetLendingAnalysisSummary</code> and provide the <code>JobId</code> to obtain the results of the analysis.
+     * </p>
+     * <p>
+     * If using <code>OutputConfig</code> to specify an Amazon S3 bucket, the output will be contained within the
+     * specified prefix in a directory labeled with the job-id. In the directory there are 3 sub-directories:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * detailedResponse (contains the GetLendingAnalysis response)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * summaryResponse (for the GetLendingAnalysisSummary response)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * splitDocuments (documents split across logical boundaries)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param startLendingAnalysisRequest
+     * @return Result of the StartLendingAnalysis operation returned by the service.
+     * @throws InvalidParameterException
+     *         An input parameter violated a constraint. For example, in synchronous operations, an
+     *         <code>InvalidParameterException</code> exception occurs when neither of the <code>S3Object</code> or
+     *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
+     *         parameter before calling the API operation again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
+     * @throws UnsupportedDocumentException
+     *         The format of the input document isn't supported. Documents for operations can be in PNG, JPEG, PDF, or
+     *         TIFF format.
+     * @throws DocumentTooLargeException
+     *         The document can't be processed because it's too large. The maximum document size for synchronous
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     * @throws BadDocumentException
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
+     * @throws AccessDeniedException
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
+     * @throws ProvisionedThroughputExceededException
+     *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
+     *         Textract.
+     * @throws InternalServerErrorException
+     *         Amazon Textract experienced a service issue. Try your call again.
+     * @throws IdempotentParameterMismatchException
+     *         A <code>ClientRequestToken</code> input parameter was reused with an operation, but at least one of the
+     *         other input parameters is different from the previous call to the operation.
+     * @throws ThrottlingException
+     *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws LimitExceededException
+     *         An Amazon Textract service limit was exceeded. For example, if you start too many asynchronous jobs
+     *         concurrently, calls to start operations (<code>StartDocumentTextDetection</code>, for example) raise a
+     *         LimitExceededException exception (HTTP status code: 400) until the number of concurrently running jobs is
+     *         below the Amazon Textract service limit.
+     * @sample AmazonTextract.StartLendingAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/StartLendingAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartLendingAnalysisResult startLendingAnalysis(StartLendingAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartLendingAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final StartLendingAnalysisResult executeStartLendingAnalysis(StartLendingAnalysisRequest startLendingAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startLendingAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartLendingAnalysisRequest> request = null;
+        Response<StartLendingAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartLendingAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startLendingAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartLendingAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartLendingAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartLendingAnalysisResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

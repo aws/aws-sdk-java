@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PropertyValue implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The timestamp of a value for a time series property.
+     * </p>
+     */
+    @Deprecated
+    private java.util.Date timestamp;
+    /**
+     * <p>
+     * An object that specifies a value for a time series property.
+     * </p>
+     */
+    private DataValue value;
     /**
      * <p>
      * ISO8601 DateTime of a value for a time series property.
@@ -89,19 +102,86 @@ public class PropertyValue implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String time;
+
     /**
      * <p>
      * The timestamp of a value for a time series property.
      * </p>
+     * 
+     * @param timestamp
+     *        The timestamp of a value for a time series property.
      */
     @Deprecated
-    private java.util.Date timestamp;
+    public void setTimestamp(java.util.Date timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of a value for a time series property.
+     * </p>
+     * 
+     * @return The timestamp of a value for a time series property.
+     */
+    @Deprecated
+    public java.util.Date getTimestamp() {
+        return this.timestamp;
+    }
+
+    /**
+     * <p>
+     * The timestamp of a value for a time series property.
+     * </p>
+     * 
+     * @param timestamp
+     *        The timestamp of a value for a time series property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public PropertyValue withTimestamp(java.util.Date timestamp) {
+        setTimestamp(timestamp);
+        return this;
+    }
+
     /**
      * <p>
      * An object that specifies a value for a time series property.
      * </p>
+     * 
+     * @param value
+     *        An object that specifies a value for a time series property.
      */
-    private DataValue value;
+
+    public void setValue(DataValue value) {
+        this.value = value;
+    }
+
+    /**
+     * <p>
+     * An object that specifies a value for a time series property.
+     * </p>
+     * 
+     * @return An object that specifies a value for a time series property.
+     */
+
+    public DataValue getValue() {
+        return this.value;
+    }
+
+    /**
+     * <p>
+     * An object that specifies a value for a time series property.
+     * </p>
+     * 
+     * @param value
+     *        An object that specifies a value for a time series property.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PropertyValue withValue(DataValue value) {
+        setValue(value);
+        return this;
+    }
 
     /**
      * <p>
@@ -471,86 +551,6 @@ public class PropertyValue implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The timestamp of a value for a time series property.
-     * </p>
-     * 
-     * @param timestamp
-     *        The timestamp of a value for a time series property.
-     */
-    @Deprecated
-    public void setTimestamp(java.util.Date timestamp) {
-        this.timestamp = timestamp;
-    }
-
-    /**
-     * <p>
-     * The timestamp of a value for a time series property.
-     * </p>
-     * 
-     * @return The timestamp of a value for a time series property.
-     */
-    @Deprecated
-    public java.util.Date getTimestamp() {
-        return this.timestamp;
-    }
-
-    /**
-     * <p>
-     * The timestamp of a value for a time series property.
-     * </p>
-     * 
-     * @param timestamp
-     *        The timestamp of a value for a time series property.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-    @Deprecated
-    public PropertyValue withTimestamp(java.util.Date timestamp) {
-        setTimestamp(timestamp);
-        return this;
-    }
-
-    /**
-     * <p>
-     * An object that specifies a value for a time series property.
-     * </p>
-     * 
-     * @param value
-     *        An object that specifies a value for a time series property.
-     */
-
-    public void setValue(DataValue value) {
-        this.value = value;
-    }
-
-    /**
-     * <p>
-     * An object that specifies a value for a time series property.
-     * </p>
-     * 
-     * @return An object that specifies a value for a time series property.
-     */
-
-    public DataValue getValue() {
-        return this.value;
-    }
-
-    /**
-     * <p>
-     * An object that specifies a value for a time series property.
-     * </p>
-     * 
-     * @param value
-     *        An object that specifies a value for a time series property.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public PropertyValue withValue(DataValue value) {
-        setValue(value);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -562,12 +562,12 @@ public class PropertyValue implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTime() != null)
-            sb.append("Time: ").append(getTime()).append(",");
         if (getTimestamp() != null)
             sb.append("Timestamp: ").append(getTimestamp()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getTime() != null)
+            sb.append("Time: ").append(getTime());
         sb.append("}");
         return sb.toString();
     }
@@ -582,10 +582,6 @@ public class PropertyValue implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof PropertyValue == false)
             return false;
         PropertyValue other = (PropertyValue) obj;
-        if (other.getTime() == null ^ this.getTime() == null)
-            return false;
-        if (other.getTime() != null && other.getTime().equals(this.getTime()) == false)
-            return false;
         if (other.getTimestamp() == null ^ this.getTimestamp() == null)
             return false;
         if (other.getTimestamp() != null && other.getTimestamp().equals(this.getTimestamp()) == false)
@@ -593,6 +589,10 @@ public class PropertyValue implements Serializable, Cloneable, StructuredPojo {
         if (other.getValue() == null ^ this.getValue() == null)
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
+            return false;
+        if (other.getTime() == null ^ this.getTime() == null)
+            return false;
+        if (other.getTime() != null && other.getTime().equals(this.getTime()) == false)
             return false;
         return true;
     }
@@ -602,9 +602,9 @@ public class PropertyValue implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTime() == null) ? 0 : getTime().hashCode());
         hashCode = prime * hashCode + ((getTimestamp() == null) ? 0 : getTimestamp().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getTime() == null) ? 0 : getTime().hashCode());
         return hashCode;
     }
 

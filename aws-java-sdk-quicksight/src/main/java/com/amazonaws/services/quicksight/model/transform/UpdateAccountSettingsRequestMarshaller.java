@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class UpdateAccountSettingsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultNamespace").build();
     private static final MarshallingInfo<String> NOTIFICATIONEMAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NotificationEmail").build();
+    private static final MarshallingInfo<Boolean> TERMINATIONPROTECTIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminationProtectionEnabled").build();
 
     private static final UpdateAccountSettingsRequestMarshaller instance = new UpdateAccountSettingsRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateAccountSettingsRequestMarshaller {
             protocolMarshaller.marshall(updateAccountSettingsRequest.getAwsAccountId(), AWSACCOUNTID_BINDING);
             protocolMarshaller.marshall(updateAccountSettingsRequest.getDefaultNamespace(), DEFAULTNAMESPACE_BINDING);
             protocolMarshaller.marshall(updateAccountSettingsRequest.getNotificationEmail(), NOTIFICATIONEMAIL_BINDING);
+            protocolMarshaller.marshall(updateAccountSettingsRequest.getTerminationProtectionEnabled(), TERMINATIONPROTECTIONENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

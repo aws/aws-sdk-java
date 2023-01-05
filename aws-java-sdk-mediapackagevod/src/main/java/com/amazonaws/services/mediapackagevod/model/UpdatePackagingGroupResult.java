@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdatePackagingGroupResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /** The approximate asset count of the PackagingGroup. */
+    private Integer approximateAssetCount;
     /** The ARN of the PackagingGroup. */
     private String arn;
 
@@ -35,6 +37,40 @@ public class UpdatePackagingGroupResult extends com.amazonaws.AmazonWebServiceRe
     private String id;
 
     private java.util.Map<String, String> tags;
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @param approximateAssetCount
+     *        The approximate asset count of the PackagingGroup.
+     */
+
+    public void setApproximateAssetCount(Integer approximateAssetCount) {
+        this.approximateAssetCount = approximateAssetCount;
+    }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @return The approximate asset count of the PackagingGroup.
+     */
+
+    public Integer getApproximateAssetCount() {
+        return this.approximateAssetCount;
+    }
+
+    /**
+     * The approximate asset count of the PackagingGroup.
+     * 
+     * @param approximateAssetCount
+     *        The approximate asset count of the PackagingGroup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdatePackagingGroupResult withApproximateAssetCount(Integer approximateAssetCount) {
+        setApproximateAssetCount(approximateAssetCount);
+        return this;
+    }
 
     /**
      * The ARN of the PackagingGroup.
@@ -256,6 +292,8 @@ public class UpdatePackagingGroupResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApproximateAssetCount() != null)
+            sb.append("ApproximateAssetCount: ").append(getApproximateAssetCount()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getAuthorization() != null)
@@ -282,6 +320,10 @@ public class UpdatePackagingGroupResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof UpdatePackagingGroupResult == false)
             return false;
         UpdatePackagingGroupResult other = (UpdatePackagingGroupResult) obj;
+        if (other.getApproximateAssetCount() == null ^ this.getApproximateAssetCount() == null)
+            return false;
+        if (other.getApproximateAssetCount() != null && other.getApproximateAssetCount().equals(this.getApproximateAssetCount()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -314,6 +356,7 @@ public class UpdatePackagingGroupResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApproximateAssetCount() == null) ? 0 : getApproximateAssetCount().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());

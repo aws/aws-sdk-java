@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * group.
      * </p>
      * <p>
+     * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
+     * </p>
+     * <p>
      * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
      * </p>
      * <p>
@@ -47,6 +50,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * as a percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used by
      * the target group. With a high value, the proxy leaves a high percentage of idle database connections open. A low
      * value causes the proxy to close more idle connections and return them to the database.
+     * </p>
+     * <p>
+     * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
      * </p>
      * <p>
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
@@ -104,6 +110,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * group.
      * </p>
      * <p>
+     * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
+     * </p>
+     * <p>
      * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
      * </p>
      * <p>
@@ -114,6 +123,10 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        The maximum size of the connection pool for each target in a target group. The value is expressed as a
      *        percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used
      *        by the target group.</p>
+     *        <p>
+     *        If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this
+     *        parameter.
+     *        </p>
      *        <p>
      *        Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
      *        </p>
@@ -132,6 +145,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * group.
      * </p>
      * <p>
+     * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
+     * </p>
+     * <p>
      * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
      * </p>
      * <p>
@@ -141,6 +157,10 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * @return The maximum size of the connection pool for each target in a target group. The value is expressed as a
      *         percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used
      *         by the target group.</p>
+     *         <p>
+     *         If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this
+     *         parameter.
+     *         </p>
      *         <p>
      *         Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
      *         </p>
@@ -159,6 +179,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * group.
      * </p>
      * <p>
+     * If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this parameter.
+     * </p>
+     * <p>
      * Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
      * </p>
      * <p>
@@ -169,6 +192,10 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        The maximum size of the connection pool for each target in a target group. The value is expressed as a
      *        percentage of the <code>max_connections</code> setting for the RDS DB instance or Aurora DB cluster used
      *        by the target group.</p>
+     *        <p>
+     *        If you specify <code>MaxIdleConnectionsPercent</code>, then you must also include a value for this
+     *        parameter.
+     *        </p>
      *        <p>
      *        Default: 10 for RDS for Microsoft SQL Server, and 100 for all other engines
      *        </p>
@@ -190,6 +217,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * value causes the proxy to close more idle connections and return them to the database.
      * </p>
      * <p>
+     * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
+     * </p>
+     * <p>
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      * <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40.
      * If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
@@ -205,6 +235,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
      *        connections open. A low value causes the proxy to close more idle connections and return them to the
      *        database.</p>
+     *        <p>
+     *        If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
+     *        </p>
      *        <p>
      *        Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      *        <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code>
@@ -227,6 +260,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * value causes the proxy to close more idle connections and return them to the database.
      * </p>
      * <p>
+     * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
+     * </p>
+     * <p>
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      * <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40.
      * If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
@@ -241,6 +277,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *         DB cluster used by the target group. With a high value, the proxy leaves a high percentage of idle
      *         database connections open. A low value causes the proxy to close more idle connections and return them to
      *         the database.</p>
+     *         <p>
+     *         If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
+     *         </p>
      *         <p>
      *         Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      *         <code>MaxConnectionsPercent</code> is 80, then the default value of
@@ -264,6 +303,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      * value causes the proxy to close more idle connections and return them to the database.
      * </p>
      * <p>
+     * If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
+     * </p>
+     * <p>
      * Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      * <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code> is 40.
      * If the value of <code>MaxConnectionsPercent</code> isn't specified, then for SQL Server,
@@ -279,6 +321,9 @@ public class ConnectionPoolConfiguration implements Serializable, Cloneable {
      *        cluster used by the target group. With a high value, the proxy leaves a high percentage of idle database
      *        connections open. A low value causes the proxy to close more idle connections and return them to the
      *        database.</p>
+     *        <p>
+     *        If you specify this parameter, then you must also include a value for <code>MaxConnectionsPercent</code>.
+     *        </p>
      *        <p>
      *        Default: The default value is half of the value of <code>MaxConnectionsPercent</code>. For example, if
      *        <code>MaxConnectionsPercent</code> is 80, then the default value of <code>MaxIdleConnectionsPercent</code>

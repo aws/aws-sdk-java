@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,22 @@ public class OperationSummaryJsonUnmarshaller implements Unmarshaller<OperationS
                 if (context.testExpression("SubmittedDate", targetDepth)) {
                     context.nextToken();
                     operationSummary.setSubmittedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("DomainName", targetDepth)) {
+                    context.nextToken();
+                    operationSummary.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Message", targetDepth)) {
+                    context.nextToken();
+                    operationSummary.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("StatusFlag", targetDepth)) {
+                    context.nextToken();
+                    operationSummary.setStatusFlag(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastUpdatedDate", targetDepth)) {
+                    context.nextToken();
+                    operationSummary.setLastUpdatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

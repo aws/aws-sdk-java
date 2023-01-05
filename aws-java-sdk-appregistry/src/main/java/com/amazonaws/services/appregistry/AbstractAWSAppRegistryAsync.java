@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -171,6 +171,19 @@ public class AbstractAWSAppRegistryAsync extends AbstractAWSAppRegistry implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest request) {
+
+        return getConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConfigurationResult> getConfigurationAsync(GetConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConfigurationRequest, GetConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request) {
 
         return listApplicationsAsync(request, null);
@@ -246,6 +259,19 @@ public class AbstractAWSAppRegistryAsync extends AbstractAWSAppRegistry implemen
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationResult> putConfigurationAsync(PutConfigurationRequest request) {
+
+        return putConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutConfigurationResult> putConfigurationAsync(PutConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutConfigurationRequest, PutConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

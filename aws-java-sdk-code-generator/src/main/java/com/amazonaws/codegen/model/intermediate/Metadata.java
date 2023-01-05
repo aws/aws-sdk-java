@@ -20,6 +20,8 @@ import static com.amazonaws.codegen.internal.Constants.SMOKE_TESTS_DIR_NAME;
 import com.amazonaws.codegen.protocol.ProtocolMetadataProvider;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.Map;
+
 
 public class Metadata {
 
@@ -73,6 +75,8 @@ public class Metadata {
     private String uid;
 
     private String serviceId;
+
+    private Map<String, String> awsQueryCompatible;
 
     public String getApiVersion() {
         return apiVersion;
@@ -492,6 +496,17 @@ public class Metadata {
 
     public Metadata withServiceId(String serviceId) {
         setServiceId(serviceId);
+        return this;
+    }
+
+    public Map<String, String> getAwsQueryCompatible() { return awsQueryCompatible; }
+
+    public void setAwsQueryCompatible(Map<String, String> awsQueryCompatible) {
+        this.awsQueryCompatible = awsQueryCompatible;
+    }
+
+    public Metadata withAwsQueryCompatible(Map<String, String> awsQueryCompatible) {
+        setAwsQueryCompatible(awsQueryCompatible);
         return this;
     }
 }

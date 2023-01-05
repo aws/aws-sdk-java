@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
      * <code>MONITORED</code>: linked accounts that are associated to billing groups.
      * </p>
      * <p>
-     * <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+     * <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.
      * </p>
      * <p>
      * <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.
@@ -48,7 +48,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
     private ListAccountAssociationsFilter filters;
     /**
      * <p>
-     * The pagination token used on subsequent calls to retrieve accounts.
+     * The pagination token that's used on subsequent calls to retrieve accounts.
      * </p>
      */
     private String nextToken;
@@ -101,7 +101,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
      * <code>MONITORED</code>: linked accounts that are associated to billing groups.
      * </p>
      * <p>
-     * <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+     * <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.
      * </p>
      * <p>
      * <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.
@@ -113,7 +113,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
      *        <code>MONITORED</code>: linked accounts that are associated to billing groups.
      *        </p>
      *        <p>
-     *        <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+     *        <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.
      *        </p>
      *        <p>
      *        <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.
@@ -131,7 +131,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
      * <code>MONITORED</code>: linked accounts that are associated to billing groups.
      * </p>
      * <p>
-     * <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+     * <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.
      * </p>
      * <p>
      * <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.
@@ -142,7 +142,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
      *         <code>MONITORED</code>: linked accounts that are associated to billing groups.
      *         </p>
      *         <p>
-     *         <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+     *         <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.
      *         </p>
      *         <p>
      *         <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.
@@ -160,7 +160,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
      * <code>MONITORED</code>: linked accounts that are associated to billing groups.
      * </p>
      * <p>
-     * <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+     * <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.
      * </p>
      * <p>
      * <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.
@@ -172,7 +172,7 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
      *        <code>MONITORED</code>: linked accounts that are associated to billing groups.
      *        </p>
      *        <p>
-     *        <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+     *        <code>UNMONITORED</code>: linked accounts that aren't associated to billing groups.
      *        </p>
      *        <p>
      *        <code>Billing Group Arn</code>: linked accounts that are associated to the provided billing group Arn.
@@ -186,11 +186,11 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to retrieve accounts.
+     * The pagination token that's used on subsequent calls to retrieve accounts.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to retrieve accounts.
+     *        The pagination token that's used on subsequent calls to retrieve accounts.
      */
 
     public void setNextToken(String nextToken) {
@@ -199,10 +199,10 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to retrieve accounts.
+     * The pagination token that's used on subsequent calls to retrieve accounts.
      * </p>
      * 
-     * @return The pagination token used on subsequent calls to retrieve accounts.
+     * @return The pagination token that's used on subsequent calls to retrieve accounts.
      */
 
     public String getNextToken() {
@@ -211,11 +211,11 @@ public class ListAccountAssociationsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to retrieve accounts.
+     * The pagination token that's used on subsequent calls to retrieve accounts.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to retrieve accounts.
+     *        The pagination token that's used on subsequent calls to retrieve accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,10 +72,28 @@ public class OptionGroup implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the option group.
+     * Specifies the Amazon Resource Name (ARN) for the option group.
      * </p>
      */
     private String optionGroupArn;
+    /**
+     * <p>
+     * Specifies the name of the option group from which this option group is copied.
+     * </p>
+     */
+    private String sourceOptionGroup;
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account ID for the option group from which this option group is copied.
+     * </p>
+     */
+    private String sourceAccountId;
+    /**
+     * <p>
+     * Indicates when the option group was copied.
+     * </p>
+     */
+    private java.util.Date copyTimestamp;
 
     /**
      * <p>
@@ -430,11 +448,11 @@ public class OptionGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the option group.
+     * Specifies the Amazon Resource Name (ARN) for the option group.
      * </p>
      * 
      * @param optionGroupArn
-     *        The Amazon Resource Name (ARN) for the option group.
+     *        Specifies the Amazon Resource Name (ARN) for the option group.
      */
 
     public void setOptionGroupArn(String optionGroupArn) {
@@ -443,10 +461,10 @@ public class OptionGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the option group.
+     * Specifies the Amazon Resource Name (ARN) for the option group.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the option group.
+     * @return Specifies the Amazon Resource Name (ARN) for the option group.
      */
 
     public String getOptionGroupArn() {
@@ -455,16 +473,136 @@ public class OptionGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the option group.
+     * Specifies the Amazon Resource Name (ARN) for the option group.
      * </p>
      * 
      * @param optionGroupArn
-     *        The Amazon Resource Name (ARN) for the option group.
+     *        Specifies the Amazon Resource Name (ARN) for the option group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OptionGroup withOptionGroupArn(String optionGroupArn) {
         setOptionGroupArn(optionGroupArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the option group from which this option group is copied.
+     * </p>
+     * 
+     * @param sourceOptionGroup
+     *        Specifies the name of the option group from which this option group is copied.
+     */
+
+    public void setSourceOptionGroup(String sourceOptionGroup) {
+        this.sourceOptionGroup = sourceOptionGroup;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the option group from which this option group is copied.
+     * </p>
+     * 
+     * @return Specifies the name of the option group from which this option group is copied.
+     */
+
+    public String getSourceOptionGroup() {
+        return this.sourceOptionGroup;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the option group from which this option group is copied.
+     * </p>
+     * 
+     * @param sourceOptionGroup
+     *        Specifies the name of the option group from which this option group is copied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroup withSourceOptionGroup(String sourceOptionGroup) {
+        setSourceOptionGroup(sourceOptionGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account ID for the option group from which this option group is copied.
+     * </p>
+     * 
+     * @param sourceAccountId
+     *        Specifies the Amazon Web Services account ID for the option group from which this option group is copied.
+     */
+
+    public void setSourceAccountId(String sourceAccountId) {
+        this.sourceAccountId = sourceAccountId;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account ID for the option group from which this option group is copied.
+     * </p>
+     * 
+     * @return Specifies the Amazon Web Services account ID for the option group from which this option group is copied.
+     */
+
+    public String getSourceAccountId() {
+        return this.sourceAccountId;
+    }
+
+    /**
+     * <p>
+     * Specifies the Amazon Web Services account ID for the option group from which this option group is copied.
+     * </p>
+     * 
+     * @param sourceAccountId
+     *        Specifies the Amazon Web Services account ID for the option group from which this option group is copied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroup withSourceAccountId(String sourceAccountId) {
+        setSourceAccountId(sourceAccountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates when the option group was copied.
+     * </p>
+     * 
+     * @param copyTimestamp
+     *        Indicates when the option group was copied.
+     */
+
+    public void setCopyTimestamp(java.util.Date copyTimestamp) {
+        this.copyTimestamp = copyTimestamp;
+    }
+
+    /**
+     * <p>
+     * Indicates when the option group was copied.
+     * </p>
+     * 
+     * @return Indicates when the option group was copied.
+     */
+
+    public java.util.Date getCopyTimestamp() {
+        return this.copyTimestamp;
+    }
+
+    /**
+     * <p>
+     * Indicates when the option group was copied.
+     * </p>
+     * 
+     * @param copyTimestamp
+     *        Indicates when the option group was copied.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OptionGroup withCopyTimestamp(java.util.Date copyTimestamp) {
+        setCopyTimestamp(copyTimestamp);
         return this;
     }
 
@@ -495,7 +633,13 @@ public class OptionGroup implements Serializable, Cloneable {
         if (getVpcId() != null)
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getOptionGroupArn() != null)
-            sb.append("OptionGroupArn: ").append(getOptionGroupArn());
+            sb.append("OptionGroupArn: ").append(getOptionGroupArn()).append(",");
+        if (getSourceOptionGroup() != null)
+            sb.append("SourceOptionGroup: ").append(getSourceOptionGroup()).append(",");
+        if (getSourceAccountId() != null)
+            sb.append("SourceAccountId: ").append(getSourceAccountId()).append(",");
+        if (getCopyTimestamp() != null)
+            sb.append("CopyTimestamp: ").append(getCopyTimestamp());
         sb.append("}");
         return sb.toString();
     }
@@ -543,6 +687,18 @@ public class OptionGroup implements Serializable, Cloneable {
             return false;
         if (other.getOptionGroupArn() != null && other.getOptionGroupArn().equals(this.getOptionGroupArn()) == false)
             return false;
+        if (other.getSourceOptionGroup() == null ^ this.getSourceOptionGroup() == null)
+            return false;
+        if (other.getSourceOptionGroup() != null && other.getSourceOptionGroup().equals(this.getSourceOptionGroup()) == false)
+            return false;
+        if (other.getSourceAccountId() == null ^ this.getSourceAccountId() == null)
+            return false;
+        if (other.getSourceAccountId() != null && other.getSourceAccountId().equals(this.getSourceAccountId()) == false)
+            return false;
+        if (other.getCopyTimestamp() == null ^ this.getCopyTimestamp() == null)
+            return false;
+        if (other.getCopyTimestamp() != null && other.getCopyTimestamp().equals(this.getCopyTimestamp()) == false)
+            return false;
         return true;
     }
 
@@ -559,6 +715,9 @@ public class OptionGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAllowsVpcAndNonVpcInstanceMemberships() == null) ? 0 : getAllowsVpcAndNonVpcInstanceMemberships().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupArn() == null) ? 0 : getOptionGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceOptionGroup() == null) ? 0 : getSourceOptionGroup().hashCode());
+        hashCode = prime * hashCode + ((getSourceAccountId() == null) ? 0 : getSourceAccountId().hashCode());
+        hashCode = prime * hashCode + ((getCopyTimestamp() == null) ? 0 : getCopyTimestamp().hashCode());
         return hashCode;
     }
 

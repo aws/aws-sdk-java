@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class AggregationConfigMarshaller {
 
     private static final MarshallingInfo<String> AGGREGATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("aggregationType").build();
+    private static final MarshallingInfo<Long> TARGETFILESIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetFileSize").build();
 
     private static final AggregationConfigMarshaller instance = new AggregationConfigMarshaller();
 
@@ -47,6 +49,7 @@ public class AggregationConfigMarshaller {
 
         try {
             protocolMarshaller.marshall(aggregationConfig.getAggregationType(), AGGREGATIONTYPE_BINDING);
+            protocolMarshaller.marshall(aggregationConfig.getTargetFileSize(), TARGETFILESIZE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

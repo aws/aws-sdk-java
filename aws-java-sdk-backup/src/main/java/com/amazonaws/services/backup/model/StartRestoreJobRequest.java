@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,7 +94,7 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
     private java.util.Map<String, String> metadata;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      */
@@ -616,13 +616,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for
-     *        example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for
+     *        example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public void setIamRoleArn(String iamRoleArn) {
@@ -631,12 +631,12 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for
-     *         example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     * @return The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for
+     *         example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
      */
 
     public String getIamRoleArn() {
@@ -645,13 +645,13 @@ public class StartRestoreJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for example,
+     * The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for example:
      * <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * </p>
      * 
      * @param iamRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target recovery point; for
-     *        example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+     *        The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target resource; for
+     *        example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

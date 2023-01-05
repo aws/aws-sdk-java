@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The service is unable to resolve the routing for a particular alias because it has a terminal <a>RoutingStrategy</a>
- * associated with it. The message returned in this exception is the message defined in the routing strategy itself.
- * Such requests should only be retried if the routing strategy for the specified alias is modified.
+ * The service is unable to resolve the routing for a particular alias because it has a terminal
+ * <code>RoutingStrategy</code> associated with it. The message returned in this exception is the message defined in the
+ * routing strategy itself. Such requests should only be retried if the routing strategy for the specified alias is
+ * modified.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

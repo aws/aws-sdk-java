@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     }
 
     @Override
+    public AssociateDelegationSignerToDomainResult associateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelDomainTransferToAnotherAwsAccountResult cancelDomainTransferToAnotherAwsAccount(CancelDomainTransferToAnotherAwsAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -74,6 +79,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
 
     @Override
     public DisableDomainTransferLockResult disableDomainTransferLock(DisableDomainTransferLockRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateDelegationSignerFromDomainResult disassociateDelegationSignerFromDomain(DisassociateDelegationSignerFromDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -138,6 +148,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
     }
 
     @Override
+    public PushDomainResult pushDomain(PushDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RegisterDomainResult registerDomain(RegisterDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -154,6 +169,11 @@ public class AbstractAmazonRoute53Domains implements AmazonRoute53Domains {
 
     @Override
     public ResendContactReachabilityEmailResult resendContactReachabilityEmail(ResendContactReachabilityEmailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResendOperationAuthorizationResult resendOperationAuthorization(ResendOperationAuthorizationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

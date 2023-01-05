@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,8 @@ public enum EventCode {
     FLEET_VPC_PEERING_SUCCEEDED("FLEET_VPC_PEERING_SUCCEEDED"),
     FLEET_VPC_PEERING_FAILED("FLEET_VPC_PEERING_FAILED"),
     FLEET_VPC_PEERING_DELETED("FLEET_VPC_PEERING_DELETED"),
-    INSTANCE_INTERRUPTED("INSTANCE_INTERRUPTED");
+    INSTANCE_INTERRUPTED("INSTANCE_INTERRUPTED"),
+    INSTANCE_RECYCLED("INSTANCE_RECYCLED");
 
     private String value;
 

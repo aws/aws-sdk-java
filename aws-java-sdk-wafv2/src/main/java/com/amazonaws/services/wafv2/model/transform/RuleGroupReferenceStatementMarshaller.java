@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class RuleGroupReferenceStatementMarshaller {
             .marshallLocationName("ARN").build();
     private static final MarshallingInfo<List> EXCLUDEDRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ExcludedRules").build();
+    private static final MarshallingInfo<List> RULEACTIONOVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleActionOverrides").build();
 
     private static final RuleGroupReferenceStatementMarshaller instance = new RuleGroupReferenceStatementMarshaller();
 
@@ -51,6 +53,7 @@ public class RuleGroupReferenceStatementMarshaller {
         try {
             protocolMarshaller.marshall(ruleGroupReferenceStatement.getARN(), ARN_BINDING);
             protocolMarshaller.marshall(ruleGroupReferenceStatement.getExcludedRules(), EXCLUDEDRULES_BINDING);
+            protocolMarshaller.marshall(ruleGroupReferenceStatement.getRuleActionOverrides(), RULEACTIONOVERRIDES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

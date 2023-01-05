@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,16 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A container for the activity metrics.
+ * The container element for Amazon S3 Storage Lens activity metrics. Activity metrics show details about how your
+ * storage is requested, such as requests (for example, All requests, Get requests, Put requests), bytes uploaded or
+ * downloaded, and errors.
+ * </p>
+ * <p>
+ * For more information about S3 Storage Lens, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and
+ * usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics,
+ * see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage
+ * Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/ActivityMetrics" target="_top">AWS API
@@ -28,18 +37,18 @@ public class ActivityMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for whether the activity metrics are enabled.
+     * A container that indicates whether activity metrics are enabled.
      * </p>
      */
     private Boolean isEnabled;
 
     /**
      * <p>
-     * A container for whether the activity metrics are enabled.
+     * A container that indicates whether activity metrics are enabled.
      * </p>
      * 
      * @param isEnabled
-     *        A container for whether the activity metrics are enabled.
+     *        A container that indicates whether activity metrics are enabled.
      */
 
     public void setIsEnabled(Boolean isEnabled) {
@@ -48,10 +57,10 @@ public class ActivityMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for whether the activity metrics are enabled.
+     * A container that indicates whether activity metrics are enabled.
      * </p>
      * 
-     * @return A container for whether the activity metrics are enabled.
+     * @return A container that indicates whether activity metrics are enabled.
      */
 
     public Boolean getIsEnabled() {
@@ -60,11 +69,11 @@ public class ActivityMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for whether the activity metrics are enabled.
+     * A container that indicates whether activity metrics are enabled.
      * </p>
      * 
      * @param isEnabled
-     *        A container for whether the activity metrics are enabled.
+     *        A container that indicates whether activity metrics are enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,10 +84,10 @@ public class ActivityMetrics implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for whether the activity metrics are enabled.
+     * A container that indicates whether activity metrics are enabled.
      * </p>
      * 
-     * @return A container for whether the activity metrics are enabled.
+     * @return A container that indicates whether activity metrics are enabled.
      */
 
     public Boolean isEnabled() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,12 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
     private String ec2LaunchTemplateID;
     /**
      * <p>
+     * Enable map auto tagging.
+     * </p>
+     */
+    private Boolean enableMapAutoTagging;
+    /**
+     * <p>
      * Launch disposition for launch configuration.
      * </p>
      */
@@ -59,6 +65,12 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private Licensing licensing;
+    /**
+     * <p>
+     * Map auto tagging MPE ID.
+     * </p>
+     */
+    private String mapAutoTaggingMpeID;
     /**
      * <p>
      * Launch configuration name.
@@ -285,6 +297,58 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @param enableMapAutoTagging
+     *        Enable map auto tagging.
+     */
+
+    public void setEnableMapAutoTagging(Boolean enableMapAutoTagging) {
+        this.enableMapAutoTagging = enableMapAutoTagging;
+    }
+
+    /**
+     * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @return Enable map auto tagging.
+     */
+
+    public Boolean getEnableMapAutoTagging() {
+        return this.enableMapAutoTagging;
+    }
+
+    /**
+     * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @param enableMapAutoTagging
+     *        Enable map auto tagging.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationResult withEnableMapAutoTagging(Boolean enableMapAutoTagging) {
+        setEnableMapAutoTagging(enableMapAutoTagging);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable map auto tagging.
+     * </p>
+     * 
+     * @return Enable map auto tagging.
+     */
+
+    public Boolean isEnableMapAutoTagging() {
+        return this.enableMapAutoTagging;
+    }
+
+    /**
+     * <p>
      * Launch disposition for launch configuration.
      * </p>
      * 
@@ -379,6 +443,46 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
 
     public UpdateLaunchConfigurationResult withLicensing(Licensing licensing) {
         setLicensing(licensing);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Map auto tagging MPE ID.
+     * </p>
+     * 
+     * @param mapAutoTaggingMpeID
+     *        Map auto tagging MPE ID.
+     */
+
+    public void setMapAutoTaggingMpeID(String mapAutoTaggingMpeID) {
+        this.mapAutoTaggingMpeID = mapAutoTaggingMpeID;
+    }
+
+    /**
+     * <p>
+     * Map auto tagging MPE ID.
+     * </p>
+     * 
+     * @return Map auto tagging MPE ID.
+     */
+
+    public String getMapAutoTaggingMpeID() {
+        return this.mapAutoTaggingMpeID;
+    }
+
+    /**
+     * <p>
+     * Map auto tagging MPE ID.
+     * </p>
+     * 
+     * @param mapAutoTaggingMpeID
+     *        Map auto tagging MPE ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateLaunchConfigurationResult withMapAutoTaggingMpeID(String mapAutoTaggingMpeID) {
+        setMapAutoTaggingMpeID(mapAutoTaggingMpeID);
         return this;
     }
 
@@ -567,10 +671,14 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
         if (getEc2LaunchTemplateID() != null)
             sb.append("Ec2LaunchTemplateID: ").append(getEc2LaunchTemplateID()).append(",");
+        if (getEnableMapAutoTagging() != null)
+            sb.append("EnableMapAutoTagging: ").append(getEnableMapAutoTagging()).append(",");
         if (getLaunchDisposition() != null)
             sb.append("LaunchDisposition: ").append(getLaunchDisposition()).append(",");
         if (getLicensing() != null)
             sb.append("Licensing: ").append(getLicensing()).append(",");
+        if (getMapAutoTaggingMpeID() != null)
+            sb.append("MapAutoTaggingMpeID: ").append(getMapAutoTaggingMpeID()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPostLaunchActions() != null)
@@ -609,6 +717,10 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getEc2LaunchTemplateID() != null && other.getEc2LaunchTemplateID().equals(this.getEc2LaunchTemplateID()) == false)
             return false;
+        if (other.getEnableMapAutoTagging() == null ^ this.getEnableMapAutoTagging() == null)
+            return false;
+        if (other.getEnableMapAutoTagging() != null && other.getEnableMapAutoTagging().equals(this.getEnableMapAutoTagging()) == false)
+            return false;
         if (other.getLaunchDisposition() == null ^ this.getLaunchDisposition() == null)
             return false;
         if (other.getLaunchDisposition() != null && other.getLaunchDisposition().equals(this.getLaunchDisposition()) == false)
@@ -616,6 +728,10 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
         if (other.getLicensing() == null ^ this.getLicensing() == null)
             return false;
         if (other.getLicensing() != null && other.getLicensing().equals(this.getLicensing()) == false)
+            return false;
+        if (other.getMapAutoTaggingMpeID() == null ^ this.getMapAutoTaggingMpeID() == null)
+            return false;
+        if (other.getMapAutoTaggingMpeID() != null && other.getMapAutoTaggingMpeID().equals(this.getMapAutoTaggingMpeID()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -646,8 +762,10 @@ public class UpdateLaunchConfigurationResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getCopyPrivateIp() == null) ? 0 : getCopyPrivateIp().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getEc2LaunchTemplateID() == null) ? 0 : getEc2LaunchTemplateID().hashCode());
+        hashCode = prime * hashCode + ((getEnableMapAutoTagging() == null) ? 0 : getEnableMapAutoTagging().hashCode());
         hashCode = prime * hashCode + ((getLaunchDisposition() == null) ? 0 : getLaunchDisposition().hashCode());
         hashCode = prime * hashCode + ((getLicensing() == null) ? 0 : getLicensing().hashCode());
+        hashCode = prime * hashCode + ((getMapAutoTaggingMpeID() == null) ? 0 : getMapAutoTaggingMpeID().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPostLaunchActions() == null) ? 0 : getPostLaunchActions().hashCode());
         hashCode = prime * hashCode + ((getSourceServerID() == null) ? 0 : getSourceServerID().hashCode());

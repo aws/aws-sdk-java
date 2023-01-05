@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Status of the encryption At Rest options for the specified domain.
+ * Status of the encryption at rest options for the specified OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class EncryptionAtRestOptionsStatus implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Encryption At Rest options for the specified domain.
+     * Encryption at rest options for the specified domain.
      * </p>
      */
     private EncryptionAtRestOptions options;
     /**
      * <p>
-     * The status of the Encryption At Rest options for the specified domain.
+     * The status of the encryption at rest options for the specified domain.
      * </p>
      */
     private OptionStatus status;
 
     /**
      * <p>
-     * The Encryption At Rest options for the specified domain.
+     * Encryption at rest options for the specified domain.
      * </p>
      * 
      * @param options
-     *        The Encryption At Rest options for the specified domain.
+     *        Encryption at rest options for the specified domain.
      */
 
     public void setOptions(EncryptionAtRestOptions options) {
@@ -53,10 +53,10 @@ public class EncryptionAtRestOptionsStatus implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Encryption At Rest options for the specified domain.
+     * Encryption at rest options for the specified domain.
      * </p>
      * 
-     * @return The Encryption At Rest options for the specified domain.
+     * @return Encryption at rest options for the specified domain.
      */
 
     public EncryptionAtRestOptions getOptions() {
@@ -65,11 +65,11 @@ public class EncryptionAtRestOptionsStatus implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The Encryption At Rest options for the specified domain.
+     * Encryption at rest options for the specified domain.
      * </p>
      * 
      * @param options
-     *        The Encryption At Rest options for the specified domain.
+     *        Encryption at rest options for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class EncryptionAtRestOptionsStatus implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The status of the Encryption At Rest options for the specified domain.
+     * The status of the encryption at rest options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The status of the Encryption At Rest options for the specified domain.
+     *        The status of the encryption at rest options for the specified domain.
      */
 
     public void setStatus(OptionStatus status) {
@@ -93,10 +93,10 @@ public class EncryptionAtRestOptionsStatus implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The status of the Encryption At Rest options for the specified domain.
+     * The status of the encryption at rest options for the specified domain.
      * </p>
      * 
-     * @return The status of the Encryption At Rest options for the specified domain.
+     * @return The status of the encryption at rest options for the specified domain.
      */
 
     public OptionStatus getStatus() {
@@ -105,11 +105,11 @@ public class EncryptionAtRestOptionsStatus implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The status of the Encryption At Rest options for the specified domain.
+     * The status of the encryption at rest options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The status of the Encryption At Rest options for the specified domain.
+     *        The status of the encryption at rest options for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

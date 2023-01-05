@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By
  * default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With
- * OutputConfig enabled, you can set the name of the bucket the output will be sent to and the file prefix of the
- * results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a
+ * <code>OutputConfig</code> enabled, you can set the name of the bucket the output will be sent to the file prefix of
+ * the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a
  * customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side
  * using the AWS managed CMK for Amazon S3.
  * </p>

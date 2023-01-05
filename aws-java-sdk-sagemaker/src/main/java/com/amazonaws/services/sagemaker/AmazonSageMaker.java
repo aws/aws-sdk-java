@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -683,10 +683,16 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
-     * compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a
-     * machine learning model.
+     * Creates a SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared
+     * and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine
+     * learning model.
      * </p>
+     * <note>
+     * <p>
+     * In the Studio UI, trials are referred to as <i>run groups</i> and trial components are referred to as
+     * <i>runs</i>.
+     * </p>
+     * </note>
      * <p>
      * The goal of an experiment is to determine the components that produce the best model. Multiple trials are
      * performed, each one isolating and measuring the impact of a change to one or more inputs, while keeping the
@@ -775,6 +781,24 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Create a hub.
+     * </p>
+     * 
+     * @param createHubRequest
+     * @return Result of the CreateHub operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateHubResult createHub(CreateHubRequest createHubRequest);
+
+    /**
+     * <p>
      * Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel
      * interface with an instruction area, the item to review, and an input area.
      * </p>
@@ -799,6 +823,19 @@ public interface AmazonSageMaker {
      * you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured
      * by an objective metric that you choose.
      * </p>
+     * <p>
+     * A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for
+     * each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+     * Experiments, Trials, and Trial Components</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param createHyperParameterTuningJobRequest
      * @return Result of the CreateHyperParameterTuningJob operation returned by the service.
@@ -853,6 +890,39 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     CreateImageVersionResult createImageVersion(CreateImageVersionRequest createImageVersionRequest);
+
+    /**
+     * <p>
+     * Creates an inference experiment using the configurations specified in the request.
+     * </p>
+     * <p>
+     * Use this API to setup and schedule an experiment to compare model variants on a Amazon SageMaker inference
+     * endpoint. For more information about inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>.
+     * </p>
+     * <p>
+     * Amazon SageMaker begins your experiment at the scheduled time and routes traffic to your endpoint's model
+     * variants based on your specified configuration.
+     * </p>
+     * <p>
+     * While the experiment is in progress or after it has concluded, you can view metrics that compare your model
+     * variants. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View, monitor, and
+     * edit shadow tests</a>.
+     * </p>
+     * 
+     * @param createInferenceExperimentRequest
+     * @return Result of the CreateInferenceExperiment operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateInferenceExperimentResult createInferenceExperiment(CreateInferenceExperimentRequest createInferenceExperimentRequest);
 
     /**
      * <p>
@@ -999,6 +1069,50 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     CreateModelBiasJobDefinitionResult createModelBiasJobDefinition(CreateModelBiasJobDefinitionRequest createModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card.
+     * </p>
+     * <p>
+     * For information about how to use model cards, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon SageMaker Model Card</a>.
+     * </p>
+     * 
+     * @param createModelCardRequest
+     * @return Result of the CreateModelCard operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.CreateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateModelCardResult createModelCard(CreateModelCardRequest createModelCardRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param createModelCardExportJobRequest
+     * @return Result of the CreateModelCardExportJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.CreateModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateModelCardExportJobResult createModelCardExportJob(CreateModelCardExportJobRequest createModelCardExportJobRequest);
 
     /**
      * <p>
@@ -1350,6 +1464,24 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a space used for real time collaboration in a Domain.
+     * </p>
+     * 
+     * @param createSpaceRequest
+     * @return Result of the CreateSpace operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateSpaceResult createSpace(CreateSpaceRequest createSpaceRequest);
+
+    /**
+     * <p>
      * Creates a new Studio Lifecycle Configuration.
      * </p>
      * 
@@ -1391,15 +1523,15 @@ public interface AmazonSageMaker {
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is
-     * stored.
+     * <code>InputDataConfig</code> - Describes the input required by the training job and the Amazon S3, EFS, or FSx
+     * location where it is stored.
      * </p>
      * </li>
      * <li>
@@ -1968,6 +2100,40 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Delete a hub.
+     * </p>
+     * 
+     * @param deleteHubRequest
+     * @return Result of the DeleteHub operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteHubResult deleteHub(DeleteHubRequest deleteHubRequest);
+
+    /**
+     * <p>
+     * Delete the contents of a hub.
+     * </p>
+     * 
+     * @param deleteHubContentRequest
+     * @return Result of the DeleteHubContent operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteHubContentResult deleteHubContent(DeleteHubContentRequest deleteHubContentRequest);
+
+    /**
+     * <p>
      * Use this operation to delete a human task user interface (worker task template).
      * </p>
      * <p>
@@ -2021,6 +2187,30 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an inference experiment.
+     * </p>
+     * <note>
+     * <p>
+     * This operation does not delete your endpoint, variants, or any underlying resources. This operation only deletes
+     * the metadata of your experiment.
+     * </p>
+     * </note>
+     * 
+     * @param deleteInferenceExperimentRequest
+     * @return Result of the DeleteInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteInferenceExperimentResult deleteInferenceExperiment(DeleteInferenceExperimentRequest deleteInferenceExperimentRequest);
+
+    /**
+     * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in SageMaker when
      * you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role
      * that you specified when creating the model.
@@ -2048,6 +2238,24 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteModelBiasJobDefinitionResult deleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest deleteModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param deleteModelCardRequest
+     * @return Result of the DeleteModelCard operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.DeleteModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteModelCardResult deleteModelCard(DeleteModelCardRequest deleteModelCardRequest);
 
     /**
      * <p>
@@ -2211,6 +2419,23 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     DeleteProjectResult deleteProject(DeleteProjectRequest deleteProjectRequest);
+
+    /**
+     * <p>
+     * Used to delete a space.
+     * </p>
+     * 
+     * @param deleteSpaceRequest
+     * @return Result of the DeleteSpace operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteSpaceResult deleteSpace(DeleteSpaceRequest deleteSpaceRequest);
 
     /**
      * <p>
@@ -2676,6 +2901,36 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Describe a hub.
+     * </p>
+     * 
+     * @param describeHubRequest
+     * @return Result of the DescribeHub operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeHubResult describeHub(DescribeHubRequest describeHubRequest);
+
+    /**
+     * <p>
+     * Describe the content of a hub.
+     * </p>
+     * 
+     * @param describeHubContentRequest
+     * @return Result of the DescribeHubContent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeHubContentResult describeHubContent(DescribeHubContentRequest describeHubContentRequest);
+
+    /**
+     * <p>
      * Returns information about the requested human task user interface (worker task template).
      * </p>
      * 
@@ -2733,6 +2988,21 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     DescribeImageVersionResult describeImageVersion(DescribeImageVersionRequest describeImageVersionRequest);
+
+    /**
+     * <p>
+     * Returns details about an inference experiment.
+     * </p>
+     * 
+     * @param describeInferenceExperimentRequest
+     * @return Result of the DescribeInferenceExperiment operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInferenceExperimentResult describeInferenceExperiment(DescribeInferenceExperimentRequest describeInferenceExperimentRequest);
 
     /**
      * <p>
@@ -2809,6 +3079,36 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeModelBiasJobDefinitionResult describeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest describeModelBiasJobDefinitionRequest);
+
+    /**
+     * <p>
+     * Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param describeModelCardRequest
+     * @return Result of the DescribeModelCard operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeModelCardResult describeModelCard(DescribeModelCardRequest describeModelCardRequest);
+
+    /**
+     * <p>
+     * Describes an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param describeModelCardExportJobRequest
+     * @return Result of the DescribeModelCardExportJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeModelCardExportJobResult describeModelCardExportJob(DescribeModelCardExportJobRequest describeModelCardExportJobRequest);
 
     /**
      * <p>
@@ -2993,6 +3293,21 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     DescribeProjectResult describeProject(DescribeProjectRequest describeProjectRequest);
+
+    /**
+     * <p>
+     * Describes the space.
+     * </p>
+     * 
+     * @param describeSpaceRequest
+     * @return Result of the DescribeSpace operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeSpaceResult describeSpace(DescribeSpaceRequest describeSpaceRequest);
 
     /**
      * <p>
@@ -3266,6 +3581,26 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Import hub content.
+     * </p>
+     * 
+     * @param importHubContentRequest
+     * @return Result of the ImportHubContent operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ImportHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ImportHubContentResult importHubContent(ImportHubContentRequest importHubContentRequest);
+
+    /**
+     * <p>
      * Lists the actions in your account and their properties.
      * </p>
      * 
@@ -3291,6 +3626,21 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListAlgorithmsResult listAlgorithms(ListAlgorithmsRequest listAlgorithmsRequest);
+
+    /**
+     * <p>
+     * Lists the aliases of a specified image or image version.
+     * </p>
+     * 
+     * @param listAliasesRequest
+     * @return Result of the ListAliases operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAliases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAliasesResult listAliases(ListAliasesRequest listAliasesRequest);
 
     /**
      * <p>
@@ -3568,6 +3918,49 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * List hub content versions.
+     * </p>
+     * 
+     * @param listHubContentVersionsRequest
+     * @return Result of the ListHubContentVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListHubContentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListHubContentVersionsResult listHubContentVersions(ListHubContentVersionsRequest listHubContentVersionsRequest);
+
+    /**
+     * <p>
+     * List the contents of a hub.
+     * </p>
+     * 
+     * @param listHubContentsRequest
+     * @return Result of the ListHubContents operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListHubContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListHubContentsResult listHubContents(ListHubContentsRequest listHubContentsRequest);
+
+    /**
+     * <p>
+     * List all existing hubs.
+     * </p>
+     * 
+     * @param listHubsRequest
+     * @return Result of the ListHubs operation returned by the service.
+     * @sample AmazonSageMaker.ListHubs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListHubsResult listHubs(ListHubsRequest listHubsRequest);
+
+    /**
+     * <p>
      * Returns information about the human task user interfaces in your account.
      * </p>
      * 
@@ -3622,6 +4015,36 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListImagesResult listImages(ListImagesRequest listImagesRequest);
+
+    /**
+     * <p>
+     * Returns the list of all inference experiments.
+     * </p>
+     * 
+     * @param listInferenceExperimentsRequest
+     * @return Result of the ListInferenceExperiments operation returned by the service.
+     * @sample AmazonSageMaker.ListInferenceExperiments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInferenceExperimentsResult listInferenceExperiments(ListInferenceExperimentsRequest listInferenceExperimentsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @return Result of the ListInferenceRecommendationsJobSteps operation returned by the service.
+     * @sample AmazonSageMaker.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInferenceRecommendationsJobStepsResult listInferenceRecommendationsJobSteps(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest);
 
     /**
      * <p>
@@ -3691,6 +4114,47 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     ListModelBiasJobDefinitionsResult listModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest listModelBiasJobDefinitionsRequest);
+
+    /**
+     * <p>
+     * List the export jobs for the Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardExportJobsRequest
+     * @return Result of the ListModelCardExportJobs operation returned by the service.
+     * @sample AmazonSageMaker.ListModelCardExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListModelCardExportJobsResult listModelCardExportJobs(ListModelCardExportJobsRequest listModelCardExportJobsRequest);
+
+    /**
+     * <p>
+     * List existing versions of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardVersionsRequest
+     * @return Result of the ListModelCardVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListModelCardVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListModelCardVersionsResult listModelCardVersions(ListModelCardVersionsRequest listModelCardVersionsRequest);
+
+    /**
+     * <p>
+     * List existing model cards.
+     * </p>
+     * 
+     * @param listModelCardsRequest
+     * @return Result of the ListModelCards operation returned by the service.
+     * @sample AmazonSageMaker.ListModelCards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListModelCardsResult listModelCards(ListModelCardsRequest listModelCardsRequest);
 
     /**
      * <p>
@@ -3770,6 +4234,36 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListModelsResult listModels(ListModelsRequest listModelsRequest);
+
+    /**
+     * <p>
+     * Gets a list of past alerts in a model monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertHistoryRequest
+     * @return Result of the ListMonitoringAlertHistory operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListMonitoringAlertHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMonitoringAlertHistoryResult listMonitoringAlertHistory(ListMonitoringAlertHistoryRequest listMonitoringAlertHistoryRequest);
+
+    /**
+     * <p>
+     * Gets the alerts for a single monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertsRequest
+     * @return Result of the ListMonitoringAlerts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListMonitoringAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListMonitoringAlertsResult listMonitoringAlerts(ListMonitoringAlertsRequest listMonitoringAlertsRequest);
 
     /**
      * <p>
@@ -3909,6 +4403,19 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     ListProjectsResult listProjects(ListProjectsRequest listProjectsRequest);
+
+    /**
+     * <p>
+     * Lists spaces.
+     * </p>
+     * 
+     * @param listSpacesRequest
+     * @return Result of the ListSpaces operation returned by the service.
+     * @sample AmazonSageMaker.ListSpaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListSpacesResult listSpaces(ListSpacesRequest listSpacesRequest);
 
     /**
      * <p>
@@ -4284,6 +4791,24 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Starts an inference experiment.
+     * </p>
+     * 
+     * @param startInferenceExperimentRequest
+     * @return Result of the StartInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StartInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartInferenceExperimentResult startInferenceExperiment(StartInferenceExperimentRequest startInferenceExperimentRequest);
+
+    /**
+     * <p>
      * Starts a previously stopped monitoring schedule.
      * </p>
      * <note>
@@ -4423,6 +4948,24 @@ public interface AmazonSageMaker {
      *      target="_top">AWS API Documentation</a>
      */
     StopHyperParameterTuningJobResult stopHyperParameterTuningJob(StopHyperParameterTuningJobRequest stopHyperParameterTuningJobRequest);
+
+    /**
+     * <p>
+     * Stops an inference experiment.
+     * </p>
+     * 
+     * @param stopInferenceExperimentRequest
+     * @return Result of the StopInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StopInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopInferenceExperimentResult stopInferenceExperiment(StopInferenceExperimentRequest stopInferenceExperimentRequest);
 
     /**
      * <p>
@@ -4823,6 +5366,21 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Update a hub.
+     * </p>
+     * 
+     * @param updateHubRequest
+     * @return Result of the UpdateHub operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateHubResult updateHub(UpdateHubRequest updateHubRequest);
+
+    /**
+     * <p>
      * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
      * <a>DeleteTags</a> APIs.
      * </p>
@@ -4841,6 +5399,69 @@ public interface AmazonSageMaker {
 
     /**
      * <p>
+     * Updates the properties of a SageMaker image version.
+     * </p>
+     * 
+     * @param updateImageVersionRequest
+     * @return Result of the UpdateImageVersion operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateImageVersionResult updateImageVersion(UpdateImageVersionRequest updateImageVersionRequest);
+
+    /**
+     * <p>
+     * Updates an inference experiment that you created. The status of the inference experiment has to be either
+     * <code>Created</code>, <code>Running</code>. For more information on the status of an inference experiment, see
+     * <a>DescribeInferenceExperimentResponse$Status</a>.
+     * </p>
+     * 
+     * @param updateInferenceExperimentRequest
+     * @return Result of the UpdateInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateInferenceExperimentResult updateInferenceExperiment(UpdateInferenceExperimentRequest updateInferenceExperimentRequest);
+
+    /**
+     * <p>
+     * Update an Amazon SageMaker Model Card.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot update both model card content and model card status in a single call.
+     * </p>
+     * </important>
+     * 
+     * @param updateModelCardRequest
+     * @return Result of the UpdateModelCard operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.UpdateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateModelCardResult updateModelCard(UpdateModelCardRequest updateModelCardRequest);
+
+    /**
+     * <p>
      * Updates a versioned model.
      * </p>
      * 
@@ -4851,6 +5472,24 @@ public interface AmazonSageMaker {
      *      API Documentation</a>
      */
     UpdateModelPackageResult updateModelPackage(UpdateModelPackageRequest updateModelPackageRequest);
+
+    /**
+     * <p>
+     * Update the parameters of a model monitor alert.
+     * </p>
+     * 
+     * @param updateMonitoringAlertRequest
+     * @return Result of the UpdateMonitoringAlert operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateMonitoringAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMonitoringAlertResult updateMonitoringAlert(UpdateMonitoringAlertRequest updateMonitoringAlertRequest);
 
     /**
      * <p>
@@ -4955,6 +5594,26 @@ public interface AmazonSageMaker {
      *      Documentation</a>
      */
     UpdateProjectResult updateProject(UpdateProjectRequest updateProjectRequest);
+
+    /**
+     * <p>
+     * Updates the settings of a space.
+     * </p>
+     * 
+     * @param updateSpaceRequest
+     * @return Result of the UpdateSpace operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateSpaceResult updateSpace(UpdateSpaceRequest updateSpaceRequest);
 
     /**
      * <p>

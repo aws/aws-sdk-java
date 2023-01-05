@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -775,6 +775,39 @@ public class AmazonNimbleStudioAsyncClient extends AmazonNimbleStudioClient impl
     }
 
     @Override
+    public java.util.concurrent.Future<GetStreamingSessionBackupResult> getStreamingSessionBackupAsync(GetStreamingSessionBackupRequest request) {
+
+        return getStreamingSessionBackupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStreamingSessionBackupResult> getStreamingSessionBackupAsync(final GetStreamingSessionBackupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetStreamingSessionBackupRequest, GetStreamingSessionBackupResult> asyncHandler) {
+        final GetStreamingSessionBackupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetStreamingSessionBackupResult>() {
+            @Override
+            public GetStreamingSessionBackupResult call() throws Exception {
+                GetStreamingSessionBackupResult result = null;
+
+                try {
+                    result = executeGetStreamingSessionBackup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStreamingSessionStreamResult> getStreamingSessionStreamAsync(GetStreamingSessionStreamRequest request) {
 
         return getStreamingSessionStreamAsync(request, null);
@@ -1056,6 +1089,39 @@ public class AmazonNimbleStudioAsyncClient extends AmazonNimbleStudioClient impl
 
                 try {
                     result = executeListStreamingImages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamingSessionBackupsResult> listStreamingSessionBackupsAsync(ListStreamingSessionBackupsRequest request) {
+
+        return listStreamingSessionBackupsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamingSessionBackupsResult> listStreamingSessionBackupsAsync(final ListStreamingSessionBackupsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListStreamingSessionBackupsRequest, ListStreamingSessionBackupsResult> asyncHandler) {
+        final ListStreamingSessionBackupsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListStreamingSessionBackupsResult>() {
+            @Override
+            public ListStreamingSessionBackupsResult call() throws Exception {
+                ListStreamingSessionBackupsResult result = null;
+
+                try {
+                    result = executeListStreamingSessionBackups(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

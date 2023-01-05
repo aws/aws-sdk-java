@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -231,9 +231,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
     private com.amazonaws.internal.SdkInternalList<java.util.Map<String, java.util.List<String>>> targetMaps;
     /**
      * <p>
-     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
-     * as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of
-     * resource to which it applies, the environment, or the purpose of the association.
+     * Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign
+     * to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you
+     * define.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -1794,14 +1795,16 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
-     * as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of
-     * resource to which it applies, the environment, or the purpose of the association.
+     * Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign
+     * to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you
+     * define.
      * </p>
      * 
-     * @return Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
-     *         ways, such as by purpose, owner, or environment. For example, you might want to tag an association to
-     *         identify the type of resource to which it applies, the environment, or the purpose of the association.
+     * @return Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you
+     *         can assign to your Amazon Web Services resources. Tags enable you to categorize your resources in
+     *         different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an
+     *         optional value, both of which you define.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1813,15 +1816,17 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
-     * as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of
-     * resource to which it applies, the environment, or the purpose of the association.
+     * Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign
+     * to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you
+     * define.
      * </p>
      * 
      * @param tags
-     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
-     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an association to
-     *        identify the type of resource to which it applies, the environment, or the purpose of the association.
+     *        Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can
+     *        assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different
+     *        ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value,
+     *        both of which you define.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1835,9 +1840,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
-     * as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of
-     * resource to which it applies, the environment, or the purpose of the association.
+     * Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign
+     * to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you
+     * define.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1846,9 +1852,10 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param tags
-     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
-     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an association to
-     *        identify the type of resource to which it applies, the environment, or the purpose of the association.
+     *        Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can
+     *        assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different
+     *        ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value,
+     *        both of which you define.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1864,15 +1871,17 @@ public class CreateAssociationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different ways, such
-     * as by purpose, owner, or environment. For example, you might want to tag an association to identify the type of
-     * resource to which it applies, the environment, or the purpose of the association.
+     * Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can assign
+     * to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for
+     * example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you
+     * define.
      * </p>
      * 
      * @param tags
-     *        Optional metadata that you assign to a resource. Tags enable you to categorize a resource in different
-     *        ways, such as by purpose, owner, or environment. For example, you might want to tag an association to
-     *        identify the type of resource to which it applies, the environment, or the purpose of the association.
+     *        Adds or overwrites one or more tags for a State Manager association. <i>Tags</i> are metadata that you can
+     *        assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different
+     *        ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value,
+     *        both of which you define.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

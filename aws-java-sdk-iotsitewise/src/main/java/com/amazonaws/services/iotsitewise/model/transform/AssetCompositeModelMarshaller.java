@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class AssetCompositeModelMarshaller {
             .marshallLocationName("type").build();
     private static final MarshallingInfo<List> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("properties").build();
+    private static final MarshallingInfo<String> ID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("id").build();
 
     private static final AssetCompositeModelMarshaller instance = new AssetCompositeModelMarshaller();
 
@@ -57,6 +59,7 @@ public class AssetCompositeModelMarshaller {
             protocolMarshaller.marshall(assetCompositeModel.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(assetCompositeModel.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(assetCompositeModel.getProperties(), PROPERTIES_BINDING);
+            protocolMarshaller.marshall(assetCompositeModel.getId(), ID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

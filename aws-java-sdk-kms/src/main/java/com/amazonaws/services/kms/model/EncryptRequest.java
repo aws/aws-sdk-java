@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,6 +115,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * This parameter is required only for asymmetric KMS keys. The default value, <code>SYMMETRIC_DEFAULT</code>, is
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
+     * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
      * </p>
      */
     private String encryptionAlgorithm;
@@ -735,6 +738,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @param encryptionAlgorithm
      *        Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
@@ -743,6 +749,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        This parameter is required only for asymmetric KMS keys. The default value, <code>SYMMETRIC_DEFAULT</code>
      *        , is the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we
      *        recommend RSAES_OAEP_SHA_256.
+     *        </p>
+     *        <p>
+     *        The SM2PKE algorithm is only available in China Regions.
      * @see EncryptionAlgorithmSpec
      */
 
@@ -760,6 +769,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @return Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
      *         be compatible with the KMS key that you specify.</p>
@@ -767,6 +779,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *         This parameter is required only for asymmetric KMS keys. The default value,
      *         <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric encryption KMS keys. If you are using
      *         an asymmetric KMS key, we recommend RSAES_OAEP_SHA_256.
+     *         </p>
+     *         <p>
+     *         The SM2PKE algorithm is only available in China Regions.
      * @see EncryptionAlgorithmSpec
      */
 
@@ -784,6 +799,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @param encryptionAlgorithm
      *        Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
@@ -792,6 +810,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        This parameter is required only for asymmetric KMS keys. The default value, <code>SYMMETRIC_DEFAULT</code>
      *        , is the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we
      *        recommend RSAES_OAEP_SHA_256.
+     *        </p>
+     *        <p>
+     *        The SM2PKE algorithm is only available in China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithmSpec
      */
@@ -811,6 +832,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we recommend
      * RSAES_OAEP_SHA_256.
      * </p>
+     * <p>
+     * The SM2PKE algorithm is only available in China Regions.
+     * </p>
      * 
      * @param encryptionAlgorithm
      *        Specifies the encryption algorithm that KMS will use to encrypt the plaintext message. The algorithm must
@@ -819,6 +843,9 @@ public class EncryptRequest extends com.amazonaws.AmazonWebServiceRequest implem
      *        This parameter is required only for asymmetric KMS keys. The default value, <code>SYMMETRIC_DEFAULT</code>
      *        , is the algorithm used for symmetric encryption KMS keys. If you are using an asymmetric KMS key, we
      *        recommend RSAES_OAEP_SHA_256.
+     *        </p>
+     *        <p>
+     *        The SM2PKE algorithm is only available in China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionAlgorithmSpec
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,13 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </ul>
      */
     private java.util.List<FeatureValue> record;
+    /**
+     * <p>
+     * A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the
+     * stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     */
+    private java.util.List<String> targetStores;
 
     /**
      * <p>
@@ -307,6 +314,114 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the
+     * stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @return A list of stores to which you're adding the record. By default, Feature Store adds the record to all of
+     *         the stores that you're using for the <code>FeatureGroup</code>.
+     * @see TargetStore
+     */
+
+    public java.util.List<String> getTargetStores() {
+        return targetStores;
+    }
+
+    /**
+     * <p>
+     * A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the
+     * stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores to which you're adding the record. By default, Feature Store adds the record to all of
+     *        the stores that you're using for the <code>FeatureGroup</code>.
+     * @see TargetStore
+     */
+
+    public void setTargetStores(java.util.Collection<String> targetStores) {
+        if (targetStores == null) {
+            this.targetStores = null;
+            return;
+        }
+
+        this.targetStores = new java.util.ArrayList<String>(targetStores);
+    }
+
+    /**
+     * <p>
+     * A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the
+     * stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetStores(java.util.Collection)} or {@link #withTargetStores(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores to which you're adding the record. By default, Feature Store adds the record to all of
+     *        the stores that you're using for the <code>FeatureGroup</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetStore
+     */
+
+    public PutRecordRequest withTargetStores(String... targetStores) {
+        if (this.targetStores == null) {
+            setTargetStores(new java.util.ArrayList<String>(targetStores.length));
+        }
+        for (String ele : targetStores) {
+            this.targetStores.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the
+     * stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores to which you're adding the record. By default, Feature Store adds the record to all of
+     *        the stores that you're using for the <code>FeatureGroup</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetStore
+     */
+
+    public PutRecordRequest withTargetStores(java.util.Collection<String> targetStores) {
+        setTargetStores(targetStores);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the
+     * stores that you're using for the <code>FeatureGroup</code>.
+     * </p>
+     * 
+     * @param targetStores
+     *        A list of stores to which you're adding the record. By default, Feature Store adds the record to all of
+     *        the stores that you're using for the <code>FeatureGroup</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetStore
+     */
+
+    public PutRecordRequest withTargetStores(TargetStore... targetStores) {
+        java.util.ArrayList<String> targetStoresCopy = new java.util.ArrayList<String>(targetStores.length);
+        for (TargetStore value : targetStores) {
+            targetStoresCopy.add(value.toString());
+        }
+        if (getTargetStores() == null) {
+            setTargetStores(targetStoresCopy);
+        } else {
+            getTargetStores().addAll(targetStoresCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -321,7 +436,9 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getFeatureGroupName() != null)
             sb.append("FeatureGroupName: ").append(getFeatureGroupName()).append(",");
         if (getRecord() != null)
-            sb.append("Record: ").append(getRecord());
+            sb.append("Record: ").append(getRecord()).append(",");
+        if (getTargetStores() != null)
+            sb.append("TargetStores: ").append(getTargetStores());
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +461,10 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getRecord() != null && other.getRecord().equals(this.getRecord()) == false)
             return false;
+        if (other.getTargetStores() == null ^ this.getTargetStores() == null)
+            return false;
+        if (other.getTargetStores() != null && other.getTargetStores().equals(this.getTargetStores()) == false)
+            return false;
         return true;
     }
 
@@ -354,6 +475,7 @@ public class PutRecordRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
         hashCode = prime * hashCode + ((getFeatureGroupName() == null) ? 0 : getFeatureGroupName().hashCode());
         hashCode = prime * hashCode + ((getRecord() == null) ? 0 : getRecord().hashCode());
+        hashCode = prime * hashCode + ((getTargetStores() == null) ? 0 : getTargetStores().hashCode());
         return hashCode;
     }
 

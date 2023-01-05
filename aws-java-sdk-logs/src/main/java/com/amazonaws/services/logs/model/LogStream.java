@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,28 +36,31 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     private String logStreamName;
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      */
     private Long firstEventTimestamp;
     /**
      * <p>
      * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
-     * eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations
-     * might take longer.
+     * number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates
+     * on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare
+     * situations might take longer.
      * </p>
      */
     private Long lastEventTimestamp;
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The
+     * <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than
+     * an hour after ingestion, but in rare situations might take longer.
      * </p>
      */
     private Long lastIngestionTime;
@@ -65,6 +68,13 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The sequence token.
      * </p>
+     * <important>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted regardless of receiving an invalid sequence token. You don't need to obtain
+     * <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.
+     * </p>
+     * </important>
      */
     private String uploadSequenceToken;
     /**
@@ -78,9 +88,9 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * The number of bytes stored.
      * </p>
      * <p>
-     * <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as
-     * zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not
-     * affected.
+     * <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always
+     * reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups
+     * is not affected.
      * </p>
      */
     @Deprecated
@@ -128,11 +138,13 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The creation time of the stream, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -141,10 +153,12 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
-     * @return The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * @return The creation time of the stream, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public Long getCreationTime() {
@@ -153,11 +167,13 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the stream, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the stream, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The creation time of the stream, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +184,12 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param firstEventTimestamp
-     *        The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The time of the first event, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public void setFirstEventTimestamp(Long firstEventTimestamp) {
@@ -181,10 +198,11 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
-     * @return The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * @return The time of the first event, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public Long getFirstEventTimestamp() {
@@ -193,11 +211,12 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The time of the first event, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param firstEventTimestamp
-     *        The time of the first event, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The time of the first event, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,16 +228,16 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
-     * eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations
-     * might take longer.
+     * number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates
+     * on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare
+     * situations might take longer.
      * </p>
      * 
      * @param lastEventTimestamp
      *        The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on
-     *        an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare
-     *        situations might take longer.
+     *        the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code>
+     *        value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion,
+     *        but in rare situations might take longer.
      */
 
     public void setLastEventTimestamp(Long lastEventTimestamp) {
@@ -228,15 +247,15 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
-     * eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations
-     * might take longer.
+     * number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates
+     * on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare
+     * situations might take longer.
      * </p>
      * 
      * @return The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *         the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates
-     *         on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare
-     *         situations might take longer.
+     *         the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code>
+     *         value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion,
+     *         but in rare situations might take longer.
      */
 
     public Long getLastEventTimestamp() {
@@ -246,16 +265,16 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the
-     * number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on an
-     * eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations
-     * might take longer.
+     * number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code> value updates
+     * on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare
+     * situations might take longer.
      * </p>
      * 
      * @param lastEventTimestamp
      *        The time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as
-     *        the number of milliseconds after Jan 1, 1970 00:00:00 UTC. The <code>lastEventTime</code> value updates on
-     *        an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare
-     *        situations might take longer.
+     *        the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>. The <code>lastEventTime</code>
+     *        value updates on an eventual consistency basis. It typically updates in less than an hour from ingestion,
+     *        but in rare situations might take longer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,11 +285,15 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The
+     * <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than
+     * an hour after ingestion, but in rare situations might take longer.
      * </p>
      * 
      * @param lastIngestionTime
-     *        The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>
+     *        The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in
+     *        less than an hour after ingestion, but in rare situations might take longer.
      */
 
     public void setLastIngestionTime(Long lastIngestionTime) {
@@ -279,10 +302,14 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The
+     * <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than
+     * an hour after ingestion, but in rare situations might take longer.
      * </p>
      * 
-     * @return The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * @return The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>
+     *         The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates
+     *         in less than an hour after ingestion, but in rare situations might take longer.
      */
 
     public Long getLastIngestionTime() {
@@ -291,11 +318,15 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code> The
+     * <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in less than
+     * an hour after ingestion, but in rare situations might take longer.
      * </p>
      * 
      * @param lastIngestionTime
-     *        The ingestion time, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     *        The ingestion time, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>
+     *        The <code>lastIngestionTime</code> value updates on an eventual consistency basis. It typically updates in
+     *        less than an hour after ingestion, but in rare situations might take longer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,9 +339,21 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The sequence token.
      * </p>
+     * <important>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted regardless of receiving an invalid sequence token. You don't need to obtain
+     * <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.
+     * </p>
+     * </important>
      * 
      * @param uploadSequenceToken
-     *        The sequence token.
+     *        The sequence token.</p> <important>
+     *        <p>
+     *        The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions
+     *        are always accepted regardless of receiving an invalid sequence token. You don't need to obtain
+     *        <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.
+     *        </p>
      */
 
     public void setUploadSequenceToken(String uploadSequenceToken) {
@@ -321,8 +364,20 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The sequence token.
      * </p>
+     * <important>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted regardless of receiving an invalid sequence token. You don't need to obtain
+     * <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.
+     * </p>
+     * </important>
      * 
-     * @return The sequence token.
+     * @return The sequence token.</p> <important>
+     *         <p>
+     *         The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions
+     *         are always accepted regardless of receiving an invalid sequence token. You don't need to obtain
+     *         <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.
+     *         </p>
      */
 
     public String getUploadSequenceToken() {
@@ -333,9 +388,21 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The sequence token.
      * </p>
+     * <important>
+     * <p>
+     * The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions are
+     * always accepted regardless of receiving an invalid sequence token. You don't need to obtain
+     * <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.
+     * </p>
+     * </important>
      * 
      * @param uploadSequenceToken
-     *        The sequence token.
+     *        The sequence token.</p> <important>
+     *        <p>
+     *        The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code> actions
+     *        are always accepted regardless of receiving an invalid sequence token. You don't need to obtain
+     *        <code>uploadSequenceToken</code> to use a <code>PutLogEvents</code> action.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,17 +456,17 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * The number of bytes stored.
      * </p>
      * <p>
-     * <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as
-     * zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not
-     * affected.
+     * <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always
+     * reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups
+     * is not affected.
      * </p>
      * 
      * @param storedBytes
      *        The number of bytes stored.</p>
      *        <p>
-     *        <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported
-     *        as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is
-     *        not affected.
+     *        <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is
+     *        always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter
+     *        for log groups is not affected.
      */
     @Deprecated
     public void setStoredBytes(Long storedBytes) {
@@ -411,16 +478,16 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * The number of bytes stored.
      * </p>
      * <p>
-     * <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as
-     * zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not
-     * affected.
+     * <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always
+     * reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups
+     * is not affected.
      * </p>
      * 
      * @return The number of bytes stored.</p>
      *         <p>
-     *         <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported
-     *         as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups
-     *         is not affected.
+     *         <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is
+     *         always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter
+     *         for log groups is not affected.
      */
     @Deprecated
     public Long getStoredBytes() {
@@ -432,17 +499,17 @@ public class LogStream implements Serializable, Cloneable, StructuredPojo {
      * The number of bytes stored.
      * </p>
      * <p>
-     * <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported as
-     * zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is not
-     * affected.
+     * <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is always
+     * reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups
+     * is not affected.
      * </p>
      * 
      * @param storedBytes
      *        The number of bytes stored.</p>
      *        <p>
-     *        <b>Important:</b> On June 17, 2019, this parameter was deprecated for log streams, and is always reported
-     *        as zero. This change applies only to log streams. The <code>storedBytes</code> parameter for log groups is
-     *        not affected.
+     *        <b>Important:</b> As of June 17, 2019, this parameter is no longer supported for log streams, and is
+     *        always reported as zero. This change applies only to log streams. The <code>storedBytes</code> parameter
+     *        for log groups is not affected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated

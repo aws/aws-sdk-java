@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,7 +93,6 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      */
     private String keyPairSpec;
@@ -515,7 +514,6 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @param keyPairSpec
@@ -524,7 +522,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      *        The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *        and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *        not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *        China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *        China Regions.
      * @see DataKeyPairSpec
      */
 
@@ -540,7 +538,6 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @return Determines the type of data key pair that is generated. </p>
@@ -548,7 +545,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      *         The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *         and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *         not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *         China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *         China Regions.
      * @see DataKeyPairSpec
      */
 
@@ -564,7 +561,6 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @param keyPairSpec
@@ -573,7 +569,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      *        The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *        and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *        not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *        China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *        China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataKeyPairSpec
      */
@@ -591,7 +587,6 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      * The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign and
      * verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not
      * effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in China Regions.
-     * RSA and ECC asymmetric key pairs are also available in China Regions.
      * </p>
      * 
      * @param keyPairSpec
@@ -600,7 +595,7 @@ public class GenerateDataKeyPairRequest extends com.amazonaws.AmazonWebServiceRe
      *        The KMS rule that restricts the use of asymmetric RSA and SM2 KMS keys to encrypt and decrypt or to sign
      *        and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are
      *        not effective on data key pairs, which are used outside of KMS. The SM2 key spec is only available in
-     *        China Regions. RSA and ECC asymmetric key pairs are also available in China Regions.
+     *        China Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataKeyPairSpec
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,11 +29,15 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
-     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
+     * For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Gateway Load Balancers, this must be "200–399".
      * </p>
      * <p>
      * Note that when using shorthand syntax, some values such as commas need to be escaped.
@@ -50,22 +54,31 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
-     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
+     * For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Gateway Load Balancers, this must be "200–399".
      * </p>
      * <p>
      * Note that when using shorthand syntax, some values such as commas need to be escaped.
      * </p>
      * 
      * @param httpCode
-     *        For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
-     *        You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *        For Application Load Balancers, you can specify values between 200 and 499, with the default value being
+     *        200. You can specify multiple values (for example, "200,202") or a range of values (for example,
      *        "200-299").</p>
      *        <p>
-     *        For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
+     *        For Network Load Balancers, you can specify values between 200 and 599, with the default value being
+     *        200-399. You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *        "200-299").
+     *        </p>
+     *        <p>
+     *        For Gateway Load Balancers, this must be "200–399".
      *        </p>
      *        <p>
      *        Note that when using shorthand syntax, some values such as commas need to be escaped.
@@ -77,21 +90,30 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
-     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
+     * For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Gateway Load Balancers, this must be "200–399".
      * </p>
      * <p>
      * Note that when using shorthand syntax, some values such as commas need to be escaped.
      * </p>
      * 
-     * @return For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
-     *         You can specify multiple values (for example, "200,202") or a range of values (for example,
+     * @return For Application Load Balancers, you can specify values between 200 and 499, with the default value being
+     *         200. You can specify multiple values (for example, "200,202") or a range of values (for example,
      *         "200-299").</p>
      *         <p>
-     *         For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
+     *         For Network Load Balancers, you can specify values between 200 and 599, with the default value being
+     *         200-399. You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *         "200-299").
+     *         </p>
+     *         <p>
+     *         For Gateway Load Balancers, this must be "200–399".
      *         </p>
      *         <p>
      *         Note that when using shorthand syntax, some values such as commas need to be escaped.
@@ -103,22 +125,31 @@ public class Matcher implements Serializable, Cloneable {
 
     /**
      * <p>
-     * For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can
-     * specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * For Application Load Balancers, you can specify values between 200 and 499, with the default value being 200. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
      * </p>
      * <p>
-     * For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
+     * For Network Load Balancers, you can specify values between 200 and 599, with the default value being 200-399. You
+     * can specify multiple values (for example, "200,202") or a range of values (for example, "200-299").
+     * </p>
+     * <p>
+     * For Gateway Load Balancers, this must be "200–399".
      * </p>
      * <p>
      * Note that when using shorthand syntax, some values such as commas need to be escaped.
      * </p>
      * 
      * @param httpCode
-     *        For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200.
-     *        You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *        For Application Load Balancers, you can specify values between 200 and 499, with the default value being
+     *        200. You can specify multiple values (for example, "200,202") or a range of values (for example,
      *        "200-299").</p>
      *        <p>
-     *        For Network Load Balancers and Gateway Load Balancers, this must be "200–399".
+     *        For Network Load Balancers, you can specify values between 200 and 599, with the default value being
+     *        200-399. You can specify multiple values (for example, "200,202") or a range of values (for example,
+     *        "200-299").
+     *        </p>
+     *        <p>
+     *        For Gateway Load Balancers, this must be "200–399".
      *        </p>
      *        <p>
      *        Note that when using shorthand syntax, some values such as commas need to be escaped.

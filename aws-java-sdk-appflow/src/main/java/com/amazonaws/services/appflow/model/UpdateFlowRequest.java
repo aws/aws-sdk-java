@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,13 @@ public class UpdateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.List<Task> tasks;
+    /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     */
+    private MetadataCatalogConfig metadataCatalogConfig;
 
     /**
      * <p>
@@ -345,6 +352,52 @@ public class UpdateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     * 
+     * @param metadataCatalogConfig
+     *        Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     *        associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     */
+
+    public void setMetadataCatalogConfig(MetadataCatalogConfig metadataCatalogConfig) {
+        this.metadataCatalogConfig = metadataCatalogConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     * 
+     * @return Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     *         associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     */
+
+    public MetadataCatalogConfig getMetadataCatalogConfig() {
+        return this.metadataCatalogConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     * associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * </p>
+     * 
+     * @param metadataCatalogConfig
+     *        Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the
+     *        associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowRequest withMetadataCatalogConfig(MetadataCatalogConfig metadataCatalogConfig) {
+        setMetadataCatalogConfig(metadataCatalogConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -367,7 +420,9 @@ public class UpdateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getDestinationFlowConfigList() != null)
             sb.append("DestinationFlowConfigList: ").append(getDestinationFlowConfigList()).append(",");
         if (getTasks() != null)
-            sb.append("Tasks: ").append(getTasks());
+            sb.append("Tasks: ").append(getTasks()).append(",");
+        if (getMetadataCatalogConfig() != null)
+            sb.append("MetadataCatalogConfig: ").append(getMetadataCatalogConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -406,6 +461,10 @@ public class UpdateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getTasks() != null && other.getTasks().equals(this.getTasks()) == false)
             return false;
+        if (other.getMetadataCatalogConfig() == null ^ this.getMetadataCatalogConfig() == null)
+            return false;
+        if (other.getMetadataCatalogConfig() != null && other.getMetadataCatalogConfig().equals(this.getMetadataCatalogConfig()) == false)
+            return false;
         return true;
     }
 
@@ -420,6 +479,7 @@ public class UpdateFlowRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getSourceFlowConfig() == null) ? 0 : getSourceFlowConfig().hashCode());
         hashCode = prime * hashCode + ((getDestinationFlowConfigList() == null) ? 0 : getDestinationFlowConfigList().hashCode());
         hashCode = prime * hashCode + ((getTasks() == null) ? 0 : getTasks().hashCode());
+        hashCode = prime * hashCode + ((getMetadataCatalogConfig() == null) ? 0 : getMetadataCatalogConfig().hashCode());
         return hashCode;
     }
 

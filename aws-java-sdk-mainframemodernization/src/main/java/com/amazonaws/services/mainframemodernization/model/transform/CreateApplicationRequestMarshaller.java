@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class CreateApplicationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<String> ENGINETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineType").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +67,7 @@ public class CreateApplicationRequestMarshaller {
             protocolMarshaller.marshall(createApplicationRequest.getDefinition(), DEFINITION_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getEngineType(), ENGINETYPE_BINDING);
+            protocolMarshaller.marshall(createApplicationRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createApplicationRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

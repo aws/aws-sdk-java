@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -358,6 +358,8 @@ public class AWSBackupGatewayClient extends AmazonWebServiceClient implements AW
      * @return Result of the DeleteHypervisor operation returned by the service.
      * @throws ValidationException
      *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws AccessDeniedException
@@ -484,6 +486,73 @@ public class AWSBackupGatewayClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to get a gateway's bandwidth
+     * rate limit schedule.
+     * </p>
+     * 
+     * @param getBandwidthRateLimitScheduleRequest
+     * @return Result of the GetBandwidthRateLimitSchedule operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetBandwidthRateLimitScheduleResult getBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetBandwidthRateLimitSchedule(request);
+    }
+
+    @SdkInternalApi
+    final GetBandwidthRateLimitScheduleResult executeGetBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest getBandwidthRateLimitScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getBandwidthRateLimitScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetBandwidthRateLimitScheduleRequest> request = null;
+        Response<GetBandwidthRateLimitScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetBandwidthRateLimitScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getBandwidthRateLimitScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBandwidthRateLimitSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetBandwidthRateLimitScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetBandwidthRateLimitScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * By providing the ARN (Amazon Resource Name), this API returns the gateway.
      * </p>
      * 
@@ -535,6 +604,137 @@ public class AWSBackupGatewayClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<GetGatewayResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This action requests information about the specified hypervisor to which the gateway will connect. A hypervisor
+     * is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.
+     * </p>
+     * 
+     * @param getHypervisorRequest
+     * @return Result of the GetHypervisor operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetHypervisor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetHypervisorResult getHypervisor(GetHypervisorRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHypervisor(request);
+    }
+
+    @SdkInternalApi
+    final GetHypervisorResult executeGetHypervisor(GetHypervisorRequest getHypervisorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getHypervisorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHypervisorRequest> request = null;
+        Response<GetHypervisorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHypervisorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getHypervisorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHypervisor");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetHypervisorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetHypervisorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays
+     * the relationship of entity properties available from the on-premises hypervisor to the properties available in
+     * Amazon Web Services.
+     * </p>
+     * 
+     * @param getHypervisorPropertyMappingsRequest
+     * @return Result of the GetHypervisorPropertyMappings operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetHypervisorPropertyMappingsResult getHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetHypervisorPropertyMappings(request);
+    }
+
+    @SdkInternalApi
+    final GetHypervisorPropertyMappingsResult executeGetHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest getHypervisorPropertyMappingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getHypervisorPropertyMappingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetHypervisorPropertyMappingsRequest> request = null;
+        Response<GetHypervisorPropertyMappingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetHypervisorPropertyMappingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getHypervisorPropertyMappingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHypervisorPropertyMappings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetHypervisorPropertyMappingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetHypervisorPropertyMappingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -617,6 +817,8 @@ public class AWSBackupGatewayClient extends AmazonWebServiceClient implements AW
      * @return Result of the ImportHypervisorConfiguration operation returned by the service.
      * @throws ValidationException
      *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws AccessDeniedException
@@ -922,6 +1124,144 @@ public class AWSBackupGatewayClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a
+     * bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a
+     * gateway's bandwidth rate limit schedule.
+     * </p>
+     * 
+     * @param putBandwidthRateLimitScheduleRequest
+     * @return Result of the PutBandwidthRateLimitSchedule operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.PutBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutBandwidthRateLimitScheduleResult putBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest request) {
+        request = beforeClientExecution(request);
+        return executePutBandwidthRateLimitSchedule(request);
+    }
+
+    @SdkInternalApi
+    final PutBandwidthRateLimitScheduleResult executePutBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest putBandwidthRateLimitScheduleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putBandwidthRateLimitScheduleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutBandwidthRateLimitScheduleRequest> request = null;
+        Response<PutBandwidthRateLimitScheduleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutBandwidthRateLimitScheduleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putBandwidthRateLimitScheduleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBandwidthRateLimitSchedule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutBandwidthRateLimitScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutBandwidthRateLimitScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the
+     * relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon
+     * Web Services.
+     * </p>
+     * 
+     * @param putHypervisorPropertyMappingsRequest
+     * @return Result of the PutHypervisorPropertyMappings operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws AccessDeniedException
+     *         The operation cannot proceed because you have insufficient permissions.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.PutHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutHypervisorPropertyMappingsResult putHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutHypervisorPropertyMappings(request);
+    }
+
+    @SdkInternalApi
+    final PutHypervisorPropertyMappingsResult executePutHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest putHypervisorPropertyMappingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putHypervisorPropertyMappingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutHypervisorPropertyMappingsRequest> request = null;
+        Response<PutHypervisorPropertyMappingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutHypervisorPropertyMappingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putHypervisorPropertyMappingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutHypervisorPropertyMappings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutHypervisorPropertyMappingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutHypervisorPropertyMappingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Set the maintenance start time for a gateway.
      * </p>
      * 
@@ -977,6 +1317,74 @@ public class AWSBackupGatewayClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<PutMaintenanceStartTimeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutMaintenanceStartTimeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This action sends a request to sync metadata across the specified virtual machines.
+     * </p>
+     * 
+     * @param startVirtualMachinesMetadataSyncRequest
+     * @return Result of the StartVirtualMachinesMetadataSync operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws AccessDeniedException
+     *         The operation cannot proceed because you have insufficient permissions.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.StartVirtualMachinesMetadataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartVirtualMachinesMetadataSyncResult startVirtualMachinesMetadataSync(StartVirtualMachinesMetadataSyncRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartVirtualMachinesMetadataSync(request);
+    }
+
+    @SdkInternalApi
+    final StartVirtualMachinesMetadataSyncResult executeStartVirtualMachinesMetadataSync(
+            StartVirtualMachinesMetadataSyncRequest startVirtualMachinesMetadataSyncRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startVirtualMachinesMetadataSyncRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartVirtualMachinesMetadataSyncRequest> request = null;
+        Response<StartVirtualMachinesMetadataSyncResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartVirtualMachinesMetadataSyncRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startVirtualMachinesMetadataSyncRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup Gateway");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartVirtualMachinesMetadataSync");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartVirtualMachinesMetadataSyncResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartVirtualMachinesMetadataSyncResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1330,6 +1738,8 @@ public class AWSBackupGatewayClient extends AmazonWebServiceClient implements AW
      * @return Result of the UpdateHypervisor operation returned by the service.
      * @throws ValidationException
      *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws AccessDeniedException

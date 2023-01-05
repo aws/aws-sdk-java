@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,18 +28,18 @@ public class StartTaskExecutionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the specific task execution that was started.
+     * The ARN of the running task execution.
      * </p>
      */
     private String taskExecutionArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the specific task execution that was started.
+     * The ARN of the running task execution.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the specific task execution that was started.
+     *        The ARN of the running task execution.
      */
 
     public void setTaskExecutionArn(String taskExecutionArn) {
@@ -48,10 +48,10 @@ public class StartTaskExecutionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the specific task execution that was started.
+     * The ARN of the running task execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the specific task execution that was started.
+     * @return The ARN of the running task execution.
      */
 
     public String getTaskExecutionArn() {
@@ -60,11 +60,11 @@ public class StartTaskExecutionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the specific task execution that was started.
+     * The ARN of the running task execution.
      * </p>
      * 
      * @param taskExecutionArn
-     *        The Amazon Resource Name (ARN) of the specific task execution that was started.
+     *        The ARN of the running task execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

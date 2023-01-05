@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the request parameters to the <code> <a>DissociatePackage</a> </code> operation.
+ * Container for the request parameters to the <code>DissociatePackage</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,25 +27,27 @@ public class DissociatePackageRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.
+     * Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this
+     * value.
      * </p>
      */
     private String packageID;
     /**
      * <p>
-     * The name of the domain to associate the package with.
+     * Name of the domain to dissociate the package from.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.
+     * Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this
+     * value.
      * </p>
      * 
      * @param packageID
-     *        The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this
-     *        value.
+     *        Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find
+     *        this value.
      */
 
     public void setPackageID(String packageID) {
@@ -54,11 +56,12 @@ public class DissociatePackageRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.
+     * Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this
+     * value.
      * </p>
      * 
-     * @return The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this
-     *         value.
+     * @return Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find
+     *         this value.
      */
 
     public String getPackageID() {
@@ -67,12 +70,13 @@ public class DissociatePackageRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value.
+     * Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this
+     * value.
      * </p>
      * 
      * @param packageID
-     *        The internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this
-     *        value.
+     *        Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find
+     *        this value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +87,11 @@ public class DissociatePackageRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the domain to associate the package with.
+     * Name of the domain to dissociate the package from.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain to associate the package with.
+     *        Name of the domain to dissociate the package from.
      */
 
     public void setDomainName(String domainName) {
@@ -96,10 +100,10 @@ public class DissociatePackageRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the domain to associate the package with.
+     * Name of the domain to dissociate the package from.
      * </p>
      * 
-     * @return The name of the domain to associate the package with.
+     * @return Name of the domain to dissociate the package from.
      */
 
     public String getDomainName() {
@@ -108,11 +112,11 @@ public class DissociatePackageRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The name of the domain to associate the package with.
+     * Name of the domain to dissociate the package from.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain to associate the package with.
+     *        Name of the domain to dissociate the package from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

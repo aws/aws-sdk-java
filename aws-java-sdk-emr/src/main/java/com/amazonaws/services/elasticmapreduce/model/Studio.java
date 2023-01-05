@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      */
     private String authMode;
@@ -297,11 +297,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * @see AuthMode
      */
 
@@ -311,10 +311,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
-     * @return Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     * @return Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * @see AuthMode
      */
 
@@ -324,11 +324,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -340,11 +340,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Amazon EMR Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */

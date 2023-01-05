@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Source server replication type.
+ * AWS Systems Manager Document.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/SsmDocument" target="_top">AWS API
@@ -30,42 +30,42 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * User-friendly name for the AWS Systems Manager Document.
      * </p>
      */
     private String actionName;
     /**
      * <p>
-     * Source server replication type.
+     * If true, Cutover will not be enabled if the document has failed.
      * </p>
      */
     private Boolean mustSucceedForCutover;
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document parameters.
      * </p>
      */
     private java.util.Map<String, java.util.List<SsmParameterStoreParameter>> parameters;
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document name or full ARN.
      * </p>
      */
     private String ssmDocumentName;
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document timeout seconds.
      * </p>
      */
     private Integer timeoutSeconds;
 
     /**
      * <p>
-     * Source server replication type.
+     * User-friendly name for the AWS Systems Manager Document.
      * </p>
      * 
      * @param actionName
-     *        Source server replication type.
+     *        User-friendly name for the AWS Systems Manager Document.
      */
 
     public void setActionName(String actionName) {
@@ -74,10 +74,10 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * User-friendly name for the AWS Systems Manager Document.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return User-friendly name for the AWS Systems Manager Document.
      */
 
     public String getActionName() {
@@ -86,11 +86,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * User-friendly name for the AWS Systems Manager Document.
      * </p>
      * 
      * @param actionName
-     *        Source server replication type.
+     *        User-friendly name for the AWS Systems Manager Document.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,11 +101,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * If true, Cutover will not be enabled if the document has failed.
      * </p>
      * 
      * @param mustSucceedForCutover
-     *        Source server replication type.
+     *        If true, Cutover will not be enabled if the document has failed.
      */
 
     public void setMustSucceedForCutover(Boolean mustSucceedForCutover) {
@@ -114,10 +114,10 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * If true, Cutover will not be enabled if the document has failed.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return If true, Cutover will not be enabled if the document has failed.
      */
 
     public Boolean getMustSucceedForCutover() {
@@ -126,11 +126,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * If true, Cutover will not be enabled if the document has failed.
      * </p>
      * 
      * @param mustSucceedForCutover
-     *        Source server replication type.
+     *        If true, Cutover will not be enabled if the document has failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,10 +141,10 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * If true, Cutover will not be enabled if the document has failed.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return If true, Cutover will not be enabled if the document has failed.
      */
 
     public Boolean isMustSucceedForCutover() {
@@ -153,10 +153,10 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document parameters.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return AWS Systems Manager Document parameters.
      */
 
     public java.util.Map<String, java.util.List<SsmParameterStoreParameter>> getParameters() {
@@ -165,11 +165,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document parameters.
      * </p>
      * 
      * @param parameters
-     *        Source server replication type.
+     *        AWS Systems Manager Document parameters.
      */
 
     public void setParameters(java.util.Map<String, java.util.List<SsmParameterStoreParameter>> parameters) {
@@ -178,11 +178,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document parameters.
      * </p>
      * 
      * @param parameters
-     *        Source server replication type.
+     *        AWS Systems Manager Document parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -221,11 +221,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document name or full ARN.
      * </p>
      * 
      * @param ssmDocumentName
-     *        Source server replication type.
+     *        AWS Systems Manager Document name or full ARN.
      */
 
     public void setSsmDocumentName(String ssmDocumentName) {
@@ -234,10 +234,10 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document name or full ARN.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return AWS Systems Manager Document name or full ARN.
      */
 
     public String getSsmDocumentName() {
@@ -246,11 +246,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document name or full ARN.
      * </p>
      * 
      * @param ssmDocumentName
-     *        Source server replication type.
+     *        AWS Systems Manager Document name or full ARN.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -261,11 +261,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document timeout seconds.
      * </p>
      * 
      * @param timeoutSeconds
-     *        Source server replication type.
+     *        AWS Systems Manager Document timeout seconds.
      */
 
     public void setTimeoutSeconds(Integer timeoutSeconds) {
@@ -274,10 +274,10 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document timeout seconds.
      * </p>
      * 
-     * @return Source server replication type.
+     * @return AWS Systems Manager Document timeout seconds.
      */
 
     public Integer getTimeoutSeconds() {
@@ -286,11 +286,11 @@ public class SsmDocument implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Source server replication type.
+     * AWS Systems Manager Document timeout seconds.
      * </p>
      * 
      * @param timeoutSeconds
-     *        Source server replication type.
+     *        AWS Systems Manager Document timeout seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

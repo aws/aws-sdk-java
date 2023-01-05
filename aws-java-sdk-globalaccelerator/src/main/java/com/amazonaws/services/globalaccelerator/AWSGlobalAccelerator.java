@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,6 +151,53 @@ public interface AWSGlobalAccelerator {
      *      target="_top">AWS API Documentation</a>
      */
     AddCustomRoutingEndpointsResult addCustomRoutingEndpoints(AddCustomRoutingEndpointsRequest addCustomRoutingEndpointsRequest);
+
+    /**
+     * <p>
+     * Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is the recommended option for
+     * adding endpoints. The alternative options are to add endpoints when you create an endpoint group (with the <a
+     * href
+     * ="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+     * API) or when you update an endpoint group (with the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API).
+     * </p>
+     * <p>
+     * There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's more convenient, because you don't need to specify all of the current endpoints that are already in the
+     * endpoint group in addition to the new endpoints that you want to add.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param addEndpointsRequest
+     * @return Result of the AddEndpoints operation returned by the service.
+     * @throws TransactionInProgressException
+     *         There's already a transaction in progress. Another transaction can't be processed.
+     * @throws EndpointGroupNotFoundException
+     *         The endpoint group that you specified doesn't exist.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws LimitExceededException
+     *         Processing your request would cause you to exceed an Global Accelerator limit.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @sample AWSGlobalAccelerator.AddEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AddEndpointsResult addEndpoints(AddEndpointsRequest addEndpointsRequest);
 
     /**
      * <p>
@@ -1057,6 +1104,52 @@ public interface AWSGlobalAccelerator {
      *      target="_top">AWS API Documentation</a>
      */
     RemoveCustomRoutingEndpointsResult removeCustomRoutingEndpoints(RemoveCustomRoutingEndpointsRequest removeCustomRoutingEndpointsRequest);
+
+    /**
+     * <p>
+     * Remove endpoints from an endpoint group.
+     * </p>
+     * <p>
+     * The <code>RemoveEndpoints</code> API operation is the recommended option for removing endpoints. The alternative
+     * is to remove endpoints by updating an endpoint group by using the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API operation. There are two advantages to using <code>AddEndpoints</code> to remove
+     * endpoints instead:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's more convenient, because you only need to specify the endpoints that you want to remove. With the
+     * <code>UpdateEndpointGroup</code> API operation, you must specify all of the endpoints in the endpoint group
+     * except the ones that you want to remove from the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator doesn't need to resolve any endpoints. With the
+     * <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve all of the endpoints that remain
+     * in the group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param removeEndpointsRequest
+     * @return Result of the RemoveEndpoints operation returned by the service.
+     * @throws EndpointGroupNotFoundException
+     *         The endpoint group that you specified doesn't exist.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @throws TransactionInProgressException
+     *         There's already a transaction in progress. Another transaction can't be processed.
+     * @sample AWSGlobalAccelerator.RemoveEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RemoveEndpointsResult removeEndpoints(RemoveEndpointsRequest removeEndpointsRequest);
 
     /**
      * <p>

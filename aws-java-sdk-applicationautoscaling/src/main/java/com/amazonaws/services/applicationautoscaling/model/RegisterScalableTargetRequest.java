@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -197,7 +197,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -267,9 +267,59 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * required when registering a new scalable target.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * For the following resources, the minimum value allowed is 0.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * It's strongly recommended that you specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale on a metric like average CPU
+     * utilization.
+     * </p>
+     * <p>
+     * For all other resources, the minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs. In which case, the error message
+     * will provide the minimum value that the resource can accept.
      * </p>
      */
     private Integer minCapacity;
@@ -284,8 +334,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private Integer maxCapacity;
@@ -1141,7 +1191,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1257,7 +1307,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1383,7 +1433,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1498,7 +1548,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1624,7 +1674,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1740,7 +1790,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1868,7 +1918,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1984,7 +2034,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2110,7 +2160,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2226,7 +2276,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2305,9 +2355,59 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * required when registering a new scalable target.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * For the following resources, the minimum value allowed is 0.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * It's strongly recommended that you specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale on a metric like average CPU
+     * utilization.
+     * </p>
+     * <p>
+     * For all other resources, the minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs. In which case, the error message
+     * will provide the minimum value that the resource can accept.
      * </p>
      * 
      * @param minCapacity
@@ -2315,9 +2415,59 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      *        This property is required when registering a new scalable target.</p>
      *        <p>
-     *        For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     *        Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
-     *        minimum value allowed is 1.
+     *        For the following resources, the minimum value allowed is 0.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        It's strongly recommended that you specify a value greater than 0. A value greater than 0 means that data
+     *        points are continuously reported to CloudWatch that scaling policies can use to scale on a metric like
+     *        average CPU utilization.
+     *        </p>
+     *        <p>
+     *        For all other resources, the minimum allowed value depends on the type of resource that you are using. If
+     *        you provide a value that is lower than what a resource can accept, an error occurs. In which case, the
+     *        error message will provide the minimum value that the resource can accept.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -2331,18 +2481,118 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * required when registering a new scalable target.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * For the following resources, the minimum value allowed is 0.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * It's strongly recommended that you specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale on a metric like average CPU
+     * utilization.
+     * </p>
+     * <p>
+     * For all other resources, the minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs. In which case, the error message
+     * will provide the minimum value that the resource can accept.
      * </p>
      * 
      * @return The minimum value that you plan to scale in to. When a scaling policy is in effect, Application Auto
      *         Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      *         This property is required when registering a new scalable target.</p>
      *         <p>
-     *         For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     *         Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
-     *         minimum value allowed is 1.
+     *         For the following resources, the minimum value allowed is 0.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         AppStream 2.0 fleets
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Aurora DB clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ECS services
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMR clusters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Lambda provisioned concurrency
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SageMaker endpoint variants
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Spot Fleets
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         custom resources
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         It's strongly recommended that you specify a value greater than 0. A value greater than 0 means that data
+     *         points are continuously reported to CloudWatch that scaling policies can use to scale on a metric like
+     *         average CPU utilization.
+     *         </p>
+     *         <p>
+     *         For all other resources, the minimum allowed value depends on the type of resource that you are using. If
+     *         you provide a value that is lower than what a resource can accept, an error occurs. In which case, the
+     *         error message will provide the minimum value that the resource can accept.
      */
 
     public Integer getMinCapacity() {
@@ -2356,9 +2606,59 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * required when registering a new scalable target.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * For the following resources, the minimum value allowed is 0.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AppStream 2.0 fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aurora DB clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ECS services
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EMR clusters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Lambda provisioned concurrency
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SageMaker endpoint variants
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Spot Fleets
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * custom resources
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * It's strongly recommended that you specify a value greater than 0. A value greater than 0 means that data points
+     * are continuously reported to CloudWatch that scaling policies can use to scale on a metric like average CPU
+     * utilization.
+     * </p>
+     * <p>
+     * For all other resources, the minimum allowed value depends on the type of resource that you are using. If you
+     * provide a value that is lower than what a resource can accept, an error occurs. In which case, the error message
+     * will provide the minimum value that the resource can accept.
      * </p>
      * 
      * @param minCapacity
@@ -2366,9 +2666,59 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        Scaling can scale in (contract) as needed to the minimum capacity limit in response to changing demand.
      *        This property is required when registering a new scalable target.</p>
      *        <p>
-     *        For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     *        Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
-     *        minimum value allowed is 1.
+     *        For the following resources, the minimum value allowed is 0.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        AppStream 2.0 fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Aurora DB clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        ECS services
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EMR clusters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Lambda provisioned concurrency
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SageMaker endpoint variants
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Spot Fleets
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        custom resources
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        It's strongly recommended that you specify a value greater than 0. A value greater than 0 means that data
+     *        points are continuously reported to CloudWatch that scaling policies can use to scale on a metric like
+     *        average CPU utilization.
+     *        </p>
+     *        <p>
+     *        For all other resources, the minimum allowed value depends on the type of resource that you are using. If
+     *        you provide a value that is lower than what a resource can accept, an error occurs. In which case, the
+     *        error message will provide the minimum value that the resource can accept.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2388,8 +2738,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param maxCapacity
@@ -2401,8 +2751,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a
      *        higher limit, you can request an increase. For more information, consult the documentation for that
      *        service. For information about the default quotas for each service, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     *        Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     *        quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -2420,8 +2770,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The maximum value that you plan to scale out to. When a scaling policy is in effect, Application Auto
@@ -2432,8 +2782,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *         service has its own default quotas for the maximum capacity of the resource. If you want to specify a
      *         higher limit, you can request an increase. For more information, consult the documentation for that
      *         service. For information about the default quotas for each service, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     *         Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     *         quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public Integer getMaxCapacity() {
@@ -2451,8 +2801,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param maxCapacity
@@ -2464,8 +2814,8 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a
      *        higher limit, you can request an increase. For more information, consult the documentation for that
      *        service. For information about the default quotas for each service, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     *        Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     *        quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

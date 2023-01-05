@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,10 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the parameter.
+     * The name of the parameter. Currently the following default values are supported: 3 for
+     * <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     * <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * </p>
      */
     private String parameterName;
@@ -43,11 +46,17 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the parameter.
+     * The name of the parameter. Currently the following default values are supported: 3 for
+     * <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     * <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * </p>
      * 
      * @param parameterName
-     *        The name of the parameter.
+     *        The name of the parameter. Currently the following default values are supported: 3 for
+     *        <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     *        <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for
+     *        all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * @see ProcessorParameterName
      */
 
@@ -57,10 +66,16 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the parameter.
+     * The name of the parameter. Currently the following default values are supported: 3 for
+     * <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     * <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * </p>
      * 
-     * @return The name of the parameter.
+     * @return The name of the parameter. Currently the following default values are supported: 3 for
+     *         <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     *         <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for
+     *         all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * @see ProcessorParameterName
      */
 
@@ -70,11 +85,17 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the parameter.
+     * The name of the parameter. Currently the following default values are supported: 3 for
+     * <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     * <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * </p>
      * 
      * @param parameterName
-     *        The name of the parameter.
+     *        The name of the parameter. Currently the following default values are supported: 3 for
+     *        <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     *        <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for
+     *        all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessorParameterName
      */
@@ -86,11 +107,17 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the parameter.
+     * The name of the parameter. Currently the following default values are supported: 3 for
+     * <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     * <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * </p>
      * 
      * @param parameterName
-     *        The name of the parameter.
+     *        The name of the parameter. Currently the following default values are supported: 3 for
+     *        <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     *        <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for
+     *        all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * @see ProcessorParameterName
      */
 
@@ -100,11 +127,17 @@ public class ProcessorParameter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The name of the parameter.
+     * The name of the parameter. Currently the following default values are supported: 3 for
+     * <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     * <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all
+     * destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * </p>
      * 
      * @param parameterName
-     *        The name of the parameter.
+     *        The name of the parameter. Currently the following default values are supported: 3 for
+     *        <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>. The
+     *        <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for
+     *        all destinations, except Splunk. For Splunk, the default buffering hint is 256 KB.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessorParameterName
      */

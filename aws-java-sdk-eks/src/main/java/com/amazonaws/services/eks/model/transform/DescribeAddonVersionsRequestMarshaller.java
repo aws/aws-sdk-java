@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.eks.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,12 @@ public class DescribeAddonVersionsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("nextToken").build();
     private static final MarshallingInfo<String> ADDONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("addonName").build();
+    private static final MarshallingInfo<List> TYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("types").build();
+    private static final MarshallingInfo<List> PUBLISHERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("publishers").build();
+    private static final MarshallingInfo<List> OWNERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.QUERY_PARAM)
+            .marshallLocationName("owners").build();
 
     private static final DescribeAddonVersionsRequestMarshaller instance = new DescribeAddonVersionsRequestMarshaller();
 
@@ -56,6 +63,9 @@ public class DescribeAddonVersionsRequestMarshaller {
             protocolMarshaller.marshall(describeAddonVersionsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeAddonVersionsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeAddonVersionsRequest.getAddonName(), ADDONNAME_BINDING);
+            protocolMarshaller.marshall(describeAddonVersionsRequest.getTypes(), TYPES_BINDING);
+            protocolMarshaller.marshall(describeAddonVersionsRequest.getPublishers(), PUBLISHERS_BINDING);
+            protocolMarshaller.marshall(describeAddonVersionsRequest.getOwners(), OWNERS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

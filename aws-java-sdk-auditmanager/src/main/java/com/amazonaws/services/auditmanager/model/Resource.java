@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,35 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String value;
+    /**
+     * <p>
+     * The evaluation status for a resource that was assessed when collecting compliance check evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     * reports a <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource.
+     * This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but
+     * those services aren't enabled. This is also the case if the resource assessment uses an underlying data source
+     * type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or
+     * CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String complianceCheck;
 
     /**
      * <p>
@@ -122,6 +151,181 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The evaluation status for a resource that was assessed when collecting compliance check evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     * reports a <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource.
+     * This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but
+     * those services aren't enabled. This is also the case if the resource assessment uses an underlying data source
+     * type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or
+     * CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param complianceCheck
+     *        The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if
+     *        Config reports a <i>Non-compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     *        reports a <i>Compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a compliance check isn't available or applicable, then no compliance evaluation can be made for that
+     *        resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data
+     *        source type, but those services aren't enabled. This is also the case if the resource assessment uses an
+     *        underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web
+     *        Services API calls, or CloudTrail).
+     *        </p>
+     *        </li>
+     */
+
+    public void setComplianceCheck(String complianceCheck) {
+        this.complianceCheck = complianceCheck;
+    }
+
+    /**
+     * <p>
+     * The evaluation status for a resource that was assessed when collecting compliance check evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     * reports a <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource.
+     * This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but
+     * those services aren't enabled. This is also the case if the resource assessment uses an underlying data source
+     * type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or
+     * CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if
+     *         Config reports a <i>Non-compliant</i> result.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if
+     *         Config reports a <i>Compliant</i> result.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If a compliance check isn't available or applicable, then no compliance evaluation can be made for that
+     *         resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data
+     *         source type, but those services aren't enabled. This is also the case if the resource assessment uses an
+     *         underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web
+     *         Services API calls, or CloudTrail).
+     *         </p>
+     *         </li>
+     */
+
+    public String getComplianceCheck() {
+        return this.complianceCheck;
+    }
+
+    /**
+     * <p>
+     * The evaluation status for a resource that was assessed when collecting compliance check evidence.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if Config
+     * reports a <i>Non-compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     * reports a <i>Compliant</i> result.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If a compliance check isn't available or applicable, then no compliance evaluation can be made for that resource.
+     * This is the case if a resource assessment uses Config or Security Hub as the underlying data source type, but
+     * those services aren't enabled. This is also the case if the resource assessment uses an underlying data source
+     * type that doesn't support compliance checks (such as manual evidence, Amazon Web Services API calls, or
+     * CloudTrail).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param complianceCheck
+     *        The evaluation status for a resource that was assessed when collecting compliance check evidence. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes the resource as non-compliant if Security Hub reports a <i>Fail</i> result, or if
+     *        Config reports a <i>Non-compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Audit Manager classes the resource as compliant if Security Hub reports a <i>Pass</i> result, or if Config
+     *        reports a <i>Compliant</i> result.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If a compliance check isn't available or applicable, then no compliance evaluation can be made for that
+     *        resource. This is the case if a resource assessment uses Config or Security Hub as the underlying data
+     *        source type, but those services aren't enabled. This is also the case if the resource assessment uses an
+     *        underlying data source type that doesn't support compliance checks (such as manual evidence, Amazon Web
+     *        Services API calls, or CloudTrail).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withComplianceCheck(String complianceCheck) {
+        setComplianceCheck(complianceCheck);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +340,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getValue() != null)
-            sb.append("Value: ").append(getValue());
+            sb.append("Value: ").append(getValue()).append(",");
+        if (getComplianceCheck() != null)
+            sb.append("ComplianceCheck: ").append(getComplianceCheck());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +365,10 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getValue() != null && other.getValue().equals(this.getValue()) == false)
             return false;
+        if (other.getComplianceCheck() == null ^ this.getComplianceCheck() == null)
+            return false;
+        if (other.getComplianceCheck() != null && other.getComplianceCheck().equals(this.getComplianceCheck()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +379,7 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getValue() == null) ? 0 : getValue().hashCode());
+        hashCode = prime * hashCode + ((getComplianceCheck() == null) ? 0 : getComplianceCheck().hashCode());
         return hashCode;
     }
 

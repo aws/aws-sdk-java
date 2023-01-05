@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,18 +48,23 @@ public class ComponentRequestJsonUnmarshaller implements Unmarshaller<ComponentR
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("componentTypeId", targetDepth)) {
-                    context.nextToken();
-                    componentRequest.setComponentTypeId(context.getUnmarshaller(String.class).unmarshall(context));
-                }
                 if (context.testExpression("description", targetDepth)) {
                     context.nextToken();
                     componentRequest.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("componentTypeId", targetDepth)) {
+                    context.nextToken();
+                    componentRequest.setComponentTypeId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("properties", targetDepth)) {
                     context.nextToken();
                     componentRequest.setProperties(new MapUnmarshaller<String, PropertyRequest>(context.getUnmarshaller(String.class),
                             PropertyRequestJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("propertyGroups", targetDepth)) {
+                    context.nextToken();
+                    componentRequest.setPropertyGroups(new MapUnmarshaller<String, ComponentPropertyGroupRequest>(context.getUnmarshaller(String.class),
+                            ComponentPropertyGroupRequestJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

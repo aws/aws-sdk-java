@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.migrationhubstrategyrecommendations.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StartAssessmentRequestMarshaller {
 
+    private static final MarshallingInfo<List> ASSESSMENTTARGETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assessmentTargets").build();
     private static final MarshallingInfo<String> S3BUCKETFORANALYSISDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("s3bucketForAnalysisData").build();
     private static final MarshallingInfo<String> S3BUCKETFORREPORTDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +51,7 @@ public class StartAssessmentRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(startAssessmentRequest.getAssessmentTargets(), ASSESSMENTTARGETS_BINDING);
             protocolMarshaller.marshall(startAssessmentRequest.getS3bucketForAnalysisData(), S3BUCKETFORANALYSISDATA_BINDING);
             protocolMarshaller.marshall(startAssessmentRequest.getS3bucketForReportData(), S3BUCKETFORREPORTDATA_BINDING);
         } catch (Exception e) {

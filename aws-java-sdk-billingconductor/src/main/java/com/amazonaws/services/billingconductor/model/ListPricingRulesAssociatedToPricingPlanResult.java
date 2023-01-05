@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class ListPricingRulesAssociatedToPricingPlanResult extends com.amazonaws
     private String pricingPlanArn;
     /**
      * <p>
-     * A list containing pricing rules associated with the requested pricing plan.
+     * A list containing pricing rules that are associated with the requested pricing plan.
      * </p>
      */
     private java.util.List<String> pricingRuleArns;
@@ -132,10 +132,10 @@ public class ListPricingRulesAssociatedToPricingPlanResult extends com.amazonaws
 
     /**
      * <p>
-     * A list containing pricing rules associated with the requested pricing plan.
+     * A list containing pricing rules that are associated with the requested pricing plan.
      * </p>
      * 
-     * @return A list containing pricing rules associated with the requested pricing plan.
+     * @return A list containing pricing rules that are associated with the requested pricing plan.
      */
 
     public java.util.List<String> getPricingRuleArns() {
@@ -144,11 +144,11 @@ public class ListPricingRulesAssociatedToPricingPlanResult extends com.amazonaws
 
     /**
      * <p>
-     * A list containing pricing rules associated with the requested pricing plan.
+     * A list containing pricing rules that are associated with the requested pricing plan.
      * </p>
      * 
      * @param pricingRuleArns
-     *        A list containing pricing rules associated with the requested pricing plan.
+     *        A list containing pricing rules that are associated with the requested pricing plan.
      */
 
     public void setPricingRuleArns(java.util.Collection<String> pricingRuleArns) {
@@ -162,7 +162,7 @@ public class ListPricingRulesAssociatedToPricingPlanResult extends com.amazonaws
 
     /**
      * <p>
-     * A list containing pricing rules associated with the requested pricing plan.
+     * A list containing pricing rules that are associated with the requested pricing plan.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -171,7 +171,7 @@ public class ListPricingRulesAssociatedToPricingPlanResult extends com.amazonaws
      * </p>
      * 
      * @param pricingRuleArns
-     *        A list containing pricing rules associated with the requested pricing plan.
+     *        A list containing pricing rules that are associated with the requested pricing plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class ListPricingRulesAssociatedToPricingPlanResult extends com.amazonaws
 
     /**
      * <p>
-     * A list containing pricing rules associated with the requested pricing plan.
+     * A list containing pricing rules that are associated with the requested pricing plan.
      * </p>
      * 
      * @param pricingRuleArns
-     *        A list containing pricing rules associated with the requested pricing plan.
+     *        A list containing pricing rules that are associated with the requested pricing plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

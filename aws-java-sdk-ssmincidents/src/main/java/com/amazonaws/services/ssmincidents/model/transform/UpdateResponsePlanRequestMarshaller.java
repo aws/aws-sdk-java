@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,8 @@ public class UpdateResponsePlanRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("incidentTemplateTags").build();
     private static final MarshallingInfo<String> INCIDENTTEMPLATETITLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("incidentTemplateTitle").build();
+    private static final MarshallingInfo<List> INTEGRATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("integrations").build();
 
     private static final UpdateResponsePlanRequestMarshaller instance = new UpdateResponsePlanRequestMarshaller();
 
@@ -85,6 +87,7 @@ public class UpdateResponsePlanRequestMarshaller {
             protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateSummary(), INCIDENTTEMPLATESUMMARY_BINDING);
             protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateTags(), INCIDENTTEMPLATETAGS_BINDING);
             protocolMarshaller.marshall(updateResponsePlanRequest.getIncidentTemplateTitle(), INCIDENTTEMPLATETITLE_BINDING);
+            protocolMarshaller.marshall(updateResponsePlanRequest.getIntegrations(), INTEGRATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

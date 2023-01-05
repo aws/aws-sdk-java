@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,35 +35,35 @@ public class ModelSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the custom language model you want to use when processing your transcription job. Note that language
-     * model names are case sensitive.
+     * The name of the custom language model you want to use when processing your transcription job. Note that custom
+     * language model names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified language model must match the language code you specify in your transcription
-     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.
+     * The language of the specified custom language model must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom language model isn't applied. There are no errors
+     * or warnings associated with a language mismatch.
      * </p>
      */
     private String languageModelName;
 
     /**
      * <p>
-     * The name of the custom language model you want to use when processing your transcription job. Note that language
-     * model names are case sensitive.
+     * The name of the custom language model you want to use when processing your transcription job. Note that custom
+     * language model names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified language model must match the language code you specify in your transcription
-     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.
+     * The language of the specified custom language model must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom language model isn't applied. There are no errors
+     * or warnings associated with a language mismatch.
      * </p>
      * 
      * @param languageModelName
      *        The name of the custom language model you want to use when processing your transcription job. Note that
-     *        language model names are case sensitive.</p>
+     *        custom language model names are case sensitive.</p>
      *        <p>
-     *        The language of the specified language model must match the language code you specify in your
-     *        transcription request. If the languages don't match, the language model isn't applied. There are no errors
-     *        or warnings associated with a language mismatch.
+     *        The language of the specified custom language model must match the language code that you specify in your
+     *        transcription request. If the languages don't match, the custom language model isn't applied. There are no
+     *        errors or warnings associated with a language mismatch.
      */
 
     public void setLanguageModelName(String languageModelName) {
@@ -72,21 +72,21 @@ public class ModelSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the custom language model you want to use when processing your transcription job. Note that language
-     * model names are case sensitive.
+     * The name of the custom language model you want to use when processing your transcription job. Note that custom
+     * language model names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified language model must match the language code you specify in your transcription
-     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.
+     * The language of the specified custom language model must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom language model isn't applied. There are no errors
+     * or warnings associated with a language mismatch.
      * </p>
      * 
      * @return The name of the custom language model you want to use when processing your transcription job. Note that
-     *         language model names are case sensitive.</p>
+     *         custom language model names are case sensitive.</p>
      *         <p>
-     *         The language of the specified language model must match the language code you specify in your
-     *         transcription request. If the languages don't match, the language model isn't applied. There are no
-     *         errors or warnings associated with a language mismatch.
+     *         The language of the specified custom language model must match the language code that you specify in your
+     *         transcription request. If the languages don't match, the custom language model isn't applied. There are
+     *         no errors or warnings associated with a language mismatch.
      */
 
     public String getLanguageModelName() {
@@ -95,22 +95,22 @@ public class ModelSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the custom language model you want to use when processing your transcription job. Note that language
-     * model names are case sensitive.
+     * The name of the custom language model you want to use when processing your transcription job. Note that custom
+     * language model names are case sensitive.
      * </p>
      * <p>
-     * The language of the specified language model must match the language code you specify in your transcription
-     * request. If the languages don't match, the language model isn't applied. There are no errors or warnings
-     * associated with a language mismatch.
+     * The language of the specified custom language model must match the language code that you specify in your
+     * transcription request. If the languages don't match, the custom language model isn't applied. There are no errors
+     * or warnings associated with a language mismatch.
      * </p>
      * 
      * @param languageModelName
      *        The name of the custom language model you want to use when processing your transcription job. Note that
-     *        language model names are case sensitive.</p>
+     *        custom language model names are case sensitive.</p>
      *        <p>
-     *        The language of the specified language model must match the language code you specify in your
-     *        transcription request. If the languages don't match, the language model isn't applied. There are no errors
-     *        or warnings associated with a language mismatch.
+     *        The language of the specified custom language model must match the language code that you specify in your
+     *        transcription request. If the languages don't match, the custom language model isn't applied. There are no
+     *        errors or warnings associated with a language mismatch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

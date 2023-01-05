@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Array of logging-configuration identifiers attached to the room.
+     * </p>
+     */
+    private java.util.List<String> loggingConfigurationIdentifiers;
     /**
      * <p>
      * Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit
@@ -59,6 +65,76 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * Array of logging-configuration identifiers attached to the room.
+     * </p>
+     * 
+     * @return Array of logging-configuration identifiers attached to the room.
+     */
+
+    public java.util.List<String> getLoggingConfigurationIdentifiers() {
+        return loggingConfigurationIdentifiers;
+    }
+
+    /**
+     * <p>
+     * Array of logging-configuration identifiers attached to the room.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        Array of logging-configuration identifiers attached to the room.
+     */
+
+    public void setLoggingConfigurationIdentifiers(java.util.Collection<String> loggingConfigurationIdentifiers) {
+        if (loggingConfigurationIdentifiers == null) {
+            this.loggingConfigurationIdentifiers = null;
+            return;
+        }
+
+        this.loggingConfigurationIdentifiers = new java.util.ArrayList<String>(loggingConfigurationIdentifiers);
+    }
+
+    /**
+     * <p>
+     * Array of logging-configuration identifiers attached to the room.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoggingConfigurationIdentifiers(java.util.Collection)} or
+     * {@link #withLoggingConfigurationIdentifiers(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        Array of logging-configuration identifiers attached to the room.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoomRequest withLoggingConfigurationIdentifiers(String... loggingConfigurationIdentifiers) {
+        if (this.loggingConfigurationIdentifiers == null) {
+            setLoggingConfigurationIdentifiers(new java.util.ArrayList<String>(loggingConfigurationIdentifiers.length));
+        }
+        for (String ele : loggingConfigurationIdentifiers) {
+            this.loggingConfigurationIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Array of logging-configuration identifiers attached to the room.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        Array of logging-configuration identifiers attached to the room.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRoomRequest withLoggingConfigurationIdentifiers(java.util.Collection<String> loggingConfigurationIdentifiers) {
+        setLoggingConfigurationIdentifiers(loggingConfigurationIdentifiers);
+        return this;
+    }
 
     /**
      * <p>
@@ -324,6 +400,8 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getLoggingConfigurationIdentifiers() != null)
+            sb.append("LoggingConfigurationIdentifiers: ").append(getLoggingConfigurationIdentifiers()).append(",");
         if (getMaximumMessageLength() != null)
             sb.append("MaximumMessageLength: ").append(getMaximumMessageLength()).append(",");
         if (getMaximumMessageRatePerSecond() != null)
@@ -348,6 +426,11 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (obj instanceof CreateRoomRequest == false)
             return false;
         CreateRoomRequest other = (CreateRoomRequest) obj;
+        if (other.getLoggingConfigurationIdentifiers() == null ^ this.getLoggingConfigurationIdentifiers() == null)
+            return false;
+        if (other.getLoggingConfigurationIdentifiers() != null
+                && other.getLoggingConfigurationIdentifiers().equals(this.getLoggingConfigurationIdentifiers()) == false)
+            return false;
         if (other.getMaximumMessageLength() == null ^ this.getMaximumMessageLength() == null)
             return false;
         if (other.getMaximumMessageLength() != null && other.getMaximumMessageLength().equals(this.getMaximumMessageLength()) == false)
@@ -376,6 +459,7 @@ public class CreateRoomRequest extends com.amazonaws.AmazonWebServiceRequest imp
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getLoggingConfigurationIdentifiers() == null) ? 0 : getLoggingConfigurationIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getMaximumMessageLength() == null) ? 0 : getMaximumMessageLength().hashCode());
         hashCode = prime * hashCode + ((getMaximumMessageRatePerSecond() == null) ? 0 : getMaximumMessageRatePerSecond().hashCode());
         hashCode = prime * hashCode + ((getMessageReviewHandler() == null) ? 0 : getMessageReviewHandler().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
      * in the init fragment. This lets you use different SPS/PPS/VPS settings for your assets during content playback.
      */
     private Boolean includeEncoderConfigurationInSegments;
+    /** When enabled, an I-Frame only stream will be included in the output. */
+    private Boolean includeIframeOnlyStream;
     /**
      * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming over HTTP (DASH) Media Presentation
      * Description (MPD) will be partitioned into multiple periods. If empty, the content will not be partitioned into
@@ -206,6 +208,50 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
 
     public Boolean isIncludeEncoderConfigurationInSegments() {
         return this.includeEncoderConfigurationInSegments;
+    }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     * 
+     * @param includeIframeOnlyStream
+     *        When enabled, an I-Frame only stream will be included in the output.
+     */
+
+    public void setIncludeIframeOnlyStream(Boolean includeIframeOnlyStream) {
+        this.includeIframeOnlyStream = includeIframeOnlyStream;
+    }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     * 
+     * @return When enabled, an I-Frame only stream will be included in the output.
+     */
+
+    public Boolean getIncludeIframeOnlyStream() {
+        return this.includeIframeOnlyStream;
+    }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     * 
+     * @param includeIframeOnlyStream
+     *        When enabled, an I-Frame only stream will be included in the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashPackage withIncludeIframeOnlyStream(Boolean includeIframeOnlyStream) {
+        setIncludeIframeOnlyStream(includeIframeOnlyStream);
+        return this;
+    }
+
+    /**
+     * When enabled, an I-Frame only stream will be included in the output.
+     * 
+     * @return When enabled, an I-Frame only stream will be included in the output.
+     */
+
+    public Boolean isIncludeIframeOnlyStream() {
+        return this.includeIframeOnlyStream;
     }
 
     /**
@@ -464,6 +510,8 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getIncludeEncoderConfigurationInSegments() != null)
             sb.append("IncludeEncoderConfigurationInSegments: ").append(getIncludeEncoderConfigurationInSegments()).append(",");
+        if (getIncludeIframeOnlyStream() != null)
+            sb.append("IncludeIframeOnlyStream: ").append(getIncludeIframeOnlyStream()).append(",");
         if (getPeriodTriggers() != null)
             sb.append("PeriodTriggers: ").append(getPeriodTriggers()).append(",");
         if (getSegmentDurationSeconds() != null)
@@ -497,6 +545,10 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         if (other.getIncludeEncoderConfigurationInSegments() != null
                 && other.getIncludeEncoderConfigurationInSegments().equals(this.getIncludeEncoderConfigurationInSegments()) == false)
             return false;
+        if (other.getIncludeIframeOnlyStream() == null ^ this.getIncludeIframeOnlyStream() == null)
+            return false;
+        if (other.getIncludeIframeOnlyStream() != null && other.getIncludeIframeOnlyStream().equals(this.getIncludeIframeOnlyStream()) == false)
+            return false;
         if (other.getPeriodTriggers() == null ^ this.getPeriodTriggers() == null)
             return false;
         if (other.getPeriodTriggers() != null && other.getPeriodTriggers().equals(this.getPeriodTriggers()) == false)
@@ -520,6 +572,7 @@ public class DashPackage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDashManifests() == null) ? 0 : getDashManifests().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getIncludeEncoderConfigurationInSegments() == null) ? 0 : getIncludeEncoderConfigurationInSegments().hashCode());
+        hashCode = prime * hashCode + ((getIncludeIframeOnlyStream() == null) ? 0 : getIncludeIframeOnlyStream().hashCode());
         hashCode = prime * hashCode + ((getPeriodTriggers() == null) ? 0 : getPeriodTriggers().hashCode());
         hashCode = prime * hashCode + ((getSegmentDurationSeconds() == null) ? 0 : getSegmentDurationSeconds().hashCode());
         hashCode = prime * hashCode + ((getSegmentTemplateFormat() == null) ? 0 : getSegmentTemplateFormat().hashCode());

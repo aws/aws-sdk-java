@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,56 +30,16 @@ public class RelationshipValue implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The name of the target component associated with the relationship value.
-     * </p>
-     */
-    private String targetComponentName;
-    /**
-     * <p>
      * The ID of the target entity associated with this relationship value.
      * </p>
      */
     private String targetEntityId;
-
     /**
      * <p>
      * The name of the target component associated with the relationship value.
      * </p>
-     * 
-     * @param targetComponentName
-     *        The name of the target component associated with the relationship value.
      */
-
-    public void setTargetComponentName(String targetComponentName) {
-        this.targetComponentName = targetComponentName;
-    }
-
-    /**
-     * <p>
-     * The name of the target component associated with the relationship value.
-     * </p>
-     * 
-     * @return The name of the target component associated with the relationship value.
-     */
-
-    public String getTargetComponentName() {
-        return this.targetComponentName;
-    }
-
-    /**
-     * <p>
-     * The name of the target component associated with the relationship value.
-     * </p>
-     * 
-     * @param targetComponentName
-     *        The name of the target component associated with the relationship value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public RelationshipValue withTargetComponentName(String targetComponentName) {
-        setTargetComponentName(targetComponentName);
-        return this;
-    }
+    private String targetComponentName;
 
     /**
      * <p>
@@ -122,6 +82,46 @@ public class RelationshipValue implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The name of the target component associated with the relationship value.
+     * </p>
+     * 
+     * @param targetComponentName
+     *        The name of the target component associated with the relationship value.
+     */
+
+    public void setTargetComponentName(String targetComponentName) {
+        this.targetComponentName = targetComponentName;
+    }
+
+    /**
+     * <p>
+     * The name of the target component associated with the relationship value.
+     * </p>
+     * 
+     * @return The name of the target component associated with the relationship value.
+     */
+
+    public String getTargetComponentName() {
+        return this.targetComponentName;
+    }
+
+    /**
+     * <p>
+     * The name of the target component associated with the relationship value.
+     * </p>
+     * 
+     * @param targetComponentName
+     *        The name of the target component associated with the relationship value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RelationshipValue withTargetComponentName(String targetComponentName) {
+        setTargetComponentName(targetComponentName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -133,10 +133,10 @@ public class RelationshipValue implements Serializable, Cloneable, StructuredPoj
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getTargetComponentName() != null)
-            sb.append("TargetComponentName: ").append(getTargetComponentName()).append(",");
         if (getTargetEntityId() != null)
-            sb.append("TargetEntityId: ").append(getTargetEntityId());
+            sb.append("TargetEntityId: ").append(getTargetEntityId()).append(",");
+        if (getTargetComponentName() != null)
+            sb.append("TargetComponentName: ").append(getTargetComponentName());
         sb.append("}");
         return sb.toString();
     }
@@ -151,13 +151,13 @@ public class RelationshipValue implements Serializable, Cloneable, StructuredPoj
         if (obj instanceof RelationshipValue == false)
             return false;
         RelationshipValue other = (RelationshipValue) obj;
-        if (other.getTargetComponentName() == null ^ this.getTargetComponentName() == null)
-            return false;
-        if (other.getTargetComponentName() != null && other.getTargetComponentName().equals(this.getTargetComponentName()) == false)
-            return false;
         if (other.getTargetEntityId() == null ^ this.getTargetEntityId() == null)
             return false;
         if (other.getTargetEntityId() != null && other.getTargetEntityId().equals(this.getTargetEntityId()) == false)
+            return false;
+        if (other.getTargetComponentName() == null ^ this.getTargetComponentName() == null)
+            return false;
+        if (other.getTargetComponentName() != null && other.getTargetComponentName().equals(this.getTargetComponentName()) == false)
             return false;
         return true;
     }
@@ -167,8 +167,8 @@ public class RelationshipValue implements Serializable, Cloneable, StructuredPoj
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getTargetComponentName() == null) ? 0 : getTargetComponentName().hashCode());
         hashCode = prime * hashCode + ((getTargetEntityId() == null) ? 0 : getTargetEntityId().hashCode());
+        hashCode = prime * hashCode + ((getTargetComponentName() == null) ? 0 : getTargetComponentName().hashCode());
         return hashCode;
     }
 

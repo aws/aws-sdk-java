@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <p>
- * Represents the returned data in response to a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ListFleets" target="_top">AWS API
  *      Documentation</a>
@@ -28,9 +25,7 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets
-     * by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.
+     * A set of fleet IDs that match the list request.
      * </p>
      */
     private java.util.List<String> fleetIds;
@@ -44,14 +39,10 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets
-     * by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.
+     * A set of fleet IDs that match the list request.
      * </p>
      * 
-     * @return A set of fleet IDs that match the list request. You can retrieve additional information about all
-     *         returned fleets by passing this result set to a <a>DescribeFleetAttributes</a>,
-     *         <a>DescribeFleetCapacity</a>, or <a>DescribeFleetUtilization</a> call.
+     * @return A set of fleet IDs that match the list request.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -60,15 +51,11 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets
-     * by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.
+     * A set of fleet IDs that match the list request.
      * </p>
      * 
      * @param fleetIds
-     *        A set of fleet IDs that match the list request. You can retrieve additional information about all returned
-     *        fleets by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     *        <a>DescribeFleetUtilization</a> call.
+     *        A set of fleet IDs that match the list request.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -82,9 +69,7 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets
-     * by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.
+     * A set of fleet IDs that match the list request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -93,9 +78,7 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param fleetIds
-     *        A set of fleet IDs that match the list request. You can retrieve additional information about all returned
-     *        fleets by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     *        <a>DescribeFleetUtilization</a> call.
+     *        A set of fleet IDs that match the list request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,15 +94,11 @@ public class ListFleetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A set of fleet IDs that match the list request. You can retrieve additional information about all returned fleets
-     * by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     * <a>DescribeFleetUtilization</a> call.
+     * A set of fleet IDs that match the list request.
      * </p>
      * 
      * @param fleetIds
-     *        A set of fleet IDs that match the list request. You can retrieve additional information about all returned
-     *        fleets by passing this result set to a <a>DescribeFleetAttributes</a>, <a>DescribeFleetCapacity</a>, or
-     *        <a>DescribeFleetUtilization</a> call.
+     *        A set of fleet IDs that match the list request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details of a reserved OpenSearch instance.
+ * Details of an OpenSearch Reserved Instance.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -37,23 +37,27 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String reservedInstanceId;
-
+    /**
+     * <p>
+     * The unique identifier of the billing subscription.
+     * </p>
+     */
     private Long billingSubscriptionId;
     /**
      * <p>
-     * The offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      */
     private String reservedInstanceOfferingId;
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by theReserved Instance offering.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The time the reservation started.
+     * The date and time when the reservation was purchased.
      * </p>
      */
     private java.util.Date startTime;
@@ -65,19 +69,19 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
     private Integer duration;
     /**
      * <p>
-     * The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.
      * </p>
      */
     private Double fixedPrice;
     /**
      * <p>
-     * The rate you are charged for each hour for the domain that is using this reserved instance.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      */
     private Double usagePrice;
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the offering.
      * </p>
      */
     private String currencyCode;
@@ -89,19 +93,20 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
     private Integer instanceCount;
     /**
      * <p>
-     * The state of the reserved OpenSearch instance.
+     * The state of the Reserved Instance.
      * </p>
      */
     private String state;
     /**
      * <p>
-     * The payment option as defined in the reserved OpenSearch instance offering.
+     * The payment option as defined in the Reserved Instance offering.
      * </p>
      */
     private String paymentOption;
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you create any domains using the Reserved Instance
+     * offering.
      * </p>
      */
     private java.util.List<RecurringCharge> recurringCharges;
@@ -187,7 +192,12 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The unique identifier of the billing subscription.
+     * </p>
+     * 
      * @param billingSubscriptionId
+     *        The unique identifier of the billing subscription.
      */
 
     public void setBillingSubscriptionId(Long billingSubscriptionId) {
@@ -195,7 +205,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * @return
+     * <p>
+     * The unique identifier of the billing subscription.
+     * </p>
+     * 
+     * @return The unique identifier of the billing subscription.
      */
 
     public Long getBillingSubscriptionId() {
@@ -203,7 +217,12 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The unique identifier of the billing subscription.
+     * </p>
+     * 
      * @param billingSubscriptionId
+     *        The unique identifier of the billing subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,11 +233,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      * 
      * @param reservedInstanceOfferingId
-     *        The offering identifier.
+     *        The unique identifier of the Reserved Instance offering.
      */
 
     public void setReservedInstanceOfferingId(String reservedInstanceOfferingId) {
@@ -227,10 +246,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      * 
-     * @return The offering identifier.
+     * @return The unique identifier of the Reserved Instance offering.
      */
 
     public String getReservedInstanceOfferingId() {
@@ -239,11 +258,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The offering identifier.
+     * The unique identifier of the Reserved Instance offering.
      * </p>
      * 
      * @param reservedInstanceOfferingId
-     *        The offering identifier.
+     *        The unique identifier of the Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,11 +273,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by theReserved Instance offering.
      * </p>
      * 
      * @param instanceType
-     *        The OpenSearch instance type offered by the reserved instance offering.
+     *        The OpenSearch instance type offered by theReserved Instance offering.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -268,10 +287,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by theReserved Instance offering.
      * </p>
      * 
-     * @return The OpenSearch instance type offered by the reserved instance offering.
+     * @return The OpenSearch instance type offered by theReserved Instance offering.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -281,11 +300,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by theReserved Instance offering.
      * </p>
      * 
      * @param instanceType
-     *        The OpenSearch instance type offered by the reserved instance offering.
+     *        The OpenSearch instance type offered by theReserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -297,11 +316,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The OpenSearch instance type offered by the reserved instance offering.
+     * The OpenSearch instance type offered by theReserved Instance offering.
      * </p>
      * 
      * @param instanceType
-     *        The OpenSearch instance type offered by the reserved instance offering.
+     *        The OpenSearch instance type offered by theReserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -313,11 +332,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the reservation started.
+     * The date and time when the reservation was purchased.
      * </p>
      * 
      * @param startTime
-     *        The time the reservation started.
+     *        The date and time when the reservation was purchased.
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -326,10 +345,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the reservation started.
+     * The date and time when the reservation was purchased.
      * </p>
      * 
-     * @return The time the reservation started.
+     * @return The date and time when the reservation was purchased.
      */
 
     public java.util.Date getStartTime() {
@@ -338,11 +357,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The time the reservation started.
+     * The date and time when the reservation was purchased.
      * </p>
      * 
      * @param startTime
-     *        The time the reservation started.
+     *        The date and time when the reservation was purchased.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -393,11 +412,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.
      * </p>
      * 
      * @param fixedPrice
-     *        The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.
+     *        The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.
      */
 
     public void setFixedPrice(Double fixedPrice) {
@@ -406,10 +425,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.
      * </p>
      * 
-     * @return The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.
+     * @return The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.
      */
 
     public Double getFixedPrice() {
@@ -418,11 +437,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.
+     * The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.
      * </p>
      * 
      * @param fixedPrice
-     *        The upfront fixed charge you will paid to purchase the specific reserved OpenSearch instance offering.
+     *        The upfront fixed charge you will paid to purchase the specific Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -433,11 +452,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The rate you are charged for each hour for the domain that is using this reserved instance.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      * 
      * @param usagePrice
-     *        The rate you are charged for each hour for the domain that is using this reserved instance.
+     *        The hourly rate at which you're charged for the domain using this Reserved Instance.
      */
 
     public void setUsagePrice(Double usagePrice) {
@@ -446,10 +465,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The rate you are charged for each hour for the domain that is using this reserved instance.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      * 
-     * @return The rate you are charged for each hour for the domain that is using this reserved instance.
+     * @return The hourly rate at which you're charged for the domain using this Reserved Instance.
      */
 
     public Double getUsagePrice() {
@@ -458,11 +477,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The rate you are charged for each hour for the domain that is using this reserved instance.
+     * The hourly rate at which you're charged for the domain using this Reserved Instance.
      * </p>
      * 
      * @param usagePrice
-     *        The rate you are charged for each hour for the domain that is using this reserved instance.
+     *        The hourly rate at which you're charged for the domain using this Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -473,11 +492,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the offering.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code for the reserved OpenSearch instance offering.
+     *        The currency code for the offering.
      */
 
     public void setCurrencyCode(String currencyCode) {
@@ -486,10 +505,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the offering.
      * </p>
      * 
-     * @return The currency code for the reserved OpenSearch instance offering.
+     * @return The currency code for the offering.
      */
 
     public String getCurrencyCode() {
@@ -498,11 +517,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The currency code for the reserved OpenSearch instance offering.
+     * The currency code for the offering.
      * </p>
      * 
      * @param currencyCode
-     *        The currency code for the reserved OpenSearch instance offering.
+     *        The currency code for the offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -553,11 +572,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The state of the reserved OpenSearch instance.
+     * The state of the Reserved Instance.
      * </p>
      * 
      * @param state
-     *        The state of the reserved OpenSearch instance.
+     *        The state of the Reserved Instance.
      */
 
     public void setState(String state) {
@@ -566,10 +585,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The state of the reserved OpenSearch instance.
+     * The state of the Reserved Instance.
      * </p>
      * 
-     * @return The state of the reserved OpenSearch instance.
+     * @return The state of the Reserved Instance.
      */
 
     public String getState() {
@@ -578,11 +597,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The state of the reserved OpenSearch instance.
+     * The state of the Reserved Instance.
      * </p>
      * 
      * @param state
-     *        The state of the reserved OpenSearch instance.
+     *        The state of the Reserved Instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -593,11 +612,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The payment option as defined in the reserved OpenSearch instance offering.
+     * The payment option as defined in the Reserved Instance offering.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option as defined in the reserved OpenSearch instance offering.
+     *        The payment option as defined in the Reserved Instance offering.
      * @see ReservedInstancePaymentOption
      */
 
@@ -607,10 +626,10 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The payment option as defined in the reserved OpenSearch instance offering.
+     * The payment option as defined in the Reserved Instance offering.
      * </p>
      * 
-     * @return The payment option as defined in the reserved OpenSearch instance offering.
+     * @return The payment option as defined in the Reserved Instance offering.
      * @see ReservedInstancePaymentOption
      */
 
@@ -620,11 +639,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The payment option as defined in the reserved OpenSearch instance offering.
+     * The payment option as defined in the Reserved Instance offering.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option as defined in the reserved OpenSearch instance offering.
+     *        The payment option as defined in the Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedInstancePaymentOption
      */
@@ -636,11 +655,11 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The payment option as defined in the reserved OpenSearch instance offering.
+     * The payment option as defined in the Reserved Instance offering.
      * </p>
      * 
      * @param paymentOption
-     *        The payment option as defined in the reserved OpenSearch instance offering.
+     *        The payment option as defined in the Reserved Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReservedInstancePaymentOption
      */
@@ -652,11 +671,12 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you create any domains using the Reserved Instance
+     * offering.
      * </p>
      * 
-     * @return The charge to your account regardless of whether you are creating any domains using the instance
-     *         offering.
+     * @return The recurring charge to your account, regardless of whether you create any domains using the Reserved
+     *         Instance offering.
      */
 
     public java.util.List<RecurringCharge> getRecurringCharges() {
@@ -665,11 +685,13 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you create any domains using the Reserved Instance
+     * offering.
      * </p>
      * 
      * @param recurringCharges
-     *        The charge to your account regardless of whether you are creating any domains using the instance offering.
+     *        The recurring charge to your account, regardless of whether you create any domains using the Reserved
+     *        Instance offering.
      */
 
     public void setRecurringCharges(java.util.Collection<RecurringCharge> recurringCharges) {
@@ -683,7 +705,8 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you create any domains using the Reserved Instance
+     * offering.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -692,7 +715,8 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param recurringCharges
-     *        The charge to your account regardless of whether you are creating any domains using the instance offering.
+     *        The recurring charge to your account, regardless of whether you create any domains using the Reserved
+     *        Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -708,11 +732,13 @@ public class ReservedInstance implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The charge to your account regardless of whether you are creating any domains using the instance offering.
+     * The recurring charge to your account, regardless of whether you create any domains using the Reserved Instance
+     * offering.
      * </p>
      * 
      * @param recurringCharges
-     *        The charge to your account regardless of whether you are creating any domains using the instance offering.
+     *        The recurring charge to your account, regardless of whether you create any domains using the Reserved
+     *        Instance offering.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

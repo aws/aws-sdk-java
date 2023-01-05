@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -627,6 +627,33 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon
+     * Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     * 
+     * @param createMetricAttributionRequest
+     * @return Result of the CreateMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @sample AmazonPersonalize.CreateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateMetricAttributionResult createMetricAttribution(CreateMetricAttributionRequest createMetricAttributionRequest);
+
+    /**
+     * <p>
      * Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for
      * a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
@@ -998,6 +1025,8 @@ public interface AmazonPersonalize {
      *         The specified resource is in use.
      * @throws TooManyTagsException
      *         You have exceeded the maximum number of tags you can apply to this resource.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
      * @sample AmazonPersonalize.CreateSolutionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -1123,6 +1152,25 @@ public interface AmazonPersonalize {
      *      Documentation</a>
      */
     DeleteFilterResult deleteFilter(DeleteFilterRequest deleteFilterRequest);
+
+    /**
+     * <p>
+     * Deletes a metric attribution.
+     * </p>
+     * 
+     * @param deleteMetricAttributionRequest
+     * @return Result of the DeleteMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.DeleteMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteMetricAttributionResult deleteMetricAttribution(DeleteMetricAttributionRequest deleteMetricAttributionRequest);
 
     /**
      * <p>
@@ -1409,6 +1457,23 @@ public interface AmazonPersonalize {
      *      Documentation</a>
      */
     DescribeFilterResult describeFilter(DescribeFilterRequest describeFilterRequest);
+
+    /**
+     * <p>
+     * Describes a metric attribution.
+     * </p>
+     * 
+     * @param describeMetricAttributionRequest
+     * @return Result of the DescribeMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeMetricAttributionResult describeMetricAttribution(DescribeMetricAttributionRequest describeMetricAttributionRequest);
 
     /**
      * <p>
@@ -1749,6 +1814,40 @@ public interface AmazonPersonalize {
 
     /**
      * <p>
+     * Lists the metrics for the metric attribution.
+     * </p>
+     * 
+     * @param listMetricAttributionMetricsRequest
+     * @return Result of the ListMetricAttributionMetrics operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListMetricAttributionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMetricAttributionMetricsResult listMetricAttributionMetrics(ListMetricAttributionMetricsRequest listMetricAttributionMetricsRequest);
+
+    /**
+     * <p>
+     * Lists metric attributions.
+     * </p>
+     * 
+     * @param listMetricAttributionsRequest
+     * @return Result of the ListMetricAttributions operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListMetricAttributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListMetricAttributionsResult listMetricAttributions(ListMetricAttributionsRequest listMetricAttributionsRequest);
+
+    /**
+     * <p>
      * Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's
      * Amazon Resource Name (ARN).
      * </p>
@@ -2024,6 +2123,27 @@ public interface AmazonPersonalize {
      *      Documentation</a>
      */
     UpdateCampaignResult updateCampaign(UpdateCampaignRequest updateCampaignRequest);
+
+    /**
+     * <p>
+     * Updates a metric attribution.
+     * </p>
+     * 
+     * @param updateMetricAttributionRequest
+     * @return Result of the UpdateMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @sample AmazonPersonalize.UpdateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateMetricAttributionResult updateMetricAttribution(UpdateMetricAttributionRequest updateMetricAttributionRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -148,6 +148,9 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AuthenticationFailedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.AuthenticationFailedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryInDesiredStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directory.model.transform.DirectoryInDesiredStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.InsufficientPermissionsExceptionUnmarshaller.getInstance()))
@@ -2748,6 +2751,75 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Describes the updates of a directory for a particular update type.
+     * </p>
+     * 
+     * @param describeUpdateDirectoryRequest
+     * @return Result of the DescribeUpdateDirectory operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @sample AWSDirectoryService.DescribeUpdateDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeUpdateDirectoryResult describeUpdateDirectory(DescribeUpdateDirectoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeUpdateDirectory(request);
+    }
+
+    @SdkInternalApi
+    final DescribeUpdateDirectoryResult executeDescribeUpdateDirectory(DescribeUpdateDirectoryRequest describeUpdateDirectoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeUpdateDirectoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeUpdateDirectoryRequest> request = null;
+        Response<DescribeUpdateDirectoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeUpdateDirectoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeUpdateDirectoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUpdateDirectory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeUpdateDirectoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeUpdateDirectoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables alternative client authentication methods for the specified directory.
      * </p>
      * 
@@ -4598,6 +4670,80 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<UpdateConditionalForwarderResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateConditionalForwarderResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the directory for a particular update type.
+     * </p>
+     * 
+     * @param updateDirectorySetupRequest
+     * @return Result of the UpdateDirectorySetup operation returned by the service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws DirectoryInDesiredStateException
+     *         The directory is already updated to desired update type settings.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws SnapshotLimitExceededException
+     *         The maximum number of manual snapshots for the directory has been reached. You can use the
+     *         <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @sample AWSDirectoryService.UpdateDirectorySetup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateDirectorySetupResult updateDirectorySetup(UpdateDirectorySetupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDirectorySetup(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDirectorySetupResult executeUpdateDirectorySetup(UpdateDirectorySetupRequest updateDirectorySetupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDirectorySetupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDirectorySetupRequest> request = null;
+        Response<UpdateDirectorySetupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDirectorySetupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDirectorySetupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Directory Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDirectorySetup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDirectorySetupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateDirectorySetupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

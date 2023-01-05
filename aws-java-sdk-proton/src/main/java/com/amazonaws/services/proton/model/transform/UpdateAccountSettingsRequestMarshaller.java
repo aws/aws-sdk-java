@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class UpdateAccountSettingsRequestMarshaller {
 
     private static final MarshallingInfo<Boolean> DELETEPIPELINEPROVISIONINGREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deletePipelineProvisioningRepository").build();
+    private static final MarshallingInfo<String> PIPELINECODEBUILDROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineCodebuildRoleArn").build();
     private static final MarshallingInfo<StructuredPojo> PIPELINEPROVISIONINGREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineProvisioningRepository").build();
     private static final MarshallingInfo<String> PIPELINESERVICEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,7 @@ public class UpdateAccountSettingsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(updateAccountSettingsRequest.getDeletePipelineProvisioningRepository(), DELETEPIPELINEPROVISIONINGREPOSITORY_BINDING);
+            protocolMarshaller.marshall(updateAccountSettingsRequest.getPipelineCodebuildRoleArn(), PIPELINECODEBUILDROLEARN_BINDING);
             protocolMarshaller.marshall(updateAccountSettingsRequest.getPipelineProvisioningRepository(), PIPELINEPROVISIONINGREPOSITORY_BINDING);
             protocolMarshaller.marshall(updateAccountSettingsRequest.getPipelineServiceRoleArn(), PIPELINESERVICEROLEARN_BINDING);
         } catch (Exception e) {

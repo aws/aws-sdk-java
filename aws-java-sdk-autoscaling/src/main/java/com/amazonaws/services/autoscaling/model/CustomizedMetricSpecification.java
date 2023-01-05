@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,13 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
      * </p>
      */
     private String unit;
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TargetTrackingMetricDataQuery> metrics;
 
     /**
      * <p>
@@ -428,6 +435,87 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * 
+     * @return The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *         both raw metric and metric math expressions.
+     */
+
+    public java.util.List<TargetTrackingMetricDataQuery> getMetrics() {
+        if (metrics == null) {
+            metrics = new com.amazonaws.internal.SdkInternalList<TargetTrackingMetricDataQuery>();
+        }
+        return metrics;
+    }
+
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * 
+     * @param metrics
+     *        The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *        both raw metric and metric math expressions.
+     */
+
+    public void setMetrics(java.util.Collection<TargetTrackingMetricDataQuery> metrics) {
+        if (metrics == null) {
+            this.metrics = null;
+            return;
+        }
+
+        this.metrics = new com.amazonaws.internal.SdkInternalList<TargetTrackingMetricDataQuery>(metrics);
+    }
+
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetrics(java.util.Collection)} or {@link #withMetrics(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param metrics
+     *        The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *        both raw metric and metric math expressions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomizedMetricSpecification withMetrics(TargetTrackingMetricDataQuery... metrics) {
+        if (this.metrics == null) {
+            setMetrics(new com.amazonaws.internal.SdkInternalList<TargetTrackingMetricDataQuery>(metrics.length));
+        }
+        for (TargetTrackingMetricDataQuery ele : metrics) {
+            this.metrics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The metrics to include in the target tracking scaling policy, as a metric data query. This can include both raw
+     * metric and metric math expressions.
+     * </p>
+     * 
+     * @param metrics
+     *        The metrics to include in the target tracking scaling policy, as a metric data query. This can include
+     *        both raw metric and metric math expressions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomizedMetricSpecification withMetrics(java.util.Collection<TargetTrackingMetricDataQuery> metrics) {
+        setMetrics(metrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -448,7 +536,9 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
         if (getStatistic() != null)
             sb.append("Statistic: ").append(getStatistic()).append(",");
         if (getUnit() != null)
-            sb.append("Unit: ").append(getUnit());
+            sb.append("Unit: ").append(getUnit()).append(",");
+        if (getMetrics() != null)
+            sb.append("Metrics: ").append(getMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -483,6 +573,10 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
             return false;
+        if (other.getMetrics() == null ^ this.getMetrics() == null)
+            return false;
+        if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -496,6 +590,7 @@ public class CustomizedMetricSpecification implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDimensions() == null) ? 0 : getDimensions().hashCode());
         hashCode = prime * hashCode + ((getStatistic() == null) ? 0 : getStatistic().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
+        hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -259,6 +259,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     private java.util.List<String> replicationInstancePrivateIpAddresses;
     /**
      * <p>
+     * One or more IPv6 addresses for the replication instance.
+     * </p>
+     */
+    private java.util.List<String> replicationInstanceIpv6Addresses;
+    /**
+     * <p>
      * Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an
      * instance with a public IP address. A value of <code>false</code> represents an instance with a private IP
      * address. The default value is <code>true</code>.
@@ -283,6 +289,13 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String dnsNameServers;
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     */
+    private String networkType;
 
     /**
      * <p>
@@ -1839,6 +1852,76 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * One or more IPv6 addresses for the replication instance.
+     * </p>
+     * 
+     * @return One or more IPv6 addresses for the replication instance.
+     */
+
+    public java.util.List<String> getReplicationInstanceIpv6Addresses() {
+        return replicationInstanceIpv6Addresses;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 addresses for the replication instance.
+     * </p>
+     * 
+     * @param replicationInstanceIpv6Addresses
+     *        One or more IPv6 addresses for the replication instance.
+     */
+
+    public void setReplicationInstanceIpv6Addresses(java.util.Collection<String> replicationInstanceIpv6Addresses) {
+        if (replicationInstanceIpv6Addresses == null) {
+            this.replicationInstanceIpv6Addresses = null;
+            return;
+        }
+
+        this.replicationInstanceIpv6Addresses = new java.util.ArrayList<String>(replicationInstanceIpv6Addresses);
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 addresses for the replication instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReplicationInstanceIpv6Addresses(java.util.Collection)} or
+     * {@link #withReplicationInstanceIpv6Addresses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param replicationInstanceIpv6Addresses
+     *        One or more IPv6 addresses for the replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationInstance withReplicationInstanceIpv6Addresses(String... replicationInstanceIpv6Addresses) {
+        if (this.replicationInstanceIpv6Addresses == null) {
+            setReplicationInstanceIpv6Addresses(new java.util.ArrayList<String>(replicationInstanceIpv6Addresses.length));
+        }
+        for (String ele : replicationInstanceIpv6Addresses) {
+            this.replicationInstanceIpv6Addresses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more IPv6 addresses for the replication instance.
+     * </p>
+     * 
+     * @param replicationInstanceIpv6Addresses
+     *        One or more IPv6 addresses for the replication instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationInstance withReplicationInstanceIpv6Addresses(java.util.Collection<String> replicationInstanceIpv6Addresses) {
+        setReplicationInstanceIpv6Addresses(replicationInstanceIpv6Addresses);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies the accessibility options for the replication instance. A value of <code>true</code> represents an
      * instance with a public IP address. A value of <code>false</code> represents an instance with a private IP
      * address. The default value is <code>true</code>.
@@ -2029,6 +2112,52 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param networkType
+     *        The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *        supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     */
+
+    public void setNetworkType(String networkType) {
+        this.networkType = networkType;
+    }
+
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @return The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *         supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     */
+
+    public String getNetworkType() {
+        return this.networkType;
+    }
+
+    /**
+     * <p>
+     * The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that supports
+     * both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * </p>
+     * 
+     * @param networkType
+     *        The type of IP address protocol used by a replication instance, such as IPv4 only or Dual-stack that
+     *        supports both IPv4 and IPv6 addressing. IPv6 only is not yet supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationInstance withNetworkType(String networkType) {
+        setNetworkType(networkType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2078,6 +2207,8 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
             sb.append("ReplicationInstancePublicIpAddresses: ").append(getReplicationInstancePublicIpAddresses()).append(",");
         if (getReplicationInstancePrivateIpAddresses() != null)
             sb.append("ReplicationInstancePrivateIpAddresses: ").append(getReplicationInstancePrivateIpAddresses()).append(",");
+        if (getReplicationInstanceIpv6Addresses() != null)
+            sb.append("ReplicationInstanceIpv6Addresses: ").append(getReplicationInstanceIpv6Addresses()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecondaryAvailabilityZone() != null)
@@ -2085,7 +2216,9 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
         if (getFreeUntil() != null)
             sb.append("FreeUntil: ").append(getFreeUntil()).append(",");
         if (getDnsNameServers() != null)
-            sb.append("DnsNameServers: ").append(getDnsNameServers());
+            sb.append("DnsNameServers: ").append(getDnsNameServers()).append(",");
+        if (getNetworkType() != null)
+            sb.append("NetworkType: ").append(getNetworkType());
         sb.append("}");
         return sb.toString();
     }
@@ -2181,6 +2314,11 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
         if (other.getReplicationInstancePrivateIpAddresses() != null
                 && other.getReplicationInstancePrivateIpAddresses().equals(this.getReplicationInstancePrivateIpAddresses()) == false)
             return false;
+        if (other.getReplicationInstanceIpv6Addresses() == null ^ this.getReplicationInstanceIpv6Addresses() == null)
+            return false;
+        if (other.getReplicationInstanceIpv6Addresses() != null
+                && other.getReplicationInstanceIpv6Addresses().equals(this.getReplicationInstanceIpv6Addresses()) == false)
+            return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
@@ -2196,6 +2334,10 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
         if (other.getDnsNameServers() == null ^ this.getDnsNameServers() == null)
             return false;
         if (other.getDnsNameServers() != null && other.getDnsNameServers().equals(this.getDnsNameServers()) == false)
+            return false;
+        if (other.getNetworkType() == null ^ this.getNetworkType() == null)
+            return false;
+        if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
             return false;
         return true;
     }
@@ -2224,10 +2366,12 @@ public class ReplicationInstance implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getReplicationInstancePrivateIpAddress() == null) ? 0 : getReplicationInstancePrivateIpAddress().hashCode());
         hashCode = prime * hashCode + ((getReplicationInstancePublicIpAddresses() == null) ? 0 : getReplicationInstancePublicIpAddresses().hashCode());
         hashCode = prime * hashCode + ((getReplicationInstancePrivateIpAddresses() == null) ? 0 : getReplicationInstancePrivateIpAddresses().hashCode());
+        hashCode = prime * hashCode + ((getReplicationInstanceIpv6Addresses() == null) ? 0 : getReplicationInstanceIpv6Addresses().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getFreeUntil() == null) ? 0 : getFreeUntil().hashCode());
         hashCode = prime * hashCode + ((getDnsNameServers() == null) ? 0 : getDnsNameServers().hashCode());
+        hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
         return hashCode;
     }
 

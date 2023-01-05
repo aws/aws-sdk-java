@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> channels;
+    /**
+     * <p>
+     * A list of up to 100 routing profile IDs or ARNs.
+     * </p>
+     */
+    private java.util.List<String> routingProfiles;
 
     /**
      * <p>
@@ -228,6 +234,76 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of up to 100 routing profile IDs or ARNs.
+     * </p>
+     * 
+     * @return A list of up to 100 routing profile IDs or ARNs.
+     */
+
+    public java.util.List<String> getRoutingProfiles() {
+        return routingProfiles;
+    }
+
+    /**
+     * <p>
+     * A list of up to 100 routing profile IDs or ARNs.
+     * </p>
+     * 
+     * @param routingProfiles
+     *        A list of up to 100 routing profile IDs or ARNs.
+     */
+
+    public void setRoutingProfiles(java.util.Collection<String> routingProfiles) {
+        if (routingProfiles == null) {
+            this.routingProfiles = null;
+            return;
+        }
+
+        this.routingProfiles = new java.util.ArrayList<String>(routingProfiles);
+    }
+
+    /**
+     * <p>
+     * A list of up to 100 routing profile IDs or ARNs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRoutingProfiles(java.util.Collection)} or {@link #withRoutingProfiles(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param routingProfiles
+     *        A list of up to 100 routing profile IDs or ARNs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Filters withRoutingProfiles(String... routingProfiles) {
+        if (this.routingProfiles == null) {
+            setRoutingProfiles(new java.util.ArrayList<String>(routingProfiles.length));
+        }
+        for (String ele : routingProfiles) {
+            this.routingProfiles.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of up to 100 routing profile IDs or ARNs.
+     * </p>
+     * 
+     * @param routingProfiles
+     *        A list of up to 100 routing profile IDs or ARNs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Filters withRoutingProfiles(java.util.Collection<String> routingProfiles) {
+        setRoutingProfiles(routingProfiles);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -242,7 +318,9 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
         if (getQueues() != null)
             sb.append("Queues: ").append(getQueues()).append(",");
         if (getChannels() != null)
-            sb.append("Channels: ").append(getChannels());
+            sb.append("Channels: ").append(getChannels()).append(",");
+        if (getRoutingProfiles() != null)
+            sb.append("RoutingProfiles: ").append(getRoutingProfiles());
         sb.append("}");
         return sb.toString();
     }
@@ -265,6 +343,10 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getChannels() != null && other.getChannels().equals(this.getChannels()) == false)
             return false;
+        if (other.getRoutingProfiles() == null ^ this.getRoutingProfiles() == null)
+            return false;
+        if (other.getRoutingProfiles() != null && other.getRoutingProfiles().equals(this.getRoutingProfiles()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +357,7 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getQueues() == null) ? 0 : getQueues().hashCode());
         hashCode = prime * hashCode + ((getChannels() == null) ? 0 : getChannels().hashCode());
+        hashCode = prime * hashCode + ((getRoutingProfiles() == null) ? 0 : getRoutingProfiles().hashCode());
         return hashCode;
     }
 

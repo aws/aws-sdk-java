@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a vocabulary filter, including the language of the filter, when it was last modified, and
- * its name.
+ * Provides information about a custom vocabulary filter, including the language of the filter, when it was last
+ * modified, and its name.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/VocabularyFilterInfo" target="_top">AWS
@@ -38,13 +38,13 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
     private String vocabularyFilterName;
     /**
      * <p>
-     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
-     * must contain terms in only one language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary
+     * filter must contain terms in only one language.
      * </p>
      * <p>
-     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
-     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
-     * contain English audio.
+     * A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     * if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     * files that contain English audio.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
@@ -54,7 +54,7 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
     private String languageCode;
     /**
      * <p>
-     * The date and time the specified vocabulary filter was last modified.
+     * The date and time the specified custom vocabulary filter was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -111,13 +111,13 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
-     * must contain terms in only one language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary
+     * filter must contain terms in only one language.
      * </p>
      * <p>
-     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
-     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
-     * contain English audio.
+     * A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     * if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     * files that contain English audio.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
@@ -125,12 +125,12 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param languageCode
-     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
-     *        filter must contain terms in only one language.</p>
+     *        The language code that represents the language of the entries in your vocabulary filter. Each custom
+     *        vocabulary filter must contain terms in only one language.</p>
      *        <p>
-     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
-     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
-     *        files that contain English audio.
+     *        A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For
+     *        example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only
+     *        apply this filter to files that contain English audio.
      *        </p>
      *        <p>
      *        For a list of supported languages and their associated language codes, refer to the <a
@@ -145,25 +145,25 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
-     * must contain terms in only one language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary
+     * filter must contain terms in only one language.
      * </p>
      * <p>
-     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
-     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
-     * contain English audio.
+     * A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     * if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     * files that contain English audio.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported languages</a> table.
      * </p>
      * 
-     * @return The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
-     *         filter must contain terms in only one language.</p>
+     * @return The language code that represents the language of the entries in your vocabulary filter. Each custom
+     *         vocabulary filter must contain terms in only one language.</p>
      *         <p>
-     *         A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
-     *         if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter
-     *         to files that contain English audio.
+     *         A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For
+     *         example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only
+     *         apply this filter to files that contain English audio.
      *         </p>
      *         <p>
      *         For a list of supported languages and their associated language codes, refer to the <a
@@ -178,13 +178,13 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
-     * must contain terms in only one language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary
+     * filter must contain terms in only one language.
      * </p>
      * <p>
-     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
-     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
-     * contain English audio.
+     * A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     * if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     * files that contain English audio.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
@@ -192,12 +192,12 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param languageCode
-     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
-     *        filter must contain terms in only one language.</p>
+     *        The language code that represents the language of the entries in your vocabulary filter. Each custom
+     *        vocabulary filter must contain terms in only one language.</p>
      *        <p>
-     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
-     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
-     *        files that contain English audio.
+     *        A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For
+     *        example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only
+     *        apply this filter to files that contain English audio.
      *        </p>
      *        <p>
      *        For a list of supported languages and their associated language codes, refer to the <a
@@ -214,13 +214,13 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The language code that represents the language of the entries in your vocabulary filter. Each vocabulary filter
-     * must contain terms in only one language.
+     * The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary
+     * filter must contain terms in only one language.
      * </p>
      * <p>
-     * A vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you
-     * create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to files that
-     * contain English audio.
+     * A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
+     * if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
+     * files that contain English audio.
      * </p>
      * <p>
      * For a list of supported languages and their associated language codes, refer to the <a
@@ -228,12 +228,12 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param languageCode
-     *        The language code that represents the language of the entries in your vocabulary filter. Each vocabulary
-     *        filter must contain terms in only one language.</p>
+     *        The language code that represents the language of the entries in your vocabulary filter. Each custom
+     *        vocabulary filter must contain terms in only one language.</p>
      *        <p>
-     *        A vocabulary filter can only be used to transcribe files in the same language as the filter. For example,
-     *        if you create a vocabulary filter using US English (<code>en-US</code>), you can only apply this filter to
-     *        files that contain English audio.
+     *        A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For
+     *        example, if you create a custom vocabulary filter using US English (<code>en-US</code>), you can only
+     *        apply this filter to files that contain English audio.
      *        </p>
      *        <p>
      *        For a list of supported languages and their associated language codes, refer to the <a
@@ -250,7 +250,7 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time the specified vocabulary filter was last modified.
+     * The date and time the specified custom vocabulary filter was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -258,7 +258,7 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the specified vocabulary filter was last modified.</p>
+     *        The date and time the specified custom vocabulary filter was last modified.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -270,14 +270,14 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time the specified vocabulary filter was last modified.
+     * The date and time the specified custom vocabulary filter was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return The date and time the specified vocabulary filter was last modified.</p>
+     * @return The date and time the specified custom vocabulary filter was last modified.</p>
      *         <p>
      *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -289,7 +289,7 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time the specified vocabulary filter was last modified.
+     * The date and time the specified custom vocabulary filter was last modified.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -297,7 +297,7 @@ public class VocabularyFilterInfo implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time the specified vocabulary filter was last modified.</p>
+     *        The date and time the specified custom vocabulary filter was last modified.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.

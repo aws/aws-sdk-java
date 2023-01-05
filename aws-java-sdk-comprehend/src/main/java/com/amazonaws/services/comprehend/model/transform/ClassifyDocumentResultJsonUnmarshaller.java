@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,22 @@ public class ClassifyDocumentResultJsonUnmarshaller implements Unmarshaller<Clas
                 if (context.testExpression("Labels", targetDepth)) {
                     context.nextToken();
                     classifyDocumentResult.setLabels(new ListUnmarshaller<DocumentLabel>(DocumentLabelJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("DocumentMetadata", targetDepth)) {
+                    context.nextToken();
+                    classifyDocumentResult.setDocumentMetadata(DocumentMetadataJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DocumentType", targetDepth)) {
+                    context.nextToken();
+                    classifyDocumentResult.setDocumentType(new ListUnmarshaller<DocumentTypeListItem>(DocumentTypeListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Errors", targetDepth)) {
+                    context.nextToken();
+                    classifyDocumentResult.setErrors(new ListUnmarshaller<ErrorsListItem>(ErrorsListItemJsonUnmarshaller.getInstance())
 
                     .unmarshall(context));
                 }

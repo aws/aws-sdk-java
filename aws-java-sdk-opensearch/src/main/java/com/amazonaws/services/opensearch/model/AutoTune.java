@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the Auto-Tune type and Auto-Tune action details.
+ * Information about an Auto-Tune action. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,26 +29,24 @@ public class AutoTune implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     * The type of Auto-Tune action.
      * </p>
      */
     private String autoTuneType;
     /**
      * <p>
-     * Specifies details about the Auto-Tune action. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Details about an Auto-Tune action.
      * </p>
      */
     private AutoTuneDetails autoTuneDetails;
 
     /**
      * <p>
-     * Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     * The type of Auto-Tune action.
      * </p>
      * 
      * @param autoTuneType
-     *        Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     *        The type of Auto-Tune action.
      * @see AutoTuneType
      */
 
@@ -56,10 +56,10 @@ public class AutoTune implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     * The type of Auto-Tune action.
      * </p>
      * 
-     * @return Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     * @return The type of Auto-Tune action.
      * @see AutoTuneType
      */
 
@@ -69,11 +69,11 @@ public class AutoTune implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     * The type of Auto-Tune action.
      * </p>
      * 
      * @param autoTuneType
-     *        Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     *        The type of Auto-Tune action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneType
      */
@@ -85,11 +85,11 @@ public class AutoTune implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     * The type of Auto-Tune action.
      * </p>
      * 
      * @param autoTuneType
-     *        Specifies the Auto-Tune type. Valid value is SCHEDULED_ACTION.
+     *        The type of Auto-Tune action.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneType
      */
@@ -101,15 +101,11 @@ public class AutoTune implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies details about the Auto-Tune action. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Details about an Auto-Tune action.
      * </p>
      * 
      * @param autoTuneDetails
-     *        Specifies details about the Auto-Tune action. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        Details about an Auto-Tune action.
      */
 
     public void setAutoTuneDetails(AutoTuneDetails autoTuneDetails) {
@@ -118,14 +114,10 @@ public class AutoTune implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies details about the Auto-Tune action. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Details about an Auto-Tune action.
      * </p>
      * 
-     * @return Specifies details about the Auto-Tune action. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return Details about an Auto-Tune action.
      */
 
     public AutoTuneDetails getAutoTuneDetails() {
@@ -134,15 +126,11 @@ public class AutoTune implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies details about the Auto-Tune action. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Details about an Auto-Tune action.
      * </p>
      * 
      * @param autoTuneDetails
-     *        Specifies details about the Auto-Tune action. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        Details about an Auto-Tune action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

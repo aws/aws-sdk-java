@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,12 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
+     * List of logging-configuration identifiers attached to the room.
+     * </p>
+     */
+    private java.util.List<String> loggingConfigurationIdentifiers;
+    /**
+     * <p>
      * Configuration information for optional review of messages.
      * </p>
      */
@@ -61,7 +67,7 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Tags attached to the resource. See <a
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
      * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
      * constraints beyond what is documented there.
@@ -206,6 +212,76 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * List of logging-configuration identifiers attached to the room.
+     * </p>
+     * 
+     * @return List of logging-configuration identifiers attached to the room.
+     */
+
+    public java.util.List<String> getLoggingConfigurationIdentifiers() {
+        return loggingConfigurationIdentifiers;
+    }
+
+    /**
+     * <p>
+     * List of logging-configuration identifiers attached to the room.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        List of logging-configuration identifiers attached to the room.
+     */
+
+    public void setLoggingConfigurationIdentifiers(java.util.Collection<String> loggingConfigurationIdentifiers) {
+        if (loggingConfigurationIdentifiers == null) {
+            this.loggingConfigurationIdentifiers = null;
+            return;
+        }
+
+        this.loggingConfigurationIdentifiers = new java.util.ArrayList<String>(loggingConfigurationIdentifiers);
+    }
+
+    /**
+     * <p>
+     * List of logging-configuration identifiers attached to the room.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLoggingConfigurationIdentifiers(java.util.Collection)} or
+     * {@link #withLoggingConfigurationIdentifiers(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        List of logging-configuration identifiers attached to the room.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoomSummary withLoggingConfigurationIdentifiers(String... loggingConfigurationIdentifiers) {
+        if (this.loggingConfigurationIdentifiers == null) {
+            setLoggingConfigurationIdentifiers(new java.util.ArrayList<String>(loggingConfigurationIdentifiers.length));
+        }
+        for (String ele : loggingConfigurationIdentifiers) {
+            this.loggingConfigurationIdentifiers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List of logging-configuration identifiers attached to the room.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifiers
+     *        List of logging-configuration identifiers attached to the room.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RoomSummary withLoggingConfigurationIdentifiers(java.util.Collection<String> loggingConfigurationIdentifiers) {
+        setLoggingConfigurationIdentifiers(loggingConfigurationIdentifiers);
+        return this;
+    }
+
+    /**
+     * <p>
      * Configuration information for optional review of messages.
      * </p>
      * 
@@ -286,16 +362,16 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tags attached to the resource. See <a
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
      * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
      * constraints beyond what is documented there.
      * </p>
      * 
-     * @return Tags attached to the resource. See <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
-     *         details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
-     *         Chat has no constraints beyond what is documented there.
+     * @return Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>.
+     *         See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>
+     *         for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon
+     *         IVS Chat has no constraints beyond what is documented there.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -304,15 +380,15 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tags attached to the resource. See <a
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
      * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
      * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Tags attached to the resource. See <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
      *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
      *        Chat has no constraints beyond what is documented there.
      */
@@ -323,15 +399,15 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Tags attached to the resource. See <a
+     * Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details,
      * including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no
      * constraints beyond what is documented there.
      * </p>
      * 
      * @param tags
-     *        Tags attached to the resource. See <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
+     *        Tags attached to the resource. Array of maps, each of the form <code>string:string (key:value)</code>. See
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for
      *        details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS
      *        Chat has no constraints beyond what is documented there.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -431,6 +507,8 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("CreateTime: ").append(getCreateTime()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
+        if (getLoggingConfigurationIdentifiers() != null)
+            sb.append("LoggingConfigurationIdentifiers: ").append(getLoggingConfigurationIdentifiers()).append(",");
         if (getMessageReviewHandler() != null)
             sb.append("MessageReviewHandler: ").append(getMessageReviewHandler()).append(",");
         if (getName() != null)
@@ -465,6 +543,11 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
             return false;
+        if (other.getLoggingConfigurationIdentifiers() == null ^ this.getLoggingConfigurationIdentifiers() == null)
+            return false;
+        if (other.getLoggingConfigurationIdentifiers() != null
+                && other.getLoggingConfigurationIdentifiers().equals(this.getLoggingConfigurationIdentifiers()) == false)
+            return false;
         if (other.getMessageReviewHandler() == null ^ this.getMessageReviewHandler() == null)
             return false;
         if (other.getMessageReviewHandler() != null && other.getMessageReviewHandler().equals(this.getMessageReviewHandler()) == false)
@@ -492,6 +575,7 @@ public class RoomSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfigurationIdentifiers() == null) ? 0 : getLoggingConfigurationIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getMessageReviewHandler() == null) ? 0 : getMessageReviewHandler().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

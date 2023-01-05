@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class RootCauseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LinkedAccount").build();
     private static final MarshallingInfo<String> USAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UsageType").build();
+    private static final MarshallingInfo<String> LINKEDACCOUNTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LinkedAccountName").build();
 
     private static final RootCauseMarshaller instance = new RootCauseMarshaller();
 
@@ -56,6 +58,7 @@ public class RootCauseMarshaller {
             protocolMarshaller.marshall(rootCause.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(rootCause.getLinkedAccount(), LINKEDACCOUNT_BINDING);
             protocolMarshaller.marshall(rootCause.getUsageType(), USAGETYPE_BINDING);
+            protocolMarshaller.marshall(rootCause.getLinkedAccountName(), LINKEDACCOUNTNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

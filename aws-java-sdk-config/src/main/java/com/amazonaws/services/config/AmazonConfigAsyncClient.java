@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -2564,6 +2564,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(GetResourceEvaluationSummaryRequest request) {
+
+        return getResourceEvaluationSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceEvaluationSummaryResult> getResourceEvaluationSummaryAsync(final GetResourceEvaluationSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourceEvaluationSummaryRequest, GetResourceEvaluationSummaryResult> asyncHandler) {
+        final GetResourceEvaluationSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourceEvaluationSummaryResult>() {
+            @Override
+            public GetResourceEvaluationSummaryResult call() throws Exception {
+                GetResourceEvaluationSummaryResult result = null;
+
+                try {
+                    result = executeGetResourceEvaluationSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetStoredQueryResult> getStoredQueryAsync(GetStoredQueryRequest request) {
 
         return getStoredQueryAsync(request, null);
@@ -2684,6 +2717,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executeListDiscoveredResources(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(ListResourceEvaluationsRequest request) {
+
+        return listResourceEvaluationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListResourceEvaluationsResult> listResourceEvaluationsAsync(final ListResourceEvaluationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListResourceEvaluationsRequest, ListResourceEvaluationsResult> asyncHandler) {
+        final ListResourceEvaluationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListResourceEvaluationsResult>() {
+            @Override
+            public ListResourceEvaluationsResult call() throws Exception {
+                ListResourceEvaluationsResult result = null;
+
+                try {
+                    result = executeListResourceEvaluations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3412,6 +3478,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executeStartRemediationExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(StartResourceEvaluationRequest request) {
+
+        return startResourceEvaluationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartResourceEvaluationResult> startResourceEvaluationAsync(final StartResourceEvaluationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartResourceEvaluationRequest, StartResourceEvaluationResult> asyncHandler) {
+        final StartResourceEvaluationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartResourceEvaluationResult>() {
+            @Override
+            public StartResourceEvaluationResult call() throws Exception {
+                StartResourceEvaluationResult result = null;
+
+                try {
+                    result = executeStartResourceEvaluation(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

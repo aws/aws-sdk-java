@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation. Specifies the domain name
- * and optional change specific identity for which you want progress information.
+ * Container for the parameters to the <code>DescribeDomainChangeProgress</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,25 +27,25 @@ public class DescribeDomainChangeProgressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The domain you want to get the progress information about.
+     * The name of the domain to get progress information for.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The specific change ID for which you want to get progress information. This is an optional parameter. If omitted,
-     * the service returns information about the most recent configuration change.
+     * The specific change ID for which you want to get progress information. If omitted, the request returns
+     * information about the most recent configuration change.
      * </p>
      */
     private String changeId;
 
     /**
      * <p>
-     * The domain you want to get the progress information about.
+     * The name of the domain to get progress information for.
      * </p>
      * 
      * @param domainName
-     *        The domain you want to get the progress information about.
+     *        The name of the domain to get progress information for.
      */
 
     public void setDomainName(String domainName) {
@@ -55,10 +54,10 @@ public class DescribeDomainChangeProgressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The domain you want to get the progress information about.
+     * The name of the domain to get progress information for.
      * </p>
      * 
-     * @return The domain you want to get the progress information about.
+     * @return The name of the domain to get progress information for.
      */
 
     public String getDomainName() {
@@ -67,11 +66,11 @@ public class DescribeDomainChangeProgressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The domain you want to get the progress information about.
+     * The name of the domain to get progress information for.
      * </p>
      * 
      * @param domainName
-     *        The domain you want to get the progress information about.
+     *        The name of the domain to get progress information for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,13 +81,13 @@ public class DescribeDomainChangeProgressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The specific change ID for which you want to get progress information. This is an optional parameter. If omitted,
-     * the service returns information about the most recent configuration change.
+     * The specific change ID for which you want to get progress information. If omitted, the request returns
+     * information about the most recent configuration change.
      * </p>
      * 
      * @param changeId
-     *        The specific change ID for which you want to get progress information. This is an optional parameter. If
-     *        omitted, the service returns information about the most recent configuration change.
+     *        The specific change ID for which you want to get progress information. If omitted, the request returns
+     *        information about the most recent configuration change.
      */
 
     public void setChangeId(String changeId) {
@@ -97,12 +96,12 @@ public class DescribeDomainChangeProgressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The specific change ID for which you want to get progress information. This is an optional parameter. If omitted,
-     * the service returns information about the most recent configuration change.
+     * The specific change ID for which you want to get progress information. If omitted, the request returns
+     * information about the most recent configuration change.
      * </p>
      * 
-     * @return The specific change ID for which you want to get progress information. This is an optional parameter. If
-     *         omitted, the service returns information about the most recent configuration change.
+     * @return The specific change ID for which you want to get progress information. If omitted, the request returns
+     *         information about the most recent configuration change.
      */
 
     public String getChangeId() {
@@ -111,13 +110,13 @@ public class DescribeDomainChangeProgressRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The specific change ID for which you want to get progress information. This is an optional parameter. If omitted,
-     * the service returns information about the most recent configuration change.
+     * The specific change ID for which you want to get progress information. If omitted, the request returns
+     * information about the most recent configuration change.
      * </p>
      * 
      * @param changeId
-     *        The specific change ID for which you want to get progress information. This is an optional parameter. If
-     *        omitted, the service returns information about the most recent configuration change.
+     *        The specific change ID for which you want to get progress information. If omitted, the request returns
+     *        information about the most recent configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

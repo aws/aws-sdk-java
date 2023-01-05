@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * A specified value for the attribute.
      * </p>
      */
+    @Deprecated
     private String assignedValue;
     /**
      * <p>
@@ -427,7 +428,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * @param assignedValue
      *        A specified value for the attribute.
      */
-
+    @Deprecated
     public void setAssignedValue(String assignedValue) {
         this.assignedValue = assignedValue;
     }
@@ -439,7 +440,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A specified value for the attribute.
      */
-
+    @Deprecated
     public String getAssignedValue() {
         return this.assignedValue;
     }
@@ -453,7 +454,7 @@ public class Attribute implements Serializable, Cloneable, StructuredPojo {
      *        A specified value for the attribute.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Attribute withAssignedValue(String assignedValue) {
         setAssignedValue(assignedValue);
         return this;

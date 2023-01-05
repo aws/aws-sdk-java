@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -286,6 +286,8 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private java.util.Date automaticRestartTime;
+
+    private ServerlessV2ScalingConfigurationInfo serverlessV2ScalingConfiguration;
 
     /**
      * <p>
@@ -2286,6 +2288,32 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * @param serverlessV2ScalingConfiguration
+     */
+
+    public void setServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo serverlessV2ScalingConfiguration) {
+        this.serverlessV2ScalingConfiguration = serverlessV2ScalingConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public ServerlessV2ScalingConfigurationInfo getServerlessV2ScalingConfiguration() {
+        return this.serverlessV2ScalingConfiguration;
+    }
+
+    /**
+     * @param serverlessV2ScalingConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withServerlessV2ScalingConfiguration(ServerlessV2ScalingConfigurationInfo serverlessV2ScalingConfiguration) {
+        setServerlessV2ScalingConfiguration(serverlessV2ScalingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2376,7 +2404,9 @@ public class DBCluster implements Serializable, Cloneable {
         if (getCrossAccountClone() != null)
             sb.append("CrossAccountClone: ").append(getCrossAccountClone()).append(",");
         if (getAutomaticRestartTime() != null)
-            sb.append("AutomaticRestartTime: ").append(getAutomaticRestartTime());
+            sb.append("AutomaticRestartTime: ").append(getAutomaticRestartTime()).append(",");
+        if (getServerlessV2ScalingConfiguration() != null)
+            sb.append("ServerlessV2ScalingConfiguration: ").append(getServerlessV2ScalingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -2553,6 +2583,11 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getAutomaticRestartTime() != null && other.getAutomaticRestartTime().equals(this.getAutomaticRestartTime()) == false)
             return false;
+        if (other.getServerlessV2ScalingConfiguration() == null ^ this.getServerlessV2ScalingConfiguration() == null)
+            return false;
+        if (other.getServerlessV2ScalingConfiguration() != null
+                && other.getServerlessV2ScalingConfiguration().equals(this.getServerlessV2ScalingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -2601,6 +2636,7 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getCrossAccountClone() == null) ? 0 : getCrossAccountClone().hashCode());
         hashCode = prime * hashCode + ((getAutomaticRestartTime() == null) ? 0 : getAutomaticRestartTime().hashCode());
+        hashCode = prime * hashCode + ((getServerlessV2ScalingConfiguration() == null) ? 0 : getServerlessV2ScalingConfiguration().hashCode());
         return hashCode;
     }
 

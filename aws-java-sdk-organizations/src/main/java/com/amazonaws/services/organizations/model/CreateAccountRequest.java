@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,9 +92,6 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      */
     private String accountName;
     /**
-     * <p>
-     * (Optional)
-     * </p>
      * <p>
      * The name of an IAM role that Organizations automatically preconfigures in the new member account. This role
      * trusts the management account, allowing users in the management account to assume the role, as permitted by the
@@ -564,9 +561,6 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * (Optional)
-     * </p>
-     * <p>
      * The name of an IAM role that Organizations automatically preconfigures in the new member account. This role
      * trusts the management account, allowing users in the management account to assume the role, as permitted by the
      * management account administrator. The role has administrator permissions in the new member account.
@@ -600,13 +594,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param roleName
-     *        (Optional)</p>
-     *        <p>
      *        The name of an IAM role that Organizations automatically preconfigures in the new member account. This
      *        role trusts the management account, allowing users in the management account to assume the role, as
      *        permitted by the management account administrator. The role has administrator permissions in the new
-     *        member account.
-     *        </p>
+     *        member account.</p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      *        </p>
@@ -642,9 +633,6 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * (Optional)
-     * </p>
-     * <p>
      * The name of an IAM role that Organizations automatically preconfigures in the new member account. This role
      * trusts the management account, allowing users in the management account to assume the role, as permitted by the
      * management account administrator. The role has administrator permissions in the new member account.
@@ -677,13 +665,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * characters: =,.@-
      * </p>
      * 
-     * @return (Optional)</p>
-     *         <p>
-     *         The name of an IAM role that Organizations automatically preconfigures in the new member account. This
+     * @return The name of an IAM role that Organizations automatically preconfigures in the new member account. This
      *         role trusts the management account, allowing users in the management account to assume the role, as
      *         permitted by the management account administrator. The role has administrator permissions in the new
-     *         member account.
-     *         </p>
+     *         member account.</p>
      *         <p>
      *         If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>
      *         .
@@ -720,9 +705,6 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * (Optional)
-     * </p>
-     * <p>
      * The name of an IAM role that Organizations automatically preconfigures in the new member account. This role
      * trusts the management account, allowing users in the management account to assume the role, as permitted by the
      * management account administrator. The role has administrator permissions in the new member account.
@@ -756,13 +738,10 @@ public class CreateAccountRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param roleName
-     *        (Optional)</p>
-     *        <p>
      *        The name of an IAM role that Organizations automatically preconfigures in the new member account. This
      *        role trusts the management account, allowing users in the management account to assume the role, as
      *        permitted by the management account administrator. The role has administrator permissions in the new
-     *        member account.
-     *        </p>
+     *        member account.</p>
      *        <p>
      *        If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
      *        </p>

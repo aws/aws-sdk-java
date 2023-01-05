@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UpdatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan you're updating.
+     * The Amazon Resource Name (ARN) of the pricing plan that you're updating.
      * </p>
      */
     private String arn;
@@ -39,18 +39,18 @@ public class UpdatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String name;
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan you're updating.
+     * The Amazon Resource Name (ARN) of the pricing plan that you're updating.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the pricing plan you're updating.
+     *        The Amazon Resource Name (ARN) of the pricing plan that you're updating.
      */
 
     public void setArn(String arn) {
@@ -59,10 +59,10 @@ public class UpdatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan you're updating.
+     * The Amazon Resource Name (ARN) of the pricing plan that you're updating.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the pricing plan you're updating.
+     * @return The Amazon Resource Name (ARN) of the pricing plan that you're updating.
      */
 
     public String getArn() {
@@ -71,11 +71,11 @@ public class UpdatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan you're updating.
+     * The Amazon Resource Name (ARN) of the pricing plan that you're updating.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the pricing plan you're updating.
+     *        The Amazon Resource Name (ARN) of the pricing plan that you're updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class UpdatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      * 
      * @param description
-     *        The pricing plan description.
+     *        The description of the pricing plan.
      */
 
     public void setDescription(String description) {
@@ -139,10 +139,10 @@ public class UpdatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      * 
-     * @return The pricing plan description.
+     * @return The description of the pricing plan.
      */
 
     public String getDescription() {
@@ -151,11 +151,11 @@ public class UpdatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      * 
      * @param description
-     *        The pricing plan description.
+     *        The description of the pricing plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

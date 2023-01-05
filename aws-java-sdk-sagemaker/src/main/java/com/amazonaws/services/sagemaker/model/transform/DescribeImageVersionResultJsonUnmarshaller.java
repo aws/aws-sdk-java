@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,34 @@ public class DescribeImageVersionResultJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("Version", targetDepth)) {
                     context.nextToken();
                     describeImageVersionResult.setVersion(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("VendorGuidance", targetDepth)) {
+                    context.nextToken();
+                    describeImageVersionResult.setVendorGuidance(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("JobType", targetDepth)) {
+                    context.nextToken();
+                    describeImageVersionResult.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MLFramework", targetDepth)) {
+                    context.nextToken();
+                    describeImageVersionResult.setMLFramework(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProgrammingLang", targetDepth)) {
+                    context.nextToken();
+                    describeImageVersionResult.setProgrammingLang(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Processor", targetDepth)) {
+                    context.nextToken();
+                    describeImageVersionResult.setProcessor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Horovod", targetDepth)) {
+                    context.nextToken();
+                    describeImageVersionResult.setHorovod(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ReleaseNotes", targetDepth)) {
+                    context.nextToken();
+                    describeImageVersionResult.setReleaseNotes(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

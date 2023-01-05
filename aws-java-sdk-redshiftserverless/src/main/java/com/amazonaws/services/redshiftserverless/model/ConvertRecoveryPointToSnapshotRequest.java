@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,13 @@ public class ConvertRecoveryPointToSnapshotRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String snapshotName;
+    /**
+     * <p>
+     * An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -165,6 +172,85 @@ public class ConvertRecoveryPointToSnapshotRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.
+     * </p>
+     * 
+     * @return An array of <a
+     *         href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag objects</a>
+     *         to associate with the created snapshot.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.
+     * </p>
+     * 
+     * @param tags
+     *        An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     *        objects</a> to associate with the created snapshot.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     *        objects</a> to associate with the created snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConvertRecoveryPointToSnapshotRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     * objects</a> to associate with the created snapshot.
+     * </p>
+     * 
+     * @param tags
+     *        An array of <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_Tag.html">Tag
+     *        objects</a> to associate with the created snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConvertRecoveryPointToSnapshotRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +267,9 @@ public class ConvertRecoveryPointToSnapshotRequest extends com.amazonaws.AmazonW
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getSnapshotName() != null)
-            sb.append("SnapshotName: ").append(getSnapshotName());
+            sb.append("SnapshotName: ").append(getSnapshotName()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +296,10 @@ public class ConvertRecoveryPointToSnapshotRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getSnapshotName() != null && other.getSnapshotName().equals(this.getSnapshotName()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +311,7 @@ public class ConvertRecoveryPointToSnapshotRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getRecoveryPointId() == null) ? 0 : getRecoveryPointId().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getSnapshotName() == null) ? 0 : getSnapshotName().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

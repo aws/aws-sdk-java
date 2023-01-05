@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
      * </p>
      */
     private String networkInsightsPathId;
+    /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> additionalAccounts;
     /**
      * <p>
      * The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.
@@ -106,6 +112,12 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AlternatePathHint> alternatePathHints;
+    /**
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> suggestedAccounts;
     /**
      * <p>
      * The tags.
@@ -230,6 +242,79 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     public NetworkInsightsAnalysis withNetworkInsightsPathId(String networkInsightsPathId) {
         setNetworkInsightsPathId(networkInsightsPathId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
+     * @return The member accounts that contain resources that the path can traverse.
+     */
+
+    public java.util.List<String> getAdditionalAccounts() {
+        if (additionalAccounts == null) {
+            additionalAccounts = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return additionalAccounts;
+    }
+
+    /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
+     * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
+     */
+
+    public void setAdditionalAccounts(java.util.Collection<String> additionalAccounts) {
+        if (additionalAccounts == null) {
+            this.additionalAccounts = null;
+            return;
+        }
+
+        this.additionalAccounts = new com.amazonaws.internal.SdkInternalList<String>(additionalAccounts);
+    }
+
+    /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalAccounts(java.util.Collection)} or {@link #withAdditionalAccounts(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInsightsAnalysis withAdditionalAccounts(String... additionalAccounts) {
+        if (this.additionalAccounts == null) {
+            setAdditionalAccounts(new com.amazonaws.internal.SdkInternalList<String>(additionalAccounts.length));
+        }
+        for (String ele : additionalAccounts) {
+            this.additionalAccounts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The member accounts that contain resources that the path can traverse.
+     * </p>
+     * 
+     * @param additionalAccounts
+     *        The member accounts that contain resources that the path can traverse.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInsightsAnalysis withAdditionalAccounts(java.util.Collection<String> additionalAccounts) {
+        setAdditionalAccounts(additionalAccounts);
         return this;
     }
 
@@ -847,6 +932,79 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
 
     /**
      * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * 
+     * @return Potential intermediate accounts.
+     */
+
+    public java.util.List<String> getSuggestedAccounts() {
+        if (suggestedAccounts == null) {
+            suggestedAccounts = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return suggestedAccounts;
+    }
+
+    /**
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * 
+     * @param suggestedAccounts
+     *        Potential intermediate accounts.
+     */
+
+    public void setSuggestedAccounts(java.util.Collection<String> suggestedAccounts) {
+        if (suggestedAccounts == null) {
+            this.suggestedAccounts = null;
+            return;
+        }
+
+        this.suggestedAccounts = new com.amazonaws.internal.SdkInternalList<String>(suggestedAccounts);
+    }
+
+    /**
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSuggestedAccounts(java.util.Collection)} or {@link #withSuggestedAccounts(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param suggestedAccounts
+     *        Potential intermediate accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInsightsAnalysis withSuggestedAccounts(String... suggestedAccounts) {
+        if (this.suggestedAccounts == null) {
+            setSuggestedAccounts(new com.amazonaws.internal.SdkInternalList<String>(suggestedAccounts.length));
+        }
+        for (String ele : suggestedAccounts) {
+            this.suggestedAccounts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Potential intermediate accounts.
+     * </p>
+     * 
+     * @param suggestedAccounts
+     *        Potential intermediate accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInsightsAnalysis withSuggestedAccounts(java.util.Collection<String> suggestedAccounts) {
+        setSuggestedAccounts(suggestedAccounts);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags.
      * </p>
      * 
@@ -936,6 +1094,8 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
             sb.append("NetworkInsightsAnalysisArn: ").append(getNetworkInsightsAnalysisArn()).append(",");
         if (getNetworkInsightsPathId() != null)
             sb.append("NetworkInsightsPathId: ").append(getNetworkInsightsPathId()).append(",");
+        if (getAdditionalAccounts() != null)
+            sb.append("AdditionalAccounts: ").append(getAdditionalAccounts()).append(",");
         if (getFilterInArns() != null)
             sb.append("FilterInArns: ").append(getFilterInArns()).append(",");
         if (getStartDate() != null)
@@ -956,6 +1116,8 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
             sb.append("Explanations: ").append(getExplanations()).append(",");
         if (getAlternatePathHints() != null)
             sb.append("AlternatePathHints: ").append(getAlternatePathHints()).append(",");
+        if (getSuggestedAccounts() != null)
+            sb.append("SuggestedAccounts: ").append(getSuggestedAccounts()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -983,6 +1145,10 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
         if (other.getNetworkInsightsPathId() == null ^ this.getNetworkInsightsPathId() == null)
             return false;
         if (other.getNetworkInsightsPathId() != null && other.getNetworkInsightsPathId().equals(this.getNetworkInsightsPathId()) == false)
+            return false;
+        if (other.getAdditionalAccounts() == null ^ this.getAdditionalAccounts() == null)
+            return false;
+        if (other.getAdditionalAccounts() != null && other.getAdditionalAccounts().equals(this.getAdditionalAccounts()) == false)
             return false;
         if (other.getFilterInArns() == null ^ this.getFilterInArns() == null)
             return false;
@@ -1024,6 +1190,10 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
             return false;
         if (other.getAlternatePathHints() != null && other.getAlternatePathHints().equals(this.getAlternatePathHints()) == false)
             return false;
+        if (other.getSuggestedAccounts() == null ^ this.getSuggestedAccounts() == null)
+            return false;
+        if (other.getSuggestedAccounts() != null && other.getSuggestedAccounts().equals(this.getSuggestedAccounts()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -1039,6 +1209,7 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNetworkInsightsAnalysisId() == null) ? 0 : getNetworkInsightsAnalysisId().hashCode());
         hashCode = prime * hashCode + ((getNetworkInsightsAnalysisArn() == null) ? 0 : getNetworkInsightsAnalysisArn().hashCode());
         hashCode = prime * hashCode + ((getNetworkInsightsPathId() == null) ? 0 : getNetworkInsightsPathId().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalAccounts() == null) ? 0 : getAdditionalAccounts().hashCode());
         hashCode = prime * hashCode + ((getFilterInArns() == null) ? 0 : getFilterInArns().hashCode());
         hashCode = prime * hashCode + ((getStartDate() == null) ? 0 : getStartDate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
@@ -1049,6 +1220,7 @@ public class NetworkInsightsAnalysis implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReturnPathComponents() == null) ? 0 : getReturnPathComponents().hashCode());
         hashCode = prime * hashCode + ((getExplanations() == null) ? 0 : getExplanations().hashCode());
         hashCode = prime * hashCode + ((getAlternatePathHints() == null) ? 0 : getAlternatePathHints().hashCode());
+        hashCode = prime * hashCode + ((getSuggestedAccounts() == null) ? 0 : getSuggestedAccounts().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

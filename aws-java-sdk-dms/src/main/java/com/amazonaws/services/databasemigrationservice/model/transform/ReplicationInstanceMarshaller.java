@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,8 @@ public class ReplicationInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstancePublicIpAddresses").build();
     private static final MarshallingInfo<List> REPLICATIONINSTANCEPRIVATEIPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstancePrivateIpAddresses").build();
+    private static final MarshallingInfo<List> REPLICATIONINSTANCEIPV6ADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReplicationInstanceIpv6Addresses").build();
     private static final MarshallingInfo<Boolean> PUBLICLYACCESSIBLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PubliclyAccessible").build();
     private static final MarshallingInfo<String> SECONDARYAVAILABILITYZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -74,6 +76,8 @@ public class ReplicationInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FreeUntil").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DNSNAMESERVERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DnsNameServers").build();
+    private static final MarshallingInfo<String> NETWORKTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NetworkType").build();
 
     private static final ReplicationInstanceMarshaller instance = new ReplicationInstanceMarshaller();
 
@@ -110,10 +114,12 @@ public class ReplicationInstanceMarshaller {
             protocolMarshaller.marshall(replicationInstance.getReplicationInstancePrivateIpAddress(), REPLICATIONINSTANCEPRIVATEIPADDRESS_BINDING);
             protocolMarshaller.marshall(replicationInstance.getReplicationInstancePublicIpAddresses(), REPLICATIONINSTANCEPUBLICIPADDRESSES_BINDING);
             protocolMarshaller.marshall(replicationInstance.getReplicationInstancePrivateIpAddresses(), REPLICATIONINSTANCEPRIVATEIPADDRESSES_BINDING);
+            protocolMarshaller.marshall(replicationInstance.getReplicationInstanceIpv6Addresses(), REPLICATIONINSTANCEIPV6ADDRESSES_BINDING);
             protocolMarshaller.marshall(replicationInstance.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(replicationInstance.getSecondaryAvailabilityZone(), SECONDARYAVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(replicationInstance.getFreeUntil(), FREEUNTIL_BINDING);
             protocolMarshaller.marshall(replicationInstance.getDnsNameServers(), DNSNAMESERVERS_BINDING);
+            protocolMarshaller.marshall(replicationInstance.getNetworkType(), NETWORKTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

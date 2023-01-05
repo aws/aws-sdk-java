@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,9 +30,13 @@ import com.fasterxml.jackson.core.JsonFactory;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import java.io.ByteArrayInputStream;
+import java.util.Collection;
 import java.util.Map;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -43,6 +47,7 @@ import java.util.Arrays;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 
+import static com.amazonaws.http.HttpResponseHandler.X_AMZN_QUERY_ERROR;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.is;
@@ -56,6 +61,7 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+@RunWith(Parameterized.class)
 public class JsonErrorResponseHandlerTest {
 
     private static final String SERVICE_NAME = "someService";
@@ -79,6 +85,30 @@ public class JsonErrorResponseHandlerTest {
     @Mock
     private Map<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers;
 
+    private boolean hasAwsQueryCompatible;
+    private final String queryErrorHeader;
+    private final String expectedErrorCode;
+    public JsonErrorResponseHandlerTest(
+            boolean hasAwsQueryCompatible,
+            String queryErrorHeader,
+            String expectedErrorCode
+    ) {
+        this.hasAwsQueryCompatible = hasAwsQueryCompatible;
+        this.queryErrorHeader = queryErrorHeader;
+        this.expectedErrorCode = expectedErrorCode;
+    }
+
+    @Parameters(name = "trait exists: {0}; parsing header: {1}, expecting ErrorCode: {2}")
+    public static Collection<Object[]> testData() {
+        return Arrays.asList(new Object[][] {
+                {true, "customErrorCode;Sender", "customErrorCode"},
+                {true, "customError CodeSender", ERROR_CODE},
+                {true, "customErrorCode", ERROR_CODE},
+                {true, ";Sender", ERROR_CODE},
+                {false, "customErrorCode;Sender", ERROR_CODE}
+        });
+    }
+
     @Before
     public void setup() throws UnsupportedEncodingException {
         MockitoAnnotations.initMocks(this);
@@ -93,9 +123,25 @@ public class JsonErrorResponseHandlerTest {
                                                        simpleTypeUnmarshallers,
                                                        customTypeUnmarshallers,
                                                        errorCodeParser,
+                                                       hasAwsQueryCompatible,
                                                        JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
                                                        new JsonFactory());
     }
+
+    @Test
+    public void handle_EffectiveErrorCode_WhenQueryHeaderIsPresent() throws Exception {
+        httpResponse.addHeader(X_AMZN_QUERY_ERROR, queryErrorHeader);
+
+        responseHandler = new JsonErrorResponseHandler(new ArrayList<JsonErrorUnmarshaller>(),
+                errorCodeParser,
+                hasAwsQueryCompatible,
+                JsonErrorMessageParser.DEFAULT_ERROR_MESSAGE_PARSER,
+                new JsonFactory());
+
+        AmazonServiceException ase = responseHandler.handle(httpResponse);
+        assertEquals(expectedErrorCode, ase.getErrorCode());
+    }
+
 
     @Test
     public void handle_NoUnmarshallersAdded_ReturnsGenericAmazonServiceException() throws
@@ -125,12 +171,13 @@ public class JsonErrorResponseHandlerTest {
     public void handle_NullContent_ReturnsGenericAmazonServiceException() throws Exception {
         httpResponse.setStatusCode(500);
         httpResponse.setContent(null);
+        httpResponse.addHeader(X_AMZN_QUERY_ERROR, queryErrorHeader);
 
         AmazonServiceException ase = responseHandler.handle(httpResponse);
 
         // We assert these common properties are set again to make sure that code path is exercised
         // for unknown AmazonServiceExceptions as well
-        assertEquals(ERROR_CODE, ase.getErrorCode());
+        assertEquals(expectedErrorCode, ase.getErrorCode());
         assertEquals(500, ase.getStatusCode());
         assertEquals(SERVICE_NAME, ase.getServiceName());
         assertEquals(ErrorType.Service, ase.getErrorType());
@@ -150,11 +197,12 @@ public class JsonErrorResponseHandlerTest {
     public void handle_UnmarshallerReturnsNull_ReturnsGenericAmazonServiceException() throws
                                                                                       Exception {
         expectUnmarshallerMatches();
+        httpResponse.addHeader(X_AMZN_QUERY_ERROR, queryErrorHeader);
 
         AmazonServiceException ase = responseHandler.handle(httpResponse);
 
         assertNotNull(ase);
-        assertEquals(ERROR_CODE, ase.getErrorCode());
+        assertEquals(expectedErrorCode, ase.getErrorCode());
     }
 
     @Test
@@ -162,11 +210,12 @@ public class JsonErrorResponseHandlerTest {
                                                                                           Exception {
         expectUnmarshallerMatches();
         when(unmarshaller.unmarshall(any(JsonNode.class))).thenThrow(new RuntimeException());
+        httpResponse.addHeader(X_AMZN_QUERY_ERROR, queryErrorHeader);
 
         AmazonServiceException ase = responseHandler.handle(httpResponse);
 
         assertNotNull(ase);
-        assertEquals(ERROR_CODE, ase.getErrorCode());
+        assertEquals(expectedErrorCode, ase.getErrorCode());
     }
 
     @Test
@@ -175,10 +224,11 @@ public class JsonErrorResponseHandlerTest {
         expectUnmarshallerMatches();
         when(unmarshaller.unmarshall(any(JsonNode.class)))
                 .thenReturn(new CustomException("error"));
+        httpResponse.addHeader(X_AMZN_QUERY_ERROR, queryErrorHeader);
 
         AmazonServiceException ase = responseHandler.handle(httpResponse);
 
-        assertEquals(ERROR_CODE, ase.getErrorCode());
+        assertEquals(expectedErrorCode, ase.getErrorCode());
         assertEquals(400, ase.getStatusCode());
         assertEquals(SERVICE_NAME, ase.getServiceName());
         assertEquals(ErrorType.Client, ase.getErrorType());
@@ -226,7 +276,7 @@ public class JsonErrorResponseHandlerTest {
 
         assertEquals("1234", ase.getRequestId());
     }
-    
+
     @Test
     public void handle_UnmarshallerReturnsException_WithAlternativeRequestId() throws Exception {
         httpResponse.setStatusCode(500);

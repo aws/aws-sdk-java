@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,12 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A container for the bucket-level configuration.
+ * A container for the bucket-level configuration for Amazon S3 Storage Lens.
+ * </p>
+ * <p>
+ * For more information about S3 Storage Lens, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens.html">Assessing your storage activity and
+ * usage with S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/BucketLevel" target="_top">AWS API
@@ -28,24 +33,42 @@ public class BucketLevel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+     * A container for the bucket-level activity metrics for S3 Storage Lens.
      * </p>
      */
     private ActivityMetrics activityMetrics;
     /**
      * <p>
-     * A container for the bucket-level prefix-level metrics for S3 Storage Lens
+     * A container for the prefix-level metrics for S3 Storage Lens.
      * </p>
      */
     private PrefixLevel prefixLevel;
+    /**
+     * <p>
+     * A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+     * </p>
+     */
+    private AdvancedCostOptimizationMetrics advancedCostOptimizationMetrics;
+    /**
+     * <p>
+     * A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+     * </p>
+     */
+    private AdvancedDataProtectionMetrics advancedDataProtectionMetrics;
+    /**
+     * <p>
+     * A container for bucket-level detailed status code metrics for S3 Storage Lens.
+     * </p>
+     */
+    private DetailedStatusCodesMetrics detailedStatusCodesMetrics;
 
     /**
      * <p>
-     * A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+     * A container for the bucket-level activity metrics for S3 Storage Lens.
      * </p>
      * 
      * @param activityMetrics
-     *        A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+     *        A container for the bucket-level activity metrics for S3 Storage Lens.
      */
 
     public void setActivityMetrics(ActivityMetrics activityMetrics) {
@@ -54,10 +77,10 @@ public class BucketLevel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+     * A container for the bucket-level activity metrics for S3 Storage Lens.
      * </p>
      * 
-     * @return A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+     * @return A container for the bucket-level activity metrics for S3 Storage Lens.
      */
 
     public ActivityMetrics getActivityMetrics() {
@@ -66,11 +89,11 @@ public class BucketLevel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+     * A container for the bucket-level activity metrics for S3 Storage Lens.
      * </p>
      * 
      * @param activityMetrics
-     *        A container for the bucket-level activity metrics for Amazon S3 Storage Lens
+     *        A container for the bucket-level activity metrics for S3 Storage Lens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +104,11 @@ public class BucketLevel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the bucket-level prefix-level metrics for S3 Storage Lens
+     * A container for the prefix-level metrics for S3 Storage Lens.
      * </p>
      * 
      * @param prefixLevel
-     *        A container for the bucket-level prefix-level metrics for S3 Storage Lens
+     *        A container for the prefix-level metrics for S3 Storage Lens.
      */
 
     public void setPrefixLevel(PrefixLevel prefixLevel) {
@@ -94,10 +117,10 @@ public class BucketLevel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the bucket-level prefix-level metrics for S3 Storage Lens
+     * A container for the prefix-level metrics for S3 Storage Lens.
      * </p>
      * 
-     * @return A container for the bucket-level prefix-level metrics for S3 Storage Lens
+     * @return A container for the prefix-level metrics for S3 Storage Lens.
      */
 
     public PrefixLevel getPrefixLevel() {
@@ -106,16 +129,136 @@ public class BucketLevel implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A container for the bucket-level prefix-level metrics for S3 Storage Lens
+     * A container for the prefix-level metrics for S3 Storage Lens.
      * </p>
      * 
      * @param prefixLevel
-     *        A container for the bucket-level prefix-level metrics for S3 Storage Lens
+     *        A container for the prefix-level metrics for S3 Storage Lens.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BucketLevel withPrefixLevel(PrefixLevel prefixLevel) {
         setPrefixLevel(prefixLevel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @param advancedCostOptimizationMetrics
+     *        A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+     */
+
+    public void setAdvancedCostOptimizationMetrics(AdvancedCostOptimizationMetrics advancedCostOptimizationMetrics) {
+        this.advancedCostOptimizationMetrics = advancedCostOptimizationMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @return A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+     */
+
+    public AdvancedCostOptimizationMetrics getAdvancedCostOptimizationMetrics() {
+        return this.advancedCostOptimizationMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @param advancedCostOptimizationMetrics
+     *        A container for bucket-level advanced cost-optimization metrics for S3 Storage Lens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketLevel withAdvancedCostOptimizationMetrics(AdvancedCostOptimizationMetrics advancedCostOptimizationMetrics) {
+        setAdvancedCostOptimizationMetrics(advancedCostOptimizationMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @param advancedDataProtectionMetrics
+     *        A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+     */
+
+    public void setAdvancedDataProtectionMetrics(AdvancedDataProtectionMetrics advancedDataProtectionMetrics) {
+        this.advancedDataProtectionMetrics = advancedDataProtectionMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @return A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+     */
+
+    public AdvancedDataProtectionMetrics getAdvancedDataProtectionMetrics() {
+        return this.advancedDataProtectionMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @param advancedDataProtectionMetrics
+     *        A container for bucket-level advanced data-protection metrics for S3 Storage Lens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketLevel withAdvancedDataProtectionMetrics(AdvancedDataProtectionMetrics advancedDataProtectionMetrics) {
+        setAdvancedDataProtectionMetrics(advancedDataProtectionMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level detailed status code metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @param detailedStatusCodesMetrics
+     *        A container for bucket-level detailed status code metrics for S3 Storage Lens.
+     */
+
+    public void setDetailedStatusCodesMetrics(DetailedStatusCodesMetrics detailedStatusCodesMetrics) {
+        this.detailedStatusCodesMetrics = detailedStatusCodesMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level detailed status code metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @return A container for bucket-level detailed status code metrics for S3 Storage Lens.
+     */
+
+    public DetailedStatusCodesMetrics getDetailedStatusCodesMetrics() {
+        return this.detailedStatusCodesMetrics;
+    }
+
+    /**
+     * <p>
+     * A container for bucket-level detailed status code metrics for S3 Storage Lens.
+     * </p>
+     * 
+     * @param detailedStatusCodesMetrics
+     *        A container for bucket-level detailed status code metrics for S3 Storage Lens.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketLevel withDetailedStatusCodesMetrics(DetailedStatusCodesMetrics detailedStatusCodesMetrics) {
+        setDetailedStatusCodesMetrics(detailedStatusCodesMetrics);
         return this;
     }
 
@@ -134,7 +277,13 @@ public class BucketLevel implements Serializable, Cloneable {
         if (getActivityMetrics() != null)
             sb.append("ActivityMetrics: ").append(getActivityMetrics()).append(",");
         if (getPrefixLevel() != null)
-            sb.append("PrefixLevel: ").append(getPrefixLevel());
+            sb.append("PrefixLevel: ").append(getPrefixLevel()).append(",");
+        if (getAdvancedCostOptimizationMetrics() != null)
+            sb.append("AdvancedCostOptimizationMetrics: ").append(getAdvancedCostOptimizationMetrics()).append(",");
+        if (getAdvancedDataProtectionMetrics() != null)
+            sb.append("AdvancedDataProtectionMetrics: ").append(getAdvancedDataProtectionMetrics()).append(",");
+        if (getDetailedStatusCodesMetrics() != null)
+            sb.append("DetailedStatusCodesMetrics: ").append(getDetailedStatusCodesMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -157,6 +306,20 @@ public class BucketLevel implements Serializable, Cloneable {
             return false;
         if (other.getPrefixLevel() != null && other.getPrefixLevel().equals(this.getPrefixLevel()) == false)
             return false;
+        if (other.getAdvancedCostOptimizationMetrics() == null ^ this.getAdvancedCostOptimizationMetrics() == null)
+            return false;
+        if (other.getAdvancedCostOptimizationMetrics() != null
+                && other.getAdvancedCostOptimizationMetrics().equals(this.getAdvancedCostOptimizationMetrics()) == false)
+            return false;
+        if (other.getAdvancedDataProtectionMetrics() == null ^ this.getAdvancedDataProtectionMetrics() == null)
+            return false;
+        if (other.getAdvancedDataProtectionMetrics() != null
+                && other.getAdvancedDataProtectionMetrics().equals(this.getAdvancedDataProtectionMetrics()) == false)
+            return false;
+        if (other.getDetailedStatusCodesMetrics() == null ^ this.getDetailedStatusCodesMetrics() == null)
+            return false;
+        if (other.getDetailedStatusCodesMetrics() != null && other.getDetailedStatusCodesMetrics().equals(this.getDetailedStatusCodesMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -167,6 +330,9 @@ public class BucketLevel implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getActivityMetrics() == null) ? 0 : getActivityMetrics().hashCode());
         hashCode = prime * hashCode + ((getPrefixLevel() == null) ? 0 : getPrefixLevel().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedCostOptimizationMetrics() == null) ? 0 : getAdvancedCostOptimizationMetrics().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedDataProtectionMetrics() == null) ? 0 : getAdvancedDataProtectionMetrics().hashCode());
+        hashCode = prime * hashCode + ((getDetailedStatusCodesMetrics() == null) ? 0 : getDetailedStatusCodesMetrics().hashCode());
         return hashCode;
     }
 

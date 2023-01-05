@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,15 @@ public class OutpostConfigResponse implements Serializable, Cloneable, Structure
      * </p>
      */
     private String controlPlaneInstanceType;
+    /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     */
+    private ControlPlanePlacementResponse controlPlanePlacement;
 
     /**
      * <p>
@@ -160,6 +169,64 @@ public class OutpostConfigResponse implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param controlPlanePlacement
+     *        An object representing the placement configuration for all the control plane instances of your local
+     *        Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.
+     */
+
+    public void setControlPlanePlacement(ControlPlanePlacementResponse controlPlanePlacement) {
+        this.controlPlanePlacement = controlPlanePlacement;
+    }
+
+    /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @return An object representing the placement configuration for all the control plane instances of your local
+     *         Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html"
+     *         >Capacity considerations</a> in the <i>Amazon EKS User Guide</i>.
+     */
+
+    public ControlPlanePlacementResponse getControlPlanePlacement() {
+        return this.controlPlanePlacement;
+    }
+
+    /**
+     * <p>
+     * An object representing the placement configuration for all the control plane instances of your local Amazon EKS
+     * cluster on an Amazon Web Services Outpost. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     * considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * </p>
+     * 
+     * @param controlPlanePlacement
+     *        An object representing the placement configuration for all the control plane instances of your local
+     *        Amazon EKS cluster on an Amazon Web Services Outpost. For more information, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-outposts-capacity-considerations.html">Capacity
+     *        considerations</a> in the <i>Amazon EKS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutpostConfigResponse withControlPlanePlacement(ControlPlanePlacementResponse controlPlanePlacement) {
+        setControlPlanePlacement(controlPlanePlacement);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -174,7 +241,9 @@ public class OutpostConfigResponse implements Serializable, Cloneable, Structure
         if (getOutpostArns() != null)
             sb.append("OutpostArns: ").append(getOutpostArns()).append(",");
         if (getControlPlaneInstanceType() != null)
-            sb.append("ControlPlaneInstanceType: ").append(getControlPlaneInstanceType());
+            sb.append("ControlPlaneInstanceType: ").append(getControlPlaneInstanceType()).append(",");
+        if (getControlPlanePlacement() != null)
+            sb.append("ControlPlanePlacement: ").append(getControlPlanePlacement());
         sb.append("}");
         return sb.toString();
     }
@@ -197,6 +266,10 @@ public class OutpostConfigResponse implements Serializable, Cloneable, Structure
             return false;
         if (other.getControlPlaneInstanceType() != null && other.getControlPlaneInstanceType().equals(this.getControlPlaneInstanceType()) == false)
             return false;
+        if (other.getControlPlanePlacement() == null ^ this.getControlPlanePlacement() == null)
+            return false;
+        if (other.getControlPlanePlacement() != null && other.getControlPlanePlacement().equals(this.getControlPlanePlacement()) == false)
+            return false;
         return true;
     }
 
@@ -207,6 +280,7 @@ public class OutpostConfigResponse implements Serializable, Cloneable, Structure
 
         hashCode = prime * hashCode + ((getOutpostArns() == null) ? 0 : getOutpostArns().hashCode());
         hashCode = prime * hashCode + ((getControlPlaneInstanceType() == null) ? 0 : getControlPlaneInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getControlPlanePlacement() == null) ? 0 : getControlPlanePlacement().hashCode());
         return hashCode;
     }
 

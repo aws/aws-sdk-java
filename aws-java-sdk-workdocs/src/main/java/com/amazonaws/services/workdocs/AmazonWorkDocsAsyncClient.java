@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,37 @@ import java.util.concurrent.ExecutorService;
  * perform the three use cases above, as well as give users the ability to grant access on a selective basis using the
  * IAM model.
  * </p>
+ * <note>
+ * <p>
+ * The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>READ (Get*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>LIST (Describe*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DELETE*, CANCEL</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For information about Amazon WorkDocs API pricing, see <a href="https://aws.amazon.com/workdocs/pricing/">Amazon
+ * WorkDocs Pricing</a>.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -521,6 +552,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeDeleteDocument(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(DeleteDocumentVersionRequest request) {
+
+        return deleteDocumentVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(final DeleteDocumentVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteDocumentVersionRequest, DeleteDocumentVersionResult> asyncHandler) {
+        final DeleteDocumentVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteDocumentVersionResult>() {
+            @Override
+            public DeleteDocumentVersionResult call() throws Exception {
+                DeleteDocumentVersionResult result = null;
+
+                try {
+                    result = executeDeleteDocumentVersion(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1317,6 +1381,39 @@ public class AmazonWorkDocsAsyncClient extends AmazonWorkDocsClient implements A
 
                 try {
                     result = executeRemoveResourcePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(RestoreDocumentVersionsRequest request) {
+
+        return restoreDocumentVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(final RestoreDocumentVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreDocumentVersionsRequest, RestoreDocumentVersionsResult> asyncHandler) {
+        final RestoreDocumentVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreDocumentVersionsResult>() {
+            @Override
+            public RestoreDocumentVersionsResult call() throws Exception {
+                RestoreDocumentVersionsResult result = null;
+
+                try {
+                    result = executeRestoreDocumentVersions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

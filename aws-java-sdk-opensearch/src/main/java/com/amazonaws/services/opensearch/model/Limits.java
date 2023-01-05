@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Limits for a given InstanceType and for each of its roles. <br/>
- * Limits contains the following: <code> <a>StorageTypes</a> </code>, <code> <a>InstanceLimits</a> </code>, and
- * <code> <a>AdditionalLimits</a> </code>
+ * Limits for a given instance type and for each of its roles.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,26 +27,29 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Storage-related types and attributes that are available for a given InstanceType.
+     * Storage-related attributes that are available for a given instance type.
      * </p>
      */
     private java.util.List<StorageType> storageTypes;
-
+    /**
+     * <p>
+     * The limits for a given instance type.
+     * </p>
+     */
     private InstanceLimits instanceLimits;
     /**
      * <p>
-     * List of additional limits that are specific to a given InstanceType and for each of its
-     * <code> <a>InstanceRole</a> </code> .
+     * List of additional limits that are specific to a given instance type for each of its instance roles.
      * </p>
      */
     private java.util.List<AdditionalLimit> additionalLimits;
 
     /**
      * <p>
-     * Storage-related types and attributes that are available for a given InstanceType.
+     * Storage-related attributes that are available for a given instance type.
      * </p>
      * 
-     * @return Storage-related types and attributes that are available for a given InstanceType.
+     * @return Storage-related attributes that are available for a given instance type.
      */
 
     public java.util.List<StorageType> getStorageTypes() {
@@ -57,11 +58,11 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Storage-related types and attributes that are available for a given InstanceType.
+     * Storage-related attributes that are available for a given instance type.
      * </p>
      * 
      * @param storageTypes
-     *        Storage-related types and attributes that are available for a given InstanceType.
+     *        Storage-related attributes that are available for a given instance type.
      */
 
     public void setStorageTypes(java.util.Collection<StorageType> storageTypes) {
@@ -75,7 +76,7 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Storage-related types and attributes that are available for a given InstanceType.
+     * Storage-related attributes that are available for a given instance type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -84,7 +85,7 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param storageTypes
-     *        Storage-related types and attributes that are available for a given InstanceType.
+     *        Storage-related attributes that are available for a given instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +101,11 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Storage-related types and attributes that are available for a given InstanceType.
+     * Storage-related attributes that are available for a given instance type.
      * </p>
      * 
      * @param storageTypes
-     *        Storage-related types and attributes that are available for a given InstanceType.
+     *        Storage-related attributes that are available for a given instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,7 +115,12 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The limits for a given instance type.
+     * </p>
+     * 
      * @param instanceLimits
+     *        The limits for a given instance type.
      */
 
     public void setInstanceLimits(InstanceLimits instanceLimits) {
@@ -122,7 +128,11 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The limits for a given instance type.
+     * </p>
+     * 
+     * @return The limits for a given instance type.
      */
 
     public InstanceLimits getInstanceLimits() {
@@ -130,7 +140,12 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The limits for a given instance type.
+     * </p>
+     * 
      * @param instanceLimits
+     *        The limits for a given instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +156,10 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of additional limits that are specific to a given InstanceType and for each of its
-     * <code> <a>InstanceRole</a> </code> .
+     * List of additional limits that are specific to a given instance type for each of its instance roles.
      * </p>
      * 
-     * @return List of additional limits that are specific to a given InstanceType and for each of its
-     *         <code> <a>InstanceRole</a> </code> .
+     * @return List of additional limits that are specific to a given instance type for each of its instance roles.
      */
 
     public java.util.List<AdditionalLimit> getAdditionalLimits() {
@@ -155,13 +168,11 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of additional limits that are specific to a given InstanceType and for each of its
-     * <code> <a>InstanceRole</a> </code> .
+     * List of additional limits that are specific to a given instance type for each of its instance roles.
      * </p>
      * 
      * @param additionalLimits
-     *        List of additional limits that are specific to a given InstanceType and for each of its
-     *        <code> <a>InstanceRole</a> </code> .
+     *        List of additional limits that are specific to a given instance type for each of its instance roles.
      */
 
     public void setAdditionalLimits(java.util.Collection<AdditionalLimit> additionalLimits) {
@@ -175,8 +186,7 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of additional limits that are specific to a given InstanceType and for each of its
-     * <code> <a>InstanceRole</a> </code> .
+     * List of additional limits that are specific to a given instance type for each of its instance roles.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -185,8 +195,7 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param additionalLimits
-     *        List of additional limits that are specific to a given InstanceType and for each of its
-     *        <code> <a>InstanceRole</a> </code> .
+     *        List of additional limits that are specific to a given instance type for each of its instance roles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,13 +211,11 @@ public class Limits implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of additional limits that are specific to a given InstanceType and for each of its
-     * <code> <a>InstanceRole</a> </code> .
+     * List of additional limits that are specific to a given instance type for each of its instance roles.
      * </p>
      * 
      * @param additionalLimits
-     *        List of additional limits that are specific to a given InstanceType and for each of its
-     *        <code> <a>InstanceRole</a> </code> .
+     *        List of additional limits that are specific to a given instance type for each of its instance roles.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,25 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     * </note>
      */
     private String logGroupName;
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view log events from. If the log group is in a source account
+     * and you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     */
+    private String logGroupIdentifier;
     /**
      * <p>
      * Filters the results to only logs from the log streams in this list.
@@ -54,15 +71,15 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     private String logStreamNamePrefix;
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp before this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp before this time are not returned.
      * </p>
      */
     private Long startTime;
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp later than this time are not returned.
      * </p>
      */
     private Long endTime;
@@ -91,26 +108,46 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer limit;
     /**
      * <p>
-     * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
-     * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
-     * false.
+     * If the value is true, the operation attempts to provide responses that contain events from multiple log streams
+     * within the log group, interleaved in a single response. If the value is false, all the matched log events in the
+     * first log stream are searched first, then those in the next log stream, and so on.
      * </p>
      * <p>
-     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
-     * response from this operation always interleaves events from multiple log streams within a log group.
+     * <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response
+     * from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      */
     @Deprecated
     private Boolean interleaved;
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     */
+    private Boolean unmask;
 
     /**
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group to search.
+     *        The name of the log group to search.</p> <note>
+     *        <p>
+     *        If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     *        returns an <code>InvalidParameterException</code> error.
+     *        </p>
      */
 
     public void setLogGroupName(String logGroupName) {
@@ -121,8 +158,18 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     * </note>
      * 
-     * @return The name of the log group to search.
+     * @return The name of the log group to search.</p> <note>
+     *         <p>
+     *         If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     *         returns an <code>InvalidParameterException</code> error.
+     *         </p>
      */
 
     public String getLogGroupName() {
@@ -133,14 +180,91 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The name of the log group to search.
      * </p>
+     * <note>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     * </note>
      * 
      * @param logGroupName
-     *        The name of the log group to search.
+     *        The name of the log group to search.</p> <note>
+     *        <p>
+     *        If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     *        returns an <code>InvalidParameterException</code> error.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public FilterLogEventsRequest withLogGroupName(String logGroupName) {
         setLogGroupName(logGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view log events from. If the log group is in a source account
+     * and you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view log events from. If the log group is in a source
+     *        account and you are using a monitoring account, you must use the log group ARN.</p>
+     *        <p>
+     *        If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     *        returns an <code>InvalidParameterException</code> error.
+     */
+
+    public void setLogGroupIdentifier(String logGroupIdentifier) {
+        this.logGroupIdentifier = logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view log events from. If the log group is in a source account
+     * and you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     * 
+     * @return Specify either the name or ARN of the log group to view log events from. If the log group is in a source
+     *         account and you are using a monitoring account, you must use the log group ARN.</p>
+     *         <p>
+     *         If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     *         returns an <code>InvalidParameterException</code> error.
+     */
+
+    public String getLogGroupIdentifier() {
+        return this.logGroupIdentifier;
+    }
+
+    /**
+     * <p>
+     * Specify either the name or ARN of the log group to view log events from. If the log group is in a source account
+     * and you are using a monitoring account, you must use the log group ARN.
+     * </p>
+     * <p>
+     * If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action returns
+     * an <code>InvalidParameterException</code> error.
+     * </p>
+     * 
+     * @param logGroupIdentifier
+     *        Specify either the name or ARN of the log group to view log events from. If the log group is in a source
+     *        account and you are using a monitoring account, you must use the log group ARN.</p>
+     *        <p>
+     *        If you specify values for both <code>logGroupName</code> and <code>logGroupIdentifier</code>, the action
+     *        returns an <code>InvalidParameterException</code> error.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterLogEventsRequest withLogGroupIdentifier(String logGroupIdentifier) {
+        setLogGroupIdentifier(logGroupIdentifier);
         return this;
     }
 
@@ -315,13 +439,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp before this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp before this time are not returned.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp before this time are not returned.
+     *        The start of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.
      */
 
     public void setStartTime(Long startTime) {
@@ -330,12 +454,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp before this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp before this time are not returned.
      * </p>
      * 
-     * @return The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *         Events with a timestamp before this time are not returned.
+     * @return The start of the time range, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.
      */
 
     public Long getStartTime() {
@@ -344,13 +468,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with
-     * a timestamp before this time are not returned.
+     * The start of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp before this time are not returned.
      * </p>
      * 
      * @param startTime
-     *        The start of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
-     *        Events with a timestamp before this time are not returned.
+     *        The start of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -361,13 +485,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp later than this time are not returned.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp later than this time are not returned.
+     *        The end of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.
      */
 
     public void setEndTime(Long endTime) {
@@ -376,12 +500,12 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp later than this time are not returned.
      * </p>
      * 
-     * @return The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *         with a timestamp later than this time are not returned.
+     * @return The end of the time range, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.
      */
 
     public Long getEndTime() {
@@ -390,13 +514,13 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events with a
-     * timestamp later than this time are not returned.
+     * The end of the time range, expressed as the number of milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.
+     * Events with a timestamp later than this time are not returned.
      * </p>
      * 
      * @param endTime
-     *        The end of the time range, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC. Events
-     *        with a timestamp later than this time are not returned.
+     *        The end of the time range, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,25 +678,22 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
-     * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
-     * false.
+     * If the value is true, the operation attempts to provide responses that contain events from multiple log streams
+     * within the log group, interleaved in a single response. If the value is false, all the matched log events in the
+     * first log stream are searched first, then those in the next log stream, and so on.
      * </p>
      * <p>
-     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
-     * response from this operation always interleaves events from multiple log streams within a log group.
+     * <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response
+     * from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
      * @param interleaved
-     *        If the value is true, the operation makes a best effort to provide responses that contain events from
-     *        multiple log streams within the log group, interleaved in a single response. If the value is false, all
-     *        the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *        so on. The default is false.</p>
+     *        If the value is true, the operation attempts to provide responses that contain events from multiple log
+     *        streams within the log group, interleaved in a single response. If the value is false, all the matched log
+     *        events in the first log stream are searched first, then those in the next log stream, and so on.</p>
      *        <p>
-     *        <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
-     *        true. The response from this operation always interleaves events from multiple log streams within a log
-     *        group.
+     *        <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     *        response from this operation always interleaves events from multiple log streams within a log group.
      */
     @Deprecated
     public void setInterleaved(Boolean interleaved) {
@@ -581,24 +702,21 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
-     * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
-     * false.
+     * If the value is true, the operation attempts to provide responses that contain events from multiple log streams
+     * within the log group, interleaved in a single response. If the value is false, all the matched log events in the
+     * first log stream are searched first, then those in the next log stream, and so on.
      * </p>
      * <p>
-     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
-     * response from this operation always interleaves events from multiple log streams within a log group.
+     * <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response
+     * from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
-     * @return If the value is true, the operation makes a best effort to provide responses that contain events from
-     *         multiple log streams within the log group, interleaved in a single response. If the value is false, all
-     *         the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *         so on. The default is false.</p>
+     * @return If the value is true, the operation attempts to provide responses that contain events from multiple log
+     *         streams within the log group, interleaved in a single response. If the value is false, all the matched
+     *         log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
      *         <p>
-     *         <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
-     *         true. The response from this operation always interleaves events from multiple log streams within a log
-     *         group.
+     *         <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     *         response from this operation always interleaves events from multiple log streams within a log group.
      */
     @Deprecated
     public Boolean getInterleaved() {
@@ -607,25 +725,22 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
-     * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
-     * false.
+     * If the value is true, the operation attempts to provide responses that contain events from multiple log streams
+     * within the log group, interleaved in a single response. If the value is false, all the matched log events in the
+     * first log stream are searched first, then those in the next log stream, and so on.
      * </p>
      * <p>
-     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
-     * response from this operation always interleaves events from multiple log streams within a log group.
+     * <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response
+     * from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
      * @param interleaved
-     *        If the value is true, the operation makes a best effort to provide responses that contain events from
-     *        multiple log streams within the log group, interleaved in a single response. If the value is false, all
-     *        the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *        so on. The default is false.</p>
+     *        If the value is true, the operation attempts to provide responses that contain events from multiple log
+     *        streams within the log group, interleaved in a single response. If the value is false, all the matched log
+     *        events in the first log stream are searched first, then those in the next log stream, and so on.</p>
      *        <p>
-     *        <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
-     *        true. The response from this operation always interleaves events from multiple log streams within a log
-     *        group.
+     *        <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     *        response from this operation always interleaves events from multiple log streams within a log group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -636,28 +751,113 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * If the value is true, the operation makes a best effort to provide responses that contain events from multiple
-     * log streams within the log group, interleaved in a single response. If the value is false, all the matched log
-     * events in the first log stream are searched first, then those in the next log stream, and so on. The default is
-     * false.
+     * If the value is true, the operation attempts to provide responses that contain events from multiple log streams
+     * within the log group, interleaved in a single response. If the value is false, all the matched log events in the
+     * first log stream are searched first, then those in the next log stream, and so on.
      * </p>
      * <p>
-     * <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be true. The
-     * response from this operation always interleaves events from multiple log streams within a log group.
+     * <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response
+     * from this operation always interleaves events from multiple log streams within a log group.
      * </p>
      * 
-     * @return If the value is true, the operation makes a best effort to provide responses that contain events from
-     *         multiple log streams within the log group, interleaved in a single response. If the value is false, all
-     *         the matched log events in the first log stream are searched first, then those in the next log stream, and
-     *         so on. The default is false.</p>
+     * @return If the value is true, the operation attempts to provide responses that contain events from multiple log
+     *         streams within the log group, interleaved in a single response. If the value is false, all the matched
+     *         log events in the first log stream are searched first, then those in the next log stream, and so on.</p>
      *         <p>
-     *         <b>Important:</b> Starting on June 17, 2019, this parameter is ignored and the value is assumed to be
-     *         true. The response from this operation always interleaves events from multiple log streams within a log
-     *         group.
+     *         <b>Important</b> As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The
+     *         response from this operation always interleaves events from multiple log streams within a log group.
      */
     @Deprecated
     public Boolean isInterleaved() {
         return this.interleaved;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @param unmask
+     *        Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *        The default is <code>false</code>.</p>
+     *        <p>
+     *        To use this operation with this parameter, you must be signed into an account with the
+     *        <code>logs:Unmask</code> permission.
+     */
+
+    public void setUnmask(Boolean unmask) {
+        this.unmask = unmask;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *         The default is <code>false</code>.</p>
+     *         <p>
+     *         To use this operation with this parameter, you must be signed into an account with the
+     *         <code>logs:Unmask</code> permission.
+     */
+
+    public Boolean getUnmask() {
+        return this.unmask;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @param unmask
+     *        Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *        The default is <code>false</code>.</p>
+     *        <p>
+     *        To use this operation with this parameter, you must be signed into an account with the
+     *        <code>logs:Unmask</code> permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FilterLogEventsRequest withUnmask(Boolean unmask) {
+        setUnmask(unmask);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *         The default is <code>false</code>.</p>
+     *         <p>
+     *         To use this operation with this parameter, you must be signed into an account with the
+     *         <code>logs:Unmask</code> permission.
+     */
+
+    public Boolean isUnmask() {
+        return this.unmask;
     }
 
     /**
@@ -674,6 +874,8 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
         sb.append("{");
         if (getLogGroupName() != null)
             sb.append("LogGroupName: ").append(getLogGroupName()).append(",");
+        if (getLogGroupIdentifier() != null)
+            sb.append("LogGroupIdentifier: ").append(getLogGroupIdentifier()).append(",");
         if (getLogStreamNames() != null)
             sb.append("LogStreamNames: ").append(getLogStreamNames()).append(",");
         if (getLogStreamNamePrefix() != null)
@@ -689,7 +891,9 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
         if (getLimit() != null)
             sb.append("Limit: ").append(getLimit()).append(",");
         if (getInterleaved() != null)
-            sb.append("Interleaved: ").append(getInterleaved());
+            sb.append("Interleaved: ").append(getInterleaved()).append(",");
+        if (getUnmask() != null)
+            sb.append("Unmask: ").append(getUnmask());
         sb.append("}");
         return sb.toString();
     }
@@ -707,6 +911,10 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getLogGroupName() == null ^ this.getLogGroupName() == null)
             return false;
         if (other.getLogGroupName() != null && other.getLogGroupName().equals(this.getLogGroupName()) == false)
+            return false;
+        if (other.getLogGroupIdentifier() == null ^ this.getLogGroupIdentifier() == null)
+            return false;
+        if (other.getLogGroupIdentifier() != null && other.getLogGroupIdentifier().equals(this.getLogGroupIdentifier()) == false)
             return false;
         if (other.getLogStreamNames() == null ^ this.getLogStreamNames() == null)
             return false;
@@ -740,6 +948,10 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getInterleaved() != null && other.getInterleaved().equals(this.getInterleaved()) == false)
             return false;
+        if (other.getUnmask() == null ^ this.getUnmask() == null)
+            return false;
+        if (other.getUnmask() != null && other.getUnmask().equals(this.getUnmask()) == false)
+            return false;
         return true;
     }
 
@@ -749,6 +961,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLogGroupName() == null) ? 0 : getLogGroupName().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupIdentifier() == null) ? 0 : getLogGroupIdentifier().hashCode());
         hashCode = prime * hashCode + ((getLogStreamNames() == null) ? 0 : getLogStreamNames().hashCode());
         hashCode = prime * hashCode + ((getLogStreamNamePrefix() == null) ? 0 : getLogStreamNamePrefix().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
@@ -757,6 +970,7 @@ public class FilterLogEventsRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getLimit() == null) ? 0 : getLimit().hashCode());
         hashCode = prime * hashCode + ((getInterleaved() == null) ? 0 : getInterleaved().hashCode());
+        hashCode = prime * hashCode + ((getUnmask() == null) ? 0 : getUnmask().hashCode());
         return hashCode;
     }
 

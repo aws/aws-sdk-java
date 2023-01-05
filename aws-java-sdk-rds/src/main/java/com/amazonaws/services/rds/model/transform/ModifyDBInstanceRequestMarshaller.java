@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -302,6 +302,22 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         if (modifyDBInstanceRequest.getNetworkType() != null) {
             request.addParameter("NetworkType", StringUtils.fromString(modifyDBInstanceRequest.getNetworkType()));
+        }
+
+        if (modifyDBInstanceRequest.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(modifyDBInstanceRequest.getStorageThroughput()));
+        }
+
+        if (modifyDBInstanceRequest.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(modifyDBInstanceRequest.getManageMasterUserPassword()));
+        }
+
+        if (modifyDBInstanceRequest.getRotateMasterUserPassword() != null) {
+            request.addParameter("RotateMasterUserPassword", StringUtils.fromBoolean(modifyDBInstanceRequest.getRotateMasterUserPassword()));
+        }
+
+        if (modifyDBInstanceRequest.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(modifyDBInstanceRequest.getMasterUserSecretKmsKeyId()));
         }
 
         return request;

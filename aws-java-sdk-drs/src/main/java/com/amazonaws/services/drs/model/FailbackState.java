@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,9 @@ public enum FailbackState {
     FAILBACK_IN_PROGRESS("FAILBACK_IN_PROGRESS"),
     FAILBACK_READY_FOR_LAUNCH("FAILBACK_READY_FOR_LAUNCH"),
     FAILBACK_COMPLETED("FAILBACK_COMPLETED"),
-    FAILBACK_ERROR("FAILBACK_ERROR");
+    FAILBACK_ERROR("FAILBACK_ERROR"),
+    FAILBACK_NOT_READY_FOR_LAUNCH("FAILBACK_NOT_READY_FOR_LAUNCH"),
+    FAILBACK_LAUNCH_STATE_NOT_AVAILABLE("FAILBACK_LAUNCH_STATE_NOT_AVAILABLE");
 
     private String value;
 

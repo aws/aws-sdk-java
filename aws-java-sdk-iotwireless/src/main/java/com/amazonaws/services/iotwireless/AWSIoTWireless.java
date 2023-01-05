@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1160,6 +1160,13 @@ public interface AWSIoTWireless {
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @return Result of the GetPosition operation returned by the service.
@@ -1177,12 +1184,20 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     GetPositionResult getPosition(GetPositionRequest getPositionRequest);
 
     /**
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @return Result of the GetPositionConfiguration operation returned by the service.
@@ -1200,7 +1215,32 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest getPositionConfigurationRequest);
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @return Result of the GetPositionEstimate operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetPositionEstimateResult getPositionEstimate(GetPositionEstimateRequest getPositionEstimateRequest);
 
     /**
      * <p>
@@ -1248,6 +1288,30 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     GetResourceLogLevelResult getResourceLogLevel(GetResourceLogLevelRequest getResourceLogLevelRequest);
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The postion information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @return Result of the GetResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetResourcePositionResult getResourcePosition(GetResourcePositionRequest getResourcePositionRequest);
 
     /**
      * <p>
@@ -1654,6 +1718,13 @@ public interface AWSIoTWireless {
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @return Result of the ListPositionConfigurations operation returned by the service.
@@ -1669,6 +1740,7 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListPositionConfigurations"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest listPositionConfigurationsRequest);
 
     /**
@@ -1806,6 +1878,13 @@ public interface AWSIoTWireless {
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @return Result of the PutPositionConfiguration operation returned by the service.
@@ -1823,6 +1902,7 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/PutPositionConfiguration"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest putPositionConfigurationRequest);
 
     /**
@@ -2282,6 +2362,13 @@ public interface AWSIoTWireless {
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @return Result of the UpdatePosition operation returned by the service.
@@ -2299,6 +2386,7 @@ public interface AWSIoTWireless {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdatePosition" target="_top">AWS API
      *      Documentation</a>
      */
+    @Deprecated
     UpdatePositionResult updatePosition(UpdatePositionRequest updatePositionRequest);
 
     /**
@@ -2325,6 +2413,31 @@ public interface AWSIoTWireless {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateResourceEventConfigurationResult updateResourceEventConfiguration(UpdateResourceEventConfigurationRequest updateResourceEventConfigurationRequest);
+
+    /**
+     * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The postion
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @return Result of the UpdateResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResourcePositionResult updateResourcePosition(UpdateResourcePositionRequest updateResourcePositionRequest);
 
     /**
      * <p>

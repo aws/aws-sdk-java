@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Server participating in Job.
+ * Status of the Post Launch Actions running on the Test or Cutover instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PostLaunchActionsStatus" target="_top">AWS API
@@ -30,23 +30,23 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Server participating in Job.
+     * List of Post Launch Action status.
      * </p>
      */
     private java.util.List<JobPostLaunchActionsLaunchStatus> postLaunchActionsLaunchStatusList;
     /**
      * <p>
-     * Server participating in Job.
+     * Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.
      * </p>
      */
     private String ssmAgentDiscoveryDatetime;
 
     /**
      * <p>
-     * Server participating in Job.
+     * List of Post Launch Action status.
      * </p>
      * 
-     * @return Server participating in Job.
+     * @return List of Post Launch Action status.
      */
 
     public java.util.List<JobPostLaunchActionsLaunchStatus> getPostLaunchActionsLaunchStatusList() {
@@ -55,11 +55,11 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Server participating in Job.
+     * List of Post Launch Action status.
      * </p>
      * 
      * @param postLaunchActionsLaunchStatusList
-     *        Server participating in Job.
+     *        List of Post Launch Action status.
      */
 
     public void setPostLaunchActionsLaunchStatusList(java.util.Collection<JobPostLaunchActionsLaunchStatus> postLaunchActionsLaunchStatusList) {
@@ -73,7 +73,7 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Server participating in Job.
+     * List of Post Launch Action status.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -82,7 +82,7 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param postLaunchActionsLaunchStatusList
-     *        Server participating in Job.
+     *        List of Post Launch Action status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Server participating in Job.
+     * List of Post Launch Action status.
      * </p>
      * 
      * @param postLaunchActionsLaunchStatusList
-     *        Server participating in Job.
+     *        List of Post Launch Action status.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,11 +114,11 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Server participating in Job.
+     * Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.
      * </p>
      * 
      * @param ssmAgentDiscoveryDatetime
-     *        Server participating in Job.
+     *        Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.
      */
 
     public void setSsmAgentDiscoveryDatetime(String ssmAgentDiscoveryDatetime) {
@@ -127,10 +127,10 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Server participating in Job.
+     * Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.
      * </p>
      * 
-     * @return Server participating in Job.
+     * @return Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.
      */
 
     public String getSsmAgentDiscoveryDatetime() {
@@ -139,11 +139,11 @@ public class PostLaunchActionsStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Server participating in Job.
+     * Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.
      * </p>
      * 
      * @param ssmAgentDiscoveryDatetime
-     *        Server participating in Job.
+     *        Time where the AWS Systems Manager was detected as running on the Test or Cutover instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

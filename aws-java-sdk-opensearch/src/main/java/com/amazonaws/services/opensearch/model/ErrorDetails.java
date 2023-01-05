@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,15 +17,34 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Additional information if the package is in an error state. Null otherwise.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The type of error that occurred.
+     * </p>
+     */
     private String errorType;
-
+    /**
+     * <p>
+     * A message describing the error.
+     * </p>
+     */
     private String errorMessage;
 
     /**
+     * <p>
+     * The type of error that occurred.
+     * </p>
+     * 
      * @param errorType
+     *        The type of error that occurred.
      */
 
     public void setErrorType(String errorType) {
@@ -33,7 +52,11 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The type of error that occurred.
+     * </p>
+     * 
+     * @return The type of error that occurred.
      */
 
     public String getErrorType() {
@@ -41,7 +64,12 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The type of error that occurred.
+     * </p>
+     * 
      * @param errorType
+     *        The type of error that occurred.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -51,7 +79,12 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A message describing the error.
+     * </p>
+     * 
      * @param errorMessage
+     *        A message describing the error.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -59,7 +92,11 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * A message describing the error.
+     * </p>
+     * 
+     * @return A message describing the error.
      */
 
     public String getErrorMessage() {
@@ -67,7 +104,12 @@ public class ErrorDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A message describing the error.
+     * </p>
+     * 
      * @param errorMessage
+     *        A message describing the error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

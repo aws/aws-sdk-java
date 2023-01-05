@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,21 @@ public class BucketLevelStaxUnmarshaller implements Unmarshaller<BucketLevel, St
 
                 if (context.testExpression("PrefixLevel", targetDepth)) {
                     bucketLevel.setPrefixLevel(PrefixLevelStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AdvancedCostOptimizationMetrics", targetDepth)) {
+                    bucketLevel.setAdvancedCostOptimizationMetrics(AdvancedCostOptimizationMetricsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("AdvancedDataProtectionMetrics", targetDepth)) {
+                    bucketLevel.setAdvancedDataProtectionMetrics(AdvancedDataProtectionMetricsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DetailedStatusCodesMetrics", targetDepth)) {
+                    bucketLevel.setDetailedStatusCodesMetrics(DetailedStatusCodesMetricsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

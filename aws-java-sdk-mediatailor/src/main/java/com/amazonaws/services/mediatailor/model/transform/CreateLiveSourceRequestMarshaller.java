@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,9 @@ public class CreateLiveSourceRequestMarshaller {
     private static final MarshallingInfo<List> HTTPPACKAGECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HttpPackageConfigurations").build();
     private static final MarshallingInfo<String> LIVESOURCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("liveSourceName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("LiveSourceName").build();
     private static final MarshallingInfo<String> SOURCELOCATIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PATH).marshallLocationName("sourceLocationName").build();
+            .marshallLocation(MarshallLocation.PATH).marshallLocationName("SourceLocationName").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 

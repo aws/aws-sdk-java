@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,13 @@ public class UpdateCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier for the cache policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The version of the cache policy that you are updating. The version is returned in the cache policy’s
+     * The version of the cache policy that you are updating. The version is returned in the cache policy's
      * <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
      * </p>
      */
@@ -89,12 +89,12 @@ public class UpdateCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier for the cache policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      * 
      * @param id
      *        The unique identifier for the cache policy that you are updating. The identifier is returned in a cache
-     *        behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     *        behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      */
 
     public void setId(String id) {
@@ -104,11 +104,11 @@ public class UpdateCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier for the cache policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      * 
      * @return The unique identifier for the cache policy that you are updating. The identifier is returned in a cache
-     *         behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     *         behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      */
 
     public String getId() {
@@ -118,12 +118,12 @@ public class UpdateCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The unique identifier for the cache policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      * 
      * @param id
      *        The unique identifier for the cache policy that you are updating. The identifier is returned in a cache
-     *        behavior’s <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     *        behavior's <code>CachePolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,12 +134,12 @@ public class UpdateCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the cache policy that you are updating. The version is returned in the cache policy’s
+     * The version of the cache policy that you are updating. The version is returned in the cache policy's
      * <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the cache policy that you are updating. The version is returned in the cache policy’s
+     *        The version of the cache policy that you are updating. The version is returned in the cache policy's
      *        <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
      */
 
@@ -149,11 +149,11 @@ public class UpdateCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the cache policy that you are updating. The version is returned in the cache policy’s
+     * The version of the cache policy that you are updating. The version is returned in the cache policy's
      * <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
      * </p>
      * 
-     * @return The version of the cache policy that you are updating. The version is returned in the cache policy’s
+     * @return The version of the cache policy that you are updating. The version is returned in the cache policy's
      *         <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
      */
 
@@ -163,12 +163,12 @@ public class UpdateCachePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the cache policy that you are updating. The version is returned in the cache policy’s
+     * The version of the cache policy that you are updating. The version is returned in the cache policy's
      * <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the cache policy that you are updating. The version is returned in the cache policy’s
+     *        The version of the cache policy that you are updating. The version is returned in the cache policy's
      *        <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

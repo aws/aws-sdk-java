@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      */
     private String targetArn;
@@ -61,6 +61,13 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private DeploymentPolicies deploymentPolicies;
     /**
      * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     */
+    private String parentTargetArn;
+    /**
+     * <p>
      * A list of key-value pairs that contain metadata for the resource. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the
      * <i>IoT Greengrass V2 Developer Guide</i>.
@@ -81,12 +88,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      * 
      * @param targetArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        target IoT thing or thing group.
+     *        target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      */
 
     public void setTargetArn(String targetArn) {
@@ -96,11 +103,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      * 
      * @return The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *         target IoT thing or thing group.
+     *         target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      */
 
     public String getTargetArn() {
@@ -110,12 +117,12 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target
-     * IoT thing or thing group.
+     * IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * </p>
      * 
      * @param targetArn
      *        The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the
-     *        target IoT thing or thing group.
+     *        target IoT thing or thing group. When creating a subdeployment, the targetARN can only be a thing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -332,6 +339,55 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     */
+
+    public void setParentTargetArn(String parentTargetArn) {
+        this.parentTargetArn = parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @return The parent deployment's target <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *         subdeployment.
+     */
+
+    public String getParentTargetArn() {
+        return this.parentTargetArn;
+    }
+
+    /**
+     * <p>
+     * The parent deployment's target <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a subdeployment.
+     * </p>
+     * 
+     * @param parentTargetArn
+     *        The parent deployment's target <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> within a
+     *        subdeployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDeploymentRequest withParentTargetArn(String parentTargetArn) {
+        setParentTargetArn(parentTargetArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of key-value pairs that contain metadata for the resource. For more information, see <a
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your resources</a> in the
      * <i>IoT Greengrass V2 Developer Guide</i>.
@@ -496,6 +552,8 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("IotJobConfiguration: ").append(getIotJobConfiguration()).append(",");
         if (getDeploymentPolicies() != null)
             sb.append("DeploymentPolicies: ").append(getDeploymentPolicies()).append(",");
+        if (getParentTargetArn() != null)
+            sb.append("ParentTargetArn: ").append(getParentTargetArn()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getClientToken() != null)
@@ -534,6 +592,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDeploymentPolicies() != null && other.getDeploymentPolicies().equals(this.getDeploymentPolicies()) == false)
             return false;
+        if (other.getParentTargetArn() == null ^ this.getParentTargetArn() == null)
+            return false;
+        if (other.getParentTargetArn() != null && other.getParentTargetArn().equals(this.getParentTargetArn()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -555,6 +617,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getComponents() == null) ? 0 : getComponents().hashCode());
         hashCode = prime * hashCode + ((getIotJobConfiguration() == null) ? 0 : getIotJobConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeploymentPolicies() == null) ? 0 : getDeploymentPolicies().hashCode());
+        hashCode = prime * hashCode + ((getParentTargetArn() == null) ? 0 : getParentTargetArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;

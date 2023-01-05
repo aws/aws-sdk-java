@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,12 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.List<String> executionParameters;
+    /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     */
+    private ResultReuseConfiguration resultReuseConfiguration;
 
     /**
      * <p>
@@ -423,6 +429,46 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior for the query.
+     */
+
+    public void setResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        this.resultReuseConfiguration = resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     * 
+     * @return Specifies the query result reuse behavior for the query.
+     */
+
+    public ResultReuseConfiguration getResultReuseConfiguration() {
+        return this.resultReuseConfiguration;
+    }
+
+    /**
+     * <p>
+     * Specifies the query result reuse behavior for the query.
+     * </p>
+     * 
+     * @param resultReuseConfiguration
+     *        Specifies the query result reuse behavior for the query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartQueryExecutionRequest withResultReuseConfiguration(ResultReuseConfiguration resultReuseConfiguration) {
+        setResultReuseConfiguration(resultReuseConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -445,7 +491,9 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getWorkGroup() != null)
             sb.append("WorkGroup: ").append(getWorkGroup()).append(",");
         if (getExecutionParameters() != null)
-            sb.append("ExecutionParameters: ").append(getExecutionParameters());
+            sb.append("ExecutionParameters: ").append(getExecutionParameters()).append(",");
+        if (getResultReuseConfiguration() != null)
+            sb.append("ResultReuseConfiguration: ").append(getResultReuseConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -484,6 +532,10 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getExecutionParameters() != null && other.getExecutionParameters().equals(this.getExecutionParameters()) == false)
             return false;
+        if (other.getResultReuseConfiguration() == null ^ this.getResultReuseConfiguration() == null)
+            return false;
+        if (other.getResultReuseConfiguration() != null && other.getResultReuseConfiguration().equals(this.getResultReuseConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -498,6 +550,7 @@ public class StartQueryExecutionRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getResultConfiguration() == null) ? 0 : getResultConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkGroup() == null) ? 0 : getWorkGroup().hashCode());
         hashCode = prime * hashCode + ((getExecutionParameters() == null) ? 0 : getExecutionParameters().hashCode());
+        hashCode = prime * hashCode + ((getResultReuseConfiguration() == null) ? 0 : getResultReuseConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,9 @@ public enum Dimension {
     PAYMENT_OPTION("PAYMENT_OPTION"),
     AGREEMENT_END_DATE_TIME_AFTER("AGREEMENT_END_DATE_TIME_AFTER"),
     AGREEMENT_END_DATE_TIME_BEFORE("AGREEMENT_END_DATE_TIME_BEFORE"),
-    INVOICING_ENTITY("INVOICING_ENTITY");
+    INVOICING_ENTITY("INVOICING_ENTITY"),
+    ANOMALY_TOTAL_IMPACT_ABSOLUTE("ANOMALY_TOTAL_IMPACT_ABSOLUTE"),
+    ANOMALY_TOTAL_IMPACT_PERCENTAGE("ANOMALY_TOTAL_IMPACT_PERCENTAGE");
 
     private String value;
 

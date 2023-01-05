@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class DescribeScalingActivitiesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("NextToken").build();
+    private static final MarshallingInfo<Boolean> INCLUDENOTSCALEDACTIVITIES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IncludeNotScaledActivities").build();
 
     private static final DescribeScalingActivitiesRequestMarshaller instance = new DescribeScalingActivitiesRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class DescribeScalingActivitiesRequestMarshaller {
             protocolMarshaller.marshall(describeScalingActivitiesRequest.getScalableDimension(), SCALABLEDIMENSION_BINDING);
             protocolMarshaller.marshall(describeScalingActivitiesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(describeScalingActivitiesRequest.getNextToken(), NEXTTOKEN_BINDING);
+            protocolMarshaller.marshall(describeScalingActivitiesRequest.getIncludeNotScaledActivities(), INCLUDENOTSCALEDACTIVITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

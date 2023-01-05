@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,11 +85,22 @@ import java.util.concurrent.ExecutorService;
  * href="https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html">Authorize a Slack workspace
  * to enable the Amazon Web Services Support App</a>.
  * </p>
+ * <note>
+ * <ul>
+ * <li>
+ * <p>
+ * You must have a Business or Enterprise Support plan to use the Amazon Web Services Support App API.
  * </p>
- * 
- * <pre>
- * <code> &lt;note&gt; &lt;ul&gt; &lt;li&gt; &lt;p&gt;You must have a Business or Enterprise Support plan to use the Amazon Web Services Support App API. &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt;For more information about the Amazon Web Services Support App endpoints, see the &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region&quot;&gt;Amazon Web Services Support App in Slack endpoints&lt;/a&gt; in the &lt;i&gt;Amazon Web Services General Reference&lt;/i&gt;.&lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/note&gt; </code>
- * </pre>
+ * </li>
+ * <li>
+ * <p>
+ * For more information about the Amazon Web Services Support App endpoints, see the <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region">Amazon Web Services
+ * Support App in Slack endpoints</a> in the <i>Amazon Web Services General Reference</i>.
+ * </p>
+ * </li>
+ * </ul>
+ * </note></p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -393,6 +404,41 @@ public class AWSSupportAppAsyncClient extends AWSSupportAppClient implements AWS
 
                 try {
                     result = executePutAccountAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterSlackWorkspaceForOrganizationResult> registerSlackWorkspaceForOrganizationAsync(
+            RegisterSlackWorkspaceForOrganizationRequest request) {
+
+        return registerSlackWorkspaceForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterSlackWorkspaceForOrganizationResult> registerSlackWorkspaceForOrganizationAsync(
+            final RegisterSlackWorkspaceForOrganizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterSlackWorkspaceForOrganizationRequest, RegisterSlackWorkspaceForOrganizationResult> asyncHandler) {
+        final RegisterSlackWorkspaceForOrganizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterSlackWorkspaceForOrganizationResult>() {
+            @Override
+            public RegisterSlackWorkspaceForOrganizationResult call() throws Exception {
+                RegisterSlackWorkspaceForOrganizationResult result = null;
+
+                try {
+                    result = executeRegisterSlackWorkspaceForOrganization(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

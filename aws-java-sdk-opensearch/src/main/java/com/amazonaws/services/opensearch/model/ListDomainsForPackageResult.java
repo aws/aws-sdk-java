@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for the response parameters to the <code> <a>ListDomainsForPackage</a> </code> operation.
+ * Container for the response parameters to the <code>ListDomainsForPackage</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,19 +25,24 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>DomainPackageDetails</code> objects.
+     * Information about all domains associated with a package.
      * </p>
      */
     private java.util.List<DomainPackageDetails> domainPackageDetailsList;
-
+    /**
+     * <p>
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * </p>
+     */
     private String nextToken;
 
     /**
      * <p>
-     * List of <code>DomainPackageDetails</code> objects.
+     * Information about all domains associated with a package.
      * </p>
      * 
-     * @return List of <code>DomainPackageDetails</code> objects.
+     * @return Information about all domains associated with a package.
      */
 
     public java.util.List<DomainPackageDetails> getDomainPackageDetailsList() {
@@ -46,11 +51,11 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>DomainPackageDetails</code> objects.
+     * Information about all domains associated with a package.
      * </p>
      * 
      * @param domainPackageDetailsList
-     *        List of <code>DomainPackageDetails</code> objects.
+     *        Information about all domains associated with a package.
      */
 
     public void setDomainPackageDetailsList(java.util.Collection<DomainPackageDetails> domainPackageDetailsList) {
@@ -64,7 +69,7 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>DomainPackageDetails</code> objects.
+     * Information about all domains associated with a package.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -73,7 +78,7 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @param domainPackageDetailsList
-     *        List of <code>DomainPackageDetails</code> objects.
+     *        Information about all domains associated with a package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +94,11 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * List of <code>DomainPackageDetails</code> objects.
+     * Information about all domains associated with a package.
      * </p>
      * 
      * @param domainPackageDetailsList
-     *        List of <code>DomainPackageDetails</code> objects.
+     *        Information about all domains associated with a package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -103,7 +108,15 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -111,7 +124,14 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * <p>
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * </p>
+     * 
+     * @return When <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -119,7 +139,15 @@ public class ListDomainsForPackageResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -215,6 +215,9 @@ public interface AmazonLookoutEquipment {
      *         The request could not be completed because you do not have access to the resource.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteDataset
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteDataset" target="_top">AWS
      *      API Documentation</a>
@@ -264,6 +267,9 @@ public interface AmazonLookoutEquipment {
      *         The request could not be completed because you do not have access to the resource.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteLabel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabel" target="_top">AWS
      *      API Documentation</a>
@@ -287,6 +293,9 @@ public interface AmazonLookoutEquipment {
      *         The request could not be completed because you do not have access to the resource.
      * @throws ConflictException
      *         The request could not be completed due to a conflict with the current state of the target resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteLabelGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteLabelGroup"
      *      target="_top">AWS API Documentation</a>
@@ -311,6 +320,9 @@ public interface AmazonLookoutEquipment {
      *         The request could not be completed due to a conflict with the current state of the target resource.
      * @throws AccessDeniedException
      *         The request could not be completed because you do not have access to the resource.
+     * @throws ValidationException
+     *         The input fails to satisfy constraints specified by Amazon Lookout for Equipment or a related AWS service
+     *         that's being utilized.
      * @sample AmazonLookoutEquipment.DeleteModel
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lookoutequipment-2020-12-15/DeleteModel" target="_top">AWS
      *      API Documentation</a>

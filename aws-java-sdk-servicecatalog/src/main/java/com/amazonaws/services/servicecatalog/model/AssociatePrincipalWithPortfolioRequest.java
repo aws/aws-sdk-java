@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,13 +56,20 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
     private String portfolioId;
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is
+     * useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns
+     * the portfolio.
      * </p>
      */
     private String principalARN;
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      */
     private String principalType;
@@ -248,11 +255,22 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is
+     * useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns
+     * the portfolio.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
+     *        <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+     *        <p>
+     *        You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name.
+     *        This is useful in Principal Name Sharing if you want to share a principal without creating it in the
+     *        account that owns the portfolio.
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -261,10 +279,21 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is
+     * useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns
+     * the portfolio.
      * </p>
      * 
-     * @return The ARN of the principal (IAM user, role, or group).
+     * @return The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
+     *         <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+     *         <p>
+     *         You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name.
+     *         This is useful in Principal Name Sharing if you want to share a principal without creating it in the
+     *         account that owns the portfolio.
      */
 
     public String getPrincipalARN() {
@@ -273,11 +302,22 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows an ARN with no <code>accountID</code> if
+     * <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+     * </p>
+     * <p>
+     * You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name. This is
+     * useful in Principal Name Sharing if you want to share a principal without creating it in the account that owns
+     * the portfolio.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group). This field allows an ARN with no
+     *        <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>. </p>
+     *        <p>
+     *        You can associate multiple <code>IAM</code> patterns even if the account has no principal with that name.
+     *        This is useful in Principal Name Sharing if you want to share a principal without creating it in the
+     *        account that owns the portfolio.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,11 +328,13 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @see PrincipalType
      */
 
@@ -302,10 +344,12 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
-     * @return The principal type. The supported value is <code>IAM</code>.
+     * @return The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *         <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @see PrincipalType
      */
 
@@ -315,11 +359,13 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */
@@ -331,11 +377,13 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @see PrincipalType
      */
 
@@ -345,11 +393,13 @@ public class AssociatePrincipalWithPortfolioRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */

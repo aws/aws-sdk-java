@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Details implements Serializable, Cloneable, StructuredPojo {
     private ImportAssetFromSignedUrlJobErrorDetails importAssetFromSignedUrlJobErrorDetails;
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      */
     private java.util.List<AssetSourceEntry> importAssetsFromS3JobErrorDetails;
@@ -83,10 +83,10 @@ public class Details implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      * 
-     * @return Information about the job error.
+     * @return Details about the job error.
      */
 
     public java.util.List<AssetSourceEntry> getImportAssetsFromS3JobErrorDetails() {
@@ -95,11 +95,11 @@ public class Details implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      * 
      * @param importAssetsFromS3JobErrorDetails
-     *        Information about the job error.
+     *        Details about the job error.
      */
 
     public void setImportAssetsFromS3JobErrorDetails(java.util.Collection<AssetSourceEntry> importAssetsFromS3JobErrorDetails) {
@@ -113,7 +113,7 @@ public class Details implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class Details implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param importAssetsFromS3JobErrorDetails
-     *        Information about the job error.
+     *        Details about the job error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class Details implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Information about the job error.
+     * Details about the job error.
      * </p>
      * 
      * @param importAssetsFromS3JobErrorDetails
-     *        Information about the job error.
+     *        Details about the job error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

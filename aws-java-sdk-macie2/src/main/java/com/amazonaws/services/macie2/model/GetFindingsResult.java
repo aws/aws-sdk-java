@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each finding that meets the criteria specified in the request.
+     * An array of objects, one for each finding that matches the criteria specified in the request.
      * </p>
      */
     private java.util.List<Finding> findings;
 
     /**
      * <p>
-     * An array of objects, one for each finding that meets the criteria specified in the request.
+     * An array of objects, one for each finding that matches the criteria specified in the request.
      * </p>
      * 
-     * @return An array of objects, one for each finding that meets the criteria specified in the request.
+     * @return An array of objects, one for each finding that matches the criteria specified in the request.
      */
 
     public java.util.List<Finding> getFindings() {
@@ -44,11 +44,11 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each finding that meets the criteria specified in the request.
+     * An array of objects, one for each finding that matches the criteria specified in the request.
      * </p>
      * 
      * @param findings
-     *        An array of objects, one for each finding that meets the criteria specified in the request.
+     *        An array of objects, one for each finding that matches the criteria specified in the request.
      */
 
     public void setFindings(java.util.Collection<Finding> findings) {
@@ -62,7 +62,7 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each finding that meets the criteria specified in the request.
+     * An array of objects, one for each finding that matches the criteria specified in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param findings
-     *        An array of objects, one for each finding that meets the criteria specified in the request.
+     *        An array of objects, one for each finding that matches the criteria specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class GetFindingsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each finding that meets the criteria specified in the request.
+     * An array of objects, one for each finding that matches the criteria specified in the request.
      * </p>
      * 
      * @param findings
-     *        An array of objects, one for each finding that meets the criteria specified in the request.
+     *        An array of objects, one for each finding that matches the criteria specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

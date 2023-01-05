@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Launch profile membership enables your studio admins to delegate launch profile access to other studio users in the
- * Nimble Studio portal without needing to write or maintain complex IAM policies. A launch profile member is a user
- * association from your studio identity source who is granted permissions to a launch profile.
+ * Studio admins can use launch profile membership to delegate launch profile access to studio users in the Nimble
+ * Studio portal without writing or maintaining complex IAM policies. A launch profile member is a user association from
+ * your studio identity source who is granted permissions to a launch profile.
  * </p>
  * <p>
  * A launch profile member (type USER) provides the following permissions to that launch profile:

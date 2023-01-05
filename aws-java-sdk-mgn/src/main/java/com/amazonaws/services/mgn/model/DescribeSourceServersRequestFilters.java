@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
 
     /**
      * <p>
+     * Request to filter Source Servers list by application IDs.
+     * </p>
+     */
+    private java.util.List<String> applicationIDs;
+    /**
+     * <p>
      * Request to filter Source Servers list by archived.
      * </p>
      */
@@ -52,6 +58,76 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
      * </p>
      */
     private java.util.List<String> sourceServerIDs;
+
+    /**
+     * <p>
+     * Request to filter Source Servers list by application IDs.
+     * </p>
+     * 
+     * @return Request to filter Source Servers list by application IDs.
+     */
+
+    public java.util.List<String> getApplicationIDs() {
+        return applicationIDs;
+    }
+
+    /**
+     * <p>
+     * Request to filter Source Servers list by application IDs.
+     * </p>
+     * 
+     * @param applicationIDs
+     *        Request to filter Source Servers list by application IDs.
+     */
+
+    public void setApplicationIDs(java.util.Collection<String> applicationIDs) {
+        if (applicationIDs == null) {
+            this.applicationIDs = null;
+            return;
+        }
+
+        this.applicationIDs = new java.util.ArrayList<String>(applicationIDs);
+    }
+
+    /**
+     * <p>
+     * Request to filter Source Servers list by application IDs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplicationIDs(java.util.Collection)} or {@link #withApplicationIDs(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param applicationIDs
+     *        Request to filter Source Servers list by application IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSourceServersRequestFilters withApplicationIDs(String... applicationIDs) {
+        if (this.applicationIDs == null) {
+            setApplicationIDs(new java.util.ArrayList<String>(applicationIDs.length));
+        }
+        for (String ele : applicationIDs) {
+            this.applicationIDs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Request to filter Source Servers list by application IDs.
+     * </p>
+     * 
+     * @param applicationIDs
+     *        Request to filter Source Servers list by application IDs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSourceServersRequestFilters withApplicationIDs(java.util.Collection<String> applicationIDs) {
+        setApplicationIDs(applicationIDs);
+        return this;
+    }
 
     /**
      * <p>
@@ -383,6 +459,8 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationIDs() != null)
+            sb.append("ApplicationIDs: ").append(getApplicationIDs()).append(",");
         if (getIsArchived() != null)
             sb.append("IsArchived: ").append(getIsArchived()).append(",");
         if (getLifeCycleStates() != null)
@@ -405,6 +483,10 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
         if (obj instanceof DescribeSourceServersRequestFilters == false)
             return false;
         DescribeSourceServersRequestFilters other = (DescribeSourceServersRequestFilters) obj;
+        if (other.getApplicationIDs() == null ^ this.getApplicationIDs() == null)
+            return false;
+        if (other.getApplicationIDs() != null && other.getApplicationIDs().equals(this.getApplicationIDs()) == false)
+            return false;
         if (other.getIsArchived() == null ^ this.getIsArchived() == null)
             return false;
         if (other.getIsArchived() != null && other.getIsArchived().equals(this.getIsArchived()) == false)
@@ -429,6 +511,7 @@ public class DescribeSourceServersRequestFilters implements Serializable, Clonea
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApplicationIDs() == null) ? 0 : getApplicationIDs().hashCode());
         hashCode = prime * hashCode + ((getIsArchived() == null) ? 0 : getIsArchived().hashCode());
         hashCode = prime * hashCode + ((getLifeCycleStates() == null) ? 0 : getLifeCycleStates().hashCode());
         hashCode = prime * hashCode + ((getReplicationTypes() == null) ? 0 : getReplicationTypes().hashCode());

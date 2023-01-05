@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,8 @@ public enum RDSActions implements Action {
     CopyDBSnapshot("rds:CopyDBSnapshot"),
     /** Action for the CopyOptionGroup operation. */
     CopyOptionGroup("rds:CopyOptionGroup"),
+    /** Action for the CreateBlueGreenDeployment operation. */
+    CreateBlueGreenDeployment("rds:CreateBlueGreenDeployment"),
     /** Action for the CreateCustomDBEngineVersion operation. */
     CreateCustomDBEngineVersion("rds:CreateCustomDBEngineVersion"),
     /** Action for the CreateDBCluster operation. */
@@ -83,6 +85,8 @@ public enum RDSActions implements Action {
     CreateGlobalCluster("rds:CreateGlobalCluster"),
     /** Action for the CreateOptionGroup operation. */
     CreateOptionGroup("rds:CreateOptionGroup"),
+    /** Action for the DeleteBlueGreenDeployment operation. */
+    DeleteBlueGreenDeployment("rds:DeleteBlueGreenDeployment"),
     /** Action for the DeleteCustomDBEngineVersion operation. */
     DeleteCustomDBEngineVersion("rds:DeleteCustomDBEngineVersion"),
     /** Action for the DeleteDBCluster operation. */
@@ -119,6 +123,8 @@ public enum RDSActions implements Action {
     DeregisterDBProxyTargets("rds:DeregisterDBProxyTargets"),
     /** Action for the DescribeAccountAttributes operation. */
     DescribeAccountAttributes("rds:DescribeAccountAttributes"),
+    /** Action for the DescribeBlueGreenDeployments operation. */
+    DescribeBlueGreenDeployments("rds:DescribeBlueGreenDeployments"),
     /** Action for the DescribeCertificates operation. */
     DescribeCertificates("rds:DescribeCertificates"),
     /** Action for the DescribeDBClusterBacktracks operation. */
@@ -297,6 +303,8 @@ public enum RDSActions implements Action {
     StopDBInstance("rds:StopDBInstance"),
     /** Action for the StopDBInstanceAutomatedBackupsReplication operation. */
     StopDBInstanceAutomatedBackupsReplication("rds:StopDBInstanceAutomatedBackupsReplication"),
+    /** Action for the SwitchoverBlueGreenDeployment operation. */
+    SwitchoverBlueGreenDeployment("rds:SwitchoverBlueGreenDeployment"),
     /** Action for the SwitchoverReadReplica operation. */
     SwitchoverReadReplica("rds:SwitchoverReadReplica"),
 

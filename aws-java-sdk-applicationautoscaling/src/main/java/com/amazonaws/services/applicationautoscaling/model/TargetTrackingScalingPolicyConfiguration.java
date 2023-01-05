@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      */
     private Double targetValue;
     /**
@@ -244,12 +250,23 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      * 
      * @param targetValue
      *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
      *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
      *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
      *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
+     *        </p> <note>
+     *        <p>
+     *        If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the
+     *        target utilization as the optimal average request count per target during any one-minute interval.
+     *        </p>
      */
 
     public void setTargetValue(Double targetValue) {
@@ -263,11 +280,22 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      * 
      * @return The target value for the metric. Although this property accepts numbers of type Double, it won't accept
      *         values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
      *         must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
      *         the target value is a percent value that represents how much of the CPU can be used before scaling out.
+     *         </p> <note>
+     *         <p>
+     *         If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the
+     *         target utilization as the optimal average request count per target during any one-minute interval.
+     *         </p>
      */
 
     public Double getTargetValue() {
@@ -281,12 +309,23 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
      * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
+     * <note>
+     * <p>
+     * If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the target
+     * utilization as the optimal average request count per target during any one-minute interval.
+     * </p>
+     * </note>
      * 
      * @param targetValue
      *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
      *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
      *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
      *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
+     *        </p> <note>
+     *        <p>
+     *        If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined metric, specify the
+     *        target utilization as the optimal average request count per target during any one-minute interval.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

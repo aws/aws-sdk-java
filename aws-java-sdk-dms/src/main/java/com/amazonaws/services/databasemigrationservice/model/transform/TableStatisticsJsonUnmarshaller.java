@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,22 @@ public class TableStatisticsJsonUnmarshaller implements Unmarshaller<TableStatis
                 if (context.testExpression("Ddls", targetDepth)) {
                     context.nextToken();
                     tableStatistics.setDdls(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("AppliedInserts", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setAppliedInserts(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("AppliedDeletes", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setAppliedDeletes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("AppliedUpdates", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setAppliedUpdates(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("AppliedDdls", targetDepth)) {
+                    context.nextToken();
+                    tableStatistics.setAppliedDdls(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FullLoadRows", targetDepth)) {
                     context.nextToken();

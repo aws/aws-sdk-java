@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,16 +19,26 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * InstanceLimits represents the list of instance-related attributes that are available for a given InstanceType.
+ * Instance-related attributes that are available for a given instance type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceLimits implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Limits on the number of instances that can be created for a given instance type.
+     * </p>
+     */
     private InstanceCountLimits instanceCountLimits;
 
     /**
+     * <p>
+     * Limits on the number of instances that can be created for a given instance type.
+     * </p>
+     * 
      * @param instanceCountLimits
+     *        Limits on the number of instances that can be created for a given instance type.
      */
 
     public void setInstanceCountLimits(InstanceCountLimits instanceCountLimits) {
@@ -36,7 +46,11 @@ public class InstanceLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Limits on the number of instances that can be created for a given instance type.
+     * </p>
+     * 
+     * @return Limits on the number of instances that can be created for a given instance type.
      */
 
     public InstanceCountLimits getInstanceCountLimits() {
@@ -44,7 +58,12 @@ public class InstanceLimits implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Limits on the number of instances that can be created for a given instance type.
+     * </p>
+     * 
      * @param instanceCountLimits
+     *        Limits on the number of instances that can be created for a given instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

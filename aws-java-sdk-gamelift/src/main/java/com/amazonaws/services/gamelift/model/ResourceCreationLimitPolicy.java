@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>) has
  * created fewer than game session limit in the specified time period.
  * </p>
- * <p>
- * The resource creation limit policy is included in <a>FleetAttributes</a>.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ResourceCreationLimitPolicy"
  *      target="_top">AWS API Documentation</a>
@@ -39,7 +36,13 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The maximum number of game sessions that an individual can create during the policy period.
+     * A policy that puts limits on the number of game sessions that a player can create within a specified span of
+     * time. With this policy, you can control players' ability to consume available resources.
+     * </p>
+     * <p>
+     * The policy is evaluated when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>)
+     * has created fewer than game session limit in the specified time period.
      * </p>
      */
     private Integer newGameSessionsPerCreator;
@@ -52,11 +55,22 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The maximum number of game sessions that an individual can create during the policy period.
+     * A policy that puts limits on the number of game sessions that a player can create within a specified span of
+     * time. With this policy, you can control players' ability to consume available resources.
+     * </p>
+     * <p>
+     * The policy is evaluated when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>)
+     * has created fewer than game session limit in the specified time period.
      * </p>
      * 
      * @param newGameSessionsPerCreator
-     *        The maximum number of game sessions that an individual can create during the policy period.
+     *        A policy that puts limits on the number of game sessions that a player can create within a specified span
+     *        of time. With this policy, you can control players' ability to consume available resources.</p>
+     *        <p>
+     *        The policy is evaluated when a player tries to create a new game session. On receiving a
+     *        <code>CreateGameSession</code> request, GameLift checks that the player (identified by
+     *        <code>CreatorId</code>) has created fewer than game session limit in the specified time period.
      */
 
     public void setNewGameSessionsPerCreator(Integer newGameSessionsPerCreator) {
@@ -65,10 +79,21 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The maximum number of game sessions that an individual can create during the policy period.
+     * A policy that puts limits on the number of game sessions that a player can create within a specified span of
+     * time. With this policy, you can control players' ability to consume available resources.
+     * </p>
+     * <p>
+     * The policy is evaluated when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>)
+     * has created fewer than game session limit in the specified time period.
      * </p>
      * 
-     * @return The maximum number of game sessions that an individual can create during the policy period.
+     * @return A policy that puts limits on the number of game sessions that a player can create within a specified span
+     *         of time. With this policy, you can control players' ability to consume available resources.</p>
+     *         <p>
+     *         The policy is evaluated when a player tries to create a new game session. On receiving a
+     *         <code>CreateGameSession</code> request, GameLift checks that the player (identified by
+     *         <code>CreatorId</code>) has created fewer than game session limit in the specified time period.
      */
 
     public Integer getNewGameSessionsPerCreator() {
@@ -77,11 +102,22 @@ public class ResourceCreationLimitPolicy implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The maximum number of game sessions that an individual can create during the policy period.
+     * A policy that puts limits on the number of game sessions that a player can create within a specified span of
+     * time. With this policy, you can control players' ability to consume available resources.
+     * </p>
+     * <p>
+     * The policy is evaluated when a player tries to create a new game session. On receiving a
+     * <code>CreateGameSession</code> request, GameLift checks that the player (identified by <code>CreatorId</code>)
+     * has created fewer than game session limit in the specified time period.
      * </p>
      * 
      * @param newGameSessionsPerCreator
-     *        The maximum number of game sessions that an individual can create during the policy period.
+     *        A policy that puts limits on the number of game sessions that a player can create within a specified span
+     *        of time. With this policy, you can control players' ability to consume available resources.</p>
+     *        <p>
+     *        The policy is evaluated when a player tries to create a new game session. On receiving a
+     *        <code>CreateGameSession</code> request, GameLift checks that the player (identified by
+     *        <code>CreatorId</code>) has created fewer than game session limit in the specified time period.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

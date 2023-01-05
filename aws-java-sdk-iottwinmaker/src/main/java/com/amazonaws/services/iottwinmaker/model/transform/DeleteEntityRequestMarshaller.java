@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,12 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DeleteEntityRequestMarshaller {
 
+    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
+            .marshallLocationName("workspaceId").build();
     private static final MarshallingInfo<String> ENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("entityId").build();
     private static final MarshallingInfo<Boolean> ISRECURSIVE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("isRecursive").build();
-    private static final MarshallingInfo<String> WORKSPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
-            .marshallLocationName("workspaceId").build();
 
     private static final DeleteEntityRequestMarshaller instance = new DeleteEntityRequestMarshaller();
 
@@ -50,9 +50,9 @@ public class DeleteEntityRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(deleteEntityRequest.getWorkspaceId(), WORKSPACEID_BINDING);
             protocolMarshaller.marshall(deleteEntityRequest.getEntityId(), ENTITYID_BINDING);
             protocolMarshaller.marshall(deleteEntityRequest.getIsRecursive(), ISRECURSIVE_BINDING);
-            protocolMarshaller.marshall(deleteEntityRequest.getWorkspaceId(), WORKSPACEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

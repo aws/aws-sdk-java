@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,14 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Boolean publicSharingEnabled;
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.
+     * </p>
+     */
+    private Boolean terminationProtectionEnabled;
 
     /**
      * <p>
@@ -336,6 +344,78 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.
+     * </p>
+     * 
+     * @param terminationProtectionEnabled
+     *        A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *        <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *        tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the
+     *        ccount to be deleted.
+     */
+
+    public void setTerminationProtectionEnabled(Boolean terminationProtectionEnabled) {
+        this.terminationProtectionEnabled = terminationProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.
+     * </p>
+     * 
+     * @return A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *         <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *         tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the
+     *         ccount to be deleted.
+     */
+
+    public Boolean getTerminationProtectionEnabled() {
+        return this.terminationProtectionEnabled;
+    }
+
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.
+     * </p>
+     * 
+     * @param terminationProtectionEnabled
+     *        A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *        <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *        tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the
+     *        ccount to be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountSettings withTerminationProtectionEnabled(Boolean terminationProtectionEnabled) {
+        setTerminationProtectionEnabled(terminationProtectionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A <code>True</code>
+     * value doesn't allow the account to be deleted and results in an error message if a user tries to make a
+     * <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the ccount to be deleted.
+     * </p>
+     * 
+     * @return A boolean value that determines whether or not an Amazon QuickSight account can be deleted. A
+     *         <code>True</code> value doesn't allow the account to be deleted and results in an error message if a user
+     *         tries to make a <code>DeleteAccountSubsctiption</code> request. A <code>False</code> value will allow the
+     *         ccount to be deleted.
+     */
+
+    public Boolean isTerminationProtectionEnabled() {
+        return this.terminationProtectionEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -356,7 +436,9 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         if (getNotificationEmail() != null)
             sb.append("NotificationEmail: ").append(getNotificationEmail()).append(",");
         if (getPublicSharingEnabled() != null)
-            sb.append("PublicSharingEnabled: ").append(getPublicSharingEnabled());
+            sb.append("PublicSharingEnabled: ").append(getPublicSharingEnabled()).append(",");
+        if (getTerminationProtectionEnabled() != null)
+            sb.append("TerminationProtectionEnabled: ").append(getTerminationProtectionEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -391,6 +473,10 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getPublicSharingEnabled() != null && other.getPublicSharingEnabled().equals(this.getPublicSharingEnabled()) == false)
             return false;
+        if (other.getTerminationProtectionEnabled() == null ^ this.getTerminationProtectionEnabled() == null)
+            return false;
+        if (other.getTerminationProtectionEnabled() != null && other.getTerminationProtectionEnabled().equals(this.getTerminationProtectionEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -404,6 +490,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDefaultNamespace() == null) ? 0 : getDefaultNamespace().hashCode());
         hashCode = prime * hashCode + ((getNotificationEmail() == null) ? 0 : getNotificationEmail().hashCode());
         hashCode = prime * hashCode + ((getPublicSharingEnabled() == null) ? 0 : getPublicSharingEnabled().hashCode());
+        hashCode = prime * hashCode + ((getTerminationProtectionEnabled() == null) ? 0 : getTerminationProtectionEnabled().hashCode());
         return hashCode;
     }
 

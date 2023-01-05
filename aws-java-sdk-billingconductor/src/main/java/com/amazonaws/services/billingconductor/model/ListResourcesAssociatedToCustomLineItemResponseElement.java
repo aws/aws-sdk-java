@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,12 @@ public class ListResourcesAssociatedToCustomLineItemResponseElement implements S
      * </p>
      */
     private String relationship;
+    /**
+     * <p>
+     * The end billing period of the associated resource.
+     * </p>
+     */
+    private String endBillingPeriod;
 
     /**
      * <p>
@@ -142,6 +148,46 @@ public class ListResourcesAssociatedToCustomLineItemResponseElement implements S
     }
 
     /**
+     * <p>
+     * The end billing period of the associated resource.
+     * </p>
+     * 
+     * @param endBillingPeriod
+     *        The end billing period of the associated resource.
+     */
+
+    public void setEndBillingPeriod(String endBillingPeriod) {
+        this.endBillingPeriod = endBillingPeriod;
+    }
+
+    /**
+     * <p>
+     * The end billing period of the associated resource.
+     * </p>
+     * 
+     * @return The end billing period of the associated resource.
+     */
+
+    public String getEndBillingPeriod() {
+        return this.endBillingPeriod;
+    }
+
+    /**
+     * <p>
+     * The end billing period of the associated resource.
+     * </p>
+     * 
+     * @param endBillingPeriod
+     *        The end billing period of the associated resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListResourcesAssociatedToCustomLineItemResponseElement withEndBillingPeriod(String endBillingPeriod) {
+        setEndBillingPeriod(endBillingPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -156,7 +202,9 @@ public class ListResourcesAssociatedToCustomLineItemResponseElement implements S
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getRelationship() != null)
-            sb.append("Relationship: ").append(getRelationship());
+            sb.append("Relationship: ").append(getRelationship()).append(",");
+        if (getEndBillingPeriod() != null)
+            sb.append("EndBillingPeriod: ").append(getEndBillingPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -179,6 +227,10 @@ public class ListResourcesAssociatedToCustomLineItemResponseElement implements S
             return false;
         if (other.getRelationship() != null && other.getRelationship().equals(this.getRelationship()) == false)
             return false;
+        if (other.getEndBillingPeriod() == null ^ this.getEndBillingPeriod() == null)
+            return false;
+        if (other.getEndBillingPeriod() != null && other.getEndBillingPeriod().equals(this.getEndBillingPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -189,6 +241,7 @@ public class ListResourcesAssociatedToCustomLineItemResponseElement implements S
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getRelationship() == null) ? 0 : getRelationship().hashCode());
+        hashCode = prime * hashCode + ((getEndBillingPeriod() == null) ? 0 : getEndBillingPeriod().hashCode());
         return hashCode;
     }
 

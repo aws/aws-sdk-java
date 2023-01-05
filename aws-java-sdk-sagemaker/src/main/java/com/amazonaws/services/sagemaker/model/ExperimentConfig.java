@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of an existing experiment to associate the trial component with.
+     * The name of an existing experiment to associate with the trial component.
      * </p>
      */
     private String experimentName;
@@ -65,14 +65,20 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String trialComponentDisplayName;
+    /**
+     * <p>
+     * The name of the experiment run to associate with the trial component.
+     * </p>
+     */
+    private String runName;
 
     /**
      * <p>
-     * The name of an existing experiment to associate the trial component with.
+     * The name of an existing experiment to associate with the trial component.
      * </p>
      * 
      * @param experimentName
-     *        The name of an existing experiment to associate the trial component with.
+     *        The name of an existing experiment to associate with the trial component.
      */
 
     public void setExperimentName(String experimentName) {
@@ -81,10 +87,10 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of an existing experiment to associate the trial component with.
+     * The name of an existing experiment to associate with the trial component.
      * </p>
      * 
-     * @return The name of an existing experiment to associate the trial component with.
+     * @return The name of an existing experiment to associate with the trial component.
      */
 
     public String getExperimentName() {
@@ -93,11 +99,11 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of an existing experiment to associate the trial component with.
+     * The name of an existing experiment to associate with the trial component.
      * </p>
      * 
      * @param experimentName
-     *        The name of an existing experiment to associate the trial component with.
+     *        The name of an existing experiment to associate with the trial component.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,6 +202,46 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The name of the experiment run to associate with the trial component.
+     * </p>
+     * 
+     * @param runName
+     *        The name of the experiment run to associate with the trial component.
+     */
+
+    public void setRunName(String runName) {
+        this.runName = runName;
+    }
+
+    /**
+     * <p>
+     * The name of the experiment run to associate with the trial component.
+     * </p>
+     * 
+     * @return The name of the experiment run to associate with the trial component.
+     */
+
+    public String getRunName() {
+        return this.runName;
+    }
+
+    /**
+     * <p>
+     * The name of the experiment run to associate with the trial component.
+     * </p>
+     * 
+     * @param runName
+     *        The name of the experiment run to associate with the trial component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExperimentConfig withRunName(String runName) {
+        setRunName(runName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -212,7 +258,9 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
         if (getTrialName() != null)
             sb.append("TrialName: ").append(getTrialName()).append(",");
         if (getTrialComponentDisplayName() != null)
-            sb.append("TrialComponentDisplayName: ").append(getTrialComponentDisplayName());
+            sb.append("TrialComponentDisplayName: ").append(getTrialComponentDisplayName()).append(",");
+        if (getRunName() != null)
+            sb.append("RunName: ").append(getRunName());
         sb.append("}");
         return sb.toString();
     }
@@ -239,6 +287,10 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTrialComponentDisplayName() != null && other.getTrialComponentDisplayName().equals(this.getTrialComponentDisplayName()) == false)
             return false;
+        if (other.getRunName() == null ^ this.getRunName() == null)
+            return false;
+        if (other.getRunName() != null && other.getRunName().equals(this.getRunName()) == false)
+            return false;
         return true;
     }
 
@@ -250,6 +302,7 @@ public class ExperimentConfig implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getExperimentName() == null) ? 0 : getExperimentName().hashCode());
         hashCode = prime * hashCode + ((getTrialName() == null) ? 0 : getTrialName().hashCode());
         hashCode = prime * hashCode + ((getTrialComponentDisplayName() == null) ? 0 : getTrialComponentDisplayName().hashCode());
+        hashCode = prime * hashCode + ((getRunName() == null) ? 0 : getRunName().hashCode());
         return hashCode;
     }
 

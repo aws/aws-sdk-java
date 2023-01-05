@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
     private Integer tooNewLogEventStartIndex;
     /**
      * <p>
-     * The log events that are too old.
+     * The log events that are dated too far in the past.
      * </p>
      */
     private Integer tooOldLogEventEndIndex;
@@ -89,11 +89,11 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are too old.
+     * The log events that are dated too far in the past.
      * </p>
      * 
      * @param tooOldLogEventEndIndex
-     *        The log events that are too old.
+     *        The log events that are dated too far in the past.
      */
 
     public void setTooOldLogEventEndIndex(Integer tooOldLogEventEndIndex) {
@@ -102,10 +102,10 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are too old.
+     * The log events that are dated too far in the past.
      * </p>
      * 
-     * @return The log events that are too old.
+     * @return The log events that are dated too far in the past.
      */
 
     public Integer getTooOldLogEventEndIndex() {
@@ -114,11 +114,11 @@ public class RejectedLogEventsInfo implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The log events that are too old.
+     * The log events that are dated too far in the past.
      * </p>
      * 
      * @param tooOldLogEventEndIndex
-     *        The log events that are too old.
+     *        The log events that are dated too far in the past.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

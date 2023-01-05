@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class EnableImageDeprecationRequest extends AmazonWebServiceRequest imple
      * rounds the seconds to the nearest minute.
      * </p>
      * <p>
-     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now.
+     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now, except
+     * for public AMIs, where the upper limit is 2 years from the creation date.
      * </p>
      */
     private java.util.Date deprecateAt;
@@ -91,7 +92,8 @@ public class EnableImageDeprecationRequest extends AmazonWebServiceRequest imple
      * rounds the seconds to the nearest minute.
      * </p>
      * <p>
-     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now.
+     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now, except
+     * for public AMIs, where the upper limit is 2 years from the creation date.
      * </p>
      * 
      * @param deprecateAt
@@ -99,7 +101,8 @@ public class EnableImageDeprecationRequest extends AmazonWebServiceRequest imple
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a value for seconds, Amazon
      *        EC2 rounds the seconds to the nearest minute.</p>
      *        <p>
-     *        You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now.
+     *        You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now,
+     *        except for public AMIs, where the upper limit is 2 years from the creation date.
      */
 
     public void setDeprecateAt(java.util.Date deprecateAt) {
@@ -113,14 +116,16 @@ public class EnableImageDeprecationRequest extends AmazonWebServiceRequest imple
      * rounds the seconds to the nearest minute.
      * </p>
      * <p>
-     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now.
+     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now, except
+     * for public AMIs, where the upper limit is 2 years from the creation date.
      * </p>
      * 
      * @return The date and time to deprecate the AMI, in UTC, in the following format:
      *         <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a value for seconds,
      *         Amazon EC2 rounds the seconds to the nearest minute.</p>
      *         <p>
-     *         You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now.
+     *         You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now,
+     *         except for public AMIs, where the upper limit is 2 years from the creation date.
      */
 
     public java.util.Date getDeprecateAt() {
@@ -134,7 +139,8 @@ public class EnableImageDeprecationRequest extends AmazonWebServiceRequest imple
      * rounds the seconds to the nearest minute.
      * </p>
      * <p>
-     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now.
+     * You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now, except
+     * for public AMIs, where the upper limit is 2 years from the creation date.
      * </p>
      * 
      * @param deprecateAt
@@ -142,7 +148,8 @@ public class EnableImageDeprecationRequest extends AmazonWebServiceRequest imple
      *        <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z. If you specify a value for seconds, Amazon
      *        EC2 rounds the seconds to the nearest minute.</p>
      *        <p>
-     *        You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now.
+     *        You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code> is 10 years from now,
+     *        except for public AMIs, where the upper limit is 2 years from the creation date.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -3211,6 +3211,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Get the position information for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionRequest
      * @return Result of the GetPosition operation returned by the service.
@@ -3229,6 +3236,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public GetPositionResult getPosition(GetPositionRequest request) {
         request = beforeClientExecution(request);
         return executeGetPosition(request);
@@ -3276,6 +3284,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Get position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param getPositionConfigurationRequest
      * @return Result of the GetPositionConfiguration operation returned by the service.
@@ -3294,6 +3309,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetPositionConfigurationResult getPositionConfiguration(GetPositionConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executeGetPositionConfiguration(request);
@@ -3329,6 +3345,72 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
             HttpResponseHandler<AmazonWebServiceResponse<GetPositionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetPositionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get estimated position information as a payload in GeoJSON format. The payload measurement data is resolved using
+     * solvers that are provided by third-party vendors.
+     * </p>
+     * 
+     * @param getPositionEstimateRequest
+     * @return Result of the GetPositionEstimate operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetPositionEstimate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetPositionEstimate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetPositionEstimateResult getPositionEstimate(GetPositionEstimateRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetPositionEstimate(request);
+    }
+
+    @SdkInternalApi
+    final GetPositionEstimateResult executeGetPositionEstimate(GetPositionEstimateRequest getPositionEstimateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getPositionEstimateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetPositionEstimateRequest> request = null;
+        Response<GetPositionEstimateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetPositionEstimateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPositionEstimateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPositionEstimate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetPositionEstimateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetPositionEstimateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3462,6 +3544,72 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<GetResourceLogLevelResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourceLogLevelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get the position information for a given wireless device or a wireless gateway resource. The postion information
+     * uses the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.
+     * </p>
+     * 
+     * @param getResourcePositionRequest
+     * @return Result of the GetResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.GetResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourcePositionResult getResourcePosition(GetResourcePositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourcePosition(request);
+    }
+
+    @SdkInternalApi
+    final GetResourcePositionResult executeGetResourcePosition(GetResourcePositionRequest getResourcePositionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourcePositionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourcePositionRequest> request = null;
+        Response<GetResourcePositionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourcePositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePositionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePosition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourcePositionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(false), new GetResourcePositionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4652,6 +4800,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * List position configurations for a given resource, such as positioning solvers.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to retrieve position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html"
+     * >GetResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param listPositionConfigurationsRequest
      * @return Result of the ListPositionConfigurations operation returned by the service.
@@ -4668,6 +4823,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public ListPositionConfigurationsResult listPositionConfigurations(ListPositionConfigurationsRequest request) {
         request = beforeClientExecution(request);
         return executeListPositionConfigurations(request);
@@ -5102,6 +5258,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Put position configuration for a given resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position configuration should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param putPositionConfigurationRequest
      * @return Result of the PutPositionConfiguration operation returned by the service.
@@ -5120,6 +5283,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public PutPositionConfigurationResult putPositionConfiguration(PutPositionConfigurationRequest request) {
         request = beforeClientExecution(request);
         return executePutPositionConfiguration(request);
@@ -6441,6 +6605,13 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      * <p>
      * Update the position information of a resource.
      * </p>
+     * <important>
+     * <p>
+     * This action is no longer supported. Calls to update the position information should use the <a
+     * href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_UpdateResourcePosition.html"
+     * >UpdateResourcePosition</a> API operation instead.
+     * </p>
+     * </important>
      * 
      * @param updatePositionRequest
      * @return Result of the UpdatePosition operation returned by the service.
@@ -6459,6 +6630,7 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
      *      Documentation</a>
      */
     @Override
+    @Deprecated
     public UpdatePositionResult updatePosition(UpdatePositionRequest request) {
         request = beforeClientExecution(request);
         return executeUpdatePosition(request);
@@ -6562,6 +6734,74 @@ public class AWSIoTWirelessClient extends AmazonWebServiceClient implements AWSI
             HttpResponseHandler<AmazonWebServiceResponse<UpdateResourceEventConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateResourceEventConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the position information of a given wireless device or a wireless gateway resource. The postion
+     * coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic
+     * System (WGS84)</a>.
+     * </p>
+     * 
+     * @param updateResourcePositionRequest
+     * @return Result of the UpdateResourcePosition operation returned by the service.
+     * @throws ValidationException
+     *         The input did not meet the specified constraints.
+     * @throws AccessDeniedException
+     *         User does not have permission to perform this action.
+     * @throws ResourceNotFoundException
+     *         Resource does not exist.
+     * @throws ThrottlingException
+     *         The request was denied because it exceeded the allowed API request rate.
+     * @throws InternalServerException
+     *         An unexpected error occurred while processing a request.
+     * @sample AWSIoTWireless.UpdateResourcePosition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateResourcePosition"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateResourcePositionResult updateResourcePosition(UpdateResourcePositionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateResourcePosition(request);
+    }
+
+    @SdkInternalApi
+    final UpdateResourcePositionResult executeUpdateResourcePosition(UpdateResourcePositionRequest updateResourcePositionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateResourcePositionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateResourcePositionRequest> request = null;
+        Response<UpdateResourcePositionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateResourcePositionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourcePositionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Wireless");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourcePosition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateResourcePositionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateResourcePositionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

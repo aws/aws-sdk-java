@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>RemoveTags</a> </code> operation. Specify the <code>ARN</code> for the
- * domain from which you want to remove the specified <code>TagKey</code>.
+ * Container for the request parameters to the <code>RemoveTags</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,24 +27,24 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>ARN</code> of the domain from which you want to delete the specified tags.
+     * The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.
      * </p>
      */
     private String aRN;
     /**
      * <p>
-     * The <code>TagKey</code> list you want to remove from the domain.
+     * The list of tag keys to remove from the domain.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * The <code>ARN</code> of the domain from which you want to delete the specified tags.
+     * The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.
      * </p>
      * 
      * @param aRN
-     *        The <code>ARN</code> of the domain from which you want to delete the specified tags.
+     *        The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.
      */
 
     public void setARN(String aRN) {
@@ -54,10 +53,10 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>ARN</code> of the domain from which you want to delete the specified tags.
+     * The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.
      * </p>
      * 
-     * @return The <code>ARN</code> of the domain from which you want to delete the specified tags.
+     * @return The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.
      */
 
     public String getARN() {
@@ -66,11 +65,11 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>ARN</code> of the domain from which you want to delete the specified tags.
+     * The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.
      * </p>
      * 
      * @param aRN
-     *        The <code>ARN</code> of the domain from which you want to delete the specified tags.
+     *        The Amazon Resource Name (ARN) of the domain from which you want to delete the specified tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +80,10 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>TagKey</code> list you want to remove from the domain.
+     * The list of tag keys to remove from the domain.
      * </p>
      * 
-     * @return The <code>TagKey</code> list you want to remove from the domain.
+     * @return The list of tag keys to remove from the domain.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -93,11 +92,11 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>TagKey</code> list you want to remove from the domain.
+     * The list of tag keys to remove from the domain.
      * </p>
      * 
      * @param tagKeys
-     *        The <code>TagKey</code> list you want to remove from the domain.
+     *        The list of tag keys to remove from the domain.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -111,7 +110,7 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>TagKey</code> list you want to remove from the domain.
+     * The list of tag keys to remove from the domain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -120,7 +119,7 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tagKeys
-     *        The <code>TagKey</code> list you want to remove from the domain.
+     *        The list of tag keys to remove from the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +135,11 @@ public class RemoveTagsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The <code>TagKey</code> list you want to remove from the domain.
+     * The list of tag keys to remove from the domain.
      * </p>
      * 
      * @param tagKeys
-     *        The <code>TagKey</code> list you want to remove from the domain.
+     *        The list of tag keys to remove from the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private java.util.Date creationTime;
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      */
     private String deploymentStatus;
@@ -78,8 +78,7 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
     private String environmentId;
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      */
     private java.util.Date lastStartTime;
@@ -264,11 +263,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
      * @param deploymentStatus
-     *        Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     *        Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @see ApplicationDeploymentLifecycle
      */
 
@@ -278,10 +277,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
-     * @return Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * @return Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @see ApplicationDeploymentLifecycle
      */
 
@@ -291,11 +290,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
      * @param deploymentStatus
-     *        Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     *        Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationDeploymentLifecycle
      */
@@ -307,11 +306,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     * Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * </p>
      * 
      * @param deploymentStatus
-     *        Indicates whether there is an ongoing deployment or if the application has ever deployed successfully.
+     *        Indicates either an ongoing deployment or if the application has ever deployed successfully.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ApplicationDeploymentLifecycle
      */
@@ -462,13 +461,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
      * @param lastStartTime
-     *        The timestamp when the application was last started. Null until the application has started running for
-     *        the first time.
+     *        The timestamp when you last started the application. Null until the application runs for the first time.
      */
 
     public void setLastStartTime(java.util.Date lastStartTime) {
@@ -477,12 +474,10 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
-     * @return The timestamp when the application was last started. Null until the application has started running for
-     *         the first time.
+     * @return The timestamp when you last started the application. Null until the application runs for the first time.
      */
 
     public java.util.Date getLastStartTime() {
@@ -491,13 +486,11 @@ public class ApplicationSummary implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The timestamp when the application was last started. Null until the application has started running for the first
-     * time.
+     * The timestamp when you last started the application. Null until the application runs for the first time.
      * </p>
      * 
      * @param lastStartTime
-     *        The timestamp when the application was last started. Null until the application has started running for
-     *        the first time.
+     *        The timestamp when you last started the application. Null until the application runs for the first time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

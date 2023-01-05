@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -163,7 +163,27 @@ public enum ResourceType {
     AWSGlobalAcceleratorListener("AWS::GlobalAccelerator::Listener"),
     AWSEC2TransitGatewayAttachment("AWS::EC2::TransitGatewayAttachment"),
     AWSEC2TransitGatewayRouteTable("AWS::EC2::TransitGatewayRouteTable"),
-    AWSDMSCertificate("AWS::DMS::Certificate");
+    AWSDMSCertificate("AWS::DMS::Certificate"),
+    AWSAppConfigApplication("AWS::AppConfig::Application"),
+    AWSAppSyncGraphQLApi("AWS::AppSync::GraphQLApi"),
+    AWSDataSyncLocationSMB("AWS::DataSync::LocationSMB"),
+    AWSDataSyncLocationFSxLustre("AWS::DataSync::LocationFSxLustre"),
+    AWSDataSyncLocationS3("AWS::DataSync::LocationS3"),
+    AWSDataSyncLocationEFS("AWS::DataSync::LocationEFS"),
+    AWSDataSyncTask("AWS::DataSync::Task"),
+    AWSDataSyncLocationNFS("AWS::DataSync::LocationNFS"),
+    AWSEC2NetworkInsightsAccessScopeAnalysis("AWS::EC2::NetworkInsightsAccessScopeAnalysis"),
+    AWSEKSFargateProfile("AWS::EKS::FargateProfile"),
+    AWSGlueJob("AWS::Glue::Job"),
+    AWSGuardDutyThreatIntelSet("AWS::GuardDuty::ThreatIntelSet"),
+    AWSGuardDutyIPSet("AWS::GuardDuty::IPSet"),
+    AWSSageMakerWorkteam("AWS::SageMaker::Workteam"),
+    AWSSageMakerNotebookInstanceLifecycleConfig("AWS::SageMaker::NotebookInstanceLifecycleConfig"),
+    AWSServiceDiscoveryService("AWS::ServiceDiscovery::Service"),
+    AWSServiceDiscoveryPublicDnsNamespace("AWS::ServiceDiscovery::PublicDnsNamespace"),
+    AWSSESContactList("AWS::SES::ContactList"),
+    AWSSESConfigurationSet("AWS::SES::ConfigurationSet"),
+    AWSRoute53HostedZone("AWS::Route53::HostedZone");
 
     private String value;
 

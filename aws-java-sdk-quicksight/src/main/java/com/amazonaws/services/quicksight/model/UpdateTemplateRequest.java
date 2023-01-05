@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,15 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     */
+    private TemplateVersionDefinition definition;
 
     /**
      * <p>
@@ -338,6 +347,61 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a template.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     */
+
+    public void setDefinition(TemplateVersionDefinition definition) {
+        this.definition = definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * 
+     * @return The definition of a template.</p>
+     *         <p>
+     *         A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     */
+
+    public TemplateVersionDefinition getDefinition() {
+        return this.definition;
+    }
+
+    /**
+     * <p>
+     * The definition of a template.
+     * </p>
+     * <p>
+     * A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * </p>
+     * 
+     * @param definition
+     *        The definition of a template.</p>
+     *        <p>
+     *        A definition is the data model of all features in a Dashboard, Template, or Analysis.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateTemplateRequest withDefinition(TemplateVersionDefinition definition) {
+        setDefinition(definition);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +422,9 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getVersionDescription() != null)
             sb.append("VersionDescription: ").append(getVersionDescription()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getDefinition() != null)
+            sb.append("Definition: ").append(getDefinition());
         sb.append("}");
         return sb.toString();
     }
@@ -393,6 +459,10 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getDefinition() == null ^ this.getDefinition() == null)
+            return false;
+        if (other.getDefinition() != null && other.getDefinition().equals(this.getDefinition()) == false)
+            return false;
         return true;
     }
 
@@ -406,6 +476,7 @@ public class UpdateTemplateRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getSourceEntity() == null) ? 0 : getSourceEntity().hashCode());
         hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         return hashCode;
     }
 

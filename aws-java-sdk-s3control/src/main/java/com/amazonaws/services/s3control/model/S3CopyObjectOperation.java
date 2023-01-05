@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
-     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.
      * </p>
      */
     private String targetResource;
@@ -117,12 +118,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
-     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.
      * </p>
      * 
      * @param targetResource
      *        Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
-     *        bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     *        bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to
+     *        <code>arn:aws:s3:::destinationBucket</code>.
      */
 
     public void setTargetResource(String targetResource) {
@@ -132,11 +135,13 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
-     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.
      * </p>
      * 
      * @return Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
-     *         bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     *         bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to
+     *         <code>arn:aws:s3:::destinationBucket</code>.
      */
 
     public String getTargetResource() {
@@ -146,12 +151,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     /**
      * <p>
      * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
-     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * <code>destinationBucket</code>, set the <code>TargetResource</code> property to
+     * <code>arn:aws:s3:::destinationBucket</code>.
      * </p>
      * 
      * @param targetResource
      *        Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
-     *        bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     *        bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property to
+     *        <code>arn:aws:s3:::destinationBucket</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

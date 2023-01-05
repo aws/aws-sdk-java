@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,6 +92,10 @@ public class ServerDetailJsonUnmarshaller implements Unmarshaller<ServerDetail, 
                 if (context.testExpression("recommendationSet", targetDepth)) {
                     context.nextToken();
                     serverDetail.setRecommendationSet(RecommendationSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("serverError", targetDepth)) {
+                    context.nextToken();
+                    serverDetail.setServerError(ServerErrorJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("serverType", targetDepth)) {
                     context.nextToken();

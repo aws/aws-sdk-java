@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether to update the environment during the maintenance window. The default is false. Currently,
-     * Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
+     * Indicates whether to update the runtime environment during the maintenance window. The default is false.
+     * Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
      * <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is
      * provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is
      * set to true.
@@ -37,13 +37,13 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean applyDuringMaintenanceWindow;
     /**
      * <p>
-     * The desired capacity for the environment to update.
+     * The desired capacity for the runtime environment to update.
      * </p>
      */
     private Integer desiredCapacity;
     /**
      * <p>
-     * The version of the runtime engine for the environment.
+     * The version of the runtime engine for the runtime environment.
      * </p>
      */
     private String engineVersion;
@@ -55,13 +55,13 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
     private String environmentId;
     /**
      * <p>
-     * The instance type for the environment to update.
+     * The instance type for the runtime environment to update.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
+     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
      * system-generated value will be assigned.
      * </p>
      */
@@ -69,15 +69,15 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether to update the environment during the maintenance window. The default is false. Currently,
-     * Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
+     * Indicates whether to update the runtime environment during the maintenance window. The default is false.
+     * Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
      * <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is
      * provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is
      * set to true.
      * </p>
      * 
      * @param applyDuringMaintenanceWindow
-     *        Indicates whether to update the environment during the maintenance window. The default is false.
+     *        Indicates whether to update the runtime environment during the maintenance window. The default is false.
      *        Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter
      *        only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than
      *        <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if
@@ -90,14 +90,14 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether to update the environment during the maintenance window. The default is false. Currently,
-     * Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
+     * Indicates whether to update the runtime environment during the maintenance window. The default is false.
+     * Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
      * <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is
      * provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is
      * set to true.
      * </p>
      * 
-     * @return Indicates whether to update the environment during the maintenance window. The default is false.
+     * @return Indicates whether to update the runtime environment during the maintenance window. The default is false.
      *         Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter
      *         only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than
      *         <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if
@@ -110,15 +110,15 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether to update the environment during the maintenance window. The default is false. Currently,
-     * Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
+     * Indicates whether to update the runtime environment during the maintenance window. The default is false.
+     * Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
      * <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is
      * provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is
      * set to true.
      * </p>
      * 
      * @param applyDuringMaintenanceWindow
-     *        Indicates whether to update the environment during the maintenance window. The default is false.
+     *        Indicates whether to update the runtime environment during the maintenance window. The default is false.
      *        Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter
      *        only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than
      *        <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if
@@ -133,14 +133,14 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Indicates whether to update the environment during the maintenance window. The default is false. Currently,
-     * Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
+     * Indicates whether to update the runtime environment during the maintenance window. The default is false.
+     * Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if
      * <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is
      * provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is
      * set to true.
      * </p>
      * 
-     * @return Indicates whether to update the environment during the maintenance window. The default is false.
+     * @return Indicates whether to update the runtime environment during the maintenance window. The default is false.
      *         Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter
      *         only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than
      *         <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if
@@ -153,11 +153,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The desired capacity for the environment to update.
+     * The desired capacity for the runtime environment to update.
      * </p>
      * 
      * @param desiredCapacity
-     *        The desired capacity for the environment to update.
+     *        The desired capacity for the runtime environment to update.
      */
 
     public void setDesiredCapacity(Integer desiredCapacity) {
@@ -166,10 +166,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The desired capacity for the environment to update.
+     * The desired capacity for the runtime environment to update.
      * </p>
      * 
-     * @return The desired capacity for the environment to update.
+     * @return The desired capacity for the runtime environment to update.
      */
 
     public Integer getDesiredCapacity() {
@@ -178,11 +178,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The desired capacity for the environment to update.
+     * The desired capacity for the runtime environment to update.
      * </p>
      * 
      * @param desiredCapacity
-     *        The desired capacity for the environment to update.
+     *        The desired capacity for the runtime environment to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the runtime engine for the environment.
+     * The version of the runtime engine for the runtime environment.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the runtime engine for the environment.
+     *        The version of the runtime engine for the runtime environment.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -206,10 +206,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the runtime engine for the environment.
+     * The version of the runtime engine for the runtime environment.
      * </p>
      * 
-     * @return The version of the runtime engine for the environment.
+     * @return The version of the runtime engine for the runtime environment.
      */
 
     public String getEngineVersion() {
@@ -218,11 +218,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The version of the runtime engine for the environment.
+     * The version of the runtime engine for the runtime environment.
      * </p>
      * 
      * @param engineVersion
-     *        The version of the runtime engine for the environment.
+     *        The version of the runtime engine for the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The instance type for the environment to update.
+     * The instance type for the runtime environment to update.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for the environment to update.
+     *        The instance type for the runtime environment to update.
      */
 
     public void setInstanceType(String instanceType) {
@@ -286,10 +286,10 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The instance type for the environment to update.
+     * The instance type for the runtime environment to update.
      * </p>
      * 
-     * @return The instance type for the environment to update.
+     * @return The instance type for the runtime environment to update.
      */
 
     public String getInstanceType() {
@@ -298,11 +298,11 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The instance type for the environment to update.
+     * The instance type for the runtime environment to update.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for the environment to update.
+     *        The instance type for the runtime environment to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,13 +313,13 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
+     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
      * system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *        system-generated value will be assigned.
+     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
+     *        random system-generated value will be assigned.
      */
 
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
@@ -328,12 +328,12 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
+     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
      * system-generated value will be assigned.
      * </p>
      * 
-     * @return Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *         system-generated value will be assigned.
+     * @return Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
+     *         random system-generated value will be assigned.
      */
 
     public String getPreferredMaintenanceWindow() {
@@ -342,13 +342,13 @@ public class UpdateEnvironmentRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Configures a desired maintenance window for the environment. If you do not provide a value, a random
+     * Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random
      * system-generated value will be assigned.
      * </p>
      * 
      * @param preferredMaintenanceWindow
-     *        Configures a desired maintenance window for the environment. If you do not provide a value, a random
-     *        system-generated value will be assigned.
+     *        Configures the maintenance window you want for the runtime environment. If you do not provide a value, a
+     *        random system-generated value will be assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

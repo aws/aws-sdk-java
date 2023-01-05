@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,18 @@ public class UpdateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private AppMonitorConfiguration appMonitorConfiguration;
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. The default is for
+     * custom events to be <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     */
+    private CustomEvents customEvents;
     /**
      * <p>
      * Data collected by RUM is kept by RUM for 30 days and then deleted. This parameter specifies whether RUM sends a
@@ -127,6 +139,79 @@ public class UpdateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
 
     public UpdateAppMonitorRequest withAppMonitorConfiguration(AppMonitorConfiguration appMonitorConfiguration) {
         setAppMonitorConfiguration(appMonitorConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. The default is for
+     * custom events to be <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @param customEvents
+     *        Specifies whether this app monitor allows the web client to define and send custom events. The default is
+     *        for custom events to be <code>DISABLED</code>.</p>
+     *        <p>
+     *        For more information about custom events, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *        >Send custom events</a>.
+     */
+
+    public void setCustomEvents(CustomEvents customEvents) {
+        this.customEvents = customEvents;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. The default is for
+     * custom events to be <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @return Specifies whether this app monitor allows the web client to define and send custom events. The default is
+     *         for custom events to be <code>DISABLED</code>.</p>
+     *         <p>
+     *         For more information about custom events, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *         >Send custom events</a>.
+     */
+
+    public CustomEvents getCustomEvents() {
+        return this.customEvents;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this app monitor allows the web client to define and send custom events. The default is for
+     * custom events to be <code>DISABLED</code>.
+     * </p>
+     * <p>
+     * For more information about custom events, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html">Send
+     * custom events</a>.
+     * </p>
+     * 
+     * @param customEvents
+     *        Specifies whether this app monitor allows the web client to define and send custom events. The default is
+     *        for custom events to be <code>DISABLED</code>.</p>
+     *        <p>
+     *        For more information about custom events, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-custom-events.html"
+     *        >Send custom events</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppMonitorRequest withCustomEvents(CustomEvents customEvents) {
+        setCustomEvents(customEvents);
         return this;
     }
 
@@ -292,6 +377,8 @@ public class UpdateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getAppMonitorConfiguration() != null)
             sb.append("AppMonitorConfiguration: ").append(getAppMonitorConfiguration()).append(",");
+        if (getCustomEvents() != null)
+            sb.append("CustomEvents: ").append(getCustomEvents()).append(",");
         if (getCwLogEnabled() != null)
             sb.append("CwLogEnabled: ").append(getCwLogEnabled()).append(",");
         if (getDomain() != null)
@@ -316,6 +403,10 @@ public class UpdateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getAppMonitorConfiguration() != null && other.getAppMonitorConfiguration().equals(this.getAppMonitorConfiguration()) == false)
             return false;
+        if (other.getCustomEvents() == null ^ this.getCustomEvents() == null)
+            return false;
+        if (other.getCustomEvents() != null && other.getCustomEvents().equals(this.getCustomEvents()) == false)
+            return false;
         if (other.getCwLogEnabled() == null ^ this.getCwLogEnabled() == null)
             return false;
         if (other.getCwLogEnabled() != null && other.getCwLogEnabled().equals(this.getCwLogEnabled()) == false)
@@ -337,6 +428,7 @@ public class UpdateAppMonitorRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppMonitorConfiguration() == null) ? 0 : getAppMonitorConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getCustomEvents() == null) ? 0 : getCustomEvents().hashCode());
         hashCode = prime * hashCode + ((getCwLogEnabled() == null) ? 0 : getCwLogEnabled().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

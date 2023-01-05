@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,19 +19,42 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Status of the advanced options for the specified domain. Currently, the following advanced options are available:
+ * Status of the advanced options for the specified domain. The following options are available:
  * </p>
  * <ul>
- * <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access
- * to individual sub-resources. By default, the value is <code>true</code>. See <a href=
- * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
- * target="_blank">Advanced cluster parameters </a> for more information.</li>
- * <li>Option to specify the percentage of heap space allocated to field data. By default, this setting is unbounded.</li>
+ * <li>
+ * <p>
+ * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the use of a string rather than a
+ * boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want
+ * to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable
+ * this property. Default is true.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather than a boolean. Specifies the
+ * percentage of heap space allocated to field data. Default is unbounded.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string rather than a boolean.
+ * Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than
+ * the permitted number of clauses result in a <code>TooManyClauses</code> error.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>"override_main_response_version": "true" | "false"</code> - Note the use of a string rather than a boolean.
+ * Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
+ * working with it. Default is false when creating a domain and true when upgrading a domain.
+ * </p>
+ * </li>
  * </ul>
  * <p>
  * For more information, see <a href=
- * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
- * > Advanced cluster parameters</a>.
+ * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+ * >Advanced cluster parameters</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -45,7 +68,7 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable, Structure
     private java.util.Map<String, String> options;
     /**
      * <p>
-     * The <code>OptionStatus</code> for advanced options for the specified domain.
+     * The status of advanced options for the specified domain.
      * </p>
      */
     private OptionStatus status;
@@ -120,11 +143,11 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>OptionStatus</code> for advanced options for the specified domain.
+     * The status of advanced options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The <code>OptionStatus</code> for advanced options for the specified domain.
+     *        The status of advanced options for the specified domain.
      */
 
     public void setStatus(OptionStatus status) {
@@ -133,10 +156,10 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>OptionStatus</code> for advanced options for the specified domain.
+     * The status of advanced options for the specified domain.
      * </p>
      * 
-     * @return The <code>OptionStatus</code> for advanced options for the specified domain.
+     * @return The status of advanced options for the specified domain.
      */
 
     public OptionStatus getStatus() {
@@ -145,11 +168,11 @@ public class AdvancedOptionsStatus implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The <code>OptionStatus</code> for advanced options for the specified domain.
+     * The status of advanced options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The <code>OptionStatus</code> for advanced options for the specified domain.
+     *        The status of advanced options for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

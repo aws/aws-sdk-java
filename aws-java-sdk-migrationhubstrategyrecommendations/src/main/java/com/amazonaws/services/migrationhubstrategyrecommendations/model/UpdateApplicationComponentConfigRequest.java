@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,10 +28,24 @@ public class UpdateApplicationComponentConfigRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
+     * The type of known component.
+     * </p>
+     */
+    private String appType;
+    /**
+     * <p>
      * The ID of the application component. The ID is unique within an AWS account.
      * </p>
      */
     private String applicationComponentId;
+    /**
+     * <p>
+     * Update the configuration request of an application component. If it is set to true, the source code and/or
+     * database credentials are updated. If it is set to false, the source code and/or database credentials are updated
+     * and an analysis is initiated.
+     * </p>
+     */
+    private Boolean configureOnly;
     /**
      * <p>
      * Indicates whether the application component has been included for server recommendation or not.
@@ -57,6 +71,65 @@ public class UpdateApplicationComponentConfigRequest extends com.amazonaws.Amazo
      * </p>
      */
     private StrategyOption strategyOption;
+
+    /**
+     * <p>
+     * The type of known component.
+     * </p>
+     * 
+     * @param appType
+     *        The type of known component.
+     * @see AppType
+     */
+
+    public void setAppType(String appType) {
+        this.appType = appType;
+    }
+
+    /**
+     * <p>
+     * The type of known component.
+     * </p>
+     * 
+     * @return The type of known component.
+     * @see AppType
+     */
+
+    public String getAppType() {
+        return this.appType;
+    }
+
+    /**
+     * <p>
+     * The type of known component.
+     * </p>
+     * 
+     * @param appType
+     *        The type of known component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppType
+     */
+
+    public UpdateApplicationComponentConfigRequest withAppType(String appType) {
+        setAppType(appType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of known component.
+     * </p>
+     * 
+     * @param appType
+     *        The type of known component.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppType
+     */
+
+    public UpdateApplicationComponentConfigRequest withAppType(AppType appType) {
+        this.appType = appType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -96,6 +169,74 @@ public class UpdateApplicationComponentConfigRequest extends com.amazonaws.Amazo
     public UpdateApplicationComponentConfigRequest withApplicationComponentId(String applicationComponentId) {
         setApplicationComponentId(applicationComponentId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Update the configuration request of an application component. If it is set to true, the source code and/or
+     * database credentials are updated. If it is set to false, the source code and/or database credentials are updated
+     * and an analysis is initiated.
+     * </p>
+     * 
+     * @param configureOnly
+     *        Update the configuration request of an application component. If it is set to true, the source code and/or
+     *        database credentials are updated. If it is set to false, the source code and/or database credentials are
+     *        updated and an analysis is initiated.
+     */
+
+    public void setConfigureOnly(Boolean configureOnly) {
+        this.configureOnly = configureOnly;
+    }
+
+    /**
+     * <p>
+     * Update the configuration request of an application component. If it is set to true, the source code and/or
+     * database credentials are updated. If it is set to false, the source code and/or database credentials are updated
+     * and an analysis is initiated.
+     * </p>
+     * 
+     * @return Update the configuration request of an application component. If it is set to true, the source code
+     *         and/or database credentials are updated. If it is set to false, the source code and/or database
+     *         credentials are updated and an analysis is initiated.
+     */
+
+    public Boolean getConfigureOnly() {
+        return this.configureOnly;
+    }
+
+    /**
+     * <p>
+     * Update the configuration request of an application component. If it is set to true, the source code and/or
+     * database credentials are updated. If it is set to false, the source code and/or database credentials are updated
+     * and an analysis is initiated.
+     * </p>
+     * 
+     * @param configureOnly
+     *        Update the configuration request of an application component. If it is set to true, the source code and/or
+     *        database credentials are updated. If it is set to false, the source code and/or database credentials are
+     *        updated and an analysis is initiated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationComponentConfigRequest withConfigureOnly(Boolean configureOnly) {
+        setConfigureOnly(configureOnly);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Update the configuration request of an application component. If it is set to true, the source code and/or
+     * database credentials are updated. If it is set to false, the source code and/or database credentials are updated
+     * and an analysis is initiated.
+     * </p>
+     * 
+     * @return Update the configuration request of an application component. If it is set to true, the source code
+     *         and/or database credentials are updated. If it is set to false, the source code and/or database
+     *         credentials are updated and an analysis is initiated.
+     */
+
+    public Boolean isConfigureOnly() {
+        return this.configureOnly;
     }
 
     /**
@@ -325,8 +466,12 @@ public class UpdateApplicationComponentConfigRequest extends com.amazonaws.Amazo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAppType() != null)
+            sb.append("AppType: ").append(getAppType()).append(",");
         if (getApplicationComponentId() != null)
             sb.append("ApplicationComponentId: ").append(getApplicationComponentId()).append(",");
+        if (getConfigureOnly() != null)
+            sb.append("ConfigureOnly: ").append(getConfigureOnly()).append(",");
         if (getInclusionStatus() != null)
             sb.append("InclusionStatus: ").append(getInclusionStatus()).append(",");
         if (getSecretsManagerKey() != null)
@@ -349,9 +494,17 @@ public class UpdateApplicationComponentConfigRequest extends com.amazonaws.Amazo
         if (obj instanceof UpdateApplicationComponentConfigRequest == false)
             return false;
         UpdateApplicationComponentConfigRequest other = (UpdateApplicationComponentConfigRequest) obj;
+        if (other.getAppType() == null ^ this.getAppType() == null)
+            return false;
+        if (other.getAppType() != null && other.getAppType().equals(this.getAppType()) == false)
+            return false;
         if (other.getApplicationComponentId() == null ^ this.getApplicationComponentId() == null)
             return false;
         if (other.getApplicationComponentId() != null && other.getApplicationComponentId().equals(this.getApplicationComponentId()) == false)
+            return false;
+        if (other.getConfigureOnly() == null ^ this.getConfigureOnly() == null)
+            return false;
+        if (other.getConfigureOnly() != null && other.getConfigureOnly().equals(this.getConfigureOnly()) == false)
             return false;
         if (other.getInclusionStatus() == null ^ this.getInclusionStatus() == null)
             return false;
@@ -377,7 +530,9 @@ public class UpdateApplicationComponentConfigRequest extends com.amazonaws.Amazo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAppType() == null) ? 0 : getAppType().hashCode());
         hashCode = prime * hashCode + ((getApplicationComponentId() == null) ? 0 : getApplicationComponentId().hashCode());
+        hashCode = prime * hashCode + ((getConfigureOnly() == null) ? 0 : getConfigureOnly().hashCode());
         hashCode = prime * hashCode + ((getInclusionStatus() == null) ? 0 : getInclusionStatus().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerKey() == null) ? 0 : getSecretsManagerKey().hashCode());
         hashCode = prime * hashCode + ((getSourceCodeList() == null) ? 0 : getSourceCodeList().hashCode());

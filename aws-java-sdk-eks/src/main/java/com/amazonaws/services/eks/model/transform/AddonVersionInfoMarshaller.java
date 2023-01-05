@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class AddonVersionInfoMarshaller {
             .marshallLocationName("architecture").build();
     private static final MarshallingInfo<List> COMPATIBILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("compatibilities").build();
+    private static final MarshallingInfo<Boolean> REQUIRESCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requiresConfiguration").build();
 
     private static final AddonVersionInfoMarshaller instance = new AddonVersionInfoMarshaller();
 
@@ -54,6 +56,7 @@ public class AddonVersionInfoMarshaller {
             protocolMarshaller.marshall(addonVersionInfo.getAddonVersion(), ADDONVERSION_BINDING);
             protocolMarshaller.marshall(addonVersionInfo.getArchitecture(), ARCHITECTURE_BINDING);
             protocolMarshaller.marshall(addonVersionInfo.getCompatibilities(), COMPATIBILITIES_BINDING);
+            protocolMarshaller.marshall(addonVersionInfo.getRequiresConfiguration(), REQUIRESCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

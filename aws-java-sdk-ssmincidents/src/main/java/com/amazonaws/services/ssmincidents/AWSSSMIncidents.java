@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -485,9 +485,9 @@ public interface AWSSSMIncidents {
     /**
      * <p>
      * Adds a resource policy to the specified response plan. The resource policy is used to share the response plan
-     * using Resource Access Manager (RAM). For more information about cross-account sharing, see <a
-     * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting up cross-account
-     * functionality</a>.
+     * using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href=
+     * "https://docs.aws.amazon.com/incident-manager/latest/userguide/incident-manager-cross-account-cross-region.html"
+     * >Cross-Region and cross-account incident management</a>.
      * </p>
      * 
      * @param putResourcePolicyRequest

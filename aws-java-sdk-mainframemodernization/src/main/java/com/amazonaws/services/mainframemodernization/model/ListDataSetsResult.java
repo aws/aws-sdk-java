@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListDataSetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of data sets, containing ionformation including the creating time, the data set name, the data set
+     * The list of data sets, containing information including the creation time, the data set name, the data set
      * organization, the data set format, and the last time the data set was referenced or updated.
      * </p>
      */
@@ -40,11 +40,11 @@ public class ListDataSetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of data sets, containing ionformation including the creating time, the data set name, the data set
+     * The list of data sets, containing information including the creation time, the data set name, the data set
      * organization, the data set format, and the last time the data set was referenced or updated.
      * </p>
      * 
-     * @return The list of data sets, containing ionformation including the creating time, the data set name, the data
+     * @return The list of data sets, containing information including the creation time, the data set name, the data
      *         set organization, the data set format, and the last time the data set was referenced or updated.
      */
 
@@ -54,13 +54,13 @@ public class ListDataSetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of data sets, containing ionformation including the creating time, the data set name, the data set
+     * The list of data sets, containing information including the creation time, the data set name, the data set
      * organization, the data set format, and the last time the data set was referenced or updated.
      * </p>
      * 
      * @param dataSets
-     *        The list of data sets, containing ionformation including the creating time, the data set name, the data
-     *        set organization, the data set format, and the last time the data set was referenced or updated.
+     *        The list of data sets, containing information including the creation time, the data set name, the data set
+     *        organization, the data set format, and the last time the data set was referenced or updated.
      */
 
     public void setDataSets(java.util.Collection<DataSetSummary> dataSets) {
@@ -74,7 +74,7 @@ public class ListDataSetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of data sets, containing ionformation including the creating time, the data set name, the data set
+     * The list of data sets, containing information including the creation time, the data set name, the data set
      * organization, the data set format, and the last time the data set was referenced or updated.
      * </p>
      * <p>
@@ -84,8 +84,8 @@ public class ListDataSetsResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * 
      * @param dataSets
-     *        The list of data sets, containing ionformation including the creating time, the data set name, the data
-     *        set organization, the data set format, and the last time the data set was referenced or updated.
+     *        The list of data sets, containing information including the creation time, the data set name, the data set
+     *        organization, the data set format, and the last time the data set was referenced or updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +101,13 @@ public class ListDataSetsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The list of data sets, containing ionformation including the creating time, the data set name, the data set
+     * The list of data sets, containing information including the creation time, the data set name, the data set
      * organization, the data set format, and the last time the data set was referenced or updated.
      * </p>
      * 
      * @param dataSets
-     *        The list of data sets, containing ionformation including the creating time, the data set name, the data
-     *        set organization, the data set format, and the last time the data set was referenced or updated.
+     *        The list of data sets, containing information including the creation time, the data set name, the data set
+     *        organization, the data set format, and the last time the data set was referenced or updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

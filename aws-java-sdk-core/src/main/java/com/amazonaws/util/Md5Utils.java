@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2022 Amazon Technologies, Inc.
+ * Copyright 2012-2023 Amazon Technologies, Inc.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.

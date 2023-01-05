@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,9 +102,34 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
     private String severity;
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insights</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String opsItemType;
     /**
@@ -664,13 +689,62 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insights</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param opsItemType
-     *        The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     *        <code>/aws/issue</code>.
+     *        The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/aws/issue</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used for default OpsItems created by OpsCenter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/changerequest</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/insights</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     *        </p>
+     *        </li>
      */
 
     public void setOpsItemType(String opsItemType) {
@@ -679,12 +753,61 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insights</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     *         <code>/aws/issue</code>.
+     * @return The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/aws/issue</code>
+     *         </p>
+     *         <p>
+     *         This type of OpsItem is used for default OpsItems created by OpsCenter.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/aws/changerequest</code>
+     *         </p>
+     *         <p>
+     *         This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/aws/insights</code>
+     *         </p>
+     *         <p>
+     *         This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     *         </p>
+     *         </li>
      */
 
     public String getOpsItemType() {
@@ -693,13 +816,62 @@ public class OpsItemSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     * <code>/aws/issue</code>.
+     * The type of OpsItem. Systems Manager supports the following types of OpsItems:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>/aws/issue</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used for default OpsItems created by OpsCenter.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/changerequest</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/aws/insights</code>
+     * </p>
+     * <p>
+     * This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param opsItemType
-     *        The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code> and
-     *        <code>/aws/issue</code>.
+     *        The type of OpsItem. Systems Manager supports the following types of OpsItems:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/aws/issue</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used for default OpsItems created by OpsCenter.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/changerequest</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by Change Manager for reviewing and approving or rejecting change requests.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/aws/insights</code>
+     *        </p>
+     *        <p>
+     *        This type of OpsItem is used by OpsCenter for aggregating and reporting on duplicate OpsItems.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class UpdateHostKeyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Returns the server ID for the server that contains the updated host key.
+     * Returns the server identifier for the server that contains the updated host key.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * Returns the host key ID for the updated host key.
+     * Returns the host key identifier for the updated host key.
      * </p>
      */
     private String hostKeyId;
 
     /**
      * <p>
-     * Returns the server ID for the server that contains the updated host key.
+     * Returns the server identifier for the server that contains the updated host key.
      * </p>
      * 
      * @param serverId
-     *        Returns the server ID for the server that contains the updated host key.
+     *        Returns the server identifier for the server that contains the updated host key.
      */
 
     public void setServerId(String serverId) {
@@ -51,10 +51,10 @@ public class UpdateHostKeyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Returns the server ID for the server that contains the updated host key.
+     * Returns the server identifier for the server that contains the updated host key.
      * </p>
      * 
-     * @return Returns the server ID for the server that contains the updated host key.
+     * @return Returns the server identifier for the server that contains the updated host key.
      */
 
     public String getServerId() {
@@ -63,11 +63,11 @@ public class UpdateHostKeyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Returns the server ID for the server that contains the updated host key.
+     * Returns the server identifier for the server that contains the updated host key.
      * </p>
      * 
      * @param serverId
-     *        Returns the server ID for the server that contains the updated host key.
+     *        Returns the server identifier for the server that contains the updated host key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class UpdateHostKeyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Returns the host key ID for the updated host key.
+     * Returns the host key identifier for the updated host key.
      * </p>
      * 
      * @param hostKeyId
-     *        Returns the host key ID for the updated host key.
+     *        Returns the host key identifier for the updated host key.
      */
 
     public void setHostKeyId(String hostKeyId) {
@@ -91,10 +91,10 @@ public class UpdateHostKeyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Returns the host key ID for the updated host key.
+     * Returns the host key identifier for the updated host key.
      * </p>
      * 
-     * @return Returns the host key ID for the updated host key.
+     * @return Returns the host key identifier for the updated host key.
      */
 
     public String getHostKeyId() {
@@ -103,11 +103,11 @@ public class UpdateHostKeyResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * Returns the host key ID for the updated host key.
+     * Returns the host key identifier for the updated host key.
      * </p>
      * 
      * @param hostKeyId
-     *        Returns the host key ID for the updated host key.
+     *        Returns the host key identifier for the updated host key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

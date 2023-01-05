@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -145,6 +145,10 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
                     continue;
                 }
 
+                if (context.testExpression("CopyableCrossAccount", targetDepth)) {
+                    optionGroupOption.setCopyableCrossAccount(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionGroupOption;

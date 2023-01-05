@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,7 @@ import com.amazonaws.services.macie2.waiters.AmazonMacie2Waiters;
  * </p>
  * <p>
  * <p>
- * Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern
- * matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as
- * PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie
- * also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects
- * sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as
- * necessary.
+ * Amazon Macie
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -55,7 +50,7 @@ public interface AmazonMacie2 {
      * @param acceptInvitationRequest
      * @return Result of the AcceptInvitation operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -83,7 +78,7 @@ public interface AmazonMacie2 {
      * @param batchGetCustomDataIdentifiersRequest
      * @return Result of the BatchGetCustomDataIdentifiers operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -111,7 +106,7 @@ public interface AmazonMacie2 {
      * @param createAllowListRequest
      * @return Result of the CreateAllowList operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -139,7 +134,7 @@ public interface AmazonMacie2 {
      * @param createClassificationJobRequest
      * @return Result of the CreateClassificationJob operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -167,7 +162,7 @@ public interface AmazonMacie2 {
      * @param createCustomDataIdentifierRequest
      * @return Result of the CreateCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -195,7 +190,7 @@ public interface AmazonMacie2 {
      * @param createFindingsFilterRequest
      * @return Result of the CreateFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -223,7 +218,7 @@ public interface AmazonMacie2 {
      * @param createInvitationsRequest
      * @return Result of the CreateInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -251,7 +246,7 @@ public interface AmazonMacie2 {
      * @param createMemberRequest
      * @return Result of the CreateMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -279,7 +274,7 @@ public interface AmazonMacie2 {
      * @param createSampleFindingsRequest
      * @return Result of the CreateSampleFindings operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -307,7 +302,7 @@ public interface AmazonMacie2 {
      * @param declineInvitationsRequest
      * @return Result of the DeclineInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -339,7 +334,7 @@ public interface AmazonMacie2 {
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -358,7 +353,7 @@ public interface AmazonMacie2 {
      * @param deleteCustomDataIdentifierRequest
      * @return Result of the DeleteCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -386,7 +381,7 @@ public interface AmazonMacie2 {
      * @param deleteFindingsFilterRequest
      * @return Result of the DeleteFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -414,7 +409,7 @@ public interface AmazonMacie2 {
      * @param deleteInvitationsRequest
      * @return Result of the DeleteInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -442,7 +437,7 @@ public interface AmazonMacie2 {
      * @param deleteMemberRequest
      * @return Result of the DeleteMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -465,13 +460,13 @@ public interface AmazonMacie2 {
     /**
      * <p>
      * Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie
-     * monitors and analyzes.
+     * monitors and analyzes for an account.
      * </p>
      * 
      * @param describeBucketsRequest
      * @return Result of the DescribeBuckets operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -499,7 +494,7 @@ public interface AmazonMacie2 {
      * @param describeClassificationJobRequest
      * @return Result of the DescribeClassificationJob operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -527,7 +522,7 @@ public interface AmazonMacie2 {
      * @param describeOrganizationConfigurationRequest
      * @return Result of the DescribeOrganizationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -555,7 +550,7 @@ public interface AmazonMacie2 {
      * @param disableMacieRequest
      * @return Result of the DisableMacie operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -583,7 +578,7 @@ public interface AmazonMacie2 {
      * @param disableOrganizationAdminAccountRequest
      * @return Result of the DisableOrganizationAdminAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -611,7 +606,7 @@ public interface AmazonMacie2 {
      * @param disassociateFromAdministratorAccountRequest
      * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -642,7 +637,7 @@ public interface AmazonMacie2 {
      * @param disassociateFromMasterAccountRequest
      * @return Result of the DisassociateFromMasterAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -670,7 +665,7 @@ public interface AmazonMacie2 {
      * @param disassociateMemberRequest
      * @return Result of the DisassociateMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -698,7 +693,7 @@ public interface AmazonMacie2 {
      * @param enableMacieRequest
      * @return Result of the EnableMacie operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -726,7 +721,7 @@ public interface AmazonMacie2 {
      * @param enableOrganizationAdminAccountRequest
      * @return Result of the EnableOrganizationAdminAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -754,7 +749,7 @@ public interface AmazonMacie2 {
      * @param getAdministratorAccountRequest
      * @return Result of the GetAdministratorAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -786,7 +781,7 @@ public interface AmazonMacie2 {
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -799,13 +794,36 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie monitors and analyzes.
+     * Retrieves the configuration settings and status of automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param getAutomatedDiscoveryConfigurationRequest
+     * @return Result of the GetAutomatedDiscoveryConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.GetAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAutomatedDiscoveryConfigurationResult getAutomatedDiscoveryConfiguration(
+            GetAutomatedDiscoveryConfigurationRequest getAutomatedDiscoveryConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon Macie monitors and analyzes
+     * for an account.
      * </p>
      * 
      * @param getBucketStatisticsRequest
      * @return Result of the GetBucketStatistics operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -833,7 +851,7 @@ public interface AmazonMacie2 {
      * @param getClassificationExportConfigurationRequest
      * @return Result of the GetClassificationExportConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -856,13 +874,36 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves the classification scope settings for an account.
+     * </p>
+     * 
+     * @param getClassificationScopeRequest
+     * @return Result of the GetClassificationScope operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.GetClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetClassificationScopeResult getClassificationScope(GetClassificationScopeRequest getClassificationScopeRequest);
+
+    /**
+     * <p>
      * Retrieves the criteria and other settings for a custom data identifier.
      * </p>
      * 
      * @param getCustomDataIdentifierRequest
      * @return Result of the GetCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -890,7 +931,7 @@ public interface AmazonMacie2 {
      * @param getFindingStatisticsRequest
      * @return Result of the GetFindingStatistics operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -918,7 +959,7 @@ public interface AmazonMacie2 {
      * @param getFindingsRequest
      * @return Result of the GetFindings operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -946,7 +987,7 @@ public interface AmazonMacie2 {
      * @param getFindingsFilterRequest
      * @return Result of the GetFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -974,7 +1015,7 @@ public interface AmazonMacie2 {
      * @param getFindingsPublicationConfigurationRequest
      * @return Result of the GetFindingsPublicationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1003,7 +1044,7 @@ public interface AmazonMacie2 {
      * @param getInvitationsCountRequest
      * @return Result of the GetInvitationsCount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1025,13 +1066,13 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
      * @return Result of the GetMacieSession operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1060,7 +1101,7 @@ public interface AmazonMacie2 {
      * @param getMasterAccountRequest
      * @return Result of the GetMasterAccount operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1088,7 +1129,7 @@ public interface AmazonMacie2 {
      * @param getMemberRequest
      * @return Result of the GetMember operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1110,6 +1151,32 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves (queries) sensitive data discovery statistics and the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param getResourceProfileRequest
+     * @return Result of the GetResourceProfile operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.GetResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetResourceProfileResult getResourceProfile(GetResourceProfileRequest getResourceProfileRequest);
+
+    /**
+     * <p>
      * Retrieves the status and configuration settings for retrieving occurrences of sensitive data reported by
      * findings.
      * </p>
@@ -1119,7 +1186,7 @@ public interface AmazonMacie2 {
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -1181,13 +1248,36 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param getSensitivityInspectionTemplateRequest
+     * @return Result of the GetSensitivityInspectionTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.GetSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetSensitivityInspectionTemplateResult getSensitivityInspectionTemplate(GetSensitivityInspectionTemplateRequest getSensitivityInspectionTemplateRequest);
+
+    /**
+     * <p>
      * Retrieves (queries) quotas and aggregated usage data for one or more accounts.
      * </p>
      * 
      * @param getUsageStatisticsRequest
      * @return Result of the GetUsageStatistics operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1215,7 +1305,7 @@ public interface AmazonMacie2 {
      * @param getUsageTotalsRequest
      * @return Result of the GetUsageTotals operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1245,7 +1335,7 @@ public interface AmazonMacie2 {
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -1264,7 +1354,7 @@ public interface AmazonMacie2 {
      * @param listClassificationJobsRequest
      * @return Result of the ListClassificationJobs operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1286,13 +1376,34 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Retrieves a subset of information about the classification scope for an account.
+     * </p>
+     * 
+     * @param listClassificationScopesRequest
+     * @return Result of the ListClassificationScopes operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.ListClassificationScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListClassificationScopesResult listClassificationScopes(ListClassificationScopesRequest listClassificationScopesRequest);
+
+    /**
+     * <p>
      * Retrieves a subset of information about all the custom data identifiers for an account.
      * </p>
      * 
      * @param listCustomDataIdentifiersRequest
      * @return Result of the ListCustomDataIdentifiers operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1320,7 +1431,7 @@ public interface AmazonMacie2 {
      * @param listFindingsRequest
      * @return Result of the ListFindings operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1348,7 +1459,7 @@ public interface AmazonMacie2 {
      * @param listFindingsFiltersRequest
      * @return Result of the ListFindingsFilters operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1376,7 +1487,7 @@ public interface AmazonMacie2 {
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1417,7 +1528,7 @@ public interface AmazonMacie2 {
      * @param listMembersRequest
      * @return Result of the ListMembers operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1446,7 +1557,7 @@ public interface AmazonMacie2 {
      * @param listOrganizationAdminAccountsRequest
      * @return Result of the ListOrganizationAdminAccounts operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1465,6 +1576,80 @@ public interface AmazonMacie2 {
      *      target="_top">AWS API Documentation</a>
      */
     ListOrganizationAdminAccountsResult listOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about objects that were selected from an S3 bucket for automated sensitive data discovery.
+     * </p>
+     * 
+     * @param listResourceProfileArtifactsRequest
+     * @return Result of the ListResourceProfileArtifacts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.ListResourceProfileArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourceProfileArtifactsResult listResourceProfileArtifacts(ListResourceProfileArtifactsRequest listResourceProfileArtifactsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.
+     * </p>
+     * 
+     * @param listResourceProfileDetectionsRequest
+     * @return Result of the ListResourceProfileDetections operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.ListResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListResourceProfileDetectionsResult listResourceProfileDetections(ListResourceProfileDetectionsRequest listResourceProfileDetectionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a subset of information about the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param listSensitivityInspectionTemplatesRequest
+     * @return Result of the ListSensitivityInspectionTemplates operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.ListSensitivityInspectionTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListSensitivityInspectionTemplatesResult listSensitivityInspectionTemplates(
+            ListSensitivityInspectionTemplatesRequest listSensitivityInspectionTemplatesRequest);
 
     /**
      * <p>
@@ -1487,7 +1672,7 @@ public interface AmazonMacie2 {
      * @param putClassificationExportConfigurationRequest
      * @return Result of the PutClassificationExportConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1516,7 +1701,7 @@ public interface AmazonMacie2 {
      * @param putFindingsPublicationConfigurationRequest
      * @return Result of the PutFindingsPublicationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1546,7 +1731,7 @@ public interface AmazonMacie2 {
      * @param searchResourcesRequest
      * @return Result of the SearchResources operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1587,7 +1772,7 @@ public interface AmazonMacie2 {
      * @param testCustomDataIdentifierRequest
      * @return Result of the TestCustomDataIdentifier operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1632,7 +1817,7 @@ public interface AmazonMacie2 {
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -1645,13 +1830,35 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Enables or disables automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param updateAutomatedDiscoveryConfigurationRequest
+     * @return Result of the UpdateAutomatedDiscoveryConfiguration operation returned by the service.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.UpdateAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateAutomatedDiscoveryConfigurationResult updateAutomatedDiscoveryConfiguration(
+            UpdateAutomatedDiscoveryConfigurationRequest updateAutomatedDiscoveryConfigurationRequest);
+
+    /**
+     * <p>
      * Changes the status of a classification job.
      * </p>
      * 
      * @param updateClassificationJobRequest
      * @return Result of the UpdateClassificationJob operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1673,13 +1880,36 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Updates the classification scope settings for an account.
+     * </p>
+     * 
+     * @param updateClassificationScopeRequest
+     * @return Result of the UpdateClassificationScope operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.UpdateClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateClassificationScopeResult updateClassificationScope(UpdateClassificationScopeRequest updateClassificationScopeRequest);
+
+    /**
+     * <p>
      * Updates the criteria and other settings for a findings filter.
      * </p>
      * 
      * @param updateFindingsFilterRequest
      * @return Result of the UpdateFindingsFilter operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1707,7 +1937,7 @@ public interface AmazonMacie2 {
      * @param updateMacieSessionRequest
      * @return Result of the UpdateMacieSession operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1735,7 +1965,7 @@ public interface AmazonMacie2 {
      * @param updateMemberSessionRequest
      * @return Result of the UpdateMemberSession operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1763,7 +1993,7 @@ public interface AmazonMacie2 {
      * @param updateOrganizationConfigurationRequest
      * @return Result of the UpdateOrganizationConfiguration operation returned by the service.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws ServiceQuotaExceededException
@@ -1785,6 +2015,58 @@ public interface AmazonMacie2 {
 
     /**
      * <p>
+     * Updates the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileRequest
+     * @return Result of the UpdateResourceProfile operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.UpdateResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateResourceProfileResult updateResourceProfile(UpdateResourceProfileRequest updateResourceProfileRequest);
+
+    /**
+     * <p>
+     * Updates the sensitivity scoring settings for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileDetectionsRequest
+     * @return Result of the UpdateResourceProfileDetections operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @sample AmazonMacie2.UpdateResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateResourceProfileDetectionsResult updateResourceProfileDetections(UpdateResourceProfileDetectionsRequest updateResourceProfileDetectionsRequest);
+
+    /**
+     * <p>
      * Updates the status and configuration settings for retrieving occurrences of sensitive data reported by findings.
      * </p>
      * 
@@ -1793,7 +2075,7 @@ public interface AmazonMacie2 {
      * @throws ThrottlingException
      *         The request failed because you sent too many requests during a certain amount of time.
      * @throws ValidationException
-     *         The request failed because it contains a syntax error.
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
      * @throws InternalServerException
      *         The request failed due to an unknown internal server error, exception, or failure.
      * @throws AccessDeniedException
@@ -1803,6 +2085,30 @@ public interface AmazonMacie2 {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateRevealConfigurationResult updateRevealConfiguration(UpdateRevealConfigurationRequest updateRevealConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param updateSensitivityInspectionTemplateRequest
+     * @return Result of the UpdateSensitivityInspectionTemplate operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ValidationException
+     *         The request failed because the input doesn't satisfy the constraints specified by the service.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @sample AmazonMacie2.UpdateSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSensitivityInspectionTemplateResult updateSensitivityInspectionTemplate(
+            UpdateSensitivityInspectionTemplateRequest updateSensitivityInspectionTemplateRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

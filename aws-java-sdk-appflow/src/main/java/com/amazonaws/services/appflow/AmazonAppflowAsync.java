@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -561,8 +561,8 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
 
     /**
      * <p>
-     * Registers a new connector with your Amazon Web Services account. Before you can register the connector, you must
-     * deploy lambda in your account.
+     * Registers a new custom connector with your Amazon Web Services account. Before you can register the connector,
+     * you must deploy the associated AWS lambda function in your account.
      * </p>
      * 
      * @param registerConnectorRequest
@@ -575,8 +575,8 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
 
     /**
      * <p>
-     * Registers a new connector with your Amazon Web Services account. Before you can register the connector, you must
-     * deploy lambda in your account.
+     * Registers a new custom connector with your Amazon Web Services account. Before you can register the connector,
+     * you must deploy the associated AWS lambda function in your account.
      * </p>
      * 
      * @param registerConnectorRequest
@@ -693,7 +693,7 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
 
     /**
      * <p>
-     * Unregisters the custom connector registered in your account that matches the connectorLabel provided in the
+     * Unregisters the custom connector registered in your account that matches the connector label provided in the
      * request.
      * </p>
      * 
@@ -707,7 +707,7 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
 
     /**
      * <p>
-     * Unregisters the custom connector registered in your account that matches the connectorLabel provided in the
+     * Unregisters the custom connector registered in your account that matches the connector label provided in the
      * request.
      * </p>
      * 
@@ -785,6 +785,65 @@ public interface AmazonAppflowAsync extends AmazonAppflow {
      */
     java.util.concurrent.Future<UpdateConnectorProfileResult> updateConnectorProfileAsync(UpdateConnectorProfileRequest updateConnectorProfileRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConnectorProfileRequest, UpdateConnectorProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a custom connector that you've previously registered. This operation updates the connector with one of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The latest version of the AWS Lambda function that's assigned to the connector
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new AWS Lambda function that you specify
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateConnectorRegistrationRequest
+     * @return A Java Future containing the result of the UpdateConnectorRegistration operation returned by the service.
+     * @sample AmazonAppflowAsync.UpdateConnectorRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectorRegistrationResult> updateConnectorRegistrationAsync(
+            UpdateConnectorRegistrationRequest updateConnectorRegistrationRequest);
+
+    /**
+     * <p>
+     * Updates a custom connector that you've previously registered. This operation updates the connector with one of
+     * the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The latest version of the AWS Lambda function that's assigned to the connector
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new AWS Lambda function that you specify
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateConnectorRegistrationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConnectorRegistration operation returned by the service.
+     * @sample AmazonAppflowAsyncHandler.UpdateConnectorRegistration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/UpdateConnectorRegistration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectorRegistrationResult> updateConnectorRegistrationAsync(
+            UpdateConnectorRegistrationRequest updateConnectorRegistrationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectorRegistrationRequest, UpdateConnectorRegistrationResult> asyncHandler);
 
     /**
      * <p>

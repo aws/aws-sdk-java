@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -808,6 +808,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(ReverseReplicationRequest request) {
+
+        return reverseReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(final ReverseReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ReverseReplicationRequest, ReverseReplicationResult> asyncHandler) {
+        final ReverseReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ReverseReplicationResult>() {
+            @Override
+            public ReverseReplicationResult call() throws Exception {
+                ReverseReplicationResult result = null;
+
+                try {
+                    result = executeReverseReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFailbackLaunchResult> startFailbackLaunchAsync(StartFailbackLaunchRequest request) {
 
         return startFailbackLaunchAsync(request, null);
@@ -874,6 +907,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request) {
+
+        return startReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(final StartReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartReplicationRequest, StartReplicationResult> asyncHandler) {
+        final StartReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartReplicationResult>() {
+            @Override
+            public StartReplicationResult call() throws Exception {
+                StartReplicationResult result = null;
+
+                try {
+                    result = executeStartReplication(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StopFailbackResult> stopFailbackAsync(StopFailbackRequest request) {
 
         return stopFailbackAsync(request, null);
@@ -891,6 +957,39 @@ public class AWSdrsAsyncClient extends AWSdrsClient implements AWSdrsAsync {
 
                 try {
                     result = executeStopFailback(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request) {
+
+        return stopReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(final StopReplicationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler) {
+        final StopReplicationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopReplicationResult>() {
+            @Override
+            public StopReplicationResult call() throws Exception {
+                StopReplicationResult result = null;
+
+                try {
+                    result = executeStopReplication(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

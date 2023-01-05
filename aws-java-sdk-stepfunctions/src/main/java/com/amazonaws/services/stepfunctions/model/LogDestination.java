@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class LogDestination implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"
-     * >AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.
+     * >AWS::Logs::LogGroup</a> in the CloudFormation User Guide.
      * </p>
      */
     private CloudWatchLogsLogGroup cloudWatchLogsLogGroup;
@@ -39,13 +39,13 @@ public class LogDestination implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"
-     * >AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.
+     * >AWS::Logs::LogGroup</a> in the CloudFormation User Guide.
      * </p>
      * 
      * @param cloudWatchLogsLogGroup
      *        An object describing a CloudWatch log group. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"
-     *        >AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.
+     *        >AWS::Logs::LogGroup</a> in the CloudFormation User Guide.
      */
 
     public void setCloudWatchLogsLogGroup(CloudWatchLogsLogGroup cloudWatchLogsLogGroup) {
@@ -56,12 +56,12 @@ public class LogDestination implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"
-     * >AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.
+     * >AWS::Logs::LogGroup</a> in the CloudFormation User Guide.
      * </p>
      * 
      * @return An object describing a CloudWatch log group. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"
-     *         >AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.
+     *         >AWS::Logs::LogGroup</a> in the CloudFormation User Guide.
      */
 
     public CloudWatchLogsLogGroup getCloudWatchLogsLogGroup() {
@@ -72,13 +72,13 @@ public class LogDestination implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * An object describing a CloudWatch log group. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"
-     * >AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.
+     * >AWS::Logs::LogGroup</a> in the CloudFormation User Guide.
      * </p>
      * 
      * @param cloudWatchLogsLogGroup
      *        An object describing a CloudWatch log group. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html"
-     *        >AWS::Logs::LogGroup</a> in the AWS CloudFormation User Guide.
+     *        >AWS::Logs::LogGroup</a> in the CloudFormation User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

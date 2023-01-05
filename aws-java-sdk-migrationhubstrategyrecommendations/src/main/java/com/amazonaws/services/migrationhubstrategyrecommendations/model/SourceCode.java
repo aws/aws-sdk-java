@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class SourceCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String location;
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     */
+    private String projectName;
     /**
      * <p>
      * The branch of the source code.
@@ -84,6 +90,46 @@ public class SourceCode implements Serializable, Cloneable, StructuredPojo {
 
     public SourceCode withLocation(String location) {
         setLocation(location);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     * 
+     * @param projectName
+     *        The name of the project.
+     */
+
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     * 
+     * @return The name of the project.
+     */
+
+    public String getProjectName() {
+        return this.projectName;
+    }
+
+    /**
+     * <p>
+     * The name of the project.
+     * </p>
+     * 
+     * @param projectName
+     *        The name of the project.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceCode withProjectName(String projectName) {
+        setProjectName(projectName);
         return this;
     }
 
@@ -200,6 +246,8 @@ public class SourceCode implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getLocation() != null)
             sb.append("Location: ").append(getLocation()).append(",");
+        if (getProjectName() != null)
+            sb.append("ProjectName: ").append(getProjectName()).append(",");
         if (getSourceVersion() != null)
             sb.append("SourceVersion: ").append(getSourceVersion()).append(",");
         if (getVersionControl() != null)
@@ -222,6 +270,10 @@ public class SourceCode implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
             return false;
+        if (other.getProjectName() == null ^ this.getProjectName() == null)
+            return false;
+        if (other.getProjectName() != null && other.getProjectName().equals(this.getProjectName()) == false)
+            return false;
         if (other.getSourceVersion() == null ^ this.getSourceVersion() == null)
             return false;
         if (other.getSourceVersion() != null && other.getSourceVersion().equals(this.getSourceVersion()) == false)
@@ -239,6 +291,7 @@ public class SourceCode implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
+        hashCode = prime * hashCode + ((getProjectName() == null) ? 0 : getProjectName().hashCode());
         hashCode = prime * hashCode + ((getSourceVersion() == null) ? 0 : getSourceVersion().hashCode());
         hashCode = prime * hashCode + ((getVersionControl() == null) ? 0 : getVersionControl().hashCode());
         return hashCode;

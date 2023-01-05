@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,21 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The ID of the backup.
+     * </p>
+     */
+    private String backupId;
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * The streaming session ID for the StartStreamingSessionRequest.
+     * The streaming session ID for the <code>StartStreamingSessionRequest</code>.
      * </p>
      */
     private String sessionId;
@@ -48,15 +54,55 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
+     * The ID of the backup.
+     * </p>
+     * 
+     * @param backupId
+     *        The ID of the backup.
+     */
+
+    public void setBackupId(String backupId) {
+        this.backupId = backupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the backup.
+     * </p>
+     * 
+     * @return The ID of the backup.
+     */
+
+    public String getBackupId() {
+        return this.backupId;
+    }
+
+    /**
+     * <p>
+     * The ID of the backup.
+     * </p>
+     * 
+     * @param backupId
+     *        The ID of the backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartStreamingSessionRequest withBackupId(String backupId) {
+        setBackupId(backupId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      */
 
     public void setClientToken(String clientToken) {
@@ -66,13 +112,13 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @return Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *         specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *         ensure idempotency.
+     *         specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it
+     *         for the request to ensure idempotency.
      */
 
     public String getClientToken() {
@@ -82,14 +128,14 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t specify
-     * a client token, the AWS SDK automatically generates a client token and uses it for the request to ensure
-     * idempotency.
+     * a client token, the Amazon Web Services SDK automatically generates a client token and uses it for the request to
+     * ensure idempotency.
      * </p>
      * 
      * @param clientToken
      *        Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don’t
-     *        specify a client token, the AWS SDK automatically generates a client token and uses it for the request to
-     *        ensure idempotency.
+     *        specify a client token, the Amazon Web Services SDK automatically generates a client token and uses it for
+     *        the request to ensure idempotency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -100,11 +146,11 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The streaming session ID for the StartStreamingSessionRequest.
+     * The streaming session ID for the <code>StartStreamingSessionRequest</code>.
      * </p>
      * 
      * @param sessionId
-     *        The streaming session ID for the StartStreamingSessionRequest.
+     *        The streaming session ID for the <code>StartStreamingSessionRequest</code>.
      */
 
     public void setSessionId(String sessionId) {
@@ -113,10 +159,10 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The streaming session ID for the StartStreamingSessionRequest.
+     * The streaming session ID for the <code>StartStreamingSessionRequest</code>.
      * </p>
      * 
-     * @return The streaming session ID for the StartStreamingSessionRequest.
+     * @return The streaming session ID for the <code>StartStreamingSessionRequest</code>.
      */
 
     public String getSessionId() {
@@ -125,11 +171,11 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The streaming session ID for the StartStreamingSessionRequest.
+     * The streaming session ID for the <code>StartStreamingSessionRequest</code>.
      * </p>
      * 
      * @param sessionId
-     *        The streaming session ID for the StartStreamingSessionRequest.
+     *        The streaming session ID for the <code>StartStreamingSessionRequest</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,6 +236,8 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getBackupId() != null)
+            sb.append("BackupId: ").append(getBackupId()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSessionId() != null)
@@ -210,6 +258,10 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
         if (obj instanceof StartStreamingSessionRequest == false)
             return false;
         StartStreamingSessionRequest other = (StartStreamingSessionRequest) obj;
+        if (other.getBackupId() == null ^ this.getBackupId() == null)
+            return false;
+        if (other.getBackupId() != null && other.getBackupId().equals(this.getBackupId()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -230,6 +282,7 @@ public class StartStreamingSessionRequest extends com.amazonaws.AmazonWebService
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getBackupId() == null) ? 0 : getBackupId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSessionId() == null) ? 0 : getSessionId().hashCode());
         hashCode = prime * hashCode + ((getStudioId() == null) ? 0 : getStudioId().hashCode());

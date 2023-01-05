@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,16 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String nextToken;
+    /**
+     * <p>
+     * If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     * accounts where the metrics in the returned data are from.
+     * </p>
+     * <p>
+     * This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> owningAccounts;
 
     /**
      * <p>
@@ -150,6 +160,107 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     * accounts where the metrics in the returned data are from.
+     * </p>
+     * <p>
+     * This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     * </p>
+     * 
+     * @return If you are using this operation in a monitoring account, this array contains the account IDs of the
+     *         source accounts where the metrics in the returned data are from.</p>
+     *         <p>
+     *         This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     */
+
+    public java.util.List<String> getOwningAccounts() {
+        if (owningAccounts == null) {
+            owningAccounts = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return owningAccounts;
+    }
+
+    /**
+     * <p>
+     * If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     * accounts where the metrics in the returned data are from.
+     * </p>
+     * <p>
+     * This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     * </p>
+     * 
+     * @param owningAccounts
+     *        If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     *        accounts where the metrics in the returned data are from.</p>
+     *        <p>
+     *        This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     */
+
+    public void setOwningAccounts(java.util.Collection<String> owningAccounts) {
+        if (owningAccounts == null) {
+            this.owningAccounts = null;
+            return;
+        }
+
+        this.owningAccounts = new com.amazonaws.internal.SdkInternalList<String>(owningAccounts);
+    }
+
+    /**
+     * <p>
+     * If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     * accounts where the metrics in the returned data are from.
+     * </p>
+     * <p>
+     * This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOwningAccounts(java.util.Collection)} or {@link #withOwningAccounts(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param owningAccounts
+     *        If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     *        accounts where the metrics in the returned data are from.</p>
+     *        <p>
+     *        This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListMetricsResult withOwningAccounts(String... owningAccounts) {
+        if (this.owningAccounts == null) {
+            setOwningAccounts(new com.amazonaws.internal.SdkInternalList<String>(owningAccounts.length));
+        }
+        for (String ele : owningAccounts) {
+            this.owningAccounts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     * accounts where the metrics in the returned data are from.
+     * </p>
+     * <p>
+     * This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     * </p>
+     * 
+     * @param owningAccounts
+     *        If you are using this operation in a monitoring account, this array contains the account IDs of the source
+     *        accounts where the metrics in the returned data are from.</p>
+     *        <p>
+     *        This field is a 1:1 mapping between each metric that is returned and the ID of the owning account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListMetricsResult withOwningAccounts(java.util.Collection<String> owningAccounts) {
+        setOwningAccounts(owningAccounts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -164,7 +275,9 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken());
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getOwningAccounts() != null)
+            sb.append("OwningAccounts: ").append(getOwningAccounts());
         sb.append("}");
         return sb.toString();
     }
@@ -187,6 +300,10 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
+        if (other.getOwningAccounts() == null ^ this.getOwningAccounts() == null)
+            return false;
+        if (other.getOwningAccounts() != null && other.getOwningAccounts().equals(this.getOwningAccounts()) == false)
+            return false;
         return true;
     }
 
@@ -197,6 +314,7 @@ public class ListMetricsResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getOwningAccounts() == null) ? 0 : getOwningAccounts().hashCode());
         return hashCode;
     }
 

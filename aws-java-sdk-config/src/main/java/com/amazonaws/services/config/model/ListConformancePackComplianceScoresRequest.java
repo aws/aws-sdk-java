@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,14 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * order.
      * </p>
      * <p>
-     * Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>,
+     * conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by
+     * ascending order and first when sorting by descending order.
      * </p>
      */
     private String sortOrder;
@@ -48,9 +54,9 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * <code>SortOrder</code>.
      * </p>
      * <p>
-     * By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     * alphabetically by name of the conformance pack if there is more than one conformance pack with the same
-     * compliance score.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance
+     * score.
      * </p>
      */
     private String sortBy;
@@ -114,16 +120,29 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * order.
      * </p>
      * <p>
-     * Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>,
+     * conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by
+     * ascending order and first when sorting by descending order.
      * </p>
      * 
      * @param sortOrder
      *        Determines the order in which conformance pack compliance scores are sorted. Either in ascending or
      *        descending order.</p>
      *        <p>
-     *        Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     *        ascending order and last when sorting by descending order.
+     *        By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance
+     *        pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter
+     *        <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     *        <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by
+     *        <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be
+     *        last when sorting by ascending order and first when sorting by descending order.
      * @see SortOrder
      */
 
@@ -137,15 +156,28 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * order.
      * </p>
      * <p>
-     * Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>,
+     * conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by
+     * ascending order and first when sorting by descending order.
      * </p>
      * 
      * @return Determines the order in which conformance pack compliance scores are sorted. Either in ascending or
      *         descending order.</p>
      *         <p>
-     *         Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     *         ascending order and last when sorting by descending order.
+     *         By default, conformance pack compliance scores are sorted in alphabetical order by name of the
+     *         conformance pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you
+     *         enter <code>DESCENDING</code>.
+     *         </p>
+     *         <p>
+     *         You can sort conformance pack compliance scores by the numerical value of the compliance score by
+     *         entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by
+     *         <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be
+     *         last when sorting by ascending order and first when sorting by descending order.
      * @see SortOrder
      */
 
@@ -159,16 +191,29 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * order.
      * </p>
      * <p>
-     * Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>,
+     * conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by
+     * ascending order and first when sorting by descending order.
      * </p>
      * 
      * @param sortOrder
      *        Determines the order in which conformance pack compliance scores are sorted. Either in ascending or
      *        descending order.</p>
      *        <p>
-     *        Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     *        ascending order and last when sorting by descending order.
+     *        By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance
+     *        pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter
+     *        <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     *        <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by
+     *        <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be
+     *        last when sorting by ascending order and first when sorting by descending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -184,16 +229,29 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * order.
      * </p>
      * <p>
-     * Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     * ascending order and last when sorting by descending order.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Conformance pack compliance scores are sorted in reverse alphabetical order if you enter <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     * <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by <code>SCORE</code>,
+     * conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be last when sorting by
+     * ascending order and first when sorting by descending order.
      * </p>
      * 
      * @param sortOrder
      *        Determines the order in which conformance pack compliance scores are sorted. Either in ascending or
      *        descending order.</p>
      *        <p>
-     *        Conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be first when sorting by
-     *        ascending order and last when sorting by descending order.
+     *        By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance
+     *        pack. Conformance pack compliance scores are sorted in reverse alphabetical order if you enter
+     *        <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        You can sort conformance pack compliance scores by the numerical value of the compliance score by entering
+     *        <code>SCORE</code> in the <code>SortBy</code> action. When compliance scores are sorted by
+     *        <code>SCORE</code>, conformance packs with a compliance score of <code>INSUFFICIENT_DATA</code> will be
+     *        last when sorting by ascending order and first when sorting by descending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortOrder
      */
@@ -209,17 +267,17 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * <code>SortOrder</code>.
      * </p>
      * <p>
-     * By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     * alphabetically by name of the conformance pack if there is more than one conformance pack with the same
-     * compliance score.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance
+     * score.
      * </p>
      * 
      * @param sortBy
      *        Sorts your conformance pack compliance scores in either ascending or descending order, depending on
      *        <code>SortOrder</code>.</p>
      *        <p>
-     *        By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     *        alphabetically by name of the conformance pack if there is more than one conformance pack with the same
+     *        By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance
+     *        pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the
      *        compliance score.
      * @see SortBy
      */
@@ -234,17 +292,17 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * <code>SortOrder</code>.
      * </p>
      * <p>
-     * By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     * alphabetically by name of the conformance pack if there is more than one conformance pack with the same
-     * compliance score.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance
+     * score.
      * </p>
      * 
      * @return Sorts your conformance pack compliance scores in either ascending or descending order, depending on
      *         <code>SortOrder</code>.</p>
      *         <p>
-     *         By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     *         alphabetically by name of the conformance pack if there is more than one conformance pack with the same
-     *         compliance score.
+     *         By default, conformance pack compliance scores are sorted in alphabetical order by name of the
+     *         conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical
+     *         value of the compliance score.
      * @see SortBy
      */
 
@@ -258,17 +316,17 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * <code>SortOrder</code>.
      * </p>
      * <p>
-     * By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     * alphabetically by name of the conformance pack if there is more than one conformance pack with the same
-     * compliance score.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance
+     * score.
      * </p>
      * 
      * @param sortBy
      *        Sorts your conformance pack compliance scores in either ascending or descending order, depending on
      *        <code>SortOrder</code>.</p>
      *        <p>
-     *        By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     *        alphabetically by name of the conformance pack if there is more than one conformance pack with the same
+     *        By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance
+     *        pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the
      *        compliance score.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortBy
@@ -285,17 +343,17 @@ public class ListConformancePackComplianceScoresRequest extends com.amazonaws.Am
      * <code>SortOrder</code>.
      * </p>
      * <p>
-     * By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     * alphabetically by name of the conformance pack if there is more than one conformance pack with the same
-     * compliance score.
+     * By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance pack.
+     * Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the compliance
+     * score.
      * </p>
      * 
      * @param sortBy
      *        Sorts your conformance pack compliance scores in either ascending or descending order, depending on
      *        <code>SortOrder</code>.</p>
      *        <p>
-     *        By default, conformance pack compliance scores are sorted in ascending order by compliance score and
-     *        alphabetically by name of the conformance pack if there is more than one conformance pack with the same
+     *        By default, conformance pack compliance scores are sorted in alphabetical order by name of the conformance
+     *        pack. Enter <code>SCORE</code>, to sort conformance pack compliance scores by the numerical value of the
      *        compliance score.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SortBy

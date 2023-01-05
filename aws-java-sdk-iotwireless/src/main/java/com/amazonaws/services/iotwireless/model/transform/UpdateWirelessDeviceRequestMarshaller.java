@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class UpdateWirelessDeviceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<StructuredPojo> LORAWAN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoRaWAN").build();
+    private static final MarshallingInfo<String> POSITIONING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Positioning").build();
 
     private static final UpdateWirelessDeviceRequestMarshaller instance = new UpdateWirelessDeviceRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class UpdateWirelessDeviceRequestMarshaller {
             protocolMarshaller.marshall(updateWirelessDeviceRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateWirelessDeviceRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateWirelessDeviceRequest.getLoRaWAN(), LORAWAN_BINDING);
+            protocolMarshaller.marshall(updateWirelessDeviceRequest.getPositioning(), POSITIONING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

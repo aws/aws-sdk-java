@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,12 +12,11 @@
  */
 
 /**
- * <fullname>GameLift Service</fullname>
  * <p>
- * Amazon Web Services provides solutions for hosting session-based multiplayer game servers in the cloud, including
- * tools for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing
- * infrastructure, GameLift helps you deliver high-performance, high-reliability, low-cost game servers while
- * dynamically scaling your resource usage to meet player demand.
+ * Amazon GameLift provides solutions for hosting session-based multiplayer game servers in the cloud, including tools
+ * for deploying, operating, and scaling game servers. Built on Amazon Web Services global computing infrastructure,
+ * GameLift helps you deliver high-performance, high-reliability, low-cost game servers while dynamically scaling your
+ * resource usage to meet player demand.
  * </p>
  * <p>
  * <b>About GameLift solutions</b>
@@ -62,8 +61,8 @@
  * <b>About this API Reference</b>
  * </p>
  * <p>
- * This reference guide describes the low-level service API for Amazon Web Services. With each topic in this guide, you
- * can find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:
+ * This reference guide describes the low-level service API for Amazon GameLift. With each topic in this guide, you can
+ * find links to language-specific SDK guides and the Amazon Web Services CLI reference. Useful links:
  * </p>
  * <ul>
  * <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,17 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3:
      * Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
      * </p>
+     * <p>
+     * <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the
+     * continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning,
+     * turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.
+     * </p>
+     * <p>
+     * To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is
+     * enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result
+     * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
+     * deleted.
+     * </p>
      */
     private String status;
     /**
@@ -179,6 +190,28 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.Date lastRestoreTime;
+    /**
+     * <p>
+     * This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+     * </p>
+     */
+    private String parentRecoveryPointArn;
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     */
+    private String compositeMemberIdentifier;
+    /**
+     * <p>
+     * This returns the boolean value that a recovery point is a parent (composite) job.
+     * </p>
+     */
+    private Boolean isParent;
 
     /**
      * <p>
@@ -576,6 +609,17 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3:
      * Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
      * </p>
+     * <p>
+     * <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the
+     * continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning,
+     * turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.
+     * </p>
+     * <p>
+     * To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is
+     * enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result
+     * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
+     * deleted.
+     * </p>
      * 
      * @param status
      *        A status code specifying the state of the recovery point.</p>
@@ -592,6 +636,18 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        <a
      *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      *        Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
+     *        </p>
+     *        <p>
+     *        <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes
+     *        the continuous backup to be disabled. This can be caused by the removal of permissions, turning off
+     *        versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put
+     *        in place by Backup.
+     *        </p>
+     *        <p>
+     *        To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that
+     *        versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
+     *        running will result in a new continuous recovery point being created. The recovery points with STOPPED
+     *        status do not need to be deleted.
      * @see RecoveryPointStatus
      */
 
@@ -615,6 +671,17 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3:
      * Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
      * </p>
+     * <p>
+     * <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the
+     * continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning,
+     * turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.
+     * </p>
+     * <p>
+     * To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is
+     * enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result
+     * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
+     * deleted.
+     * </p>
      * 
      * @return A status code specifying the state of the recovery point.</p>
      *         <p>
@@ -631,6 +698,18 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *         href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      *         Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting
      *         started</i>.
+     *         </p>
+     *         <p>
+     *         <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes
+     *         the continuous backup to be disabled. This can be caused by the removal of permissions, turning off
+     *         versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put
+     *         in place by Backup.
+     *         </p>
+     *         <p>
+     *         To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that
+     *         versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
+     *         running will result in a new continuous recovery point being created. The recovery points with STOPPED
+     *         status do not need to be deleted.
      * @see RecoveryPointStatus
      */
 
@@ -654,6 +733,17 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3:
      * Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
      * </p>
+     * <p>
+     * <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the
+     * continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning,
+     * turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.
+     * </p>
+     * <p>
+     * To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is
+     * enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result
+     * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
+     * deleted.
+     * </p>
      * 
      * @param status
      *        A status code specifying the state of the recovery point.</p>
@@ -670,6 +760,18 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        <a
      *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      *        Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
+     *        </p>
+     *        <p>
+     *        <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes
+     *        the continuous backup to be disabled. This can be caused by the removal of permissions, turning off
+     *        versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put
+     *        in place by Backup.
+     *        </p>
+     *        <p>
+     *        To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that
+     *        versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
+     *        running will result in a new continuous recovery point being created. The recovery points with STOPPED
+     *        status do not need to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecoveryPointStatus
      */
@@ -695,6 +797,17 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups"> Step 3:
      * Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
      * </p>
+     * <p>
+     * <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes the
+     * continuous backup to be disabled. This can be caused by the removal of permissions, turning off versioning,
+     * turning off events being sent to EventBridge, or disabling the EventBridge rules that are put in place by Backup.
+     * </p>
+     * <p>
+     * To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that versioning is
+     * enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule running will result
+     * in a new continuous recovery point being created. The recovery points with STOPPED status do not need to be
+     * deleted.
+     * </p>
      * 
      * @param status
      *        A status code specifying the state of the recovery point.</p>
@@ -711,6 +824,18 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        <a
      *        href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
      *        Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of <i>Getting started</i>.
+     *        </p>
+     *        <p>
+     *        <code>STOPPED</code> status occurs on a continuous backup where a user has taken some action that causes
+     *        the continuous backup to be disabled. This can be caused by the removal of permissions, turning off
+     *        versioning, turning off events being sent to EventBridge, or disabling the EventBridge rules that are put
+     *        in place by Backup.
+     *        </p>
+     *        <p>
+     *        To resolve <code>STOPPED</code> status, ensure that all requested permissions are in place and that
+     *        versioning is enabled on the S3 bucket. Once these conditions are met, the next instance of a backup rule
+     *        running will result in a new continuous recovery point being created. The recovery points with STOPPED
+     *        status do not need to be deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecoveryPointStatus
      */
@@ -1284,6 +1409,162 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+     * </p>
+     * 
+     * @param parentRecoveryPointArn
+     *        This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+     *        <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+     */
+
+    public void setParentRecoveryPointArn(String parentRecoveryPointArn) {
+        this.parentRecoveryPointArn = parentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+     * </p>
+     * 
+     * @return This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+     *         <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+     */
+
+    public String getParentRecoveryPointArn() {
+        return this.parentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+     * </p>
+     * 
+     * @param parentRecoveryPointArn
+     *        This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
+     *        <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRecoveryPointResult withParentRecoveryPointArn(String parentRecoveryPointArn) {
+        setParentRecoveryPointArn(parentRecoveryPointArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @param compositeMemberIdentifier
+     *        This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *        belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *        > logical ID</a> within a stack.
+     */
+
+    public void setCompositeMemberIdentifier(String compositeMemberIdentifier) {
+        this.compositeMemberIdentifier = compositeMemberIdentifier;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @return This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *         belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *         > logical ID</a> within a stack.
+     */
+
+    public String getCompositeMemberIdentifier() {
+        return this.compositeMemberIdentifier;
+    }
+
+    /**
+     * <p>
+     * This is the identifier of a resource within a composite group, such as nested (child) recovery point belonging to
+     * a composite (parent) stack. The ID is transferred from the <a href=
+     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     * > logical ID</a> within a stack.
+     * </p>
+     * 
+     * @param compositeMemberIdentifier
+     *        This is the identifier of a resource within a composite group, such as nested (child) recovery point
+     *        belonging to a composite (parent) stack. The ID is transferred from the <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html#resources-section-structure-syntax"
+     *        > logical ID</a> within a stack.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRecoveryPointResult withCompositeMemberIdentifier(String compositeMemberIdentifier) {
+        setCompositeMemberIdentifier(compositeMemberIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This returns the boolean value that a recovery point is a parent (composite) job.
+     * </p>
+     * 
+     * @param isParent
+     *        This returns the boolean value that a recovery point is a parent (composite) job.
+     */
+
+    public void setIsParent(Boolean isParent) {
+        this.isParent = isParent;
+    }
+
+    /**
+     * <p>
+     * This returns the boolean value that a recovery point is a parent (composite) job.
+     * </p>
+     * 
+     * @return This returns the boolean value that a recovery point is a parent (composite) job.
+     */
+
+    public Boolean getIsParent() {
+        return this.isParent;
+    }
+
+    /**
+     * <p>
+     * This returns the boolean value that a recovery point is a parent (composite) job.
+     * </p>
+     * 
+     * @param isParent
+     *        This returns the boolean value that a recovery point is a parent (composite) job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRecoveryPointResult withIsParent(Boolean isParent) {
+        setIsParent(isParent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This returns the boolean value that a recovery point is a parent (composite) job.
+     * </p>
+     * 
+     * @return This returns the boolean value that a recovery point is a parent (composite) job.
+     */
+
+    public Boolean isParent() {
+        return this.isParent;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1332,7 +1613,13 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
         if (getStorageClass() != null)
             sb.append("StorageClass: ").append(getStorageClass()).append(",");
         if (getLastRestoreTime() != null)
-            sb.append("LastRestoreTime: ").append(getLastRestoreTime());
+            sb.append("LastRestoreTime: ").append(getLastRestoreTime()).append(",");
+        if (getParentRecoveryPointArn() != null)
+            sb.append("ParentRecoveryPointArn: ").append(getParentRecoveryPointArn()).append(",");
+        if (getCompositeMemberIdentifier() != null)
+            sb.append("CompositeMemberIdentifier: ").append(getCompositeMemberIdentifier()).append(",");
+        if (getIsParent() != null)
+            sb.append("IsParent: ").append(getIsParent());
         sb.append("}");
         return sb.toString();
     }
@@ -1423,6 +1710,18 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getLastRestoreTime() != null && other.getLastRestoreTime().equals(this.getLastRestoreTime()) == false)
             return false;
+        if (other.getParentRecoveryPointArn() == null ^ this.getParentRecoveryPointArn() == null)
+            return false;
+        if (other.getParentRecoveryPointArn() != null && other.getParentRecoveryPointArn().equals(this.getParentRecoveryPointArn()) == false)
+            return false;
+        if (other.getCompositeMemberIdentifier() == null ^ this.getCompositeMemberIdentifier() == null)
+            return false;
+        if (other.getCompositeMemberIdentifier() != null && other.getCompositeMemberIdentifier().equals(this.getCompositeMemberIdentifier()) == false)
+            return false;
+        if (other.getIsParent() == null ^ this.getIsParent() == null)
+            return false;
+        if (other.getIsParent() != null && other.getIsParent().equals(this.getIsParent()) == false)
+            return false;
         return true;
     }
 
@@ -1450,6 +1749,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getIsEncrypted() == null) ? 0 : getIsEncrypted().hashCode());
         hashCode = prime * hashCode + ((getStorageClass() == null) ? 0 : getStorageClass().hashCode());
         hashCode = prime * hashCode + ((getLastRestoreTime() == null) ? 0 : getLastRestoreTime().hashCode());
+        hashCode = prime * hashCode + ((getParentRecoveryPointArn() == null) ? 0 : getParentRecoveryPointArn().hashCode());
+        hashCode = prime * hashCode + ((getCompositeMemberIdentifier() == null) ? 0 : getCompositeMemberIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getIsParent() == null) ? 0 : getIsParent().hashCode());
         return hashCode;
     }
 

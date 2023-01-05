@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,18 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private ImportAssetFromApiGatewayApiResponseDetails importAssetFromApiGatewayApi;
+    /**
+     * <p>
+     * Response details from the CreateS3DataAccessFromS3Bucket job.
+     * </p>
+     */
+    private CreateS3DataAccessFromS3BucketResponseDetails createS3DataAccessFromS3Bucket;
+    /**
+     * <p>
+     * Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+     * </p>
+     */
+    private ImportAssetsFromLakeFormationTagPolicyResponseDetails importAssetsFromLakeFormationTagPolicy;
 
     /**
      * <p>
@@ -352,6 +364,87 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Response details from the CreateS3DataAccessFromS3Bucket job.
+     * </p>
+     * 
+     * @param createS3DataAccessFromS3Bucket
+     *        Response details from the CreateS3DataAccessFromS3Bucket job.
+     */
+
+    public void setCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketResponseDetails createS3DataAccessFromS3Bucket) {
+        this.createS3DataAccessFromS3Bucket = createS3DataAccessFromS3Bucket;
+    }
+
+    /**
+     * <p>
+     * Response details from the CreateS3DataAccessFromS3Bucket job.
+     * </p>
+     * 
+     * @return Response details from the CreateS3DataAccessFromS3Bucket job.
+     */
+
+    public CreateS3DataAccessFromS3BucketResponseDetails getCreateS3DataAccessFromS3Bucket() {
+        return this.createS3DataAccessFromS3Bucket;
+    }
+
+    /**
+     * <p>
+     * Response details from the CreateS3DataAccessFromS3Bucket job.
+     * </p>
+     * 
+     * @param createS3DataAccessFromS3Bucket
+     *        Response details from the CreateS3DataAccessFromS3Bucket job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseDetails withCreateS3DataAccessFromS3Bucket(CreateS3DataAccessFromS3BucketResponseDetails createS3DataAccessFromS3Bucket) {
+        setCreateS3DataAccessFromS3Bucket(createS3DataAccessFromS3Bucket);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+     * </p>
+     * 
+     * @param importAssetsFromLakeFormationTagPolicy
+     *        Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+     */
+
+    public void setImportAssetsFromLakeFormationTagPolicy(ImportAssetsFromLakeFormationTagPolicyResponseDetails importAssetsFromLakeFormationTagPolicy) {
+        this.importAssetsFromLakeFormationTagPolicy = importAssetsFromLakeFormationTagPolicy;
+    }
+
+    /**
+     * <p>
+     * Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+     * </p>
+     * 
+     * @return Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+     */
+
+    public ImportAssetsFromLakeFormationTagPolicyResponseDetails getImportAssetsFromLakeFormationTagPolicy() {
+        return this.importAssetsFromLakeFormationTagPolicy;
+    }
+
+    /**
+     * <p>
+     * Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+     * </p>
+     * 
+     * @param importAssetsFromLakeFormationTagPolicy
+     *        Response details from the ImportAssetsFromLakeFormationTagPolicy job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseDetails withImportAssetsFromLakeFormationTagPolicy(
+            ImportAssetsFromLakeFormationTagPolicyResponseDetails importAssetsFromLakeFormationTagPolicy) {
+        setImportAssetsFromLakeFormationTagPolicy(importAssetsFromLakeFormationTagPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +469,11 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
         if (getImportAssetsFromRedshiftDataShares() != null)
             sb.append("ImportAssetsFromRedshiftDataShares: ").append(getImportAssetsFromRedshiftDataShares()).append(",");
         if (getImportAssetFromApiGatewayApi() != null)
-            sb.append("ImportAssetFromApiGatewayApi: ").append(getImportAssetFromApiGatewayApi());
+            sb.append("ImportAssetFromApiGatewayApi: ").append(getImportAssetFromApiGatewayApi()).append(",");
+        if (getCreateS3DataAccessFromS3Bucket() != null)
+            sb.append("CreateS3DataAccessFromS3Bucket: ").append(getCreateS3DataAccessFromS3Bucket()).append(",");
+        if (getImportAssetsFromLakeFormationTagPolicy() != null)
+            sb.append("ImportAssetsFromLakeFormationTagPolicy: ").append(getImportAssetsFromLakeFormationTagPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -420,6 +517,16 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getImportAssetFromApiGatewayApi() != null && other.getImportAssetFromApiGatewayApi().equals(this.getImportAssetFromApiGatewayApi()) == false)
             return false;
+        if (other.getCreateS3DataAccessFromS3Bucket() == null ^ this.getCreateS3DataAccessFromS3Bucket() == null)
+            return false;
+        if (other.getCreateS3DataAccessFromS3Bucket() != null
+                && other.getCreateS3DataAccessFromS3Bucket().equals(this.getCreateS3DataAccessFromS3Bucket()) == false)
+            return false;
+        if (other.getImportAssetsFromLakeFormationTagPolicy() == null ^ this.getImportAssetsFromLakeFormationTagPolicy() == null)
+            return false;
+        if (other.getImportAssetsFromLakeFormationTagPolicy() != null
+                && other.getImportAssetsFromLakeFormationTagPolicy().equals(this.getImportAssetsFromLakeFormationTagPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -435,6 +542,8 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getImportAssetsFromS3() == null) ? 0 : getImportAssetsFromS3().hashCode());
         hashCode = prime * hashCode + ((getImportAssetsFromRedshiftDataShares() == null) ? 0 : getImportAssetsFromRedshiftDataShares().hashCode());
         hashCode = prime * hashCode + ((getImportAssetFromApiGatewayApi() == null) ? 0 : getImportAssetFromApiGatewayApi().hashCode());
+        hashCode = prime * hashCode + ((getCreateS3DataAccessFromS3Bucket() == null) ? 0 : getCreateS3DataAccessFromS3Bucket().hashCode());
+        hashCode = prime * hashCode + ((getImportAssetsFromLakeFormationTagPolicy() == null) ? 0 : getImportAssetsFromLakeFormationTagPolicy().hashCode());
         return hashCode;
     }
 

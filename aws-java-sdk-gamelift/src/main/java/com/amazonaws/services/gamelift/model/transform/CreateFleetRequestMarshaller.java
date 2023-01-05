@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,10 @@ public class CreateFleetRequestMarshaller {
             .marshallLocationName("Locations").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> COMPUTETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ComputeType").build();
+    private static final MarshallingInfo<StructuredPojo> ANYWHERECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AnywhereConfiguration").build();
 
     private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
 
@@ -105,6 +109,8 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getCertificateConfiguration(), CERTIFICATECONFIGURATION_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getLocations(), LOCATIONS_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getComputeType(), COMPUTETYPE_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getAnywhereConfiguration(), ANYWHERECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

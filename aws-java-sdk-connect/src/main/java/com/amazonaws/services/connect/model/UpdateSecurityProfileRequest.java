@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,18 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String instanceId;
+    /**
+     * <p>
+     * The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+     * </p>
+     */
+    private java.util.Map<String, String> allowedAccessControlTags;
+    /**
+     * <p>
+     * The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     * </p>
+     */
+    private java.util.List<String> tagRestrictedResources;
 
     /**
      * <p>
@@ -259,6 +271,144 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+     * </p>
+     * 
+     * @return The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+     */
+
+    public java.util.Map<String, String> getAllowedAccessControlTags() {
+        return allowedAccessControlTags;
+    }
+
+    /**
+     * <p>
+     * The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+     * </p>
+     * 
+     * @param allowedAccessControlTags
+     *        The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+     */
+
+    public void setAllowedAccessControlTags(java.util.Map<String, String> allowedAccessControlTags) {
+        this.allowedAccessControlTags = allowedAccessControlTags;
+    }
+
+    /**
+     * <p>
+     * The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+     * </p>
+     * 
+     * @param allowedAccessControlTags
+     *        The list of tags that a security profile uses to restrict access to resources in Amazon Connect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withAllowedAccessControlTags(java.util.Map<String, String> allowedAccessControlTags) {
+        setAllowedAccessControlTags(allowedAccessControlTags);
+        return this;
+    }
+
+    /**
+     * Add a single AllowedAccessControlTags entry
+     *
+     * @see UpdateSecurityProfileRequest#withAllowedAccessControlTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest addAllowedAccessControlTagsEntry(String key, String value) {
+        if (null == this.allowedAccessControlTags) {
+            this.allowedAccessControlTags = new java.util.HashMap<String, String>();
+        }
+        if (this.allowedAccessControlTags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.allowedAccessControlTags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AllowedAccessControlTags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest clearAllowedAccessControlTagsEntries() {
+        this.allowedAccessControlTags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     * </p>
+     * 
+     * @return The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     */
+
+    public java.util.List<String> getTagRestrictedResources() {
+        return tagRestrictedResources;
+    }
+
+    /**
+     * <p>
+     * The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     * </p>
+     * 
+     * @param tagRestrictedResources
+     *        The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     */
+
+    public void setTagRestrictedResources(java.util.Collection<String> tagRestrictedResources) {
+        if (tagRestrictedResources == null) {
+            this.tagRestrictedResources = null;
+            return;
+        }
+
+        this.tagRestrictedResources = new java.util.ArrayList<String>(tagRestrictedResources);
+    }
+
+    /**
+     * <p>
+     * The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagRestrictedResources(java.util.Collection)} or
+     * {@link #withTagRestrictedResources(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param tagRestrictedResources
+     *        The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withTagRestrictedResources(String... tagRestrictedResources) {
+        if (this.tagRestrictedResources == null) {
+            setTagRestrictedResources(new java.util.ArrayList<String>(tagRestrictedResources.length));
+        }
+        for (String ele : tagRestrictedResources) {
+            this.tagRestrictedResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     * </p>
+     * 
+     * @param tagRestrictedResources
+     *        The list of resources that a security profile applies tag restrictions to in Amazon Connect.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateSecurityProfileRequest withTagRestrictedResources(java.util.Collection<String> tagRestrictedResources) {
+        setTagRestrictedResources(tagRestrictedResources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -277,7 +427,11 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         if (getSecurityProfileId() != null)
             sb.append("SecurityProfileId: ").append(getSecurityProfileId()).append(",");
         if (getInstanceId() != null)
-            sb.append("InstanceId: ").append(getInstanceId());
+            sb.append("InstanceId: ").append(getInstanceId()).append(",");
+        if (getAllowedAccessControlTags() != null)
+            sb.append("AllowedAccessControlTags: ").append(getAllowedAccessControlTags()).append(",");
+        if (getTagRestrictedResources() != null)
+            sb.append("TagRestrictedResources: ").append(getTagRestrictedResources());
         sb.append("}");
         return sb.toString();
     }
@@ -308,6 +462,14 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getInstanceId() != null && other.getInstanceId().equals(this.getInstanceId()) == false)
             return false;
+        if (other.getAllowedAccessControlTags() == null ^ this.getAllowedAccessControlTags() == null)
+            return false;
+        if (other.getAllowedAccessControlTags() != null && other.getAllowedAccessControlTags().equals(this.getAllowedAccessControlTags()) == false)
+            return false;
+        if (other.getTagRestrictedResources() == null ^ this.getTagRestrictedResources() == null)
+            return false;
+        if (other.getTagRestrictedResources() != null && other.getTagRestrictedResources().equals(this.getTagRestrictedResources()) == false)
+            return false;
         return true;
     }
 
@@ -320,6 +482,8 @@ public class UpdateSecurityProfileRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getPermissions() == null) ? 0 : getPermissions().hashCode());
         hashCode = prime * hashCode + ((getSecurityProfileId() == null) ? 0 : getSecurityProfileId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
+        hashCode = prime * hashCode + ((getAllowedAccessControlTags() == null) ? 0 : getAllowedAccessControlTags().hashCode());
+        hashCode = prime * hashCode + ((getTagRestrictedResources() == null) ? 0 : getTagRestrictedResources().hashCode());
         return hashCode;
     }
 

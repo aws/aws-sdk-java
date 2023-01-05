@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -345,10 +345,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -548,8 +549,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      */
     private Boolean enableCustomerOwnedIp;
@@ -631,6 +632,15 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      */
     private String networkType;
+    /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     */
+    private Integer storageThroughput;
 
     /**
      * Default constructor for RestoreDBInstanceToPointInTimeRequest object. Callers should use the setter or fluent
@@ -2751,10 +2761,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2763,10 +2774,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * @param storageType
      *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
-     *        Valid values: <code>standard | gp2 | io1</code>
+     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
      *        </p>
      *        <p>
-     *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     *        <code>Iops</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2781,10 +2793,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2792,10 +2805,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * 
      * @return Specifies the storage type to be associated with the DB instance.</p>
      *         <p>
-     *         Valid values: <code>standard | gp2 | io1</code>
+     *         Valid values: <code>gp2 | gp3 | io1 | standard</code>
      *         </p>
      *         <p>
-     *         If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     *         If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
      *         </p>
      *         <p>
      *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2810,10 +2824,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2822,10 +2837,11 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * @param storageType
      *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
-     *        Valid values: <code>standard | gp2 | io1</code>
+     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
      *        </p>
      *        <p>
-     *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     *        <code>Iops</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -4122,8 +4138,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -4143,9 +4159,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        For more information about CoIPs, see <a href=
-     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *        For more information about CoIPs, see <a
+     *        href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *        addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public void setEnableCustomerOwnedIp(Boolean enableCustomerOwnedIp) {
@@ -4171,8 +4187,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -4191,9 +4207,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         For more information about CoIPs, see <a href=
-     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *         For more information about CoIPs, see <a
+     *         href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *         addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean getEnableCustomerOwnedIp() {
@@ -4219,8 +4235,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -4240,9 +4256,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        For more information about CoIPs, see <a href=
-     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *        For more information about CoIPs, see <a
+     *        href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *        addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -4270,8 +4286,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -4290,9 +4306,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
      *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         For more information about CoIPs, see <a href=
-     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *         For more information about CoIPs, see <a
+     *         href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *         addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean isEnableCustomerOwnedIp() {
@@ -4774,6 +4790,61 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput value for the DB instance.</p>
+     *        <p>
+     *        This setting doesn't apply to RDS Custom or Amazon Aurora.
+     */
+
+    public void setStorageThroughput(Integer storageThroughput) {
+        this.storageThroughput = storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     * 
+     * @return Specifies the storage throughput value for the DB instance.</p>
+     *         <p>
+     *         This setting doesn't apply to RDS Custom or Amazon Aurora.
+     */
+
+    public Integer getStorageThroughput() {
+        return this.storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput value for the DB instance.</p>
+     *        <p>
+     *        This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceToPointInTimeRequest withStorageThroughput(Integer storageThroughput) {
+        setStorageThroughput(storageThroughput);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4858,7 +4929,9 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         if (getBackupTarget() != null)
             sb.append("BackupTarget: ").append(getBackupTarget()).append(",");
         if (getNetworkType() != null)
-            sb.append("NetworkType: ").append(getNetworkType());
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getStorageThroughput() != null)
+            sb.append("StorageThroughput: ").append(getStorageThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -5023,6 +5096,10 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
             return false;
         if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
             return false;
+        if (other.getStorageThroughput() == null ^ this.getStorageThroughput() == null)
+            return false;
+        if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -5068,6 +5145,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends com.amazonaws.AmazonW
         hashCode = prime * hashCode + ((getCustomIamInstanceProfile() == null) ? 0 : getCustomIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
         return hashCode;
     }
 

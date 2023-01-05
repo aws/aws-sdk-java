@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class UpdateWorkspaceAuthenticationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
@@ -51,14 +51,14 @@ public class UpdateWorkspaceAuthenticationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
-     * @return Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *         authenticate users for using the Grafana console within a workspace. For more information, see <a
+     * @return Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or
+     *         both to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *         href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      *         authentication in Amazon Managed Grafana</a>.
      * @see AuthenticationProviderTypes
@@ -70,15 +70,15 @@ public class UpdateWorkspaceAuthenticationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @see AuthenticationProviderTypes
@@ -95,8 +95,8 @@ public class UpdateWorkspaceAuthenticationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
@@ -107,8 +107,8 @@ public class UpdateWorkspaceAuthenticationRequest extends com.amazonaws.AmazonWe
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -127,15 +127,15 @@ public class UpdateWorkspaceAuthenticationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -149,15 +149,15 @@ public class UpdateWorkspaceAuthenticationRequest extends com.amazonaws.AmazonWe
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

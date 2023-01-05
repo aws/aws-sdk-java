@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,25 +17,64 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Lists all instance types and available features for a given OpenSearch or Elasticsearch version.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceTypeDetails implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The instance type.
+     * </p>
+     */
     private String instanceType;
-
+    /**
+     * <p>
+     * Whether encryption at rest and node-to-node encryption are supported for the instance type.
+     * </p>
+     */
     private Boolean encryptionEnabled;
-
+    /**
+     * <p>
+     * Whether Amazon Cognito access is supported for the instance type.
+     * </p>
+     */
     private Boolean cognitoEnabled;
-
+    /**
+     * <p>
+     * Whether logging is supported for the instance type.
+     * </p>
+     */
     private Boolean appLogsEnabled;
-
+    /**
+     * <p>
+     * Whether fine-grained access control is supported for the instance type.
+     * </p>
+     */
     private Boolean advancedSecurityEnabled;
-
+    /**
+     * <p>
+     * Whether UltraWarm is supported for the instance type.
+     * </p>
+     */
     private Boolean warmEnabled;
-
+    /**
+     * <p>
+     * Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
+     * </p>
+     */
     private java.util.List<String> instanceRole;
 
     /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance type.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -44,7 +83,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The instance type.
+     * </p>
+     * 
+     * @return The instance type.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -53,7 +96,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -64,7 +112,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The instance type.
+     * </p>
+     * 
      * @param instanceType
+     *        The instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -75,7 +128,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether encryption at rest and node-to-node encryption are supported for the instance type.
+     * </p>
+     * 
      * @param encryptionEnabled
+     *        Whether encryption at rest and node-to-node encryption are supported for the instance type.
      */
 
     public void setEncryptionEnabled(Boolean encryptionEnabled) {
@@ -83,7 +141,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether encryption at rest and node-to-node encryption are supported for the instance type.
+     * </p>
+     * 
+     * @return Whether encryption at rest and node-to-node encryption are supported for the instance type.
      */
 
     public Boolean getEncryptionEnabled() {
@@ -91,7 +153,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether encryption at rest and node-to-node encryption are supported for the instance type.
+     * </p>
+     * 
      * @param encryptionEnabled
+     *        Whether encryption at rest and node-to-node encryption are supported for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,7 +168,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether encryption at rest and node-to-node encryption are supported for the instance type.
+     * </p>
+     * 
+     * @return Whether encryption at rest and node-to-node encryption are supported for the instance type.
      */
 
     public Boolean isEncryptionEnabled() {
@@ -109,7 +180,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether Amazon Cognito access is supported for the instance type.
+     * </p>
+     * 
      * @param cognitoEnabled
+     *        Whether Amazon Cognito access is supported for the instance type.
      */
 
     public void setCognitoEnabled(Boolean cognitoEnabled) {
@@ -117,7 +193,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether Amazon Cognito access is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether Amazon Cognito access is supported for the instance type.
      */
 
     public Boolean getCognitoEnabled() {
@@ -125,7 +205,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether Amazon Cognito access is supported for the instance type.
+     * </p>
+     * 
      * @param cognitoEnabled
+     *        Whether Amazon Cognito access is supported for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,7 +220,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether Amazon Cognito access is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether Amazon Cognito access is supported for the instance type.
      */
 
     public Boolean isCognitoEnabled() {
@@ -143,7 +232,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether logging is supported for the instance type.
+     * </p>
+     * 
      * @param appLogsEnabled
+     *        Whether logging is supported for the instance type.
      */
 
     public void setAppLogsEnabled(Boolean appLogsEnabled) {
@@ -151,7 +245,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether logging is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether logging is supported for the instance type.
      */
 
     public Boolean getAppLogsEnabled() {
@@ -159,7 +257,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether logging is supported for the instance type.
+     * </p>
+     * 
      * @param appLogsEnabled
+     *        Whether logging is supported for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,7 +272,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether logging is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether logging is supported for the instance type.
      */
 
     public Boolean isAppLogsEnabled() {
@@ -177,7 +284,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether fine-grained access control is supported for the instance type.
+     * </p>
+     * 
      * @param advancedSecurityEnabled
+     *        Whether fine-grained access control is supported for the instance type.
      */
 
     public void setAdvancedSecurityEnabled(Boolean advancedSecurityEnabled) {
@@ -185,7 +297,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether fine-grained access control is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether fine-grained access control is supported for the instance type.
      */
 
     public Boolean getAdvancedSecurityEnabled() {
@@ -193,7 +309,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether fine-grained access control is supported for the instance type.
+     * </p>
+     * 
      * @param advancedSecurityEnabled
+     *        Whether fine-grained access control is supported for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,7 +324,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether fine-grained access control is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether fine-grained access control is supported for the instance type.
      */
 
     public Boolean isAdvancedSecurityEnabled() {
@@ -211,7 +336,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether UltraWarm is supported for the instance type.
+     * </p>
+     * 
      * @param warmEnabled
+     *        Whether UltraWarm is supported for the instance type.
      */
 
     public void setWarmEnabled(Boolean warmEnabled) {
@@ -219,7 +349,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether UltraWarm is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether UltraWarm is supported for the instance type.
      */
 
     public Boolean getWarmEnabled() {
@@ -227,7 +361,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether UltraWarm is supported for the instance type.
+     * </p>
+     * 
      * @param warmEnabled
+     *        Whether UltraWarm is supported for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -237,7 +376,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether UltraWarm is supported for the instance type.
+     * </p>
+     * 
+     * @return Whether UltraWarm is supported for the instance type.
      */
 
     public Boolean isWarmEnabled() {
@@ -245,7 +388,11 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
+     * </p>
+     * 
+     * @return Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
      */
 
     public java.util.List<String> getInstanceRole() {
@@ -253,7 +400,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
+     * </p>
+     * 
      * @param instanceRole
+     *        Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
      */
 
     public void setInstanceRole(java.util.Collection<String> instanceRole) {
@@ -267,12 +419,16 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
+     * Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInstanceRole(java.util.Collection)} or {@link #withInstanceRole(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param instanceRole
+     *        Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -287,7 +443,12 @@ public class InstanceTypeDetails implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
+     * </p>
+     * 
      * @param instanceRole
+     *        Whether the instance acts as a data node, a dedicated master node, or an UltraWarm node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

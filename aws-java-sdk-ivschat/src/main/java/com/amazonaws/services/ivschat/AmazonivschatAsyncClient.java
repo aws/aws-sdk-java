@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,9 +58,15 @@ import java.util.concurrent.ExecutorService;
  * <b>Resources</b>
  * </p>
  * <p>
- * The following resource is part of Amazon IVS Chat:
+ * The following resources are part of Amazon IVS Chat:
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <b>LoggingConfiguration</b> — A configuration that allows customers to store and record sent messages in a chat room.
+ * See the Logging Configuration endpoints for more information.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <b>Room</b> — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See
@@ -190,9 +196,10 @@ import java.util.concurrent.ExecutorService;
  * <ul>
  * <li>
  * <p>
- * <a>CreateChatToken</a> — Creates an encrypted token that is used to establish an individual WebSocket connection to a
- * room. The token is valid for one minute, and a connection (session) established with the token is valid for the
- * specified duration.
+ * <a>CreateChatToken</a> — Creates an encrypted token that is used by a chat participant to establish an individual
+ * WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the
+ * session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in
+ * the response.
  * </p>
  * </li>
  * </ul>
@@ -224,6 +231,38 @@ import java.util.concurrent.ExecutorService;
  * <li>
  * <p>
  * <a>UpdateRoom</a> — Updates a room’s configuration.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Logging Configuration Endpoints</b>
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateLoggingConfiguration</a> — Creates a logging configuration that allows clients to store and record sent
+ * messages.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteLoggingConfiguration</a> — Deletes the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetLoggingConfiguration</a> — Gets the specified logging configuration.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListLoggingConfigurations</a> — Gets summary information about all your logging configurations in the AWS region
+ * where the API request is processed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UpdateLoggingConfiguration</a> — Updates a specified logging configuration.
  * </p>
  * </li>
  * </ul>
@@ -331,6 +370,39 @@ public class AmazonivschatAsyncClient extends AmazonivschatClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLoggingConfigurationResult> createLoggingConfigurationAsync(CreateLoggingConfigurationRequest request) {
+
+        return createLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLoggingConfigurationResult> createLoggingConfigurationAsync(final CreateLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLoggingConfigurationRequest, CreateLoggingConfigurationResult> asyncHandler) {
+        final CreateLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLoggingConfigurationResult>() {
+            @Override
+            public CreateLoggingConfigurationResult call() throws Exception {
+                CreateLoggingConfigurationResult result = null;
+
+                try {
+                    result = executeCreateLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRoomResult> createRoomAsync(CreateRoomRequest request) {
 
         return createRoomAsync(request, null);
@@ -348,6 +420,39 @@ public class AmazonivschatAsyncClient extends AmazonivschatClient implements Ama
 
                 try {
                     result = executeCreateRoom(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(DeleteLoggingConfigurationRequest request) {
+
+        return deleteLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLoggingConfigurationResult> deleteLoggingConfigurationAsync(final DeleteLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLoggingConfigurationRequest, DeleteLoggingConfigurationResult> asyncHandler) {
+        final DeleteLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLoggingConfigurationResult>() {
+            @Override
+            public DeleteLoggingConfigurationResult call() throws Exception {
+                DeleteLoggingConfigurationResult result = null;
+
+                try {
+                    result = executeDeleteLoggingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -463,6 +568,39 @@ public class AmazonivschatAsyncClient extends AmazonivschatClient implements Ama
     }
 
     @Override
+    public java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(GetLoggingConfigurationRequest request) {
+
+        return getLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLoggingConfigurationResult> getLoggingConfigurationAsync(final GetLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLoggingConfigurationRequest, GetLoggingConfigurationResult> asyncHandler) {
+        final GetLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLoggingConfigurationResult>() {
+            @Override
+            public GetLoggingConfigurationResult call() throws Exception {
+                GetLoggingConfigurationResult result = null;
+
+                try {
+                    result = executeGetLoggingConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRoomResult> getRoomAsync(GetRoomRequest request) {
 
         return getRoomAsync(request, null);
@@ -480,6 +618,39 @@ public class AmazonivschatAsyncClient extends AmazonivschatClient implements Ama
 
                 try {
                     result = executeGetRoom(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(ListLoggingConfigurationsRequest request) {
+
+        return listLoggingConfigurationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLoggingConfigurationsResult> listLoggingConfigurationsAsync(final ListLoggingConfigurationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLoggingConfigurationsRequest, ListLoggingConfigurationsResult> asyncHandler) {
+        final ListLoggingConfigurationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLoggingConfigurationsResult>() {
+            @Override
+            public ListLoggingConfigurationsResult call() throws Exception {
+                ListLoggingConfigurationsResult result = null;
+
+                try {
+                    result = executeListLoggingConfigurations(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -645,6 +816,39 @@ public class AmazonivschatAsyncClient extends AmazonivschatClient implements Ama
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLoggingConfigurationResult> updateLoggingConfigurationAsync(UpdateLoggingConfigurationRequest request) {
+
+        return updateLoggingConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLoggingConfigurationResult> updateLoggingConfigurationAsync(final UpdateLoggingConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLoggingConfigurationRequest, UpdateLoggingConfigurationResult> asyncHandler) {
+        final UpdateLoggingConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLoggingConfigurationResult>() {
+            @Override
+            public UpdateLoggingConfigurationResult call() throws Exception {
+                UpdateLoggingConfigurationResult result = null;
+
+                try {
+                    result = executeUpdateLoggingConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

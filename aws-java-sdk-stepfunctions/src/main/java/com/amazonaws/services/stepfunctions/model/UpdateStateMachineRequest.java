@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,7 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
     private LoggingConfiguration loggingConfiguration;
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      */
     private TracingConfiguration tracingConfiguration;
@@ -232,11 +232,11 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      */
 
     public void setTracingConfiguration(TracingConfiguration tracingConfiguration) {
@@ -245,10 +245,10 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
-     * @return Selects whether AWS X-Ray tracing is enabled.
+     * @return Selects whether X-Ray tracing is enabled.
      */
 
     public TracingConfiguration getTracingConfiguration() {
@@ -257,11 +257,11 @@ public class UpdateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Selects whether AWS X-Ray tracing is enabled.
+     * Selects whether X-Ray tracing is enabled.
      * </p>
      * 
      * @param tracingConfiguration
-     *        Selects whether AWS X-Ray tracing is enabled.
+     *        Selects whether X-Ray tracing is enabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

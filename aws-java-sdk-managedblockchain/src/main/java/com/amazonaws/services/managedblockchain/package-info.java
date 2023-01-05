@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@
  * Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks. Because of fundamental
  * differences between the frameworks, some API actions or data types may only apply in the context of one framework and
  * not the other. For example, actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
- * and <code>DeleteMember</code> do not apply to Ethereum.
+ * and <code>DeleteMember</code> don't apply to Ethereum.
  * </p>
  * <p>
  * The description for each action indicates the framework or frameworks to which it applies. Data types and properties

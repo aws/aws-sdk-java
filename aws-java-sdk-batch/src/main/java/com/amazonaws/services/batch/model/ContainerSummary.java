@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing summary details of a container within a job.
+ * An object that represents summary details of a container within a job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ContainerSummary" target="_top">AWS API
@@ -36,7 +36,7 @@ public class ContainerSummary implements Serializable, Cloneable, StructuredPojo
     private Integer exitCode;
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      */
@@ -84,13 +84,13 @@ public class ContainerSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional details about a running or
-     *        stopped container.
+     *        A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *        container.
      */
 
     public void setReason(String reason) {
@@ -99,12 +99,12 @@ public class ContainerSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
-     * @return A short (255 max characters) human-readable string to provide additional details about a running or
-     *         stopped container.
+     * @return A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *         container.
      */
 
     public String getReason() {
@@ -113,13 +113,13 @@ public class ContainerSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A short (255 max characters) human-readable string to provide additional details about a running or stopped
+     * A short (255 max characters) human-readable string to provide additional details for a running or stopped
      * container.
      * </p>
      * 
      * @param reason
-     *        A short (255 max characters) human-readable string to provide additional details about a running or
-     *        stopped container.
+     *        A short (255 max characters) human-readable string to provide additional details for a running or stopped
+     *        container.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

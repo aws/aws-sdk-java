@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -323,6 +323,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         requestHandler2s.addAll(chainFactory.newRequestHandlerChain("/com/amazonaws/services/ec2/request.handlers"));
         requestHandler2s.addAll(chainFactory.newRequestHandler2Chain("/com/amazonaws/services/ec2/request.handler2s"));
         requestHandler2s.addAll(chainFactory.getGlobalHandlers());
+    }
+
+    /**
+     * <p>
+     * Accepts an Elastic IP address transfer. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept"
+     * >Accept a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param acceptAddressTransferRequest
+     * @return Result of the AcceptAddressTransfer operation returned by the service.
+     * @sample AmazonEC2.AcceptAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public AcceptAddressTransferResult acceptAddressTransfer(AcceptAddressTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptAddressTransfer(request);
+    }
+
+    @SdkInternalApi
+    final AcceptAddressTransferResult executeAcceptAddressTransfer(AcceptAddressTransferRequest acceptAddressTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptAddressTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptAddressTransferRequest> request = null;
+        Response<AcceptAddressTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptAddressTransferRequestMarshaller().marshall(super.beforeMarshalling(acceptAddressTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptAddressTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AcceptAddressTransferResult> responseHandler = new StaxResponseHandler<AcceptAddressTransferResult>(
+                    new AcceptAddressTransferResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -2236,6 +2294,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. One or more trust providers can be attached to an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param attachVerifiedAccessTrustProviderRequest
+     * @return Result of the AttachVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.AttachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AttachVerifiedAccessTrustProviderResult attachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeAttachVerifiedAccessTrustProvider(request);
+    }
+
+    @SdkInternalApi
+    final AttachVerifiedAccessTrustProviderResult executeAttachVerifiedAccessTrustProvider(
+            AttachVerifiedAccessTrustProviderRequest attachVerifiedAccessTrustProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(attachVerifiedAccessTrustProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AttachVerifiedAccessTrustProviderRequest> request = null;
+        Response<AttachVerifiedAccessTrustProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AttachVerifiedAccessTrustProviderRequestMarshaller().marshall(super.beforeMarshalling(attachVerifiedAccessTrustProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachVerifiedAccessTrustProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<AttachVerifiedAccessTrustProviderResult> responseHandler = new StaxResponseHandler<AttachVerifiedAccessTrustProviderResult>(
+                    new AttachVerifiedAccessTrustProviderResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Attaches an EBS volume to a running or stopped instance and exposes it to the instance with the specified device
      * name.
      * </p>
@@ -2989,6 +3105,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information,
+     * see <a href="https://docs.aws.amazon.com/">Cancel having an AMI shared with your Amazon Web Services account</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param cancelImageLaunchPermissionRequest
+     * @return Result of the CancelImageLaunchPermission operation returned by the service.
+     * @sample AmazonEC2.CancelImageLaunchPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelImageLaunchPermissionResult cancelImageLaunchPermission(CancelImageLaunchPermissionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelImageLaunchPermission(request);
+    }
+
+    @SdkInternalApi
+    final CancelImageLaunchPermissionResult executeCancelImageLaunchPermission(CancelImageLaunchPermissionRequest cancelImageLaunchPermissionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelImageLaunchPermissionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelImageLaunchPermissionRequest> request = null;
+        Response<CancelImageLaunchPermissionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelImageLaunchPermissionRequestMarshaller().marshall(super.beforeMarshalling(cancelImageLaunchPermissionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelImageLaunchPermission");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CancelImageLaunchPermissionResult> responseHandler = new StaxResponseHandler<CancelImageLaunchPermissionResult>(
+                    new CancelImageLaunchPermissionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Cancels an in-process import virtual machine or import snapshot task.
      * </p>
      * 
@@ -3369,12 +3543,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
      * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
      * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
-     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an AMI</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -4528,8 +4702,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating Amazon EBS-Backed
-     * Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createImageRequest
@@ -6088,13 +6262,13 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
-     * Creates a root volume replacement task for an Amazon EC2 instance. The root volume can either be restored to its
-     * initial launch state, or it can be restored using a specific snapshot.
+     * Replaces the EBS-backed root volume for a <code>running</code> instance with a new volume that is restored to the
+     * original root volume's launch state, that is restored to a specific snapshot taken from the original root volume,
+     * or that is restored from an AMI that has the same key characteristics as that of the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
+     * a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createReplaceRootVolumeTaskRequest
@@ -6239,12 +6413,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createRestoreImageTaskRequest
@@ -6763,12 +6937,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createStoreImageTaskRequest
@@ -7964,6 +8138,239 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<CreateTransitGatewayVpcAttachmentResult> responseHandler = new StaxResponseHandler<CreateTransitGatewayVpcAttachmentResult>(
                     new CreateTransitGatewayVpcAttachmentResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access endpoint is where you define your application along with an optional
+     * endpoint-level access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessEndpointRequest
+     * @return Result of the CreateVerifiedAccessEndpoint operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVerifiedAccessEndpointResult createVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVerifiedAccessEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateVerifiedAccessEndpointResult executeCreateVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest createVerifiedAccessEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVerifiedAccessEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVerifiedAccessEndpointRequest> request = null;
+        Response<CreateVerifiedAccessEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVerifiedAccessEndpointRequestMarshaller().marshall(super.beforeMarshalling(createVerifiedAccessEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVerifiedAccessEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateVerifiedAccessEndpointResult> responseHandler = new StaxResponseHandler<CreateVerifiedAccessEndpointResult>(
+                    new CreateVerifiedAccessEndpointResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
+     * who's associated applications have similar security requirements. Each instance within an Amazon Web Services
+     * Verified Access group shares an Amazon Web Services Verified Access policy. For example, you can group all Amazon
+     * Web Services Verified Access instances associated with “sales” applications together and use one common Amazon
+     * Web Services Verified Access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessGroupRequest
+     * @return Result of the CreateVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateVerifiedAccessGroupResult createVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVerifiedAccessGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateVerifiedAccessGroupResult executeCreateVerifiedAccessGroup(CreateVerifiedAccessGroupRequest createVerifiedAccessGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVerifiedAccessGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVerifiedAccessGroupRequest> request = null;
+        Response<CreateVerifiedAccessGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVerifiedAccessGroupRequestMarshaller().marshall(super.beforeMarshalling(createVerifiedAccessGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVerifiedAccessGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateVerifiedAccessGroupResult> responseHandler = new StaxResponseHandler<CreateVerifiedAccessGroupResult>(
+                    new CreateVerifiedAccessGroupResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and
+     * grants access only when your security requirements are met.
+     * </p>
+     * 
+     * @param createVerifiedAccessInstanceRequest
+     * @return Result of the CreateVerifiedAccessInstance operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVerifiedAccessInstanceResult createVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVerifiedAccessInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateVerifiedAccessInstanceResult executeCreateVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest createVerifiedAccessInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVerifiedAccessInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVerifiedAccessInstanceRequest> request = null;
+        Response<CreateVerifiedAccessInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVerifiedAccessInstanceRequestMarshaller().marshall(super.beforeMarshalling(createVerifiedAccessInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVerifiedAccessInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateVerifiedAccessInstanceResult> responseHandler = new StaxResponseHandler<CreateVerifiedAccessInstanceResult>(
+                    new CreateVerifiedAccessInstanceResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. When an application request is made, the identity information sent by the trust provider will be
+     * evaluated by Amazon Web Services Verified Access, before allowing or denying the application request.
+     * </p>
+     * 
+     * @param createVerifiedAccessTrustProviderRequest
+     * @return Result of the CreateVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateVerifiedAccessTrustProviderResult createVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVerifiedAccessTrustProvider(request);
+    }
+
+    @SdkInternalApi
+    final CreateVerifiedAccessTrustProviderResult executeCreateVerifiedAccessTrustProvider(
+            CreateVerifiedAccessTrustProviderRequest createVerifiedAccessTrustProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVerifiedAccessTrustProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVerifiedAccessTrustProviderRequest> request = null;
+        Response<CreateVerifiedAccessTrustProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVerifiedAccessTrustProviderRequestMarshaller().marshall(super.beforeMarshalling(createVerifiedAccessTrustProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVerifiedAccessTrustProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateVerifiedAccessTrustProviderResult> responseHandler = new StaxResponseHandler<CreateVerifiedAccessTrustProviderResult>(
+                    new CreateVerifiedAccessTrustProviderResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -12077,6 +12484,231 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Delete an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessEndpointRequest
+     * @return Result of the DeleteVerifiedAccessEndpoint operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVerifiedAccessEndpointResult deleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVerifiedAccessEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVerifiedAccessEndpointResult executeDeleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest deleteVerifiedAccessEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVerifiedAccessEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVerifiedAccessEndpointRequest> request = null;
+        Response<DeleteVerifiedAccessEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVerifiedAccessEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteVerifiedAccessEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVerifiedAccessEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteVerifiedAccessEndpointResult> responseHandler = new StaxResponseHandler<DeleteVerifiedAccessEndpointResult>(
+                    new DeleteVerifiedAccessEndpointResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access group.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessGroupRequest
+     * @return Result of the DeleteVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteVerifiedAccessGroupResult deleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVerifiedAccessGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVerifiedAccessGroupResult executeDeleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest deleteVerifiedAccessGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVerifiedAccessGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVerifiedAccessGroupRequest> request = null;
+        Response<DeleteVerifiedAccessGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVerifiedAccessGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteVerifiedAccessGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVerifiedAccessGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteVerifiedAccessGroupResult> responseHandler = new StaxResponseHandler<DeleteVerifiedAccessGroupResult>(
+                    new DeleteVerifiedAccessGroupResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessInstanceRequest
+     * @return Result of the DeleteVerifiedAccessInstance operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVerifiedAccessInstanceResult deleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVerifiedAccessInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVerifiedAccessInstanceResult executeDeleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest deleteVerifiedAccessInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVerifiedAccessInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVerifiedAccessInstanceRequest> request = null;
+        Response<DeleteVerifiedAccessInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVerifiedAccessInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteVerifiedAccessInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVerifiedAccessInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteVerifiedAccessInstanceResult> responseHandler = new StaxResponseHandler<DeleteVerifiedAccessInstanceResult>(
+                    new DeleteVerifiedAccessInstanceResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessTrustProviderRequest
+     * @return Result of the DeleteVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVerifiedAccessTrustProviderResult deleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVerifiedAccessTrustProvider(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVerifiedAccessTrustProviderResult executeDeleteVerifiedAccessTrustProvider(
+            DeleteVerifiedAccessTrustProviderRequest deleteVerifiedAccessTrustProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVerifiedAccessTrustProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVerifiedAccessTrustProviderRequest> request = null;
+        Response<DeleteVerifiedAccessTrustProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVerifiedAccessTrustProviderRequestMarshaller().marshall(super.beforeMarshalling(deleteVerifiedAccessTrustProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVerifiedAccessTrustProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteVerifiedAccessTrustProviderResult> responseHandler = new StaxResponseHandler<DeleteVerifiedAccessTrustProviderResult>(
+                    new DeleteVerifiedAccessTrustProviderResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified EBS volume. The volume must be in the <code>available</code> state (not attached to an
      * instance).
      * </p>
@@ -12843,8 +13475,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained in the Recycle Bin for
      * the specified retention period. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * <p>
      * When you deregister an AMI, it doesn't affect any instances that you've already launched from the AMI. You'll
@@ -13198,6 +13830,64 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Describes an Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeAddressTransfersRequest
+     * @return Result of the DescribeAddressTransfers operation returned by the service.
+     * @sample AmazonEC2.DescribeAddressTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAddressTransfersResult describeAddressTransfers(DescribeAddressTransfersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAddressTransfers(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAddressTransfersResult executeDescribeAddressTransfers(DescribeAddressTransfersRequest describeAddressTransfersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAddressTransfersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAddressTransfersRequest> request = null;
+        Response<DescribeAddressTransfersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAddressTransfersRequestMarshaller().marshall(super.beforeMarshalling(describeAddressTransfersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAddressTransfers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAddressTransfersResult> responseHandler = new StaxResponseHandler<DescribeAddressTransfersResult>(
+                    new DescribeAddressTransfersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
      * </p>
      * <p>
@@ -13465,6 +14155,66 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     @Override
     public DescribeAvailabilityZonesResult describeAvailabilityZones() {
         return describeAvailabilityZones(new DescribeAvailabilityZonesRequest());
+    }
+
+    /**
+     * <p>
+     * Describes the current Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param describeAwsNetworkPerformanceMetricSubscriptionsRequest
+     * @return Result of the DescribeAwsNetworkPerformanceMetricSubscriptions operation returned by the service.
+     * @sample AmazonEC2.DescribeAwsNetworkPerformanceMetricSubscriptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAwsNetworkPerformanceMetricSubscriptionsResult describeAwsNetworkPerformanceMetricSubscriptions(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAwsNetworkPerformanceMetricSubscriptions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAwsNetworkPerformanceMetricSubscriptionsResult executeDescribeAwsNetworkPerformanceMetricSubscriptions(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest describeAwsNetworkPerformanceMetricSubscriptionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAwsNetworkPerformanceMetricSubscriptionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAwsNetworkPerformanceMetricSubscriptionsRequest> request = null;
+        Response<DescribeAwsNetworkPerformanceMetricSubscriptionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAwsNetworkPerformanceMetricSubscriptionsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeAwsNetworkPerformanceMetricSubscriptionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAwsNetworkPerformanceMetricSubscriptions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeAwsNetworkPerformanceMetricSubscriptionsResult> responseHandler = new StaxResponseHandler<DescribeAwsNetworkPerformanceMetricSubscriptionsResult>(
+                    new DescribeAwsNetworkPerformanceMetricSubscriptionsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -18094,8 +18844,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Describes a root volume replacement task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeReplaceRootVolumeTasksRequest
@@ -19203,7 +19953,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon
-     * EventBridge</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * EventBridge</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -19546,12 +20296,12 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeStoreImageTasksRequest
@@ -20538,6 +21288,294 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DescribeTrunkInterfaceAssociationsResult> responseHandler = new StaxResponseHandler<DescribeTrunkInterfaceAssociationsResult>(
                     new DescribeTrunkInterfaceAssociationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe Amazon Web Services Verified Access endpoints.
+     * </p>
+     * 
+     * @param describeVerifiedAccessEndpointsRequest
+     * @return Result of the DescribeVerifiedAccessEndpoints operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVerifiedAccessEndpointsResult describeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVerifiedAccessEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVerifiedAccessEndpointsResult executeDescribeVerifiedAccessEndpoints(
+            DescribeVerifiedAccessEndpointsRequest describeVerifiedAccessEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVerifiedAccessEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVerifiedAccessEndpointsRequest> request = null;
+        Response<DescribeVerifiedAccessEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVerifiedAccessEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeVerifiedAccessEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVerifiedAccessEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVerifiedAccessEndpointsResult> responseHandler = new StaxResponseHandler<DescribeVerifiedAccessEndpointsResult>(
+                    new DescribeVerifiedAccessEndpointsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access groups.
+     * </p>
+     * 
+     * @param describeVerifiedAccessGroupsRequest
+     * @return Result of the DescribeVerifiedAccessGroups operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVerifiedAccessGroupsResult describeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVerifiedAccessGroups(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVerifiedAccessGroupsResult executeDescribeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest describeVerifiedAccessGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVerifiedAccessGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVerifiedAccessGroupsRequest> request = null;
+        Response<DescribeVerifiedAccessGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVerifiedAccessGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeVerifiedAccessGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVerifiedAccessGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVerifiedAccessGroupsResult> responseHandler = new StaxResponseHandler<DescribeVerifiedAccessGroupsResult>(
+                    new DescribeVerifiedAccessGroupsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the current logging configuration for the Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
+     * @return Result of the DescribeVerifiedAccessInstanceLoggingConfigurations operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessInstanceLoggingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVerifiedAccessInstanceLoggingConfigurationsResult describeVerifiedAccessInstanceLoggingConfigurations(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVerifiedAccessInstanceLoggingConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVerifiedAccessInstanceLoggingConfigurationsResult executeDescribeVerifiedAccessInstanceLoggingConfigurations(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest describeVerifiedAccessInstanceLoggingConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVerifiedAccessInstanceLoggingConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVerifiedAccessInstanceLoggingConfigurationsRequest> request = null;
+        Response<DescribeVerifiedAccessInstanceLoggingConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVerifiedAccessInstanceLoggingConfigurationsRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeVerifiedAccessInstanceLoggingConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVerifiedAccessInstanceLoggingConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVerifiedAccessInstanceLoggingConfigurationsResult> responseHandler = new StaxResponseHandler<DescribeVerifiedAccessInstanceLoggingConfigurationsResult>(
+                    new DescribeVerifiedAccessInstanceLoggingConfigurationsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstancesRequest
+     * @return Result of the DescribeVerifiedAccessInstances operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVerifiedAccessInstancesResult describeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVerifiedAccessInstances(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVerifiedAccessInstancesResult executeDescribeVerifiedAccessInstances(
+            DescribeVerifiedAccessInstancesRequest describeVerifiedAccessInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVerifiedAccessInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVerifiedAccessInstancesRequest> request = null;
+        Response<DescribeVerifiedAccessInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVerifiedAccessInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeVerifiedAccessInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVerifiedAccessInstances");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVerifiedAccessInstancesResult> responseHandler = new StaxResponseHandler<DescribeVerifiedAccessInstancesResult>(
+                    new DescribeVerifiedAccessInstancesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access trust providers.
+     * </p>
+     * 
+     * @param describeVerifiedAccessTrustProvidersRequest
+     * @return Result of the DescribeVerifiedAccessTrustProviders operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessTrustProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeVerifiedAccessTrustProvidersResult describeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVerifiedAccessTrustProviders(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVerifiedAccessTrustProvidersResult executeDescribeVerifiedAccessTrustProviders(
+            DescribeVerifiedAccessTrustProvidersRequest describeVerifiedAccessTrustProvidersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVerifiedAccessTrustProvidersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVerifiedAccessTrustProvidersRequest> request = null;
+        Response<DescribeVerifiedAccessTrustProvidersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVerifiedAccessTrustProvidersRequestMarshaller().marshall(super
+                        .beforeMarshalling(describeVerifiedAccessTrustProvidersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVerifiedAccessTrustProviders");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeVerifiedAccessTrustProvidersResult> responseHandler = new StaxResponseHandler<DescribeVerifiedAccessTrustProvidersResult>(
+                    new DescribeVerifiedAccessTrustProvidersResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -21834,6 +22872,63 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Detach a trust provider from an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param detachVerifiedAccessTrustProviderRequest
+     * @return Result of the DetachVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.DetachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DetachVerifiedAccessTrustProviderResult detachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeDetachVerifiedAccessTrustProvider(request);
+    }
+
+    @SdkInternalApi
+    final DetachVerifiedAccessTrustProviderResult executeDetachVerifiedAccessTrustProvider(
+            DetachVerifiedAccessTrustProviderRequest detachVerifiedAccessTrustProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(detachVerifiedAccessTrustProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DetachVerifiedAccessTrustProviderRequest> request = null;
+        Response<DetachVerifiedAccessTrustProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DetachVerifiedAccessTrustProviderRequestMarshaller().marshall(super.beforeMarshalling(detachVerifiedAccessTrustProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachVerifiedAccessTrustProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DetachVerifiedAccessTrustProviderResult> responseHandler = new StaxResponseHandler<DetachVerifiedAccessTrustProviderResult>(
+                    new DetachVerifiedAccessTrustProviderResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Detaches an EBS volume from an instance. Make sure to unmount any file systems on the device within your
      * operating system before detaching the volume. Failure to do so can result in the volume becoming stuck in the
      * <code>busy</code> state while detaching. If this happens, detachment can be delayed indefinitely until you
@@ -21953,6 +23048,124 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<DetachVpnGatewayResult> responseHandler = new StaxResponseHandler<DetachVpnGatewayResult>(
                     new DetachVpnGatewayResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableAddressTransferRequest
+     * @return Result of the DisableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2.DisableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DisableAddressTransferResult disableAddressTransfer(DisableAddressTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableAddressTransfer(request);
+    }
+
+    @SdkInternalApi
+    final DisableAddressTransferResult executeDisableAddressTransfer(DisableAddressTransferRequest disableAddressTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableAddressTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableAddressTransferRequest> request = null;
+        Response<DisableAddressTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableAddressTransferRequestMarshaller().marshall(super.beforeMarshalling(disableAddressTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAddressTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableAddressTransferResult> responseHandler = new StaxResponseHandler<DisableAddressTransferResult>(
+                    new DisableAddressTransferResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Disables Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param disableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return Result of the DisableAwsNetworkPerformanceMetricSubscription operation returned by the service.
+     * @sample AmazonEC2.DisableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableAwsNetworkPerformanceMetricSubscriptionResult disableAwsNetworkPerformanceMetricSubscription(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableAwsNetworkPerformanceMetricSubscription(request);
+    }
+
+    @SdkInternalApi
+    final DisableAwsNetworkPerformanceMetricSubscriptionResult executeDisableAwsNetworkPerformanceMetricSubscription(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest disableAwsNetworkPerformanceMetricSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableAwsNetworkPerformanceMetricSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableAwsNetworkPerformanceMetricSubscriptionRequest> request = null;
+        Response<DisableAwsNetworkPerformanceMetricSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller().marshall(super
+                        .beforeMarshalling(disableAwsNetworkPerformanceMetricSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAwsNetworkPerformanceMetricSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DisableAwsNetworkPerformanceMetricSubscriptionResult> responseHandler = new StaxResponseHandler<DisableAwsNetworkPerformanceMetricSubscriptionResult>(
+                    new DisableAwsNetworkPerformanceMetricSubscriptionResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -22157,7 +23370,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param disableImageDeprecationRequest
@@ -23332,6 +24545,124 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Enables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableAddressTransferRequest
+     * @return Result of the EnableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2.EnableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public EnableAddressTransferResult enableAddressTransfer(EnableAddressTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableAddressTransfer(request);
+    }
+
+    @SdkInternalApi
+    final EnableAddressTransferResult executeEnableAddressTransfer(EnableAddressTransferRequest enableAddressTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableAddressTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableAddressTransferRequest> request = null;
+        Response<EnableAddressTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableAddressTransferRequestMarshaller().marshall(super.beforeMarshalling(enableAddressTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAddressTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableAddressTransferResult> responseHandler = new StaxResponseHandler<EnableAddressTransferResult>(
+                    new EnableAddressTransferResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables Infrastructure Performance subscriptions.
+     * </p>
+     * 
+     * @param enableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return Result of the EnableAwsNetworkPerformanceMetricSubscription operation returned by the service.
+     * @sample AmazonEC2.EnableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EnableAwsNetworkPerformanceMetricSubscriptionResult enableAwsNetworkPerformanceMetricSubscription(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableAwsNetworkPerformanceMetricSubscription(request);
+    }
+
+    @SdkInternalApi
+    final EnableAwsNetworkPerformanceMetricSubscriptionResult executeEnableAwsNetworkPerformanceMetricSubscription(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest enableAwsNetworkPerformanceMetricSubscriptionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableAwsNetworkPerformanceMetricSubscriptionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableAwsNetworkPerformanceMetricSubscriptionRequest> request = null;
+        Response<EnableAwsNetworkPerformanceMetricSubscriptionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableAwsNetworkPerformanceMetricSubscriptionRequestMarshaller().marshall(super
+                        .beforeMarshalling(enableAwsNetworkPerformanceMetricSubscriptionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAwsNetworkPerformanceMetricSubscription");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableAwsNetworkPerformanceMetricSubscriptionResult> responseHandler = new StaxResponseHandler<EnableAwsNetworkPerformanceMetricSubscriptionResult>(
+                    new EnableAwsNetworkPerformanceMetricSubscriptionResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
@@ -23543,7 +24874,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param enableImageDeprecationRequest
@@ -23647,6 +24978,71 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<EnableIpamOrganizationAdminAccountResult> responseHandler = new StaxResponseHandler<EnableIpamOrganizationAdminAccountResult>(
                     new EnableIpamOrganizationAdminAccountResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Establishes a trust relationship between Reachability Analyzer and Organizations. This operation must be
+     * performed by the management account for the organization.
+     * </p>
+     * <p>
+     * After you establish a trust relationship, a user in the management account or a delegated administrator account
+     * can run a cross-account analysis using resources from the member accounts.
+     * </p>
+     * 
+     * @param enableReachabilityAnalyzerOrganizationSharingRequest
+     * @return Result of the EnableReachabilityAnalyzerOrganizationSharing operation returned by the service.
+     * @sample AmazonEC2.EnableReachabilityAnalyzerOrganizationSharing
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EnableReachabilityAnalyzerOrganizationSharingResult enableReachabilityAnalyzerOrganizationSharing(
+            EnableReachabilityAnalyzerOrganizationSharingRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableReachabilityAnalyzerOrganizationSharing(request);
+    }
+
+    @SdkInternalApi
+    final EnableReachabilityAnalyzerOrganizationSharingResult executeEnableReachabilityAnalyzerOrganizationSharing(
+            EnableReachabilityAnalyzerOrganizationSharingRequest enableReachabilityAnalyzerOrganizationSharingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableReachabilityAnalyzerOrganizationSharingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableReachabilityAnalyzerOrganizationSharingRequest> request = null;
+        Response<EnableReachabilityAnalyzerOrganizationSharingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableReachabilityAnalyzerOrganizationSharingRequestMarshaller().marshall(super
+                        .beforeMarshalling(enableReachabilityAnalyzerOrganizationSharingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableReachabilityAnalyzerOrganizationSharing");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<EnableReachabilityAnalyzerOrganizationSharingResult> responseHandler = new StaxResponseHandler<EnableReachabilityAnalyzerOrganizationSharingResult>(
+                    new EnableReachabilityAnalyzerOrganizationSharingResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -24373,6 +25769,62 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
             StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult> responseHandler = new StaxResponseHandler<GetAssociatedIpv6PoolCidrsResult>(
                     new GetAssociatedIpv6PoolCidrsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets network performance data.
+     * </p>
+     * 
+     * @param getAwsNetworkPerformanceDataRequest
+     * @return Result of the GetAwsNetworkPerformanceData operation returned by the service.
+     * @sample AmazonEC2.GetAwsNetworkPerformanceData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAwsNetworkPerformanceDataResult getAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAwsNetworkPerformanceData(request);
+    }
+
+    @SdkInternalApi
+    final GetAwsNetworkPerformanceDataResult executeGetAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest getAwsNetworkPerformanceDataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAwsNetworkPerformanceDataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAwsNetworkPerformanceDataRequest> request = null;
+        Response<GetAwsNetworkPerformanceDataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAwsNetworkPerformanceDataRequestMarshaller().marshall(super.beforeMarshalling(getAwsNetworkPerformanceDataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAwsNetworkPerformanceData");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetAwsNetworkPerformanceDataResult> responseHandler = new StaxResponseHandler<GetAwsNetworkPerformanceDataResult>(
+                    new GetAwsNetworkPerformanceDataResultStaxUnmarshaller());
 
             response = invoke(request, responseHandler, executionContext);
 
@@ -26407,6 +27859,119 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Get the Verified Access policy associated with the endpoint.
+     * </p>
+     * 
+     * @param getVerifiedAccessEndpointPolicyRequest
+     * @return Result of the GetVerifiedAccessEndpointPolicy operation returned by the service.
+     * @sample AmazonEC2.GetVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetVerifiedAccessEndpointPolicyResult getVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVerifiedAccessEndpointPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetVerifiedAccessEndpointPolicyResult executeGetVerifiedAccessEndpointPolicy(
+            GetVerifiedAccessEndpointPolicyRequest getVerifiedAccessEndpointPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVerifiedAccessEndpointPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVerifiedAccessEndpointPolicyRequest> request = null;
+        Response<GetVerifiedAccessEndpointPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVerifiedAccessEndpointPolicyRequestMarshaller().marshall(super.beforeMarshalling(getVerifiedAccessEndpointPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVerifiedAccessEndpointPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetVerifiedAccessEndpointPolicyResult> responseHandler = new StaxResponseHandler<GetVerifiedAccessEndpointPolicyResult>(
+                    new GetVerifiedAccessEndpointPolicyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Shows the contents of the Verified Access policy associated with the group.
+     * </p>
+     * 
+     * @param getVerifiedAccessGroupPolicyRequest
+     * @return Result of the GetVerifiedAccessGroupPolicy operation returned by the service.
+     * @sample AmazonEC2.GetVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetVerifiedAccessGroupPolicyResult getVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVerifiedAccessGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final GetVerifiedAccessGroupPolicyResult executeGetVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest getVerifiedAccessGroupPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVerifiedAccessGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVerifiedAccessGroupPolicyRequest> request = null;
+        Response<GetVerifiedAccessGroupPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVerifiedAccessGroupPolicyRequestMarshaller().marshall(super.beforeMarshalling(getVerifiedAccessGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVerifiedAccessGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetVerifiedAccessGroupPolicyResult> responseHandler = new StaxResponseHandler<GetVerifiedAccessGroupPolicyResult>(
+                    new GetVerifiedAccessGroupPolicyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Download an Amazon Web Services-provided sample configuration file to be used with the customer gateway device
      * specified for your Site-to-Site VPN connection.
      * </p>
@@ -26929,8 +28494,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Lists one or more AMIs that are currently in the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param listImagesInRecycleBinRequest
@@ -29749,6 +31314,406 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointRequest
+     * @return Result of the ModifyVerifiedAccessEndpoint operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVerifiedAccessEndpointResult modifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVerifiedAccessEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVerifiedAccessEndpointResult executeModifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest modifyVerifiedAccessEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVerifiedAccessEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVerifiedAccessEndpointRequest> request = null;
+        Response<ModifyVerifiedAccessEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVerifiedAccessEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyVerifiedAccessEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVerifiedAccessEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVerifiedAccessEndpointResult> responseHandler = new StaxResponseHandler<ModifyVerifiedAccessEndpointResult>(
+                    new ModifyVerifiedAccessEndpointResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access endpoint policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointPolicyRequest
+     * @return Result of the ModifyVerifiedAccessEndpointPolicy operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVerifiedAccessEndpointPolicyResult modifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVerifiedAccessEndpointPolicy(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVerifiedAccessEndpointPolicyResult executeModifyVerifiedAccessEndpointPolicy(
+            ModifyVerifiedAccessEndpointPolicyRequest modifyVerifiedAccessEndpointPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVerifiedAccessEndpointPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVerifiedAccessEndpointPolicyRequest> request = null;
+        Response<ModifyVerifiedAccessEndpointPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVerifiedAccessEndpointPolicyRequestMarshaller()
+                        .marshall(super.beforeMarshalling(modifyVerifiedAccessEndpointPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVerifiedAccessEndpointPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVerifiedAccessEndpointPolicyResult> responseHandler = new StaxResponseHandler<ModifyVerifiedAccessEndpointPolicyResult>(
+                    new ModifyVerifiedAccessEndpointPolicyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group configuration.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupRequest
+     * @return Result of the ModifyVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyVerifiedAccessGroupResult modifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVerifiedAccessGroup(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVerifiedAccessGroupResult executeModifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest modifyVerifiedAccessGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVerifiedAccessGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVerifiedAccessGroupRequest> request = null;
+        Response<ModifyVerifiedAccessGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVerifiedAccessGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyVerifiedAccessGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVerifiedAccessGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVerifiedAccessGroupResult> responseHandler = new StaxResponseHandler<ModifyVerifiedAccessGroupResult>(
+                    new ModifyVerifiedAccessGroupResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupPolicyRequest
+     * @return Result of the ModifyVerifiedAccessGroupPolicy operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVerifiedAccessGroupPolicyResult modifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVerifiedAccessGroupPolicy(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVerifiedAccessGroupPolicyResult executeModifyVerifiedAccessGroupPolicy(
+            ModifyVerifiedAccessGroupPolicyRequest modifyVerifiedAccessGroupPolicyRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVerifiedAccessGroupPolicyRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVerifiedAccessGroupPolicyRequest> request = null;
+        Response<ModifyVerifiedAccessGroupPolicyResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVerifiedAccessGroupPolicyRequestMarshaller().marshall(super.beforeMarshalling(modifyVerifiedAccessGroupPolicyRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVerifiedAccessGroupPolicy");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVerifiedAccessGroupPolicyResult> responseHandler = new StaxResponseHandler<ModifyVerifiedAccessGroupPolicyResult>(
+                    new ModifyVerifiedAccessGroupPolicyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceRequest
+     * @return Result of the ModifyVerifiedAccessInstance operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVerifiedAccessInstanceResult modifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVerifiedAccessInstance(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVerifiedAccessInstanceResult executeModifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest modifyVerifiedAccessInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVerifiedAccessInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVerifiedAccessInstanceRequest> request = null;
+        Response<ModifyVerifiedAccessInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVerifiedAccessInstanceRequestMarshaller().marshall(super.beforeMarshalling(modifyVerifiedAccessInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVerifiedAccessInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVerifiedAccessInstanceResult> responseHandler = new StaxResponseHandler<ModifyVerifiedAccessInstanceResult>(
+                    new ModifyVerifiedAccessInstanceResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceLoggingConfigurationRequest
+     * @return Result of the ModifyVerifiedAccessInstanceLoggingConfiguration operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessInstanceLoggingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVerifiedAccessInstanceLoggingConfigurationResult modifyVerifiedAccessInstanceLoggingConfiguration(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVerifiedAccessInstanceLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVerifiedAccessInstanceLoggingConfigurationResult executeModifyVerifiedAccessInstanceLoggingConfiguration(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest modifyVerifiedAccessInstanceLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVerifiedAccessInstanceLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVerifiedAccessInstanceLoggingConfigurationRequest> request = null;
+        Response<ModifyVerifiedAccessInstanceLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVerifiedAccessInstanceLoggingConfigurationRequestMarshaller().marshall(super
+                        .beforeMarshalling(modifyVerifiedAccessInstanceLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVerifiedAccessInstanceLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVerifiedAccessInstanceLoggingConfigurationResult> responseHandler = new StaxResponseHandler<ModifyVerifiedAccessInstanceLoggingConfigurationResult>(
+                    new ModifyVerifiedAccessInstanceLoggingConfigurationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessTrustProviderRequest
+     * @return Result of the ModifyVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ModifyVerifiedAccessTrustProviderResult modifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVerifiedAccessTrustProvider(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVerifiedAccessTrustProviderResult executeModifyVerifiedAccessTrustProvider(
+            ModifyVerifiedAccessTrustProviderRequest modifyVerifiedAccessTrustProviderRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVerifiedAccessTrustProviderRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVerifiedAccessTrustProviderRequest> request = null;
+        Response<ModifyVerifiedAccessTrustProviderResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVerifiedAccessTrustProviderRequestMarshaller().marshall(super.beforeMarshalling(modifyVerifiedAccessTrustProviderRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVerifiedAccessTrustProvider");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVerifiedAccessTrustProviderResult> responseHandler = new StaxResponseHandler<ModifyVerifiedAccessTrustProviderResult>(
+                    new ModifyVerifiedAccessTrustProviderResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
      * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you might be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
@@ -31374,7 +33339,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an
      * instance from the AMI. For more information about creating AMIs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating your own AMIs</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <note>
@@ -31439,8 +33404,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
      * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     * billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param registerImageRequest
@@ -32662,14 +34627,14 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
-     * the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <important>
      * <p>
      * We strongly discourage using the RequestSpotFleet API because it is a legacy API with no planned investment. For
      * options for requesting Spot Instances, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
-     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -33286,8 +35251,8 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     /**
      * <p>
      * Restores an AMI from the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param restoreImageFromRecycleBinRequest

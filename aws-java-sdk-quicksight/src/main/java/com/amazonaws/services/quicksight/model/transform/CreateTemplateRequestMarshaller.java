@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class CreateTemplateRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> VERSIONDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionDescription").build();
+    private static final MarshallingInfo<StructuredPojo> DEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Definition").build();
 
     private static final CreateTemplateRequestMarshaller instance = new CreateTemplateRequestMarshaller();
 
@@ -66,6 +68,7 @@ public class CreateTemplateRequestMarshaller {
             protocolMarshaller.marshall(createTemplateRequest.getSourceEntity(), SOURCEENTITY_BINDING);
             protocolMarshaller.marshall(createTemplateRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createTemplateRequest.getVersionDescription(), VERSIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createTemplateRequest.getDefinition(), DEFINITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

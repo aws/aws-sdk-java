@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,51 @@ import com.amazonaws.services.lexmodelsv2.model.*;
 public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 implements AmazonLexModelsV2Async {
 
     protected AbstractAmazonLexModelsV2Async() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateCustomVocabularyItemResult> batchCreateCustomVocabularyItemAsync(
+            BatchCreateCustomVocabularyItemRequest request) {
+
+        return batchCreateCustomVocabularyItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateCustomVocabularyItemResult> batchCreateCustomVocabularyItemAsync(
+            BatchCreateCustomVocabularyItemRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateCustomVocabularyItemRequest, BatchCreateCustomVocabularyItemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteCustomVocabularyItemResult> batchDeleteCustomVocabularyItemAsync(
+            BatchDeleteCustomVocabularyItemRequest request) {
+
+        return batchDeleteCustomVocabularyItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteCustomVocabularyItemResult> batchDeleteCustomVocabularyItemAsync(
+            BatchDeleteCustomVocabularyItemRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteCustomVocabularyItemRequest, BatchDeleteCustomVocabularyItemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateCustomVocabularyItemResult> batchUpdateCustomVocabularyItemAsync(
+            BatchUpdateCustomVocabularyItemRequest request) {
+
+        return batchUpdateCustomVocabularyItemAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchUpdateCustomVocabularyItemResult> batchUpdateCustomVocabularyItemAsync(
+            BatchUpdateCustomVocabularyItemRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchUpdateCustomVocabularyItemRequest, BatchUpdateCustomVocabularyItemResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -610,6 +655,19 @@ public class AbstractAmazonLexModelsV2Async extends AbstractAmazonLexModelsV2 im
     @Override
     public java.util.concurrent.Future<ListBuiltInSlotTypesResult> listBuiltInSlotTypesAsync(ListBuiltInSlotTypesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListBuiltInSlotTypesRequest, ListBuiltInSlotTypesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomVocabularyItemsResult> listCustomVocabularyItemsAsync(ListCustomVocabularyItemsRequest request) {
+
+        return listCustomVocabularyItemsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomVocabularyItemsResult> listCustomVocabularyItemsAsync(ListCustomVocabularyItemsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListCustomVocabularyItemsRequest, ListCustomVocabularyItemsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,6 +117,33 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     AssociateTrustStoreResult associateTrustStore(AssociateTrustStoreRequest associateTrustStoreRequest);
+
+    /**
+     * <p>
+     * Associates a user access logging settings resource with a web portal.
+     * </p>
+     * 
+     * @param associateUserAccessLoggingSettingsRequest
+     * @return Result of the AssociateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.AssociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateUserAccessLoggingSettingsResult associateUserAccessLoggingSettings(
+            AssociateUserAccessLoggingSettingsRequest associateUserAccessLoggingSettingsRequest);
 
     /**
      * <p>
@@ -281,6 +308,31 @@ public interface AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Creates a user access logging settings resource that can be associated with a web portal.
+     * </p>
+     * 
+     * @param createUserAccessLoggingSettingsRequest
+     * @return Result of the CreateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.CreateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateUserAccessLoggingSettingsResult createUserAccessLoggingSettings(CreateUserAccessLoggingSettingsRequest createUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
      * Creates a user settings resource that can be associated with a web portal. Once associated with a web portal,
      * user settings control how users can transfer data between a streaming session and the their local devices.
      * </p>
@@ -422,6 +474,29 @@ public interface AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Deletes user access logging settings.
+     * </p>
+     * 
+     * @param deleteUserAccessLoggingSettingsRequest
+     * @return Result of the DeleteUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @throws ConflictException
+     *         There is a conflict.
+     * @sample AmazonWorkSpacesWeb.DeleteUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteUserAccessLoggingSettingsResult deleteUserAccessLoggingSettings(DeleteUserAccessLoggingSettingsRequest deleteUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
      * Deletes user settings.
      * </p>
      * 
@@ -511,6 +586,31 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     DisassociateTrustStoreResult disassociateTrustStore(DisassociateTrustStoreRequest disassociateTrustStoreRequest);
+
+    /**
+     * <p>
+     * Disassociates user access logging settings from a web portal.
+     * </p>
+     * 
+     * @param disassociateUserAccessLoggingSettingsRequest
+     * @return Result of the DisassociateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.DisassociateUserAccessLoggingSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateUserAccessLoggingSettingsResult disassociateUserAccessLoggingSettings(
+            DisassociateUserAccessLoggingSettingsRequest disassociateUserAccessLoggingSettingsRequest);
 
     /**
      * <p>
@@ -698,6 +798,29 @@ public interface AmazonWorkSpacesWeb {
 
     /**
      * <p>
+     * Gets user access logging settings.
+     * </p>
+     * 
+     * @param getUserAccessLoggingSettingsRequest
+     * @return Result of the GetUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.GetUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetUserAccessLoggingSettingsResult getUserAccessLoggingSettings(GetUserAccessLoggingSettingsRequest getUserAccessLoggingSettingsRequest);
+
+    /**
+     * <p>
      * Gets user settings.
      * </p>
      * 
@@ -869,6 +992,27 @@ public interface AmazonWorkSpacesWeb {
      *      API Documentation</a>
      */
     ListTrustStoresResult listTrustStores(ListTrustStoresRequest listTrustStoresRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of user access logging settings.
+     * </p>
+     * 
+     * @param listUserAccessLoggingSettingsRequest
+     * @return Result of the ListUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.ListUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListUserAccessLoggingSettingsResult listUserAccessLoggingSettings(ListUserAccessLoggingSettingsRequest listUserAccessLoggingSettingsRequest);
 
     /**
      * <p>
@@ -1055,6 +1199,29 @@ public interface AmazonWorkSpacesWeb {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateTrustStoreResult updateTrustStore(UpdateTrustStoreRequest updateTrustStoreRequest);
+
+    /**
+     * <p>
+     * Updates the user access logging settings.
+     * </p>
+     * 
+     * @param updateUserAccessLoggingSettingsRequest
+     * @return Result of the UpdateUserAccessLoggingSettings operation returned by the service.
+     * @throws InternalServerException
+     *         There is an internal server error.
+     * @throws ResourceNotFoundException
+     *         The resource cannot be found.
+     * @throws AccessDeniedException
+     *         Access is denied.
+     * @throws ThrottlingException
+     *         There is a throttling error.
+     * @throws ValidationException
+     *         There is a validation error.
+     * @sample AmazonWorkSpacesWeb.UpdateUserAccessLoggingSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateUserAccessLoggingSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateUserAccessLoggingSettingsResult updateUserAccessLoggingSettings(UpdateUserAccessLoggingSettingsRequest updateUserAccessLoggingSettingsRequest);
 
     /**
      * <p>

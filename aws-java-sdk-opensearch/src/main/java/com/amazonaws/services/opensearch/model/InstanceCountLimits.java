@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,19 +19,32 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * InstanceCountLimits represents the limits on the number of instances that can be created in Amazon OpenSearch Service
- * for a given InstanceType.
+ * Limits on the number of instances that can be created in OpenSearch Service for a given instance type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class InstanceCountLimits implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The maximum allowed number of instances.
+     * </p>
+     */
     private Integer minimumInstanceCount;
-
+    /**
+     * <p>
+     * The minimum allowed number of instances.
+     * </p>
+     */
     private Integer maximumInstanceCount;
 
     /**
+     * <p>
+     * The maximum allowed number of instances.
+     * </p>
+     * 
      * @param minimumInstanceCount
+     *        The maximum allowed number of instances.
      */
 
     public void setMinimumInstanceCount(Integer minimumInstanceCount) {
@@ -39,7 +52,11 @@ public class InstanceCountLimits implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum allowed number of instances.
+     * </p>
+     * 
+     * @return The maximum allowed number of instances.
      */
 
     public Integer getMinimumInstanceCount() {
@@ -47,7 +64,12 @@ public class InstanceCountLimits implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The maximum allowed number of instances.
+     * </p>
+     * 
      * @param minimumInstanceCount
+     *        The maximum allowed number of instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -57,7 +79,12 @@ public class InstanceCountLimits implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The minimum allowed number of instances.
+     * </p>
+     * 
      * @param maximumInstanceCount
+     *        The minimum allowed number of instances.
      */
 
     public void setMaximumInstanceCount(Integer maximumInstanceCount) {
@@ -65,7 +92,11 @@ public class InstanceCountLimits implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The minimum allowed number of instances.
+     * </p>
+     * 
+     * @return The minimum allowed number of instances.
      */
 
     public Integer getMaximumInstanceCount() {
@@ -73,7 +104,12 @@ public class InstanceCountLimits implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The minimum allowed number of instances.
+     * </p>
+     * 
      * @param maximumInstanceCount
+     *        The minimum allowed number of instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,20 @@ import com.amazonaws.AmazonWebServiceResult;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyTransitGatewayResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the transit gateway.
+     * </p>
+     */
     private TransitGateway transitGateway;
 
     /**
+     * <p>
+     * Information about the transit gateway.
+     * </p>
+     * 
      * @param transitGateway
+     *        Information about the transit gateway.
      */
 
     public void setTransitGateway(TransitGateway transitGateway) {
@@ -34,7 +44,11 @@ public class ModifyTransitGatewayResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the transit gateway.
+     * </p>
+     * 
+     * @return Information about the transit gateway.
      */
 
     public TransitGateway getTransitGateway() {
@@ -42,7 +56,12 @@ public class ModifyTransitGatewayResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Information about the transit gateway.
+     * </p>
+     * 
      * @param transitGateway
+     *        Information about the transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

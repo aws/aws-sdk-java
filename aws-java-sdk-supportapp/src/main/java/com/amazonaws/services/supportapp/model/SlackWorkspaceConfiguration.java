@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,91 @@ public class SlackWorkspaceConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization
+     * in Organizations.
+     * </p>
+     */
+    private Boolean allowOrganizationMemberAccount;
+    /**
+     * <p>
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      */
     private String teamId;
+    /**
+     * <p>
+     * The name of the Slack workspace.
+     * </p>
+     */
+    private String teamName;
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization
+     * in Organizations.
+     * </p>
+     * 
+     * @param allowOrganizationMemberAccount
+     *        Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an
+     *        organization in Organizations.
+     */
+
+    public void setAllowOrganizationMemberAccount(Boolean allowOrganizationMemberAccount) {
+        this.allowOrganizationMemberAccount = allowOrganizationMemberAccount;
+    }
+
+    /**
+     * <p>
+     * Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization
+     * in Organizations.
+     * </p>
+     * 
+     * @return Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an
+     *         organization in Organizations.
+     */
+
+    public Boolean getAllowOrganizationMemberAccount() {
+        return this.allowOrganizationMemberAccount;
+    }
+
+    /**
+     * <p>
+     * Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization
+     * in Organizations.
+     * </p>
+     * 
+     * @param allowOrganizationMemberAccount
+     *        Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an
+     *        organization in Organizations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SlackWorkspaceConfiguration withAllowOrganizationMemberAccount(Boolean allowOrganizationMemberAccount) {
+        setAllowOrganizationMemberAccount(allowOrganizationMemberAccount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an organization
+     * in Organizations.
+     * </p>
+     * 
+     * @return Whether to allow member accounts to authorize Slack workspaces. Member accounts must be part of an
+     *         organization in Organizations.
+     */
+
+    public Boolean isAllowOrganizationMemberAccount() {
+        return this.allowOrganizationMemberAccount;
+    }
+
+    /**
+     * <p>
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public void setTeamId(String teamId) {
@@ -50,10 +123,10 @@ public class SlackWorkspaceConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
-     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * @return The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      */
 
     public String getTeamId() {
@@ -62,16 +135,56 @@ public class SlackWorkspaceConfiguration implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     * The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * </p>
      * 
      * @param teamId
-     *        The team ID in Slack. This ID uniquely identifies a Slack workspace.
+     *        The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SlackWorkspaceConfiguration withTeamId(String teamId) {
         setTeamId(teamId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Slack workspace.
+     * </p>
+     * 
+     * @param teamName
+     *        The name of the Slack workspace.
+     */
+
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Slack workspace.
+     * </p>
+     * 
+     * @return The name of the Slack workspace.
+     */
+
+    public String getTeamName() {
+        return this.teamName;
+    }
+
+    /**
+     * <p>
+     * The name of the Slack workspace.
+     * </p>
+     * 
+     * @param teamName
+     *        The name of the Slack workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SlackWorkspaceConfiguration withTeamName(String teamName) {
+        setTeamName(teamName);
         return this;
     }
 
@@ -87,8 +200,12 @@ public class SlackWorkspaceConfiguration implements Serializable, Cloneable, Str
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAllowOrganizationMemberAccount() != null)
+            sb.append("AllowOrganizationMemberAccount: ").append(getAllowOrganizationMemberAccount()).append(",");
         if (getTeamId() != null)
-            sb.append("TeamId: ").append(getTeamId());
+            sb.append("TeamId: ").append(getTeamId()).append(",");
+        if (getTeamName() != null)
+            sb.append("TeamName: ").append(getTeamName());
         sb.append("}");
         return sb.toString();
     }
@@ -103,9 +220,18 @@ public class SlackWorkspaceConfiguration implements Serializable, Cloneable, Str
         if (obj instanceof SlackWorkspaceConfiguration == false)
             return false;
         SlackWorkspaceConfiguration other = (SlackWorkspaceConfiguration) obj;
+        if (other.getAllowOrganizationMemberAccount() == null ^ this.getAllowOrganizationMemberAccount() == null)
+            return false;
+        if (other.getAllowOrganizationMemberAccount() != null
+                && other.getAllowOrganizationMemberAccount().equals(this.getAllowOrganizationMemberAccount()) == false)
+            return false;
         if (other.getTeamId() == null ^ this.getTeamId() == null)
             return false;
         if (other.getTeamId() != null && other.getTeamId().equals(this.getTeamId()) == false)
+            return false;
+        if (other.getTeamName() == null ^ this.getTeamName() == null)
+            return false;
+        if (other.getTeamName() != null && other.getTeamName().equals(this.getTeamName()) == false)
             return false;
         return true;
     }
@@ -115,7 +241,9 @@ public class SlackWorkspaceConfiguration implements Serializable, Cloneable, Str
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAllowOrganizationMemberAccount() == null) ? 0 : getAllowOrganizationMemberAccount().hashCode());
         hashCode = prime * hashCode + ((getTeamId() == null) ? 0 : getTeamId().hashCode());
+        hashCode = prime * hashCode + ((getTeamName() == null) ? 0 : getTeamName().hashCode());
         return hashCode;
     }
 

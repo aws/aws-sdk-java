@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -460,6 +460,41 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
 
                 try {
                     result = executeDeleteTrail(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            DeregisterOrganizationDelegatedAdminRequest request) {
+
+        return deregisterOrganizationDelegatedAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeregisterOrganizationDelegatedAdminResult> deregisterOrganizationDelegatedAdminAsync(
+            final DeregisterOrganizationDelegatedAdminRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeregisterOrganizationDelegatedAdminRequest, DeregisterOrganizationDelegatedAdminResult> asyncHandler) {
+        final DeregisterOrganizationDelegatedAdminRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeregisterOrganizationDelegatedAdminResult>() {
+            @Override
+            public DeregisterOrganizationDelegatedAdminResult call() throws Exception {
+                DeregisterOrganizationDelegatedAdminResult result = null;
+
+                try {
+                    result = executeDeregisterOrganizationDelegatedAdmin(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1222,6 +1257,41 @@ public class AWSCloudTrailAsyncClient extends AWSCloudTrailClient implements AWS
 
                 try {
                     result = executePutInsightSelectors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            RegisterOrganizationDelegatedAdminRequest request) {
+
+        return registerOrganizationDelegatedAdminAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RegisterOrganizationDelegatedAdminResult> registerOrganizationDelegatedAdminAsync(
+            final RegisterOrganizationDelegatedAdminRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RegisterOrganizationDelegatedAdminRequest, RegisterOrganizationDelegatedAdminResult> asyncHandler) {
+        final RegisterOrganizationDelegatedAdminRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RegisterOrganizationDelegatedAdminResult>() {
+            @Override
+            public RegisterOrganizationDelegatedAdminResult call() throws Exception {
+                RegisterOrganizationDelegatedAdminResult result = null;
+
+                try {
+                    result = executeRegisterOrganizationDelegatedAdmin(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the request parameters to the <code> <a>GetPackageVersionHistory</a> </code> operation.
+ * Container for the request parameters to the <code>GetPackageVersionHistory</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,31 +27,33 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns an audit history of package versions.
+     * The unique identifier of the package.
      * </p>
      */
     private String packageID;
     /**
      * <p>
-     * Limits results to a maximum number of package versions.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns
+     * results in the next page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Returns an audit history of package versions.
+     * The unique identifier of the package.
      * </p>
      * 
      * @param packageID
-     *        Returns an audit history of package versions.
+     *        The unique identifier of the package.
      */
 
     public void setPackageID(String packageID) {
@@ -60,10 +62,10 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns an audit history of package versions.
+     * The unique identifier of the package.
      * </p>
      * 
-     * @return Returns an audit history of package versions.
+     * @return The unique identifier of the package.
      */
 
     public String getPackageID() {
@@ -72,11 +74,11 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Returns an audit history of package versions.
+     * The unique identifier of the package.
      * </p>
      * 
      * @param packageID
-     *        Returns an audit history of package versions.
+     *        The unique identifier of the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +89,13 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Limits results to a maximum number of package versions.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Limits results to a maximum number of package versions.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -100,10 +104,12 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Limits results to a maximum number of package versions.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
-     * @return Limits results to a maximum number of package versions.
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -112,11 +118,13 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Limits results to a maximum number of package versions.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Limits results to a maximum number of package versions.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +135,15 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns
+     * results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If
-     *        provided, returns results for the next page.
+     *        If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can
+     *        include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code>
+     *        operations, which returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -142,12 +152,14 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns
+     * results in the next page.
      * </p>
      * 
-     * @return Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If
-     *         provided, returns results for the next page.
+     * @return If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can
+     *         include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code>
+     *         operations, which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -156,13 +168,15 @@ public class GetPackageVersionHistoryRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns
+     * results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If
-     *        provided, returns results for the next page.
+     *        If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can
+     *        include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code>
+     *        operations, which returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

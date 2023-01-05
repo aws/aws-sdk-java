@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,8 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
     private String lensAlias;
     /**
      * <p>
-     * The Amazon Web Services account ID or IAM role with which the lens is shared.
+     * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens
+     * is shared.
      * </p>
      */
     private String sharedWithPrefix;
@@ -71,11 +72,13 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services account ID or IAM role with which the lens is shared.
+     * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens
+     * is shared.
      * </p>
      * 
      * @param sharedWithPrefix
-     *        The Amazon Web Services account ID or IAM role with which the lens is shared.
+     *        The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which
+     *        the lens is shared.
      */
 
     public void setSharedWithPrefix(String sharedWithPrefix) {
@@ -84,10 +87,12 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services account ID or IAM role with which the lens is shared.
+     * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens
+     * is shared.
      * </p>
      * 
-     * @return The Amazon Web Services account ID or IAM role with which the lens is shared.
+     * @return The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which
+     *         the lens is shared.
      */
 
     public String getSharedWithPrefix() {
@@ -96,11 +101,13 @@ public class ListLensSharesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Web Services account ID or IAM role with which the lens is shared.
+     * The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens
+     * is shared.
      * </p>
      * 
      * @param sharedWithPrefix
-     *        The Amazon Web Services account ID or IAM role with which the lens is shared.
+     *        The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which
+     *        the lens is shared.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

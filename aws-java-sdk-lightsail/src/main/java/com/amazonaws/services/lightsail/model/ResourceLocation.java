@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
     private String availabilityZone;
     /**
      * <p>
-     * The AWS Region name.
+     * The Amazon Web Services Region name.
      * </p>
      */
     private String regionName;
@@ -83,11 +83,11 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region name.
+     * The Amazon Web Services Region name.
      * </p>
      * 
      * @param regionName
-     *        The AWS Region name.
+     *        The Amazon Web Services Region name.
      * @see RegionName
      */
 
@@ -97,10 +97,10 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region name.
+     * The Amazon Web Services Region name.
      * </p>
      * 
-     * @return The AWS Region name.
+     * @return The Amazon Web Services Region name.
      * @see RegionName
      */
 
@@ -110,11 +110,11 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region name.
+     * The Amazon Web Services Region name.
      * </p>
      * 
      * @param regionName
-     *        The AWS Region name.
+     *        The Amazon Web Services Region name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegionName
      */
@@ -126,11 +126,11 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region name.
+     * The Amazon Web Services Region name.
      * </p>
      * 
      * @param regionName
-     *        The AWS Region name.
+     *        The Amazon Web Services Region name.
      * @see RegionName
      */
 
@@ -140,11 +140,11 @@ public class ResourceLocation implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The AWS Region name.
+     * The Amazon Web Services Region name.
      * </p>
      * 
      * @param regionName
-     *        The AWS Region name.
+     *        The Amazon Web Services Region name.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegionName
      */

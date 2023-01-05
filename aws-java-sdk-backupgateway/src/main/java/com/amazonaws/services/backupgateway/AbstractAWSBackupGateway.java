@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,22 @@ public class AbstractAWSBackupGateway implements AWSBackupGateway {
     }
 
     @Override
+    public GetBandwidthRateLimitScheduleResult getBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetGatewayResult getGateway(GetGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetHypervisorResult getHypervisor(GetHypervisorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetHypervisorPropertyMappingsResult getHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,7 +103,22 @@ public class AbstractAWSBackupGateway implements AWSBackupGateway {
     }
 
     @Override
+    public PutBandwidthRateLimitScheduleResult putBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutHypervisorPropertyMappingsResult putHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutMaintenanceStartTimeResult putMaintenanceStartTime(PutMaintenanceStartTimeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartVirtualMachinesMetadataSyncResult startVirtualMachinesMetadataSync(StartVirtualMachinesMetadataSyncRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

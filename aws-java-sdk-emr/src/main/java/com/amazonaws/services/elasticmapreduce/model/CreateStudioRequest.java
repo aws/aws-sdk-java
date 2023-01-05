@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String description;
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      */
     private String authMode;
@@ -67,7 +67,7 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      */
@@ -201,11 +201,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @see AuthMode
      */
 
@@ -215,10 +215,10 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
-     * @return Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * @return Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @see AuthMode
      */
 
@@ -228,11 +228,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -244,11 +244,11 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     * Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * </p>
      * 
      * @param authMode
-     *        Specifies whether the Studio authenticates users using IAM or Amazon Web Services SSO.
+     *        Specifies whether the Studio authenticates users using IAM or IAM Identity Center.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -436,13 +436,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @param userRole
      *        The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     *        <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     *        <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      *        <code>UserRole</code> can be scoped down for each user or group using session policies.
      */
 
@@ -453,13 +453,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @return The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     *         <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to
-     *         the <code>UserRole</code> can be scoped down for each user or group using session policies.
+     *         <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
+     *         <code>UserRole</code> can be scoped down for each user or group using session policies.
      */
 
     public String getUserRole() {
@@ -469,13 +469,13 @@ public class CreateStudioRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     * <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     * <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      * <code>UserRole</code> can be scoped down for each user or group using session policies.
      * </p>
      * 
      * @param userRole
      *        The IAM user role that users and groups assume when logged in to an Amazon EMR Studio. Only specify a
-     *        <code>UserRole</code> when you use Amazon Web Services SSO authentication. The permissions attached to the
+     *        <code>UserRole</code> when you use IAM Identity Center authentication. The permissions attached to the
      *        <code>UserRole</code> can be scoped down for each user or group using session policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

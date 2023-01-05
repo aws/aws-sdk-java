@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,14 @@ public class VpcOptions implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean ipv6Support;
+    /**
+     * <p>
+     * Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the
+     * same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.
+     * </p>
+     */
+    private Boolean applianceModeSupport;
 
     /**
      * <p>
@@ -88,6 +96,74 @@ public class VpcOptions implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the
+     * same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination
+     *        use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     *        <code>false</code>.
+     */
+
+    public void setApplianceModeSupport(Boolean applianceModeSupport) {
+        this.applianceModeSupport = applianceModeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the
+     * same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination
+     *         use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     *         <code>false</code>.
+     */
+
+    public Boolean getApplianceModeSupport() {
+        return this.applianceModeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the
+     * same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination
+     *        use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     *        <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpcOptions withApplianceModeSupport(Boolean applianceModeSupport) {
+        setApplianceModeSupport(applianceModeSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination use the
+     * same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether appliance mode is supported. If enabled, traffic flow between a source and destination
+     *         use the same Availability Zone for the VPC attachment for the lifetime of that flow. The default value is
+     *         <code>false</code>.
+     */
+
+    public Boolean isApplianceModeSupport() {
+        return this.applianceModeSupport;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +176,9 @@ public class VpcOptions implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getIpv6Support() != null)
-            sb.append("Ipv6Support: ").append(getIpv6Support());
+            sb.append("Ipv6Support: ").append(getIpv6Support()).append(",");
+        if (getApplianceModeSupport() != null)
+            sb.append("ApplianceModeSupport: ").append(getApplianceModeSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +197,10 @@ public class VpcOptions implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpv6Support() != null && other.getIpv6Support().equals(this.getIpv6Support()) == false)
             return false;
+        if (other.getApplianceModeSupport() == null ^ this.getApplianceModeSupport() == null)
+            return false;
+        if (other.getApplianceModeSupport() != null && other.getApplianceModeSupport().equals(this.getApplianceModeSupport()) == false)
+            return false;
         return true;
     }
 
@@ -128,6 +210,7 @@ public class VpcOptions implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getIpv6Support() == null) ? 0 : getIpv6Support().hashCode());
+        hashCode = prime * hashCode + ((getApplianceModeSupport() == null) ? 0 : getApplianceModeSupport().hashCode());
         return hashCode;
     }
 

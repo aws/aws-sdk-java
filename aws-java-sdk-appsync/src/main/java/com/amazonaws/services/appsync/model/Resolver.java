@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -109,6 +109,15 @@ public class Resolver implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer maxBatchSize;
+
+    private AppSyncRuntime runtime;
+    /**
+     * <p>
+     * The <code>resolver</code> code that contains the request and response functions. When code is used, the
+     * <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+     * </p>
+     */
+    private String code;
 
     /**
      * <p>
@@ -686,6 +695,78 @@ public class Resolver implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param runtime
+     */
+
+    public void setRuntime(AppSyncRuntime runtime) {
+        this.runtime = runtime;
+    }
+
+    /**
+     * @return
+     */
+
+    public AppSyncRuntime getRuntime() {
+        return this.runtime;
+    }
+
+    /**
+     * @param runtime
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resolver withRuntime(AppSyncRuntime runtime) {
+        setRuntime(runtime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>resolver</code> code that contains the request and response functions. When code is used, the
+     * <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+     * </p>
+     * 
+     * @param code
+     *        The <code>resolver</code> code that contains the request and response functions. When code is used, the
+     *        <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+     */
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    /**
+     * <p>
+     * The <code>resolver</code> code that contains the request and response functions. When code is used, the
+     * <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+     * </p>
+     * 
+     * @return The <code>resolver</code> code that contains the request and response functions. When code is used, the
+     *         <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+     */
+
+    public String getCode() {
+        return this.code;
+    }
+
+    /**
+     * <p>
+     * The <code>resolver</code> code that contains the request and response functions. When code is used, the
+     * <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+     * </p>
+     * 
+     * @param code
+     *        The <code>resolver</code> code that contains the request and response functions. When code is used, the
+     *        <code>runtime</code> is required. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resolver withCode(String code) {
+        setCode(code);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -718,7 +799,11 @@ public class Resolver implements Serializable, Cloneable, StructuredPojo {
         if (getCachingConfig() != null)
             sb.append("CachingConfig: ").append(getCachingConfig()).append(",");
         if (getMaxBatchSize() != null)
-            sb.append("MaxBatchSize: ").append(getMaxBatchSize());
+            sb.append("MaxBatchSize: ").append(getMaxBatchSize()).append(",");
+        if (getRuntime() != null)
+            sb.append("Runtime: ").append(getRuntime()).append(",");
+        if (getCode() != null)
+            sb.append("Code: ").append(getCode());
         sb.append("}");
         return sb.toString();
     }
@@ -777,6 +862,14 @@ public class Resolver implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMaxBatchSize() != null && other.getMaxBatchSize().equals(this.getMaxBatchSize()) == false)
             return false;
+        if (other.getRuntime() == null ^ this.getRuntime() == null)
+            return false;
+        if (other.getRuntime() != null && other.getRuntime().equals(this.getRuntime()) == false)
+            return false;
+        if (other.getCode() == null ^ this.getCode() == null)
+            return false;
+        if (other.getCode() != null && other.getCode().equals(this.getCode()) == false)
+            return false;
         return true;
     }
 
@@ -796,6 +889,8 @@ public class Resolver implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSyncConfig() == null) ? 0 : getSyncConfig().hashCode());
         hashCode = prime * hashCode + ((getCachingConfig() == null) ? 0 : getCachingConfig().hashCode());
         hashCode = prime * hashCode + ((getMaxBatchSize() == null) ? 0 : getMaxBatchSize().hashCode());
+        hashCode = prime * hashCode + ((getRuntime() == null) ? 0 : getRuntime().hashCode());
+        hashCode = prime * hashCode + ((getCode() == null) ? 0 : getCode().hashCode());
         return hashCode;
     }
 

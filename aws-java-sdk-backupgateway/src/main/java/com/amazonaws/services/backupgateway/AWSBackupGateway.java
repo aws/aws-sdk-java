@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -129,6 +129,8 @@ public interface AWSBackupGateway {
      * @return Result of the DeleteHypervisor operation returned by the service.
      * @throws ValidationException
      *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws AccessDeniedException
@@ -169,6 +171,29 @@ public interface AWSBackupGateway {
 
     /**
      * <p>
+     * Retrieves the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to get a gateway's bandwidth
+     * rate limit schedule.
+     * </p>
+     * 
+     * @param getBandwidthRateLimitScheduleRequest
+     * @return Result of the GetBandwidthRateLimitSchedule operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetBandwidthRateLimitScheduleResult getBandwidthRateLimitSchedule(GetBandwidthRateLimitScheduleRequest getBandwidthRateLimitScheduleRequest);
+
+    /**
+     * <p>
      * By providing the ARN (Amazon Resource Name), this API returns the gateway.
      * </p>
      * 
@@ -187,6 +212,51 @@ public interface AWSBackupGateway {
      *      Documentation</a>
      */
     GetGatewayResult getGateway(GetGatewayRequest getGatewayRequest);
+
+    /**
+     * <p>
+     * This action requests information about the specified hypervisor to which the gateway will connect. A hypervisor
+     * is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.
+     * </p>
+     * 
+     * @param getHypervisorRequest
+     * @return Result of the GetHypervisor operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetHypervisor
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisor" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetHypervisorResult getHypervisor(GetHypervisorRequest getHypervisorRequest);
+
+    /**
+     * <p>
+     * This action retrieves the property mappings for the specified hypervisor. A hypervisor property mapping displays
+     * the relationship of entity properties available from the on-premises hypervisor to the properties available in
+     * Amazon Web Services.
+     * </p>
+     * 
+     * @param getHypervisorPropertyMappingsRequest
+     * @return Result of the GetHypervisorPropertyMappings operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.GetHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/GetHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetHypervisorPropertyMappingsResult getHypervisorPropertyMappings(GetHypervisorPropertyMappingsRequest getHypervisorPropertyMappingsRequest);
 
     /**
      * <p>
@@ -218,6 +288,8 @@ public interface AWSBackupGateway {
      * @return Result of the ImportHypervisorConfiguration operation returned by the service.
      * @throws ValidationException
      *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws AccessDeniedException
@@ -311,6 +383,56 @@ public interface AWSBackupGateway {
 
     /**
      * <p>
+     * This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a
+     * bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a
+     * gateway's bandwidth rate limit schedule.
+     * </p>
+     * 
+     * @param putBandwidthRateLimitScheduleRequest
+     * @return Result of the PutBandwidthRateLimitSchedule operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.PutBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutBandwidthRateLimitScheduleResult putBandwidthRateLimitSchedule(PutBandwidthRateLimitScheduleRequest putBandwidthRateLimitScheduleRequest);
+
+    /**
+     * <p>
+     * This action sets the property mappings for the specified hypervisor. A hypervisor property mapping displays the
+     * relationship of entity properties available from the on-premises hypervisor to the properties available in Amazon
+     * Web Services.
+     * </p>
+     * 
+     * @param putHypervisorPropertyMappingsRequest
+     * @return Result of the PutHypervisorPropertyMappings operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws AccessDeniedException
+     *         The operation cannot proceed because you have insufficient permissions.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.PutHypervisorPropertyMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/PutHypervisorPropertyMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutHypervisorPropertyMappingsResult putHypervisorPropertyMappings(PutHypervisorPropertyMappingsRequest putHypervisorPropertyMappingsRequest);
+
+    /**
+     * <p>
      * Set the maintenance start time for a gateway.
      * </p>
      * 
@@ -331,6 +453,29 @@ public interface AWSBackupGateway {
      *      target="_top">AWS API Documentation</a>
      */
     PutMaintenanceStartTimeResult putMaintenanceStartTime(PutMaintenanceStartTimeRequest putMaintenanceStartTimeRequest);
+
+    /**
+     * <p>
+     * This action sends a request to sync metadata across the specified virtual machines.
+     * </p>
+     * 
+     * @param startVirtualMachinesMetadataSyncRequest
+     * @return Result of the StartVirtualMachinesMetadataSync operation returned by the service.
+     * @throws ValidationException
+     *         The operation did not succeed because a validation error occurred.
+     * @throws InternalServerException
+     *         The operation did not succeed because an internal error occurred. Try again later.
+     * @throws AccessDeniedException
+     *         The operation cannot proceed because you have insufficient permissions.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action wasn't found.
+     * @throws ThrottlingException
+     *         TPS has been limited to protect against intentional or unintentional high request volumes.
+     * @sample AWSBackupGateway.StartVirtualMachinesMetadataSync
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-gateway-2021-01-01/StartVirtualMachinesMetadataSync"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartVirtualMachinesMetadataSyncResult startVirtualMachinesMetadataSync(StartVirtualMachinesMetadataSyncRequest startVirtualMachinesMetadataSyncRequest);
 
     /**
      * <p>
@@ -459,6 +604,8 @@ public interface AWSBackupGateway {
      * @return Result of the UpdateHypervisor operation returned by the service.
      * @throws ValidationException
      *         The operation did not succeed because a validation error occurred.
+     * @throws ConflictException
+     *         The operation cannot proceed because it is not supported.
      * @throws InternalServerException
      *         The operation did not succeed because an internal error occurred. Try again later.
      * @throws AccessDeniedException

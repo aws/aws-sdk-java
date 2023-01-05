@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,16 +53,53 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
     private String dailyAutomaticBackupStartTime;
     /**
      * <p>
-     * Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     * Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a
+     * single Availability Zone in an Amazon Web Services Region . Valid values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     * available, except US West (Oregon).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe
+     * L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West
+     * (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     * >Deployment type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     * performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * </p>
      */
     private String deploymentType;
     /**
      * <p>
      * Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid
-     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.
+     * values depend on the DeploymentType you choose, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You pay for additional throughput capacity that you provision.
      * </p>
      */
     private Integer throughputCapacity;
@@ -304,13 +341,58 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     * Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a
+     * single Availability Zone in an Amazon Web Services Region . Valid values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     * available, except US West (Oregon).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe
+     * L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West
+     * (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     * >Deployment type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     * performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     *        Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within
+     *        a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     *        <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     *        available, except US West (Oregon).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an
+     *        NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio),
+     *        US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see: <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     *        >Deployment type availability</a> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     *        performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * @see OpenZFSDeploymentType
      */
 
@@ -320,12 +402,57 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     * Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a
+     * single Availability Zone in an Amazon Web Services Region . Valid values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     * available, except US West (Oregon).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe
+     * L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West
+     * (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     * >Deployment type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     * performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * </p>
      * 
-     * @return Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *         <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     * @return Specifies the file system deployment type. Single AZ deployment types are configured for redundancy
+     *         within a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     *         <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     *         available, except US West (Oregon).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an
+     *         NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East
+     *         (Ohio), US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see: <a href=
+     *         "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     *         >Deployment type availability</a> and <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File
+     *         system performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * @see OpenZFSDeploymentType
      */
 
@@ -335,13 +462,58 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     * Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a
+     * single Availability Zone in an Amazon Web Services Region . Valid values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     * available, except US West (Oregon).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe
+     * L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West
+     * (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     * >Deployment type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     * performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     *        Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within
+     *        a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     *        <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     *        available, except US West (Oregon).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an
+     *        NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio),
+     *        US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see: <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     *        >Deployment type availability</a> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     *        performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSDeploymentType
      */
@@ -353,13 +525,58 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     * <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     * Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within a
+     * single Availability Zone in an Amazon Web Services Region . Valid values are the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     * <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     * available, except US West (Oregon).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an NVMe
+     * L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio), US West
+     * (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see: <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     * >Deployment type availability</a> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     * performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * </p>
      * 
      * @param deploymentType
-     *        Specifies the file system deployment type. Amazon FSx for OpenZFS supports <code>SINGLE_AZ_1</code>.
-     *        <code>SINGLE_AZ_1</code> deployment type is configured for redundancy within a single Availability Zone.
+     *        Specifies the file system deployment type. Single AZ deployment types are configured for redundancy within
+     *        a single Availability Zone in an Amazon Web Services Region . Valid values are the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_1</code>- (Default) Creates file systems with throughput capacities of 64 - 4,096 MB/s.
+     *        <code>Single_AZ_1</code> is available in all Amazon Web Services Regions where Amazon FSx for OpenZFS is
+     *        available, except US West (Oregon).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160 - 10,240 MB/s using an
+     *        NVMe L2ARC cache. <code>Single_AZ_2</code> is available only in the US East (N. Virginia), US East (Ohio),
+     *        US West (Oregon), and Europe (Ireland) Amazon Web Services Regions.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see: <a href=
+     *        "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/availability-durability.html#available-aws-regions"
+     *        >Deployment type availability</a> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#zfs-fs-performance">File system
+     *        performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenZFSDeploymentType
      */
@@ -372,14 +589,41 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
     /**
      * <p>
      * Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid
-     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.
+     * values depend on the DeploymentType you choose, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You pay for additional throughput capacity that you provision.
      * </p>
      * 
      * @param throughputCapacity
      *        Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second
-     *        (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional
-     *        throughput capacity that you provision.
+     *        (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You pay for additional throughput capacity that you provision.
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -389,13 +633,41 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
     /**
      * <p>
      * Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid
-     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.
+     * values depend on the DeploymentType you choose, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You pay for additional throughput capacity that you provision.
      * </p>
      * 
      * @return Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second
-     *         (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional
-     *         throughput capacity that you provision.
+     *         (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240
+     *         MB/s.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You pay for additional throughput capacity that you provision.
      */
 
     public Integer getThroughputCapacity() {
@@ -405,14 +677,41 @@ public class CreateFileSystemOpenZFSConfiguration implements Serializable, Clone
     /**
      * <p>
      * Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second (MB/s). Valid
-     * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional throughput capacity that you
-     * provision.
+     * values depend on the DeploymentType you choose, as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You pay for additional throughput capacity that you provision.
      * </p>
      * 
      * @param throughputCapacity
      *        Specifies the throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second
-     *        (MB/s). Valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s. You pay for additional
-     *        throughput capacity that you provision.
+     *        (MB/s). Valid values depend on the DeploymentType you choose, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You pay for additional throughput capacity that you provision.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

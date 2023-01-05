@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String hypervisorArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+     * </p>
+     */
+    private String logGroupArn;
     /**
      * <p>
      * The updated name for the hypervisor
@@ -136,6 +142,46 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
 
     public UpdateHypervisorRequest withHypervisorArn(String hypervisorArn) {
         setHypervisorArn(hypervisorArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+     * </p>
+     * 
+     * @param logGroupArn
+     *        The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+     */
+
+    public void setLogGroupArn(String logGroupArn) {
+        this.logGroupArn = logGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+     */
+
+    public String getLogGroupArn() {
+        return this.logGroupArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+     * </p>
+     * 
+     * @param logGroupArn
+     *        The Amazon Resource Name (ARN) of the group of gateways within the requested log.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateHypervisorRequest withLogGroupArn(String logGroupArn) {
+        setLogGroupArn(logGroupArn);
         return this;
     }
 
@@ -275,6 +321,8 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("Host: ").append(getHost()).append(",");
         if (getHypervisorArn() != null)
             sb.append("HypervisorArn: ").append(getHypervisorArn()).append(",");
+        if (getLogGroupArn() != null)
+            sb.append("LogGroupArn: ").append(getLogGroupArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPassword() != null)
@@ -303,6 +351,10 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getHypervisorArn() != null && other.getHypervisorArn().equals(this.getHypervisorArn()) == false)
             return false;
+        if (other.getLogGroupArn() == null ^ this.getLogGroupArn() == null)
+            return false;
+        if (other.getLogGroupArn() != null && other.getLogGroupArn().equals(this.getLogGroupArn()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -325,6 +377,7 @@ public class UpdateHypervisorRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getHost() == null) ? 0 : getHost().hashCode());
         hashCode = prime * hashCode + ((getHypervisorArn() == null) ? 0 : getHypervisorArn().hashCode());
+        hashCode = prime * hashCode + ((getLogGroupArn() == null) ? 0 : getLogGroupArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPassword() == null) ? 0 : getPassword().hashCode());
         hashCode = prime * hashCode + ((getUsername() == null) ? 0 : getUsername().hashCode());

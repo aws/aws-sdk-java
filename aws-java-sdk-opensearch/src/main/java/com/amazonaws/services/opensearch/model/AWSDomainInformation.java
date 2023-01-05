@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,17 +17,40 @@ import javax.annotation.Generated;
 import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
+/**
+ * <p>
+ * Information about an Amazon OpenSearch Service domain.
+ * </p>
+ */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AWSDomainInformation implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Web Services account ID of the domain owner.
+     * </p>
+     */
     private String ownerId;
-
+    /**
+     * <p>
+     * Name of the domain.
+     * </p>
+     */
     private String domainName;
-
+    /**
+     * <p>
+     * The Amazon Web Services Region in which the domain is located.
+     * </p>
+     */
     private String region;
 
     /**
+     * <p>
+     * The Amazon Web Services account ID of the domain owner.
+     * </p>
+     * 
      * @param ownerId
+     *        The Amazon Web Services account ID of the domain owner.
      */
 
     public void setOwnerId(String ownerId) {
@@ -35,7 +58,11 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Web Services account ID of the domain owner.
+     * </p>
+     * 
+     * @return The Amazon Web Services account ID of the domain owner.
      */
 
     public String getOwnerId() {
@@ -43,7 +70,12 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The Amazon Web Services account ID of the domain owner.
+     * </p>
+     * 
      * @param ownerId
+     *        The Amazon Web Services account ID of the domain owner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -53,7 +85,12 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Name of the domain.
+     * </p>
+     * 
      * @param domainName
+     *        Name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -61,7 +98,11 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * Name of the domain.
+     * </p>
+     * 
+     * @return Name of the domain.
      */
 
     public String getDomainName() {
@@ -69,7 +110,12 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Name of the domain.
+     * </p>
+     * 
      * @param domainName
+     *        Name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +125,12 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The Amazon Web Services Region in which the domain is located.
+     * </p>
+     * 
      * @param region
+     *        The Amazon Web Services Region in which the domain is located.
      */
 
     public void setRegion(String region) {
@@ -87,7 +138,11 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Web Services Region in which the domain is located.
+     * </p>
+     * 
+     * @return The Amazon Web Services Region in which the domain is located.
      */
 
     public String getRegion() {
@@ -95,7 +150,12 @@ public class AWSDomainInformation implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The Amazon Web Services Region in which the domain is located.
+     * </p>
+     * 
      * @param region
+     *        The Amazon Web Services Region in which the domain is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

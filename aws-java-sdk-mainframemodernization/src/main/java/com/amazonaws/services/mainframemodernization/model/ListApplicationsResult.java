@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the applications in an environment.
+     * Returns a list of summary details for all the applications in a runtime environment.
      * </p>
      */
     private java.util.List<ApplicationSummary> applications;
@@ -38,10 +38,10 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the applications in an environment.
+     * Returns a list of summary details for all the applications in a runtime environment.
      * </p>
      * 
-     * @return Returns a list of summary details for all the applications in an environment.
+     * @return Returns a list of summary details for all the applications in a runtime environment.
      */
 
     public java.util.List<ApplicationSummary> getApplications() {
@@ -50,11 +50,11 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the applications in an environment.
+     * Returns a list of summary details for all the applications in a runtime environment.
      * </p>
      * 
      * @param applications
-     *        Returns a list of summary details for all the applications in an environment.
+     *        Returns a list of summary details for all the applications in a runtime environment.
      */
 
     public void setApplications(java.util.Collection<ApplicationSummary> applications) {
@@ -68,7 +68,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the applications in an environment.
+     * Returns a list of summary details for all the applications in a runtime environment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param applications
-     *        Returns a list of summary details for all the applications in an environment.
+     *        Returns a list of summary details for all the applications in a runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListApplicationsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Returns a list of summary details for all the applications in an environment.
+     * Returns a list of summary details for all the applications in a runtime environment.
      * </p>
      * 
      * @param applications
-     *        Returns a list of summary details for all the applications in an environment.
+     *        Returns a list of summary details for all the applications in a runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

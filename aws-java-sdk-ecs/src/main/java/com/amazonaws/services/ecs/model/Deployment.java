@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -176,6 +176,32 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String rolloutStateReason;
+    /**
+     * <p>
+     * The details of the Service Connect configuration that's used by this deployment. Compare the configuration
+     * between multiple deployments when troubleshooting issues with new deployments.
+     * </p>
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private ServiceConnectConfiguration serviceConnectConfiguration;
+    /**
+     * <p>
+     * The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery
+     * name to a Cloud Map service name.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ServiceConnectServiceResource> serviceConnectResources;
 
     /**
      * <p>
@@ -1207,6 +1233,202 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The details of the Service Connect configuration that's used by this deployment. Compare the configuration
+     * between multiple deployments when troubleshooting issues with new deployments.
+     * </p>
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The details of the Service Connect configuration that's used by this deployment. Compare the configuration
+     *        between multiple deployments when troubleshooting issues with new deployments.</p>
+     *        <p>
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.
+     *        </p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        this.serviceConnectConfiguration = serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details of the Service Connect configuration that's used by this deployment. Compare the configuration
+     * between multiple deployments when troubleshooting issues with new deployments.
+     * </p>
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The details of the Service Connect configuration that's used by this deployment. Compare the
+     *         configuration between multiple deployments when troubleshooting issues with new deployments.</p>
+     *         <p>
+     *         The configuration for this service to discover and connect to services, and be discovered by, and
+     *         connected from, other services within a namespace.
+     *         </p>
+     *         <p>
+     *         Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *         connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *         container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS
+     *         services create are supported with Service Connect. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public ServiceConnectConfiguration getServiceConnectConfiguration() {
+        return this.serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The details of the Service Connect configuration that's used by this deployment. Compare the configuration
+     * between multiple deployments when troubleshooting issues with new deployments.
+     * </p>
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The details of the Service Connect configuration that's used by this deployment. Compare the configuration
+     *        between multiple deployments when troubleshooting issues with new deployments.</p>
+     *        <p>
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.
+     *        </p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        setServiceConnectConfiguration(serviceConnectConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery
+     * name to a Cloud Map service name.
+     * </p>
+     * 
+     * @return The list of Service Connect resources that are associated with this deployment. Each list entry maps a
+     *         discovery name to a Cloud Map service name.
+     */
+
+    public java.util.List<ServiceConnectServiceResource> getServiceConnectResources() {
+        if (serviceConnectResources == null) {
+            serviceConnectResources = new com.amazonaws.internal.SdkInternalList<ServiceConnectServiceResource>();
+        }
+        return serviceConnectResources;
+    }
+
+    /**
+     * <p>
+     * The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery
+     * name to a Cloud Map service name.
+     * </p>
+     * 
+     * @param serviceConnectResources
+     *        The list of Service Connect resources that are associated with this deployment. Each list entry maps a
+     *        discovery name to a Cloud Map service name.
+     */
+
+    public void setServiceConnectResources(java.util.Collection<ServiceConnectServiceResource> serviceConnectResources) {
+        if (serviceConnectResources == null) {
+            this.serviceConnectResources = null;
+            return;
+        }
+
+        this.serviceConnectResources = new com.amazonaws.internal.SdkInternalList<ServiceConnectServiceResource>(serviceConnectResources);
+    }
+
+    /**
+     * <p>
+     * The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery
+     * name to a Cloud Map service name.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setServiceConnectResources(java.util.Collection)} or
+     * {@link #withServiceConnectResources(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param serviceConnectResources
+     *        The list of Service Connect resources that are associated with this deployment. Each list entry maps a
+     *        discovery name to a Cloud Map service name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withServiceConnectResources(ServiceConnectServiceResource... serviceConnectResources) {
+        if (this.serviceConnectResources == null) {
+            setServiceConnectResources(new com.amazonaws.internal.SdkInternalList<ServiceConnectServiceResource>(serviceConnectResources.length));
+        }
+        for (ServiceConnectServiceResource ele : serviceConnectResources) {
+            this.serviceConnectResources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of Service Connect resources that are associated with this deployment. Each list entry maps a discovery
+     * name to a Cloud Map service name.
+     * </p>
+     * 
+     * @param serviceConnectResources
+     *        The list of Service Connect resources that are associated with this deployment. Each list entry maps a
+     *        discovery name to a Cloud Map service name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Deployment withServiceConnectResources(java.util.Collection<ServiceConnectServiceResource> serviceConnectResources) {
+        setServiceConnectResources(serviceConnectResources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1249,7 +1471,11 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         if (getRolloutState() != null)
             sb.append("RolloutState: ").append(getRolloutState()).append(",");
         if (getRolloutStateReason() != null)
-            sb.append("RolloutStateReason: ").append(getRolloutStateReason());
+            sb.append("RolloutStateReason: ").append(getRolloutStateReason()).append(",");
+        if (getServiceConnectConfiguration() != null)
+            sb.append("ServiceConnectConfiguration: ").append(getServiceConnectConfiguration()).append(",");
+        if (getServiceConnectResources() != null)
+            sb.append("ServiceConnectResources: ").append(getServiceConnectResources());
         sb.append("}");
         return sb.toString();
     }
@@ -1328,6 +1554,14 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRolloutStateReason() != null && other.getRolloutStateReason().equals(this.getRolloutStateReason()) == false)
             return false;
+        if (other.getServiceConnectConfiguration() == null ^ this.getServiceConnectConfiguration() == null)
+            return false;
+        if (other.getServiceConnectConfiguration() != null && other.getServiceConnectConfiguration().equals(this.getServiceConnectConfiguration()) == false)
+            return false;
+        if (other.getServiceConnectResources() == null ^ this.getServiceConnectResources() == null)
+            return false;
+        if (other.getServiceConnectResources() != null && other.getServiceConnectResources().equals(this.getServiceConnectResources()) == false)
+            return false;
         return true;
     }
 
@@ -1352,6 +1586,8 @@ public class Deployment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRolloutState() == null) ? 0 : getRolloutState().hashCode());
         hashCode = prime * hashCode + ((getRolloutStateReason() == null) ? 0 : getRolloutStateReason().hashCode());
+        hashCode = prime * hashCode + ((getServiceConnectConfiguration() == null) ? 0 : getServiceConnectConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getServiceConnectResources() == null) ? 0 : getServiceConnectResources().hashCode());
         return hashCode;
     }
 

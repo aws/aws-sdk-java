@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>DescribeOutboundConnections</a> </code> operation.
+ * Container for the parameters to the <code>DescribeOutboundConnections</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,53 +27,32 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of filters used to match properties for outbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> names for this operation are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>remote-domain-info.domain-name</li>
-     * <li>remote-domain-info.owner-id</li>
-     * <li>remote-domain-info.region</li>
-     * <li>local-domain-info.domain-name</li>
-     * </ul>
+     * List of filter names and values that you can use for requests.
      * </p>
      */
     private java.util.List<Filter> filters;
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.
+     * If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A list of filters used to match properties for outbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> names for this operation are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>remote-domain-info.domain-name</li>
-     * <li>remote-domain-info.owner-id</li>
-     * <li>remote-domain-info.region</li>
-     * <li>local-domain-info.domain-name</li>
-     * </ul>
+     * List of filter names and values that you can use for requests.
      * </p>
      * 
-     * @return A list of filters used to match properties for outbound cross-cluster connections. Available
-     *         <code> <a>Filter</a> </code> names for this operation are:
-     *         <ul>
-     *         <li>connection-id</li>
-     *         <li>remote-domain-info.domain-name</li>
-     *         <li>remote-domain-info.owner-id</li>
-     *         <li>remote-domain-info.region</li>
-     *         <li>local-domain-info.domain-name</li>
-     *         </ul>
+     * @return List of filter names and values that you can use for requests.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -82,27 +61,11 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of filters used to match properties for outbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> names for this operation are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>remote-domain-info.domain-name</li>
-     * <li>remote-domain-info.owner-id</li>
-     * <li>remote-domain-info.region</li>
-     * <li>local-domain-info.domain-name</li>
-     * </ul>
+     * List of filter names and values that you can use for requests.
      * </p>
      * 
      * @param filters
-     *        A list of filters used to match properties for outbound cross-cluster connections. Available
-     *        <code> <a>Filter</a> </code> names for this operation are:
-     *        <ul>
-     *        <li>connection-id</li>
-     *        <li>remote-domain-info.domain-name</li>
-     *        <li>remote-domain-info.owner-id</li>
-     *        <li>remote-domain-info.region</li>
-     *        <li>local-domain-info.domain-name</li>
-     *        </ul>
+     *        List of filter names and values that you can use for requests.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -116,15 +79,7 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of filters used to match properties for outbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> names for this operation are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>remote-domain-info.domain-name</li>
-     * <li>remote-domain-info.owner-id</li>
-     * <li>remote-domain-info.region</li>
-     * <li>local-domain-info.domain-name</li>
-     * </ul>
+     * List of filter names and values that you can use for requests.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -133,15 +88,7 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param filters
-     *        A list of filters used to match properties for outbound cross-cluster connections. Available
-     *        <code> <a>Filter</a> </code> names for this operation are:
-     *        <ul>
-     *        <li>connection-id</li>
-     *        <li>remote-domain-info.domain-name</li>
-     *        <li>remote-domain-info.owner-id</li>
-     *        <li>remote-domain-info.region</li>
-     *        <li>local-domain-info.domain-name</li>
-     *        </ul>
+     *        List of filter names and values that you can use for requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,27 +104,11 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * A list of filters used to match properties for outbound cross-cluster connections. Available
-     * <code> <a>Filter</a> </code> names for this operation are:
-     * <ul>
-     * <li>connection-id</li>
-     * <li>remote-domain-info.domain-name</li>
-     * <li>remote-domain-info.owner-id</li>
-     * <li>remote-domain-info.region</li>
-     * <li>local-domain-info.domain-name</li>
-     * </ul>
+     * List of filter names and values that you can use for requests.
      * </p>
      * 
      * @param filters
-     *        A list of filters used to match properties for outbound cross-cluster connections. Available
-     *        <code> <a>Filter</a> </code> names for this operation are:
-     *        <ul>
-     *        <li>connection-id</li>
-     *        <li>remote-domain-info.domain-name</li>
-     *        <li>remote-domain-info.owner-id</li>
-     *        <li>remote-domain-info.region</li>
-     *        <li>local-domain-info.domain-name</li>
-     *        </ul>
+     *        List of filter names and values that you can use for requests.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,11 +119,13 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. If not specified, defaults to 100.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -201,10 +134,12 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
-     * @return Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -213,11 +148,13 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Set this value to limit the number of results returned. If not specified, defaults to 100.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Set this value to limit the number of results returned. If not specified, defaults to 100.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -228,12 +165,15 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.
+     * If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for
-     *        pagination.
+     *        If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you
+     *        can include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code>
+     *        operations, which returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -242,11 +182,14 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.
+     * If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      * 
-     * @return NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for
-     *         pagination.
+     * @return If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you
+     *         can include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code>
+     *         operations, which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -255,12 +198,15 @@ public class DescribeOutboundConnectionsRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for pagination.
+     * If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you can
+     * include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code> operations,
+     * which returns results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        NextToken is sent in case the earlier API call results contain the NextToken parameter. Used for
-     *        pagination.
+     *        If your initial <code>DescribeOutboundConnections</code> operation returns a <code>nextToken</code>, you
+     *        can include the returned <code>nextToken</code> in subsequent <code>DescribeOutboundConnections</code>
+     *        operations, which returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

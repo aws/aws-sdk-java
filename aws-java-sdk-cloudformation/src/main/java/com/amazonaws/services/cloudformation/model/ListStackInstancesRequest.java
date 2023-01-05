@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
     private Integer maxResults;
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StackInstanceFilter> filters;
@@ -250,10 +250,10 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * 
-     * @return The status that stack instances are filtered by.
+     * @return The filter to apply to stack instances
      */
 
     public java.util.List<StackInstanceFilter> getFilters() {
@@ -265,11 +265,11 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * 
      * @param filters
-     *        The status that stack instances are filtered by.
+     *        The filter to apply to stack instances
      */
 
     public void setFilters(java.util.Collection<StackInstanceFilter> filters) {
@@ -283,7 +283,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -292,7 +292,7 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param filters
-     *        The status that stack instances are filtered by.
+     *        The filter to apply to stack instances
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +308,11 @@ public class ListStackInstancesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The status that stack instances are filtered by.
+     * The filter to apply to stack instances
      * </p>
      * 
      * @param filters
-     *        The status that stack instances are filtered by.
+     *        The filter to apply to stack instances
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -139,6 +139,12 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String lineageGroupArn;
+    /**
+     * <p>
+     * A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     * </p>
+     */
+    private java.util.List<TrialComponentSource> sources;
 
     /**
      * <p>
@@ -1026,6 +1032,76 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     * </p>
+     * 
+     * @return A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     */
+
+    public java.util.List<TrialComponentSource> getSources() {
+        return sources;
+    }
+
+    /**
+     * <p>
+     * A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     * </p>
+     * 
+     * @param sources
+     *        A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     */
+
+    public void setSources(java.util.Collection<TrialComponentSource> sources) {
+        if (sources == null) {
+            this.sources = null;
+            return;
+        }
+
+        this.sources = new java.util.ArrayList<TrialComponentSource>(sources);
+    }
+
+    /**
+     * <p>
+     * A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSources(java.util.Collection)} or {@link #withSources(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param sources
+     *        A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrialComponentResult withSources(TrialComponentSource... sources) {
+        if (this.sources == null) {
+            setSources(new java.util.ArrayList<TrialComponentSource>(sources.length));
+        }
+        for (TrialComponentSource ele : sources) {
+            this.sources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     * </p>
+     * 
+     * @param sources
+     *        A list of ARNs and, if applicable, job types for multiple sources of an experiment run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrialComponentResult withSources(java.util.Collection<TrialComponentSource> sources) {
+        setSources(sources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1070,7 +1146,9 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
         if (getLineageGroupArn() != null)
-            sb.append("LineageGroupArn: ").append(getLineageGroupArn());
+            sb.append("LineageGroupArn: ").append(getLineageGroupArn()).append(",");
+        if (getSources() != null)
+            sb.append("Sources: ").append(getSources());
         sb.append("}");
         return sb.toString();
     }
@@ -1153,6 +1231,10 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getLineageGroupArn() != null && other.getLineageGroupArn().equals(this.getLineageGroupArn()) == false)
             return false;
+        if (other.getSources() == null ^ this.getSources() == null)
+            return false;
+        if (other.getSources() != null && other.getSources().equals(this.getSources()) == false)
+            return false;
         return true;
     }
 
@@ -1178,6 +1260,7 @@ public class DescribeTrialComponentResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
         hashCode = prime * hashCode + ((getLineageGroupArn() == null) ? 0 : getLineageGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getSources() == null) ? 0 : getSources().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Boolean noPasswordRequired;
+    /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     */
+    private AuthenticationMode authenticationMode;
 
     /**
      * <p>
@@ -302,6 +308,46 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     * 
+     * @param authenticationMode
+     *        Specifies how to authenticate the user.
+     */
+
+    public void setAuthenticationMode(AuthenticationMode authenticationMode) {
+        this.authenticationMode = authenticationMode;
+    }
+
+    /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     * 
+     * @return Specifies how to authenticate the user.
+     */
+
+    public AuthenticationMode getAuthenticationMode() {
+        return this.authenticationMode;
+    }
+
+    /**
+     * <p>
+     * Specifies how to authenticate the user.
+     * </p>
+     * 
+     * @param authenticationMode
+     *        Specifies how to authenticate the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyUserRequest withAuthenticationMode(AuthenticationMode authenticationMode) {
+        setAuthenticationMode(authenticationMode);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -322,7 +368,9 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getPasswords() != null)
             sb.append("Passwords: ").append(getPasswords()).append(",");
         if (getNoPasswordRequired() != null)
-            sb.append("NoPasswordRequired: ").append(getNoPasswordRequired());
+            sb.append("NoPasswordRequired: ").append(getNoPasswordRequired()).append(",");
+        if (getAuthenticationMode() != null)
+            sb.append("AuthenticationMode: ").append(getAuthenticationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -357,6 +405,10 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getNoPasswordRequired() != null && other.getNoPasswordRequired().equals(this.getNoPasswordRequired()) == false)
             return false;
+        if (other.getAuthenticationMode() == null ^ this.getAuthenticationMode() == null)
+            return false;
+        if (other.getAuthenticationMode() != null && other.getAuthenticationMode().equals(this.getAuthenticationMode()) == false)
+            return false;
         return true;
     }
 
@@ -370,6 +422,7 @@ public class ModifyUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getAppendAccessString() == null) ? 0 : getAppendAccessString().hashCode());
         hashCode = prime * hashCode + ((getPasswords() == null) ? 0 : getPasswords().hashCode());
         hashCode = prime * hashCode + ((getNoPasswordRequired() == null) ? 0 : getNoPasswordRequired().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationMode() == null) ? 0 : getAuthenticationMode().hashCode());
         return hashCode;
     }
 

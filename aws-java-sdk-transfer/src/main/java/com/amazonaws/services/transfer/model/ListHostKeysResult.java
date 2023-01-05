@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class ListHostKeysResult extends com.amazonaws.AmazonWebServiceResult<com
     private String nextToken;
     /**
      * <p>
-     * Returns the server ID that contains the listed host keys.
+     * Returns the server identifier that contains the listed host keys.
      * </p>
      */
     private String serverId;
@@ -91,11 +91,11 @@ public class ListHostKeysResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the server ID that contains the listed host keys.
+     * Returns the server identifier that contains the listed host keys.
      * </p>
      * 
      * @param serverId
-     *        Returns the server ID that contains the listed host keys.
+     *        Returns the server identifier that contains the listed host keys.
      */
 
     public void setServerId(String serverId) {
@@ -104,10 +104,10 @@ public class ListHostKeysResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the server ID that contains the listed host keys.
+     * Returns the server identifier that contains the listed host keys.
      * </p>
      * 
-     * @return Returns the server ID that contains the listed host keys.
+     * @return Returns the server identifier that contains the listed host keys.
      */
 
     public String getServerId() {
@@ -116,11 +116,11 @@ public class ListHostKeysResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * Returns the server ID that contains the listed host keys.
+     * Returns the server identifier that contains the listed host keys.
      * </p>
      * 
      * @param serverId
-     *        Returns the server ID that contains the listed host keys.
+     *        Returns the server identifier that contains the listed host keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

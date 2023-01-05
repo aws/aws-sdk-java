@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Determine whether your data volume persists on the host container instance and where it is stored. If this parameter
- * is empty, then the Docker daemon assigns a host path for your data volume, but the data isn't guaranteed to persist
- * after the containers associated with it stop running.
+ * Determine whether your data volume persists on the host container instance and where it's stored. If this parameter
+ * is empty, then the Docker daemon assigns a host path for your data volume. However, the data isn't guaranteed to
+ * persist after the containers that are associated with it stop running.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/Host" target="_top">AWS API Documentation</a>
@@ -39,7 +39,7 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.
      * </p>
      * </note>
      */
@@ -55,7 +55,7 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.
      * </p>
      * </note>
      * 
@@ -66,7 +66,7 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      *        manually. If the source path location doesn't exist on the host container instance, the Docker daemon
      *        creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.
      *        </p>
      */
 
@@ -84,7 +84,7 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.
      * </p>
      * </note>
      * 
@@ -94,7 +94,7 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      *         manually. If the source path location doesn't exist on the host container instance, the Docker daemon
      *         creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
      *         <p>
-     *         This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.
+     *         This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.
      *         </p>
      */
 
@@ -112,7 +112,7 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.
+     * This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.
      * </p>
      * </note>
      * 
@@ -123,7 +123,7 @@ public class Host implements Serializable, Cloneable, StructuredPojo {
      *        manually. If the source path location doesn't exist on the host container instance, the Docker daemon
      *        creates it. If the location does exist, the contents of the source path folder are exported.</p> <note>
      *        <p>
-     *        This parameter isn't applicable to jobs that run on Fargate resources and shouldn't be provided.
+     *        This parameter isn't applicable to jobs that run on Fargate resources. Don't provide this for these jobs.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

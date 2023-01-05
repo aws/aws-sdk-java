@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
+ * Container for the parameters to the <code>ListDomainNames</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,21 +27,18 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     * 'OpenSearch'.
+     * Filters the output by domain engine type.
      * </p>
      */
     private String engineType;
 
     /**
      * <p>
-     * Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     * 'OpenSearch'.
+     * Filters the output by domain engine type.
      * </p>
      * 
      * @param engineType
-     *        Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     *        'OpenSearch'.
+     *        Filters the output by domain engine type.
      * @see EngineType
      */
 
@@ -51,12 +48,10 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     * 'OpenSearch'.
+     * Filters the output by domain engine type.
      * </p>
      * 
-     * @return Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     *         'OpenSearch'.
+     * @return Filters the output by domain engine type.
      * @see EngineType
      */
 
@@ -66,13 +61,11 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     * 'OpenSearch'.
+     * Filters the output by domain engine type.
      * </p>
      * 
      * @param engineType
-     *        Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     *        'OpenSearch'.
+     *        Filters the output by domain engine type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */
@@ -84,13 +77,11 @@ public class ListDomainNamesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     * 'OpenSearch'.
+     * Filters the output by domain engine type.
      * </p>
      * 
      * @param engineType
-     *        Optional parameter to filter the output by domain engine type. Acceptable values are 'Elasticsearch' and
-     *        'OpenSearch'.
+     *        Filters the output by domain engine type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EngineType
      */

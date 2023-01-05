@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,23 +28,23 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of resource tags.
+     * An array of tags applied to the specified resource.
      * </p>
      */
     private java.util.List<TagListEntry> tags;
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of resource tags.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Array of resource tags.
+     * An array of tags applied to the specified resource.
      * </p>
      * 
-     * @return Array of resource tags.
+     * @return An array of tags applied to the specified resource.
      */
 
     public java.util.List<TagListEntry> getTags() {
@@ -53,11 +53,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of resource tags.
+     * An array of tags applied to the specified resource.
      * </p>
      * 
      * @param tags
-     *        Array of resource tags.
+     *        An array of tags applied to the specified resource.
      */
 
     public void setTags(java.util.Collection<TagListEntry> tags) {
@@ -71,7 +71,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of resource tags.
+     * An array of tags applied to the specified resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +80,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        Array of resource tags.
+     *        An array of tags applied to the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +96,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Array of resource tags.
+     * An array of tags applied to the specified resource.
      * </p>
      * 
      * @param tags
-     *        Array of resource tags.
+     *        An array of tags applied to the specified resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of resource tags.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin returning the next list of resource tags.
+     *        The opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public void setNextToken(String nextToken) {
@@ -124,10 +124,10 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of resource tags.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
-     * @return An opaque string that indicates the position at which to begin returning the next list of resource tags.
+     * @return The opaque string that indicates the position to begin the next list of results in the response.
      */
 
     public String getNextToken() {
@@ -136,11 +136,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * An opaque string that indicates the position at which to begin returning the next list of resource tags.
+     * The opaque string that indicates the position to begin the next list of results in the response.
      * </p>
      * 
      * @param nextToken
-     *        An opaque string that indicates the position at which to begin returning the next list of resource tags.
+     *        The opaque string that indicates the position to begin the next list of results in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

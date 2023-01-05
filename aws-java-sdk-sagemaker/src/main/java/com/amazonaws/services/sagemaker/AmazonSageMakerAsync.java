@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1277,10 +1277,16 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
-     * compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a
-     * machine learning model.
+     * Creates a SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared
+     * and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine
+     * learning model.
      * </p>
+     * <note>
+     * <p>
+     * In the Studio UI, trials are referred to as <i>run groups</i> and trial components are referred to as
+     * <i>runs</i>.
+     * </p>
+     * </note>
      * <p>
      * The goal of an experiment is to determine the components that produce the best model. Multiple trials are
      * performed, each one isolating and measuring the impact of a change to one or more inputs, while keeping the
@@ -1315,10 +1321,16 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
-     * Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
-     * compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a
-     * machine learning model.
+     * Creates a SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared
+     * and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine
+     * learning model.
      * </p>
+     * <note>
+     * <p>
+     * In the Studio UI, trials are referred to as <i>run groups</i> and trial components are referred to as
+     * <i>runs</i>.
+     * </p>
+     * </note>
      * <p>
      * The goal of an experiment is to determine the components that produce the best model. Multiple trials are
      * performed, each one isolating and measuring the impact of a change to one or more inputs, while keeping the
@@ -1450,6 +1462,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Create a hub.
+     * </p>
+     * 
+     * @param createHubRequest
+     * @return A Java Future containing the result of the CreateHub operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHubResult> createHubAsync(CreateHubRequest createHubRequest);
+
+    /**
+     * <p>
+     * Create a hub.
+     * </p>
+     * 
+     * @param createHubRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateHub operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHubResult> createHubAsync(CreateHubRequest createHubRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateHubRequest, CreateHubResult> asyncHandler);
+
+    /**
+     * <p>
      * Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel
      * interface with an instruction area, the item to review, and an input area.
      * </p>
@@ -1488,6 +1531,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured
      * by an objective metric that you choose.
      * </p>
+     * <p>
+     * A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for
+     * each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+     * Experiments, Trials, and Trial Components</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param createHyperParameterTuningJobRequest
      * @return A Java Future containing the result of the CreateHyperParameterTuningJob operation returned by the
@@ -1506,6 +1562,19 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured
      * by an objective metric that you choose.
      * </p>
+     * <p>
+     * A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for
+     * each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+     * Experiments, Trials, and Trial Components</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param createHyperParameterTuningJobRequest
      * @param asyncHandler
@@ -1589,6 +1658,69 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<CreateImageVersionResult> createImageVersionAsync(CreateImageVersionRequest createImageVersionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateImageVersionRequest, CreateImageVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an inference experiment using the configurations specified in the request.
+     * </p>
+     * <p>
+     * Use this API to setup and schedule an experiment to compare model variants on a Amazon SageMaker inference
+     * endpoint. For more information about inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>.
+     * </p>
+     * <p>
+     * Amazon SageMaker begins your experiment at the scheduled time and routes traffic to your endpoint's model
+     * variants based on your specified configuration.
+     * </p>
+     * <p>
+     * While the experiment is in progress or after it has concluded, you can view metrics that compare your model
+     * variants. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View, monitor, and
+     * edit shadow tests</a>.
+     * </p>
+     * 
+     * @param createInferenceExperimentRequest
+     * @return A Java Future containing the result of the CreateInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInferenceExperimentResult> createInferenceExperimentAsync(
+            CreateInferenceExperimentRequest createInferenceExperimentRequest);
+
+    /**
+     * <p>
+     * Creates an inference experiment using the configurations specified in the request.
+     * </p>
+     * <p>
+     * Use this API to setup and schedule an experiment to compare model variants on a Amazon SageMaker inference
+     * endpoint. For more information about inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>.
+     * </p>
+     * <p>
+     * Amazon SageMaker begins your experiment at the scheduled time and routes traffic to your endpoint's model
+     * variants based on your specified configuration.
+     * </p>
+     * <p>
+     * While the experiment is in progress or after it has concluded, you can view metrics that compare your model
+     * variants. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View, monitor, and
+     * edit shadow tests</a>.
+     * </p>
+     * 
+     * @param createInferenceExperimentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateInferenceExperimentResult> createInferenceExperimentAsync(
+            CreateInferenceExperimentRequest createInferenceExperimentRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateInferenceExperimentRequest, CreateInferenceExperimentResult> asyncHandler);
 
     /**
      * <p>
@@ -1873,6 +2005,76 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<CreateModelBiasJobDefinitionResult> createModelBiasJobDefinitionAsync(
             CreateModelBiasJobDefinitionRequest createModelBiasJobDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateModelBiasJobDefinitionRequest, CreateModelBiasJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card.
+     * </p>
+     * <p>
+     * For information about how to use model cards, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon SageMaker Model Card</a>.
+     * </p>
+     * 
+     * @param createModelCardRequest
+     * @return A Java Future containing the result of the CreateModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelCardResult> createModelCardAsync(CreateModelCardRequest createModelCardRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card.
+     * </p>
+     * <p>
+     * For information about how to use model cards, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon SageMaker Model Card</a>.
+     * </p>
+     * 
+     * @param createModelCardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelCardResult> createModelCardAsync(CreateModelCardRequest createModelCardRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateModelCardRequest, CreateModelCardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param createModelCardExportJobRequest
+     * @return A Java Future containing the result of the CreateModelCardExportJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelCardExportJobResult> createModelCardExportJobAsync(CreateModelCardExportJobRequest createModelCardExportJobRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param createModelCardExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateModelCardExportJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateModelCardExportJobResult> createModelCardExportJobAsync(CreateModelCardExportJobRequest createModelCardExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateModelCardExportJobRequest, CreateModelCardExportJobResult> asyncHandler);
 
     /**
      * <p>
@@ -2548,6 +2750,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Creates a space used for real time collaboration in a Domain.
+     * </p>
+     * 
+     * @param createSpaceRequest
+     * @return A Java Future containing the result of the CreateSpace operation returned by the service.
+     * @sample AmazonSageMakerAsync.CreateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSpaceResult> createSpaceAsync(CreateSpaceRequest createSpaceRequest);
+
+    /**
+     * <p>
+     * Creates a space used for real time collaboration in a Domain.
+     * </p>
+     * 
+     * @param createSpaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSpace operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.CreateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSpaceResult> createSpaceAsync(CreateSpaceRequest createSpaceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSpaceRequest, CreateSpaceResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Studio Lifecycle Configuration.
      * </p>
      * 
@@ -2607,15 +2840,15 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is
-     * stored.
+     * <code>InputDataConfig</code> - Describes the input required by the training job and the Amazon S3, EFS, or FSx
+     * location where it is stored.
      * </p>
      * </li>
      * <li>
@@ -2705,15 +2938,15 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is
-     * stored.
+     * <code>InputDataConfig</code> - Describes the input required by the training job and the Amazon S3, EFS, or FSx
+     * location where it is stored.
      * </p>
      * </li>
      * <li>
@@ -3786,6 +4019,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Delete a hub.
+     * </p>
+     * 
+     * @param deleteHubRequest
+     * @return A Java Future containing the result of the DeleteHub operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHubResult> deleteHubAsync(DeleteHubRequest deleteHubRequest);
+
+    /**
+     * <p>
+     * Delete a hub.
+     * </p>
+     * 
+     * @param deleteHubRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHub operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHubResult> deleteHubAsync(DeleteHubRequest deleteHubRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHubRequest, DeleteHubResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete the contents of a hub.
+     * </p>
+     * 
+     * @param deleteHubContentRequest
+     * @return A Java Future containing the result of the DeleteHubContent operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHubContentResult> deleteHubContentAsync(DeleteHubContentRequest deleteHubContentRequest);
+
+    /**
+     * <p>
+     * Delete the contents of a hub.
+     * </p>
+     * 
+     * @param deleteHubContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHubContent operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHubContentResult> deleteHubContentAsync(DeleteHubContentRequest deleteHubContentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHubContentRequest, DeleteHubContentResult> asyncHandler);
+
+    /**
+     * <p>
      * Use this operation to delete a human task user interface (worker task template).
      * </p>
      * <p>
@@ -3887,6 +4182,51 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Deletes an inference experiment.
+     * </p>
+     * <note>
+     * <p>
+     * This operation does not delete your endpoint, variants, or any underlying resources. This operation only deletes
+     * the metadata of your experiment.
+     * </p>
+     * </note>
+     * 
+     * @param deleteInferenceExperimentRequest
+     * @return A Java Future containing the result of the DeleteInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInferenceExperimentResult> deleteInferenceExperimentAsync(
+            DeleteInferenceExperimentRequest deleteInferenceExperimentRequest);
+
+    /**
+     * <p>
+     * Deletes an inference experiment.
+     * </p>
+     * <note>
+     * <p>
+     * This operation does not delete your endpoint, variants, or any underlying resources. This operation only deletes
+     * the metadata of your experiment.
+     * </p>
+     * </note>
+     * 
+     * @param deleteInferenceExperimentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteInferenceExperimentResult> deleteInferenceExperimentAsync(
+            DeleteInferenceExperimentRequest deleteInferenceExperimentRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteInferenceExperimentRequest, DeleteInferenceExperimentResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in SageMaker when
      * you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role
      * that you specified when creating the model.
@@ -3954,6 +4294,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<DeleteModelBiasJobDefinitionResult> deleteModelBiasJobDefinitionAsync(
             DeleteModelBiasJobDefinitionRequest deleteModelBiasJobDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteModelBiasJobDefinitionRequest, DeleteModelBiasJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param deleteModelCardRequest
+     * @return A Java Future containing the result of the DeleteModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelCardResult> deleteModelCardAsync(DeleteModelCardRequest deleteModelCardRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param deleteModelCardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteModelCardResult> deleteModelCardAsync(DeleteModelCardRequest deleteModelCardRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteModelCardRequest, DeleteModelCardResult> asyncHandler);
 
     /**
      * <p>
@@ -4308,6 +4679,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DeleteProjectResult> deleteProjectAsync(DeleteProjectRequest deleteProjectRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProjectRequest, DeleteProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used to delete a space.
+     * </p>
+     * 
+     * @param deleteSpaceRequest
+     * @return A Java Future containing the result of the DeleteSpace operation returned by the service.
+     * @sample AmazonSageMakerAsync.DeleteSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSpaceResult> deleteSpaceAsync(DeleteSpaceRequest deleteSpaceRequest);
+
+    /**
+     * <p>
+     * Used to delete a space.
+     * </p>
+     * 
+     * @param deleteSpaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSpace operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DeleteSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSpaceResult> deleteSpaceAsync(DeleteSpaceRequest deleteSpaceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSpaceRequest, DeleteSpaceResult> asyncHandler);
 
     /**
      * <p>
@@ -5290,6 +5692,68 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Describe a hub.
+     * </p>
+     * 
+     * @param describeHubRequest
+     * @return A Java Future containing the result of the DescribeHub operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHubResult> describeHubAsync(DescribeHubRequest describeHubRequest);
+
+    /**
+     * <p>
+     * Describe a hub.
+     * </p>
+     * 
+     * @param describeHubRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHub operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHubResult> describeHubAsync(DescribeHubRequest describeHubRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHubRequest, DescribeHubResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describe the content of a hub.
+     * </p>
+     * 
+     * @param describeHubContentRequest
+     * @return A Java Future containing the result of the DescribeHubContent operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHubContentResult> describeHubContentAsync(DescribeHubContentRequest describeHubContentRequest);
+
+    /**
+     * <p>
+     * Describe the content of a hub.
+     * </p>
+     * 
+     * @param describeHubContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeHubContent operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeHubContentResult> describeHubContentAsync(DescribeHubContentRequest describeHubContentRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeHubContentRequest, DescribeHubContentResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the requested human task user interface (worker task template).
      * </p>
      * 
@@ -5415,6 +5879,39 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DescribeImageVersionResult> describeImageVersionAsync(DescribeImageVersionRequest describeImageVersionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeImageVersionRequest, DescribeImageVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns details about an inference experiment.
+     * </p>
+     * 
+     * @param describeInferenceExperimentRequest
+     * @return A Java Future containing the result of the DescribeInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInferenceExperimentResult> describeInferenceExperimentAsync(
+            DescribeInferenceExperimentRequest describeInferenceExperimentRequest);
+
+    /**
+     * <p>
+     * Returns details about an inference experiment.
+     * </p>
+     * 
+     * @param describeInferenceExperimentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeInferenceExperimentResult> describeInferenceExperimentAsync(
+            DescribeInferenceExperimentRequest describeInferenceExperimentRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeInferenceExperimentRequest, DescribeInferenceExperimentResult> asyncHandler);
 
     /**
      * <p>
@@ -5582,6 +6079,70 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<DescribeModelBiasJobDefinitionResult> describeModelBiasJobDefinitionAsync(
             DescribeModelBiasJobDefinitionRequest describeModelBiasJobDefinitionRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeModelBiasJobDefinitionRequest, DescribeModelBiasJobDefinitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param describeModelCardRequest
+     * @return A Java Future containing the result of the DescribeModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelCardResult> describeModelCardAsync(DescribeModelCardRequest describeModelCardRequest);
+
+    /**
+     * <p>
+     * Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param describeModelCardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelCardResult> describeModelCardAsync(DescribeModelCardRequest describeModelCardRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelCardRequest, DescribeModelCardResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param describeModelCardExportJobRequest
+     * @return A Java Future containing the result of the DescribeModelCardExportJob operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelCardExportJobResult> describeModelCardExportJobAsync(
+            DescribeModelCardExportJobRequest describeModelCardExportJobRequest);
+
+    /**
+     * <p>
+     * Describes an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param describeModelCardExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeModelCardExportJob operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeModelCardExportJobResult> describeModelCardExportJobAsync(
+            DescribeModelCardExportJobRequest describeModelCardExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeModelCardExportJobRequest, DescribeModelCardExportJobResult> asyncHandler);
 
     /**
      * <p>
@@ -5998,6 +6559,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<DescribeProjectResult> describeProjectAsync(DescribeProjectRequest describeProjectRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeProjectRequest, DescribeProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the space.
+     * </p>
+     * 
+     * @param describeSpaceRequest
+     * @return A Java Future containing the result of the DescribeSpace operation returned by the service.
+     * @sample AmazonSageMakerAsync.DescribeSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSpaceResult> describeSpaceAsync(DescribeSpaceRequest describeSpaceRequest);
+
+    /**
+     * <p>
+     * Describes the space.
+     * </p>
+     * 
+     * @param describeSpaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSpace operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.DescribeSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSpaceResult> describeSpaceAsync(DescribeSpaceRequest describeSpaceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSpaceRequest, DescribeSpaceResult> asyncHandler);
 
     /**
      * <p>
@@ -6610,6 +7202,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Import hub content.
+     * </p>
+     * 
+     * @param importHubContentRequest
+     * @return A Java Future containing the result of the ImportHubContent operation returned by the service.
+     * @sample AmazonSageMakerAsync.ImportHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportHubContentResult> importHubContentAsync(ImportHubContentRequest importHubContentRequest);
+
+    /**
+     * <p>
+     * Import hub content.
+     * </p>
+     * 
+     * @param importHubContentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportHubContent operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ImportHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportHubContentResult> importHubContentAsync(ImportHubContentRequest importHubContentRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportHubContentRequest, ImportHubContentResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the actions in your account and their properties.
      * </p>
      * 
@@ -6669,6 +7292,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListAlgorithmsResult> listAlgorithmsAsync(ListAlgorithmsRequest listAlgorithmsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAlgorithmsRequest, ListAlgorithmsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the aliases of a specified image or image version.
+     * </p>
+     * 
+     * @param listAliasesRequest
+     * @return A Java Future containing the result of the ListAliases operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAliases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest);
+
+    /**
+     * <p>
+     * Lists the aliases of a specified image or image version.
+     * </p>
+     * 
+     * @param listAliasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAliases operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAliases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest listAliasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler);
 
     /**
      * <p>
@@ -7310,6 +7964,99 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * List hub content versions.
+     * </p>
+     * 
+     * @param listHubContentVersionsRequest
+     * @return A Java Future containing the result of the ListHubContentVersions operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListHubContentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHubContentVersionsResult> listHubContentVersionsAsync(ListHubContentVersionsRequest listHubContentVersionsRequest);
+
+    /**
+     * <p>
+     * List hub content versions.
+     * </p>
+     * 
+     * @param listHubContentVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHubContentVersions operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListHubContentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHubContentVersionsResult> listHubContentVersionsAsync(ListHubContentVersionsRequest listHubContentVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHubContentVersionsRequest, ListHubContentVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the contents of a hub.
+     * </p>
+     * 
+     * @param listHubContentsRequest
+     * @return A Java Future containing the result of the ListHubContents operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListHubContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListHubContentsResult> listHubContentsAsync(ListHubContentsRequest listHubContentsRequest);
+
+    /**
+     * <p>
+     * List the contents of a hub.
+     * </p>
+     * 
+     * @param listHubContentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHubContents operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListHubContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListHubContentsResult> listHubContentsAsync(ListHubContentsRequest listHubContentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHubContentsRequest, ListHubContentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all existing hubs.
+     * </p>
+     * 
+     * @param listHubsRequest
+     * @return A Java Future containing the result of the ListHubs operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListHubs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListHubsResult> listHubsAsync(ListHubsRequest listHubsRequest);
+
+    /**
+     * <p>
+     * List all existing hubs.
+     * </p>
+     * 
+     * @param listHubsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHubs operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListHubs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListHubsResult> listHubsAsync(ListHubsRequest listHubsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHubsRequest, ListHubsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the human task user interfaces in your account.
      * </p>
      * 
@@ -7441,6 +8188,78 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListImagesResult> listImagesAsync(ListImagesRequest listImagesRequest,
             com.amazonaws.handlers.AsyncHandler<ListImagesRequest, ListImagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the list of all inference experiments.
+     * </p>
+     * 
+     * @param listInferenceExperimentsRequest
+     * @return A Java Future containing the result of the ListInferenceExperiments operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListInferenceExperiments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceExperimentsResult> listInferenceExperimentsAsync(ListInferenceExperimentsRequest listInferenceExperimentsRequest);
+
+    /**
+     * <p>
+     * Returns the list of all inference experiments.
+     * </p>
+     * 
+     * @param listInferenceExperimentsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInferenceExperiments operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListInferenceExperiments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceExperimentsResult> listInferenceExperimentsAsync(ListInferenceExperimentsRequest listInferenceExperimentsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceExperimentsRequest, ListInferenceExperimentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @return A Java Future containing the result of the ListInferenceRecommendationsJobSteps operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsync.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListInferenceRecommendationsJobSteps operation returned by the
+     *         service.
+     * @sample AmazonSageMakerAsyncHandler.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListInferenceRecommendationsJobStepsRequest, ListInferenceRecommendationsJobStepsResult> asyncHandler);
 
     /**
      * <p>
@@ -7608,6 +8427,99 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<ListModelBiasJobDefinitionsResult> listModelBiasJobDefinitionsAsync(
             ListModelBiasJobDefinitionsRequest listModelBiasJobDefinitionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListModelBiasJobDefinitionsRequest, ListModelBiasJobDefinitionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the export jobs for the Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardExportJobsRequest
+     * @return A Java Future containing the result of the ListModelCardExportJobs operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListModelCardExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelCardExportJobsResult> listModelCardExportJobsAsync(ListModelCardExportJobsRequest listModelCardExportJobsRequest);
+
+    /**
+     * <p>
+     * List the export jobs for the Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardExportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListModelCardExportJobs operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListModelCardExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelCardExportJobsResult> listModelCardExportJobsAsync(ListModelCardExportJobsRequest listModelCardExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListModelCardExportJobsRequest, ListModelCardExportJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List existing versions of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardVersionsRequest
+     * @return A Java Future containing the result of the ListModelCardVersions operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListModelCardVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelCardVersionsResult> listModelCardVersionsAsync(ListModelCardVersionsRequest listModelCardVersionsRequest);
+
+    /**
+     * <p>
+     * List existing versions of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListModelCardVersions operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListModelCardVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelCardVersionsResult> listModelCardVersionsAsync(ListModelCardVersionsRequest listModelCardVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListModelCardVersionsRequest, ListModelCardVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List existing model cards.
+     * </p>
+     * 
+     * @param listModelCardsRequest
+     * @return A Java Future containing the result of the ListModelCards operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListModelCards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelCardsResult> listModelCardsAsync(ListModelCardsRequest listModelCardsRequest);
+
+    /**
+     * <p>
+     * List existing model cards.
+     * </p>
+     * 
+     * @param listModelCardsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListModelCards operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListModelCards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListModelCardsResult> listModelCardsAsync(ListModelCardsRequest listModelCardsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListModelCardsRequest, ListModelCardsResult> asyncHandler);
 
     /**
      * <p>
@@ -7802,6 +8714,70 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListModelsResult> listModelsAsync(ListModelsRequest listModelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListModelsRequest, ListModelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of past alerts in a model monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertHistoryRequest
+     * @return A Java Future containing the result of the ListMonitoringAlertHistory operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListMonitoringAlertHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMonitoringAlertHistoryResult> listMonitoringAlertHistoryAsync(
+            ListMonitoringAlertHistoryRequest listMonitoringAlertHistoryRequest);
+
+    /**
+     * <p>
+     * Gets a list of past alerts in a model monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMonitoringAlertHistory operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListMonitoringAlertHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMonitoringAlertHistoryResult> listMonitoringAlertHistoryAsync(
+            ListMonitoringAlertHistoryRequest listMonitoringAlertHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMonitoringAlertHistoryRequest, ListMonitoringAlertHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the alerts for a single monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertsRequest
+     * @return A Java Future containing the result of the ListMonitoringAlerts operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListMonitoringAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMonitoringAlertsResult> listMonitoringAlertsAsync(ListMonitoringAlertsRequest listMonitoringAlertsRequest);
+
+    /**
+     * <p>
+     * Gets the alerts for a single monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMonitoringAlerts operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListMonitoringAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMonitoringAlertsResult> listMonitoringAlertsAsync(ListMonitoringAlertsRequest listMonitoringAlertsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMonitoringAlertsRequest, ListMonitoringAlertsResult> asyncHandler);
 
     /**
      * <p>
@@ -8124,6 +9100,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<ListProjectsResult> listProjectsAsync(ListProjectsRequest listProjectsRequest,
             com.amazonaws.handlers.AsyncHandler<ListProjectsRequest, ListProjectsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists spaces.
+     * </p>
+     * 
+     * @param listSpacesRequest
+     * @return A Java Future containing the result of the ListSpaces operation returned by the service.
+     * @sample AmazonSageMakerAsync.ListSpaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSpacesResult> listSpacesAsync(ListSpacesRequest listSpacesRequest);
+
+    /**
+     * <p>
+     * Lists spaces.
+     * </p>
+     * 
+     * @param listSpacesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSpaces operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.ListSpaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSpacesResult> listSpacesAsync(ListSpacesRequest listSpacesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSpacesRequest, ListSpacesResult> asyncHandler);
 
     /**
      * <p>
@@ -8924,6 +9931,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Starts an inference experiment.
+     * </p>
+     * 
+     * @param startInferenceExperimentRequest
+     * @return A Java Future containing the result of the StartInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsync.StartInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInferenceExperimentResult> startInferenceExperimentAsync(StartInferenceExperimentRequest startInferenceExperimentRequest);
+
+    /**
+     * <p>
+     * Starts an inference experiment.
+     * </p>
+     * 
+     * @param startInferenceExperimentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.StartInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartInferenceExperimentResult> startInferenceExperimentAsync(StartInferenceExperimentRequest startInferenceExperimentRequest,
+            com.amazonaws.handlers.AsyncHandler<StartInferenceExperimentRequest, StartInferenceExperimentResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts a previously stopped monitoring schedule.
      * </p>
      * <note>
@@ -9215,6 +10253,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
     java.util.concurrent.Future<StopHyperParameterTuningJobResult> stopHyperParameterTuningJobAsync(
             StopHyperParameterTuningJobRequest stopHyperParameterTuningJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopHyperParameterTuningJobRequest, StopHyperParameterTuningJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops an inference experiment.
+     * </p>
+     * 
+     * @param stopInferenceExperimentRequest
+     * @return A Java Future containing the result of the StopInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsync.StopInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopInferenceExperimentResult> stopInferenceExperimentAsync(StopInferenceExperimentRequest stopInferenceExperimentRequest);
+
+    /**
+     * <p>
+     * Stops an inference experiment.
+     * </p>
+     * 
+     * @param stopInferenceExperimentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.StopInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopInferenceExperimentResult> stopInferenceExperimentAsync(StopInferenceExperimentRequest stopInferenceExperimentRequest,
+            com.amazonaws.handlers.AsyncHandler<StopInferenceExperimentRequest, StopInferenceExperimentResult> asyncHandler);
 
     /**
      * <p>
@@ -10013,6 +11082,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Update a hub.
+     * </p>
+     * 
+     * @param updateHubRequest
+     * @return A Java Future containing the result of the UpdateHub operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHubResult> updateHubAsync(UpdateHubRequest updateHubRequest);
+
+    /**
+     * <p>
+     * Update a hub.
+     * </p>
+     * 
+     * @param updateHubRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateHub operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHubResult> updateHubAsync(UpdateHubRequest updateHubRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateHubRequest, UpdateHubResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
      * <a>DeleteTags</a> APIs.
      * </p>
@@ -10046,6 +11146,115 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
 
     /**
      * <p>
+     * Updates the properties of a SageMaker image version.
+     * </p>
+     * 
+     * @param updateImageVersionRequest
+     * @return A Java Future containing the result of the UpdateImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateImageVersionResult> updateImageVersionAsync(UpdateImageVersionRequest updateImageVersionRequest);
+
+    /**
+     * <p>
+     * Updates the properties of a SageMaker image version.
+     * </p>
+     * 
+     * @param updateImageVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateImageVersion operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateImageVersionResult> updateImageVersionAsync(UpdateImageVersionRequest updateImageVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateImageVersionRequest, UpdateImageVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an inference experiment that you created. The status of the inference experiment has to be either
+     * <code>Created</code>, <code>Running</code>. For more information on the status of an inference experiment, see
+     * <a>DescribeInferenceExperimentResponse$Status</a>.
+     * </p>
+     * 
+     * @param updateInferenceExperimentRequest
+     * @return A Java Future containing the result of the UpdateInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInferenceExperimentResult> updateInferenceExperimentAsync(
+            UpdateInferenceExperimentRequest updateInferenceExperimentRequest);
+
+    /**
+     * <p>
+     * Updates an inference experiment that you created. The status of the inference experiment has to be either
+     * <code>Created</code>, <code>Running</code>. For more information on the status of an inference experiment, see
+     * <a>DescribeInferenceExperimentResponse$Status</a>.
+     * </p>
+     * 
+     * @param updateInferenceExperimentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateInferenceExperiment operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateInferenceExperimentResult> updateInferenceExperimentAsync(
+            UpdateInferenceExperimentRequest updateInferenceExperimentRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateInferenceExperimentRequest, UpdateInferenceExperimentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update an Amazon SageMaker Model Card.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot update both model card content and model card status in a single call.
+     * </p>
+     * </important>
+     * 
+     * @param updateModelCardRequest
+     * @return A Java Future containing the result of the UpdateModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelCardResult> updateModelCardAsync(UpdateModelCardRequest updateModelCardRequest);
+
+    /**
+     * <p>
+     * Update an Amazon SageMaker Model Card.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot update both model card content and model card status in a single call.
+     * </p>
+     * </important>
+     * 
+     * @param updateModelCardRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateModelCard operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateModelCardResult> updateModelCardAsync(UpdateModelCardRequest updateModelCardRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateModelCardRequest, UpdateModelCardResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a versioned model.
      * </p>
      * 
@@ -10074,6 +11283,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<UpdateModelPackageResult> updateModelPackageAsync(UpdateModelPackageRequest updateModelPackageRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateModelPackageRequest, UpdateModelPackageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update the parameters of a model monitor alert.
+     * </p>
+     * 
+     * @param updateMonitoringAlertRequest
+     * @return A Java Future containing the result of the UpdateMonitoringAlert operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateMonitoringAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMonitoringAlertResult> updateMonitoringAlertAsync(UpdateMonitoringAlertRequest updateMonitoringAlertRequest);
+
+    /**
+     * <p>
+     * Update the parameters of a model monitor alert.
+     * </p>
+     * 
+     * @param updateMonitoringAlertRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMonitoringAlert operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateMonitoringAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMonitoringAlertResult> updateMonitoringAlertAsync(UpdateMonitoringAlertRequest updateMonitoringAlertRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMonitoringAlertRequest, UpdateMonitoringAlertResult> asyncHandler);
 
     /**
      * <p>
@@ -10284,6 +11524,37 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      */
     java.util.concurrent.Future<UpdateProjectResult> updateProjectAsync(UpdateProjectRequest updateProjectRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateProjectRequest, UpdateProjectResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the settings of a space.
+     * </p>
+     * 
+     * @param updateSpaceRequest
+     * @return A Java Future containing the result of the UpdateSpace operation returned by the service.
+     * @sample AmazonSageMakerAsync.UpdateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSpaceResult> updateSpaceAsync(UpdateSpaceRequest updateSpaceRequest);
+
+    /**
+     * <p>
+     * Updates the settings of a space.
+     * </p>
+     * 
+     * @param updateSpaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSpace operation returned by the service.
+     * @sample AmazonSageMakerAsyncHandler.UpdateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSpaceResult> updateSpaceAsync(UpdateSpaceRequest updateSpaceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSpaceRequest, UpdateSpaceResult> asyncHandler);
 
     /**
      * <p>

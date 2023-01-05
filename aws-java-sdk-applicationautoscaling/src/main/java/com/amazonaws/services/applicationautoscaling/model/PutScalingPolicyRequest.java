@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,10 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name of the scaling policy.
+     * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
      * </p>
      */
     private String policyName;
@@ -202,7 +206,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -267,7 +271,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private String scalableDimension;
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
@@ -312,9 +316,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the scaling policy.
      * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
+     * </p>
      * 
      * @param policyName
-     *        The name of the scaling policy.
+     *        The name of the scaling policy.</p>
+     *        <p>
+     *        You cannot change the name of a scaling policy, but you can delete the original scaling policy and create
+     *        a new scaling policy with the same settings and a different name.
      */
 
     public void setPolicyName(String policyName) {
@@ -325,8 +336,15 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the scaling policy.
      * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
+     * </p>
      * 
-     * @return The name of the scaling policy.
+     * @return The name of the scaling policy.</p>
+     *         <p>
+     *         You cannot change the name of a scaling policy, but you can delete the original scaling policy and create
+     *         a new scaling policy with the same settings and a different name.
      */
 
     public String getPolicyName() {
@@ -337,9 +355,16 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the scaling policy.
      * </p>
+     * <p>
+     * You cannot change the name of a scaling policy, but you can delete the original scaling policy and create a new
+     * scaling policy with the same settings and a different name.
+     * </p>
      * 
      * @param policyName
-     *        The name of the scaling policy.
+     *        The name of the scaling policy.</p>
+     *        <p>
+     *        You cannot change the name of a scaling policy, but you can delete the original scaling policy and create
+     *        a new scaling policy with the same settings and a different name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1148,7 +1173,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1264,7 +1289,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1389,7 +1414,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1504,7 +1529,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1629,7 +1654,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1745,7 +1770,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1872,7 +1897,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1988,7 +2013,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2113,7 +2138,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2229,7 +2254,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2303,7 +2328,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
@@ -2324,7 +2349,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>
@@ -2350,7 +2375,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
@@ -2370,7 +2395,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * >Step scaling policies</a> in the <i>Application Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The policy type. This parameter is required if you are creating a scaling policy.</p>
+     * @return The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *         <p>
      *         The following policy types are supported:
      *         </p>
@@ -2396,7 +2421,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
@@ -2417,7 +2442,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>
@@ -2445,7 +2470,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
@@ -2466,7 +2491,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>
@@ -2492,7 +2517,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. This parameter is required if you are creating a scaling policy.
+     * The scaling policy type. This parameter is required if you are creating a scaling policy.
      * </p>
      * <p>
      * The following policy types are supported:
@@ -2513,7 +2538,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param policyType
-     *        The policy type. This parameter is required if you are creating a scaling policy.</p>
+     *        The scaling policy type. This parameter is required if you are creating a scaling policy.</p>
      *        <p>
      *        The following policy types are supported:
      *        </p>

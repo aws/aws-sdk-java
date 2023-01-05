@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Describes the buffering to perform before delivering data to the Amazon OpenSearch Service destination.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonopensearchserviceBufferingHints"
  *      target="_top">AWS API Documentation</a>
@@ -25,12 +28,35 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonopensearchserviceBufferingHints implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
+     * default value is 300 (5 minutes).
+     * </p>
+     */
     private Integer intervalInSeconds;
-
+    /**
+     * <p>
+     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
+     * 5.
+     * </p>
+     * <p>
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
+     * </p>
+     */
     private Integer sizeInMBs;
 
     /**
+     * <p>
+     * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
      * @param intervalInSeconds
+     *        Buffer incoming data for the specified period of time, in seconds, before delivering it to the
+     *        destination. The default value is 300 (5 minutes).
      */
 
     public void setIntervalInSeconds(Integer intervalInSeconds) {
@@ -38,7 +64,13 @@ public class AmazonopensearchserviceBufferingHints implements Serializable, Clon
     }
 
     /**
-     * @return
+     * <p>
+     * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
+     * @return Buffer incoming data for the specified period of time, in seconds, before delivering it to the
+     *         destination. The default value is 300 (5 minutes).
      */
 
     public Integer getIntervalInSeconds() {
@@ -46,7 +78,14 @@ public class AmazonopensearchserviceBufferingHints implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * Buffer incoming data for the specified period of time, in seconds, before delivering it to the destination. The
+     * default value is 300 (5 minutes).
+     * </p>
+     * 
      * @param intervalInSeconds
+     *        Buffer incoming data for the specified period of time, in seconds, before delivering it to the
+     *        destination. The default value is 300 (5 minutes).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +95,23 @@ public class AmazonopensearchserviceBufferingHints implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
+     * 5.
+     * </p>
+     * <p>
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
+     * </p>
+     * 
      * @param sizeInMBs
+     *        Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
+     *        value is 5.</p>
+     *        <p>
+     *        We recommend setting this parameter to a value greater than the amount of data you typically ingest into
+     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should
+     *        be 10 MB or higher.
      */
 
     public void setSizeInMBs(Integer sizeInMBs) {
@@ -64,7 +119,22 @@ public class AmazonopensearchserviceBufferingHints implements Serializable, Clon
     }
 
     /**
-     * @return
+     * <p>
+     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
+     * 5.
+     * </p>
+     * <p>
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
+     * </p>
+     * 
+     * @return Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
+     *         value is 5.</p>
+     *         <p>
+     *         We recommend setting this parameter to a value greater than the amount of data you typically ingest into
+     *         the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value
+     *         should be 10 MB or higher.
      */
 
     public Integer getSizeInMBs() {
@@ -72,7 +142,23 @@ public class AmazonopensearchserviceBufferingHints implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default value is
+     * 5.
+     * </p>
+     * <p>
+     * We recommend setting this parameter to a value greater than the amount of data you typically ingest into the
+     * delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should be 10 MB
+     * or higher.
+     * </p>
+     * 
      * @param sizeInMBs
+     *        Buffer incoming data to the specified size, in MBs, before delivering it to the destination. The default
+     *        value is 5.</p>
+     *        <p>
+     *        We recommend setting this parameter to a value greater than the amount of data you typically ingest into
+     *        the delivery stream in 10 seconds. For example, if you typically ingest data at 1 MB/sec, the value should
+     *        be 10 MB or higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

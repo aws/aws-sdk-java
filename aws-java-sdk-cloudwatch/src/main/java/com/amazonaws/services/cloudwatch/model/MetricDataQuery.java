@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ import javax.annotation.Generated;
  * structures in the array. The 20 structures can include as many as 10 structures that contain a
  * <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the
  * <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must
- * have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm
+ * have <code>true</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm
  * watches.
  * </p>
  * <p>
@@ -110,10 +110,10 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <p>
      * When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data
      * values of this metric. If you are performing this call just to do math expressions and do not also need the raw
-     * data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.
+     * data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.
      * </p>
      * <p>
-     * When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the
+     * When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the
      * alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify
      * <code>ReturnData</code> as False.
      * </p>
@@ -131,11 +131,15 @@ public class MetricDataQuery implements Serializable, Cloneable {
     private Integer period;
     /**
      * <p>
-     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * The ID of the account where the metrics are located.
      * </p>
      * <p>
-     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
-     * operations.
+     * If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which
+     * account to retrieve this metric from.
+     * </p>
+     * <p>
+     * If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the
+     * metric that the alarm is watching.
      * </p>
      */
     private String accountId;
@@ -469,10 +473,10 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <p>
      * When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data
      * values of this metric. If you are performing this call just to do math expressions and do not also need the raw
-     * data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.
+     * data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.
      * </p>
      * <p>
-     * When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the
+     * When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the
      * alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify
      * <code>ReturnData</code> as False.
      * </p>
@@ -480,10 +484,10 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * @param returnData
      *        When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw
      *        data values of this metric. If you are performing this call just to do math expressions and do not also
-     *        need the raw data returned, you can specify <code>False</code>. If you omit this, the default of
-     *        <code>True</code> is used.</p>
+     *        need the raw data returned, you can specify <code>false</code>. If you omit this, the default of
+     *        <code>true</code> is used.</p>
      *        <p>
-     *        When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use
+     *        When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use
      *        as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation,
      *        specify <code>ReturnData</code> as False.
      */
@@ -496,20 +500,20 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <p>
      * When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data
      * values of this metric. If you are performing this call just to do math expressions and do not also need the raw
-     * data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.
+     * data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.
      * </p>
      * <p>
-     * When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the
+     * When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the
      * alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify
      * <code>ReturnData</code> as False.
      * </p>
      * 
      * @return When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw
      *         data values of this metric. If you are performing this call just to do math expressions and do not also
-     *         need the raw data returned, you can specify <code>False</code>. If you omit this, the default of
-     *         <code>True</code> is used.</p>
+     *         need the raw data returned, you can specify <code>false</code>. If you omit this, the default of
+     *         <code>true</code> is used.</p>
      *         <p>
-     *         When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use
+     *         When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use
      *         as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation,
      *         specify <code>ReturnData</code> as False.
      */
@@ -522,10 +526,10 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <p>
      * When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data
      * values of this metric. If you are performing this call just to do math expressions and do not also need the raw
-     * data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.
+     * data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.
      * </p>
      * <p>
-     * When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the
+     * When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the
      * alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify
      * <code>ReturnData</code> as False.
      * </p>
@@ -533,10 +537,10 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * @param returnData
      *        When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw
      *        data values of this metric. If you are performing this call just to do math expressions and do not also
-     *        need the raw data returned, you can specify <code>False</code>. If you omit this, the default of
-     *        <code>True</code> is used.</p>
+     *        need the raw data returned, you can specify <code>false</code>. If you omit this, the default of
+     *        <code>true</code> is used.</p>
      *        <p>
-     *        When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use
+     *        When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use
      *        as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation,
      *        specify <code>ReturnData</code> as False.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -551,20 +555,20 @@ public class MetricDataQuery implements Serializable, Cloneable {
      * <p>
      * When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw data
      * values of this metric. If you are performing this call just to do math expressions and do not also need the raw
-     * data returned, you can specify <code>False</code>. If you omit this, the default of <code>True</code> is used.
+     * data returned, you can specify <code>false</code>. If you omit this, the default of <code>true</code> is used.
      * </p>
      * <p>
-     * When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use as the
+     * When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use as the
      * alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation, specify
      * <code>ReturnData</code> as False.
      * </p>
      * 
      * @return When used in <code>GetMetricData</code>, this option indicates whether to return the timestamps and raw
      *         data values of this metric. If you are performing this call just to do math expressions and do not also
-     *         need the raw data returned, you can specify <code>False</code>. If you omit this, the default of
-     *         <code>True</code> is used.</p>
+     *         need the raw data returned, you can specify <code>false</code>. If you omit this, the default of
+     *         <code>true</code> is used.</p>
      *         <p>
-     *         When used in <code>PutMetricAlarm</code>, specify <code>True</code> for the one expression result to use
+     *         When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression result to use
      *         as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code> operation,
      *         specify <code>ReturnData</code> as False.
      */
@@ -639,18 +643,26 @@ public class MetricDataQuery implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * The ID of the account where the metrics are located.
      * </p>
      * <p>
-     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
-     * operations.
+     * If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which
+     * account to retrieve this metric from.
+     * </p>
+     * <p>
+     * If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the
+     * metric that the alarm is watching.
      * </p>
      * 
      * @param accountId
-     *        The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+     *        The ID of the account where the metrics are located.</p>
      *        <p>
-     *        Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-     *        <code>GetMetricData</code> operations.
+     *        If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify
+     *        which account to retrieve this metric from.
+     *        </p>
+     *        <p>
+     *        If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains
+     *        the metric that the alarm is watching.
      */
 
     public void setAccountId(String accountId) {
@@ -659,17 +671,25 @@ public class MetricDataQuery implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * The ID of the account where the metrics are located.
      * </p>
      * <p>
-     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
-     * operations.
+     * If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which
+     * account to retrieve this metric from.
+     * </p>
+     * <p>
+     * If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the
+     * metric that the alarm is watching.
      * </p>
      * 
-     * @return The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+     * @return The ID of the account where the metrics are located.</p>
      *         <p>
-     *         Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-     *         <code>GetMetricData</code> operations.
+     *         If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify
+     *         which account to retrieve this metric from.
+     *         </p>
+     *         <p>
+     *         If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains
+     *         the metric that the alarm is watching.
      */
 
     public String getAccountId() {
@@ -678,18 +698,26 @@ public class MetricDataQuery implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the account where the metrics are located, if this is a cross-account alarm.
+     * The ID of the account where the metrics are located.
      * </p>
      * <p>
-     * Use this field only for <code>PutMetricAlarm</code> operations. It is not used in <code>GetMetricData</code>
-     * operations.
+     * If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify which
+     * account to retrieve this metric from.
+     * </p>
+     * <p>
+     * If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains the
+     * metric that the alarm is watching.
      * </p>
      * 
      * @param accountId
-     *        The ID of the account where the metrics are located, if this is a cross-account alarm.</p>
+     *        The ID of the account where the metrics are located.</p>
      *        <p>
-     *        Use this field only for <code>PutMetricAlarm</code> operations. It is not used in
-     *        <code>GetMetricData</code> operations.
+     *        If you are performing a <code>GetMetricData</code> operation in a monitoring account, use this to specify
+     *        which account to retrieve this metric from.
+     *        </p>
+     *        <p>
+     *        If you are performing a <code>PutMetricAlarm</code> operation, use this to specify which account contains
+     *        the metric that the alarm is watching.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

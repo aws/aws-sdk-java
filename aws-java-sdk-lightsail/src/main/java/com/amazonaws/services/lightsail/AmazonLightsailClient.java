@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,8 +58,8 @@ import com.amazonaws.services.lightsail.model.transform.*;
  * domains, and resource snapshots (backups) - for a low, predictable monthly price.
  * </p>
  * <p>
- * You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command Line Interface (AWS
- * CLI), or SDKs. For more information about Lightsail concepts and tasks, see the <a href=
+ * You can manage your Lightsail resources using the Lightsail console, Lightsail API, Command Line Interface (CLI), or
+ * SDKs. For more information about Lightsail concepts and tasks, see the <a href=
  * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli"
  * >Amazon Lightsail Developer Guide</a>.
  * </p>
@@ -6453,7 +6453,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * <p>
      * Container logs are retained for a certain amount of time. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and quotas</a> in
-     * the <i>AWS General Reference</i>.
+     * the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -6540,7 +6540,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * <p>
      * A set number of deployments are kept before the oldest one is replaced with the newest one. For more information,
      * see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail endpoints and
-     * quotas</a> in the <i>AWS General Reference</i>.
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * </note>
      * 
@@ -12193,8 +12193,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <p>
      * A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket. You can update a
-     * bucket's bundle only one time within a monthly AWS billing cycle. To determine if you can update a bucket's
-     * bundle, use the <a
+     * bucket's bundle only one time within a monthly Amazon Web Services billing cycle. To determine if you can update
+     * a bucket's bundle, use the <a
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetBuckets.html">GetBuckets</a> action.
      * The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can currently update a
      * bucket's bundle.
@@ -12437,8 +12437,8 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
      * incurring an overage fee.
      * </p>
      * <p>
-     * You can update your distribution's bundle only one time within your monthly AWS billing cycle. To determine if
-     * you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
+     * You can update your distribution's bundle only one time within your monthly Amazon Web Services billing cycle. To
+     * determine if you can update your distribution's bundle, use the <code>GetDistributions</code> action. The
      * <code>ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
      * distribution's bundle.
      * </p>

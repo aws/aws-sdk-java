@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,14 @@ public class PricingRuleListElementJsonUnmarshaller implements Unmarshaller<Pric
                 if (context.testExpression("LastModifiedTime", targetDepth)) {
                     context.nextToken();
                     pricingRuleListElement.setLastModifiedTime(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("BillingEntity", targetDepth)) {
+                    context.nextToken();
+                    pricingRuleListElement.setBillingEntity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Tiering", targetDepth)) {
+                    context.nextToken();
+                    pricingRuleListElement.setTiering(TieringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

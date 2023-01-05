@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,33 @@ public class GetPropertyValueRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String workspaceId;
+    /**
+     * <p>
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * The property group name.
+     * </p>
+     */
+    private String propertyGroupName;
+    /**
+     * <p>
+     * The tabular conditions.
+     * </p>
+     */
+    private TabularConditions tabularConditions;
 
     /**
      * <p>
@@ -287,6 +314,181 @@ public class GetPropertyValueRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
+     * </p>
+     * 
+     * @return The maximum number of results to return at one time. The default is 25.</p>
+     *         <p>
+     *         Valid Range: Minimum value of 1. Maximum value of 250.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @return The string that specifies the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The property group name.
+     * </p>
+     * 
+     * @param propertyGroupName
+     *        The property group name.
+     */
+
+    public void setPropertyGroupName(String propertyGroupName) {
+        this.propertyGroupName = propertyGroupName;
+    }
+
+    /**
+     * <p>
+     * The property group name.
+     * </p>
+     * 
+     * @return The property group name.
+     */
+
+    public String getPropertyGroupName() {
+        return this.propertyGroupName;
+    }
+
+    /**
+     * <p>
+     * The property group name.
+     * </p>
+     * 
+     * @param propertyGroupName
+     *        The property group name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueRequest withPropertyGroupName(String propertyGroupName) {
+        setPropertyGroupName(propertyGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tabular conditions.
+     * </p>
+     * 
+     * @param tabularConditions
+     *        The tabular conditions.
+     */
+
+    public void setTabularConditions(TabularConditions tabularConditions) {
+        this.tabularConditions = tabularConditions;
+    }
+
+    /**
+     * <p>
+     * The tabular conditions.
+     * </p>
+     * 
+     * @return The tabular conditions.
+     */
+
+    public TabularConditions getTabularConditions() {
+        return this.tabularConditions;
+    }
+
+    /**
+     * <p>
+     * The tabular conditions.
+     * </p>
+     * 
+     * @param tabularConditions
+     *        The tabular conditions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueRequest withTabularConditions(TabularConditions tabularConditions) {
+        setTabularConditions(tabularConditions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -307,7 +509,15 @@ public class GetPropertyValueRequest extends com.amazonaws.AmazonWebServiceReque
         if (getSelectedProperties() != null)
             sb.append("SelectedProperties: ").append(getSelectedProperties()).append(",");
         if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getPropertyGroupName() != null)
+            sb.append("PropertyGroupName: ").append(getPropertyGroupName()).append(",");
+        if (getTabularConditions() != null)
+            sb.append("TabularConditions: ").append(getTabularConditions());
         sb.append("}");
         return sb.toString();
     }
@@ -342,6 +552,22 @@ public class GetPropertyValueRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getPropertyGroupName() == null ^ this.getPropertyGroupName() == null)
+            return false;
+        if (other.getPropertyGroupName() != null && other.getPropertyGroupName().equals(this.getPropertyGroupName()) == false)
+            return false;
+        if (other.getTabularConditions() == null ^ this.getTabularConditions() == null)
+            return false;
+        if (other.getTabularConditions() != null && other.getTabularConditions().equals(this.getTabularConditions()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +581,10 @@ public class GetPropertyValueRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
         hashCode = prime * hashCode + ((getSelectedProperties() == null) ? 0 : getSelectedProperties().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getPropertyGroupName() == null) ? 0 : getPropertyGroupName().hashCode());
+        hashCode = prime * hashCode + ((getTabularConditions() == null) ? 0 : getTabularConditions().hashCode());
         return hashCode;
     }
 

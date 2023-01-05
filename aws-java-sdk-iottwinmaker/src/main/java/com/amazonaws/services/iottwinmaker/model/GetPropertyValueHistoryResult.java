@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,57 +25,17 @@ public class GetPropertyValueHistoryResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The string that specifies the next page of results.
-     * </p>
-     */
-    private String nextToken;
-    /**
-     * <p>
      * An object that maps strings to the property definitions in the component type. Each string in the mapping must be
      * unique to this object.
      * </p>
      */
     private java.util.List<PropertyValueHistory> propertyValues;
-
     /**
      * <p>
      * The string that specifies the next page of results.
      * </p>
-     * 
-     * @param nextToken
-     *        The string that specifies the next page of results.
      */
-
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-
-    /**
-     * <p>
-     * The string that specifies the next page of results.
-     * </p>
-     * 
-     * @return The string that specifies the next page of results.
-     */
-
-    public String getNextToken() {
-        return this.nextToken;
-    }
-
-    /**
-     * <p>
-     * The string that specifies the next page of results.
-     * </p>
-     * 
-     * @param nextToken
-     *        The string that specifies the next page of results.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetPropertyValueHistoryResult withNextToken(String nextToken) {
-        setNextToken(nextToken);
-        return this;
-    }
+    private String nextToken;
 
     /**
      * <p>
@@ -156,6 +116,46 @@ public class GetPropertyValueHistoryResult extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @return The string that specifies the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueHistoryResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -167,10 +167,10 @@ public class GetPropertyValueHistoryResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getNextToken() != null)
-            sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getPropertyValues() != null)
-            sb.append("PropertyValues: ").append(getPropertyValues());
+            sb.append("PropertyValues: ").append(getPropertyValues()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -185,13 +185,13 @@ public class GetPropertyValueHistoryResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof GetPropertyValueHistoryResult == false)
             return false;
         GetPropertyValueHistoryResult other = (GetPropertyValueHistoryResult) obj;
-        if (other.getNextToken() == null ^ this.getNextToken() == null)
-            return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
-            return false;
         if (other.getPropertyValues() == null ^ this.getPropertyValues() == null)
             return false;
         if (other.getPropertyValues() != null && other.getPropertyValues().equals(this.getPropertyValues()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
         return true;
     }
@@ -201,8 +201,8 @@ public class GetPropertyValueHistoryResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getPropertyValues() == null) ? 0 : getPropertyValues().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

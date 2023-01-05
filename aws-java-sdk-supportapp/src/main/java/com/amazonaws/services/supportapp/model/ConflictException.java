@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,18 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * Delete a Slack workspace from your Amazon Web Services account that has an active live chat channel.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web Services account that doesn't
+ * belong to an organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account, but the management account
+ * hasn't registered that workspace yet for the organization.
  * </p>
  * </li>
  * </ul>

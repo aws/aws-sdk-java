@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,16 +30,22 @@ public class ComponentUpdateRequest implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ID of the component type.
+     * The update type of the component update request.
      * </p>
      */
-    private String componentTypeId;
+    private String updateType;
     /**
      * <p>
      * The description of the component type.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     */
+    private String componentTypeId;
     /**
      * <p>
      * An object that maps strings to the properties to set in the component type update. Each string in the mapping
@@ -49,48 +55,67 @@ public class ComponentUpdateRequest implements Serializable, Cloneable, Structur
     private java.util.Map<String, PropertyRequest> propertyUpdates;
     /**
      * <p>
+     * The property group updates.
+     * </p>
+     */
+    private java.util.Map<String, ComponentPropertyGroupRequest> propertyGroupUpdates;
+
+    /**
+     * <p>
      * The update type of the component update request.
      * </p>
-     */
-    private String updateType;
-
-    /**
-     * <p>
-     * The ID of the component type.
-     * </p>
      * 
-     * @param componentTypeId
-     *        The ID of the component type.
+     * @param updateType
+     *        The update type of the component update request.
+     * @see ComponentUpdateType
      */
 
-    public void setComponentTypeId(String componentTypeId) {
-        this.componentTypeId = componentTypeId;
+    public void setUpdateType(String updateType) {
+        this.updateType = updateType;
     }
 
     /**
      * <p>
-     * The ID of the component type.
+     * The update type of the component update request.
      * </p>
      * 
-     * @return The ID of the component type.
+     * @return The update type of the component update request.
+     * @see ComponentUpdateType
      */
 
-    public String getComponentTypeId() {
-        return this.componentTypeId;
+    public String getUpdateType() {
+        return this.updateType;
     }
 
     /**
      * <p>
-     * The ID of the component type.
+     * The update type of the component update request.
      * </p>
      * 
-     * @param componentTypeId
-     *        The ID of the component type.
+     * @param updateType
+     *        The update type of the component update request.
      * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComponentUpdateType
      */
 
-    public ComponentUpdateRequest withComponentTypeId(String componentTypeId) {
-        setComponentTypeId(componentTypeId);
+    public ComponentUpdateRequest withUpdateType(String updateType) {
+        setUpdateType(updateType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The update type of the component update request.
+     * </p>
+     * 
+     * @param updateType
+     *        The update type of the component update request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComponentUpdateType
+     */
+
+    public ComponentUpdateRequest withUpdateType(ComponentUpdateType updateType) {
+        this.updateType = updateType.toString();
         return this;
     }
 
@@ -131,6 +156,46 @@ public class ComponentUpdateRequest implements Serializable, Cloneable, Structur
 
     public ComponentUpdateRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     * 
+     * @param componentTypeId
+     *        The ID of the component type.
+     */
+
+    public void setComponentTypeId(String componentTypeId) {
+        this.componentTypeId = componentTypeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     * 
+     * @return The ID of the component type.
+     */
+
+    public String getComponentTypeId() {
+        return this.componentTypeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     * 
+     * @param componentTypeId
+     *        The ID of the component type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentUpdateRequest withComponentTypeId(String componentTypeId) {
+        setComponentTypeId(componentTypeId);
         return this;
     }
 
@@ -210,60 +275,69 @@ public class ComponentUpdateRequest implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The update type of the component update request.
+     * The property group updates.
      * </p>
      * 
-     * @param updateType
-     *        The update type of the component update request.
-     * @see ComponentUpdateType
+     * @return The property group updates.
      */
 
-    public void setUpdateType(String updateType) {
-        this.updateType = updateType;
+    public java.util.Map<String, ComponentPropertyGroupRequest> getPropertyGroupUpdates() {
+        return propertyGroupUpdates;
     }
 
     /**
      * <p>
-     * The update type of the component update request.
+     * The property group updates.
      * </p>
      * 
-     * @return The update type of the component update request.
-     * @see ComponentUpdateType
+     * @param propertyGroupUpdates
+     *        The property group updates.
      */
 
-    public String getUpdateType() {
-        return this.updateType;
+    public void setPropertyGroupUpdates(java.util.Map<String, ComponentPropertyGroupRequest> propertyGroupUpdates) {
+        this.propertyGroupUpdates = propertyGroupUpdates;
     }
 
     /**
      * <p>
-     * The update type of the component update request.
+     * The property group updates.
      * </p>
      * 
-     * @param updateType
-     *        The update type of the component update request.
+     * @param propertyGroupUpdates
+     *        The property group updates.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ComponentUpdateType
      */
 
-    public ComponentUpdateRequest withUpdateType(String updateType) {
-        setUpdateType(updateType);
+    public ComponentUpdateRequest withPropertyGroupUpdates(java.util.Map<String, ComponentPropertyGroupRequest> propertyGroupUpdates) {
+        setPropertyGroupUpdates(propertyGroupUpdates);
         return this;
     }
 
     /**
-     * <p>
-     * The update type of the component update request.
-     * </p>
-     * 
-     * @param updateType
-     *        The update type of the component update request.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     * @see ComponentUpdateType
+     * Add a single PropertyGroupUpdates entry
+     *
+     * @see ComponentUpdateRequest#withPropertyGroupUpdates
+     * @returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentUpdateRequest withUpdateType(ComponentUpdateType updateType) {
-        this.updateType = updateType.toString();
+    public ComponentUpdateRequest addPropertyGroupUpdatesEntry(String key, ComponentPropertyGroupRequest value) {
+        if (null == this.propertyGroupUpdates) {
+            this.propertyGroupUpdates = new java.util.HashMap<String, ComponentPropertyGroupRequest>();
+        }
+        if (this.propertyGroupUpdates.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.propertyGroupUpdates.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into PropertyGroupUpdates.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentUpdateRequest clearPropertyGroupUpdatesEntries() {
+        this.propertyGroupUpdates = null;
         return this;
     }
 
@@ -279,14 +353,16 @@ public class ComponentUpdateRequest implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComponentTypeId() != null)
-            sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
+        if (getUpdateType() != null)
+            sb.append("UpdateType: ").append(getUpdateType()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getComponentTypeId() != null)
+            sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
         if (getPropertyUpdates() != null)
             sb.append("PropertyUpdates: ").append(getPropertyUpdates()).append(",");
-        if (getUpdateType() != null)
-            sb.append("UpdateType: ").append(getUpdateType());
+        if (getPropertyGroupUpdates() != null)
+            sb.append("PropertyGroupUpdates: ").append(getPropertyGroupUpdates());
         sb.append("}");
         return sb.toString();
     }
@@ -301,21 +377,25 @@ public class ComponentUpdateRequest implements Serializable, Cloneable, Structur
         if (obj instanceof ComponentUpdateRequest == false)
             return false;
         ComponentUpdateRequest other = (ComponentUpdateRequest) obj;
-        if (other.getComponentTypeId() == null ^ this.getComponentTypeId() == null)
+        if (other.getUpdateType() == null ^ this.getUpdateType() == null)
             return false;
-        if (other.getComponentTypeId() != null && other.getComponentTypeId().equals(this.getComponentTypeId()) == false)
+        if (other.getUpdateType() != null && other.getUpdateType().equals(this.getUpdateType()) == false)
             return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getComponentTypeId() == null ^ this.getComponentTypeId() == null)
+            return false;
+        if (other.getComponentTypeId() != null && other.getComponentTypeId().equals(this.getComponentTypeId()) == false)
+            return false;
         if (other.getPropertyUpdates() == null ^ this.getPropertyUpdates() == null)
             return false;
         if (other.getPropertyUpdates() != null && other.getPropertyUpdates().equals(this.getPropertyUpdates()) == false)
             return false;
-        if (other.getUpdateType() == null ^ this.getUpdateType() == null)
+        if (other.getPropertyGroupUpdates() == null ^ this.getPropertyGroupUpdates() == null)
             return false;
-        if (other.getUpdateType() != null && other.getUpdateType().equals(this.getUpdateType()) == false)
+        if (other.getPropertyGroupUpdates() != null && other.getPropertyGroupUpdates().equals(this.getPropertyGroupUpdates()) == false)
             return false;
         return true;
     }
@@ -325,10 +405,11 @@ public class ComponentUpdateRequest implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getPropertyUpdates() == null) ? 0 : getPropertyUpdates().hashCode());
         hashCode = prime * hashCode + ((getUpdateType() == null) ? 0 : getUpdateType().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
+        hashCode = prime * hashCode + ((getPropertyUpdates() == null) ? 0 : getPropertyUpdates().hashCode());
+        hashCode = prime * hashCode + ((getPropertyGroupUpdates() == null) ? 0 : getPropertyGroupUpdates().hashCode());
         return hashCode;
     }
 

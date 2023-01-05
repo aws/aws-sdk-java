@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JobSummaryMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> BUCKETCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketCriteria").build();
     private static final MarshallingInfo<List> BUCKETDEFINITIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketDefinitions").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -44,8 +46,6 @@ public class JobSummaryMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> USERPAUSEDDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("userPausedDetails").build();
-    private static final MarshallingInfo<StructuredPojo> BUCKETCRITERIA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketCriteria").build();
 
     private static final JobSummaryMarshaller instance = new JobSummaryMarshaller();
 
@@ -63,6 +63,7 @@ public class JobSummaryMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(jobSummary.getBucketCriteria(), BUCKETCRITERIA_BINDING);
             protocolMarshaller.marshall(jobSummary.getBucketDefinitions(), BUCKETDEFINITIONS_BINDING);
             protocolMarshaller.marshall(jobSummary.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(jobSummary.getJobId(), JOBID_BINDING);
@@ -71,7 +72,6 @@ public class JobSummaryMarshaller {
             protocolMarshaller.marshall(jobSummary.getLastRunErrorStatus(), LASTRUNERRORSTATUS_BINDING);
             protocolMarshaller.marshall(jobSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(jobSummary.getUserPausedDetails(), USERPAUSEDDETAILS_BINDING);
-            protocolMarshaller.marshall(jobSummary.getBucketCriteria(), BUCKETCRITERIA_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

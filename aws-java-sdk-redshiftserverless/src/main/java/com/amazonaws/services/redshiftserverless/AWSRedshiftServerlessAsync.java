@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -445,7 +445,7 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt; The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources. &lt;/p&gt; &lt;p&gt; If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
      * </pre>
      * 
      * @param getCredentialsRequest
@@ -467,7 +467,7 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      * </p>
      * 
      * <pre>
-     * <code> &lt;p&gt; The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources. &lt;/p&gt; &lt;p&gt; If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
+     * <code> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs GetCredentials must have an IAM policy attached that allows access to all necessary actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter is specified, the IAM policy must allow access to the resource dbname for the specified database name.&lt;/p&gt; </code>
      * </pre>
      * 
      * @param getCredentialsRequest
@@ -637,6 +637,37 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      */
     java.util.concurrent.Future<GetSnapshotResult> getSnapshotAsync(GetSnapshotRequest getSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<GetSnapshotRequest, GetSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about a <code>TableRestoreStatus</code> object.
+     * </p>
+     * 
+     * @param getTableRestoreStatusRequest
+     * @return A Java Future containing the result of the GetTableRestoreStatus operation returned by the service.
+     * @sample AWSRedshiftServerlessAsync.GetTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest getTableRestoreStatusRequest);
+
+    /**
+     * <p>
+     * Returns information about a <code>TableRestoreStatus</code> object.
+     * </p>
+     * 
+     * @param getTableRestoreStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetTableRestoreStatus operation returned by the service.
+     * @sample AWSRedshiftServerlessAsyncHandler.GetTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/GetTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetTableRestoreStatusResult> getTableRestoreStatusAsync(GetTableRestoreStatusRequest getTableRestoreStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetTableRestoreStatusRequest, GetTableRestoreStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -826,6 +857,37 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
 
     /**
      * <p>
+     * Returns information about an array of <code>TableRestoreStatus</code> objects.
+     * </p>
+     * 
+     * @param listTableRestoreStatusRequest
+     * @return A Java Future containing the result of the ListTableRestoreStatus operation returned by the service.
+     * @sample AWSRedshiftServerlessAsync.ListTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest listTableRestoreStatusRequest);
+
+    /**
+     * <p>
+     * Returns information about an array of <code>TableRestoreStatus</code> objects.
+     * </p>
+     * 
+     * @param listTableRestoreStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTableRestoreStatus operation returned by the service.
+     * @sample AWSRedshiftServerlessAsyncHandler.ListTableRestoreStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/ListTableRestoreStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListTableRestoreStatusResult> listTableRestoreStatusAsync(ListTableRestoreStatusRequest listTableRestoreStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTableRestoreStatusRequest, ListTableRestoreStatusResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the tags assigned to a resource.
      * </p>
      * 
@@ -1011,6 +1073,37 @@ public interface AWSRedshiftServerlessAsync extends AWSRedshiftServerless {
      */
     java.util.concurrent.Future<RestoreFromSnapshotResult> restoreFromSnapshotAsync(RestoreFromSnapshotRequest restoreFromSnapshotRequest,
             com.amazonaws.handlers.AsyncHandler<RestoreFromSnapshotRequest, RestoreFromSnapshotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+     * </p>
+     * 
+     * @param restoreTableFromSnapshotRequest
+     * @return A Java Future containing the result of the RestoreTableFromSnapshot operation returned by the service.
+     * @sample AWSRedshiftServerlessAsync.RestoreTableFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest restoreTableFromSnapshotRequest);
+
+    /**
+     * <p>
+     * Restores a table from a snapshot to your Amazon Redshift Serverless instance.
+     * </p>
+     * 
+     * @param restoreTableFromSnapshotRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreTableFromSnapshot operation returned by the service.
+     * @sample AWSRedshiftServerlessAsyncHandler.RestoreTableFromSnapshot
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/redshift-serverless-2021-04-21/RestoreTableFromSnapshot"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreTableFromSnapshotResult> restoreTableFromSnapshotAsync(RestoreTableFromSnapshotRequest restoreTableFromSnapshotRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreTableFromSnapshotRequest, RestoreTableFromSnapshotResult> asyncHandler);
 
     /**
      * <p>

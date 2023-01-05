@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,16 +31,46 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The access control configuration is for an Amazon EBS volume snapshot.
+     * </p>
+     */
+    private EbsSnapshotConfiguration ebsSnapshot;
+    /**
+     * <p>
+     * The access control configuration is for an Amazon ECR repository.
+     * </p>
+     */
+    private EcrRepositoryConfiguration ecrRepository;
+    /**
+     * <p>
      * The access control configuration is for an IAM role.
      * </p>
      */
     private IamRoleConfiguration iamRole;
     /**
      * <p>
+     * The access control configuration is for an Amazon EFS file system.
+     * </p>
+     */
+    private EfsFileSystemConfiguration efsFileSystem;
+    /**
+     * <p>
      * The access control configuration is for a KMS key.
      * </p>
      */
     private KmsKeyConfiguration kmsKey;
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB cluster snapshot.
+     * </p>
+     */
+    private RdsDbClusterSnapshotConfiguration rdsDbClusterSnapshot;
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB snapshot.
+     * </p>
+     */
+    private RdsDbSnapshotConfiguration rdsDbSnapshot;
     /**
      * <p>
      * The access control configuration is for a Secrets Manager secret.
@@ -55,10 +85,96 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     private S3BucketConfiguration s3Bucket;
     /**
      * <p>
+     * The access control configuration is for an Amazon SNS topic
+     * </p>
+     */
+    private SnsTopicConfiguration snsTopic;
+    /**
+     * <p>
      * The access control configuration is for an Amazon SQS queue.
      * </p>
      */
     private SqsQueueConfiguration sqsQueue;
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon EBS volume snapshot.
+     * </p>
+     * 
+     * @param ebsSnapshot
+     *        The access control configuration is for an Amazon EBS volume snapshot.
+     */
+
+    public void setEbsSnapshot(EbsSnapshotConfiguration ebsSnapshot) {
+        this.ebsSnapshot = ebsSnapshot;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon EBS volume snapshot.
+     * </p>
+     * 
+     * @return The access control configuration is for an Amazon EBS volume snapshot.
+     */
+
+    public EbsSnapshotConfiguration getEbsSnapshot() {
+        return this.ebsSnapshot;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon EBS volume snapshot.
+     * </p>
+     * 
+     * @param ebsSnapshot
+     *        The access control configuration is for an Amazon EBS volume snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Configuration withEbsSnapshot(EbsSnapshotConfiguration ebsSnapshot) {
+        setEbsSnapshot(ebsSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon ECR repository.
+     * </p>
+     * 
+     * @param ecrRepository
+     *        The access control configuration is for an Amazon ECR repository.
+     */
+
+    public void setEcrRepository(EcrRepositoryConfiguration ecrRepository) {
+        this.ecrRepository = ecrRepository;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon ECR repository.
+     * </p>
+     * 
+     * @return The access control configuration is for an Amazon ECR repository.
+     */
+
+    public EcrRepositoryConfiguration getEcrRepository() {
+        return this.ecrRepository;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon ECR repository.
+     * </p>
+     * 
+     * @param ecrRepository
+     *        The access control configuration is for an Amazon ECR repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Configuration withEcrRepository(EcrRepositoryConfiguration ecrRepository) {
+        setEcrRepository(ecrRepository);
+        return this;
+    }
 
     /**
      * <p>
@@ -102,6 +218,46 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The access control configuration is for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param efsFileSystem
+     *        The access control configuration is for an Amazon EFS file system.
+     */
+
+    public void setEfsFileSystem(EfsFileSystemConfiguration efsFileSystem) {
+        this.efsFileSystem = efsFileSystem;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon EFS file system.
+     * </p>
+     * 
+     * @return The access control configuration is for an Amazon EFS file system.
+     */
+
+    public EfsFileSystemConfiguration getEfsFileSystem() {
+        return this.efsFileSystem;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param efsFileSystem
+     *        The access control configuration is for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Configuration withEfsFileSystem(EfsFileSystemConfiguration efsFileSystem) {
+        setEfsFileSystem(efsFileSystem);
+        return this;
+    }
+
+    /**
+     * <p>
      * The access control configuration is for a KMS key.
      * </p>
      * 
@@ -137,6 +293,86 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
 
     public Configuration withKmsKey(KmsKeyConfiguration kmsKey) {
         setKmsKey(kmsKey);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB cluster snapshot.
+     * </p>
+     * 
+     * @param rdsDbClusterSnapshot
+     *        The access control configuration is for an Amazon RDS DB cluster snapshot.
+     */
+
+    public void setRdsDbClusterSnapshot(RdsDbClusterSnapshotConfiguration rdsDbClusterSnapshot) {
+        this.rdsDbClusterSnapshot = rdsDbClusterSnapshot;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB cluster snapshot.
+     * </p>
+     * 
+     * @return The access control configuration is for an Amazon RDS DB cluster snapshot.
+     */
+
+    public RdsDbClusterSnapshotConfiguration getRdsDbClusterSnapshot() {
+        return this.rdsDbClusterSnapshot;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB cluster snapshot.
+     * </p>
+     * 
+     * @param rdsDbClusterSnapshot
+     *        The access control configuration is for an Amazon RDS DB cluster snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Configuration withRdsDbClusterSnapshot(RdsDbClusterSnapshotConfiguration rdsDbClusterSnapshot) {
+        setRdsDbClusterSnapshot(rdsDbClusterSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB snapshot.
+     * </p>
+     * 
+     * @param rdsDbSnapshot
+     *        The access control configuration is for an Amazon RDS DB snapshot.
+     */
+
+    public void setRdsDbSnapshot(RdsDbSnapshotConfiguration rdsDbSnapshot) {
+        this.rdsDbSnapshot = rdsDbSnapshot;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB snapshot.
+     * </p>
+     * 
+     * @return The access control configuration is for an Amazon RDS DB snapshot.
+     */
+
+    public RdsDbSnapshotConfiguration getRdsDbSnapshot() {
+        return this.rdsDbSnapshot;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon RDS DB snapshot.
+     * </p>
+     * 
+     * @param rdsDbSnapshot
+     *        The access control configuration is for an Amazon RDS DB snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Configuration withRdsDbSnapshot(RdsDbSnapshotConfiguration rdsDbSnapshot) {
+        setRdsDbSnapshot(rdsDbSnapshot);
         return this;
     }
 
@@ -222,6 +458,46 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The access control configuration is for an Amazon SNS topic
+     * </p>
+     * 
+     * @param snsTopic
+     *        The access control configuration is for an Amazon SNS topic
+     */
+
+    public void setSnsTopic(SnsTopicConfiguration snsTopic) {
+        this.snsTopic = snsTopic;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon SNS topic
+     * </p>
+     * 
+     * @return The access control configuration is for an Amazon SNS topic
+     */
+
+    public SnsTopicConfiguration getSnsTopic() {
+        return this.snsTopic;
+    }
+
+    /**
+     * <p>
+     * The access control configuration is for an Amazon SNS topic
+     * </p>
+     * 
+     * @param snsTopic
+     *        The access control configuration is for an Amazon SNS topic
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Configuration withSnsTopic(SnsTopicConfiguration snsTopic) {
+        setSnsTopic(snsTopic);
+        return this;
+    }
+
+    /**
+     * <p>
      * The access control configuration is for an Amazon SQS queue.
      * </p>
      * 
@@ -272,14 +548,26 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEbsSnapshot() != null)
+            sb.append("EbsSnapshot: ").append(getEbsSnapshot()).append(",");
+        if (getEcrRepository() != null)
+            sb.append("EcrRepository: ").append(getEcrRepository()).append(",");
         if (getIamRole() != null)
             sb.append("IamRole: ").append(getIamRole()).append(",");
+        if (getEfsFileSystem() != null)
+            sb.append("EfsFileSystem: ").append(getEfsFileSystem()).append(",");
         if (getKmsKey() != null)
             sb.append("KmsKey: ").append(getKmsKey()).append(",");
+        if (getRdsDbClusterSnapshot() != null)
+            sb.append("RdsDbClusterSnapshot: ").append(getRdsDbClusterSnapshot()).append(",");
+        if (getRdsDbSnapshot() != null)
+            sb.append("RdsDbSnapshot: ").append(getRdsDbSnapshot()).append(",");
         if (getSecretsManagerSecret() != null)
             sb.append("SecretsManagerSecret: ").append(getSecretsManagerSecret()).append(",");
         if (getS3Bucket() != null)
             sb.append("S3Bucket: ").append(getS3Bucket()).append(",");
+        if (getSnsTopic() != null)
+            sb.append("SnsTopic: ").append(getSnsTopic()).append(",");
         if (getSqsQueue() != null)
             sb.append("SqsQueue: ").append(getSqsQueue());
         sb.append("}");
@@ -296,13 +584,33 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Configuration == false)
             return false;
         Configuration other = (Configuration) obj;
+        if (other.getEbsSnapshot() == null ^ this.getEbsSnapshot() == null)
+            return false;
+        if (other.getEbsSnapshot() != null && other.getEbsSnapshot().equals(this.getEbsSnapshot()) == false)
+            return false;
+        if (other.getEcrRepository() == null ^ this.getEcrRepository() == null)
+            return false;
+        if (other.getEcrRepository() != null && other.getEcrRepository().equals(this.getEcrRepository()) == false)
+            return false;
         if (other.getIamRole() == null ^ this.getIamRole() == null)
             return false;
         if (other.getIamRole() != null && other.getIamRole().equals(this.getIamRole()) == false)
             return false;
+        if (other.getEfsFileSystem() == null ^ this.getEfsFileSystem() == null)
+            return false;
+        if (other.getEfsFileSystem() != null && other.getEfsFileSystem().equals(this.getEfsFileSystem()) == false)
+            return false;
         if (other.getKmsKey() == null ^ this.getKmsKey() == null)
             return false;
         if (other.getKmsKey() != null && other.getKmsKey().equals(this.getKmsKey()) == false)
+            return false;
+        if (other.getRdsDbClusterSnapshot() == null ^ this.getRdsDbClusterSnapshot() == null)
+            return false;
+        if (other.getRdsDbClusterSnapshot() != null && other.getRdsDbClusterSnapshot().equals(this.getRdsDbClusterSnapshot()) == false)
+            return false;
+        if (other.getRdsDbSnapshot() == null ^ this.getRdsDbSnapshot() == null)
+            return false;
+        if (other.getRdsDbSnapshot() != null && other.getRdsDbSnapshot().equals(this.getRdsDbSnapshot()) == false)
             return false;
         if (other.getSecretsManagerSecret() == null ^ this.getSecretsManagerSecret() == null)
             return false;
@@ -311,6 +619,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         if (other.getS3Bucket() == null ^ this.getS3Bucket() == null)
             return false;
         if (other.getS3Bucket() != null && other.getS3Bucket().equals(this.getS3Bucket()) == false)
+            return false;
+        if (other.getSnsTopic() == null ^ this.getSnsTopic() == null)
+            return false;
+        if (other.getSnsTopic() != null && other.getSnsTopic().equals(this.getSnsTopic()) == false)
             return false;
         if (other.getSqsQueue() == null ^ this.getSqsQueue() == null)
             return false;
@@ -324,10 +636,16 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEbsSnapshot() == null) ? 0 : getEbsSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getEcrRepository() == null) ? 0 : getEcrRepository().hashCode());
         hashCode = prime * hashCode + ((getIamRole() == null) ? 0 : getIamRole().hashCode());
+        hashCode = prime * hashCode + ((getEfsFileSystem() == null) ? 0 : getEfsFileSystem().hashCode());
         hashCode = prime * hashCode + ((getKmsKey() == null) ? 0 : getKmsKey().hashCode());
+        hashCode = prime * hashCode + ((getRdsDbClusterSnapshot() == null) ? 0 : getRdsDbClusterSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getRdsDbSnapshot() == null) ? 0 : getRdsDbSnapshot().hashCode());
         hashCode = prime * hashCode + ((getSecretsManagerSecret() == null) ? 0 : getSecretsManagerSecret().hashCode());
         hashCode = prime * hashCode + ((getS3Bucket() == null) ? 0 : getS3Bucket().hashCode());
+        hashCode = prime * hashCode + ((getSnsTopic() == null) ? 0 : getSnsTopic().hashCode());
         hashCode = prime * hashCode + ((getSqsQueue() == null) ? 0 : getSqsQueue().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class DisassociateLexBotRequest extends com.amazonaws.AmazonWebServiceReq
     private String botName;
     /**
      * <p>
-     * The Region in which the Amazon Lex bot has been created.
+     * The Amazon Web Services Region in which the Amazon Lex bot has been created.
      * </p>
      */
     private String lexRegion;
@@ -126,11 +126,11 @@ public class DisassociateLexBotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Region in which the Amazon Lex bot has been created.
+     * The Amazon Web Services Region in which the Amazon Lex bot has been created.
      * </p>
      * 
      * @param lexRegion
-     *        The Region in which the Amazon Lex bot has been created.
+     *        The Amazon Web Services Region in which the Amazon Lex bot has been created.
      */
 
     public void setLexRegion(String lexRegion) {
@@ -139,10 +139,10 @@ public class DisassociateLexBotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Region in which the Amazon Lex bot has been created.
+     * The Amazon Web Services Region in which the Amazon Lex bot has been created.
      * </p>
      * 
-     * @return The Region in which the Amazon Lex bot has been created.
+     * @return The Amazon Web Services Region in which the Amazon Lex bot has been created.
      */
 
     public String getLexRegion() {
@@ -151,11 +151,11 @@ public class DisassociateLexBotRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Region in which the Amazon Lex bot has been created.
+     * The Amazon Web Services Region in which the Amazon Lex bot has been created.
      * </p>
      * 
      * @param lexRegion
-     *        The Region in which the Amazon Lex bot has been created.
+     *        The Amazon Web Services Region in which the Amazon Lex bot has been created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

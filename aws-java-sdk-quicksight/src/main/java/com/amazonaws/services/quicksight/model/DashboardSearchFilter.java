@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,14 +30,71 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.
+     * Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+     * </p>
+     * <p>
+     * If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in
+     * the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the
+     * <code>"Value"</code> field. For example,
+     * <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     * .
+     * </p>
+     * <p>
+     * If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching
+     * for. For example, <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     * <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * </p>
      */
     private String operator;
     /**
      * <p>
-     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.
      * </p>
+     * <p>
+     * Valid values are defined as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or groups are
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one
+     * of the owners of the dashboards are returned. Implicit permissions from folders or groups are considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     * as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     * ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from folders or
+     * groups are not considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be returned.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String name;
     /**
@@ -50,12 +107,38 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.
+     * Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+     * </p>
+     * <p>
+     * If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in
+     * the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the
+     * <code>"Value"</code> field. For example,
+     * <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     * .
+     * </p>
+     * <p>
+     * If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching
+     * for. For example, <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     * <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter, for example,
-     *        <code>"Operator": "StringEquals"</code>.
+     *        The comparison operator that you want to use as a filter, for example
+     *        <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and
+     *        <code>"StringLike"</code>.</p>
+     *        <p>
+     *        If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related
+     *        filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search
+     *        in the <code>"Value"</code> field. For example,
+     *        <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     *        .
+     *        </p>
+     *        <p>
+     *        If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are
+     *        searching for. For example,
+     *        <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     *        <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * @see FilterOperator
      */
 
@@ -65,11 +148,37 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.
+     * Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+     * </p>
+     * <p>
+     * If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in
+     * the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the
+     * <code>"Value"</code> field. For example,
+     * <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     * .
+     * </p>
+     * <p>
+     * If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching
+     * for. For example, <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     * <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * </p>
      * 
-     * @return The comparison operator that you want to use as a filter, for example,
-     *         <code>"Operator": "StringEquals"</code>.
+     * @return The comparison operator that you want to use as a filter, for example
+     *         <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and
+     *         <code>"StringLike"</code>.</p>
+     *         <p>
+     *         If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related
+     *         filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search
+     *         in the <code>"Value"</code> field. For example,
+     *         <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     *         .
+     *         </p>
+     *         <p>
+     *         If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are
+     *         searching for. For example,
+     *         <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     *         <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * @see FilterOperator
      */
 
@@ -79,12 +188,38 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.
+     * Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+     * </p>
+     * <p>
+     * If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in
+     * the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the
+     * <code>"Value"</code> field. For example,
+     * <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     * .
+     * </p>
+     * <p>
+     * If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching
+     * for. For example, <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     * <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter, for example,
-     *        <code>"Operator": "StringEquals"</code>.
+     *        The comparison operator that you want to use as a filter, for example
+     *        <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and
+     *        <code>"StringLike"</code>.</p>
+     *        <p>
+     *        If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related
+     *        filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search
+     *        in the <code>"Value"</code> field. For example,
+     *        <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     *        .
+     *        </p>
+     *        <p>
+     *        If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are
+     *        searching for. For example,
+     *        <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     *        <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterOperator
      */
@@ -96,12 +231,38 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The comparison operator that you want to use as a filter, for example, <code>"Operator": "StringEquals"</code>.
+     * The comparison operator that you want to use as a filter, for example <code>"Operator": "StringEquals"</code>.
+     * Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+     * </p>
+     * <p>
+     * If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related filter in
+     * the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search in the
+     * <code>"Value"</code> field. For example,
+     * <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     * .
+     * </p>
+     * <p>
+     * If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are searching
+     * for. For example, <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     * <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * </p>
      * 
      * @param operator
-     *        The comparison operator that you want to use as a filter, for example,
-     *        <code>"Operator": "StringEquals"</code>.
+     *        The comparison operator that you want to use as a filter, for example
+     *        <code>"Operator": "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and
+     *        <code>"StringLike"</code>.</p>
+     *        <p>
+     *        If you set the operator value to <code>"StringEquals"</code>, you need to provide an ownership related
+     *        filter in the <code>"NAME"</code> field and the arn of the user or group whose folders you want to search
+     *        in the <code>"Value"</code> field. For example,
+     *        <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>
+     *        .
+     *        </p>
+     *        <p>
+     *        If you set the value to <code>"StringLike"</code>, you need to provide the name of the folders you are
+     *        searching for. For example,
+     *        <code>"Name":"DASHBOARD_NAME", "Operator": "StringLike", "Value": "Test"</code>. The
+     *        <code>"StringLike"</code> operator only supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FilterOperator
      */
@@ -113,12 +274,101 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.
      * </p>
+     * <p>
+     * Valid values are defined as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or groups are
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one
+     * of the owners of the dashboards are returned. Implicit permissions from folders or groups are considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     * as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     * ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from folders or
+     * groups are not considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be returned.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
      *        The name of the value that you want to use as a filter, for example,
-     *        <code>"Name": "QUICKSIGHT_USER"</code>.
+     *        <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
+     *        <p>
+     *        Valid values are defined as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     *        ARN listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or
+     *        groups are considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     *        as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are
+     *        considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     *        ARN listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups
+     *        are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     *        listed as one of the owners of the dashboards are returned. Implicit permissions from folders or groups
+     *        are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with
+     *        that ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from
+     *        folders or groups are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be
+     *        returned.
+     *        </p>
+     *        </li>
      * @see DashboardFilterAttribute
      */
 
@@ -128,11 +378,100 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.
      * </p>
+     * <p>
+     * Valid values are defined as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or groups are
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one
+     * of the owners of the dashboards are returned. Implicit permissions from folders or groups are considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     * as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     * ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from folders or
+     * groups are not considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be returned.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return The name of the value that you want to use as a filter, for example,
-     *         <code>"Name": "QUICKSIGHT_USER"</code>.
+     *         <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
+     *         <p>
+     *         Valid values are defined as follows:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     *         ARN listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders
+     *         or groups are considered.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     *         as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are
+     *         considered.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with
+     *         that ARN listed as the only owner of the dashboard are returned. Implicit permissions from folders or
+     *         groups are not considered.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     *         listed as one of the owners of the dashboards are returned. Implicit permissions from folders or groups
+     *         are not considered.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards
+     *         with that ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions
+     *         from folders or groups are not considered.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be
+     *         returned.
+     *         </p>
+     *         </li>
      * @see DashboardFilterAttribute
      */
 
@@ -142,12 +481,101 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.
      * </p>
+     * <p>
+     * Valid values are defined as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or groups are
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one
+     * of the owners of the dashboards are returned. Implicit permissions from folders or groups are considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     * as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     * ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from folders or
+     * groups are not considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be returned.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
      *        The name of the value that you want to use as a filter, for example,
-     *        <code>"Name": "QUICKSIGHT_USER"</code>.
+     *        <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
+     *        <p>
+     *        Valid values are defined as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     *        ARN listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or
+     *        groups are considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     *        as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are
+     *        considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     *        ARN listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups
+     *        are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     *        listed as one of the owners of the dashboards are returned. Implicit permissions from folders or groups
+     *        are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with
+     *        that ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from
+     *        folders or groups are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be
+     *        returned.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashboardFilterAttribute
      */
@@ -159,12 +587,101 @@ public class DashboardSearchFilter implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_USER"</code>.
+     * The name of the value that you want to use as a filter, for example, <code>"Name": "QUICKSIGHT_OWNER"</code>.
      * </p>
+     * <p>
+     * Valid values are defined as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or groups are
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed as one
+     * of the owners of the dashboards are returned. Implicit permissions from folders or groups are considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     * listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     * as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are not
+     * considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     * ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from folders or
+     * groups are not considered.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be returned.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param name
      *        The name of the value that you want to use as a filter, for example,
-     *        <code>"Name": "QUICKSIGHT_USER"</code>.
+     *        <code>"Name": "QUICKSIGHT_OWNER"</code>.</p>
+     *        <p>
+     *        Valid values are defined as follows:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     *        ARN listed as one of the dashboards's owners or viewers are returned. Implicit permissions from folders or
+     *        groups are considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN listed
+     *        as one of the owners of the dashboards are returned. Implicit permissions from folders or groups are
+     *        considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that
+     *        ARN listed as the only owner of the dashboard are returned. Implicit permissions from folders or groups
+     *        are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards with that ARN
+     *        listed as one of the owners of the dashboards are returned. Implicit permissions from folders or groups
+     *        are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any dashboards with
+     *        that ARN listed as one of the owners or viewers of the dashboards are returned. Implicit permissions from
+     *        folders or groups are not considered.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to this value will be
+     *        returned.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DashboardFilterAttribute
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,18 @@ public class CreateCustomKeyStoreRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustAnchorCertificate").build();
     private static final MarshallingInfo<String> KEYSTOREPASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KeyStorePassword").build();
+    private static final MarshallingInfo<String> CUSTOMKEYSTORETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomKeyStoreType").build();
+    private static final MarshallingInfo<String> XKSPROXYURIENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XksProxyUriEndpoint").build();
+    private static final MarshallingInfo<String> XKSPROXYURIPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XksProxyUriPath").build();
+    private static final MarshallingInfo<String> XKSPROXYVPCENDPOINTSERVICENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XksProxyVpcEndpointServiceName").build();
+    private static final MarshallingInfo<StructuredPojo> XKSPROXYAUTHENTICATIONCREDENTIAL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XksProxyAuthenticationCredential").build();
+    private static final MarshallingInfo<String> XKSPROXYCONNECTIVITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("XksProxyConnectivity").build();
 
     private static final CreateCustomKeyStoreRequestMarshaller instance = new CreateCustomKeyStoreRequestMarshaller();
 
@@ -56,6 +68,12 @@ public class CreateCustomKeyStoreRequestMarshaller {
             protocolMarshaller.marshall(createCustomKeyStoreRequest.getCloudHsmClusterId(), CLOUDHSMCLUSTERID_BINDING);
             protocolMarshaller.marshall(createCustomKeyStoreRequest.getTrustAnchorCertificate(), TRUSTANCHORCERTIFICATE_BINDING);
             protocolMarshaller.marshall(createCustomKeyStoreRequest.getKeyStorePassword(), KEYSTOREPASSWORD_BINDING);
+            protocolMarshaller.marshall(createCustomKeyStoreRequest.getCustomKeyStoreType(), CUSTOMKEYSTORETYPE_BINDING);
+            protocolMarshaller.marshall(createCustomKeyStoreRequest.getXksProxyUriEndpoint(), XKSPROXYURIENDPOINT_BINDING);
+            protocolMarshaller.marshall(createCustomKeyStoreRequest.getXksProxyUriPath(), XKSPROXYURIPATH_BINDING);
+            protocolMarshaller.marshall(createCustomKeyStoreRequest.getXksProxyVpcEndpointServiceName(), XKSPROXYVPCENDPOINTSERVICENAME_BINDING);
+            protocolMarshaller.marshall(createCustomKeyStoreRequest.getXksProxyAuthenticationCredential(), XKSPROXYAUTHENTICATIONCREDENTIAL_BINDING);
+            protocolMarshaller.marshall(createCustomKeyStoreRequest.getXksProxyConnectivity(), XKSPROXYCONNECTIVITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

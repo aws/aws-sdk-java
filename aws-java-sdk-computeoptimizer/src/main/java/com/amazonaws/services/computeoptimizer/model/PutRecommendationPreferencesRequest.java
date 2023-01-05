@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,24 @@ public class PutRecommendationPreferencesRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String inferredWorkloadTypes;
+    /**
+     * <p>
+     * The provider of the external metrics recommendation preference to create or update.
+     * </p>
+     * <p>
+     * Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference,
+     * see the <a>DeleteRecommendationPreferences</a> action.
+     * </p>
+     * <p>
+     * This preference can only be set for the <code>Ec2Instance</code> resource type.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics
+     * ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     */
+    private ExternalMetricsPreference externalMetricsPreference;
 
     /**
      * <p>
@@ -665,6 +683,115 @@ public class PutRecommendationPreferencesRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The provider of the external metrics recommendation preference to create or update.
+     * </p>
+     * <p>
+     * Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference,
+     * see the <a>DeleteRecommendationPreferences</a> action.
+     * </p>
+     * <p>
+     * This preference can only be set for the <code>Ec2Instance</code> resource type.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics
+     * ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param externalMetricsPreference
+     *        The provider of the external metrics recommendation preference to create or update.</p>
+     *        <p>
+     *        Specify a valid provider in the <code>source</code> field to activate the preference. To delete this
+     *        preference, see the <a>DeleteRecommendationPreferences</a> action.
+     *        </p>
+     *        <p>
+     *        This preference can only be set for the <code>Ec2Instance</code> resource type.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     *        metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+     */
+
+    public void setExternalMetricsPreference(ExternalMetricsPreference externalMetricsPreference) {
+        this.externalMetricsPreference = externalMetricsPreference;
+    }
+
+    /**
+     * <p>
+     * The provider of the external metrics recommendation preference to create or update.
+     * </p>
+     * <p>
+     * Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference,
+     * see the <a>DeleteRecommendationPreferences</a> action.
+     * </p>
+     * <p>
+     * This preference can only be set for the <code>Ec2Instance</code> resource type.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics
+     * ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @return The provider of the external metrics recommendation preference to create or update.</p>
+     *         <p>
+     *         Specify a valid provider in the <code>source</code> field to activate the preference. To delete this
+     *         preference, see the <a>DeleteRecommendationPreferences</a> action.
+     *         </p>
+     *         <p>
+     *         This preference can only be set for the <code>Ec2Instance</code> resource type.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     *         metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+     */
+
+    public ExternalMetricsPreference getExternalMetricsPreference() {
+        return this.externalMetricsPreference;
+    }
+
+    /**
+     * <p>
+     * The provider of the external metrics recommendation preference to create or update.
+     * </p>
+     * <p>
+     * Specify a valid provider in the <code>source</code> field to activate the preference. To delete this preference,
+     * see the <a>DeleteRecommendationPreferences</a> action.
+     * </p>
+     * <p>
+     * This preference can only be set for the <code>Ec2Instance</code> resource type.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External metrics
+     * ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param externalMetricsPreference
+     *        The provider of the external metrics recommendation preference to create or update.</p>
+     *        <p>
+     *        Specify a valid provider in the <code>source</code> field to activate the preference. To delete this
+     *        preference, see the <a>DeleteRecommendationPreferences</a> action.
+     *        </p>
+     *        <p>
+     *        This preference can only be set for the <code>Ec2Instance</code> resource type.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">External
+     *        metrics ingestion</a> in the <i>Compute Optimizer User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutRecommendationPreferencesRequest withExternalMetricsPreference(ExternalMetricsPreference externalMetricsPreference) {
+        setExternalMetricsPreference(externalMetricsPreference);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -683,7 +810,9 @@ public class PutRecommendationPreferencesRequest extends com.amazonaws.AmazonWeb
         if (getEnhancedInfrastructureMetrics() != null)
             sb.append("EnhancedInfrastructureMetrics: ").append(getEnhancedInfrastructureMetrics()).append(",");
         if (getInferredWorkloadTypes() != null)
-            sb.append("InferredWorkloadTypes: ").append(getInferredWorkloadTypes());
+            sb.append("InferredWorkloadTypes: ").append(getInferredWorkloadTypes()).append(",");
+        if (getExternalMetricsPreference() != null)
+            sb.append("ExternalMetricsPreference: ").append(getExternalMetricsPreference());
         sb.append("}");
         return sb.toString();
     }
@@ -715,6 +844,10 @@ public class PutRecommendationPreferencesRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getInferredWorkloadTypes() != null && other.getInferredWorkloadTypes().equals(this.getInferredWorkloadTypes()) == false)
             return false;
+        if (other.getExternalMetricsPreference() == null ^ this.getExternalMetricsPreference() == null)
+            return false;
+        if (other.getExternalMetricsPreference() != null && other.getExternalMetricsPreference().equals(this.getExternalMetricsPreference()) == false)
+            return false;
         return true;
     }
 
@@ -727,6 +860,7 @@ public class PutRecommendationPreferencesRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getScope() == null) ? 0 : getScope().hashCode());
         hashCode = prime * hashCode + ((getEnhancedInfrastructureMetrics() == null) ? 0 : getEnhancedInfrastructureMetrics().hashCode());
         hashCode = prime * hashCode + ((getInferredWorkloadTypes() == null) ? 0 : getInferredWorkloadTypes().hashCode());
+        hashCode = prime * hashCode + ((getExternalMetricsPreference() == null) ? 0 : getExternalMetricsPreference().hashCode());
         return hashCode;
     }
 

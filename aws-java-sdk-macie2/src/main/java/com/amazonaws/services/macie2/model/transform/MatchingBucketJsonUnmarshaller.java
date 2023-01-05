@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,10 @@ public class MatchingBucketJsonUnmarshaller implements Unmarshaller<MatchingBuck
                     context.nextToken();
                     matchingBucket.setJobDetails(JobDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("lastAutomatedDiscoveryTime", targetDepth)) {
+                    context.nextToken();
+                    matchingBucket.setLastAutomatedDiscoveryTime(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                }
                 if (context.testExpression("objectCount", targetDepth)) {
                     context.nextToken();
                     matchingBucket.setObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
@@ -83,6 +87,10 @@ public class MatchingBucketJsonUnmarshaller implements Unmarshaller<MatchingBuck
                 if (context.testExpression("objectCountByEncryptionType", targetDepth)) {
                     context.nextToken();
                     matchingBucket.setObjectCountByEncryptionType(ObjectCountByEncryptionTypeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("sensitivityScore", targetDepth)) {
+                    context.nextToken();
+                    matchingBucket.setSensitivityScore(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("sizeInBytes", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,19 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private CharacterSet defaultCharacterSet;
+    /**
+     * <p>
+     * The EC2 image
+     * </p>
+     */
+    private CustomDBEngineVersionAMI image;
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     */
+    private String dBEngineMediaType;
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
@@ -205,6 +218,17 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Boolean supportsBabelfish;
+    /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     */
+    private String customDBEngineVersionManifest;
 
     /**
      * <p>
@@ -449,6 +473,92 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
 
     public CreateCustomDBEngineVersionResult withDefaultCharacterSet(CharacterSet defaultCharacterSet) {
         setDefaultCharacterSet(defaultCharacterSet);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The EC2 image
+     * </p>
+     * 
+     * @param image
+     *        The EC2 image
+     */
+
+    public void setImage(CustomDBEngineVersionAMI image) {
+        this.image = image;
+    }
+
+    /**
+     * <p>
+     * The EC2 image
+     * </p>
+     * 
+     * @return The EC2 image
+     */
+
+    public CustomDBEngineVersionAMI getImage() {
+        return this.image;
+    }
+
+    /**
+     * <p>
+     * The EC2 image
+     * </p>
+     * 
+     * @param image
+     *        The EC2 image
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionResult withImage(CustomDBEngineVersionAMI image) {
+        setImage(image);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     * 
+     * @param dBEngineMediaType
+     *        A value that indicates the source media provider of the AMI based on the usage operation. Applicable for
+     *        RDS Custom for SQL Server.
+     */
+
+    public void setDBEngineMediaType(String dBEngineMediaType) {
+        this.dBEngineMediaType = dBEngineMediaType;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     * 
+     * @return A value that indicates the source media provider of the AMI based on the usage operation. Applicable for
+     *         RDS Custom for SQL Server.
+     */
+
+    public String getDBEngineMediaType() {
+        return this.dBEngineMediaType;
+    }
+
+    /**
+     * <p>
+     * A value that indicates the source media provider of the AMI based on the usage operation. Applicable for RDS
+     * Custom for SQL Server.
+     * </p>
+     * 
+     * @param dBEngineMediaType
+     *        A value that indicates the source media provider of the AMI based on the usage operation. Applicable for
+     *        RDS Custom for SQL Server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionResult withDBEngineMediaType(String dBEngineMediaType) {
+        setDBEngineMediaType(dBEngineMediaType);
         return this;
     }
 
@@ -1759,6 +1869,76 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param customDBEngineVersionManifest
+     *        JSON string that lists the installation files and parameters that RDS Custom uses to create a custom
+     *        engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest.
+     *        You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     *        >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public void setCustomDBEngineVersionManifest(String customDBEngineVersionManifest) {
+        this.customDBEngineVersionManifest = customDBEngineVersionManifest;
+    }
+
+    /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @return JSON string that lists the installation files and parameters that RDS Custom uses to create a custom
+     *         engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the
+     *         manifest. You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation
+     *         parameters. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     *         >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     */
+
+    public String getCustomDBEngineVersionManifest() {
+        return this.customDBEngineVersionManifest;
+    }
+
+    /**
+     * <p>
+     * JSON string that lists the installation files and parameters that RDS Custom uses to create a custom engine
+     * version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest. You can set
+     * the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters. For more
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     * >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * 
+     * @param customDBEngineVersionManifest
+     *        JSON string that lists the installation files and parameters that RDS Custom uses to create a custom
+     *        engine version (CEV). RDS Custom applies the patches in the order in which they're listed in the manifest.
+     *        You can set the Oracle home, Oracle base, and UNIX/Linux user and group using the installation parameters.
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-cev.preparing.html#custom-cev.preparing.manifest.fields"
+     *        >JSON fields in the CEV manifest</a> in the <i>Amazon RDS User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCustomDBEngineVersionResult withCustomDBEngineVersionManifest(String customDBEngineVersionManifest) {
+        setCustomDBEngineVersionManifest(customDBEngineVersionManifest);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1782,6 +1962,10 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
             sb.append("DBEngineVersionDescription: ").append(getDBEngineVersionDescription()).append(",");
         if (getDefaultCharacterSet() != null)
             sb.append("DefaultCharacterSet: ").append(getDefaultCharacterSet()).append(",");
+        if (getImage() != null)
+            sb.append("Image: ").append(getImage()).append(",");
+        if (getDBEngineMediaType() != null)
+            sb.append("DBEngineMediaType: ").append(getDBEngineMediaType()).append(",");
         if (getSupportedCharacterSets() != null)
             sb.append("SupportedCharacterSets: ").append(getSupportedCharacterSets()).append(",");
         if (getSupportedNcharCharacterSets() != null)
@@ -1821,7 +2005,9 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (getTagList() != null)
             sb.append("TagList: ").append(getTagList()).append(",");
         if (getSupportsBabelfish() != null)
-            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish());
+            sb.append("SupportsBabelfish: ").append(getSupportsBabelfish()).append(",");
+        if (getCustomDBEngineVersionManifest() != null)
+            sb.append("CustomDBEngineVersionManifest: ").append(getCustomDBEngineVersionManifest());
         sb.append("}");
         return sb.toString();
     }
@@ -1859,6 +2045,14 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         if (other.getDefaultCharacterSet() == null ^ this.getDefaultCharacterSet() == null)
             return false;
         if (other.getDefaultCharacterSet() != null && other.getDefaultCharacterSet().equals(this.getDefaultCharacterSet()) == false)
+            return false;
+        if (other.getImage() == null ^ this.getImage() == null)
+            return false;
+        if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
+            return false;
+        if (other.getDBEngineMediaType() == null ^ this.getDBEngineMediaType() == null)
+            return false;
+        if (other.getDBEngineMediaType() != null && other.getDBEngineMediaType().equals(this.getDBEngineMediaType()) == false)
             return false;
         if (other.getSupportedCharacterSets() == null ^ this.getSupportedCharacterSets() == null)
             return false;
@@ -1943,6 +2137,11 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getSupportsBabelfish() != null && other.getSupportsBabelfish().equals(this.getSupportsBabelfish()) == false)
             return false;
+        if (other.getCustomDBEngineVersionManifest() == null ^ this.getCustomDBEngineVersionManifest() == null)
+            return false;
+        if (other.getCustomDBEngineVersionManifest() != null
+                && other.getCustomDBEngineVersionManifest().equals(this.getCustomDBEngineVersionManifest()) == false)
+            return false;
         return true;
     }
 
@@ -1957,6 +2156,8 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getDBEngineDescription() == null) ? 0 : getDBEngineDescription().hashCode());
         hashCode = prime * hashCode + ((getDBEngineVersionDescription() == null) ? 0 : getDBEngineVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultCharacterSet() == null) ? 0 : getDefaultCharacterSet().hashCode());
+        hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getDBEngineMediaType() == null) ? 0 : getDBEngineMediaType().hashCode());
         hashCode = prime * hashCode + ((getSupportedCharacterSets() == null) ? 0 : getSupportedCharacterSets().hashCode());
         hashCode = prime * hashCode + ((getSupportedNcharCharacterSets() == null) ? 0 : getSupportedNcharCharacterSets().hashCode());
         hashCode = prime * hashCode + ((getValidUpgradeTarget() == null) ? 0 : getValidUpgradeTarget().hashCode());
@@ -1977,6 +2178,7 @@ public class CreateCustomDBEngineVersionResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         hashCode = prime * hashCode + ((getSupportsBabelfish() == null) ? 0 : getSupportsBabelfish().hashCode());
+        hashCode = prime * hashCode + ((getCustomDBEngineVersionManifest() == null) ? 0 : getCustomDBEngineVersionManifest().hashCode());
         return hashCode;
     }
 

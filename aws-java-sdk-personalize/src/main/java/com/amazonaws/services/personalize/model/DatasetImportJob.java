@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,12 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String importMode;
+    /**
+     * <p>
+     * Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     * </p>
+     */
+    private Boolean publishAttributionMetricsToS3;
 
     /**
      * <p>
@@ -573,6 +579,58 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     * </p>
+     * 
+     * @param publishAttributionMetricsToS3
+     *        Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     */
+
+    public void setPublishAttributionMetricsToS3(Boolean publishAttributionMetricsToS3) {
+        this.publishAttributionMetricsToS3 = publishAttributionMetricsToS3;
+    }
+
+    /**
+     * <p>
+     * Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     * </p>
+     * 
+     * @return Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     */
+
+    public Boolean getPublishAttributionMetricsToS3() {
+        return this.publishAttributionMetricsToS3;
+    }
+
+    /**
+     * <p>
+     * Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     * </p>
+     * 
+     * @param publishAttributionMetricsToS3
+     *        Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatasetImportJob withPublishAttributionMetricsToS3(Boolean publishAttributionMetricsToS3) {
+        setPublishAttributionMetricsToS3(publishAttributionMetricsToS3);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     * </p>
+     * 
+     * @return Whether the job publishes metrics to Amazon S3 for a metric attribution.
+     */
+
+    public Boolean isPublishAttributionMetricsToS3() {
+        return this.publishAttributionMetricsToS3;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -603,7 +661,9 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getImportMode() != null)
-            sb.append("ImportMode: ").append(getImportMode());
+            sb.append("ImportMode: ").append(getImportMode()).append(",");
+        if (getPublishAttributionMetricsToS3() != null)
+            sb.append("PublishAttributionMetricsToS3: ").append(getPublishAttributionMetricsToS3());
         sb.append("}");
         return sb.toString();
     }
@@ -658,6 +718,11 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getImportMode() != null && other.getImportMode().equals(this.getImportMode()) == false)
             return false;
+        if (other.getPublishAttributionMetricsToS3() == null ^ this.getPublishAttributionMetricsToS3() == null)
+            return false;
+        if (other.getPublishAttributionMetricsToS3() != null
+                && other.getPublishAttributionMetricsToS3().equals(this.getPublishAttributionMetricsToS3()) == false)
+            return false;
         return true;
     }
 
@@ -676,6 +741,7 @@ public class DatasetImportJob implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getLastUpdatedDateTime() == null) ? 0 : getLastUpdatedDateTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
+        hashCode = prime * hashCode + ((getPublishAttributionMetricsToS3() == null) ? 0 : getPublishAttributionMetricsToS3().hashCode());
         return hashCode;
     }
 

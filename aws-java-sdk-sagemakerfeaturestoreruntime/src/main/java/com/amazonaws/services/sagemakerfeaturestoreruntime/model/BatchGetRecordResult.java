@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class BatchGetRecordResult extends com.amazonaws.AmazonWebServiceResult<c
     private java.util.List<BatchGetRecordResultDetail> records;
     /**
      * <p>
-     * A list of errors that have occured when retrieving a batch of Records.
+     * A list of errors that have occurred when retrieving a batch of Records.
      * </p>
      */
     private java.util.List<BatchGetRecordError> errors;
@@ -115,10 +115,10 @@ public class BatchGetRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of errors that have occured when retrieving a batch of Records.
+     * A list of errors that have occurred when retrieving a batch of Records.
      * </p>
      * 
-     * @return A list of errors that have occured when retrieving a batch of Records.
+     * @return A list of errors that have occurred when retrieving a batch of Records.
      */
 
     public java.util.List<BatchGetRecordError> getErrors() {
@@ -127,11 +127,11 @@ public class BatchGetRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of errors that have occured when retrieving a batch of Records.
+     * A list of errors that have occurred when retrieving a batch of Records.
      * </p>
      * 
      * @param errors
-     *        A list of errors that have occured when retrieving a batch of Records.
+     *        A list of errors that have occurred when retrieving a batch of Records.
      */
 
     public void setErrors(java.util.Collection<BatchGetRecordError> errors) {
@@ -145,7 +145,7 @@ public class BatchGetRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of errors that have occured when retrieving a batch of Records.
+     * A list of errors that have occurred when retrieving a batch of Records.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -154,7 +154,7 @@ public class BatchGetRecordResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param errors
-     *        A list of errors that have occured when retrieving a batch of Records.
+     *        A list of errors that have occurred when retrieving a batch of Records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,11 +170,11 @@ public class BatchGetRecordResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * A list of errors that have occured when retrieving a batch of Records.
+     * A list of errors that have occurred when retrieving a batch of Records.
      * </p>
      * 
      * @param errors
-     *        A list of errors that have occured when retrieving a batch of Records.
+     *        A list of errors that have occurred when retrieving a batch of Records.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

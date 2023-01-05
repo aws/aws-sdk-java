@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class UpdateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private LoRaWANUpdateDevice loRaWAN;
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     */
+    private String positioning;
 
     /**
      * <p>
@@ -257,6 +263,65 @@ public class UpdateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @see PositioningConfigStatus
+     */
+
+    public void setPositioning(String positioning) {
+        this.positioning = positioning;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @return FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @see PositioningConfigStatus
+     */
+
+    public String getPositioning() {
+        return this.positioning;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositioningConfigStatus
+     */
+
+    public UpdateWirelessDeviceRequest withPositioning(String positioning) {
+        setPositioning(positioning);
+        return this;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositioningConfigStatus
+     */
+
+    public UpdateWirelessDeviceRequest withPositioning(PositioningConfigStatus positioning) {
+        this.positioning = positioning.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -277,7 +342,9 @@ public class UpdateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getLoRaWAN() != null)
-            sb.append("LoRaWAN: ").append(getLoRaWAN());
+            sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
+        if (getPositioning() != null)
+            sb.append("Positioning: ").append(getPositioning());
         sb.append("}");
         return sb.toString();
     }
@@ -312,6 +379,10 @@ public class UpdateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getLoRaWAN() != null && other.getLoRaWAN().equals(this.getLoRaWAN()) == false)
             return false;
+        if (other.getPositioning() == null ^ this.getPositioning() == null)
+            return false;
+        if (other.getPositioning() != null && other.getPositioning().equals(this.getPositioning()) == false)
+            return false;
         return true;
     }
 
@@ -325,6 +396,7 @@ public class UpdateWirelessDeviceRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
+        hashCode = prime * hashCode + ((getPositioning() == null) ? 0 : getPositioning().hashCode());
         return hashCode;
     }
 

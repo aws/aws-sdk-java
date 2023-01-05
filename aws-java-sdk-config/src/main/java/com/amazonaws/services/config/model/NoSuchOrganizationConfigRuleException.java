@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The Config rule in the request is not valid. Verify that the rule is an organization Config Custom Policy rule, that
+ * The Config rule in the request is invalid. Verify that the rule is an organization Config Custom Policy rule, that
  * the rule name is correct, and that valid Amazon Resouce Names (ARNs) are used before trying again.
  * </p>
  */

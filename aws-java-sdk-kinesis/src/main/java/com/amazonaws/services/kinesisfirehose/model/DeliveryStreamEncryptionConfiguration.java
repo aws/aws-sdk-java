@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,15 +33,15 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
-     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.
+     * CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
      * </p>
      */
     private String keyARN;
     /**
      * <p>
      * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>.
      * </p>
@@ -68,13 +68,13 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
-     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.
+     * CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
      * </p>
      * 
      * @param keyARN
      *        If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer
-     *        managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>,
+     *        managed CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
      *        <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
      */
 
@@ -85,12 +85,12 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
-     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.
+     * CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
      * </p>
      * 
      * @return If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer
-     *         managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>,
+     *         managed CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
      *         <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
      */
 
@@ -101,13 +101,13 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer managed
-     * CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>, <code>DeliveryStreamEncryptionConfiguration</code>
-     * doesn't contain a value for <code>KeyARN</code>.
+     * CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
+     * <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
      * </p>
      * 
      * @param keyARN
      *        If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains the ARN of the customer
-     *        managed CMK. If <code>KeyType</code> is <code>AWS_OWNED_CMK</code>,
+     *        managed CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
      *        <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -120,14 +120,14 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>.
      * </p>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>.
      * @see KeyType
@@ -140,13 +140,13 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>.
      * </p>
      * 
      * @return Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     *         <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *         <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *         Keys (CMKs)</a>.
      * @see KeyType
@@ -159,14 +159,14 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>.
      * </p>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -181,14 +181,14 @@ public class DeliveryStreamEncryptionConfiguration implements Serializable, Clon
     /**
      * <p>
      * Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     * <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     * <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys
      * (CMKs)</a>.
      * </p>
      * 
      * @param keyType
      *        Indicates the type of customer master key (CMK) that is used for encryption. The default setting is
-     *        <code>AWS_OWNED_CMK</code>. For more information about CMKs, see <a
+     *        <code>Amazon Web Services_OWNED_CMK</code>. For more information about CMKs, see <a
      *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master
      *        Keys (CMKs)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

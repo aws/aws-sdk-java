@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -512,6 +512,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     }
 
     @Override
+    public java.util.concurrent.Future<ListReceivedGrantsForOrganizationResult> listReceivedGrantsForOrganizationAsync(
+            ListReceivedGrantsForOrganizationRequest request) {
+
+        return listReceivedGrantsForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedGrantsForOrganizationResult> listReceivedGrantsForOrganizationAsync(
+            ListReceivedGrantsForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReceivedGrantsForOrganizationRequest, ListReceivedGrantsForOrganizationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListReceivedLicensesResult> listReceivedLicensesAsync(ListReceivedLicensesRequest request) {
 
         return listReceivedLicensesAsync(request, null);
@@ -520,6 +535,21 @@ public class AbstractAWSLicenseManagerAsync extends AbstractAWSLicenseManager im
     @Override
     public java.util.concurrent.Future<ListReceivedLicensesResult> listReceivedLicensesAsync(ListReceivedLicensesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListReceivedLicensesRequest, ListReceivedLicensesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedLicensesForOrganizationResult> listReceivedLicensesForOrganizationAsync(
+            ListReceivedLicensesForOrganizationRequest request) {
+
+        return listReceivedLicensesForOrganizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReceivedLicensesForOrganizationResult> listReceivedLicensesForOrganizationAsync(
+            ListReceivedLicensesForOrganizationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReceivedLicensesForOrganizationRequest, ListReceivedLicensesForOrganizationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

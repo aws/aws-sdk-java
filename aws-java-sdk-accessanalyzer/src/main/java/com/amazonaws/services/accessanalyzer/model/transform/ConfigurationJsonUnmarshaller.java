@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,33 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("ebsSnapshot", targetDepth)) {
+                    context.nextToken();
+                    configuration.setEbsSnapshot(EbsSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ecrRepository", targetDepth)) {
+                    context.nextToken();
+                    configuration.setEcrRepository(EcrRepositoryConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("iamRole", targetDepth)) {
                     context.nextToken();
                     configuration.setIamRole(IamRoleConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("efsFileSystem", targetDepth)) {
+                    context.nextToken();
+                    configuration.setEfsFileSystem(EfsFileSystemConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("kmsKey", targetDepth)) {
                     context.nextToken();
                     configuration.setKmsKey(KmsKeyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("rdsDbClusterSnapshot", targetDepth)) {
+                    context.nextToken();
+                    configuration.setRdsDbClusterSnapshot(RdsDbClusterSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("rdsDbSnapshot", targetDepth)) {
+                    context.nextToken();
+                    configuration.setRdsDbSnapshot(RdsDbSnapshotConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("secretsManagerSecret", targetDepth)) {
                     context.nextToken();
@@ -63,6 +83,10 @@ public class ConfigurationJsonUnmarshaller implements Unmarshaller<Configuration
                 if (context.testExpression("s3Bucket", targetDepth)) {
                     context.nextToken();
                     configuration.setS3Bucket(S3BucketConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("snsTopic", targetDepth)) {
+                    context.nextToken();
+                    configuration.setSnsTopic(SnsTopicConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("sqsQueue", targetDepth)) {
                     context.nextToken();

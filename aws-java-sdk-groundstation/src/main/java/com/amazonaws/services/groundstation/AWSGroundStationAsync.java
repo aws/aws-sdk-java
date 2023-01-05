@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -155,6 +155,37 @@ public interface AWSGroundStationAsync extends AWSGroundStation {
 
     /**
      * <p>
+     * Creates an Ephemeris with the specified <code>EphemerisData</code>.
+     * </p>
+     * 
+     * @param createEphemerisRequest
+     * @return A Java Future containing the result of the CreateEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsync.CreateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEphemerisResult> createEphemerisAsync(CreateEphemerisRequest createEphemerisRequest);
+
+    /**
+     * <p>
+     * Creates an Ephemeris with the specified <code>EphemerisData</code>.
+     * </p>
+     * 
+     * @param createEphemerisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsyncHandler.CreateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateEphemerisResult> createEphemerisAsync(CreateEphemerisRequest createEphemerisRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEphemerisRequest, CreateEphemerisResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a mission profile.
      * </p>
      * <p>
@@ -258,6 +289,37 @@ public interface AWSGroundStationAsync extends AWSGroundStation {
 
     /**
      * <p>
+     * Deletes an ephemeris
+     * </p>
+     * 
+     * @param deleteEphemerisRequest
+     * @return A Java Future containing the result of the DeleteEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsync.DeleteEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEphemerisResult> deleteEphemerisAsync(DeleteEphemerisRequest deleteEphemerisRequest);
+
+    /**
+     * <p>
+     * Deletes an ephemeris
+     * </p>
+     * 
+     * @param deleteEphemerisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsyncHandler.DeleteEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteEphemerisResult> deleteEphemerisAsync(DeleteEphemerisRequest deleteEphemerisRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEphemerisRequest, DeleteEphemerisResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a mission profile.
      * </p>
      * 
@@ -317,6 +379,37 @@ public interface AWSGroundStationAsync extends AWSGroundStation {
      */
     java.util.concurrent.Future<DescribeContactResult> describeContactAsync(DescribeContactRequest describeContactRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeContactRequest, DescribeContactResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an existing ephemeris.
+     * </p>
+     * 
+     * @param describeEphemerisRequest
+     * @return A Java Future containing the result of the DescribeEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsync.DescribeEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEphemerisResult> describeEphemerisAsync(DescribeEphemerisRequest describeEphemerisRequest);
+
+    /**
+     * <p>
+     * Describes an existing ephemeris.
+     * </p>
+     * 
+     * @param describeEphemerisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsyncHandler.DescribeEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEphemerisResult> describeEphemerisAsync(DescribeEphemerisRequest describeEphemerisRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEphemerisRequest, DescribeEphemerisResult> asyncHandler);
 
     /**
      * <p>
@@ -584,6 +677,37 @@ public interface AWSGroundStationAsync extends AWSGroundStation {
 
     /**
      * <p>
+     * List existing ephemerides.
+     * </p>
+     * 
+     * @param listEphemeridesRequest
+     * @return A Java Future containing the result of the ListEphemerides operation returned by the service.
+     * @sample AWSGroundStationAsync.ListEphemerides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEphemeridesResult> listEphemeridesAsync(ListEphemeridesRequest listEphemeridesRequest);
+
+    /**
+     * <p>
+     * List existing ephemerides.
+     * </p>
+     * 
+     * @param listEphemeridesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEphemerides operation returned by the service.
+     * @sample AWSGroundStationAsyncHandler.ListEphemerides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEphemeridesResult> listEphemeridesAsync(ListEphemeridesRequest listEphemeridesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEphemeridesRequest, ListEphemeridesResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of ground stations.
      * </p>
      * 
@@ -837,6 +961,37 @@ public interface AWSGroundStationAsync extends AWSGroundStation {
      */
     java.util.concurrent.Future<UpdateConfigResult> updateConfigAsync(UpdateConfigRequest updateConfigRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateConfigRequest, UpdateConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing ephemeris
+     * </p>
+     * 
+     * @param updateEphemerisRequest
+     * @return A Java Future containing the result of the UpdateEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsync.UpdateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEphemerisResult> updateEphemerisAsync(UpdateEphemerisRequest updateEphemerisRequest);
+
+    /**
+     * <p>
+     * Updates an existing ephemeris
+     * </p>
+     * 
+     * @param updateEphemerisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateEphemeris operation returned by the service.
+     * @sample AWSGroundStationAsyncHandler.UpdateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateEphemerisResult> updateEphemerisAsync(UpdateEphemerisRequest updateEphemerisRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateEphemerisRequest, UpdateEphemerisResult> asyncHandler);
 
     /**
      * <p>

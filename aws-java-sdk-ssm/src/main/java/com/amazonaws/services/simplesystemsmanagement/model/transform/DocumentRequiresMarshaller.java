@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class DocumentRequiresMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Version").build();
+    private static final MarshallingInfo<String> REQUIRETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequireType").build();
+    private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
 
     private static final DocumentRequiresMarshaller instance = new DocumentRequiresMarshaller();
 
@@ -50,6 +54,8 @@ public class DocumentRequiresMarshaller {
         try {
             protocolMarshaller.marshall(documentRequires.getName(), NAME_BINDING);
             protocolMarshaller.marshall(documentRequires.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(documentRequires.getRequireType(), REQUIRETYPE_BINDING);
+            protocolMarshaller.marshall(documentRequires.getVersionName(), VERSIONNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

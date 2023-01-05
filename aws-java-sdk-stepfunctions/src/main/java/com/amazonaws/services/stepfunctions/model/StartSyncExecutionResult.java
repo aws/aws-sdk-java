@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,7 +96,7 @@ public class StartSyncExecutionResult extends com.amazonaws.AmazonWebServiceResu
     private CloudWatchEventsExecutionDataDetails outputDetails;
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      */
     private String traceHeader;
@@ -616,11 +616,11 @@ public class StartSyncExecutionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      * 
      * @param traceHeader
-     *        The AWS X-Ray trace header that was passed to the execution.
+     *        The X-Ray trace header that was passed to the execution.
      */
 
     public void setTraceHeader(String traceHeader) {
@@ -629,10 +629,10 @@ public class StartSyncExecutionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      * 
-     * @return The AWS X-Ray trace header that was passed to the execution.
+     * @return The X-Ray trace header that was passed to the execution.
      */
 
     public String getTraceHeader() {
@@ -641,11 +641,11 @@ public class StartSyncExecutionResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The AWS X-Ray trace header that was passed to the execution.
+     * The X-Ray trace header that was passed to the execution.
      * </p>
      * 
      * @param traceHeader
-     *        The AWS X-Ray trace header that was passed to the execution.
+     *        The X-Ray trace header that was passed to the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

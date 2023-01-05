@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class UpdateFPortsJsonUnmarshaller implements Unmarshaller<UpdateFPorts, 
                 if (context.testExpression("Positioning", targetDepth)) {
                     context.nextToken();
                     updateFPorts.setPositioning(PositioningJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Applications", targetDepth)) {
+                    context.nextToken();
+                    updateFPorts.setApplications(new ListUnmarshaller<ApplicationConfig>(ApplicationConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

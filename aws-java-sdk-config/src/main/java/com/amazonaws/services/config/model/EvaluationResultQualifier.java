@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,12 @@ public class EvaluationResultQualifier implements Serializable, Cloneable, Struc
      * </p>
      */
     private String resourceId;
+    /**
+     * <p>
+     * The mode of an evaluation. The valid values are Detective or Proactive.
+     * </p>
+     */
+    private String evaluationMode;
 
     /**
      * <p>
@@ -169,6 +175,65 @@ public class EvaluationResultQualifier implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The mode of an evaluation. The valid values are Detective or Proactive.
+     * </p>
+     * 
+     * @param evaluationMode
+     *        The mode of an evaluation. The valid values are Detective or Proactive.
+     * @see EvaluationMode
+     */
+
+    public void setEvaluationMode(String evaluationMode) {
+        this.evaluationMode = evaluationMode;
+    }
+
+    /**
+     * <p>
+     * The mode of an evaluation. The valid values are Detective or Proactive.
+     * </p>
+     * 
+     * @return The mode of an evaluation. The valid values are Detective or Proactive.
+     * @see EvaluationMode
+     */
+
+    public String getEvaluationMode() {
+        return this.evaluationMode;
+    }
+
+    /**
+     * <p>
+     * The mode of an evaluation. The valid values are Detective or Proactive.
+     * </p>
+     * 
+     * @param evaluationMode
+     *        The mode of an evaluation. The valid values are Detective or Proactive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EvaluationMode
+     */
+
+    public EvaluationResultQualifier withEvaluationMode(String evaluationMode) {
+        setEvaluationMode(evaluationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The mode of an evaluation. The valid values are Detective or Proactive.
+     * </p>
+     * 
+     * @param evaluationMode
+     *        The mode of an evaluation. The valid values are Detective or Proactive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EvaluationMode
+     */
+
+    public EvaluationResultQualifier withEvaluationMode(EvaluationMode evaluationMode) {
+        this.evaluationMode = evaluationMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +250,9 @@ public class EvaluationResultQualifier implements Serializable, Cloneable, Struc
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceId() != null)
-            sb.append("ResourceId: ").append(getResourceId());
+            sb.append("ResourceId: ").append(getResourceId()).append(",");
+        if (getEvaluationMode() != null)
+            sb.append("EvaluationMode: ").append(getEvaluationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +279,10 @@ public class EvaluationResultQualifier implements Serializable, Cloneable, Struc
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
             return false;
+        if (other.getEvaluationMode() == null ^ this.getEvaluationMode() == null)
+            return false;
+        if (other.getEvaluationMode() != null && other.getEvaluationMode().equals(this.getEvaluationMode()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +294,7 @@ public class EvaluationResultQualifier implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getConfigRuleName() == null) ? 0 : getConfigRuleName().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationMode() == null) ? 0 : getEvaluationMode().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that describes whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
+ * A structure that describes whether the workspace uses SAML, IAM Identity Center, or both methods for user
  * authentication, and whether that authentication is fully configured.
  * </p>
  * 
@@ -31,7 +31,7 @@ public class AuthenticationSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.
+     * Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * </p>
      */
     private java.util.List<String> providers;
@@ -44,11 +44,10 @@ public class AuthenticationSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.
+     * Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * </p>
      * 
-     * @return Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
-     *         authentication.
+     * @return Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * @see AuthenticationProviderTypes
      */
 
@@ -58,12 +57,11 @@ public class AuthenticationSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.
+     * Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * </p>
      * 
      * @param providers
-     *        Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
-     *        authentication.
+     *        Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * @see AuthenticationProviderTypes
      */
 
@@ -78,7 +76,7 @@ public class AuthenticationSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.
+     * Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,8 +85,7 @@ public class AuthenticationSummary implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param providers
-     *        Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
-     *        authentication.
+     *        Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationProviderTypes
      */
@@ -105,12 +102,11 @@ public class AuthenticationSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.
+     * Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * </p>
      * 
      * @param providers
-     *        Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
-     *        authentication.
+     *        Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationProviderTypes
      */
@@ -122,12 +118,11 @@ public class AuthenticationSummary implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user authentication.
+     * Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * </p>
      * 
      * @param providers
-     *        Specifies whether the workspace uses SAML, Amazon Web Services SSO, or both methods for user
-     *        authentication.
+     *        Specifies whether the workspace uses SAML, IAM Identity Center, or both methods for user authentication.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthenticationProviderTypes
      */

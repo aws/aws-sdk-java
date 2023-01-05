@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -180,6 +180,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeAddonRequest, DescribeAddonResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonConfigurationResult> describeAddonConfigurationAsync(DescribeAddonConfigurationRequest request) {
+
+        return describeAddonConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonConfigurationResult> describeAddonConfigurationAsync(DescribeAddonConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonConfigurationRequest, DescribeAddonConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

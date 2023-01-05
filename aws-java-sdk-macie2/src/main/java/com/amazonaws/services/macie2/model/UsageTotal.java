@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,10 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
     private String estimatedCost;
     /**
      * <p>
-     * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     * The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated
+     * sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data
+     * discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification
+     * jobs.
      * </p>
      */
     private String type;
@@ -151,13 +153,17 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     * The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated
+     * sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data
+     * discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification
+     * jobs.
      * </p>
      * 
      * @param type
-     *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     *        The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for
+     *        automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for
+     *        automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     *        SENSITIVE_DATA_DISCOVERY, to run classification jobs.
      * @see UsageType
      */
 
@@ -167,12 +173,16 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     * The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated
+     * sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data
+     * discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification
+     * jobs.
      * </p>
      * 
-     * @return The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *         SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     * @return The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for
+     *         automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for
+     *         automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     *         SENSITIVE_DATA_DISCOVERY, to run classification jobs.
      * @see UsageType
      */
 
@@ -182,13 +192,17 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     * The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated
+     * sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data
+     * discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification
+     * jobs.
      * </p>
      * 
      * @param type
-     *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     *        The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for
+     *        automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for
+     *        automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     *        SENSITIVE_DATA_DISCOVERY, to run classification jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageType
      */
@@ -200,13 +214,17 @@ public class UsageTotal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     * The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for automated
+     * sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for automated sensitive data
+     * discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and, SENSITIVE_DATA_DISCOVERY, to run classification
+     * jobs.
      * </p>
      * 
      * @param type
-     *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
+     *        The name of the metric. Possible values are: AUTOMATED_OBJECT_MONITORING, to monitor S3 objects for
+     *        automated sensitive data discovery; AUTOMATED_SENSITIVE_DATA_DISCOVERY, to analyze S3 objects for
+     *        automated sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
+     *        SENSITIVE_DATA_DISCOVERY, to run classification jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageType
      */

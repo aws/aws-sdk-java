@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress information of the requested
+ * The result of a <code>DescribeDomainChangeProgress</code> request. Contains progress information for the requested
  * domain change.
  * </p>
  */
@@ -26,21 +26,18 @@ public class DescribeDomainChangeProgressResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request.
+     * Container for information about the stages of a configuration change happening on a domain.
      * </p>
      */
     private ChangeProgressStatusDetails changeProgressStatus;
 
     /**
      * <p>
-     * Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request.
+     * Container for information about the stages of a configuration change happening on a domain.
      * </p>
      * 
      * @param changeProgressStatus
-     *        Progress information for the configuration change that is requested in the
-     *        <code>DescribeDomainChangeProgress</code> request.
+     *        Container for information about the stages of a configuration change happening on a domain.
      */
 
     public void setChangeProgressStatus(ChangeProgressStatusDetails changeProgressStatus) {
@@ -49,12 +46,10 @@ public class DescribeDomainChangeProgressResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request.
+     * Container for information about the stages of a configuration change happening on a domain.
      * </p>
      * 
-     * @return Progress information for the configuration change that is requested in the
-     *         <code>DescribeDomainChangeProgress</code> request.
+     * @return Container for information about the stages of a configuration change happening on a domain.
      */
 
     public ChangeProgressStatusDetails getChangeProgressStatus() {
@@ -63,13 +58,11 @@ public class DescribeDomainChangeProgressResult extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request.
+     * Container for information about the stages of a configuration change happening on a domain.
      * </p>
      * 
      * @param changeProgressStatus
-     *        Progress information for the configuration change that is requested in the
-     *        <code>DescribeDomainChangeProgress</code> request.
+     *        Container for information about the stages of a configuration change happening on a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

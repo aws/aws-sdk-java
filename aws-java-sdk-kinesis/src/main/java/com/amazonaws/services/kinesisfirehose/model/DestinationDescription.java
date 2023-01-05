@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,11 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private ElasticsearchDestinationDescription elasticsearchDestinationDescription;
-
+    /**
+     * <p>
+     * The destination in Amazon OpenSearch Service.
+     * </p>
+     */
     private AmazonopensearchserviceDestinationDescription amazonopensearchserviceDestinationDescription;
     /**
      * <p>
@@ -72,6 +76,12 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
      * </p>
      */
     private HttpEndpointDestinationDescription httpEndpointDestinationDescription;
+    /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service.
+     * </p>
+     */
+    private AmazonOpenSearchServerlessDestinationDescription amazonOpenSearchServerlessDestinationDescription;
 
     /**
      * <p>
@@ -274,7 +284,12 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The destination in Amazon OpenSearch Service.
+     * </p>
+     * 
      * @param amazonopensearchserviceDestinationDescription
+     *        The destination in Amazon OpenSearch Service.
      */
 
     public void setAmazonopensearchserviceDestinationDescription(AmazonopensearchserviceDestinationDescription amazonopensearchserviceDestinationDescription) {
@@ -282,7 +297,11 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * The destination in Amazon OpenSearch Service.
+     * </p>
+     * 
+     * @return The destination in Amazon OpenSearch Service.
      */
 
     public AmazonopensearchserviceDestinationDescription getAmazonopensearchserviceDestinationDescription() {
@@ -290,7 +309,12 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The destination in Amazon OpenSearch Service.
+     * </p>
+     * 
      * @param amazonopensearchserviceDestinationDescription
+     *        The destination in Amazon OpenSearch Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,6 +405,48 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service.
+     * </p>
+     * 
+     * @param amazonOpenSearchServerlessDestinationDescription
+     *        The destination in the Serverless offering for Amazon OpenSearch Service.
+     */
+
+    public void setAmazonOpenSearchServerlessDestinationDescription(
+            AmazonOpenSearchServerlessDestinationDescription amazonOpenSearchServerlessDestinationDescription) {
+        this.amazonOpenSearchServerlessDestinationDescription = amazonOpenSearchServerlessDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service.
+     * </p>
+     * 
+     * @return The destination in the Serverless offering for Amazon OpenSearch Service.
+     */
+
+    public AmazonOpenSearchServerlessDestinationDescription getAmazonOpenSearchServerlessDestinationDescription() {
+        return this.amazonOpenSearchServerlessDestinationDescription;
+    }
+
+    /**
+     * <p>
+     * The destination in the Serverless offering for Amazon OpenSearch Service.
+     * </p>
+     * 
+     * @param amazonOpenSearchServerlessDestinationDescription
+     *        The destination in the Serverless offering for Amazon OpenSearch Service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DestinationDescription withAmazonOpenSearchServerlessDestinationDescription(
+            AmazonOpenSearchServerlessDestinationDescription amazonOpenSearchServerlessDestinationDescription) {
+        setAmazonOpenSearchServerlessDestinationDescription(amazonOpenSearchServerlessDestinationDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -407,7 +473,9 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
         if (getSplunkDestinationDescription() != null)
             sb.append("SplunkDestinationDescription: ").append(getSplunkDestinationDescription()).append(",");
         if (getHttpEndpointDestinationDescription() != null)
-            sb.append("HttpEndpointDestinationDescription: ").append(getHttpEndpointDestinationDescription());
+            sb.append("HttpEndpointDestinationDescription: ").append(getHttpEndpointDestinationDescription()).append(",");
+        if (getAmazonOpenSearchServerlessDestinationDescription() != null)
+            sb.append("AmazonOpenSearchServerlessDestinationDescription: ").append(getAmazonOpenSearchServerlessDestinationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -459,6 +527,11 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
         if (other.getHttpEndpointDestinationDescription() != null
                 && other.getHttpEndpointDestinationDescription().equals(this.getHttpEndpointDestinationDescription()) == false)
             return false;
+        if (other.getAmazonOpenSearchServerlessDestinationDescription() == null ^ this.getAmazonOpenSearchServerlessDestinationDescription() == null)
+            return false;
+        if (other.getAmazonOpenSearchServerlessDestinationDescription() != null
+                && other.getAmazonOpenSearchServerlessDestinationDescription().equals(this.getAmazonOpenSearchServerlessDestinationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -476,6 +549,8 @@ public class DestinationDescription implements Serializable, Cloneable, Structur
                 + ((getAmazonopensearchserviceDestinationDescription() == null) ? 0 : getAmazonopensearchserviceDestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getSplunkDestinationDescription() == null) ? 0 : getSplunkDestinationDescription().hashCode());
         hashCode = prime * hashCode + ((getHttpEndpointDestinationDescription() == null) ? 0 : getHttpEndpointDestinationDescription().hashCode());
+        hashCode = prime * hashCode
+                + ((getAmazonOpenSearchServerlessDestinationDescription() == null) ? 0 : getAmazonOpenSearchServerlessDestinationDescription().hashCode());
         return hashCode;
     }
 

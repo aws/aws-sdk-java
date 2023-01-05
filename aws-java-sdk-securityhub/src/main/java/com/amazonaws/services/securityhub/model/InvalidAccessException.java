@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * There is an issue with the account used to make the request. Either Security Hub is not enabled for the account, or
- * the account does not have permission to perform this action.
+ * The account doesn't have permission to perform this action.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

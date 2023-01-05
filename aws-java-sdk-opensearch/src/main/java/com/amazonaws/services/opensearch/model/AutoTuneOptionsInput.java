@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.
+ * Options for configuring Auto-Tune. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,26 +29,27 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      */
     private String desiredState;
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite,
+     * not append. If your request includes no schedules, the request deletes all existing schedules. To preserve
+     * existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     * <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      * </p>
      */
     private java.util.List<AutoTuneMaintenanceSchedule> maintenanceSchedules;
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @see AutoTuneDesiredState
      */
 
@@ -56,10 +59,10 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
-     * @return The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * @return Whether Auto-Tune is enabled or disabled.
      * @see AutoTuneDesiredState
      */
 
@@ -69,11 +72,11 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneDesiredState
      */
@@ -85,11 +88,11 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     * Whether Auto-Tune is enabled or disabled.
      * </p>
      * 
      * @param desiredState
-     *        The Auto-Tune desired state. Valid values are ENABLED and DISABLED.
+     *        Whether Auto-Tune is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoTuneDesiredState
      */
@@ -101,14 +104,16 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite,
+     * not append. If your request includes no schedules, the request deletes all existing schedules. To preserve
+     * existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     * <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      * </p>
      * 
-     * @return A list of maintenance schedules. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are
+     *         overwrite, not append. If your request includes no schedules, the request deletes all existing schedules.
+     *         To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     *         <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      */
 
     public java.util.List<AutoTuneMaintenanceSchedule> getMaintenanceSchedules() {
@@ -117,15 +122,17 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite,
+     * not append. If your request includes no schedules, the request deletes all existing schedules. To preserve
+     * existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     * <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are
+     *        overwrite, not append. If your request includes no schedules, the request deletes all existing schedules.
+     *        To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     *        <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      */
 
     public void setMaintenanceSchedules(java.util.Collection<AutoTuneMaintenanceSchedule> maintenanceSchedules) {
@@ -139,9 +146,10 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite,
+     * not append. If your request includes no schedules, the request deletes all existing schedules. To preserve
+     * existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     * <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -150,9 +158,10 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are
+     *        overwrite, not append. If your request includes no schedules, the request deletes all existing schedules.
+     *        To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     *        <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,15 +177,17 @@ public class AutoTuneOptionsInput implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A list of maintenance schedules. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are overwrite,
+     * not append. If your request includes no schedules, the request deletes all existing schedules. To preserve
+     * existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     * <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      * </p>
      * 
      * @param maintenanceSchedules
-     *        A list of maintenance schedules. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        A list of maintenance schedules during which Auto-Tune can deploy changes. Maintenance schedules are
+     *        overwrite, not append. If your request includes no schedules, the request deletes all existing schedules.
+     *        To preserve existing schedules, make a call to <code>DescribeDomainConfig</code> first and use the
+     *        <code>MaintenanceSchedules</code> portion of the response as the basis for this section.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@
  * </p>
  * <note>
  * <p>
- * KMS is replacing the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has
+ * KMS has replaced the term <i>customer master key (CMK)</i> with <i>KMS key</i> and <i>KMS key</i>. The concept has
  * not changed. To prevent breaking changes, KMS is keeping some variations of this term.
  * </p>
  * <p>
@@ -52,9 +52,9 @@
  * </p>
  * <p>
  * Requests must be signed by using an access key ID and a secret access key. We strongly recommend that you <i>do
- * not</i> use your Amazon Web Services account (root) access key ID and secret key for everyday work with KMS. Instead,
- * use the access key ID and secret access key for an IAM user. You can also use the Amazon Web Services Security Token
- * Service to generate temporary security credentials that you can use to sign requests.
+ * not</i> use your Amazon Web Services account (root) access key ID and secret access key for everyday work with KMS.
+ * Instead, use the access key ID and secret access key for an IAM user. You can also use the Amazon Web Services
+ * Security Token Service to generate temporary security credentials that you can use to sign requests.
  * </p>
  * <p>
  * All KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * See <a href=
- * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
- * >Rule criteria</a> for usage examples.
+ * See <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html#tca-rules-batch">Rule
+ * criteria for batch categories</a> for usage examples.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/InterruptionFilter" target="_top">AWS API
@@ -61,27 +60,28 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
-     * than 10000 milliseconds of interruptions.
+     * than 10,000 milliseconds of interruptions.
      * </p>
      */
     private Long threshold;
     /**
      * <p>
-     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      */
     private String participantRole;
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an
      * interruption. See for more detail.
      * </p>
      */
     private AbsoluteTimeRange absoluteTimeRange;
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
-     * interruption. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * an interruption. See for more detail.
      * </p>
      */
     private RelativeTimeRange relativeTimeRange;
@@ -96,12 +96,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
-     * than 10000 milliseconds of interruptions.
+     * than 10,000 milliseconds of interruptions.
      * </p>
      * 
      * @param threshold
      *        Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains
-     *        more than 10000 milliseconds of interruptions.
+     *        more than 10,000 milliseconds of interruptions.
      */
 
     public void setThreshold(Long threshold) {
@@ -111,11 +111,11 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
-     * than 10000 milliseconds of interruptions.
+     * than 10,000 milliseconds of interruptions.
      * </p>
      * 
      * @return Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains
-     *         more than 10000 milliseconds of interruptions.
+     *         more than 10,000 milliseconds of interruptions.
      */
 
     public Long getThreshold() {
@@ -125,12 +125,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains more
-     * than 10000 milliseconds of interruptions.
+     * than 10,000 milliseconds of interruptions.
      * </p>
      * 
      * @param threshold
      *        Specify the duration of the interruptions in milliseconds. For example, you can flag speech that contains
-     *        more than 10000 milliseconds of interruptions.
+     *        more than 10,000 milliseconds of interruptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +141,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @see ParticipantRole
      */
@@ -156,10 +157,11 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
-     * @return Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     * @return Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
      *         participants.
      * @see ParticipantRole
      */
@@ -170,11 +172,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
@@ -187,11 +190,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both participants.
+     * Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
+     * participants.
      * </p>
      * 
      * @param participantRole
-     *        Specify the interrupter you want to flag. Omitting this parameter is equivalent to specifying both
+     *        Specify the interrupter that you want to flag. Omitting this parameter is equivalent to specifying both
      *        participants.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParticipantRole
@@ -204,13 +208,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an
      * interruption. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
-     *        interruption. See for more detail.
+     *        Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search
+     *        for an interruption. See for more detail.
      */
 
     public void setAbsoluteTimeRange(AbsoluteTimeRange absoluteTimeRange) {
@@ -219,12 +223,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an
      * interruption. See for more detail.
      * </p>
      * 
-     * @return Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for
-     *         an interruption. See for more detail.
+     * @return Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to
+     *         search for an interruption. See for more detail.
      */
 
     public AbsoluteTimeRange getAbsoluteTimeRange() {
@@ -233,13 +237,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
+     * Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search for an
      * interruption. See for more detail.
      * </p>
      * 
      * @param absoluteTimeRange
-     *        Allows you to specify a time range (in milliseconds) in your audio, during which you want to search for an
-     *        interruption. See for more detail.
+     *        Makes it possible to specify a time range (in milliseconds) in your audio, during which you want to search
+     *        for an interruption. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -250,13 +254,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
-     * interruption. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * an interruption. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
-     *        an interruption. See for more detail.
+     *        Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *        search for an interruption. See for more detail.
      */
 
     public void setRelativeTimeRange(RelativeTimeRange relativeTimeRange) {
@@ -265,12 +269,12 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
-     * interruption. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * an interruption. See for more detail.
      * </p>
      * 
-     * @return Allows you to specify a time range (in percentage) in your media file, during which you want to search
-     *         for an interruption. See for more detail.
+     * @return Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *         search for an interruption. See for more detail.
      */
 
     public RelativeTimeRange getRelativeTimeRange() {
@@ -279,13 +283,13 @@ public class InterruptionFilter implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Allows you to specify a time range (in percentage) in your media file, during which you want to search for an
-     * interruption. See for more detail.
+     * Makes it possible to specify a time range (in percentage) in your media file, during which you want to search for
+     * an interruption. See for more detail.
      * </p>
      * 
      * @param relativeTimeRange
-     *        Allows you to specify a time range (in percentage) in your media file, during which you want to search for
-     *        an interruption. See for more detail.
+     *        Makes it possible to specify a time range (in percentage) in your media file, during which you want to
+     *        search for an interruption. See for more detail.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

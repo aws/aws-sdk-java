@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites any existing tags that
      * correspond to the specified tag keys.
@@ -59,6 +65,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites any existing tags that
      * correspond to the specified tag keys.
@@ -88,10 +100,14 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * which are uniquely identified groups of data records in a stream.
      * </p>
      * <p>
-     * You specify and control the number of shards that a stream is composed of. Each shard can support reads up to
-     * five transactions per second, up to a maximum data read total of 2 MiB per second. Each shard can support writes
-     * up to 1,000 records per second, up to a maximum data write total of 1 MiB per second. If the amount of data input
-     * increases or decreases, you can add or remove shards.
+     * You can create your data stream using either on-demand or provisioned capacity mode. Data streams with an
+     * on-demand mode require no capacity planning and automatically scale to handle gigabytes of write and read
+     * throughput per minute. With the on-demand mode, Kinesis Data Streams automatically manages the shards in order to
+     * provide the necessary throughput. For the data streams with a provisioned mode, you must specify the number of
+     * shards for the data stream. Each shard can support reads up to five transactions per second, up to a maximum data
+     * read total of 2 MiB per second. Each shard can support writes up to 1,000 records per second, up to a maximum
+     * data write total of 1 MiB per second. If the amount of data input increases or decreases, you can add or remove
+     * shards.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the Amazon Web Services account used by the
@@ -151,10 +167,14 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * which are uniquely identified groups of data records in a stream.
      * </p>
      * <p>
-     * You specify and control the number of shards that a stream is composed of. Each shard can support reads up to
-     * five transactions per second, up to a maximum data read total of 2 MiB per second. Each shard can support writes
-     * up to 1,000 records per second, up to a maximum data write total of 1 MiB per second. If the amount of data input
-     * increases or decreases, you can add or remove shards.
+     * You can create your data stream using either on-demand or provisioned capacity mode. Data streams with an
+     * on-demand mode require no capacity planning and automatically scale to handle gigabytes of write and read
+     * throughput per minute. With the on-demand mode, Kinesis Data Streams automatically manages the shards in order to
+     * provide the necessary throughput. For the data streams with a provisioned mode, you must specify the number of
+     * shards for the data stream. Each shard can support reads up to five transactions per second, up to a maximum data
+     * read total of 2 MiB per second. Each shard can support writes up to 1,000 records per second, up to a maximum
+     * data write total of 1 MiB per second. If the amount of data input increases or decreases, you can add or remove
+     * shards.
      * </p>
      * <p>
      * The stream name identifies the stream. The name is scoped to the Amazon Web Services account used by the
@@ -232,6 +252,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Decreases the Kinesis data stream's retention period, which is the length of time data records are accessible
      * after they are added to the stream. The minimum value of a stream's retention period is 24 hours.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * This operation may result in lost data. For example, if the stream's retention period is 48 hours and is
      * decreased to 24 hours, any data already in the stream that is older than 24 hours is inaccessible.
@@ -253,6 +279,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Decreases the Kinesis data stream's retention period, which is the length of time data records are accessible
      * after they are added to the stream. The minimum value of a stream's retention period is 24 hours.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * This operation may result in lost data. For example, if the stream's retention period is 48 hours and is
      * decreased to 24 hours, any data already in the stream that is older than 24 hours is inaccessible.
@@ -280,6 +312,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it
      * receives the exception <code>ResourceNotFoundException</code>.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request,
      * the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.
@@ -316,6 +354,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * on the stream before you delete the stream. If an application attempts to operate on a deleted stream, it
      * receives the exception <code>ResourceNotFoundException</code>.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code> request,
      * the specified stream is in the <code>DELETING</code> state until Kinesis Data Streams completes the deletion.
@@ -464,6 +508,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * summarized description of the specified Kinesis data stream and the <a>ListShards</a> API to list the shards in a
      * specified data stream and obtain information about each shard.
      * </p>
+     * </note> <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
      * </note>
      * <p>
      * The information returned includes the stream name, Amazon Resource Name (ARN), creation time, enhanced metric
@@ -503,6 +552,11 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * This API has been revised. It's highly recommended that you use the <a>DescribeStreamSummary</a> API to get a
      * summarized description of the specified Kinesis data stream and the <a>ListShards</a> API to list the shards in a
      * specified data stream and obtain information about each shard.
+     * </p>
+     * </note> <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
      * </p>
      * </note>
      * <p>
@@ -633,6 +687,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Provides a summarized description of the specified Kinesis data stream without the shard list.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * The information returned includes the stream name, Amazon Resource Name (ARN), status, record retention period,
      * approximate creation time, monitoring, encryption details, and open shard count.
@@ -653,6 +713,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Provides a summarized description of the specified Kinesis data stream without the shard list.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * The information returned includes the stream name, Amazon Resource Name (ARN), status, record retention period,
      * approximate creation time, monitoring, encryption details, and open shard count.
@@ -678,6 +744,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Disables enhanced monitoring.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param disableEnhancedMonitoringRequest
      *        Represents the input for <a>DisableEnhancedMonitoring</a>.
@@ -693,6 +765,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Disables enhanced monitoring.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param disableEnhancedMonitoringRequest
      *        Represents the input for <a>DisableEnhancedMonitoring</a>.
@@ -713,6 +791,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Enables enhanced Kinesis data stream monitoring for shard-level metrics.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param enableEnhancedMonitoringRequest
      *        Represents the input for <a>EnableEnhancedMonitoring</a>.
@@ -727,6 +811,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Enables enhanced Kinesis data stream monitoring for shard-level metrics.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param enableEnhancedMonitoringRequest
      *        Represents the input for <a>EnableEnhancedMonitoring</a>.
@@ -746,6 +836,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Gets data records from a Kinesis data stream's shard.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter in addition to the
+     * <code>ShardIterator</code> parameter.
+     * </p>
+     * </note>
      * <p>
      * Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator specifies the
      * position in the shard from which you want to start reading data records sequentially. If there are no records
@@ -813,6 +909,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Gets data records from a Kinesis data stream's shard.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter in addition to the
+     * <code>ShardIterator</code> parameter.
+     * </p>
+     * </note>
      * <p>
      * Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard iterator specifies the
      * position in the shard from which you want to start reading data records sequentially. If there are no records
@@ -885,6 +987,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it is returned to the requester.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * A shard iterator specifies the shard position from which to start reading data records sequentially. The position
      * is specified using the sequence number of a data record in a shard. A sequence number is the identifier
@@ -937,6 +1045,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Gets an Amazon Kinesis shard iterator. A shard iterator expires 5 minutes after it is returned to the requester.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * A shard iterator specifies the shard position from which to start reading data records sequentially. The position
      * is specified using the sequence number of a data record in a shard. A sequence number is the identifier
@@ -1026,6 +1140,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Increases the Kinesis data stream's retention period, which is the length of time data records are accessible
      * after they are added to the stream. The maximum value of a stream's retention period is 8760 hours (365 days).
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If you choose a longer stream retention period, this operation increases the time period during which records
      * that have not yet expired are accessible. However, it does not make previous, expired data (older than the
@@ -1050,6 +1170,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Increases the Kinesis data stream's retention period, which is the length of time data records are accessible
      * after they are added to the stream. The maximum value of a stream's retention period is 8760 hours (365 days).
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If you choose a longer stream retention period, this operation increases the time period during which records
      * that have not yet expired are accessible. However, it does not make previous, expired data (older than the
@@ -1079,6 +1205,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Lists the shards in a stream and provides information about each shard. This operation has a limit of 1000
      * transactions per second per data stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * This action does not list expired shards. For information about expired shards, see <a href=
      * "https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing"
@@ -1106,6 +1238,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Lists the shards in a stream and provides information about each shard. This operation has a limit of 1000
      * transactions per second per data stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * This action does not list expired shards. For information about expired shards, see <a href=
      * "https://docs.aws.amazon.com/streams/latest/dev/kinesis-using-sdk-java-after-resharding.html#kinesis-using-sdk-java-resharding-data-routing"
@@ -1284,6 +1422,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second
      * per account.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param listTagsForStreamRequest
      *        Represents the input for <code>ListTagsForStream</code>.
@@ -1299,6 +1443,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second
      * per account.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param listTagsForStreamRequest
      *        Represents the input for <code>ListTagsForStream</code>.
@@ -1317,12 +1467,19 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
     /**
      * <p>
      * Merges two adjacent shards in a Kinesis data stream and combines them into a single shard to reduce the stream's
-     * capacity to ingest and transport data. Two shards are considered adjacent if the union of the hash key ranges for
-     * the two shards form a contiguous set with no gaps. For example, if you have two shards, one with a hash key range
-     * of 276...381 and the other with a hash key range of 382...454, then you could merge these two shards into a
-     * single shard that would have a hash key range of 276...454. After the merge, the single child shard receives data
-     * for all hash key values covered by the two parent shards.
+     * capacity to ingest and transport data. This API is only supported for the data streams with the provisioned
+     * capacity mode. Two shards are considered adjacent if the union of the hash key ranges for the two shards form a
+     * contiguous set with no gaps. For example, if you have two shards, one with a hash key range of 276...381 and the
+     * other with a hash key range of 382...454, then you could merge these two shards into a single shard that would
+     * have a hash key range of 276...454. After the merge, the single child shard receives data for all hash key values
+     * covered by the two parent shards.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * <code>MergeShards</code> is called when there is a need to reduce the overall capacity of a stream because of
      * excess capacity that is not being used. You must specify the shard to be merged and the adjacent shard for a
@@ -1371,12 +1528,19 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
     /**
      * <p>
      * Merges two adjacent shards in a Kinesis data stream and combines them into a single shard to reduce the stream's
-     * capacity to ingest and transport data. Two shards are considered adjacent if the union of the hash key ranges for
-     * the two shards form a contiguous set with no gaps. For example, if you have two shards, one with a hash key range
-     * of 276...381 and the other with a hash key range of 382...454, then you could merge these two shards into a
-     * single shard that would have a hash key range of 276...454. After the merge, the single child shard receives data
-     * for all hash key values covered by the two parent shards.
+     * capacity to ingest and transport data. This API is only supported for the data streams with the provisioned
+     * capacity mode. Two shards are considered adjacent if the union of the hash key ranges for the two shards form a
+     * contiguous set with no gaps. For example, if you have two shards, one with a hash key range of 276...381 and the
+     * other with a hash key range of 382...454, then you could merge these two shards into a single shard that would
+     * have a hash key range of 276...454. After the merge, the single child shard receives data for all hash key values
+     * covered by the two parent shards.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * <code>MergeShards</code> is called when there is a need to reduce the overall capacity of a stream because of
      * excess capacity that is not being used. You must specify the shard to be merged and the adjacent shard for a
@@ -1448,6 +1612,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * stream for real-time ingestion and subsequent processing, one record at a time. Each shard can support writes up
      * to 1,000 records per second, up to a maximum data write total of 1 MiB per second.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * You must specify the name of the stream that captures, stores, and transports the data; a partition key; and the
      * data blob itself.
@@ -1510,6 +1680,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * stream for real-time ingestion and subsequent processing, one record at a time. Each shard can support writes up
      * to 1,000 records per second, up to a maximum data write total of 1 MiB per second.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * You must specify the name of the stream that captures, stores, and transports the data; a partition key; and the
      * data blob itself.
@@ -1608,6 +1784,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <code>PutRecords</code> request). Use this operation to send data into the stream for data ingestion and
      * processing.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * Each <code>PutRecords</code> request can support up to 500 records. Each record in the request can be as large as
      * 1 MiB, up to a limit of 5 MiB for the entire request, including partition keys. Each shard can support writes up
@@ -1691,6 +1873,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <code>PutRecords</code> request). Use this operation to send data into the stream for data ingestion and
      * processing.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * Each <code>PutRecords</code> request can support up to 500 records. Each record in the request can be as large as
      * 1 MiB, up to a limit of 5 MiB for the entire request, including partition keys. Each shard can support writes up
@@ -1845,6 +2033,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this
      * operation successfully completes.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If you specify a tag that does not exist, it is ignored.
      * </p>
@@ -1866,6 +2060,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * Removes tags from the specified Kinesis data stream. Removed tags are deleted and cannot be recovered after this
      * operation successfully completes.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * If you specify a tag that does not exist, it is ignored.
      * </p>
@@ -1891,8 +2091,15 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Splits a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and
      * transport data. <code>SplitShard</code> is called when there is a need to increase the overall capacity of a
-     * stream because of an expected increase in the volume of data records being ingested.
+     * stream because of an expected increase in the volume of data records being ingested. This API is only supported
+     * for the data streams with the provisioned capacity mode.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * You can also use <code>SplitShard</code> when a shard appears to be approaching its maximum utilization; for
      * example, the producers sending data into the specific shard are suddenly sending more than previously
@@ -1955,8 +2162,15 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Splits a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and
      * transport data. <code>SplitShard</code> is called when there is a need to increase the overall capacity of a
-     * stream because of an expected increase in the volume of data records being ingested.
+     * stream because of an expected increase in the volume of data records being ingested. This API is only supported
+     * for the data streams with the provisioned capacity mode.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * You can also use <code>SplitShard</code> when a shard appears to be approaching its maximum utilization; for
      * example, the producers sending data into the specific shard are suddenly sending more than previously
@@ -2056,6 +2270,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * to the stream are encrypted. After you enable encryption, you can verify that encryption is applied by inspecting
      * the API response from <code>PutRecord</code> or <code>PutRecords</code>.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param startStreamEncryptionRequest
      * @return A Java Future containing the result of the StartStreamEncryption operation returned by the service.
@@ -2086,6 +2306,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * to the stream are encrypted. After you enable encryption, you can verify that encryption is applied by inspecting
      * the API response from <code>PutRecord</code> or <code>PutRecords</code>.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * 
      * @param startStreamEncryptionRequest
      * @param asyncHandler
@@ -2104,6 +2330,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Disables server-side encryption for a specified stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns
      * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis
@@ -2133,6 +2365,12 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
      * <p>
      * Disables server-side encryption for a specified stream.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns
      * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis
@@ -2165,8 +2403,15 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Updates the shard count of the specified stream to the specified number of shards.
+     * Updates the shard count of the specified stream to the specified number of shards. This API is only supported for
+     * the data streams with the provisioned capacity mode.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * Updating the shard count is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns
      * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis
@@ -2238,8 +2483,15 @@ public interface AmazonKinesisAsync extends AmazonKinesis {
 
     /**
      * <p>
-     * Updates the shard count of the specified stream to the specified number of shards.
+     * Updates the shard count of the specified stream to the specified number of shards. This API is only supported for
+     * the data streams with the provisioned capacity mode.
      * </p>
+     * <note>
+     * <p>
+     * When invoking this API, it is recommended you use the <code>StreamARN</code> input parameter rather than the
+     * <code>StreamName</code> input parameter.
+     * </p>
+     * </note>
      * <p>
      * Updating the shard count is an asynchronous operation. Upon receiving the request, Kinesis Data Streams returns
      * immediately and sets the status of the stream to <code>UPDATING</code>. After the update is complete, Kinesis

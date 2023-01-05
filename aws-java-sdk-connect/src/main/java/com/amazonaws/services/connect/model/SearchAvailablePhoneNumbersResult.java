@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,8 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
     private String nextToken;
     /**
      * <p>
-     * A list of available phone numbers that you can claim for your Amazon Connect instance.
+     * A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      */
     private java.util.List<AvailableNumberSummary> availableNumbersList;
@@ -78,10 +79,12 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of available phone numbers that you can claim for your Amazon Connect instance.
+     * A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      * 
-     * @return A list of available phone numbers that you can claim for your Amazon Connect instance.
+     * @return A list of available phone numbers that you can claim to your Amazon Connect instance or traffic
+     *         distribution group.
      */
 
     public java.util.List<AvailableNumberSummary> getAvailableNumbersList() {
@@ -90,11 +93,13 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of available phone numbers that you can claim for your Amazon Connect instance.
+     * A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      * 
      * @param availableNumbersList
-     *        A list of available phone numbers that you can claim for your Amazon Connect instance.
+     *        A list of available phone numbers that you can claim to your Amazon Connect instance or traffic
+     *        distribution group.
      */
 
     public void setAvailableNumbersList(java.util.Collection<AvailableNumberSummary> availableNumbersList) {
@@ -108,7 +113,8 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of available phone numbers that you can claim for your Amazon Connect instance.
+     * A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +123,8 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param availableNumbersList
-     *        A list of available phone numbers that you can claim for your Amazon Connect instance.
+     *        A list of available phone numbers that you can claim to your Amazon Connect instance or traffic
+     *        distribution group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +140,13 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A list of available phone numbers that you can claim for your Amazon Connect instance.
+     * A list of available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      * 
      * @param availableNumbersList
-     *        A list of available phone numbers that you can claim for your Amazon Connect instance.
+     *        A list of available phone numbers that you can claim to your Amazon Connect instance or traffic
+     *        distribution group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child
-     * jobs of array and multi-node parallel (MNP) jobs are not supported.
+     * jobs of array and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      */
     private String resourceArn;
@@ -41,13 +41,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child
-     * jobs of array and multi-node parallel (MNP) jobs are not supported.
+     * jobs of array and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      *        support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs
-     *        for child jobs of array and multi-node parallel (MNP) jobs are not supported.
+     *        for child jobs of array and multi-node parallel (MNP) jobs aren't supported.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -58,12 +58,12 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child
-     * jobs of array and multi-node parallel (MNP) jobs are not supported.
+     * jobs of array and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources
      *         that support tags are compute environments, jobs, job definitions, job queues, and scheduling policies.
-     *         ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.
+     *         ARNs for child jobs of array and multi-node parallel (MNP) jobs aren't supported.
      */
 
     public String getResourceArn() {
@@ -74,13 +74,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      * support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs for child
-     * jobs of array and multi-node parallel (MNP) jobs are not supported.
+     * jobs of array and multi-node parallel (MNP) jobs aren't supported.
      * </p>
      * 
      * @param resourceArn
      *        The Amazon Resource Name (ARN) that identifies the resource that tags are listed for. Batch resources that
      *        support tags are compute environments, jobs, job definitions, job queues, and scheduling policies. ARNs
-     *        for child jobs of array and multi-node parallel (MNP) jobs are not supported.
+     *        for child jobs of array and multi-node parallel (MNP) jobs aren't supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

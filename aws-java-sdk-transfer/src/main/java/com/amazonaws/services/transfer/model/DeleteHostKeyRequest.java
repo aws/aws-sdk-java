@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class DeleteHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are deleting.
+     * The identifier of the server that contains the host key that you are deleting.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * The ID of the host key that you are deleting.
+     * The identifier of the host key that you are deleting.
      * </p>
      */
     private String hostKeyId;
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are deleting.
+     * The identifier of the server that contains the host key that you are deleting.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host key that you are deleting.
+     *        The identifier of the server that contains the host key that you are deleting.
      */
 
     public void setServerId(String serverId) {
@@ -53,10 +53,10 @@ public class DeleteHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are deleting.
+     * The identifier of the server that contains the host key that you are deleting.
      * </p>
      * 
-     * @return Provide the ID of the server that contains the host key that you are deleting.
+     * @return The identifier of the server that contains the host key that you are deleting.
      */
 
     public String getServerId() {
@@ -65,11 +65,11 @@ public class DeleteHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are deleting.
+     * The identifier of the server that contains the host key that you are deleting.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host key that you are deleting.
+     *        The identifier of the server that contains the host key that you are deleting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DeleteHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the host key that you are deleting.
+     * The identifier of the host key that you are deleting.
      * </p>
      * 
      * @param hostKeyId
-     *        The ID of the host key that you are deleting.
+     *        The identifier of the host key that you are deleting.
      */
 
     public void setHostKeyId(String hostKeyId) {
@@ -93,10 +93,10 @@ public class DeleteHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the host key that you are deleting.
+     * The identifier of the host key that you are deleting.
      * </p>
      * 
-     * @return The ID of the host key that you are deleting.
+     * @return The identifier of the host key that you are deleting.
      */
 
     public String getHostKeyId() {
@@ -105,11 +105,11 @@ public class DeleteHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The ID of the host key that you are deleting.
+     * The identifier of the host key that you are deleting.
      * </p>
      * 
      * @param hostKeyId
-     *        The ID of the host key that you are deleting.
+     *        The identifier of the host key that you are deleting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -131,6 +131,12 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private Integer minimumHealthyPercent;
+    /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     */
+    private DeploymentAlarms alarms;
 
     /**
      * <note>
@@ -757,6 +763,46 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     * 
+     * @param alarms
+     *        Information about the CloudWatch alarms.
+     */
+
+    public void setAlarms(DeploymentAlarms alarms) {
+        this.alarms = alarms;
+    }
+
+    /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     * 
+     * @return Information about the CloudWatch alarms.
+     */
+
+    public DeploymentAlarms getAlarms() {
+        return this.alarms;
+    }
+
+    /**
+     * <p>
+     * Information about the CloudWatch alarms.
+     * </p>
+     * 
+     * @param alarms
+     *        Information about the CloudWatch alarms.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeploymentConfiguration withAlarms(DeploymentAlarms alarms) {
+        setAlarms(alarms);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -773,7 +819,9 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
         if (getMaximumPercent() != null)
             sb.append("MaximumPercent: ").append(getMaximumPercent()).append(",");
         if (getMinimumHealthyPercent() != null)
-            sb.append("MinimumHealthyPercent: ").append(getMinimumHealthyPercent());
+            sb.append("MinimumHealthyPercent: ").append(getMinimumHealthyPercent()).append(",");
+        if (getAlarms() != null)
+            sb.append("Alarms: ").append(getAlarms());
         sb.append("}");
         return sb.toString();
     }
@@ -800,6 +848,10 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getMinimumHealthyPercent() != null && other.getMinimumHealthyPercent().equals(this.getMinimumHealthyPercent()) == false)
             return false;
+        if (other.getAlarms() == null ^ this.getAlarms() == null)
+            return false;
+        if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false)
+            return false;
         return true;
     }
 
@@ -811,6 +863,7 @@ public class DeploymentConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getDeploymentCircuitBreaker() == null) ? 0 : getDeploymentCircuitBreaker().hashCode());
         hashCode = prime * hashCode + ((getMaximumPercent() == null) ? 0 : getMaximumPercent().hashCode());
         hashCode = prime * hashCode + ((getMinimumHealthyPercent() == null) ? 0 : getMinimumHealthyPercent().hashCode());
+        hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode());
         return hashCode;
     }
 

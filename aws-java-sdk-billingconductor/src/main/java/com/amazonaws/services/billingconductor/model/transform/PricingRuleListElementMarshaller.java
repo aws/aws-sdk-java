@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,10 @@ public class PricingRuleListElementMarshaller {
             .marshallLocationName("CreationTime").build();
     private static final MarshallingInfo<Long> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").build();
+    private static final MarshallingInfo<String> BILLINGENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BillingEntity").build();
+    private static final MarshallingInfo<StructuredPojo> TIERING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Tiering").build();
 
     private static final PricingRuleListElementMarshaller instance = new PricingRuleListElementMarshaller();
 
@@ -74,6 +78,8 @@ public class PricingRuleListElementMarshaller {
             protocolMarshaller.marshall(pricingRuleListElement.getAssociatedPricingPlanCount(), ASSOCIATEDPRICINGPLANCOUNT_BINDING);
             protocolMarshaller.marshall(pricingRuleListElement.getCreationTime(), CREATIONTIME_BINDING);
             protocolMarshaller.marshall(pricingRuleListElement.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
+            protocolMarshaller.marshall(pricingRuleListElement.getBillingEntity(), BILLINGENTITY_BINDING);
+            protocolMarshaller.marshall(pricingRuleListElement.getTiering(), TIERING_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

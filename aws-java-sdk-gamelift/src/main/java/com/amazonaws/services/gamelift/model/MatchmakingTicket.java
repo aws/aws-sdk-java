@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Ticket generated to track the progress of a matchmaking request. Each ticket is uniquely identified by a ticket ID,
- * supplied by the requester, when creating a matchmaking request with <a>StartMatchmaking</a>. Tickets can be retrieved
- * by calling <a>DescribeMatchmaking</a> with the ticket ID.
+ * supplied by the requester, when creating a matchmaking request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/MatchmakingTicket" target="_top">AWS API
@@ -38,8 +37,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     private String ticketId;
     /**
      * <p>
-     * Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking configurations determine
-     * how players are grouped into a match and how a new game session is created for the match.
+     * Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how
+     * players are grouped into a match and how a new game session is created for the match.
      * </p>
      */
     private String configurationName;
@@ -67,9 +66,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
-     * acceptance requirement.
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is
+     * used only with requests that use a matchmaking configuration with a player acceptance requirement.
      * </p>
      * </li>
      * <li>
@@ -91,8 +89,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     * <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -132,8 +130,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     private java.util.Date startTime;
     /**
      * <p>
-     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).
      * </p>
      */
@@ -149,9 +147,10 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
     private java.util.List<Player> players;
     /**
      * <p>
-     * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
-     * FlexMatch is being used without GameLift hosting.
+     * Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game
+     * session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a
+     * href=
+     * "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .
      * </p>
      */
     private GameSessionConnectionInfo gameSessionConnectionInfo;
@@ -205,13 +204,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking configurations determine
-     * how players are grouped into a match and how a new game session is created for the match.
+     * Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how
+     * players are grouped into a match and how a new game session is created for the match.
      * </p>
      * 
      * @param configurationName
-     *        Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking configurations
-     *        determine how players are grouped into a match and how a new game session is created for the match.
+     *        Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine
+     *        how players are grouped into a match and how a new game session is created for the match.
      */
 
     public void setConfigurationName(String configurationName) {
@@ -220,12 +219,12 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking configurations determine
-     * how players are grouped into a match and how a new game session is created for the match.
+     * Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how
+     * players are grouped into a match and how a new game session is created for the match.
      * </p>
      * 
-     * @return Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking configurations
-     *         determine how players are grouped into a match and how a new game session is created for the match.
+     * @return Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine
+     *         how players are grouped into a match and how a new game session is created for the match.
      */
 
     public String getConfigurationName() {
@@ -234,13 +233,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking configurations determine
-     * how players are grouped into a match and how a new game session is created for the match.
+     * Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine how
+     * players are grouped into a match and how a new game session is created for the match.
      * </p>
      * 
      * @param configurationName
-     *        Name of the <a>MatchmakingConfiguration</a> that is used with this ticket. Matchmaking configurations
-     *        determine how players are grouped into a match and how a new game session is created for the match.
+     *        Name of the matchmaking configuration that is used with this ticket. Matchmaking configurations determine
+     *        how players are grouped into a match and how a new game session is created for the match.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,9 +314,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
-     * acceptance requirement.
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is
+     * used only with requests that use a matchmaking configuration with a player acceptance requirement.
      * </p>
      * </li>
      * <li>
@@ -339,8 +337,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     * <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -372,9 +370,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     *        <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
-     *        player acceptance requirement.
+     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status
+     *        is used only with requests that use a matchmaking configuration with a player acceptance requirement.
      *        </p>
      *        </li>
      *        <li>
@@ -396,8 +393,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     *        <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     *        <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      *        </p>
      *        </li>
      *        <li>
@@ -436,9 +433,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
-     * acceptance requirement.
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is
+     * used only with requests that use a matchmaking configuration with a player acceptance requirement.
      * </p>
      * </li>
      * <li>
@@ -460,8 +456,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     * <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -492,9 +488,9 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     *         <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
-     *         player acceptance requirement.
+     *         <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This
+     *         status is used only with requests that use a matchmaking configuration with a player acceptance
+     *         requirement.
      *         </p>
      *         </li>
      *         <li>
@@ -516,8 +512,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *         </li>
      *         <li>
      *         <p>
-     *         <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     *         <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     *         <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     *         <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      *         </p>
      *         </li>
      *         <li>
@@ -556,9 +552,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
-     * acceptance requirement.
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is
+     * used only with requests that use a matchmaking configuration with a player acceptance requirement.
      * </p>
      * </li>
      * <li>
@@ -580,8 +575,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     * <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -613,9 +608,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     *        <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
-     *        player acceptance requirement.
+     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status
+     *        is used only with requests that use a matchmaking configuration with a player acceptance requirement.
      *        </p>
      *        </li>
      *        <li>
@@ -637,8 +631,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     *        <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     *        <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      *        </p>
      *        </li>
      *        <li>
@@ -679,9 +673,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     * <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a player
-     * acceptance requirement.
+     * <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status is
+     * used only with requests that use a matchmaking configuration with a player acceptance requirement.
      * </p>
      * </li>
      * <li>
@@ -703,8 +696,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      * </li>
      * <li>
      * <p>
-     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     * <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     * <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     * <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      * </p>
      * </li>
      * <li>
@@ -736,9 +729,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match (see
-     *        <a>AcceptMatch</a>). This status is used only with requests that use a matchmaking configuration with a
-     *        player acceptance requirement.
+     *        <b>REQUIRES_ACCEPTANCE</b> -- A match has been proposed and the players must accept the match. This status
+     *        is used only with requests that use a matchmaking configuration with a player acceptance requirement.
      *        </p>
      *        </li>
      *        <li>
@@ -760,8 +752,8 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
      *        </li>
      *        <li>
      *        <p>
-     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a call to
-     *        <a>StopMatchmaking</a> or a proposed match that one or more players failed to accept.
+     *        <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result of a
+     *        <code>StopMatchmaking</code> operation or a proposed match that one or more players failed to accept.
      *        </p>
      *        </li>
      *        <li>
@@ -919,14 +911,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param endTime
-     *        Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *        Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
+     *        timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
      *        <code>"1469498468.057"</code>).
      */
 
@@ -936,13 +928,13 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     *         cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * @return Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
+     *         timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
      *         <code>"1469498468.057"</code>).
      */
 
@@ -952,14 +944,14 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     * cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     * Time stamp indicating when the matchmaking request stopped being processed due to successful completion, timeout,
+     * or cancellation. Format is a number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param endTime
-     *        Time stamp indicating when this matchmaking request stopped being processed due to success, failure, or
-     *        cancellation. Format is a number expressed in Unix time as milliseconds (for example
+     *        Time stamp indicating when the matchmaking request stopped being processed due to successful completion,
+     *        timeout, or cancellation. Format is a number expressed in Unix time as milliseconds (for example
      *        <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1065,15 +1057,17 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
-     * FlexMatch is being used without GameLift hosting.
+     * Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game
+     * session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a
+     * href=
+     * "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .
      * </p>
      * 
      * @param gameSessionConnectionInfo
-     *        Identifier and connection information of the game session created for the match. This information is added
-     *        to the ticket only after the matchmaking request has been successfully completed. This parameter is not
-     *        set when FlexMatch is being used without GameLift hosting.
+     *        Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new
+     *        game session for it. This information is added to the matchmaking ticket, which you can be retrieve by
+     *        calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">
+     *        DescribeMatchmaking</a> .
      */
 
     public void setGameSessionConnectionInfo(GameSessionConnectionInfo gameSessionConnectionInfo) {
@@ -1082,14 +1076,16 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
-     * FlexMatch is being used without GameLift hosting.
+     * Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game
+     * session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a
+     * href=
+     * "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .
      * </p>
      * 
-     * @return Identifier and connection information of the game session created for the match. This information is
-     *         added to the ticket only after the matchmaking request has been successfully completed. This parameter is
-     *         not set when FlexMatch is being used without GameLift hosting.
+     * @return Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new
+     *         game session for it. This information is added to the matchmaking ticket, which you can be retrieve by
+     *         calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">
+     *         DescribeMatchmaking</a> .
      */
 
     public GameSessionConnectionInfo getGameSessionConnectionInfo() {
@@ -1098,15 +1094,17 @@ public class MatchmakingTicket implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Identifier and connection information of the game session created for the match. This information is added to the
-     * ticket only after the matchmaking request has been successfully completed. This parameter is not set when
-     * FlexMatch is being used without GameLift hosting.
+     * Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new game
+     * session for it. This information is added to the matchmaking ticket, which you can be retrieve by calling <a
+     * href=
+     * "https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">DescribeMatchmaking</a> .
      * </p>
      * 
      * @param gameSessionConnectionInfo
-     *        Identifier and connection information of the game session created for the match. This information is added
-     *        to the ticket only after the matchmaking request has been successfully completed. This parameter is not
-     *        set when FlexMatch is being used without GameLift hosting.
+     *        Connection information for a new game session. Once a match is made, the FlexMatch engine creates a new
+     *        game session for it. This information is added to the matchmaking ticket, which you can be retrieve by
+     *        calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeMatchmaking.html">
+     *        DescribeMatchmaking</a> .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

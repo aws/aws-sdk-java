@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1065,6 +1065,45 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon
+     * Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     * 
+     * @param createMetricAttributionRequest
+     * @return A Java Future containing the result of the CreateMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsync.CreateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMetricAttributionResult> createMetricAttributionAsync(CreateMetricAttributionRequest createMetricAttributionRequest);
+
+    /**
+     * <p>
+     * Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon
+     * Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     * 
+     * @param createMetricAttributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.CreateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMetricAttributionResult> createMetricAttributionAsync(CreateMetricAttributionRequest createMetricAttributionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMetricAttributionRequest, CreateMetricAttributionResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for
      * a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
@@ -1968,6 +2007,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Deletes a metric attribution.
+     * </p>
+     * 
+     * @param deleteMetricAttributionRequest
+     * @return A Java Future containing the result of the DeleteMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DeleteMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMetricAttributionResult> deleteMetricAttributionAsync(DeleteMetricAttributionRequest deleteMetricAttributionRequest);
+
+    /**
+     * <p>
+     * Deletes a metric attribution.
+     * </p>
+     * 
+     * @param deleteMetricAttributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DeleteMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteMetricAttributionResult> deleteMetricAttributionAsync(DeleteMetricAttributionRequest deleteMetricAttributionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricAttributionRequest, DeleteMetricAttributionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deactivates and removes a recommender. A deleted recommender can no longer be specified in a <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
      * request.
@@ -2489,6 +2559,39 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest describeFilterRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFilterRequest, DescribeFilterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a metric attribution.
+     * </p>
+     * 
+     * @param describeMetricAttributionRequest
+     * @return A Java Future containing the result of the DescribeMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DescribeMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMetricAttributionResult> describeMetricAttributionAsync(
+            DescribeMetricAttributionRequest describeMetricAttributionRequest);
+
+    /**
+     * <p>
+     * Describes a metric attribution.
+     * </p>
+     * 
+     * @param describeMetricAttributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DescribeMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeMetricAttributionResult> describeMetricAttributionAsync(
+            DescribeMetricAttributionRequest describeMetricAttributionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeMetricAttributionRequest, DescribeMetricAttributionResult> asyncHandler);
 
     /**
      * <p>
@@ -3121,6 +3224,72 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Lists the metrics for the metric attribution.
+     * </p>
+     * 
+     * @param listMetricAttributionMetricsRequest
+     * @return A Java Future containing the result of the ListMetricAttributionMetrics operation returned by the
+     *         service.
+     * @sample AmazonPersonalizeAsync.ListMetricAttributionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetricAttributionMetricsResult> listMetricAttributionMetricsAsync(
+            ListMetricAttributionMetricsRequest listMetricAttributionMetricsRequest);
+
+    /**
+     * <p>
+     * Lists the metrics for the metric attribution.
+     * </p>
+     * 
+     * @param listMetricAttributionMetricsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMetricAttributionMetrics operation returned by the
+     *         service.
+     * @sample AmazonPersonalizeAsyncHandler.ListMetricAttributionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetricAttributionMetricsResult> listMetricAttributionMetricsAsync(
+            ListMetricAttributionMetricsRequest listMetricAttributionMetricsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMetricAttributionMetricsRequest, ListMetricAttributionMetricsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists metric attributions.
+     * </p>
+     * 
+     * @param listMetricAttributionsRequest
+     * @return A Java Future containing the result of the ListMetricAttributions operation returned by the service.
+     * @sample AmazonPersonalizeAsync.ListMetricAttributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetricAttributionsResult> listMetricAttributionsAsync(ListMetricAttributionsRequest listMetricAttributionsRequest);
+
+    /**
+     * <p>
+     * Lists metric attributions.
+     * </p>
+     * 
+     * @param listMetricAttributionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListMetricAttributions operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.ListMetricAttributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListMetricAttributionsResult> listMetricAttributionsAsync(ListMetricAttributionsRequest listMetricAttributionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListMetricAttributionsRequest, ListMetricAttributionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's
      * Amazon Resource Name (ARN).
      * </p>
@@ -3600,6 +3769,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest updateCampaignRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateCampaignRequest, UpdateCampaignResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a metric attribution.
+     * </p>
+     * 
+     * @param updateMetricAttributionRequest
+     * @return A Java Future containing the result of the UpdateMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsync.UpdateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMetricAttributionResult> updateMetricAttributionAsync(UpdateMetricAttributionRequest updateMetricAttributionRequest);
+
+    /**
+     * <p>
+     * Updates a metric attribution.
+     * </p>
+     * 
+     * @param updateMetricAttributionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateMetricAttribution operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.UpdateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateMetricAttributionResult> updateMetricAttributionAsync(UpdateMetricAttributionRequest updateMetricAttributionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateMetricAttributionRequest, UpdateMetricAttributionResult> asyncHandler);
 
     /**
      * <p>

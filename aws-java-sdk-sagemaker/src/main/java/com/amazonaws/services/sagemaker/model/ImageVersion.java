@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
     private String failureReason;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      */
     private String imageArn;
@@ -153,11 +153,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      * 
      * @param imageArn
-     *        The Amazon Resource Name (ARN) of the image the version is based on.
+     *        The ARN of the image the version is based on.
      */
 
     public void setImageArn(String imageArn) {
@@ -166,10 +166,10 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image the version is based on.
+     * @return The ARN of the image the version is based on.
      */
 
     public String getImageArn() {
@@ -178,11 +178,11 @@ public class ImageVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      * 
      * @param imageArn
-     *        The Amazon Resource Name (ARN) of the image the version is based on.
+     *        The ARN of the image the version is based on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,7 @@ public class LogPublishingOptionsStatus implements Serializable, Cloneable, Stru
     private java.util.Map<String, LogPublishingOption> options;
     /**
      * <p>
-     * The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the log publishing options for the domain.
      * </p>
      */
     private OptionStatus status;
@@ -109,13 +108,11 @@ public class LogPublishingOptionsStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the log publishing options for the domain.
      * </p>
      * 
      * @param status
-     *        The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status
-     *        information that's included.
+     *        The status of the log publishing options for the domain.
      */
 
     public void setStatus(OptionStatus status) {
@@ -124,12 +121,10 @@ public class LogPublishingOptionsStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the log publishing options for the domain.
      * </p>
      * 
-     * @return The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status
-     *         information that's included.
+     * @return The status of the log publishing options for the domain.
      */
 
     public OptionStatus getStatus() {
@@ -138,13 +133,11 @@ public class LogPublishingOptionsStatus implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the log publishing options for the domain.
      * </p>
      * 
      * @param status
-     *        The status of the log publishing options for the domain. See <code>OptionStatus</code> for the status
-     *        information that's included.
+     *        The status of the log publishing options for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

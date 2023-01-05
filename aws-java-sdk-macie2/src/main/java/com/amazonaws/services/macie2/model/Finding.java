@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,13 +57,13 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
-     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
+     * sensitive data findings are considered unique.
      * </p>
      */
     private Long count;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.
      * </p>
      */
     private java.util.Date createdAt;
@@ -137,9 +137,9 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
-     * considered new (unique) because they derive from individual classification jobs.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive
+     * data findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -352,13 +352,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
-     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
+     * sensitive data findings are considered unique.
      * </p>
      * 
      * @param count
      *        The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
-     *        sensitive data findings are considered new (unique) because they derive from individual classification
-     *        jobs.
+     *        sensitive data findings are considered unique.
      */
 
     public void setCount(Long count) {
@@ -368,12 +367,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
-     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
+     * sensitive data findings are considered unique.
      * </p>
      * 
      * @return The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
-     *         sensitive data findings are considered new (unique) because they derive from individual classification
-     *         jobs.
+     *         sensitive data findings are considered unique.
      */
 
     public Long getCount() {
@@ -383,13 +381,12 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
-     * sensitive data findings are considered new (unique) because they derive from individual classification jobs.
+     * sensitive data findings are considered unique.
      * </p>
      * 
      * @param count
      *        The total number of occurrences of the finding. For sensitive data findings, this value is always 1. All
-     *        sensitive data findings are considered new (unique) because they derive from individual classification
-     *        jobs.
+     *        sensitive data findings are considered unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -400,11 +397,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -413,10 +410,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.
      */
 
     public java.util.Date getCreatedAt() {
@@ -425,11 +422,11 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.
      * </p>
      * 
      * @param createdAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the finding was created.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie created the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -925,15 +922,15 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
-     * considered new (unique) because they derive from individual classification jobs.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive
+     * data findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new.
      * </p>
      * 
      * @param updatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive
-     *        data findings, this value is the same as the value for the createdAt property. All sensitive data findings
-     *        are considered new (unique) because they derive from individual classification jobs.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For
+     *        sensitive data findings, this value is the same as the value for the createdAt property. All sensitive
+     *        data findings are considered new.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -942,14 +939,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
-     * considered new (unique) because they derive from individual classification jobs.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive
+     * data findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive
-     *         data findings, this value is the same as the value for the createdAt property. All sensitive data
-     *         findings are considered new (unique) because they derive from individual classification jobs.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For
+     *         sensitive data findings, this value is the same as the value for the createdAt property. All sensitive
+     *         data findings are considered new.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -958,15 +955,15 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive data
-     * findings, this value is the same as the value for the createdAt property. All sensitive data findings are
-     * considered new (unique) because they derive from individual classification jobs.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For sensitive
+     * data findings, this value is the same as the value for the createdAt property. All sensitive data findings are
+     * considered new.
      * </p>
      * 
      * @param updatedAt
-     *        The date and time, in UTC and extended ISO 8601 format, when the finding was last updated. For sensitive
-     *        data findings, this value is the same as the value for the createdAt property. All sensitive data findings
-     *        are considered new (unique) because they derive from individual classification jobs.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last updated the finding. For
+     *        sensitive data findings, this value is the same as the value for the createdAt property. All sensitive
+     *        data findings are considered new.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

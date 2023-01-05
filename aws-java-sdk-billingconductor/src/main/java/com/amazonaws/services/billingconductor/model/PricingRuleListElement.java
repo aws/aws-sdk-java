@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,16 +79,29 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
     private Long associatedPricingPlanCount;
     /**
      * <p>
-     * The time the pricing rule was created.
+     * The time when the pricing rule was created.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The most recent time the pricing rule was modified.
+     * The most recent time when the pricing rule was modified.
      * </p>
      */
     private Long lastModifiedTime;
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     */
+    private String billingEntity;
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     */
+    private Tiering tiering;
 
     /**
      * <p>
@@ -456,11 +469,11 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time the pricing rule was created.
+     * The time when the pricing rule was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the pricing rule was created.
+     *        The time when the pricing rule was created.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -469,10 +482,10 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time the pricing rule was created.
+     * The time when the pricing rule was created.
      * </p>
      * 
-     * @return The time the pricing rule was created.
+     * @return The time when the pricing rule was created.
      */
 
     public Long getCreationTime() {
@@ -481,11 +494,11 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The time the pricing rule was created.
+     * The time when the pricing rule was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the pricing rule was created.
+     *        The time when the pricing rule was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -496,11 +509,11 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The most recent time the pricing rule was modified.
+     * The most recent time when the pricing rule was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the pricing rule was modified.
+     *        The most recent time when the pricing rule was modified.
      */
 
     public void setLastModifiedTime(Long lastModifiedTime) {
@@ -509,10 +522,10 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The most recent time the pricing rule was modified.
+     * The most recent time when the pricing rule was modified.
      * </p>
      * 
-     * @return The most recent time the pricing rule was modified.
+     * @return The most recent time when the pricing rule was modified.
      */
 
     public Long getLastModifiedTime() {
@@ -521,16 +534,102 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The most recent time the pricing rule was modified.
+     * The most recent time when the pricing rule was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the pricing rule was modified.
+     *        The most recent time when the pricing rule was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PricingRuleListElement withLastModifiedTime(Long lastModifiedTime) {
         setLastModifiedTime(lastModifiedTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param billingEntity
+     *        The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     *        services via Amazon Web Services Marketplace.
+     */
+
+    public void setBillingEntity(String billingEntity) {
+        this.billingEntity = billingEntity;
+    }
+
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @return The seller of services provided by Amazon Web Services, their affiliates, or third-party providers
+     *         selling services via Amazon Web Services Marketplace.
+     */
+
+    public String getBillingEntity() {
+        return this.billingEntity;
+    }
+
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param billingEntity
+     *        The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     *        services via Amazon Web Services Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PricingRuleListElement withBillingEntity(String billingEntity) {
+        setBillingEntity(billingEntity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     */
+
+    public void setTiering(Tiering tiering) {
+        this.tiering = tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @return The set of tiering configurations for the pricing rule.
+     */
+
+    public Tiering getTiering() {
+        return this.tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PricingRuleListElement withTiering(Tiering tiering) {
+        setTiering(tiering);
         return this;
     }
 
@@ -565,7 +664,11 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getBillingEntity() != null)
+            sb.append("BillingEntity: ").append(getBillingEntity()).append(",");
+        if (getTiering() != null)
+            sb.append("Tiering: ").append(getTiering());
         sb.append("}");
         return sb.toString();
     }
@@ -620,6 +723,14 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getBillingEntity() == null ^ this.getBillingEntity() == null)
+            return false;
+        if (other.getBillingEntity() != null && other.getBillingEntity().equals(this.getBillingEntity()) == false)
+            return false;
+        if (other.getTiering() == null ^ this.getTiering() == null)
+            return false;
+        if (other.getTiering() != null && other.getTiering().equals(this.getTiering()) == false)
+            return false;
         return true;
     }
 
@@ -638,6 +749,8 @@ public class PricingRuleListElement implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getAssociatedPricingPlanCount() == null) ? 0 : getAssociatedPricingPlanCount().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getBillingEntity() == null) ? 0 : getBillingEntity().hashCode());
+        hashCode = prime * hashCode + ((getTiering() == null) ? 0 : getTiering().hashCode());
         return hashCode;
     }
 

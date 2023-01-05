@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
     private String locationUri;
     /**
      * <p>
-     * The access key (for example, a user name) required to authenticate with the object storage server.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      */
     private String accessKey;
@@ -53,7 +53,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
     private Integer serverPort;
     /**
      * <p>
-     * The protocol that your object storage server uses to communicate.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      */
     private String serverProtocol;
@@ -69,6 +69,12 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     */
+    private java.nio.ByteBuffer serverCertificate;
 
     /**
      * <p>
@@ -152,11 +158,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The access key (for example, a user name) required to authenticate with the object storage server.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      * 
      * @param accessKey
-     *        The access key (for example, a user name) required to authenticate with the object storage server.
+     *        The access key (for example, a user name) required to authenticate with the object storage system.
      */
 
     public void setAccessKey(String accessKey) {
@@ -165,10 +171,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The access key (for example, a user name) required to authenticate with the object storage server.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      * 
-     * @return The access key (for example, a user name) required to authenticate with the object storage server.
+     * @return The access key (for example, a user name) required to authenticate with the object storage system.
      */
 
     public String getAccessKey() {
@@ -177,11 +183,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The access key (for example, a user name) required to authenticate with the object storage server.
+     * The access key (for example, a user name) required to authenticate with the object storage system.
      * </p>
      * 
      * @param accessKey
-     *        The access key (for example, a user name) required to authenticate with the object storage server.
+     *        The access key (for example, a user name) required to authenticate with the object storage system.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,11 +238,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that your object storage server uses to communicate.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that your object storage server uses to communicate.
+     *        The protocol that your object storage system uses to communicate.
      * @see ObjectStorageServerProtocol
      */
 
@@ -246,10 +252,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that your object storage server uses to communicate.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
-     * @return The protocol that your object storage server uses to communicate.
+     * @return The protocol that your object storage system uses to communicate.
      * @see ObjectStorageServerProtocol
      */
 
@@ -259,11 +265,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that your object storage server uses to communicate.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that your object storage server uses to communicate.
+     *        The protocol that your object storage system uses to communicate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectStorageServerProtocol
      */
@@ -275,11 +281,11 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The protocol that your object storage server uses to communicate.
+     * The protocol that your object storage system uses to communicate.
      * </p>
      * 
      * @param serverProtocol
-     *        The protocol that your object storage server uses to communicate.
+     *        The protocol that your object storage system uses to communicate.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectStorageServerProtocol
      */
@@ -400,6 +406,73 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     */
+
+    public void setServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        this.serverCertificate = serverCertificate;
+    }
+
+    /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     * <p>
+     * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
+     * using {@link java.nio.ByteBuffer#asReadOnlyBuffer()} to create a read-only view of the buffer with an independent
+     * {@code position}, and calling {@code get} methods on this rather than directly on the returned {@code ByteBuffer}.
+     * Doing so will ensure that anyone else using the {@code ByteBuffer} will not be affected by changes to the
+     * {@code position}.
+     * </p>
+     * 
+     * @return The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     */
+
+    public java.nio.ByteBuffer getServerCertificate() {
+        return this.serverCertificate;
+    }
+
+    /**
+     * <p>
+     * The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * <p>
+     * Warning: ByteBuffers returned by the SDK are mutable. Changes to the content or position of the byte buffer will
+     * be seen by all objects that have a reference to this object. It is recommended to call ByteBuffer.duplicate() or
+     * ByteBuffer.asReadOnlyBuffer() before using or reading from the buffer. This behavior will be changed in a future
+     * major version of the SDK.
+     * </p>
+     * 
+     * @param serverCertificate
+     *        The self-signed certificate that DataSync uses to securely authenticate with your object storage system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeLocationObjectStorageResult withServerCertificate(java.nio.ByteBuffer serverCertificate) {
+        setServerCertificate(serverCertificate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -424,7 +497,9 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
         if (getAgentArns() != null)
             sb.append("AgentArns: ").append(getAgentArns()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getServerCertificate() != null)
+            sb.append("ServerCertificate: ").append(getServerCertificate());
         sb.append("}");
         return sb.toString();
     }
@@ -467,6 +542,10 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getServerCertificate() == null ^ this.getServerCertificate() == null)
+            return false;
+        if (other.getServerCertificate() != null && other.getServerCertificate().equals(this.getServerCertificate()) == false)
+            return false;
         return true;
     }
 
@@ -482,6 +561,7 @@ public class DescribeLocationObjectStorageResult extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getServerProtocol() == null) ? 0 : getServerProtocol().hashCode());
         hashCode = prime * hashCode + ((getAgentArns() == null) ? 0 : getAgentArns().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getServerCertificate() == null) ? 0 : getServerCertificate().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,13 +38,30 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
     private String categoryName;
     /**
      * <p>
-     * Rules define a Call Analytics category. When creating a new Call Analytics category, you must create between 1
-     * and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
-     * For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the
-     * last 30 seconds of the call.
+     * Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for
+     * that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you
+     * can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of
+     * the call.
      * </p>
      */
     private java.util.List<Rule> rules;
+    /**
+     * <p>
+     * Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.
+     * </p>
+     * <p>
+     * Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type
+     * cannot be applied to streaming (real-time) transcriptions.
+     * </p>
+     * <p>
+     * Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input
+     * type cannot be applied to batch (post-call) transcriptions.
+     * </p>
+     * <p>
+     * If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * </p>
+     */
+    private String inputType;
 
     /**
      * <p>
@@ -118,16 +135,16 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Rules define a Call Analytics category. When creating a new Call Analytics category, you must create between 1
-     * and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
-     * For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the
-     * last 30 seconds of the call.
+     * Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for
+     * that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you
+     * can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of
+     * the call.
      * </p>
      * 
-     * @return Rules define a Call Analytics category. When creating a new Call Analytics category, you must create
-     *         between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the
-     *         attributes of a call. For example, you can choose a sentiment filter that detects if a customer's
-     *         sentiment was positive during the last 30 seconds of the call.
+     * @return Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20
+     *         rules for that category. For each rule, you specify a filter you want applied to the attributes of a
+     *         call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive
+     *         during the last 30 seconds of the call.
      */
 
     public java.util.List<Rule> getRules() {
@@ -136,17 +153,17 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Rules define a Call Analytics category. When creating a new Call Analytics category, you must create between 1
-     * and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
-     * For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the
-     * last 30 seconds of the call.
+     * Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for
+     * that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you
+     * can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of
+     * the call.
      * </p>
      * 
      * @param rules
-     *        Rules define a Call Analytics category. When creating a new Call Analytics category, you must create
-     *        between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the
-     *        attributes of a call. For example, you can choose a sentiment filter that detects if a customer's
-     *        sentiment was positive during the last 30 seconds of the call.
+     *        Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20
+     *        rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
+     *        For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during
+     *        the last 30 seconds of the call.
      */
 
     public void setRules(java.util.Collection<Rule> rules) {
@@ -160,10 +177,10 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Rules define a Call Analytics category. When creating a new Call Analytics category, you must create between 1
-     * and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
-     * For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the
-     * last 30 seconds of the call.
+     * Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for
+     * that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you
+     * can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of
+     * the call.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -172,10 +189,10 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
      * </p>
      * 
      * @param rules
-     *        Rules define a Call Analytics category. When creating a new Call Analytics category, you must create
-     *        between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the
-     *        attributes of a call. For example, you can choose a sentiment filter that detects if a customer's
-     *        sentiment was positive during the last 30 seconds of the call.
+     *        Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20
+     *        rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
+     *        For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during
+     *        the last 30 seconds of the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,22 +208,169 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Rules define a Call Analytics category. When creating a new Call Analytics category, you must create between 1
-     * and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
-     * For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the
-     * last 30 seconds of the call.
+     * Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for
+     * that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you
+     * can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of
+     * the call.
      * </p>
      * 
      * @param rules
-     *        Rules define a Call Analytics category. When creating a new Call Analytics category, you must create
-     *        between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the
-     *        attributes of a call. For example, you can choose a sentiment filter that detects if a customer's
-     *        sentiment was positive during the last 30 seconds of the call.
+     *        Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20
+     *        rules for that category. For each rule, you specify a filter you want applied to the attributes of a call.
+     *        For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during
+     *        the last 30 seconds of the call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateCallAnalyticsCategoryRequest withRules(java.util.Collection<Rule> rules) {
         setRules(rules);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.
+     * </p>
+     * <p>
+     * Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type
+     * cannot be applied to streaming (real-time) transcriptions.
+     * </p>
+     * <p>
+     * Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input
+     * type cannot be applied to batch (post-call) transcriptions.
+     * </p>
+     * <p>
+     * If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * </p>
+     * 
+     * @param inputType
+     *        Choose whether you want to create a streaming or a batch category for your Call Analytics
+     *        transcription.</p>
+     *        <p>
+     *        Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this
+     *        input type cannot be applied to streaming (real-time) transcriptions.
+     *        </p>
+     *        <p>
+     *        Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this
+     *        input type cannot be applied to batch (post-call) transcriptions.
+     *        </p>
+     *        <p>
+     *        If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * @see InputType
+     */
+
+    public void setInputType(String inputType) {
+        this.inputType = inputType;
+    }
+
+    /**
+     * <p>
+     * Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.
+     * </p>
+     * <p>
+     * Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type
+     * cannot be applied to streaming (real-time) transcriptions.
+     * </p>
+     * <p>
+     * Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input
+     * type cannot be applied to batch (post-call) transcriptions.
+     * </p>
+     * <p>
+     * If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * </p>
+     * 
+     * @return Choose whether you want to create a streaming or a batch category for your Call Analytics
+     *         transcription.</p>
+     *         <p>
+     *         Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this
+     *         input type cannot be applied to streaming (real-time) transcriptions.
+     *         </p>
+     *         <p>
+     *         Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this
+     *         input type cannot be applied to batch (post-call) transcriptions.
+     *         </p>
+     *         <p>
+     *         If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * @see InputType
+     */
+
+    public String getInputType() {
+        return this.inputType;
+    }
+
+    /**
+     * <p>
+     * Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.
+     * </p>
+     * <p>
+     * Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type
+     * cannot be applied to streaming (real-time) transcriptions.
+     * </p>
+     * <p>
+     * Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input
+     * type cannot be applied to batch (post-call) transcriptions.
+     * </p>
+     * <p>
+     * If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * </p>
+     * 
+     * @param inputType
+     *        Choose whether you want to create a streaming or a batch category for your Call Analytics
+     *        transcription.</p>
+     *        <p>
+     *        Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this
+     *        input type cannot be applied to streaming (real-time) transcriptions.
+     *        </p>
+     *        <p>
+     *        Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this
+     *        input type cannot be applied to batch (post-call) transcriptions.
+     *        </p>
+     *        <p>
+     *        If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputType
+     */
+
+    public CreateCallAnalyticsCategoryRequest withInputType(String inputType) {
+        setInputType(inputType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Choose whether you want to create a streaming or a batch category for your Call Analytics transcription.
+     * </p>
+     * <p>
+     * Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this input type
+     * cannot be applied to streaming (real-time) transcriptions.
+     * </p>
+     * <p>
+     * Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this input
+     * type cannot be applied to batch (post-call) transcriptions.
+     * </p>
+     * <p>
+     * If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * </p>
+     * 
+     * @param inputType
+     *        Choose whether you want to create a streaming or a batch category for your Call Analytics
+     *        transcription.</p>
+     *        <p>
+     *        Specifying <code>POST_CALL</code> assigns your category to batch transcriptions; categories with this
+     *        input type cannot be applied to streaming (real-time) transcriptions.
+     *        </p>
+     *        <p>
+     *        Specifying <code>REAL_TIME</code> assigns your category to streaming transcriptions; categories with this
+     *        input type cannot be applied to batch (post-call) transcriptions.
+     *        </p>
+     *        <p>
+     *        If you do not include <code>InputType</code>, your category is created as a batch category by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputType
+     */
+
+    public CreateCallAnalyticsCategoryRequest withInputType(InputType inputType) {
+        this.inputType = inputType.toString();
         return this;
     }
 
@@ -225,7 +389,9 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
         if (getCategoryName() != null)
             sb.append("CategoryName: ").append(getCategoryName()).append(",");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getInputType() != null)
+            sb.append("InputType: ").append(getInputType());
         sb.append("}");
         return sb.toString();
     }
@@ -248,6 +414,10 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getInputType() == null ^ this.getInputType() == null)
+            return false;
+        if (other.getInputType() != null && other.getInputType().equals(this.getInputType()) == false)
+            return false;
         return true;
     }
 
@@ -258,6 +428,7 @@ public class CreateCallAnalyticsCategoryRequest extends com.amazonaws.AmazonWebS
 
         hashCode = prime * hashCode + ((getCategoryName() == null) ? 0 : getCategoryName().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getInputType() == null) ? 0 : getInputType().hashCode());
         return hashCode;
     }
 

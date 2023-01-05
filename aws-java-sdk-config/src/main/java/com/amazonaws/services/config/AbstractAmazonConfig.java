@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -393,6 +393,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public GetResourceEvaluationSummaryResult getResourceEvaluationSummary(GetResourceEvaluationSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetStoredQueryResult getStoredQuery(GetStoredQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -409,6 +414,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceEvaluationsResult listResourceEvaluations(ListResourceEvaluationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -519,6 +529,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public StartRemediationExecutionResult startRemediationExecution(StartRemediationExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartResourceEvaluationResult startResourceEvaluation(StartResourceEvaluationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

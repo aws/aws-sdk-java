@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,16 +30,56 @@ public class DataConnector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A Boolean value that specifies whether the data connector is native to IoT TwinMaker.
-     * </p>
-     */
-    private Boolean isNative;
-    /**
-     * <p>
      * The Lambda function associated with this data connector.
      * </p>
      */
     private LambdaFunction lambda;
+    /**
+     * <p>
+     * A Boolean value that specifies whether the data connector is native to IoT TwinMaker.
+     * </p>
+     */
+    private Boolean isNative;
+
+    /**
+     * <p>
+     * The Lambda function associated with this data connector.
+     * </p>
+     * 
+     * @param lambda
+     *        The Lambda function associated with this data connector.
+     */
+
+    public void setLambda(LambdaFunction lambda) {
+        this.lambda = lambda;
+    }
+
+    /**
+     * <p>
+     * The Lambda function associated with this data connector.
+     * </p>
+     * 
+     * @return The Lambda function associated with this data connector.
+     */
+
+    public LambdaFunction getLambda() {
+        return this.lambda;
+    }
+
+    /**
+     * <p>
+     * The Lambda function associated with this data connector.
+     * </p>
+     * 
+     * @param lambda
+     *        The Lambda function associated with this data connector.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataConnector withLambda(LambdaFunction lambda) {
+        setLambda(lambda);
+        return this;
+    }
 
     /**
      * <p>
@@ -94,46 +134,6 @@ public class DataConnector implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The Lambda function associated with this data connector.
-     * </p>
-     * 
-     * @param lambda
-     *        The Lambda function associated with this data connector.
-     */
-
-    public void setLambda(LambdaFunction lambda) {
-        this.lambda = lambda;
-    }
-
-    /**
-     * <p>
-     * The Lambda function associated with this data connector.
-     * </p>
-     * 
-     * @return The Lambda function associated with this data connector.
-     */
-
-    public LambdaFunction getLambda() {
-        return this.lambda;
-    }
-
-    /**
-     * <p>
-     * The Lambda function associated with this data connector.
-     * </p>
-     * 
-     * @param lambda
-     *        The Lambda function associated with this data connector.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataConnector withLambda(LambdaFunction lambda) {
-        setLambda(lambda);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -145,10 +145,10 @@ public class DataConnector implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getIsNative() != null)
-            sb.append("IsNative: ").append(getIsNative()).append(",");
         if (getLambda() != null)
-            sb.append("Lambda: ").append(getLambda());
+            sb.append("Lambda: ").append(getLambda()).append(",");
+        if (getIsNative() != null)
+            sb.append("IsNative: ").append(getIsNative());
         sb.append("}");
         return sb.toString();
     }
@@ -163,13 +163,13 @@ public class DataConnector implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof DataConnector == false)
             return false;
         DataConnector other = (DataConnector) obj;
-        if (other.getIsNative() == null ^ this.getIsNative() == null)
-            return false;
-        if (other.getIsNative() != null && other.getIsNative().equals(this.getIsNative()) == false)
-            return false;
         if (other.getLambda() == null ^ this.getLambda() == null)
             return false;
         if (other.getLambda() != null && other.getLambda().equals(this.getLambda()) == false)
+            return false;
+        if (other.getIsNative() == null ^ this.getIsNative() == null)
+            return false;
+        if (other.getIsNative() != null && other.getIsNative().equals(this.getIsNative()) == false)
             return false;
         return true;
     }
@@ -179,8 +179,8 @@ public class DataConnector implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getIsNative() == null) ? 0 : getIsNative().hashCode());
         hashCode = prime * hashCode + ((getLambda() == null) ? 0 : getLambda().hashCode());
+        hashCode = prime * hashCode + ((getIsNative() == null) ? 0 : getIsNative().hashCode());
         return hashCode;
     }
 

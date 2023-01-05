@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>Related actions</b>
  * </p>
  * <p>
- * <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a> | <a>DeleteScript</a> | <a
- * href=
+ * <a href=
  * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
  * >All APIs by task</a>
  * </p>
@@ -59,7 +58,7 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings do not need to be unique.
      * </p>
      */
     private String version;
@@ -77,7 +76,15 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationTime;
-
+    /**
+     * <p>
+     * The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage
+     * location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to
+     * create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version.
+     * </p>
+     */
     private S3Location storageLocation;
 
     /**
@@ -217,11 +224,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        Version information associated with a build or script. Version strings do not need to be unique.
      */
 
     public void setVersion(String version) {
@@ -230,10 +237,10 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
-     * @return Version information that is associated with a build or script. Version strings do not need to be unique.
+     * @return Version information associated with a build or script. Version strings do not need to be unique.
      */
 
     public String getVersion() {
@@ -242,11 +249,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique.
+     * Version information associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        Version information that is associated with a build or script. Version strings do not need to be unique.
+     *        Version information associated with a build or script. Version strings do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,7 +355,21 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage
+     * location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to
+     * create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version.
+     * </p>
+     * 
      * @param storageLocation
+     *        The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The
+     *        storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN
+     *        that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same
+     *        Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of
+     *        the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+     *        parameter to specify an earlier version.
      */
 
     public void setStorageLocation(S3Location storageLocation) {
@@ -356,7 +377,20 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage
+     * location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to
+     * create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version.
+     * </p>
+     * 
+     * @return The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The
+     *         storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN
+     *         that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same
+     *         Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of
+     *         the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+     *         parameter to specify an earlier version.
      */
 
     public S3Location getStorageLocation() {
@@ -364,7 +398,21 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The storage
+     * location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN that allows Amazon
+     * GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same Region where you want to
+     * create a new script. By default, Amazon GameLift uploads the latest version of the zip file; if you have S3
+     * object versioning turned on, you can use the <code>ObjectVersion</code> parameter to specify an earlier version.
+     * </p>
+     * 
      * @param storageLocation
+     *        The location of the Amazon S3 bucket where a zipped file containing your Realtime scripts is stored. The
+     *        storage location must specify the Amazon S3 bucket name, the zip file name (the "key"), and a role ARN
+     *        that allows Amazon GameLift to access the Amazon S3 storage location. The S3 bucket must be in the same
+     *        Region where you want to create a new script. By default, Amazon GameLift uploads the latest version of
+     *        the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+     *        parameter to specify an earlier version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

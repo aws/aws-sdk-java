@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,13 +16,14 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for a
- * custom key store.
+ * The request was rejected because the associated CloudHSM cluster did not meet the configuration requirements for an
+ * CloudHSM key store.
  * </p>
  * <ul>
  * <li>
  * <p>
- * The cluster must be configured with private subnets in at least two different Availability Zones in the Region.
+ * The CloudHSM cluster must be configured with private subnets in at least two different Availability Zones in the
+ * Region.
  * </p>
  * </li>
  * <li>
@@ -30,15 +31,15 @@ import javax.annotation.Generated;
  * The <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/configure-sg.html">security group for the
  * cluster</a> (cloudhsm-cluster-<i>&lt;cluster-id&gt;</i>-sg) must include inbound rules and outbound rules that allow
  * TCP traffic on ports 2223-2225. The <b>Source</b> in the inbound rules and the <b>Destination</b> in the outbound
- * rules must match the security group ID. These rules are set by default when you create the cluster. Do not delete or
- * change them. To get information about a particular security group, use the <a
+ * rules must match the security group ID. These rules are set by default when you create the CloudHSM cluster. Do not
+ * delete or change them. To get information about a particular security group, use the <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSecurityGroups.html"
  * >DescribeSecurityGroups</a> operation.
  * </p>
  * </li>
  * <li>
  * <p>
- * The cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a
+ * The CloudHSM cluster must contain at least as many HSMs as the operation requires. To add HSMs, use the CloudHSM <a
  * href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_CreateHsm.html">CreateHsm</a> operation.
  * </p>
  * <p>
@@ -49,7 +50,7 @@ import javax.annotation.Generated;
  * </li>
  * </ul>
  * <p>
- * For information about the requirements for an CloudHSM cluster that is associated with a custom key store, see <a
+ * For information about the requirements for an CloudHSM cluster that is associated with an CloudHSM key store, see <a
  * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keystore.html#before-keystore">Assemble the
  * Prerequisites</a> in the <i>Key Management Service Developer Guide</i>. For information about creating a private
  * subnet for an CloudHSM cluster, see <a

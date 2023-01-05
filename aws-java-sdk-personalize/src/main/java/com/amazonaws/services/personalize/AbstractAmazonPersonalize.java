@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public CreateMetricAttributionResult createMetricAttribution(CreateMetricAttributionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateRecommenderResult createRecommender(CreateRecommenderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +119,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public DeleteFilterResult deleteFilter(DeleteFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMetricAttributionResult deleteMetricAttribution(DeleteMetricAttributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,6 +194,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public DescribeFilterResult describeFilter(DescribeFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeMetricAttributionResult describeMetricAttribution(DescribeMetricAttributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -263,6 +278,16 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public ListMetricAttributionMetricsResult listMetricAttributionMetrics(ListMetricAttributionMetricsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMetricAttributionsResult listMetricAttributions(ListMetricAttributionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRecipesResult listRecipes(ListRecipesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -319,6 +344,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public UpdateCampaignResult updateCampaign(UpdateCampaignRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateMetricAttributionResult updateMetricAttribution(UpdateMetricAttributionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

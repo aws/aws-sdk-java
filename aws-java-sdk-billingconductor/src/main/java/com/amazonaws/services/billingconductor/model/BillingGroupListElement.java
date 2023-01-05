@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      */
     private String name;
@@ -42,7 +42,7 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
     private String arn;
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      */
     private String description;
@@ -62,13 +62,13 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
     private Long size;
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      */
     private Long lastModifiedTime;
@@ -87,11 +87,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      * 
      * @param name
-     *        The billing group's name.
+     *        The name of the billing group.
      */
 
     public void setName(String name) {
@@ -100,10 +100,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      * 
-     * @return The billing group's name.
+     * @return The name of the billing group.
      */
 
     public String getName() {
@@ -112,11 +112,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group's name.
+     * The name of the billing group.
      * </p>
      * 
      * @param name
-     *        The billing group's name.
+     *        The name of the billing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +167,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
      * @param description
-     *        The billing group description.
+     *        The description of the billing group.
      */
 
     public void setDescription(String description) {
@@ -180,10 +180,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
-     * @return The billing group description.
+     * @return The description of the billing group.
      */
 
     public String getDescription() {
@@ -192,11 +192,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The billing group description.
+     * The description of the billing group.
      * </p>
      * 
      * @param description
-     *        The billing group description.
+     *        The description of the billing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the billing group was created.
+     *        The time when the billing group was created.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -326,10 +326,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      * 
-     * @return The time the billing group was created.
+     * @return The time when the billing group was created.
      */
 
     public Long getCreationTime() {
@@ -338,11 +338,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The time the billing group was created.
+     * The time when the billing group was created.
      * </p>
      * 
      * @param creationTime
-     *        The time the billing group was created.
+     *        The time when the billing group was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,11 +353,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the billing group was modified.
+     *        The most recent time when the billing group was modified.
      */
 
     public void setLastModifiedTime(Long lastModifiedTime) {
@@ -366,10 +366,10 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      * 
-     * @return The most recent time the billing group was modified.
+     * @return The most recent time when the billing group was modified.
      */
 
     public Long getLastModifiedTime() {
@@ -378,11 +378,11 @@ public class BillingGroupListElement implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The most recent time the billing group was modified.
+     * The most recent time when the billing group was modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        The most recent time the billing group was modified.
+     *        The most recent time when the billing group was modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

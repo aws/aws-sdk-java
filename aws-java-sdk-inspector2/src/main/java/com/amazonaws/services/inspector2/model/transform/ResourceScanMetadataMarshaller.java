@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ResourceScanMetadataMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrImage").build();
     private static final MarshallingInfo<StructuredPojo> ECRREPOSITORY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecrRepository").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDAFUNCTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunction").build();
 
     private static final ResourceScanMetadataMarshaller instance = new ResourceScanMetadataMarshaller();
 
@@ -53,6 +55,7 @@ public class ResourceScanMetadataMarshaller {
             protocolMarshaller.marshall(resourceScanMetadata.getEc2(), EC2_BINDING);
             protocolMarshaller.marshall(resourceScanMetadata.getEcrImage(), ECRIMAGE_BINDING);
             protocolMarshaller.marshall(resourceScanMetadata.getEcrRepository(), ECRREPOSITORY_BINDING);
+            protocolMarshaller.marshall(resourceScanMetadata.getLambdaFunction(), LAMBDAFUNCTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

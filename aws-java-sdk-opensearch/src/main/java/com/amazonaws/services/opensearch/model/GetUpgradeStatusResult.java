@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for the response returned by the <code> <a>GetUpgradeStatus</a> </code> operation.
+ * Container for the response returned by the <code>GetUpgradeStatus</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,52 +25,30 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through.
      * </p>
      */
     private String upgradeStep;
     /**
      * <p>
-     * One of four statuses an upgrade have, returned as part of the <code> <a>GetUpgradeStatusResponse</a> </code>
-     * object. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
+     * The status of the current step that an upgrade is on.
      * </p>
      */
     private String stepStatus;
     /**
      * <p>
-     * A string that briefly describes the update.
+     * A string that describes the update.
      * </p>
      */
     private String upgradeName;
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through.
      * </p>
      * 
      * @param upgradeStep
-     *        One of three steps an upgrade or upgrade eligibility check goes through:
-     *        <ul>
-     *        <li>PreUpgradeCheck</li>
-     *        <li>Snapshot</li>
-     *        <li>Upgrade</li>
-     *        </ul>
+     *        One of three steps that an upgrade or upgrade eligibility check goes through.
      * @see UpgradeStep
      */
 
@@ -80,20 +58,10 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through.
      * </p>
      * 
-     * @return One of three steps an upgrade or upgrade eligibility check goes through:
-     *         <ul>
-     *         <li>PreUpgradeCheck</li>
-     *         <li>Snapshot</li>
-     *         <li>Upgrade</li>
-     *         </ul>
+     * @return One of three steps that an upgrade or upgrade eligibility check goes through.
      * @see UpgradeStep
      */
 
@@ -103,21 +71,11 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through.
      * </p>
      * 
      * @param upgradeStep
-     *        One of three steps an upgrade or upgrade eligibility check goes through:
-     *        <ul>
-     *        <li>PreUpgradeCheck</li>
-     *        <li>Snapshot</li>
-     *        <li>Upgrade</li>
-     *        </ul>
+     *        One of three steps that an upgrade or upgrade eligibility check goes through.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStep
      */
@@ -129,21 +87,11 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of three steps an upgrade or upgrade eligibility check goes through:
-     * <ul>
-     * <li>PreUpgradeCheck</li>
-     * <li>Snapshot</li>
-     * <li>Upgrade</li>
-     * </ul>
+     * One of three steps that an upgrade or upgrade eligibility check goes through.
      * </p>
      * 
      * @param upgradeStep
-     *        One of three steps an upgrade or upgrade eligibility check goes through:
-     *        <ul>
-     *        <li>PreUpgradeCheck</li>
-     *        <li>Snapshot</li>
-     *        <li>Upgrade</li>
-     *        </ul>
+     *        One of three steps that an upgrade or upgrade eligibility check goes through.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStep
      */
@@ -155,25 +103,11 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of four statuses an upgrade have, returned as part of the <code> <a>GetUpgradeStatusResponse</a> </code>
-     * object. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
+     * The status of the current step that an upgrade is on.
      * </p>
      * 
      * @param stepStatus
-     *        One of four statuses an upgrade have, returned as part of the
-     *        <code> <a>GetUpgradeStatusResponse</a> </code> object. The status can take one of the following values:
-     *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        The status of the current step that an upgrade is on.
      * @see UpgradeStatus
      */
 
@@ -183,24 +117,10 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of four statuses an upgrade have, returned as part of the <code> <a>GetUpgradeStatusResponse</a> </code>
-     * object. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
+     * The status of the current step that an upgrade is on.
      * </p>
      * 
-     * @return One of four statuses an upgrade have, returned as part of the
-     *         <code> <a>GetUpgradeStatusResponse</a> </code> object. The status can take one of the following values:
-     *         <ul>
-     *         <li>In Progress</li>
-     *         <li>Succeeded</li>
-     *         <li>Succeeded with Issues</li>
-     *         <li>Failed</li>
-     *         </ul>
+     * @return The status of the current step that an upgrade is on.
      * @see UpgradeStatus
      */
 
@@ -210,25 +130,11 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of four statuses an upgrade have, returned as part of the <code> <a>GetUpgradeStatusResponse</a> </code>
-     * object. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
+     * The status of the current step that an upgrade is on.
      * </p>
      * 
      * @param stepStatus
-     *        One of four statuses an upgrade have, returned as part of the
-     *        <code> <a>GetUpgradeStatusResponse</a> </code> object. The status can take one of the following values:
-     *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        The status of the current step that an upgrade is on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStatus
      */
@@ -240,25 +146,11 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * One of four statuses an upgrade have, returned as part of the <code> <a>GetUpgradeStatusResponse</a> </code>
-     * object. The status can take one of the following values:
-     * <ul>
-     * <li>In Progress</li>
-     * <li>Succeeded</li>
-     * <li>Succeeded with Issues</li>
-     * <li>Failed</li>
-     * </ul>
+     * The status of the current step that an upgrade is on.
      * </p>
      * 
      * @param stepStatus
-     *        One of four statuses an upgrade have, returned as part of the
-     *        <code> <a>GetUpgradeStatusResponse</a> </code> object. The status can take one of the following values:
-     *        <ul>
-     *        <li>In Progress</li>
-     *        <li>Succeeded</li>
-     *        <li>Succeeded with Issues</li>
-     *        <li>Failed</li>
-     *        </ul>
+     *        The status of the current step that an upgrade is on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UpgradeStatus
      */
@@ -270,11 +162,11 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A string that briefly describes the update.
+     * A string that describes the update.
      * </p>
      * 
      * @param upgradeName
-     *        A string that briefly describes the update.
+     *        A string that describes the update.
      */
 
     public void setUpgradeName(String upgradeName) {
@@ -283,10 +175,10 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A string that briefly describes the update.
+     * A string that describes the update.
      * </p>
      * 
-     * @return A string that briefly describes the update.
+     * @return A string that describes the update.
      */
 
     public String getUpgradeName() {
@@ -295,11 +187,11 @@ public class GetUpgradeStatusResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A string that briefly describes the update.
+     * A string that describes the update.
      * </p>
      * 
      * @param upgradeName
-     *        A string that briefly describes the update.
+     *        A string that describes the update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

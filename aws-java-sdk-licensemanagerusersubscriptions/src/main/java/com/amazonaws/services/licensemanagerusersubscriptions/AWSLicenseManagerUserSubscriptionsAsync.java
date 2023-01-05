@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,14 @@ public interface AWSLicenseManagerUserSubscriptionsAsync extends AWSLicenseManag
      * <p>
      * Associates the user to an EC2 instance to utilize user-based subscriptions.
      * </p>
+     * <note>
+     * <p>
+     * Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing
+     * periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more
+     * information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your
+     * monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param associateUserRequest
      * @return A Java Future containing the result of the AssociateUser operation returned by the service.
@@ -51,6 +59,14 @@ public interface AWSLicenseManagerUserSubscriptionsAsync extends AWSLicenseManag
      * <p>
      * Associates the user to an EC2 instance to utilize user-based subscriptions.
      * </p>
+     * <note>
+     * <p>
+     * Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing
+     * periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more
+     * information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your
+     * monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param associateUserRequest
      * @param asyncHandler
@@ -300,6 +316,14 @@ public interface AWSLicenseManagerUserSubscriptionsAsync extends AWSLicenseManag
      * <p>
      * Starts a product subscription for a user with the specified identity provider.
      * </p>
+     * <note>
+     * <p>
+     * Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing
+     * periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more
+     * information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your
+     * monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param startProductSubscriptionRequest
      * @return A Java Future containing the result of the StartProductSubscription operation returned by the service.
@@ -314,6 +338,14 @@ public interface AWSLicenseManagerUserSubscriptionsAsync extends AWSLicenseManag
      * <p>
      * Starts a product subscription for a user with the specified identity provider.
      * </p>
+     * <note>
+     * <p>
+     * Your estimated bill for charges on the number of users and related costs will take 48 hours to appear for billing
+     * periods that haven't closed (marked as <b>Pending</b> billing status) in Amazon Web Services Billing. For more
+     * information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/invoice.html">Viewing your
+     * monthly charges</a> in the <i>Amazon Web Services Billing User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param startProductSubscriptionRequest
      * @param asyncHandler
@@ -361,5 +393,42 @@ public interface AWSLicenseManagerUserSubscriptionsAsync extends AWSLicenseManag
      */
     java.util.concurrent.Future<StopProductSubscriptionResult> stopProductSubscriptionAsync(StopProductSubscriptionRequest stopProductSubscriptionRequest,
             com.amazonaws.handlers.AsyncHandler<StopProductSubscriptionRequest, StopProductSubscriptionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates additional product configuration settings for the registered identity provider.
+     * </p>
+     * 
+     * @param updateIdentityProviderSettingsRequest
+     * @return A Java Future containing the result of the UpdateIdentityProviderSettings operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerUserSubscriptionsAsync.UpdateIdentityProviderSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UpdateIdentityProviderSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIdentityProviderSettingsResult> updateIdentityProviderSettingsAsync(
+            UpdateIdentityProviderSettingsRequest updateIdentityProviderSettingsRequest);
+
+    /**
+     * <p>
+     * Updates additional product configuration settings for the registered identity provider.
+     * </p>
+     * 
+     * @param updateIdentityProviderSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateIdentityProviderSettings operation returned by the
+     *         service.
+     * @sample AWSLicenseManagerUserSubscriptionsAsyncHandler.UpdateIdentityProviderSettings
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/license-manager-user-subscriptions-2018-05-10/UpdateIdentityProviderSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateIdentityProviderSettingsResult> updateIdentityProviderSettingsAsync(
+            UpdateIdentityProviderSettingsRequest updateIdentityProviderSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateIdentityProviderSettingsRequest, UpdateIdentityProviderSettingsResult> asyncHandler);
 
 }

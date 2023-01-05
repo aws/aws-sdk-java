@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,26 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String connectionName;
+    /**
+     * <p>
+     * Additional options for the table. Currently there are two keys supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your
+     * dataset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue
+     * Data Catalog.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.Map<String, String> additionalOptions;
 
     /**
      * <p>
@@ -214,6 +234,155 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Additional options for the table. Currently there are two keys supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your
+     * dataset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue
+     * Data Catalog.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Additional options for the table. Currently there are two keys supported:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in
+     *         your dataset.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in
+     *         the Glue Data Catalog.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.Map<String, String> getAdditionalOptions() {
+        return additionalOptions;
+    }
+
+    /**
+     * <p>
+     * Additional options for the table. Currently there are two keys supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your
+     * dataset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue
+     * Data Catalog.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param additionalOptions
+     *        Additional options for the table. Currently there are two keys supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in
+     *        your dataset.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in
+     *        the Glue Data Catalog.
+     *        </p>
+     *        </li>
+     */
+
+    public void setAdditionalOptions(java.util.Map<String, String> additionalOptions) {
+        this.additionalOptions = additionalOptions;
+    }
+
+    /**
+     * <p>
+     * Additional options for the table. Currently there are two keys supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in your
+     * dataset.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in the Glue
+     * Data Catalog.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param additionalOptions
+     *        Additional options for the table. Currently there are two keys supported:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>pushDownPredicate</code>: to filter on partitions without having to list and read all the files in
+     *        your dataset.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>catalogPartitionPredicate</code>: to use server-side partition pruning using partition indexes in
+     *        the Glue Data Catalog.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GlueTable withAdditionalOptions(java.util.Map<String, String> additionalOptions) {
+        setAdditionalOptions(additionalOptions);
+        return this;
+    }
+
+    /**
+     * Add a single AdditionalOptions entry
+     *
+     * @see GlueTable#withAdditionalOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GlueTable addAdditionalOptionsEntry(String key, String value) {
+        if (null == this.additionalOptions) {
+            this.additionalOptions = new java.util.HashMap<String, String>();
+        }
+        if (this.additionalOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.additionalOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into AdditionalOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GlueTable clearAdditionalOptionsEntries() {
+        this.additionalOptions = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +401,9 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
         if (getCatalogId() != null)
             sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getConnectionName() != null)
-            sb.append("ConnectionName: ").append(getConnectionName());
+            sb.append("ConnectionName: ").append(getConnectionName()).append(",");
+        if (getAdditionalOptions() != null)
+            sb.append("AdditionalOptions: ").append(getAdditionalOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +434,10 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConnectionName() != null && other.getConnectionName().equals(this.getConnectionName()) == false)
             return false;
+        if (other.getAdditionalOptions() == null ^ this.getAdditionalOptions() == null)
+            return false;
+        if (other.getAdditionalOptions() != null && other.getAdditionalOptions().equals(this.getAdditionalOptions()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +450,7 @@ public class GlueTable implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTableName() == null) ? 0 : getTableName().hashCode());
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalOptions() == null) ? 0 : getAdditionalOptions().hashCode());
         return hashCode;
     }
 

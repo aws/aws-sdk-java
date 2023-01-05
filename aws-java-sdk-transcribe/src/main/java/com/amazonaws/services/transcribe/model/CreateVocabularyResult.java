@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,8 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
     private String languageCode;
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      */
     private String vocabularyState;
@@ -55,7 +55,7 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the vocabulary request failed. See also: <a
+     * the custom vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      */
@@ -162,12 +162,12 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
      *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
@@ -178,12 +178,12 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @return The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
-     *         vocabulary in a <code>StartTranscriptionJob</code> request.
+     *         custom vocabulary in a <code>StartTranscriptionJob</code> request.
      * @see VocabularyState
      */
 
@@ -193,12 +193,12 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
      *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
@@ -211,12 +211,12 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the vocabulary in
-     * a <code>StartTranscriptionJob</code> request.
+     * The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
+     * vocabulary in a <code>StartTranscriptionJob</code> request.
      * </p>
      * 
      * @param vocabularyState
-     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the
+     *        The processing state of your custom vocabulary. If the state is <code>READY</code>, you can use the custom
      *        vocabulary in a <code>StartTranscriptionJob</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyState
@@ -291,13 +291,13 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the vocabulary request failed. See also: <a
+     * the custom vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
      *        If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
-     *        about why the vocabulary request failed. See also: <a
+     *        about why the custom vocabulary request failed. See also: <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
@@ -308,12 +308,12 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the vocabulary request failed. See also: <a
+     * the custom vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @return If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
-     *         about why the vocabulary request failed. See also: <a
+     *         about why the custom vocabulary request failed. See also: <a
      *         href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      */
 
@@ -324,13 +324,13 @@ public class CreateVocabularyResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information about why
-     * the vocabulary request failed. See also: <a
+     * the custom vocabulary request failed. See also: <a
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * </p>
      * 
      * @param failureReason
      *        If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code> contains information
-     *        about why the vocabulary request failed. See also: <a
+     *        about why the custom vocabulary request failed. See also: <a
      *        href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common Errors</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,31 @@ public interface AWSBackup {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "backup";
+
+    /**
+     * <p>
+     * This action removes the specified legal hold on a recovery point. This action can only be performed by a user
+     * with sufficient permissions.
+     * </p>
+     * 
+     * @param cancelLegalHoldRequest
+     * @return Result of the CancelLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidResourceStateException
+     *         Backup is already performing an action on this recovery point. It can't perform the action you requested
+     *         until the first action finishes. Try again later.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @sample AWSBackup.CancelLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CancelLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CancelLegalHoldResult cancelLegalHold(CancelLegalHoldRequest cancelLegalHoldRequest);
 
     /**
      * <p>
@@ -150,6 +175,29 @@ public interface AWSBackup {
      *      Documentation</a>
      */
     CreateFrameworkResult createFramework(CreateFrameworkRequest createFrameworkRequest);
+
+    /**
+     * <p>
+     * This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or
+     * deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a
+     * recovery point will fail with an error if one or more active legal holds are on the recovery point.
+     * </p>
+     * 
+     * @param createLegalHoldRequest
+     * @return Result of the CreateLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws LimitExceededException
+     *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @sample AWSBackup.CreateLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLegalHoldResult createLegalHold(CreateLegalHoldRequest createLegalHoldRequest);
 
     /**
      * <p>
@@ -354,6 +402,20 @@ public interface AWSBackup {
      * <p>
      * If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous
      * backup and stops future continuous backup.
+     * </p>
+     * <p>
+     * When an IAM role's permissions are insufficient to call this API, the service sends back an HTTP 200 response
+     * with an empty HTTP body, but the recovery point is not deleted. Instead, it enters an <code>EXPIRED</code> state.
+     * </p>
+     * <p>
+     * <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role has the
+     * <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding this role, see <a href=
+     * "https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+     * Troubleshooting manual deletions</a>.
+     * </p>
+     * <p>
+     * If the user or role is deleted or the permission within the role is removed, the deletion will not be successful
+     * and will enter an <code>EXPIRED</code> state.
      * </p>
      * 
      * @param deleteRecoveryPointRequest
@@ -667,6 +729,32 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This action to a specific child (nested) recovery point removes the relationship between the specified recovery
+     * point and its parent (composite) recovery point.
+     * </p>
+     * 
+     * @param disassociateRecoveryPointFromParentRequest
+     * @return Result of the DisassociateRecoveryPointFromParent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.DisassociateRecoveryPointFromParent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPointFromParent"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateRecoveryPointFromParentResult disassociateRecoveryPointFromParent(
+            DisassociateRecoveryPointFromParentRequest disassociateRecoveryPointFromParentRequest);
+
+    /**
+     * <p>
      * Returns the backup plan that is specified by the plan ID as a backup template.
      * </p>
      * 
@@ -816,6 +904,28 @@ public interface AWSBackup {
      *      target="_top">AWS API Documentation</a>
      */
     GetBackupVaultNotificationsResult getBackupVaultNotifications(GetBackupVaultNotificationsRequest getBackupVaultNotificationsRequest);
+
+    /**
+     * <p>
+     * This action returns details for a specified legal hold. The details are the body of a legal hold in JSON format,
+     * in addition to metadata.
+     * </p>
+     * 
+     * @param getLegalHoldRequest
+     * @return Result of the GetLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @sample AWSBackup.GetLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/GetLegalHold" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetLegalHoldResult getLegalHold(GetLegalHoldRequest getLegalHoldRequest);
 
     /**
      * <p>
@@ -1017,6 +1127,23 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This action returns metadata about active and previous legal holds.
+     * </p>
+     * 
+     * @param listLegalHoldsRequest
+     * @return Result of the ListLegalHolds operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListLegalHolds
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListLegalHolds" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListLegalHoldsResult listLegalHolds(ListLegalHoldsRequest listLegalHoldsRequest);
+
+    /**
+     * <p>
      * Returns an array of resources successfully backed up by Backup, including the time the resource was saved, an
      * Amazon Resource Name (ARN) of the resource, and a resource type.
      * </p>
@@ -1056,6 +1183,25 @@ public interface AWSBackup {
 
     /**
      * <p>
+     * This action returns recovery point ARNs (Amazon Resource Names) of the specified legal hold.
+     * </p>
+     * 
+     * @param listRecoveryPointsByLegalHoldRequest
+     * @return Result of the ListRecoveryPointsByLegalHold operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.ListRecoveryPointsByLegalHold
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListRecoveryPointsByLegalHold"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListRecoveryPointsByLegalHoldResult listRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest listRecoveryPointsByLegalHoldRequest);
+
+    /**
+     * <p>
      * Returns detailed information about all the recovery points of the type specified by a resource Amazon Resource
      * Name (ARN).
      * </p>
@@ -1092,6 +1238,8 @@ public interface AWSBackup {
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
      * @sample AWSBackup.ListReportJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListReportJobs" target="_top">AWS API
      *      Documentation</a>
@@ -1340,6 +1488,11 @@ public interface AWSBackup {
     /**
      * <p>
      * Attempts to cancel a job to create a one-time backup of a resource.
+     * </p>
+     * <p>
+     * This action is not supported for the following services: Amazon FSx for Windows File Server, Amazon FSx for
+     * Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB (with MongoDB compatibility), Amazon RDS,
+     * Amazon Aurora, and Amazon Neptune.
      * </p>
      * 
      * @param stopBackupJobRequest

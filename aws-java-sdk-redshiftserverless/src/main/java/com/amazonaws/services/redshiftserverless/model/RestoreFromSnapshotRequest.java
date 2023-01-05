@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,13 +39,19 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
     private String ownerAccount;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      */
     private String snapshotArn;
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      */
     private String snapshotName;
@@ -138,11 +144,23 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      * 
      * @param snapshotArn
-     *        The Amazon Resource Name (ARN) of the snapshot to restore from.
+     *        The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     *        Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>
+     *        .</p>
+     *        <p>
+     *        The format of the ARN is
+     *        arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier
+     *        &gt;/&lt;snapshot_identifier&gt;.
      */
 
     public void setSnapshotArn(String snapshotArn) {
@@ -151,10 +169,22 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * @return The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon
+     *         Redshift Serverless to a provisioned cluster. Must not be specified at the same time as
+     *         <code>snapshotName</code>.</p>
+     *         <p>
+     *         The format of the ARN is
+     *         arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier
+     *         &gt;/&lt;snapshot_identifier&gt;.
      */
 
     public String getSnapshotArn() {
@@ -163,11 +193,23 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the snapshot to restore from.
+     * The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     * Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>.
+     * </p>
+     * <p>
+     * The format of the ARN is
+     * arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier&gt;/&lt
+     * ;snapshot_identifier&gt;.
      * </p>
      * 
      * @param snapshotArn
-     *        The Amazon Resource Name (ARN) of the snapshot to restore from.
+     *        The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from Amazon Redshift
+     *        Serverless to a provisioned cluster. Must not be specified at the same time as <code>snapshotName</code>
+     *        .</p>
+     *        <p>
+     *        The format of the ARN is
+     *        arn:aws:redshift:&lt;region&gt;:&lt;account_id&gt;:snapshot:&lt;cluster_identifier
+     *        &gt;/&lt;snapshot_identifier&gt;.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +220,12 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      * 
      * @param snapshotName
-     *        The name of the snapshot to restore from.
+     *        The name of the snapshot to restore from. Must not be specified at the same time as
+     *        <code>snapshotArn</code>.
      */
 
     public void setSnapshotName(String snapshotName) {
@@ -191,10 +234,11 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      * 
-     * @return The name of the snapshot to restore from.
+     * @return The name of the snapshot to restore from. Must not be specified at the same time as
+     *         <code>snapshotArn</code>.
      */
 
     public String getSnapshotName() {
@@ -203,11 +247,12 @@ public class RestoreFromSnapshotRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the snapshot to restore from.
+     * The name of the snapshot to restore from. Must not be specified at the same time as <code>snapshotArn</code>.
      * </p>
      * 
      * @param snapshotName
-     *        The name of the snapshot to restore from.
+     *        The name of the snapshot to restore from. Must not be specified at the same time as
+     *        <code>snapshotArn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

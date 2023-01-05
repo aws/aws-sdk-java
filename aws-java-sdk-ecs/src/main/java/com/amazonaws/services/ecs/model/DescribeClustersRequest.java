@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
-     * are included.
+     * are included, for example the capacity providers.
      * </p>
      * <p>
      * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -144,7 +144,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
-     * are included.
+     * are included, for example the capacity providers.
      * </p>
      * <p>
      * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -163,7 +163,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *         omitted, this information isn't included.</p>
      *         <p>
      *         If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
-     *         cluster are included.
+     *         cluster are included, for example the capacity providers.
      *         </p>
      *         <p>
      *         If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -194,7 +194,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
-     * are included.
+     * are included, for example the capacity providers.
      * </p>
      * <p>
      * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -214,7 +214,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
-     *        cluster are included.
+     *        cluster are included, for example the capacity providers.
      *        </p>
      *        <p>
      *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -246,7 +246,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
-     * are included.
+     * are included, for example the capacity providers.
      * </p>
      * <p>
      * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -271,7 +271,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
-     *        cluster are included.
+     *        cluster are included, for example the capacity providers.
      *        </p>
      *        <p>
      *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -305,7 +305,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
-     * are included.
+     * are included, for example the capacity providers.
      * </p>
      * <p>
      * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -325,7 +325,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
-     *        cluster are included.
+     *        cluster are included, for example the capacity providers.
      *        </p>
      *        <p>
      *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -354,7 +354,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the cluster
-     * are included.
+     * are included, for example the capacity providers.
      * </p>
      * <p>
      * If <code>SETTINGS</code> is specified, the settings for the cluster are included.
@@ -374,7 +374,7 @@ public class DescribeClustersRequest extends com.amazonaws.AmazonWebServiceReque
      *        omitted, this information isn't included.</p>
      *        <p>
      *        If <code>ATTACHMENTS</code> is specified, the attachments for the container instances or tasks within the
-     *        cluster are included.
+     *        cluster are included, for example the capacity providers.
      *        </p>
      *        <p>
      *        If <code>SETTINGS</code> is specified, the settings for the cluster are included.

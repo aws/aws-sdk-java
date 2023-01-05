@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,13 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of indices to return.
      * </p>
      */
     private Integer maxResults;
@@ -43,14 +42,12 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     *        pagination token in the response. You can use this pagination token to retrieve the next set of indexes (
-     *        <code>DataSourceSummaryItems</code>).
+     *        pagination token in the response. You can use this pagination token to retrieve the next set of indexes.
      */
 
     public void setNextToken(String nextToken) {
@@ -60,13 +57,11 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes.
      * </p>
      * 
      * @return If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     *         pagination token in the response. You can use this pagination token to retrieve the next set of indexes (
-     *         <code>DataSourceSummaryItems</code>).
+     *         pagination token in the response. You can use this pagination token to retrieve the next set of indexes.
      */
 
     public String getNextToken() {
@@ -76,14 +71,12 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes (
-     * <code>DataSourceSummaryItems</code>).
+     * pagination token in the response. You can use this pagination token to retrieve the next set of indexes.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a
-     *        pagination token in the response. You can use this pagination token to retrieve the next set of indexes (
-     *        <code>DataSourceSummaryItems</code>).
+     *        pagination token in the response. You can use this pagination token to retrieve the next set of indexes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +87,11 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of indices to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of data sources to return.
+     *        The maximum number of indices to return.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -107,10 +100,10 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of indices to return.
      * </p>
      * 
-     * @return The maximum number of data sources to return.
+     * @return The maximum number of indices to return.
      */
 
     public Integer getMaxResults() {
@@ -119,11 +112,11 @@ public class ListIndicesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The maximum number of data sources to return.
+     * The maximum number of indices to return.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of data sources to return.
+     *        The maximum number of indices to return.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

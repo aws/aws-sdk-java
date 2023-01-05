@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      * An array of metric data query structures that enables you to create an anomaly detector based on the result of a
      * metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
      * One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly
-     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this
-     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this
+     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>.
      * The designated expression must return a single time series.
      * </p>
      */
@@ -44,8 +44,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      * An array of metric data query structures that enables you to create an anomaly detector based on the result of a
      * metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
      * One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly
-     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this
-     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this
+     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>.
      * The designated expression must return a single time series.
      * </p>
      * 
@@ -53,8 +53,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      *         result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs
      *         a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time
      *         series that the anomaly detector uses as input. Designate the expression by setting
-     *         <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and
-     *         metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a
+     *         <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and
+     *         metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a
      *         single time series.
      */
 
@@ -70,8 +70,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      * An array of metric data query structures that enables you to create an anomaly detector based on the result of a
      * metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
      * One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly
-     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this
-     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this
+     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>.
      * The designated expression must return a single time series.
      * </p>
      * 
@@ -80,8 +80,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      *        result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs
      *        a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time
      *        series that the anomaly detector uses as input. Designate the expression by setting
-     *        <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and
-     *        metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single
+     *        <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and
+     *        metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single
      *        time series.
      */
 
@@ -99,8 +99,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      * An array of metric data query structures that enables you to create an anomaly detector based on the result of a
      * metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
      * One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly
-     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this
-     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this
+     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>.
      * The designated expression must return a single time series.
      * </p>
      * <p>
@@ -114,8 +114,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      *        result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs
      *        a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time
      *        series that the anomaly detector uses as input. Designate the expression by setting
-     *        <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and
-     *        metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single
+     *        <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and
+     *        metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single
      *        time series.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -135,8 +135,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      * An array of metric data query structures that enables you to create an anomaly detector based on the result of a
      * metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs a math expression.
      * One item in <code>MetricDataQueries</code> is the expression that provides the time series that the anomaly
-     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>True</code> for this
-     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>False</code>.
+     * detector uses as input. Designate the expression by setting <code>ReturnData</code> to <code>true</code> for this
+     * object in the array. For all other expressions and metrics, set <code>ReturnData</code> to <code>false</code>.
      * The designated expression must return a single time series.
      * </p>
      * 
@@ -145,8 +145,8 @@ public class MetricMathAnomalyDetector implements Serializable, Cloneable {
      *        result of a metric math expression. Each item in <code>MetricDataQueries</code> gets a metric or performs
      *        a math expression. One item in <code>MetricDataQueries</code> is the expression that provides the time
      *        series that the anomaly detector uses as input. Designate the expression by setting
-     *        <code>ReturnData</code> to <code>True</code> for this object in the array. For all other expressions and
-     *        metrics, set <code>ReturnData</code> to <code>False</code>. The designated expression must return a single
+     *        <code>ReturnData</code> to <code>true</code> for this object in the array. For all other expressions and
+     *        metrics, set <code>ReturnData</code> to <code>false</code>. The designated expression must return a single
      *        time series.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

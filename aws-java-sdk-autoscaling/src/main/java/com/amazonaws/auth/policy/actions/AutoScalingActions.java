@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public enum AutoScalingActions implements Action {
     AttachLoadBalancerTargetGroups("autoscaling:AttachLoadBalancerTargetGroups"),
     /** Action for the AttachLoadBalancers operation. */
     AttachLoadBalancers("autoscaling:AttachLoadBalancers"),
+    /** Action for the AttachTrafficSources operation. */
+    AttachTrafficSources("autoscaling:AttachTrafficSources"),
     /** Action for the BatchDeleteScheduledAction operation. */
     BatchDeleteScheduledAction("autoscaling:BatchDeleteScheduledAction"),
     /** Action for the BatchPutScheduledUpdateGroupAction operation. */
@@ -99,6 +101,8 @@ public enum AutoScalingActions implements Action {
     DescribeTags("autoscaling:DescribeTags"),
     /** Action for the DescribeTerminationPolicyTypes operation. */
     DescribeTerminationPolicyTypes("autoscaling:DescribeTerminationPolicyTypes"),
+    /** Action for the DescribeTrafficSources operation. */
+    DescribeTrafficSources("autoscaling:DescribeTrafficSources"),
     /** Action for the DescribeWarmPool operation. */
     DescribeWarmPool("autoscaling:DescribeWarmPool"),
     /** Action for the DetachInstances operation. */
@@ -107,6 +111,8 @@ public enum AutoScalingActions implements Action {
     DetachLoadBalancerTargetGroups("autoscaling:DetachLoadBalancerTargetGroups"),
     /** Action for the DetachLoadBalancers operation. */
     DetachLoadBalancers("autoscaling:DetachLoadBalancers"),
+    /** Action for the DetachTrafficSources operation. */
+    DetachTrafficSources("autoscaling:DetachTrafficSources"),
     /** Action for the DisableMetricsCollection operation. */
     DisableMetricsCollection("autoscaling:DisableMetricsCollection"),
     /** Action for the EnableMetricsCollection operation. */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1915,7 +1915,7 @@ public interface AWSNetworkManager {
 
     /**
      * <p>
-     * Enables for the Network Manager service for an Amazon Web Services Organization. This can only be called by a
+     * Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a
      * management account within the organization.
      * </p>
      * 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.panorama.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -45,6 +45,8 @@ public class ApplicationInstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthStatus").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<List> RUNTIMECONTEXTSTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuntimeContextStates").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> STATUSDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -76,6 +78,7 @@ public class ApplicationInstanceMarshaller {
             protocolMarshaller.marshall(applicationInstance.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(applicationInstance.getHealthStatus(), HEALTHSTATUS_BINDING);
             protocolMarshaller.marshall(applicationInstance.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(applicationInstance.getRuntimeContextStates(), RUNTIMECONTEXTSTATES_BINDING);
             protocolMarshaller.marshall(applicationInstance.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(applicationInstance.getStatusDescription(), STATUSDESCRIPTION_BINDING);
             protocolMarshaller.marshall(applicationInstance.getTags(), TAGS_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,14 @@ public class AggregationRequestJsonUnmarshaller implements Unmarshaller<Aggregat
                 if (context.testExpression("imageLayerAggregation", targetDepth)) {
                     context.nextToken();
                     aggregationRequest.setImageLayerAggregation(ImageLayerAggregationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lambdaFunctionAggregation", targetDepth)) {
+                    context.nextToken();
+                    aggregationRequest.setLambdaFunctionAggregation(LambdaFunctionAggregationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lambdaLayerAggregation", targetDepth)) {
+                    context.nextToken();
+                    aggregationRequest.setLambdaLayerAggregation(LambdaLayerAggregationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("packageAggregation", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -145,6 +145,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<CreateMetricAttributionResult> createMetricAttributionAsync(CreateMetricAttributionRequest request) {
+
+        return createMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMetricAttributionResult> createMetricAttributionAsync(CreateMetricAttributionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateMetricAttributionRequest, CreateMetricAttributionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRecommenderResult> createRecommenderAsync(CreateRecommenderRequest request) {
 
         return createRecommenderAsync(request, null);
@@ -257,6 +270,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricAttributionResult> deleteMetricAttributionAsync(DeleteMetricAttributionRequest request) {
+
+        return deleteMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMetricAttributionResult> deleteMetricAttributionAsync(DeleteMetricAttributionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteMetricAttributionRequest, DeleteMetricAttributionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -439,6 +465,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFilterRequest, DescribeFilterResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMetricAttributionResult> describeMetricAttributionAsync(DescribeMetricAttributionRequest request) {
+
+        return describeMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeMetricAttributionResult> describeMetricAttributionAsync(DescribeMetricAttributionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeMetricAttributionRequest, DescribeMetricAttributionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -639,6 +678,32 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     }
 
     @Override
+    public java.util.concurrent.Future<ListMetricAttributionMetricsResult> listMetricAttributionMetricsAsync(ListMetricAttributionMetricsRequest request) {
+
+        return listMetricAttributionMetricsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricAttributionMetricsResult> listMetricAttributionMetricsAsync(ListMetricAttributionMetricsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMetricAttributionMetricsRequest, ListMetricAttributionMetricsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricAttributionsResult> listMetricAttributionsAsync(ListMetricAttributionsRequest request) {
+
+        return listMetricAttributionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMetricAttributionsResult> listMetricAttributionsAsync(ListMetricAttributionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListMetricAttributionsRequest, ListMetricAttributionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListRecipesResult> listRecipesAsync(ListRecipesRequest request) {
 
         return listRecipesAsync(request, null);
@@ -790,6 +855,19 @@ public class AbstractAmazonPersonalizeAsync extends AbstractAmazonPersonalize im
     @Override
     public java.util.concurrent.Future<UpdateCampaignResult> updateCampaignAsync(UpdateCampaignRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateCampaignRequest, UpdateCampaignResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetricAttributionResult> updateMetricAttributionAsync(UpdateMetricAttributionRequest request) {
+
+        return updateMetricAttributionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMetricAttributionResult> updateMetricAttributionAsync(UpdateMetricAttributionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateMetricAttributionRequest, UpdateMetricAttributionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

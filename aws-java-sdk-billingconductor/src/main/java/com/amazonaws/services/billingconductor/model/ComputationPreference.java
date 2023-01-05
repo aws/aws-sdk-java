@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,21 +30,21 @@ public class ComputationPreference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing
-     * group.
+     * The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a
+     * billing group.
      * </p>
      */
     private String pricingPlanArn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing
-     * group.
+     * The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a
+     * billing group.
      * </p>
      * 
      * @param pricingPlanArn
-     *        The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a
-     *        billing group.
+     *        The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges
+     *        for a billing group.
      */
 
     public void setPricingPlanArn(String pricingPlanArn) {
@@ -53,12 +53,12 @@ public class ComputationPreference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing
-     * group.
+     * The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a
+     * billing group.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a
-     *         billing group.
+     * @return The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges
+     *         for a billing group.
      */
 
     public String getPricingPlanArn() {
@@ -67,13 +67,13 @@ public class ComputationPreference implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a billing
-     * group.
+     * The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges for a
+     * billing group.
      * </p>
      * 
      * @param pricingPlanArn
-     *        The Amazon Resource Name (ARN) of the pricing plan used to compute the Amazon Web Services charges for a
-     *        billing group.
+     *        The Amazon Resource Name (ARN) of the pricing plan that's used to compute the Amazon Web Services charges
+     *        for a billing group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

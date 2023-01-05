@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
     private java.util.Date createdAt;
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      */
     private ResourceLocation location;
@@ -476,11 +476,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      * 
      * @param location
-     *        The AWS Region and Availability Zone where you created your certificate.
+     *        The Amazon Web Services Region and Availability Zone where you created your certificate.
      */
 
     public void setLocation(ResourceLocation location) {
@@ -489,10 +489,10 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      * 
-     * @return The AWS Region and Availability Zone where you created your certificate.
+     * @return The Amazon Web Services Region and Availability Zone where you created your certificate.
      */
 
     public ResourceLocation getLocation() {
@@ -501,11 +501,11 @@ public class LoadBalancerTlsCertificate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The AWS Region and Availability Zone where you created your certificate.
+     * The Amazon Web Services Region and Availability Zone where you created your certificate.
      * </p>
      * 
      * @param location
-     *        The AWS Region and Availability Zone where you created your certificate.
+     *        The Amazon Web Services Region and Availability Zone where you created your certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

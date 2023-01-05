@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,10 +62,19 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
     private Long storedBytes;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     */
+    private String dataProtectionStatus;
 
     /**
      * <p>
@@ -298,11 +307,11 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -311,10 +320,10 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * @return The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      */
 
     public String getKmsKeyId() {
@@ -323,16 +332,99 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LogGroup withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param dataProtectionStatus
+     *        Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *        >PutDataProtectionPolicy</a>.
+     * @see DataProtectionStatus
+     */
+
+    public void setDataProtectionStatus(String dataProtectionStatus) {
+        this.dataProtectionStatus = dataProtectionStatus;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @return Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *         >PutDataProtectionPolicy</a>.
+     * @see DataProtectionStatus
+     */
+
+    public String getDataProtectionStatus() {
+        return this.dataProtectionStatus;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param dataProtectionStatus
+     *        Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *        >PutDataProtectionPolicy</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataProtectionStatus
+     */
+
+    public LogGroup withDataProtectionStatus(String dataProtectionStatus) {
+        setDataProtectionStatus(dataProtectionStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Displays whether this log group has a protection policy, or whether it had one in the past. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     * >PutDataProtectionPolicy</a>.
+     * </p>
+     * 
+     * @param dataProtectionStatus
+     *        Displays whether this log group has a protection policy, or whether it had one in the past. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html"
+     *        >PutDataProtectionPolicy</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DataProtectionStatus
+     */
+
+    public LogGroup withDataProtectionStatus(DataProtectionStatus dataProtectionStatus) {
+        this.dataProtectionStatus = dataProtectionStatus.toString();
         return this;
     }
 
@@ -361,7 +453,9 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         if (getStoredBytes() != null)
             sb.append("StoredBytes: ").append(getStoredBytes()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getDataProtectionStatus() != null)
+            sb.append("DataProtectionStatus: ").append(getDataProtectionStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +498,10 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getDataProtectionStatus() == null ^ this.getDataProtectionStatus() == null)
+            return false;
+        if (other.getDataProtectionStatus() != null && other.getDataProtectionStatus().equals(this.getDataProtectionStatus()) == false)
+            return false;
         return true;
     }
 
@@ -419,6 +517,7 @@ public class LogGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStoredBytes() == null) ? 0 : getStoredBytes().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getDataProtectionStatus() == null) ? 0 : getDataProtectionStatus().hashCode());
         return hashCode;
     }
 

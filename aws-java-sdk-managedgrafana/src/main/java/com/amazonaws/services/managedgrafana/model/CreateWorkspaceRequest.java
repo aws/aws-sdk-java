@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String accountAccessType;
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
@@ -51,6 +51,15 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     private String clientToken;
     /**
      * <p>
+     * The configuration string for the workspace that you create. For more information about the format and
+     * configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana
+     * workspace</a>.
+     * </p>
+     */
+    private String configuration;
+    /**
+     * <p>
      * The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources
      * and notification channels in other accounts in an organization.
      * </p>
@@ -60,8 +69,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
      * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role
-     * for you.
+     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
+     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
+     * type when creating a workspace in the CLI.
      * </p>
      * <p>
      * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
@@ -88,6 +99,12 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     */
+    private VpcConfiguration vpcConfiguration;
     /**
      * <p>
      * Specify the Amazon Web Services data sources that you want to be queried in this workspace. Specifying these data
@@ -224,14 +241,14 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
-     * @return Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *         authenticate users for using the Grafana console within a workspace. For more information, see <a
+     * @return Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or
+     *         both to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *         href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User
      *         authentication in Amazon Managed Grafana</a>.
      * @see AuthenticationProviderTypes
@@ -243,15 +260,15 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @see AuthenticationProviderTypes
@@ -268,8 +285,8 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
@@ -280,8 +297,8 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -300,15 +317,15 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -322,15 +339,15 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to authenticate users
-     * for using the Grafana console within a workspace. For more information, see <a
+     * Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to
+     * authenticate users for using the Grafana console within a workspace. For more information, see <a
      * href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in
      * Amazon Managed Grafana</a>.
      * </p>
      * 
      * @param authenticationProviders
-     *        Specifies whether this workspace uses SAML 2.0, Amazon Web Services Single Sign On, or both to
-     *        authenticate users for using the Grafana console within a workspace. For more information, see <a
+     *        Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both
+     *        to authenticate users for using the Grafana console within a workspace. For more information, see <a
      *        href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication
      *        in Amazon Managed Grafana</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -392,6 +409,84 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The configuration string for the workspace that you create. For more information about the format and
+     * configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana
+     * workspace</a>.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param configuration
+     *        The configuration string for the workspace that you create. For more information about the format and
+     *        configuration options available, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your
+     *        Grafana workspace</a>.
+     */
+
+    public void setConfiguration(String configuration) {
+        this.configuration = configuration;
+    }
+
+    /**
+     * <p>
+     * The configuration string for the workspace that you create. For more information about the format and
+     * configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana
+     * workspace</a>.
+     * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * 
+     * @return The configuration string for the workspace that you create. For more information about the format and
+     *         configuration options available, see <a
+     *         href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your
+     *         Grafana workspace</a>.
+     */
+
+    public String getConfiguration() {
+        return this.configuration;
+    }
+
+    /**
+     * <p>
+     * The configuration string for the workspace that you create. For more information about the format and
+     * configuration options available, see <a
+     * href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana
+     * workspace</a>.
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param configuration
+     *        The configuration string for the workspace that you create. For more information about the format and
+     *        configuration options available, see <a
+     *        href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your
+     *        Grafana workspace</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkspaceRequest withConfiguration(String configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources
      * and notification channels in other accounts in an organization.
      * </p>
@@ -440,8 +535,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
      * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role
-     * for you.
+     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
+     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
+     * type when creating a workspace in the CLI.
      * </p>
      * <p>
      * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
@@ -458,8 +555,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param permissionType
      *        If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
      *        creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *        data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will
-     *        not create the IAM role for you.</p>
+     *        data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
+     *        will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on
+     *        behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
+     *        <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
      *        <p>
      *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
      *        are creating this workspace in a member account of an organization that is not a delegated administrator
@@ -481,8 +580,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
      * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role
-     * for you.
+     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
+     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
+     * type when creating a workspace in the CLI.
      * </p>
      * <p>
      * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
@@ -498,8 +599,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
      *         creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *         data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will
-     *         not create the IAM role for you.</p>
+     *         data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
+     *         will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role
+     *         on behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
+     *         <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
      *         <p>
      *         If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If
      *         you are creating this workspace in a member account of an organization that is not a delegated
@@ -521,8 +624,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
      * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role
-     * for you.
+     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
+     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
+     * type when creating a workspace in the CLI.
      * </p>
      * <p>
      * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
@@ -539,8 +644,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param permissionType
      *        If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
      *        creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *        data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will
-     *        not create the IAM role for you.</p>
+     *        data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
+     *        will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on
+     *        behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
+     *        <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
      *        <p>
      *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
      *        are creating this workspace in a member account of an organization that is not a delegated administrator
@@ -564,8 +671,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically creates
      * the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services data sources and
-     * notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM role
-     * for you.
+     * notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code> will not create the IAM
+     * role for you. The ability for the Amazon Managed Grafana to create the IAM role on behalf of the user is
+     * supported only in the Amazon Managed Grafana AWS console. Use only the <code>CUSTOMER_MANAGED</code> permission
+     * type when creating a workspace in the CLI.
      * </p>
      * <p>
      * If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you are
@@ -582,8 +691,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * @param permissionType
      *        If you specify <code>SERVICE_MANAGED</code> on AWS Grafana console, Amazon Managed Grafana automatically
      *        creates the IAM roles and provisions the permissions that the workspace needs to use Amazon Web Services
-     *        data sources and notification channels. In CLI mode, the permissionType <code>SERVICE_MANAGED</code> will
-     *        not create the IAM role for you.</p>
+     *        data sources and notification channels. In the CLI mode, the permissionType <code>SERVICE_MANAGED</code>
+     *        will not create the IAM role for you. The ability for the Amazon Managed Grafana to create the IAM role on
+     *        behalf of the user is supported only in the Amazon Managed Grafana AWS console. Use only the
+     *        <code>CUSTOMER_MANAGED</code> permission type when creating a workspace in the CLI. </p>
      *        <p>
      *        If you specify <code>CUSTOMER_MANAGED</code>, you will manage those roles and permissions yourself. If you
      *        are creating this workspace in a member account of an organization that is not a delegated administrator
@@ -708,6 +819,49 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateWorkspaceRequest clearTagsEntries() {
         this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *        connect to.
+     */
+
+    public void setVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        this.vpcConfiguration = vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @return The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *         connect to.
+     */
+
+    public VpcConfiguration getVpcConfiguration() {
+        return this.vpcConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.
+     * </p>
+     * 
+     * @param vpcConfiguration
+     *        The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to
+     *        connect to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateWorkspaceRequest withVpcConfiguration(VpcConfiguration vpcConfiguration) {
+        setVpcConfiguration(vpcConfiguration);
         return this;
     }
 
@@ -1230,6 +1384,8 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("AuthenticationProviders: ").append(getAuthenticationProviders()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration()).append(",");
         if (getOrganizationRoleName() != null)
             sb.append("OrganizationRoleName: ").append("***Sensitive Data Redacted***").append(",");
         if (getPermissionType() != null)
@@ -1238,6 +1394,8 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("StackSetName: ").append(getStackSetName()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpcConfiguration() != null)
+            sb.append("VpcConfiguration: ").append(getVpcConfiguration()).append(",");
         if (getWorkspaceDataSources() != null)
             sb.append("WorkspaceDataSources: ").append(getWorkspaceDataSources()).append(",");
         if (getWorkspaceDescription() != null)
@@ -1276,6 +1434,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         if (other.getOrganizationRoleName() == null ^ this.getOrganizationRoleName() == null)
             return false;
         if (other.getOrganizationRoleName() != null && other.getOrganizationRoleName().equals(this.getOrganizationRoleName()) == false)
@@ -1291,6 +1453,10 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getVpcConfiguration() == null ^ this.getVpcConfiguration() == null)
+            return false;
+        if (other.getVpcConfiguration() != null && other.getVpcConfiguration().equals(this.getVpcConfiguration()) == false)
             return false;
         if (other.getWorkspaceDataSources() == null ^ this.getWorkspaceDataSources() == null)
             return false;
@@ -1328,10 +1494,12 @@ public class CreateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getAccountAccessType() == null) ? 0 : getAccountAccessType().hashCode());
         hashCode = prime * hashCode + ((getAuthenticationProviders() == null) ? 0 : getAuthenticationProviders().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOrganizationRoleName() == null) ? 0 : getOrganizationRoleName().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
         hashCode = prime * hashCode + ((getStackSetName() == null) ? 0 : getStackSetName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceDataSources() == null) ? 0 : getWorkspaceDataSources().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceDescription() == null) ? 0 : getWorkspaceDescription().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceName() == null) ? 0 : getWorkspaceName().hashCode());

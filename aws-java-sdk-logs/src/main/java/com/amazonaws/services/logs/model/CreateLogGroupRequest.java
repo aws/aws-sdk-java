@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,9 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private String logGroupName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      */
     private String kmsKeyId;
@@ -44,9 +44,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
@@ -113,15 +115,15 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - Key Management Service</a>.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        Resource Names</a>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -130,14 +132,15 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see
+     *         <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *         Resource Names - Key Management Service</a>.
+     *         Resource Names</a>.
      */
 
     public String getKmsKeyId() {
@@ -146,15 +149,15 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
+     * The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon Resource
-     * Names - Key Management Service</a>.
+     * Names</a>.
      * </p>
      * 
      * @param kmsKeyId
-     *        The Amazon Resource Name (ARN) of the CMK to use when encrypting log data. For more information, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
-     *        Resource Names - Key Management Service</a>.
+     *        The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see
+     *        <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">Amazon
+     *        Resource Names</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,18 +171,23 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
      * 
      * @return The key-value pairs to use for the tags.</p>
      *         <p>
-     *         CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
-     *         groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
-     *         For more information about using tags to control access, see <a
+     *         You can grant users access to certain log groups while preventing them from accessing other log groups.
+     *         To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a
+     *         log group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code>
+     *         permission. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *         resources</a>. For more information about using tags to control access, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      *         Services resources using tags</a>.
      */
@@ -196,9 +204,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
@@ -206,9 +216,12 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param tags
      *        The key-value pairs to use for the tags.</p>
      *        <p>
-     *        CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
-     *        groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
-     *        For more information about using tags to control access, see <a
+     *        You can grant users access to certain log groups while preventing them from accessing other log groups. To
+     *        do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log
+     *        group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission.
+     *        For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>. For more information about using tags to control access, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      *        Services resources using tags</a>.
      */
@@ -222,9 +235,11 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * The key-value pairs to use for the tags.
      * </p>
      * <p>
-     * CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log groups using
-     * the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys. For more information
-     * about using tags to control access, see <a
+     * You can grant users access to certain log groups while preventing them from accessing other log groups. To do so,
+     * tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you
+     * must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission. For more
+     * information about tagging, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+     * Amazon Web Services resources</a>. For more information about using tags to control access, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      * Services resources using tags</a>.
      * </p>
@@ -232,9 +247,12 @@ public class CreateLogGroupRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param tags
      *        The key-value pairs to use for the tags.</p>
      *        <p>
-     *        CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified tags to log
-     *        groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code> condition keys.
-     *        For more information about using tags to control access, see <a
+     *        You can grant users access to certain log groups while preventing them from accessing other log groups. To
+     *        do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log
+     *        group, you must have either the <code>logs:TagResource</code> or <code>logs:TagLogGroup</code> permission.
+     *        For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services
+     *        resources</a>. For more information about using tags to control access, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling access to Amazon Web
      *        Services resources using tags</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

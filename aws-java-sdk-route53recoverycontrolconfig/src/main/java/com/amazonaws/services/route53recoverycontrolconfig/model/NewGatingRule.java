@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * The criteria that you set for specific gating controls (routing controls) that designate how many control states
      * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      */
@@ -58,7 +58,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
      * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset)
+     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
      * the routing controls that you have specified as TargetControls if that rule evaluates to true.
      * </p>
      * <p>
@@ -236,12 +236,12 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * The criteria that you set for specific gating controls (routing controls) that designate how many control states
      * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for specific gating controls (routing controls) that designates how many control
+     *        The criteria that you set for specific gating controls (routing controls) that designate how many control
      *        states must be ON to allow you to change (set or unset) the target control states.
      */
 
@@ -251,12 +251,12 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * The criteria that you set for specific gating controls (routing controls) that designate how many control states
      * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      * 
-     * @return The criteria that you set for specific gating controls (routing controls) that designates how many
-     *         control states must be ON to allow you to change (set or unset) the target control states.
+     * @return The criteria that you set for specific gating controls (routing controls) that designate how many control
+     *         states must be ON to allow you to change (set or unset) the target control states.
      */
 
     public RuleConfig getRuleConfig() {
@@ -265,12 +265,12 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The criteria that you set for specific gating controls (routing controls) that designates how many control states
+     * The criteria that you set for specific gating controls (routing controls) that designate how many control states
      * must be ON to allow you to change (set or unset) the target control states.
      * </p>
      * 
      * @param ruleConfig
-     *        The criteria that you set for specific gating controls (routing controls) that designates how many control
+     *        The criteria that you set for specific gating controls (routing controls) that designate how many control
      *        states must be ON to allow you to change (set or unset) the target control states.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -284,7 +284,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
      * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset)
+     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
      * the routing controls that you have specified as TargetControls if that rule evaluates to true.
      * </p>
      * <p>
@@ -294,7 +294,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
      *         specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *         Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     *         Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      *         change (set or unset) the routing controls that you have specified as TargetControls if that rule
      *         evaluates to true.</p>
      *         <p>
@@ -310,7 +310,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
      * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset)
+     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
      * the routing controls that you have specified as TargetControls if that rule evaluates to true.
      * </p>
      * <p>
@@ -321,7 +321,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * @param targetControls
      *        Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
      *        specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *        Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     *        Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      *        change (set or unset) the routing controls that you have specified as TargetControls if that rule
      *        evaluates to true.</p>
      *        <p>
@@ -342,7 +342,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
      * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset)
+     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
      * the routing controls that you have specified as TargetControls if that rule evaluates to true.
      * </p>
      * <p>
@@ -358,7 +358,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * @param targetControls
      *        Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
      *        specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *        Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     *        Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      *        change (set or unset) the routing controls that you have specified as TargetControls if that rule
      *        evaluates to true.</p>
      *        <p>
@@ -381,7 +381,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the specified
      * GatingControls. For example, say you have three gating controls, one for each of three Amazon Web Services
-     * Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only change (set or unset)
+     * Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only change (set or unset)
      * the routing controls that you have specified as TargetControls if that rule evaluates to true.
      * </p>
      * <p>
@@ -392,7 +392,7 @@ public class NewGatingRule implements Serializable, Cloneable, StructuredPojo {
      * @param targetControls
      *        Routing controls that can only be set or unset if the specified RuleConfig evaluates to true for the
      *        specified GatingControls. For example, say you have three gating controls, one for each of three Amazon
-     *        Web Services Regions. Now you specify AtLeast 2 as your RuleConfig. With these settings, you can only
+     *        Web Services Regions. Now you specify ATLEAST 2 as your RuleConfig. With these settings, you can only
      *        change (set or unset) the routing controls that you have specified as TargetControls if that rule
      *        evaluates to true.</p>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,12 +26,7 @@ import com.amazonaws.services.macie2.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern
- * matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as
- * PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie
- * also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects
- * sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as
- * necessary.
+ * Amazon Macie
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -513,7 +508,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     /**
      * <p>
      * Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie
-     * monitors and analyzes.
+     * monitors and analyzes for an account.
      * </p>
      * 
      * @param describeBucketsRequest
@@ -527,7 +522,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     /**
      * <p>
      * Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie
-     * monitors and analyzes.
+     * monitors and analyzes for an account.
      * </p>
      * 
      * @param describeBucketsRequest
@@ -912,7 +907,43 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie monitors and analyzes.
+     * Retrieves the configuration settings and status of automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param getAutomatedDiscoveryConfigurationRequest
+     * @return A Java Future containing the result of the GetAutomatedDiscoveryConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.GetAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAutomatedDiscoveryConfigurationResult> getAutomatedDiscoveryConfigurationAsync(
+            GetAutomatedDiscoveryConfigurationRequest getAutomatedDiscoveryConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration settings and status of automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param getAutomatedDiscoveryConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAutomatedDiscoveryConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.GetAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAutomatedDiscoveryConfigurationResult> getAutomatedDiscoveryConfigurationAsync(
+            GetAutomatedDiscoveryConfigurationRequest getAutomatedDiscoveryConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAutomatedDiscoveryConfigurationRequest, GetAutomatedDiscoveryConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon Macie monitors and analyzes
+     * for an account.
      * </p>
      * 
      * @param getBucketStatisticsRequest
@@ -925,7 +956,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves (queries) aggregated statistical data about S3 buckets that Amazon Macie monitors and analyzes.
+     * Retrieves (queries) aggregated statistical data about all the S3 buckets that Amazon Macie monitors and analyzes
+     * for an account.
      * </p>
      * 
      * @param getBucketStatisticsRequest
@@ -975,6 +1007,37 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<GetClassificationExportConfigurationResult> getClassificationExportConfigurationAsync(
             GetClassificationExportConfigurationRequest getClassificationExportConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<GetClassificationExportConfigurationRequest, GetClassificationExportConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the classification scope settings for an account.
+     * </p>
+     * 
+     * @param getClassificationScopeRequest
+     * @return A Java Future containing the result of the GetClassificationScope operation returned by the service.
+     * @sample AmazonMacie2Async.GetClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetClassificationScopeResult> getClassificationScopeAsync(GetClassificationScopeRequest getClassificationScopeRequest);
+
+    /**
+     * <p>
+     * Retrieves the classification scope settings for an account.
+     * </p>
+     * 
+     * @param getClassificationScopeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetClassificationScope operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.GetClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetClassificationScope" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetClassificationScopeResult> getClassificationScopeAsync(GetClassificationScopeRequest getClassificationScopeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetClassificationScopeRequest, GetClassificationScopeResult> asyncHandler);
 
     /**
      * <p>
@@ -1168,7 +1231,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
@@ -1181,7 +1244,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
@@ -1260,6 +1323,37 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
      */
     java.util.concurrent.Future<GetMemberResult> getMemberAsync(GetMemberRequest getMemberRequest,
             com.amazonaws.handlers.AsyncHandler<GetMemberRequest, GetMemberResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves (queries) sensitive data discovery statistics and the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param getResourceProfileRequest
+     * @return A Java Future containing the result of the GetResourceProfile operation returned by the service.
+     * @sample AmazonMacie2Async.GetResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceProfileResult> getResourceProfileAsync(GetResourceProfileRequest getResourceProfileRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) sensitive data discovery statistics and the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param getResourceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetResourceProfile operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.GetResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetResourceProfile" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetResourceProfileResult> getResourceProfileAsync(GetResourceProfileRequest getResourceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<GetResourceProfileRequest, GetResourceProfileResult> asyncHandler);
 
     /**
      * <p>
@@ -1361,6 +1455,41 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<GetSensitiveDataOccurrencesAvailabilityResult> getSensitiveDataOccurrencesAvailabilityAsync(
             GetSensitiveDataOccurrencesAvailabilityRequest getSensitiveDataOccurrencesAvailabilityRequest,
             com.amazonaws.handlers.AsyncHandler<GetSensitiveDataOccurrencesAvailabilityRequest, GetSensitiveDataOccurrencesAvailabilityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param getSensitivityInspectionTemplateRequest
+     * @return A Java Future containing the result of the GetSensitivityInspectionTemplate operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.GetSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSensitivityInspectionTemplateResult> getSensitivityInspectionTemplateAsync(
+            GetSensitivityInspectionTemplateRequest getSensitivityInspectionTemplateRequest);
+
+    /**
+     * <p>
+     * Retrieves the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param getSensitivityInspectionTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSensitivityInspectionTemplate operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.GetSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSensitivityInspectionTemplateResult> getSensitivityInspectionTemplateAsync(
+            GetSensitivityInspectionTemplateRequest getSensitivityInspectionTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSensitivityInspectionTemplateRequest, GetSensitivityInspectionTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -1485,6 +1614,37 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
      */
     java.util.concurrent.Future<ListClassificationJobsResult> listClassificationJobsAsync(ListClassificationJobsRequest listClassificationJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListClassificationJobsRequest, ListClassificationJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a subset of information about the classification scope for an account.
+     * </p>
+     * 
+     * @param listClassificationScopesRequest
+     * @return A Java Future containing the result of the ListClassificationScopes operation returned by the service.
+     * @sample AmazonMacie2Async.ListClassificationScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListClassificationScopesResult> listClassificationScopesAsync(ListClassificationScopesRequest listClassificationScopesRequest);
+
+    /**
+     * <p>
+     * Retrieves a subset of information about the classification scope for an account.
+     * </p>
+     * 
+     * @param listClassificationScopesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListClassificationScopes operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.ListClassificationScopes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListClassificationScopes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListClassificationScopesResult> listClassificationScopesAsync(ListClassificationScopesRequest listClassificationScopesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListClassificationScopesRequest, ListClassificationScopesResult> asyncHandler);
 
     /**
      * <p>
@@ -1712,6 +1872,111 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(
             ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest,
             com.amazonaws.handlers.AsyncHandler<ListOrganizationAdminAccountsRequest, ListOrganizationAdminAccountsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about objects that were selected from an S3 bucket for automated sensitive data discovery.
+     * </p>
+     * 
+     * @param listResourceProfileArtifactsRequest
+     * @return A Java Future containing the result of the ListResourceProfileArtifacts operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.ListResourceProfileArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceProfileArtifactsResult> listResourceProfileArtifactsAsync(
+            ListResourceProfileArtifactsRequest listResourceProfileArtifactsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about objects that were selected from an S3 bucket for automated sensitive data discovery.
+     * </p>
+     * 
+     * @param listResourceProfileArtifactsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceProfileArtifacts operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.ListResourceProfileArtifacts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileArtifacts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceProfileArtifactsResult> listResourceProfileArtifactsAsync(
+            ListResourceProfileArtifactsRequest listResourceProfileArtifactsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceProfileArtifactsRequest, ListResourceProfileArtifactsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.
+     * </p>
+     * 
+     * @param listResourceProfileDetectionsRequest
+     * @return A Java Future containing the result of the ListResourceProfileDetections operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.ListResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceProfileDetectionsResult> listResourceProfileDetectionsAsync(
+            ListResourceProfileDetectionsRequest listResourceProfileDetectionsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.
+     * </p>
+     * 
+     * @param listResourceProfileDetectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourceProfileDetections operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.ListResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourceProfileDetectionsResult> listResourceProfileDetectionsAsync(
+            ListResourceProfileDetectionsRequest listResourceProfileDetectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourceProfileDetectionsRequest, ListResourceProfileDetectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a subset of information about the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param listSensitivityInspectionTemplatesRequest
+     * @return A Java Future containing the result of the ListSensitivityInspectionTemplates operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.ListSensitivityInspectionTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSensitivityInspectionTemplatesResult> listSensitivityInspectionTemplatesAsync(
+            ListSensitivityInspectionTemplatesRequest listSensitivityInspectionTemplatesRequest);
+
+    /**
+     * <p>
+     * Retrieves a subset of information about the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param listSensitivityInspectionTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSensitivityInspectionTemplates operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.ListSensitivityInspectionTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ListSensitivityInspectionTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSensitivityInspectionTemplatesResult> listSensitivityInspectionTemplatesAsync(
+            ListSensitivityInspectionTemplatesRequest listSensitivityInspectionTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSensitivityInspectionTemplatesRequest, ListSensitivityInspectionTemplatesResult> asyncHandler);
 
     /**
      * <p>
@@ -1973,6 +2238,41 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
+     * Enables or disables automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param updateAutomatedDiscoveryConfigurationRequest
+     * @return A Java Future containing the result of the UpdateAutomatedDiscoveryConfiguration operation returned by
+     *         the service.
+     * @sample AmazonMacie2Async.UpdateAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAutomatedDiscoveryConfigurationResult> updateAutomatedDiscoveryConfigurationAsync(
+            UpdateAutomatedDiscoveryConfigurationRequest updateAutomatedDiscoveryConfigurationRequest);
+
+    /**
+     * <p>
+     * Enables or disables automated sensitive data discovery for an account.
+     * </p>
+     * 
+     * @param updateAutomatedDiscoveryConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAutomatedDiscoveryConfiguration operation returned by
+     *         the service.
+     * @sample AmazonMacie2AsyncHandler.UpdateAutomatedDiscoveryConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateAutomatedDiscoveryConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAutomatedDiscoveryConfigurationResult> updateAutomatedDiscoveryConfigurationAsync(
+            UpdateAutomatedDiscoveryConfigurationRequest updateAutomatedDiscoveryConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAutomatedDiscoveryConfigurationRequest, UpdateAutomatedDiscoveryConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
      * Changes the status of a classification job.
      * </p>
      * 
@@ -2001,6 +2301,39 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
      */
     java.util.concurrent.Future<UpdateClassificationJobResult> updateClassificationJobAsync(UpdateClassificationJobRequest updateClassificationJobRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateClassificationJobRequest, UpdateClassificationJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the classification scope settings for an account.
+     * </p>
+     * 
+     * @param updateClassificationScopeRequest
+     * @return A Java Future containing the result of the UpdateClassificationScope operation returned by the service.
+     * @sample AmazonMacie2Async.UpdateClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClassificationScopeResult> updateClassificationScopeAsync(
+            UpdateClassificationScopeRequest updateClassificationScopeRequest);
+
+    /**
+     * <p>
+     * Updates the classification scope settings for an account.
+     * </p>
+     * 
+     * @param updateClassificationScopeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateClassificationScope operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.UpdateClassificationScope
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateClassificationScope"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClassificationScopeResult> updateClassificationScopeAsync(
+            UpdateClassificationScopeRequest updateClassificationScopeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClassificationScopeRequest, UpdateClassificationScopeResult> asyncHandler);
 
     /**
      * <p>
@@ -2132,6 +2465,72 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
+     * Updates the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileRequest
+     * @return A Java Future containing the result of the UpdateResourceProfile operation returned by the service.
+     * @sample AmazonMacie2Async.UpdateResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceProfileResult> updateResourceProfileAsync(UpdateResourceProfileRequest updateResourceProfileRequest);
+
+    /**
+     * <p>
+     * Updates the sensitivity score for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResourceProfile operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.UpdateResourceProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceProfileResult> updateResourceProfileAsync(UpdateResourceProfileRequest updateResourceProfileRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourceProfileRequest, UpdateResourceProfileResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the sensitivity scoring settings for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileDetectionsRequest
+     * @return A Java Future containing the result of the UpdateResourceProfileDetections operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.UpdateResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceProfileDetectionsResult> updateResourceProfileDetectionsAsync(
+            UpdateResourceProfileDetectionsRequest updateResourceProfileDetectionsRequest);
+
+    /**
+     * <p>
+     * Updates the sensitivity scoring settings for an S3 bucket.
+     * </p>
+     * 
+     * @param updateResourceProfileDetectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateResourceProfileDetections operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.UpdateResourceProfileDetections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateResourceProfileDetections"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateResourceProfileDetectionsResult> updateResourceProfileDetectionsAsync(
+            UpdateResourceProfileDetectionsRequest updateResourceProfileDetectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateResourceProfileDetectionsRequest, UpdateResourceProfileDetectionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the status and configuration settings for retrieving occurrences of sensitive data reported by findings.
      * </p>
      * 
@@ -2162,5 +2561,40 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<UpdateRevealConfigurationResult> updateRevealConfigurationAsync(
             UpdateRevealConfigurationRequest updateRevealConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateRevealConfigurationRequest, UpdateRevealConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param updateSensitivityInspectionTemplateRequest
+     * @return A Java Future containing the result of the UpdateSensitivityInspectionTemplate operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.UpdateSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSensitivityInspectionTemplateResult> updateSensitivityInspectionTemplateAsync(
+            UpdateSensitivityInspectionTemplateRequest updateSensitivityInspectionTemplateRequest);
+
+    /**
+     * <p>
+     * Updates the settings for the sensitivity inspection template for an account.
+     * </p>
+     * 
+     * @param updateSensitivityInspectionTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSensitivityInspectionTemplate operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.UpdateSensitivityInspectionTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UpdateSensitivityInspectionTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSensitivityInspectionTemplateResult> updateSensitivityInspectionTemplateAsync(
+            UpdateSensitivityInspectionTemplateRequest updateSensitivityInspectionTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSensitivityInspectionTemplateRequest, UpdateSensitivityInspectionTemplateResult> asyncHandler);
 
 }

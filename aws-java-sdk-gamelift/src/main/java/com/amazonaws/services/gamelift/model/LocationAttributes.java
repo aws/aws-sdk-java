@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,13 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Represents a location in a multi-location fleet.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>DescribeFleetLocationAttributes</a>
+ * Details about a location in a multi-location fleet.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationAttributes" target="_top">AWS API
@@ -49,8 +43,8 @@ public class LocationAttributes implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that
-     * <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet been completed
-     * for the location.
+     * <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.
      * </p>
      */
     private String updateStatus;
@@ -196,14 +190,14 @@ public class LocationAttributes implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that
-     * <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet been completed
-     * for the location.
+     * <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.
      * </p>
      * 
      * @param updateStatus
      *        The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates
-     *        that <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet
-     *        been completed for the location.
+     *        that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has
+     *        not yet been completed for the location.
      * @see LocationUpdateStatus
      */
 
@@ -214,13 +208,13 @@ public class LocationAttributes implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that
-     * <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet been completed
-     * for the location.
+     * <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.
      * </p>
      * 
      * @return The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates
-     *         that <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet
-     *         been completed for the location.
+     *         that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update
+     *         has not yet been completed for the location.
      * @see LocationUpdateStatus
      */
 
@@ -231,14 +225,14 @@ public class LocationAttributes implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that
-     * <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet been completed
-     * for the location.
+     * <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.
      * </p>
      * 
      * @param updateStatus
      *        The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates
-     *        that <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet
-     *        been completed for the location.
+     *        that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has
+     *        not yet been completed for the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationUpdateStatus
      */
@@ -251,14 +245,14 @@ public class LocationAttributes implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates that
-     * <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet been completed
-     * for the location.
+     * <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has not yet
+     * been completed for the location.
      * </p>
      * 
      * @param updateStatus
      *        The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code> indicates
-     *        that <a>StopFleetActions</a> or <a>StartFleetActions</a> has been requested but the update has not yet
-     *        been completed for the location.
+     *        that <code>StopFleetActions</code> or <code>StartFleetActions</code> has been requested but the update has
+     *        not yet been completed for the location.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LocationUpdateStatus
      */

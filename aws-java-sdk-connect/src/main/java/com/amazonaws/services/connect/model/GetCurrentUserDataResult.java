@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class GetCurrentUserDataResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.List<UserData> userDataList;
+    /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     */
+    private Long approximateTotalCount;
 
     /**
      * <p>
@@ -147,6 +153,46 @@ public class GetCurrentUserDataResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     * 
+     * @param approximateTotalCount
+     *        The total count of the result, regardless of the current page size.
+     */
+
+    public void setApproximateTotalCount(Long approximateTotalCount) {
+        this.approximateTotalCount = approximateTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     * 
+     * @return The total count of the result, regardless of the current page size.
+     */
+
+    public Long getApproximateTotalCount() {
+        return this.approximateTotalCount;
+    }
+
+    /**
+     * <p>
+     * The total count of the result, regardless of the current page size.
+     * </p>
+     * 
+     * @param approximateTotalCount
+     *        The total count of the result, regardless of the current page size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetCurrentUserDataResult withApproximateTotalCount(Long approximateTotalCount) {
+        setApproximateTotalCount(approximateTotalCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -161,7 +207,9 @@ public class GetCurrentUserDataResult extends com.amazonaws.AmazonWebServiceResu
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getUserDataList() != null)
-            sb.append("UserDataList: ").append(getUserDataList());
+            sb.append("UserDataList: ").append(getUserDataList()).append(",");
+        if (getApproximateTotalCount() != null)
+            sb.append("ApproximateTotalCount: ").append(getApproximateTotalCount());
         sb.append("}");
         return sb.toString();
     }
@@ -184,6 +232,10 @@ public class GetCurrentUserDataResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getUserDataList() != null && other.getUserDataList().equals(this.getUserDataList()) == false)
             return false;
+        if (other.getApproximateTotalCount() == null ^ this.getApproximateTotalCount() == null)
+            return false;
+        if (other.getApproximateTotalCount() != null && other.getApproximateTotalCount().equals(this.getApproximateTotalCount()) == false)
+            return false;
         return true;
     }
 
@@ -194,6 +246,7 @@ public class GetCurrentUserDataResult extends com.amazonaws.AmazonWebServiceResu
 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getUserDataList() == null) ? 0 : getUserDataList().hashCode());
+        hashCode = prime * hashCode + ((getApproximateTotalCount() == null) ? 0 : getApproximateTotalCount().hashCode());
         return hashCode;
     }
 

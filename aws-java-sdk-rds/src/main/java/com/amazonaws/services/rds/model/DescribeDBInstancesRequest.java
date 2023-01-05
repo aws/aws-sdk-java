@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-supplied instance identifier. If this parameter is specified, information from only the specific DB
-     * instance is returned. This parameter isn't case-sensitive.
+     * The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is
+     * specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -110,8 +110,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-supplied instance identifier. If this parameter is specified, information from only the specific DB
-     * instance is returned. This parameter isn't case-sensitive.
+     * The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is
+     * specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -125,8 +125,9 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The user-supplied instance identifier. If this parameter is specified, information from only the specific
-     *        DB instance is returned. This parameter isn't case-sensitive.</p>
+     *        The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this
+     *        parameter is specified, information from only the specific DB instance is returned. This parameter isn't
+     *        case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -144,8 +145,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-supplied instance identifier. If this parameter is specified, information from only the specific DB
-     * instance is returned. This parameter isn't case-sensitive.
+     * The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is
+     * specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -158,8 +159,9 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </li>
      * </ul>
      * 
-     * @return The user-supplied instance identifier. If this parameter is specified, information from only the specific
-     *         DB instance is returned. This parameter isn't case-sensitive.</p>
+     * @return The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this
+     *         parameter is specified, information from only the specific DB instance is returned. This parameter isn't
+     *         case-sensitive.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -177,8 +179,8 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The user-supplied instance identifier. If this parameter is specified, information from only the specific DB
-     * instance is returned. This parameter isn't case-sensitive.
+     * The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is
+     * specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.
      * </p>
      * <p>
      * Constraints:
@@ -192,8 +194,9 @@ public class DescribeDBInstancesRequest extends com.amazonaws.AmazonWebServiceRe
      * </ul>
      * 
      * @param dBInstanceIdentifier
-     *        The user-supplied instance identifier. If this parameter is specified, information from only the specific
-     *        DB instance is returned. This parameter isn't case-sensitive.</p>
+     *        The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this
+     *        parameter is specified, information from only the specific DB instance is returned. This parameter isn't
+     *        case-sensitive.</p>
      *        <p>
      *        Constraints:
      *        </p>

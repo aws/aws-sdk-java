@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,13 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Date dataPullEndTime;
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     */
+    private java.util.List<MetadataCatalogDetail> metadataCatalogDetails;
 
     /**
      * <p>
@@ -371,6 +378,84 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * 
+     * @return Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *         associated flow run.
+     */
+
+    public java.util.List<MetadataCatalogDetail> getMetadataCatalogDetails() {
+        return metadataCatalogDetails;
+    }
+
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * 
+     * @param metadataCatalogDetails
+     *        Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *        associated flow run.
+     */
+
+    public void setMetadataCatalogDetails(java.util.Collection<MetadataCatalogDetail> metadataCatalogDetails) {
+        if (metadataCatalogDetails == null) {
+            this.metadataCatalogDetails = null;
+            return;
+        }
+
+        this.metadataCatalogDetails = new java.util.ArrayList<MetadataCatalogDetail>(metadataCatalogDetails);
+    }
+
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMetadataCatalogDetails(java.util.Collection)} or
+     * {@link #withMetadataCatalogDetails(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param metadataCatalogDetails
+     *        Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *        associated flow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionRecord withMetadataCatalogDetails(MetadataCatalogDetail... metadataCatalogDetails) {
+        if (this.metadataCatalogDetails == null) {
+            setMetadataCatalogDetails(new java.util.ArrayList<MetadataCatalogDetail>(metadataCatalogDetails.length));
+        }
+        for (MetadataCatalogDetail ele : metadataCatalogDetails) {
+            this.metadataCatalogDetails.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the associated
+     * flow run.
+     * </p>
+     * 
+     * @param metadataCatalogDetails
+     *        Describes the metadata catalog, metadata table, and data partitions that Amazon AppFlow used for the
+     *        associated flow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExecutionRecord withMetadataCatalogDetails(java.util.Collection<MetadataCatalogDetail> metadataCatalogDetails) {
+        setMetadataCatalogDetails(metadataCatalogDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -395,7 +480,9 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
         if (getDataPullStartTime() != null)
             sb.append("DataPullStartTime: ").append(getDataPullStartTime()).append(",");
         if (getDataPullEndTime() != null)
-            sb.append("DataPullEndTime: ").append(getDataPullEndTime());
+            sb.append("DataPullEndTime: ").append(getDataPullEndTime()).append(",");
+        if (getMetadataCatalogDetails() != null)
+            sb.append("MetadataCatalogDetails: ").append(getMetadataCatalogDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +525,10 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getDataPullEndTime() != null && other.getDataPullEndTime().equals(this.getDataPullEndTime()) == false)
             return false;
+        if (other.getMetadataCatalogDetails() == null ^ this.getMetadataCatalogDetails() == null)
+            return false;
+        if (other.getMetadataCatalogDetails() != null && other.getMetadataCatalogDetails().equals(this.getMetadataCatalogDetails()) == false)
+            return false;
         return true;
     }
 
@@ -453,6 +544,7 @@ public class ExecutionRecord implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getDataPullStartTime() == null) ? 0 : getDataPullStartTime().hashCode());
         hashCode = prime * hashCode + ((getDataPullEndTime() == null) ? 0 : getDataPullEndTime().hashCode());
+        hashCode = prime * hashCode + ((getMetadataCatalogDetails() == null) ? 0 : getMetadataCatalogDetails().hashCode());
         return hashCode;
     }
 

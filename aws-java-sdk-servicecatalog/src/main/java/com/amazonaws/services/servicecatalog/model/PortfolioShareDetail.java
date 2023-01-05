@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of
-     * the following:
+     * The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the
+     * following:
      * </p>
      * <p>
      * 1. An external account.
@@ -66,11 +66,17 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
      * </p>
      */
     private Boolean shareTagOptions;
+    /**
+     * <p>
+     * Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     * </p>
+     */
+    private Boolean sharePrincipals;
 
     /**
      * <p>
-     * The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of
-     * the following:
+     * The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the
+     * following:
      * </p>
      * <p>
      * 1. An external account.
@@ -86,8 +92,8 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param principalId
-     *        The identifier of the recipient entity that received the portfolio share. The recipient entities can be
-     *        one of the following: </p>
+     *        The identifier of the recipient entity that received the portfolio share. The recipient entity can be one
+     *        of the following:</p>
      *        <p>
      *        1. An external account.
      *        </p>
@@ -107,8 +113,8 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of
-     * the following:
+     * The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the
+     * following:
      * </p>
      * <p>
      * 1. An external account.
@@ -123,8 +129,8 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
      * 4. The organization itself. (This shares with every account in the organization).
      * </p>
      * 
-     * @return The identifier of the recipient entity that received the portfolio share. The recipient entities can be
-     *         one of the following: </p>
+     * @return The identifier of the recipient entity that received the portfolio share. The recipient entity can be one
+     *         of the following:</p>
      *         <p>
      *         1. An external account.
      *         </p>
@@ -144,8 +150,8 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The identifier of the recipient entity that received the portfolio share. The recipient entities can be one of
-     * the following:
+     * The identifier of the recipient entity that received the portfolio share. The recipient entity can be one of the
+     * following:
      * </p>
      * <p>
      * 1. An external account.
@@ -161,8 +167,8 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param principalId
-     *        The identifier of the recipient entity that received the portfolio share. The recipient entities can be
-     *        one of the following: </p>
+     *        The identifier of the recipient entity that received the portfolio share. The recipient entity can be one
+     *        of the following:</p>
      *        <p>
      *        1. An external account.
      *        </p>
@@ -354,6 +360,58 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     * </p>
+     * 
+     * @param sharePrincipals
+     *        Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     */
+
+    public void setSharePrincipals(Boolean sharePrincipals) {
+        this.sharePrincipals = sharePrincipals;
+    }
+
+    /**
+     * <p>
+     * Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     * </p>
+     * 
+     * @return Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     */
+
+    public Boolean getSharePrincipals() {
+        return this.sharePrincipals;
+    }
+
+    /**
+     * <p>
+     * Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     * </p>
+     * 
+     * @param sharePrincipals
+     *        Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PortfolioShareDetail withSharePrincipals(Boolean sharePrincipals) {
+        setSharePrincipals(sharePrincipals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     * </p>
+     * 
+     * @return Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio share.
+     */
+
+    public Boolean isSharePrincipals() {
+        return this.sharePrincipals;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -372,7 +430,9 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
         if (getAccepted() != null)
             sb.append("Accepted: ").append(getAccepted()).append(",");
         if (getShareTagOptions() != null)
-            sb.append("ShareTagOptions: ").append(getShareTagOptions());
+            sb.append("ShareTagOptions: ").append(getShareTagOptions()).append(",");
+        if (getSharePrincipals() != null)
+            sb.append("SharePrincipals: ").append(getSharePrincipals());
         sb.append("}");
         return sb.toString();
     }
@@ -403,6 +463,10 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
             return false;
         if (other.getShareTagOptions() != null && other.getShareTagOptions().equals(this.getShareTagOptions()) == false)
             return false;
+        if (other.getSharePrincipals() == null ^ this.getSharePrincipals() == null)
+            return false;
+        if (other.getSharePrincipals() != null && other.getSharePrincipals().equals(this.getSharePrincipals()) == false)
+            return false;
         return true;
     }
 
@@ -415,6 +479,7 @@ public class PortfolioShareDetail implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAccepted() == null) ? 0 : getAccepted().hashCode());
         hashCode = prime * hashCode + ((getShareTagOptions() == null) ? 0 : getShareTagOptions().hashCode());
+        hashCode = prime * hashCode + ((getSharePrincipals() == null) ? 0 : getSharePrincipals().hashCode());
         return hashCode;
     }
 

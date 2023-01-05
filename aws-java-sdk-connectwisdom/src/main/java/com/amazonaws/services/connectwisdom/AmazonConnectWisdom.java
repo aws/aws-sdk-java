@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -519,29 +519,6 @@ public interface AmazonConnectWisdom {
      *      target="_top">AWS API Documentation</a>
      */
     NotifyRecommendationsReceivedResult notifyRecommendationsReceived(NotifyRecommendationsReceivedRequest notifyRecommendationsReceivedRequest);
-
-    /**
-     * <p>
-     * Submits feedback to Wisdom. The feedback is used to improve future recommendations from <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-     * or results from <a
-     * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
-     * Feedback can be resubmitted up to 6 hours after submission.
-     * </p>
-     * 
-     * @param putFeedbackRequest
-     * @return Result of the PutFeedback operation returned by the service.
-     * @throws ValidationException
-     *         The input fails to satisfy the constraints specified by a service.
-     * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
-     * @throws ResourceNotFoundException
-     *         The specified resource does not exist.
-     * @sample AmazonConnectWisdom.PutFeedback
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wisdom-2020-10-19/PutFeedback" target="_top">AWS API
-     *      Documentation</a>
-     */
-    PutFeedbackResult putFeedback(PutFeedbackRequest putFeedbackRequest);
 
     /**
      * <p>

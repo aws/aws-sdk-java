@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
@@ -69,16 +69,16 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
      * </p>
      * 
      * @param name
-     *        A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
-     *        them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     *        A name for the query definition. If you are saving numerous query definitions, we recommend that you name
+     *        them. This way, you can find the ones you want by using the first part of the name as a filter in the
      *        <code>queryDefinitionNamePrefix</code> parameter of <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      *        >DescribeQueryDefinitions</a>.
@@ -90,15 +90,15 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
      * </p>
      * 
-     * @return A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
-     *         them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     * @return A name for the query definition. If you are saving numerous query definitions, we recommend that you name
+     *         them. This way, you can find the ones you want by using the first part of the name as a filter in the
      *         <code>queryDefinitionNamePrefix</code> parameter of <a
      *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      *         >DescribeQueryDefinitions</a>.
@@ -110,16 +110,16 @@ public class PutQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A name for the query definition. If you are saving a lot of query definitions, we recommend that you name them so
-     * that you can easily find the ones you want by using the first part of the name as a filter in the
+     * A name for the query definition. If you are saving numerous query definitions, we recommend that you name them.
+     * This way, you can find the ones you want by using the first part of the name as a filter in the
      * <code>queryDefinitionNamePrefix</code> parameter of <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      * >DescribeQueryDefinitions</a>.
      * </p>
      * 
      * @param name
-     *        A name for the query definition. If you are saving a lot of query definitions, we recommend that you name
-     *        them so that you can easily find the ones you want by using the first part of the name as a filter in the
+     *        A name for the query definition. If you are saving numerous query definitions, we recommend that you name
+     *        them. This way, you can find the ones you want by using the first part of the name as a filter in the
      *        <code>queryDefinitionNamePrefix</code> parameter of <a
      *        href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
      *        >DescribeQueryDefinitions</a>.

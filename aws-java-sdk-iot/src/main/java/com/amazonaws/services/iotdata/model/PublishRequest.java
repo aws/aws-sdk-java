@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
     private String topic;
     /**
      * <p>
-     * The Quality of Service (QoS) level.
+     * The Quality of Service (QoS) level. The default QoS level is 0.
      * </p>
      */
     private Integer qos;
@@ -65,6 +65,58 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
      * </p>
      */
     private java.nio.ByteBuffer payload;
+    /**
+     * <p>
+     * A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must
+     * encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an
+     * HTTP header value in the API.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string which represents two User
+     * Properties. Note that it needs to be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     */
+    private String userProperties;
+    /**
+     * <p>
+     * An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     * <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * </p>
+     */
+    private String payloadFormatIndicator;
+    /**
+     * <p>
+     * A UTF-8 encoded string that describes the content of the publishing message.
+     * </p>
+     */
+    private String contentType;
+    /**
+     * <p>
+     * A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to
+     * describe the topic which the receiver should publish to as part of the request-response flow. The topic must not
+     * contain wildcard characters.
+     * </p>
+     */
+    private String responseTopic;
+    /**
+     * <p>
+     * The base64-encoded binary data used by the sender of the request message to identify which request the response
+     * message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.
+     * </p>
+     */
+    private String correlationData;
+    /**
+     * <p>
+     * A user-defined integer value that represents the message expiry interval in seconds. If absent, the message
+     * doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT
+     * Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.
+     * </p>
+     */
+    private Long messageExpiry;
 
     /**
      * <p>
@@ -108,11 +160,11 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Quality of Service (QoS) level.
+     * The Quality of Service (QoS) level. The default QoS level is 0.
      * </p>
      * 
      * @param qos
-     *        The Quality of Service (QoS) level.
+     *        The Quality of Service (QoS) level. The default QoS level is 0.
      */
 
     public void setQos(Integer qos) {
@@ -121,10 +173,10 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Quality of Service (QoS) level.
+     * The Quality of Service (QoS) level. The default QoS level is 0.
      * </p>
      * 
-     * @return The Quality of Service (QoS) level.
+     * @return The Quality of Service (QoS) level. The default QoS level is 0.
      */
 
     public Integer getQos() {
@@ -133,11 +185,11 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The Quality of Service (QoS) level.
+     * The Quality of Service (QoS) level. The default QoS level is 0.
      * </p>
      * 
      * @param qos
-     *        The Quality of Service (QoS) level.
+     *        The Quality of Service (QoS) level. The default QoS level is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,6 +407,386 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
     }
 
     /**
+     * <p>
+     * A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must
+     * encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an
+     * HTTP header value in the API.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string which represents two User
+     * Properties. Note that it needs to be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param userProperties
+     *        A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you
+     *        must encode the JSON string to base64 format before adding it to the HTTP header.
+     *        <code>userProperties</code> is an HTTP header value in the API.</p>
+     *        <p>
+     *        The following example <code>userProperties</code> parameter is a JSON string which represents two User
+     *        Properties. Note that it needs to be base64-encoded:
+     *        </p>
+     *        <p>
+     *        <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     */
+
+    public void setUserProperties(String userProperties) {
+        this.userProperties = userProperties;
+    }
+
+    /**
+     * <p>
+     * A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must
+     * encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an
+     * HTTP header value in the API.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string which represents two User
+     * Properties. Note that it needs to be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     * <p>
+     * This field's value will be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * 
+     * @return A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI,
+     *         you must encode the JSON string to base64 format before adding it to the HTTP header.
+     *         <code>userProperties</code> is an HTTP header value in the API.</p>
+     *         <p>
+     *         The following example <code>userProperties</code> parameter is a JSON string which represents two User
+     *         Properties. Note that it needs to be base64-encoded:
+     *         </p>
+     *         <p>
+     *         <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     */
+
+    public String getUserProperties() {
+        return this.userProperties;
+    }
+
+    /**
+     * <p>
+     * A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you must
+     * encode the JSON string to base64 format before adding it to the HTTP header. <code>userProperties</code> is an
+     * HTTP header value in the API.
+     * </p>
+     * <p>
+     * The following example <code>userProperties</code> parameter is a JSON string which represents two User
+     * Properties. Note that it needs to be base64-encoded:
+     * </p>
+     * <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * </p>
+     * <p>
+     * This field's value must be valid JSON according to RFC 7159, including the opening and closing braces. For
+     * example: '{"key": "value"}'.
+     * </p>
+     * <p>
+     * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
+     * Users of the SDK should not perform Base64 encoding on this field.
+     * </p>
+     * 
+     * @param userProperties
+     *        A JSON string that contains an array of JSON objects. If you don’t use Amazon Web Services SDK or CLI, you
+     *        must encode the JSON string to base64 format before adding it to the HTTP header.
+     *        <code>userProperties</code> is an HTTP header value in the API.</p>
+     *        <p>
+     *        The following example <code>userProperties</code> parameter is a JSON string which represents two User
+     *        Properties. Note that it needs to be base64-encoded:
+     *        </p>
+     *        <p>
+     *        <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishRequest withUserProperties(String userProperties) {
+        setUserProperties(userProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     * <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * </p>
+     * 
+     * @param payloadFormatIndicator
+     *        An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     *        <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * @see PayloadFormatIndicator
+     */
+
+    public void setPayloadFormatIndicator(String payloadFormatIndicator) {
+        this.payloadFormatIndicator = payloadFormatIndicator;
+    }
+
+    /**
+     * <p>
+     * An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     * <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * </p>
+     * 
+     * @return An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     *         <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * @see PayloadFormatIndicator
+     */
+
+    public String getPayloadFormatIndicator() {
+        return this.payloadFormatIndicator;
+    }
+
+    /**
+     * <p>
+     * An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     * <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * </p>
+     * 
+     * @param payloadFormatIndicator
+     *        An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     *        <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PayloadFormatIndicator
+     */
+
+    public PublishRequest withPayloadFormatIndicator(String payloadFormatIndicator) {
+        setPayloadFormatIndicator(payloadFormatIndicator);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     * <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * </p>
+     * 
+     * @param payloadFormatIndicator
+     *        An <code>Enum</code> string value that indicates whether the payload is formatted as UTF-8.
+     *        <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PayloadFormatIndicator
+     */
+
+    public PublishRequest withPayloadFormatIndicator(PayloadFormatIndicator payloadFormatIndicator) {
+        this.payloadFormatIndicator = payloadFormatIndicator.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A UTF-8 encoded string that describes the content of the publishing message.
+     * </p>
+     * 
+     * @param contentType
+     *        A UTF-8 encoded string that describes the content of the publishing message.
+     */
+
+    public void setContentType(String contentType) {
+        this.contentType = contentType;
+    }
+
+    /**
+     * <p>
+     * A UTF-8 encoded string that describes the content of the publishing message.
+     * </p>
+     * 
+     * @return A UTF-8 encoded string that describes the content of the publishing message.
+     */
+
+    public String getContentType() {
+        return this.contentType;
+    }
+
+    /**
+     * <p>
+     * A UTF-8 encoded string that describes the content of the publishing message.
+     * </p>
+     * 
+     * @param contentType
+     *        A UTF-8 encoded string that describes the content of the publishing message.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishRequest withContentType(String contentType) {
+        setContentType(contentType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to
+     * describe the topic which the receiver should publish to as part of the request-response flow. The topic must not
+     * contain wildcard characters.
+     * </p>
+     * 
+     * @param responseTopic
+     *        A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to
+     *        describe the topic which the receiver should publish to as part of the request-response flow. The topic
+     *        must not contain wildcard characters.
+     */
+
+    public void setResponseTopic(String responseTopic) {
+        this.responseTopic = responseTopic;
+    }
+
+    /**
+     * <p>
+     * A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to
+     * describe the topic which the receiver should publish to as part of the request-response flow. The topic must not
+     * contain wildcard characters.
+     * </p>
+     * 
+     * @return A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used
+     *         to describe the topic which the receiver should publish to as part of the request-response flow. The
+     *         topic must not contain wildcard characters.
+     */
+
+    public String getResponseTopic() {
+        return this.responseTopic;
+    }
+
+    /**
+     * <p>
+     * A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to
+     * describe the topic which the receiver should publish to as part of the request-response flow. The topic must not
+     * contain wildcard characters.
+     * </p>
+     * 
+     * @param responseTopic
+     *        A UTF-8 encoded string that's used as the topic name for a response message. The response topic is used to
+     *        describe the topic which the receiver should publish to as part of the request-response flow. The topic
+     *        must not contain wildcard characters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishRequest withResponseTopic(String responseTopic) {
+        setResponseTopic(responseTopic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The base64-encoded binary data used by the sender of the request message to identify which request the response
+     * message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.
+     * </p>
+     * 
+     * @param correlationData
+     *        The base64-encoded binary data used by the sender of the request message to identify which request the
+     *        response message is for when it's received. <code>correlationData</code> is an HTTP header value in the
+     *        API.
+     */
+
+    public void setCorrelationData(String correlationData) {
+        this.correlationData = correlationData;
+    }
+
+    /**
+     * <p>
+     * The base64-encoded binary data used by the sender of the request message to identify which request the response
+     * message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.
+     * </p>
+     * 
+     * @return The base64-encoded binary data used by the sender of the request message to identify which request the
+     *         response message is for when it's received. <code>correlationData</code> is an HTTP header value in the
+     *         API.
+     */
+
+    public String getCorrelationData() {
+        return this.correlationData;
+    }
+
+    /**
+     * <p>
+     * The base64-encoded binary data used by the sender of the request message to identify which request the response
+     * message is for when it's received. <code>correlationData</code> is an HTTP header value in the API.
+     * </p>
+     * 
+     * @param correlationData
+     *        The base64-encoded binary data used by the sender of the request message to identify which request the
+     *        response message is for when it's received. <code>correlationData</code> is an HTTP header value in the
+     *        API.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishRequest withCorrelationData(String correlationData) {
+        setCorrelationData(correlationData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A user-defined integer value that represents the message expiry interval in seconds. If absent, the message
+     * doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT
+     * Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.
+     * </p>
+     * 
+     * @param messageExpiry
+     *        A user-defined integer value that represents the message expiry interval in seconds. If absent, the
+     *        message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web
+     *        Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services
+     *        Reference Guide.
+     */
+
+    public void setMessageExpiry(Long messageExpiry) {
+        this.messageExpiry = messageExpiry;
+    }
+
+    /**
+     * <p>
+     * A user-defined integer value that represents the message expiry interval in seconds. If absent, the message
+     * doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT
+     * Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.
+     * </p>
+     * 
+     * @return A user-defined integer value that represents the message expiry interval in seconds. If absent, the
+     *         message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web
+     *         Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services
+     *         Reference Guide.
+     */
+
+    public Long getMessageExpiry() {
+        return this.messageExpiry;
+    }
+
+    /**
+     * <p>
+     * A user-defined integer value that represents the message expiry interval in seconds. If absent, the message
+     * doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web Services IoT
+     * Core message broker and protocol limits and quotas </a> from the Amazon Web Services Reference Guide.
+     * </p>
+     * 
+     * @param messageExpiry
+     *        A user-defined integer value that represents the message expiry interval in seconds. If absent, the
+     *        message doesn't expire. For more information about the limits of <code>messageExpiry</code>, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon Web
+     *        Services IoT Core message broker and protocol limits and quotas </a> from the Amazon Web Services
+     *        Reference Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishRequest withMessageExpiry(Long messageExpiry) {
+        setMessageExpiry(messageExpiry);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -373,7 +805,19 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
         if (getRetain() != null)
             sb.append("Retain: ").append(getRetain()).append(",");
         if (getPayload() != null)
-            sb.append("Payload: ").append(getPayload());
+            sb.append("Payload: ").append(getPayload()).append(",");
+        if (getUserProperties() != null)
+            sb.append("UserProperties: ").append(getUserProperties()).append(",");
+        if (getPayloadFormatIndicator() != null)
+            sb.append("PayloadFormatIndicator: ").append(getPayloadFormatIndicator()).append(",");
+        if (getContentType() != null)
+            sb.append("ContentType: ").append(getContentType()).append(",");
+        if (getResponseTopic() != null)
+            sb.append("ResponseTopic: ").append(getResponseTopic()).append(",");
+        if (getCorrelationData() != null)
+            sb.append("CorrelationData: ").append(getCorrelationData()).append(",");
+        if (getMessageExpiry() != null)
+            sb.append("MessageExpiry: ").append(getMessageExpiry());
         sb.append("}");
         return sb.toString();
     }
@@ -404,6 +848,30 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
             return false;
         if (other.getPayload() != null && other.getPayload().equals(this.getPayload()) == false)
             return false;
+        if (other.getUserProperties() == null ^ this.getUserProperties() == null)
+            return false;
+        if (other.getUserProperties() != null && other.getUserProperties().equals(this.getUserProperties()) == false)
+            return false;
+        if (other.getPayloadFormatIndicator() == null ^ this.getPayloadFormatIndicator() == null)
+            return false;
+        if (other.getPayloadFormatIndicator() != null && other.getPayloadFormatIndicator().equals(this.getPayloadFormatIndicator()) == false)
+            return false;
+        if (other.getContentType() == null ^ this.getContentType() == null)
+            return false;
+        if (other.getContentType() != null && other.getContentType().equals(this.getContentType()) == false)
+            return false;
+        if (other.getResponseTopic() == null ^ this.getResponseTopic() == null)
+            return false;
+        if (other.getResponseTopic() != null && other.getResponseTopic().equals(this.getResponseTopic()) == false)
+            return false;
+        if (other.getCorrelationData() == null ^ this.getCorrelationData() == null)
+            return false;
+        if (other.getCorrelationData() != null && other.getCorrelationData().equals(this.getCorrelationData()) == false)
+            return false;
+        if (other.getMessageExpiry() == null ^ this.getMessageExpiry() == null)
+            return false;
+        if (other.getMessageExpiry() != null && other.getMessageExpiry().equals(this.getMessageExpiry()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +884,12 @@ public class PublishRequest extends com.amazonaws.AmazonWebServiceRequest implem
         hashCode = prime * hashCode + ((getQos() == null) ? 0 : getQos().hashCode());
         hashCode = prime * hashCode + ((getRetain() == null) ? 0 : getRetain().hashCode());
         hashCode = prime * hashCode + ((getPayload() == null) ? 0 : getPayload().hashCode());
+        hashCode = prime * hashCode + ((getUserProperties() == null) ? 0 : getUserProperties().hashCode());
+        hashCode = prime * hashCode + ((getPayloadFormatIndicator() == null) ? 0 : getPayloadFormatIndicator().hashCode());
+        hashCode = prime * hashCode + ((getContentType() == null) ? 0 : getContentType().hashCode());
+        hashCode = prime * hashCode + ((getResponseTopic() == null) ? 0 : getResponseTopic().hashCode());
+        hashCode = prime * hashCode + ((getCorrelationData() == null) ? 0 : getCorrelationData().hashCode());
+        hashCode = prime * hashCode + ((getMessageExpiry() == null) ? 0 : getMessageExpiry().hashCode());
         return hashCode;
     }
 

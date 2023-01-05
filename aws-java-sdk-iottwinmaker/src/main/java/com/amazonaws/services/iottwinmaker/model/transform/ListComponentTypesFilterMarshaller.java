@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,10 @@ public class ListComponentTypesFilterMarshaller {
 
     private static final MarshallingInfo<String> EXTENDSFROM_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("extendsFrom").build();
-    private static final MarshallingInfo<Boolean> ISABSTRACT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isAbstract").build();
     private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("namespace").build();
+    private static final MarshallingInfo<Boolean> ISABSTRACT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isAbstract").build();
 
     private static final ListComponentTypesFilterMarshaller instance = new ListComponentTypesFilterMarshaller();
 
@@ -51,8 +51,8 @@ public class ListComponentTypesFilterMarshaller {
 
         try {
             protocolMarshaller.marshall(listComponentTypesFilter.getExtendsFrom(), EXTENDSFROM_BINDING);
-            protocolMarshaller.marshall(listComponentTypesFilter.getIsAbstract(), ISABSTRACT_BINDING);
             protocolMarshaller.marshall(listComponentTypesFilter.getNamespace(), NAMESPACE_BINDING);
+            protocolMarshaller.marshall(listComponentTypesFilter.getIsAbstract(), ISABSTRACT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

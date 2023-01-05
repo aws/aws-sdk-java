@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -136,8 +136,8 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and
-     * Exclude Patterns</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration
+     * options</a>.
      * </p>
      */
     private String configuration;
@@ -900,15 +900,15 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and
-     * Exclude Patterns</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration
+     * options</a>.
      * </p>
      * 
      * @param configuration
      *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *        crawler's behavior. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     *        and Exclude Patterns</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration
+     *        options</a>.
      */
 
     public void setConfiguration(String configuration) {
@@ -919,14 +919,14 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and
-     * Exclude Patterns</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration
+     * options</a>.
      * </p>
      * 
      * @return Crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *         crawler's behavior. For more information, see <a
-     *         href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     *         and Exclude Patterns</a>.
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler
+     *         configuration options</a>.
      */
 
     public String getConfiguration() {
@@ -937,15 +937,15 @@ public class Crawler implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's
      * behavior. For more information, see <a
-     * href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include and
-     * Exclude Patterns</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration
+     * options</a>.
      * </p>
      * 
      * @param configuration
      *        Crawler configuration information. This versioned JSON string allows users to specify aspects of a
      *        crawler's behavior. For more information, see <a
-     *        href="https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude">Include
-     *        and Exclude Patterns</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Setting crawler configuration
+     *        options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

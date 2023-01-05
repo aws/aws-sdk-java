@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,8 @@ public class MutableClusterInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionInfo").build();
     private static final MarshallingInfo<StructuredPojo> CONNECTIVITYINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectivityInfo").build();
+    private static final MarshallingInfo<String> STORAGEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("storageMode").build();
 
     private static final MutableClusterInfoMarshaller instance = new MutableClusterInfoMarshaller();
 
@@ -78,6 +80,7 @@ public class MutableClusterInfoMarshaller {
             protocolMarshaller.marshall(mutableClusterInfo.getClientAuthentication(), CLIENTAUTHENTICATION_BINDING);
             protocolMarshaller.marshall(mutableClusterInfo.getEncryptionInfo(), ENCRYPTIONINFO_BINDING);
             protocolMarshaller.marshall(mutableClusterInfo.getConnectivityInfo(), CONNECTIVITYINFO_BINDING);
+            protocolMarshaller.marshall(mutableClusterInfo.getStorageMode(), STORAGEMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

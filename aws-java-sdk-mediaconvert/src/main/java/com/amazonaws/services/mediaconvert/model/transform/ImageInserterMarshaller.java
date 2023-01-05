@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class ImageInserterMarshaller {
 
     private static final MarshallingInfo<List> INSERTABLEIMAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("insertableImages").build();
+    private static final MarshallingInfo<Integer> SDRREFERENCEWHITELEVEL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sdrReferenceWhiteLevel").build();
 
     private static final ImageInserterMarshaller instance = new ImageInserterMarshaller();
 
@@ -48,6 +50,7 @@ public class ImageInserterMarshaller {
 
         try {
             protocolMarshaller.marshall(imageInserter.getInsertableImages(), INSERTABLEIMAGES_BINDING);
+            protocolMarshaller.marshall(imageInserter.getSdrReferenceWhiteLevel(), SDRREFERENCEWHITELEVEL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

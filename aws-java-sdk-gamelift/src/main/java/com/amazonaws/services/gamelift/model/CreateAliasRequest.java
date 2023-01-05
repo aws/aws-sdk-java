@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateAlias" target="_top">AWS API
  *      Documentation</a>
@@ -51,10 +48,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -184,19 +178,13 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging
      *         Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *         For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *         Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *         resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-     *         to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web
-     *         Services General Reference for actual tagging limits.
+     *         Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -208,20 +196,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
      *        A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-     *        to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
-     *        General Reference for actual tagging limits.
+     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -238,10 +220,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -253,10 +232,7 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-     *        to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
-     *        General Reference for actual tagging limits.
+     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,20 +251,14 @@ public class CreateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
      *        A list of labels to assign to the new alias resource. Tags are developer-defined key-value pairs. Tagging
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-     *        to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
-     *        General Reference for actual tagging limits.
+     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,8 @@ public enum Runtime {
     Ruby25("ruby2.5"),
     Ruby27("ruby2.7"),
     Provided("provided"),
-    ProvidedAl2("provided.al2");
+    ProvidedAl2("provided.al2"),
+    Nodejs18X("nodejs18.x");
 
     private String value;
 

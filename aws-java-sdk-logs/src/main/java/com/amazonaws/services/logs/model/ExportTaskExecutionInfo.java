@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,25 +30,28 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      */
     private Long creationTime;
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      */
     private Long completionTime;
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     *        UTC.
+     *        The creation time of the export task, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public void setCreationTime(Long creationTime) {
@@ -57,11 +60,12 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
-     * @return The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     *         UTC.
+     * @return The creation time of the export task, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public Long getCreationTime() {
@@ -70,12 +74,13 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The creation time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param creationTime
-     *        The creation time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     *        UTC.
+     *        The creation time of the export task, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,12 +91,13 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param completionTime
-     *        The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     *        UTC.
+     *        The completion time of the export task, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public void setCompletionTime(Long completionTime) {
@@ -100,11 +106,12 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
-     * @return The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970
-     *         00:00:00 UTC.
+     * @return The completion time of the export task, expressed as the number of milliseconds after
+     *         <code>Jan 1, 1970 00:00:00 UTC</code>.
      */
 
     public Long getCompletionTime() {
@@ -113,12 +120,13 @@ public class ExportTaskExecutionInfo implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.
+     * The completion time of the export task, expressed as the number of milliseconds after
+     * <code>Jan 1, 1970 00:00:00 UTC</code>.
      * </p>
      * 
      * @param completionTime
-     *        The completion time of the export task, expressed as the number of milliseconds after Jan 1, 1970 00:00:00
-     *        UTC.
+     *        The completion time of the export task, expressed as the number of milliseconds after
+     *        <code>Jan 1, 1970 00:00:00 UTC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

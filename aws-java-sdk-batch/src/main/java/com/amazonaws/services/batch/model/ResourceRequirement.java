@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,12 +38,13 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="GPU"</dt>
      * <dd>
      * <p>
-     * The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job
-     * shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.
+     * The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all
+     * containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched
+     * on.
      * </p>
      * <note>
      * <p>
-     * GPUs are not available for jobs that are running on Fargate resources.
+     * GPUs aren't available for jobs that are running on Fargate resources.
      * </p>
      * </note></dd>
      * <dt>type="MEMORY"</dt>
@@ -114,19 +115,49 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>value = 8192</dt>
      * <dd>
      * <p>
-     * <code>VCPU</code> = 1, 2, or 4
+     * <code>VCPU</code> = 1, 2, 4, or 8
      * </p>
      * </dd>
-     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 2 or 4
      * </p>
      * </dd>
-     * <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt>
+     * <dt>value = 16384</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 2, 4, or 8
+     * </p>
+     * </dd>
+     * <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 4
+     * </p>
+     * </dd>
+     * <dt>value = 20480, 24576, or 28672</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 4 or 8
+     * </p>
+     * </dd>
+     * <dt>value = 36864, 45056, 53248, or 61440</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8
+     * </p>
+     * </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8 or 16
+     * </p>
+     * </dd>
+     * <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 16
      * </p>
      * </dd>
      * </dl>
@@ -142,9 +173,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * places; it must be specified for each node at least once.
      * </p>
      * <p>
+     * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
+     * quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * <p>
      * For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values
      * and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The
-     * supported values are 0.25, 0.5, 1, 2, and 4
+     * supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
      * </p>
      * <dl>
      * <dt>value = 0.25</dt>
@@ -176,6 +213,18 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <p>
      * <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456, 20480,
      * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
+     * </p>
+     * </dd>
+     * <dt>value = 8</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440
+     * </p>
+     * </dd>
+     * <dt>value = 16</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
      * </p>
      * </dd>
      * </dl>
@@ -200,12 +249,13 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="GPU"</dt>
      * <dd>
      * <p>
-     * The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job
-     * shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.
+     * The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all
+     * containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched
+     * on.
      * </p>
      * <note>
      * <p>
-     * GPUs are not available for jobs that are running on Fargate resources.
+     * GPUs aren't available for jobs that are running on Fargate resources.
      * </p>
      * </note></dd>
      * <dt>type="MEMORY"</dt>
@@ -276,19 +326,49 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>value = 8192</dt>
      * <dd>
      * <p>
-     * <code>VCPU</code> = 1, 2, or 4
+     * <code>VCPU</code> = 1, 2, 4, or 8
      * </p>
      * </dd>
-     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 2 or 4
      * </p>
      * </dd>
-     * <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt>
+     * <dt>value = 16384</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 2, 4, or 8
+     * </p>
+     * </dd>
+     * <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 4
+     * </p>
+     * </dd>
+     * <dt>value = 20480, 24576, or 28672</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 4 or 8
+     * </p>
+     * </dd>
+     * <dt>value = 36864, 45056, 53248, or 61440</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8
+     * </p>
+     * </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8 or 16
+     * </p>
+     * </dd>
+     * <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 16
      * </p>
      * </dd>
      * </dl>
@@ -304,9 +384,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * places; it must be specified for each node at least once.
      * </p>
      * <p>
+     * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
+     * quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * <p>
      * For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values
      * and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The
-     * supported values are 0.25, 0.5, 1, 2, and 4
+     * supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
      * </p>
      * <dl>
      * <dt>value = 0.25</dt>
@@ -340,6 +426,18 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
      * </p>
      * </dd>
+     * <dt>value = 8</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440
+     * </p>
+     * </dd>
+     * <dt>value = 16</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
+     * </p>
+     * </dd>
      * </dl>
      * </dd>
      * </dl>
@@ -351,13 +449,13 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dt>type="GPU"</dt>
      *        <dd>
      *        <p>
-     *        The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers
-     *        in a job shouldn't exceed the number of available GPUs on the compute resource that the job is launched
-     *        on.
+     *        The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for
+     *        all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job
+     *        is launched on.
      *        </p>
      *        <note>
      *        <p>
-     *        GPUs are not available for jobs that are running on Fargate resources.
+     *        GPUs aren't available for jobs that are running on Fargate resources.
      *        </p>
      *        </note></dd>
      *        <dt>type="MEMORY"</dt>
@@ -429,20 +527,49 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dt>value = 8192</dt>
      *        <dd>
      *        <p>
-     *        <code>VCPU</code> = 1, 2, or 4
+     *        <code>VCPU</code> = 1, 2, 4, or 8
      *        </p>
      *        </dd>
-     *        <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+     *        <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt>
      *        <dd>
      *        <p>
      *        <code>VCPU</code> = 2 or 4
      *        </p>
      *        </dd>
-     *        <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or
-     *        30720</dt>
+     *        <dt>value = 16384</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 2, 4, or 8
+     *        </p>
+     *        </dd>
+     *        <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720</dt>
      *        <dd>
      *        <p>
      *        <code>VCPU</code> = 4
+     *        </p>
+     *        </dd>
+     *        <dt>value = 20480, 24576, or 28672</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 4 or 8
+     *        </p>
+     *        </dd>
+     *        <dt>value = 36864, 45056, 53248, or 61440</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 8
+     *        </p>
+     *        </dd>
+     *        <dt>value = 32768, 40960, 49152, or 57344</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 8 or 16
+     *        </p>
+     *        </dd>
+     *        <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 16
      *        </p>
      *        </dd>
      *        </dl>
@@ -459,9 +586,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        once.
      *        </p>
      *        <p>
+     *        The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     *        Fargate quotas, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     *        quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *        </p>
+     *        <p>
      *        For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported
      *        values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code>
-     *        value. The supported values are 0.25, 0.5, 1, 2, and 4
+     *        value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
      *        </p>
      *        <dl>
      *        <dt>value = 0.25</dt>
@@ -496,6 +629,20 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
      *        </p>
      *        </dd>
+     *        <dt>value = 8</dt>
+     *        <dd>
+     *        <p>
+     *        <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or
+     *        61440
+     *        </p>
+     *        </dd>
+     *        <dt>value = 16</dt>
+     *        <dd>
+     *        <p>
+     *        <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     *        122880
+     *        </p>
+     *        </dd>
      *        </dl>
      *        </dd>
      */
@@ -513,12 +660,13 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="GPU"</dt>
      * <dd>
      * <p>
-     * The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job
-     * shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.
+     * The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all
+     * containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched
+     * on.
      * </p>
      * <note>
      * <p>
-     * GPUs are not available for jobs that are running on Fargate resources.
+     * GPUs aren't available for jobs that are running on Fargate resources.
      * </p>
      * </note></dd>
      * <dt>type="MEMORY"</dt>
@@ -589,19 +737,49 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>value = 8192</dt>
      * <dd>
      * <p>
-     * <code>VCPU</code> = 1, 2, or 4
+     * <code>VCPU</code> = 1, 2, 4, or 8
      * </p>
      * </dd>
-     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 2 or 4
      * </p>
      * </dd>
-     * <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt>
+     * <dt>value = 16384</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 2, 4, or 8
+     * </p>
+     * </dd>
+     * <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 4
+     * </p>
+     * </dd>
+     * <dt>value = 20480, 24576, or 28672</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 4 or 8
+     * </p>
+     * </dd>
+     * <dt>value = 36864, 45056, 53248, or 61440</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8
+     * </p>
+     * </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8 or 16
+     * </p>
+     * </dd>
+     * <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 16
      * </p>
      * </dd>
      * </dl>
@@ -617,9 +795,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * places; it must be specified for each node at least once.
      * </p>
      * <p>
+     * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
+     * quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * <p>
      * For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values
      * and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The
-     * supported values are 0.25, 0.5, 1, 2, and 4
+     * supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
      * </p>
      * <dl>
      * <dt>value = 0.25</dt>
@@ -653,6 +837,18 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
      * </p>
      * </dd>
+     * <dt>value = 8</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440
+     * </p>
+     * </dd>
+     * <dt>value = 16</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
+     * </p>
+     * </dd>
      * </dl>
      * </dd>
      * </dl>
@@ -663,13 +859,13 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *         <dt>type="GPU"</dt>
      *         <dd>
      *         <p>
-     *         The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers
-     *         in a job shouldn't exceed the number of available GPUs on the compute resource that the job is launched
-     *         on.
+     *         The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for
+     *         all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job
+     *         is launched on.
      *         </p>
      *         <note>
      *         <p>
-     *         GPUs are not available for jobs that are running on Fargate resources.
+     *         GPUs aren't available for jobs that are running on Fargate resources.
      *         </p>
      *         </note></dd>
      *         <dt>type="MEMORY"</dt>
@@ -741,20 +937,49 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *         <dt>value = 8192</dt>
      *         <dd>
      *         <p>
-     *         <code>VCPU</code> = 1, 2, or 4
+     *         <code>VCPU</code> = 1, 2, 4, or 8
      *         </p>
      *         </dd>
-     *         <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+     *         <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt>
      *         <dd>
      *         <p>
      *         <code>VCPU</code> = 2 or 4
      *         </p>
      *         </dd>
-     *         <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or
-     *         30720</dt>
+     *         <dt>value = 16384</dt>
+     *         <dd>
+     *         <p>
+     *         <code>VCPU</code> = 2, 4, or 8
+     *         </p>
+     *         </dd>
+     *         <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720</dt>
      *         <dd>
      *         <p>
      *         <code>VCPU</code> = 4
+     *         </p>
+     *         </dd>
+     *         <dt>value = 20480, 24576, or 28672</dt>
+     *         <dd>
+     *         <p>
+     *         <code>VCPU</code> = 4 or 8
+     *         </p>
+     *         </dd>
+     *         <dt>value = 36864, 45056, 53248, or 61440</dt>
+     *         <dd>
+     *         <p>
+     *         <code>VCPU</code> = 8
+     *         </p>
+     *         </dd>
+     *         <dt>value = 32768, 40960, 49152, or 57344</dt>
+     *         <dd>
+     *         <p>
+     *         <code>VCPU</code> = 8 or 16
+     *         </p>
+     *         </dd>
+     *         <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
+     *         <dd>
+     *         <p>
+     *         <code>VCPU</code> = 16
      *         </p>
      *         </dd>
      *         </dl>
@@ -771,9 +996,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *         least once.
      *         </p>
      *         <p>
+     *         The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     *         Fargate quotas, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     *         quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *         </p>
+     *         <p>
      *         For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported
      *         values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code>
-     *         value. The supported values are 0.25, 0.5, 1, 2, and 4
+     *         value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
      *         </p>
      *         <dl>
      *         <dt>value = 0.25</dt>
@@ -808,6 +1039,20 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *         20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
      *         </p>
      *         </dd>
+     *         <dt>value = 8</dt>
+     *         <dd>
+     *         <p>
+     *         <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or
+     *         61440
+     *         </p>
+     *         </dd>
+     *         <dt>value = 16</dt>
+     *         <dd>
+     *         <p>
+     *         <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     *         122880
+     *         </p>
+     *         </dd>
      *         </dl>
      *         </dd>
      */
@@ -825,12 +1070,13 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>type="GPU"</dt>
      * <dd>
      * <p>
-     * The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers in a job
-     * shouldn't exceed the number of available GPUs on the compute resource that the job is launched on.
+     * The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for all
+     * containers in a job doesn't exceed the number of available GPUs on the compute resource that the job is launched
+     * on.
      * </p>
      * <note>
      * <p>
-     * GPUs are not available for jobs that are running on Fargate resources.
+     * GPUs aren't available for jobs that are running on Fargate resources.
      * </p>
      * </note></dd>
      * <dt>type="MEMORY"</dt>
@@ -901,19 +1147,49 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * <dt>value = 8192</dt>
      * <dd>
      * <p>
-     * <code>VCPU</code> = 1, 2, or 4
+     * <code>VCPU</code> = 1, 2, 4, or 8
      * </p>
      * </dd>
-     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+     * <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 2 or 4
      * </p>
      * </dd>
-     * <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720</dt>
+     * <dt>value = 16384</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 2, 4, or 8
+     * </p>
+     * </dd>
+     * <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720</dt>
      * <dd>
      * <p>
      * <code>VCPU</code> = 4
+     * </p>
+     * </dd>
+     * <dt>value = 20480, 24576, or 28672</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 4 or 8
+     * </p>
+     * </dd>
+     * <dt>value = 36864, 45056, 53248, or 61440</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8
+     * </p>
+     * </dd>
+     * <dt>value = 32768, 40960, 49152, or 57344</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 8 or 16
+     * </p>
+     * </dd>
+     * <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
+     * <dd>
+     * <p>
+     * <code>VCPU</code> = 16
      * </p>
      * </dd>
      * </dl>
@@ -929,9 +1205,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * places; it must be specified for each node at least once.
      * </p>
      * <p>
+     * The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about Fargate
+     * quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate quotas</a>
+     * in the <i>Amazon Web Services General Reference</i>.
+     * </p>
+     * <p>
      * For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported values
      * and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code> value. The
-     * supported values are 0.25, 0.5, 1, 2, and 4
+     * supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
      * </p>
      * <dl>
      * <dt>value = 0.25</dt>
@@ -965,6 +1247,18 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      * 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
      * </p>
      * </dd>
+     * <dt>value = 8</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or 61440
+     * </p>
+     * </dd>
+     * <dt>value = 16</dt>
+     * <dd>
+     * <p>
+     * <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880
+     * </p>
+     * </dd>
      * </dl>
      * </dd>
      * </dl>
@@ -976,13 +1270,13 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dt>type="GPU"</dt>
      *        <dd>
      *        <p>
-     *        The number of physical GPUs to reserve for the container. The number of GPUs reserved for all containers
-     *        in a job shouldn't exceed the number of available GPUs on the compute resource that the job is launched
-     *        on.
+     *        The number of physical GPUs to reserve for the container. Make sure that the number of GPUs reserved for
+     *        all containers in a job doesn't exceed the number of available GPUs on the compute resource that the job
+     *        is launched on.
      *        </p>
      *        <note>
      *        <p>
-     *        GPUs are not available for jobs that are running on Fargate resources.
+     *        GPUs aren't available for jobs that are running on Fargate resources.
      *        </p>
      *        </note></dd>
      *        <dt>type="MEMORY"</dt>
@@ -1054,20 +1348,49 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <dt>value = 8192</dt>
      *        <dd>
      *        <p>
-     *        <code>VCPU</code> = 1, 2, or 4
+     *        <code>VCPU</code> = 1, 2, 4, or 8
      *        </p>
      *        </dd>
-     *        <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, 15360, or 16384</dt>
+     *        <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt>
      *        <dd>
      *        <p>
      *        <code>VCPU</code> = 2 or 4
      *        </p>
      *        </dd>
-     *        <dt>value = 17408, 18432, 19456, 20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or
-     *        30720</dt>
+     *        <dt>value = 16384</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 2, 4, or 8
+     *        </p>
+     *        </dd>
+     *        <dt>value = 17408, 18432, 19456, 21504, 22528, 23552, 25600, 26624, 27648, 29696, or 30720</dt>
      *        <dd>
      *        <p>
      *        <code>VCPU</code> = 4
+     *        </p>
+     *        </dd>
+     *        <dt>value = 20480, 24576, or 28672</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 4 or 8
+     *        </p>
+     *        </dd>
+     *        <dt>value = 36864, 45056, 53248, or 61440</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 8
+     *        </p>
+     *        </dd>
+     *        <dt>value = 32768, 40960, 49152, or 57344</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 8 or 16
+     *        </p>
+     *        </dd>
+     *        <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
+     *        <dd>
+     *        <p>
+     *        <code>VCPU</code> = 16
      *        </p>
      *        </dd>
      *        </dl>
@@ -1084,9 +1407,15 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        once.
      *        </p>
      *        <p>
+     *        The default for the Fargate On-Demand vCPU resource count quota is 6 vCPUs. For more information about
+     *        Fargate quotas, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/ecs-service.html#service-quotas-fargate">Fargate
+     *        quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *        </p>
+     *        <p>
      *        For jobs that are running on Fargate resources, then <code>value</code> must match one of the supported
      *        values and the <code>MEMORY</code> values must be one of the values supported for that <code>VCPU</code>
-     *        value. The supported values are 0.25, 0.5, 1, 2, and 4
+     *        value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
      *        </p>
      *        <dl>
      *        <dt>value = 0.25</dt>
@@ -1119,6 +1448,20 @@ public class ResourceRequirement implements Serializable, Cloneable, StructuredP
      *        <p>
      *        <code>MEMORY</code> = 8192, 9216, 10240, 11264, 12288, 13312, 14336, 15360, 16384, 17408, 18432, 19456,
      *        20480, 21504, 22528, 23552, 24576, 25600, 26624, 27648, 28672, 29696, or 30720
+     *        </p>
+     *        </dd>
+     *        <dt>value = 8</dt>
+     *        <dd>
+     *        <p>
+     *        <code>MEMORY</code> = 16384, 20480, 24576, 28672, 32768, 36864, 40960, 45056, 49152, 53248, 57344, or
+     *        61440
+     *        </p>
+     *        </dd>
+     *        <dt>value = 16</dt>
+     *        <dd>
+     *        <p>
+     *        <code>MEMORY</code> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496, 114688, or
+     *        122880
      *        </p>
      *        </dd>
      *        </dl>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
      * the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code>
-     * parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no
+     * parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no
      * opportunity to recover the secret. You lose the secret permanently.
      * </p>
      * </important>
@@ -200,7 +200,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
      * the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code>
-     * parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no
+     * parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no
      * opportunity to recover the secret. You lose the secret permanently.
      * </p>
      * </important>
@@ -219,7 +219,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Use this parameter with caution. This parameter causes the operation to skip the normal recovery window
      *        before the permanent deletion that Secrets Manager would normally impose with the
      *        <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-     *        <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You
+     *        <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret. You
      *        lose the secret permanently.
      *        </p>
      */
@@ -243,7 +243,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
      * the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code>
-     * parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no
+     * parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no
      * opportunity to recover the secret. You lose the secret permanently.
      * </p>
      * </important>
@@ -261,8 +261,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Use this parameter with caution. This parameter causes the operation to skip the normal recovery window
      *         before the permanent deletion that Secrets Manager would normally impose with the
      *         <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-     *         <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You
-     *         lose the secret permanently.
+     *         <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret.
+     *         You lose the secret permanently.
      *         </p>
      */
 
@@ -285,7 +285,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
      * the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code>
-     * parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no
+     * parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no
      * opportunity to recover the secret. You lose the secret permanently.
      * </p>
      * </important>
@@ -304,7 +304,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Use this parameter with caution. This parameter causes the operation to skip the normal recovery window
      *        before the permanent deletion that Secrets Manager would normally impose with the
      *        <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-     *        <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You
+     *        <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret. You
      *        lose the secret permanently.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -330,7 +330,7 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * Use this parameter with caution. This parameter causes the operation to skip the normal recovery window before
      * the permanent deletion that Secrets Manager would normally impose with the <code>RecoveryWindowInDays</code>
-     * parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no
+     * parameter. If you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then you have no
      * opportunity to recover the secret. You lose the secret permanently.
      * </p>
      * </important>
@@ -348,8 +348,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Use this parameter with caution. This parameter causes the operation to skip the normal recovery window
      *         before the permanent deletion that Secrets Manager would normally impose with the
      *         <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
-     *         <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover the secret. You
-     *         lose the secret permanently.
+     *         <code>ForceDeleteWithoutRecovery</code> parameter, then you have no opportunity to recover the secret.
+     *         You lose the secret permanently.
      *         </p>
      */
 

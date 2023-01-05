@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have reached the limit (100,000) of active custom resource types in your account. Delete unused resources using
- * <code>DeleteResourceConfig</code>.
+ * You have reached the limit of active custom resource types in your account. There is a limit of 100,000. Delete
+ * unused resources using <a
+ * href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteResourceConfig.html">DeleteResourceConfig</a>
+ * <code/>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

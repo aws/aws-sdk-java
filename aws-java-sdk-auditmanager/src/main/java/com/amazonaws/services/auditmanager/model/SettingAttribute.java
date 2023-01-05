@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,8 @@ public enum SettingAttribute {
     IS_AWS_ORG_ENABLED("IS_AWS_ORG_ENABLED"),
     SNS_TOPIC("SNS_TOPIC"),
     DEFAULT_ASSESSMENT_REPORTS_DESTINATION("DEFAULT_ASSESSMENT_REPORTS_DESTINATION"),
-    DEFAULT_PROCESS_OWNERS("DEFAULT_PROCESS_OWNERS");
+    DEFAULT_PROCESS_OWNERS("DEFAULT_PROCESS_OWNERS"),
+    EVIDENCE_FINDER_ENABLEMENT("EVIDENCE_FINDER_ENABLEMENT");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,24 @@ public class ReportSettingJsonUnmarshaller implements Unmarshaller<ReportSetting
                 if (context.testExpression("NumberOfFrameworks", targetDepth)) {
                     context.nextToken();
                     reportSetting.setNumberOfFrameworks(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Accounts", targetDepth)) {
+                    context.nextToken();
+                    reportSetting.setAccounts(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("OrganizationUnits", targetDepth)) {
+                    context.nextToken();
+                    reportSetting.setOrganizationUnits(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Regions", targetDepth)) {
+                    context.nextToken();
+                    reportSetting.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

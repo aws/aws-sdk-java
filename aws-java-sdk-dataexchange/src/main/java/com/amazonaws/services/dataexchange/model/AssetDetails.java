@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the asset.
+ * Details about the asset.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dataexchange-2017-07-25/AssetDetails" target="_top">AWS API
@@ -30,7 +30,7 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 object that is the asset.
+     * The Amazon S3 object that is the asset.
      * </p>
      */
     private S3SnapshotAsset s3SnapshotAsset;
@@ -46,14 +46,26 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ApiGatewayApiAsset apiGatewayApiAsset;
+    /**
+     * <p>
+     * The Amazon S3 data access that is the asset.
+     * </p>
+     */
+    private S3DataAccessAsset s3DataAccessAsset;
+    /**
+     * <p>
+     * The AWS Lake Formation data permission that is the asset.
+     * </p>
+     */
+    private LakeFormationDataPermissionAsset lakeFormationDataPermissionAsset;
 
     /**
      * <p>
-     * The S3 object that is the asset.
+     * The Amazon S3 object that is the asset.
      * </p>
      * 
      * @param s3SnapshotAsset
-     *        The S3 object that is the asset.
+     *        The Amazon S3 object that is the asset.
      */
 
     public void setS3SnapshotAsset(S3SnapshotAsset s3SnapshotAsset) {
@@ -62,10 +74,10 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 object that is the asset.
+     * The Amazon S3 object that is the asset.
      * </p>
      * 
-     * @return The S3 object that is the asset.
+     * @return The Amazon S3 object that is the asset.
      */
 
     public S3SnapshotAsset getS3SnapshotAsset() {
@@ -74,11 +86,11 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The S3 object that is the asset.
+     * The Amazon S3 object that is the asset.
      * </p>
      * 
      * @param s3SnapshotAsset
-     *        The S3 object that is the asset.
+     *        The Amazon S3 object that is the asset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,6 +180,86 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon S3 data access that is the asset.
+     * </p>
+     * 
+     * @param s3DataAccessAsset
+     *        The Amazon S3 data access that is the asset.
+     */
+
+    public void setS3DataAccessAsset(S3DataAccessAsset s3DataAccessAsset) {
+        this.s3DataAccessAsset = s3DataAccessAsset;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 data access that is the asset.
+     * </p>
+     * 
+     * @return The Amazon S3 data access that is the asset.
+     */
+
+    public S3DataAccessAsset getS3DataAccessAsset() {
+        return this.s3DataAccessAsset;
+    }
+
+    /**
+     * <p>
+     * The Amazon S3 data access that is the asset.
+     * </p>
+     * 
+     * @param s3DataAccessAsset
+     *        The Amazon S3 data access that is the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetDetails withS3DataAccessAsset(S3DataAccessAsset s3DataAccessAsset) {
+        setS3DataAccessAsset(s3DataAccessAsset);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS Lake Formation data permission that is the asset.
+     * </p>
+     * 
+     * @param lakeFormationDataPermissionAsset
+     *        The AWS Lake Formation data permission that is the asset.
+     */
+
+    public void setLakeFormationDataPermissionAsset(LakeFormationDataPermissionAsset lakeFormationDataPermissionAsset) {
+        this.lakeFormationDataPermissionAsset = lakeFormationDataPermissionAsset;
+    }
+
+    /**
+     * <p>
+     * The AWS Lake Formation data permission that is the asset.
+     * </p>
+     * 
+     * @return The AWS Lake Formation data permission that is the asset.
+     */
+
+    public LakeFormationDataPermissionAsset getLakeFormationDataPermissionAsset() {
+        return this.lakeFormationDataPermissionAsset;
+    }
+
+    /**
+     * <p>
+     * The AWS Lake Formation data permission that is the asset.
+     * </p>
+     * 
+     * @param lakeFormationDataPermissionAsset
+     *        The AWS Lake Formation data permission that is the asset.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetDetails withLakeFormationDataPermissionAsset(LakeFormationDataPermissionAsset lakeFormationDataPermissionAsset) {
+        setLakeFormationDataPermissionAsset(lakeFormationDataPermissionAsset);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +276,11 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
         if (getRedshiftDataShareAsset() != null)
             sb.append("RedshiftDataShareAsset: ").append(getRedshiftDataShareAsset()).append(",");
         if (getApiGatewayApiAsset() != null)
-            sb.append("ApiGatewayApiAsset: ").append(getApiGatewayApiAsset());
+            sb.append("ApiGatewayApiAsset: ").append(getApiGatewayApiAsset()).append(",");
+        if (getS3DataAccessAsset() != null)
+            sb.append("S3DataAccessAsset: ").append(getS3DataAccessAsset()).append(",");
+        if (getLakeFormationDataPermissionAsset() != null)
+            sb.append("LakeFormationDataPermissionAsset: ").append(getLakeFormationDataPermissionAsset());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +307,15 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getApiGatewayApiAsset() != null && other.getApiGatewayApiAsset().equals(this.getApiGatewayApiAsset()) == false)
             return false;
+        if (other.getS3DataAccessAsset() == null ^ this.getS3DataAccessAsset() == null)
+            return false;
+        if (other.getS3DataAccessAsset() != null && other.getS3DataAccessAsset().equals(this.getS3DataAccessAsset()) == false)
+            return false;
+        if (other.getLakeFormationDataPermissionAsset() == null ^ this.getLakeFormationDataPermissionAsset() == null)
+            return false;
+        if (other.getLakeFormationDataPermissionAsset() != null
+                && other.getLakeFormationDataPermissionAsset().equals(this.getLakeFormationDataPermissionAsset()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +327,8 @@ public class AssetDetails implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getS3SnapshotAsset() == null) ? 0 : getS3SnapshotAsset().hashCode());
         hashCode = prime * hashCode + ((getRedshiftDataShareAsset() == null) ? 0 : getRedshiftDataShareAsset().hashCode());
         hashCode = prime * hashCode + ((getApiGatewayApiAsset() == null) ? 0 : getApiGatewayApiAsset().hashCode());
+        hashCode = prime * hashCode + ((getS3DataAccessAsset() == null) ? 0 : getS3DataAccessAsset().hashCode());
+        hashCode = prime * hashCode + ((getLakeFormationDataPermissionAsset() == null) ? 0 : getLakeFormationDataPermissionAsset().hashCode());
         return hashCode;
     }
 

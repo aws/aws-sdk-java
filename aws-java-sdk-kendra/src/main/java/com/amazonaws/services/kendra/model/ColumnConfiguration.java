@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The column that provides the document's unique identifier.
+     * The column that provides the document's identifier.
      * </p>
      */
     private String documentIdColumnName;
@@ -62,11 +62,11 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The column that provides the document's unique identifier.
+     * The column that provides the document's identifier.
      * </p>
      * 
      * @param documentIdColumnName
-     *        The column that provides the document's unique identifier.
+     *        The column that provides the document's identifier.
      */
 
     public void setDocumentIdColumnName(String documentIdColumnName) {
@@ -75,10 +75,10 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The column that provides the document's unique identifier.
+     * The column that provides the document's identifier.
      * </p>
      * 
-     * @return The column that provides the document's unique identifier.
+     * @return The column that provides the document's identifier.
      */
 
     public String getDocumentIdColumnName() {
@@ -87,11 +87,11 @@ public class ColumnConfiguration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The column that provides the document's unique identifier.
+     * The column that provides the document's identifier.
      * </p>
      * 
      * @param documentIdColumnName
-     *        The column that provides the document's unique identifier.
+     *        The column that provides the document's identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

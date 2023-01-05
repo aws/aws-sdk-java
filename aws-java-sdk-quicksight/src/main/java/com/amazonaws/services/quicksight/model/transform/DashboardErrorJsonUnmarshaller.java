@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class DashboardErrorJsonUnmarshaller implements Unmarshaller<DashboardErr
                 if (context.testExpression("Message", targetDepth)) {
                     context.nextToken();
                     dashboardError.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ViolatedEntities", targetDepth)) {
+                    context.nextToken();
+                    dashboardError.setViolatedEntities(new ListUnmarshaller<Entity>(EntityJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

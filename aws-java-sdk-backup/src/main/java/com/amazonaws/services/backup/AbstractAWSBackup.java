@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public CancelLegalHoldResult cancelLegalHold(CancelLegalHoldRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateBackupPlanResult createBackupPlan(CreateBackupPlanRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +49,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public CreateFrameworkResult createFramework(CreateFrameworkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLegalHoldResult createLegalHold(CreateLegalHoldRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -158,6 +168,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public DisassociateRecoveryPointFromParentResult disassociateRecoveryPointFromParent(DisassociateRecoveryPointFromParentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ExportBackupPlanTemplateResult exportBackupPlanTemplate(ExportBackupPlanTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -189,6 +204,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public GetBackupVaultNotificationsResult getBackupVaultNotifications(GetBackupVaultNotificationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLegalHoldResult getLegalHold(GetLegalHoldRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -243,12 +263,22 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public ListLegalHoldsResult listLegalHolds(ListLegalHoldsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProtectedResourcesResult listProtectedResources(ListProtectedResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListRecoveryPointsByBackupVaultResult listRecoveryPointsByBackupVault(ListRecoveryPointsByBackupVaultRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListRecoveryPointsByLegalHoldResult listRecoveryPointsByLegalHold(ListRecoveryPointsByLegalHoldRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

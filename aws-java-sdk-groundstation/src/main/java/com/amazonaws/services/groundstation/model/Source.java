@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,8 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+     * Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or
+     * <code>antenna-downlink-demod-decode</code>
      * </p>
      */
     private ConfigDetails configDetails;
@@ -55,11 +56,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+     * Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or
+     * <code>antenna-downlink-demod-decode</code>
      * </p>
      * 
      * @param configDetails
-     *        Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+     *        Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or
+     *        <code>antenna-downlink-demod-decode</code>
      */
 
     public void setConfigDetails(ConfigDetails configDetails) {
@@ -68,10 +71,12 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+     * Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or
+     * <code>antenna-downlink-demod-decode</code>
      * </p>
      * 
-     * @return Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+     * @return Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or
+     *         <code>antenna-downlink-demod-decode</code>
      */
 
     public ConfigDetails getConfigDetails() {
@@ -80,11 +85,13 @@ public class Source implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+     * Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or
+     * <code>antenna-downlink-demod-decode</code>
      * </p>
      * 
      * @param configDetails
-     *        Additional details for a <code>Config</code>, if type is dataflow endpoint or antenna demod decode.
+     *        Additional details for a <code>Config</code>, if type is <code>dataflow-endpoint</code> or
+     *        <code>antenna-downlink-demod-decode</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

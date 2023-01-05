@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
     private String username;
     /**
      * <p>
-     * The maximum number of authentication events to return.
+     * The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0,
+     * or if you don't include a <code>MaxResults</code> parameter.
      * </p>
      */
     private Integer maxResults;
@@ -132,11 +133,13 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of authentication events to return.
+     * The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0,
+     * or if you don't include a <code>MaxResults</code> parameter.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of authentication events to return.
+     *        The maximum number of authentication events to return. Returns 60 events if you set
+     *        <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -145,10 +148,12 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of authentication events to return.
+     * The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0,
+     * or if you don't include a <code>MaxResults</code> parameter.
      * </p>
      * 
-     * @return The maximum number of authentication events to return.
+     * @return The maximum number of authentication events to return. Returns 60 events if you set
+     *         <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.
      */
 
     public Integer getMaxResults() {
@@ -157,11 +162,13 @@ public class AdminListUserAuthEventsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximum number of authentication events to return.
+     * The maximum number of authentication events to return. Returns 60 events if you set <code>MaxResults</code> to 0,
+     * or if you don't include a <code>MaxResults</code> parameter.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of authentication events to return.
+     *        The maximum number of authentication events to return. Returns 60 events if you set
+     *        <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

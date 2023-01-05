@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,7 @@ import javax.annotation.Generated;
  * >The Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.
  * </p>
  * <p>
- * This is not supported for Amazon S3 on Outposts.
+ * This data type is not supported for Amazon S3 on Outposts.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/PublicAccessBlockConfiguration"
@@ -41,7 +41,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     * <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      * </p>
      * </li>
      * <li>
@@ -59,7 +59,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing policies or ACLs.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      */
     private Boolean blockPublicAcls;
@@ -74,7 +74,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * from being set.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      */
     private Boolean ignorePublicAcls;
@@ -88,7 +88,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing bucket policies.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      */
     private Boolean blockPublicPolicy;
@@ -103,7 +103,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      */
     private Boolean restrictPublicBuckets;
@@ -116,7 +116,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     * <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      * </p>
      * </li>
      * <li>
@@ -134,7 +134,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing policies or ACLs.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param blockPublicAcls
@@ -143,7 +143,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     *        <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      *        </p>
      *        </li>
      *        <li>
@@ -161,7 +161,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        Enabling this setting doesn't affect existing policies or ACLs.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      */
 
     public void setBlockPublicAcls(Boolean blockPublicAcls) {
@@ -176,7 +176,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     * <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      * </p>
      * </li>
      * <li>
@@ -194,7 +194,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing policies or ACLs.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account.
@@ -202,7 +202,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     *         <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      *         </p>
      *         </li>
      *         <li>
@@ -220,7 +220,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         Enabling this setting doesn't affect existing policies or ACLs.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean getBlockPublicAcls() {
@@ -235,7 +235,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     * <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      * </p>
      * </li>
      * <li>
@@ -253,7 +253,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing policies or ACLs.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param blockPublicAcls
@@ -262,7 +262,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        <ul>
      *        <li>
      *        <p>
-     *        PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     *        <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      *        </p>
      *        </li>
      *        <li>
@@ -280,7 +280,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        Enabling this setting doesn't affect existing policies or ACLs.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -297,7 +297,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * <ul>
      * <li>
      * <p>
-     * PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     * <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      * </p>
      * </li>
      * <li>
@@ -315,7 +315,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing policies or ACLs.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets in this account.
@@ -323,7 +323,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         <ul>
      *         <li>
      *         <p>
-     *         PUT Bucket acl and PUT Object acl calls fail if the specified ACL is public.
+     *         <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified ACL is public.
      *         </p>
      *         </li>
      *         <li>
@@ -341,7 +341,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         Enabling this setting doesn't affect existing policies or ACLs.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean isBlockPublicAcls() {
@@ -359,7 +359,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * from being set.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param ignorePublicAcls
@@ -371,7 +371,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        ACLs from being set.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      */
 
     public void setIgnorePublicAcls(Boolean ignorePublicAcls) {
@@ -389,7 +389,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * from being set.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element
@@ -400,7 +400,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         ACLs from being set.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean getIgnorePublicAcls() {
@@ -418,7 +418,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * from being set.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param ignorePublicAcls
@@ -430,7 +430,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        ACLs from being set.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,7 +450,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * from being set.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should ignore public ACLs for buckets in this account. Setting this element
@@ -461,7 +461,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         ACLs from being set.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean isIgnorePublicAcls() {
@@ -478,7 +478,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing bucket policies.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param blockPublicPolicy
@@ -489,7 +489,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        Enabling this setting doesn't affect existing bucket policies.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      */
 
     public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
@@ -506,7 +506,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing bucket policies.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this
@@ -516,7 +516,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         Enabling this setting doesn't affect existing bucket policies.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean getBlockPublicPolicy() {
@@ -533,7 +533,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing bucket policies.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param blockPublicPolicy
@@ -544,7 +544,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        Enabling this setting doesn't affect existing bucket policies.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,7 +563,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * Enabling this setting doesn't affect existing bucket policies.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should block public bucket policies for buckets in this account. Setting this
@@ -573,7 +573,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         Enabling this setting doesn't affect existing bucket policies.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean isBlockPublicPolicy() {
@@ -591,7 +591,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param restrictPublicBuckets
@@ -604,7 +604,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        accounts, is blocked.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      */
 
     public void setRestrictPublicBuckets(Boolean restrictPublicBuckets) {
@@ -622,7 +622,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting
@@ -634,7 +634,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         accounts, is blocked.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean getRestrictPublicBuckets() {
@@ -652,7 +652,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @param restrictPublicBuckets
@@ -665,7 +665,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *        accounts, is blocked.
      *        </p>
      *        <p>
-     *        This is not supported for Amazon S3 on Outposts.
+     *        This property is not supported for Amazon S3 on Outposts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,7 +685,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      * access within any public bucket policy, including non-public delegation to specific accounts, is blocked.
      * </p>
      * <p>
-     * This is not supported for Amazon S3 on Outposts.
+     * This property is not supported for Amazon S3 on Outposts.
      * </p>
      * 
      * @return Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account. Setting
@@ -697,7 +697,7 @@ public class PublicAccessBlockConfiguration implements Serializable, Cloneable {
      *         accounts, is blocked.
      *         </p>
      *         <p>
-     *         This is not supported for Amazon S3 on Outposts.
+     *         This property is not supported for Amazon S3 on Outposts.
      */
 
     public Boolean isRestrictPublicBuckets() {

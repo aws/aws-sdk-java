@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,16 +27,16 @@ public class ListComponentTypesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
+     * The ID of the workspace.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * A list of objects that filter the request.
      * </p>
      */
     private java.util.List<ListComponentTypesFilter> filters;
-    /**
-     * <p>
-     * The maximum number of results to display.
-     * </p>
-     */
-    private Integer maxResults;
     /**
      * <p>
      * The string that specifies the next page of results.
@@ -45,10 +45,53 @@ public class ListComponentTypesRequest extends com.amazonaws.AmazonWebServiceReq
     private String nextToken;
     /**
      * <p>
-     * The ID of the workspace.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      */
-    private String workspaceId;
+    private Integer maxResults;
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
+     */
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @return The ID of the workspace.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListComponentTypesRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -122,46 +165,6 @@ public class ListComponentTypesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The maximum number of results to display.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to display.
-     */
-
-    public void setMaxResults(Integer maxResults) {
-        this.maxResults = maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to display.
-     * </p>
-     * 
-     * @return The maximum number of results to display.
-     */
-
-    public Integer getMaxResults() {
-        return this.maxResults;
-    }
-
-    /**
-     * <p>
-     * The maximum number of results to display.
-     * </p>
-     * 
-     * @param maxResults
-     *        The maximum number of results to display.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ListComponentTypesRequest withMaxResults(Integer maxResults) {
-        setMaxResults(maxResults);
-        return this;
-    }
-
-    /**
-     * <p>
      * The string that specifies the next page of results.
      * </p>
      * 
@@ -202,41 +205,56 @@ public class ListComponentTypesRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ID of the workspace.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace.
+     * @param maxResults
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
      */
 
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
     }
 
     /**
      * <p>
-     * The ID of the workspace.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
-     * @return The ID of the workspace.
+     * @return The maximum number of results to return at one time. The default is 25.</p>
+     *         <p>
+     *         Valid Range: Minimum value of 1. Maximum value of 250.
      */
 
-    public String getWorkspaceId() {
-        return this.workspaceId;
+    public Integer getMaxResults() {
+        return this.maxResults;
     }
 
     /**
      * <p>
-     * The ID of the workspace.
+     * The maximum number of results to return at one time. The default is 25.
+     * </p>
+     * <p>
+     * Valid Range: Minimum value of 1. Maximum value of 250.
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace.
+     * @param maxResults
+     *        The maximum number of results to return at one time. The default is 25.</p>
+     *        <p>
+     *        Valid Range: Minimum value of 1. Maximum value of 250.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ListComponentTypesRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
+    public ListComponentTypesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
         return this;
     }
 
@@ -252,14 +270,14 @@ public class ListComponentTypesRequest extends com.amazonaws.AmazonWebServiceReq
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getFilters() != null)
             sb.append("Filters: ").append(getFilters()).append(",");
-        if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults());
         sb.append("}");
         return sb.toString();
     }
@@ -274,21 +292,21 @@ public class ListComponentTypesRequest extends com.amazonaws.AmazonWebServiceReq
         if (obj instanceof ListComponentTypesRequest == false)
             return false;
         ListComponentTypesRequest other = (ListComponentTypesRequest) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getFilters() == null ^ this.getFilters() == null)
             return false;
         if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
-            return false;
-        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
-            return false;
-        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
             return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
         return true;
     }
@@ -298,10 +316,10 @@ public class ListComponentTypesRequest extends com.amazonaws.AmazonWebServiceReq
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
-        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;
     }
 

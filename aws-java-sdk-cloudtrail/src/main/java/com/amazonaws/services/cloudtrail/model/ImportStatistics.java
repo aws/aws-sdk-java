@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides statistics for the specified <code>ImportID</code>.
+ * Provides statistics for the specified <code>ImportID</code>. CloudTrail does not update import statistics in
+ * real-time. Returned values for parameters such as <code>EventsCompleted</code> may be lower than the actual value,
+ * because CloudTrail updates statistics incrementally over the course of the import.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/ImportStatistics" target="_top">AWS API
@@ -42,13 +44,13 @@ public class ImportStatistics implements Serializable, Cloneable, StructuredPojo
     private Long prefixesCompleted;
     /**
      * <p>
-     * The number of files that completed import.
+     * The number of log files that completed import.
      * </p>
      */
     private Long filesCompleted;
     /**
      * <p>
-     * The number of trail events imported.
+     * The number of trail events imported into the event data store.
      * </p>
      */
     private Long eventsCompleted;
@@ -141,11 +143,11 @@ public class ImportStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of files that completed import.
+     * The number of log files that completed import.
      * </p>
      * 
      * @param filesCompleted
-     *        The number of files that completed import.
+     *        The number of log files that completed import.
      */
 
     public void setFilesCompleted(Long filesCompleted) {
@@ -154,10 +156,10 @@ public class ImportStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of files that completed import.
+     * The number of log files that completed import.
      * </p>
      * 
-     * @return The number of files that completed import.
+     * @return The number of log files that completed import.
      */
 
     public Long getFilesCompleted() {
@@ -166,11 +168,11 @@ public class ImportStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of files that completed import.
+     * The number of log files that completed import.
      * </p>
      * 
      * @param filesCompleted
-     *        The number of files that completed import.
+     *        The number of log files that completed import.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,11 +183,11 @@ public class ImportStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of trail events imported.
+     * The number of trail events imported into the event data store.
      * </p>
      * 
      * @param eventsCompleted
-     *        The number of trail events imported.
+     *        The number of trail events imported into the event data store.
      */
 
     public void setEventsCompleted(Long eventsCompleted) {
@@ -194,10 +196,10 @@ public class ImportStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of trail events imported.
+     * The number of trail events imported into the event data store.
      * </p>
      * 
-     * @return The number of trail events imported.
+     * @return The number of trail events imported into the event data store.
      */
 
     public Long getEventsCompleted() {
@@ -206,11 +208,11 @@ public class ImportStatistics implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The number of trail events imported.
+     * The number of trail events imported into the event data store.
      * </p>
      * 
      * @param eventsCompleted
-     *        The number of trail events imported.
+     *        The number of trail events imported into the event data store.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

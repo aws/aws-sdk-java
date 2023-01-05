@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -367,6 +367,22 @@ public class ResourceDetailsJsonUnmarshaller implements Unmarshaller<ResourceDet
                 if (context.testExpression("AwsBackupRecoveryPoint", targetDepth)) {
                     context.nextToken();
                     resourceDetails.setAwsBackupRecoveryPoint(AwsBackupRecoveryPointDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsEc2LaunchTemplate", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsEc2LaunchTemplate(AwsEc2LaunchTemplateDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsSageMakerNotebookInstance", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsSageMakerNotebookInstance(AwsSageMakerNotebookInstanceDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafv2WebAcl", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafv2WebAcl(AwsWafv2WebAclDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AwsWafv2RuleGroup", targetDepth)) {
+                    context.nextToken();
+                    resourceDetails.setAwsWafv2RuleGroup(AwsWafv2RuleGroupDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,8 +59,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots
+     * on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<BlockDeviceMapping> blockDeviceMappings;
@@ -99,8 +99,15 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     private String name;
     /**
      * <p>
-     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
-     * use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     * The billing product codes. Your account must be authorized to specify billing product codes.
+     * </p>
+     * <p>
+     * If your account is not authorized to specify billing product codes, you can publish AMIs that include billable
+     * software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon
+     * Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a
+     * seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> billingProducts;
@@ -142,16 +149,16 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * The boot mode of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      */
     private String bootMode;
     /**
      * <p>
      * Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      */
     private String tpmSupport;
@@ -162,7 +169,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String uefiData;
@@ -173,7 +180,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -389,8 +396,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots
+     * on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The block device mapping entries.</p>
@@ -402,8 +409,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *         Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances
      *         on the same Outpost only. For more information, <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     *         snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local
+     *         snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -425,8 +432,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots
+     * on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param blockDeviceMappings
@@ -439,8 +446,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
      *        the same Outpost only. For more information, <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -464,8 +471,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots
+     * on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -483,8 +490,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
      *        the same Outpost only. For more information, <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,8 +517,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the Region of
      * that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on the same Outpost
      * only. For more information, <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     * snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local snapshots
+     * on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param blockDeviceMappings
@@ -524,8 +531,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        If you create an AMI on an Outpost, then all backing snapshots must be on the same Outpost or in the
      *        Region of that Outpost. AMIs on an Outpost that include local snapshots can be used to launch instances on
      *        the same Outpost only. For more information, <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon EBS local
-     *        snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon EBS local
+     *        snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -765,12 +772,26 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
-     * use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     * The billing product codes. Your account must be authorized to specify billing product codes.
+     * </p>
+     * <p>
+     * If your account is not authorized to specify billing product codes, you can publish AMIs that include billable
+     * software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon
+     * Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a
+     * seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      * </p>
      * 
-     * @return The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
-     *         you can use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     * @return The billing product codes. Your account must be authorized to specify billing product codes.</p>
+     *         <p>
+     *         If your account is not authorized to specify billing product codes, you can publish AMIs that include
+     *         billable software and list them on the Amazon Web Services Marketplace. You must first register as a
+     *         seller on the Amazon Web Services Marketplace. For more information, see <a
+     *         href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     *         started as a seller</a> and <a
+     *         href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a>
+     *         in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      */
 
     public java.util.List<String> getBillingProducts() {
@@ -782,13 +803,27 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
-     * use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     * The billing product codes. Your account must be authorized to specify billing product codes.
+     * </p>
+     * <p>
+     * If your account is not authorized to specify billing product codes, you can publish AMIs that include billable
+     * software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon
+     * Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a
+     * seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      * </p>
      * 
      * @param billingProducts
-     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
-     *        you can use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     *        The billing product codes. Your account must be authorized to specify billing product codes.</p>
+     *        <p>
+     *        If your account is not authorized to specify billing product codes, you can publish AMIs that include
+     *        billable software and list them on the Amazon Web Services Marketplace. You must first register as a
+     *        seller on the Amazon Web Services Marketplace. For more information, see <a
+     *        href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     *        started as a seller</a> and <a
+     *        href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a>
+     *        in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      */
 
     public void setBillingProducts(java.util.Collection<String> billingProducts) {
@@ -802,8 +837,15 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
-     * use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     * The billing product codes. Your account must be authorized to specify billing product codes.
+     * </p>
+     * <p>
+     * If your account is not authorized to specify billing product codes, you can publish AMIs that include billable
+     * software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon
+     * Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a
+     * seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -812,8 +854,15 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * </p>
      * 
      * @param billingProducts
-     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
-     *        you can use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     *        The billing product codes. Your account must be authorized to specify billing product codes.</p>
+     *        <p>
+     *        If your account is not authorized to specify billing product codes, you can publish AMIs that include
+     *        billable software and list them on the Amazon Web Services Marketplace. You must first register as a
+     *        seller on the Amazon Web Services Marketplace. For more information, see <a
+     *        href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     *        started as a seller</a> and <a
+     *        href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a>
+     *        in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -829,13 +878,27 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
 
     /**
      * <p>
-     * The billing product codes. Your account must be authorized to specify billing product codes. Otherwise, you can
-     * use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     * The billing product codes. Your account must be authorized to specify billing product codes.
+     * </p>
+     * <p>
+     * If your account is not authorized to specify billing product codes, you can publish AMIs that include billable
+     * software and list them on the Amazon Web Services Marketplace. You must first register as a seller on the Amazon
+     * Web Services Marketplace. For more information, see <a
+     * href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting started as a
+     * seller</a> and <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
+     * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      * </p>
      * 
      * @param billingProducts
-     *        The billing product codes. Your account must be authorized to specify billing product codes. Otherwise,
-     *        you can use the Amazon Web Services Marketplace to bill for the use of an AMI.
+     *        The billing product codes. Your account must be authorized to specify billing product codes.</p>
+     *        <p>
+     *        If your account is not authorized to specify billing product codes, you can publish AMIs that include
+     *        billable software and list them on the Amazon Web Services Marketplace. You must first register as a
+     *        seller on the Amazon Web Services Marketplace. For more information, see <a
+     *        href="https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html">Getting
+     *        started as a seller</a> and <a
+     *        href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based products</a>
+     *        in the <i>Amazon Web Services Marketplace Seller Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1067,14 +1130,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * The boot mode of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the AMI. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1085,13 +1148,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * The boot mode of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @return The boot mode of the AMI. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *         Elastic Compute Cloud User Guide</i>.
+     *         EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1102,14 +1165,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * The boot mode of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the AMI. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */
@@ -1122,14 +1185,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * The boot mode of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the AMI. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @see BootModeValues
      */
 
@@ -1140,14 +1203,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * The boot mode of the AMI. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param bootMode
      *        The boot mode of the AMI. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see BootModeValues
      */
@@ -1160,14 +1223,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2
+     *        User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1178,13 +1241,13 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @return Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *         Elastic Compute Cloud User Guide</i>.
+     *         EC2 User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1195,14 +1258,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TpmSupportValues
      */
@@ -1215,14 +1278,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2
+     *        User Guide</i>.
      * @see TpmSupportValues
      */
 
@@ -1233,14 +1296,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
     /**
      * <p>
      * Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon Elastic
-     * Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2 User
+     * Guide</i>.
      * </p>
      * 
      * @param tpmSupport
      *        Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon
-     *        Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a> in the <i>Amazon EC2
+     *        User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TpmSupportValues
      */
@@ -1257,7 +1320,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param uefiData
@@ -1266,7 +1329,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        >GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a
      *        href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     *        Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setUefiData(String uefiData) {
@@ -1280,7 +1343,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return Base64 representation of the non-volatile UEFI variable store. To retrieve the UEFI data, use the <a
@@ -1289,7 +1352,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         command. You can inspect and modify the UEFI data by using the <a
      *         href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more
      *         information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     *         Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public String getUefiData() {
@@ -1303,7 +1366,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * command. You can inspect and modify the UEFI data by using the <a
      * href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more information, see
      * <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI Secure Boot</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param uefiData
@@ -1312,7 +1375,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        >GetInstanceUefiData</a> command. You can inspect and modify the UEFI data by using the <a
      *        href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a> on GitHub. For more
      *        information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
-     *        Secure Boot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1328,7 +1391,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1342,7 +1405,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
      *        <p>
      *        If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.
      *        </p>
@@ -1360,7 +1423,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1373,7 +1436,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *         instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *         <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *         >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
+     *         >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
      *         <p>
      *         If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.
      *         </p>
@@ -1391,7 +1454,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1405,7 +1468,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
      *        <p>
      *        If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.
      *        </p>
@@ -1425,7 +1488,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1439,7 +1502,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
      *        <p>
      *        If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.
      *        </p>
@@ -1457,7 +1520,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      * requires that IMDSv2 is used when requesting instance metadata. In addition, <code>HttpPutResponseHopLimit</code>
      * is set to <code>2</code>. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     * >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1471,7 +1534,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest implements Ser
      *        instance requires that IMDSv2 is used when requesting instance metadata. In addition,
      *        <code>HttpPutResponseHopLimit</code> is set to <code>2</code>. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration"
-     *        >Configure the AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>
+     *        >Configure the AMI</a> in the <i>Amazon EC2 User Guide</i>.</p> <note>
      *        <p>
      *        If you set the value to <code>v2.0</code>, make sure that your AMI software can support IMDSv2.
      *        </p>

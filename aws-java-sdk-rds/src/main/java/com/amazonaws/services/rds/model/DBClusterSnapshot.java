@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -180,6 +180,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private Boolean iAMDatabaseAuthenticationEnabled;
 
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     */
+    private String dBSystemId;
 
     /**
      * <p>
@@ -1271,6 +1277,46 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param dBSystemId
+     *        Reserved for future use.
+     */
+
+    public void setDBSystemId(String dBSystemId) {
+        this.dBSystemId = dBSystemId;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @return Reserved for future use.
+     */
+
+    public String getDBSystemId() {
+        return this.dBSystemId;
+    }
+
+    /**
+     * <p>
+     * Reserved for future use.
+     * </p>
+     * 
+     * @param dBSystemId
+     *        Reserved for future use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBClusterSnapshot withDBSystemId(String dBSystemId) {
+        setDBSystemId(dBSystemId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1325,7 +1371,9 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         if (getIAMDatabaseAuthenticationEnabled() != null)
             sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
         if (getTagList() != null)
-            sb.append("TagList: ").append(getTagList());
+            sb.append("TagList: ").append(getTagList()).append(",");
+        if (getDBSystemId() != null)
+            sb.append("DBSystemId: ").append(getDBSystemId());
         sb.append("}");
         return sb.toString();
     }
@@ -1429,6 +1477,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
             return false;
+        if (other.getDBSystemId() == null ^ this.getDBSystemId() == null)
+            return false;
+        if (other.getDBSystemId() != null && other.getDBSystemId().equals(this.getDBSystemId()) == false)
+            return false;
         return true;
     }
 
@@ -1459,6 +1511,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSourceDBClusterSnapshotArn() == null) ? 0 : getSourceDBClusterSnapshotArn().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
+        hashCode = prime * hashCode + ((getDBSystemId() == null) ? 0 : getDBSystemId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -246,6 +246,39 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a
+     * file in the workgroup with the same name already exists.
+     * </p>
+     * 
+     * @param createNotebookRequest
+     * @return A Java Future containing the result of the CreateNotebook operation returned by the service.
+     * @sample AmazonAthenaAsync.CreateNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNotebookResult> createNotebookAsync(CreateNotebookRequest createNotebookRequest);
+
+    /**
+     * <p>
+     * Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a
+     * file in the workgroup with the same name already exists.
+     * </p>
+     * 
+     * @param createNotebookRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNotebook operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.CreateNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNotebookResult> createNotebookAsync(CreateNotebookRequest createNotebookRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNotebookRequest, CreateNotebookResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a prepared statement for use with SQL queries in Athena.
      * </p>
      * 
@@ -277,7 +310,45 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Creates a workgroup with the specified name.
+     * Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access,
+     * <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token.
+     * </p>
+     * 
+     * @param createPresignedNotebookUrlRequest
+     * @return A Java Future containing the result of the CreatePresignedNotebookUrl operation returned by the service.
+     * @sample AmazonAthenaAsync.CreatePresignedNotebookUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePresignedNotebookUrlResult> createPresignedNotebookUrlAsync(
+            CreatePresignedNotebookUrlRequest createPresignedNotebookUrlRequest);
+
+    /**
+     * <p>
+     * Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access,
+     * <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token.
+     * </p>
+     * 
+     * @param createPresignedNotebookUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreatePresignedNotebookUrl operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.CreatePresignedNotebookUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreatePresignedNotebookUrlResult> createPresignedNotebookUrlAsync(
+            CreatePresignedNotebookUrlRequest createPresignedNotebookUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<CreatePresignedNotebookUrlRequest, CreatePresignedNotebookUrlResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a workgroup with the specified name. Only one of <code>Configurations</code> or
+     * <code>Configuration</code> can be specified; <code>Configurations</code> for a workgroup with multi engine
+     * support (for example, an Apache Spark enabled workgroup) or <code>Configuration</code> for an Athena SQL
+     * workgroup.
      * </p>
      * 
      * @param createWorkGroupRequest
@@ -290,7 +361,10 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Creates a workgroup with the specified name.
+     * Creates a workgroup with the specified name. Only one of <code>Configurations</code> or
+     * <code>Configuration</code> can be specified; <code>Configurations</code> for a workgroup with multi engine
+     * support (for example, an Apache Spark enabled workgroup) or <code>Configuration</code> for an Athena SQL
+     * workgroup.
      * </p>
      * 
      * @param createWorkGroupRequest
@@ -380,6 +454,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Deletes the specified notebook.
+     * </p>
+     * 
+     * @param deleteNotebookRequest
+     * @return A Java Future containing the result of the DeleteNotebook operation returned by the service.
+     * @sample AmazonAthenaAsync.DeleteNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNotebookResult> deleteNotebookAsync(DeleteNotebookRequest deleteNotebookRequest);
+
+    /**
+     * <p>
+     * Deletes the specified notebook.
+     * </p>
+     * 
+     * @param deleteNotebookRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNotebook operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.DeleteNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNotebookResult> deleteNotebookAsync(DeleteNotebookRequest deleteNotebookRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNotebookRequest, DeleteNotebookResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the prepared statement with the specified name from the specified workgroup.
      * </p>
      * 
@@ -439,6 +544,136 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<DeleteWorkGroupResult> deleteWorkGroupAsync(DeleteWorkGroupRequest deleteWorkGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteWorkGroupRequest, DeleteWorkGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Exports the specified notebook and its metadata.
+     * </p>
+     * 
+     * @param exportNotebookRequest
+     * @return A Java Future containing the result of the ExportNotebook operation returned by the service.
+     * @sample AmazonAthenaAsync.ExportNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportNotebookResult> exportNotebookAsync(ExportNotebookRequest exportNotebookRequest);
+
+    /**
+     * <p>
+     * Exports the specified notebook and its metadata.
+     * </p>
+     * 
+     * @param exportNotebookRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportNotebook operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ExportNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ExportNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportNotebookResult> exportNotebookAsync(ExportNotebookRequest exportNotebookRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportNotebookRequest, ExportNotebookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a previously submitted calculation execution.
+     * </p>
+     * 
+     * @param getCalculationExecutionRequest
+     * @return A Java Future containing the result of the GetCalculationExecution operation returned by the service.
+     * @sample AmazonAthenaAsync.GetCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculationExecutionResult> getCalculationExecutionAsync(GetCalculationExecutionRequest getCalculationExecutionRequest);
+
+    /**
+     * <p>
+     * Describes a previously submitted calculation execution.
+     * </p>
+     * 
+     * @param getCalculationExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCalculationExecution operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculationExecutionResult> getCalculationExecutionAsync(GetCalculationExecutionRequest getCalculationExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionRequest, GetCalculationExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a pre-signed URL to a copy of the code that was executed for the calculation.
+     * </p>
+     * 
+     * @param getCalculationExecutionCodeRequest
+     * @return A Java Future containing the result of the GetCalculationExecutionCode operation returned by the service.
+     * @sample AmazonAthenaAsync.GetCalculationExecutionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculationExecutionCodeResult> getCalculationExecutionCodeAsync(
+            GetCalculationExecutionCodeRequest getCalculationExecutionCodeRequest);
+
+    /**
+     * <p>
+     * Retrieves a pre-signed URL to a copy of the code that was executed for the calculation.
+     * </p>
+     * 
+     * @param getCalculationExecutionCodeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCalculationExecutionCode operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetCalculationExecutionCode
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculationExecutionCodeResult> getCalculationExecutionCodeAsync(
+            GetCalculationExecutionCodeRequest getCalculationExecutionCodeRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionCodeRequest, GetCalculationExecutionCodeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the status of a current calculation.
+     * </p>
+     * 
+     * @param getCalculationExecutionStatusRequest
+     * @return A Java Future containing the result of the GetCalculationExecutionStatus operation returned by the
+     *         service.
+     * @sample AmazonAthenaAsync.GetCalculationExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculationExecutionStatusResult> getCalculationExecutionStatusAsync(
+            GetCalculationExecutionStatusRequest getCalculationExecutionStatusRequest);
+
+    /**
+     * <p>
+     * Gets the status of a current calculation.
+     * </p>
+     * 
+     * @param getCalculationExecutionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCalculationExecutionStatus operation returned by the
+     *         service.
+     * @sample AmazonAthenaAsyncHandler.GetCalculationExecutionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionStatus"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCalculationExecutionStatusResult> getCalculationExecutionStatusAsync(
+            GetCalculationExecutionStatusRequest getCalculationExecutionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionStatusRequest, GetCalculationExecutionStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -534,6 +769,37 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<GetNamedQueryResult> getNamedQueryAsync(GetNamedQueryRequest getNamedQueryRequest,
             com.amazonaws.handlers.AsyncHandler<GetNamedQueryRequest, GetNamedQueryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves notebook metadata for the specified notebook ID.
+     * </p>
+     * 
+     * @param getNotebookMetadataRequest
+     * @return A Java Future containing the result of the GetNotebookMetadata operation returned by the service.
+     * @sample AmazonAthenaAsync.GetNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetNotebookMetadataResult> getNotebookMetadataAsync(GetNotebookMetadataRequest getNotebookMetadataRequest);
+
+    /**
+     * <p>
+     * Retrieves notebook metadata for the specified notebook ID.
+     * </p>
+     * 
+     * @param getNotebookMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetNotebookMetadata operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetNotebookMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetNotebookMetadataResult> getNotebookMetadataAsync(GetNotebookMetadataRequest getNotebookMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetNotebookMetadataRequest, GetNotebookMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -665,8 +931,9 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     /**
      * <p>
      * Returns query execution runtime statistics related to a single execution of a query if you have access to the
-     * workgroup in which the query ran. The query execution runtime statistics is returned only when
-     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state.
+     * workgroup in which the query ran. Query execution runtime statistics are returned only when
+     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and
+     * data size statistics are not shown when a query has row-level filters defined in Lake Formation.
      * </p>
      * 
      * @param getQueryRuntimeStatisticsRequest
@@ -681,8 +948,9 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     /**
      * <p>
      * Returns query execution runtime statistics related to a single execution of a query if you have access to the
-     * workgroup in which the query ran. The query execution runtime statistics is returned only when
-     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state.
+     * workgroup in which the query ran. Query execution runtime statistics are returned only when
+     * <a>QueryExecutionStatus$State</a> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and
+     * data size statistics are not shown when a query has row-level filters defined in Lake Formation.
      * </p>
      * 
      * @param getQueryRuntimeStatisticsRequest
@@ -698,6 +966,68 @@ public interface AmazonAthenaAsync extends AmazonAthena {
     java.util.concurrent.Future<GetQueryRuntimeStatisticsResult> getQueryRuntimeStatisticsAsync(
             GetQueryRuntimeStatisticsRequest getQueryRuntimeStatisticsRequest,
             com.amazonaws.handlers.AsyncHandler<GetQueryRuntimeStatisticsRequest, GetQueryRuntimeStatisticsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the full details of a previously created session, including the session status and configuration.
+     * </p>
+     * 
+     * @param getSessionRequest
+     * @return A Java Future containing the result of the GetSession operation returned by the service.
+     * @sample AmazonAthenaAsync.GetSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionResult> getSessionAsync(GetSessionRequest getSessionRequest);
+
+    /**
+     * <p>
+     * Gets the full details of a previously created session, including the session status and configuration.
+     * </p>
+     * 
+     * @param getSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSession operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionResult> getSessionAsync(GetSessionRequest getSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSessionRequest, GetSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the current status of a session.
+     * </p>
+     * 
+     * @param getSessionStatusRequest
+     * @return A Java Future containing the result of the GetSessionStatus operation returned by the service.
+     * @sample AmazonAthenaAsync.GetSessionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionStatusResult> getSessionStatusAsync(GetSessionStatusRequest getSessionStatusRequest);
+
+    /**
+     * <p>
+     * Gets the current status of a session.
+     * </p>
+     * 
+     * @param getSessionStatusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSessionStatus operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.GetSessionStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetSessionStatus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionStatusResult> getSessionStatusAsync(GetSessionStatusRequest getSessionStatusRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSessionStatusRequest, GetSessionStatusResult> asyncHandler);
 
     /**
      * <p>
@@ -760,6 +1090,107 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<GetWorkGroupResult> getWorkGroupAsync(GetWorkGroupRequest getWorkGroupRequest,
             com.amazonaws.handlers.AsyncHandler<GetWorkGroupRequest, GetWorkGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported
+     * is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an
+     * error.
+     * </p>
+     * 
+     * @param importNotebookRequest
+     * @return A Java Future containing the result of the ImportNotebook operation returned by the service.
+     * @sample AmazonAthenaAsync.ImportNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportNotebookResult> importNotebookAsync(ImportNotebookRequest importNotebookRequest);
+
+    /**
+     * <p>
+     * Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported
+     * is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an
+     * error.
+     * </p>
+     * 
+     * @param importNotebookRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportNotebook operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ImportNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ImportNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ImportNotebookResult> importNotebookAsync(ImportNotebookRequest importNotebookRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportNotebookRequest, ImportNotebookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the supported DPU sizes for the supported application runtimes (for example, <code>Jupyter 1.0</code>).
+     * </p>
+     * 
+     * @param listApplicationDPUSizesRequest
+     * @return A Java Future containing the result of the ListApplicationDPUSizes operation returned by the service.
+     * @sample AmazonAthenaAsync.ListApplicationDPUSizes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationDPUSizesResult> listApplicationDPUSizesAsync(ListApplicationDPUSizesRequest listApplicationDPUSizesRequest);
+
+    /**
+     * <p>
+     * Returns the supported DPU sizes for the supported application runtimes (for example, <code>Jupyter 1.0</code>).
+     * </p>
+     * 
+     * @param listApplicationDPUSizesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplicationDPUSizes operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListApplicationDPUSizes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationDPUSizesResult> listApplicationDPUSizesAsync(ListApplicationDPUSizesRequest listApplicationDPUSizesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationDPUSizesRequest, ListApplicationDPUSizesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed
+     * first; older calculations are listed later.
+     * </p>
+     * 
+     * @param listCalculationExecutionsRequest
+     * @return A Java Future containing the result of the ListCalculationExecutions operation returned by the service.
+     * @sample AmazonAthenaAsync.ListCalculationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCalculationExecutionsResult> listCalculationExecutionsAsync(
+            ListCalculationExecutionsRequest listCalculationExecutionsRequest);
+
+    /**
+     * <p>
+     * Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed
+     * first; older calculations are listed later.
+     * </p>
+     * 
+     * @param listCalculationExecutionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCalculationExecutions operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListCalculationExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListCalculationExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCalculationExecutionsResult> listCalculationExecutionsAsync(
+            ListCalculationExecutionsRequest listCalculationExecutionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCalculationExecutionsRequest, ListCalculationExecutionsResult> asyncHandler);
 
     /**
      * <p>
@@ -856,6 +1287,39 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Lists, in descending order, the executors that have been submitted to a session. Newer executors are listed
+     * first; older executors are listed later. The result can be optionally filtered by state.
+     * </p>
+     * 
+     * @param listExecutorsRequest
+     * @return A Java Future containing the result of the ListExecutors operation returned by the service.
+     * @sample AmazonAthenaAsync.ListExecutors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExecutorsResult> listExecutorsAsync(ListExecutorsRequest listExecutorsRequest);
+
+    /**
+     * <p>
+     * Lists, in descending order, the executors that have been submitted to a session. Newer executors are listed
+     * first; older executors are listed later. The result can be optionally filtered by state.
+     * </p>
+     * 
+     * @param listExecutorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExecutors operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListExecutors
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExecutorsResult> listExecutorsAsync(ListExecutorsRequest listExecutorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExecutorsRequest, ListExecutorsResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
      * access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary
      * workgroup.
@@ -898,6 +1362,72 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<ListNamedQueriesResult> listNamedQueriesAsync(ListNamedQueriesRequest listNamedQueriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListNamedQueriesRequest, ListNamedQueriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Displays the notebook files for the specified workgroup in paginated format.
+     * </p>
+     * 
+     * @param listNotebookMetadataRequest
+     * @return A Java Future containing the result of the ListNotebookMetadata operation returned by the service.
+     * @sample AmazonAthenaAsync.ListNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNotebookMetadataResult> listNotebookMetadataAsync(ListNotebookMetadataRequest listNotebookMetadataRequest);
+
+    /**
+     * <p>
+     * Displays the notebook files for the specified workgroup in paginated format.
+     * </p>
+     * 
+     * @param listNotebookMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNotebookMetadata operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNotebookMetadataResult> listNotebookMetadataAsync(ListNotebookMetadataRequest listNotebookMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNotebookMetadataRequest, ListNotebookMetadataResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists, in descending order, the sessions that have been created in a notebook that are in an active state like
+     * <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed
+     * first; older sessions are listed later.
+     * </p>
+     * 
+     * @param listNotebookSessionsRequest
+     * @return A Java Future containing the result of the ListNotebookSessions operation returned by the service.
+     * @sample AmazonAthenaAsync.ListNotebookSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNotebookSessionsResult> listNotebookSessionsAsync(ListNotebookSessionsRequest listNotebookSessionsRequest);
+
+    /**
+     * <p>
+     * Lists, in descending order, the sessions that have been created in a notebook that are in an active state like
+     * <code>CREATING</code>, <code>CREATED</code>, <code>IDLE</code> or <code>BUSY</code>. Newer sessions are listed
+     * first; older sessions are listed later.
+     * </p>
+     * 
+     * @param listNotebookSessionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNotebookSessions operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListNotebookSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListNotebookSessions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListNotebookSessionsResult> listNotebookSessionsAsync(ListNotebookSessionsRequest listNotebookSessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNotebookSessionsRequest, ListNotebookSessionsResult> asyncHandler);
 
     /**
      * <p>
@@ -974,6 +1504,39 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<ListQueryExecutionsResult> listQueryExecutionsAsync(ListQueryExecutionsRequest listQueryExecutionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListQueryExecutionsRequest, ListQueryExecutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>,
+     * <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
+     * </p>
+     * 
+     * @param listSessionsRequest
+     * @return A Java Future containing the result of the ListSessions operation returned by the service.
+     * @sample AmazonAthenaAsync.ListSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSessionsResult> listSessionsAsync(ListSessionsRequest listSessionsRequest);
+
+    /**
+     * <p>
+     * Lists the sessions in a workgroup that are in an active state like <code>CREATING</code>, <code>CREATED</code>,
+     * <code>IDLE</code>, or <code>BUSY</code>. Newer sessions are listed first; older sessions are listed later.
+     * </p>
+     * 
+     * @param listSessionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSessions operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.ListSessions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListSessions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSessionsResult> listSessionsAsync(ListSessionsRequest listSessionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSessionsRequest, ListSessionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1070,6 +1633,41 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Submits calculations for execution within a session. You can supply the code to run as an inline code block
+     * within the request or as an Amazon S3 URL.
+     * </p>
+     * 
+     * @param startCalculationExecutionRequest
+     * @return A Java Future containing the result of the StartCalculationExecution operation returned by the service.
+     * @sample AmazonAthenaAsync.StartCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCalculationExecutionResult> startCalculationExecutionAsync(
+            StartCalculationExecutionRequest startCalculationExecutionRequest);
+
+    /**
+     * <p>
+     * Submits calculations for execution within a session. You can supply the code to run as an inline code block
+     * within the request or as an Amazon S3 URL.
+     * </p>
+     * 
+     * @param startCalculationExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartCalculationExecution operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.StartCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartCalculationExecutionResult> startCalculationExecutionAsync(
+            StartCalculationExecutionRequest startCalculationExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartCalculationExecutionRequest, StartCalculationExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
      * in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to
      * the catalog. For code samples using the Amazon Web Services SDK for Java, see <a
@@ -1106,6 +1704,88 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<StartQueryExecutionResult> startQueryExecutionAsync(StartQueryExecutionRequest startQueryExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StartQueryExecutionRequest, StartQueryExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a session for running calculations within a workgroup. The session is ready when it reaches an
+     * <code>IDLE</code> state.
+     * </p>
+     * 
+     * @param startSessionRequest
+     * @return A Java Future containing the result of the StartSession operation returned by the service.
+     * @sample AmazonAthenaAsync.StartSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest startSessionRequest);
+
+    /**
+     * <p>
+     * Creates a session for running calculations within a workgroup. The session is ready when it reaches an
+     * <code>IDLE</code> state.
+     * </p>
+     * 
+     * @param startSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSession operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.StartSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest startSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSessionRequest, StartSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is
+     * already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>)
+     * succeeds but has no effect.
+     * </p>
+     * <note>
+     * <p>
+     * Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged
+     * for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider
+     * terminating the session in which the calculation is running.
+     * </p>
+     * </note>
+     * 
+     * @param stopCalculationExecutionRequest
+     * @return A Java Future containing the result of the StopCalculationExecution operation returned by the service.
+     * @sample AmazonAthenaAsync.StopCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopCalculationExecutionResult> stopCalculationExecutionAsync(StopCalculationExecutionRequest stopCalculationExecutionRequest);
+
+    /**
+     * <p>
+     * Requests the cancellation of a calculation. A <code>StopCalculationExecution</code> call on a calculation that is
+     * already in a terminal state (for example, <code>STOPPED</code>, <code>FAILED</code>, or <code>COMPLETED</code>)
+     * succeeds but has no effect.
+     * </p>
+     * <note>
+     * <p>
+     * Cancelling a calculation is done on a best effort basis. If a calculation cannot be cancelled, you can be charged
+     * for its completion. If you are concerned about being charged for a calculation that cannot be cancelled, consider
+     * terminating the session in which the calculation is running.
+     * </p>
+     * </note>
+     * 
+     * @param stopCalculationExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopCalculationExecution operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.StopCalculationExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StopCalculationExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopCalculationExecutionResult> stopCalculationExecutionAsync(StopCalculationExecutionRequest stopCalculationExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StopCalculationExecutionRequest, StopCalculationExecutionResult> asyncHandler);
 
     /**
      * <p>
@@ -1196,6 +1876,43 @@ public interface AmazonAthenaAsync extends AmazonAthena {
      */
     java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for
+     * example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no
+     * effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped,
+     * but may display as <code>FAILED</code> instead of <code>STOPPED</code>.
+     * </p>
+     * 
+     * @param terminateSessionRequest
+     * @return A Java Future containing the result of the TerminateSession operation returned by the service.
+     * @sample AmazonAthenaAsync.TerminateSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest terminateSessionRequest);
+
+    /**
+     * <p>
+     * Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for
+     * example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no
+     * effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped,
+     * but may display as <code>FAILED</code> instead of <code>STOPPED</code>.
+     * </p>
+     * 
+     * @param terminateSessionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TerminateSession operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.TerminateSession
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/TerminateSession" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest terminateSessionRequest,
+            com.amazonaws.handlers.AsyncHandler<TerminateSessionRequest, TerminateSessionResult> asyncHandler);
 
     /**
      * <p>
@@ -1292,6 +2009,68 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
+     * Updates the contents of a Spark notebook.
+     * </p>
+     * 
+     * @param updateNotebookRequest
+     * @return A Java Future containing the result of the UpdateNotebook operation returned by the service.
+     * @sample AmazonAthenaAsync.UpdateNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNotebookResult> updateNotebookAsync(UpdateNotebookRequest updateNotebookRequest);
+
+    /**
+     * <p>
+     * Updates the contents of a Spark notebook.
+     * </p>
+     * 
+     * @param updateNotebookRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNotebook operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.UpdateNotebook
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebook" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNotebookResult> updateNotebookAsync(UpdateNotebookRequest updateNotebookRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNotebookRequest, UpdateNotebookResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the metadata for a notebook.
+     * </p>
+     * 
+     * @param updateNotebookMetadataRequest
+     * @return A Java Future containing the result of the UpdateNotebookMetadata operation returned by the service.
+     * @sample AmazonAthenaAsync.UpdateNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNotebookMetadataResult> updateNotebookMetadataAsync(UpdateNotebookMetadataRequest updateNotebookMetadataRequest);
+
+    /**
+     * <p>
+     * Updates the metadata for a notebook.
+     * </p>
+     * 
+     * @param updateNotebookMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateNotebookMetadata operation returned by the service.
+     * @sample AmazonAthenaAsyncHandler.UpdateNotebookMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateNotebookMetadata" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateNotebookMetadataResult> updateNotebookMetadataAsync(UpdateNotebookMetadataRequest updateNotebookMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateNotebookMetadataRequest, UpdateNotebookMetadataResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates a prepared statement.
      * </p>
      * 
@@ -1323,7 +2102,10 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+     * Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only one of
+     * <code>ConfigurationsUpdates</code> or <code>ConfigurationUpdates</code> can be specified;
+     * <code>ConfigurationsUpdates</code> for a workgroup with multi engine support (for example, an Apache Spark
+     * enabled workgroup) or <code>ConfigurationUpdates</code> for an Athena SQL workgroup.
      * </p>
      * 
      * @param updateWorkGroupRequest
@@ -1336,7 +2118,10 @@ public interface AmazonAthenaAsync extends AmazonAthena {
 
     /**
      * <p>
-     * Updates the workgroup with the specified name. The workgroup's name cannot be changed.
+     * Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only one of
+     * <code>ConfigurationsUpdates</code> or <code>ConfigurationUpdates</code> can be specified;
+     * <code>ConfigurationsUpdates</code> for a workgroup with multi engine support (for example, an Apache Spark
+     * enabled workgroup) or <code>ConfigurationUpdates</code> for an Athena SQL workgroup.
      * </p>
      * 
      * @param updateWorkGroupRequest

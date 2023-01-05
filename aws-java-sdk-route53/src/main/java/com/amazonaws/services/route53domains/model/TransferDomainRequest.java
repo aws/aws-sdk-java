@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,7 +92,7 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
     private String authCode;
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
+     * Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect
      * after the account is charged.
      * </p>
      * <p>
@@ -591,7 +591,7 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
+     * Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect
      * after the account is charged.
      * </p>
      * <p>
@@ -599,7 +599,7 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param autoRenew
-     *        Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes
+     *        Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes
      *        effect after the account is charged.</p>
      *        <p>
      *        Default: true
@@ -611,14 +611,14 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
+     * Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect
      * after the account is charged.
      * </p>
      * <p>
      * Default: true
      * </p>
      * 
-     * @return Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes
+     * @return Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes
      *         effect after the account is charged.</p>
      *         <p>
      *         Default: true
@@ -630,7 +630,7 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
+     * Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect
      * after the account is charged.
      * </p>
      * <p>
@@ -638,7 +638,7 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param autoRenew
-     *        Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes
+     *        Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes
      *        effect after the account is charged.</p>
      *        <p>
      *        Default: true
@@ -652,14 +652,14 @@ public class TransferDomainRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes effect
+     * Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes effect
      * after the account is charged.
      * </p>
      * <p>
      * Default: true
      * </p>
      * 
-     * @return Indicates whether the domain will be automatically renewed (true) or not (false). Autorenewal only takes
+     * @return Indicates whether the domain will be automatically renewed (true) or not (false). Auto renewal only takes
      *         effect after the account is charged.</p>
      *         <p>
      *         Default: true

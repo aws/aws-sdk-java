@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class ListHostKeysRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String nextToken;
     /**
      * <p>
-     * Provide the ID of the server that contains the host keys that you want to view.
+     * The identifier of the server that contains the host keys that you want to view.
      * </p>
      */
     private String serverId;
@@ -133,11 +133,11 @@ public class ListHostKeysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host keys that you want to view.
+     * The identifier of the server that contains the host keys that you want to view.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host keys that you want to view.
+     *        The identifier of the server that contains the host keys that you want to view.
      */
 
     public void setServerId(String serverId) {
@@ -146,10 +146,10 @@ public class ListHostKeysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host keys that you want to view.
+     * The identifier of the server that contains the host keys that you want to view.
      * </p>
      * 
-     * @return Provide the ID of the server that contains the host keys that you want to view.
+     * @return The identifier of the server that contains the host keys that you want to view.
      */
 
     public String getServerId() {
@@ -158,11 +158,11 @@ public class ListHostKeysRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host keys that you want to view.
+     * The identifier of the server that contains the host keys that you want to view.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host keys that you want to view.
+     *        The identifier of the server that contains the host keys that you want to view.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

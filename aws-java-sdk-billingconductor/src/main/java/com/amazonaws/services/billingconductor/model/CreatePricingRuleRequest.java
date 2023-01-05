@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented
-     * in a future update.
+     * The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in
+     * a future update.
      * </p>
      */
     private String clientToken;
@@ -46,7 +46,7 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     private String description;
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      */
     private String scope;
@@ -58,7 +58,7 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     private String type;
     /**
      * <p>
-     * A percentage modifier applied on the public pricing rates.
+     * A percentage modifier that's applied on the public pricing rates.
      * </p>
      */
     private Double modifierPercentage;
@@ -75,15 +75,28 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     */
+    private String billingEntity;
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     */
+    private CreateTieringInput tiering;
 
     /**
      * <p>
-     * The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented
-     * in a future update.
+     * The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in
+     * a future update.
      * </p>
      * 
      * @param clientToken
-     *        The token that is needed to support idempotency. Idempotency isn't currently supported, but will be
+     *        The token that's needed to support idempotency. Idempotency isn't currently supported, but will be
      *        implemented in a future update.
      */
 
@@ -93,11 +106,11 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented
-     * in a future update.
+     * The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in
+     * a future update.
      * </p>
      * 
-     * @return The token that is needed to support idempotency. Idempotency isn't currently supported, but will be
+     * @return The token that's needed to support idempotency. Idempotency isn't currently supported, but will be
      *         implemented in a future update.
      */
 
@@ -107,12 +120,12 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented
-     * in a future update.
+     * The token that's needed to support idempotency. Idempotency isn't currently supported, but will be implemented in
+     * a future update.
      * </p>
      * 
      * @param clientToken
-     *        The token that is needed to support idempotency. Idempotency isn't currently supported, but will be
+     *        The token that's needed to support idempotency. Idempotency isn't currently supported, but will be
      *        implemented in a future update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -204,11 +217,11 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
      * @param scope
-     *        The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     *        The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @see PricingRuleScope
      */
 
@@ -218,10 +231,10 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
-     * @return The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * @return The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @see PricingRuleScope
      */
 
@@ -231,11 +244,11 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
      * @param scope
-     *        The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     *        The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingRuleScope
      */
@@ -247,11 +260,11 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     * The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * </p>
      * 
      * @param scope
-     *        The scope of pricing rule that indicates if it is globally applicable, or is service-specific.
+     *        The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PricingRuleScope
      */
@@ -322,11 +335,11 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A percentage modifier applied on the public pricing rates.
+     * A percentage modifier that's applied on the public pricing rates.
      * </p>
      * 
      * @param modifierPercentage
-     *        A percentage modifier applied on the public pricing rates.
+     *        A percentage modifier that's applied on the public pricing rates.
      */
 
     public void setModifierPercentage(Double modifierPercentage) {
@@ -335,10 +348,10 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A percentage modifier applied on the public pricing rates.
+     * A percentage modifier that's applied on the public pricing rates.
      * </p>
      * 
-     * @return A percentage modifier applied on the public pricing rates.
+     * @return A percentage modifier that's applied on the public pricing rates.
      */
 
     public Double getModifierPercentage() {
@@ -347,11 +360,11 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A percentage modifier applied on the public pricing rates.
+     * A percentage modifier that's applied on the public pricing rates.
      * </p>
      * 
      * @param modifierPercentage
-     *        A percentage modifier applied on the public pricing rates.
+     *        A percentage modifier that's applied on the public pricing rates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,6 +488,92 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param billingEntity
+     *        The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     *        services via Amazon Web Services Marketplace.
+     */
+
+    public void setBillingEntity(String billingEntity) {
+        this.billingEntity = billingEntity;
+    }
+
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @return The seller of services provided by Amazon Web Services, their affiliates, or third-party providers
+     *         selling services via Amazon Web Services Marketplace.
+     */
+
+    public String getBillingEntity() {
+        return this.billingEntity;
+    }
+
+    /**
+     * <p>
+     * The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     * services via Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param billingEntity
+     *        The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling
+     *        services via Amazon Web Services Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePricingRuleRequest withBillingEntity(String billingEntity) {
+        setBillingEntity(billingEntity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     */
+
+    public void setTiering(CreateTieringInput tiering) {
+        this.tiering = tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @return The set of tiering configurations for the pricing rule.
+     */
+
+    public CreateTieringInput getTiering() {
+        return this.tiering;
+    }
+
+    /**
+     * <p>
+     * The set of tiering configurations for the pricing rule.
+     * </p>
+     * 
+     * @param tiering
+     *        The set of tiering configurations for the pricing rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePricingRuleRequest withTiering(CreateTieringInput tiering) {
+        setTiering(tiering);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -501,7 +600,11 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getService() != null)
             sb.append("Service: ").append(getService()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getBillingEntity() != null)
+            sb.append("BillingEntity: ").append(getBillingEntity()).append(",");
+        if (getTiering() != null)
+            sb.append("Tiering: ").append(getTiering());
         sb.append("}");
         return sb.toString();
     }
@@ -548,6 +651,14 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getBillingEntity() == null ^ this.getBillingEntity() == null)
+            return false;
+        if (other.getBillingEntity() != null && other.getBillingEntity().equals(this.getBillingEntity()) == false)
+            return false;
+        if (other.getTiering() == null ^ this.getTiering() == null)
+            return false;
+        if (other.getTiering() != null && other.getTiering().equals(this.getTiering()) == false)
+            return false;
         return true;
     }
 
@@ -564,6 +675,8 @@ public class CreatePricingRuleRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getModifierPercentage() == null) ? 0 : getModifierPercentage().hashCode());
         hashCode = prime * hashCode + ((getService() == null) ? 0 : getService().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getBillingEntity() == null) ? 0 : getBillingEntity().hashCode());
+        hashCode = prime * hashCode + ((getTiering() == null) ? 0 : getTiering().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code>DescribeDomainConfig</code> operation. Specifies the domain name for which
- * you want configuration information.
+ * Container for the parameters to the <code>DescribeDomainConfig</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,18 +27,18 @@ public class DescribeDomainConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The domain you want to get information about.
+     * Name of the OpenSearch Service domain configuration that you want to describe.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * The domain you want to get information about.
+     * Name of the OpenSearch Service domain configuration that you want to describe.
      * </p>
      * 
      * @param domainName
-     *        The domain you want to get information about.
+     *        Name of the OpenSearch Service domain configuration that you want to describe.
      */
 
     public void setDomainName(String domainName) {
@@ -48,10 +47,10 @@ public class DescribeDomainConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The domain you want to get information about.
+     * Name of the OpenSearch Service domain configuration that you want to describe.
      * </p>
      * 
-     * @return The domain you want to get information about.
+     * @return Name of the OpenSearch Service domain configuration that you want to describe.
      */
 
     public String getDomainName() {
@@ -60,11 +59,11 @@ public class DescribeDomainConfigRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The domain you want to get information about.
+     * Name of the OpenSearch Service domain configuration that you want to describe.
      * </p>
      * 
      * @param domainName
-     *        The domain you want to get information about.
+     *        Name of the OpenSearch Service domain configuration that you want to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

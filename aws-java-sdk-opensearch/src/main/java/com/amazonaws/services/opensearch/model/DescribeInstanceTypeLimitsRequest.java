@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>DescribeInstanceTypeLimits</a> </code> operation.
+ * Container for the parameters to the <code>DescribeInstanceTypeLimits</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,33 +27,31 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the domain you want to modify. Only include this value if you're querying OpenSearch
-     * <code> <a>Limits</a> </code> for an existing domain.
+     * The name of the domain. Only specify if you need the limits for an existing domain.
      * </p>
      */
     private String domainName;
     /**
      * <p>
-     * The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     * The OpenSearch Service instance type for which you need limit information.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * Version of OpenSearch for which <code> <a>Limits</a> </code> are needed.
+     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
+     * version of OpenSearch.
      * </p>
      */
     private String engineVersion;
 
     /**
      * <p>
-     * The name of the domain you want to modify. Only include this value if you're querying OpenSearch
-     * <code> <a>Limits</a> </code> for an existing domain.
+     * The name of the domain. Only specify if you need the limits for an existing domain.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain you want to modify. Only include this value if you're querying OpenSearch
-     *        <code> <a>Limits</a> </code> for an existing domain.
+     *        The name of the domain. Only specify if you need the limits for an existing domain.
      */
 
     public void setDomainName(String domainName) {
@@ -62,12 +60,10 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the domain you want to modify. Only include this value if you're querying OpenSearch
-     * <code> <a>Limits</a> </code> for an existing domain.
+     * The name of the domain. Only specify if you need the limits for an existing domain.
      * </p>
      * 
-     * @return The name of the domain you want to modify. Only include this value if you're querying OpenSearch
-     *         <code> <a>Limits</a> </code> for an existing domain.
+     * @return The name of the domain. Only specify if you need the limits for an existing domain.
      */
 
     public String getDomainName() {
@@ -76,13 +72,11 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The name of the domain you want to modify. Only include this value if you're querying OpenSearch
-     * <code> <a>Limits</a> </code> for an existing domain.
+     * The name of the domain. Only specify if you need the limits for an existing domain.
      * </p>
      * 
      * @param domainName
-     *        The name of the domain you want to modify. Only include this value if you're querying OpenSearch
-     *        <code> <a>Limits</a> </code> for an existing domain.
+     *        The name of the domain. Only specify if you need the limits for an existing domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +87,11 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     * The OpenSearch Service instance type for which you need limit information.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     *        The OpenSearch Service instance type for which you need limit information.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -107,10 +101,10 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     * The OpenSearch Service instance type for which you need limit information.
      * </p>
      * 
-     * @return The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     * @return The OpenSearch Service instance type for which you need limit information.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -120,11 +114,11 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     * The OpenSearch Service instance type for which you need limit information.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     *        The OpenSearch Service instance type for which you need limit information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -136,11 +130,11 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     * The OpenSearch Service instance type for which you need limit information.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an OpenSearch cluster for which OpenSearch <code> <a>Limits</a> </code> are needed.
+     *        The OpenSearch Service instance type for which you need limit information.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -152,11 +146,13 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Version of OpenSearch for which <code> <a>Limits</a> </code> are needed.
+     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
+     * version of OpenSearch.
      * </p>
      * 
      * @param engineVersion
-     *        Version of OpenSearch for which <code> <a>Limits</a> </code> are needed.
+     *        Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     *        latest version of OpenSearch.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -165,10 +161,12 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Version of OpenSearch for which <code> <a>Limits</a> </code> are needed.
+     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
+     * version of OpenSearch.
      * </p>
      * 
-     * @return Version of OpenSearch for which <code> <a>Limits</a> </code> are needed.
+     * @return Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to
+     *         the latest version of OpenSearch.
      */
 
     public String getEngineVersion() {
@@ -177,11 +175,13 @@ public class DescribeInstanceTypeLimitsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Version of OpenSearch for which <code> <a>Limits</a> </code> are needed.
+     * Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest
+     * version of OpenSearch.
      * </p>
      * 
      * @param engineVersion
-     *        Version of OpenSearch for which <code> <a>Limits</a> </code> are needed.
+     *        Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the
+     *        latest version of OpenSearch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

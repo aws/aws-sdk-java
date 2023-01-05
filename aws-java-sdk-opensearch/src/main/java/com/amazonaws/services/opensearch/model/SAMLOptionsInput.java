@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The SAML application configuration for the domain.
+ * The SAML authentication configuration for an Amazon OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True if SAML is enabled.
+     * True to enable SAML authentication for a domain.
      * </p>
      */
     private Boolean enabled;
@@ -39,7 +39,7 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
     private SAMLIdp idp;
     /**
      * <p>
-     * The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * The SAML master user name, which is stored in the domain's internal user database.
      * </p>
      */
     private String masterUserName;
@@ -51,13 +51,13 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
     private String masterBackendRole;
     /**
      * <p>
-     * Element of the SAML assertion to use for username. Default is NameID.
+     * Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
      * </p>
      */
     private String subjectKey;
     /**
      * <p>
-     * Element of the SAML assertion to use for backend roles. Default is roles.
+     * Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
      * </p>
      */
     private String rolesKey;
@@ -71,11 +71,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True if SAML is enabled.
+     * True to enable SAML authentication for a domain.
      * </p>
      * 
      * @param enabled
-     *        True if SAML is enabled.
+     *        True to enable SAML authentication for a domain.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -84,10 +84,10 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True if SAML is enabled.
+     * True to enable SAML authentication for a domain.
      * </p>
      * 
-     * @return True if SAML is enabled.
+     * @return True to enable SAML authentication for a domain.
      */
 
     public Boolean getEnabled() {
@@ -96,11 +96,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True if SAML is enabled.
+     * True to enable SAML authentication for a domain.
      * </p>
      * 
      * @param enabled
-     *        True if SAML is enabled.
+     *        True to enable SAML authentication for a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,10 +111,10 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * True if SAML is enabled.
+     * True to enable SAML authentication for a domain.
      * </p>
      * 
-     * @return True if SAML is enabled.
+     * @return True to enable SAML authentication for a domain.
      */
 
     public Boolean isEnabled() {
@@ -163,11 +163,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * The SAML master user name, which is stored in the domain's internal user database.
      * </p>
      * 
      * @param masterUserName
-     *        The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     *        The SAML master user name, which is stored in the domain's internal user database.
      */
 
     public void setMasterUserName(String masterUserName) {
@@ -176,10 +176,10 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * The SAML master user name, which is stored in the domain's internal user database.
      * </p>
      * 
-     * @return The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * @return The SAML master user name, which is stored in the domain's internal user database.
      */
 
     public String getMasterUserName() {
@@ -188,11 +188,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     * The SAML master user name, which is stored in the domain's internal user database.
      * </p>
      * 
      * @param masterUserName
-     *        The SAML master username, which is stored in the Amazon OpenSearch Service domain's internal database.
+     *        The SAML master user name, which is stored in the domain's internal user database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -243,11 +243,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Element of the SAML assertion to use for username. Default is NameID.
+     * Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
      * </p>
      * 
      * @param subjectKey
-     *        Element of the SAML assertion to use for username. Default is NameID.
+     *        Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
      */
 
     public void setSubjectKey(String subjectKey) {
@@ -256,10 +256,10 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Element of the SAML assertion to use for username. Default is NameID.
+     * Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
      * </p>
      * 
-     * @return Element of the SAML assertion to use for username. Default is NameID.
+     * @return Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
      */
 
     public String getSubjectKey() {
@@ -268,11 +268,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Element of the SAML assertion to use for username. Default is NameID.
+     * Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
      * </p>
      * 
      * @param subjectKey
-     *        Element of the SAML assertion to use for username. Default is NameID.
+     *        Element of the SAML assertion to use for the user name. Default is <code>NameID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -283,11 +283,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Element of the SAML assertion to use for backend roles. Default is roles.
+     * Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
      * </p>
      * 
      * @param rolesKey
-     *        Element of the SAML assertion to use for backend roles. Default is roles.
+     *        Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
      */
 
     public void setRolesKey(String rolesKey) {
@@ -296,10 +296,10 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Element of the SAML assertion to use for backend roles. Default is roles.
+     * Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
      * </p>
      * 
-     * @return Element of the SAML assertion to use for backend roles. Default is roles.
+     * @return Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
      */
 
     public String getRolesKey() {
@@ -308,11 +308,11 @@ public class SAMLOptionsInput implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Element of the SAML assertion to use for backend roles. Default is roles.
+     * Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
      * </p>
      * 
      * @param rolesKey
-     *        Element of the SAML assertion to use for backend roles. Default is roles.
+     *        Element of the SAML assertion to use for backend roles. Default is <code>roles</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

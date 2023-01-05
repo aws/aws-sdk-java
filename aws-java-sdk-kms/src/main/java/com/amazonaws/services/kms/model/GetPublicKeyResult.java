@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,7 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you
-     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both
-     * fields.
+     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.
      * </p>
      */
     @Deprecated
@@ -254,16 +253,15 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you
-     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both
-     * fields.
+     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.
      * </p>
      * 
      * @param customerMasterKeySpec
      *        Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
      *        <p>
      *        The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend
-     *        that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will
-     *        support both fields.
+     *        that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports
+     *        both fields.
      * @see CustomerMasterKeySpec
      */
     @Deprecated
@@ -277,15 +275,14 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you
-     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both
-     * fields.
+     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.
      * </p>
      * 
      * @return Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
      *         <p>
      *         The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend
-     *         that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will
-     *         support both fields.
+     *         that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS
+     *         supports both fields.
      * @see CustomerMasterKeySpec
      */
     @Deprecated
@@ -299,16 +296,15 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you
-     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both
-     * fields.
+     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.
      * </p>
      * 
      * @param customerMasterKeySpec
      *        Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
      *        <p>
      *        The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend
-     *        that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will
-     *        support both fields.
+     *        that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports
+     *        both fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomerMasterKeySpec
      */
@@ -324,16 +320,15 @@ public class GetPublicKeyResult extends com.amazonaws.AmazonWebServiceResult<com
      * </p>
      * <p>
      * The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend that you
-     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will support both
-     * fields.
+     * use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports both fields.
      * </p>
      * 
      * @param customerMasterKeySpec
      *        Instead, use the <code>KeySpec</code> field in the <code>GetPublicKey</code> response.</p>
      *        <p>
      *        The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same value. We recommend
-     *        that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS will
-     *        support both fields.
+     *        that you use the <code>KeySpec</code> field in your code. However, to avoid breaking changes, KMS supports
+     *        both fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CustomerMasterKeySpec
      */

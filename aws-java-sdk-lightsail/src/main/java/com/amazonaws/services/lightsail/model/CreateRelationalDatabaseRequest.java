@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -252,7 +252,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more
      * information about the preferred backup window time blocks for each region, see the <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.
+     * >Working With Backups</a> guide in the Amazon Relational Database Service documentation.
      * </p>
      * <p>
      * Constraints:
@@ -1672,7 +1672,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more
      * information about the preferred backup window time blocks for each region, see the <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.
+     * >Working With Backups</a> guide in the Amazon Relational Database Service documentation.
      * </p>
      * <p>
      * Constraints:
@@ -1710,7 +1710,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For
      *        more information about the preferred backup window time blocks for each region, see the <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *        >Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.
+     *        >Working With Backups</a> guide in the Amazon Relational Database Service documentation.
      *        </p>
      *        <p>
      *        Constraints:
@@ -1754,7 +1754,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more
      * information about the preferred backup window time blocks for each region, see the <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.
+     * >Working With Backups</a> guide in the Amazon Relational Database Service documentation.
      * </p>
      * <p>
      * Constraints:
@@ -1791,7 +1791,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region.
      *         For more information about the preferred backup window time blocks for each region, see the <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *         >Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.
+     *         >Working With Backups</a> guide in the Amazon Relational Database Service documentation.
      *         </p>
      *         <p>
      *         Constraints:
@@ -1835,7 +1835,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For more
      * information about the preferred backup window time blocks for each region, see the <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.
+     * >Working With Backups</a> guide in the Amazon Relational Database Service documentation.
      * </p>
      * <p>
      * Constraints:
@@ -1873,7 +1873,7 @@ public class CreateRelationalDatabaseRequest extends com.amazonaws.AmazonWebServ
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. For
      *        more information about the preferred backup window time blocks for each region, see the <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *        >Working With Backups</a> guide in the Amazon Relational Database Service (Amazon RDS) documentation.
+     *        >Working With Backups</a> guide in the Amazon Relational Database Service documentation.
      *        </p>
      *        <p>
      *        Constraints:

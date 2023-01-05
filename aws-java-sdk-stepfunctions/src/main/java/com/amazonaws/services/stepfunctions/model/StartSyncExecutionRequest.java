@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class StartSyncExecutionRequest extends com.amazonaws.AmazonWebServiceReq
     private String input;
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      */
     private String traceHeader;
@@ -253,11 +253,11 @@ public class StartSyncExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      * 
      * @param traceHeader
-     *        Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     *        Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      */
 
     public void setTraceHeader(String traceHeader) {
@@ -266,10 +266,10 @@ public class StartSyncExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      * 
-     * @return Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * @return Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      */
 
     public String getTraceHeader() {
@@ -278,11 +278,11 @@ public class StartSyncExecutionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * </p>
      * 
      * @param traceHeader
-     *        Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     *        Passes the X-Ray trace header. The trace header can also be passed in the request payload.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

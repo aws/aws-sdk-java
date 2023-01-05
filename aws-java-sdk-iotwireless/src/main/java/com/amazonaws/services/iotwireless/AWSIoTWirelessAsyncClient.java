@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1614,12 +1614,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionResult> getPositionAsync(GetPositionRequest request) {
 
         return getPositionAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionResult> getPositionAsync(final GetPositionRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPositionRequest, GetPositionResult> asyncHandler) {
         final GetPositionRequest finalRequest = beforeClientExecution(request);
@@ -1647,12 +1649,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(GetPositionConfigurationRequest request) {
 
         return getPositionConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<GetPositionConfigurationResult> getPositionConfigurationAsync(final GetPositionConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<GetPositionConfigurationRequest, GetPositionConfigurationResult> asyncHandler) {
         final GetPositionConfigurationRequest finalRequest = beforeClientExecution(request);
@@ -1664,6 +1668,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetPositionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(GetPositionEstimateRequest request) {
+
+        return getPositionEstimateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPositionEstimateResult> getPositionEstimateAsync(final GetPositionEstimateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPositionEstimateRequest, GetPositionEstimateResult> asyncHandler) {
+        final GetPositionEstimateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPositionEstimateResult>() {
+            @Override
+            public GetPositionEstimateResult call() throws Exception {
+                GetPositionEstimateResult result = null;
+
+                try {
+                    result = executeGetPositionEstimate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1731,6 +1768,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeGetResourceLogLevel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(GetResourcePositionRequest request) {
+
+        return getResourcePositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePositionResult> getResourcePositionAsync(final GetResourcePositionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourcePositionRequest, GetResourcePositionResult> asyncHandler) {
+        final GetResourcePositionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourcePositionResult>() {
+            @Override
+            public GetResourcePositionResult call() throws Exception {
+                GetResourcePositionResult result = null;
+
+                try {
+                    result = executeGetResourcePosition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2349,12 +2419,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(ListPositionConfigurationsRequest request) {
 
         return listPositionConfigurationsAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<ListPositionConfigurationsResult> listPositionConfigurationsAsync(final ListPositionConfigurationsRequest request,
             final com.amazonaws.handlers.AsyncHandler<ListPositionConfigurationsRequest, ListPositionConfigurationsResult> asyncHandler) {
         final ListPositionConfigurationsRequest finalRequest = beforeClientExecution(request);
@@ -2582,12 +2654,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(PutPositionConfigurationRequest request) {
 
         return putPositionConfigurationAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<PutPositionConfigurationResult> putPositionConfigurationAsync(final PutPositionConfigurationRequest request,
             final com.amazonaws.handlers.AsyncHandler<PutPositionConfigurationRequest, PutPositionConfigurationResult> asyncHandler) {
         final PutPositionConfigurationRequest finalRequest = beforeClientExecution(request);
@@ -3251,12 +3325,14 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(UpdatePositionRequest request) {
 
         return updatePositionAsync(request, null);
     }
 
     @Override
+    @Deprecated
     public java.util.concurrent.Future<UpdatePositionResult> updatePositionAsync(final UpdatePositionRequest request,
             final com.amazonaws.handlers.AsyncHandler<UpdatePositionRequest, UpdatePositionResult> asyncHandler) {
         final UpdatePositionRequest finalRequest = beforeClientExecution(request);
@@ -3303,6 +3379,39 @@ public class AWSIoTWirelessAsyncClient extends AWSIoTWirelessClient implements A
 
                 try {
                     result = executeUpdateResourceEventConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(UpdateResourcePositionRequest request) {
+
+        return updateResourcePositionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePositionResult> updateResourcePositionAsync(final UpdateResourcePositionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateResourcePositionRequest, UpdateResourcePositionResult> asyncHandler) {
+        final UpdateResourcePositionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateResourcePositionResult>() {
+            @Override
+            public UpdateResourcePositionResult call() throws Exception {
+                UpdateResourcePositionResult result = null;
+
+                try {
+                    result = executeUpdateResourcePosition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

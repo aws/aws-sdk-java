@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -430,8 +430,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -3100,8 +3101,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -3110,7 +3112,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The Elastic IP (EIP) address for the cluster.</p>
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     *        gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone
+     *        relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a
      *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
@@ -3124,8 +3127,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -3133,7 +3137,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The Elastic IP (EIP) address for the cluster.</p>
      *         <p>
      *         Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     *         gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     *         gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone
+     *         relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a
      *         href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *         >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      */
@@ -3147,8 +3152,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The Elastic IP (EIP) address for the cluster.
      * </p>
      * <p>
-     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway. For
-     * more information about provisioning clusters in EC2-VPC, go to <a
+     * Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet gateway.
+     * Don't specify the Elastic IP address for a publicly accessible cluster with availability zone relocation turned
+     * on. For more information about provisioning clusters in EC2-VPC, go to <a
      * href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms">Supported
      * Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * </p>
@@ -3157,7 +3163,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The Elastic IP (EIP) address for the cluster.</p>
      *        <p>
      *        Constraints: The cluster must be provisioned in EC2-VPC and publicly-accessible through an Internet
-     *        gateway. For more information about provisioning clusters in EC2-VPC, go to <a
+     *        gateway. Don't specify the Elastic IP address for a publicly accessible cluster with availability zone
+     *        relocation turned on. For more information about provisioning clusters in EC2-VPC, go to <a
      *        href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#cluster-platforms"
      *        >Supported Platforms to Launch Your Cluster</a> in the Amazon Redshift Cluster Management Guide.
      * @return Returns a reference to this object so that method calls can be chained together.

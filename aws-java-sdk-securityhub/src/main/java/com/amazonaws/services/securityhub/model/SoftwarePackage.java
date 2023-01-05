@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,18 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String remediation;
+    /**
+     * <p>
+     * The source layer hash of the vulnerable package.
+     * </p>
+     */
+    private String sourceLayerHash;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source layer.
+     * </p>
+     */
+    private String sourceLayerArn;
 
     /**
      * <p>
@@ -444,6 +456,86 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The source layer hash of the vulnerable package.
+     * </p>
+     * 
+     * @param sourceLayerHash
+     *        The source layer hash of the vulnerable package.
+     */
+
+    public void setSourceLayerHash(String sourceLayerHash) {
+        this.sourceLayerHash = sourceLayerHash;
+    }
+
+    /**
+     * <p>
+     * The source layer hash of the vulnerable package.
+     * </p>
+     * 
+     * @return The source layer hash of the vulnerable package.
+     */
+
+    public String getSourceLayerHash() {
+        return this.sourceLayerHash;
+    }
+
+    /**
+     * <p>
+     * The source layer hash of the vulnerable package.
+     * </p>
+     * 
+     * @param sourceLayerHash
+     *        The source layer hash of the vulnerable package.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SoftwarePackage withSourceLayerHash(String sourceLayerHash) {
+        setSourceLayerHash(sourceLayerHash);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source layer.
+     * </p>
+     * 
+     * @param sourceLayerArn
+     *        The Amazon Resource Name (ARN) of the source layer.
+     */
+
+    public void setSourceLayerArn(String sourceLayerArn) {
+        this.sourceLayerArn = sourceLayerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source layer.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the source layer.
+     */
+
+    public String getSourceLayerArn() {
+        return this.sourceLayerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the source layer.
+     * </p>
+     * 
+     * @param sourceLayerArn
+     *        The Amazon Resource Name (ARN) of the source layer.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SoftwarePackage withSourceLayerArn(String sourceLayerArn) {
+        setSourceLayerArn(sourceLayerArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -472,7 +564,11 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
         if (getFixedInVersion() != null)
             sb.append("FixedInVersion: ").append(getFixedInVersion()).append(",");
         if (getRemediation() != null)
-            sb.append("Remediation: ").append(getRemediation());
+            sb.append("Remediation: ").append(getRemediation()).append(",");
+        if (getSourceLayerHash() != null)
+            sb.append("SourceLayerHash: ").append(getSourceLayerHash()).append(",");
+        if (getSourceLayerArn() != null)
+            sb.append("SourceLayerArn: ").append(getSourceLayerArn());
         sb.append("}");
         return sb.toString();
     }
@@ -523,6 +619,14 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getRemediation() != null && other.getRemediation().equals(this.getRemediation()) == false)
             return false;
+        if (other.getSourceLayerHash() == null ^ this.getSourceLayerHash() == null)
+            return false;
+        if (other.getSourceLayerHash() != null && other.getSourceLayerHash().equals(this.getSourceLayerHash()) == false)
+            return false;
+        if (other.getSourceLayerArn() == null ^ this.getSourceLayerArn() == null)
+            return false;
+        if (other.getSourceLayerArn() != null && other.getSourceLayerArn().equals(this.getSourceLayerArn()) == false)
+            return false;
         return true;
     }
 
@@ -540,6 +644,8 @@ public class SoftwarePackage implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getFilePath() == null) ? 0 : getFilePath().hashCode());
         hashCode = prime * hashCode + ((getFixedInVersion() == null) ? 0 : getFixedInVersion().hashCode());
         hashCode = prime * hashCode + ((getRemediation() == null) ? 0 : getRemediation().hashCode());
+        hashCode = prime * hashCode + ((getSourceLayerHash() == null) ? 0 : getSourceLayerHash().hashCode());
+        hashCode = prime * hashCode + ((getSourceLayerArn() == null) ? 0 : getSourceLayerArn().hashCode());
         return hashCode;
     }
 

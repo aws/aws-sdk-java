@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -116,6 +116,25 @@ public interface AWSGroundStation {
 
     /**
      * <p>
+     * Creates an Ephemeris with the specified <code>EphemerisData</code>.
+     * </p>
+     * 
+     * @param createEphemerisRequest
+     * @return Result of the CreateEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.CreateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/CreateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateEphemerisResult createEphemeris(CreateEphemerisRequest createEphemerisRequest);
+
+    /**
+     * <p>
      * Creates a mission profile.
      * </p>
      * <p>
@@ -177,6 +196,25 @@ public interface AWSGroundStation {
 
     /**
      * <p>
+     * Deletes an ephemeris
+     * </p>
+     * 
+     * @param deleteEphemerisRequest
+     * @return Result of the DeleteEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.DeleteEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DeleteEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteEphemerisResult deleteEphemeris(DeleteEphemerisRequest deleteEphemerisRequest);
+
+    /**
+     * <p>
      * Deletes a mission profile.
      * </p>
      * 
@@ -212,6 +250,25 @@ public interface AWSGroundStation {
      *      API Documentation</a>
      */
     DescribeContactResult describeContact(DescribeContactRequest describeContactRequest);
+
+    /**
+     * <p>
+     * Describes an existing ephemeris.
+     * </p>
+     * 
+     * @param describeEphemerisRequest
+     * @return Result of the DescribeEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.DescribeEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/DescribeEphemeris"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeEphemerisResult describeEphemeris(DescribeEphemerisRequest describeEphemerisRequest);
 
     /**
      * <p>
@@ -374,6 +431,25 @@ public interface AWSGroundStation {
 
     /**
      * <p>
+     * List existing ephemerides.
+     * </p>
+     * 
+     * @param listEphemeridesRequest
+     * @return Result of the ListEphemerides operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.ListEphemerides
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/ListEphemerides" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListEphemeridesResult listEphemerides(ListEphemeridesRequest listEphemeridesRequest);
+
+    /**
+     * <p>
      * Returns a list of ground stations.
      * </p>
      * 
@@ -527,6 +603,25 @@ public interface AWSGroundStation {
      *      Documentation</a>
      */
     UpdateConfigResult updateConfig(UpdateConfigRequest updateConfigRequest);
+
+    /**
+     * <p>
+     * Updates an existing ephemeris
+     * </p>
+     * 
+     * @param updateEphemerisRequest
+     * @return Result of the UpdateEphemeris operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DependencyException
+     *         Dependency encountered an error.
+     * @throws ResourceNotFoundException
+     *         Resource was not found.
+     * @sample AWSGroundStation.UpdateEphemeris
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateEphemeris" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateEphemerisResult updateEphemeris(UpdateEphemerisRequest updateEphemerisRequest);
 
     /**
      * <p>

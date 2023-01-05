@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,15 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                             new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53domains.model.transform.DuplicateRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedTLD").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.UnsupportedTLDExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OperationLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.OperationLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DnssecLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.DnssecLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInput").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53domains.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -88,12 +97,6 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DomainLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53domains.model.transform.DomainLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedTLD").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53domains.model.transform.UnsupportedTLDExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationLimitExceeded").withExceptionUnmarshaller(
-                                    com.amazonaws.services.route53domains.model.transform.OperationLimitExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException.class));
 
     /**
@@ -374,6 +377,87 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<AcceptDomainTransferFromAnotherAwsAccountResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new AcceptDomainTransferFromAnotherAwsAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * <p>
+     * Note that creating DS record at the registry impacts DNSSEC validation of your DNS records. This action may
+     * render your domain name unavailable on the internet if the steps are completed in the wrong order, or with
+     * incorrect timing. For more information about DNSSEC signing, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring DNSSEC
+     * signing</a> in the <i>Route 53 developer guide</i>.
+     * </p>
+     * 
+     * @param associateDelegationSignerToDomainRequest
+     * @return Result of the AssociateDelegationSignerToDomain operation returned by the service.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @throws DnssecLimitExceededException
+     *         This error is returned if you call <code>AssociateDelegationSignerToDomain</code> when the specified
+     *         domain has reached the maximum number of DS records. You can't add any additional DS records unless you
+     *         delete an existing one first.
+     * @sample AmazonRoute53Domains.AssociateDelegationSignerToDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateDelegationSignerToDomainResult associateDelegationSignerToDomain(AssociateDelegationSignerToDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateDelegationSignerToDomain(request);
+    }
+
+    @SdkInternalApi
+    final AssociateDelegationSignerToDomainResult executeAssociateDelegationSignerToDomain(
+            AssociateDelegationSignerToDomainRequest associateDelegationSignerToDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateDelegationSignerToDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateDelegationSignerToDomainRequest> request = null;
+        Response<AssociateDelegationSignerToDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateDelegationSignerToDomainRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateDelegationSignerToDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDelegationSignerToDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateDelegationSignerToDomainResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateDelegationSignerToDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -884,6 +968,77 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<DisableDomainTransferLockResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisableDomainTransferLockResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * 
+     * @param disassociateDelegationSignerFromDomainRequest
+     * @return Result of the DisassociateDelegationSignerFromDomain operation returned by the service.
+     * @throws DuplicateRequestException
+     *         The request is already in progress for the domain.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws TLDRulesViolationException
+     *         The top-level domain does not support this operation.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @sample AmazonRoute53Domains.DisassociateDelegationSignerFromDomain
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateDelegationSignerFromDomainResult disassociateDelegationSignerFromDomain(DisassociateDelegationSignerFromDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateDelegationSignerFromDomain(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateDelegationSignerFromDomainResult executeDisassociateDelegationSignerFromDomain(
+            DisassociateDelegationSignerFromDomainRequest disassociateDelegationSignerFromDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateDelegationSignerFromDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateDelegationSignerFromDomainRequest> request = null;
+        Response<DisassociateDelegationSignerFromDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateDelegationSignerFromDomainRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateDelegationSignerFromDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDelegationSignerFromDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateDelegationSignerFromDomainResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DisassociateDelegationSignerFromDomainResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1586,6 +1741,80 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
+     * Moves a domain from Amazon Web Services to another registrar.
+     * </p>
+     * <p>
+     * Supported actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be
+     * transferred to another registrar.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param pushDomainRequest
+     * @return Result of the PushDomain operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @throws OperationLimitExceededException
+     *         The number of operations or jobs running exceeded the allowed threshold for the account.
+     * @throws UnsupportedTLDException
+     *         Amazon Route 53 does not support this top-level domain (TLD).
+     * @sample AmazonRoute53Domains.PushDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PushDomainResult pushDomain(PushDomainRequest request) {
+        request = beforeClientExecution(request);
+        return executePushDomain(request);
+    }
+
+    @SdkInternalApi
+    final PushDomainResult executePushDomain(PushDomainRequest pushDomainRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(pushDomainRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PushDomainRequest> request = null;
+        Response<PushDomainResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PushDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(pushDomainRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PushDomain");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PushDomainResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new PushDomainResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This operation registers a domain. Domains are registered either by Amazon Registrar (for .com, .net, and .org
      * domains) or by our registrar associate, Gandi (for all other domains). For some top-level domains (TLDs), this
      * operation requires extra parameters.
@@ -1602,8 +1831,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </li>
      * <li>
      * <p>
-     * Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of
-     * the renewal date so you can choose whether to renew the registration.
+     * Enables auto renew, so your domain registration will renew automatically each year. We'll notify you in advance
+     * of the renewal date so you can choose whether to renew the registration.
      * </p>
      * </li>
      * <li>
@@ -1923,8 +2152,69 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this
-     * value to the new registrar.
+     * Resend the form of authorization email for this operation.
+     * </p>
+     * 
+     * @param resendOperationAuthorizationRequest
+     * @return Result of the ResendOperationAuthorization operation returned by the service.
+     * @throws InvalidInputException
+     *         The requested item is not acceptable. For example, for APIs that accept a domain name, the request might
+     *         specify a domain name that doesn't belong to the account that submitted the request. For
+     *         <code>AcceptDomainTransferFromAnotherAwsAccount</code>, the password might be invalid.
+     * @sample AmazonRoute53Domains.ResendOperationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ResendOperationAuthorizationResult resendOperationAuthorization(ResendOperationAuthorizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeResendOperationAuthorization(request);
+    }
+
+    @SdkInternalApi
+    final ResendOperationAuthorizationResult executeResendOperationAuthorization(ResendOperationAuthorizationRequest resendOperationAuthorizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(resendOperationAuthorizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ResendOperationAuthorizationRequest> request = null;
+        Response<ResendOperationAuthorizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ResendOperationAuthorizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(resendOperationAuthorizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Route 53 Domains");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResendOperationAuthorization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ResendOperationAuthorizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ResendOperationAuthorizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation returns the authorization code for the domain. To transfer a domain to another registrar, you
+     * provide this value to the new registrar.
      * </p>
      * 
      * @param retrieveDomainAuthCodeRequest
@@ -2224,8 +2514,8 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * If the update is successful, this method returns an operation ID that you can use to track the progress and
-     * completion of the action. If the request is not completed successfully, the domain registrant will be notified by
-     * email.
+     * completion of the operation. If the request is not completed successfully, the domain registrant will be notified
+     * by email.
      * </p>
      * 
      * @param updateDomainContactRequest

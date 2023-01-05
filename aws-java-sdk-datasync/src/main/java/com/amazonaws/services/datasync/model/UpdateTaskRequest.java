@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,11 +38,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Options options;
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      */
     private java.util.List<FilterRule> excludes;
@@ -69,9 +67,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String cloudWatchLogGroupArn;
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      */
     private java.util.List<FilterRule> includes;
@@ -144,17 +142,15 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-     *         <p>
+     * @return Specifies a list of filter rules that exclude specific data during your transfer. For more information
+     *         and examples, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     *         DataSync</a>.
      */
 
     public java.util.List<FilterRule> getExcludes() {
@@ -163,18 +159,15 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-     *        <p>
+     *        Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      */
 
     public void setExcludes(java.util.Collection<FilterRule> excludes) {
@@ -188,11 +181,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -201,10 +192,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-     *        <p>
+     *        Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,18 +210,15 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to exclude from a task. The list should contain a single
-     * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
-     * </p>
-     * <p>
+     * Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param excludes
-     *        A list of filter rules that determines which files to exclude from a task. The list should contain a
-     *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.</p>
-     *        <p>
+     *        Specifies a list of filter rules that exclude specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,14 +370,15 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
-     * @return A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *         single filter string that consists of the patterns to include. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+     * @return Specifies a list of filter rules that include specific data during your transfer. For more information
+     *         and examples, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data transferred by
+     *         DataSync</a>.
      */
 
     public java.util.List<FilterRule> getIncludes() {
@@ -399,15 +387,15 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that include specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      */
 
     public void setIncludes(java.util.Collection<FilterRule> includes) {
@@ -421,9 +409,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -432,9 +420,9 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that include specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,15 +438,15 @@ public class UpdateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of filter rules that determines which files to include when running a task. The pattern contains a single
-     * filter string that consists of the patterns to include. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>.
+     * Specifies a list of filter rules that include specific data during your transfer. For more information and
+     * examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering data
+     * transferred by DataSync</a>.
      * </p>
      * 
      * @param includes
-     *        A list of filter rules that determines which files to include when running a task. The pattern contains a
-     *        single filter string that consists of the patterns to include. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code>.
+     *        Specifies a list of filter rules that include specific data during your transfer. For more information and
+     *        examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
+     *        data transferred by DataSync</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

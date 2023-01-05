@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,45 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * location or home Region. Life-cycle state tracks the progress of launching the first instance in a new location and
  * preparing it for game hosting, and then removing all instances and deleting the location from the fleet.
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * <b>Related actions</b>
+ * <b>NEW</b> -- A new fleet location has been defined and desired instances is set to 1.
  * </p>
+ * </li>
+ * <li>
  * <p>
- * <a>CreateFleet</a> | <a>CreateFleetLocations</a> | <a>DeleteFleetLocations</a>
+ * <b>DOWNLOADING/VALIDATING/BUILDING/ACTIVATING</b> -- GameLift is setting up the new fleet location, creating new
+ * instances with the game build or Realtime script and starting server processes.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>ACTIVE</b> -- Hosts can now accept game sessions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>ERROR</b> -- An error occurred when downloading, validating, building, or activating the fleet location.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>DELETING</b> -- Hosts are responding to a delete fleet location request.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>TERMINATED</b> -- The fleet location no longer exists.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>NOT_FOUND</b> -- The fleet location was not found. This could be because the custom location was removed or not
+ * created.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationState" target="_top">AWS API
  *      Documentation</a>

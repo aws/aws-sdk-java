@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
     private String functionError;
     /**
      * <p>
-     * The last 4 KB of the execution log, which is base64 encoded.
+     * The last 4 KB of the execution log, which is base64-encoded.
      * </p>
      */
     private String logResult;
@@ -158,11 +158,11 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The last 4 KB of the execution log, which is base64 encoded.
+     * The last 4 KB of the execution log, which is base64-encoded.
      * </p>
      * 
      * @param logResult
-     *        The last 4 KB of the execution log, which is base64 encoded.
+     *        The last 4 KB of the execution log, which is base64-encoded.
      */
 
     public void setLogResult(String logResult) {
@@ -171,10 +171,10 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The last 4 KB of the execution log, which is base64 encoded.
+     * The last 4 KB of the execution log, which is base64-encoded.
      * </p>
      * 
-     * @return The last 4 KB of the execution log, which is base64 encoded.
+     * @return The last 4 KB of the execution log, which is base64-encoded.
      */
 
     public String getLogResult() {
@@ -183,11 +183,11 @@ public class InvokeResult extends com.amazonaws.AmazonWebServiceResult<com.amazo
 
     /**
      * <p>
-     * The last 4 KB of the execution log, which is base64 encoded.
+     * The last 4 KB of the execution log, which is base64-encoded.
      * </p>
      * 
      * @param logResult
-     *        The last 4 KB of the execution log, which is base64 encoded.
+     *        The last 4 KB of the execution log, which is base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

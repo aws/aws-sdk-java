@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1117,6 +1117,77 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon
+     * Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of
+     * recommendations</a>.
+     * </p>
+     * 
+     * @param createMetricAttributionRequest
+     * @return Result of the CreateMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of requests per second has been exceeded.
+     * @sample AmazonPersonalize.CreateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMetricAttributionResult createMetricAttribution(CreateMetricAttributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMetricAttribution(request);
+    }
+
+    @SdkInternalApi
+    final CreateMetricAttributionResult executeCreateMetricAttribution(CreateMetricAttributionRequest createMetricAttributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMetricAttributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMetricAttributionRequest> request = null;
+        Response<CreateMetricAttributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMetricAttributionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMetricAttributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMetricAttribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMetricAttributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMetricAttributionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for
      * a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
@@ -1614,6 +1685,8 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      *         The specified resource is in use.
      * @throws TooManyTagsException
      *         You have exceeded the maximum number of tags you can apply to this resource.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
      * @sample AmazonPersonalize.CreateSolutionVersion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateSolutionVersion"
      *      target="_top">AWS API Documentation</a>
@@ -1983,6 +2056,69 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteFilterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a metric attribution.
+     * </p>
+     * 
+     * @param deleteMetricAttributionRequest
+     * @return Result of the DeleteMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalize.DeleteMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMetricAttributionResult deleteMetricAttribution(DeleteMetricAttributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMetricAttribution(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMetricAttributionResult executeDeleteMetricAttribution(DeleteMetricAttributionRequest deleteMetricAttributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMetricAttributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMetricAttributionRequest> request = null;
+        Response<DeleteMetricAttributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMetricAttributionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMetricAttributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMetricAttribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMetricAttributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteMetricAttributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2867,6 +3003,67 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeFilterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a metric attribution.
+     * </p>
+     * 
+     * @param describeMetricAttributionRequest
+     * @return Result of the DescribeMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @sample AmazonPersonalize.DescribeMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMetricAttributionResult describeMetricAttribution(DescribeMetricAttributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMetricAttribution(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMetricAttributionResult executeDescribeMetricAttribution(DescribeMetricAttributionRequest describeMetricAttributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMetricAttributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMetricAttributionRequest> request = null;
+        Response<DescribeMetricAttributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMetricAttributionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMetricAttributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMetricAttribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMetricAttributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMetricAttributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3851,6 +4048,127 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
     /**
      * <p>
+     * Lists the metrics for the metric attribution.
+     * </p>
+     * 
+     * @param listMetricAttributionMetricsRequest
+     * @return Result of the ListMetricAttributionMetrics operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListMetricAttributionMetrics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributionMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMetricAttributionMetricsResult listMetricAttributionMetrics(ListMetricAttributionMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMetricAttributionMetrics(request);
+    }
+
+    @SdkInternalApi
+    final ListMetricAttributionMetricsResult executeListMetricAttributionMetrics(ListMetricAttributionMetricsRequest listMetricAttributionMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMetricAttributionMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMetricAttributionMetricsRequest> request = null;
+        Response<ListMetricAttributionMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMetricAttributionMetricsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMetricAttributionMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMetricAttributionMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMetricAttributionMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMetricAttributionMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists metric attributions.
+     * </p>
+     * 
+     * @param listMetricAttributionsRequest
+     * @return Result of the ListMetricAttributions operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
+     * @sample AmazonPersonalize.ListMetricAttributions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListMetricAttributions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMetricAttributionsResult listMetricAttributions(ListMetricAttributionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMetricAttributions(request);
+    }
+
+    @SdkInternalApi
+    final ListMetricAttributionsResult executeListMetricAttributions(ListMetricAttributionsRequest listMetricAttributionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMetricAttributionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMetricAttributionsRequest> request = null;
+        Response<ListMetricAttributionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMetricAttributionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMetricAttributionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMetricAttributions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMetricAttributionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMetricAttributionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's
      * Amazon Resource Name (ARN).
      * </p>
@@ -4623,6 +4941,71 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCampaignResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateCampaignResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a metric attribution.
+     * </p>
+     * 
+     * @param updateMetricAttributionRequest
+     * @return Result of the UpdateMetricAttribution operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws ResourceAlreadyExistsException
+     *         The specified resource already exists.
+     * @sample AmazonPersonalize.UpdateMetricAttribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateMetricAttribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMetricAttributionResult updateMetricAttribution(UpdateMetricAttributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMetricAttribution(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMetricAttributionResult executeUpdateMetricAttribution(UpdateMetricAttributionRequest updateMetricAttributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMetricAttributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMetricAttributionRequest> request = null;
+        Response<UpdateMetricAttributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMetricAttributionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMetricAttributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Personalize");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMetricAttribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMetricAttributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateMetricAttributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

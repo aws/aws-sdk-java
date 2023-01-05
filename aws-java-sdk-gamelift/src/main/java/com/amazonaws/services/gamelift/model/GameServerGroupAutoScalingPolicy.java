@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,9 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an
- * Auto Scaling policy when creating the corresponding Auto Scaling group with <a>CreateGameServerGroup</a>. After the
- * Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or
- * removing other policies, is done directly on the Auto Scaling group.
+ * Auto Scaling policy when creating the corresponding Auto Scaling group. After the Auto Scaling group is created, all
+ * updates to Auto Scaling policies, including changing this policy and adding or removing other policies, is done
+ * directly on the Auto Scaling group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroupAutoScalingPolicy"

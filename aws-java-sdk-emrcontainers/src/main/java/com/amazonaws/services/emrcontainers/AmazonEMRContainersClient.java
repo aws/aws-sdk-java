@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -228,6 +228,69 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return Result of the CreateJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final CreateJobTemplateResult executeCreateJobTemplate(CreateJobTemplateRequest createJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateJobTemplateRequest> request = null;
+        Response<CreateJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateJobTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
      * EMR Studio can communicate with your virtual cluster.
      * </p>
@@ -343,6 +406,67 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateVirtualClusterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVirtualClusterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return Result of the DeleteJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DeleteJobTemplateResult executeDeleteJobTemplate(DeleteJobTemplateRequest deleteJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteJobTemplateRequest> request = null;
+        Response<DeleteJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteJobTemplateResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -540,6 +664,69 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return Result of the DescribeJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeJobTemplate(request);
+    }
+
+    @SdkInternalApi
+    final DescribeJobTemplateResult executeDescribeJobTemplate(DescribeJobTemplateRequest describeJobTemplateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeJobTemplateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeJobTemplateRequest> request = null;
+        Response<DescribeJobTemplateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeJobTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeJobTemplateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeJobTemplate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeJobTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeJobTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
      * to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
      * </p>
@@ -717,6 +904,67 @@ public class AmazonEMRContainersClient extends AmazonWebServiceClient implements
 
             HttpResponseHandler<AmazonWebServiceResponse<ListJobRunsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListJobRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return Result of the ListJobTemplates operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListJobTemplates(request);
+    }
+
+    @SdkInternalApi
+    final ListJobTemplatesResult executeListJobTemplates(ListJobTemplatesRequest listJobTemplatesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listJobTemplatesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListJobTemplatesRequest> request = null;
+        Response<ListJobTemplatesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListJobTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listJobTemplatesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EMR containers");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListJobTemplates");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListJobTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListJobTemplatesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

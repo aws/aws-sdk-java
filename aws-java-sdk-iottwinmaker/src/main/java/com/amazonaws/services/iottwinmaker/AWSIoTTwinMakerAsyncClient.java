@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -211,6 +211,39 @@ public class AWSIoTTwinMakerAsyncClient extends AWSIoTTwinMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSyncJobResult> createSyncJobAsync(CreateSyncJobRequest request) {
+
+        return createSyncJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSyncJobResult> createSyncJobAsync(final CreateSyncJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSyncJobRequest, CreateSyncJobResult> asyncHandler) {
+        final CreateSyncJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSyncJobResult>() {
+            @Override
+            public CreateSyncJobResult call() throws Exception {
+                CreateSyncJobResult result = null;
+
+                try {
+                    result = executeCreateSyncJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateWorkspaceResult> createWorkspaceAsync(CreateWorkspaceRequest request) {
 
         return createWorkspaceAsync(request, null);
@@ -343,6 +376,39 @@ public class AWSIoTTwinMakerAsyncClient extends AWSIoTTwinMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteSyncJobResult> deleteSyncJobAsync(DeleteSyncJobRequest request) {
+
+        return deleteSyncJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSyncJobResult> deleteSyncJobAsync(final DeleteSyncJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSyncJobRequest, DeleteSyncJobResult> asyncHandler) {
+        final DeleteSyncJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSyncJobResult>() {
+            @Override
+            public DeleteSyncJobResult call() throws Exception {
+                DeleteSyncJobResult result = null;
+
+                try {
+                    result = executeDeleteSyncJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteWorkspaceResult> deleteWorkspaceAsync(DeleteWorkspaceRequest request) {
 
         return deleteWorkspaceAsync(request, null);
@@ -360,6 +426,39 @@ public class AWSIoTTwinMakerAsyncClient extends AWSIoTTwinMakerClient implements
 
                 try {
                     result = executeDeleteWorkspace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(ExecuteQueryRequest request) {
+
+        return executeQueryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExecuteQueryResult> executeQueryAsync(final ExecuteQueryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExecuteQueryRequest, ExecuteQueryResult> asyncHandler) {
+        final ExecuteQueryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExecuteQueryResult>() {
+            @Override
+            public ExecuteQueryResult call() throws Exception {
+                ExecuteQueryResult result = null;
+
+                try {
+                    result = executeExecuteQuery(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -426,6 +525,39 @@ public class AWSIoTTwinMakerAsyncClient extends AWSIoTTwinMakerClient implements
 
                 try {
                     result = executeGetEntity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPricingPlanResult> getPricingPlanAsync(GetPricingPlanRequest request) {
+
+        return getPricingPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPricingPlanResult> getPricingPlanAsync(final GetPricingPlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetPricingPlanRequest, GetPricingPlanResult> asyncHandler) {
+        final GetPricingPlanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetPricingPlanResult>() {
+            @Override
+            public GetPricingPlanResult call() throws Exception {
+                GetPricingPlanResult result = null;
+
+                try {
+                    result = executeGetPricingPlan(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -525,6 +657,39 @@ public class AWSIoTTwinMakerAsyncClient extends AWSIoTTwinMakerClient implements
 
                 try {
                     result = executeGetScene(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncJobResult> getSyncJobAsync(GetSyncJobRequest request) {
+
+        return getSyncJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSyncJobResult> getSyncJobAsync(final GetSyncJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSyncJobRequest, GetSyncJobResult> asyncHandler) {
+        final GetSyncJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSyncJobResult>() {
+            @Override
+            public GetSyncJobResult call() throws Exception {
+                GetSyncJobResult result = null;
+
+                try {
+                    result = executeGetSyncJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -657,6 +822,72 @@ public class AWSIoTTwinMakerAsyncClient extends AWSIoTTwinMakerClient implements
 
                 try {
                     result = executeListScenes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncJobsResult> listSyncJobsAsync(ListSyncJobsRequest request) {
+
+        return listSyncJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncJobsResult> listSyncJobsAsync(final ListSyncJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSyncJobsRequest, ListSyncJobsResult> asyncHandler) {
+        final ListSyncJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSyncJobsResult>() {
+            @Override
+            public ListSyncJobsResult call() throws Exception {
+                ListSyncJobsResult result = null;
+
+                try {
+                    result = executeListSyncJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncResourcesResult> listSyncResourcesAsync(ListSyncResourcesRequest request) {
+
+        return listSyncResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSyncResourcesResult> listSyncResourcesAsync(final ListSyncResourcesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSyncResourcesRequest, ListSyncResourcesResult> asyncHandler) {
+        final ListSyncResourcesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSyncResourcesResult>() {
+            @Override
+            public ListSyncResourcesResult call() throws Exception {
+                ListSyncResourcesResult result = null;
+
+                try {
+                    result = executeListSyncResources(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -855,6 +1086,39 @@ public class AWSIoTTwinMakerAsyncClient extends AWSIoTTwinMakerClient implements
 
                 try {
                     result = executeUpdateEntity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePricingPlanResult> updatePricingPlanAsync(UpdatePricingPlanRequest request) {
+
+        return updatePricingPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePricingPlanResult> updatePricingPlanAsync(final UpdatePricingPlanRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePricingPlanRequest, UpdatePricingPlanResult> asyncHandler) {
+        final UpdatePricingPlanRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePricingPlanResult>() {
+            @Override
+            public UpdatePricingPlanResult call() throws Exception {
+                UpdatePricingPlanResult result = null;
+
+                try {
+                    result = executeUpdatePricingPlan(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

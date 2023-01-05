@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,21 @@ public class DescribePhoneNumberResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about a phone number that's been claimed to your Amazon Connect instance.
+     * Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      */
     private ClaimedPhoneNumberSummary claimedPhoneNumberSummary;
 
     /**
      * <p>
-     * Information about a phone number that's been claimed to your Amazon Connect instance.
+     * Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      * 
      * @param claimedPhoneNumberSummary
-     *        Information about a phone number that's been claimed to your Amazon Connect instance.
+     *        Information about a phone number that's been claimed to your Amazon Connect instance or traffic
+     *        distribution group.
      */
 
     public void setClaimedPhoneNumberSummary(ClaimedPhoneNumberSummary claimedPhoneNumberSummary) {
@@ -45,10 +48,12 @@ public class DescribePhoneNumberResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about a phone number that's been claimed to your Amazon Connect instance.
+     * Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      * 
-     * @return Information about a phone number that's been claimed to your Amazon Connect instance.
+     * @return Information about a phone number that's been claimed to your Amazon Connect instance or traffic
+     *         distribution group.
      */
 
     public ClaimedPhoneNumberSummary getClaimedPhoneNumberSummary() {
@@ -57,11 +62,13 @@ public class DescribePhoneNumberResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Information about a phone number that's been claimed to your Amazon Connect instance.
+     * Information about a phone number that's been claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
      * 
      * @param claimedPhoneNumberSummary
-     *        Information about a phone number that's been claimed to your Amazon Connect instance.
+     *        Information about a phone number that's been claimed to your Amazon Connect instance or traffic
+     *        distribution group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies details about an outbound connection.
+ * Specifies details about an outbound cross-cluster connection.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,42 +27,42 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      */
     private DomainInformationContainer localDomainInfo;
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      */
     private DomainInformationContainer remoteDomainInfo;
     /**
      * <p>
-     * The connection ID for the outbound cross-cluster connection.
+     * Unique identifier of the connection.
      * </p>
      */
     private String connectionId;
     /**
      * <p>
-     * The connection alias for the outbound cross-cluster connection.
+     * Name of the connection.
      * </p>
      */
     private String connectionAlias;
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection.
+     * Status of the connection.
      * </p>
      */
     private OutboundConnectionStatus connectionStatus;
 
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain.
+     *        Information about the source (local) domain.
      */
 
     public void setLocalDomainInfo(DomainInformationContainer localDomainInfo) {
@@ -71,10 +71,10 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
-     * @return The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain.
+     * @return Information about the source (local) domain.
      */
 
     public DomainInformationContainer getLocalDomainInfo() {
@@ -83,11 +83,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain.
+     * Information about the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>DomainInformation</a> </code> for the local OpenSearch domain.
+     *        Information about the source (local) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,11 +98,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Information about the destination (remote) domain.
      */
 
     public void setRemoteDomainInfo(DomainInformationContainer remoteDomainInfo) {
@@ -111,10 +111,10 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
-     * @return The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain.
+     * @return Information about the destination (remote) domain.
      */
 
     public DomainInformationContainer getRemoteDomainInfo() {
@@ -123,11 +123,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain.
+     * Information about the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>DomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Information about the destination (remote) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The connection ID for the outbound cross-cluster connection.
+     * Unique identifier of the connection.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID for the outbound cross-cluster connection.
+     *        Unique identifier of the connection.
      */
 
     public void setConnectionId(String connectionId) {
@@ -151,10 +151,10 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The connection ID for the outbound cross-cluster connection.
+     * Unique identifier of the connection.
      * </p>
      * 
-     * @return The connection ID for the outbound cross-cluster connection.
+     * @return Unique identifier of the connection.
      */
 
     public String getConnectionId() {
@@ -163,11 +163,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The connection ID for the outbound cross-cluster connection.
+     * Unique identifier of the connection.
      * </p>
      * 
      * @param connectionId
-     *        The connection ID for the outbound cross-cluster connection.
+     *        Unique identifier of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +178,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The connection alias for the outbound cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias for the outbound cross-cluster connection.
+     *        Name of the connection.
      */
 
     public void setConnectionAlias(String connectionAlias) {
@@ -191,10 +191,10 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The connection alias for the outbound cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
-     * @return The connection alias for the outbound cross-cluster connection.
+     * @return Name of the connection.
      */
 
     public String getConnectionAlias() {
@@ -203,11 +203,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The connection alias for the outbound cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias for the outbound cross-cluster connection.
+     *        Name of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -218,11 +218,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection.
+     * Status of the connection.
      * </p>
      * 
      * @param connectionStatus
-     *        The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection.
+     *        Status of the connection.
      */
 
     public void setConnectionStatus(OutboundConnectionStatus connectionStatus) {
@@ -231,10 +231,10 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection.
+     * Status of the connection.
      * </p>
      * 
-     * @return The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection.
+     * @return Status of the connection.
      */
 
     public OutboundConnectionStatus getConnectionStatus() {
@@ -243,11 +243,11 @@ public class OutboundConnection implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection.
+     * Status of the connection.
      * </p>
      * 
      * @param connectionStatus
-     *        The <code> <a>OutboundConnectionStatus</a> </code> for the outbound connection.
+     *        Status of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

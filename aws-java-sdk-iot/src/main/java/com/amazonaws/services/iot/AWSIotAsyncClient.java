@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -5780,6 +5780,41 @@ public class AWSIotAsyncClient extends AWSIotClient implements AWSIotAsync {
 
                 try {
                     result = executeListProvisioningTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRelatedResourcesForAuditFindingResult> listRelatedResourcesForAuditFindingAsync(
+            ListRelatedResourcesForAuditFindingRequest request) {
+
+        return listRelatedResourcesForAuditFindingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRelatedResourcesForAuditFindingResult> listRelatedResourcesForAuditFindingAsync(
+            final ListRelatedResourcesForAuditFindingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRelatedResourcesForAuditFindingRequest, ListRelatedResourcesForAuditFindingResult> asyncHandler) {
+        final ListRelatedResourcesForAuditFindingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRelatedResourcesForAuditFindingResult>() {
+            @Override
+            public ListRelatedResourcesForAuditFindingResult call() throws Exception {
+                ListRelatedResourcesForAuditFindingResult result = null;
+
+                try {
+                    result = executeListRelatedResourcesForAuditFinding(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

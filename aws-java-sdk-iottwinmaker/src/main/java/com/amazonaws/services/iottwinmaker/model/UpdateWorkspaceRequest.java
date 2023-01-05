@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * The ID of the workspace.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * The description of the workspace.
      * </p>
      */
@@ -37,12 +43,46 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String role;
+
     /**
      * <p>
      * The ID of the workspace.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @return The ID of the workspace.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkspaceRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -125,46 +165,6 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @return The ID of the workspace.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateWorkspaceRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,12 +176,12 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getRole() != null)
-            sb.append("Role: ").append(getRole()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("Role: ").append(getRole());
         sb.append("}");
         return sb.toString();
     }
@@ -196,6 +196,10 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (obj instanceof UpdateWorkspaceRequest == false)
             return false;
         UpdateWorkspaceRequest other = (UpdateWorkspaceRequest) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -203,10 +207,6 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getRole() == null ^ this.getRole() == null)
             return false;
         if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -216,9 +216,9 @@ public class UpdateWorkspaceRequest extends com.amazonaws.AmazonWebServiceReques
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

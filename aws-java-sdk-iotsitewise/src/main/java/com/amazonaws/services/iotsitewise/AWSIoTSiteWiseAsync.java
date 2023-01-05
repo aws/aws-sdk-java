@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -407,8 +407,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -421,8 +421,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -633,8 +633,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -655,8 +655,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -1975,8 +1975,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -1989,8 +1989,8 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -2005,6 +2005,39 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest listAccessPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListAccessPoliciesRequest, ListAccessPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @return A Java Future containing the result of the ListAssetModelProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetModelProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetModelPropertiesResult> listAssetModelPropertiesAsync(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetModelPropertiesRequest, ListAssetModelPropertiesResult> asyncHandler);
 
     /**
      * <p>
@@ -2036,6 +2069,39 @@ public interface AWSIoTSiteWiseAsync extends AWSIoTSiteWise {
      */
     java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest listAssetModelsRequest,
             com.amazonaws.handlers.AsyncHandler<ListAssetModelsRequest, ListAssetModelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @return A Java Future containing the result of the ListAssetProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsync.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest listAssetPropertiesRequest);
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAssetProperties operation returned by the service.
+     * @sample AWSIoTSiteWiseAsyncHandler.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAssetPropertiesResult> listAssetPropertiesAsync(ListAssetPropertiesRequest listAssetPropertiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAssetPropertiesRequest, ListAssetPropertiesResult> asyncHandler);
 
     /**
      * <p>

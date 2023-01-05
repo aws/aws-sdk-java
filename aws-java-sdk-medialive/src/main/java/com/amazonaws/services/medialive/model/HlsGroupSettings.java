@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -161,8 +161,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     /** Indicates whether the output manifest should use floating point or integer values for segment duration. */
     private String manifestDurationFormat;
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby
-     * avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by
+     * looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
      */
     private Integer minSegmentLength;
     /**
@@ -215,8 +215,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String redundantManifest;
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
-     * keyframe after this number of seconds, so actual segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe
+     * after this duration, so actual segment length may be longer.
      */
     private Integer segmentLength;
     /** useInputSegmentation has been deprecated. The configured segment size is always used. */
@@ -1863,12 +1863,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby
-     * avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by
+     * looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
      * 
      * @param minSegmentLength
-     *        When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a
-     *        nearby avail and extending the segment size if needed.
+     *        Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is
+     *        enforced by looking ahead and back within the specified range for a nearby avail and extending the segment
+     *        size if needed.
      */
 
     public void setMinSegmentLength(Integer minSegmentLength) {
@@ -1876,11 +1877,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby
-     * avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by
+     * looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
      * 
-     * @return When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a
-     *         nearby avail and extending the segment size if needed.
+     * @return Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is
+     *         enforced by looking ahead and back within the specified range for a nearby avail and extending the
+     *         segment size if needed.
      */
 
     public Integer getMinSegmentLength() {
@@ -1888,12 +1890,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby
-     * avail and extending the segment size if needed.
+     * Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is enforced by
+     * looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.
      * 
      * @param minSegmentLength
-     *        When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a
-     *        nearby avail and extending the segment size if needed.
+     *        Minimum length of MPEG-2 Transport Stream segments in seconds. When set, minimum segment length is
+     *        enforced by looking ahead and back within the specified range for a nearby avail and extending the segment
+     *        size if needed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2420,12 +2423,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
-     * keyframe after this number of seconds, so actual segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe
+     * after this duration, so actual segment length may be longer.
      * 
      * @param segmentLength
-     *        Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
-     *        keyframe after this number of seconds, so actual segment length may be longer.
+     *        Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next
+     *        keyframe after this duration, so actual segment length may be longer.
      */
 
     public void setSegmentLength(Integer segmentLength) {
@@ -2433,11 +2436,11 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
-     * keyframe after this number of seconds, so actual segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe
+     * after this duration, so actual segment length may be longer.
      * 
-     * @return Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the
-     *         next keyframe after this number of seconds, so actual segment length may be longer.
+     * @return Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next
+     *         keyframe after this duration, so actual segment length may be longer.
      */
 
     public Integer getSegmentLength() {
@@ -2445,12 +2448,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
-     * keyframe after this number of seconds, so actual segment length may be longer.
+     * Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next keyframe
+     * after this duration, so actual segment length may be longer.
      * 
      * @param segmentLength
-     *        Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next
-     *        keyframe after this number of seconds, so actual segment length may be longer.
+     *        Length of MPEG-2 Transport Stream segments to create in seconds. Note that segments will end on the next
+     *        keyframe after this duration, so actual segment length may be longer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

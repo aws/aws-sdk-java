@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,10 @@ public class CmfcSettingsJsonUnmarshaller implements Unmarshaller<CmfcSettings, 
                     context.nextToken();
                     cmfcSettings.setKlvMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("manifestMetadataSignaling", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setManifestMetadataSignaling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("scte35Esam", targetDepth)) {
                     context.nextToken();
                     cmfcSettings.setScte35Esam(context.getUnmarshaller(String.class).unmarshall(context));
@@ -87,6 +91,18 @@ public class CmfcSettingsJsonUnmarshaller implements Unmarshaller<CmfcSettings, 
                 if (context.testExpression("timedMetadata", targetDepth)) {
                     context.nextToken();
                     cmfcSettings.setTimedMetadata(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataBoxVersion", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setTimedMetadataBoxVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataSchemeIdUri", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setTimedMetadataSchemeIdUri(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("timedMetadataValue", targetDepth)) {
+                    context.nextToken();
+                    cmfcSettings.setTimedMetadataValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

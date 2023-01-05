@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * For more information about the Amazon Redshift Data API and CLI usage examples, see <a
  * href="https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html">Using the Amazon Redshift Data API</a> in the
- * <i>Amazon Redshift Cluster Management Guide</i>.
+ * <i>Amazon Redshift Management Guide</i>.
  * </p>
  */
 @ThreadSafe

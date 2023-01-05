@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ContainerOverride> containerOverrides;
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      */
     private String cpu;
@@ -168,11 +168,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      * 
      * @param cpu
-     *        The cpu override for the task.
+     *        The CPU override for the task.
      */
 
     public void setCpu(String cpu) {
@@ -181,10 +181,10 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      * 
-     * @return The cpu override for the task.
+     * @return The CPU override for the task.
      */
 
     public String getCpu() {
@@ -193,11 +193,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cpu override for the task.
+     * The CPU override for the task.
      * </p>
      * 
      * @param cpu
-     *        The cpu override for the task.
+     *        The CPU override for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

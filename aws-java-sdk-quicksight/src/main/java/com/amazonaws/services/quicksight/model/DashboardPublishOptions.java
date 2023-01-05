@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,8 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
      * </p>
      */
     private SheetControlsOption sheetControlsOption;
+    /** <p/> */
+    private DashboardVisualPublishOptions visualPublishOptions;
 
     /**
      * <p>
@@ -168,6 +170,38 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p/>
+     * 
+     * @param visualPublishOptions
+     */
+
+    public void setVisualPublishOptions(DashboardVisualPublishOptions visualPublishOptions) {
+        this.visualPublishOptions = visualPublishOptions;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public DashboardVisualPublishOptions getVisualPublishOptions() {
+        return this.visualPublishOptions;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param visualPublishOptions
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DashboardPublishOptions withVisualPublishOptions(DashboardVisualPublishOptions visualPublishOptions) {
+        setVisualPublishOptions(visualPublishOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +218,9 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
         if (getExportToCSVOption() != null)
             sb.append("ExportToCSVOption: ").append(getExportToCSVOption()).append(",");
         if (getSheetControlsOption() != null)
-            sb.append("SheetControlsOption: ").append(getSheetControlsOption());
+            sb.append("SheetControlsOption: ").append(getSheetControlsOption()).append(",");
+        if (getVisualPublishOptions() != null)
+            sb.append("VisualPublishOptions: ").append(getVisualPublishOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +247,10 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
             return false;
         if (other.getSheetControlsOption() != null && other.getSheetControlsOption().equals(this.getSheetControlsOption()) == false)
             return false;
+        if (other.getVisualPublishOptions() == null ^ this.getVisualPublishOptions() == null)
+            return false;
+        if (other.getVisualPublishOptions() != null && other.getVisualPublishOptions().equals(this.getVisualPublishOptions()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +262,7 @@ public class DashboardPublishOptions implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getAdHocFilteringOption() == null) ? 0 : getAdHocFilteringOption().hashCode());
         hashCode = prime * hashCode + ((getExportToCSVOption() == null) ? 0 : getExportToCSVOption().hashCode());
         hashCode = prime * hashCode + ((getSheetControlsOption() == null) ? 0 : getSheetControlsOption().hashCode());
+        hashCode = prime * hashCode + ((getVisualPublishOptions() == null) ? 0 : getVisualPublishOptions().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ public class GetPortfolioPreferencesResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
+     * The classification for application component types.
+     * </p>
+     */
+    private String applicationMode;
+    /**
+     * <p>
      * The transformation preferences for non-database applications.
      * </p>
      */
@@ -41,6 +47,65 @@ public class GetPortfolioPreferencesResult extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private PrioritizeBusinessGoals prioritizeBusinessGoals;
+
+    /**
+     * <p>
+     * The classification for application component types.
+     * </p>
+     * 
+     * @param applicationMode
+     *        The classification for application component types.
+     * @see ApplicationMode
+     */
+
+    public void setApplicationMode(String applicationMode) {
+        this.applicationMode = applicationMode;
+    }
+
+    /**
+     * <p>
+     * The classification for application component types.
+     * </p>
+     * 
+     * @return The classification for application component types.
+     * @see ApplicationMode
+     */
+
+    public String getApplicationMode() {
+        return this.applicationMode;
+    }
+
+    /**
+     * <p>
+     * The classification for application component types.
+     * </p>
+     * 
+     * @param applicationMode
+     *        The classification for application component types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public GetPortfolioPreferencesResult withApplicationMode(String applicationMode) {
+        setApplicationMode(applicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The classification for application component types.
+     * </p>
+     * 
+     * @param applicationMode
+     *        The classification for application component types.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public GetPortfolioPreferencesResult withApplicationMode(ApplicationMode applicationMode) {
+        this.applicationMode = applicationMode.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -174,6 +239,8 @@ public class GetPortfolioPreferencesResult extends com.amazonaws.AmazonWebServic
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getApplicationMode() != null)
+            sb.append("ApplicationMode: ").append(getApplicationMode()).append(",");
         if (getApplicationPreferences() != null)
             sb.append("ApplicationPreferences: ").append(getApplicationPreferences()).append(",");
         if (getDatabasePreferences() != null)
@@ -194,6 +261,10 @@ public class GetPortfolioPreferencesResult extends com.amazonaws.AmazonWebServic
         if (obj instanceof GetPortfolioPreferencesResult == false)
             return false;
         GetPortfolioPreferencesResult other = (GetPortfolioPreferencesResult) obj;
+        if (other.getApplicationMode() == null ^ this.getApplicationMode() == null)
+            return false;
+        if (other.getApplicationMode() != null && other.getApplicationMode().equals(this.getApplicationMode()) == false)
+            return false;
         if (other.getApplicationPreferences() == null ^ this.getApplicationPreferences() == null)
             return false;
         if (other.getApplicationPreferences() != null && other.getApplicationPreferences().equals(this.getApplicationPreferences()) == false)
@@ -214,6 +285,7 @@ public class GetPortfolioPreferencesResult extends com.amazonaws.AmazonWebServic
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getApplicationMode() == null) ? 0 : getApplicationMode().hashCode());
         hashCode = prime * hashCode + ((getApplicationPreferences() == null) ? 0 : getApplicationPreferences().hashCode());
         hashCode = prime * hashCode + ((getDatabasePreferences() == null) ? 0 : getDatabasePreferences().hashCode());
         hashCode = prime * hashCode + ((getPrioritizeBusinessGoals() == null) ? 0 : getPrioritizeBusinessGoals().hashCode());

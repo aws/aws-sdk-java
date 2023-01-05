@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -42,7 +42,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
     private ResponseHeadersPolicyXSSProtection xSSProtection;
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -54,7 +54,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
     private ResponseHeadersPolicyFrameOptions frameOptions;
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -91,7 +91,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
     /**
      * <p>
      * Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the
-     * header’s value.
+     * header's value.
      * </p>
      * <p>
      * For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a
@@ -103,7 +103,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -114,7 +114,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param xSSProtection
      *        Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the
-     *        header’s value.</p>
+     *        header's value.</p>
      *        <p>
      *        For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in
@@ -127,7 +127,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -137,7 +137,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * </p>
      * 
      * @return Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the
-     *         header’s value.</p>
+     *         header's value.</p>
      *         <p>
      *         For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a
      *         href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in
@@ -150,7 +150,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -161,7 +161,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param xSSProtection
      *        Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the
-     *        header’s value.</p>
+     *        header's value.</p>
      *        <p>
      *        For more information about the <code>X-XSS-Protection</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a> in
@@ -176,7 +176,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -187,7 +187,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param frameOptions
      *        Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the
-     *        header’s value.</p>
+     *        header's value.</p>
      *        <p>
      *        For more information about the <code>X-Frame-Options</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in
@@ -200,7 +200,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -210,7 +210,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * </p>
      * 
      * @return Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the
-     *         header’s value.</p>
+     *         header's value.</p>
      *         <p>
      *         For more information about the <code>X-Frame-Options</code> HTTP response header, see <a
      *         href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in
@@ -223,7 +223,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -234,7 +234,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param frameOptions
      *        Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the
-     *        header’s value.</p>
+     *        header's value.</p>
      *        <p>
      *        For more information about the <code>X-Frame-Options</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a> in
@@ -249,7 +249,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -260,7 +260,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param referrerPolicy
      *        Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the
-     *        header’s value.</p>
+     *        header's value.</p>
      *        <p>
      *        For more information about the <code>Referrer-Policy</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in
@@ -273,7 +273,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -283,7 +283,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * </p>
      * 
      * @return Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the
-     *         header’s value.</p>
+     *         header's value.</p>
      *         <p>
      *         For more information about the <code>Referrer-Policy</code> HTTP response header, see <a
      *         href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in
@@ -296,7 +296,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
 
     /**
      * <p>
-     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s
+     * Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header's
      * value.
      * </p>
      * <p>
@@ -307,7 +307,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param referrerPolicy
      *        Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the
-     *        header’s value.</p>
+     *        header's value.</p>
      *        <p>
      *        For more information about the <code>Referrer-Policy</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a> in
@@ -469,7 +469,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
     /**
      * <p>
      * Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the
-     * header’s value.
+     * header's value.
      * </p>
      * <p>
      * For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a
@@ -479,7 +479,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param strictTransportSecurity
      *        Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and
-     *        the header’s value.</p>
+     *        the header's value.</p>
      *        <p>
      *        For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"
@@ -493,7 +493,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
     /**
      * <p>
      * Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the
-     * header’s value.
+     * header's value.
      * </p>
      * <p>
      * For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a
@@ -502,7 +502,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * </p>
      * 
      * @return Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header
-     *         and the header’s value.</p>
+     *         and the header's value.</p>
      *         <p>
      *         For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a
      *         href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"
@@ -516,7 +516,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
     /**
      * <p>
      * Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the
-     * header’s value.
+     * header's value.
      * </p>
      * <p>
      * For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a
@@ -526,7 +526,7 @@ public class ResponseHeadersPolicySecurityHeadersConfig implements Serializable,
      * 
      * @param strictTransportSecurity
      *        Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and
-     *        the header’s value.</p>
+     *        the header's value.</p>
      *        <p>
      *        For more information about the <code>Strict-Transport-Security</code> HTTP response header, see <a
      *        href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"

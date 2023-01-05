@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class UpdateFlowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destinationFlowConfigList").build();
     private static final MarshallingInfo<List> TASKS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tasks").build();
+    private static final MarshallingInfo<StructuredPojo> METADATACATALOGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metadataCatalogConfig").build();
 
     private static final UpdateFlowRequestMarshaller instance = new UpdateFlowRequestMarshaller();
 
@@ -63,6 +65,7 @@ public class UpdateFlowRequestMarshaller {
             protocolMarshaller.marshall(updateFlowRequest.getSourceFlowConfig(), SOURCEFLOWCONFIG_BINDING);
             protocolMarshaller.marshall(updateFlowRequest.getDestinationFlowConfigList(), DESTINATIONFLOWCONFIGLIST_BINDING);
             protocolMarshaller.marshall(updateFlowRequest.getTasks(), TASKS_BINDING);
+            protocolMarshaller.marshall(updateFlowRequest.getMetadataCatalogConfig(), METADATACATALOGCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

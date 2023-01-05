@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -271,6 +271,24 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </dl>
      */
     private String attachmentsStatus;
+    /**
+     * <p>
+     * Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace,
+     * any new services with Service Connect turned on that are created in the cluster are added as client services in
+     * the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to
+     * <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service
+     * individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private ClusterServiceConnectDefaults serviceConnectDefaults;
 
     /**
      * <p>
@@ -2161,6 +2179,118 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace,
+     * any new services with Service Connect turned on that are created in the cluster are added as client services in
+     * the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to
+     * <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service
+     * individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectDefaults
+     *        Use this parameter to set a default Service Connect namespace. After you set a default Service Connect
+     *        namespace, any new services with Service Connect turned on that are created in the cluster are added as
+     *        client services in the namespace. This setting only applies to new services that set the
+     *        <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You
+     *        can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to
+     *        override this default parameter.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setServiceConnectDefaults(ClusterServiceConnectDefaults serviceConnectDefaults) {
+        this.serviceConnectDefaults = serviceConnectDefaults;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace,
+     * any new services with Service Connect turned on that are created in the cluster are added as client services in
+     * the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to
+     * <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service
+     * individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return Use this parameter to set a default Service Connect namespace. After you set a default Service Connect
+     *         namespace, any new services with Service Connect turned on that are created in the cluster are added as
+     *         client services in the namespace. This setting only applies to new services that set the
+     *         <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You
+     *         can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to
+     *         override this default parameter.</p>
+     *         <p>
+     *         Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *         connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *         container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS
+     *         services create are supported with Service Connect. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public ClusterServiceConnectDefaults getServiceConnectDefaults() {
+        return this.serviceConnectDefaults;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to set a default Service Connect namespace. After you set a default Service Connect namespace,
+     * any new services with Service Connect turned on that are created in the cluster are added as client services in
+     * the namespace. This setting only applies to new services that set the <code>enabled</code> parameter to
+     * <code>true</code> in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each service
+     * individually in the <code>ServiceConnectConfiguration</code> to override this default parameter.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectDefaults
+     *        Use this parameter to set a default Service Connect namespace. After you set a default Service Connect
+     *        namespace, any new services with Service Connect turned on that are created in the cluster are added as
+     *        client services in the namespace. This setting only applies to new services that set the
+     *        <code>enabled</code> parameter to <code>true</code> in the <code>ServiceConnectConfiguration</code>. You
+     *        can set the namespace of each service individually in the <code>ServiceConnectConfiguration</code> to
+     *        override this default parameter.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withServiceConnectDefaults(ClusterServiceConnectDefaults serviceConnectDefaults) {
+        setServiceConnectDefaults(serviceConnectDefaults);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2201,7 +2331,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getAttachments() != null)
             sb.append("Attachments: ").append(getAttachments()).append(",");
         if (getAttachmentsStatus() != null)
-            sb.append("AttachmentsStatus: ").append(getAttachmentsStatus());
+            sb.append("AttachmentsStatus: ").append(getAttachmentsStatus()).append(",");
+        if (getServiceConnectDefaults() != null)
+            sb.append("ServiceConnectDefaults: ").append(getServiceConnectDefaults());
         sb.append("}");
         return sb.toString();
     }
@@ -2278,6 +2410,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAttachmentsStatus() != null && other.getAttachmentsStatus().equals(this.getAttachmentsStatus()) == false)
             return false;
+        if (other.getServiceConnectDefaults() == null ^ this.getServiceConnectDefaults() == null)
+            return false;
+        if (other.getServiceConnectDefaults() != null && other.getServiceConnectDefaults().equals(this.getServiceConnectDefaults()) == false)
+            return false;
         return true;
     }
 
@@ -2301,6 +2437,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDefaultCapacityProviderStrategy() == null) ? 0 : getDefaultCapacityProviderStrategy().hashCode());
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         hashCode = prime * hashCode + ((getAttachmentsStatus() == null) ? 0 : getAttachmentsStatus().hashCode());
+        hashCode = prime * hashCode + ((getServiceConnectDefaults() == null) ? 0 : getServiceConnectDefaults().hashCode());
         return hashCode;
     }
 

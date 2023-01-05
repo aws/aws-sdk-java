@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,9 @@ public enum AssetType {
 
     S3_SNAPSHOT("S3_SNAPSHOT"),
     REDSHIFT_DATA_SHARE("REDSHIFT_DATA_SHARE"),
-    API_GATEWAY_API("API_GATEWAY_API");
+    API_GATEWAY_API("API_GATEWAY_API"),
+    S3_DATA_ACCESS("S3_DATA_ACCESS"),
+    LAKE_FORMATION_DATA_PERMISSION("LAKE_FORMATION_DATA_PERMISSION");
 
     private String value;
 

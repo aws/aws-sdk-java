@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,10 @@ public class RequestDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportAssetsFromRedshiftDataShares").build();
     private static final MarshallingInfo<StructuredPojo> IMPORTASSETFROMAPIGATEWAYAPI_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportAssetFromApiGatewayApi").build();
+    private static final MarshallingInfo<StructuredPojo> CREATES3DATAACCESSFROMS3BUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateS3DataAccessFromS3Bucket").build();
+    private static final MarshallingInfo<StructuredPojo> IMPORTASSETSFROMLAKEFORMATIONTAGPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportAssetsFromLakeFormationTagPolicy").build();
 
     private static final RequestDetailsMarshaller instance = new RequestDetailsMarshaller();
 
@@ -65,6 +69,8 @@ public class RequestDetailsMarshaller {
             protocolMarshaller.marshall(requestDetails.getImportAssetsFromS3(), IMPORTASSETSFROMS3_BINDING);
             protocolMarshaller.marshall(requestDetails.getImportAssetsFromRedshiftDataShares(), IMPORTASSETSFROMREDSHIFTDATASHARES_BINDING);
             protocolMarshaller.marshall(requestDetails.getImportAssetFromApiGatewayApi(), IMPORTASSETFROMAPIGATEWAYAPI_BINDING);
+            protocolMarshaller.marshall(requestDetails.getCreateS3DataAccessFromS3Bucket(), CREATES3DATAACCESSFROMS3BUCKET_BINDING);
+            protocolMarshaller.marshall(requestDetails.getImportAssetsFromLakeFormationTagPolicy(), IMPORTASSETSFROMLAKEFORMATIONTAGPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

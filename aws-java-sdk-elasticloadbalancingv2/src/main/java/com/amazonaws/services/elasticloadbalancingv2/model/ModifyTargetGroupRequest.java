@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,8 +68,7 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private Boolean healthCheckEnabled;
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      */
     private Integer healthCheckIntervalSeconds;
@@ -87,14 +86,16 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     private Integer healthyThresholdCount;
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy. For target
-     * groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      */
     private Integer unhealthyThresholdCount;
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      */
     private Matcher matcher;
@@ -425,13 +426,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
-     *        checks, the supported values are 10 or 30 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target.
      */
 
     public void setHealthCheckIntervalSeconds(Integer healthCheckIntervalSeconds) {
@@ -440,12 +439,10 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      * 
-     * @return The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
-     *         checks, the supported values are 10 or 30 seconds.
+     * @return The approximate amount of time, in seconds, between health checks of an individual target.
      */
 
     public Integer getHealthCheckIntervalSeconds() {
@@ -454,13 +451,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The approximate amount of time, in seconds, between health checks of an individual target. For TCP health checks,
-     * the supported values are 10 or 30 seconds.
+     * The approximate amount of time, in seconds, between health checks of an individual target.
      * </p>
      * 
      * @param healthCheckIntervalSeconds
-     *        The approximate amount of time, in seconds, between health checks of an individual target. For TCP health
-     *        checks, the supported values are 10 or 30 seconds.
+     *        The approximate amount of time, in seconds, between health checks of an individual target.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -555,13 +550,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy. For target
-     * groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering the target unhealthy. For
-     *        target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.
+     *        The number of consecutive health check failures required before considering the target unhealthy.
      */
 
     public void setUnhealthyThresholdCount(Integer unhealthyThresholdCount) {
@@ -570,12 +563,10 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy. For target
-     * groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      * 
-     * @return The number of consecutive health check failures required before considering the target unhealthy. For
-     *         target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.
+     * @return The number of consecutive health check failures required before considering the target unhealthy.
      */
 
     public Integer getUnhealthyThresholdCount() {
@@ -584,13 +575,11 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The number of consecutive health check failures required before considering the target unhealthy. For target
-     * groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.
+     * The number of consecutive health check failures required before considering the target unhealthy.
      * </p>
      * 
      * @param unhealthyThresholdCount
-     *        The number of consecutive health check failures required before considering the target unhealthy. For
-     *        target groups with a protocol of TCP or TLS, this value must be the same as the healthy threshold count.
+     *        The number of consecutive health check failures required before considering the target unhealthy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,11 +591,16 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      * 
      * @param matcher
      *        [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
-     *        target.
+     *        target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target
+     *        groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     *        GENEVE, the range is 200-399.
      */
 
     public void setMatcher(Matcher matcher) {
@@ -616,10 +610,15 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      * 
      * @return [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
-     *         target.
+     *         target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target
+     *         groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     *         GENEVE, the range is 200-399.
      */
 
     public Matcher getMatcher() {
@@ -629,11 +628,16 @@ public class ModifyTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target.
+     * For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a
+     * protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is
+     * 200-399.
      * </p>
      * 
      * @param matcher
      *        [HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a
-     *        target.
+     *        target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target
+     *        groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of
+     *        GENEVE, the range is 200-399.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

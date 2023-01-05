@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,17 +20,18 @@ import javax.annotation.Generated;
  * A response headers policy.
  * </p>
  * <p>
- * A response headers policy contains information about a set of HTTP response headers and their values.
+ * A response headers policy contains information about a set of HTTP response headers.
  * </p>
  * <p>
  * After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a
- * CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to HTTP
- * responses that it sends for requests that match the cache behavior.
+ * CloudFront distribution. When it's attached to a cache behavior, the response headers policy affects the HTTP headers
+ * that CloudFront includes in HTTP responses to requests that match the cache behavior. CloudFront adds or removes
+ * response headers according to the configuration of the response headers policy.
  * </p>
  * <p>
  * For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-response-headers.html">Adding HTTP
- * headers to CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/modifying-response-headers.html">Adding or
+ * removing HTTP headers in CloudFront responses</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ResponseHeadersPolicy" target="_top">AWS
@@ -54,11 +55,6 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
     /**
      * <p>
      * A response headers policy configuration.
-     * </p>
-     * <p>
-     * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
-     * associated with the policy.
      * </p>
      */
     private ResponseHeadersPolicyConfig responseHeadersPolicyConfig;
@@ -147,18 +143,9 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      * <p>
      * A response headers policy configuration.
      * </p>
-     * <p>
-     * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
-     * associated with the policy.
-     * </p>
      * 
      * @param responseHeadersPolicyConfig
-     *        A response headers policy configuration.</p>
-     *        <p>
-     *        A response headers policy contains information about a set of HTTP response headers and their values.
-     *        CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache
-     *        behavior that’s associated with the policy.
+     *        A response headers policy configuration.
      */
 
     public void setResponseHeadersPolicyConfig(ResponseHeadersPolicyConfig responseHeadersPolicyConfig) {
@@ -169,17 +156,8 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      * <p>
      * A response headers policy configuration.
      * </p>
-     * <p>
-     * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
-     * associated with the policy.
-     * </p>
      * 
-     * @return A response headers policy configuration.</p>
-     *         <p>
-     *         A response headers policy contains information about a set of HTTP response headers and their values.
-     *         CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache
-     *         behavior that’s associated with the policy.
+     * @return A response headers policy configuration.
      */
 
     public ResponseHeadersPolicyConfig getResponseHeadersPolicyConfig() {
@@ -190,18 +168,9 @@ public class ResponseHeadersPolicy implements Serializable, Cloneable {
      * <p>
      * A response headers policy configuration.
      * </p>
-     * <p>
-     * A response headers policy contains information about a set of HTTP response headers and their values. CloudFront
-     * adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior that’s
-     * associated with the policy.
-     * </p>
      * 
      * @param responseHeadersPolicyConfig
-     *        A response headers policy configuration.</p>
-     *        <p>
-     *        A response headers policy contains information about a set of HTTP response headers and their values.
-     *        CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache
-     *        behavior that’s associated with the policy.
+     *        A response headers policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

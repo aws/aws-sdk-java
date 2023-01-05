@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,9 @@ import javax.annotation.Generated;
  * Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR
  * formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted
  * video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental
- * tone mapping technology to approximate the outcome of manually regrading from HDR to SDR.
+ * tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65 (SDR) to
+ * set the output color space metadata to the following: * Color primaries: Display P3 * Transfer characteristics: SMPTE
+ * 428M * Matrix coefficients: BT.709
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ColorSpaceConversion {
@@ -27,7 +29,9 @@ public enum ColorSpaceConversion {
     FORCE_601("FORCE_601"),
     FORCE_709("FORCE_709"),
     FORCE_HDR10("FORCE_HDR10"),
-    FORCE_HLG_2020("FORCE_HLG_2020");
+    FORCE_HLG_2020("FORCE_HLG_2020"),
+    FORCE_P3DCI("FORCE_P3DCI"),
+    FORCE_P3D65_SDR("FORCE_P3D65_SDR");
 
     private String value;
 

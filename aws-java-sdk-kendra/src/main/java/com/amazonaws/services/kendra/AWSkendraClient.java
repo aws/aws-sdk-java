@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -169,11 +169,23 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param associateEntitiesToExperienceRequest
      * @return Result of the AssociateEntitiesToExperience operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ResourceAlreadyExistException
+     *         The resource you want to use already exists. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.AssociateEntitiesToExperience
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociateEntitiesToExperience"
      *      target="_top">AWS API Documentation</a>
@@ -236,11 +248,23 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param associatePersonasToEntitiesRequest
      * @return Result of the AssociatePersonasToEntities operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ResourceAlreadyExistException
+     *         The resource you want to use already exists. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.AssociatePersonasToEntities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/AssociatePersonasToEntities"
      *      target="_top">AWS API Documentation</a>
@@ -304,11 +328,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param batchDeleteDocumentRequest
      * @return Result of the BatchDeleteDocument operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.BatchDeleteDocument
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteDocument" target="_top">AWS API
      *      Documentation</a>
@@ -376,11 +411,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param batchGetDocumentStatusRequest
      * @return Result of the BatchGetDocumentStatus operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.BatchGetDocumentStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchGetDocumentStatus" target="_top">AWS
      *      API Documentation</a>
@@ -453,12 +499,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param batchPutDocumentRequest
      * @return Result of the BatchPutDocument operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.BatchPutDocument
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchPutDocument" target="_top">AWS API
      *      Documentation</a>
@@ -525,11 +585,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param clearQuerySuggestionsRequest
      * @return Result of the ClearQuerySuggestions operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ClearQuerySuggestions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions" target="_top">AWS
      *      API Documentation</a>
@@ -609,12 +680,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param createAccessControlConfigurationRequest
      * @return Result of the CreateAccessControlConfiguration operation returned by the service.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.CreateAccessControlConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateAccessControlConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -692,13 +777,29 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param createDataSourceRequest
      * @return Result of the CreateDataSource operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ResourceAlreadyExistException
+     *         The resource you want to use already exists. Please check you have provided the correct resource and try
+     *         again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.CreateDataSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateDataSource" target="_top">AWS API
      *      Documentation</a>
@@ -758,12 +859,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param createExperienceRequest
      * @return Result of the CreateExperience operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.CreateExperience
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateExperience" target="_top">AWS API
      *      Documentation</a>
@@ -827,12 +942,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param createFaqRequest
      * @return Result of the CreateFaq operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.CreateFaq
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq" target="_top">AWS API
      *      Documentation</a>
@@ -901,12 +1030,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param createIndexRequest
      * @return Result of the CreateIndex operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceAlreadyExistException
+     *         The resource you want to use already exists. Please check you have provided the correct resource and try
+     *         again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.CreateIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateIndex" target="_top">AWS API
      *      Documentation</a>
@@ -984,12 +1127,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param createQuerySuggestionsBlockListRequest
      * @return Result of the CreateQuerySuggestionsBlockList operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.CreateQuerySuggestionsBlockList
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList"
      *      target="_top">AWS API Documentation</a>
@@ -1054,12 +1211,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param createThesaurusRequest
      * @return Result of the CreateThesaurus operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.CreateThesaurus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
      *      Documentation</a>
@@ -1118,11 +1289,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deleteAccessControlConfigurationRequest
      * @return Result of the DeleteAccessControlConfiguration operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeleteAccessControlConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteAccessControlConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1185,11 +1367,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deleteDataSourceRequest
      * @return Result of the DeleteDataSource operation returned by the service.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeleteDataSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteDataSource" target="_top">AWS API
      *      Documentation</a>
@@ -1249,11 +1442,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deleteExperienceRequest
      * @return Result of the DeleteExperience operation returned by the service.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeleteExperience
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteExperience" target="_top">AWS API
      *      Documentation</a>
@@ -1310,11 +1514,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deleteFaqRequest
      * @return Result of the DeleteFaq operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeleteFaq
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteFaq" target="_top">AWS API
      *      Documentation</a>
@@ -1373,11 +1588,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deleteIndexRequest
      * @return Result of the DeleteIndex operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeleteIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteIndex" target="_top">AWS API
      *      Documentation</a>
@@ -1450,11 +1676,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deletePrincipalMappingRequest
      * @return Result of the DeletePrincipalMapping operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeletePrincipalMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeletePrincipalMapping" target="_top">AWS
      *      API Documentation</a>
@@ -1520,11 +1757,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deleteQuerySuggestionsBlockListRequest
      * @return Result of the DeleteQuerySuggestionsBlockList operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeleteQuerySuggestionsBlockList
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList"
      *      target="_top">AWS API Documentation</a>
@@ -1584,11 +1832,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param deleteThesaurusRequest
      * @return Result of the DeleteThesaurus operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DeleteThesaurus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
      *      Documentation</a>
@@ -1647,10 +1906,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeAccessControlConfigurationRequest
      * @return Result of the DescribeAccessControlConfiguration operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeAccessControlConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeAccessControlConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1710,10 +1979,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeDataSourceRequest
      * @return Result of the DescribeDataSource operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeDataSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeDataSource" target="_top">AWS API
      *      Documentation</a>
@@ -1773,10 +2052,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeExperienceRequest
      * @return Result of the DescribeExperience operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeExperience
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeExperience" target="_top">AWS API
      *      Documentation</a>
@@ -1833,10 +2122,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeFaqRequest
      * @return Result of the DescribeFaq operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeFaq
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFaq" target="_top">AWS API
      *      Documentation</a>
@@ -1893,10 +2192,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeIndexRequest
      * @return Result of the DescribeIndex operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex" target="_top">AWS API
      *      Documentation</a>
@@ -1960,10 +2269,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describePrincipalMappingRequest
      * @return Result of the DescribePrincipalMapping operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribePrincipalMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribePrincipalMapping"
      *      target="_top">AWS API Documentation</a>
@@ -2029,10 +2348,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeQuerySuggestionsBlockListRequest
      * @return Result of the DescribeQuerySuggestionsBlockList operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeQuerySuggestionsBlockList
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList"
      *      target="_top">AWS API Documentation</a>
@@ -2099,10 +2428,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeQuerySuggestionsConfigRequest
      * @return Result of the DescribeQuerySuggestionsConfig operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeQuerySuggestionsConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig"
      *      target="_top">AWS API Documentation</a>
@@ -2161,10 +2500,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param describeThesaurusRequest
      * @return Result of the DescribeThesaurus operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DescribeThesaurus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
      *      Documentation</a>
@@ -2225,10 +2574,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param disassociateEntitiesFromExperienceRequest
      * @return Result of the DisassociateEntitiesFromExperience operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DisassociateEntitiesFromExperience
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociateEntitiesFromExperience"
      *      target="_top">AWS API Documentation</a>
@@ -2292,10 +2651,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param disassociatePersonasFromEntitiesRequest
      * @return Result of the DisassociatePersonasFromEntities operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.DisassociatePersonasFromEntities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DisassociatePersonasFromEntities"
      *      target="_top">AWS API Documentation</a>
@@ -2358,12 +2727,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param getQuerySuggestionsRequest
      * @return Result of the GetQuerySuggestions operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.GetQuerySuggestions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions" target="_top">AWS API
      *      Documentation</a>
@@ -2421,10 +2804,17 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param getSnapshotsRequest
      * @return Result of the GetSnapshots operation returned by the service.
      * @throws InvalidRequestException
-     *         The input to the request is not valid.
+     *         The input to the request is not valid. Please provide the correct input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.GetSnapshots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetSnapshots" target="_top">AWS API
      *      Documentation</a>
@@ -2483,10 +2873,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listAccessControlConfigurationsRequest
      * @return Result of the ListAccessControlConfigurations operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListAccessControlConfigurations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListAccessControlConfigurations"
      *      target="_top">AWS API Documentation</a>
@@ -2546,11 +2946,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listDataSourceSyncJobsRequest
      * @return Result of the ListDataSourceSyncJobs operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListDataSourceSyncJobs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSourceSyncJobs" target="_top">AWS
      *      API Documentation</a>
@@ -2608,10 +3019,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listDataSourcesRequest
      * @return Result of the ListDataSources operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListDataSources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListDataSources" target="_top">AWS API
      *      Documentation</a>
@@ -2668,10 +3089,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listEntityPersonasRequest
      * @return Result of the ListEntityPersonas operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListEntityPersonas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListEntityPersonas" target="_top">AWS API
      *      Documentation</a>
@@ -2732,10 +3163,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listExperienceEntitiesRequest
      * @return Result of the ListExperienceEntities operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListExperienceEntities
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperienceEntities" target="_top">AWS
      *      API Documentation</a>
@@ -2796,10 +3237,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listExperiencesRequest
      * @return Result of the ListExperiences operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListExperiences
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListExperiences" target="_top">AWS API
      *      Documentation</a>
@@ -2856,10 +3307,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listFaqsRequest
      * @return Result of the ListFaqs operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListFaqs
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFaqs" target="_top">AWS API
      *      Documentation</a>
@@ -2920,11 +3381,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listGroupsOlderThanOrderingIdRequest
      * @return Result of the ListGroupsOlderThanOrderingId operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListGroupsOlderThanOrderingId
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListGroupsOlderThanOrderingId"
      *      target="_top">AWS API Documentation</a>
@@ -2983,9 +3455,17 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listIndicesRequest
      * @return Result of the ListIndices operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListIndices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListIndices" target="_top">AWS API
      *      Documentation</a>
@@ -3050,10 +3530,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listQuerySuggestionsBlockListsRequest
      * @return Result of the ListQuerySuggestionsBlockLists operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListQuerySuggestionsBlockLists
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists"
      *      target="_top">AWS API Documentation</a>
@@ -3113,10 +3603,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceUnavailableException
+     *         The resource you want to use isn't available. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -3173,10 +3673,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param listThesauriRequest
      * @return Result of the ListThesauri operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.ListThesauri
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
      *      Documentation</a>
@@ -3251,12 +3761,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param putPrincipalMappingRequest
      * @return Result of the PutPrincipalMapping operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.PutPrincipalMapping
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping" target="_top">AWS API
      *      Documentation</a>
@@ -3346,12 +3870,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param queryRequest
      * @return Result of the Query operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.Query
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Query" target="_top">AWS API
      *      Documentation</a>
@@ -3409,12 +3947,25 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param startDataSourceSyncJobRequest
      * @return Result of the StartDataSourceSyncJob operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ResourceInUseException
+     *         The resource you want to use is currently in use. Please check you have provided the correct resource and
+     *         try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.StartDataSourceSyncJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StartDataSourceSyncJob" target="_top">AWS
      *      API Documentation</a>
@@ -3472,10 +4023,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param stopDataSourceSyncJobRequest
      * @return Result of the StopDataSourceSyncJob operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.StopDataSourceSyncJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/StopDataSourceSyncJob" target="_top">AWS
      *      API Documentation</a>
@@ -3536,11 +4097,23 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param submitFeedbackRequest
      * @return Result of the SubmitFeedback operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceUnavailableException
+     *         The resource you want to use isn't available. Please check you have provided the correct resource and try
+     *         again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.SubmitFeedback
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SubmitFeedback" target="_top">AWS API
      *      Documentation</a>
@@ -3598,10 +4171,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceUnavailableException
+     *         The resource you want to use isn't available. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3658,10 +4241,20 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceUnavailableException
+     *         The resource you want to use isn't available. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3737,12 +4330,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param updateAccessControlConfigurationRequest
      * @return Result of the UpdateAccessControlConfiguration operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UpdateAccessControlConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateAccessControlConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -3802,11 +4409,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param updateDataSourceRequest
      * @return Result of the UpdateDataSource operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UpdateDataSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateDataSource" target="_top">AWS API
      *      Documentation</a>
@@ -3866,11 +4484,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param updateExperienceRequest
      * @return Result of the UpdateExperience operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UpdateExperience
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateExperience" target="_top">AWS API
      *      Documentation</a>
@@ -3927,12 +4556,26 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param updateIndexRequest
      * @return Result of the UpdateIndex operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ServiceQuotaExceededException
+     *         You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink Kendra
+     *         Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
+     *         Support</a> to inquire about an increase of limits.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UpdateIndex
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateIndex" target="_top">AWS API
      *      Documentation</a>
@@ -4004,11 +4647,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param updateQuerySuggestionsBlockListRequest
      * @return Result of the UpdateQuerySuggestionsBlockList operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UpdateQuerySuggestionsBlockList
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList"
      *      target="_top">AWS API Documentation</a>
@@ -4086,11 +4740,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param updateQuerySuggestionsConfigRequest
      * @return Result of the UpdateQuerySuggestionsConfig operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UpdateQuerySuggestionsConfig
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig"
      *      target="_top">AWS API Documentation</a>
@@ -4149,11 +4814,22 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * @param updateThesaurusRequest
      * @return Result of the UpdateThesaurus operation returned by the service.
      * @throws ValidationException
+     *         The input fails to satisfy the constraints set by the Amazon Kendra service. Please provide the correct
+     *         input and try again.
      * @throws ResourceNotFoundException
+     *         The resource you want to use doesn’t exist. Please check you have provided the correct resource and try
+     *         again.
      * @throws ThrottlingException
+     *         The request was denied due to request throttling. Please reduce the number of requests and try again.
      * @throws AccessDeniedException
+     *         You don't have sufficient access to perform this action. Please ensure you have the required permission
+     *         policies and user accounts and try again.
      * @throws ConflictException
+     *         A conflict occurred with the request. Please fix any inconsistences with your resources and try again.
      * @throws InternalServerException
+     *         An issue occurred with the internal server used for your Amazon Kendra service. Please wait a few minutes
+     *         and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us"> Support</a> for
+     *         help.
      * @sample AWSkendra.UpdateThesaurus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
      *      Documentation</a>

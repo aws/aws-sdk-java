@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.lakeformation.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -34,6 +35,8 @@ public class DataLakeSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateDatabaseDefaultPermissions").build();
     private static final MarshallingInfo<List> CREATETABLEDEFAULTPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTableDefaultPermissions").build();
+    private static final MarshallingInfo<Map> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Parameters").build();
     private static final MarshallingInfo<List> TRUSTEDRESOURCEOWNERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TrustedResourceOwners").build();
     private static final MarshallingInfo<Boolean> ALLOWEXTERNALDATAFILTERING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
@@ -62,6 +65,7 @@ public class DataLakeSettingsMarshaller {
             protocolMarshaller.marshall(dataLakeSettings.getDataLakeAdmins(), DATALAKEADMINS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getCreateDatabaseDefaultPermissions(), CREATEDATABASEDEFAULTPERMISSIONS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getCreateTableDefaultPermissions(), CREATETABLEDEFAULTPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(dataLakeSettings.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getTrustedResourceOwners(), TRUSTEDRESOURCEOWNERS_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getAllowExternalDataFiltering(), ALLOWEXTERNALDATAFILTERING_BINDING);
             protocolMarshaller.marshall(dataLakeSettings.getExternalDataFilteringAllowList(), EXTERNALDATAFILTERINGALLOWLIST_BINDING);

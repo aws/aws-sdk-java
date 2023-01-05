@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,8 @@ public class Mpeg2SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("subgopLength").build();
     private static final MarshallingInfo<String> TIMECODEINSERTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timecodeInsertion").build();
+    private static final MarshallingInfo<StructuredPojo> TIMECODEBURNINSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timecodeBurninSettings").build();
 
     private static final Mpeg2SettingsMarshaller instance = new Mpeg2SettingsMarshaller();
 
@@ -92,6 +94,7 @@ public class Mpeg2SettingsMarshaller {
             protocolMarshaller.marshall(mpeg2Settings.getScanType(), SCANTYPE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getSubgopLength(), SUBGOPLENGTH_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getTimecodeInsertion(), TIMECODEINSERTION_BINDING);
+            protocolMarshaller.marshall(mpeg2Settings.getTimecodeBurninSettings(), TIMECODEBURNINSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

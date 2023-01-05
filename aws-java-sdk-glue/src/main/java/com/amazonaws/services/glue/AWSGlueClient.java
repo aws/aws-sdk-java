@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,9 +81,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SchedulerRunningException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.SchedulerRunningExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotReadyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.ResourceNotReadyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -92,9 +89,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IllegalSessionStateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.IllegalSessionStateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MLTransformNotReadyException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.MLTransformNotReadyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.AlreadyExistsExceptionUnmarshaller.getInstance()))
@@ -108,9 +102,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CrawlerStoppingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.CrawlerStoppingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -120,20 +111,38 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("CrawlerNotRunningException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.CrawlerNotRunningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.EntityNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("GlueEncryptionException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.GlueEncryptionExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PermissionTypeMismatchException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.PermissionTypeMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OperationTimeoutException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.OperationTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.VersionMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IllegalWorkflowStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.IllegalWorkflowStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNumberLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ResourceNumberLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SchedulerNotRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.SchedulerNotRunningExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("SchedulerRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.SchedulerRunningExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("MLTransformNotReadyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.MLTransformNotReadyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CrawlerStoppingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.CrawlerStoppingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.EntityNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PermissionTypeMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.PermissionTypeMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IllegalBlueprintStateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.IllegalBlueprintStateExceptionUnmarshaller.getInstance()))
@@ -144,20 +153,11 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                             new JsonErrorShapeMetadata().withErrorCode("NoScheduleException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.NoScheduleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IllegalWorkflowStateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.IllegalWorkflowStateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentRunsExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.ConcurrentRunsExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNumberLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.ResourceNumberLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SchedulerNotRunningException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.glue.model.transform.SchedulerNotRunningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
@@ -735,6 +735,69 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Retrieves a list of data quality results for the specified result IDs.
+     * </p>
+     * 
+     * @param batchGetDataQualityResultRequest
+     * @return Result of the BatchGetDataQualityResult operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.BatchGetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResult" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchGetDataQualityResultResult batchGetDataQualityResult(BatchGetDataQualityResultRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetDataQualityResult(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetDataQualityResultResult executeBatchGetDataQualityResult(BatchGetDataQualityResultRequest batchGetDataQualityResultRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetDataQualityResultRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetDataQualityResultRequest> request = null;
+        Response<BatchGetDataQualityResultResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetDataQualityResultRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchGetDataQualityResultRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetDataQualityResult");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetDataQualityResultResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchGetDataQualityResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of resource metadata for a given list of development endpoint names. After calling the
      * <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been
      * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
@@ -1170,6 +1233,138 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchUpdatePartitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchUpdatePartitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels the specified recommendation run that was being used to generate rules.
+     * </p>
+     * 
+     * @param cancelDataQualityRuleRecommendationRunRequest
+     * @return Result of the CancelDataQualityRuleRecommendationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.CancelDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelDataQualityRuleRecommendationRunResult cancelDataQualityRuleRecommendationRun(CancelDataQualityRuleRecommendationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelDataQualityRuleRecommendationRun(request);
+    }
+
+    @SdkInternalApi
+    final CancelDataQualityRuleRecommendationRunResult executeCancelDataQualityRuleRecommendationRun(
+            CancelDataQualityRuleRecommendationRunRequest cancelDataQualityRuleRecommendationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelDataQualityRuleRecommendationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelDataQualityRuleRecommendationRunRequest> request = null;
+        Response<CancelDataQualityRuleRecommendationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelDataQualityRuleRecommendationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelDataQualityRuleRecommendationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelDataQualityRuleRecommendationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelDataQualityRuleRecommendationRunResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CancelDataQualityRuleRecommendationRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a run where a ruleset is being evaluated against a data source.
+     * </p>
+     * 
+     * @param cancelDataQualityRulesetEvaluationRunRequest
+     * @return Result of the CancelDataQualityRulesetEvaluationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.CancelDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelDataQualityRulesetEvaluationRunResult cancelDataQualityRulesetEvaluationRun(CancelDataQualityRulesetEvaluationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelDataQualityRulesetEvaluationRun(request);
+    }
+
+    @SdkInternalApi
+    final CancelDataQualityRulesetEvaluationRunResult executeCancelDataQualityRulesetEvaluationRun(
+            CancelDataQualityRulesetEvaluationRunRequest cancelDataQualityRulesetEvaluationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelDataQualityRulesetEvaluationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelDataQualityRulesetEvaluationRunRequest> request = null;
+        Response<CancelDataQualityRulesetEvaluationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelDataQualityRulesetEvaluationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelDataQualityRulesetEvaluationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelDataQualityRulesetEvaluationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelDataQualityRulesetEvaluationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelDataQualityRulesetEvaluationRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1701,6 +1896,77 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             HttpResponseHandler<AmazonWebServiceResponse<CreateCustomEntityTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateCustomEntityTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
+     * </p>
+     * <p>
+     * You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue
+     * developer guide.
+     * </p>
+     * 
+     * @param createDataQualityRulesetRequest
+     * @return Result of the CreateDataQualityRuleset operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @sample AWSGlue.CreateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateDataQualityRulesetResult createDataQualityRuleset(CreateDataQualityRulesetRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDataQualityRuleset(request);
+    }
+
+    @SdkInternalApi
+    final CreateDataQualityRulesetResult executeCreateDataQualityRuleset(CreateDataQualityRulesetRequest createDataQualityRulesetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDataQualityRulesetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDataQualityRulesetRequest> request = null;
+        Response<CreateDataQualityRulesetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDataQualityRulesetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createDataQualityRulesetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataQualityRuleset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateDataQualityRulesetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateDataQualityRulesetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3211,6 +3477,71 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             HttpResponseHandler<AmazonWebServiceResponse<DeleteCustomEntityTypeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteCustomEntityTypeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a data quality ruleset.
+     * </p>
+     * 
+     * @param deleteDataQualityRulesetRequest
+     * @return Result of the DeleteDataQualityRuleset operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.DeleteDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteDataQualityRulesetResult deleteDataQualityRuleset(DeleteDataQualityRulesetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDataQualityRuleset(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDataQualityRulesetResult executeDeleteDataQualityRuleset(DeleteDataQualityRulesetRequest deleteDataQualityRulesetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDataQualityRulesetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDataQualityRulesetRequest> request = null;
+        Response<DeleteDataQualityRulesetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDataQualityRulesetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteDataQualityRulesetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataQualityRuleset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteDataQualityRulesetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteDataQualityRulesetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5296,6 +5627,265 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Retrieves the result of a data quality rule evaluation.
+     * </p>
+     * 
+     * @param getDataQualityResultRequest
+     * @return Result of the GetDataQualityResult operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @sample AWSGlue.GetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDataQualityResultResult getDataQualityResult(GetDataQualityResultRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataQualityResult(request);
+    }
+
+    @SdkInternalApi
+    final GetDataQualityResultResult executeGetDataQualityResult(GetDataQualityResultRequest getDataQualityResultRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataQualityResultRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataQualityResultRequest> request = null;
+        Response<GetDataQualityResultResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataQualityResultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataQualityResultRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataQualityResult");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataQualityResultResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDataQualityResultResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the specified recommendation run that was used to generate rules.
+     * </p>
+     * 
+     * @param getDataQualityRuleRecommendationRunRequest
+     * @return Result of the GetDataQualityRuleRecommendationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.GetDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDataQualityRuleRecommendationRunResult getDataQualityRuleRecommendationRun(GetDataQualityRuleRecommendationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataQualityRuleRecommendationRun(request);
+    }
+
+    @SdkInternalApi
+    final GetDataQualityRuleRecommendationRunResult executeGetDataQualityRuleRecommendationRun(
+            GetDataQualityRuleRecommendationRunRequest getDataQualityRuleRecommendationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataQualityRuleRecommendationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataQualityRuleRecommendationRunRequest> request = null;
+        Response<GetDataQualityRuleRecommendationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataQualityRuleRecommendationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDataQualityRuleRecommendationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataQualityRuleRecommendationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataQualityRuleRecommendationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDataQualityRuleRecommendationRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an existing ruleset by identifier or name.
+     * </p>
+     * 
+     * @param getDataQualityRulesetRequest
+     * @return Result of the GetDataQualityRuleset operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.GetDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDataQualityRulesetResult getDataQualityRuleset(GetDataQualityRulesetRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataQualityRuleset(request);
+    }
+
+    @SdkInternalApi
+    final GetDataQualityRulesetResult executeGetDataQualityRuleset(GetDataQualityRulesetRequest getDataQualityRulesetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataQualityRulesetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataQualityRulesetRequest> request = null;
+        Response<GetDataQualityRulesetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataQualityRulesetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataQualityRulesetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataQualityRuleset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataQualityRulesetResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetDataQualityRulesetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a specific run where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param getDataQualityRulesetEvaluationRunRequest
+     * @return Result of the GetDataQualityRulesetEvaluationRun operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.GetDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetDataQualityRulesetEvaluationRunResult getDataQualityRulesetEvaluationRun(GetDataQualityRulesetEvaluationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDataQualityRulesetEvaluationRun(request);
+    }
+
+    @SdkInternalApi
+    final GetDataQualityRulesetEvaluationRunResult executeGetDataQualityRulesetEvaluationRun(
+            GetDataQualityRulesetEvaluationRunRequest getDataQualityRulesetEvaluationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDataQualityRulesetEvaluationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDataQualityRulesetEvaluationRunRequest> request = null;
+        Response<GetDataQualityRulesetEvaluationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDataQualityRulesetEvaluationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getDataQualityRulesetEvaluationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataQualityRulesetEvaluationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDataQualityRulesetEvaluationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDataQualityRulesetEvaluationRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the definition of a specified database.
      * </p>
      * 
@@ -5555,7 +6145,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Retrieves all the development endpoints in this AWS account.
+     * Retrieves all the development endpoints in this Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -5690,6 +6280,29 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * <p>
      * Returns information on a job bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getJobBookmarkRequest
      * @return Result of the GetJobBookmark operation returned by the service.
@@ -8613,6 +9226,261 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
+     * Returns all data quality execution results for your account.
+     * </p>
+     * 
+     * @param listDataQualityResultsRequest
+     * @return Result of the ListDataQualityResults operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListDataQualityResultsResult listDataQualityResults(ListDataQualityResultsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataQualityResults(request);
+    }
+
+    @SdkInternalApi
+    final ListDataQualityResultsResult executeListDataQualityResults(ListDataQualityResultsRequest listDataQualityResultsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataQualityResultsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataQualityResultsRequest> request = null;
+        Response<ListDataQualityResultsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataQualityResultsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataQualityResultsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataQualityResults");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataQualityResultsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDataQualityResultsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the recommendation runs meeting the filter criteria.
+     * </p>
+     * 
+     * @param listDataQualityRuleRecommendationRunsRequest
+     * @return Result of the ListDataQualityRuleRecommendationRuns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityRuleRecommendationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDataQualityRuleRecommendationRunsResult listDataQualityRuleRecommendationRuns(ListDataQualityRuleRecommendationRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataQualityRuleRecommendationRuns(request);
+    }
+
+    @SdkInternalApi
+    final ListDataQualityRuleRecommendationRunsResult executeListDataQualityRuleRecommendationRuns(
+            ListDataQualityRuleRecommendationRunsRequest listDataQualityRuleRecommendationRunsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataQualityRuleRecommendationRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataQualityRuleRecommendationRunsRequest> request = null;
+        Response<ListDataQualityRuleRecommendationRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataQualityRuleRecommendationRunsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDataQualityRuleRecommendationRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataQualityRuleRecommendationRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataQualityRuleRecommendationRunsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDataQualityRuleRecommendationRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param listDataQualityRulesetEvaluationRunsRequest
+     * @return Result of the ListDataQualityRulesetEvaluationRuns operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityRulesetEvaluationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDataQualityRulesetEvaluationRunsResult listDataQualityRulesetEvaluationRuns(ListDataQualityRulesetEvaluationRunsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataQualityRulesetEvaluationRuns(request);
+    }
+
+    @SdkInternalApi
+    final ListDataQualityRulesetEvaluationRunsResult executeListDataQualityRulesetEvaluationRuns(
+            ListDataQualityRulesetEvaluationRunsRequest listDataQualityRulesetEvaluationRunsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataQualityRulesetEvaluationRunsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataQualityRulesetEvaluationRunsRequest> request = null;
+        Response<ListDataQualityRulesetEvaluationRunsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataQualityRulesetEvaluationRunsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDataQualityRulesetEvaluationRunsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataQualityRulesetEvaluationRuns");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataQualityRulesetEvaluationRunsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDataQualityRulesetEvaluationRunsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a paginated list of rulesets for the specified list of Glue tables.
+     * </p>
+     * 
+     * @param listDataQualityRulesetsRequest
+     * @return Result of the ListDataQualityRulesets operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @sample AWSGlue.ListDataQualityRulesets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListDataQualityRulesetsResult listDataQualityRulesets(ListDataQualityRulesetsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDataQualityRulesets(request);
+    }
+
+    @SdkInternalApi
+    final ListDataQualityRulesetsResult executeListDataQualityRulesets(ListDataQualityRulesetsRequest listDataQualityRulesetsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDataQualityRulesetsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDataQualityRulesetsRequest> request = null;
+        Response<ListDataQualityRulesetsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDataQualityRulesetsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDataQualityRulesetsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataQualityRulesets");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDataQualityRulesetsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDataQualityRulesetsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the
      * resources with the specified tag. This operation allows you to see which resources are available in your account,
      * and their names.
@@ -9752,6 +10620,29 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
      * <p>
      * Resets a bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetJobBookmarkRequest
      * @return Result of the ResetJobBookmark operation returned by the service.
@@ -10206,6 +11097,144 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
             HttpResponseHandler<AmazonWebServiceResponse<StartCrawlerScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartCrawlerScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data
+     * Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the
+     * ruleset and modify the generated ruleset to your liking.
+     * </p>
+     * 
+     * @param startDataQualityRuleRecommendationRunRequest
+     * @return Result of the StartDataQualityRuleRecommendationRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @sample AWSGlue.StartDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartDataQualityRuleRecommendationRunResult startDataQualityRuleRecommendationRun(StartDataQualityRuleRecommendationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDataQualityRuleRecommendationRun(request);
+    }
+
+    @SdkInternalApi
+    final StartDataQualityRuleRecommendationRunResult executeStartDataQualityRuleRecommendationRun(
+            StartDataQualityRuleRecommendationRunRequest startDataQualityRuleRecommendationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDataQualityRuleRecommendationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDataQualityRuleRecommendationRunRequest> request = null;
+        Response<StartDataQualityRuleRecommendationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDataQualityRuleRecommendationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDataQualityRuleRecommendationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDataQualityRuleRecommendationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDataQualityRuleRecommendationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDataQualityRuleRecommendationRunResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the
+     * ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the
+     * <code>GetDataQualityResult</code> API.
+     * </p>
+     * 
+     * @param startDataQualityRulesetEvaluationRunRequest
+     * @return Result of the StartDataQualityRulesetEvaluationRun operation returned by the service.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ConflictException
+     *         The <code>CreatePartitions</code> API was called on a table that has indexes enabled.
+     * @sample AWSGlue.StartDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartDataQualityRulesetEvaluationRunResult startDataQualityRulesetEvaluationRun(StartDataQualityRulesetEvaluationRunRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDataQualityRulesetEvaluationRun(request);
+    }
+
+    @SdkInternalApi
+    final StartDataQualityRulesetEvaluationRunResult executeStartDataQualityRulesetEvaluationRun(
+            StartDataQualityRulesetEvaluationRunRequest startDataQualityRulesetEvaluationRunRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDataQualityRulesetEvaluationRunRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDataQualityRulesetEvaluationRunRequest> request = null;
+        Response<StartDataQualityRulesetEvaluationRunResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDataQualityRulesetEvaluationRunRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startDataQualityRulesetEvaluationRunRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDataQualityRulesetEvaluationRun");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartDataQualityRulesetEvaluationRunResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartDataQualityRulesetEvaluationRunResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11647,6 +12676,77 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
             HttpResponseHandler<AmazonWebServiceResponse<UpdateCrawlerScheduleResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new UpdateCrawlerScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the specified data quality ruleset.
+     * </p>
+     * 
+     * @param updateDataQualityRulesetRequest
+     * @return Result of the UpdateDataQualityRuleset operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws AlreadyExistsException
+     *         A resource to be created or added already exists.
+     * @throws IdempotentParameterMismatchException
+     *         The same unique identifier was associated with two different records.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @sample AWSGlue.UpdateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateDataQualityRulesetResult updateDataQualityRuleset(UpdateDataQualityRulesetRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDataQualityRuleset(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDataQualityRulesetResult executeUpdateDataQualityRuleset(UpdateDataQualityRulesetRequest updateDataQualityRulesetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDataQualityRulesetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDataQualityRulesetRequest> request = null;
+        Response<UpdateDataQualityRulesetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDataQualityRulesetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateDataQualityRulesetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataQualityRuleset");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDataQualityRulesetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDataQualityRulesetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

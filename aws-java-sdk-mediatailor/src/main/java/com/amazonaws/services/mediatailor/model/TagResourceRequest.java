@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,27 +27,27 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) associated with the resource.
      * </p>
      */
     private String resourceArn;
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      */
     private java.util.Map<String, String> tags;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) associated with the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any
-     *        playback configuration request.
+     *        The Amazon Resource Name (ARN) associated with the resource.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -56,12 +56,10 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) associated with the resource.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any
-     *         playback configuration request.
+     * @return The Amazon Resource Name (ARN) associated with the resource.
      */
 
     public String getResourceArn() {
@@ -70,13 +68,11 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any playback
-     * configuration request.
+     * The Amazon Resource Name (ARN) associated with the resource.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for the playback configuration. You can get this from the response to any
-     *        playback configuration request.
+     *        The Amazon Resource Name (ARN) associated with the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,10 +83,16 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
-     * @return A comma-separated list of tag key:value pairs.
+     * @return The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources
+     *         to help with organization, access control, and cost tracking. For more information, see <a
+     *         href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *         Resources</a>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -99,11 +101,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        A comma-separated list of tag key:value pairs.
+     *        The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -112,11 +120,17 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A comma-separated list of tag key:value pairs.
+     * The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources to help
+     * with organization, access control, and cost tracking. For more information, see <a
+     * href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     * Resources</a>.
      * </p>
      * 
      * @param tags
-     *        A comma-separated list of tag key:value pairs.
+     *        The tags to assign to the resource. Tags are key-value pairs that you can associate with Amazon resources
+     *        to help with organization, access control, and cost tracking. For more information, see <a
+     *        href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor
+     *        Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

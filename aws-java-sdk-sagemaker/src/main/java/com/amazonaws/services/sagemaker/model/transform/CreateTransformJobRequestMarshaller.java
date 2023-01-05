@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class CreateTransformJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformInput").build();
     private static final MarshallingInfo<StructuredPojo> TRANSFORMOUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformOutput").build();
+    private static final MarshallingInfo<StructuredPojo> DATACAPTURECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataCaptureConfig").build();
     private static final MarshallingInfo<StructuredPojo> TRANSFORMRESOURCES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TransformResources").build();
     private static final MarshallingInfo<StructuredPojo> DATAPROCESSING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -81,6 +83,7 @@ public class CreateTransformJobRequestMarshaller {
             protocolMarshaller.marshall(createTransformJobRequest.getEnvironment(), ENVIRONMENT_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getTransformInput(), TRANSFORMINPUT_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getTransformOutput(), TRANSFORMOUTPUT_BINDING);
+            protocolMarshaller.marshall(createTransformJobRequest.getDataCaptureConfig(), DATACAPTURECONFIG_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getTransformResources(), TRANSFORMRESOURCES_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getDataProcessing(), DATAPROCESSING_BINDING);
             protocolMarshaller.marshall(createTransformJobRequest.getTags(), TAGS_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -854,6 +854,63 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
+     * Retrieves a <code>TagKey</code> configuration from an account.
+     * </p>
+     * 
+     * @param getConfigurationRequest
+     * @return Result of the GetConfiguration operation returned by the service.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @sample AWSAppRegistry.GetConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConfigurationResult getConfiguration(GetConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetConfigurationResult executeGetConfiguration(GetConfigurationRequest getConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConfigurationRequest> request = null;
+        Response<GetConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog AppRegistry");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves a list of all of your applications. Results are paginated.
      * </p>
      * 
@@ -976,8 +1033,15 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
-     * Lists all resources that are associated with specified application. Results are paginated.
+     * Lists all of the resources that are associated with the specified application. Results are paginated.
      * </p>
+     * <note>
+     * <p>
+     * If you share an application, and a consumer account associates a tag query to the application, all of the users
+     * who can access the application can also view the tag values in all accounts that are associated with it using
+     * this API.
+     * </p>
+     * </note>
      * 
      * @param listAssociatedResourcesRequest
      * @return Result of the ListAssociatedResources operation returned by the service.
@@ -1224,6 +1288,68 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
 
     /**
      * <p>
+     * Associates a <code>TagKey</code> configuration to an account.
+     * </p>
+     * 
+     * @param putConfigurationRequest
+     * @return Result of the PutConfiguration operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when processing the request (for example, a resource with the given name already
+     *         exists within the account).
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
+     * @throws ValidationException
+     *         The request has invalid or missing parameters.
+     * @sample AWSAppRegistry.PutConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/PutConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutConfigurationResult putConfiguration(PutConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutConfigurationResult executePutConfiguration(PutConfigurationRequest putConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutConfigurationRequest> request = null;
+        Response<PutConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Service Catalog AppRegistry");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Syncs the resource with current AppRegistry records.
      * </p>
      * <p>
@@ -1433,10 +1559,10 @@ public class AWSAppRegistryClient extends AmazonWebServiceClient implements AWSA
      * @throws ConflictException
      *         There was a conflict when processing the request (for example, a resource with the given name already
      *         exists within the account).
-     * @throws InternalServerException
-     *         The service is experiencing internal problems.
      * @throws ValidationException
      *         The request has invalid or missing parameters.
+     * @throws InternalServerException
+     *         The service is experiencing internal problems.
      * @sample AWSAppRegistry.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/UpdateApplication"
      *      target="_top">AWS API Documentation</a>

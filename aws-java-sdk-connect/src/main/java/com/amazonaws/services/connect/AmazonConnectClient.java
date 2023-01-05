@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,12 +69,6 @@ import com.amazonaws.services.connect.model.transform.*;
  * endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect
  * Endpoints</a>.
  * </p>
- * <note>
- * <p>
- * Working with flows? Check out the <a
- * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
- * </p>
- * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -102,6 +96,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OutboundContactNotPermittedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.OutboundContactNotPermittedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotReadyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.connect.model.transform.ResourceNotReadyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ContactFlowNotPublishedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.ContactFlowNotPublishedExceptionUnmarshaller.getInstance()))
@@ -649,6 +646,16 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Associates a flow with a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param associatePhoneNumberContactFlowRequest
      * @return Result of the AssociatePhoneNumberContactFlow operation returned by the service.
@@ -926,8 +933,28 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Claims an available phone number to your Amazon Connect instance.
+     * Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this
+     * API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group
+     * was created.
      * </p>
+     * <p>
+     * For more information about how to use this operation, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-number.html">Claim a phone number in your
+     * country</a> and <a href=
+     * "https://docs.aws.amazon.com/connect/latest/adminguide/claim-phone-numbers-traffic-distribution-groups.html"
+     * >Claim phone numbers to traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * <important>
+     * <p>
+     * You can call the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchAvailablePhoneNumbers.html"
+     * >SearchAvailablePhoneNumbers</a> API for available phone numbers that you can claim. Call the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html"
+     * >DescribePhoneNumber</a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimPhoneNumber.html">ClaimPhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param claimPhoneNumberRequest
      * @return Result of the ClaimPhoneNumber operation returned by the service.
@@ -1069,7 +1096,8 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param createContactFlowRequest
@@ -1438,6 +1466,18 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Creates a new queue for the specified Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param createQueueRequest
      * @return Result of the CreateQueue operation returned by the service.
@@ -1643,6 +1683,79 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Creates a rule for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+     * Function language</a> to code conditions for the rule.
+     * </p>
+     * 
+     * @param createRuleRequest
+     * @return Result of the CreateRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @sample AmazonConnect.CreateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateRuleResult createRule(CreateRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateRuleResult executeCreateRule(CreateRuleRequest createRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateRuleRequest> request = null;
+        Response<CreateRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -1771,6 +1884,84 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTaskTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTaskTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a traffic distribution group given an Amazon Connect instance that has been replicated.
+     * </p>
+     * <p>
+     * For more information about creating traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-traffic-distribution-groups.html">Set up
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param createTrafficDistributionGroupRequest
+     * @return Result of the CreateTrafficDistributionGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws ResourceNotReadyException
+     *         The resource is not ready.
+     * @sample AmazonConnect.CreateTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateTrafficDistributionGroupResult createTrafficDistributionGroup(CreateTrafficDistributionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTrafficDistributionGroup(request);
+    }
+
+    @SdkInternalApi
+    final CreateTrafficDistributionGroupResult executeCreateTrafficDistributionGroup(CreateTrafficDistributionGroupRequest createTrafficDistributionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createTrafficDistributionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateTrafficDistributionGroupRequest> request = null;
+        Response<CreateTrafficDistributionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateTrafficDistributionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createTrafficDistributionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTrafficDistributionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateTrafficDistributionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateTrafficDistributionGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2470,6 +2661,71 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Deletes a rule for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param deleteRuleRequest
+     * @return Result of the DeleteRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonConnect.DeleteRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteRuleResult executeDeleteRule(DeleteRuleRequest deleteRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteRuleRequest> request = null;
+        Response<DeleteRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -2596,6 +2852,79 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTaskTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTaskTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution
+     * group is created.
+     * </p>
+     * <p>
+     * For more information about deleting traffic distribution groups, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete
+     * traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteTrafficDistributionGroupRequest
+     * @return Result of the DeleteTrafficDistributionGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceInUseException
+     *         That resource is already in use. Please try another.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DeleteTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteTrafficDistributionGroupResult deleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTrafficDistributionGroup(request);
+    }
+
+    @SdkInternalApi
+    final DeleteTrafficDistributionGroupResult executeDeleteTrafficDistributionGroup(DeleteTrafficDistributionGroupRequest deleteTrafficDistributionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteTrafficDistributionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteTrafficDistributionGroupRequest> request = null;
+        Response<DeleteTrafficDistributionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteTrafficDistributionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteTrafficDistributionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTrafficDistributionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteTrafficDistributionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteTrafficDistributionGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3026,7 +3355,8 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param describeContactFlowRequest
@@ -3441,8 +3771,19 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance
+     * Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution
+     * group.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling in the Amazon Web Services Region
+     * where the traffic distribution group was created, you can use either a phone number ARN or UUID value for the
+     * <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed to a traffic distribution
+     * group and you are calling this API in the alternate Amazon Web Services Region associated with the traffic
+     * distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will
+     * receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param describePhoneNumberRequest
      * @return Result of the DescribePhoneNumber operation returned by the service.
@@ -3705,6 +4046,71 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Describes a rule for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param describeRuleRequest
+     * @return Result of the DescribeRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @sample AmazonConnect.DescribeRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeRuleResult describeRule(DescribeRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeRule(request);
+    }
+
+    @SdkInternalApi
+    final DescribeRuleResult executeDescribeRule(DescribeRuleRequest describeRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeRuleRequest> request = null;
+        Response<DescribeRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -3763,6 +4169,74 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSecurityProfileResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeSecurityProfileResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets details and status of a traffic distribution group.
+     * </p>
+     * 
+     * @param describeTrafficDistributionGroupRequest
+     * @return Result of the DescribeTrafficDistributionGroup operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.DescribeTrafficDistributionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeTrafficDistributionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeTrafficDistributionGroupResult describeTrafficDistributionGroup(DescribeTrafficDistributionGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTrafficDistributionGroup(request);
+    }
+
+    @SdkInternalApi
+    final DescribeTrafficDistributionGroupResult executeDescribeTrafficDistributionGroup(
+            DescribeTrafficDistributionGroupRequest describeTrafficDistributionGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeTrafficDistributionGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeTrafficDistributionGroupRequest> request = null;
+        Response<DescribeTrafficDistributionGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeTrafficDistributionGroupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeTrafficDistributionGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTrafficDistributionGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeTrafficDistributionGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeTrafficDistributionGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4385,9 +4859,18 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Removes the flow association from a phone number claimed to your Amazon Connect instance, if a flow association
-     * exists.
+     * Removes the flow association from a phone number claimed to your Amazon Connect instance.
      * </p>
+     * <important>
+     * <p>
+     * If the number is claimed to a traffic distribution group, and you are calling this API using an instance in the
+     * Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone
+     * number ARN or UUID value for the <code>PhoneNumberId</code> URI request parameter. However, if the number is
+     * claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon
+     * Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If
+     * a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param disassociatePhoneNumberContactFlowRequest
      * @return Result of the DisassociatePhoneNumberContactFlow operation returned by the service.
@@ -4650,6 +5133,76 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
             HttpResponseHandler<AmazonWebServiceResponse<DisassociateSecurityKeyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DisassociateSecurityKeyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Dismisses contacts from an agent’s CCP and returns the agent to an available state, which allows the agent to
+     * receive a new routed contact. Contacts can only be dismissed if they are in a <code>MISSED</code>,
+     * <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code> state in the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent Event Stream</a>.
+     * </p>
+     * 
+     * @param dismissUserContactRequest
+     * @return Result of the DismissUserContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.DismissUserContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DismissUserContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DismissUserContactResult dismissUserContact(DismissUserContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeDismissUserContact(request);
+    }
+
+    @SdkInternalApi
+    final DismissUserContactResult executeDismissUserContact(DismissUserContactRequest dismissUserContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(dismissUserContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DismissUserContactRequest> request = null;
+        Response<DismissUserContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DismissUserContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(dismissUserContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DismissUserContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DismissUserContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DismissUserContactResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5069,6 +5622,72 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Retrieves the current traffic distribution for a given traffic distribution group.
+     * </p>
+     * 
+     * @param getTrafficDistributionRequest
+     * @return Result of the GetTrafficDistribution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @sample AmazonConnect.GetTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetTrafficDistribution" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetTrafficDistributionResult getTrafficDistribution(GetTrafficDistributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetTrafficDistribution(request);
+    }
+
+    @SdkInternalApi
+    final GetTrafficDistributionResult executeGetTrafficDistribution(GetTrafficDistributionRequest getTrafficDistributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getTrafficDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetTrafficDistributionRequest> request = null;
+        Response<GetTrafficDistributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetTrafficDistributionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getTrafficDistributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTrafficDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetTrafficDistributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetTrafficDistributionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -5344,7 +5963,8 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * <p>
      * For more information about flows, see <a
@@ -6034,6 +6654,16 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone
      * Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
+     * <important>
+     * <p>
+     * The phone number <code>Arn</code> value that is returned from each of the items in the <a href=
+     * "https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList"
+     * >PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a
+     * <code>ResourceNotFoundException</code>. Instead, use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+     * API. It returns the new phone number ARN that can be used to tag phone number resources.
+     * </p>
+     * </important>
      * 
      * @param listPhoneNumbersRequest
      * @return Result of the ListPhoneNumbers operation returned by the service.
@@ -6097,7 +6727,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Lists phone numbers claimed to your Amazon Connect instance.
+     * Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided
+     * <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions
+     * associated with traffic distribution group.
      * </p>
      * <p>
      * For more information about phone numbers, see <a
@@ -6579,6 +7211,71 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * List all rules for the specified Amazon Connect instance.
+     * </p>
+     * 
+     * @param listRulesRequest
+     * @return Result of the ListRules operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @sample AmazonConnect.ListRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListRulesResult listRules(ListRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListRules(request);
+    }
+
+    @SdkInternalApi
+    final ListRulesResult executeListRules(ListRulesRequest listRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListRulesRequest> request = null;
+        Response<ListRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListRulesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -6922,6 +7619,71 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Lists traffic distribution groups.
+     * </p>
+     * 
+     * @param listTrafficDistributionGroupsRequest
+     * @return Result of the ListTrafficDistributionGroups operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.ListTrafficDistributionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListTrafficDistributionGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTrafficDistributionGroupsResult listTrafficDistributionGroups(ListTrafficDistributionGroupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTrafficDistributionGroups(request);
+    }
+
+    @SdkInternalApi
+    final ListTrafficDistributionGroupsResult executeListTrafficDistributionGroups(ListTrafficDistributionGroupsRequest listTrafficDistributionGroupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTrafficDistributionGroupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTrafficDistributionGroupsRequest> request = null;
+        Response<ListTrafficDistributionGroupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTrafficDistributionGroupsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listTrafficDistributionGroupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTrafficDistributionGroups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTrafficDistributionGroupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListTrafficDistributionGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the use cases for the integration association.
      * </p>
      * 
@@ -7123,6 +7885,76 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Initiates silent monitoring of a contact. The Contact Control Panel (CCP) of the user specified by <i>userId</i>
+     * will be set to silent monitoring mode on the contact.
+     * </p>
+     * 
+     * @param monitorContactRequest
+     * @return Result of the MonitorContact operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws IdempotencyException
+     *         An entity with the same name already exists.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.MonitorContact
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/MonitorContact" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public MonitorContactResult monitorContact(MonitorContactRequest request) {
+        request = beforeClientExecution(request);
+        return executeMonitorContact(request);
+    }
+
+    @SdkInternalApi
+    final MonitorContactResult executeMonitorContact(MonitorContactRequest monitorContactRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(monitorContactRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<MonitorContactRequest> request = null;
+        Response<MonitorContactResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new MonitorContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(monitorContactRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MonitorContact");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<MonitorContactResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new MonitorContactResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact,
      * this sets the agent's next status.
      * </p>
@@ -7197,8 +8029,20 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Releases a phone number previously claimed to an Amazon Connect instance.
+     * Releases a phone number previously claimed to an Amazon Connect instance or traffic distribution group. You can
+     * call this API only in the Amazon Web Services Region where the number was claimed.
      * </p>
+     * <important>
+     * <p>
+     * To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code> API, not the
+     * Amazon Connect console.
+     * </p>
+     * <p>
+     * After releasing a phone number, the phone number enters into a cooldown period of 30 days. It cannot be searched
+     * for or claimed again until the period has ended. If you accidentally release a phone number, contact Amazon Web
+     * Services Support.
+     * </p>
+     * </important>
      * 
      * @param releasePhoneNumberRequest
      * @return Result of the ReleasePhoneNumber operation returned by the service.
@@ -7254,6 +8098,82 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<ReleasePhoneNumberResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReleasePhoneNumberResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Replicates an Amazon Connect instance in the specified Amazon Web Services Region.
+     * </p>
+     * <p>
+     * For more information about replicating an Amazon Connect instance, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a
+     * replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * </p>
+     * 
+     * @param replicateInstanceRequest
+     * @return Result of the ReplicateInstance operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ServiceQuotaExceededException
+     *         The service quota has been exceeded.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ResourceNotReadyException
+     *         The resource is not ready.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @sample AmazonConnect.ReplicateInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ReplicateInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ReplicateInstanceResult replicateInstance(ReplicateInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeReplicateInstance(request);
+    }
+
+    @SdkInternalApi
+    final ReplicateInstanceResult executeReplicateInstance(ReplicateInstanceRequest replicateInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(replicateInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ReplicateInstanceRequest> request = null;
+        Response<ReplicateInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ReplicateInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(replicateInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReplicateInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ReplicateInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ReplicateInstanceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7332,7 +8252,9 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Searches for available phone numbers that you can claim to your Amazon Connect instance.
+     * Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution
+     * group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both
+     * Amazon Web Services Regions associated with the traffic distribution group.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -7605,6 +8527,11 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Searches users in an Amazon Connect instance, with optional filtering.
      * </p>
+     * <note>
+     * <p>
+     * <code>AfterContactWorkTimeLimit</code> is returned in milliseconds.
+     * </p>
+     * </note>
      * 
      * @param searchUsersRequest
      * @return Result of the SearchUsers operation returned by the service.
@@ -8179,7 +9106,8 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * @throws InvalidRequestException
      *         The request is not valid.
      * @throws ContactNotFoundException
-     *         The contact with the specified ID is not active or does not exist.
+     *         The contact with the specified ID is not active or does not exist. Applies to Voice calls only, not to
+     *         Chat, Task, or Voice Callback.
      * @throws InvalidParameterException
      *         One or more of the specified parameters are not valid.
      * @throws ResourceNotFoundException
@@ -8910,7 +9838,8 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param updateContactFlowContentRequest
@@ -9193,7 +10122,8 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * </p>
      * <p>
      * You can also create and update flows using the <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow
+     * language</a>.
      * </p>
      * 
      * @param updateContactFlowNameRequest
@@ -9540,9 +10470,115 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
-     * Updates your claimed phone number from its current Amazon Connect instance to another Amazon Connect instance in
-     * the same Region.
+     * Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically
+     * disconnected from a chat due to idleness. You can set four timers:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Customer idle timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Customer auto-disconnect timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agent idle timeout
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Agent auto-disconnect timeout
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about how chat timeouts work, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for
+     * human participants</a>.
+     * </p>
+     * 
+     * @param updateParticipantRoleConfigRequest
+     * @return Result of the UpdateParticipantRoleConfig operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws InvalidParameterException
+     *         One or more of the specified parameters are not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateParticipantRoleConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateParticipantRoleConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateParticipantRoleConfigResult updateParticipantRoleConfig(UpdateParticipantRoleConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateParticipantRoleConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateParticipantRoleConfigResult executeUpdateParticipantRoleConfig(UpdateParticipantRoleConfigRequest updateParticipantRoleConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateParticipantRoleConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateParticipantRoleConfigRequest> request = null;
+        Response<UpdateParticipantRoleConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateParticipantRoleConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateParticipantRoleConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateParticipantRoleConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateParticipantRoleConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateParticipantRoleConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to
+     * another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region.
+     * </p>
+     * <important>
+     * <p>
+     * You can call <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber
+     * </a> API to verify the status of a previous <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
+     * operation.
+     * </p>
+     * </important>
      * 
      * @param updatePhoneNumberRequest
      * @return Result of the UpdatePhoneNumber operation returned by the service.
@@ -9825,6 +10861,18 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
      * <p>
      * Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.
      * </p>
+     * <important>
+     * <p>
+     * If the number being used in the input is claimed to a traffic distribution group, and you are calling this API
+     * using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use
+     * either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a
+     * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a>
+     * request body parameter. However, if the number is claimed to a traffic distribution group and you are calling
+     * this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution
+     * group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a
+     * <code>ResourceNotFoundException</code>.
+     * </p>
+     * </important>
      * 
      * @param updateQueueOutboundCallerConfigRequest
      * @return Result of the UpdateQueueOutboundCallerConfig operation returned by the service.
@@ -10366,6 +11414,77 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
     /**
      * <p>
+     * Updates a rule for the specified Amazon Connect instance.
+     * </p>
+     * <p>
+     * Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules
+     * Function language</a> to code conditions for the rule.
+     * </p>
+     * 
+     * @param updateRuleRequest
+     * @return Result of the UpdateRule operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @sample AmazonConnect.UpdateRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateRuleResult updateRule(UpdateRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateRuleResult executeUpdateRule(UpdateRuleRequest updateRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateRuleRequest> request = null;
+        Response<UpdateRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * This API is in preview release for Amazon Connect and is subject to change.
      * </p>
      * <p>
@@ -10491,6 +11610,81 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTaskTemplateResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateTaskTemplateResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the traffic distribution for a given traffic distribution group.
+     * </p>
+     * <p>
+     * For more information about updating a traffic distribution group, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/update-telephony-traffic-distribution.html">Update
+     * telephony traffic distribution across Amazon Web Services Regions </a> in the <i>Amazon Connect Administrator
+     * Guide</i>.
+     * </p>
+     * 
+     * @param updateTrafficDistributionRequest
+     * @return Result of the UpdateTrafficDistribution operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws AccessDeniedException
+     *         You do not have sufficient permissions to perform this action.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws ResourceConflictException
+     *         A resource already has that name.
+     * @throws ThrottlingException
+     *         The throttling limit has been exceeded.
+     * @throws InternalServiceException
+     *         Request processing failed because of an error or failure with the service.
+     * @sample AmazonConnect.UpdateTrafficDistribution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateTrafficDistribution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateTrafficDistributionResult updateTrafficDistribution(UpdateTrafficDistributionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTrafficDistribution(request);
+    }
+
+    @SdkInternalApi
+    final UpdateTrafficDistributionResult executeUpdateTrafficDistribution(UpdateTrafficDistributionRequest updateTrafficDistributionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateTrafficDistributionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateTrafficDistributionRequest> request = null;
+        Response<UpdateTrafficDistributionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateTrafficDistributionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateTrafficDistributionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Connect");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTrafficDistribution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateTrafficDistributionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateTrafficDistributionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

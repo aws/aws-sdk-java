@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -188,6 +188,9 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                             new JsonErrorShapeMetadata().withErrorCode("IncorrectCidrStateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.globalaccelerator.model.transform.IncorrectCidrStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TransactionInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.TransactionInProgressExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ByoipCidrNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.globalaccelerator.model.transform.ByoipCidrNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -323,6 +326,95 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<AddCustomRoutingEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AddCustomRoutingEndpointsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is the recommended option for
+     * adding endpoints. The alternative options are to add endpoints when you create an endpoint group (with the <a
+     * href
+     * ="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+     * API) or when you update an endpoint group (with the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API).
+     * </p>
+     * <p>
+     * There are two advantages to using <code>AddEndpoints</code> to add endpoints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator only has to resolve the new endpoints that you're adding.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's more convenient, because you don't need to specify all of the current endpoints that are already in the
+     * endpoint group in addition to the new endpoints that you want to add.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param addEndpointsRequest
+     * @return Result of the AddEndpoints operation returned by the service.
+     * @throws TransactionInProgressException
+     *         There's already a transaction in progress. Another transaction can't be processed.
+     * @throws EndpointGroupNotFoundException
+     *         The endpoint group that you specified doesn't exist.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws LimitExceededException
+     *         Processing your request would cause you to exceed an Global Accelerator limit.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @sample AWSGlobalAccelerator.AddEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/AddEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public AddEndpointsResult addEndpoints(AddEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final AddEndpointsResult executeAddEndpoints(AddEndpointsRequest addEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddEndpointsRequest> request = null;
+        Response<AddEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddEndpointsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2784,6 +2876,94 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
             HttpResponseHandler<AmazonWebServiceResponse<RemoveCustomRoutingEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RemoveCustomRoutingEndpointsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove endpoints from an endpoint group.
+     * </p>
+     * <p>
+     * The <code>RemoveEndpoints</code> API operation is the recommended option for removing endpoints. The alternative
+     * is to remove endpoints by updating an endpoint group by using the <a
+     * href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html"
+     * >UpdateEndpointGroup</a> API operation. There are two advantages to using <code>AddEndpoints</code> to remove
+     * endpoints instead:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It's more convenient, because you only need to specify the endpoints that you want to remove. With the
+     * <code>UpdateEndpointGroup</code> API operation, you must specify all of the endpoints in the endpoint group
+     * except the ones that you want to remove from the group.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It's faster, because Global Accelerator doesn't need to resolve any endpoints. With the
+     * <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve all of the endpoints that remain
+     * in the group.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param removeEndpointsRequest
+     * @return Result of the RemoveEndpoints operation returned by the service.
+     * @throws EndpointGroupNotFoundException
+     *         The endpoint group that you specified doesn't exist.
+     * @throws InternalServiceErrorException
+     *         There was an internal error for Global Accelerator.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
+     * @throws TransactionInProgressException
+     *         There's already a transaction in progress. Another transaction can't be processed.
+     * @sample AWSGlobalAccelerator.RemoveEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/RemoveEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveEndpointsResult removeEndpoints(RemoveEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final RemoveEndpointsResult executeRemoveEndpoints(RemoveEndpointsRequest removeEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveEndpointsRequest> request = null;
+        Response<RemoveEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Global Accelerator");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RemoveEndpointsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

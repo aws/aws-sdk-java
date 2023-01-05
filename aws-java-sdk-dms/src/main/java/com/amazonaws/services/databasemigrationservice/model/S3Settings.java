@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -563,7 +563,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer cdcMaxBatchInterval;
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -5037,7 +5037,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -5048,7 +5048,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param cdcMinFileSize
-     *        Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+     *        Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
      *        <p>
      *        When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write
      *        is triggered by whichever parameter condition is met first within an DMS CloudFormation template.
@@ -5063,7 +5063,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -5073,7 +5073,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * The default value is 32 MB.
      * </p>
      * 
-     * @return Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+     * @return Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
      *         <p>
      *         When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write
      *         is triggered by whichever parameter condition is met first within an DMS CloudFormation template.
@@ -5088,7 +5088,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.
+     * Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.
      * </p>
      * <p>
      * When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write is
@@ -5099,7 +5099,7 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param cdcMinFileSize
-     *        Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+     *        Minimum file size, defined in kilobytes, to reach for a file output to Amazon S3.</p>
      *        <p>
      *        When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file write
      *        is triggered by whichever parameter condition is met first within an DMS CloudFormation template.

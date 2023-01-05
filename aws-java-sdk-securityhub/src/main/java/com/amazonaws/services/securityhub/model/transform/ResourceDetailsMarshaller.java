@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -187,6 +187,14 @@ public class ResourceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsBackupBackupPlan").build();
     private static final MarshallingInfo<StructuredPojo> AWSBACKUPRECOVERYPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsBackupRecoveryPoint").build();
+    private static final MarshallingInfo<StructuredPojo> AWSEC2LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsEc2LaunchTemplate").build();
+    private static final MarshallingInfo<StructuredPojo> AWSSAGEMAKERNOTEBOOKINSTANCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsSageMakerNotebookInstance").build();
+    private static final MarshallingInfo<StructuredPojo> AWSWAFV2WEBACL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsWafv2WebAcl").build();
+    private static final MarshallingInfo<StructuredPojo> AWSWAFV2RULEGROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AwsWafv2RuleGroup").build();
 
     private static final ResourceDetailsMarshaller instance = new ResourceDetailsMarshaller();
 
@@ -283,6 +291,10 @@ public class ResourceDetailsMarshaller {
             protocolMarshaller.marshall(resourceDetails.getAwsBackupBackupVault(), AWSBACKUPBACKUPVAULT_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsBackupBackupPlan(), AWSBACKUPBACKUPPLAN_BINDING);
             protocolMarshaller.marshall(resourceDetails.getAwsBackupRecoveryPoint(), AWSBACKUPRECOVERYPOINT_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsEc2LaunchTemplate(), AWSEC2LAUNCHTEMPLATE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsSageMakerNotebookInstance(), AWSSAGEMAKERNOTEBOOKINSTANCE_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsWafv2WebAcl(), AWSWAFV2WEBACL_BINDING);
+            protocolMarshaller.marshall(resourceDetails.getAwsWafv2RuleGroup(), AWSWAFV2RULEGROUP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

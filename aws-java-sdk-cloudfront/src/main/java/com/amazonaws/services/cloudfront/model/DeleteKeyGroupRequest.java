@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DeleteKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
     private String id;
     /**
      * <p>
-     * The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To
+     * The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To
      * get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      * </p>
      */
@@ -84,12 +84,12 @@ public class DeleteKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To
+     * The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To
      * get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the key group that you are deleting. The version is the key group’s <code>ETag</code>
+     *        The version of the key group that you are deleting. The version is the key group's <code>ETag</code>
      *        value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      */
 
@@ -99,11 +99,11 @@ public class DeleteKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To
+     * The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To
      * get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      * </p>
      * 
-     * @return The version of the key group that you are deleting. The version is the key group’s <code>ETag</code>
+     * @return The version of the key group that you are deleting. The version is the key group's <code>ETag</code>
      *         value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      */
 
@@ -113,12 +113,12 @@ public class DeleteKeyGroupRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the key group that you are deleting. The version is the key group’s <code>ETag</code> value. To
+     * The version of the key group that you are deleting. The version is the key group's <code>ETag</code> value. To
      * get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      * </p>
      * 
      * @param ifMatch
-     *        The version of the key group that you are deleting. The version is the key group’s <code>ETag</code>
+     *        The version of the key group that you are deleting. The version is the key group's <code>ETag</code>
      *        value. To get the <code>ETag</code>, use <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

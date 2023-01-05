@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class ListPricingPlansResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.List<PricingPlanListElement> pricingPlans;
     /**
      * <p>
-     * The pagination token used on subsequent calls to get pricing plans.
+     * The pagination token that's used on subsequent calls to get pricing plans.
      * </p>
      */
     private String nextToken;
@@ -154,11 +154,11 @@ public class ListPricingPlansResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get pricing plans.
+     * The pagination token that's used on subsequent calls to get pricing plans.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to get pricing plans.
+     *        The pagination token that's used on subsequent calls to get pricing plans.
      */
 
     public void setNextToken(String nextToken) {
@@ -167,10 +167,10 @@ public class ListPricingPlansResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get pricing plans.
+     * The pagination token that's used on subsequent calls to get pricing plans.
      * </p>
      * 
-     * @return The pagination token used on subsequent calls to get pricing plans.
+     * @return The pagination token that's used on subsequent calls to get pricing plans.
      */
 
     public String getNextToken() {
@@ -179,11 +179,11 @@ public class ListPricingPlansResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The pagination token used on subsequent calls to get pricing plans.
+     * The pagination token that's used on subsequent calls to get pricing plans.
      * </p>
      * 
      * @param nextToken
-     *        The pagination token used on subsequent calls to get pricing plans.
+     *        The pagination token that's used on subsequent calls to get pricing plans.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

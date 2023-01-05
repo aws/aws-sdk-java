@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.iottwinmaker.model.transform;
 
+import java.util.Map;
 import java.math.*;
 
 import javax.annotation.Generated;
@@ -52,6 +53,20 @@ public class GetPropertyValueResultJsonUnmarshaller implements Unmarshaller<GetP
                     context.nextToken();
                     getPropertyValueResult.setPropertyValues(new MapUnmarshaller<String, PropertyLatestValue>(context.getUnmarshaller(String.class),
                             PropertyLatestValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    context.nextToken();
+                    getPropertyValueResult.setNextToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("tabularPropertyValues", targetDepth)) {
+                    context.nextToken();
+                    getPropertyValueResult.setTabularPropertyValues(new ListUnmarshaller<java.util.List<java.util.Map<String, DataValue>>>(
+                            new ListUnmarshaller<java.util.Map<String, DataValue>>(new MapUnmarshaller<String, DataValue>(
+                                    context.getUnmarshaller(String.class), DataValueJsonUnmarshaller.getInstance()))
+
+                    )
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

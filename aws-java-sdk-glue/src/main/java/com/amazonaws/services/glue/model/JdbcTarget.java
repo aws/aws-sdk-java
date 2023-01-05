@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,17 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> exclusions;
+    /**
+     * <p>
+     * Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     * responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments
+     * associated with a column or table in the database.
+     * </p>
+     * <p>
+     * If you do not need additional metadata, keep the field empty.
+     * </p>
+     */
+    private java.util.List<String> enableAdditionalMetadata;
 
     /**
      * <p>
@@ -207,6 +218,149 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     * responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments
+     * associated with a column or table in the database.
+     * </p>
+     * <p>
+     * If you do not need additional metadata, keep the field empty.
+     * </p>
+     * 
+     * @return Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     *         responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides
+     *         comments associated with a column or table in the database.</p>
+     *         <p>
+     *         If you do not need additional metadata, keep the field empty.
+     * @see JdbcMetadataEntry
+     */
+
+    public java.util.List<String> getEnableAdditionalMetadata() {
+        return enableAdditionalMetadata;
+    }
+
+    /**
+     * <p>
+     * Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     * responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments
+     * associated with a column or table in the database.
+     * </p>
+     * <p>
+     * If you do not need additional metadata, keep the field empty.
+     * </p>
+     * 
+     * @param enableAdditionalMetadata
+     *        Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     *        responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides
+     *        comments associated with a column or table in the database.</p>
+     *        <p>
+     *        If you do not need additional metadata, keep the field empty.
+     * @see JdbcMetadataEntry
+     */
+
+    public void setEnableAdditionalMetadata(java.util.Collection<String> enableAdditionalMetadata) {
+        if (enableAdditionalMetadata == null) {
+            this.enableAdditionalMetadata = null;
+            return;
+        }
+
+        this.enableAdditionalMetadata = new java.util.ArrayList<String>(enableAdditionalMetadata);
+    }
+
+    /**
+     * <p>
+     * Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     * responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments
+     * associated with a column or table in the database.
+     * </p>
+     * <p>
+     * If you do not need additional metadata, keep the field empty.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEnableAdditionalMetadata(java.util.Collection)} or
+     * {@link #withEnableAdditionalMetadata(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param enableAdditionalMetadata
+     *        Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     *        responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides
+     *        comments associated with a column or table in the database.</p>
+     *        <p>
+     *        If you do not need additional metadata, keep the field empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JdbcMetadataEntry
+     */
+
+    public JdbcTarget withEnableAdditionalMetadata(String... enableAdditionalMetadata) {
+        if (this.enableAdditionalMetadata == null) {
+            setEnableAdditionalMetadata(new java.util.ArrayList<String>(enableAdditionalMetadata.length));
+        }
+        for (String ele : enableAdditionalMetadata) {
+            this.enableAdditionalMetadata.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     * responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments
+     * associated with a column or table in the database.
+     * </p>
+     * <p>
+     * If you do not need additional metadata, keep the field empty.
+     * </p>
+     * 
+     * @param enableAdditionalMetadata
+     *        Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     *        responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides
+     *        comments associated with a column or table in the database.</p>
+     *        <p>
+     *        If you do not need additional metadata, keep the field empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JdbcMetadataEntry
+     */
+
+    public JdbcTarget withEnableAdditionalMetadata(java.util.Collection<String> enableAdditionalMetadata) {
+        setEnableAdditionalMetadata(enableAdditionalMetadata);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     * responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides comments
+     * associated with a column or table in the database.
+     * </p>
+     * <p>
+     * If you do not need additional metadata, keep the field empty.
+     * </p>
+     * 
+     * @param enableAdditionalMetadata
+     *        Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional metadata in table
+     *        responses. <code>RAWTYPES</code> provides the native-level datatype. <code>COMMENTS</code> provides
+     *        comments associated with a column or table in the database.</p>
+     *        <p>
+     *        If you do not need additional metadata, keep the field empty.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JdbcMetadataEntry
+     */
+
+    public JdbcTarget withEnableAdditionalMetadata(JdbcMetadataEntry... enableAdditionalMetadata) {
+        java.util.ArrayList<String> enableAdditionalMetadataCopy = new java.util.ArrayList<String>(enableAdditionalMetadata.length);
+        for (JdbcMetadataEntry value : enableAdditionalMetadata) {
+            enableAdditionalMetadataCopy.add(value.toString());
+        }
+        if (getEnableAdditionalMetadata() == null) {
+            setEnableAdditionalMetadata(enableAdditionalMetadataCopy);
+        } else {
+            getEnableAdditionalMetadata().addAll(enableAdditionalMetadataCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -223,7 +377,9 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
         if (getPath() != null)
             sb.append("Path: ").append(getPath()).append(",");
         if (getExclusions() != null)
-            sb.append("Exclusions: ").append(getExclusions());
+            sb.append("Exclusions: ").append(getExclusions()).append(",");
+        if (getEnableAdditionalMetadata() != null)
+            sb.append("EnableAdditionalMetadata: ").append(getEnableAdditionalMetadata());
         sb.append("}");
         return sb.toString();
     }
@@ -250,6 +406,10 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExclusions() != null && other.getExclusions().equals(this.getExclusions()) == false)
             return false;
+        if (other.getEnableAdditionalMetadata() == null ^ this.getEnableAdditionalMetadata() == null)
+            return false;
+        if (other.getEnableAdditionalMetadata() != null && other.getEnableAdditionalMetadata().equals(this.getEnableAdditionalMetadata()) == false)
+            return false;
         return true;
     }
 
@@ -261,6 +421,7 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getConnectionName() == null) ? 0 : getConnectionName().hashCode());
         hashCode = prime * hashCode + ((getPath() == null) ? 0 : getPath().hashCode());
         hashCode = prime * hashCode + ((getExclusions() == null) ? 0 : getExclusions().hashCode());
+        hashCode = prime * hashCode + ((getEnableAdditionalMetadata() == null) ? 0 : getEnableAdditionalMetadata().hashCode());
         return hashCode;
     }
 

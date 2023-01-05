@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeSourceServersRequestFiltersMarshaller {
 
+    private static final MarshallingInfo<List> APPLICATIONIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("applicationIDs").build();
     private static final MarshallingInfo<Boolean> ISARCHIVED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isArchived").build();
     private static final MarshallingInfo<List> LIFECYCLESTATES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -53,6 +55,7 @@ public class DescribeSourceServersRequestFiltersMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeSourceServersRequestFilters.getApplicationIDs(), APPLICATIONIDS_BINDING);
             protocolMarshaller.marshall(describeSourceServersRequestFilters.getIsArchived(), ISARCHIVED_BINDING);
             protocolMarshaller.marshall(describeSourceServersRequestFilters.getLifeCycleStates(), LIFECYCLESTATES_BINDING);
             protocolMarshaller.marshall(describeSourceServersRequestFilters.getReplicationTypes(), REPLICATIONTYPES_BINDING);

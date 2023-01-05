@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,13 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      */
     private Double minFinalSegmentLength;
     /**
+     * Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We
+     * recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player
+     * configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second.
+     * Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+     */
+    private String mpdManifestBandwidthType;
+    /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
      * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
      * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -131,6 +138,14 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
      * GOP boundary.
      */
     private String segmentLengthControl;
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     * compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be
+     * greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4
+     * video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to
+     * zero, and sample composition time offsets will increment using signed integers.
+     */
+    private String videoCompositionOffsets;
     /**
      * If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your
      * transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH
@@ -822,6 +837,85 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We
+     * recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player
+     * configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second.
+     * Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+     * 
+     * @param mpdManifestBandwidthType
+     *        Specify how the value for bandwidth is determined for each video Representation in your output MPD
+     *        manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your
+     *        downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video
+     *        output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in
+     *        bits per second.
+     * @see DashIsoMpdManifestBandwidthType
+     */
+
+    public void setMpdManifestBandwidthType(String mpdManifestBandwidthType) {
+        this.mpdManifestBandwidthType = mpdManifestBandwidthType;
+    }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We
+     * recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player
+     * configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second.
+     * Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+     * 
+     * @return Specify how the value for bandwidth is determined for each video Representation in your output MPD
+     *         manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your
+     *         downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video
+     *         output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in
+     *         bits per second.
+     * @see DashIsoMpdManifestBandwidthType
+     */
+
+    public String getMpdManifestBandwidthType() {
+        return this.mpdManifestBandwidthType;
+    }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We
+     * recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player
+     * configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second.
+     * Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+     * 
+     * @param mpdManifestBandwidthType
+     *        Specify how the value for bandwidth is determined for each video Representation in your output MPD
+     *        manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your
+     *        downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video
+     *        output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in
+     *        bits per second.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoMpdManifestBandwidthType
+     */
+
+    public DashIsoGroupSettings withMpdManifestBandwidthType(String mpdManifestBandwidthType) {
+        setMpdManifestBandwidthType(mpdManifestBandwidthType);
+        return this;
+    }
+
+    /**
+     * Specify how the value for bandwidth is determined for each video Representation in your output MPD manifest. We
+     * recommend that you choose a MPD manifest bandwidth type that is compatible with your downstream player
+     * configuration. Max: Use the same value that you specify for Max bitrate in the video output, in bits per second.
+     * Average: Use the calculated average bitrate of the encoded video output, in bits per second.
+     * 
+     * @param mpdManifestBandwidthType
+     *        Specify how the value for bandwidth is determined for each video Representation in your output MPD
+     *        manifest. We recommend that you choose a MPD manifest bandwidth type that is compatible with your
+     *        downstream player configuration. Max: Use the same value that you specify for Max bitrate in the video
+     *        output, in bits per second. Average: Use the calculated average bitrate of the encoded video output, in
+     *        bits per second.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoMpdManifestBandwidthType
+     */
+
+    public DashIsoGroupSettings withMpdManifestBandwidthType(DashIsoMpdManifestBandwidthType mpdManifestBandwidthType) {
+        this.mpdManifestBandwidthType = mpdManifestBandwidthType.toString();
+        return this;
+    }
+
+    /**
      * Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service
      * signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand
      * (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose
@@ -1193,6 +1287,89 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
     }
 
     /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     * compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be
+     * greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4
+     * video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to
+     * zero, and sample composition time offsets will increment using signed integers.
+     * 
+     * @param videoCompositionOffsets
+     *        Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     *        compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time
+     *        may be greater than zero, and sample composition time offsets will increment using unsigned integers. For
+     *        strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation
+     *        time will be equal to zero, and sample composition time offsets will increment using signed integers.
+     * @see DashIsoVideoCompositionOffsets
+     */
+
+    public void setVideoCompositionOffsets(String videoCompositionOffsets) {
+        this.videoCompositionOffsets = videoCompositionOffsets;
+    }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     * compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be
+     * greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4
+     * video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to
+     * zero, and sample composition time offsets will increment using signed integers.
+     * 
+     * @return Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     *         compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time
+     *         may be greater than zero, and sample composition time offsets will increment using unsigned integers. For
+     *         strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation
+     *         time will be equal to zero, and sample composition time offsets will increment using signed integers.
+     * @see DashIsoVideoCompositionOffsets
+     */
+
+    public String getVideoCompositionOffsets() {
+        return this.videoCompositionOffsets;
+    }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     * compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be
+     * greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4
+     * video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to
+     * zero, and sample composition time offsets will increment using signed integers.
+     * 
+     * @param videoCompositionOffsets
+     *        Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     *        compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time
+     *        may be greater than zero, and sample composition time offsets will increment using unsigned integers. For
+     *        strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation
+     *        time will be equal to zero, and sample composition time offsets will increment using signed integers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoVideoCompositionOffsets
+     */
+
+    public DashIsoGroupSettings withVideoCompositionOffsets(String videoCompositionOffsets) {
+        setVideoCompositionOffsets(videoCompositionOffsets);
+        return this;
+    }
+
+    /**
+     * Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     * compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time may be
+     * greater than zero, and sample composition time offsets will increment using unsigned integers. For strict fMP4
+     * video and audio timing, set Video composition offsets to Signed. The earliest presentation time will be equal to
+     * zero, and sample composition time offsets will increment using signed integers.
+     * 
+     * @param videoCompositionOffsets
+     *        Specify the video sample composition time offset mode in the output fMP4 TRUN box. For wider player
+     *        compatibility, set Video composition offsets to Unsigned or leave blank. The earliest presentation time
+     *        may be greater than zero, and sample composition time offsets will increment using unsigned integers. For
+     *        strict fMP4 video and audio timing, set Video composition offsets to Signed. The earliest presentation
+     *        time will be equal to zero, and sample composition time offsets will increment using signed integers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DashIsoVideoCompositionOffsets
+     */
+
+    public DashIsoGroupSettings withVideoCompositionOffsets(DashIsoVideoCompositionOffsets videoCompositionOffsets) {
+        this.videoCompositionOffsets = videoCompositionOffsets.toString();
+        return this;
+    }
+
+    /**
      * If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your
      * transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH
      * manifest. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at
@@ -1311,6 +1488,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             sb.append("MinBufferTime: ").append(getMinBufferTime()).append(",");
         if (getMinFinalSegmentLength() != null)
             sb.append("MinFinalSegmentLength: ").append(getMinFinalSegmentLength()).append(",");
+        if (getMpdManifestBandwidthType() != null)
+            sb.append("MpdManifestBandwidthType: ").append(getMpdManifestBandwidthType()).append(",");
         if (getMpdProfile() != null)
             sb.append("MpdProfile: ").append(getMpdProfile()).append(",");
         if (getPtsOffsetHandlingForBFrames() != null)
@@ -1321,6 +1500,8 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             sb.append("SegmentLength: ").append(getSegmentLength()).append(",");
         if (getSegmentLengthControl() != null)
             sb.append("SegmentLengthControl: ").append(getSegmentLengthControl()).append(",");
+        if (getVideoCompositionOffsets() != null)
+            sb.append("VideoCompositionOffsets: ").append(getVideoCompositionOffsets()).append(",");
         if (getWriteSegmentTimelineInRepresentation() != null)
             sb.append("WriteSegmentTimelineInRepresentation: ").append(getWriteSegmentTimelineInRepresentation());
         sb.append("}");
@@ -1386,6 +1567,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
             return false;
         if (other.getMinFinalSegmentLength() != null && other.getMinFinalSegmentLength().equals(this.getMinFinalSegmentLength()) == false)
             return false;
+        if (other.getMpdManifestBandwidthType() == null ^ this.getMpdManifestBandwidthType() == null)
+            return false;
+        if (other.getMpdManifestBandwidthType() != null && other.getMpdManifestBandwidthType().equals(this.getMpdManifestBandwidthType()) == false)
+            return false;
         if (other.getMpdProfile() == null ^ this.getMpdProfile() == null)
             return false;
         if (other.getMpdProfile() != null && other.getMpdProfile().equals(this.getMpdProfile()) == false)
@@ -1405,6 +1590,10 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         if (other.getSegmentLengthControl() == null ^ this.getSegmentLengthControl() == null)
             return false;
         if (other.getSegmentLengthControl() != null && other.getSegmentLengthControl().equals(this.getSegmentLengthControl()) == false)
+            return false;
+        if (other.getVideoCompositionOffsets() == null ^ this.getVideoCompositionOffsets() == null)
+            return false;
+        if (other.getVideoCompositionOffsets() != null && other.getVideoCompositionOffsets().equals(this.getVideoCompositionOffsets()) == false)
             return false;
         if (other.getWriteSegmentTimelineInRepresentation() == null ^ this.getWriteSegmentTimelineInRepresentation() == null)
             return false;
@@ -1431,11 +1620,13 @@ public class DashIsoGroupSettings implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getImageBasedTrickPlaySettings() == null) ? 0 : getImageBasedTrickPlaySettings().hashCode());
         hashCode = prime * hashCode + ((getMinBufferTime() == null) ? 0 : getMinBufferTime().hashCode());
         hashCode = prime * hashCode + ((getMinFinalSegmentLength() == null) ? 0 : getMinFinalSegmentLength().hashCode());
+        hashCode = prime * hashCode + ((getMpdManifestBandwidthType() == null) ? 0 : getMpdManifestBandwidthType().hashCode());
         hashCode = prime * hashCode + ((getMpdProfile() == null) ? 0 : getMpdProfile().hashCode());
         hashCode = prime * hashCode + ((getPtsOffsetHandlingForBFrames() == null) ? 0 : getPtsOffsetHandlingForBFrames().hashCode());
         hashCode = prime * hashCode + ((getSegmentControl() == null) ? 0 : getSegmentControl().hashCode());
         hashCode = prime * hashCode + ((getSegmentLength() == null) ? 0 : getSegmentLength().hashCode());
         hashCode = prime * hashCode + ((getSegmentLengthControl() == null) ? 0 : getSegmentLengthControl().hashCode());
+        hashCode = prime * hashCode + ((getVideoCompositionOffsets() == null) ? 0 : getVideoCompositionOffsets().hashCode());
         hashCode = prime * hashCode + ((getWriteSegmentTimelineInRepresentation() == null) ? 0 : getWriteSegmentTimelineInRepresentation().hashCode());
         return hashCode;
     }

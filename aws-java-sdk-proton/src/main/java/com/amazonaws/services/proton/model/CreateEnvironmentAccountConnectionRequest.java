@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,13 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
      * </p>
      */
     private String clientToken;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     */
+    private String codebuildRoleArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
@@ -126,6 +133,55 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
 
     public CreateEnvironmentAccountConnectionRequest withClientToken(String clientToken) {
         setClientToken(clientToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     *        provision infrastructure resources using CodeBuild-based provisioning in the associated environment
+     *        account.
+     */
+
+    public void setCodebuildRoleArn(String codebuildRoleArn) {
+        this.codebuildRoleArn = codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role
+     *         to provision infrastructure resources using CodeBuild-based provisioning in the associated environment
+     *         account.
+     */
+
+    public String getCodebuildRoleArn() {
+        return this.codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     *        provision infrastructure resources using CodeBuild-based provisioning in the associated environment
+     *        account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentAccountConnectionRequest withCodebuildRoleArn(String codebuildRoleArn) {
+        setCodebuildRoleArn(codebuildRoleArn);
         return this;
     }
 
@@ -500,6 +556,8 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
         sb.append("{");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
+        if (getCodebuildRoleArn() != null)
+            sb.append("CodebuildRoleArn: ").append(getCodebuildRoleArn()).append(",");
         if (getComponentRoleArn() != null)
             sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getEnvironmentName() != null)
@@ -527,6 +585,10 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
+        if (other.getCodebuildRoleArn() == null ^ this.getCodebuildRoleArn() == null)
+            return false;
+        if (other.getCodebuildRoleArn() != null && other.getCodebuildRoleArn().equals(this.getCodebuildRoleArn()) == false)
             return false;
         if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
             return false;
@@ -557,6 +619,7 @@ public class CreateEnvironmentAccountConnectionRequest extends com.amazonaws.Ama
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
+        hashCode = prime * hashCode + ((getCodebuildRoleArn() == null) ? 0 : getCodebuildRoleArn().hashCode());
         hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());
         hashCode = prime * hashCode + ((getManagementAccountId() == null) ? 0 : getManagementAccountId().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,28 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * List of reserved OpenSearch instances.
+     * List of Reserved Instances in the current Region.
      * </p>
      */
     private java.util.List<ReservedInstance> reservedInstances;
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        Provides an identifier to allow retrieval of paginated results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -51,10 +55,13 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
-     * @return Provides an identifier to allow retrieval of paginated results.
+     * @return When <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -63,11 +70,14 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        Provides an identifier to allow retrieval of paginated results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +88,10 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of reserved OpenSearch instances.
+     * List of Reserved Instances in the current Region.
      * </p>
      * 
-     * @return List of reserved OpenSearch instances.
+     * @return List of Reserved Instances in the current Region.
      */
 
     public java.util.List<ReservedInstance> getReservedInstances() {
@@ -90,11 +100,11 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of reserved OpenSearch instances.
+     * List of Reserved Instances in the current Region.
      * </p>
      * 
      * @param reservedInstances
-     *        List of reserved OpenSearch instances.
+     *        List of Reserved Instances in the current Region.
      */
 
     public void setReservedInstances(java.util.Collection<ReservedInstance> reservedInstances) {
@@ -108,7 +118,7 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of reserved OpenSearch instances.
+     * List of Reserved Instances in the current Region.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -117,7 +127,7 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param reservedInstances
-     *        List of reserved OpenSearch instances.
+     *        List of Reserved Instances in the current Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,11 +143,11 @@ public class DescribeReservedInstancesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * List of reserved OpenSearch instances.
+     * List of Reserved Instances in the current Region.
      * </p>
      * 
      * @param reservedInstances
-     *        List of reserved OpenSearch instances.
+     *        List of Reserved Instances in the current Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

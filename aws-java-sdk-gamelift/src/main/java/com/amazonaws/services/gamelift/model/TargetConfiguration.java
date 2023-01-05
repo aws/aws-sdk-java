@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,20 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Settings for a target-based scaling policy (see <a>ScalingPolicy</a>. A target-based policy tracks a particular fleet
- * metric specifies a target value for the metric. As player usage changes, the policy triggers Amazon GameLift to
- * adjust capacity so that the metric returns to the target value. The target configuration specifies settings as needed
- * for the target based policy, including the target value.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>DescribeFleetCapacity</a> | <a>UpdateFleetCapacity</a> | <a>DescribeEC2InstanceLimits</a> |
- * <a>PutScalingPolicy</a> | <a>DescribeScalingPolicies</a> | <a>DeleteScalingPolicy</a> | <a>StopFleetActions</a> |
- * <a>StartFleetActions</a> | <a href=
- * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
- * >All APIs by task</a>
+ * Settings for a target-based scaling policy. A target-based policy tracks a particular fleet metric specifies a target
+ * value for the metric. As player usage changes, the policy triggers Amazon GameLift to adjust capacity so that the
+ * metric returns to the target value. The target configuration specifies settings as needed for the target based
+ * policy, including the target value.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/TargetConfiguration" target="_top">AWS API

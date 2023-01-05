@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an Batch job dependency.
+ * An object that represents an Batch job dependency.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/JobDependency" target="_top">AWS API
@@ -30,7 +30,7 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job ID of the Batch job associated with this dependency.
+     * The job ID of the Batch job that's associated with this dependency.
      * </p>
      */
     private String jobId;
@@ -43,11 +43,11 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job ID of the Batch job associated with this dependency.
+     * The job ID of the Batch job that's associated with this dependency.
      * </p>
      * 
      * @param jobId
-     *        The job ID of the Batch job associated with this dependency.
+     *        The job ID of the Batch job that's associated with this dependency.
      */
 
     public void setJobId(String jobId) {
@@ -56,10 +56,10 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job ID of the Batch job associated with this dependency.
+     * The job ID of the Batch job that's associated with this dependency.
      * </p>
      * 
-     * @return The job ID of the Batch job associated with this dependency.
+     * @return The job ID of the Batch job that's associated with this dependency.
      */
 
     public String getJobId() {
@@ -68,11 +68,11 @@ public class JobDependency implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The job ID of the Batch job associated with this dependency.
+     * The job ID of the Batch job that's associated with this dependency.
      * </p>
      * 
      * @param jobId
-     *        The job ID of the Batch job associated with this dependency.
+     *        The job ID of the Batch job that's associated with this dependency.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,12 @@ public class RecoveryInstanceFailback implements Serializable, Cloneable, Struct
      * </p>
      */
     private String failbackJobID;
+    /**
+     * <p>
+     * The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.
+     * </p>
+     */
+    private String failbackLaunchType;
     /**
      * <p>
      * Whether we are failing back to the original Source Server for this Recovery Instance.
@@ -325,6 +331,69 @@ public class RecoveryInstanceFailback implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.
+     * </p>
+     * 
+     * @param failbackLaunchType
+     *        The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery
+     *        instance.
+     * @see FailbackLaunchType
+     */
+
+    public void setFailbackLaunchType(String failbackLaunchType) {
+        this.failbackLaunchType = failbackLaunchType;
+    }
+
+    /**
+     * <p>
+     * The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.
+     * </p>
+     * 
+     * @return The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery
+     *         instance.
+     * @see FailbackLaunchType
+     */
+
+    public String getFailbackLaunchType() {
+        return this.failbackLaunchType;
+    }
+
+    /**
+     * <p>
+     * The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.
+     * </p>
+     * 
+     * @param failbackLaunchType
+     *        The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery
+     *        instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailbackLaunchType
+     */
+
+    public RecoveryInstanceFailback withFailbackLaunchType(String failbackLaunchType) {
+        setFailbackLaunchType(failbackLaunchType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery instance.
+     * </p>
+     * 
+     * @param failbackLaunchType
+     *        The launch type (Recovery / Drill) of the last launch for the failback replication of this recovery
+     *        instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailbackLaunchType
+     */
+
+    public RecoveryInstanceFailback withFailbackLaunchType(FailbackLaunchType failbackLaunchType) {
+        this.failbackLaunchType = failbackLaunchType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Whether we are failing back to the original Source Server for this Recovery Instance.
      * </p>
      * 
@@ -498,6 +567,8 @@ public class RecoveryInstanceFailback implements Serializable, Cloneable, Struct
             sb.append("FailbackInitiationTime: ").append(getFailbackInitiationTime()).append(",");
         if (getFailbackJobID() != null)
             sb.append("FailbackJobID: ").append(getFailbackJobID()).append(",");
+        if (getFailbackLaunchType() != null)
+            sb.append("FailbackLaunchType: ").append(getFailbackLaunchType()).append(",");
         if (getFailbackToOriginalServer() != null)
             sb.append("FailbackToOriginalServer: ").append(getFailbackToOriginalServer()).append(",");
         if (getFirstByteDateTime() != null)
@@ -544,6 +615,10 @@ public class RecoveryInstanceFailback implements Serializable, Cloneable, Struct
             return false;
         if (other.getFailbackJobID() != null && other.getFailbackJobID().equals(this.getFailbackJobID()) == false)
             return false;
+        if (other.getFailbackLaunchType() == null ^ this.getFailbackLaunchType() == null)
+            return false;
+        if (other.getFailbackLaunchType() != null && other.getFailbackLaunchType().equals(this.getFailbackLaunchType()) == false)
+            return false;
         if (other.getFailbackToOriginalServer() == null ^ this.getFailbackToOriginalServer() == null)
             return false;
         if (other.getFailbackToOriginalServer() != null && other.getFailbackToOriginalServer().equals(this.getFailbackToOriginalServer()) == false)
@@ -570,6 +645,7 @@ public class RecoveryInstanceFailback implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getFailbackClientLastSeenByServiceDateTime() == null) ? 0 : getFailbackClientLastSeenByServiceDateTime().hashCode());
         hashCode = prime * hashCode + ((getFailbackInitiationTime() == null) ? 0 : getFailbackInitiationTime().hashCode());
         hashCode = prime * hashCode + ((getFailbackJobID() == null) ? 0 : getFailbackJobID().hashCode());
+        hashCode = prime * hashCode + ((getFailbackLaunchType() == null) ? 0 : getFailbackLaunchType().hashCode());
         hashCode = prime * hashCode + ((getFailbackToOriginalServer() == null) ? 0 : getFailbackToOriginalServer().hashCode());
         hashCode = prime * hashCode + ((getFirstByteDateTime() == null) ? 0 : getFirstByteDateTime().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());

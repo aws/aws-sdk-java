@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -313,6 +313,39 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Retrieves a list of data quality results for the specified result IDs.
+     * </p>
+     * 
+     * @param batchGetDataQualityResultRequest
+     * @return A Java Future containing the result of the BatchGetDataQualityResult operation returned by the service.
+     * @sample AWSGlueAsync.BatchGetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResult" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetDataQualityResultResult> batchGetDataQualityResultAsync(
+            BatchGetDataQualityResultRequest batchGetDataQualityResultRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of data quality results for the specified result IDs.
+     * </p>
+     * 
+     * @param batchGetDataQualityResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchGetDataQualityResult operation returned by the service.
+     * @sample AWSGlueAsyncHandler.BatchGetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityResult" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchGetDataQualityResultResult> batchGetDataQualityResultAsync(
+            BatchGetDataQualityResultRequest batchGetDataQualityResultRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchGetDataQualityResultRequest, BatchGetDataQualityResultResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of resource metadata for a given list of development endpoint names. After calling the
      * <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been
      * granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.
@@ -543,6 +576,76 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<BatchUpdatePartitionResult> batchUpdatePartitionAsync(BatchUpdatePartitionRequest batchUpdatePartitionRequest,
             com.amazonaws.handlers.AsyncHandler<BatchUpdatePartitionRequest, BatchUpdatePartitionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels the specified recommendation run that was being used to generate rules.
+     * </p>
+     * 
+     * @param cancelDataQualityRuleRecommendationRunRequest
+     * @return A Java Future containing the result of the CancelDataQualityRuleRecommendationRun operation returned by
+     *         the service.
+     * @sample AWSGlueAsync.CancelDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDataQualityRuleRecommendationRunResult> cancelDataQualityRuleRecommendationRunAsync(
+            CancelDataQualityRuleRecommendationRunRequest cancelDataQualityRuleRecommendationRunRequest);
+
+    /**
+     * <p>
+     * Cancels the specified recommendation run that was being used to generate rules.
+     * </p>
+     * 
+     * @param cancelDataQualityRuleRecommendationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelDataQualityRuleRecommendationRun operation returned by
+     *         the service.
+     * @sample AWSGlueAsyncHandler.CancelDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDataQualityRuleRecommendationRunResult> cancelDataQualityRuleRecommendationRunAsync(
+            CancelDataQualityRuleRecommendationRunRequest cancelDataQualityRuleRecommendationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelDataQualityRuleRecommendationRunRequest, CancelDataQualityRuleRecommendationRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels a run where a ruleset is being evaluated against a data source.
+     * </p>
+     * 
+     * @param cancelDataQualityRulesetEvaluationRunRequest
+     * @return A Java Future containing the result of the CancelDataQualityRulesetEvaluationRun operation returned by
+     *         the service.
+     * @sample AWSGlueAsync.CancelDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDataQualityRulesetEvaluationRunResult> cancelDataQualityRulesetEvaluationRunAsync(
+            CancelDataQualityRulesetEvaluationRunRequest cancelDataQualityRulesetEvaluationRunRequest);
+
+    /**
+     * <p>
+     * Cancels a run where a ruleset is being evaluated against a data source.
+     * </p>
+     * 
+     * @param cancelDataQualityRulesetEvaluationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelDataQualityRulesetEvaluationRun operation returned by
+     *         the service.
+     * @sample AWSGlueAsyncHandler.CancelDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CancelDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CancelDataQualityRulesetEvaluationRunResult> cancelDataQualityRulesetEvaluationRunAsync(
+            CancelDataQualityRulesetEvaluationRunRequest cancelDataQualityRulesetEvaluationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelDataQualityRulesetEvaluationRunRequest, CancelDataQualityRulesetEvaluationRunResult> asyncHandler);
 
     /**
      * <p>
@@ -821,6 +924,45 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<CreateCustomEntityTypeResult> createCustomEntityTypeAsync(CreateCustomEntityTypeRequest createCustomEntityTypeRequest,
             com.amazonaws.handlers.AsyncHandler<CreateCustomEntityTypeRequest, CreateCustomEntityTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
+     * </p>
+     * <p>
+     * You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue
+     * developer guide.
+     * </p>
+     * 
+     * @param createDataQualityRulesetRequest
+     * @return A Java Future containing the result of the CreateDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsync.CreateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataQualityRulesetResult> createDataQualityRulesetAsync(CreateDataQualityRulesetRequest createDataQualityRulesetRequest);
+
+    /**
+     * <p>
+     * Creates a data quality ruleset with DQDL rules applied to a specified Glue table.
+     * </p>
+     * <p>
+     * You create the ruleset using the Data Quality Definition Language (DQDL). For more information, see the Glue
+     * developer guide.
+     * </p>
+     * 
+     * @param createDataQualityRulesetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsyncHandler.CreateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDataQualityRulesetResult> createDataQualityRulesetAsync(CreateDataQualityRulesetRequest createDataQualityRulesetRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDataQualityRulesetRequest, CreateDataQualityRulesetResult> asyncHandler);
 
     /**
      * <p>
@@ -1583,6 +1725,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<DeleteCustomEntityTypeResult> deleteCustomEntityTypeAsync(DeleteCustomEntityTypeRequest deleteCustomEntityTypeRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteCustomEntityTypeRequest, DeleteCustomEntityTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a data quality ruleset.
+     * </p>
+     * 
+     * @param deleteDataQualityRulesetRequest
+     * @return A Java Future containing the result of the DeleteDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsync.DeleteDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataQualityRulesetResult> deleteDataQualityRulesetAsync(DeleteDataQualityRulesetRequest deleteDataQualityRulesetRequest);
+
+    /**
+     * <p>
+     * Deletes a data quality ruleset.
+     * </p>
+     * 
+     * @param deleteDataQualityRulesetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsyncHandler.DeleteDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/DeleteDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDataQualityRulesetResult> deleteDataQualityRulesetAsync(DeleteDataQualityRulesetRequest deleteDataQualityRulesetRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDataQualityRulesetRequest, DeleteDataQualityRulesetResult> asyncHandler);
 
     /**
      * <p>
@@ -2708,6 +2881,138 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Retrieves the result of a data quality rule evaluation.
+     * </p>
+     * 
+     * @param getDataQualityResultRequest
+     * @return A Java Future containing the result of the GetDataQualityResult operation returned by the service.
+     * @sample AWSGlueAsync.GetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityResultResult> getDataQualityResultAsync(GetDataQualityResultRequest getDataQualityResultRequest);
+
+    /**
+     * <p>
+     * Retrieves the result of a data quality rule evaluation.
+     * </p>
+     * 
+     * @param getDataQualityResultRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataQualityResult operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetDataQualityResult
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityResult" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityResultResult> getDataQualityResultAsync(GetDataQualityResultRequest getDataQualityResultRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityResultRequest, GetDataQualityResultResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the specified recommendation run that was used to generate rules.
+     * </p>
+     * 
+     * @param getDataQualityRuleRecommendationRunRequest
+     * @return A Java Future containing the result of the GetDataQualityRuleRecommendationRun operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.GetDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityRuleRecommendationRunResult> getDataQualityRuleRecommendationRunAsync(
+            GetDataQualityRuleRecommendationRunRequest getDataQualityRuleRecommendationRunRequest);
+
+    /**
+     * <p>
+     * Gets the specified recommendation run that was used to generate rules.
+     * </p>
+     * 
+     * @param getDataQualityRuleRecommendationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataQualityRuleRecommendationRun operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.GetDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityRuleRecommendationRunResult> getDataQualityRuleRecommendationRunAsync(
+            GetDataQualityRuleRecommendationRunRequest getDataQualityRuleRecommendationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityRuleRecommendationRunRequest, GetDataQualityRuleRecommendationRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an existing ruleset by identifier or name.
+     * </p>
+     * 
+     * @param getDataQualityRulesetRequest
+     * @return A Java Future containing the result of the GetDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsync.GetDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityRulesetResult> getDataQualityRulesetAsync(GetDataQualityRulesetRequest getDataQualityRulesetRequest);
+
+    /**
+     * <p>
+     * Returns an existing ruleset by identifier or name.
+     * </p>
+     * 
+     * @param getDataQualityRulesetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsyncHandler.GetDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRuleset" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityRulesetResult> getDataQualityRulesetAsync(GetDataQualityRulesetRequest getDataQualityRulesetRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityRulesetRequest, GetDataQualityRulesetResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a specific run where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param getDataQualityRulesetEvaluationRunRequest
+     * @return A Java Future containing the result of the GetDataQualityRulesetEvaluationRun operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.GetDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityRulesetEvaluationRunResult> getDataQualityRulesetEvaluationRunAsync(
+            GetDataQualityRulesetEvaluationRunRequest getDataQualityRulesetEvaluationRunRequest);
+
+    /**
+     * <p>
+     * Retrieves a specific run where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param getDataQualityRulesetEvaluationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDataQualityRulesetEvaluationRun operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.GetDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetDataQualityRulesetEvaluationRunResult> getDataQualityRulesetEvaluationRunAsync(
+            GetDataQualityRulesetEvaluationRunRequest getDataQualityRulesetEvaluationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDataQualityRulesetEvaluationRunRequest, GetDataQualityRulesetEvaluationRunResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the definition of a specified database.
      * </p>
      * 
@@ -2846,7 +3151,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieves all the development endpoints in this AWS account.
+     * Retrieves all the development endpoints in this Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -2866,7 +3171,7 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
-     * Retrieves all the development endpoints in this AWS account.
+     * Retrieves all the development endpoints in this Amazon Web Services account.
      * </p>
      * <note>
      * <p>
@@ -2924,6 +3229,29 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Returns information on a job bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getJobBookmarkRequest
      * @return A Java Future containing the result of the GetJobBookmark operation returned by the service.
@@ -2937,6 +3265,29 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Returns information on a job bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param getJobBookmarkRequest
      * @param asyncHandler
@@ -4425,6 +4776,138 @@ public interface AWSGlueAsync extends AWSGlue {
 
     /**
      * <p>
+     * Returns all data quality execution results for your account.
+     * </p>
+     * 
+     * @param listDataQualityResultsRequest
+     * @return A Java Future containing the result of the ListDataQualityResults operation returned by the service.
+     * @sample AWSGlueAsync.ListDataQualityResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityResultsResult> listDataQualityResultsAsync(ListDataQualityResultsRequest listDataQualityResultsRequest);
+
+    /**
+     * <p>
+     * Returns all data quality execution results for your account.
+     * </p>
+     * 
+     * @param listDataQualityResultsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataQualityResults operation returned by the service.
+     * @sample AWSGlueAsyncHandler.ListDataQualityResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityResults" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityResultsResult> listDataQualityResultsAsync(ListDataQualityResultsRequest listDataQualityResultsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityResultsRequest, ListDataQualityResultsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the recommendation runs meeting the filter criteria.
+     * </p>
+     * 
+     * @param listDataQualityRuleRecommendationRunsRequest
+     * @return A Java Future containing the result of the ListDataQualityRuleRecommendationRuns operation returned by
+     *         the service.
+     * @sample AWSGlueAsync.ListDataQualityRuleRecommendationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityRuleRecommendationRunsResult> listDataQualityRuleRecommendationRunsAsync(
+            ListDataQualityRuleRecommendationRunsRequest listDataQualityRuleRecommendationRunsRequest);
+
+    /**
+     * <p>
+     * Lists the recommendation runs meeting the filter criteria.
+     * </p>
+     * 
+     * @param listDataQualityRuleRecommendationRunsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataQualityRuleRecommendationRuns operation returned by
+     *         the service.
+     * @sample AWSGlueAsyncHandler.ListDataQualityRuleRecommendationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRuleRecommendationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityRuleRecommendationRunsResult> listDataQualityRuleRecommendationRunsAsync(
+            ListDataQualityRuleRecommendationRunsRequest listDataQualityRuleRecommendationRunsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityRuleRecommendationRunsRequest, ListDataQualityRuleRecommendationRunsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param listDataQualityRulesetEvaluationRunsRequest
+     * @return A Java Future containing the result of the ListDataQualityRulesetEvaluationRuns operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.ListDataQualityRulesetEvaluationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityRulesetEvaluationRunsResult> listDataQualityRulesetEvaluationRunsAsync(
+            ListDataQualityRulesetEvaluationRunsRequest listDataQualityRulesetEvaluationRunsRequest);
+
+    /**
+     * <p>
+     * Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.
+     * </p>
+     * 
+     * @param listDataQualityRulesetEvaluationRunsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataQualityRulesetEvaluationRuns operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.ListDataQualityRulesetEvaluationRuns
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesetEvaluationRuns"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityRulesetEvaluationRunsResult> listDataQualityRulesetEvaluationRunsAsync(
+            ListDataQualityRulesetEvaluationRunsRequest listDataQualityRulesetEvaluationRunsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityRulesetEvaluationRunsRequest, ListDataQualityRulesetEvaluationRunsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a paginated list of rulesets for the specified list of Glue tables.
+     * </p>
+     * 
+     * @param listDataQualityRulesetsRequest
+     * @return A Java Future containing the result of the ListDataQualityRulesets operation returned by the service.
+     * @sample AWSGlueAsync.ListDataQualityRulesets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityRulesetsResult> listDataQualityRulesetsAsync(ListDataQualityRulesetsRequest listDataQualityRulesetsRequest);
+
+    /**
+     * <p>
+     * Returns a paginated list of rulesets for the specified list of Glue tables.
+     * </p>
+     * 
+     * @param listDataQualityRulesetsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDataQualityRulesets operation returned by the service.
+     * @sample AWSGlueAsyncHandler.ListDataQualityRulesets
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ListDataQualityRulesets" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDataQualityRulesetsResult> listDataQualityRulesetsAsync(ListDataQualityRulesetsRequest listDataQualityRulesetsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDataQualityRulesetsRequest, ListDataQualityRulesetsResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the
      * resources with the specified tag. This operation allows you to see which resources are available in your account,
      * and their names.
@@ -5054,6 +5537,29 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Resets a bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetJobBookmarkRequest
      * @return A Java Future containing the result of the ResetJobBookmark operation returned by the service.
@@ -5067,6 +5573,29 @@ public interface AWSGlueAsync extends AWSGlue {
      * <p>
      * Resets a bookmark entry.
      * </p>
+     * <p>
+     * For more information about enabling and using job bookmarks, see:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-continuations.html">Tracking processed data using job
+     * bookmarks</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Job parameters
+     * used by Glue</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html#aws-glue-api-jobs-job-Job">Job
+     * structure</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param resetJobBookmarkRequest
      * @param asyncHandler
@@ -5292,6 +5821,84 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<StartCrawlerScheduleResult> startCrawlerScheduleAsync(StartCrawlerScheduleRequest startCrawlerScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<StartCrawlerScheduleRequest, StartCrawlerScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data
+     * Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the
+     * ruleset and modify the generated ruleset to your liking.
+     * </p>
+     * 
+     * @param startDataQualityRuleRecommendationRunRequest
+     * @return A Java Future containing the result of the StartDataQualityRuleRecommendationRun operation returned by
+     *         the service.
+     * @sample AWSGlueAsync.StartDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDataQualityRuleRecommendationRunResult> startDataQualityRuleRecommendationRunAsync(
+            StartDataQualityRuleRecommendationRunRequest startDataQualityRuleRecommendationRunRequest);
+
+    /**
+     * <p>
+     * Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data
+     * Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the
+     * ruleset and modify the generated ruleset to your liking.
+     * </p>
+     * 
+     * @param startDataQualityRuleRecommendationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDataQualityRuleRecommendationRun operation returned by
+     *         the service.
+     * @sample AWSGlueAsyncHandler.StartDataQualityRuleRecommendationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRuleRecommendationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDataQualityRuleRecommendationRunResult> startDataQualityRuleRecommendationRunAsync(
+            StartDataQualityRuleRecommendationRunRequest startDataQualityRuleRecommendationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDataQualityRuleRecommendationRunRequest, StartDataQualityRuleRecommendationRunResult> asyncHandler);
+
+    /**
+     * <p>
+     * Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the
+     * ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the
+     * <code>GetDataQualityResult</code> API.
+     * </p>
+     * 
+     * @param startDataQualityRulesetEvaluationRunRequest
+     * @return A Java Future containing the result of the StartDataQualityRulesetEvaluationRun operation returned by the
+     *         service.
+     * @sample AWSGlueAsync.StartDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDataQualityRulesetEvaluationRunResult> startDataQualityRulesetEvaluationRunAsync(
+            StartDataQualityRulesetEvaluationRunRequest startDataQualityRulesetEvaluationRunRequest);
+
+    /**
+     * <p>
+     * Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the
+     * ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the
+     * <code>GetDataQualityResult</code> API.
+     * </p>
+     * 
+     * @param startDataQualityRulesetEvaluationRunRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartDataQualityRulesetEvaluationRun operation returned by the
+     *         service.
+     * @sample AWSGlueAsyncHandler.StartDataQualityRulesetEvaluationRun
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/StartDataQualityRulesetEvaluationRun"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartDataQualityRulesetEvaluationRunResult> startDataQualityRulesetEvaluationRunAsync(
+            StartDataQualityRulesetEvaluationRunRequest startDataQualityRulesetEvaluationRunRequest,
+            com.amazonaws.handlers.AsyncHandler<StartDataQualityRulesetEvaluationRunRequest, StartDataQualityRulesetEvaluationRunResult> asyncHandler);
 
     /**
      * <p>
@@ -6077,6 +6684,37 @@ public interface AWSGlueAsync extends AWSGlue {
      */
     java.util.concurrent.Future<UpdateCrawlerScheduleResult> updateCrawlerScheduleAsync(UpdateCrawlerScheduleRequest updateCrawlerScheduleRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateCrawlerScheduleRequest, UpdateCrawlerScheduleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified data quality ruleset.
+     * </p>
+     * 
+     * @param updateDataQualityRulesetRequest
+     * @return A Java Future containing the result of the UpdateDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsync.UpdateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataQualityRulesetResult> updateDataQualityRulesetAsync(UpdateDataQualityRulesetRequest updateDataQualityRulesetRequest);
+
+    /**
+     * <p>
+     * Updates the specified data quality ruleset.
+     * </p>
+     * 
+     * @param updateDataQualityRulesetRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDataQualityRuleset operation returned by the service.
+     * @sample AWSGlueAsyncHandler.UpdateDataQualityRuleset
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/UpdateDataQualityRuleset" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDataQualityRulesetResult> updateDataQualityRulesetAsync(UpdateDataQualityRulesetRequest updateDataQualityRulesetRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDataQualityRulesetRequest, UpdateDataQualityRulesetResult> asyncHandler);
 
     /**
      * <p>

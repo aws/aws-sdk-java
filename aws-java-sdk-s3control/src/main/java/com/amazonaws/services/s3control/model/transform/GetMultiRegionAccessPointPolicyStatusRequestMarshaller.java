@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,9 +47,9 @@ public class GetMultiRegionAccessPointPolicyStatusRequestMarshaller implements
             request.addHeader("x-amz-account-id", StringUtils.fromString(getMultiRegionAccessPointPolicyStatusRequest.getAccountId()));
         }
 
-        String uriResourcePath = "/v20180820/mrap/instances/{name}/policystatus";
+        String uriResourcePath = "/v20180820/mrap/instances/{name+}/policystatus";
 
-        uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "name",
+        uriResourcePath = com.amazonaws.transform.PathMarshallers.GREEDY.marshall(uriResourcePath, "name",
                 getMultiRegionAccessPointPolicyStatusRequest.getName());
         request.setResourcePath(uriResourcePath);
 

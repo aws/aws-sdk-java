@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ public class CreateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
+     * The ID of the entity.
+     * </p>
+     */
+    private String entityId;
+    /**
+     * <p>
      * The ARN of the entity.
      * </p>
      */
@@ -37,16 +43,50 @@ public class CreateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
     private java.util.Date creationDateTime;
     /**
      * <p>
-     * The ID of the entity.
-     * </p>
-     */
-    private String entityId;
-    /**
-     * <p>
      * The current state of the entity.
      * </p>
      */
     private String state;
+
+    /**
+     * <p>
+     * The ID of the entity.
+     * </p>
+     * 
+     * @param entityId
+     *        The ID of the entity.
+     */
+
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
+
+    /**
+     * <p>
+     * The ID of the entity.
+     * </p>
+     * 
+     * @return The ID of the entity.
+     */
+
+    public String getEntityId() {
+        return this.entityId;
+    }
+
+    /**
+     * <p>
+     * The ID of the entity.
+     * </p>
+     * 
+     * @param entityId
+     *        The ID of the entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEntityResult withEntityId(String entityId) {
+        setEntityId(entityId);
+        return this;
+    }
 
     /**
      * <p>
@@ -130,46 +170,6 @@ public class CreateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The ID of the entity.
-     * </p>
-     * 
-     * @param entityId
-     *        The ID of the entity.
-     */
-
-    public void setEntityId(String entityId) {
-        this.entityId = entityId;
-    }
-
-    /**
-     * <p>
-     * The ID of the entity.
-     * </p>
-     * 
-     * @return The ID of the entity.
-     */
-
-    public String getEntityId() {
-        return this.entityId;
-    }
-
-    /**
-     * <p>
-     * The ID of the entity.
-     * </p>
-     * 
-     * @param entityId
-     *        The ID of the entity.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateEntityResult withEntityId(String entityId) {
-        setEntityId(entityId);
-        return this;
-    }
-
-    /**
-     * <p>
      * The current state of the entity.
      * </p>
      * 
@@ -239,12 +239,12 @@ public class CreateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEntityId() != null)
+            sb.append("EntityId: ").append(getEntityId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
-        if (getEntityId() != null)
-            sb.append("EntityId: ").append(getEntityId()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState());
         sb.append("}");
@@ -261,6 +261,10 @@ public class CreateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof CreateEntityResult == false)
             return false;
         CreateEntityResult other = (CreateEntityResult) obj;
+        if (other.getEntityId() == null ^ this.getEntityId() == null)
+            return false;
+        if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -268,10 +272,6 @@ public class CreateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
         if (other.getCreationDateTime() == null ^ this.getCreationDateTime() == null)
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
-            return false;
-        if (other.getEntityId() == null ^ this.getEntityId() == null)
-            return false;
-        if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
             return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
@@ -285,9 +285,9 @@ public class CreateEntityResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
-        hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }

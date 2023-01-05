@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
     private String clientToken;
     /**
      * <p>
-     * The identifier of the environment where this application will be deployed.
+     * The identifier of the runtime environment where you want to deploy this application.
      * </p>
      */
     private String environmentId;
@@ -193,11 +193,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the environment where this application will be deployed.
+     * The identifier of the runtime environment where you want to deploy this application.
      * </p>
      * 
      * @param environmentId
-     *        The identifier of the environment where this application will be deployed.
+     *        The identifier of the runtime environment where you want to deploy this application.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -206,10 +206,10 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the environment where this application will be deployed.
+     * The identifier of the runtime environment where you want to deploy this application.
      * </p>
      * 
-     * @return The identifier of the environment where this application will be deployed.
+     * @return The identifier of the runtime environment where you want to deploy this application.
      */
 
     public String getEnvironmentId() {
@@ -218,11 +218,11 @@ public class CreateDeploymentRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The identifier of the environment where this application will be deployed.
+     * The identifier of the runtime environment where you want to deploy this application.
      * </p>
      * 
      * @param environmentId
-     *        The identifier of the environment where this application will be deployed.
+     *        The identifier of the runtime environment where you want to deploy this application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,8 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
     private java.util.List<String> excludedPages;
     /**
      * <p>
-     * A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     * A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     * console.
      * </p>
      */
     private java.util.List<String> favoritePages;
@@ -80,22 +81,22 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      */
     private java.util.List<String> includedPages;
     /**
      * <p>
-     * Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage gives you
-     * more data but also incurs more costs.
+     * Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more
+     * data but also incurs more costs.
      * </p>
      * <p>
-     * The number you specify is the percentage of user sessions that will be used.
+     * The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and
+     * setting it to 0.1 means that 10% of user sessions are sampled.
      * </p>
      * <p>
-     * If you omit this parameter, the default of 10 is used.
+     * If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.
      * </p>
      */
     private Double sessionSampleRate;
@@ -377,10 +378,12 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     * A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     * console.
      * </p>
      * 
-     * @return A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     * @return A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     *         console.
      */
 
     public java.util.List<String> getFavoritePages() {
@@ -389,11 +392,13 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     * A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     * console.
      * </p>
      * 
      * @param favoritePages
-     *        A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     *        A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     *        console.
      */
 
     public void setFavoritePages(java.util.Collection<String> favoritePages) {
@@ -407,7 +412,8 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     * A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     * console.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -416,7 +422,8 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param favoritePages
-     *        A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     *        A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     *        console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,11 +439,13 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     * A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     * console.
      * </p>
      * 
      * @param favoritePages
-     *        A list of pages in the CloudWatch RUM console that are to be displayed with a "favorite" icon.
+     *        A list of pages in your application that are to be displayed with a "favorite" icon in the CloudWatch RUM
+     *        console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -536,15 +545,14 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * 
      * @return If this app monitor is to collect data from only certain pages in your application, this structure lists
      *         those pages. </p>
-     * 
-     * <pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *         <p>
+     *         You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      */
 
     public java.util.List<String> getIncludedPages() {
@@ -556,16 +564,15 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * 
      * @param includedPages
      *        If this app monitor is to collect data from only certain pages in your application, this structure lists
      *        those pages. </p>
-     * 
-     * <pre><code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *        <p>
+     *        You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      */
 
     public void setIncludedPages(java.util.Collection<String> includedPages) {
@@ -582,10 +589,9 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setIncludedPages(java.util.Collection)} or {@link #withIncludedPages(java.util.Collection)} if you want
@@ -595,9 +601,8 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * @param includedPages
      *        If this app monitor is to collect data from only certain pages in your application, this structure lists
      *        those pages. </p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *        <p>
+     *        You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -616,17 +621,15 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
      * If this app monitor is to collect data from only certain pages in your application, this structure lists those
      * pages.
      * </p>
-     * 
-     * <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
-     * </pre>
+     * <p>
+     * You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
+     * </p>
      * 
      * @param includedPages
      *        If this app monitor is to collect data from only certain pages in your application, this structure lists
      *        those pages. </p>
-     * 
-     *        <pre>
-     * <code> &lt;p&gt;You can't include both &lt;code&gt;ExcludedPages&lt;/code&gt; and &lt;code&gt;IncludedPages&lt;/code&gt; in the same operation.&lt;/p&gt; </code>
+     *        <p>
+     *        You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in the same operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -637,24 +640,26 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage gives you
-     * more data but also incurs more costs.
+     * Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more
+     * data but also incurs more costs.
      * </p>
      * <p>
-     * The number you specify is the percentage of user sessions that will be used.
+     * The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and
+     * setting it to 0.1 means that 10% of user sessions are sampled.
      * </p>
      * <p>
-     * If you omit this parameter, the default of 10 is used.
+     * If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.
      * </p>
      * 
      * @param sessionSampleRate
-     *        Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage
-     *        gives you more data but also incurs more costs.</p>
+     *        Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you
+     *        more data but also incurs more costs.</p>
      *        <p>
-     *        The number you specify is the percentage of user sessions that will be used.
+     *        The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are
+     *        sampled, and setting it to 0.1 means that 10% of user sessions are sampled.
      *        </p>
      *        <p>
-     *        If you omit this parameter, the default of 10 is used.
+     *        If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.
      */
 
     public void setSessionSampleRate(Double sessionSampleRate) {
@@ -663,23 +668,25 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage gives you
-     * more data but also incurs more costs.
+     * Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more
+     * data but also incurs more costs.
      * </p>
      * <p>
-     * The number you specify is the percentage of user sessions that will be used.
+     * The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and
+     * setting it to 0.1 means that 10% of user sessions are sampled.
      * </p>
      * <p>
-     * If you omit this parameter, the default of 10 is used.
+     * If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.
      * </p>
      * 
-     * @return Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage
-     *         gives you more data but also incurs more costs.</p>
+     * @return Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives
+     *         you more data but also incurs more costs.</p>
      *         <p>
-     *         The number you specify is the percentage of user sessions that will be used.
+     *         The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are
+     *         sampled, and setting it to 0.1 means that 10% of user sessions are sampled.
      *         </p>
      *         <p>
-     *         If you omit this parameter, the default of 10 is used.
+     *         If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.
      */
 
     public Double getSessionSampleRate() {
@@ -688,24 +695,26 @@ public class AppMonitorConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage gives you
-     * more data but also incurs more costs.
+     * Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you more
+     * data but also incurs more costs.
      * </p>
      * <p>
-     * The number you specify is the percentage of user sessions that will be used.
+     * The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are sampled, and
+     * setting it to 0.1 means that 10% of user sessions are sampled.
      * </p>
      * <p>
-     * If you omit this parameter, the default of 10 is used.
+     * If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.
      * </p>
      * 
      * @param sessionSampleRate
-     *        Specifies the percentage of user sessions to use for RUM data collection. Choosing a higher percentage
-     *        gives you more data but also incurs more costs.</p>
+     *        Specifies the portion of user sessions to use for RUM data collection. Choosing a higher portion gives you
+     *        more data but also incurs more costs.</p>
      *        <p>
-     *        The number you specify is the percentage of user sessions that will be used.
+     *        The range for this value is 0 to 1 inclusive. Setting this to 1 means that 100% of user sessions are
+     *        sampled, and setting it to 0.1 means that 10% of user sessions are sampled.
      *        </p>
      *        <p>
-     *        If you omit this parameter, the default of 10 is used.
+     *        If you omit this parameter, the default of 0.1 is used, and 10% of sessions will be sampled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private String callAnalyticsJobName;
-
+    /**
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     */
     private Media media;
     /**
      * <p>
@@ -137,8 +141,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -159,8 +163,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     private CallAnalyticsJobSettings settings;
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      */
@@ -234,7 +238,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     * 
      * @param media
+     *        Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
      */
 
     public void setMedia(Media media) {
@@ -242,7 +251,11 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     * 
+     * @return Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
      */
 
     public Media getMedia() {
@@ -250,7 +263,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
+     * </p>
+     * 
      * @param media
+     *        Describes the Amazon S3 location of the media file you want to use in your Call Analytics request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -849,8 +867,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -863,8 +881,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -882,8 +900,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -895,8 +913,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *         contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *         specified Amazon S3 location, your request fails.</p>
+     *         contains your input files. If the role that you specify doesn’t have the appropriate permissions to
+     *         access the specified Amazon S3 location, your request fails.</p>
      *         <p>
      *         IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *         example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -914,8 +932,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains
-     * your input files. If the role you specify doesn’t have the appropriate permissions to access the specified Amazon
-     * S3 location, your request fails.
+     * your input files. If the role that you specify doesn’t have the appropriate permissions to access the specified
+     * Amazon S3 location, your request fails.
      * </p>
      * <p>
      * IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For example:
@@ -928,8 +946,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * 
      * @param dataAccessRoleArn
      *        The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that
-     *        contains your input files. If the role you specify doesn’t have the appropriate permissions to access the
-     *        specified Amazon S3 location, your request fails.</p>
+     *        contains your input files. If the role that you specify doesn’t have the appropriate permissions to access
+     *        the specified Amazon S3 location, your request fails.</p>
      *        <p>
      *        IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>. For
      *        example: <code>arn:aws:iam::111122223333:role/Admin</code>.
@@ -994,12 +1012,12 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
-     * @return Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     * @return Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *         participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *         channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *         speaking).
@@ -1011,13 +1029,13 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *        speaking).
@@ -1034,8 +1052,8 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * <p>
@@ -1045,7 +1063,7 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *        speaking).
@@ -1064,13 +1082,13 @@ public class StartCallAnalyticsJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Allows you to specify which speaker is on which channel. For example, if your agent is the first participant to
-     * speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
+     * Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
+     * participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first channel) and
      * <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent speaking).
      * </p>
      * 
      * @param channelDefinitions
-     *        Allows you to specify which speaker is on which channel. For example, if your agent is the first
+     *        Makes it possible to specify which speaker is on which channel. For example, if your agent is the first
      *        participant to speak, you would set <code>ChannelId</code> to <code>0</code> (to indicate the first
      *        channel) and <code>ParticipantRole</code> to <code>AGENT</code> (to indicate that it's the agent
      *        speaking).

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,130 @@ import com.amazonaws.services.mgn.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSmgnAsync extends AWSmgn {
+
+    /**
+     * <p>
+     * Archive application.
+     * </p>
+     * 
+     * @param archiveApplicationRequest
+     * @return A Java Future containing the result of the ArchiveApplication operation returned by the service.
+     * @sample AWSmgnAsync.ArchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ArchiveApplicationResult> archiveApplicationAsync(ArchiveApplicationRequest archiveApplicationRequest);
+
+    /**
+     * <p>
+     * Archive application.
+     * </p>
+     * 
+     * @param archiveApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ArchiveApplication operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ArchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ArchiveApplicationResult> archiveApplicationAsync(ArchiveApplicationRequest archiveApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<ArchiveApplicationRequest, ArchiveApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Archive wave.
+     * </p>
+     * 
+     * @param archiveWaveRequest
+     * @return A Java Future containing the result of the ArchiveWave operation returned by the service.
+     * @sample AWSmgnAsync.ArchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ArchiveWaveResult> archiveWaveAsync(ArchiveWaveRequest archiveWaveRequest);
+
+    /**
+     * <p>
+     * Archive wave.
+     * </p>
+     * 
+     * @param archiveWaveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ArchiveWave operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ArchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ArchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ArchiveWaveResult> archiveWaveAsync(ArchiveWaveRequest archiveWaveRequest,
+            com.amazonaws.handlers.AsyncHandler<ArchiveWaveRequest, ArchiveWaveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate applications to wave.
+     * </p>
+     * 
+     * @param associateApplicationsRequest
+     * @return A Java Future containing the result of the AssociateApplications operation returned by the service.
+     * @sample AWSmgnAsync.AssociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApplicationsResult> associateApplicationsAsync(AssociateApplicationsRequest associateApplicationsRequest);
+
+    /**
+     * <p>
+     * Associate applications to wave.
+     * </p>
+     * 
+     * @param associateApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateApplications operation returned by the service.
+     * @sample AWSmgnAsyncHandler.AssociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateApplicationsResult> associateApplicationsAsync(AssociateApplicationsRequest associateApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateApplicationsRequest, AssociateApplicationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate source servers to application.
+     * </p>
+     * 
+     * @param associateSourceServersRequest
+     * @return A Java Future containing the result of the AssociateSourceServers operation returned by the service.
+     * @sample AWSmgnAsync.AssociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSourceServersResult> associateSourceServersAsync(AssociateSourceServersRequest associateSourceServersRequest);
+
+    /**
+     * <p>
+     * Associate source servers to application.
+     * </p>
+     * 
+     * @param associateSourceServersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateSourceServers operation returned by the service.
+     * @sample AWSmgnAsyncHandler.AssociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/AssociateSourceServers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateSourceServersResult> associateSourceServersAsync(AssociateSourceServersRequest associateSourceServersRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateSourceServersRequest, AssociateSourceServersResult> asyncHandler);
 
     /**
      * <p>
@@ -71,7 +195,38 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Create application.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AWSmgnAsync.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest);
+
+    /**
+     * <p>
+     * Create application.
+     * </p>
+     * 
+     * @param createApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApplication operation returned by the service.
+     * @sample AWSmgnAsyncHandler.CreateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApplicationResult> createApplicationAsync(CreateApplicationRequest createApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApplicationRequest, CreateApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Launch Configuration Template.
      * </p>
      * 
      * @param createLaunchConfigurationTemplateRequest
@@ -86,7 +241,7 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Creates a new Launch Configuration Template.
      * </p>
      * 
      * @param createLaunchConfigurationTemplateRequest
@@ -141,6 +296,68 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
+     * Create wave.
+     * </p>
+     * 
+     * @param createWaveRequest
+     * @return A Java Future containing the result of the CreateWave operation returned by the service.
+     * @sample AWSmgnAsync.CreateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWaveResult> createWaveAsync(CreateWaveRequest createWaveRequest);
+
+    /**
+     * <p>
+     * Create wave.
+     * </p>
+     * 
+     * @param createWaveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateWave operation returned by the service.
+     * @sample AWSmgnAsyncHandler.CreateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/CreateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateWaveResult> createWaveAsync(CreateWaveRequest createWaveRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateWaveRequest, CreateWaveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AWSmgnAsync.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest);
+
+    /**
+     * <p>
+     * Delete application.
+     * </p>
+     * 
+     * @param deleteApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApplication operation returned by the service.
+     * @sample AWSmgnAsyncHandler.DeleteApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest deleteApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApplicationRequest, DeleteApplicationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a single Job by ID.
      * </p>
      * 
@@ -172,7 +389,7 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Deletes a single Launch Configuration Template by ID.
      * </p>
      * 
      * @param deleteLaunchConfigurationTemplateRequest
@@ -187,7 +404,7 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Deletes a single Launch Configuration Template by ID.
      * </p>
      * 
      * @param deleteLaunchConfigurationTemplateRequest
@@ -304,6 +521,37 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
+     * Delete wave.
+     * </p>
+     * 
+     * @param deleteWaveRequest
+     * @return A Java Future containing the result of the DeleteWave operation returned by the service.
+     * @sample AWSmgnAsync.DeleteWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWaveResult> deleteWaveAsync(DeleteWaveRequest deleteWaveRequest);
+
+    /**
+     * <p>
+     * Delete wave.
+     * </p>
+     * 
+     * @param deleteWaveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteWave operation returned by the service.
+     * @sample AWSmgnAsyncHandler.DeleteWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DeleteWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteWaveResult> deleteWaveAsync(DeleteWaveRequest deleteWaveRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteWaveRequest, DeleteWaveResult> asyncHandler);
+
+    /**
+     * <p>
      * Retrieves detailed job log items with paging.
      * </p>
      * 
@@ -374,7 +622,7 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs
      * </p>
      * 
      * @param describeLaunchConfigurationTemplatesRequest
@@ -389,7 +637,7 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs
      * </p>
      * 
      * @param describeLaunchConfigurationTemplatesRequest
@@ -503,6 +751,70 @@ public interface AWSmgnAsync extends AWSmgn {
      */
     java.util.concurrent.Future<DescribeVcenterClientsResult> describeVcenterClientsAsync(DescribeVcenterClientsRequest describeVcenterClientsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeVcenterClientsRequest, DescribeVcenterClientsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociate applications from wave.
+     * </p>
+     * 
+     * @param disassociateApplicationsRequest
+     * @return A Java Future containing the result of the DisassociateApplications operation returned by the service.
+     * @sample AWSmgnAsync.DisassociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApplicationsResult> disassociateApplicationsAsync(DisassociateApplicationsRequest disassociateApplicationsRequest);
+
+    /**
+     * <p>
+     * Disassociate applications from wave.
+     * </p>
+     * 
+     * @param disassociateApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateApplications operation returned by the service.
+     * @sample AWSmgnAsyncHandler.DisassociateApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateApplicationsResult> disassociateApplicationsAsync(DisassociateApplicationsRequest disassociateApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateApplicationsRequest, DisassociateApplicationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociate source servers from application.
+     * </p>
+     * 
+     * @param disassociateSourceServersRequest
+     * @return A Java Future containing the result of the DisassociateSourceServers operation returned by the service.
+     * @sample AWSmgnAsync.DisassociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSourceServersResult> disassociateSourceServersAsync(
+            DisassociateSourceServersRequest disassociateSourceServersRequest);
+
+    /**
+     * <p>
+     * Disassociate source servers from application.
+     * </p>
+     * 
+     * @param disassociateSourceServersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateSourceServers operation returned by the service.
+     * @sample AWSmgnAsyncHandler.DisassociateSourceServers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/DisassociateSourceServers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateSourceServersResult> disassociateSourceServersAsync(
+            DisassociateSourceServersRequest disassociateSourceServersRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateSourceServersRequest, DisassociateSourceServersResult> asyncHandler);
 
     /**
      * <p>
@@ -689,6 +1001,68 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
+     * Retrieves all applications or multiple applications by ID.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @return A Java Future containing the result of the ListApplications operation returned by the service.
+     * @sample AWSmgnAsync.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest);
+
+    /**
+     * <p>
+     * Retrieves all applications or multiple applications by ID.
+     * </p>
+     * 
+     * @param listApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApplications operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListApplications" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest listApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApplicationsRequest, ListApplicationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List source server post migration custom actions.
+     * </p>
+     * 
+     * @param listSourceServerActionsRequest
+     * @return A Java Future containing the result of the ListSourceServerActions operation returned by the service.
+     * @sample AWSmgnAsync.ListSourceServerActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSourceServerActionsResult> listSourceServerActionsAsync(ListSourceServerActionsRequest listSourceServerActionsRequest);
+
+    /**
+     * <p>
+     * List source server post migration custom actions.
+     * </p>
+     * 
+     * @param listSourceServerActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSourceServerActions operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListSourceServerActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListSourceServerActions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSourceServerActionsResult> listSourceServerActionsAsync(ListSourceServerActionsRequest listSourceServerActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSourceServerActionsRequest, ListSourceServerActionsResult> asyncHandler);
+
+    /**
+     * <p>
      * List all tags for your Application Migration Service resources.
      * </p>
      * 
@@ -717,6 +1091,68 @@ public interface AWSmgnAsync extends AWSmgn {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * List template post migration custom actions.
+     * </p>
+     * 
+     * @param listTemplateActionsRequest
+     * @return A Java Future containing the result of the ListTemplateActions operation returned by the service.
+     * @sample AWSmgnAsync.ListTemplateActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTemplateActionsResult> listTemplateActionsAsync(ListTemplateActionsRequest listTemplateActionsRequest);
+
+    /**
+     * <p>
+     * List template post migration custom actions.
+     * </p>
+     * 
+     * @param listTemplateActionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTemplateActions operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListTemplateActions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListTemplateActions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTemplateActionsResult> listTemplateActionsAsync(ListTemplateActionsRequest listTemplateActionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTemplateActionsRequest, ListTemplateActionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves all waves or multiple waves by ID.
+     * </p>
+     * 
+     * @param listWavesRequest
+     * @return A Java Future containing the result of the ListWaves operation returned by the service.
+     * @sample AWSmgnAsync.ListWaves
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWavesResult> listWavesAsync(ListWavesRequest listWavesRequest);
+
+    /**
+     * <p>
+     * Retrieves all waves or multiple waves by ID.
+     * </p>
+     * 
+     * @param listWavesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListWaves operation returned by the service.
+     * @sample AWSmgnAsyncHandler.ListWaves
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListWaves" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListWavesResult> listWavesAsync(ListWavesRequest listWavesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListWavesRequest, ListWavesResult> asyncHandler);
 
     /**
      * <p>
@@ -752,6 +1188,130 @@ public interface AWSmgnAsync extends AWSmgn {
      */
     java.util.concurrent.Future<MarkAsArchivedResult> markAsArchivedAsync(MarkAsArchivedRequest markAsArchivedRequest,
             com.amazonaws.handlers.AsyncHandler<MarkAsArchivedRequest, MarkAsArchivedResult> asyncHandler);
+
+    /**
+     * <p>
+     * Put source server post migration custom action.
+     * </p>
+     * 
+     * @param putSourceServerActionRequest
+     * @return A Java Future containing the result of the PutSourceServerAction operation returned by the service.
+     * @sample AWSmgnAsync.PutSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutSourceServerActionResult> putSourceServerActionAsync(PutSourceServerActionRequest putSourceServerActionRequest);
+
+    /**
+     * <p>
+     * Put source server post migration custom action.
+     * </p>
+     * 
+     * @param putSourceServerActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutSourceServerAction operation returned by the service.
+     * @sample AWSmgnAsyncHandler.PutSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutSourceServerAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutSourceServerActionResult> putSourceServerActionAsync(PutSourceServerActionRequest putSourceServerActionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutSourceServerActionRequest, PutSourceServerActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Put template post migration custom action.
+     * </p>
+     * 
+     * @param putTemplateActionRequest
+     * @return A Java Future containing the result of the PutTemplateAction operation returned by the service.
+     * @sample AWSmgnAsync.PutTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutTemplateActionResult> putTemplateActionAsync(PutTemplateActionRequest putTemplateActionRequest);
+
+    /**
+     * <p>
+     * Put template post migration custom action.
+     * </p>
+     * 
+     * @param putTemplateActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutTemplateAction operation returned by the service.
+     * @sample AWSmgnAsyncHandler.PutTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/PutTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutTemplateActionResult> putTemplateActionAsync(PutTemplateActionRequest putTemplateActionRequest,
+            com.amazonaws.handlers.AsyncHandler<PutTemplateActionRequest, PutTemplateActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove source server post migration custom action.
+     * </p>
+     * 
+     * @param removeSourceServerActionRequest
+     * @return A Java Future containing the result of the RemoveSourceServerAction operation returned by the service.
+     * @sample AWSmgnAsync.RemoveSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveSourceServerActionResult> removeSourceServerActionAsync(RemoveSourceServerActionRequest removeSourceServerActionRequest);
+
+    /**
+     * <p>
+     * Remove source server post migration custom action.
+     * </p>
+     * 
+     * @param removeSourceServerActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveSourceServerAction operation returned by the service.
+     * @sample AWSmgnAsyncHandler.RemoveSourceServerAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveSourceServerAction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveSourceServerActionResult> removeSourceServerActionAsync(RemoveSourceServerActionRequest removeSourceServerActionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveSourceServerActionRequest, RemoveSourceServerActionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove template post migration custom action.
+     * </p>
+     * 
+     * @param removeTemplateActionRequest
+     * @return A Java Future containing the result of the RemoveTemplateAction operation returned by the service.
+     * @sample AWSmgnAsync.RemoveTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveTemplateActionResult> removeTemplateActionAsync(RemoveTemplateActionRequest removeTemplateActionRequest);
+
+    /**
+     * <p>
+     * Remove template post migration custom action.
+     * </p>
+     * 
+     * @param removeTemplateActionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveTemplateAction operation returned by the service.
+     * @sample AWSmgnAsyncHandler.RemoveTemplateAction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/RemoveTemplateAction" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveTemplateActionResult> removeTemplateActionAsync(RemoveTemplateActionRequest removeTemplateActionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveTemplateActionRequest, RemoveTemplateActionResult> asyncHandler);
 
     /**
      * <p>
@@ -955,6 +1515,68 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
+     * Unarchive application.
+     * </p>
+     * 
+     * @param unarchiveApplicationRequest
+     * @return A Java Future containing the result of the UnarchiveApplication operation returned by the service.
+     * @sample AWSmgnAsync.UnarchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnarchiveApplicationResult> unarchiveApplicationAsync(UnarchiveApplicationRequest unarchiveApplicationRequest);
+
+    /**
+     * <p>
+     * Unarchive application.
+     * </p>
+     * 
+     * @param unarchiveApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnarchiveApplication operation returned by the service.
+     * @sample AWSmgnAsyncHandler.UnarchiveApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnarchiveApplicationResult> unarchiveApplicationAsync(UnarchiveApplicationRequest unarchiveApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UnarchiveApplicationRequest, UnarchiveApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Unarchive wave.
+     * </p>
+     * 
+     * @param unarchiveWaveRequest
+     * @return A Java Future containing the result of the UnarchiveWave operation returned by the service.
+     * @sample AWSmgnAsync.UnarchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnarchiveWaveResult> unarchiveWaveAsync(UnarchiveWaveRequest unarchiveWaveRequest);
+
+    /**
+     * <p>
+     * Unarchive wave.
+     * </p>
+     * 
+     * @param unarchiveWaveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnarchiveWave operation returned by the service.
+     * @sample AWSmgnAsyncHandler.UnarchiveWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UnarchiveWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UnarchiveWaveResult> unarchiveWaveAsync(UnarchiveWaveRequest unarchiveWaveRequest,
+            com.amazonaws.handlers.AsyncHandler<UnarchiveWaveRequest, UnarchiveWaveResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified set of tags from the specified set of Application Migration Service resources.
      * </p>
      * 
@@ -983,6 +1605,37 @@ public interface AWSmgnAsync extends AWSmgn {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AWSmgnAsync.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest);
+
+    /**
+     * <p>
+     * Update application.
+     * </p>
+     * 
+     * @param updateApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApplication operation returned by the service.
+     * @sample AWSmgnAsyncHandler.UpdateApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateApplication" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApplicationResult> updateApplicationAsync(UpdateApplicationRequest updateApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApplicationRequest, UpdateApplicationResult> asyncHandler);
 
     /**
      * <p>
@@ -1019,7 +1672,7 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Updates an existing Launch Configuration Template by ID.
      * </p>
      * 
      * @param updateLaunchConfigurationTemplateRequest
@@ -1034,7 +1687,7 @@ public interface AWSmgnAsync extends AWSmgn {
 
     /**
      * <p>
-     * Creates a new ReplicationConfigurationTemplate.
+     * Updates an existing Launch Configuration Template by ID.
      * </p>
      * 
      * @param updateLaunchConfigurationTemplateRequest
@@ -1156,5 +1809,36 @@ public interface AWSmgnAsync extends AWSmgn {
     java.util.concurrent.Future<UpdateSourceServerReplicationTypeResult> updateSourceServerReplicationTypeAsync(
             UpdateSourceServerReplicationTypeRequest updateSourceServerReplicationTypeRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateSourceServerReplicationTypeRequest, UpdateSourceServerReplicationTypeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update wave.
+     * </p>
+     * 
+     * @param updateWaveRequest
+     * @return A Java Future containing the result of the UpdateWave operation returned by the service.
+     * @sample AWSmgnAsync.UpdateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWaveResult> updateWaveAsync(UpdateWaveRequest updateWaveRequest);
+
+    /**
+     * <p>
+     * Update wave.
+     * </p>
+     * 
+     * @param updateWaveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateWave operation returned by the service.
+     * @sample AWSmgnAsyncHandler.UpdateWave
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/UpdateWave" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateWaveResult> updateWaveAsync(UpdateWaveRequest updateWaveRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateWaveRequest, UpdateWaveResult> asyncHandler);
 
 }

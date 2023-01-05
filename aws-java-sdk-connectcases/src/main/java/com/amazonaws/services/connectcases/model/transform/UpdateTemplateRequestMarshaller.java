@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class UpdateTemplateRequestMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<List> REQUIREDFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requiredFields").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("status").build();
     private static final MarshallingInfo<String> TEMPLATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("templateId").build();
 
@@ -62,6 +64,7 @@ public class UpdateTemplateRequestMarshaller {
             protocolMarshaller.marshall(updateTemplateRequest.getLayoutConfiguration(), LAYOUTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateTemplateRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateTemplateRequest.getRequiredFields(), REQUIREDFIELDS_BINDING);
+            protocolMarshaller.marshall(updateTemplateRequest.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(updateTemplateRequest.getTemplateId(), TEMPLATEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

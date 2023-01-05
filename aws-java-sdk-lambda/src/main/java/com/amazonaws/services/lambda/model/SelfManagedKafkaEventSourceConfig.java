@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,9 @@ public class SelfManagedKafkaEventSourceConfig implements Serializable, Cloneabl
      * <p>
      * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
      * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
-     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * update this value. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
+     * consumer group ID</a>.
      * </p>
      */
     private String consumerGroupId;
@@ -41,13 +43,17 @@ public class SelfManagedKafkaEventSourceConfig implements Serializable, Cloneabl
      * <p>
      * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
      * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
-     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * update this value. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
+     * consumer group ID</a>.
      * </p>
      * 
      * @param consumerGroupId
      *        The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your
      *        Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you
-     *        cannot update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     *        cannot update this value. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id"
+     *        >Customizable consumer group ID</a>.
      */
 
     public void setConsumerGroupId(String consumerGroupId) {
@@ -58,12 +64,16 @@ public class SelfManagedKafkaEventSourceConfig implements Serializable, Cloneabl
      * <p>
      * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
      * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
-     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * update this value. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
+     * consumer group ID</a>.
      * </p>
      * 
      * @return The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your
      *         Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified,
-     *         you cannot update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     *         you cannot update this value. For more information, see <a
+     *         href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id"
+     *         >Customizable consumer group ID</a>.
      */
 
     public String getConsumerGroupId() {
@@ -74,13 +84,17 @@ public class SelfManagedKafkaEventSourceConfig implements Serializable, Cloneabl
      * <p>
      * The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your Kafka
      * event sources. After creating a Kafka event source mapping with the consumer group ID specified, you cannot
-     * update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     * update this value. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id">Customizable
+     * consumer group ID</a>.
      * </p>
      * 
      * @param consumerGroupId
      *        The identifier for the Kafka consumer group to join. The consumer group ID must be unique among all your
      *        Kafka event sources. After creating a Kafka event source mapping with the consumer group ID specified, you
-     *        cannot update this value. For more information, see <a>services-msk-consumer-group-id</a>.
+     *        cannot update this value. For more information, see <a
+     *        href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-consumer-group-id"
+     *        >Customizable consumer group ID</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

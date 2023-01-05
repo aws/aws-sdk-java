@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string included in the request to help make sure that the request can’t be replayed.
+     * A string included in the request to help make sure that the request can't be replayed.
      * </p>
      */
     private String callerReference;
@@ -61,11 +61,11 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string included in the request to help make sure that the request can’t be replayed.
+     * A string included in the request to help make sure that the request can't be replayed.
      * </p>
      * 
      * @param callerReference
-     *        A string included in the request to help make sure that the request can’t be replayed.
+     *        A string included in the request to help make sure that the request can't be replayed.
      */
 
     public void setCallerReference(String callerReference) {
@@ -74,10 +74,10 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string included in the request to help make sure that the request can’t be replayed.
+     * A string included in the request to help make sure that the request can't be replayed.
      * </p>
      * 
-     * @return A string included in the request to help make sure that the request can’t be replayed.
+     * @return A string included in the request to help make sure that the request can't be replayed.
      */
 
     public String getCallerReference() {
@@ -86,11 +86,11 @@ public class PublicKeyConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A string included in the request to help make sure that the request can’t be replayed.
+     * A string included in the request to help make sure that the request can't be replayed.
      * </p>
      * 
      * @param callerReference
-     *        A string included in the request to help make sure that the request can’t be replayed.
+     *        A string included in the request to help make sure that the request can't be replayed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

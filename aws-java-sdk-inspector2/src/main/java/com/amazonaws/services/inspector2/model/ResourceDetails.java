@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private AwsEcrContainerImageDetails awsEcrContainerImage;
+    /**
+     * <p>
+     * A summary of the information about an AWS Lambda function affected by a finding.
+     * </p>
+     */
+    private AwsLambdaFunctionDetails awsLambdaFunction;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * A summary of the information about an AWS Lambda function affected by a finding.
+     * </p>
+     * 
+     * @param awsLambdaFunction
+     *        A summary of the information about an AWS Lambda function affected by a finding.
+     */
+
+    public void setAwsLambdaFunction(AwsLambdaFunctionDetails awsLambdaFunction) {
+        this.awsLambdaFunction = awsLambdaFunction;
+    }
+
+    /**
+     * <p>
+     * A summary of the information about an AWS Lambda function affected by a finding.
+     * </p>
+     * 
+     * @return A summary of the information about an AWS Lambda function affected by a finding.
+     */
+
+    public AwsLambdaFunctionDetails getAwsLambdaFunction() {
+        return this.awsLambdaFunction;
+    }
+
+    /**
+     * <p>
+     * A summary of the information about an AWS Lambda function affected by a finding.
+     * </p>
+     * 
+     * @param awsLambdaFunction
+     *        A summary of the information about an AWS Lambda function affected by a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceDetails withAwsLambdaFunction(AwsLambdaFunctionDetails awsLambdaFunction) {
+        setAwsLambdaFunction(awsLambdaFunction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
         if (getAwsEc2Instance() != null)
             sb.append("AwsEc2Instance: ").append(getAwsEc2Instance()).append(",");
         if (getAwsEcrContainerImage() != null)
-            sb.append("AwsEcrContainerImage: ").append(getAwsEcrContainerImage());
+            sb.append("AwsEcrContainerImage: ").append(getAwsEcrContainerImage()).append(",");
+        if (getAwsLambdaFunction() != null)
+            sb.append("AwsLambdaFunction: ").append(getAwsLambdaFunction());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getAwsEcrContainerImage() != null && other.getAwsEcrContainerImage().equals(this.getAwsEcrContainerImage()) == false)
             return false;
+        if (other.getAwsLambdaFunction() == null ^ this.getAwsLambdaFunction() == null)
+            return false;
+        if (other.getAwsLambdaFunction() != null && other.getAwsLambdaFunction().equals(this.getAwsLambdaFunction()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class ResourceDetails implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getAwsEc2Instance() == null) ? 0 : getAwsEc2Instance().hashCode());
         hashCode = prime * hashCode + ((getAwsEcrContainerImage() == null) ? 0 : getAwsEcrContainerImage().hashCode());
+        hashCode = prime * hashCode + ((getAwsLambdaFunction() == null) ? 0 : getAwsLambdaFunction().hashCode());
         return hashCode;
     }
 

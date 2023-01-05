@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.rekognition.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,6 +32,8 @@ public class InstanceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BoundingBox").build();
     private static final MarshallingInfo<Float> CONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Confidence").build();
+    private static final MarshallingInfo<List> DOMINANTCOLORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DominantColors").build();
 
     private static final InstanceMarshaller instance = new InstanceMarshaller();
 
@@ -50,6 +53,7 @@ public class InstanceMarshaller {
         try {
             protocolMarshaller.marshall(instance.getBoundingBox(), BOUNDINGBOX_BINDING);
             protocolMarshaller.marshall(instance.getConfidence(), CONFIDENCE_BINDING);
+            protocolMarshaller.marshall(instance.getDominantColors(), DOMINANTCOLORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

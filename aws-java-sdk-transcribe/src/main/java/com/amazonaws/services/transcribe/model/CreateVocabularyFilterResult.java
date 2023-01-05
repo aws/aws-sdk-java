@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,13 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
     private String vocabularyFilterName;
     /**
      * <p>
-     * The language code you selected for your vocabulary filter.
+     * The language code you selected for your custom vocabulary filter.
      * </p>
      */
     private String languageCode;
     /**
      * <p>
-     * The date and time you created your vocabulary filter.
+     * The date and time you created your custom vocabulary filter.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -88,11 +88,11 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The language code you selected for your vocabulary filter.
+     * The language code you selected for your custom vocabulary filter.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your vocabulary filter.
+     *        The language code you selected for your custom vocabulary filter.
      * @see LanguageCode
      */
 
@@ -102,10 +102,10 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The language code you selected for your vocabulary filter.
+     * The language code you selected for your custom vocabulary filter.
      * </p>
      * 
-     * @return The language code you selected for your vocabulary filter.
+     * @return The language code you selected for your custom vocabulary filter.
      * @see LanguageCode
      */
 
@@ -115,11 +115,11 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The language code you selected for your vocabulary filter.
+     * The language code you selected for your custom vocabulary filter.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your vocabulary filter.
+     *        The language code you selected for your custom vocabulary filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -131,11 +131,11 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The language code you selected for your vocabulary filter.
+     * The language code you selected for your custom vocabulary filter.
      * </p>
      * 
      * @param languageCode
-     *        The language code you selected for your vocabulary filter.
+     *        The language code you selected for your custom vocabulary filter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -147,7 +147,7 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The date and time you created your vocabulary filter.
+     * The date and time you created your custom vocabulary filter.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -155,7 +155,7 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time you created your vocabulary filter.</p>
+     *        The date and time you created your custom vocabulary filter.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -167,14 +167,14 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The date and time you created your vocabulary filter.
+     * The date and time you created your custom vocabulary filter.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
      * </p>
      * 
-     * @return The date and time you created your vocabulary filter.</p>
+     * @return The date and time you created your custom vocabulary filter.</p>
      *         <p>
      *         Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *         <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.
@@ -186,7 +186,7 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The date and time you created your vocabulary filter.
+     * The date and time you created your custom vocabulary filter.
      * </p>
      * <p>
      * Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
@@ -194,7 +194,7 @@ public class CreateVocabularyFilterResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param lastModifiedTime
-     *        The date and time you created your vocabulary filter.</p>
+     *        The date and time you created your custom vocabulary filter.</p>
      *        <p>
      *        Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
      *        <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4, 2022.

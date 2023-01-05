@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,12 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String remediation;
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+     * </p>
+     */
+    private String sourceLambdaLayerArn;
     /**
      * <p>
      * The source layer hash of the vulnerable package.
@@ -430,6 +436,46 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
+     * The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+     * </p>
+     * 
+     * @param sourceLambdaLayerArn
+     *        The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+     */
+
+    public void setSourceLambdaLayerArn(String sourceLambdaLayerArn) {
+        this.sourceLambdaLayerArn = sourceLambdaLayerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+     * </p>
+     * 
+     * @return The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+     */
+
+    public String getSourceLambdaLayerArn() {
+        return this.sourceLambdaLayerArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+     * </p>
+     * 
+     * @param sourceLambdaLayerArn
+     *        The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VulnerablePackage withSourceLambdaLayerArn(String sourceLambdaLayerArn) {
+        setSourceLambdaLayerArn(sourceLambdaLayerArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The source layer hash of the vulnerable package.
      * </p>
      * 
@@ -536,6 +582,8 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
             sb.append("Release: ").append(getRelease()).append(",");
         if (getRemediation() != null)
             sb.append("Remediation: ").append(getRemediation()).append(",");
+        if (getSourceLambdaLayerArn() != null)
+            sb.append("SourceLambdaLayerArn: ").append(getSourceLambdaLayerArn()).append(",");
         if (getSourceLayerHash() != null)
             sb.append("SourceLayerHash: ").append(getSourceLayerHash()).append(",");
         if (getVersion() != null)
@@ -586,6 +634,10 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getRemediation() != null && other.getRemediation().equals(this.getRemediation()) == false)
             return false;
+        if (other.getSourceLambdaLayerArn() == null ^ this.getSourceLambdaLayerArn() == null)
+            return false;
+        if (other.getSourceLambdaLayerArn() != null && other.getSourceLambdaLayerArn().equals(this.getSourceLambdaLayerArn()) == false)
+            return false;
         if (other.getSourceLayerHash() == null ^ this.getSourceLayerHash() == null)
             return false;
         if (other.getSourceLayerHash() != null && other.getSourceLayerHash().equals(this.getSourceLayerHash()) == false)
@@ -610,6 +662,7 @@ public class VulnerablePackage implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getPackageManager() == null) ? 0 : getPackageManager().hashCode());
         hashCode = prime * hashCode + ((getRelease() == null) ? 0 : getRelease().hashCode());
         hashCode = prime * hashCode + ((getRemediation() == null) ? 0 : getRemediation().hashCode());
+        hashCode = prime * hashCode + ((getSourceLambdaLayerArn() == null) ? 0 : getSourceLambdaLayerArn().hashCode());
         hashCode = prime * hashCode + ((getSourceLayerHash() == null) ? 0 : getSourceLayerHash().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;

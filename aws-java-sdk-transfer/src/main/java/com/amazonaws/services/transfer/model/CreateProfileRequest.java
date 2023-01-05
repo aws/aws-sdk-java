@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,9 +37,22 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String as2Id;
     /**
      * <p>
-     * Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If
-     * not supplied in the request, the command lists all types of profiles.
+     * Determines the type of profile to create:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family
+     * server organization or party.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization,
+     * external to Transfer Family.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String profileType;
     /**
@@ -122,13 +135,38 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If
-     * not supplied in the request, the command lists all types of profiles.
+     * Determines the type of profile to create:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family
+     * server organization or party.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization,
+     * external to Transfer Family.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param profileType
-     *        Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type
-     *        profiles. If not supplied in the request, the command lists all types of profiles.
+     *        Determines the type of profile to create:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer
+     *        Family server organization or party.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote
+     *        organization, external to Transfer Family.
+     *        </p>
+     *        </li>
      * @see ProfileType
      */
 
@@ -138,12 +176,37 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If
-     * not supplied in the request, the command lists all types of profiles.
+     * Determines the type of profile to create:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family
+     * server organization or party.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization,
+     * external to Transfer Family.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type
-     *         profiles. If not supplied in the request, the command lists all types of profiles.
+     * @return Determines the type of profile to create:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer
+     *         Family server organization or party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote
+     *         organization, external to Transfer Family.
+     *         </p>
+     *         </li>
      * @see ProfileType
      */
 
@@ -153,13 +216,38 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If
-     * not supplied in the request, the command lists all types of profiles.
+     * Determines the type of profile to create:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family
+     * server organization or party.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization,
+     * external to Transfer Family.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param profileType
-     *        Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type
-     *        profiles. If not supplied in the request, the command lists all types of profiles.
+     *        Determines the type of profile to create:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer
+     *        Family server organization or party.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote
+     *        organization, external to Transfer Family.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProfileType
      */
@@ -171,13 +259,38 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type profiles. If
-     * not supplied in the request, the command lists all types of profiles.
+     * Determines the type of profile to create:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer Family
+     * server organization or party.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote organization,
+     * external to Transfer Family.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param profileType
-     *        Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code> type
-     *        profiles. If not supplied in the request, the command lists all types of profiles.
+     *        Determines the type of profile to create:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Specify <code>LOCAL</code> to create a local profile. A local profile represents the AS2-enabled Transfer
+     *        Family server organization or party.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Specify <code>PARTNER</code> to create a partner profile. A partner profile represents a remote
+     *        organization, external to Transfer Family.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProfileType
      */

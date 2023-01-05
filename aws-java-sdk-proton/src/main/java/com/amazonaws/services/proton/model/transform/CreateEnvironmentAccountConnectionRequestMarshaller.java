@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class CreateEnvironmentAccountConnectionRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> CODEBUILDROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codebuildRoleArn").build();
     private static final MarshallingInfo<String> COMPONENTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentRoleArn").build();
     private static final MarshallingInfo<String> ENVIRONMENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +63,7 @@ public class CreateEnvironmentAccountConnectionRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getCodebuildRoleArn(), CODEBUILDROLEARN_BINDING);
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getComponentRoleArn(), COMPONENTROLEARN_BINDING);
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getEnvironmentName(), ENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(createEnvironmentAccountConnectionRequest.getManagementAccountId(), MANAGEMENTACCOUNTID_BINDING);

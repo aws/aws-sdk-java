@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class StreamConfigurationMarshaller {
 
+    private static final MarshallingInfo<String> AUTOMATICTERMINATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("automaticTerminationMode").build();
     private static final MarshallingInfo<String> CLIPBOARDMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clipboardMode").build();
     private static final MarshallingInfo<List> EC2INSTANCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -36,10 +38,16 @@ public class StreamConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxSessionLengthInMinutes").build();
     private static final MarshallingInfo<Integer> MAXSTOPPEDSESSIONLENGTHINMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxStoppedSessionLengthInMinutes").build();
+    private static final MarshallingInfo<StructuredPojo> SESSIONBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sessionBackup").build();
+    private static final MarshallingInfo<String> SESSIONPERSISTENCEMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sessionPersistenceMode").build();
     private static final MarshallingInfo<StructuredPojo> SESSIONSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sessionStorage").build();
     private static final MarshallingInfo<List> STREAMINGIMAGEIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamingImageIds").build();
+    private static final MarshallingInfo<StructuredPojo> VOLUMECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("volumeConfiguration").build();
 
     private static final StreamConfigurationMarshaller instance = new StreamConfigurationMarshaller();
 
@@ -57,12 +65,16 @@ public class StreamConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(streamConfiguration.getAutomaticTerminationMode(), AUTOMATICTERMINATIONMODE_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getClipboardMode(), CLIPBOARDMODE_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getEc2InstanceTypes(), EC2INSTANCETYPES_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getMaxSessionLengthInMinutes(), MAXSESSIONLENGTHINMINUTES_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getMaxStoppedSessionLengthInMinutes(), MAXSTOPPEDSESSIONLENGTHINMINUTES_BINDING);
+            protocolMarshaller.marshall(streamConfiguration.getSessionBackup(), SESSIONBACKUP_BINDING);
+            protocolMarshaller.marshall(streamConfiguration.getSessionPersistenceMode(), SESSIONPERSISTENCEMODE_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getSessionStorage(), SESSIONSTORAGE_BINDING);
             protocolMarshaller.marshall(streamConfiguration.getStreamingImageIds(), STREAMINGIMAGEIDS_BINDING);
+            protocolMarshaller.marshall(streamConfiguration.getVolumeConfiguration(), VOLUMECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

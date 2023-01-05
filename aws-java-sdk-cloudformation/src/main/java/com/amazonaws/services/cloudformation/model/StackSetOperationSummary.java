@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -109,6 +109,14 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
      * </p>
      */
     private String statusReason;
+    /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     */
+    private StackSetOperationStatusDetails statusDetails;
+
+    private StackSetOperationPreferences operationPreferences;
 
     /**
      * <p>
@@ -862,6 +870,72 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the stack set operation.
+     */
+
+    public void setStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        this.statusDetails = statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     * 
+     * @return Detailed information about the stack set operation.
+     */
+
+    public StackSetOperationStatusDetails getStatusDetails() {
+        return this.statusDetails;
+    }
+
+    /**
+     * <p>
+     * Detailed information about the stack set operation.
+     * </p>
+     * 
+     * @param statusDetails
+     *        Detailed information about the stack set operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperationSummary withStatusDetails(StackSetOperationStatusDetails statusDetails) {
+        setStatusDetails(statusDetails);
+        return this;
+    }
+
+    /**
+     * @param operationPreferences
+     */
+
+    public void setOperationPreferences(StackSetOperationPreferences operationPreferences) {
+        this.operationPreferences = operationPreferences;
+    }
+
+    /**
+     * @return
+     */
+
+    public StackSetOperationPreferences getOperationPreferences() {
+        return this.operationPreferences;
+    }
+
+    /**
+     * @param operationPreferences
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StackSetOperationSummary withOperationPreferences(StackSetOperationPreferences operationPreferences) {
+        setOperationPreferences(operationPreferences);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -884,7 +958,11 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
         if (getEndTimestamp() != null)
             sb.append("EndTimestamp: ").append(getEndTimestamp()).append(",");
         if (getStatusReason() != null)
-            sb.append("StatusReason: ").append(getStatusReason());
+            sb.append("StatusReason: ").append(getStatusReason()).append(",");
+        if (getStatusDetails() != null)
+            sb.append("StatusDetails: ").append(getStatusDetails()).append(",");
+        if (getOperationPreferences() != null)
+            sb.append("OperationPreferences: ").append(getOperationPreferences());
         sb.append("}");
         return sb.toString();
     }
@@ -923,6 +1001,14 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
             return false;
+        if (other.getStatusDetails() == null ^ this.getStatusDetails() == null)
+            return false;
+        if (other.getStatusDetails() != null && other.getStatusDetails().equals(this.getStatusDetails()) == false)
+            return false;
+        if (other.getOperationPreferences() == null ^ this.getOperationPreferences() == null)
+            return false;
+        if (other.getOperationPreferences() != null && other.getOperationPreferences().equals(this.getOperationPreferences()) == false)
+            return false;
         return true;
     }
 
@@ -937,6 +1023,8 @@ public class StackSetOperationSummary implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCreationTimestamp() == null) ? 0 : getCreationTimestamp().hashCode());
         hashCode = prime * hashCode + ((getEndTimestamp() == null) ? 0 : getEndTimestamp().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
+        hashCode = prime * hashCode + ((getStatusDetails() == null) ? 0 : getStatusDetails().hashCode());
+        hashCode = prime * hashCode + ((getOperationPreferences() == null) ? 0 : getOperationPreferences().hashCode());
         return hashCode;
     }
 

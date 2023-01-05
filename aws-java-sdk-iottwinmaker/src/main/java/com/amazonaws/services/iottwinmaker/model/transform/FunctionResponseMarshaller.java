@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class FunctionResponseMarshaller {
 
-    private static final MarshallingInfo<StructuredPojo> IMPLEMENTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("implementedBy").build();
-    private static final MarshallingInfo<Boolean> ISINHERITED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isInherited").build();
     private static final MarshallingInfo<List> REQUIREDPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("requiredProperties").build();
     private static final MarshallingInfo<String> SCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("scope").build();
+    private static final MarshallingInfo<StructuredPojo> IMPLEMENTEDBY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("implementedBy").build();
+    private static final MarshallingInfo<Boolean> ISINHERITED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isInherited").build();
 
     private static final FunctionResponseMarshaller instance = new FunctionResponseMarshaller();
 
@@ -53,10 +53,10 @@ public class FunctionResponseMarshaller {
         }
 
         try {
-            protocolMarshaller.marshall(functionResponse.getImplementedBy(), IMPLEMENTEDBY_BINDING);
-            protocolMarshaller.marshall(functionResponse.getIsInherited(), ISINHERITED_BINDING);
             protocolMarshaller.marshall(functionResponse.getRequiredProperties(), REQUIREDPROPERTIES_BINDING);
             protocolMarshaller.marshall(functionResponse.getScope(), SCOPE_BINDING);
+            protocolMarshaller.marshall(functionResponse.getImplementedBy(), IMPLEMENTEDBY_BINDING);
+            protocolMarshaller.marshall(functionResponse.getIsInherited(), ISINHERITED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

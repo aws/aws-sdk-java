@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,17 @@ public class UpdateManagedInstanceRoleRequest extends com.amazonaws.AmazonWebSer
     private String instanceId;
     /**
      * <p>
-     * The IAM role you want to assign or change.
+     * The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM
+     * role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal
+     * <code>ssm.amazonaws.com</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     * service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an IAM service-linked role for this parameter. You must create a unique role.
+     * </p>
+     * </note>
      */
     private String iamRole;
 
@@ -80,11 +89,28 @@ public class UpdateManagedInstanceRoleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The IAM role you want to assign or change.
+     * The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM
+     * role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal
+     * <code>ssm.amazonaws.com</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     * service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an IAM service-linked role for this parameter. You must create a unique role.
+     * </p>
+     * </note>
      * 
      * @param iamRole
-     *        The IAM role you want to assign or change.
+     *        The name of the Identity and Access Management (IAM) role that you want to assign to the managed node.
+     *        This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service
+     *        principal <code>ssm.amazonaws.com</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     *        service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>.</p> <note>
+     *        <p>
+     *        You can't specify an IAM service-linked role for this parameter. You must create a unique role.
+     *        </p>
      */
 
     public void setIamRole(String iamRole) {
@@ -93,10 +119,27 @@ public class UpdateManagedInstanceRoleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The IAM role you want to assign or change.
+     * The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM
+     * role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal
+     * <code>ssm.amazonaws.com</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     * service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an IAM service-linked role for this parameter. You must create a unique role.
+     * </p>
+     * </note>
      * 
-     * @return The IAM role you want to assign or change.
+     * @return The name of the Identity and Access Management (IAM) role that you want to assign to the managed node.
+     *         This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service
+     *         principal <code>ssm.amazonaws.com</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
+     *         IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User
+     *         Guide</i>.</p> <note>
+     *         <p>
+     *         You can't specify an IAM service-linked role for this parameter. You must create a unique role.
+     *         </p>
      */
 
     public String getIamRole() {
@@ -105,11 +148,28 @@ public class UpdateManagedInstanceRoleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The IAM role you want to assign or change.
+     * The name of the Identity and Access Management (IAM) role that you want to assign to the managed node. This IAM
+     * role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service principal
+     * <code>ssm.amazonaws.com</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     * service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * You can't specify an IAM service-linked role for this parameter. You must create a unique role.
+     * </p>
+     * </note>
      * 
      * @param iamRole
-     *        The IAM role you want to assign or change.
+     *        The name of the Identity and Access Management (IAM) role that you want to assign to the managed node.
+     *        This IAM role must provide AssumeRole permissions for the Amazon Web Services Systems Manager service
+     *        principal <code>ssm.amazonaws.com</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM
+     *        service role for a hybrid environment</a> in the <i>Amazon Web Services Systems Manager User
+     *        Guide</i>.</p> <note>
+     *        <p>
+     *        You can't specify an IAM service-linked role for this parameter. You must create a unique role.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

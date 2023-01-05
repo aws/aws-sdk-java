@@ -1,5 +1,5 @@
 /*
- * Copyright 2016-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,7 +49,6 @@ public class SdkStructuredIonFactoryTest {
 
     private static final String NO_SERVICE_NAME = null;
     private static final HttpRequestBase NO_HTTP_REQUEST = null;
-    private static final String NO_CUSTOM_ERROR_CODE_FIELD_NAME = null;
 
     private static IonSystem system;
 
@@ -141,7 +140,9 @@ public class SdkStructuredIonFactoryTest {
         List<JsonErrorUnmarshaller> unmarshallers = new LinkedList<JsonErrorUnmarshaller>();
         unmarshallers.add(new InvalidParameterExceptionUnmarshaller(ERROR_TYPE));
 
-        JsonErrorResponseHandler handler = SdkStructuredIonFactory.SDK_ION_BINARY_FACTORY.createErrorResponseHandler(unmarshallers, NO_CUSTOM_ERROR_CODE_FIELD_NAME);
+        JsonErrorResponseHandler handler = SdkStructuredIonFactory
+                .SDK_ION_BINARY_FACTORY
+                .createErrorResponseHandler(new JsonErrorResponseMetadata(), unmarshallers);
         return handler.handle(error);
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> securityGroupIds;
@@ -122,10 +122,10 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
-     * @return A list of VPC security groups IDs.
+     * @return A list of VPC security group IDs.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -137,11 +137,11 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -155,7 +155,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +164,7 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +180,11 @@ public class VpcConfigResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * A list of VPC security groups IDs.
+     * A list of VPC security group IDs.
      * </p>
      * 
      * @param securityGroupIds
-     *        A list of VPC security groups IDs.
+     *        A list of VPC security group IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,78 @@ public interface AmazonLexModelsV2 {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "models-v2-lex";
+
+    /**
+     * <p>
+     * Batch create custom vocabulary item for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param batchCreateCustomVocabularyItemRequest
+     * @return Result of the BatchCreateCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchCreateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchCreateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchCreateCustomVocabularyItemResult batchCreateCustomVocabularyItem(BatchCreateCustomVocabularyItemRequest batchCreateCustomVocabularyItemRequest);
+
+    /**
+     * <p>
+     * Batch delete custom vocabulary item for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param batchDeleteCustomVocabularyItemRequest
+     * @return Result of the BatchDeleteCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchDeleteCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchDeleteCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchDeleteCustomVocabularyItemResult batchDeleteCustomVocabularyItem(BatchDeleteCustomVocabularyItemRequest batchDeleteCustomVocabularyItemRequest);
+
+    /**
+     * <p>
+     * Batch update custom vocabulary item for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param batchUpdateCustomVocabularyItemRequest
+     * @return Result of the BatchUpdateCustomVocabularyItem operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.BatchUpdateCustomVocabularyItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/BatchUpdateCustomVocabularyItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    BatchUpdateCustomVocabularyItemResult batchUpdateCustomVocabularyItem(BatchUpdateCustomVocabularyItemRequest batchUpdateCustomVocabularyItemRequest);
 
     /**
      * <p>
@@ -1302,6 +1374,30 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
+     * List custom vocabulary items for the specified locale in the specified bot.
+     * </p>
+     * 
+     * @param listCustomVocabularyItemsRequest
+     * @return Result of the ListCustomVocabularyItems operation returned by the service.
+     * @throws ThrottlingException
+     *         Your request rate is too high. Reduce the frequency of requests.
+     * @throws ServiceQuotaExceededException
+     *         You have reached a quota for your bot.
+     * @throws ValidationException
+     *         One of the input parameters in your request isn't valid. Check the parameters and try your request again.
+     * @throws ResourceNotFoundException
+     *         You asked to describe a resource that doesn't exist. Check the resource that you are requesting and try
+     *         again.
+     * @throws InternalServerException
+     *         The service encountered an unexpected condition. Try your request again.
+     * @sample AmazonLexModelsV2.ListCustomVocabularyItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/models.lex.v2-2020-08-07/ListCustomVocabularyItems"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListCustomVocabularyItemsResult listCustomVocabularyItems(ListCustomVocabularyItemsRequest listCustomVocabularyItemsRequest);
+
+    /**
+     * <p>
      * Lists the exports for a bot, bot locale, or custom vocabulary. Exports are kept in the list for 7 days.
      * </p>
      * 
@@ -1361,7 +1457,8 @@ public interface AmazonLexModelsV2 {
 
     /**
      * <p>
-     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot.
+     * Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in
+     * the response are ordered by relevance.
      * </p>
      * 
      * @param listRecommendedIntentsRequest

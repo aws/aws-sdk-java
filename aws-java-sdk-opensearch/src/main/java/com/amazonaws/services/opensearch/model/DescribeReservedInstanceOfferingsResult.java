@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Container for results from <code>DescribeReservedInstanceOfferings</code>
+ * Container for results of a <code>DescribeReservedInstanceOfferings</code> request.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -26,24 +26,28 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * List of reserved OpenSearch instance offerings
+     * List of Reserved Instance offerings.
      * </p>
      */
     private java.util.List<ReservedInstanceOffering> reservedInstanceOfferings;
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        Provides an identifier to allow retrieval of paginated results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -52,10 +56,13 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
-     * @return Provides an identifier to allow retrieval of paginated results.
+     * @return When <code>nextToken</code> is returned, there are more results available. The value of
+     *         <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *         token to retrieve the next page.
      */
 
     public String getNextToken() {
@@ -64,11 +71,14 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * Provides an identifier to allow retrieval of paginated results.
+     * When <code>nextToken</code> is returned, there are more results available. The value of <code>nextToken</code> is
+     * a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.
      * </p>
      * 
      * @param nextToken
-     *        Provides an identifier to allow retrieval of paginated results.
+     *        When <code>nextToken</code> is returned, there are more results available. The value of
+     *        <code>nextToken</code> is a unique pagination token for each page. Make the call again using the returned
+     *        token to retrieve the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,10 +89,10 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of reserved OpenSearch instance offerings
+     * List of Reserved Instance offerings.
      * </p>
      * 
-     * @return List of reserved OpenSearch instance offerings
+     * @return List of Reserved Instance offerings.
      */
 
     public java.util.List<ReservedInstanceOffering> getReservedInstanceOfferings() {
@@ -91,11 +101,11 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of reserved OpenSearch instance offerings
+     * List of Reserved Instance offerings.
      * </p>
      * 
      * @param reservedInstanceOfferings
-     *        List of reserved OpenSearch instance offerings
+     *        List of Reserved Instance offerings.
      */
 
     public void setReservedInstanceOfferings(java.util.Collection<ReservedInstanceOffering> reservedInstanceOfferings) {
@@ -109,7 +119,7 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of reserved OpenSearch instance offerings
+     * List of Reserved Instance offerings.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -118,7 +128,7 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
      * </p>
      * 
      * @param reservedInstanceOfferings
-     *        List of reserved OpenSearch instance offerings
+     *        List of Reserved Instance offerings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,11 +144,11 @@ public class DescribeReservedInstanceOfferingsResult extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * List of reserved OpenSearch instance offerings
+     * List of Reserved Instance offerings.
      * </p>
      * 
      * @param reservedInstanceOfferings
-     *        List of reserved OpenSearch instance offerings
+     *        List of Reserved Instance offerings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

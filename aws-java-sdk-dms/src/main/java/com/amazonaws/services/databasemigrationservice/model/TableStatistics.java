@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,31 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private Long ddls;
+    /**
+     * <p>
+     * The number of insert actions applied on a target table.
+     * </p>
+     */
+    private Long appliedInserts;
+    /**
+     * <p>
+     * The number of delete actions applied on a target table.
+     * </p>
+     */
+    private Long appliedDeletes;
+    /**
+     * <p>
+     * The number of update actions applied on a target table.
+     * </p>
+     */
+    private Long appliedUpdates;
+    /**
+     * <p>
+     * The number of data definition language (DDL) statements used to build and modify the structure of your tables
+     * applied on the target.
+     * </p>
+     */
+    private Long appliedDdls;
     /**
      * <p>
      * The number of rows added during the full load operation.
@@ -448,6 +473,172 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
 
     public TableStatistics withDdls(Long ddls) {
         setDdls(ddls);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of insert actions applied on a target table.
+     * </p>
+     * 
+     * @param appliedInserts
+     *        The number of insert actions applied on a target table.
+     */
+
+    public void setAppliedInserts(Long appliedInserts) {
+        this.appliedInserts = appliedInserts;
+    }
+
+    /**
+     * <p>
+     * The number of insert actions applied on a target table.
+     * </p>
+     * 
+     * @return The number of insert actions applied on a target table.
+     */
+
+    public Long getAppliedInserts() {
+        return this.appliedInserts;
+    }
+
+    /**
+     * <p>
+     * The number of insert actions applied on a target table.
+     * </p>
+     * 
+     * @param appliedInserts
+     *        The number of insert actions applied on a target table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withAppliedInserts(Long appliedInserts) {
+        setAppliedInserts(appliedInserts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of delete actions applied on a target table.
+     * </p>
+     * 
+     * @param appliedDeletes
+     *        The number of delete actions applied on a target table.
+     */
+
+    public void setAppliedDeletes(Long appliedDeletes) {
+        this.appliedDeletes = appliedDeletes;
+    }
+
+    /**
+     * <p>
+     * The number of delete actions applied on a target table.
+     * </p>
+     * 
+     * @return The number of delete actions applied on a target table.
+     */
+
+    public Long getAppliedDeletes() {
+        return this.appliedDeletes;
+    }
+
+    /**
+     * <p>
+     * The number of delete actions applied on a target table.
+     * </p>
+     * 
+     * @param appliedDeletes
+     *        The number of delete actions applied on a target table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withAppliedDeletes(Long appliedDeletes) {
+        setAppliedDeletes(appliedDeletes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of update actions applied on a target table.
+     * </p>
+     * 
+     * @param appliedUpdates
+     *        The number of update actions applied on a target table.
+     */
+
+    public void setAppliedUpdates(Long appliedUpdates) {
+        this.appliedUpdates = appliedUpdates;
+    }
+
+    /**
+     * <p>
+     * The number of update actions applied on a target table.
+     * </p>
+     * 
+     * @return The number of update actions applied on a target table.
+     */
+
+    public Long getAppliedUpdates() {
+        return this.appliedUpdates;
+    }
+
+    /**
+     * <p>
+     * The number of update actions applied on a target table.
+     * </p>
+     * 
+     * @param appliedUpdates
+     *        The number of update actions applied on a target table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withAppliedUpdates(Long appliedUpdates) {
+        setAppliedUpdates(appliedUpdates);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of data definition language (DDL) statements used to build and modify the structure of your tables
+     * applied on the target.
+     * </p>
+     * 
+     * @param appliedDdls
+     *        The number of data definition language (DDL) statements used to build and modify the structure of your
+     *        tables applied on the target.
+     */
+
+    public void setAppliedDdls(Long appliedDdls) {
+        this.appliedDdls = appliedDdls;
+    }
+
+    /**
+     * <p>
+     * The number of data definition language (DDL) statements used to build and modify the structure of your tables
+     * applied on the target.
+     * </p>
+     * 
+     * @return The number of data definition language (DDL) statements used to build and modify the structure of your
+     *         tables applied on the target.
+     */
+
+    public Long getAppliedDdls() {
+        return this.appliedDdls;
+    }
+
+    /**
+     * <p>
+     * The number of data definition language (DDL) statements used to build and modify the structure of your tables
+     * applied on the target.
+     * </p>
+     * 
+     * @param appliedDdls
+     *        The number of data definition language (DDL) statements used to build and modify the structure of your
+     *        tables applied on the target.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableStatistics withAppliedDdls(Long appliedDdls) {
+        setAppliedDdls(appliedDdls);
         return this;
     }
 
@@ -1408,6 +1599,14 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
             sb.append("Updates: ").append(getUpdates()).append(",");
         if (getDdls() != null)
             sb.append("Ddls: ").append(getDdls()).append(",");
+        if (getAppliedInserts() != null)
+            sb.append("AppliedInserts: ").append(getAppliedInserts()).append(",");
+        if (getAppliedDeletes() != null)
+            sb.append("AppliedDeletes: ").append(getAppliedDeletes()).append(",");
+        if (getAppliedUpdates() != null)
+            sb.append("AppliedUpdates: ").append(getAppliedUpdates()).append(",");
+        if (getAppliedDdls() != null)
+            sb.append("AppliedDdls: ").append(getAppliedDdls()).append(",");
         if (getFullLoadRows() != null)
             sb.append("FullLoadRows: ").append(getFullLoadRows()).append(",");
         if (getFullLoadCondtnlChkFailedRows() != null)
@@ -1471,6 +1670,22 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         if (other.getDdls() == null ^ this.getDdls() == null)
             return false;
         if (other.getDdls() != null && other.getDdls().equals(this.getDdls()) == false)
+            return false;
+        if (other.getAppliedInserts() == null ^ this.getAppliedInserts() == null)
+            return false;
+        if (other.getAppliedInserts() != null && other.getAppliedInserts().equals(this.getAppliedInserts()) == false)
+            return false;
+        if (other.getAppliedDeletes() == null ^ this.getAppliedDeletes() == null)
+            return false;
+        if (other.getAppliedDeletes() != null && other.getAppliedDeletes().equals(this.getAppliedDeletes()) == false)
+            return false;
+        if (other.getAppliedUpdates() == null ^ this.getAppliedUpdates() == null)
+            return false;
+        if (other.getAppliedUpdates() != null && other.getAppliedUpdates().equals(this.getAppliedUpdates()) == false)
+            return false;
+        if (other.getAppliedDdls() == null ^ this.getAppliedDdls() == null)
+            return false;
+        if (other.getAppliedDdls() != null && other.getAppliedDdls().equals(this.getAppliedDdls()) == false)
             return false;
         if (other.getFullLoadRows() == null ^ this.getFullLoadRows() == null)
             return false;
@@ -1538,6 +1753,10 @@ public class TableStatistics implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getDeletes() == null) ? 0 : getDeletes().hashCode());
         hashCode = prime * hashCode + ((getUpdates() == null) ? 0 : getUpdates().hashCode());
         hashCode = prime * hashCode + ((getDdls() == null) ? 0 : getDdls().hashCode());
+        hashCode = prime * hashCode + ((getAppliedInserts() == null) ? 0 : getAppliedInserts().hashCode());
+        hashCode = prime * hashCode + ((getAppliedDeletes() == null) ? 0 : getAppliedDeletes().hashCode());
+        hashCode = prime * hashCode + ((getAppliedUpdates() == null) ? 0 : getAppliedUpdates().hashCode());
+        hashCode = prime * hashCode + ((getAppliedDdls() == null) ? 0 : getAppliedDdls().hashCode());
         hashCode = prime * hashCode + ((getFullLoadRows() == null) ? 0 : getFullLoadRows().hashCode());
         hashCode = prime * hashCode + ((getFullLoadCondtnlChkFailedRows() == null) ? 0 : getFullLoadCondtnlChkFailedRows().hashCode());
         hashCode = prime * hashCode + ((getFullLoadErrorRows() == null) ? 0 : getFullLoadErrorRows().hashCode());

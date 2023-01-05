@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,14 @@ public class RStudioServerProDomainSettingsForUpdateJsonUnmarshaller implements 
                 if (context.testExpression("DefaultResourceSpec", targetDepth)) {
                     context.nextToken();
                     rStudioServerProDomainSettingsForUpdate.setDefaultResourceSpec(ResourceSpecJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RStudioConnectUrl", targetDepth)) {
+                    context.nextToken();
+                    rStudioServerProDomainSettingsForUpdate.setRStudioConnectUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("RStudioPackageManagerUrl", targetDepth)) {
+                    context.nextToken();
+                    rStudioServerProDomainSettingsForUpdate.setRStudioPackageManagerUrl(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are updating.
+     * The identifier of the server that contains the host key that you are updating.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * Provide the ID of the host key that you are updating.
+     * The identifier of the host key that you are updating.
      * </p>
      */
     private String hostKeyId;
     /**
      * <p>
-     * Provide an updated description for the host key.
+     * An updated description for the host key.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are updating.
+     * The identifier of the server that contains the host key that you are updating.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host key that you are updating.
+     *        The identifier of the server that contains the host key that you are updating.
      */
 
     public void setServerId(String serverId) {
@@ -59,10 +59,10 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are updating.
+     * The identifier of the server that contains the host key that you are updating.
      * </p>
      * 
-     * @return Provide the ID of the server that contains the host key that you are updating.
+     * @return The identifier of the server that contains the host key that you are updating.
      */
 
     public String getServerId() {
@@ -71,11 +71,11 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the server that contains the host key that you are updating.
+     * The identifier of the server that contains the host key that you are updating.
      * </p>
      * 
      * @param serverId
-     *        Provide the ID of the server that contains the host key that you are updating.
+     *        The identifier of the server that contains the host key that you are updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the host key that you are updating.
+     * The identifier of the host key that you are updating.
      * </p>
      * 
      * @param hostKeyId
-     *        Provide the ID of the host key that you are updating.
+     *        The identifier of the host key that you are updating.
      */
 
     public void setHostKeyId(String hostKeyId) {
@@ -99,10 +99,10 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the host key that you are updating.
+     * The identifier of the host key that you are updating.
      * </p>
      * 
-     * @return Provide the ID of the host key that you are updating.
+     * @return The identifier of the host key that you are updating.
      */
 
     public String getHostKeyId() {
@@ -111,11 +111,11 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide the ID of the host key that you are updating.
+     * The identifier of the host key that you are updating.
      * </p>
      * 
      * @param hostKeyId
-     *        Provide the ID of the host key that you are updating.
+     *        The identifier of the host key that you are updating.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide an updated description for the host key.
+     * An updated description for the host key.
      * </p>
      * 
      * @param description
-     *        Provide an updated description for the host key.
+     *        An updated description for the host key.
      */
 
     public void setDescription(String description) {
@@ -139,10 +139,10 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide an updated description for the host key.
+     * An updated description for the host key.
      * </p>
      * 
-     * @return Provide an updated description for the host key.
+     * @return An updated description for the host key.
      */
 
     public String getDescription() {
@@ -151,11 +151,11 @@ public class UpdateHostKeyRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Provide an updated description for the host key.
+     * An updated description for the host key.
      * </p>
      * 
      * @param description
-     *        Provide an updated description for the host key.
+     *        An updated description for the host key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

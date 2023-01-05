@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DeleteWorkspaceApiKeyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the API key that was deleted.
+     * The name of the key that was deleted.
      * </p>
      */
     private String keyName;
@@ -38,11 +38,11 @@ public class DeleteWorkspaceApiKeyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the API key that was deleted.
+     * The name of the key that was deleted.
      * </p>
      * 
      * @param keyName
-     *        The name of the API key that was deleted.
+     *        The name of the key that was deleted.
      */
 
     public void setKeyName(String keyName) {
@@ -51,10 +51,10 @@ public class DeleteWorkspaceApiKeyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the API key that was deleted.
+     * The name of the key that was deleted.
      * </p>
      * 
-     * @return The name of the API key that was deleted.
+     * @return The name of the key that was deleted.
      */
 
     public String getKeyName() {
@@ -63,11 +63,11 @@ public class DeleteWorkspaceApiKeyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the API key that was deleted.
+     * The name of the key that was deleted.
      * </p>
      * 
      * @param keyName
-     *        The name of the API key that was deleted.
+     *        The name of the key that was deleted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

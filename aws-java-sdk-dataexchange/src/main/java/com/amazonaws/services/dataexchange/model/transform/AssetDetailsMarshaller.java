@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class AssetDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedshiftDataShareAsset").build();
     private static final MarshallingInfo<StructuredPojo> APIGATEWAYAPIASSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApiGatewayApiAsset").build();
+    private static final MarshallingInfo<StructuredPojo> S3DATAACCESSASSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DataAccessAsset").build();
+    private static final MarshallingInfo<StructuredPojo> LAKEFORMATIONDATAPERMISSIONASSET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LakeFormationDataPermissionAsset").build();
 
     private static final AssetDetailsMarshaller instance = new AssetDetailsMarshaller();
 
@@ -53,6 +57,8 @@ public class AssetDetailsMarshaller {
             protocolMarshaller.marshall(assetDetails.getS3SnapshotAsset(), S3SNAPSHOTASSET_BINDING);
             protocolMarshaller.marshall(assetDetails.getRedshiftDataShareAsset(), REDSHIFTDATASHAREASSET_BINDING);
             protocolMarshaller.marshall(assetDetails.getApiGatewayApiAsset(), APIGATEWAYAPIASSET_BINDING);
+            protocolMarshaller.marshall(assetDetails.getS3DataAccessAsset(), S3DATAACCESSASSET_BINDING);
+            protocolMarshaller.marshall(assetDetails.getLakeFormationDataPermissionAsset(), LAKEFORMATIONDATAPERMISSIONASSET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

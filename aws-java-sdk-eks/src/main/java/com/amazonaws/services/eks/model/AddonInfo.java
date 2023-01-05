@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,24 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<AddonVersionInfo> addonVersions;
+    /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     */
+    private String publisher;
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     */
+    private String owner;
+    /**
+     * <p>
+     * Information about the add-on from the Amazon Web Services Marketplace.
+     * </p>
+     */
+    private MarketplaceInformation marketplaceInformation;
 
     /**
      * <p>
@@ -198,6 +216,126 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     * 
+     * @param publisher
+     *        The publisher of the add-on.
+     */
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     * 
+     * @return The publisher of the add-on.
+     */
+
+    public String getPublisher() {
+        return this.publisher;
+    }
+
+    /**
+     * <p>
+     * The publisher of the add-on.
+     * </p>
+     * 
+     * @param publisher
+     *        The publisher of the add-on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddonInfo withPublisher(String publisher) {
+        setPublisher(publisher);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of the add-on.
+     */
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     * 
+     * @return The owner of the add-on.
+     */
+
+    public String getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The owner of the add-on.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of the add-on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddonInfo withOwner(String owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the add-on from the Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param marketplaceInformation
+     *        Information about the add-on from the Amazon Web Services Marketplace.
+     */
+
+    public void setMarketplaceInformation(MarketplaceInformation marketplaceInformation) {
+        this.marketplaceInformation = marketplaceInformation;
+    }
+
+    /**
+     * <p>
+     * Information about the add-on from the Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @return Information about the add-on from the Amazon Web Services Marketplace.
+     */
+
+    public MarketplaceInformation getMarketplaceInformation() {
+        return this.marketplaceInformation;
+    }
+
+    /**
+     * <p>
+     * Information about the add-on from the Amazon Web Services Marketplace.
+     * </p>
+     * 
+     * @param marketplaceInformation
+     *        Information about the add-on from the Amazon Web Services Marketplace.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddonInfo withMarketplaceInformation(MarketplaceInformation marketplaceInformation) {
+        setMarketplaceInformation(marketplaceInformation);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -214,7 +352,13 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
         if (getAddonVersions() != null)
-            sb.append("AddonVersions: ").append(getAddonVersions());
+            sb.append("AddonVersions: ").append(getAddonVersions()).append(",");
+        if (getPublisher() != null)
+            sb.append("Publisher: ").append(getPublisher()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner()).append(",");
+        if (getMarketplaceInformation() != null)
+            sb.append("MarketplaceInformation: ").append(getMarketplaceInformation());
         sb.append("}");
         return sb.toString();
     }
@@ -241,6 +385,18 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAddonVersions() != null && other.getAddonVersions().equals(this.getAddonVersions()) == false)
             return false;
+        if (other.getPublisher() == null ^ this.getPublisher() == null)
+            return false;
+        if (other.getPublisher() != null && other.getPublisher().equals(this.getPublisher()) == false)
+            return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
+        if (other.getMarketplaceInformation() == null ^ this.getMarketplaceInformation() == null)
+            return false;
+        if (other.getMarketplaceInformation() != null && other.getMarketplaceInformation().equals(this.getMarketplaceInformation()) == false)
+            return false;
         return true;
     }
 
@@ -252,6 +408,9 @@ public class AddonInfo implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAddonName() == null) ? 0 : getAddonName().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getAddonVersions() == null) ? 0 : getAddonVersions().hashCode());
+        hashCode = prime * hashCode + ((getPublisher() == null) ? 0 : getPublisher().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        hashCode = prime * hashCode + ((getMarketplaceInformation() == null) ? 0 : getMarketplaceInformation().hashCode());
         return hashCode;
     }
 

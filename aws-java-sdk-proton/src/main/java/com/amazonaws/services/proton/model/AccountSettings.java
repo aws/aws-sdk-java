@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,13 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     */
+    private String pipelineCodebuildRoleArn;
+    /**
+     * <p>
      * The linked repository for pipeline provisioning. Required if you have environments configured for self-managed
      * provisioning with services that include pipelines. A linked repository is a repository that has been registered
      * with Proton. For more information, see <a>CreateRepository</a>.
@@ -43,6 +50,52 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String pipelineServiceRoleArn;
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     * 
+     * @param pipelineCodebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton
+     *        assumes this role for CodeBuild-based provisioning.
+     */
+
+    public void setPipelineCodebuildRoleArn(String pipelineCodebuildRoleArn) {
+        this.pipelineCodebuildRoleArn = pipelineCodebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton
+     *         assumes this role for CodeBuild-based provisioning.
+     */
+
+    public String getPipelineCodebuildRoleArn() {
+        return this.pipelineCodebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton assumes
+     * this role for CodeBuild-based provisioning.
+     * </p>
+     * 
+     * @param pipelineCodebuildRoleArn
+     *        The Amazon Resource Name (ARN) of the service role that Proton uses for provisioning pipelines. Proton
+     *        assumes this role for CodeBuild-based provisioning.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AccountSettings withPipelineCodebuildRoleArn(String pipelineCodebuildRoleArn) {
+        setPipelineCodebuildRoleArn(pipelineCodebuildRoleArn);
+        return this;
+    }
 
     /**
      * <p>
@@ -157,6 +210,8 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getPipelineCodebuildRoleArn() != null)
+            sb.append("PipelineCodebuildRoleArn: ").append(getPipelineCodebuildRoleArn()).append(",");
         if (getPipelineProvisioningRepository() != null)
             sb.append("PipelineProvisioningRepository: ").append(getPipelineProvisioningRepository()).append(",");
         if (getPipelineServiceRoleArn() != null)
@@ -175,6 +230,10 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         if (obj instanceof AccountSettings == false)
             return false;
         AccountSettings other = (AccountSettings) obj;
+        if (other.getPipelineCodebuildRoleArn() == null ^ this.getPipelineCodebuildRoleArn() == null)
+            return false;
+        if (other.getPipelineCodebuildRoleArn() != null && other.getPipelineCodebuildRoleArn().equals(this.getPipelineCodebuildRoleArn()) == false)
+            return false;
         if (other.getPipelineProvisioningRepository() == null ^ this.getPipelineProvisioningRepository() == null)
             return false;
         if (other.getPipelineProvisioningRepository() != null
@@ -192,6 +251,7 @@ public class AccountSettings implements Serializable, Cloneable, StructuredPojo 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getPipelineCodebuildRoleArn() == null) ? 0 : getPipelineCodebuildRoleArn().hashCode());
         hashCode = prime * hashCode + ((getPipelineProvisioningRepository() == null) ? 0 : getPipelineProvisioningRepository().hashCode());
         hashCode = prime * hashCode + ((getPipelineServiceRoleArn() == null) ? 0 : getPipelineServiceRoleArn().hashCode());
         return hashCode;

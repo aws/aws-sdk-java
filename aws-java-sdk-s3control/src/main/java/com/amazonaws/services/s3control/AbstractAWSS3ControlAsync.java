@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -520,6 +520,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetMultiRegionAccessPointRoutesResult> getMultiRegionAccessPointRoutesAsync(
+            GetMultiRegionAccessPointRoutesRequest request) {
+
+        return getMultiRegionAccessPointRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMultiRegionAccessPointRoutesResult> getMultiRegionAccessPointRoutesAsync(
+            GetMultiRegionAccessPointRoutesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetMultiRegionAccessPointRoutesRequest, GetMultiRegionAccessPointRoutesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPublicAccessBlockResult> getPublicAccessBlockAsync(GetPublicAccessBlockRequest request) {
 
         return getPublicAccessBlockAsync(request, null);
@@ -802,6 +817,21 @@ public class AbstractAWSS3ControlAsync extends AbstractAWSS3Control implements A
     public java.util.concurrent.Future<PutStorageLensConfigurationTaggingResult> putStorageLensConfigurationTaggingAsync(
             PutStorageLensConfigurationTaggingRequest request,
             com.amazonaws.handlers.AsyncHandler<PutStorageLensConfigurationTaggingRequest, PutStorageLensConfigurationTaggingResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitMultiRegionAccessPointRoutesResult> submitMultiRegionAccessPointRoutesAsync(
+            SubmitMultiRegionAccessPointRoutesRequest request) {
+
+        return submitMultiRegionAccessPointRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitMultiRegionAccessPointRoutesResult> submitMultiRegionAccessPointRoutesAsync(
+            SubmitMultiRegionAccessPointRoutesRequest request,
+            com.amazonaws.handlers.AsyncHandler<SubmitMultiRegionAccessPointRoutesRequest, SubmitMultiRegionAccessPointRoutesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

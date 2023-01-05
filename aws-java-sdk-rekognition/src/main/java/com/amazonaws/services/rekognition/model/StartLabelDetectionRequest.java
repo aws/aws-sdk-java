@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      * level lower than this specified value.
      * </p>
      * <p>
-     * If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than
-     * or equal to 50 percent.
+     * If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected)
+     * with confidence values greater than or equal to 50 percent.
      * </p>
      */
     private Float minConfidence;
@@ -63,6 +63,19 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String jobTag;
+    /**
+     * <p>
+     * The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * </p>
+     */
+    private java.util.List<String> features;
+    /**
+     * <p>
+     * The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request
+     * of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
+     * </p>
+     */
+    private LabelDetectionSettings settings;
 
     /**
      * <p>
@@ -164,8 +177,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      * level lower than this specified value.
      * </p>
      * <p>
-     * If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than
-     * or equal to 50 percent.
+     * If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected)
+     * with confidence values greater than or equal to 50 percent.
      * </p>
      * 
      * @param minConfidence
@@ -174,8 +187,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      *        the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels
      *        with a confidence level lower than this specified value.</p>
      *        <p>
-     *        If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values
-     *        greater than or equal to 50 percent.
+     *        If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if
+     *        detected) with confidence values greater than or equal to 50 percent.
      */
 
     public void setMinConfidence(Float minConfidence) {
@@ -190,8 +203,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      * level lower than this specified value.
      * </p>
      * <p>
-     * If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than
-     * or equal to 50 percent.
+     * If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected)
+     * with confidence values greater than or equal to 50 percent.
      * </p>
      * 
      * @return Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected
@@ -199,8 +212,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      *         the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels
      *         with a confidence level lower than this specified value.</p>
      *         <p>
-     *         If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values
-     *         greater than or equal to 50 percent.
+     *         If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if
+     *         detected) with confidence values greater than or equal to 50 percent.
      */
 
     public Float getMinConfidence() {
@@ -215,8 +228,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      * level lower than this specified value.
      * </p>
      * <p>
-     * If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values greater than
-     * or equal to 50 percent.
+     * If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if detected)
+     * with confidence values greater than or equal to 50 percent.
      * </p>
      * 
      * @param minConfidence
@@ -225,8 +238,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
      *        the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels
      *        with a confidence level lower than this specified value.</p>
      *        <p>
-     *        If you don't specify <code>MinConfidence</code>, the operation returns labels with confidence values
-     *        greater than or equal to 50 percent.
+     *        If you don't specify <code>MinConfidence</code>, the operation returns labels and bounding boxes (if
+     *        detected) with confidence values greater than or equal to 50 percent.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,6 +353,150 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * </p>
+     * 
+     * @return The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * @see LabelDetectionFeatureName
+     */
+
+    public java.util.List<String> getFeatures() {
+        return features;
+    }
+
+    /**
+     * <p>
+     * The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * </p>
+     * 
+     * @param features
+     *        The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * @see LabelDetectionFeatureName
+     */
+
+    public void setFeatures(java.util.Collection<String> features) {
+        if (features == null) {
+            this.features = null;
+            return;
+        }
+
+        this.features = new java.util.ArrayList<String>(features);
+    }
+
+    /**
+     * <p>
+     * The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFeatures(java.util.Collection)} or {@link #withFeatures(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param features
+     *        The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LabelDetectionFeatureName
+     */
+
+    public StartLabelDetectionRequest withFeatures(String... features) {
+        if (this.features == null) {
+            setFeatures(new java.util.ArrayList<String>(features.length));
+        }
+        for (String ele : features) {
+            this.features.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * </p>
+     * 
+     * @param features
+     *        The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LabelDetectionFeatureName
+     */
+
+    public StartLabelDetectionRequest withFeatures(java.util.Collection<String> features) {
+        setFeatures(features);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * </p>
+     * 
+     * @param features
+     *        The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LabelDetectionFeatureName
+     */
+
+    public StartLabelDetectionRequest withFeatures(LabelDetectionFeatureName... features) {
+        java.util.ArrayList<String> featuresCopy = new java.util.ArrayList<String>(features.length);
+        for (LabelDetectionFeatureName value : features) {
+            featuresCopy.add(value.toString());
+        }
+        if (getFeatures() == null) {
+            setFeatures(featuresCopy);
+        } else {
+            getFeatures().addAll(featuresCopy);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request
+     * of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for a StartLabelDetection request.Contains the specified parameters for the label detection
+     *        request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
+     */
+
+    public void setSettings(LabelDetectionSettings settings) {
+        this.settings = settings;
+    }
+
+    /**
+     * <p>
+     * The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request
+     * of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
+     * </p>
+     * 
+     * @return The settings for a StartLabelDetection request.Contains the specified parameters for the label detection
+     *         request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
+     */
+
+    public LabelDetectionSettings getSettings() {
+        return this.settings;
+    }
+
+    /**
+     * <p>
+     * The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request
+     * of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
+     * </p>
+     * 
+     * @param settings
+     *        The settings for a StartLabelDetection request.Contains the specified parameters for the label detection
+     *        request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartLabelDetectionRequest withSettings(LabelDetectionSettings settings) {
+        setSettings(settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -360,7 +517,11 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
         if (getNotificationChannel() != null)
             sb.append("NotificationChannel: ").append(getNotificationChannel()).append(",");
         if (getJobTag() != null)
-            sb.append("JobTag: ").append(getJobTag());
+            sb.append("JobTag: ").append(getJobTag()).append(",");
+        if (getFeatures() != null)
+            sb.append("Features: ").append(getFeatures()).append(",");
+        if (getSettings() != null)
+            sb.append("Settings: ").append(getSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -395,6 +556,14 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getJobTag() != null && other.getJobTag().equals(this.getJobTag()) == false)
             return false;
+        if (other.getFeatures() == null ^ this.getFeatures() == null)
+            return false;
+        if (other.getFeatures() != null && other.getFeatures().equals(this.getFeatures()) == false)
+            return false;
+        if (other.getSettings() == null ^ this.getSettings() == null)
+            return false;
+        if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
         return true;
     }
 
@@ -408,6 +577,8 @@ public class StartLabelDetectionRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getMinConfidence() == null) ? 0 : getMinConfidence().hashCode());
         hashCode = prime * hashCode + ((getNotificationChannel() == null) ? 0 : getNotificationChannel().hashCode());
         hashCode = prime * hashCode + ((getJobTag() == null) ? 0 : getJobTag().hashCode());
+        hashCode = prime * hashCode + ((getFeatures() == null) ? 0 : getFeatures().hashCode());
+        hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
         return hashCode;
     }
 

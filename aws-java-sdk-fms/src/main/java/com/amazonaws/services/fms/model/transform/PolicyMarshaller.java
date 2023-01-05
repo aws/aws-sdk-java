@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,10 @@ public class PolicyMarshaller {
             .marshallLocationName("IncludeMap").build();
     private static final MarshallingInfo<Map> EXCLUDEMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ExcludeMap").build();
+    private static final MarshallingInfo<List> RESOURCESETIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceSetIds").build();
+    private static final MarshallingInfo<String> POLICYDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyDescription").build();
 
     private static final PolicyMarshaller instance = new PolicyMarshaller();
 
@@ -82,6 +86,8 @@ public class PolicyMarshaller {
             protocolMarshaller.marshall(policy.getDeleteUnusedFMManagedResources(), DELETEUNUSEDFMMANAGEDRESOURCES_BINDING);
             protocolMarshaller.marshall(policy.getIncludeMap(), INCLUDEMAP_BINDING);
             protocolMarshaller.marshall(policy.getExcludeMap(), EXCLUDEMAP_BINDING);
+            protocolMarshaller.marshall(policy.getResourceSetIds(), RESOURCESETIDS_BINDING);
+            protocolMarshaller.marshall(policy.getPolicyDescription(), POLICYDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

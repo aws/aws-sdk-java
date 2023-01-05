@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,8 @@ public class PackageFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private StringFilter release;
+
+    private StringFilter sourceLambdaLayerArn;
     /**
      * <p>
      * An object that contains details on the source layer hash to filter on.
@@ -226,6 +228,32 @@ public class PackageFilter implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param sourceLambdaLayerArn
+     */
+
+    public void setSourceLambdaLayerArn(StringFilter sourceLambdaLayerArn) {
+        this.sourceLambdaLayerArn = sourceLambdaLayerArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public StringFilter getSourceLambdaLayerArn() {
+        return this.sourceLambdaLayerArn;
+    }
+
+    /**
+     * @param sourceLambdaLayerArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PackageFilter withSourceLambdaLayerArn(StringFilter sourceLambdaLayerArn) {
+        setSourceLambdaLayerArn(sourceLambdaLayerArn);
+        return this;
+    }
+
+    /**
      * <p>
      * An object that contains details on the source layer hash to filter on.
      * </p>
@@ -325,6 +353,8 @@ public class PackageFilter implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getRelease() != null)
             sb.append("Release: ").append(getRelease()).append(",");
+        if (getSourceLambdaLayerArn() != null)
+            sb.append("SourceLambdaLayerArn: ").append(getSourceLambdaLayerArn()).append(",");
         if (getSourceLayerHash() != null)
             sb.append("SourceLayerHash: ").append(getSourceLayerHash()).append(",");
         if (getVersion() != null)
@@ -359,6 +389,10 @@ public class PackageFilter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRelease() != null && other.getRelease().equals(this.getRelease()) == false)
             return false;
+        if (other.getSourceLambdaLayerArn() == null ^ this.getSourceLambdaLayerArn() == null)
+            return false;
+        if (other.getSourceLambdaLayerArn() != null && other.getSourceLambdaLayerArn().equals(this.getSourceLambdaLayerArn()) == false)
+            return false;
         if (other.getSourceLayerHash() == null ^ this.getSourceLayerHash() == null)
             return false;
         if (other.getSourceLayerHash() != null && other.getSourceLayerHash().equals(this.getSourceLayerHash()) == false)
@@ -379,6 +413,7 @@ public class PackageFilter implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEpoch() == null) ? 0 : getEpoch().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRelease() == null) ? 0 : getRelease().hashCode());
+        hashCode = prime * hashCode + ((getSourceLambdaLayerArn() == null) ? 0 : getSourceLambdaLayerArn().hashCode());
         hashCode = prime * hashCode + ((getSourceLayerHash() == null) ? 0 : getSourceLayerHash().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         return hashCode;

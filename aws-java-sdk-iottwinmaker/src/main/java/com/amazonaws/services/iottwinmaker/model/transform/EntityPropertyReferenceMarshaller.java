@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,10 @@ public class EntityPropertyReferenceMarshaller {
 
     private static final MarshallingInfo<String> COMPONENTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("componentName").build();
-    private static final MarshallingInfo<String> ENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("entityId").build();
     private static final MarshallingInfo<Map> EXTERNALIDPROPERTY_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalIdProperty").build();
+    private static final MarshallingInfo<String> ENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("entityId").build();
     private static final MarshallingInfo<String> PROPERTYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propertyName").build();
 
@@ -55,8 +55,8 @@ public class EntityPropertyReferenceMarshaller {
 
         try {
             protocolMarshaller.marshall(entityPropertyReference.getComponentName(), COMPONENTNAME_BINDING);
-            protocolMarshaller.marshall(entityPropertyReference.getEntityId(), ENTITYID_BINDING);
             protocolMarshaller.marshall(entityPropertyReference.getExternalIdProperty(), EXTERNALIDPROPERTY_BINDING);
+            protocolMarshaller.marshall(entityPropertyReference.getEntityId(), ENTITYID_BINDING);
             protocolMarshaller.marshall(entityPropertyReference.getPropertyName(), PROPERTYNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

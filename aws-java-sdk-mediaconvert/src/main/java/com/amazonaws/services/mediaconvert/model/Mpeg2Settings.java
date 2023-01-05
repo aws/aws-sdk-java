@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -101,6 +101,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
      * size in frames.
      */
     private String gopSizeUnits;
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer
+     * that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to
+     * automatically determine the final buffer fill percentage.
+     */
+    private Integer hrdBufferFinalFillPercentage;
     /** Percentage of the buffer that should initially be filled (HRD buffer model). */
     private Integer hrdBufferInitialFillPercentage;
     /** Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000. */
@@ -219,8 +225,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
     private String spatialAdaptiveQuantization;
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related
-     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10
-     * (D_10).
+     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to D10 (D_10).
      */
     private String syntax;
     /**
@@ -1007,6 +1012,52 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
 
     public Mpeg2Settings withGopSizeUnits(Mpeg2GopSizeUnits gopSizeUnits) {
         this.gopSizeUnits = gopSizeUnits.toString();
+        return this;
+    }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer
+     * that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to
+     * automatically determine the final buffer fill percentage.
+     * 
+     * @param hrdBufferFinalFillPercentage
+     *        If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD
+     *        buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or
+     *        leave blank to automatically determine the final buffer fill percentage.
+     */
+
+    public void setHrdBufferFinalFillPercentage(Integer hrdBufferFinalFillPercentage) {
+        this.hrdBufferFinalFillPercentage = hrdBufferFinalFillPercentage;
+    }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer
+     * that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to
+     * automatically determine the final buffer fill percentage.
+     * 
+     * @return If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD
+     *         buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or
+     *         leave blank to automatically determine the final buffer fill percentage.
+     */
+
+    public Integer getHrdBufferFinalFillPercentage() {
+        return this.hrdBufferFinalFillPercentage;
+    }
+
+    /**
+     * If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD buffer
+     * that's available at the end of each encoded video segment. For the best video quality: Set to 0 or leave blank to
+     * automatically determine the final buffer fill percentage.
+     * 
+     * @param hrdBufferFinalFillPercentage
+     *        If your downstream systems have strict buffer requirements: Specify the minimum percentage of the HRD
+     *        buffer that's available at the end of each encoded video segment. For the best video quality: Set to 0 or
+     *        leave blank to automatically determine the final buffer fill percentage.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Mpeg2Settings withHrdBufferFinalFillPercentage(Integer hrdBufferFinalFillPercentage) {
+        setHrdBufferFinalFillPercentage(hrdBufferFinalFillPercentage);
         return this;
     }
 
@@ -2174,13 +2225,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related
-     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10
-     * (D_10).
+     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to D10 (D_10).
      * 
      * @param syntax
      *        Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax.
      *        Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value
-     *        to to D10 (D_10).
+     *        to D10 (D_10).
      * @see Mpeg2Syntax
      */
 
@@ -2190,12 +2240,11 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related
-     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10
-     * (D_10).
+     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to D10 (D_10).
      * 
      * @return Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax.
      *         Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value
-     *         to to D10 (D_10).
+     *         to D10 (D_10).
      * @see Mpeg2Syntax
      */
 
@@ -2205,13 +2254,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related
-     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10
-     * (D_10).
+     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to D10 (D_10).
      * 
      * @param syntax
      *        Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax.
      *        Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value
-     *        to to D10 (D_10).
+     *        to D10 (D_10).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2Syntax
      */
@@ -2223,13 +2271,12 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related
-     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10
-     * (D_10).
+     * settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to D10 (D_10).
      * 
      * @param syntax
      *        Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax.
      *        Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value
-     *        to to D10 (D_10).
+     *        to D10 (D_10).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Mpeg2Syntax
      */
@@ -2485,6 +2532,8 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("GopSize: ").append(getGopSize()).append(",");
         if (getGopSizeUnits() != null)
             sb.append("GopSizeUnits: ").append(getGopSizeUnits()).append(",");
+        if (getHrdBufferFinalFillPercentage() != null)
+            sb.append("HrdBufferFinalFillPercentage: ").append(getHrdBufferFinalFillPercentage()).append(",");
         if (getHrdBufferInitialFillPercentage() != null)
             sb.append("HrdBufferInitialFillPercentage: ").append(getHrdBufferInitialFillPercentage()).append(",");
         if (getHrdBufferSize() != null)
@@ -2586,6 +2635,10 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getGopSizeUnits() == null ^ this.getGopSizeUnits() == null)
             return false;
         if (other.getGopSizeUnits() != null && other.getGopSizeUnits().equals(this.getGopSizeUnits()) == false)
+            return false;
+        if (other.getHrdBufferFinalFillPercentage() == null ^ this.getHrdBufferFinalFillPercentage() == null)
+            return false;
+        if (other.getHrdBufferFinalFillPercentage() != null && other.getHrdBufferFinalFillPercentage().equals(this.getHrdBufferFinalFillPercentage()) == false)
             return false;
         if (other.getHrdBufferInitialFillPercentage() == null ^ this.getHrdBufferInitialFillPercentage() == null)
             return false;
@@ -2689,6 +2742,7 @@ public class Mpeg2Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getGopClosedCadence() == null) ? 0 : getGopClosedCadence().hashCode());
         hashCode = prime * hashCode + ((getGopSize() == null) ? 0 : getGopSize().hashCode());
         hashCode = prime * hashCode + ((getGopSizeUnits() == null) ? 0 : getGopSizeUnits().hashCode());
+        hashCode = prime * hashCode + ((getHrdBufferFinalFillPercentage() == null) ? 0 : getHrdBufferFinalFillPercentage().hashCode());
         hashCode = prime * hashCode + ((getHrdBufferInitialFillPercentage() == null) ? 0 : getHrdBufferInitialFillPercentage().hashCode());
         hashCode = prime * hashCode + ((getHrdBufferSize() == null) ? 0 : getHrdBufferSize().hashCode());
         hashCode = prime * hashCode + ((getInterlaceMode() == null) ? 0 : getInterlaceMode().hashCode());

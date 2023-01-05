@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,26 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
      * </p>
      */
     private String engineVersion;
+    /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     */
+    private Integer backupRetentionPeriod;
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     */
+    private Integer allocatedStorage;
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     */
+    private Integer iops;
 
     /**
      * @param pendingCloudwatchLogsExports
@@ -261,6 +281,141 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     * 
+     * @param backupRetentionPeriod
+     *        The number of days for which automatic DB snapshots are retained.
+     */
+
+    public void setBackupRetentionPeriod(Integer backupRetentionPeriod) {
+        this.backupRetentionPeriod = backupRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     * 
+     * @return The number of days for which automatic DB snapshots are retained.
+     */
+
+    public Integer getBackupRetentionPeriod() {
+        return this.backupRetentionPeriod;
+    }
+
+    /**
+     * <p>
+     * The number of days for which automatic DB snapshots are retained.
+     * </p>
+     * 
+     * @param backupRetentionPeriod
+     *        The number of days for which automatic DB snapshots are retained.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withBackupRetentionPeriod(Integer backupRetentionPeriod) {
+        setBackupRetentionPeriod(backupRetentionPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     * 
+     * @param allocatedStorage
+     *        The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     *        <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but
+     *        instead automatically adjusts as needed.
+     */
+
+    public void setAllocatedStorage(Integer allocatedStorage) {
+        this.allocatedStorage = allocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     * 
+     * @return The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     *         <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but
+     *         instead automatically adjusts as needed.
+     */
+
+    public Integer getAllocatedStorage() {
+        return this.allocatedStorage;
+    }
+
+    /**
+     * <p>
+     * The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     * <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
+     * automatically adjusts as needed.
+     * </p>
+     * 
+     * @param allocatedStorage
+     *        The allocated storage size in gibibytes (GiB) for all database engines except Amazon Aurora. For Aurora,
+     *        <code>AllocatedStorage</code> always returns 1, because Aurora DB cluster storage size isn't fixed, but
+     *        instead automatically adjusts as needed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withAllocatedStorage(Integer allocatedStorage) {
+        setAllocatedStorage(allocatedStorage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     * 
+     * @param iops
+     *        The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB
+     *        clusters.
+     */
+
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     * 
+     * @return The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB
+     *         clusters.
+     */
+
+    public Integer getIops() {
+        return this.iops;
+    }
+
+    /**
+     * <p>
+     * The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB clusters.
+     * </p>
+     * 
+     * @param iops
+     *        The Provisioned IOPS (I/O operations per second) value. This setting is only for non-Aurora Multi-AZ DB
+     *        clusters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClusterPendingModifiedValues withIops(Integer iops) {
+        setIops(iops);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +436,13 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
         if (getIAMDatabaseAuthenticationEnabled() != null)
             sb.append("IAMDatabaseAuthenticationEnabled: ").append(getIAMDatabaseAuthenticationEnabled()).append(",");
         if (getEngineVersion() != null)
-            sb.append("EngineVersion: ").append(getEngineVersion());
+            sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
+        if (getBackupRetentionPeriod() != null)
+            sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
+        if (getAllocatedStorage() != null)
+            sb.append("AllocatedStorage: ").append(getAllocatedStorage()).append(",");
+        if (getIops() != null)
+            sb.append("Iops: ").append(getIops());
         sb.append("}");
         return sb.toString();
     }
@@ -317,6 +478,18 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
             return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
             return false;
+        if (other.getBackupRetentionPeriod() == null ^ this.getBackupRetentionPeriod() == null)
+            return false;
+        if (other.getBackupRetentionPeriod() != null && other.getBackupRetentionPeriod().equals(this.getBackupRetentionPeriod()) == false)
+            return false;
+        if (other.getAllocatedStorage() == null ^ this.getAllocatedStorage() == null)
+            return false;
+        if (other.getAllocatedStorage() != null && other.getAllocatedStorage().equals(this.getAllocatedStorage()) == false)
+            return false;
+        if (other.getIops() == null ^ this.getIops() == null)
+            return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false)
+            return false;
         return true;
     }
 
@@ -330,6 +503,9 @@ public class ClusterPendingModifiedValues implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode());
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode());
+        hashCode = prime * hashCode + ((getAllocatedStorage() == null) ? 0 : getAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,9 +53,21 @@ public class UpdateFileSystemOpenZFSConfiguration implements Serializable, Clone
     private String dailyAutomaticBackupStartTime;
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second&#x2028; (MB/s). Valid
+     * values depend on the DeploymentType you choose, as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Integer throughputCapacity;
 
@@ -289,13 +301,36 @@ public class UpdateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second&#x2028; (MB/s). Valid
+     * values depend on the DeploymentType you choose, as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64,
-     *        128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second&#x2028; (MB/s).
+     *        Valid values depend on the DeploymentType you choose, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     *        </p>
+     *        </li>
      */
 
     public void setThroughputCapacity(Integer throughputCapacity) {
@@ -304,12 +339,36 @@ public class UpdateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second&#x2028; (MB/s). Valid
+     * values depend on the DeploymentType you choose, as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are
-     *         64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * @return The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second&#x2028; (MB/s).
+     *         Valid values depend on the DeploymentType you choose, as follows:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240
+     *         MB/s.
+     *         </p>
+     *         </li>
      */
 
     public Integer getThroughputCapacity() {
@@ -318,13 +377,36 @@ public class UpdateFileSystemOpenZFSConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64, 128,
-     * 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second&#x2028; (MB/s). Valid
+     * values depend on the DeploymentType you choose, as follows:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param throughputCapacity
-     *        The throughput of an Amazon FSx file system, measured in megabytes per second (MBps). Valid values are 64,
-     *        128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        The throughput of an Amazon FSx for OpenZFS file system, measured in megabytes per second&#x2028; (MB/s).
+     *        Valid values depend on the DeploymentType you choose, as follows:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>SINGLE_AZ_2</code>, valid values are 160, 320, 640, 1280, 2560, 3840, 5120, 7680, or 10240 MB/s.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

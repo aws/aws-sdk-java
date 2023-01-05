@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class CreateWorkspaceRequestMarshaller {
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<String> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
     private static final MarshallingInfo<String> ORGANIZATIONROLENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("organizationRoleName").build();
     private static final MarshallingInfo<String> PERMISSIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -46,6 +48,8 @@ public class CreateWorkspaceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("stackSetName").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfiguration").build();
     private static final MarshallingInfo<List> WORKSPACEDATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workspaceDataSources").build();
     private static final MarshallingInfo<String> WORKSPACEDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -78,10 +82,12 @@ public class CreateWorkspaceRequestMarshaller {
             protocolMarshaller.marshall(createWorkspaceRequest.getAccountAccessType(), ACCOUNTACCESSTYPE_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getAuthenticationProviders(), AUTHENTICATIONPROVIDERS_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getClientToken(), CLIENTTOKEN_BINDING);
+            protocolMarshaller.marshall(createWorkspaceRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getOrganizationRoleName(), ORGANIZATIONROLENAME_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getPermissionType(), PERMISSIONTYPE_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getStackSetName(), STACKSETNAME_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createWorkspaceRequest.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getWorkspaceDataSources(), WORKSPACEDATASOURCES_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getWorkspaceDescription(), WORKSPACEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(createWorkspaceRequest.getWorkspaceName(), WORKSPACENAME_BINDING);

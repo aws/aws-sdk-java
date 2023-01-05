@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The status of the OpenSearch version options for the specified OpenSearch domain.
+ * The status of the the OpenSearch or Elasticsearch version options for the specified Amazon OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,24 +27,24 @@ public class VersionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The OpenSearch version for the specified OpenSearch domain.
+     * The OpenSearch or Elasticsearch version for the specified domain.
      * </p>
      */
     private String options;
     /**
      * <p>
-     * The status of the OpenSearch version options for the specified OpenSearch domain.
+     * The status of the version options for the specified domain.
      * </p>
      */
     private OptionStatus status;
 
     /**
      * <p>
-     * The OpenSearch version for the specified OpenSearch domain.
+     * The OpenSearch or Elasticsearch version for the specified domain.
      * </p>
      * 
      * @param options
-     *        The OpenSearch version for the specified OpenSearch domain.
+     *        The OpenSearch or Elasticsearch version for the specified domain.
      */
 
     public void setOptions(String options) {
@@ -53,10 +53,10 @@ public class VersionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The OpenSearch version for the specified OpenSearch domain.
+     * The OpenSearch or Elasticsearch version for the specified domain.
      * </p>
      * 
-     * @return The OpenSearch version for the specified OpenSearch domain.
+     * @return The OpenSearch or Elasticsearch version for the specified domain.
      */
 
     public String getOptions() {
@@ -65,11 +65,11 @@ public class VersionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The OpenSearch version for the specified OpenSearch domain.
+     * The OpenSearch or Elasticsearch version for the specified domain.
      * </p>
      * 
      * @param options
-     *        The OpenSearch version for the specified OpenSearch domain.
+     *        The OpenSearch or Elasticsearch version for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class VersionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the OpenSearch version options for the specified OpenSearch domain.
+     * The status of the version options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The status of the OpenSearch version options for the specified OpenSearch domain.
+     *        The status of the version options for the specified domain.
      */
 
     public void setStatus(OptionStatus status) {
@@ -93,10 +93,10 @@ public class VersionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the OpenSearch version options for the specified OpenSearch domain.
+     * The status of the version options for the specified domain.
      * </p>
      * 
-     * @return The status of the OpenSearch version options for the specified OpenSearch domain.
+     * @return The status of the version options for the specified domain.
      */
 
     public OptionStatus getStatus() {
@@ -105,11 +105,11 @@ public class VersionStatus implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the OpenSearch version options for the specified OpenSearch domain.
+     * The status of the version options for the specified domain.
      * </p>
      * 
      * @param status
-     *        The status of the OpenSearch version options for the specified OpenSearch domain.
+     *        The status of the version options for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

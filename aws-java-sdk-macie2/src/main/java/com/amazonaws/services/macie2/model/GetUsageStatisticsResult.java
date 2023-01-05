@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * An array of objects that contains the results of the query. Each object contains the data for an account that
-     * meets the filter criteria specified in the request.
+     * matches the filter criteria specified in the request.
      * </p>
      */
     private java.util.List<UsageRecord> records;
@@ -94,11 +94,11 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * An array of objects that contains the results of the query. Each object contains the data for an account that
-     * meets the filter criteria specified in the request.
+     * matches the filter criteria specified in the request.
      * </p>
      * 
      * @return An array of objects that contains the results of the query. Each object contains the data for an account
-     *         that meets the filter criteria specified in the request.
+     *         that matches the filter criteria specified in the request.
      */
 
     public java.util.List<UsageRecord> getRecords() {
@@ -108,12 +108,12 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * An array of objects that contains the results of the query. Each object contains the data for an account that
-     * meets the filter criteria specified in the request.
+     * matches the filter criteria specified in the request.
      * </p>
      * 
      * @param records
      *        An array of objects that contains the results of the query. Each object contains the data for an account
-     *        that meets the filter criteria specified in the request.
+     *        that matches the filter criteria specified in the request.
      */
 
     public void setRecords(java.util.Collection<UsageRecord> records) {
@@ -128,7 +128,7 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * An array of objects that contains the results of the query. Each object contains the data for an account that
-     * meets the filter criteria specified in the request.
+     * matches the filter criteria specified in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,7 +138,7 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
      * 
      * @param records
      *        An array of objects that contains the results of the query. Each object contains the data for an account
-     *        that meets the filter criteria specified in the request.
+     *        that matches the filter criteria specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,12 +155,12 @@ public class GetUsageStatisticsResult extends com.amazonaws.AmazonWebServiceResu
     /**
      * <p>
      * An array of objects that contains the results of the query. Each object contains the data for an account that
-     * meets the filter criteria specified in the request.
+     * matches the filter criteria specified in the request.
      * </p>
      * 
      * @param records
      *        An array of objects that contains the results of the query. Each object contains the data for an account
-     *        that meets the filter criteria specified in the request.
+     *        that matches the filter criteria specified in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

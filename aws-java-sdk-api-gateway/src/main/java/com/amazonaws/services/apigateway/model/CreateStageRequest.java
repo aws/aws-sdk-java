@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,9 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Boolean cacheClusterEnabled;
     /**
      * <p>
-     * The stage's cache cluster size.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      */
     private String cacheClusterSize;
@@ -315,11 +317,15 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage's cache cluster size.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      * 
      * @param cacheClusterSize
-     *        The stage's cache cluster size.
+     *        The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API
+     *        caching to enhance responsiveness</a>.
      */
 
     public void setCacheClusterSize(String cacheClusterSize) {
@@ -328,10 +334,14 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage's cache cluster size.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      * 
-     * @return The stage's cache cluster size.
+     * @return The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     *         href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API
+     *         caching to enhance responsiveness</a>.
      */
 
     public String getCacheClusterSize() {
@@ -340,11 +350,15 @@ public class CreateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage's cache cluster size.
+     * The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API caching
+     * to enhance responsiveness</a>.
      * </p>
      * 
      * @param cacheClusterSize
-     *        The stage's cache cluster size.
+     *        The stage's cache capacity in GB. For more information about choosing a cache size, see <a
+     *        href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html">Enabling API
+     *        caching to enhance responsiveness</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

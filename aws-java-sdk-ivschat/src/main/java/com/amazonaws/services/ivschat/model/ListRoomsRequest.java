@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class ListRoomsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
+     * Logging-configuration identifier.
+     * </p>
+     */
+    private String loggingConfigurationIdentifier;
+    /**
+     * <p>
      * Maximum number of rooms to return. Default: 50.
      * </p>
      */
@@ -49,6 +55,46 @@ public class ListRoomsRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String nextToken;
+
+    /**
+     * <p>
+     * Logging-configuration identifier.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifier
+     *        Logging-configuration identifier.
+     */
+
+    public void setLoggingConfigurationIdentifier(String loggingConfigurationIdentifier) {
+        this.loggingConfigurationIdentifier = loggingConfigurationIdentifier;
+    }
+
+    /**
+     * <p>
+     * Logging-configuration identifier.
+     * </p>
+     * 
+     * @return Logging-configuration identifier.
+     */
+
+    public String getLoggingConfigurationIdentifier() {
+        return this.loggingConfigurationIdentifier;
+    }
+
+    /**
+     * <p>
+     * Logging-configuration identifier.
+     * </p>
+     * 
+     * @param loggingConfigurationIdentifier
+     *        Logging-configuration identifier.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRoomsRequest withLoggingConfigurationIdentifier(String loggingConfigurationIdentifier) {
+        setLoggingConfigurationIdentifier(loggingConfigurationIdentifier);
+        return this;
+    }
 
     /**
      * <p>
@@ -222,6 +268,8 @@ public class ListRoomsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getLoggingConfigurationIdentifier() != null)
+            sb.append("LoggingConfigurationIdentifier: ").append(getLoggingConfigurationIdentifier()).append(",");
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getMessageReviewHandlerUri() != null)
@@ -244,6 +292,11 @@ public class ListRoomsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof ListRoomsRequest == false)
             return false;
         ListRoomsRequest other = (ListRoomsRequest) obj;
+        if (other.getLoggingConfigurationIdentifier() == null ^ this.getLoggingConfigurationIdentifier() == null)
+            return false;
+        if (other.getLoggingConfigurationIdentifier() != null
+                && other.getLoggingConfigurationIdentifier().equals(this.getLoggingConfigurationIdentifier()) == false)
+            return false;
         if (other.getMaxResults() == null ^ this.getMaxResults() == null)
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
@@ -268,6 +321,7 @@ public class ListRoomsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getLoggingConfigurationIdentifier() == null) ? 0 : getLoggingConfigurationIdentifier().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getMessageReviewHandlerUri() == null) ? 0 : getMessageReviewHandlerUri().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

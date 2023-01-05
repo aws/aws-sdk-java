@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,10 @@ public class LabelMarshaller {
             .marshallLocationName("Instances").build();
     private static final MarshallingInfo<List> PARENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Parents").build();
+    private static final MarshallingInfo<List> ALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Aliases").build();
+    private static final MarshallingInfo<List> CATEGORIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Categories").build();
 
     private static final LabelMarshaller instance = new LabelMarshaller();
 
@@ -57,6 +61,8 @@ public class LabelMarshaller {
             protocolMarshaller.marshall(label.getConfidence(), CONFIDENCE_BINDING);
             protocolMarshaller.marshall(label.getInstances(), INSTANCES_BINDING);
             protocolMarshaller.marshall(label.getParents(), PARENTS_BINDING);
+            protocolMarshaller.marshall(label.getAliases(), ALIASES_BINDING);
+            protocolMarshaller.marshall(label.getCategories(), CATEGORIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

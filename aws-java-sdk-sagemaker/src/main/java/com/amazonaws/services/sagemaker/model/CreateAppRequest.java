@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String domainId;
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      */
     private String userProfileName;
@@ -70,6 +70,12 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </note>
      */
     private ResourceSpec resourceSpec;
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     */
+    private String spaceName;
 
     /**
      * <p>
@@ -113,11 +119,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public void setUserProfileName(String userProfileName) {
@@ -126,10 +132,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
-     * @return The user profile name.
+     * @return The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      */
 
     public String getUserProfileName() {
@@ -138,11 +144,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The user profile name.
+     * The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * </p>
      * 
      * @param userProfileName
-     *        The user profile name.
+     *        The user profile name. If this value is not set, then <code>SpaceName</code> must be set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -412,6 +418,46 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public void setSpaceName(String spaceName) {
+        this.spaceName = spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @return The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     */
+
+    public String getSpaceName() {
+        return this.spaceName;
+    }
+
+    /**
+     * <p>
+     * The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * </p>
+     * 
+     * @param spaceName
+     *        The name of the space. If this value is not set, then <code>UserProfileName</code> must be set.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAppRequest withSpaceName(String spaceName) {
+        setSpaceName(spaceName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -434,7 +480,9 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getResourceSpec() != null)
-            sb.append("ResourceSpec: ").append(getResourceSpec());
+            sb.append("ResourceSpec: ").append(getResourceSpec()).append(",");
+        if (getSpaceName() != null)
+            sb.append("SpaceName: ").append(getSpaceName());
         sb.append("}");
         return sb.toString();
     }
@@ -473,6 +521,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getResourceSpec() != null && other.getResourceSpec().equals(this.getResourceSpec()) == false)
             return false;
+        if (other.getSpaceName() == null ^ this.getSpaceName() == null)
+            return false;
+        if (other.getSpaceName() != null && other.getSpaceName().equals(this.getSpaceName()) == false)
+            return false;
         return true;
     }
 
@@ -487,6 +539,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getAppName() == null) ? 0 : getAppName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getResourceSpec() == null) ? 0 : getResourceSpec().hashCode());
+        hashCode = prime * hashCode + ((getSpaceName() == null) ? 0 : getSpaceName().hashCode());
         return hashCode;
     }
 

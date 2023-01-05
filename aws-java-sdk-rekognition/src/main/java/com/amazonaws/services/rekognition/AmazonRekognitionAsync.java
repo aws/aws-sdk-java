@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1643,22 +1643,108 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition Developer Guide.
      * </p>
-     * <note>
-     * <p>
-     * <code>DetectLabels</code> does not support the detection of activities. However, activity detection is supported
-     * for label detection in videos. For more information, see StartLabelDetection in the Amazon Rekognition Developer
-     * Guide.
-     * </p>
-     * </note>
      * <p>
      * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
      * you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must
      * be either a PNG or JPEG formatted file.
      * </p>
      * <p>
-     * For each object, scene, and concept the API returns one or more labels. Each label provides the object name, and
-     * the level of confidence that the image contains the object. For example, suppose the input image has a
-     * lighthouse, the sea, and a rock. The response includes all three labels, one for each object.
+     * <b>Optional Parameters</b>
+     * </p>
+     * <p>
+     * You can specify one or both of the <code>GENERAL_LABELS</code> and <code>IMAGE_PROPERTIES</code> feature types
+     * when calling the DetectLabels API. Including <code>GENERAL_LABELS</code> will ensure the response includes the
+     * labels detected in the input image, while including <code>IMAGE_PROPERTIES </code>will ensure the response
+     * includes information about the image quality and color.
+     * </p>
+     * <p>
+     * When using <code>GENERAL_LABELS</code> and/or <code>IMAGE_PROPERTIES</code> you can provide filtering criteria to
+     * the Settings parameter. You can filter with sets of individual labels or with label categories. You can specify
+     * inclusive filters, exclusive filters, or a combination of inclusive and exclusive filters. For more information
+     * on filtering see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting Labels in an
+     * Image</a>.
+     * </p>
+     * <p>
+     * You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The
+     * default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. The
+     * default and upper limit is 1000 labels.
+     * </p>
+     * <p>
+     * <b>Response Elements</b>
+     * </p>
+     * <p>
+     * For each object, scene, and concept the API returns one or more labels. The API returns the following types of
+     * information regarding labels:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Name - The name of the detected label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Confidence - The level of confidence in the label assigned to a detected object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parents - The ancestor labels for a detected label. DetectLabels returns a hierarchical taxonomy of detected
+     * labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle
+     * (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where
+     * every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as
+     * unique labels in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aliases - Possible Aliases for the label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Categories - The label categories that the detected label belongs to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an
+     * array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label
+     * on the input image. It also includes the confidence for the accuracy of the detected bounding box.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The API returns the following information regarding the image, as part of the ImageProperties structure:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Quality - Information about the Sharpness, Brightness, and Contrast of the input image, scored between 0 to 100.
+     * Image quality is returned for the entire image, as well as the background and the foreground.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Dominant Color - An array of the dominant colors in the image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Foreground - Information about the sharpness, brightness, and dominant colors of the input image’s foreground.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Background - Information about the sharpness, brightness, and dominant colors of the input image’s background.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The list of returned labels will include at least one label for every detected object, along with information
+     * about that label. In the following example, suppose the input image has a lighthouse, the sea, and a rock. The
+     * response includes all three labels, one for each object, as well as the confidence in the label:
      * </p>
      * <p>
      * <code>{Name: lighthouse, Confidence: 98.4629}</code>
@@ -1670,9 +1756,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code> {Name: sea,Confidence: 75.061}</code>
      * </p>
      * <p>
-     * In the preceding example, the operation returns one label for each of the three objects. The operation can also
-     * return multiple labels for the same object in the image. For example, if the input image shows a flower (for
-     * example, a tulip), the operation might return the following three labels.
+     * The list of labels can include multiple labels for the same object. For example, if the input image shows a
+     * flower (for example, a tulip), the operation might return the following three labels.
      * </p>
      * <p>
      * <code>{Name: flower,Confidence: 99.0562}</code>
@@ -1686,30 +1771,12 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * In this example, the detection algorithm more precisely identifies the flower as a tulip.
      * </p>
-     * <p>
-     * In response, the API returns an array of labels. In addition, the response also includes the orientation
-     * correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the
-     * labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of
-     * labels returned.
-     * </p>
      * <note>
      * <p>
      * If the object detected is a person, the operation doesn't provide the same facial details that the
      * <a>DetectFaces</a> operation provides.
      * </p>
      * </note>
-     * <p>
-     * <code>DetectLabels</code> returns bounding boxes for instances of common object labels in an array of
-     * <a>Instance</a> objects. An <code>Instance</code> object contains a <a>BoundingBox</a> object, for the location
-     * of the label on the image. It also includes the confidence by which the bounding box was detected.
-     * </p>
-     * <p>
-     * <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels. For example, a detected car
-     * might be assigned the label <i>car</i>. The label <i>car</i> has two parent labels: <i>Vehicle</i> (its parent)
-     * and <i>Transportation</i> (its grandparent). The response returns the entire list of ancestors for a label. Each
-     * ancestor is a unique label in the response. In the previous example, <i>Car</i>, <i>Vehicle</i>, and
-     * <i>Transportation</i> are returned as unique labels in the response.
-     * </p>
      * <p>
      * This is a stateless API operation. That is, the operation does not persist any data.
      * </p>
@@ -1732,22 +1799,108 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * For an example, see Analyzing images stored in an Amazon S3 bucket in the Amazon Rekognition Developer Guide.
      * </p>
-     * <note>
-     * <p>
-     * <code>DetectLabels</code> does not support the detection of activities. However, activity detection is supported
-     * for label detection in videos. For more information, see StartLabelDetection in the Amazon Rekognition Developer
-     * Guide.
-     * </p>
-     * </note>
      * <p>
      * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. If
      * you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. The image must
      * be either a PNG or JPEG formatted file.
      * </p>
      * <p>
-     * For each object, scene, and concept the API returns one or more labels. Each label provides the object name, and
-     * the level of confidence that the image contains the object. For example, suppose the input image has a
-     * lighthouse, the sea, and a rock. The response includes all three labels, one for each object.
+     * <b>Optional Parameters</b>
+     * </p>
+     * <p>
+     * You can specify one or both of the <code>GENERAL_LABELS</code> and <code>IMAGE_PROPERTIES</code> feature types
+     * when calling the DetectLabels API. Including <code>GENERAL_LABELS</code> will ensure the response includes the
+     * labels detected in the input image, while including <code>IMAGE_PROPERTIES </code>will ensure the response
+     * includes information about the image quality and color.
+     * </p>
+     * <p>
+     * When using <code>GENERAL_LABELS</code> and/or <code>IMAGE_PROPERTIES</code> you can provide filtering criteria to
+     * the Settings parameter. You can filter with sets of individual labels or with label categories. You can specify
+     * inclusive filters, exclusive filters, or a combination of inclusive and exclusive filters. For more information
+     * on filtering see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detect-labels-image.html">Detecting Labels in an
+     * Image</a>.
+     * </p>
+     * <p>
+     * You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The
+     * default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of labels returned. The
+     * default and upper limit is 1000 labels.
+     * </p>
+     * <p>
+     * <b>Response Elements</b>
+     * </p>
+     * <p>
+     * For each object, scene, and concept the API returns one or more labels. The API returns the following types of
+     * information regarding labels:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Name - The name of the detected label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Confidence - The level of confidence in the label assigned to a detected object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parents - The ancestor labels for a detected label. DetectLabels returns a hierarchical taxonomy of detected
+     * labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle
+     * (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where
+     * every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as
+     * unique labels in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aliases - Possible Aliases for the label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Categories - The label categories that the detected label belongs to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an
+     * array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label
+     * on the input image. It also includes the confidence for the accuracy of the detected bounding box.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The API returns the following information regarding the image, as part of the ImageProperties structure:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Quality - Information about the Sharpness, Brightness, and Contrast of the input image, scored between 0 to 100.
+     * Image quality is returned for the entire image, as well as the background and the foreground.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Dominant Color - An array of the dominant colors in the image.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Foreground - Information about the sharpness, brightness, and dominant colors of the input image’s foreground.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Background - Information about the sharpness, brightness, and dominant colors of the input image’s background.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The list of returned labels will include at least one label for every detected object, along with information
+     * about that label. In the following example, suppose the input image has a lighthouse, the sea, and a rock. The
+     * response includes all three labels, one for each object, as well as the confidence in the label:
      * </p>
      * <p>
      * <code>{Name: lighthouse, Confidence: 98.4629}</code>
@@ -1759,9 +1912,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <code> {Name: sea,Confidence: 75.061}</code>
      * </p>
      * <p>
-     * In the preceding example, the operation returns one label for each of the three objects. The operation can also
-     * return multiple labels for the same object in the image. For example, if the input image shows a flower (for
-     * example, a tulip), the operation might return the following three labels.
+     * The list of labels can include multiple labels for the same object. For example, if the input image shows a
+     * flower (for example, a tulip), the operation might return the following three labels.
      * </p>
      * <p>
      * <code>{Name: flower,Confidence: 99.0562}</code>
@@ -1775,30 +1927,12 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * In this example, the detection algorithm more precisely identifies the flower as a tulip.
      * </p>
-     * <p>
-     * In response, the API returns an array of labels. In addition, the response also includes the orientation
-     * correction. Optionally, you can specify <code>MinConfidence</code> to control the confidence threshold for the
-     * labels returned. The default is 55%. You can also add the <code>MaxLabels</code> parameter to limit the number of
-     * labels returned.
-     * </p>
      * <note>
      * <p>
      * If the object detected is a person, the operation doesn't provide the same facial details that the
      * <a>DetectFaces</a> operation provides.
      * </p>
      * </note>
-     * <p>
-     * <code>DetectLabels</code> returns bounding boxes for instances of common object labels in an array of
-     * <a>Instance</a> objects. An <code>Instance</code> object contains a <a>BoundingBox</a> object, for the location
-     * of the label on the image. It also includes the confidence by which the bounding box was detected.
-     * </p>
-     * <p>
-     * <code>DetectLabels</code> also returns a hierarchical taxonomy of detected labels. For example, a detected car
-     * might be assigned the label <i>car</i>. The label <i>car</i> has two parent labels: <i>Vehicle</i> (its parent)
-     * and <i>Transportation</i> (its grandparent). The response returns the entire list of ancestors for a label. Each
-     * ancestor is a unique label in the response. In the previous example, <i>Car</i>, <i>Vehicle</i>, and
-     * <i>Transportation</i> are returned as unique labels in the response.
-     * </p>
      * <p>
      * This is a stateless API operation. That is, the operation does not persist any data.
      * </p>
@@ -2608,29 +2742,91 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * The label detection operation is started by a call to <a>StartLabelDetection</a> which returns a job identifier (
      * <code>JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a completion
      * status to the Amazon Simple Notification Service topic registered in the initial call to
-     * <code>StartlabelDetection</code>. To get the results of the label detection operation, first check that the
-     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a>
-     * and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
+     * <code>StartlabelDetection</code>.
+     * </p>
+     * <p>
+     * To get the results of the label detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
      * </p>
      * <p>
      * <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the
      * labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the
-     * <code>SortBy</code> input parameter.
+     * <code>SortBy</code> input parameter. If there is no <code>NAME</code> specified, the default sort is by
+     * timestamp.
      * </p>
      * <p>
-     * The labels returned include the label name, the percentage confidence in the accuracy of the detected label, and
-     * the time the label was detected in the video.
+     * You can select how results are aggregated by using the <code>AggregateBy</code> input parameter. The default
+     * aggregation method is <code>TIMESTAMPS</code>. You can also aggregate by <code>SEGMENTS</code>, which aggregates
+     * all instances of labels detected in a given segment.
      * </p>
      * <p>
-     * The returned labels also include bounding box information for common objects, a hierarchical taxonomy of detected
-     * labels, and the version of the label model used for detection.
+     * The returned Labels array may include the following attributes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Name - The name of the detected label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Confidence - The level of confidence in the label assigned to a detected object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parents - The ancestor labels for a detected label. GetLabelDetection returns a hierarchical taxonomy of detected
+     * labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle
+     * (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where
+     * every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as
+     * unique labels in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aliases - Possible Aliases for the label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Categories - The label categories that the detected label belongs to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an
+     * array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label
+     * on the input image. It also includes the confidence for the accuracy of the detected bounding box.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Timestamp - Time, in milliseconds from the start of the video, that the label was detected. For aggregation by
+     * <code>SEGMENTS</code>, the <code>StartTimestampMillis</code>, <code>EndTimestampMillis</code>, and
+     * <code>DurationMillis</code> structures are what define a segment. Although the “Timestamp” structure is still
+     * returned with each label, its value is set to be the same as <code>StartTimestampMillis</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Timestamp and Bounding box information are returned for detected Instances, only if aggregation is done by
+     * <code>TIMESTAMPS</code>. If aggregating by <code>SEGMENTS</code>, information about detected instances isn’t
+     * returned.
      * </p>
      * <p>
-     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
-     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
-     * token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code>
-     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
-     * <code>GetLabelDetection</code>.
+     * The version of the label model used for the detection is also returned.
+     * </p>
+     * <p>
+     * <b>Note <code>DominantColors</code> isn't returned for <code>Instances</code>, although it is shown as part of
+     * the response in the sample seen below.</b>
+     * </p>
+     * <p>
+     * Use <code>MaxResults</code> parameter to limit the number of labels returned. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetLabelDetection</code>.
      * </p>
      * 
      * @param getLabelDetectionRequest
@@ -2647,29 +2843,91 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * The label detection operation is started by a call to <a>StartLabelDetection</a> which returns a job identifier (
      * <code>JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a completion
      * status to the Amazon Simple Notification Service topic registered in the initial call to
-     * <code>StartlabelDetection</code>. To get the results of the label detection operation, first check that the
-     * status value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a>
-     * and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
+     * <code>StartlabelDetection</code>.
+     * </p>
+     * <p>
+     * To get the results of the label detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
      * </p>
      * <p>
      * <code>GetLabelDetection</code> returns an array of detected labels (<code>Labels</code>) sorted by the time the
      * labels were detected. You can also sort by the label name by specifying <code>NAME</code> for the
-     * <code>SortBy</code> input parameter.
+     * <code>SortBy</code> input parameter. If there is no <code>NAME</code> specified, the default sort is by
+     * timestamp.
      * </p>
      * <p>
-     * The labels returned include the label name, the percentage confidence in the accuracy of the detected label, and
-     * the time the label was detected in the video.
+     * You can select how results are aggregated by using the <code>AggregateBy</code> input parameter. The default
+     * aggregation method is <code>TIMESTAMPS</code>. You can also aggregate by <code>SEGMENTS</code>, which aggregates
+     * all instances of labels detected in a given segment.
      * </p>
      * <p>
-     * The returned labels also include bounding box information for common objects, a hierarchical taxonomy of detected
-     * labels, and the version of the label model used for detection.
+     * The returned Labels array may include the following attributes:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Name - The name of the detected label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Confidence - The level of confidence in the label assigned to a detected object.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Parents - The ancestor labels for a detected label. GetLabelDetection returns a hierarchical taxonomy of detected
+     * labels. For example, a detected car might be assigned the label car. The label car has two parent labels: Vehicle
+     * (its parent) and Transportation (its grandparent). The response includes the all ancestors for a label, where
+     * every ancestor is a unique label. In the previous example, Car, Vehicle, and Transportation are returned as
+     * unique labels in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Aliases - Possible Aliases for the label.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Categories - The label categories that the detected label belongs to.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * BoundingBox — Bounding boxes are described for all instances of detected common object labels, returned in an
+     * array of Instance objects. An Instance object contains a BoundingBox object, describing the location of the label
+     * on the input image. It also includes the confidence for the accuracy of the detected bounding box.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Timestamp - Time, in milliseconds from the start of the video, that the label was detected. For aggregation by
+     * <code>SEGMENTS</code>, the <code>StartTimestampMillis</code>, <code>EndTimestampMillis</code>, and
+     * <code>DurationMillis</code> structures are what define a segment. Although the “Timestamp” structure is still
+     * returned with each label, its value is set to be the same as <code>StartTimestampMillis</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Timestamp and Bounding box information are returned for detected Instances, only if aggregation is done by
+     * <code>TIMESTAMPS</code>. If aggregating by <code>SEGMENTS</code>, information about detected instances isn’t
+     * returned.
      * </p>
      * <p>
-     * Use MaxResults parameter to limit the number of labels returned. If there are more results than specified in
-     * <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a pagination
-     * token for getting the next set of results. To get the next page of results, call <code>GetlabelDetection</code>
-     * and populate the <code>NextToken</code> request parameter with the token value returned from the previous call to
-     * <code>GetLabelDetection</code>.
+     * The version of the label model used for the detection is also returned.
+     * </p>
+     * <p>
+     * <b>Note <code>DominantColors</code> isn't returned for <code>Instances</code>, although it is shown as part of
+     * the response in the sample seen below.</b>
+     * </p>
+     * <p>
+     * Use <code>MaxResults</code> parameter to limit the number of labels returned. If there are more results than
+     * specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response contains a
+     * pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetlabelDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetLabelDetection</code>.
      * </p>
      * 
      * @param getLabelDetectionRequest
@@ -4080,7 +4338,21 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a> and pass the job identifier (
      * <code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
      * </p>
-     * <p/>
+     * <p>
+     * <i>Optional Parameters</i>
+     * </p>
+     * <p>
+     * <code>StartLabelDetection</code> has the <code>GENERAL_LABELS</code> Feature applied by default. This feature
+     * allows you to provide filtering criteria to the <code>Settings</code> parameter. You can filter with sets of
+     * individual labels or with label categories. You can specify inclusive filters, exclusive filters, or a
+     * combination of inclusive and exclusive filters. For more information on filtering, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detecting-labels-video.html">Detecting labels in a
+     * video</a>.
+     * </p>
+     * <p>
+     * You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The
+     * default is 50.
+     * </p>
      * 
      * @param startLabelDetectionRequest
      * @return A Java Future containing the result of the StartLabelDetection operation returned by the service.
@@ -4108,7 +4380,21 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetLabelDetection</a> and pass the job identifier (
      * <code>JobId</code>) from the initial call to <code>StartLabelDetection</code>.
      * </p>
-     * <p/>
+     * <p>
+     * <i>Optional Parameters</i>
+     * </p>
+     * <p>
+     * <code>StartLabelDetection</code> has the <code>GENERAL_LABELS</code> Feature applied by default. This feature
+     * allows you to provide filtering criteria to the <code>Settings</code> parameter. You can filter with sets of
+     * individual labels or with label categories. You can specify inclusive filters, exclusive filters, or a
+     * combination of inclusive and exclusive filters. For more information on filtering, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels-detecting-labels-video.html">Detecting labels in a
+     * video</a>.
+     * </p>
+     * <p>
+     * You can specify <code>MinConfidence</code> to control the confidence threshold for the labels returned. The
+     * default is 50.
+     * </p>
      * 
      * @param startLabelDetectionRequest
      * @param asyncHandler

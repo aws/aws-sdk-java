@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,11 +44,11 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      */
     private String description;
     /**
+     * <note>
      * <p>
-     * The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs
-     * are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.
+     * This parameter is currently not supported. You can't update a retention rule's resource type after creation.
      * </p>
+     * </note>
      */
     private String resourceType;
     /**
@@ -190,16 +190,17 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <note>
      * <p>
-     * The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs
-     * are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.
+     * This parameter is currently not supported. You can't update a retention rule's resource type after creation.
      * </p>
+     * </note>
      * 
      * @param resourceType
-     *        The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and
-     *        EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain
-     *        EBS-backed AMIs, specify <code>EC2_IMAGE</code>.
+     *        <p>
+     *        This parameter is currently not supported. You can't update a retention rule's resource type after
+     *        creation.
+     *        </p>
      * @see ResourceType
      */
 
@@ -208,15 +209,16 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <note>
      * <p>
-     * The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs
-     * are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.
+     * This parameter is currently not supported. You can't update a retention rule's resource type after creation.
      * </p>
+     * </note>
      * 
-     * @return The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and
-     *         EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain
-     *         EBS-backed AMIs, specify <code>EC2_IMAGE</code>.
+     * @return <p>
+     *         This parameter is currently not supported. You can't update a retention rule's resource type after
+     *         creation.
+     *         </p>
      * @see ResourceType
      */
 
@@ -225,16 +227,17 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <note>
      * <p>
-     * The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs
-     * are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.
+     * This parameter is currently not supported. You can't update a retention rule's resource type after creation.
      * </p>
+     * </note>
      * 
      * @param resourceType
-     *        The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and
-     *        EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain
-     *        EBS-backed AMIs, specify <code>EC2_IMAGE</code>.
+     *        <p>
+     *        This parameter is currently not supported. You can't update a retention rule's resource type after
+     *        creation.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -245,16 +248,17 @@ public class UpdateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <note>
      * <p>
-     * The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and EBS-backed AMIs
-     * are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain EBS-backed AMIs, specify
-     * <code>EC2_IMAGE</code>.
+     * This parameter is currently not supported. You can't update a retention rule's resource type after creation.
      * </p>
+     * </note>
      * 
      * @param resourceType
-     *        The resource type to be retained by the retention rule. Currently, only Amazon EBS snapshots and
-     *        EBS-backed AMIs are supported. To retain snapshots, specify <code>EBS_SNAPSHOT</code>. To retain
-     *        EBS-backed AMIs, specify <code>EC2_IMAGE</code>.
+     *        <p>
+     *        This parameter is currently not supported. You can't update a retention rule's resource type after
+     *        creation.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

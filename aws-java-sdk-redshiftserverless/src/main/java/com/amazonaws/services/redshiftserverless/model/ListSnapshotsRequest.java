@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class ListSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      */
     private Integer maxResults;
@@ -113,12 +113,12 @@ public class ListSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -128,11 +128,11 @@ public class ListSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @return An optional parameter that specifies the maximum number of results to return. You can use
-     *         <code>nextToken</code> to get the next page of results.
+     *         <code>nextToken</code> to display the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -142,12 +142,12 @@ public class ListSnapshotsRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
-     * to get the next page of results.
+     * to display the next page of results.
      * </p>
      * 
      * @param maxResults
      *        An optional parameter that specifies the maximum number of results to return. You can use
-     *        <code>nextToken</code> to get the next page of results.
+     *        <code>nextToken</code> to display the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

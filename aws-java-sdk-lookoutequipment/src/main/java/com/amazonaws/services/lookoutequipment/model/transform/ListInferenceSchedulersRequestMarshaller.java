@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class ListInferenceSchedulersRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceSchedulerNameBeginsWith").build();
     private static final MarshallingInfo<String> MODELNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ModelName").build();
+    private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
 
     private static final ListInferenceSchedulersRequestMarshaller instance = new ListInferenceSchedulersRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class ListInferenceSchedulersRequestMarshaller {
             protocolMarshaller.marshall(listInferenceSchedulersRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listInferenceSchedulersRequest.getInferenceSchedulerNameBeginsWith(), INFERENCESCHEDULERNAMEBEGINSWITH_BINDING);
             protocolMarshaller.marshall(listInferenceSchedulersRequest.getModelName(), MODELNAME_BINDING);
+            protocolMarshaller.marshall(listInferenceSchedulersRequest.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

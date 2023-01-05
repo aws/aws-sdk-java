@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,7 @@ public class CancelQueryRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.
      * </p>
      */
+    @Deprecated
     private String eventDataStore;
     /**
      * <p>
@@ -47,7 +48,7 @@ public class CancelQueryRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param eventDataStore
      *        The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.
      */
-
+    @Deprecated
     public void setEventDataStore(String eventDataStore) {
         this.eventDataStore = eventDataStore;
     }
@@ -59,7 +60,7 @@ public class CancelQueryRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.
      */
-
+    @Deprecated
     public String getEventDataStore() {
         return this.eventDataStore;
     }
@@ -73,7 +74,7 @@ public class CancelQueryRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        The ARN (or the ID suffix of the ARN) of an event data store on which the specified query is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public CancelQueryRequest withEventDataStore(String eventDataStore) {
         setEventDataStore(eventDataStore);
         return this;

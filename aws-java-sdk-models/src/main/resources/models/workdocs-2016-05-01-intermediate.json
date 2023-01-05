@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : {
       "Activity" : [ "Type" ],
       "Comment" : [ "Status", "Visibility" ],
@@ -73,6 +73,7 @@
     "asyncClient" : "AmazonWorkDocsAsyncClient",
     "asyncClientBuilderClassName" : "AmazonWorkDocsAsyncClientBuilder",
     "asyncInterface" : "AmazonWorkDocsAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",
@@ -80,7 +81,7 @@
     "defaultEndpoint" : "workdocs.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "workdocs.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>The WorkDocs API is designed for the following use cases:</p> <ul> <li> <p>File Migration: File migration applications are supported for users who want to migrate their files from an on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well as allow for basic metadata changes, such as modifications to the permissions of files.</p> </li> <li> <p>Security: Support security applications are supported for users who have additional security needs, such as antivirus or data loss prevention. The API actions, along with AWS CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the target file violates the policy, the application can also choose to email the user.</p> </li> <li> <p>eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to replicate data for eDiscovery, backup, or analytical applications.</p> </li> </ul> <p>All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to perform the three use cases above, as well as give users the ability to grant access on a selective basis using the IAM model.</p>",
+    "documentation" : "<p>The WorkDocs API is designed for the following use cases:</p> <ul> <li> <p>File Migration: File migration applications are supported for users who want to migrate their files from an on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well as allow for basic metadata changes, such as modifications to the permissions of files.</p> </li> <li> <p>Security: Support security applications are supported for users who have additional security needs, such as antivirus or data loss prevention. The API actions, along with AWS CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the target file violates the policy, the application can also choose to email the user.</p> </li> <li> <p>eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to replicate data for eDiscovery, backup, or analytical applications.</p> </li> </ul> <p>All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to perform the three use cases above, as well as give users the ability to grant access on a selective basis using the IAM model.</p> <note> <p>The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:</p> <ul> <li> <p> <code>READ (Get*)</code> </p> </li> <li> <p> <code>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</code> </p> </li> <li> <p> <code>LIST (Describe*)</code> </p> </li> <li> <p> <code>DELETE*, CANCEL</code> </p> </li> </ul> <p>For information about Amazon WorkDocs API pricing, see <a href=\"https://aws.amazon.com/workdocs/pricing/\">Amazon WorkDocs Pricing</a>.</p> </note>",
     "endpointPrefix" : "workdocs",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -145,6 +146,10 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>One or more of the dependencies is unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>The resource hierarchy is changing.</p>",
+        "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -247,6 +252,10 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>One or more of the dependencies is unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ProhibitedStateException",
+        "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -423,8 +432,12 @@
         "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
         "httpStatusCode" : 409
       }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>The resource hierarchy is changing.</p>",
+        "httpStatusCode" : 409
+      }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>",
+        "documentation" : "<p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "UnauthorizedOperationException",
@@ -527,7 +540,7 @@
       "asyncReturnType" : "CreateNotificationSubscriptionResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html\">Subscribe to Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>",
+      "documentation" : "<p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html\">Setting up notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -544,6 +557,10 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>One or more of the dependencies is unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "InvalidArgumentException",
+        "documentation" : "<p>The pagination marker or limit fields are not valid.</p>",
+        "httpStatusCode" : 400
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -806,6 +823,10 @@
         "documentation" : "<p>The resource does not exist.</p>",
         "httpStatusCode" : 404
       }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>",
+        "httpStatusCode" : 409
+      }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
         "httpStatusCode" : 409
@@ -854,6 +875,71 @@
       },
       "syncReturnType" : "DeleteDocumentResult"
     },
+    "DeleteDocumentVersion" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<DeleteDocumentVersionResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<DeleteDocumentVersionResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<DeleteDocumentVersionRequest, DeleteDocumentVersionResult>",
+      "asyncReturnType" : "DeleteDocumentVersionResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code> parameter to delete prior versions.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "EntityNotExistsException",
+        "documentation" : "<p>The resource does not exist.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "ProhibitedStateException",
+        "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>The resource hierarchy is changing.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "UnauthorizedResourceAccessException",
+        "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "FailedDependencyException",
+        "documentation" : "<p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>",
+        "httpStatusCode" : 424
+      }, {
+        "exceptionName" : "InvalidOperationException",
+        "documentation" : "<p>The operation is invalid.</p>",
+        "httpStatusCode" : 405
+      }, {
+        "exceptionName" : "UnauthorizedOperationException",
+        "documentation" : "<p>The operation is not permitted.</p>",
+        "httpStatusCode" : 403
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteDocumentVersionRequest",
+        "variableName" : "deleteDocumentVersionRequest",
+        "variableType" : "DeleteDocumentVersionRequest",
+        "documentation" : "",
+        "simpleType" : "DeleteDocumentVersionRequest",
+        "variableSetterType" : "DeleteDocumentVersionRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "deleteDocumentVersion",
+      "operationName" : "DeleteDocumentVersion",
+      "returnType" : {
+        "returnType" : "DeleteDocumentVersionResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "DeleteDocumentVersionResult"
+    },
     "DeleteFolder" : {
       "asyncCallableType" : "java.util.concurrent.Callable<DeleteFolderResult>",
       "asyncFutureType" : "java.util.concurrent.Future<DeleteFolderResult>",
@@ -870,6 +956,10 @@
         "exceptionName" : "EntityNotExistsException",
         "documentation" : "<p>The resource does not exist.</p>",
         "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>",
+        "httpStatusCode" : 409
       }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
@@ -1012,6 +1102,10 @@
         "exceptionName" : "ServiceUnavailableException",
         "documentation" : "<p>One or more of the dependencies is unavailable.</p>",
         "httpStatusCode" : 503
+      }, {
+        "exceptionName" : "ProhibitedStateException",
+        "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1285,6 +1379,10 @@
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
         "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "InvalidPasswordException",
+        "documentation" : "<p>The password is invalid.</p>",
+        "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -1470,6 +1568,10 @@
       "endpointOperation" : false,
       "endpointTrait" : null,
       "exceptions" : [ {
+        "exceptionName" : "InvalidArgumentException",
+        "documentation" : "<p>The pagination marker or limit fields are not valid.</p>",
+        "httpStatusCode" : 400
+      }, {
         "exceptionName" : "UnauthorizedOperationException",
         "documentation" : "<p>The operation is not permitted.</p>",
         "httpStatusCode" : 403
@@ -2044,6 +2146,10 @@
         "documentation" : "<p>The storage limit will be exceeded.</p>",
         "httpStatusCode" : 413
       }, {
+        "exceptionName" : "LimitExceededException",
+        "documentation" : "<p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>",
+        "httpStatusCode" : 409
+      }, {
         "exceptionName" : "ProhibitedStateException",
         "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
         "httpStatusCode" : 409
@@ -2071,6 +2177,10 @@
         "exceptionName" : "ResourceAlreadyCheckedOutException",
         "documentation" : "<p>The resource is already checked out.</p>",
         "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "InvalidPasswordException",
+        "documentation" : "<p>The password is invalid.</p>",
+        "httpStatusCode" : 401
       } ],
       "hasBlobMemberAsPayload" : false,
       "hostPrefixProcessor" : null,
@@ -2190,6 +2300,71 @@
       },
       "syncReturnType" : "RemoveResourcePermissionResult"
     },
+    "RestoreDocumentVersions" : {
+      "asyncCallableType" : "java.util.concurrent.Callable<RestoreDocumentVersionsResult>",
+      "asyncFutureType" : "java.util.concurrent.Future<RestoreDocumentVersionsResult>",
+      "asyncHandlerType" : "com.amazonaws.handlers.AsyncHandler<RestoreDocumentVersionsRequest, RestoreDocumentVersionsResult>",
+      "asyncReturnType" : "RestoreDocumentVersionsResult",
+      "authenticated" : true,
+      "deprecated" : false,
+      "documentation" : "<p>Recovers a deleted version of an Amazon WorkDocs document.</p>",
+      "endpointCacheRequired" : false,
+      "endpointDiscovery" : null,
+      "endpointOperation" : false,
+      "endpointTrait" : null,
+      "exceptions" : [ {
+        "exceptionName" : "EntityNotExistsException",
+        "documentation" : "<p>The resource does not exist.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "ProhibitedStateException",
+        "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConflictingOperationException",
+        "documentation" : "<p>Another operation is in progress on the resource that conflicts with the current operation.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ConcurrentModificationException",
+        "documentation" : "<p>The resource hierarchy is changing.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "UnauthorizedResourceAccessException",
+        "documentation" : "<p>The caller does not have access to perform the action on the resource.</p>",
+        "httpStatusCode" : 404
+      }, {
+        "exceptionName" : "FailedDependencyException",
+        "documentation" : "<p>The AWS Directory Service cannot reach an on-premises instance. Or a dependency under the control of the organization is failing, such as a connected Active Directory.</p>",
+        "httpStatusCode" : 424
+      }, {
+        "exceptionName" : "InvalidOperationException",
+        "documentation" : "<p>The operation is invalid.</p>",
+        "httpStatusCode" : 405
+      }, {
+        "exceptionName" : "UnauthorizedOperationException",
+        "documentation" : "<p>The operation is not permitted.</p>",
+        "httpStatusCode" : 403
+      } ],
+      "hasBlobMemberAsPayload" : false,
+      "hostPrefixProcessor" : null,
+      "input" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "RestoreDocumentVersionsRequest",
+        "variableName" : "restoreDocumentVersionsRequest",
+        "variableType" : "RestoreDocumentVersionsRequest",
+        "documentation" : "",
+        "simpleType" : "RestoreDocumentVersionsRequest",
+        "variableSetterType" : "RestoreDocumentVersionsRequest"
+      },
+      "inputStreamPropertyName" : null,
+      "methodName" : "restoreDocumentVersions",
+      "operationName" : "RestoreDocumentVersions",
+      "returnType" : {
+        "returnType" : "RestoreDocumentVersionsResult",
+        "documentation" : null
+      },
+      "syncReturnType" : "RestoreDocumentVersionsResult"
+    },
     "UpdateDocument" : {
       "asyncCallableType" : "java.util.concurrent.Callable<UpdateDocumentResult>",
       "asyncFutureType" : "java.util.concurrent.Future<UpdateDocumentResult>",
@@ -2212,7 +2387,7 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>",
+        "documentation" : "<p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "ProhibitedStateException",
@@ -2362,7 +2537,7 @@
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "LimitExceededException",
-        "documentation" : "<p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>",
+        "documentation" : "<p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "UnauthorizedOperationException",
@@ -2428,6 +2603,10 @@
       }, {
         "exceptionName" : "IllegalUserStateException",
         "documentation" : "<p>The user is undergoing transfer of ownership.</p>",
+        "httpStatusCode" : 409
+      }, {
+        "exceptionName" : "ProhibitedStateException",
+        "documentation" : "<p>The specified document version is not in the INITIALIZED state.</p>",
         "httpStatusCode" : 409
       }, {
         "exceptionName" : "FailedDependencyException",
@@ -12810,7 +12989,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address of the user.</p>\n@param emailAddress The email address of the user.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -13365,7 +13544,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address of the user.</p>\n@param emailAddress The email address of the user.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -16516,6 +16695,655 @@
       },
       "wrapper" : false
     },
+    "DeleteDocumentVersionRequest" : {
+      "c2jName" : "DeleteDocumentVersionRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workdocs.request.DeleteDocumentVersionRequest",
+      "hasHeaderMember" : true,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "DeleteDocumentVersion",
+        "locationName" : null,
+        "requestUri" : "/api/v1/documentVersions/{DocumentId}/versions/{VersionId}",
+        "target" : null,
+        "verb" : "DELETE",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "AuthenticationToken",
+        "c2jShape" : "AuthenticationHeaderType",
+        "deprecated" : false,
+        "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAuthenticationToken",
+        "getterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@return Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+        "getterMethodName" : "getAuthenticationToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : true,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "header",
+          "marshallLocation" : "HEADER",
+          "marshallLocationName" : "Authentication",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Authentication",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AuthenticationToken",
+        "sensitive" : true,
+        "setterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+        "setterMethodName" : "setAuthenticationToken",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationToken",
+          "variableType" : "String",
+          "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DocumentId",
+        "c2jShape" : "ResourceIdType",
+        "deprecated" : false,
+        "documentation" : "<p>The ID of a document.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ID of a document.</p>\n@param documentId The ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDocumentId",
+        "getterDocumentation" : "/**<p>The ID of a document.</p>\n@return The ID of a document.*/",
+        "getterMethodName" : "getDocumentId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "DocumentId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DocumentId",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DocumentId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The ID of a document.</p>\n@param documentId The ID of a document.*/",
+        "setterMethodName" : "setDocumentId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "documentId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The ID of a document.</p>\n@param documentId The ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "documentId",
+          "variableType" : "String",
+          "documentation" : "<p>The ID of a document.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "VersionId",
+        "c2jShape" : "DocumentVersionIdType",
+        "deprecated" : false,
+        "documentation" : "<p>The version ID of a document.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The version ID of a document.</p>\n@param versionId The version ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withVersionId",
+        "getterDocumentation" : "/**<p>The version ID of a document.</p>\n@return The version ID of a document.*/",
+        "getterMethodName" : "getVersionId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "VersionId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "VersionId",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "VersionId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The version ID of a document.</p>\n@param versionId The version ID of a document.*/",
+        "setterMethodName" : "setVersionId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "versionId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The version ID of a document.</p>\n@param versionId The version ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "versionId",
+          "variableType" : "String",
+          "documentation" : "<p>The version ID of a document.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DeletePriorVersions",
+        "c2jShape" : "BooleanType",
+        "deprecated" : false,
+        "documentation" : "<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@param deletePriorVersions When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDeletePriorVersions",
+        "getterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@return When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.*/",
+        "getterMethodName" : "getDeletePriorVersions",
+        "getterModel" : {
+          "returnType" : "Boolean",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "querystring",
+          "marshallLocation" : "QUERY_PARAM",
+          "marshallLocationName" : "deletePriorVersions",
+          "queryString" : true,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "deletePriorVersions",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Boolean",
+        "marshallingType" : "BOOLEAN",
+        "name" : "DeletePriorVersions",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@param deletePriorVersions When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.*/",
+        "setterMethodName" : "setDeletePriorVersions",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "deletePriorVersions",
+          "variableType" : "Boolean",
+          "documentation" : "",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@param deletePriorVersions When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Boolean",
+          "variableName" : "deletePriorVersions",
+          "variableType" : "Boolean",
+          "documentation" : "<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>",
+          "simpleType" : "Boolean",
+          "variableSetterType" : "Boolean"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "AuthenticationToken" : {
+          "c2jName" : "AuthenticationToken",
+          "c2jShape" : "AuthenticationHeaderType",
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAuthenticationToken",
+          "getterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@return Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+          "getterMethodName" : "getAuthenticationToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : true,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "header",
+            "marshallLocation" : "HEADER",
+            "marshallLocationName" : "Authentication",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Authentication",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AuthenticationToken",
+          "sensitive" : true,
+          "setterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+          "setterMethodName" : "setAuthenticationToken",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationToken",
+            "variableType" : "String",
+            "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DeletePriorVersions" : {
+          "c2jName" : "DeletePriorVersions",
+          "c2jShape" : "BooleanType",
+          "deprecated" : false,
+          "documentation" : "<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@param deletePriorVersions When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDeletePriorVersions",
+          "getterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@return When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.*/",
+          "getterMethodName" : "getDeletePriorVersions",
+          "getterModel" : {
+            "returnType" : "Boolean",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "querystring",
+            "marshallLocation" : "QUERY_PARAM",
+            "marshallLocationName" : "deletePriorVersions",
+            "queryString" : true,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "deletePriorVersions",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Boolean",
+          "marshallingType" : "BOOLEAN",
+          "name" : "DeletePriorVersions",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@param deletePriorVersions When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.*/",
+          "setterMethodName" : "setDeletePriorVersions",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "deletePriorVersions",
+            "variableType" : "Boolean",
+            "documentation" : "",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>\n@param deletePriorVersions When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Boolean",
+            "variableName" : "deletePriorVersions",
+            "variableType" : "Boolean",
+            "documentation" : "<p>When set to <code>TRUE</code>, deletes the specified version and <i>all prior versions</i> of a document.</p>",
+            "simpleType" : "Boolean",
+            "variableSetterType" : "Boolean"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DocumentId" : {
+          "c2jName" : "DocumentId",
+          "c2jShape" : "ResourceIdType",
+          "deprecated" : false,
+          "documentation" : "<p>The ID of a document.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ID of a document.</p>\n@param documentId The ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDocumentId",
+          "getterDocumentation" : "/**<p>The ID of a document.</p>\n@return The ID of a document.*/",
+          "getterMethodName" : "getDocumentId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "DocumentId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DocumentId",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DocumentId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The ID of a document.</p>\n@param documentId The ID of a document.*/",
+          "setterMethodName" : "setDocumentId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "documentId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The ID of a document.</p>\n@param documentId The ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "documentId",
+            "variableType" : "String",
+            "documentation" : "<p>The ID of a document.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "VersionId" : {
+          "c2jName" : "VersionId",
+          "c2jShape" : "DocumentVersionIdType",
+          "deprecated" : false,
+          "documentation" : "<p>The version ID of a document.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The version ID of a document.</p>\n@param versionId The version ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withVersionId",
+          "getterDocumentation" : "/**<p>The version ID of a document.</p>\n@return The version ID of a document.*/",
+          "getterMethodName" : "getVersionId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "VersionId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "VersionId",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "VersionId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The version ID of a document.</p>\n@param versionId The version ID of a document.*/",
+          "setterMethodName" : "setVersionId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "versionId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The version ID of a document.</p>\n@param versionId The version ID of a document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "versionId",
+            "variableType" : "String",
+            "documentation" : "<p>The version ID of a document.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.workdocs.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "DocumentId", "VersionId", "DeletePriorVersions" ],
+      "shapeName" : "DeleteDocumentVersionRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteDocumentVersionRequest",
+        "variableName" : "deleteDocumentVersionRequest",
+        "variableType" : "DeleteDocumentVersionRequest",
+        "documentation" : null,
+        "simpleType" : "DeleteDocumentVersionRequest",
+        "variableSetterType" : "DeleteDocumentVersionRequest"
+      },
+      "wrapper" : false
+    },
+    "DeleteDocumentVersionResult" : {
+      "c2jName" : "DeleteDocumentVersionResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workdocs.response.DeleteDocumentVersionResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.workdocs.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "DeleteDocumentVersionResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "DeleteDocumentVersionResult",
+        "variableName" : "deleteDocumentVersionResult",
+        "variableType" : "DeleteDocumentVersionResult",
+        "documentation" : null,
+        "simpleType" : "DeleteDocumentVersionResult",
+        "variableSetterType" : "DeleteDocumentVersionResult"
+      },
+      "wrapper" : false
+    },
     "DeleteFolderContentsRequest" : {
       "c2jName" : "DeleteFolderContentsRequest",
       "customization" : {
@@ -19467,7 +20295,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Marker",
-        "c2jShape" : "MarkerType",
+        "c2jShape" : "SearchMarkerType",
         "deprecated" : false,
         "documentation" : "<p>The marker for the next set of results.</p>",
         "endpointDiscoveryId" : false,
@@ -19888,7 +20716,7 @@
         },
         "Marker" : {
           "c2jName" : "Marker",
-          "c2jShape" : "MarkerType",
+          "c2jShape" : "SearchMarkerType",
           "deprecated" : false,
           "documentation" : "<p>The marker for the next set of results.</p>",
           "endpointDiscoveryId" : false,
@@ -20431,7 +21259,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Marker",
-        "c2jShape" : "MarkerType",
+        "c2jShape" : "SearchMarkerType",
         "deprecated" : false,
         "documentation" : "<p>The marker for the next set of results.</p>",
         "endpointDiscoveryId" : false,
@@ -20502,7 +21330,7 @@
       "membersAsMap" : {
         "Marker" : {
           "c2jName" : "Marker",
-          "c2jShape" : "MarkerType",
+          "c2jShape" : "SearchMarkerType",
           "deprecated" : false,
           "documentation" : "<p>The marker for the next set of results.</p>",
           "endpointDiscoveryId" : false,
@@ -29937,12 +30765,12 @@
         "c2jName" : "Query",
         "c2jShape" : "SearchQueryType",
         "deprecated" : false,
-        "documentation" : "<p>A query to filter users by user name.</p>",
+        "documentation" : "<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@param query A query to filter users by user name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@param query A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withQuery",
-        "getterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@return A query to filter users by user name.*/",
+        "getterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@return A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>*/",
         "getterMethodName" : "getQuery",
         "getterModel" : {
           "returnType" : "String",
@@ -29976,7 +30804,7 @@
         "marshallingType" : "STRING",
         "name" : "Query",
         "sensitive" : true,
-        "setterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@param query A query to filter users by user name.*/",
+        "setterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@param query A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>*/",
         "setterMethodName" : "setQuery",
         "setterModel" : {
           "timestampFormat" : null,
@@ -29991,13 +30819,13 @@
         "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@param query A query to filter users by user name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@param query A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "query",
           "variableType" : "String",
-          "documentation" : "<p>A query to filter users by user name.</p>",
+          "documentation" : "<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -30912,12 +31740,12 @@
           "c2jName" : "Query",
           "c2jShape" : "SearchQueryType",
           "deprecated" : false,
-          "documentation" : "<p>A query to filter users by user name.</p>",
+          "documentation" : "<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@param query A query to filter users by user name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@param query A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withQuery",
-          "getterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@return A query to filter users by user name.*/",
+          "getterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@return A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>*/",
           "getterMethodName" : "getQuery",
           "getterModel" : {
             "returnType" : "String",
@@ -30951,7 +31779,7 @@
           "marshallingType" : "STRING",
           "name" : "Query",
           "sensitive" : true,
-          "setterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@param query A query to filter users by user name.*/",
+          "setterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@param query A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>*/",
           "setterMethodName" : "setQuery",
           "setterModel" : {
             "timestampFormat" : null,
@@ -30966,13 +31794,13 @@
           "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>A query to filter users by user name.</p>\n@param query A query to filter users by user name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>\n@param query A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "query",
             "variableType" : "String",
-            "documentation" : "<p>A query to filter users by user name.</p>",
+            "documentation" : "<p>A query to filter users by user name. Remember the following about the <code>Userids</code> and <code>Query</code> parameters:</p> <ul> <li> <p>If you don't use either parameter, the API returns a paginated list of all users on the site.</p> </li> <li> <p>If you use both parameters, the API ignores the <code>Query</code> parameter.</p> </li> <li> <p>The <code>Userid</code> parameter only returns user names that match a corresponding user ID.</p> </li> <li> <p>The <code>Query</code> parameter runs a \"prefix\" search for users by the <code>GivenName</code>, <code>SurName</code>, or <code>UserName</code> fields included in a <a href=\"https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html\">CreateUser</a> API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María García, and Mateo Jackson. If you use multiple characters, the API only returns data that matches all characters. For example, querying on <code>Ma J</code> only returns Mateo Jackson.</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -35904,12 +36732,12 @@
         "c2jName" : "EntityIds",
         "c2jShape" : "EntityIdList",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The IDs of the non-existent resources.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param entityIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n@param entityIds The IDs of the non-existent resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEntityIds",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n@return The IDs of the non-existent resources.*/",
         "getterMethodName" : "getEntityIds",
         "getterModel" : {
           "returnType" : "java.util.List<String>",
@@ -36027,7 +36855,7 @@
         "marshallingType" : "LIST",
         "name" : "EntityIds",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param entityIds */",
+        "setterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n@param entityIds The IDs of the non-existent resources.*/",
         "setterMethodName" : "setEntityIds",
         "setterModel" : {
           "timestampFormat" : null,
@@ -36042,13 +36870,13 @@
         "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityIds(java.util.Collection)} or {@link #withEntityIds(java.util.Collection)} if you want to override the existing values.</p>\n@param entityIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityIds(java.util.Collection)} or {@link #withEntityIds(java.util.Collection)} if you want to override the existing values.</p>\n@param entityIds The IDs of the non-existent resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "java.util.List<String>",
           "variableName" : "entityIds",
           "variableType" : "java.util.List<String>",
-          "documentation" : "",
+          "documentation" : "<p>The IDs of the non-existent resources.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
         },
@@ -36059,12 +36887,12 @@
           "c2jName" : "EntityIds",
           "c2jShape" : "EntityIdList",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The IDs of the non-existent resources.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param entityIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n@param entityIds The IDs of the non-existent resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEntityIds",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n@return The IDs of the non-existent resources.*/",
           "getterMethodName" : "getEntityIds",
           "getterModel" : {
             "returnType" : "java.util.List<String>",
@@ -36182,7 +37010,7 @@
           "marshallingType" : "LIST",
           "name" : "EntityIds",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param entityIds */",
+          "setterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n@param entityIds The IDs of the non-existent resources.*/",
           "setterMethodName" : "setEntityIds",
           "setterModel" : {
             "timestampFormat" : null,
@@ -36197,13 +37025,13 @@
           "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityIds(java.util.Collection)} or {@link #withEntityIds(java.util.Collection)} if you want to override the existing values.</p>\n@param entityIds \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The IDs of the non-existent resources.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityIds(java.util.Collection)} or {@link #withEntityIds(java.util.Collection)} if you want to override the existing values.</p>\n@param entityIds The IDs of the non-existent resources.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "java.util.List<String>",
             "variableName" : "entityIds",
             "variableType" : "java.util.List<String>",
-            "documentation" : "",
+            "documentation" : "<p>The IDs of the non-existent resources.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
           },
@@ -46493,7 +47321,7 @@
       "packageName" : "com.amazonaws.services.workdocs.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "ParentFolderId" ],
+      "required" : [ ],
       "shapeName" : "InitiateDocumentVersionUploadRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -47005,7 +47833,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The maximum of 100,000 folders under the parent folder has been exceeded.</p>",
+      "documentation" : "<p>The maximum of 100,000 files and folders under the parent folder has been exceeded.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
@@ -52197,6 +53025,377 @@
       },
       "wrapper" : false
     },
+    "RestoreDocumentVersionsRequest" : {
+      "c2jName" : "RestoreDocumentVersionsRequest",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workdocs.request.RestoreDocumentVersionsRequest",
+      "hasHeaderMember" : true,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : {
+        "action" : "RestoreDocumentVersions",
+        "locationName" : null,
+        "requestUri" : "/api/v1/documentVersions/restore/{DocumentId}",
+        "target" : null,
+        "verb" : "POST",
+        "xmlNameSpaceUri" : null
+      },
+      "members" : [ {
+        "c2jName" : "AuthenticationToken",
+        "c2jShape" : "AuthenticationHeaderType",
+        "deprecated" : false,
+        "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAuthenticationToken",
+        "getterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@return Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+        "getterMethodName" : "getAuthenticationToken",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : true,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "header",
+          "marshallLocation" : "HEADER",
+          "marshallLocationName" : "Authentication",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "Authentication",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "AuthenticationToken",
+        "sensitive" : true,
+        "setterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+        "setterMethodName" : "setAuthenticationToken",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationToken",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "authenticationToken",
+          "variableType" : "String",
+          "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "DocumentId",
+        "c2jShape" : "ResourceIdType",
+        "deprecated" : false,
+        "documentation" : "<p>The ID of the document.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The ID of the document.</p>\n@param documentId The ID of the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withDocumentId",
+        "getterDocumentation" : "/**<p>The ID of the document.</p>\n@return The ID of the document.*/",
+        "getterMethodName" : "getDocumentId",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : "uri",
+          "marshallLocation" : "PATH",
+          "marshallLocationName" : "DocumentId",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "DocumentId",
+          "uri" : true
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "DocumentId",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The ID of the document.</p>\n@param documentId The ID of the document.*/",
+        "setterMethodName" : "setDocumentId",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "documentId",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The ID of the document.</p>\n@param documentId The ID of the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "documentId",
+          "variableType" : "String",
+          "documentation" : "<p>The ID of the document.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      } ],
+      "membersAsMap" : {
+        "AuthenticationToken" : {
+          "c2jName" : "AuthenticationToken",
+          "c2jShape" : "AuthenticationHeaderType",
+          "deprecated" : false,
+          "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAuthenticationToken",
+          "getterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@return Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+          "getterMethodName" : "getAuthenticationToken",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : true,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "header",
+            "marshallLocation" : "HEADER",
+            "marshallLocationName" : "Authentication",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "Authentication",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "AuthenticationToken",
+          "sensitive" : true,
+          "setterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.*/",
+          "setterMethodName" : "setAuthenticationToken",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationToken",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>\n@param authenticationToken Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "authenticationToken",
+            "variableType" : "String",
+            "documentation" : "<p>Amazon WorkDocs authentication token. Not required when using AWS administrator credentials to access the API.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "DocumentId" : {
+          "c2jName" : "DocumentId",
+          "c2jShape" : "ResourceIdType",
+          "deprecated" : false,
+          "documentation" : "<p>The ID of the document.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The ID of the document.</p>\n@param documentId The ID of the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withDocumentId",
+          "getterDocumentation" : "/**<p>The ID of the document.</p>\n@return The ID of the document.*/",
+          "getterMethodName" : "getDocumentId",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : "uri",
+            "marshallLocation" : "PATH",
+            "marshallLocationName" : "DocumentId",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "DocumentId",
+            "uri" : true
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "DocumentId",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The ID of the document.</p>\n@param documentId The ID of the document.*/",
+          "setterMethodName" : "setDocumentId",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "documentId",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The ID of the document.</p>\n@param documentId The ID of the document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "documentId",
+            "variableType" : "String",
+            "documentation" : "<p>The ID of the document.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        }
+      },
+      "packageName" : "com.amazonaws.services.workdocs.request",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : [ "DocumentId" ],
+      "shapeName" : "RestoreDocumentVersionsRequest",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : null,
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "RestoreDocumentVersionsRequest",
+        "variableName" : "restoreDocumentVersionsRequest",
+        "variableType" : "RestoreDocumentVersionsRequest",
+        "documentation" : null,
+        "simpleType" : "RestoreDocumentVersionsRequest",
+        "variableSetterType" : "RestoreDocumentVersionsRequest"
+      },
+      "wrapper" : false
+    },
+    "RestoreDocumentVersionsResult" : {
+      "c2jName" : "RestoreDocumentVersionsResult",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : null,
+      "endpointDiscoveryMembers" : null,
+      "enums" : null,
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.workdocs.response.RestoreDocumentVersionsResult",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.workdocs.response",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "RestoreDocumentVersionsResult",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "RestoreDocumentVersionsResult",
+        "variableName" : "restoreDocumentVersionsResult",
+        "variableType" : "RestoreDocumentVersionsResult",
+        "documentation" : null,
+        "simpleType" : "RestoreDocumentVersionsResult",
+        "variableSetterType" : "RestoreDocumentVersionsResult"
+      },
+      "wrapper" : false
+    },
     "RolePermissionType" : {
       "c2jName" : "RolePermissionType",
       "customization" : {
@@ -54666,6 +55865,9 @@
       "enums" : [ {
         "name" : "HTTPS",
         "value" : "HTTPS"
+      }, {
+        "name" : "SQS",
+        "value" : "SQS"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.workdocs.enum.SubscriptionProtocolType",
@@ -59310,7 +60512,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address of the user.</p>\n@param emailAddress The email address of the user.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -60279,7 +61481,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address of the user.</p>\n@param emailAddress The email address of the user.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -61628,7 +62830,7 @@
         "marshallingTargetClass" : "String",
         "marshallingType" : "STRING",
         "name" : "EmailAddress",
-        "sensitive" : false,
+        "sensitive" : true,
         "setterDocumentation" : "/**<p>The email address of the user.</p>\n@param emailAddress The email address of the user.*/",
         "setterMethodName" : "setEmailAddress",
         "setterModel" : {
@@ -61699,7 +62901,7 @@
           "marshallingTargetClass" : "String",
           "marshallingType" : "STRING",
           "name" : "EmailAddress",
-          "sensitive" : false,
+          "sensitive" : true,
           "setterDocumentation" : "/**<p>The email address of the user.</p>\n@param emailAddress The email address of the user.*/",
           "setterMethodName" : "setEmailAddress",
           "setterModel" : {
@@ -62531,7 +63733,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonWorkDocsException",

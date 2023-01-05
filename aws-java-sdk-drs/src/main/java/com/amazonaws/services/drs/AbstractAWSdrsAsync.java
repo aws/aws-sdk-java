@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -321,6 +321,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(ReverseReplicationRequest request) {
+
+        return reverseReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ReverseReplicationResult> reverseReplicationAsync(ReverseReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<ReverseReplicationRequest, ReverseReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StartFailbackLaunchResult> startFailbackLaunchAsync(StartFailbackLaunchRequest request) {
 
         return startFailbackLaunchAsync(request, null);
@@ -347,6 +360,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request) {
+
+        return startReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplicationResult> startReplicationAsync(StartReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartReplicationRequest, StartReplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<StopFailbackResult> stopFailbackAsync(StopFailbackRequest request) {
 
         return stopFailbackAsync(request, null);
@@ -355,6 +381,19 @@ public class AbstractAWSdrsAsync extends AbstractAWSdrs implements AWSdrsAsync {
     @Override
     public java.util.concurrent.Future<StopFailbackResult> stopFailbackAsync(StopFailbackRequest request,
             com.amazonaws.handlers.AsyncHandler<StopFailbackRequest, StopFailbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request) {
+
+        return stopReplicationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopReplicationResult> stopReplicationAsync(StopReplicationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StopReplicationRequest, StopReplicationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,28 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
+     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      */
     private String principalARN;
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      */
     private String principalType;
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
+     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no
+     *        <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      */
 
     public void setPrincipalARN(String principalARN) {
@@ -56,10 +60,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
+     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      * 
-     * @return The ARN of the principal (IAM user, role, or group).
+     * @return The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no
+     *         <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      */
 
     public String getPrincipalARN() {
@@ -68,11 +74,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the principal (IAM user, role, or group).
+     * The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no <code>accountID</code>
+     * if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * </p>
      * 
      * @param principalARN
-     *        The ARN of the principal (IAM user, role, or group).
+     *        The ARN of the principal (IAM user, role, or group). This field allows for an ARN with no
+     *        <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +91,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @see PrincipalType
      */
 
@@ -97,10 +107,12 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
-     * @return The principal type. The supported value is <code>IAM</code>.
+     * @return The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *         <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @see PrincipalType
      */
 
@@ -110,11 +122,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */
@@ -126,11 +140,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @see PrincipalType
      */
 
@@ -140,11 +156,13 @@ public class Principal implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal type. The supported value is <code>IAM</code>.
+     * The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     * <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * </p>
      * 
      * @param principalType
-     *        The principal type. The supported value is <code>IAM</code>.
+     *        The principal type. The supported value is <code>IAM</code> if you use a fully defined ARN, or
+     *        <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PrincipalType
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the
  * <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video
  * operations return only the default attributes. The corresponding Start operations don't have a
- * <code>FaceAttributes</code> input parameter.
+ * <code>FaceAttributes</code> input parameter:
  * </p>
  * <ul>
  * <li>

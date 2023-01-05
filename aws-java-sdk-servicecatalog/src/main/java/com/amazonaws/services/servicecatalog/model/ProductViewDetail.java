@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,15 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.Date createdTime;
+    /**
+     * <p>
+     * A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service
+     * Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same
+     * fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.
+     * </p>
+     */
+    private SourceConnectionDetail sourceConnection;
 
     /**
      * <p>
@@ -429,6 +438,67 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service
+     * Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same
+     * fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.
+     * </p>
+     * 
+     * @param sourceConnection
+     *        A top level <code>ProductViewDetail</code> response containing details about the product’s connection.
+     *        Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     *        <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains
+     *        the same fields as the <code>ConnectionParameters</code> request, with the addition of the
+     *        <code>LastSync</code> response.
+     */
+
+    public void setSourceConnection(SourceConnectionDetail sourceConnection) {
+        this.sourceConnection = sourceConnection;
+    }
+
+    /**
+     * <p>
+     * A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service
+     * Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same
+     * fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.
+     * </p>
+     * 
+     * @return A top level <code>ProductViewDetail</code> response containing details about the product’s connection.
+     *         Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     *         <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains
+     *         the same fields as the <code>ConnectionParameters</code> request, with the addition of the
+     *         <code>LastSync</code> response.
+     */
+
+    public SourceConnectionDetail getSourceConnection() {
+        return this.sourceConnection;
+    }
+
+    /**
+     * <p>
+     * A top level <code>ProductViewDetail</code> response containing details about the product’s connection. Service
+     * Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     * <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains the same
+     * fields as the <code>ConnectionParameters</code> request, with the addition of the <code>LastSync</code> response.
+     * </p>
+     * 
+     * @param sourceConnection
+     *        A top level <code>ProductViewDetail</code> response containing details about the product’s connection.
+     *        Service Catalog returns this field for the <code>CreateProduct</code>, <code>UpdateProduct</code>,
+     *        <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code> APIs. This response contains
+     *        the same fields as the <code>ConnectionParameters</code> request, with the addition of the
+     *        <code>LastSync</code> response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProductViewDetail withSourceConnection(SourceConnectionDetail sourceConnection) {
+        setSourceConnection(sourceConnection);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -447,7 +517,9 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
         if (getProductARN() != null)
             sb.append("ProductARN: ").append(getProductARN()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getSourceConnection() != null)
+            sb.append("SourceConnection: ").append(getSourceConnection());
         sb.append("}");
         return sb.toString();
     }
@@ -478,6 +550,10 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getSourceConnection() == null ^ this.getSourceConnection() == null)
+            return false;
+        if (other.getSourceConnection() != null && other.getSourceConnection().equals(this.getSourceConnection()) == false)
+            return false;
         return true;
     }
 
@@ -490,6 +566,7 @@ public class ProductViewDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getProductARN() == null) ? 0 : getProductARN().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getSourceConnection() == null) ? 0 : getSourceConnection().hashCode());
         return hashCode;
     }
 

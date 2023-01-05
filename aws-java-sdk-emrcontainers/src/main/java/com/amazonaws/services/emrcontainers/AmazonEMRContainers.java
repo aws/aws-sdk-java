@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,6 +93,27 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return Result of the CreateJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest createJobTemplateRequest);
+
+    /**
+     * <p>
      * Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
      * EMR Studio can communicate with your virtual cluster.
      * </p>
@@ -132,6 +153,25 @@ public interface AmazonEMRContainers {
      *      target="_top">AWS API Documentation</a>
      */
     CreateVirtualClusterResult createVirtualCluster(CreateVirtualClusterRequest createVirtualClusterRequest);
+
+    /**
+     * <p>
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return Result of the DeleteJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest deleteJobTemplateRequest);
 
     /**
      * <p>
@@ -193,6 +233,27 @@ public interface AmazonEMRContainers {
 
     /**
      * <p>
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return Result of the DescribeJobTemplate operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest describeJobTemplateRequest);
+
+    /**
+     * <p>
      * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
      * to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
      * </p>
@@ -250,6 +311,25 @@ public interface AmazonEMRContainers {
      *      Documentation</a>
      */
     ListJobRunsResult listJobRuns(ListJobRunsRequest listJobRunsRequest);
+
+    /**
+     * <p>
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return Result of the ListJobTemplates operation returned by the service.
+     * @throws ValidationException
+     *         There are invalid parameters in the client request.
+     * @throws InternalServerException
+     *         This is an internal server exception.
+     * @sample AmazonEMRContainers.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest listJobTemplatesRequest);
 
     /**
      * <p>

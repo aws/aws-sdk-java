@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,13 +34,13 @@ public class CreatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
     private String clientToken;
     /**
      * <p>
-     * The pricing plan name. The names must be unique to each pricing plan.
+     * The name of the pricing plan. The names must be unique to each pricing plan.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      */
     private String description;
@@ -105,11 +105,11 @@ public class CreatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan name. The names must be unique to each pricing plan.
+     * The name of the pricing plan. The names must be unique to each pricing plan.
      * </p>
      * 
      * @param name
-     *        The pricing plan name. The names must be unique to each pricing plan.
+     *        The name of the pricing plan. The names must be unique to each pricing plan.
      */
 
     public void setName(String name) {
@@ -118,10 +118,10 @@ public class CreatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan name. The names must be unique to each pricing plan.
+     * The name of the pricing plan. The names must be unique to each pricing plan.
      * </p>
      * 
-     * @return The pricing plan name. The names must be unique to each pricing plan.
+     * @return The name of the pricing plan. The names must be unique to each pricing plan.
      */
 
     public String getName() {
@@ -130,11 +130,11 @@ public class CreatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan name. The names must be unique to each pricing plan.
+     * The name of the pricing plan. The names must be unique to each pricing plan.
      * </p>
      * 
      * @param name
-     *        The pricing plan name. The names must be unique to each pricing plan.
+     *        The name of the pricing plan. The names must be unique to each pricing plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class CreatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      * 
      * @param description
-     *        The pricing plan description.
+     *        The description of the pricing plan.
      */
 
     public void setDescription(String description) {
@@ -158,10 +158,10 @@ public class CreatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      * 
-     * @return The pricing plan description.
+     * @return The description of the pricing plan.
      */
 
     public String getDescription() {
@@ -170,11 +170,11 @@ public class CreatePricingPlanRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The pricing plan description.
+     * The description of the pricing plan.
      * </p>
      * 
      * @param description
-     *        The pricing plan description.
+     *        The description of the pricing plan.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

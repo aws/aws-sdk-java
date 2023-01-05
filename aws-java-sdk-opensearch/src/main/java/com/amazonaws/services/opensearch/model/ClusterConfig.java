@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration for the domain cluster, such as the type and number of instances.
+ * Container for the cluster configuration of an OpenSearch Service domain. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html">Creating and
+ * managing Amazon OpenSearch Service domains</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,83 +29,84 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
+     * Instance type of data nodes in the cluster.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * The number of instances in the specified domain cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      */
     private Integer instanceCount;
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     * target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     * Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will use a
+     * dedicated master node.<code>False</code> if the cluster will not.
      * </p>
      */
     private Boolean dedicatedMasterEnabled;
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
+     * Indicates whether multiple Availability Zones are enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     * target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     * >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      * </p>
      */
     private Boolean zoneAwarenessEnabled;
     /**
      * <p>
-     * The zone awareness configuration for a domain when zone awareness is enabled.
+     * Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is
+     * <code>true</code>.
      * </p>
      */
     private ZoneAwarenessConfig zoneAwarenessConfig;
     /**
      * <p>
-     * The instance type for a dedicated master node.
+     * OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * </p>
      */
     private String dedicatedMasterType;
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      */
     private Integer dedicatedMasterCount;
     /**
      * <p>
-     * True to enable UltraWarm storage.
+     * Whether to enable warm storage for the cluster.
      * </p>
      */
     private Boolean warmEnabled;
     /**
      * <p>
-     * The instance type for the OpenSearch cluster's warm nodes.
+     * The instance type for the cluster's warm nodes.
      * </p>
      */
     private String warmType;
     /**
      * <p>
-     * The number of UltraWarm nodes in the cluster.
+     * The number of warm nodes in the cluster.
      * </p>
      */
     private Integer warmCount;
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * Container for cold storage configuration options.
      * </p>
      */
     private ColdStorageOptions coldStorageOptions;
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
+     * Instance type of data nodes in the cluster.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data
-     *        instances.
+     *        Instance type of data nodes in the cluster.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -113,11 +116,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
+     * Instance type of data nodes in the cluster.
      * </p>
      * 
-     * @return The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data
-     *         instances.
+     * @return Instance type of data nodes in the cluster.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -127,12 +129,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
+     * Instance type of data nodes in the cluster.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data
-     *        instances.
+     *        Instance type of data nodes in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -144,12 +145,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data instances.
+     * Instance type of data nodes in the cluster.
      * </p>
      * 
      * @param instanceType
-     *        The instance type for an OpenSearch cluster. UltraWarm instance types are not supported for data
-     *        instances.
+     *        Instance type of data nodes in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -161,11 +161,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of instances in the specified domain cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      * 
      * @param instanceCount
-     *        The number of instances in the specified domain cluster.
+     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
+     *        a validation exception.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -174,10 +176,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of instances in the specified domain cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      * 
-     * @return The number of instances in the specified domain cluster.
+     * @return Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you
+     *         receive a validation exception.
      */
 
     public Integer getInstanceCount() {
@@ -186,11 +190,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of instances in the specified domain cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      * 
      * @param instanceCount
-     *        The number of instances in the specified domain cluster.
+     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
+     *        a validation exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,15 +207,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     * target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     * Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will use a
+     * dedicated master node.<code>False</code> if the cluster will not.
      * </p>
      * 
      * @param dedicatedMasterEnabled
-     *        A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     *        target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     *        Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will
+     *        use a dedicated master node.<code>False</code> if the cluster will not.
      */
 
     public void setDedicatedMasterEnabled(Boolean dedicatedMasterEnabled) {
@@ -218,14 +222,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     * target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     * Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will use a
+     * dedicated master node.<code>False</code> if the cluster will not.
      * </p>
      * 
-     * @return A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     *         "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     *         target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     * @return Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster
+     *         will use a dedicated master node.<code>False</code> if the cluster will not.
      */
 
     public Boolean getDedicatedMasterEnabled() {
@@ -234,15 +236,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     * target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     * Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will use a
+     * dedicated master node.<code>False</code> if the cluster will not.
      * </p>
      * 
      * @param dedicatedMasterEnabled
-     *        A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     *        target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     *        Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will
+     *        use a dedicated master node.<code>False</code> if the cluster will not.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -253,14 +253,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     * target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     * Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster will use a
+     * dedicated master node.<code>False</code> if the cluster will not.
      * </p>
      * 
-     * @return A boolean value to indicate whether a dedicated master node is enabled. See <a href=
-     *         "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains.html#managedomains-dedicatedmasternodes"
-     *         target="_blank">Dedicated master nodes in Amazon OpenSearch Service </a> for more information.
+     * @return Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code> if the cluster
+     *         will use a dedicated master node.<code>False</code> if the cluster will not.
      */
 
     public Boolean isDedicatedMasterEnabled() {
@@ -269,15 +267,15 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
+     * Indicates whether multiple Availability Zones are enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     * target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     * >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param zoneAwarenessEnabled
-     *        A boolean value to indicate whether zone awareness is enabled. See <a
+     *        Indicates whether multiple Availability Zones are enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     *        target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     *        >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      */
 
     public void setZoneAwarenessEnabled(Boolean zoneAwarenessEnabled) {
@@ -286,14 +284,14 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
+     * Indicates whether multiple Availability Zones are enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     * target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     * >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      * </p>
      * 
-     * @return A boolean value to indicate whether zone awareness is enabled. See <a
+     * @return Indicates whether multiple Availability Zones are enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     *         target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     *         >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      */
 
     public Boolean getZoneAwarenessEnabled() {
@@ -302,15 +300,15 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
+     * Indicates whether multiple Availability Zones are enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     * target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     * >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      * </p>
      * 
      * @param zoneAwarenessEnabled
-     *        A boolean value to indicate whether zone awareness is enabled. See <a
+     *        Indicates whether multiple Availability Zones are enabled. For more information, see <a
      *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     *        target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     *        >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,14 +319,14 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A boolean value to indicate whether zone awareness is enabled. See <a
+     * Indicates whether multiple Availability Zones are enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     * target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     * >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      * </p>
      * 
-     * @return A boolean value to indicate whether zone awareness is enabled. See <a
+     * @return Indicates whether multiple Availability Zones are enabled. For more information, see <a
      *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html"
-     *         target="_blank">Configuring a multi-AZ domain in Amazon OpenSearch Service </a> for more information.
+     *         >Configuring a multi-AZ domain in Amazon OpenSearch Service</a>.
      */
 
     public Boolean isZoneAwarenessEnabled() {
@@ -337,11 +335,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zone awareness configuration for a domain when zone awareness is enabled.
+     * Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param zoneAwarenessConfig
-     *        The zone awareness configuration for a domain when zone awareness is enabled.
+     *        Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is
+     *        <code>true</code>.
      */
 
     public void setZoneAwarenessConfig(ZoneAwarenessConfig zoneAwarenessConfig) {
@@ -350,10 +350,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zone awareness configuration for a domain when zone awareness is enabled.
+     * Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is
+     * <code>true</code>.
      * </p>
      * 
-     * @return The zone awareness configuration for a domain when zone awareness is enabled.
+     * @return Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is
+     *         <code>true</code>.
      */
 
     public ZoneAwarenessConfig getZoneAwarenessConfig() {
@@ -362,11 +364,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The zone awareness configuration for a domain when zone awareness is enabled.
+     * Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is
+     * <code>true</code>.
      * </p>
      * 
      * @param zoneAwarenessConfig
-     *        The zone awareness configuration for a domain when zone awareness is enabled.
+     *        Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code> is
+     *        <code>true</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -377,11 +381,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for a dedicated master node.
+     * OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * </p>
      * 
      * @param dedicatedMasterType
-     *        The instance type for a dedicated master node.
+     *        OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -391,10 +395,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for a dedicated master node.
+     * OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * </p>
      * 
-     * @return The instance type for a dedicated master node.
+     * @return OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * @see OpenSearchPartitionInstanceType
      */
 
@@ -404,11 +408,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for a dedicated master node.
+     * OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * </p>
      * 
      * @param dedicatedMasterType
-     *        The instance type for a dedicated master node.
+     *        OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -420,11 +424,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for a dedicated master node.
+     * OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * </p>
      * 
      * @param dedicatedMasterType
-     *        The instance type for a dedicated master node.
+     *        OpenSearch Service instance type of the dedicated master nodes in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchPartitionInstanceType
      */
@@ -436,11 +440,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      * 
      * @param dedicatedMasterCount
-     *        Total number of dedicated master nodes, active and on standby, for the cluster.
+     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
+     *        a validation exception.
      */
 
     public void setDedicatedMasterCount(Integer dedicatedMasterCount) {
@@ -449,10 +455,12 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      * 
-     * @return Total number of dedicated master nodes, active and on standby, for the cluster.
+     * @return Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you
+     *         receive a validation exception.
      */
 
     public Integer getDedicatedMasterCount() {
@@ -461,11 +469,13 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Total number of dedicated master nodes, active and on standby, for the cluster.
+     * Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive a
+     * validation exception.
      * </p>
      * 
      * @param dedicatedMasterCount
-     *        Total number of dedicated master nodes, active and on standby, for the cluster.
+     *        Number of dedicated master nodes in the cluster. This number must be greater than 1, otherwise you receive
+     *        a validation exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -476,11 +486,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True to enable UltraWarm storage.
+     * Whether to enable warm storage for the cluster.
      * </p>
      * 
      * @param warmEnabled
-     *        True to enable UltraWarm storage.
+     *        Whether to enable warm storage for the cluster.
      */
 
     public void setWarmEnabled(Boolean warmEnabled) {
@@ -489,10 +499,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True to enable UltraWarm storage.
+     * Whether to enable warm storage for the cluster.
      * </p>
      * 
-     * @return True to enable UltraWarm storage.
+     * @return Whether to enable warm storage for the cluster.
      */
 
     public Boolean getWarmEnabled() {
@@ -501,11 +511,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True to enable UltraWarm storage.
+     * Whether to enable warm storage for the cluster.
      * </p>
      * 
      * @param warmEnabled
-     *        True to enable UltraWarm storage.
+     *        Whether to enable warm storage for the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,10 +526,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * True to enable UltraWarm storage.
+     * Whether to enable warm storage for the cluster.
      * </p>
      * 
-     * @return True to enable UltraWarm storage.
+     * @return Whether to enable warm storage for the cluster.
      */
 
     public Boolean isWarmEnabled() {
@@ -528,11 +538,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for the OpenSearch cluster's warm nodes.
+     * The instance type for the cluster's warm nodes.
      * </p>
      * 
      * @param warmType
-     *        The instance type for the OpenSearch cluster's warm nodes.
+     *        The instance type for the cluster's warm nodes.
      * @see OpenSearchWarmPartitionInstanceType
      */
 
@@ -542,10 +552,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for the OpenSearch cluster's warm nodes.
+     * The instance type for the cluster's warm nodes.
      * </p>
      * 
-     * @return The instance type for the OpenSearch cluster's warm nodes.
+     * @return The instance type for the cluster's warm nodes.
      * @see OpenSearchWarmPartitionInstanceType
      */
 
@@ -555,11 +565,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for the OpenSearch cluster's warm nodes.
+     * The instance type for the cluster's warm nodes.
      * </p>
      * 
      * @param warmType
-     *        The instance type for the OpenSearch cluster's warm nodes.
+     *        The instance type for the cluster's warm nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchWarmPartitionInstanceType
      */
@@ -571,11 +581,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance type for the OpenSearch cluster's warm nodes.
+     * The instance type for the cluster's warm nodes.
      * </p>
      * 
      * @param warmType
-     *        The instance type for the OpenSearch cluster's warm nodes.
+     *        The instance type for the cluster's warm nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OpenSearchWarmPartitionInstanceType
      */
@@ -587,11 +597,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of UltraWarm nodes in the cluster.
+     * The number of warm nodes in the cluster.
      * </p>
      * 
      * @param warmCount
-     *        The number of UltraWarm nodes in the cluster.
+     *        The number of warm nodes in the cluster.
      */
 
     public void setWarmCount(Integer warmCount) {
@@ -600,10 +610,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of UltraWarm nodes in the cluster.
+     * The number of warm nodes in the cluster.
      * </p>
      * 
-     * @return The number of UltraWarm nodes in the cluster.
+     * @return The number of warm nodes in the cluster.
      */
 
     public Integer getWarmCount() {
@@ -612,11 +622,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of UltraWarm nodes in the cluster.
+     * The number of warm nodes in the cluster.
      * </p>
      * 
      * @param warmCount
-     *        The number of UltraWarm nodes in the cluster.
+     *        The number of warm nodes in the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -627,11 +637,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * Container for cold storage configuration options.
      * </p>
      * 
      * @param coldStorageOptions
-     *        Specifies the <code>ColdStorageOptions</code> config for a Domain
+     *        Container for cold storage configuration options.
      */
 
     public void setColdStorageOptions(ColdStorageOptions coldStorageOptions) {
@@ -640,10 +650,10 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * Container for cold storage configuration options.
      * </p>
      * 
-     * @return Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * @return Container for cold storage configuration options.
      */
 
     public ColdStorageOptions getColdStorageOptions() {
@@ -652,11 +662,11 @@ public class ClusterConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies the <code>ColdStorageOptions</code> config for a Domain
+     * Container for cold storage configuration options.
      * </p>
      * 
      * @param coldStorageOptions
-     *        Specifies the <code>ColdStorageOptions</code> config for a Domain
+     *        Container for cold storage configuration options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

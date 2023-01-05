@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,55 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
     java.util.concurrent.Future<AcceptDomainTransferFromAnotherAwsAccountResult> acceptDomainTransferFromAnotherAwsAccountAsync(
             AcceptDomainTransferFromAnotherAwsAccountRequest acceptDomainTransferFromAnotherAwsAccountRequest,
             com.amazonaws.handlers.AsyncHandler<AcceptDomainTransferFromAnotherAwsAccountRequest, AcceptDomainTransferFromAnotherAwsAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * <p>
+     * Note that creating DS record at the registry impacts DNSSEC validation of your DNS records. This action may
+     * render your domain name unavailable on the internet if the steps are completed in the wrong order, or with
+     * incorrect timing. For more information about DNSSEC signing, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring DNSSEC
+     * signing</a> in the <i>Route 53 developer guide</i>.
+     * </p>
+     * 
+     * @param associateDelegationSignerToDomainRequest
+     * @return A Java Future containing the result of the AssociateDelegationSignerToDomain operation returned by the
+     *         service.
+     * @sample AmazonRoute53DomainsAsync.AssociateDelegationSignerToDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateDelegationSignerToDomainResult> associateDelegationSignerToDomainAsync(
+            AssociateDelegationSignerToDomainRequest associateDelegationSignerToDomainRequest);
+
+    /**
+     * <p>
+     * Creates a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * <p>
+     * Note that creating DS record at the registry impacts DNSSEC validation of your DNS records. This action may
+     * render your domain name unavailable on the internet if the steps are completed in the wrong order, or with
+     * incorrect timing. For more information about DNSSEC signing, see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec.html">Configuring DNSSEC
+     * signing</a> in the <i>Route 53 developer guide</i>.
+     * </p>
+     * 
+     * @param associateDelegationSignerToDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateDelegationSignerToDomain operation returned by the
+     *         service.
+     * @sample AmazonRoute53DomainsAsyncHandler.AssociateDelegationSignerToDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/AssociateDelegationSignerToDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateDelegationSignerToDomainResult> associateDelegationSignerToDomainAsync(
+            AssociateDelegationSignerToDomainRequest associateDelegationSignerToDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateDelegationSignerToDomainRequest, AssociateDelegationSignerToDomainResult> asyncHandler);
 
     /**
      * <p>
@@ -449,6 +498,43 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
     java.util.concurrent.Future<DisableDomainTransferLockResult> disableDomainTransferLockAsync(
             DisableDomainTransferLockRequest disableDomainTransferLockRequest,
             com.amazonaws.handlers.AsyncHandler<DisableDomainTransferLockRequest, DisableDomainTransferLockResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * 
+     * @param disassociateDelegationSignerFromDomainRequest
+     * @return A Java Future containing the result of the DisassociateDelegationSignerFromDomain operation returned by
+     *         the service.
+     * @sample AmazonRoute53DomainsAsync.DisassociateDelegationSignerFromDomain
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateDelegationSignerFromDomainResult> disassociateDelegationSignerFromDomainAsync(
+            DisassociateDelegationSignerFromDomainRequest disassociateDelegationSignerFromDomainRequest);
+
+    /**
+     * <p>
+     * Deletes a delegation signer (DS) record in the registry zone for this domain name.
+     * </p>
+     * 
+     * @param disassociateDelegationSignerFromDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateDelegationSignerFromDomain operation returned by
+     *         the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.DisassociateDelegationSignerFromDomain
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/DisassociateDelegationSignerFromDomain"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateDelegationSignerFromDomainResult> disassociateDelegationSignerFromDomainAsync(
+            DisassociateDelegationSignerFromDomainRequest disassociateDelegationSignerFromDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateDelegationSignerFromDomainRequest, DisassociateDelegationSignerFromDomainResult> asyncHandler);
 
     /**
      * <p>
@@ -913,6 +999,59 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
 
     /**
      * <p>
+     * Moves a domain from Amazon Web Services to another registrar.
+     * </p>
+     * <p>
+     * Supported actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be
+     * transferred to another registrar.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param pushDomainRequest
+     * @return A Java Future containing the result of the PushDomain operation returned by the service.
+     * @sample AmazonRoute53DomainsAsync.PushDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PushDomainResult> pushDomainAsync(PushDomainRequest pushDomainRequest);
+
+    /**
+     * <p>
+     * Moves a domain from Amazon Web Services to another registrar.
+     * </p>
+     * <p>
+     * Supported actions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Changes the IPS tags of a .uk domain, and pushes it to transit. Transit means that the domain is ready to be
+     * transferred to another registrar.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param pushDomainRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PushDomain operation returned by the service.
+     * @sample AmazonRoute53DomainsAsyncHandler.PushDomain
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/PushDomain" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PushDomainResult> pushDomainAsync(PushDomainRequest pushDomainRequest,
+            com.amazonaws.handlers.AsyncHandler<PushDomainRequest, PushDomainResult> asyncHandler);
+
+    /**
+     * <p>
      * This operation registers a domain. Domains are registered either by Amazon Registrar (for .com, .net, and .org
      * domains) or by our registrar associate, Gandi (for all other domains). For some top-level domains (TLDs), this
      * operation requires extra parameters.
@@ -929,8 +1068,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * </li>
      * <li>
      * <p>
-     * Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of
-     * the renewal date so you can choose whether to renew the registration.
+     * Enables auto renew, so your domain registration will renew automatically each year. We'll notify you in advance
+     * of the renewal date so you can choose whether to renew the registration.
      * </p>
      * </li>
      * <li>
@@ -986,8 +1125,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * </li>
      * <li>
      * <p>
-     * Enables autorenew, so your domain registration will renew automatically each year. We'll notify you in advance of
-     * the renewal date so you can choose whether to renew the registration.
+     * Enables auto renew, so your domain registration will renew automatically each year. We'll notify you in advance
+     * of the renewal date so you can choose whether to renew the registration.
      * </p>
      * </li>
      * <li>
@@ -1185,8 +1324,43 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this
-     * value to the new registrar.
+     * Resend the form of authorization email for this operation.
+     * </p>
+     * 
+     * @param resendOperationAuthorizationRequest
+     * @return A Java Future containing the result of the ResendOperationAuthorization operation returned by the
+     *         service.
+     * @sample AmazonRoute53DomainsAsync.ResendOperationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResendOperationAuthorizationResult> resendOperationAuthorizationAsync(
+            ResendOperationAuthorizationRequest resendOperationAuthorizationRequest);
+
+    /**
+     * <p>
+     * Resend the form of authorization email for this operation.
+     * </p>
+     * 
+     * @param resendOperationAuthorizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResendOperationAuthorization operation returned by the
+     *         service.
+     * @sample AmazonRoute53DomainsAsyncHandler.ResendOperationAuthorization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/ResendOperationAuthorization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ResendOperationAuthorizationResult> resendOperationAuthorizationAsync(
+            ResendOperationAuthorizationRequest resendOperationAuthorizationRequest,
+            com.amazonaws.handlers.AsyncHandler<ResendOperationAuthorizationRequest, ResendOperationAuthorizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation returns the authorization code for the domain. To transfer a domain to another registrar, you
+     * provide this value to the new registrar.
      * </p>
      * 
      * @param retrieveDomainAuthCodeRequest
@@ -1201,8 +1375,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
 
     /**
      * <p>
-     * This operation returns the AuthCode for the domain. To transfer a domain to another registrar, you provide this
-     * value to the new registrar.
+     * This operation returns the authorization code for the domain. To transfer a domain to another registrar, you
+     * provide this value to the new registrar.
      * </p>
      * 
      * @param retrieveDomainAuthCodeRequest
@@ -1481,8 +1655,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * </p>
      * <p>
      * If the update is successful, this method returns an operation ID that you can use to track the progress and
-     * completion of the action. If the request is not completed successfully, the domain registrant will be notified by
-     * email.
+     * completion of the operation. If the request is not completed successfully, the domain registrant will be notified
+     * by email.
      * </p>
      * 
      * @param updateDomainContactRequest
@@ -1501,8 +1675,8 @@ public interface AmazonRoute53DomainsAsync extends AmazonRoute53Domains {
      * </p>
      * <p>
      * If the update is successful, this method returns an operation ID that you can use to track the progress and
-     * completion of the action. If the request is not completed successfully, the domain registrant will be notified by
-     * email.
+     * completion of the operation. If the request is not completed successfully, the domain registrant will be notified
+     * by email.
      * </p>
      * 
      * @param updateDomainContactRequest

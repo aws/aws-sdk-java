@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,11 @@ public class ModifyDBProxyRequestMarshaller implements Marshaller<Request<Modify
 
                     if (authListValue.getIAMAuth() != null) {
                         request.addParameter("Auth.member." + authListIndex + ".IAMAuth", StringUtils.fromString(authListValue.getIAMAuth()));
+                    }
+
+                    if (authListValue.getClientPasswordAuthType() != null) {
+                        request.addParameter("Auth.member." + authListIndex + ".ClientPasswordAuthType",
+                                StringUtils.fromString(authListValue.getClientPasswordAuthType()));
                     }
                 }
                 authListIndex++;

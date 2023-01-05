@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,8 @@ public class UpdateServiceRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propagateTags").build();
     private static final MarshallingInfo<List> SERVICEREGISTRIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRegistries").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICECONNECTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceConnectConfiguration").build();
 
     private static final UpdateServiceRequestMarshaller instance = new UpdateServiceRequestMarshaller();
 
@@ -96,6 +98,7 @@ public class UpdateServiceRequestMarshaller {
             protocolMarshaller.marshall(updateServiceRequest.getLoadBalancers(), LOADBALANCERS_BINDING);
             protocolMarshaller.marshall(updateServiceRequest.getPropagateTags(), PROPAGATETAGS_BINDING);
             protocolMarshaller.marshall(updateServiceRequest.getServiceRegistries(), SERVICEREGISTRIES_BINDING);
+            protocolMarshaller.marshall(updateServiceRequest.getServiceConnectConfiguration(), SERVICECONNECTCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

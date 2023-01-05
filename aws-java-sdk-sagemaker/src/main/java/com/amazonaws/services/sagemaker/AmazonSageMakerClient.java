@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1673,10 +1673,16 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates an SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed,
-     * compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a
-     * machine learning model.
+     * Creates a SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared
+     * and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine
+     * learning model.
      * </p>
+     * <note>
+     * <p>
+     * In the Studio UI, trials are referred to as <i>run groups</i> and trial components are referred to as
+     * <i>runs</i>.
+     * </p>
+     * </note>
      * <p>
      * The goal of an experiment is to determine the components that produce the best model. Multiple trials are
      * performed, each one isolating and measuring the impact of a change to one or more inputs, while keeping the
@@ -1891,6 +1897,66 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Create a hub.
+     * </p>
+     * 
+     * @param createHubRequest
+     * @return Result of the CreateHub operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateHubResult createHub(CreateHubRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateHub(request);
+    }
+
+    @SdkInternalApi
+    final CreateHubResult executeCreateHub(CreateHubRequest createHubRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createHubRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateHubRequest> request = null;
+        Response<CreateHubResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateHubRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createHubRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHub");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateHubResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateHubResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel
      * interface with an instruction area, the item to review, and an input area.
      * </p>
@@ -1957,6 +2023,19 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured
      * by an objective metric that you choose.
      * </p>
+     * <p>
+     * A hyperparameter tuning job automatically creates Amazon SageMaker experiments, trials, and trial components for
+     * each training job that it runs. You can view these entities in Amazon SageMaker Studio. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/experiments-view-compare.html#experiments-view">View
+     * Experiments, Trials, and Trial Components</a>.
+     * </p>
+     * <important>
+     * <p>
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
+     * </p>
+     * </important>
      * 
      * @param createHyperParameterTuningJobRequest
      * @return Result of the CreateHyperParameterTuningJob operation returned by the service.
@@ -2130,6 +2209,83 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an inference experiment using the configurations specified in the request.
+     * </p>
+     * <p>
+     * Use this API to setup and schedule an experiment to compare model variants on a Amazon SageMaker inference
+     * endpoint. For more information about inference experiments, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow tests</a>.
+     * </p>
+     * <p>
+     * Amazon SageMaker begins your experiment at the scheduled time and routes traffic to your endpoint's model
+     * variants based on your specified configuration.
+     * </p>
+     * <p>
+     * While the experiment is in progress or after it has concluded, you can view metrics that compare your model
+     * variants. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests-view-monitor-edit.html">View, monitor, and
+     * edit shadow tests</a>.
+     * </p>
+     * 
+     * @param createInferenceExperimentRequest
+     * @return Result of the CreateInferenceExperiment operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @sample AmazonSageMaker.CreateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateInferenceExperimentResult createInferenceExperiment(CreateInferenceExperimentRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateInferenceExperiment(request);
+    }
+
+    @SdkInternalApi
+    final CreateInferenceExperimentResult executeCreateInferenceExperiment(CreateInferenceExperimentRequest createInferenceExperimentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createInferenceExperimentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateInferenceExperimentRequest> request = null;
+        Response<CreateInferenceExperimentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateInferenceExperimentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createInferenceExperimentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInferenceExperiment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateInferenceExperimentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateInferenceExperimentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2449,6 +2605,136 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<CreateModelBiasJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateModelBiasJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card.
+     * </p>
+     * <p>
+     * For information about how to use model cards, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html">Amazon SageMaker Model Card</a>.
+     * </p>
+     * 
+     * @param createModelCardRequest
+     * @return Result of the CreateModelCard operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.CreateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateModelCardResult createModelCard(CreateModelCardRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateModelCard(request);
+    }
+
+    @SdkInternalApi
+    final CreateModelCardResult executeCreateModelCard(CreateModelCardRequest createModelCardRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createModelCardRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateModelCardRequest> request = null;
+        Response<CreateModelCardResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateModelCardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createModelCardRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModelCard");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateModelCardResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateModelCardResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param createModelCardExportJobRequest
+     * @return Result of the CreateModelCardExportJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.CreateModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateModelCardExportJobResult createModelCardExportJob(CreateModelCardExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateModelCardExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreateModelCardExportJobResult executeCreateModelCardExportJob(CreateModelCardExportJobRequest createModelCardExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createModelCardExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateModelCardExportJobRequest> request = null;
+        Response<CreateModelCardExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateModelCardExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createModelCardExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateModelCardExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateModelCardExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateModelCardExportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3329,6 +3615,66 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Creates a space used for real time collaboration in a Domain.
+     * </p>
+     * 
+     * @param createSpaceRequest
+     * @return Result of the CreateSpace operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @sample AmazonSageMaker.CreateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSpaceResult createSpace(CreateSpaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSpace(request);
+    }
+
+    @SdkInternalApi
+    final CreateSpaceResult executeCreateSpace(CreateSpaceRequest createSpaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSpaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSpaceRequest> request = null;
+        Response<CreateSpaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSpaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSpaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSpace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSpaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSpaceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new Studio Lifecycle Configuration.
      * </p>
      * 
@@ -3414,15 +3760,15 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
      * </p>
      * <important>
      * <p>
-     * You must not include any security-sensitive information, such as account access IDs, secrets, and tokens, in the
-     * dictionary for configuring hyperparameters. SageMaker rejects the training job request and returns an exception
-     * error for detected credentials, if such user input is found.
+     * Do not include any security-sensitive information including account access IDs, secrets or tokens in any
+     * hyperparameter field. If the use of security-sensitive credentials are detected, SageMaker will reject your
+     * training job request and return an exception error.
      * </p>
      * </important></li>
      * <li>
      * <p>
-     * <code>InputDataConfig</code> - Describes the training dataset and the Amazon S3, EFS, or FSx location where it is
-     * stored.
+     * <code>InputDataConfig</code> - Describes the input required by the training job and the Amazon S3, EFS, or FSx
+     * location where it is stored.
      * </p>
      * </li>
      * <li>
@@ -5047,6 +5393,124 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Delete a hub.
+     * </p>
+     * 
+     * @param deleteHubRequest
+     * @return Result of the DeleteHub operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteHubResult deleteHub(DeleteHubRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHub(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHubResult executeDeleteHub(DeleteHubRequest deleteHubRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteHubRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteHubRequest> request = null;
+        Response<DeleteHubResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHubRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteHubRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHub");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteHubResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteHubResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete the contents of a hub.
+     * </p>
+     * 
+     * @param deleteHubContentRequest
+     * @return Result of the DeleteHubContent operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteHubContentResult deleteHubContent(DeleteHubContentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteHubContent(request);
+    }
+
+    @SdkInternalApi
+    final DeleteHubContentResult executeDeleteHubContent(DeleteHubContentRequest deleteHubContentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteHubContentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteHubContentRequest> request = null;
+        Response<DeleteHubContentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteHubContentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteHubContentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteHubContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteHubContentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteHubContentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Use this operation to delete a human task user interface (worker task template).
      * </p>
      * <p>
@@ -5226,6 +5690,74 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Deletes an inference experiment.
+     * </p>
+     * <note>
+     * <p>
+     * This operation does not delete your endpoint, variants, or any underlying resources. This operation only deletes
+     * the metadata of your experiment.
+     * </p>
+     * </note>
+     * 
+     * @param deleteInferenceExperimentRequest
+     * @return Result of the DeleteInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteInferenceExperimentResult deleteInferenceExperiment(DeleteInferenceExperimentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteInferenceExperiment(request);
+    }
+
+    @SdkInternalApi
+    final DeleteInferenceExperimentResult executeDeleteInferenceExperiment(DeleteInferenceExperimentRequest deleteInferenceExperimentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteInferenceExperimentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteInferenceExperimentRequest> request = null;
+        Response<DeleteInferenceExperimentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteInferenceExperimentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteInferenceExperimentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInferenceExperiment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteInferenceExperimentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteInferenceExperimentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that was created in SageMaker when
      * you called the <code>CreateModel</code> API. It does not delete model artifacts, inference code, or the IAM role
      * that you specified when creating the model.
@@ -5330,6 +5862,66 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<DeleteModelBiasJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteModelBiasJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param deleteModelCardRequest
+     * @return Result of the DeleteModelCard operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.DeleteModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteModelCardResult deleteModelCard(DeleteModelCardRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteModelCard(request);
+    }
+
+    @SdkInternalApi
+    final DeleteModelCardResult executeDeleteModelCard(DeleteModelCardRequest deleteModelCardRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteModelCardRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteModelCardRequest> request = null;
+        Response<DeleteModelCardResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteModelCardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteModelCardRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteModelCard");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteModelCardResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteModelCardResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5927,6 +6519,65 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteProjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Used to delete a space.
+     * </p>
+     * 
+     * @param deleteSpaceRequest
+     * @return Result of the DeleteSpace operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DeleteSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSpaceResult deleteSpace(DeleteSpaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSpace(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSpaceResult executeDeleteSpace(DeleteSpaceRequest deleteSpaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSpaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSpaceRequest> request = null;
+        Response<DeleteSpaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSpaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSpaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSpace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSpaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSpaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7635,6 +8286,120 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Describe a hub.
+     * </p>
+     * 
+     * @param describeHubRequest
+     * @return Result of the DescribeHub operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeHubResult describeHub(DescribeHubRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeHub(request);
+    }
+
+    @SdkInternalApi
+    final DescribeHubResult executeDescribeHub(DescribeHubRequest describeHubRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeHubRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeHubRequest> request = null;
+        Response<DescribeHubResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeHubRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHubRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHub");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeHubResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeHubResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describe the content of a hub.
+     * </p>
+     * 
+     * @param describeHubContentRequest
+     * @return Result of the DescribeHubContent operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHubContent" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeHubContentResult describeHubContent(DescribeHubContentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeHubContent(request);
+    }
+
+    @SdkInternalApi
+    final DescribeHubContentResult executeDescribeHubContent(DescribeHubContentRequest describeHubContentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeHubContentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeHubContentRequest> request = null;
+        Response<DescribeHubContentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeHubContentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHubContentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHubContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeHubContentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeHubContentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the requested human task user interface (worker task template).
      * </p>
      * 
@@ -7854,6 +8619,65 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns details about an inference experiment.
+     * </p>
+     * 
+     * @param describeInferenceExperimentRequest
+     * @return Result of the DescribeInferenceExperiment operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInferenceExperimentResult describeInferenceExperiment(DescribeInferenceExperimentRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInferenceExperiment(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInferenceExperimentResult executeDescribeInferenceExperiment(DescribeInferenceExperimentRequest describeInferenceExperimentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInferenceExperimentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInferenceExperimentRequest> request = null;
+        Response<DescribeInferenceExperimentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInferenceExperimentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInferenceExperimentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInferenceExperiment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInferenceExperimentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeInferenceExperimentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8144,6 +8968,122 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<DescribeModelBiasJobDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeModelBiasJobDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param describeModelCardRequest
+     * @return Result of the DescribeModelCard operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCard" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeModelCardResult describeModelCard(DescribeModelCardRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeModelCard(request);
+    }
+
+    @SdkInternalApi
+    final DescribeModelCardResult executeDescribeModelCard(DescribeModelCardRequest describeModelCardRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeModelCardRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeModelCardRequest> request = null;
+        Response<DescribeModelCardResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeModelCardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeModelCardRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelCard");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeModelCardResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeModelCardResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an Amazon SageMaker Model Card export job.
+     * </p>
+     * 
+     * @param describeModelCardExportJobRequest
+     * @return Result of the DescribeModelCardExportJob operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeModelCardExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeModelCardExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeModelCardExportJobResult describeModelCardExportJob(DescribeModelCardExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeModelCardExportJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeModelCardExportJobResult executeDescribeModelCardExportJob(DescribeModelCardExportJobRequest describeModelCardExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeModelCardExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeModelCardExportJobRequest> request = null;
+        Response<DescribeModelCardExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeModelCardExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeModelCardExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeModelCardExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeModelCardExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeModelCardExportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8850,6 +9790,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeProjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the space.
+     * </p>
+     * 
+     * @param describeSpaceRequest
+     * @return Result of the DescribeSpace operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.DescribeSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeSpaceResult describeSpace(DescribeSpaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeSpace(request);
+    }
+
+    @SdkInternalApi
+    final DescribeSpaceResult executeDescribeSpace(DescribeSpaceRequest describeSpaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeSpaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeSpaceRequest> request = null;
+        Response<DescribeSpaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeSpaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSpaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSpace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeSpaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSpaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9862,6 +10859,68 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Import hub content.
+     * </p>
+     * 
+     * @param importHubContentRequest
+     * @return Result of the ImportHubContent operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ImportHubContent
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ImportHubContent" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ImportHubContentResult importHubContent(ImportHubContentRequest request) {
+        request = beforeClientExecution(request);
+        return executeImportHubContent(request);
+    }
+
+    @SdkInternalApi
+    final ImportHubContentResult executeImportHubContent(ImportHubContentRequest importHubContentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(importHubContentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ImportHubContentRequest> request = null;
+        Response<ImportHubContentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ImportHubContentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(importHubContentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportHubContent");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ImportHubContentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ImportHubContentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the actions in your account and their properties.
      * </p>
      * 
@@ -9962,6 +11021,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAlgorithmsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAlgorithmsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the aliases of a specified image or image version.
+     * </p>
+     * 
+     * @param listAliasesRequest
+     * @return Result of the ListAliases operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListAliases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAliasesResult listAliases(ListAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListAliasesResult executeListAliases(ListAliasesRequest listAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAliasesRequest> request = null;
+        Response<ListAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAliasesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11095,6 +12211,176 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * List hub content versions.
+     * </p>
+     * 
+     * @param listHubContentVersionsRequest
+     * @return Result of the ListHubContentVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListHubContentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContentVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListHubContentVersionsResult listHubContentVersions(ListHubContentVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHubContentVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListHubContentVersionsResult executeListHubContentVersions(ListHubContentVersionsRequest listHubContentVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listHubContentVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHubContentVersionsRequest> request = null;
+        Response<ListHubContentVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHubContentVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHubContentVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHubContentVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListHubContentVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListHubContentVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the contents of a hub.
+     * </p>
+     * 
+     * @param listHubContentsRequest
+     * @return Result of the ListHubContents operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListHubContents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubContents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListHubContentsResult listHubContents(ListHubContentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHubContents(request);
+    }
+
+    @SdkInternalApi
+    final ListHubContentsResult executeListHubContents(ListHubContentsRequest listHubContentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listHubContentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHubContentsRequest> request = null;
+        Response<ListHubContentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHubContentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHubContentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHubContents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListHubContentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListHubContentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all existing hubs.
+     * </p>
+     * 
+     * @param listHubsRequest
+     * @return Result of the ListHubs operation returned by the service.
+     * @sample AmazonSageMaker.ListHubs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHubs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListHubsResult listHubs(ListHubsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListHubs(request);
+    }
+
+    @SdkInternalApi
+    final ListHubsResult executeListHubs(ListHubsRequest listHubsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listHubsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListHubsRequest> request = null;
+        Response<ListHubsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListHubsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listHubsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHubs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListHubsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListHubsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns information about the human task user interfaces in your account.
      * </p>
      * 
@@ -11310,6 +12596,124 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListImagesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListImagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the list of all inference experiments.
+     * </p>
+     * 
+     * @param listInferenceExperimentsRequest
+     * @return Result of the ListInferenceExperiments operation returned by the service.
+     * @sample AmazonSageMaker.ListInferenceExperiments
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceExperiments"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInferenceExperimentsResult listInferenceExperiments(ListInferenceExperimentsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInferenceExperiments(request);
+    }
+
+    @SdkInternalApi
+    final ListInferenceExperimentsResult executeListInferenceExperiments(ListInferenceExperimentsRequest listInferenceExperimentsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInferenceExperimentsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInferenceExperimentsRequest> request = null;
+        Response<ListInferenceExperimentsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInferenceExperimentsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listInferenceExperimentsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInferenceExperiments");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInferenceExperimentsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInferenceExperimentsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the subtasks for an Inference Recommender job.
+     * </p>
+     * <p>
+     * The supported subtasks are benchmarks, which evaluate the performance of your model on different instance types.
+     * </p>
+     * 
+     * @param listInferenceRecommendationsJobStepsRequest
+     * @return Result of the ListInferenceRecommendationsJobSteps operation returned by the service.
+     * @sample AmazonSageMaker.ListInferenceRecommendationsJobSteps
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListInferenceRecommendationsJobSteps"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInferenceRecommendationsJobStepsResult listInferenceRecommendationsJobSteps(ListInferenceRecommendationsJobStepsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInferenceRecommendationsJobSteps(request);
+    }
+
+    @SdkInternalApi
+    final ListInferenceRecommendationsJobStepsResult executeListInferenceRecommendationsJobSteps(
+            ListInferenceRecommendationsJobStepsRequest listInferenceRecommendationsJobStepsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInferenceRecommendationsJobStepsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInferenceRecommendationsJobStepsRequest> request = null;
+        Response<ListInferenceRecommendationsJobStepsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInferenceRecommendationsJobStepsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listInferenceRecommendationsJobStepsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInferenceRecommendationsJobSteps");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInferenceRecommendationsJobStepsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInferenceRecommendationsJobStepsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11596,6 +13000,176 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<ListModelBiasJobDefinitionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListModelBiasJobDefinitionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List the export jobs for the Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardExportJobsRequest
+     * @return Result of the ListModelCardExportJobs operation returned by the service.
+     * @sample AmazonSageMaker.ListModelCardExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListModelCardExportJobsResult listModelCardExportJobs(ListModelCardExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListModelCardExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListModelCardExportJobsResult executeListModelCardExportJobs(ListModelCardExportJobsRequest listModelCardExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listModelCardExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListModelCardExportJobsRequest> request = null;
+        Response<ListModelCardExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListModelCardExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listModelCardExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelCardExportJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListModelCardExportJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListModelCardExportJobsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List existing versions of an Amazon SageMaker Model Card.
+     * </p>
+     * 
+     * @param listModelCardVersionsRequest
+     * @return Result of the ListModelCardVersions operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListModelCardVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCardVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListModelCardVersionsResult listModelCardVersions(ListModelCardVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListModelCardVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListModelCardVersionsResult executeListModelCardVersions(ListModelCardVersionsRequest listModelCardVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listModelCardVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListModelCardVersionsRequest> request = null;
+        Response<ListModelCardVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListModelCardVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listModelCardVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelCardVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListModelCardVersionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListModelCardVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List existing model cards.
+     * </p>
+     * 
+     * @param listModelCardsRequest
+     * @return Result of the ListModelCards operation returned by the service.
+     * @sample AmazonSageMaker.ListModelCards
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListModelCards" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListModelCardsResult listModelCards(ListModelCardsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListModelCards(request);
+    }
+
+    @SdkInternalApi
+    final ListModelCardsResult executeListModelCards(ListModelCardsRequest listModelCardsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listModelCardsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListModelCardsRequest> request = null;
+        Response<ListModelCardsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListModelCardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listModelCardsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListModelCards");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListModelCardsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListModelCardsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -11932,6 +13506,122 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListModelsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets a list of past alerts in a model monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertHistoryRequest
+     * @return Result of the ListMonitoringAlertHistory operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListMonitoringAlertHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlertHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMonitoringAlertHistoryResult listMonitoringAlertHistory(ListMonitoringAlertHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMonitoringAlertHistory(request);
+    }
+
+    @SdkInternalApi
+    final ListMonitoringAlertHistoryResult executeListMonitoringAlertHistory(ListMonitoringAlertHistoryRequest listMonitoringAlertHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMonitoringAlertHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMonitoringAlertHistoryRequest> request = null;
+        Response<ListMonitoringAlertHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMonitoringAlertHistoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMonitoringAlertHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitoringAlertHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMonitoringAlertHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMonitoringAlertHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the alerts for a single monitoring schedule.
+     * </p>
+     * 
+     * @param listMonitoringAlertsRequest
+     * @return Result of the ListMonitoringAlerts operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.ListMonitoringAlerts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListMonitoringAlerts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListMonitoringAlertsResult listMonitoringAlerts(ListMonitoringAlertsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMonitoringAlerts(request);
+    }
+
+    @SdkInternalApi
+    final ListMonitoringAlertsResult executeListMonitoringAlerts(ListMonitoringAlertsRequest listMonitoringAlertsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMonitoringAlertsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMonitoringAlertsRequest> request = null;
+        Response<ListMonitoringAlertsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMonitoringAlertsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMonitoringAlertsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMonitoringAlerts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMonitoringAlertsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMonitoringAlertsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -12503,6 +14193,61 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListProjectsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProjectsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists spaces.
+     * </p>
+     * 
+     * @param listSpacesRequest
+     * @return Result of the ListSpaces operation returned by the service.
+     * @sample AmazonSageMaker.ListSpaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListSpaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSpacesResult listSpaces(ListSpacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSpaces(request);
+    }
+
+    @SdkInternalApi
+    final ListSpacesResult executeListSpaces(ListSpacesRequest listSpacesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSpacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSpacesRequest> request = null;
+        Response<ListSpacesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSpacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSpacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSpaces");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSpacesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSpacesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -13786,6 +15531,68 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Starts an inference experiment.
+     * </p>
+     * 
+     * @param startInferenceExperimentRequest
+     * @return Result of the StartInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StartInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StartInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartInferenceExperimentResult startInferenceExperiment(StartInferenceExperimentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartInferenceExperiment(request);
+    }
+
+    @SdkInternalApi
+    final StartInferenceExperimentResult executeStartInferenceExperiment(StartInferenceExperimentRequest startInferenceExperimentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startInferenceExperimentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartInferenceExperimentRequest> request = null;
+        Response<StartInferenceExperimentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartInferenceExperimentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startInferenceExperimentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartInferenceExperiment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartInferenceExperimentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartInferenceExperimentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Starts a previously stopped monitoring schedule.
      * </p>
      * <note>
@@ -14260,6 +16067,68 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<StopHyperParameterTuningJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StopHyperParameterTuningJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops an inference experiment.
+     * </p>
+     * 
+     * @param stopInferenceExperimentRequest
+     * @return Result of the StopInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.StopInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StopInferenceExperimentResult stopInferenceExperiment(StopInferenceExperimentRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopInferenceExperiment(request);
+    }
+
+    @SdkInternalApi
+    final StopInferenceExperimentResult executeStopInferenceExperiment(StopInferenceExperimentRequest stopInferenceExperimentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopInferenceExperimentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopInferenceExperimentRequest> request = null;
+        Response<StopInferenceExperimentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopInferenceExperimentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(stopInferenceExperimentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopInferenceExperiment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopInferenceExperimentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StopInferenceExperimentResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -15559,6 +17428,63 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Update a hub.
+     * </p>
+     * 
+     * @param updateHubRequest
+     * @return Result of the UpdateHub operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateHub
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateHub" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateHubResult updateHub(UpdateHubRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateHub(request);
+    }
+
+    @SdkInternalApi
+    final UpdateHubResult executeUpdateHub(UpdateHubRequest updateHubRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateHubRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateHubRequest> request = null;
+        Response<UpdateHubResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateHubRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateHubRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateHub");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateHubResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateHubResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a> and
      * <a>DeleteTags</a> APIs.
      * </p>
@@ -15619,6 +17545,197 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
+     * Updates the properties of a SageMaker image version.
+     * </p>
+     * 
+     * @param updateImageVersionRequest
+     * @return Result of the UpdateImageVersion operation returned by the service.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateImageVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImageVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateImageVersionResult updateImageVersion(UpdateImageVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateImageVersion(request);
+    }
+
+    @SdkInternalApi
+    final UpdateImageVersionResult executeUpdateImageVersion(UpdateImageVersionRequest updateImageVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateImageVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateImageVersionRequest> request = null;
+        Response<UpdateImageVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateImageVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateImageVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateImageVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateImageVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateImageVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an inference experiment that you created. The status of the inference experiment has to be either
+     * <code>Created</code>, <code>Running</code>. For more information on the status of an inference experiment, see
+     * <a>DescribeInferenceExperimentResponse$Status</a>.
+     * </p>
+     * 
+     * @param updateInferenceExperimentRequest
+     * @return Result of the UpdateInferenceExperiment operation returned by the service.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateInferenceExperiment
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateInferenceExperimentResult updateInferenceExperiment(UpdateInferenceExperimentRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateInferenceExperiment(request);
+    }
+
+    @SdkInternalApi
+    final UpdateInferenceExperimentResult executeUpdateInferenceExperiment(UpdateInferenceExperimentRequest updateInferenceExperimentRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateInferenceExperimentRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateInferenceExperimentRequest> request = null;
+        Response<UpdateInferenceExperimentResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateInferenceExperimentRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateInferenceExperimentRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInferenceExperiment");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateInferenceExperimentResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateInferenceExperimentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update an Amazon SageMaker Model Card.
+     * </p>
+     * <important>
+     * <p>
+     * You cannot update both model card content and model card status in a single call.
+     * </p>
+     * </important>
+     * 
+     * @param updateModelCardRequest
+     * @return Result of the UpdateModelCard operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ConflictException
+     *         There was a conflict when you attempted to modify a SageMaker entity such as an <code>Experiment</code>
+     *         or <code>Artifact</code>.
+     * @sample AmazonSageMaker.UpdateModelCard
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateModelCard" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateModelCardResult updateModelCard(UpdateModelCardRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateModelCard(request);
+    }
+
+    @SdkInternalApi
+    final UpdateModelCardResult executeUpdateModelCard(UpdateModelCardRequest updateModelCardRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateModelCardRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateModelCardRequest> request = null;
+        Response<UpdateModelCardResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateModelCardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateModelCardRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateModelCard");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateModelCardResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateModelCardResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a versioned model.
      * </p>
      * 
@@ -15662,6 +17779,67 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateModelPackageResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateModelPackageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Update the parameters of a model monitor alert.
+     * </p>
+     * 
+     * @param updateMonitoringAlertRequest
+     * @return Result of the UpdateMonitoringAlert operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateMonitoringAlert
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateMonitoringAlert"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMonitoringAlertResult updateMonitoringAlert(UpdateMonitoringAlertRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMonitoringAlert(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMonitoringAlertResult executeUpdateMonitoringAlert(UpdateMonitoringAlertRequest updateMonitoringAlertRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMonitoringAlertRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMonitoringAlertRequest> request = null;
+        Response<UpdateMonitoringAlertResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMonitoringAlertRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMonitoringAlertRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMonitoringAlert");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMonitoringAlertResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateMonitoringAlertResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -16025,6 +18203,68 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateProjectResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateProjectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the settings of a space.
+     * </p>
+     * 
+     * @param updateSpaceRequest
+     * @return Result of the UpdateSpace operation returned by the service.
+     * @throws ResourceLimitExceededException
+     *         You have exceeded an SageMaker resource limit. For example, you might have too many training jobs
+     *         created.
+     * @throws ResourceInUseException
+     *         Resource being accessed is in use.
+     * @throws ResourceNotFoundException
+     *         Resource being access is not found.
+     * @sample AmazonSageMaker.UpdateSpace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateSpace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateSpaceResult updateSpace(UpdateSpaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSpace(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSpaceResult executeUpdateSpace(UpdateSpaceRequest updateSpaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSpaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSpaceRequest> request = null;
+        Response<UpdateSpaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSpaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSpaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SageMaker");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSpace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSpaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSpaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

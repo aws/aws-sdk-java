@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,6 +38,11 @@ public class JsonErrorResponseMetadata {
      */
     private List<JsonErrorShapeMetadata> errorShapes;
 
+    /**
+     * Correlates to AwsQueryCompatible trait
+     */
+    private boolean hasAwsQueryCompatible;
+
     public String getCustomErrorCodeFieldName() {
         return customErrorCodeFieldName;
     }
@@ -53,6 +58,15 @@ public class JsonErrorResponseMetadata {
 
     public JsonErrorResponseMetadata withErrorShapes(List<JsonErrorShapeMetadata> errorShapes) {
         this.errorShapes = errorShapes;
+        return this;
+    }
+
+    public boolean getAwsQueryCompatible() {
+        return hasAwsQueryCompatible;
+    }
+
+    public JsonErrorResponseMetadata withAwsQueryCompatible(Boolean hasAwsQueryCompatible) {
+        this.hasAwsQueryCompatible = hasAwsQueryCompatible != null && hasAwsQueryCompatible;
         return this;
     }
 }

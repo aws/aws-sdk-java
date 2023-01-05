@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,12 @@ public class UpdateComponentTypeResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The ID of the workspace that contains the component type.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * The ARN of the component type.
      * </p>
      */
@@ -41,12 +47,46 @@ public class UpdateComponentTypeResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String state;
+
     /**
      * <p>
      * The ID of the workspace that contains the component type.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the component type.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the component type.
+     * </p>
+     * 
+     * @return The ID of the workspace that contains the component type.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the component type.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the component type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateComponentTypeResult withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -188,46 +228,6 @@ public class UpdateComponentTypeResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p>
-     * The ID of the workspace that contains the component type.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the component type.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the component type.
-     * </p>
-     * 
-     * @return The ID of the workspace that contains the component type.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the component type.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the component type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public UpdateComponentTypeResult withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,14 +239,14 @@ public class UpdateComponentTypeResult extends com.amazonaws.AmazonWebServiceRes
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getComponentTypeId() != null)
             sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +261,10 @@ public class UpdateComponentTypeResult extends com.amazonaws.AmazonWebServiceRes
         if (obj instanceof UpdateComponentTypeResult == false)
             return false;
         UpdateComponentTypeResult other = (UpdateComponentTypeResult) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -273,10 +277,6 @@ public class UpdateComponentTypeResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
-            return false;
         return true;
     }
 
@@ -285,10 +285,10 @@ public class UpdateComponentTypeResult extends com.amazonaws.AmazonWebServiceRes
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

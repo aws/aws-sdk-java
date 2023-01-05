@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -162,6 +162,13 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private String createdBy;
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration> evaluationModes;
 
     /**
      * <p>
@@ -1046,6 +1053,87 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * 
+     * @return The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *         value is Detective evaluation mode only.
+     */
+
+    public java.util.List<EvaluationModeConfiguration> getEvaluationModes() {
+        if (evaluationModes == null) {
+            evaluationModes = new com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration>();
+        }
+        return evaluationModes;
+    }
+
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * 
+     * @param evaluationModes
+     *        The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *        value is Detective evaluation mode only.
+     */
+
+    public void setEvaluationModes(java.util.Collection<EvaluationModeConfiguration> evaluationModes) {
+        if (evaluationModes == null) {
+            this.evaluationModes = null;
+            return;
+        }
+
+        this.evaluationModes = new com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration>(evaluationModes);
+    }
+
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvaluationModes(java.util.Collection)} or {@link #withEvaluationModes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param evaluationModes
+     *        The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *        value is Detective evaluation mode only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigRule withEvaluationModes(EvaluationModeConfiguration... evaluationModes) {
+        if (this.evaluationModes == null) {
+            setEvaluationModes(new com.amazonaws.internal.SdkInternalList<EvaluationModeConfiguration>(evaluationModes.length));
+        }
+        for (EvaluationModeConfiguration ele : evaluationModes) {
+            this.evaluationModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the value is
+     * Detective evaluation mode only.
+     * </p>
+     * 
+     * @param evaluationModes
+     *        The modes the Config rule can be evaluated in. The valid values are distinct objects. By default, the
+     *        value is Detective evaluation mode only.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigRule withEvaluationModes(java.util.Collection<EvaluationModeConfiguration> evaluationModes) {
+        setEvaluationModes(evaluationModes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1076,7 +1164,9 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
         if (getConfigRuleState() != null)
             sb.append("ConfigRuleState: ").append(getConfigRuleState()).append(",");
         if (getCreatedBy() != null)
-            sb.append("CreatedBy: ").append(getCreatedBy());
+            sb.append("CreatedBy: ").append(getCreatedBy()).append(",");
+        if (getEvaluationModes() != null)
+            sb.append("EvaluationModes: ").append(getEvaluationModes());
         sb.append("}");
         return sb.toString();
     }
@@ -1131,6 +1221,10 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
             return false;
+        if (other.getEvaluationModes() == null ^ this.getEvaluationModes() == null)
+            return false;
+        if (other.getEvaluationModes() != null && other.getEvaluationModes().equals(this.getEvaluationModes()) == false)
+            return false;
         return true;
     }
 
@@ -1149,6 +1243,7 @@ public class ConfigRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMaximumExecutionFrequency() == null) ? 0 : getMaximumExecutionFrequency().hashCode());
         hashCode = prime * hashCode + ((getConfigRuleState() == null) ? 0 : getConfigRuleState().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
+        hashCode = prime * hashCode + ((getEvaluationModes() == null) ? 0 : getEvaluationModes().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The maintenance schedule duration: duration value and duration unit. See <a
- * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank"> Auto-Tune
- * for Amazon OpenSearch Service </a> for more information.
+ * The duration of a maintenance schedule. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon
+ * OpenSearch Service</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,32 +29,24 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Integer to specify the value of a maintenance schedule duration. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Integer to specify the value of a maintenance schedule duration.
      * </p>
      */
     private Long value;
     /**
      * <p>
-     * The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The unit of measurement for the duration of a maintenance schedule.
      * </p>
      */
     private String unit;
 
     /**
      * <p>
-     * Integer to specify the value of a maintenance schedule duration. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Integer to specify the value of a maintenance schedule duration.
      * </p>
      * 
      * @param value
-     *        Integer to specify the value of a maintenance schedule duration. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        Integer to specify the value of a maintenance schedule duration.
      */
 
     public void setValue(Long value) {
@@ -63,14 +55,10 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Integer to specify the value of a maintenance schedule duration. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Integer to specify the value of a maintenance schedule duration.
      * </p>
      * 
-     * @return Integer to specify the value of a maintenance schedule duration. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return Integer to specify the value of a maintenance schedule duration.
      */
 
     public Long getValue() {
@@ -79,15 +67,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Integer to specify the value of a maintenance schedule duration. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * Integer to specify the value of a maintenance schedule duration.
      * </p>
      * 
      * @param value
-     *        Integer to specify the value of a maintenance schedule duration. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        Integer to specify the value of a maintenance schedule duration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,15 +82,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The unit of measurement for the duration of a maintenance schedule.
      * </p>
      * 
      * @param unit
-     *        The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The unit of measurement for the duration of a maintenance schedule.
      * @see TimeUnit
      */
 
@@ -116,14 +96,10 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The unit of measurement for the duration of a maintenance schedule.
      * </p>
      * 
-     * @return The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     *         href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *         target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * @return The unit of measurement for the duration of a maintenance schedule.
      * @see TimeUnit
      */
 
@@ -133,15 +109,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The unit of measurement for the duration of a maintenance schedule.
      * </p>
      * 
      * @param unit
-     *        The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The unit of measurement for the duration of a maintenance schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnit
      */
@@ -153,15 +125,11 @@ public class Duration implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html" target="_blank">
-     * Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     * The unit of measurement for the duration of a maintenance schedule.
      * </p>
      * 
      * @param unit
-     *        The unit of a maintenance schedule duration. Valid value is HOURS. See <a
-     *        href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html"
-     *        target="_blank"> Auto-Tune for Amazon OpenSearch Service </a> for more information.
+     *        The unit of measurement for the duration of a maintenance schedule.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TimeUnit
      */

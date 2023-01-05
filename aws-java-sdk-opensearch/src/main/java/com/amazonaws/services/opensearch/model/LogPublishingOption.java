@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,27 +19,40 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Log Publishing option that is set for a given domain. <br/>
- * Attributes and their details:
- * <ul>
- * <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to publish logs to.</li>
- * <li>Enabled: Whether the log publishing for a given log type is enabled or not.</li>
- * </ul>
+ * Specifies whether the Amazon OpenSearch Service domain publishes the OpenSearch application and slow logs to Amazon
+ * CloudWatch. For more information, see <a
+ * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createdomain-configure-slow-logs.html"
+ * >Monitoring OpenSearch logs with Amazon CloudWatch Logs</a>.
  * </p>
+ * <note>
+ * <p>
+ * After you enable log publishing, you still have to enable the collection of slow logs using the OpenSearch REST API.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class LogPublishingOption implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
+     * </p>
+     */
     private String cloudWatchLogsLogGroupArn;
     /**
      * <p>
-     * Whether the given log publishing option is enabled or not.
+     * Whether the log should be published.
      * </p>
      */
     private Boolean enabled;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
+     * </p>
+     * 
      * @param cloudWatchLogsLogGroupArn
+     *        The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
      */
 
     public void setCloudWatchLogsLogGroupArn(String cloudWatchLogsLogGroupArn) {
@@ -47,7 +60,11 @@ public class LogPublishingOption implements Serializable, Cloneable, StructuredP
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
      */
 
     public String getCloudWatchLogsLogGroupArn() {
@@ -55,7 +72,12 @@ public class LogPublishingOption implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
+     * </p>
+     * 
      * @param cloudWatchLogsLogGroupArn
+     *        The Amazon Resource Name (ARN) of the CloudWatch Logs group to publish logs to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -66,11 +88,11 @@ public class LogPublishingOption implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the given log publishing option is enabled or not.
+     * Whether the log should be published.
      * </p>
      * 
      * @param enabled
-     *        Whether the given log publishing option is enabled or not.
+     *        Whether the log should be published.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -79,10 +101,10 @@ public class LogPublishingOption implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the given log publishing option is enabled or not.
+     * Whether the log should be published.
      * </p>
      * 
-     * @return Whether the given log publishing option is enabled or not.
+     * @return Whether the log should be published.
      */
 
     public Boolean getEnabled() {
@@ -91,11 +113,11 @@ public class LogPublishingOption implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the given log publishing option is enabled or not.
+     * Whether the log should be published.
      * </p>
      * 
      * @param enabled
-     *        Whether the given log publishing option is enabled or not.
+     *        Whether the log should be published.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,10 +128,10 @@ public class LogPublishingOption implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Whether the given log publishing option is enabled or not.
+     * Whether the log should be published.
      * </p>
      * 
-     * @return Whether the given log publishing option is enabled or not.
+     * @return Whether the log should be published.
      */
 
     public Boolean isEnabled() {

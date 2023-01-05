@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a launch template and overrides. You specify these properties as part of a mixed instances policy.
+ * Use this structure to specify the launch templates and instance types (overrides) for a mixed instances policy.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LaunchTemplate" target="_top">AWS API
@@ -28,29 +28,24 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template to use.
+     * The launch template.
      * </p>
      */
     private LaunchTemplateSpecification launchTemplateSpecification;
     /**
      * <p>
-     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
-     * Auto Scaling uses the instance type or instance type requirements specified in the launch template when it
-     * launches an instance.
-     * </p>
-     * <p>
-     * The overrides can include either one or more instance types or a set of instance requirements, but not both.
+     * Any properties that you specify override the same properties in the launch template.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LaunchTemplateOverrides> overrides;
 
     /**
      * <p>
-     * The launch template to use.
+     * The launch template.
      * </p>
      * 
      * @param launchTemplateSpecification
-     *        The launch template to use.
+     *        The launch template.
      */
 
     public void setLaunchTemplateSpecification(LaunchTemplateSpecification launchTemplateSpecification) {
@@ -59,10 +54,10 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template to use.
+     * The launch template.
      * </p>
      * 
-     * @return The launch template to use.
+     * @return The launch template.
      */
 
     public LaunchTemplateSpecification getLaunchTemplateSpecification() {
@@ -71,11 +66,11 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template to use.
+     * The launch template.
      * </p>
      * 
      * @param launchTemplateSpecification
-     *        The launch template to use.
+     *        The launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,20 +81,10 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
-     * Auto Scaling uses the instance type or instance type requirements specified in the launch template when it
-     * launches an instance.
-     * </p>
-     * <p>
-     * The overrides can include either one or more instance types or a set of instance requirements, but not both.
+     * Any properties that you specify override the same properties in the launch template.
      * </p>
      * 
-     * @return Any properties that you specify override the same properties in the launch template. If not provided,
-     *         Amazon EC2 Auto Scaling uses the instance type or instance type requirements specified in the launch
-     *         template when it launches an instance.</p>
-     *         <p>
-     *         The overrides can include either one or more instance types or a set of instance requirements, but not
-     *         both.
+     * @return Any properties that you specify override the same properties in the launch template.
      */
 
     public java.util.List<LaunchTemplateOverrides> getOverrides() {
@@ -111,21 +96,11 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
-     * Auto Scaling uses the instance type or instance type requirements specified in the launch template when it
-     * launches an instance.
-     * </p>
-     * <p>
-     * The overrides can include either one or more instance types or a set of instance requirements, but not both.
+     * Any properties that you specify override the same properties in the launch template.
      * </p>
      * 
      * @param overrides
-     *        Any properties that you specify override the same properties in the launch template. If not provided,
-     *        Amazon EC2 Auto Scaling uses the instance type or instance type requirements specified in the launch
-     *        template when it launches an instance.</p>
-     *        <p>
-     *        The overrides can include either one or more instance types or a set of instance requirements, but not
-     *        both.
+     *        Any properties that you specify override the same properties in the launch template.
      */
 
     public void setOverrides(java.util.Collection<LaunchTemplateOverrides> overrides) {
@@ -139,12 +114,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
-     * Auto Scaling uses the instance type or instance type requirements specified in the launch template when it
-     * launches an instance.
-     * </p>
-     * <p>
-     * The overrides can include either one or more instance types or a set of instance requirements, but not both.
+     * Any properties that you specify override the same properties in the launch template.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -153,12 +123,7 @@ public class LaunchTemplate implements Serializable, Cloneable {
      * </p>
      * 
      * @param overrides
-     *        Any properties that you specify override the same properties in the launch template. If not provided,
-     *        Amazon EC2 Auto Scaling uses the instance type or instance type requirements specified in the launch
-     *        template when it launches an instance.</p>
-     *        <p>
-     *        The overrides can include either one or more instance types or a set of instance requirements, but not
-     *        both.
+     *        Any properties that you specify override the same properties in the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -174,21 +139,11 @@ public class LaunchTemplate implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any properties that you specify override the same properties in the launch template. If not provided, Amazon EC2
-     * Auto Scaling uses the instance type or instance type requirements specified in the launch template when it
-     * launches an instance.
-     * </p>
-     * <p>
-     * The overrides can include either one or more instance types or a set of instance requirements, but not both.
+     * Any properties that you specify override the same properties in the launch template.
      * </p>
      * 
      * @param overrides
-     *        Any properties that you specify override the same properties in the launch template. If not provided,
-     *        Amazon EC2 Auto Scaling uses the instance type or instance type requirements specified in the launch
-     *        template when it launches an instance.</p>
-     *        <p>
-     *        The overrides can include either one or more instance types or a set of instance requirements, but not
-     *        both.
+     *        Any properties that you specify override the same properties in the launch template.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

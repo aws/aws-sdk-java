@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -208,6 +208,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
     }
 
     @Override
+    public GetMultiRegionAccessPointRoutesResult getMultiRegionAccessPointRoutes(GetMultiRegionAccessPointRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPublicAccessBlockResult getPublicAccessBlock(GetPublicAccessBlockRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -309,6 +314,11 @@ public class AbstractAWSS3Control implements AWSS3Control {
 
     @Override
     public PutStorageLensConfigurationTaggingResult putStorageLensConfigurationTagging(PutStorageLensConfigurationTaggingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SubmitMultiRegionAccessPointRoutesResult submitMultiRegionAccessPointRoutes(SubmitMultiRegionAccessPointRoutesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

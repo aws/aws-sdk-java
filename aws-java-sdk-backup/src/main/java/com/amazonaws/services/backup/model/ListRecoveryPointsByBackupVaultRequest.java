@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,13 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
      * </p>
      */
     private java.util.Date byCreatedAfter;
+    /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     */
+    private String byParentRecoveryPointArn;
 
     /**
      * <p>
@@ -452,6 +459,52 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     * 
+     * @param byParentRecoveryPointArn
+     *        This returns only recovery points that match the specified parent (composite) recovery point Amazon
+     *        Resource Name (ARN).
+     */
+
+    public void setByParentRecoveryPointArn(String byParentRecoveryPointArn) {
+        this.byParentRecoveryPointArn = byParentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     * 
+     * @return This returns only recovery points that match the specified parent (composite) recovery point Amazon
+     *         Resource Name (ARN).
+     */
+
+    public String getByParentRecoveryPointArn() {
+        return this.byParentRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * This returns only recovery points that match the specified parent (composite) recovery point Amazon Resource Name
+     * (ARN).
+     * </p>
+     * 
+     * @param byParentRecoveryPointArn
+     *        This returns only recovery points that match the specified parent (composite) recovery point Amazon
+     *        Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListRecoveryPointsByBackupVaultRequest withByParentRecoveryPointArn(String byParentRecoveryPointArn) {
+        setByParentRecoveryPointArn(byParentRecoveryPointArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -478,7 +531,9 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         if (getByCreatedBefore() != null)
             sb.append("ByCreatedBefore: ").append(getByCreatedBefore()).append(",");
         if (getByCreatedAfter() != null)
-            sb.append("ByCreatedAfter: ").append(getByCreatedAfter());
+            sb.append("ByCreatedAfter: ").append(getByCreatedAfter()).append(",");
+        if (getByParentRecoveryPointArn() != null)
+            sb.append("ByParentRecoveryPointArn: ").append(getByParentRecoveryPointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -525,6 +580,10 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
             return false;
         if (other.getByCreatedAfter() != null && other.getByCreatedAfter().equals(this.getByCreatedAfter()) == false)
             return false;
+        if (other.getByParentRecoveryPointArn() == null ^ this.getByParentRecoveryPointArn() == null)
+            return false;
+        if (other.getByParentRecoveryPointArn() != null && other.getByParentRecoveryPointArn().equals(this.getByParentRecoveryPointArn()) == false)
+            return false;
         return true;
     }
 
@@ -541,6 +600,7 @@ public class ListRecoveryPointsByBackupVaultRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getByBackupPlanId() == null) ? 0 : getByBackupPlanId().hashCode());
         hashCode = prime * hashCode + ((getByCreatedBefore() == null) ? 0 : getByCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
+        hashCode = prime * hashCode + ((getByParentRecoveryPointArn() == null) ? 0 : getByParentRecoveryPointArn().hashCode());
         return hashCode;
     }
 

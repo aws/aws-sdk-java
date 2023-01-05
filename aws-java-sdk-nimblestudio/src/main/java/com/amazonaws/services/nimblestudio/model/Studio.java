@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,15 +30,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * assumed by your users when they log in to the Nimble Studio portal via IAM Identity Center and your identity source.
  * </p>
  * <p>
- * The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
- * properly.
+ * The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to
+ * function properly.
  * </p>
  * <p>
- * The admin role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function
- * properly.
+ * The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal to
+ * function properly.
  * </p>
  * <p>
- * Your studio roles must trust the identity.nimble.amazonaws.com service principal to function properly.
+ * Your studio roles must trust the <code>identity.nimble.amazonaws.com</code> service principal to function properly.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/Studio" target="_top">AWS API
@@ -62,7 +62,7 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -80,8 +80,8 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     private String homeRegion;
     /**
      * <p>
-     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
-     * Center users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM
+     * Identity Center users to log in to Nimble Studio portal.
      * </p>
      */
     private String ssoClientId;
@@ -130,13 +130,13 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
     private String studioUrl;
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -235,11 +235,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -248,10 +248,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was created.
+     * @return The ISO timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -260,11 +260,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,13 +355,13 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
-     * Center users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM
+     * Identity Center users to log in to Nimble Studio portal.
      * </p>
      * 
      * @param ssoClientId
-     *        The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM
-     *        Identity Center users to log in to Nimble Studio portal.
+     *        The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows
+     *        IAM Identity Center users to log in to Nimble Studio portal.
      */
 
     public void setSsoClientId(String ssoClientId) {
@@ -370,12 +370,12 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
-     * Center users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM
+     * Identity Center users to log in to Nimble Studio portal.
      * </p>
      * 
-     * @return The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM
-     *         Identity Center users to log in to Nimble Studio portal.
+     * @return The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows
+     *         IAM Identity Center users to log in to Nimble Studio portal.
      */
 
     public String getSsoClientId() {
@@ -384,13 +384,13 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM Identity
-     * Center users to log in to Nimble Studio portal.
+     * The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows IAM
+     * Identity Center users to log in to Nimble Studio portal.
      * </p>
      * 
      * @param ssoClientId
-     *        The IAM Identity Center application client ID used to integrate with IAM Identity Center to enable IAM
-     *        Identity Center users to log in to Nimble Studio portal.
+     *        The IAM Identity Center application client ID used to integrate with IAM Identity Center. This ID allows
+     *        IAM Identity Center users to log in to Nimble Studio portal.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -725,10 +725,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
-     * @return A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * @return A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -737,11 +737,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -750,11 +750,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -793,11 +793,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -806,10 +806,10 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was updated.
+     * @return The ISO timestamp in seconds for when the resource was updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -818,11 +818,11 @@ public class Studio implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

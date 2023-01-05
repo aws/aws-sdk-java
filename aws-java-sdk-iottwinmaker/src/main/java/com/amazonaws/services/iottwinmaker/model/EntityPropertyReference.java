@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,16 +36,16 @@ public class EntityPropertyReference implements Serializable, Cloneable, Structu
     private String componentName;
     /**
      * <p>
-     * The ID of the entity.
-     * </p>
-     */
-    private String entityId;
-    /**
-     * <p>
      * A mapping of external IDs to property names. External IDs uniquely identify properties from external data stores.
      * </p>
      */
     private java.util.Map<String, String> externalIdProperty;
+    /**
+     * <p>
+     * The ID of the entity.
+     * </p>
+     */
+    private String entityId;
     /**
      * <p>
      * The name of the property.
@@ -90,46 +90,6 @@ public class EntityPropertyReference implements Serializable, Cloneable, Structu
 
     public EntityPropertyReference withComponentName(String componentName) {
         setComponentName(componentName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the entity.
-     * </p>
-     * 
-     * @param entityId
-     *        The ID of the entity.
-     */
-
-    public void setEntityId(String entityId) {
-        this.entityId = entityId;
-    }
-
-    /**
-     * <p>
-     * The ID of the entity.
-     * </p>
-     * 
-     * @return The ID of the entity.
-     */
-
-    public String getEntityId() {
-        return this.entityId;
-    }
-
-    /**
-     * <p>
-     * The ID of the entity.
-     * </p>
-     * 
-     * @param entityId
-     *        The ID of the entity.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public EntityPropertyReference withEntityId(String entityId) {
-        setEntityId(entityId);
         return this;
     }
 
@@ -206,6 +166,46 @@ public class EntityPropertyReference implements Serializable, Cloneable, Structu
 
     /**
      * <p>
+     * The ID of the entity.
+     * </p>
+     * 
+     * @param entityId
+     *        The ID of the entity.
+     */
+
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
+
+    /**
+     * <p>
+     * The ID of the entity.
+     * </p>
+     * 
+     * @return The ID of the entity.
+     */
+
+    public String getEntityId() {
+        return this.entityId;
+    }
+
+    /**
+     * <p>
+     * The ID of the entity.
+     * </p>
+     * 
+     * @param entityId
+     *        The ID of the entity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EntityPropertyReference withEntityId(String entityId) {
+        setEntityId(entityId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The name of the property.
      * </p>
      * 
@@ -258,10 +258,10 @@ public class EntityPropertyReference implements Serializable, Cloneable, Structu
         sb.append("{");
         if (getComponentName() != null)
             sb.append("ComponentName: ").append(getComponentName()).append(",");
-        if (getEntityId() != null)
-            sb.append("EntityId: ").append(getEntityId()).append(",");
         if (getExternalIdProperty() != null)
             sb.append("ExternalIdProperty: ").append(getExternalIdProperty()).append(",");
+        if (getEntityId() != null)
+            sb.append("EntityId: ").append(getEntityId()).append(",");
         if (getPropertyName() != null)
             sb.append("PropertyName: ").append(getPropertyName());
         sb.append("}");
@@ -282,13 +282,13 @@ public class EntityPropertyReference implements Serializable, Cloneable, Structu
             return false;
         if (other.getComponentName() != null && other.getComponentName().equals(this.getComponentName()) == false)
             return false;
-        if (other.getEntityId() == null ^ this.getEntityId() == null)
-            return false;
-        if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
-            return false;
         if (other.getExternalIdProperty() == null ^ this.getExternalIdProperty() == null)
             return false;
         if (other.getExternalIdProperty() != null && other.getExternalIdProperty().equals(this.getExternalIdProperty()) == false)
+            return false;
+        if (other.getEntityId() == null ^ this.getEntityId() == null)
+            return false;
+        if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
             return false;
         if (other.getPropertyName() == null ^ this.getPropertyName() == null)
             return false;
@@ -303,8 +303,8 @@ public class EntityPropertyReference implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getComponentName() == null) ? 0 : getComponentName().hashCode());
-        hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
         hashCode = prime * hashCode + ((getExternalIdProperty() == null) ? 0 : getExternalIdProperty().hashCode());
+        hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
         hashCode = prime * hashCode + ((getPropertyName() == null) ? 0 : getPropertyName().hashCode());
         return hashCode;
     }

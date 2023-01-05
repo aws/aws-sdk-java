@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,15 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the Auto Scaling group. This name must be unique per Region per account.
      * </p>
+     * <p>
+     * The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a colon (:) in the name.
+     * </p>
+     * </note>
      */
     private String autoScalingGroupName;
     /**
@@ -63,10 +72,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
@@ -146,9 +152,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> loadBalancerNames;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are
-     * registered as targets with the target groups. The target groups receive incoming traffic and route requests to
-     * one or more registered targets. For more information, see <a
+     * The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling
+     * group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and
+     * route requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load
      * Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.
@@ -157,22 +163,26 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     private com.amazonaws.internal.SdkInternalList<String> targetGroupARNs;
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>.
-     * If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance
-     * unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see
-     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health
+     * checks are always on. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
      * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The
+     * <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and
+     * is subject to change.
      * </p>
      */
     private String healthCheckType;
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Default: <code>0</code> seconds
@@ -322,14 +332,46 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Integer defaultInstanceWarmup;
+    /**
+     * <p>
+     * <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use
+     * this parameter for production workloads. It is also subject to change.</b>
+     * </p>
+     * <p>
+     * The unique identifiers of one or more traffic sources.
+     * </p>
+     * <p>
+     * Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2
+     * Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming
+     * traffic and route requests to one or more registered targets.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier> trafficSources;
 
     /**
      * <p>
      * The name of the Auto Scaling group. This name must be unique per Region per account.
      * </p>
+     * <p>
+     * The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a colon (:) in the name.
+     * </p>
+     * </note>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group. This name must be unique per Region per account.
+     *        The name of the Auto Scaling group. This name must be unique per Region per account.</p>
+     *        <p>
+     *        The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and
+     *        upper and lowercased letters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You cannot use a colon (:) in the name.
+     *        </p>
      */
 
     public void setAutoScalingGroupName(String autoScalingGroupName) {
@@ -340,8 +382,25 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the Auto Scaling group. This name must be unique per Region per account.
      * </p>
+     * <p>
+     * The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a colon (:) in the name.
+     * </p>
+     * </note>
      * 
-     * @return The name of the Auto Scaling group. This name must be unique per Region per account.
+     * @return The name of the Auto Scaling group. This name must be unique per Region per account.</p>
+     *         <p>
+     *         The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and
+     *         upper and lowercased letters.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You cannot use a colon (:) in the name.
+     *         </p>
      */
 
     public String getAutoScalingGroupName() {
@@ -352,9 +411,26 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The name of the Auto Scaling group. This name must be unique per Region per account.
      * </p>
+     * <p>
+     * The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and upper and
+     * lowercased letters.
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use a colon (:) in the name.
+     * </p>
+     * </note>
      * 
      * @param autoScalingGroupName
-     *        The name of the Auto Scaling group. This name must be unique per Region per account.
+     *        The name of the Auto Scaling group. This name must be unique per Region per account.</p>
+     *        <p>
+     *        The name can contain any ASCII character 33 to 126 including most punctuation characters, digits, and
+     *        upper and lowercased letters.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You cannot use a colon (:) in the name.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -547,19 +623,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
      * </p>
      * 
      * @param mixedInstancesPolicy
-     *        An embedded object that specifies a mixed instances policy.</p>
-     *        <p>
-     *        For more information, see <a href=
+     *        The mixed instances policy. For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      *        Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling
      *        User Guide</i>.
@@ -571,21 +642,16 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
      * </p>
      * 
-     * @return An embedded object that specifies a mixed instances policy.</p>
-     *         <p>
-     *         For more information, see <a href=
-     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
-     *         Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling
-     *         User Guide</i>.
+     * @return The mixed instances policy. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html"
+     *         >Auto Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto
+     *         Scaling User Guide</i>.
      */
 
     public MixedInstancesPolicy getMixedInstancesPolicy() {
@@ -594,19 +660,14 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * An embedded object that specifies a mixed instances policy.
-     * </p>
-     * <p>
-     * For more information, see <a
+     * The mixed instances policy. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.
      * </p>
      * 
      * @param mixedInstancesPolicy
-     *        An embedded object that specifies a mixed instances policy.</p>
-     *        <p>
-     *        For more information, see <a href=
+     *        The mixed instances policy. For more information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html">Auto
      *        Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling
      *        User Guide</i>.
@@ -1148,17 +1209,17 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are
-     * registered as targets with the target groups. The target groups receive incoming traffic and route requests to
-     * one or more registered targets. For more information, see <a
+     * The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling
+     * group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and
+     * route requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load
      * Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances
-     *         are registered as targets with the target groups. The target groups receive incoming traffic and route
-     *         requests to one or more registered targets. For more information, see <a
+     * @return The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto
+     *         Scaling group. Instances are registered as targets with the target groups. The target groups receive
+     *         incoming traffic and route requests to one or more registered targets. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic
      *         Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon
      *         EC2 Auto Scaling User Guide</i>.
@@ -1173,18 +1234,18 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are
-     * registered as targets with the target groups. The target groups receive incoming traffic and route requests to
-     * one or more registered targets. For more information, see <a
+     * The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling
+     * group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and
+     * route requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load
      * Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances
-     *        are registered as targets with the target groups. The target groups receive incoming traffic and route
-     *        requests to one or more registered targets. For more information, see <a
+     *        The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto
+     *        Scaling group. Instances are registered as targets with the target groups. The target groups receive
+     *        incoming traffic and route requests to one or more registered targets. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic
      *        Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon
      *        EC2 Auto Scaling User Guide</i>.
@@ -1201,9 +1262,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are
-     * registered as targets with the target groups. The target groups receive incoming traffic and route requests to
-     * one or more registered targets. For more information, see <a
+     * The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling
+     * group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and
+     * route requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load
      * Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.
@@ -1215,9 +1276,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances
-     *        are registered as targets with the target groups. The target groups receive incoming traffic and route
-     *        requests to one or more registered targets. For more information, see <a
+     *        The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto
+     *        Scaling group. Instances are registered as targets with the target groups. The target groups receive
+     *        incoming traffic and route requests to one or more registered targets. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic
      *        Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon
      *        EC2 Auto Scaling User Guide</i>.
@@ -1236,18 +1297,18 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances are
-     * registered as targets with the target groups. The target groups receive incoming traffic and route requests to
-     * one or more registered targets. For more information, see <a
+     * The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto Scaling
+     * group. Instances are registered as targets with the target groups. The target groups receive incoming traffic and
+     * route requests to one or more registered targets. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic Load
      * Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon EC2 Auto
      * Scaling User Guide</i>.
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups to associate with the Auto Scaling group. Instances
-     *        are registered as targets with the target groups. The target groups receive incoming traffic and route
-     *        requests to one or more registered targets. For more information, see <a
+     *        The Amazon Resource Names (ARN) of the Elastic Load Balancing target groups to associate with the Auto
+     *        Scaling group. Instances are registered as targets with the target groups. The target groups receive
+     *        incoming traffic and route requests to one or more registered targets. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-load-balancer.html">Use Elastic
      *        Load Balancing to distribute traffic across the instances in your Auto Scaling group</a> in the <i>Amazon
      *        EC2 Auto Scaling User Guide</i>.
@@ -1261,20 +1322,26 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>.
-     * If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance
-     * unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see
-     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health
+     * checks are always on. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
      * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The
+     * <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and
+     * is subject to change.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> (default) and
-     *        <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it
-     *        considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health
-     *        checks. For more information, see <a
+     *        Determines whether any additional health checks are performed on the instances in this group. Amazon EC2
+     *        health checks are always on. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto
-     *        Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *        <p>
+     *        The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The
+     *        <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview
+     *        release and is subject to change.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -1283,19 +1350,25 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>.
-     * If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance
-     * unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see
-     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health
+     * checks are always on. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
      * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <p>
+     * The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The
+     * <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and
+     * is subject to change.
+     * </p>
      * 
-     * @return The service to use for the health checks. The valid values are <code>EC2</code> (default) and
-     *         <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it
-     *         considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health
-     *         checks. For more information, see <a
+     * @return Determines whether any additional health checks are performed on the instances in this group. Amazon EC2
+     *         health checks are always on. For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto
-     *         Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *         <p>
+     *         The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The
+     *         <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview
+     *         release and is subject to change.
      */
 
     public String getHealthCheckType() {
@@ -1304,20 +1377,26 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The service to use for the health checks. The valid values are <code>EC2</code> (default) and <code>ELB</code>.
-     * If you configure an Auto Scaling group to use load balancer (ELB) health checks, it considers the instance
-     * unhealthy if it fails either the EC2 status checks or the load balancer health checks. For more information, see
-     * <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
+     * Determines whether any additional health checks are performed on the instances in this group. Amazon EC2 health
+     * checks are always on. For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto Scaling
      * instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * </p>
+     * <p>
+     * The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The
+     * <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview release and
+     * is subject to change.
      * </p>
      * 
      * @param healthCheckType
-     *        The service to use for the health checks. The valid values are <code>EC2</code> (default) and
-     *        <code>ELB</code>. If you configure an Auto Scaling group to use load balancer (ELB) health checks, it
-     *        considers the instance unhealthy if it fails either the EC2 status checks or the load balancer health
-     *        checks. For more information, see <a
+     *        Determines whether any additional health checks are performed on the instances in this group. Amazon EC2
+     *        health checks are always on. For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health checks for Auto
-     *        Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *        <p>
+     *        The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>. The
+     *        <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice, which is in preview
+     *        release and is subject to change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1329,11 +1408,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Default: <code>0</code> seconds
@@ -1341,11 +1420,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param healthCheckGracePeriod
      *        The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an
-     *        EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or
-     *        custom health check. This is useful if your instances do not immediately pass these health checks after
-     *        they enter the <code>InService</code> state. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period"
-     *        >Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *        EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is
+     *        useful if your instances do not immediately pass their health checks after they enter the
+     *        <code>InService</code> state. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health
+     *        check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *        <p>
      *        Default: <code>0</code> seconds
      */
@@ -1357,22 +1436,23 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Default: <code>0</code> seconds
      * </p>
      * 
      * @return The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of
-     *         an EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load
-     *         Balancing or custom health check. This is useful if your instances do not immediately pass these health
-     *         checks after they enter the <code>InService</code> state. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period"
-     *         >Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *         an EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is
+     *         useful if your instances do not immediately pass their health checks after they enter the
+     *         <code>InService</code> state. For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the
+     *         health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
+     *         Guide</i>.</p>
      *         <p>
      *         Default: <code>0</code> seconds
      */
@@ -1384,11 +1464,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2
-     * instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or custom
-     * health check. This is useful if your instances do not immediately pass these health checks after they enter the
-     * <code>InService</code> state. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period">Health
-     * check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * instance that has come into service and marking it unhealthy due to a failed health check. This is useful if your
+     * instances do not immediately pass their health checks after they enter the <code>InService</code> state. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health check
+     * grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * <p>
      * Default: <code>0</code> seconds
@@ -1396,11 +1476,11 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param healthCheckGracePeriod
      *        The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an
-     *        EC2 instance that has come into service and marking it unhealthy due to a failed Elastic Load Balancing or
-     *        custom health check. This is useful if your instances do not immediately pass these health checks after
-     *        they enter the <code>InService</code> state. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html#health-check-grace-period"
-     *        >Health check grace period</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     *        EC2 instance that has come into service and marking it unhealthy due to a failed health check. This is
+     *        useful if your instances do not immediately pass their health checks after they enter the
+     *        <code>InService</code> state. For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set the health
+     *        check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      *        <p>
      *        Default: <code>0</code> seconds
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2492,6 +2572,147 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use
+     * this parameter for production workloads. It is also subject to change.</b>
+     * </p>
+     * <p>
+     * The unique identifiers of one or more traffic sources.
+     * </p>
+     * <p>
+     * Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2
+     * Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming
+     * traffic and route requests to one or more registered targets.
+     * </p>
+     * 
+     * @return <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not
+     *         use this parameter for production workloads. It is also subject to change.</b> </p>
+     *         <p>
+     *         The unique identifiers of one or more traffic sources.
+     *         </p>
+     *         <p>
+     *         Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group.
+     *         Amazon EC2 Auto Scaling registers the running instances with the attached target groups. The target
+     *         groups receive incoming traffic and route requests to one or more registered targets.
+     */
+
+    public java.util.List<TrafficSourceIdentifier> getTrafficSources() {
+        if (trafficSources == null) {
+            trafficSources = new com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>();
+        }
+        return trafficSources;
+    }
+
+    /**
+     * <p>
+     * <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use
+     * this parameter for production workloads. It is also subject to change.</b>
+     * </p>
+     * <p>
+     * The unique identifiers of one or more traffic sources.
+     * </p>
+     * <p>
+     * Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2
+     * Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming
+     * traffic and route requests to one or more registered targets.
+     * </p>
+     * 
+     * @param trafficSources
+     *        <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not
+     *        use this parameter for production workloads. It is also subject to change.</b> </p>
+     *        <p>
+     *        The unique identifiers of one or more traffic sources.
+     *        </p>
+     *        <p>
+     *        Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon
+     *        EC2 Auto Scaling registers the running instances with the attached target groups. The target groups
+     *        receive incoming traffic and route requests to one or more registered targets.
+     */
+
+    public void setTrafficSources(java.util.Collection<TrafficSourceIdentifier> trafficSources) {
+        if (trafficSources == null) {
+            this.trafficSources = null;
+            return;
+        }
+
+        this.trafficSources = new com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>(trafficSources);
+    }
+
+    /**
+     * <p>
+     * <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use
+     * this parameter for production workloads. It is also subject to change.</b>
+     * </p>
+     * <p>
+     * The unique identifiers of one or more traffic sources.
+     * </p>
+     * <p>
+     * Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2
+     * Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming
+     * traffic and route requests to one or more registered targets.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTrafficSources(java.util.Collection)} or {@link #withTrafficSources(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param trafficSources
+     *        <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not
+     *        use this parameter for production workloads. It is also subject to change.</b> </p>
+     *        <p>
+     *        The unique identifiers of one or more traffic sources.
+     *        </p>
+     *        <p>
+     *        Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon
+     *        EC2 Auto Scaling registers the running instances with the attached target groups. The target groups
+     *        receive incoming traffic and route requests to one or more registered targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withTrafficSources(TrafficSourceIdentifier... trafficSources) {
+        if (this.trafficSources == null) {
+            setTrafficSources(new com.amazonaws.internal.SdkInternalList<TrafficSourceIdentifier>(trafficSources.length));
+        }
+        for (TrafficSourceIdentifier ele : trafficSources) {
+            this.trafficSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not use
+     * this parameter for production workloads. It is also subject to change.</b>
+     * </p>
+     * <p>
+     * The unique identifiers of one or more traffic sources.
+     * </p>
+     * <p>
+     * Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon EC2
+     * Auto Scaling registers the running instances with the attached target groups. The target groups receive incoming
+     * traffic and route requests to one or more registered targets.
+     * </p>
+     * 
+     * @param trafficSources
+     *        <b>Reserved for use with Amazon VPC Lattice, which is in preview release and is subject to change. Do not
+     *        use this parameter for production workloads. It is also subject to change.</b> </p>
+     *        <p>
+     *        The unique identifiers of one or more traffic sources.
+     *        </p>
+     *        <p>
+     *        Currently, you must specify an Amazon Resource Name (ARN) for an existing VPC Lattice target group. Amazon
+     *        EC2 Auto Scaling registers the running instances with the attached target groups. The target groups
+     *        receive incoming traffic and route requests to one or more registered targets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoScalingGroupRequest withTrafficSources(java.util.Collection<TrafficSourceIdentifier> trafficSources) {
+        setTrafficSources(trafficSources);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2554,7 +2775,9 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         if (getDesiredCapacityType() != null)
             sb.append("DesiredCapacityType: ").append(getDesiredCapacityType()).append(",");
         if (getDefaultInstanceWarmup() != null)
-            sb.append("DefaultInstanceWarmup: ").append(getDefaultInstanceWarmup());
+            sb.append("DefaultInstanceWarmup: ").append(getDefaultInstanceWarmup()).append(",");
+        if (getTrafficSources() != null)
+            sb.append("TrafficSources: ").append(getTrafficSources());
         sb.append("}");
         return sb.toString();
     }
@@ -2675,6 +2898,10 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getDefaultInstanceWarmup() != null && other.getDefaultInstanceWarmup().equals(this.getDefaultInstanceWarmup()) == false)
             return false;
+        if (other.getTrafficSources() == null ^ this.getTrafficSources() == null)
+            return false;
+        if (other.getTrafficSources() != null && other.getTrafficSources().equals(this.getTrafficSources()) == false)
+            return false;
         return true;
     }
 
@@ -2709,6 +2936,7 @@ public class CreateAutoScalingGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacityType() == null) ? 0 : getDesiredCapacityType().hashCode());
         hashCode = prime * hashCode + ((getDefaultInstanceWarmup() == null) ? 0 : getDefaultInstanceWarmup().hashCode());
+        hashCode = prime * hashCode + ((getTrafficSources() == null) ? 0 : getTrafficSources().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,7 @@ public class GetQueryResultsRequest extends com.amazonaws.AmazonWebServiceReques
      * The ARN (or ID suffix of the ARN) of the event data store against which the query was run.
      * </p>
      */
+    @Deprecated
     private String eventDataStore;
     /**
      * <p>
@@ -58,7 +59,7 @@ public class GetQueryResultsRequest extends com.amazonaws.AmazonWebServiceReques
      * @param eventDataStore
      *        The ARN (or ID suffix of the ARN) of the event data store against which the query was run.
      */
-
+    @Deprecated
     public void setEventDataStore(String eventDataStore) {
         this.eventDataStore = eventDataStore;
     }
@@ -70,7 +71,7 @@ public class GetQueryResultsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @return The ARN (or ID suffix of the ARN) of the event data store against which the query was run.
      */
-
+    @Deprecated
     public String getEventDataStore() {
         return this.eventDataStore;
     }
@@ -84,7 +85,7 @@ public class GetQueryResultsRequest extends com.amazonaws.AmazonWebServiceReques
      *        The ARN (or ID suffix of the ARN) of the event data store against which the query was run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public GetQueryResultsRequest withEventDataStore(String eventDataStore) {
         setEventDataStore(eventDataStore);
         return this;

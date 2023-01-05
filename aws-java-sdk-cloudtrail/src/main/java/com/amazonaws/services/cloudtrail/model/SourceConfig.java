@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains configuration information about the service-linked channel.
+ * Contains configuration information about the channel.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/SourceConfig" target="_top">AWS API
@@ -30,24 +30,24 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the service-linked channel applies to one region or all regions.
+     * Specifies whether the channel applies to a single region or to all regions.
      * </p>
      */
     private Boolean applyToAllRegions;
     /**
      * <p>
-     * The advanced event selectors configured for the service-linked channel.
+     * The advanced event selectors that are configured for the channel.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
 
     /**
      * <p>
-     * Specifies whether the service-linked channel applies to one region or all regions.
+     * Specifies whether the channel applies to a single region or to all regions.
      * </p>
      * 
      * @param applyToAllRegions
-     *        Specifies whether the service-linked channel applies to one region or all regions.
+     *        Specifies whether the channel applies to a single region or to all regions.
      */
 
     public void setApplyToAllRegions(Boolean applyToAllRegions) {
@@ -56,10 +56,10 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the service-linked channel applies to one region or all regions.
+     * Specifies whether the channel applies to a single region or to all regions.
      * </p>
      * 
-     * @return Specifies whether the service-linked channel applies to one region or all regions.
+     * @return Specifies whether the channel applies to a single region or to all regions.
      */
 
     public Boolean getApplyToAllRegions() {
@@ -68,11 +68,11 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the service-linked channel applies to one region or all regions.
+     * Specifies whether the channel applies to a single region or to all regions.
      * </p>
      * 
      * @param applyToAllRegions
-     *        Specifies whether the service-linked channel applies to one region or all regions.
+     *        Specifies whether the channel applies to a single region or to all regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the service-linked channel applies to one region or all regions.
+     * Specifies whether the channel applies to a single region or to all regions.
      * </p>
      * 
-     * @return Specifies whether the service-linked channel applies to one region or all regions.
+     * @return Specifies whether the channel applies to a single region or to all regions.
      */
 
     public Boolean isApplyToAllRegions() {
@@ -95,10 +95,10 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The advanced event selectors configured for the service-linked channel.
+     * The advanced event selectors that are configured for the channel.
      * </p>
      * 
-     * @return The advanced event selectors configured for the service-linked channel.
+     * @return The advanced event selectors that are configured for the channel.
      */
 
     public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
@@ -110,11 +110,11 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The advanced event selectors configured for the service-linked channel.
+     * The advanced event selectors that are configured for the channel.
      * </p>
      * 
      * @param advancedEventSelectors
-     *        The advanced event selectors configured for the service-linked channel.
+     *        The advanced event selectors that are configured for the channel.
      */
 
     public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
@@ -128,7 +128,7 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The advanced event selectors configured for the service-linked channel.
+     * The advanced event selectors that are configured for the channel.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +137,7 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param advancedEventSelectors
-     *        The advanced event selectors configured for the service-linked channel.
+     *        The advanced event selectors that are configured for the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class SourceConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The advanced event selectors configured for the service-linked channel.
+     * The advanced event selectors that are configured for the channel.
      * </p>
      * 
      * @param advancedEventSelectors
-     *        The advanced event selectors configured for the service-linked channel.
+     *        The advanced event selectors that are configured for the channel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

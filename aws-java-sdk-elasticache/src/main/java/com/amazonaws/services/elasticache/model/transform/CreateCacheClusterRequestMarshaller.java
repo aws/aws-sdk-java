@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -279,6 +279,14 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
 
         if (createCacheClusterRequest.getTransitEncryptionEnabled() != null) {
             request.addParameter("TransitEncryptionEnabled", StringUtils.fromBoolean(createCacheClusterRequest.getTransitEncryptionEnabled()));
+        }
+
+        if (createCacheClusterRequest.getNetworkType() != null) {
+            request.addParameter("NetworkType", StringUtils.fromString(createCacheClusterRequest.getNetworkType()));
+        }
+
+        if (createCacheClusterRequest.getIpDiscovery() != null) {
+            request.addParameter("IpDiscovery", StringUtils.fromString(createCacheClusterRequest.getIpDiscovery()));
         }
 
         return request;

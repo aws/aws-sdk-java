@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -300,7 +300,9 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * <code>BatchWriteItem</code> cannot update items. To update items, use the <code>UpdateItem</code> action.
+     * <code>BatchWriteItem</code> cannot update items. If you perform a <code>BatchWriteItem</code> operation on an
+     * existing item, that item's values will be overwritten by the operation and it will appear like it was updated. To
+     * update items, we recommend you use the <code>UpdateItem</code> action.
      * </p>
      * </note>
      * <p>
@@ -414,7 +416,9 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </p>
      * <note>
      * <p>
-     * <code>BatchWriteItem</code> cannot update items. To update items, use the <code>UpdateItem</code> action.
+     * <code>BatchWriteItem</code> cannot update items. If you perform a <code>BatchWriteItem</code> operation on an
+     * existing item, that item's values will be overwritten by the operation and it will appear like it was updated. To
+     * update items, we recommend you use the <code>UpdateItem</code> action.
      * </p>
      * </note>
      * <p>
@@ -2502,8 +2506,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * operation, using the <code>ReturnValues</code> parameter.
      * </p>
      * <p>
-     * When you add an item, the primary key attributes are the only required attributes. Attribute values cannot be
-     * null.
+     * When you add an item, the primary key attributes are the only required attributes.
      * </p>
      * <p>
      * Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a
@@ -2545,8 +2548,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * operation, using the <code>ReturnValues</code> parameter.
      * </p>
      * <p>
-     * When you add an item, the primary key attributes are the only required attributes. Attribute values cannot be
-     * null.
+     * When you add an item, the primary key attributes are the only required attributes.
      * </p>
      * <p>
      * Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a

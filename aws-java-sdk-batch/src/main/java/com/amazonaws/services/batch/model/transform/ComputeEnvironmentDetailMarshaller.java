@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,12 @@ public class ComputeEnvironmentDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceRole").build();
     private static final MarshallingInfo<StructuredPojo> UPDATEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updatePolicy").build();
+    private static final MarshallingInfo<StructuredPojo> EKSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("eksConfiguration").build();
+    private static final MarshallingInfo<String> CONTAINERORCHESTRATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOrchestrationType").build();
+    private static final MarshallingInfo<String> UUID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("uuid").build();
 
     private static final ComputeEnvironmentDetailMarshaller instance = new ComputeEnvironmentDetailMarshaller();
 
@@ -82,6 +88,9 @@ public class ComputeEnvironmentDetailMarshaller {
             protocolMarshaller.marshall(computeEnvironmentDetail.getComputeResources(), COMPUTERESOURCES_BINDING);
             protocolMarshaller.marshall(computeEnvironmentDetail.getServiceRole(), SERVICEROLE_BINDING);
             protocolMarshaller.marshall(computeEnvironmentDetail.getUpdatePolicy(), UPDATEPOLICY_BINDING);
+            protocolMarshaller.marshall(computeEnvironmentDetail.getEksConfiguration(), EKSCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(computeEnvironmentDetail.getContainerOrchestrationType(), CONTAINERORCHESTRATIONTYPE_BINDING);
+            protocolMarshaller.marshall(computeEnvironmentDetail.getUuid(), UUID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

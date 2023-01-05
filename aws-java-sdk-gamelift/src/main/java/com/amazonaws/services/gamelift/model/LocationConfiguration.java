@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,12 +20,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * A remote location where a multi-location fleet can deploy EC2 instances for game hosting.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateFleet.html">CreateFleet</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/LocationConfiguration" target="_top">AWS API

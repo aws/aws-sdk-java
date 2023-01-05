@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * The minimum capacity.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * When the scheduled action runs, the resource will have at least this much capacity, but it might have more
+     * depending on other settings, such as the target utilization level of a target tracking scaling policy.
      * </p>
      */
     private Integer minCapacity;
@@ -48,8 +47,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private Integer maxCapacity;
@@ -59,17 +58,15 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * The minimum capacity.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * When the scheduled action runs, the resource will have at least this much capacity, but it might have more
+     * depending on other settings, such as the target utilization level of a target tracking scaling policy.
      * </p>
      * 
      * @param minCapacity
      *        The minimum capacity.</p>
      *        <p>
-     *        For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     *        Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
-     *        minimum value allowed is 1.
+     *        When the scheduled action runs, the resource will have at least this much capacity, but it might have more
+     *        depending on other settings, such as the target utilization level of a target tracking scaling policy.
      */
 
     public void setMinCapacity(Integer minCapacity) {
@@ -81,16 +78,15 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * The minimum capacity.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * When the scheduled action runs, the resource will have at least this much capacity, but it might have more
+     * depending on other settings, such as the target utilization level of a target tracking scaling policy.
      * </p>
      * 
      * @return The minimum capacity.</p>
      *         <p>
-     *         For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     *         Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
-     *         minimum value allowed is 1.
+     *         When the scheduled action runs, the resource will have at least this much capacity, but it might have
+     *         more depending on other settings, such as the target utilization level of a target tracking scaling
+     *         policy.
      */
 
     public Integer getMinCapacity() {
@@ -102,17 +98,15 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * The minimum capacity.
      * </p>
      * <p>
-     * For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot Fleet,
-     * ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the minimum value
-     * allowed is 1.
+     * When the scheduled action runs, the resource will have at least this much capacity, but it might have more
+     * depending on other settings, such as the target utilization level of a target tracking scaling policy.
      * </p>
      * 
      * @param minCapacity
      *        The minimum capacity.</p>
      *        <p>
-     *        For certain resources, the minimum value allowed is 0. This includes Lambda provisioned concurrency, Spot
-     *        Fleet, ECS services, Aurora DB clusters, EMR clusters, and custom resources. For all other resources, the
-     *        minimum value allowed is 1.
+     *        When the scheduled action runs, the resource will have at least this much capacity, but it might have more
+     *        depending on other settings, such as the target utilization level of a target tracking scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,8 +124,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param maxCapacity
@@ -141,8 +135,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a
      *        higher limit, you can request an increase. For more information, consult the documentation for that
      *        service. For information about the default quotas for each service, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     *        Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     *        quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setMaxCapacity(Integer maxCapacity) {
@@ -158,8 +152,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return The maximum capacity.</p>
@@ -168,8 +162,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      *         service has its own default quotas for the maximum capacity of the resource. If you want to specify a
      *         higher limit, you can request an increase. For more information, consult the documentation for that
      *         service. For information about the default quotas for each service, see <a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     *         Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     *         quotas</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public Integer getMaxCapacity() {
@@ -185,8 +179,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      * has its own default quotas for the maximum capacity of the resource. If you want to specify a higher limit, you
      * can request an increase. For more information, consult the documentation for that service. For information about
      * the default quotas for each service, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     * Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     * quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param maxCapacity
@@ -196,8 +190,8 @@ public class ScalableTargetAction implements Serializable, Cloneable, Structured
      *        service has its own default quotas for the maximum capacity of the resource. If you want to specify a
      *        higher limit, you can request an increase. For more information, consult the documentation for that
      *        service. For information about the default quotas for each service, see <a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service Endpoints and
-     *        Quotas</a> in the <i>Amazon Web Services General Reference</i>.
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-service-information.html">Service endpoints and
+     *        quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

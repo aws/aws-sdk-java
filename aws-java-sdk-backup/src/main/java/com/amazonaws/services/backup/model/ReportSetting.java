@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,24 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer numberOfFrameworks;
+    /**
+     * <p>
+     * These are the accounts to be included in the report.
+     * </p>
+     */
+    private java.util.List<String> accounts;
+    /**
+     * <p>
+     * These are the Organizational Units to be included in the report.
+     * </p>
+     */
+    private java.util.List<String> organizationUnits;
+    /**
+     * <p>
+     * These are the Regions to be included in the report.
+     * </p>
+     */
+    private java.util.List<String> regions;
 
     /**
      * <p>
@@ -223,6 +241,216 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * These are the accounts to be included in the report.
+     * </p>
+     * 
+     * @return These are the accounts to be included in the report.
+     */
+
+    public java.util.List<String> getAccounts() {
+        return accounts;
+    }
+
+    /**
+     * <p>
+     * These are the accounts to be included in the report.
+     * </p>
+     * 
+     * @param accounts
+     *        These are the accounts to be included in the report.
+     */
+
+    public void setAccounts(java.util.Collection<String> accounts) {
+        if (accounts == null) {
+            this.accounts = null;
+            return;
+        }
+
+        this.accounts = new java.util.ArrayList<String>(accounts);
+    }
+
+    /**
+     * <p>
+     * These are the accounts to be included in the report.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccounts(java.util.Collection)} or {@link #withAccounts(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param accounts
+     *        These are the accounts to be included in the report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withAccounts(String... accounts) {
+        if (this.accounts == null) {
+            setAccounts(new java.util.ArrayList<String>(accounts.length));
+        }
+        for (String ele : accounts) {
+            this.accounts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * These are the accounts to be included in the report.
+     * </p>
+     * 
+     * @param accounts
+     *        These are the accounts to be included in the report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withAccounts(java.util.Collection<String> accounts) {
+        setAccounts(accounts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * These are the Organizational Units to be included in the report.
+     * </p>
+     * 
+     * @return These are the Organizational Units to be included in the report.
+     */
+
+    public java.util.List<String> getOrganizationUnits() {
+        return organizationUnits;
+    }
+
+    /**
+     * <p>
+     * These are the Organizational Units to be included in the report.
+     * </p>
+     * 
+     * @param organizationUnits
+     *        These are the Organizational Units to be included in the report.
+     */
+
+    public void setOrganizationUnits(java.util.Collection<String> organizationUnits) {
+        if (organizationUnits == null) {
+            this.organizationUnits = null;
+            return;
+        }
+
+        this.organizationUnits = new java.util.ArrayList<String>(organizationUnits);
+    }
+
+    /**
+     * <p>
+     * These are the Organizational Units to be included in the report.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOrganizationUnits(java.util.Collection)} or {@link #withOrganizationUnits(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param organizationUnits
+     *        These are the Organizational Units to be included in the report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withOrganizationUnits(String... organizationUnits) {
+        if (this.organizationUnits == null) {
+            setOrganizationUnits(new java.util.ArrayList<String>(organizationUnits.length));
+        }
+        for (String ele : organizationUnits) {
+            this.organizationUnits.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * These are the Organizational Units to be included in the report.
+     * </p>
+     * 
+     * @param organizationUnits
+     *        These are the Organizational Units to be included in the report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withOrganizationUnits(java.util.Collection<String> organizationUnits) {
+        setOrganizationUnits(organizationUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * These are the Regions to be included in the report.
+     * </p>
+     * 
+     * @return These are the Regions to be included in the report.
+     */
+
+    public java.util.List<String> getRegions() {
+        return regions;
+    }
+
+    /**
+     * <p>
+     * These are the Regions to be included in the report.
+     * </p>
+     * 
+     * @param regions
+     *        These are the Regions to be included in the report.
+     */
+
+    public void setRegions(java.util.Collection<String> regions) {
+        if (regions == null) {
+            this.regions = null;
+            return;
+        }
+
+        this.regions = new java.util.ArrayList<String>(regions);
+    }
+
+    /**
+     * <p>
+     * These are the Regions to be included in the report.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRegions(java.util.Collection)} or {@link #withRegions(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param regions
+     *        These are the Regions to be included in the report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withRegions(String... regions) {
+        if (this.regions == null) {
+            setRegions(new java.util.ArrayList<String>(regions.length));
+        }
+        for (String ele : regions) {
+            this.regions.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * These are the Regions to be included in the report.
+     * </p>
+     * 
+     * @param regions
+     *        These are the Regions to be included in the report.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportSetting withRegions(java.util.Collection<String> regions) {
+        setRegions(regions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -239,7 +467,13 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
         if (getFrameworkArns() != null)
             sb.append("FrameworkArns: ").append(getFrameworkArns()).append(",");
         if (getNumberOfFrameworks() != null)
-            sb.append("NumberOfFrameworks: ").append(getNumberOfFrameworks());
+            sb.append("NumberOfFrameworks: ").append(getNumberOfFrameworks()).append(",");
+        if (getAccounts() != null)
+            sb.append("Accounts: ").append(getAccounts()).append(",");
+        if (getOrganizationUnits() != null)
+            sb.append("OrganizationUnits: ").append(getOrganizationUnits()).append(",");
+        if (getRegions() != null)
+            sb.append("Regions: ").append(getRegions());
         sb.append("}");
         return sb.toString();
     }
@@ -266,6 +500,18 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNumberOfFrameworks() != null && other.getNumberOfFrameworks().equals(this.getNumberOfFrameworks()) == false)
             return false;
+        if (other.getAccounts() == null ^ this.getAccounts() == null)
+            return false;
+        if (other.getAccounts() != null && other.getAccounts().equals(this.getAccounts()) == false)
+            return false;
+        if (other.getOrganizationUnits() == null ^ this.getOrganizationUnits() == null)
+            return false;
+        if (other.getOrganizationUnits() != null && other.getOrganizationUnits().equals(this.getOrganizationUnits()) == false)
+            return false;
+        if (other.getRegions() == null ^ this.getRegions() == null)
+            return false;
+        if (other.getRegions() != null && other.getRegions().equals(this.getRegions()) == false)
+            return false;
         return true;
     }
 
@@ -277,6 +523,9 @@ public class ReportSetting implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getReportTemplate() == null) ? 0 : getReportTemplate().hashCode());
         hashCode = prime * hashCode + ((getFrameworkArns() == null) ? 0 : getFrameworkArns().hashCode());
         hashCode = prime * hashCode + ((getNumberOfFrameworks() == null) ? 0 : getNumberOfFrameworks().hashCode());
+        hashCode = prime * hashCode + ((getAccounts() == null) ? 0 : getAccounts().hashCode());
+        hashCode = prime * hashCode + ((getOrganizationUnits() == null) ? 0 : getOrganizationUnits().hashCode());
+        hashCode = prime * hashCode + ((getRegions() == null) ? 0 : getRegions().hashCode());
         return hashCode;
     }
 

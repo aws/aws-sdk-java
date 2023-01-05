@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -44,7 +44,7 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
     private String createdBy;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource expires.
+     * The ISO timestamp in seconds for when the resource expires.
      * </p>
      */
     private java.util.Date expiresAt;
@@ -82,11 +82,11 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -95,10 +95,10 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was created.
+     * @return The ISO timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -107,11 +107,11 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -162,11 +162,11 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource expires.
+     * The ISO timestamp in seconds for when the resource expires.
      * </p>
      * 
      * @param expiresAt
-     *        The Unix epoch timestamp in seconds for when the resource expires.
+     *        The ISO timestamp in seconds for when the resource expires.
      */
 
     public void setExpiresAt(java.util.Date expiresAt) {
@@ -175,10 +175,10 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource expires.
+     * The ISO timestamp in seconds for when the resource expires.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource expires.
+     * @return The ISO timestamp in seconds for when the resource expires.
      */
 
     public java.util.Date getExpiresAt() {
@@ -187,11 +187,11 @@ public class StreamingSessionStream implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource expires.
+     * The ISO timestamp in seconds for when the resource expires.
      * </p>
      * 
      * @param expiresAt
-     *        The Unix epoch timestamp in seconds for when the resource expires.
+     *        The ISO timestamp in seconds for when the resource expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

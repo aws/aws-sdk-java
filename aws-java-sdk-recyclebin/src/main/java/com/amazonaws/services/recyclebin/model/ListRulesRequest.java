@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,12 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private java.util.List<ResourceTag> resourceTags;
+    /**
+     * <p>
+     * The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.
+     * </p>
+     */
+    private String lockState;
 
     /**
      * <p>
@@ -294,6 +300,69 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.
+     * </p>
+     * 
+     * @param lockState
+     *        The lock state of the retention rules to list. Only retention rules with the specified lock state are
+     *        returned.
+     * @see LockState
+     */
+
+    public void setLockState(String lockState) {
+        this.lockState = lockState;
+    }
+
+    /**
+     * <p>
+     * The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.
+     * </p>
+     * 
+     * @return The lock state of the retention rules to list. Only retention rules with the specified lock state are
+     *         returned.
+     * @see LockState
+     */
+
+    public String getLockState() {
+        return this.lockState;
+    }
+
+    /**
+     * <p>
+     * The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.
+     * </p>
+     * 
+     * @param lockState
+     *        The lock state of the retention rules to list. Only retention rules with the specified lock state are
+     *        returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LockState
+     */
+
+    public ListRulesRequest withLockState(String lockState) {
+        setLockState(lockState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The lock state of the retention rules to list. Only retention rules with the specified lock state are returned.
+     * </p>
+     * 
+     * @param lockState
+     *        The lock state of the retention rules to list. Only retention rules with the specified lock state are
+     *        returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see LockState
+     */
+
+    public ListRulesRequest withLockState(LockState lockState) {
+        this.lockState = lockState.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -312,7 +381,9 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceTags() != null)
-            sb.append("ResourceTags: ").append(getResourceTags());
+            sb.append("ResourceTags: ").append(getResourceTags()).append(",");
+        if (getLockState() != null)
+            sb.append("LockState: ").append(getLockState());
         sb.append("}");
         return sb.toString();
     }
@@ -343,6 +414,10 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getResourceTags() != null && other.getResourceTags().equals(this.getResourceTags()) == false)
             return false;
+        if (other.getLockState() == null ^ this.getLockState() == null)
+            return false;
+        if (other.getLockState() != null && other.getLockState().equals(this.getLockState()) == false)
+            return false;
         return true;
     }
 
@@ -355,6 +430,7 @@ public class ListRulesRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
+        hashCode = prime * hashCode + ((getLockState() == null) ? 0 : getLockState().hashCode());
         return hashCode;
     }
 

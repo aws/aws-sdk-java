@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * The destination description in Amazon OpenSearch Service.
+ * </p>
  * 
  * @see <a
  *      href="http://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/AmazonopensearchserviceDestinationDescription"
@@ -26,22 +29,61 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AmazonopensearchserviceDestinationDescription implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
+     * </p>
+     */
     private String roleARN;
-
+    /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain.
+     * </p>
+     */
     private String domainARN;
-
+    /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
+     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * </p>
+     */
     private String clusterEndpoint;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     */
     private String indexName;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch
+     * 7.x and OpenSearch Service 1.x, there's no value for TypeName.
+     * </p>
+     */
     private String typeName;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period
+     * </p>
+     */
     private String indexRotationPeriod;
-
+    /**
+     * <p>
+     * The buffering options.
+     * </p>
+     */
     private AmazonopensearchserviceBufferingHints bufferingHints;
-
+    /**
+     * <p>
+     * The Amazon OpenSearch Service retry options.
+     * </p>
+     */
     private AmazonopensearchserviceRetryOptions retryOptions;
-
+    /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     */
     private String s3BackupMode;
 
     private S3DestinationDescription s3DestinationDescription;
@@ -53,7 +95,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     private VpcConfigurationDescription vpcConfigurationDescription;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
+     * </p>
+     * 
      * @param roleARN
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      */
 
     public void setRoleARN(String roleARN) {
@@ -61,7 +108,11 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      */
 
     public String getRoleARN() {
@@ -69,7 +120,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
+     * </p>
+     * 
      * @param roleARN
+     *        The Amazon Resource Name (ARN) of the Amazon Web Services credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,7 +135,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain.
+     * </p>
+     * 
      * @param domainARN
+     *        The ARN of the Amazon OpenSearch Service domain.
      */
 
     public void setDomainARN(String domainARN) {
@@ -87,7 +148,11 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain.
+     * </p>
+     * 
+     * @return The ARN of the Amazon OpenSearch Service domain.
      */
 
     public String getDomainARN() {
@@ -95,7 +160,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The ARN of the Amazon OpenSearch Service domain.
+     * </p>
+     * 
      * @param domainARN
+     *        The ARN of the Amazon OpenSearch Service domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,7 +175,14 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
+     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * </p>
+     * 
      * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.
      */
 
     public void setClusterEndpoint(String clusterEndpoint) {
@@ -113,7 +190,13 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
+     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * </p>
+     * 
+     * @return The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *         ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.
      */
 
     public String getClusterEndpoint() {
@@ -121,7 +204,14 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this ClusterEndpoint
+     * or the DomainARN field to send data to Amazon OpenSearch Service.
+     * </p>
+     * 
      * @param clusterEndpoint
+     *        The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses either this
+     *        ClusterEndpoint or the DomainARN field to send data to Amazon OpenSearch Service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,7 +221,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     * 
      * @param indexName
+     *        The Amazon OpenSearch Service index name.
      */
 
     public void setIndexName(String indexName) {
@@ -139,7 +234,11 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service index name.
      */
 
     public String getIndexName() {
@@ -147,7 +246,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index name.
+     * </p>
+     * 
      * @param indexName
+     *        The Amazon OpenSearch Service index name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +261,14 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch
+     * 7.x and OpenSearch Service 1.x, there's no value for TypeName.
+     * </p>
+     * 
      * @param typeName
+     *        The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For
+     *        Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.
      */
 
     public void setTypeName(String typeName) {
@@ -165,7 +276,13 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch
+     * 7.x and OpenSearch Service 1.x, there's no value for TypeName.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For
+     *         Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.
      */
 
     public String getTypeName() {
@@ -173,7 +290,14 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For Elasticsearch
+     * 7.x and OpenSearch Service 1.x, there's no value for TypeName.
+     * </p>
+     * 
      * @param typeName
+     *        The Amazon OpenSearch Service type name. This applies to Elasticsearch 6.x and lower versions. For
+     *        Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for TypeName.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,7 +307,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
 
@@ -192,7 +321,11 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service index rotation period
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service index rotation period
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
 
@@ -201,7 +334,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
@@ -212,7 +350,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service index rotation period
+     * </p>
+     * 
      * @param indexRotationPeriod
+     *        The Amazon OpenSearch Service index rotation period
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceIndexRotationPeriod
      */
@@ -223,7 +366,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The buffering options.
+     * </p>
+     * 
      * @param bufferingHints
+     *        The buffering options.
      */
 
     public void setBufferingHints(AmazonopensearchserviceBufferingHints bufferingHints) {
@@ -231,7 +379,11 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The buffering options.
+     * </p>
+     * 
+     * @return The buffering options.
      */
 
     public AmazonopensearchserviceBufferingHints getBufferingHints() {
@@ -239,7 +391,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The buffering options.
+     * </p>
+     * 
      * @param bufferingHints
+     *        The buffering options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -249,7 +406,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service retry options.
+     * </p>
+     * 
      * @param retryOptions
+     *        The Amazon OpenSearch Service retry options.
      */
 
     public void setRetryOptions(AmazonopensearchserviceRetryOptions retryOptions) {
@@ -257,7 +419,11 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon OpenSearch Service retry options.
+     * </p>
+     * 
+     * @return The Amazon OpenSearch Service retry options.
      */
 
     public AmazonopensearchserviceRetryOptions getRetryOptions() {
@@ -265,7 +431,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon OpenSearch Service retry options.
+     * </p>
+     * 
      * @param retryOptions
+     *        The Amazon OpenSearch Service retry options.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,7 +446,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
      * @param s3BackupMode
+     *        The Amazon S3 backup mode.
      * @see AmazonopensearchserviceS3BackupMode
      */
 
@@ -284,7 +460,11 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
+     * @return The Amazon S3 backup mode.
      * @see AmazonopensearchserviceS3BackupMode
      */
 
@@ -293,7 +473,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
      * @param s3BackupMode
+     *        The Amazon S3 backup mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceS3BackupMode
      */
@@ -304,7 +489,12 @@ public class AmazonopensearchserviceDestinationDescription implements Serializab
     }
 
     /**
+     * <p>
+     * The Amazon S3 backup mode.
+     * </p>
+     * 
      * @param s3BackupMode
+     *        The Amazon S3 backup mode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AmazonopensearchserviceS3BackupMode
      */

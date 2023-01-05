@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,20 @@ import com.amazonaws.AmazonWebServiceResult;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ModifyVpnConnectionOptionsResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Information about the VPN connection.
+     * </p>
+     */
     private VpnConnection vpnConnection;
 
     /**
+     * <p>
+     * Information about the VPN connection.
+     * </p>
+     * 
      * @param vpnConnection
+     *        Information about the VPN connection.
      */
 
     public void setVpnConnection(VpnConnection vpnConnection) {
@@ -34,7 +44,11 @@ public class ModifyVpnConnectionOptionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * Information about the VPN connection.
+     * </p>
+     * 
+     * @return Information about the VPN connection.
      */
 
     public VpnConnection getVpnConnection() {
@@ -42,7 +56,12 @@ public class ModifyVpnConnectionOptionsResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Information about the VPN connection.
+     * </p>
+     * 
      * @param vpnConnection
+     *        Information about the VPN connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

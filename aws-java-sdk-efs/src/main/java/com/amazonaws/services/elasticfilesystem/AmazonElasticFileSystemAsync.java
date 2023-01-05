@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,13 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access
      * points</a>.
      * </p>
+     * <note>
+     * <p>
+     * If multiple requests to create access points on the same file system are sent in quick succession, and the file
+     * system is near the limit of 120 access points, you may experience a throttling response for these requests. This
+     * is to ensure that the file system does not exceed the stated access point limit.
+     * </p>
+     * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
      * </p>
@@ -70,6 +77,13 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access
      * points</a>.
      * </p>
+     * <note>
+     * <p>
+     * If multiple requests to create access points on the same file system are sent in quick succession, and the file
+     * system is near the limit of 120 access points, you may experience a throttling response for these requests. This
+     * is to ensure that the file system does not exceed the stated access point limit.
+     * </p>
+     * </note>
      * <p>
      * This operation requires permissions for the <code>elasticfilesystem:CreateAccessPoint</code> action.
      * </p>
@@ -2031,14 +2045,15 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
-     * consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+     * Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A
+     * <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the
-     * lower-cost Infrequent Access (IA) storage class.
+     * lower-cost EFS Infrequent Access (IA) storage class.
      * </p>
      * <p>
      * To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.
@@ -2046,11 +2061,11 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </li>
      * <li>
      * <p>
-     * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
-     * system's primary storage class (Standard or One Zone Standard.
+     * <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
+     * system's primary storage class (EFS Standard or EFS One Zone Standard).
      * </p>
      * <p>
-     * To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
+     * To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
      * <code>AFTER_1_ACCESS</code>.
      * </p>
      * </li>
@@ -2064,8 +2079,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and intelligent
-     * tiering for the file system.
+     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS
+     * Intelligent-Tiering for the file system.
      * </p>
      * <p>
      * In the request, specify the following:
@@ -2073,8 +2088,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * <ul>
      * <li>
      * <p>
-     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and
-     * intelligent tiering.
+     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and EFS
+     * Intelligent-Tiering.
      * </p>
      * </li>
      * <li>
@@ -2109,14 +2124,15 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
 
     /**
      * <p>
-     * Use this action to manage EFS lifecycle management and intelligent tiering. A <code>LifecycleConfiguration</code>
-     * consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+     * Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A
+     * <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <b>EFS Lifecycle management</b> - When Amazon EFS automatically transitions files in a file system into the
-     * lower-cost Infrequent Access (IA) storage class.
+     * lower-cost EFS Infrequent Access (IA) storage class.
      * </p>
      * <p>
      * To enable EFS Lifecycle management, set the value of <code>TransitionToIA</code> to one of the available options.
@@ -2124,11 +2140,11 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * </li>
      * <li>
      * <p>
-     * <b>EFS Intelligent tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
-     * system's primary storage class (Standard or One Zone Standard.
+     * <b>EFS Intelligent-Tiering</b> - When Amazon EFS automatically transitions files from IA back into the file
+     * system's primary storage class (EFS Standard or EFS One Zone Standard).
      * </p>
      * <p>
-     * To enable EFS Intelligent Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
+     * To enable EFS Intelligent-Tiering, set the value of <code>TransitionToPrimaryStorageClass</code> to
      * <code>AFTER_1_ACCESS</code>.
      * </p>
      * </li>
@@ -2142,8 +2158,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * If a <code>LifecycleConfiguration</code> object already exists for the specified file system, a
      * <code>PutLifecycleConfiguration</code> call modifies the existing configuration. A
      * <code>PutLifecycleConfiguration</code> call with an empty <code>LifecyclePolicies</code> array in the request
-     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and intelligent
-     * tiering for the file system.
+     * body deletes any existing <code>LifecycleConfiguration</code> and turns off lifecycle management and EFS
+     * Intelligent-Tiering for the file system.
      * </p>
      * <p>
      * In the request, specify the following:
@@ -2151,8 +2167,8 @@ public interface AmazonElasticFileSystemAsync extends AmazonElasticFileSystem {
      * <ul>
      * <li>
      * <p>
-     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and
-     * intelligent tiering.
+     * The ID for the file system for which you are enabling, disabling, or modifying lifecycle management and EFS
+     * Intelligent-Tiering.
      * </p>
      * </li>
      * <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,10 @@ import javax.annotation.Generated;
 public class BadRequestException extends com.amazonaws.services.appsync.model.AWSAppSyncException {
     private static final long serialVersionUID = 1L;
 
+    private String reason;
+
+    private BadRequestDetail detail;
+
     /**
      * Constructs a new BadRequestException with the specified error message.
      *
@@ -32,6 +36,76 @@ public class BadRequestException extends com.amazonaws.services.appsync.model.AW
      */
     public BadRequestException(String message) {
         super(message);
+    }
+
+    /**
+     * @param reason
+     * @see BadRequestReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * @return
+     * @see BadRequestReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("reason")
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BadRequestReason
+     */
+
+    public BadRequestException withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * @param reason
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BadRequestReason
+     */
+
+    public BadRequestException withReason(BadRequestReason reason) {
+        this.reason = reason.toString();
+        return this;
+    }
+
+    /**
+     * @param detail
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("detail")
+    public void setDetail(BadRequestDetail detail) {
+        this.detail = detail;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("detail")
+    public BadRequestDetail getDetail() {
+        return this.detail;
+    }
+
+    /**
+     * @param detail
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BadRequestException withDetail(BadRequestDetail detail) {
+        setDetail(detail);
+        return this;
     }
 
 }

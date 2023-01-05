@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String engineType;
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     */
+    private String kmsKeyId;
     /**
      * <p>
      * The unique identifier of the application.
@@ -267,6 +273,46 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @return The identifier of a customer managed key.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The identifier of a customer managed key.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The identifier of a customer managed key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateApplicationRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unique identifier of the application.
      * </p>
      * 
@@ -393,6 +439,8 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("Description: ").append(getDescription()).append(",");
         if (getEngineType() != null)
             sb.append("EngineType: ").append(getEngineType()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getTags() != null)
@@ -427,6 +475,10 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEngineType() != null && other.getEngineType().equals(this.getEngineType()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -447,6 +499,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getDefinition() == null) ? 0 : getDefinition().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEngineType() == null) ? 0 : getEngineType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

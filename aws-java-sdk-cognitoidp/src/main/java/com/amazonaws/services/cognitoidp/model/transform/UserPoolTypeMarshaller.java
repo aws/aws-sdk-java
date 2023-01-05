@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class UserPoolTypeMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<StructuredPojo> POLICIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Policies").build();
+    private static final MarshallingInfo<String> DELETIONPROTECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DeletionProtection").build();
     private static final MarshallingInfo<StructuredPojo> LAMBDACONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LambdaConfig").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -113,6 +115,7 @@ public class UserPoolTypeMarshaller {
             protocolMarshaller.marshall(userPoolType.getId(), ID_BINDING);
             protocolMarshaller.marshall(userPoolType.getName(), NAME_BINDING);
             protocolMarshaller.marshall(userPoolType.getPolicies(), POLICIES_BINDING);
+            protocolMarshaller.marshall(userPoolType.getDeletionProtection(), DELETIONPROTECTION_BINDING);
             protocolMarshaller.marshall(userPoolType.getLambdaConfig(), LAMBDACONFIG_BINDING);
             protocolMarshaller.marshall(userPoolType.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(userPoolType.getLastModifiedDate(), LASTMODIFIEDDATE_BINDING);

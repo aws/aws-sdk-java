@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,9 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
      * A collection of key:value pairs containing player information for use in matchmaking. Player attribute keys must
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
+     * </p>
+     * <p>
+     * You can provide up to 10 <code>PlayerAttributes</code>.
      * </p>
      */
     private java.util.Map<String, AttributeValue> playerAttributes;
@@ -109,10 +112,15 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
+     * <p>
+     * You can provide up to 10 <code>PlayerAttributes</code>.
+     * </p>
      * 
      * @return A collection of key:value pairs containing player information for use in matchmaking. Player attribute
      *         keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
-     *         <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
+     *         <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     *         <p>
+     *         You can provide up to 10 <code>PlayerAttributes</code>.
      */
 
     public java.util.Map<String, AttributeValue> getPlayerAttributes() {
@@ -125,11 +133,16 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
+     * <p>
+     * You can provide up to 10 <code>PlayerAttributes</code>.
+     * </p>
      * 
      * @param playerAttributes
      *        A collection of key:value pairs containing player information for use in matchmaking. Player attribute
      *        keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
-     *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
+     *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     *        <p>
+     *        You can provide up to 10 <code>PlayerAttributes</code>.
      */
 
     public void setPlayerAttributes(java.util.Map<String, AttributeValue> playerAttributes) {
@@ -142,11 +155,16 @@ public class Player implements Serializable, Cloneable, StructuredPojo {
      * match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
      * <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
      * </p>
+     * <p>
+     * You can provide up to 10 <code>PlayerAttributes</code>.
+     * </p>
      * 
      * @param playerAttributes
      *        A collection of key:value pairs containing player information for use in matchmaking. Player attribute
      *        keys must match the <i>playerAttributes</i> used in a matchmaking rule set. Example:
-     *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.
+     *        <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S": "deathmatch"}}</code>.</p>
+     *        <p>
+     *        You can provide up to 10 <code>PlayerAttributes</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

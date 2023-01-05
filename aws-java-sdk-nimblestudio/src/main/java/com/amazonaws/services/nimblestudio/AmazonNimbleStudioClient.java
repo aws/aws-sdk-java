@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -178,7 +178,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.AcceptEulas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/AcceptEulas" target="_top">AWS API
      *      Documentation</a>
@@ -251,7 +251,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -324,7 +324,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingImage" target="_top">AWS
      *      API Documentation</a>
@@ -378,7 +378,8 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      * Creates a streaming session in a studio.
      * </p>
      * <p>
-     * After invoking this operation, you must poll GetStreamingSession until the streaming session is in state READY.
+     * After invoking this operation, you must poll GetStreamingSession until the streaming session is in the
+     * <code>READY</code> state.
      * </p>
      * 
      * @param createStreamingSessionRequest
@@ -400,7 +401,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSession" target="_top">AWS
      *      API Documentation</a>
@@ -456,7 +457,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      * </p>
      * <p>
      * After invoking this API, invoke GetStreamingSessionStream with the returned streamId to poll the resource until
-     * it is in state READY.
+     * it is in the <code>READY</code> state.
      * </p>
      * 
      * @param createStreamingSessionStreamRequest
@@ -478,7 +479,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStreamingSessionStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStreamingSessionStream"
      *      target="_top">AWS API Documentation</a>
@@ -531,28 +532,28 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Create a new Studio.
+     * Create a new studio.
      * </p>
      * <p>
-     * When creating a Studio, two IAM roles must be provided: the admin role and the user Role. These roles are assumed
+     * When creating a studio, two IAM roles must be provided: the admin role and the user role. These roles are assumed
      * by your users when they log in to the Nimble Studio portal.
      * </p>
      * <p>
-     * The user role must have the AmazonNimbleStudio-StudioUser managed policy attached for the portal to function
-     * properly.
+     * The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy attached for the portal to
+     * function properly.
      * </p>
      * <p>
-     * The Admin Role must have the AmazonNimbleStudio-StudioAdmin managed policy attached for the portal to function
-     * properly.
+     * The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy attached for the portal
+     * to function properly.
      * </p>
      * <p>
-     * You may optionally specify a KMS key in the StudioEncryptionConfiguration.
+     * You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.
      * </p>
      * <p>
      * In Nimble Studio, resource names, descriptions, initialization scripts, and other data you provide are always
      * encrypted at rest using an KMS key. By default, this key is owned by Amazon Web Services and managed on your
-     * behalf. You may provide your own KMS key when calling CreateStudio to encrypt this data using a key you own and
-     * manage.
+     * behalf. You may provide your own KMS key when calling <code>CreateStudio</code> to encrypt this data using a key
+     * you own and manage.
      * </p>
      * <p>
      * When providing an KMS key during studio creation, Nimble Studio creates KMS grants in your account to provide
@@ -584,7 +585,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudio" target="_top">AWS API
      *      Documentation</a>
@@ -657,7 +658,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.CreateStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/CreateStudioComponent" target="_top">AWS
      *      API Documentation</a>
@@ -731,7 +732,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -804,7 +805,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteLaunchProfileMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteLaunchProfileMember"
      *      target="_top">AWS API Documentation</a>
@@ -879,7 +880,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingImage" target="_top">AWS
      *      API Documentation</a>
@@ -933,11 +934,11 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      * Deletes streaming session resource.
      * </p>
      * <p>
-     * After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a DELETED
-     * state.
+     * After invoking this operation, use GetStreamingSession to poll the resource until it transitions to a
+     * <code>DELETED</code> state.
      * </p>
      * <p>
-     * A streaming session will count against your streaming session quota until it is marked DELETED.
+     * A streaming session will count against your streaming session quota until it is marked <code>DELETED</code>.
      * </p>
      * 
      * @param deleteStreamingSessionRequest
@@ -959,7 +960,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStreamingSession" target="_top">AWS
      *      API Documentation</a>
@@ -1033,7 +1034,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudio" target="_top">AWS API
      *      Documentation</a>
@@ -1106,7 +1107,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudioComponent" target="_top">AWS
      *      API Documentation</a>
@@ -1180,7 +1181,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.DeleteStudioMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/DeleteStudioMember" target="_top">AWS API
      *      Documentation</a>
@@ -1231,7 +1232,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Get Eula.
+     * Get EULA.
      * </p>
      * 
      * @param getEulaRequest
@@ -1253,7 +1254,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetEula
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetEula" target="_top">AWS API
      *      Documentation</a>
@@ -1326,7 +1327,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -1401,7 +1402,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfileDetails
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileDetails" target="_top">AWS
      *      API Documentation</a>
@@ -1476,7 +1477,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfileInitialization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileInitialization"
      *      target="_top">AWS API Documentation</a>
@@ -1551,7 +1552,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetLaunchProfileMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetLaunchProfileMember" target="_top">AWS
      *      API Documentation</a>
@@ -1625,7 +1626,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingImage" target="_top">AWS API
      *      Documentation</a>
@@ -1701,7 +1702,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSession" target="_top">AWS API
      *      Documentation</a>
@@ -1752,14 +1753,87 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Gets <code>StreamingSessionBackup</code> resource.
+     * </p>
+     * <p>
+     * Invoke this operation to poll for a streaming session backup while stopping a streaming session.
+     * </p>
+     * 
+     * @param getStreamingSessionBackupRequest
+     * @return Result of the GetStreamingSessionBackup operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
+     * @throws ValidationException
+     *         One of the parameters in the request is invalid.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @sample AmazonNimbleStudio.GetStreamingSessionBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionBackup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetStreamingSessionBackupResult getStreamingSessionBackup(GetStreamingSessionBackupRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStreamingSessionBackup(request);
+    }
+
+    @SdkInternalApi
+    final GetStreamingSessionBackupResult executeGetStreamingSessionBackup(GetStreamingSessionBackupRequest getStreamingSessionBackupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getStreamingSessionBackupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetStreamingSessionBackupRequest> request = null;
+        Response<GetStreamingSessionBackupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetStreamingSessionBackupRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getStreamingSessionBackupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "nimble");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStreamingSessionBackup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetStreamingSessionBackupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetStreamingSessionBackupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets a StreamingSessionStream for a streaming session.
      * </p>
      * <p>
-     * Invoke this operation to poll the resource after invoking CreateStreamingSessionStream.
+     * Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.
      * </p>
      * <p>
-     * After the StreamingSessionStream changes to the state READY, the url property will contain a stream to be used
-     * with the DCV streaming client.
+     * After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state, the url property will
+     * contain a stream to be used with the DCV streaming client.
      * </p>
      * 
      * @param getStreamingSessionStreamRequest
@@ -1781,7 +1855,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStreamingSessionStream
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStreamingSessionStream"
      *      target="_top">AWS API Documentation</a>
@@ -1834,7 +1908,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Get a Studio resource.
+     * Get a studio resource.
      * </p>
      * 
      * @param getStudioRequest
@@ -1856,7 +1930,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudio" target="_top">AWS API
      *      Documentation</a>
@@ -1929,7 +2003,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudioComponent" target="_top">AWS API
      *      Documentation</a>
@@ -2002,7 +2076,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.GetStudioMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/GetStudioMember" target="_top">AWS API
      *      Documentation</a>
@@ -2053,7 +2127,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * List Eula Acceptances.
+     * List EULA acceptances.
      * </p>
      * 
      * @param listEulaAcceptancesRequest
@@ -2075,7 +2149,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListEulaAcceptances
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulaAcceptances" target="_top">AWS API
      *      Documentation</a>
@@ -2126,7 +2200,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * List Eulas.
+     * List EULAs.
      * </p>
      * 
      * @param listEulasRequest
@@ -2148,7 +2222,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListEulas
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListEulas" target="_top">AWS API
      *      Documentation</a>
@@ -2221,7 +2295,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListLaunchProfileMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListLaunchProfileMembers"
      *      target="_top">AWS API Documentation</a>
@@ -2296,7 +2370,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListLaunchProfiles
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListLaunchProfiles" target="_top">AWS API
      *      Documentation</a>
@@ -2373,7 +2447,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStreamingImages
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingImages" target="_top">AWS API
      *      Documentation</a>
@@ -2424,6 +2498,76 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
+     * Lists the backups of a streaming session in a studio.
+     * </p>
+     * 
+     * @param listStreamingSessionBackupsRequest
+     * @return Result of the ListStreamingSessionBackups operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         Another operation is in progress.
+     * @throws ThrottlingException
+     *         The request throughput limit was exceeded.
+     * @throws ValidationException
+     *         One of the parameters in the request is invalid.
+     * @throws AccessDeniedException
+     *         You are not authorized to perform this operation. Check your IAM policies, and ensure that you are using
+     *         the correct access keys.
+     * @throws InternalServerErrorException
+     *         An internal error has occurred. Please retry your request.
+     * @sample AmazonNimbleStudio.ListStreamingSessionBackups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessionBackups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListStreamingSessionBackupsResult listStreamingSessionBackups(ListStreamingSessionBackupsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStreamingSessionBackups(request);
+    }
+
+    @SdkInternalApi
+    final ListStreamingSessionBackupsResult executeListStreamingSessionBackups(ListStreamingSessionBackupsRequest listStreamingSessionBackupsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStreamingSessionBackupsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStreamingSessionBackupsRequest> request = null;
+        Response<ListStreamingSessionBackupsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStreamingSessionBackupsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listStreamingSessionBackupsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "nimble");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStreamingSessionBackups");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStreamingSessionBackupsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListStreamingSessionBackupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the streaming sessions in a studio.
      * </p>
      * 
@@ -2446,7 +2590,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStreamingSessions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStreamingSessions" target="_top">AWS
      *      API Documentation</a>
@@ -2498,7 +2642,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Lists the StudioComponents in a studio.
+     * Lists the <code>StudioComponents</code> in a studio.
      * </p>
      * 
      * @param listStudioComponentsRequest
@@ -2520,7 +2664,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStudioComponents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioComponents" target="_top">AWS
      *      API Documentation</a>
@@ -2598,7 +2742,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStudioMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudioMembers" target="_top">AWS API
      *      Documentation</a>
@@ -2649,7 +2793,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * List studios in your Amazon Web Services account in the requested Amazon Web Services Region.
+     * List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region.
      * </p>
      * 
      * @param listStudiosRequest
@@ -2671,7 +2815,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListStudios
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListStudios" target="_top">AWS API
      *      Documentation</a>
@@ -2749,7 +2893,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -2822,7 +2966,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.PutLaunchProfileMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutLaunchProfileMembers" target="_top">AWS
      *      API Documentation</a>
@@ -2897,7 +3041,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.PutStudioMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/PutStudioMembers" target="_top">AWS API
      *      Documentation</a>
@@ -2948,8 +3092,9 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Transitions sessions from the STOPPED state into the READY state. The START_IN_PROGRESS state is the intermediate
-     * state between the STOPPED and READY states.
+     * Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code> state. The
+     * <code>START_IN_PROGRESS</code> state is the intermediate state between the <code>STOPPED</code> and
+     * <code>READY</code> states.
      * </p>
      * 
      * @param startStreamingSessionRequest
@@ -2971,7 +3116,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.StartStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStreamingSession" target="_top">AWS
      *      API Documentation</a>
@@ -3031,7 +3176,8 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      * </p>
      * <p>
      * If the studio does not have a valid IAM Identity Center configuration currently associated with it, then a new
-     * IAM Identity Center application is created for the studio and the studio is changed to the READY state.
+     * IAM Identity Center application is created for the studio and the studio is changed to the <code>READY</code>
+     * state.
      * </p>
      * <p>
      * After the IAM Identity Center application is repaired, you must use the Amazon Nimble Studio console to add
@@ -3057,7 +3203,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.StartStudioSSOConfigurationRepair
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StartStudioSSOConfigurationRepair"
      *      target="_top">AWS API Documentation</a>
@@ -3111,8 +3257,9 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
 
     /**
      * <p>
-     * Transitions sessions from the READY state into the STOPPED state. The STOP_IN_PROGRESS state is the intermediate
-     * state between the READY and STOPPED states.
+     * Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code> state. The
+     * <code>STOP_IN_PROGRESS</code> state is the intermediate state between the <code>READY</code> and
+     * <code>STOPPED</code> states.
      * </p>
      * 
      * @param stopStreamingSessionRequest
@@ -3134,7 +3281,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.StopStreamingSession
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/StopStreamingSession" target="_top">AWS
      *      API Documentation</a>
@@ -3207,7 +3354,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3280,7 +3427,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -3353,7 +3500,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateLaunchProfile
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfile" target="_top">AWS API
      *      Documentation</a>
@@ -3426,7 +3573,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateLaunchProfileMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateLaunchProfileMember"
      *      target="_top">AWS API Documentation</a>
@@ -3501,7 +3648,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateStreamingImage
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStreamingImage" target="_top">AWS
      *      API Documentation</a>
@@ -3577,7 +3724,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateStudio
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudio" target="_top">AWS API
      *      Documentation</a>
@@ -3650,7 +3797,7 @@ public class AmazonNimbleStudioClient extends AmazonWebServiceClient implements 
      *         Your current quota does not allow you to perform the request action. You can request increases for some
      *         quotas, and other quotas cannot be increased.</p>
      *         <p>
-     *         Please use AWS Service Quotas to request an increase.
+     *         Please use Amazon Web Services Service Quotas to request an increase.
      * @sample AmazonNimbleStudio.UpdateStudioComponent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/nimble-2020-08-01/UpdateStudioComponent" target="_top">AWS
      *      API Documentation</a>

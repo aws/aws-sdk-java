@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <b>Related actions</b>
  * </p>
  * <p>
- * <a>CreateAlias</a> | <a>ListAliases</a> | <a>DescribeAlias</a> | <a>UpdateAlias</a> | <a>DeleteAlias</a> |
- * <a>ResolveAlias</a> | <a href=
+ * <a href=
  * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
  * >All APIs by task</a>
  * </p>
@@ -53,7 +52,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      * </p>
      * </li>
      * </ul>
@@ -88,7 +87,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      * </p>
      * </li>
      * </ul>
@@ -107,8 +106,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
-     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
-     *        message embedded.
+     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      *        </p>
      *        </li>
      * @see RoutingStrategyType
@@ -134,7 +132,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      * </p>
      * </li>
      * </ul>
@@ -152,8 +150,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
-     *         the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
-     *         message embedded.
+     *         the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      *         </p>
      *         </li>
      * @see RoutingStrategyType
@@ -179,7 +176,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      * </p>
      * </li>
      * </ul>
@@ -198,8 +195,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
-     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
-     *        message embedded.
+     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -227,7 +223,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      * </p>
      * </li>
      * </ul>
@@ -246,8 +242,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
-     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
-     *        message embedded.
+     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      *        </p>
      *        </li>
      * @see RoutingStrategyType
@@ -273,7 +268,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to the user.
-     * A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a> message embedded.
+     * A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      * </p>
      * </li>
      * </ul>
@@ -292,8 +287,7 @@ public class RoutingStrategy implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <b>TERMINAL</b> - The alias does not resolve to a fleet but instead can be used to display a message to
-     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the <a>RoutingStrategy</a>
-     *        message embedded.
+     *        the user. A terminal alias throws a TerminalRoutingStrategyException with the message embedded.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,31 @@ public class ListStackSetOperationResultsRequestMarshaller implements
 
         if (listStackSetOperationResultsRequest.getCallAs() != null) {
             request.addParameter("CallAs", StringUtils.fromString(listStackSetOperationResultsRequest.getCallAs()));
+        }
+
+        if (listStackSetOperationResultsRequest.getFilters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<OperationResultFilter>) listStackSetOperationResultsRequest.getFilters()).isAutoConstruct()) {
+            request.addParameter("Filters", "");
+        }
+        if (!listStackSetOperationResultsRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<OperationResultFilter>) listStackSetOperationResultsRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<OperationResultFilter> filtersList = (com.amazonaws.internal.SdkInternalList<OperationResultFilter>) listStackSetOperationResultsRequest
+                    .getFilters();
+            int filtersListIndex = 1;
+
+            for (OperationResultFilter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
+
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
+
+                    if (filtersListValue.getValues() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Values", StringUtils.fromString(filtersListValue.getValues()));
+                    }
+                }
+                filtersListIndex++;
+            }
         }
 
         return request;

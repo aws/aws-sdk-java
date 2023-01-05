@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class GetOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String opsItemId;
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     */
+    private String opsItemArn;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class GetOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public void setOpsItemArn(String opsItemArn) {
+        this.opsItemArn = opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @return The OpsItem Amazon Resource Name (ARN).
+     */
+
+    public String getOpsItemArn() {
+        return this.opsItemArn;
+    }
+
+    /**
+     * <p>
+     * The OpsItem Amazon Resource Name (ARN).
+     * </p>
+     * 
+     * @param opsItemArn
+     *        The OpsItem Amazon Resource Name (ARN).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetOpsItemRequest withOpsItemArn(String opsItemArn) {
+        setOpsItemArn(opsItemArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class GetOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOpsItemId() != null)
-            sb.append("OpsItemId: ").append(getOpsItemId());
+            sb.append("OpsItemId: ").append(getOpsItemId()).append(",");
+        if (getOpsItemArn() != null)
+            sb.append("OpsItemArn: ").append(getOpsItemArn());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class GetOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getOpsItemId() != null && other.getOpsItemId().equals(this.getOpsItemId()) == false)
             return false;
+        if (other.getOpsItemArn() == null ^ this.getOpsItemArn() == null)
+            return false;
+        if (other.getOpsItemArn() != null && other.getOpsItemArn().equals(this.getOpsItemArn()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class GetOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest imp
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getOpsItemId() == null) ? 0 : getOpsItemId().hashCode());
+        hashCode = prime * hashCode + ((getOpsItemArn() == null) ? 0 : getOpsItemArn().hashCode());
         return hashCode;
     }
 

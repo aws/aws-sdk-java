@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
      * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.
+     * <code>startedBy</code> field isn't used.
      * </p>
      */
     private String startedBy;
@@ -205,7 +205,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
-     * are met, the task set sre in <code>STEADY_STATE</code>:
+     * are met, the task set are in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -456,13 +456,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
      * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.
+     * <code>startedBy</code> field isn't used.
      * </p>
      * 
      * @param startedBy
      *        The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
      *        <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task
-     *        set, the startedBy field isn't used.
+     *        set, the <code>startedBy</code> field isn't used.
      */
 
     public void setStartedBy(String startedBy) {
@@ -473,12 +473,12 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
      * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.
+     * <code>startedBy</code> field isn't used.
      * </p>
      * 
      * @return The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
      *         <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task
-     *         set, the startedBy field isn't used.
+     *         set, the <code>startedBy</code> field isn't used.
      */
 
     public String getStartedBy() {
@@ -489,13 +489,13 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
      * <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task set, the
-     * startedBy field isn't used.
+     * <code>startedBy</code> field isn't used.
      * </p>
      * 
      * @param startedBy
      *        The tag specified when a task set is started. If an CodeDeploy deployment created the task set, the
      *        <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If an external deployment created the task
-     *        set, the startedBy field isn't used.
+     *        set, the <code>startedBy</code> field isn't used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1539,7 +1539,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
-     * are met, the task set sre in <code>STEADY_STATE</code>:
+     * are met, the task set are in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1569,7 +1569,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param stabilityStatus
      *        The stability status. This indicates whether the task set has reached a steady state. If the following
-     *        conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+     *        conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1605,7 +1605,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
-     * are met, the task set sre in <code>STEADY_STATE</code>:
+     * are met, the task set are in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1634,7 +1634,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return The stability status. This indicates whether the task set has reached a steady state. If the following
-     *         conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+     *         conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1670,7 +1670,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
-     * are met, the task set sre in <code>STEADY_STATE</code>:
+     * are met, the task set are in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1700,7 +1700,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param stabilityStatus
      *        The stability status. This indicates whether the task set has reached a steady state. If the following
-     *        conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+     *        conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1738,7 +1738,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The stability status. This indicates whether the task set has reached a steady state. If the following conditions
-     * are met, the task set sre in <code>STEADY_STATE</code>:
+     * are met, the task set are in <code>STEADY_STATE</code>:
      * </p>
      * <ul>
      * <li>
@@ -1768,7 +1768,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param stabilityStatus
      *        The stability status. This indicates whether the task set has reached a steady state. If the following
-     *        conditions are met, the task set sre in <code>STEADY_STATE</code>:</p>
+     *        conditions are met, the task set are in <code>STEADY_STATE</code>:</p>
      *        <ul>
      *        <li>
      *        <p>

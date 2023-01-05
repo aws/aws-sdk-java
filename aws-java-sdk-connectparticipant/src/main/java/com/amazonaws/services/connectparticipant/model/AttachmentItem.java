@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,8 @@ public class AttachmentItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the MIME file type of the attachment. For a list of supported file types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
-     * >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      */
     private String contentType;
@@ -59,14 +59,14 @@ public class AttachmentItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the MIME file type of the attachment. For a list of supported file types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
-     * >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param contentType
-     *        Describes the MIME file type of the attachment. For a list of supported file types, see <a href=
-     *        "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
-     *        >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
+     *        specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
      */
 
     public void setContentType(String contentType) {
@@ -76,13 +76,13 @@ public class AttachmentItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the MIME file type of the attachment. For a list of supported file types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
-     * >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @return Describes the MIME file type of the attachment. For a list of supported file types, see <a
-     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
-     *         >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
+     *         specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
      */
 
     public String getContentType() {
@@ -92,14 +92,14 @@ public class AttachmentItem implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Describes the MIME file type of the attachment. For a list of supported file types, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
-     * >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in
+     * the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * 
      * @param contentType
-     *        Describes the MIME file type of the attachment. For a list of supported file types, see <a href=
-     *        "https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#feature-limits"
-     *        >Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
+     *        Describes the MIME file type of the attachment. For a list of supported file types, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature
+     *        specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,20 +19,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the request parameters to the <code> <a>GetUpgradeHistory</a> </code> operation.
+ * Container for the request parameters to the <code>GetUpgradeHistory</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of an existing domain.
+     * </p>
+     */
     private String domainName;
-
+    /**
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     */
     private Integer maxResults;
-
+    /**
+     * <p>
+     * If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in
+     * the next page.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The name of an existing domain.
+     * </p>
+     * 
      * @param domainName
+     *        The name of an existing domain.
      */
 
     public void setDomainName(String domainName) {
@@ -40,7 +61,11 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * The name of an existing domain.
+     * </p>
+     * 
+     * @return The name of an existing domain.
      */
 
     public String getDomainName() {
@@ -48,7 +73,12 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The name of an existing domain.
+     * </p>
+     * 
      * @param domainName
+     *        The name of an existing domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +88,14 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     * 
      * @param maxResults
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -66,7 +103,13 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     * 
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -74,7 +117,14 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
+     * </p>
+     * 
      * @param maxResults
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +134,16 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in
+     * the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include
+     *        the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns
+     *        results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -92,7 +151,15 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * @return
+     * <p>
+     * If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in
+     * the next page.
+     * </p>
+     * 
+     * @return If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can
+     *         include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations,
+     *         which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -100,7 +167,16 @@ public class GetUpgradeHistoryRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the
+     * returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in
+     * the next page.
+     * </p>
+     * 
      * @param nextToken
+     *        If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include
+     *        the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns
+     *        results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

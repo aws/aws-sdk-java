@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class QueryExecutionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatementType").build();
     private static final MarshallingInfo<StructuredPojo> RESULTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> RESULTREUSECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResultReuseConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> QUERYEXECUTIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("QueryExecutionContext").build();
     private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -69,6 +71,7 @@ public class QueryExecutionMarshaller {
             protocolMarshaller.marshall(queryExecution.getQuery(), QUERY_BINDING);
             protocolMarshaller.marshall(queryExecution.getStatementType(), STATEMENTTYPE_BINDING);
             protocolMarshaller.marshall(queryExecution.getResultConfiguration(), RESULTCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(queryExecution.getResultReuseConfiguration(), RESULTREUSECONFIGURATION_BINDING);
             protocolMarshaller.marshall(queryExecution.getQueryExecutionContext(), QUERYEXECUTIONCONTEXT_BINDING);
             protocolMarshaller.marshall(queryExecution.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(queryExecution.getStatistics(), STATISTICS_BINDING);

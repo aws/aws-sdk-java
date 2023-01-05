@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class UpdateClusterRequestMarshaller {
             .marshallLocationName("settings").build();
     private static final MarshallingInfo<StructuredPojo> CONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configuration").build();
+    private static final MarshallingInfo<StructuredPojo> SERVICECONNECTDEFAULTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("serviceConnectDefaults").build();
 
     private static final UpdateClusterRequestMarshaller instance = new UpdateClusterRequestMarshaller();
 
@@ -54,6 +56,7 @@ public class UpdateClusterRequestMarshaller {
             protocolMarshaller.marshall(updateClusterRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(updateClusterRequest.getSettings(), SETTINGS_BINDING);
             protocolMarshaller.marshall(updateClusterRequest.getConfiguration(), CONFIGURATION_BINDING);
+            protocolMarshaller.marshall(updateClusterRequest.getServiceConnectDefaults(), SERVICECONNECTDEFAULTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

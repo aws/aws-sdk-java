@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class CreateEnvironmentRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("highAvailabilityConfig").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> PREFERREDMAINTENANCEWINDOW_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -81,6 +83,7 @@ public class CreateEnvironmentRequestMarshaller {
             protocolMarshaller.marshall(createEnvironmentRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getHighAvailabilityConfig(), HIGHAVAILABILITYCONFIG_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(createEnvironmentRequest.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getPreferredMaintenanceWindow(), PREFERREDMAINTENANCEWINDOW_BINDING);
             protocolMarshaller.marshall(createEnvironmentRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);

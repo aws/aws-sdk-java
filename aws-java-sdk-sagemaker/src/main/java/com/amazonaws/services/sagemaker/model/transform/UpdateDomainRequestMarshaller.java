@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class UpdateDomainRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultUserSettings").build();
     private static final MarshallingInfo<StructuredPojo> DOMAINSETTINGSFORUPDATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainSettingsForUpdate").build();
+    private static final MarshallingInfo<StructuredPojo> DEFAULTSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultSpaceSettings").build();
+    private static final MarshallingInfo<String> APPSECURITYGROUPMANAGEMENT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppSecurityGroupManagement").build();
 
     private static final UpdateDomainRequestMarshaller instance = new UpdateDomainRequestMarshaller();
 
@@ -53,6 +57,8 @@ public class UpdateDomainRequestMarshaller {
             protocolMarshaller.marshall(updateDomainRequest.getDomainId(), DOMAINID_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getDefaultUserSettings(), DEFAULTUSERSETTINGS_BINDING);
             protocolMarshaller.marshall(updateDomainRequest.getDomainSettingsForUpdate(), DOMAINSETTINGSFORUPDATE_BINDING);
+            protocolMarshaller.marshall(updateDomainRequest.getDefaultSpaceSettings(), DEFAULTSPACESETTINGS_BINDING);
+            protocolMarshaller.marshall(updateDomainRequest.getAppSecurityGroupManagement(), APPSECURITYGROUPMANAGEMENT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

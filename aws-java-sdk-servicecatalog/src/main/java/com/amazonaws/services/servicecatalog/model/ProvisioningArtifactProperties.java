@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,8 +46,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -84,8 +84,7 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
     private String type;
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
      * </p>
      */
     private Boolean disableTemplateValidation;
@@ -179,8 +178,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -194,8 +193,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * @return Specify the template source with one of the following options, but not both. Keys accepted: [
      *         <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
      *         <p>
-     *         The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *         format. Specify the URL in JSON format as follows:
+     *         The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON
+     *         format as follows:
      *         </p>
      *         <p>
      *         <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -216,8 +215,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -232,8 +231,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        Specify the template source with one of the following options, but not both. Keys accepted: [
      *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
      *        <p>
-     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *        format. Specify the URL in JSON format as follows:
+     *        The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON
+     *        format as follows:
      *        </p>
      *        <p>
      *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -254,8 +253,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      * <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
      * </p>
      * <p>
-     * The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON format.
-     * Specify the URL in JSON format as follows:
+     * The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON format as
+     * follows:
      * </p>
      * <p>
      * <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -270,8 +269,8 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
      *        Specify the template source with one of the following options, but not both. Keys accepted: [
      *        <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]</p>
      *        <p>
-     *        The URL of the CloudFormation template in Amazon S3, Amazon Web Services CodeCommit, or GitHub in JSON
-     *        format. Specify the URL in JSON format as follows:
+     *        The URL of the CloudFormation template in Amazon S3 or GitHub in JSON format. Specify the URL in JSON
+     *        format as follows:
      *        </p>
      *        <p>
      *        <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
@@ -556,13 +555,12 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
      * </p>
      * 
      * @param disableTemplateValidation
-     *        If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *        even if it is invalid.
+     *        If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid.
      */
 
     public void setDisableTemplateValidation(Boolean disableTemplateValidation) {
@@ -571,12 +569,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
      * </p>
      * 
-     * @return If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *         even if it is invalid.
+     * @return If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid.
      */
 
     public Boolean getDisableTemplateValidation() {
@@ -585,13 +582,12 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
      * </p>
      * 
      * @param disableTemplateValidation
-     *        If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *        even if it is invalid.
+     *        If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *        invalid.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,12 +598,11 @@ public class ProvisioningArtifactProperties implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact even if
-     * it is invalid.
+     * If set to true, Service Catalog stops validating the specified provisioning artifact even if it is invalid.
      * </p>
      * 
-     * @return If set to true, Amazon Web Services Service Catalog stops validating the specified provisioning artifact
-     *         even if it is invalid.
+     * @return If set to true, Service Catalog stops validating the specified provisioning artifact even if it is
+     *         invalid.
      */
 
     public Boolean isDisableTemplateValidation() {

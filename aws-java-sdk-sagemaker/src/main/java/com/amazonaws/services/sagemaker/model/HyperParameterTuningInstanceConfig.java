@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
      * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * informcration.
      * </p>
      */
     private Integer instanceCount;
@@ -152,14 +152,14 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
      * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * informcration.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count
      *        larger than 1 for distributed training algorithms. See <a
      *        href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for
-     *        more information.
+     *        more informcration.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -171,13 +171,13 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
      * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * informcration.
      * </p>
      * 
      * @return The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count
      *         larger than 1 for distributed training algorithms. See <a
      *         href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for
-     *         more information.
+     *         more informcration.
      */
 
     public Integer getInstanceCount() {
@@ -189,14 +189,14 @@ public class HyperParameterTuningInstanceConfig implements Serializable, Cloneab
      * The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count larger than
      * 1 for distributed training algorithms. See <a
      * href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for more
-     * information.
+     * informcration.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances of the type specified by <code>InstanceType</code>. Choose an instance count
      *        larger than 1 for distributed training algorithms. See <a
      *        href="https://docs.aws.amazon.com/data-parallel-use-api.html">SageMaker distributed training jobs</a> for
-     *        more information.
+     *        more informcration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

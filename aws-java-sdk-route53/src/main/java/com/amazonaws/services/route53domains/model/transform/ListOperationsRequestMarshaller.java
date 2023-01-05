@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.route53domains.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,14 @@ public class ListOperationsRequestMarshaller {
             .marshallLocationName("Marker").build();
     private static final MarshallingInfo<Integer> MAXITEMS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxItems").build();
+    private static final MarshallingInfo<List> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Status").build();
+    private static final MarshallingInfo<List> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
+    private static final MarshallingInfo<String> SORTBY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortBy").build();
+    private static final MarshallingInfo<String> SORTORDER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("SortOrder").build();
 
     private static final ListOperationsRequestMarshaller instance = new ListOperationsRequestMarshaller();
 
@@ -53,6 +62,10 @@ public class ListOperationsRequestMarshaller {
             protocolMarshaller.marshall(listOperationsRequest.getSubmittedSince(), SUBMITTEDSINCE_BINDING);
             protocolMarshaller.marshall(listOperationsRequest.getMarker(), MARKER_BINDING);
             protocolMarshaller.marshall(listOperationsRequest.getMaxItems(), MAXITEMS_BINDING);
+            protocolMarshaller.marshall(listOperationsRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(listOperationsRequest.getType(), TYPE_BINDING);
+            protocolMarshaller.marshall(listOperationsRequest.getSortBy(), SORTBY_BINDING);
+            protocolMarshaller.marshall(listOperationsRequest.getSortOrder(), SORTORDER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

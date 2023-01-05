@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -49,6 +49,7 @@
     "asyncClient" : "AmazonDevOpsGuruAsyncClient",
     "asyncClientBuilderClassName" : "AmazonDevOpsGuruAsyncClientBuilder",
     "asyncInterface" : "AmazonDevOpsGuruAsync",
+    "awsQueryCompatible" : null,
     "cborProtocol" : false,
     "checksumFormat" : null,
     "contentType" : "application/json",
@@ -1393,7 +1394,7 @@
       "asyncReturnType" : "SearchInsightsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p> <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>",
+      "documentation" : "<p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p> <p> Use the <code>Filters</code> parameter to specify status and severity search parameters. Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code> in your search. </p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -7306,8 +7307,147 @@
           "variableSetterType" : "InsightHealth"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AnalyzedResourceCount",
+        "c2jShape" : "AnalyzedResourceCount",
+        "deprecated" : false,
+        "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAnalyzedResourceCount",
+        "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@return Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.*/",
+        "getterMethodName" : "getAnalyzedResourceCount",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "AnalyzedResourceCount",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AnalyzedResourceCount",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Long",
+        "marshallingType" : "LONG",
+        "name" : "AnalyzedResourceCount",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.*/",
+        "setterMethodName" : "setAnalyzedResourceCount",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AnalyzedResourceCount" : {
+          "c2jName" : "AnalyzedResourceCount",
+          "c2jShape" : "AnalyzedResourceCount",
+          "deprecated" : false,
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAnalyzedResourceCount",
+          "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@return Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.*/",
+          "getterMethodName" : "getAnalyzedResourceCount",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "AnalyzedResourceCount",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AnalyzedResourceCount",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Long",
+          "marshallingType" : "LONG",
+          "name" : "AnalyzedResourceCount",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.*/",
+          "setterMethodName" : "setAnalyzedResourceCount",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services CloudFormation stack. </p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Insight" : {
           "c2jName" : "Insight",
           "c2jShape" : "InsightHealth",
@@ -11402,8 +11542,147 @@
           "variableSetterType" : "Long"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AnalyzedResourceCount",
+        "c2jShape" : "AnalyzedResourceCount",
+        "deprecated" : false,
+        "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAnalyzedResourceCount",
+        "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@return Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.*/",
+        "getterMethodName" : "getAnalyzedResourceCount",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "AnalyzedResourceCount",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AnalyzedResourceCount",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Long",
+        "marshallingType" : "LONG",
+        "name" : "AnalyzedResourceCount",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.*/",
+        "setterMethodName" : "setAnalyzedResourceCount",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AnalyzedResourceCount" : {
+          "c2jName" : "AnalyzedResourceCount",
+          "c2jShape" : "AnalyzedResourceCount",
+          "deprecated" : false,
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAnalyzedResourceCount",
+          "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@return Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.*/",
+          "getterMethodName" : "getAnalyzedResourceCount",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "AnalyzedResourceCount",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AnalyzedResourceCount",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Long",
+          "marshallingType" : "LONG",
+          "name" : "AnalyzedResourceCount",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.*/",
+          "setterMethodName" : "setAnalyzedResourceCount",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your Amazon Web Services account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your Amazon Web Services account. </p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "MetricsAnalyzed" : {
           "c2jName" : "MetricsAnalyzed",
           "c2jShape" : "NumMetricsAnalyzed",
@@ -35356,7 +35635,7 @@
       "packageName" : "com.amazonaws.services.devopsguru.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
-      "required" : [ "Filters" ],
+      "required" : [ ],
       "shapeName" : "ListMonitoredResourcesRequest",
       "signerAware" : false,
       "signerType" : null,
@@ -41626,8 +41905,216 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "LastUpdated",
+        "c2jShape" : "Timestamp",
+        "deprecated" : false,
+        "documentation" : "<p> The time at which DevOps Guru last updated this resource. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@param lastUpdated The time at which DevOps Guru last updated this resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withLastUpdated",
+        "getterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@return The time at which DevOps Guru last updated this resource.*/",
+        "getterMethodName" : "getLastUpdated",
+        "getterModel" : {
+          "returnType" : "java.util.Date",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "LastUpdated",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "LastUpdated",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "java.util.Date",
+        "marshallingType" : "DATE",
+        "name" : "LastUpdated",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@param lastUpdated The time at which DevOps Guru last updated this resource.*/",
+        "setterMethodName" : "setLastUpdated",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "lastUpdated",
+          "variableType" : "java.util.Date",
+          "documentation" : "",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@param lastUpdated The time at which DevOps Guru last updated this resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : "unixTimestamp",
+          "variableDeclarationType" : "java.util.Date",
+          "variableName" : "lastUpdated",
+          "variableType" : "java.util.Date",
+          "documentation" : "<p> The time at which DevOps Guru last updated this resource. </p>",
+          "simpleType" : "Date",
+          "variableSetterType" : "java.util.Date"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ResourceCollection",
+        "c2jShape" : "ResourceCollection",
+        "deprecated" : false,
+        "documentation" : "",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**\n@param resourceCollection \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withResourceCollection",
+        "getterDocumentation" : "/**\n@return */",
+        "getterMethodName" : "getResourceCollection",
+        "getterModel" : {
+          "returnType" : "ResourceCollection",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ResourceCollection",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ResourceCollection",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "StructuredPojo",
+        "marshallingType" : "STRUCTURED",
+        "name" : "ResourceCollection",
+        "sensitive" : false,
+        "setterDocumentation" : "/**\n@param resourceCollection */",
+        "setterMethodName" : "setResourceCollection",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "ResourceCollection",
+          "variableName" : "resourceCollection",
+          "variableType" : "ResourceCollection",
+          "documentation" : "",
+          "simpleType" : "ResourceCollection",
+          "variableSetterType" : "ResourceCollection"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : false,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**\n@param resourceCollection \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "ResourceCollection",
+          "variableName" : "resourceCollection",
+          "variableType" : "ResourceCollection",
+          "documentation" : "",
+          "simpleType" : "ResourceCollection",
+          "variableSetterType" : "ResourceCollection"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "LastUpdated" : {
+          "c2jName" : "LastUpdated",
+          "c2jShape" : "Timestamp",
+          "deprecated" : false,
+          "documentation" : "<p> The time at which DevOps Guru last updated this resource. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@param lastUpdated The time at which DevOps Guru last updated this resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withLastUpdated",
+          "getterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@return The time at which DevOps Guru last updated this resource.*/",
+          "getterMethodName" : "getLastUpdated",
+          "getterModel" : {
+            "returnType" : "java.util.Date",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "LastUpdated",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "LastUpdated",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "java.util.Date",
+          "marshallingType" : "DATE",
+          "name" : "LastUpdated",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@param lastUpdated The time at which DevOps Guru last updated this resource.*/",
+          "setterMethodName" : "setLastUpdated",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "lastUpdated",
+            "variableType" : "java.util.Date",
+            "documentation" : "",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> The time at which DevOps Guru last updated this resource. </p>\n@param lastUpdated The time at which DevOps Guru last updated this resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : "unixTimestamp",
+            "variableDeclarationType" : "java.util.Date",
+            "variableName" : "lastUpdated",
+            "variableType" : "java.util.Date",
+            "documentation" : "<p> The time at which DevOps Guru last updated this resource. </p>",
+            "simpleType" : "Date",
+            "variableSetterType" : "java.util.Date"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "MonitoredResourceName" : {
           "c2jName" : "MonitoredResourceName",
           "c2jShape" : "MonitoredResourceName",
@@ -41695,6 +42182,76 @@
             "documentation" : "<p> The name of the resource being monitored. </p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "ResourceCollection" : {
+          "c2jName" : "ResourceCollection",
+          "c2jShape" : "ResourceCollection",
+          "deprecated" : false,
+          "documentation" : "",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**\n@param resourceCollection \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withResourceCollection",
+          "getterDocumentation" : "/**\n@return */",
+          "getterMethodName" : "getResourceCollection",
+          "getterModel" : {
+            "returnType" : "ResourceCollection",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ResourceCollection",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ResourceCollection",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "StructuredPojo",
+          "marshallingType" : "STRUCTURED",
+          "name" : "ResourceCollection",
+          "sensitive" : false,
+          "setterDocumentation" : "/**\n@param resourceCollection */",
+          "setterMethodName" : "setResourceCollection",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "ResourceCollection",
+            "variableName" : "resourceCollection",
+            "variableType" : "ResourceCollection",
+            "documentation" : "",
+            "simpleType" : "ResourceCollection",
+            "variableSetterType" : "ResourceCollection"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : false,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**\n@param resourceCollection \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "ResourceCollection",
+            "variableName" : "resourceCollection",
+            "variableType" : "ResourceCollection",
+            "documentation" : "",
+            "simpleType" : "ResourceCollection",
+            "variableSetterType" : "ResourceCollection"
           },
           "xmlNameSpaceUri" : null
         },
@@ -69902,6 +70459,84 @@
       "enums" : [ {
         "name" : "LOG_GROUPS",
         "value" : "LOG_GROUPS"
+      }, {
+        "name" : "CLOUDFRONT_DISTRIBUTION",
+        "value" : "CLOUDFRONT_DISTRIBUTION"
+      }, {
+        "name" : "DYNAMODB_TABLE",
+        "value" : "DYNAMODB_TABLE"
+      }, {
+        "name" : "EC2_NAT_GATEWAY",
+        "value" : "EC2_NAT_GATEWAY"
+      }, {
+        "name" : "ECS_CLUSTER",
+        "value" : "ECS_CLUSTER"
+      }, {
+        "name" : "ECS_SERVICE",
+        "value" : "ECS_SERVICE"
+      }, {
+        "name" : "EKS_CLUSTER",
+        "value" : "EKS_CLUSTER"
+      }, {
+        "name" : "ELASTIC_BEANSTALK_ENVIRONMENT",
+        "value" : "ELASTIC_BEANSTALK_ENVIRONMENT"
+      }, {
+        "name" : "ELASTIC_LOAD_BALANCER_LOAD_BALANCER",
+        "value" : "ELASTIC_LOAD_BALANCER_LOAD_BALANCER"
+      }, {
+        "name" : "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER",
+        "value" : "ELASTIC_LOAD_BALANCING_V2_LOAD_BALANCER"
+      }, {
+        "name" : "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP",
+        "value" : "ELASTIC_LOAD_BALANCING_V2_TARGET_GROUP"
+      }, {
+        "name" : "ELASTICACHE_CACHE_CLUSTER",
+        "value" : "ELASTICACHE_CACHE_CLUSTER"
+      }, {
+        "name" : "ELASTICSEARCH_DOMAIN",
+        "value" : "ELASTICSEARCH_DOMAIN"
+      }, {
+        "name" : "KINESIS_STREAM",
+        "value" : "KINESIS_STREAM"
+      }, {
+        "name" : "LAMBDA_FUNCTION",
+        "value" : "LAMBDA_FUNCTION"
+      }, {
+        "name" : "OPEN_SEARCH_SERVICE_DOMAIN",
+        "value" : "OPEN_SEARCH_SERVICE_DOMAIN"
+      }, {
+        "name" : "RDS_DB_INSTANCE",
+        "value" : "RDS_DB_INSTANCE"
+      }, {
+        "name" : "RDS_DB_CLUSTER",
+        "value" : "RDS_DB_CLUSTER"
+      }, {
+        "name" : "REDSHIFT_CLUSTER",
+        "value" : "REDSHIFT_CLUSTER"
+      }, {
+        "name" : "ROUTE53_HOSTED_ZONE",
+        "value" : "ROUTE53_HOSTED_ZONE"
+      }, {
+        "name" : "ROUTE53_HEALTH_CHECK",
+        "value" : "ROUTE53_HEALTH_CHECK"
+      }, {
+        "name" : "S3_BUCKET",
+        "value" : "S3_BUCKET"
+      }, {
+        "name" : "SAGEMAKER_ENDPOINT",
+        "value" : "SAGEMAKER_ENDPOINT"
+      }, {
+        "name" : "SNS_TOPIC",
+        "value" : "SNS_TOPIC"
+      }, {
+        "name" : "SQS_QUEUE",
+        "value" : "SQS_QUEUE"
+      }, {
+        "name" : "STEP_FUNCTIONS_ACTIVITY",
+        "value" : "STEP_FUNCTIONS_ACTIVITY"
+      }, {
+        "name" : "STEP_FUNCTIONS_STATE_MACHINE",
+        "value" : "STEP_FUNCTIONS_STATE_MACHINE"
       } ],
       "errorCode" : null,
       "fullyQualifiedName" : "com.amazonaws.services.devopsguru.enum.ResourceTypeFilter",
@@ -75710,8 +76345,147 @@
           "variableSetterType" : "ServiceInsightHealth"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AnalyzedResourceCount",
+        "c2jShape" : "AnalyzedResourceCount",
+        "deprecated" : false,
+        "documentation" : "<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAnalyzedResourceCount",
+        "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@return Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.*/",
+        "getterMethodName" : "getAnalyzedResourceCount",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "AnalyzedResourceCount",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AnalyzedResourceCount",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Long",
+        "marshallingType" : "LONG",
+        "name" : "AnalyzedResourceCount",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.*/",
+        "setterMethodName" : "setAnalyzedResourceCount",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AnalyzedResourceCount" : {
+          "c2jName" : "AnalyzedResourceCount",
+          "c2jShape" : "AnalyzedResourceCount",
+          "deprecated" : false,
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAnalyzedResourceCount",
+          "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@return Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.*/",
+          "getterMethodName" : "getAnalyzedResourceCount",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "AnalyzedResourceCount",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AnalyzedResourceCount",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Long",
+          "marshallingType" : "LONG",
+          "name" : "AnalyzedResourceCount",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.*/",
+          "setterMethodName" : "setAnalyzedResourceCount",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "<p> Number of resources that DevOps Guru is monitoring in an analyzed Amazon Web Services service. </p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "Insight" : {
           "c2jName" : "Insight",
           "c2jShape" : "ServiceInsightHealth",
@@ -79999,8 +80773,147 @@
           "variableSetterType" : "InsightHealth"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "AnalyzedResourceCount",
+        "c2jShape" : "AnalyzedResourceCount",
+        "deprecated" : false,
+        "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withAnalyzedResourceCount",
+        "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@return Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.*/",
+        "getterMethodName" : "getAnalyzedResourceCount",
+        "getterModel" : {
+          "returnType" : "Long",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "AnalyzedResourceCount",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "AnalyzedResourceCount",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Long",
+        "marshallingType" : "LONG",
+        "name" : "AnalyzedResourceCount",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.*/",
+        "setterMethodName" : "setAnalyzedResourceCount",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Long",
+          "variableName" : "analyzedResourceCount",
+          "variableType" : "Long",
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>",
+          "simpleType" : "Long",
+          "variableSetterType" : "Long"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "AnalyzedResourceCount" : {
+          "c2jName" : "AnalyzedResourceCount",
+          "c2jShape" : "AnalyzedResourceCount",
+          "deprecated" : false,
+          "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withAnalyzedResourceCount",
+          "getterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@return Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.*/",
+          "getterMethodName" : "getAnalyzedResourceCount",
+          "getterModel" : {
+            "returnType" : "Long",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "AnalyzedResourceCount",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "AnalyzedResourceCount",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Long",
+          "marshallingType" : "LONG",
+          "name" : "AnalyzedResourceCount",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.*/",
+          "setterMethodName" : "setAnalyzedResourceCount",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>\n@param analyzedResourceCount Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Long",
+            "variableName" : "analyzedResourceCount",
+            "variableType" : "Long",
+            "documentation" : "<p> Number of resources that DevOps Guru is monitoring in your account that are specified by an Amazon Web Services tag. </p>",
+            "simpleType" : "Long",
+            "variableSetterType" : "Long"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "AppBoundaryKey" : {
           "c2jName" : "AppBoundaryKey",
           "c2jShape" : "AppBoundaryKey",
@@ -84438,7 +85351,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonDevOpsGuruException",

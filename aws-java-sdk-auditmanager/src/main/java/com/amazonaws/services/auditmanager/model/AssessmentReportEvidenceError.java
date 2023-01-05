@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An error entity for the <code>AssessmentReportEvidence</code> API. This is used to provide more meaningful errors
- * than a simple string message.
+ * An error entity for assessment report evidence errors. This is used to provide more meaningful errors than a simple
+ * string message.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/AssessmentReportEvidenceError"
@@ -37,13 +37,13 @@ public class AssessmentReportEvidenceError implements Serializable, Cloneable, S
     private String evidenceId;
     /**
      * <p>
-     * The error code that the <code>AssessmentReportEvidence</code> API returned.
+     * The error code that was returned.
      * </p>
      */
     private String errorCode;
     /**
      * <p>
-     * The error message that the <code>AssessmentReportEvidence</code> API returned.
+     * The error message that was returned.
      * </p>
      */
     private String errorMessage;
@@ -90,11 +90,11 @@ public class AssessmentReportEvidenceError implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The error code that the <code>AssessmentReportEvidence</code> API returned.
+     * The error code that was returned.
      * </p>
      * 
      * @param errorCode
-     *        The error code that the <code>AssessmentReportEvidence</code> API returned.
+     *        The error code that was returned.
      */
 
     public void setErrorCode(String errorCode) {
@@ -103,10 +103,10 @@ public class AssessmentReportEvidenceError implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The error code that the <code>AssessmentReportEvidence</code> API returned.
+     * The error code that was returned.
      * </p>
      * 
-     * @return The error code that the <code>AssessmentReportEvidence</code> API returned.
+     * @return The error code that was returned.
      */
 
     public String getErrorCode() {
@@ -115,11 +115,11 @@ public class AssessmentReportEvidenceError implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The error code that the <code>AssessmentReportEvidence</code> API returned.
+     * The error code that was returned.
      * </p>
      * 
      * @param errorCode
-     *        The error code that the <code>AssessmentReportEvidence</code> API returned.
+     *        The error code that was returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +130,11 @@ public class AssessmentReportEvidenceError implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The error message that the <code>AssessmentReportEvidence</code> API returned.
+     * The error message that was returned.
      * </p>
      * 
      * @param errorMessage
-     *        The error message that the <code>AssessmentReportEvidence</code> API returned.
+     *        The error message that was returned.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -143,10 +143,10 @@ public class AssessmentReportEvidenceError implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The error message that the <code>AssessmentReportEvidence</code> API returned.
+     * The error message that was returned.
      * </p>
      * 
-     * @return The error message that the <code>AssessmentReportEvidence</code> API returned.
+     * @return The error message that was returned.
      */
 
     public String getErrorMessage() {
@@ -155,11 +155,11 @@ public class AssessmentReportEvidenceError implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The error message that the <code>AssessmentReportEvidence</code> API returned.
+     * The error message that was returned.
      * </p>
      * 
      * @param errorMessage
-     *        The error message that the <code>AssessmentReportEvidence</code> API returned.
+     *        The error message that was returned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

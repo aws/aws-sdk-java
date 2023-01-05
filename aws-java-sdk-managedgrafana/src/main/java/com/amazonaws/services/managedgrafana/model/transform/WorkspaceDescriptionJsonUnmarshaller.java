@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -138,6 +138,10 @@ public class WorkspaceDescriptionJsonUnmarshaller implements Unmarshaller<Worksp
                     context.nextToken();
                     workspaceDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("vpcConfiguration", targetDepth)) {
+                    context.nextToken();
+                    workspaceDescription.setVpcConfiguration(VpcConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("workspaceRoleArn", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,17 +35,17 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -69,7 +69,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     private String qualifier;
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * policy that has changed since you last read it.
      * </p>
      */
@@ -85,17 +85,17 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -112,17 +112,17 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -145,17 +145,17 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -171,17 +171,17 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *         <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *         <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *         <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *         </p>
      *         </li>
      *         </ul>
@@ -204,17 +204,17 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     * <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     * <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     * <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      * </p>
      * </li>
      * </ul>
@@ -231,17 +231,17 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
+     *        <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+     *        <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.
+     *        <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
      *        </p>
      *        </li>
      *        </ul>
@@ -338,12 +338,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid
      *        modifying a policy that has changed since you last read it.
      */
 
@@ -353,11 +353,11 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * policy that has changed since you last read it.
      * </p>
      * 
-     * @return Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     * @return Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid
      *         modifying a policy that has changed since you last read it.
      */
 
@@ -367,12 +367,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid modifying a
+     * Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a
      * policy that has changed since you last read it.
      * </p>
      * 
      * @param revisionId
-     *        Only update the policy if the revision ID matches the ID that's specified. Use this option to avoid
+     *        Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid
      *        modifying a policy that has changed since you last read it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

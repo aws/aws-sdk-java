@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
      * for Lake Formation</a>.
      * </p>
      */
@@ -97,7 +97,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
      * for Lake Formation</a>.
      * </p>
      * 
@@ -107,7 +107,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Formation.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked
+     *        href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked
      *        Roles for Lake Formation</a>.
      */
 
@@ -122,7 +122,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
      * for Lake Formation</a>.
      * </p>
      * 
@@ -131,7 +131,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Formation.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     *         href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
      *         Service-Linked Roles for Lake Formation</a>.
      */
 
@@ -146,7 +146,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
      * for Lake Formation</a>.
      * </p>
      * 
@@ -156,7 +156,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Formation.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked
+     *        href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked
      *        Roles for Lake Formation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -173,7 +173,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using Service-Linked Roles
      * for Lake Formation</a>.
      * </p>
      * 
@@ -182,7 +182,7 @@ public class RegisterResourceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Formation.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs-aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
+     *         href="https://docs.aws.amazon.com/lake-formation/latest/dg/service-linked-roles.html">Using
      *         Service-Linked Roles for Lake Formation</a>.
      */
 

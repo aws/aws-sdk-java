@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,6 +83,12 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
      * </ul>
      */
     private String callAs;
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<OperationResultFilter> filters;
 
     /**
      * <p>
@@ -516,6 +522,79 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
     }
 
     /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * 
+     * @return The filter to apply to operation results.
+     */
+
+    public java.util.List<OperationResultFilter> getFilters() {
+        if (filters == null) {
+            filters = new com.amazonaws.internal.SdkInternalList<OperationResultFilter>();
+        }
+        return filters;
+    }
+
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * 
+     * @param filters
+     *        The filter to apply to operation results.
+     */
+
+    public void setFilters(java.util.Collection<OperationResultFilter> filters) {
+        if (filters == null) {
+            this.filters = null;
+            return;
+        }
+
+        this.filters = new com.amazonaws.internal.SdkInternalList<OperationResultFilter>(filters);
+    }
+
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param filters
+     *        The filter to apply to operation results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListStackSetOperationResultsRequest withFilters(OperationResultFilter... filters) {
+        if (this.filters == null) {
+            setFilters(new com.amazonaws.internal.SdkInternalList<OperationResultFilter>(filters.length));
+        }
+        for (OperationResultFilter ele : filters) {
+            this.filters.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The filter to apply to operation results.
+     * </p>
+     * 
+     * @param filters
+     *        The filter to apply to operation results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListStackSetOperationResultsRequest withFilters(java.util.Collection<OperationResultFilter> filters) {
+        setFilters(filters);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -536,7 +615,9 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getCallAs() != null)
-            sb.append("CallAs: ").append(getCallAs());
+            sb.append("CallAs: ").append(getCallAs()).append(",");
+        if (getFilters() != null)
+            sb.append("Filters: ").append(getFilters());
         sb.append("}");
         return sb.toString();
     }
@@ -571,6 +652,10 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getCallAs() != null && other.getCallAs().equals(this.getCallAs()) == false)
             return false;
+        if (other.getFilters() == null ^ this.getFilters() == null)
+            return false;
+        if (other.getFilters() != null && other.getFilters().equals(this.getFilters()) == false)
+            return false;
         return true;
     }
 
@@ -584,6 +669,7 @@ public class ListStackSetOperationResultsRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getCallAs() == null) ? 0 : getCallAs().hashCode());
+        hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode());
         return hashCode;
     }
 

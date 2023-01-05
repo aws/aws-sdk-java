@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -895,8 +895,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Creates an access policy that grants the specified identity (Amazon Web Services SSO user, Amazon Web Services
-     * SSO group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
+     * Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group,
+     * or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.
      * </p>
      * 
      * @param createAccessPolicyRequest
@@ -1452,8 +1452,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses Amazon Web Services SSO or
-     * IAM to authenticate portal users and manage user permissions.
+     * Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM
+     * to authenticate portal users and manage user permissions.
      * </p>
      * <note>
      * <p>
@@ -4061,8 +4061,8 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
     /**
      * <p>
-     * Retrieves a paginated list of access policies for an identity (an Amazon Web Services SSO user, an Amazon Web
-     * Services SSO group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
+     * Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity
+     * Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).
      * </p>
      * 
      * @param listAccessPoliciesRequest
@@ -4126,6 +4126,87 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAccessPoliciesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAccessPoliciesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset model. If you update properties associated with
+     * the model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetModelPropertiesRequest
+     * @return Result of the ListAssetModelProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetModelProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetModelProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssetModelPropertiesResult listAssetModelProperties(ListAssetModelPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssetModelProperties(request);
+    }
+
+    @SdkInternalApi
+    final ListAssetModelPropertiesResult executeListAssetModelProperties(ListAssetModelPropertiesRequest listAssetModelPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssetModelPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssetModelPropertiesRequest> request = null;
+        Response<ListAssetModelPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssetModelPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listAssetModelPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssetModelProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssetModelPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListAssetModelPropertiesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();
@@ -4202,6 +4283,85 @@ public class AWSIoTSiteWiseClient extends AmazonWebServiceClient implements AWSI
 
             HttpResponseHandler<AmazonWebServiceResponse<ListAssetModelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssetModelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves a paginated list of properties associated with an asset. If you update properties associated with the
+     * model before you finish listing all the properties, you need to start all over again.
+     * </p>
+     * 
+     * @param listAssetPropertiesRequest
+     * @return Result of the ListAssetProperties operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request isn't valid. This can occur if your request contains malformed JSON or unsupported
+     *         characters. Check your request and try again.
+     * @throws InternalFailureException
+     *         IoT SiteWise can't process your request right now. Try again later.
+     * @throws ResourceNotFoundException
+     *         The requested resource can't be found.
+     * @throws ThrottlingException
+     *         Your request exceeded a rate limit. For example, you might have exceeded the number of IoT SiteWise
+     *         assets that can be created per second, the allowed number of messages per second, and so on.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT
+     *         SiteWise User Guide</i>.
+     * @sample AWSIoTSiteWise.ListAssetProperties
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/ListAssetProperties"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListAssetPropertiesResult listAssetProperties(ListAssetPropertiesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAssetProperties(request);
+    }
+
+    @SdkInternalApi
+    final ListAssetPropertiesResult executeListAssetProperties(ListAssetPropertiesRequest listAssetPropertiesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAssetPropertiesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAssetPropertiesRequest> request = null;
+        Response<ListAssetPropertiesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAssetPropertiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetPropertiesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoTSiteWise");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssetProperties");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "api.";
+                String resolvedHostPrefix = String.format("api.");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAssetPropertiesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAssetPropertiesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
 
             return response.getAwsResponse();

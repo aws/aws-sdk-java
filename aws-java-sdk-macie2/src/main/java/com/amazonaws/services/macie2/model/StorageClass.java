@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,9 @@ public enum StorageClass {
     INTELLIGENT_TIERING("INTELLIGENT_TIERING"),
     DEEP_ARCHIVE("DEEP_ARCHIVE"),
     ONEZONE_IA("ONEZONE_IA"),
-    GLACIER("GLACIER");
+    GLACIER("GLACIER"),
+    GLACIER_IR("GLACIER_IR"),
+    OUTPOSTS("OUTPOSTS");
 
     private String value;
 

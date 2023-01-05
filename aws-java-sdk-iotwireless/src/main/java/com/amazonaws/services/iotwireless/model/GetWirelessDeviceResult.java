@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,12 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private SidewalkDevice sidewalk;
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     */
+    private String positioning;
 
     /**
      * <p>
@@ -511,6 +517,65 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @see PositioningConfigStatus
+     */
+
+    public void setPositioning(String positioning) {
+        this.positioning = positioning;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @return FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @see PositioningConfigStatus
+     */
+
+    public String getPositioning() {
+        return this.positioning;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositioningConfigStatus
+     */
+
+    public GetWirelessDeviceResult withPositioning(String positioning) {
+        setPositioning(positioning);
+        return this;
+    }
+
+    /**
+     * <p>
+     * FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * </p>
+     * 
+     * @param positioning
+     *        FPort values for the GNSS, stream, and ClockSync functions of the positioning information.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PositioningConfigStatus
+     */
+
+    public GetWirelessDeviceResult withPositioning(PositioningConfigStatus positioning) {
+        this.positioning = positioning.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -541,7 +606,9 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
         if (getLoRaWAN() != null)
             sb.append("LoRaWAN: ").append(getLoRaWAN()).append(",");
         if (getSidewalk() != null)
-            sb.append("Sidewalk: ").append(getSidewalk());
+            sb.append("Sidewalk: ").append(getSidewalk()).append(",");
+        if (getPositioning() != null)
+            sb.append("Positioning: ").append(getPositioning());
         sb.append("}");
         return sb.toString();
     }
@@ -596,6 +663,10 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getSidewalk() != null && other.getSidewalk().equals(this.getSidewalk()) == false)
             return false;
+        if (other.getPositioning() == null ^ this.getPositioning() == null)
+            return false;
+        if (other.getPositioning() != null && other.getPositioning().equals(this.getPositioning()) == false)
+            return false;
         return true;
     }
 
@@ -614,6 +685,7 @@ public class GetWirelessDeviceResult extends com.amazonaws.AmazonWebServiceResul
         hashCode = prime * hashCode + ((getThingArn() == null) ? 0 : getThingArn().hashCode());
         hashCode = prime * hashCode + ((getLoRaWAN() == null) ? 0 : getLoRaWAN().hashCode());
         hashCode = prime * hashCode + ((getSidewalk() == null) ? 0 : getSidewalk().hashCode());
+        hashCode = prime * hashCode + ((getPositioning() == null) ? 0 : getPositioning().hashCode());
         return hashCode;
     }
 

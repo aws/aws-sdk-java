@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,12 @@ public class DeleteEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
+     * The ID of the workspace that contains the entity to delete.
+     * </p>
+     */
+    private String workspaceId;
+    /**
+     * <p>
      * The ID of the entity to delete.
      * </p>
      */
@@ -37,12 +43,46 @@ public class DeleteEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Boolean isRecursive;
+
     /**
      * <p>
      * The ID of the workspace that contains the entity to delete.
      * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the entity to delete.
      */
-    private String workspaceId;
+
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the entity to delete.
+     * </p>
+     * 
+     * @return The ID of the workspace that contains the entity to delete.
+     */
+
+    public String getWorkspaceId() {
+        return this.workspaceId;
+    }
+
+    /**
+     * <p>
+     * The ID of the workspace that contains the entity to delete.
+     * </p>
+     * 
+     * @param workspaceId
+     *        The ID of the workspace that contains the entity to delete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEntityRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
+        return this;
+    }
 
     /**
      * <p>
@@ -137,46 +177,6 @@ public class DeleteEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * <p>
-     * The ID of the workspace that contains the entity to delete.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the entity to delete.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the entity to delete.
-     * </p>
-     * 
-     * @return The ID of the workspace that contains the entity to delete.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the entity to delete.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the entity to delete.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DeleteEntityRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
-        return this;
-    }
-
-    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,12 +188,12 @@ public class DeleteEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
         if (getEntityId() != null)
             sb.append("EntityId: ").append(getEntityId()).append(",");
         if (getIsRecursive() != null)
-            sb.append("IsRecursive: ").append(getIsRecursive()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+            sb.append("IsRecursive: ").append(getIsRecursive());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +208,10 @@ public class DeleteEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (obj instanceof DeleteEntityRequest == false)
             return false;
         DeleteEntityRequest other = (DeleteEntityRequest) obj;
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
+            return false;
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
         if (other.getEntityId() == null ^ this.getEntityId() == null)
             return false;
         if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
@@ -215,10 +219,6 @@ public class DeleteEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (other.getIsRecursive() == null ^ this.getIsRecursive() == null)
             return false;
         if (other.getIsRecursive() != null && other.getIsRecursive().equals(this.getIsRecursive()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
             return false;
         return true;
     }
@@ -228,9 +228,9 @@ public class DeleteEntityRequest extends com.amazonaws.AmazonWebServiceRequest i
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
         hashCode = prime * hashCode + ((getIsRecursive() == null) ? 0 : getIsRecursive().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
         return hashCode;
     }
 

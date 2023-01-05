@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateFleet" target="_top">AWS API
  *      Documentation</a>
@@ -36,7 +33,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String name;
     /**
      * <p>
-     * A human-readable description of the fleet.
+     * A description for the fleet.
      * </p>
      */
     private String description;
@@ -74,9 +71,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process
      * shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     * >Server API Reference</a>.
+     * <code>logParameters</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     * >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      * </p>
      */
     private java.util.List<String> logPaths;
@@ -100,8 +97,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The status of termination protection for active game sessions on the fleet. By default, this property is set to
-     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.
+     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -188,16 +185,24 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String instanceRoleArn;
     /**
      * <p>
-     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting
-     * traffic between game clients and the game servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed after the
-     * fleet is created.
+     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift uses the certificates to encrypt
+     * traffic between game clients and the game servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change this property after you create
+     * the fleet.
      * </p>
      * <p>
-     * Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not available in
-     * all Amazon Web Services regions. When working in a region that does not support this feature, a fleet creation
-     * request with certificate generation fails with a 4xx error.
+     * Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail,
+     * preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months,
+     * consider using fleet aliases for a smooth transition.
      * </p>
+     * <note>
+     * <p>
+     * ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation
+     * enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see
+     * <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     * </note>
      */
     private CertificateConfiguration certificateConfiguration;
     /**
@@ -215,13 +220,23 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual
-     * tagging limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     */
+    private String computeType;
+    /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     */
+    private AnywhereConfiguration anywhereConfiguration;
 
     /**
      * <p>
@@ -265,11 +280,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A human-readable description of the fleet.
+     * A description for the fleet.
      * </p>
      * 
      * @param description
-     *        A human-readable description of the fleet.
+     *        A description for the fleet.
      */
 
     public void setDescription(String description) {
@@ -278,10 +293,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A human-readable description of the fleet.
+     * A description for the fleet.
      * </p>
      * 
-     * @return A human-readable description of the fleet.
+     * @return A description for the fleet.
      */
 
     public String getDescription() {
@@ -290,11 +305,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A human-readable description of the fleet.
+     * A description for the fleet.
      * </p>
      * 
      * @param description
-     *        A human-readable description of the fleet.
+     *        A description for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -509,16 +524,16 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process
      * shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     * >Server API Reference</a>.
+     * <code>logParameters</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     * >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      * </p>
      * 
      * @return <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server
      *         process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more
-     *         directory paths in <code>logParameters</code>. See more information in the <a href=
-     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     *         >Server API Reference</a>.
+     *         directory paths in <code>logParameters</code>. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     *         >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      */
 
     public java.util.List<String> getLogPaths() {
@@ -529,17 +544,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process
      * shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     * >Server API Reference</a>.
+     * <code>logParameters</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     * >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      * </p>
      * 
      * @param logPaths
      *        <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server
      *        process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more
-     *        directory paths in <code>logParameters</code>. See more information in the <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     *        >Server API Reference</a>.
+     *        directory paths in <code>logParameters</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     *        >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      */
 
     public void setLogPaths(java.util.Collection<String> logPaths) {
@@ -555,9 +570,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process
      * shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     * >Server API Reference</a>.
+     * <code>logParameters</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     * >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -568,9 +583,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param logPaths
      *        <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server
      *        process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more
-     *        directory paths in <code>logParameters</code>. See more information in the <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     *        >Server API Reference</a>.
+     *        directory paths in <code>logParameters</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     *        >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -588,17 +603,17 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server process
      * shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more directory paths in
-     * <code>logParameters</code>. See more information in the <a href=
-     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     * >Server API Reference</a>.
+     * <code>logParameters</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     * >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      * </p>
      * 
      * @param logPaths
      *        <b>This parameter is no longer used.</b> To specify where GameLift should store log files once a server
      *        process shuts down, use the GameLift server API <code>ProcessReady()</code> and specify one or more
-     *        directory paths in <code>logParameters</code>. See more information in the <a href=
-     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process"
-     *        >Server API Reference</a>.
+     *        directory paths in <code>logParameters</code>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-initialize"
+     *        >Initialize the server process</a> in the <i>GameLift Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -799,8 +814,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The status of termination protection for active game sessions on the fleet. By default, this property is set to
-     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.
+     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -819,7 +834,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        The status of termination protection for active game sessions on the fleet. By default, this property is
      *        set to <code>NoProtection</code>. You can also set game session protection for an individual game session
-     *        by calling <a>UpdateGameSession</a>.</p>
+     *        by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -843,8 +858,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The status of termination protection for active game sessions on the fleet. By default, this property is set to
-     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.
+     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -862,7 +877,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return The status of termination protection for active game sessions on the fleet. By default, this property is
      *         set to <code>NoProtection</code>. You can also set game session protection for an individual game session
-     *         by calling <a>UpdateGameSession</a>.</p>
+     *         by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -886,8 +901,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The status of termination protection for active game sessions on the fleet. By default, this property is set to
-     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.
+     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -906,7 +921,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        The status of termination protection for active game sessions on the fleet. By default, this property is
      *        set to <code>NoProtection</code>. You can also set game session protection for an individual game session
-     *        by calling <a>UpdateGameSession</a>.</p>
+     *        by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -932,8 +947,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The status of termination protection for active game sessions on the fleet. By default, this property is set to
-     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.
+     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -952,7 +967,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        The status of termination protection for active game sessions on the fleet. By default, this property is
      *        set to <code>NoProtection</code>. You can also set game session protection for an individual game session
-     *        by calling <a>UpdateGameSession</a>.</p>
+     *        by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -976,8 +991,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * The status of termination protection for active game sessions on the fleet. By default, this property is set to
-     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling
-     * <a>UpdateGameSession</a>.
+     * <code>NoProtection</code>. You can also set game session protection for an individual game session by calling <a
+     * href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.
      * </p>
      * <ul>
      * <li>
@@ -996,7 +1011,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param newGameSessionProtectionPolicy
      *        The status of termination protection for active game sessions on the fleet. By default, this property is
      *        set to <code>NoProtection</code>. You can also set game session protection for an individual game session
-     *        by calling <a>UpdateGameSession</a>.</p>
+     *        by calling <a href="gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>.</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1537,26 +1552,43 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting
-     * traffic between game clients and the game servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed after the
-     * fleet is created.
+     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift uses the certificates to encrypt
+     * traffic between game clients and the game servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change this property after you create
+     * the fleet.
      * </p>
      * <p>
-     * Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not available in
-     * all Amazon Web Services regions. When working in a region that does not support this feature, a fleet creation
-     * request with certificate generation fails with a 4xx error.
+     * Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail,
+     * preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months,
+     * consider using fleet aliases for a smooth transition.
      * </p>
+     * <note>
+     * <p>
+     * ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation
+     * enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see
+     * <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param certificateConfiguration
-     *        Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting
-     *        traffic between game clients and the game servers that are running on GameLift. By default, the
-     *        <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed
-     *        after the fleet is created. </p>
+     *        Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift uses the certificates to
+     *        encrypt traffic between game clients and the game servers running on GameLift. By default, the
+     *        <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change this property after you
+     *        create the fleet. </p>
      *        <p>
-     *        Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not
-     *        available in all Amazon Web Services regions. When working in a region that does not support this feature,
-     *        a fleet creation request with certificate generation fails with a 4xx error.
+     *        Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to
+     *        fail, preventing players from connecting to instances in the fleet. We recommend you replace fleets before
+     *        13 months, consider using fleet aliases for a smooth transition.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate
+     *        generation enabled in an unsupported Region, fails with a 4xx error. For more information about the
+     *        supported Regions, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the
+     *        <i>Certificate Manager User Guide</i>.
+     *        </p>
      */
 
     public void setCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
@@ -1565,25 +1597,42 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting
-     * traffic between game clients and the game servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed after the
-     * fleet is created.
+     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift uses the certificates to encrypt
+     * traffic between game clients and the game servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change this property after you create
+     * the fleet.
      * </p>
      * <p>
-     * Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not available in
-     * all Amazon Web Services regions. When working in a region that does not support this feature, a fleet creation
-     * request with certificate generation fails with a 4xx error.
+     * Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail,
+     * preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months,
+     * consider using fleet aliases for a smooth transition.
      * </p>
+     * <note>
+     * <p>
+     * ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation
+     * enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see
+     * <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
-     * @return Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for
-     *         encrypting traffic between game clients and the game servers that are running on GameLift. By default,
-     *         the <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be
-     *         changed after the fleet is created. </p>
+     * @return Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift uses the certificates to
+     *         encrypt traffic between game clients and the game servers running on GameLift. By default, the
+     *         <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change this property after you
+     *         create the fleet. </p>
      *         <p>
-     *         Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not
-     *         available in all Amazon Web Services regions. When working in a region that does not support this
-     *         feature, a fleet creation request with certificate generation fails with a 4xx error.
+     *         Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to
+     *         fail, preventing players from connecting to instances in the fleet. We recommend you replace fleets
+     *         before 13 months, consider using fleet aliases for a smooth transition.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate
+     *         generation enabled in an unsupported Region, fails with a 4xx error. For more information about the
+     *         supported Regions, see <a
+     *         href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the
+     *         <i>Certificate Manager User Guide</i>.
+     *         </p>
      */
 
     public CertificateConfiguration getCertificateConfiguration() {
@@ -1592,26 +1641,43 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting
-     * traffic between game clients and the game servers that are running on GameLift. By default, the
-     * <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed after the
-     * fleet is created.
+     * Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift uses the certificates to encrypt
+     * traffic between game clients and the game servers running on GameLift. By default, the
+     * <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change this property after you create
+     * the fleet.
      * </p>
      * <p>
-     * Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not available in
-     * all Amazon Web Services regions. When working in a region that does not support this feature, a fleet creation
-     * request with certificate generation fails with a 4xx error.
+     * Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to fail,
+     * preventing players from connecting to instances in the fleet. We recommend you replace fleets before 13 months,
+     * consider using fleet aliases for a smooth transition.
      * </p>
+     * <note>
+     * <p>
+     * ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate generation
+     * enabled in an unsupported Region, fails with a 4xx error. For more information about the supported Regions, see
+     * <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the
+     * <i>Certificate Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param certificateConfiguration
-     *        Prompts GameLift to generate a TLS/SSL certificate for the fleet. TLS certificates are used for encrypting
-     *        traffic between game clients and the game servers that are running on GameLift. By default, the
-     *        <code>CertificateConfiguration</code> is set to <code>DISABLED</code>. This property cannot be changed
-     *        after the fleet is created. </p>
+     *        Prompts GameLift to generate a TLS/SSL certificate for the fleet. GameLift uses the certificates to
+     *        encrypt traffic between game clients and the game servers running on GameLift. By default, the
+     *        <code>CertificateConfiguration</code> is <code>DISABLED</code>. You can't change this property after you
+     *        create the fleet. </p>
      *        <p>
-     *        Note: This feature requires the Amazon Web Services Certificate Manager (ACM) service, which is not
-     *        available in all Amazon Web Services regions. When working in a region that does not support this feature,
-     *        a fleet creation request with certificate generation fails with a 4xx error.
+     *        Certificate Manager (ACM) certificates expire after 13 months. Certificate expiration can cause fleets to
+     *        fail, preventing players from connecting to instances in the fleet. We recommend you replace fleets before
+     *        13 months, consider using fleet aliases for a smooth transition.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        ACM isn't available in all Amazon Web Services regions. A fleet creation request with certificate
+     *        generation enabled in an unsupported Region, fails with a 4xx error. For more information about the
+     *        supported Regions, see <a
+     *        href="https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html">Supported Regions</a> in the
+     *        <i>Certificate Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1727,19 +1793,13 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual
-     * tagging limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
      *         Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *         For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *         Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *         fleet is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to
-     *         add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web
-     *         Services General Reference</i> for actual tagging limits.
+     *         Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1751,20 +1811,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual
-     * tagging limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
      *        A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        fleet is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to
-     *        add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web Services
-     *        General Reference</i> for actual tagging limits.
+     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1781,10 +1835,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual
-     * tagging limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1796,10 +1847,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        fleet is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to
-     *        add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web Services
-     *        General Reference</i> for actual tagging limits.
+     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1818,25 +1866,142 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging Amazon
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
-     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the fleet is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the <i>Amazon Web Services General Reference</i> for actual
-     * tagging limits.
+     * Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
      *        A list of labels to assign to the new fleet resource. Tags are developer-defined key-value pairs. Tagging
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        fleet is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to
-     *        add, remove, and view tags. The maximum tag limit may be lower than stated. See the <i>Amazon Web Services
-     *        General Reference</i> for actual tagging limits.
+     *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateFleetRequest withTags(java.util.Collection<Tag> tags) {
         setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @see ComputeType
+     */
+
+    public void setComputeType(String computeType) {
+        this.computeType = computeType;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @return The type of compute resource used to host your game servers. You can use your own compute resources with
+     *         GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @see ComputeType
+     */
+
+    public String getComputeType() {
+        return this.computeType;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeType
+     */
+
+    public CreateFleetRequest withComputeType(String computeType) {
+        setComputeType(computeType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @see ComputeType
+     */
+
+    public void setComputeType(ComputeType computeType) {
+        withComputeType(computeType);
+    }
+
+    /**
+     * <p>
+     * The type of compute resource used to host your game servers. You can use your own compute resources with GameLift
+     * Anywhere or use Amazon EC2 instances with managed GameLift.
+     * </p>
+     * 
+     * @param computeType
+     *        The type of compute resource used to host your game servers. You can use your own compute resources with
+     *        GameLift Anywhere or use Amazon EC2 instances with managed GameLift.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ComputeType
+     */
+
+    public CreateFleetRequest withComputeType(ComputeType computeType) {
+        this.computeType = computeType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     * 
+     * @param anywhereConfiguration
+     *        GameLift Anywhere configuration options.
+     */
+
+    public void setAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        this.anywhereConfiguration = anywhereConfiguration;
+    }
+
+    /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     * 
+     * @return GameLift Anywhere configuration options.
+     */
+
+    public AnywhereConfiguration getAnywhereConfiguration() {
+        return this.anywhereConfiguration;
+    }
+
+    /**
+     * <p>
+     * GameLift Anywhere configuration options.
+     * </p>
+     * 
+     * @param anywhereConfiguration
+     *        GameLift Anywhere configuration options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withAnywhereConfiguration(AnywhereConfiguration anywhereConfiguration) {
+        setAnywhereConfiguration(anywhereConfiguration);
         return this;
     }
 
@@ -1891,7 +2056,11 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getLocations() != null)
             sb.append("Locations: ").append(getLocations()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getComputeType() != null)
+            sb.append("ComputeType: ").append(getComputeType()).append(",");
+        if (getAnywhereConfiguration() != null)
+            sb.append("AnywhereConfiguration: ").append(getAnywhereConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1987,6 +2156,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getComputeType() == null ^ this.getComputeType() == null)
+            return false;
+        if (other.getComputeType() != null && other.getComputeType().equals(this.getComputeType()) == false)
+            return false;
+        if (other.getAnywhereConfiguration() == null ^ this.getAnywhereConfiguration() == null)
+            return false;
+        if (other.getAnywhereConfiguration() != null && other.getAnywhereConfiguration().equals(this.getAnywhereConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -2015,6 +2192,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getCertificateConfiguration() == null) ? 0 : getCertificateConfiguration().hashCode());
         hashCode = prime * hashCode + ((getLocations() == null) ? 0 : getLocations().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getComputeType() == null) ? 0 : getComputeType().hashCode());
+        hashCode = prime * hashCode + ((getAnywhereConfiguration() == null) ? 0 : getAnywhereConfiguration().hashCode());
         return hashCode;
     }
 

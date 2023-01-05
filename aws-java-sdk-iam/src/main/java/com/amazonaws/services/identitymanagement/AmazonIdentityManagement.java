@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1108,8 +1108,9 @@ public interface AmazonIdentityManagement {
 
     /**
      * <p>
-     * Deletes the password for the specified IAM user, which terminates the user's ability to access Amazon Web
-     * Services services through the Amazon Web Services Management Console.
+     * Deletes the password for the specified IAM user, For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_admin-change-user.html">Managing
+     * passwords for IAM users</a>.
      * </p>
      * <p>
      * You can use the CLI, the Amazon Web Services API, or the <b>Users</b> page in the IAM console to delete a

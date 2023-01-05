@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,10 +31,12 @@ import java.util.concurrent.ExecutorService;
  * client-side errors, and user behavior. When you view this data, you can see it all aggregated together and also see
  * breakdowns by the browsers and devices that your customers use.
  * </p>
- * 
- * <pre>
- * <code> &lt;p&gt;You can use the collected data to quickly identify and debug client-side performance issues. CloudWatch RUM helps you visualize anomalies in your application performance and find relevant debugging data such as error messages, stack traces, and user sessions. You can also use RUM to understand the range of end-user impact including the number of users, geolocations, and browsers used.&lt;/p&gt; </code>
- * </pre>
+ * <p>
+ * You can use the collected data to quickly identify and debug client-side performance issues. CloudWatch RUM helps you
+ * visualize anomalies in your application performance and find relevant debugging data such as error messages, stack
+ * traces, and user sessions. You can also use RUM to understand the range of end-user impact including the number of
+ * users, geolocations, and browsers used.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -78,6 +80,109 @@ public class AWSCloudWatchRUMAsyncClient extends AWSCloudWatchRUMClient implemen
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateRumMetricDefinitionsResult> batchCreateRumMetricDefinitionsAsync(
+            BatchCreateRumMetricDefinitionsRequest request) {
+
+        return batchCreateRumMetricDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchCreateRumMetricDefinitionsResult> batchCreateRumMetricDefinitionsAsync(
+            final BatchCreateRumMetricDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchCreateRumMetricDefinitionsRequest, BatchCreateRumMetricDefinitionsResult> asyncHandler) {
+        final BatchCreateRumMetricDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchCreateRumMetricDefinitionsResult>() {
+            @Override
+            public BatchCreateRumMetricDefinitionsResult call() throws Exception {
+                BatchCreateRumMetricDefinitionsResult result = null;
+
+                try {
+                    result = executeBatchCreateRumMetricDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteRumMetricDefinitionsResult> batchDeleteRumMetricDefinitionsAsync(
+            BatchDeleteRumMetricDefinitionsRequest request) {
+
+        return batchDeleteRumMetricDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteRumMetricDefinitionsResult> batchDeleteRumMetricDefinitionsAsync(
+            final BatchDeleteRumMetricDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteRumMetricDefinitionsRequest, BatchDeleteRumMetricDefinitionsResult> asyncHandler) {
+        final BatchDeleteRumMetricDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteRumMetricDefinitionsResult>() {
+            @Override
+            public BatchDeleteRumMetricDefinitionsResult call() throws Exception {
+                BatchDeleteRumMetricDefinitionsResult result = null;
+
+                try {
+                    result = executeBatchDeleteRumMetricDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRumMetricDefinitionsResult> batchGetRumMetricDefinitionsAsync(BatchGetRumMetricDefinitionsRequest request) {
+
+        return batchGetRumMetricDefinitionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetRumMetricDefinitionsResult> batchGetRumMetricDefinitionsAsync(final BatchGetRumMetricDefinitionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetRumMetricDefinitionsRequest, BatchGetRumMetricDefinitionsResult> asyncHandler) {
+        final BatchGetRumMetricDefinitionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetRumMetricDefinitionsResult>() {
+            @Override
+            public BatchGetRumMetricDefinitionsResult call() throws Exception {
+                BatchGetRumMetricDefinitionsResult result = null;
+
+                try {
+                    result = executeBatchGetRumMetricDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -131,6 +236,39 @@ public class AWSCloudWatchRUMAsyncClient extends AWSCloudWatchRUMClient implemen
 
                 try {
                     result = executeDeleteAppMonitor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRumMetricsDestinationResult> deleteRumMetricsDestinationAsync(DeleteRumMetricsDestinationRequest request) {
+
+        return deleteRumMetricsDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRumMetricsDestinationResult> deleteRumMetricsDestinationAsync(final DeleteRumMetricsDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRumMetricsDestinationRequest, DeleteRumMetricsDestinationResult> asyncHandler) {
+        final DeleteRumMetricsDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRumMetricsDestinationResult>() {
+            @Override
+            public DeleteRumMetricsDestinationResult call() throws Exception {
+                DeleteRumMetricsDestinationResult result = null;
+
+                try {
+                    result = executeDeleteRumMetricsDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -246,6 +384,39 @@ public class AWSCloudWatchRUMAsyncClient extends AWSCloudWatchRUMClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListRumMetricsDestinationsResult> listRumMetricsDestinationsAsync(ListRumMetricsDestinationsRequest request) {
+
+        return listRumMetricsDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListRumMetricsDestinationsResult> listRumMetricsDestinationsAsync(final ListRumMetricsDestinationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListRumMetricsDestinationsRequest, ListRumMetricsDestinationsResult> asyncHandler) {
+        final ListRumMetricsDestinationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListRumMetricsDestinationsResult>() {
+            @Override
+            public ListRumMetricsDestinationsResult call() throws Exception {
+                ListRumMetricsDestinationsResult result = null;
+
+                try {
+                    result = executeListRumMetricsDestinations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -296,6 +467,39 @@ public class AWSCloudWatchRUMAsyncClient extends AWSCloudWatchRUMClient implemen
 
                 try {
                     result = executePutRumEvents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRumMetricsDestinationResult> putRumMetricsDestinationAsync(PutRumMetricsDestinationRequest request) {
+
+        return putRumMetricsDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRumMetricsDestinationResult> putRumMetricsDestinationAsync(final PutRumMetricsDestinationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRumMetricsDestinationRequest, PutRumMetricsDestinationResult> asyncHandler) {
+        final PutRumMetricsDestinationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRumMetricsDestinationResult>() {
+            @Override
+            public PutRumMetricsDestinationResult call() throws Exception {
+                PutRumMetricsDestinationResult result = null;
+
+                try {
+                    result = executePutRumMetricsDestination(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -395,6 +599,39 @@ public class AWSCloudWatchRUMAsyncClient extends AWSCloudWatchRUMClient implemen
 
                 try {
                     result = executeUpdateAppMonitor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRumMetricDefinitionResult> updateRumMetricDefinitionAsync(UpdateRumMetricDefinitionRequest request) {
+
+        return updateRumMetricDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRumMetricDefinitionResult> updateRumMetricDefinitionAsync(final UpdateRumMetricDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateRumMetricDefinitionRequest, UpdateRumMetricDefinitionResult> asyncHandler) {
+        final UpdateRumMetricDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateRumMetricDefinitionResult>() {
+            @Override
+            public UpdateRumMetricDefinitionResult call() throws Exception {
+                UpdateRumMetricDefinitionResult result = null;
+
+                try {
+                    result = executeUpdateRumMetricDefinition(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

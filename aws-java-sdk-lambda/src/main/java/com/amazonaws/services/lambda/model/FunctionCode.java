@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The code for the Lambda function. You can specify either an object in Amazon S3, upload a .zip file archive
+ * The code for the Lambda function. You can either specify an object in Amazon S3, upload a .zip file archive
  * deployment package directly, or specify the URI of a container image.
  * </p>
  * 
@@ -31,8 +31,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you.
      * </p>
      */
     private java.nio.ByteBuffer zipFile;
@@ -65,8 +65,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -80,8 +80,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     *        clients handle the encoding for you.
+     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     *        encoding for you.
      */
 
     public void setZipFile(java.nio.ByteBuffer zipFile) {
@@ -90,8 +90,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -101,8 +101,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * {@code position}.
      * </p>
      * 
-     * @return The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services
-     *         CLI clients handle the encoding for you.
+     * @return The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     *         encoding for you.
      */
 
     public java.nio.ByteBuffer getZipFile() {
@@ -111,8 +111,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     * clients handle the encoding for you.
+     * The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     * encoding for you.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -126,8 +126,8 @@ public class FunctionCode implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param zipFile
-     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI
-     *        clients handle the encoding for you.
+     *        The base64-encoded contents of the deployment package. Amazon Web Services SDK and CLI clients handle the
+     *        encoding for you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

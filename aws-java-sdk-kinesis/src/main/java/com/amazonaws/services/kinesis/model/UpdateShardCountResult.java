@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,12 @@ public class UpdateShardCountResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private Integer targetShardCount;
+    /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     */
+    private String streamARN;
 
     /**
      * <p>
@@ -163,6 +169,46 @@ public class UpdateShardCountResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     * 
+     * @param streamARN
+     *        The ARN of the stream.
+     */
+
+    public void setStreamARN(String streamARN) {
+        this.streamARN = streamARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     * 
+     * @return The ARN of the stream.
+     */
+
+    public String getStreamARN() {
+        return this.streamARN;
+    }
+
+    /**
+     * <p>
+     * The ARN of the stream.
+     * </p>
+     * 
+     * @param streamARN
+     *        The ARN of the stream.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateShardCountResult withStreamARN(String streamARN) {
+        setStreamARN(streamARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -179,7 +225,9 @@ public class UpdateShardCountResult extends com.amazonaws.AmazonWebServiceResult
         if (getCurrentShardCount() != null)
             sb.append("CurrentShardCount: ").append(getCurrentShardCount()).append(",");
         if (getTargetShardCount() != null)
-            sb.append("TargetShardCount: ").append(getTargetShardCount());
+            sb.append("TargetShardCount: ").append(getTargetShardCount()).append(",");
+        if (getStreamARN() != null)
+            sb.append("StreamARN: ").append(getStreamARN());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +254,10 @@ public class UpdateShardCountResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getTargetShardCount() != null && other.getTargetShardCount().equals(this.getTargetShardCount()) == false)
             return false;
+        if (other.getStreamARN() == null ^ this.getStreamARN() == null)
+            return false;
+        if (other.getStreamARN() != null && other.getStreamARN().equals(this.getStreamARN()) == false)
+            return false;
         return true;
     }
 
@@ -217,6 +269,7 @@ public class UpdateShardCountResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
         hashCode = prime * hashCode + ((getCurrentShardCount() == null) ? 0 : getCurrentShardCount().hashCode());
         hashCode = prime * hashCode + ((getTargetShardCount() == null) ? 0 : getTargetShardCount().hashCode());
+        hashCode = prime * hashCode + ((getStreamARN() == null) ? 0 : getStreamARN().hashCode());
         return hashCode;
     }
 

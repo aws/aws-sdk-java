@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,7 +123,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request.
      * </p>
      * <p>
-     * This operation can be called only by the following principals when they also have the relevant IAM permissions:
+     * You can only call this operation by the following principals when they also have the relevant IAM permissions:
      * </p>
      * <ul>
      * <li>
@@ -172,7 +172,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request.
      * </p>
      * <p>
-     * This operation can be called only by the following principals when they also have the relevant IAM permissions:
+     * You can only call this operation by the following principals when they also have the relevant IAM permissions:
      * </p>
      * <ul>
      * <li>
@@ -513,7 +513,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element from this operation to
+     * Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element from this operation to
      * provide as a parameter to the <a>DescribeCreateAccountStatus</a> operation.
      * </p>
      * </li>
@@ -615,7 +615,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * <ul>
      * <li>
      * <p>
-     * Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element from this operation to
+     * Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element from this operation to
      * provide as a parameter to the <a>DescribeCreateAccountStatus</a> operation.
      * </p>
      * </li>
@@ -1397,6 +1397,43 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
+     * Deletes the resource policy from your organization.
+     * </p>
+     * <p>
+     * You can only call this operation from the organization's management account.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSOrganizationsAsync.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Deletes the resource policy from your organization.
+     * </p>
+     * <p>
+     * You can only call this operation from the organization's management account.
+     * </p>
+     * 
+     * @param deleteResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteResourcePolicy operation returned by the service.
+     * @sample AWSOrganizationsAsyncHandler.DeleteResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteResourcePolicyResult> deleteResourcePolicyAsync(DeleteResourcePolicyRequest deleteResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteResourcePolicyRequest, DeleteResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Removes the specified member Amazon Web Services account as a delegated administrator for the specified Amazon
      * Web Services service.
      * </p>
@@ -1781,6 +1818,45 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
 
     /**
      * <p>
+     * Retrieves information about a resource policy.
+     * </p>
+     * <p>
+     * You can only call this operation from the organization's management account or by a member account that is a
+     * delegated administrator for an AWS service.
+     * </p>
+     * 
+     * @param describeResourcePolicyRequest
+     * @return A Java Future containing the result of the DescribeResourcePolicy operation returned by the service.
+     * @sample AWSOrganizationsAsync.DescribeResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest describeResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves information about a resource policy.
+     * </p>
+     * <p>
+     * You can only call this operation from the organization's management account or by a member account that is a
+     * delegated administrator for an AWS service.
+     * </p>
+     * 
+     * @param describeResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeResourcePolicy operation returned by the service.
+     * @sample AWSOrganizationsAsyncHandler.DescribeResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeResourcePolicyResult> describeResourcePolicyAsync(DescribeResourcePolicyRequest describeResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeResourcePolicyRequest, DescribeResourcePolicyResult> asyncHandler);
+
+    /**
+     * <p>
      * Detaches a policy from a target root, organizational unit (OU), or account.
      * </p>
      * <important>
@@ -2102,7 +2178,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other Amazon Web Services Services</a> in the <i>Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's management account and only if the organization has <a
+     * You can only call this operation from the organization's management account and only if the organization has <a
      * href
      * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
      * all features</a>.
@@ -2140,7 +2216,7 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      * Organizations with Other Amazon Web Services Services</a> in the <i>Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's management account and only if the organization has <a
+     * You can only call this operation from the organization's management account and only if the organization has <a
      * href
      * ="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
      * all features</a>.
@@ -3595,6 +3671,43 @@ public interface AWSOrganizationsAsync extends AWSOrganizations {
      */
     java.util.concurrent.Future<MoveAccountResult> moveAccountAsync(MoveAccountRequest moveAccountRequest,
             com.amazonaws.handlers.AsyncHandler<MoveAccountRequest, MoveAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates or updates a resource policy.
+     * </p>
+     * <p>
+     * You can only call this operation from the organization's management account.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSOrganizationsAsync.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest);
+
+    /**
+     * <p>
+     * Creates or updates a resource policy.
+     * </p>
+     * <p>
+     * You can only call this operation from the organization's management account.
+     * </p>
+     * 
+     * @param putResourcePolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutResourcePolicy operation returned by the service.
+     * @sample AWSOrganizationsAsyncHandler.PutResourcePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/PutResourcePolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutResourcePolicyResult> putResourcePolicyAsync(PutResourcePolicyRequest putResourcePolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<PutResourcePolicyRequest, PutResourcePolicyResult> asyncHandler);
 
     /**
      * <p>

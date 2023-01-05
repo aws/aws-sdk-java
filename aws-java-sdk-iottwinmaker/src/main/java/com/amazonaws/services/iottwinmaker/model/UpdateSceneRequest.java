@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,16 @@ public class UpdateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render.
+     * The ID of the workspace that contains the scene.
      * </p>
      */
-    private java.util.List<String> capabilities;
+    private String workspaceId;
+    /**
+     * <p>
+     * The ID of the scene.
+     * </p>
+     */
+    private String sceneId;
     /**
      * <p>
      * The relative path that specifies the location of the content definition file.
@@ -45,84 +51,88 @@ public class UpdateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String description;
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render.
      * </p>
      */
-    private String sceneId;
+    private java.util.List<String> capabilities;
+
     /**
      * <p>
      * The ID of the workspace that contains the scene.
      * </p>
-     */
-    private String workspaceId;
-
-    /**
-     * <p>
-     * A list of capabilities that the scene uses to render.
-     * </p>
      * 
-     * @return A list of capabilities that the scene uses to render.
+     * @param workspaceId
+     *        The ID of the workspace that contains the scene.
      */
 
-    public java.util.List<String> getCapabilities() {
-        return capabilities;
+    public void setWorkspaceId(String workspaceId) {
+        this.workspaceId = workspaceId;
     }
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render.
+     * The ID of the workspace that contains the scene.
      * </p>
      * 
-     * @param capabilities
-     *        A list of capabilities that the scene uses to render.
+     * @return The ID of the workspace that contains the scene.
      */
 
-    public void setCapabilities(java.util.Collection<String> capabilities) {
-        if (capabilities == null) {
-            this.capabilities = null;
-            return;
-        }
-
-        this.capabilities = new java.util.ArrayList<String>(capabilities);
+    public String getWorkspaceId() {
+        return this.workspaceId;
     }
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
-     * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
-     * override the existing values.
+     * The ID of the workspace that contains the scene.
      * </p>
      * 
-     * @param capabilities
-     *        A list of capabilities that the scene uses to render.
+     * @param workspaceId
+     *        The ID of the workspace that contains the scene.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSceneRequest withCapabilities(String... capabilities) {
-        if (this.capabilities == null) {
-            setCapabilities(new java.util.ArrayList<String>(capabilities.length));
-        }
-        for (String ele : capabilities) {
-            this.capabilities.add(ele);
-        }
+    public UpdateSceneRequest withWorkspaceId(String workspaceId) {
+        setWorkspaceId(workspaceId);
         return this;
     }
 
     /**
      * <p>
-     * A list of capabilities that the scene uses to render.
+     * The ID of the scene.
      * </p>
      * 
-     * @param capabilities
-     *        A list of capabilities that the scene uses to render.
+     * @param sceneId
+     *        The ID of the scene.
+     */
+
+    public void setSceneId(String sceneId) {
+        this.sceneId = sceneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the scene.
+     * </p>
+     * 
+     * @return The ID of the scene.
+     */
+
+    public String getSceneId() {
+        return this.sceneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the scene.
+     * </p>
+     * 
+     * @param sceneId
+     *        The ID of the scene.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSceneRequest withCapabilities(java.util.Collection<String> capabilities) {
-        setCapabilities(capabilities);
+    public UpdateSceneRequest withSceneId(String sceneId) {
+        setSceneId(sceneId);
         return this;
     }
 
@@ -208,81 +218,71 @@ public class UpdateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render.
      * </p>
      * 
-     * @param sceneId
-     *        The ID of the scene.
+     * @return A list of capabilities that the scene uses to render.
      */
 
-    public void setSceneId(String sceneId) {
-        this.sceneId = sceneId;
+    public java.util.List<String> getCapabilities() {
+        return capabilities;
     }
 
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render.
      * </p>
      * 
-     * @return The ID of the scene.
+     * @param capabilities
+     *        A list of capabilities that the scene uses to render.
      */
 
-    public String getSceneId() {
-        return this.sceneId;
+    public void setCapabilities(java.util.Collection<String> capabilities) {
+        if (capabilities == null) {
+            this.capabilities = null;
+            return;
+        }
+
+        this.capabilities = new java.util.ArrayList<String>(capabilities);
     }
 
     /**
      * <p>
-     * The ID of the scene.
+     * A list of capabilities that the scene uses to render.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCapabilities(java.util.Collection)} or {@link #withCapabilities(java.util.Collection)} if you want to
+     * override the existing values.
      * </p>
      * 
-     * @param sceneId
-     *        The ID of the scene.
+     * @param capabilities
+     *        A list of capabilities that the scene uses to render.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSceneRequest withSceneId(String sceneId) {
-        setSceneId(sceneId);
+    public UpdateSceneRequest withCapabilities(String... capabilities) {
+        if (this.capabilities == null) {
+            setCapabilities(new java.util.ArrayList<String>(capabilities.length));
+        }
+        for (String ele : capabilities) {
+            this.capabilities.add(ele);
+        }
         return this;
     }
 
     /**
      * <p>
-     * The ID of the workspace that contains the scene.
+     * A list of capabilities that the scene uses to render.
      * </p>
      * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the scene.
-     */
-
-    public void setWorkspaceId(String workspaceId) {
-        this.workspaceId = workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the scene.
-     * </p>
-     * 
-     * @return The ID of the workspace that contains the scene.
-     */
-
-    public String getWorkspaceId() {
-        return this.workspaceId;
-    }
-
-    /**
-     * <p>
-     * The ID of the workspace that contains the scene.
-     * </p>
-     * 
-     * @param workspaceId
-     *        The ID of the workspace that contains the scene.
+     * @param capabilities
+     *        A list of capabilities that the scene uses to render.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public UpdateSceneRequest withWorkspaceId(String workspaceId) {
-        setWorkspaceId(workspaceId);
+    public UpdateSceneRequest withCapabilities(java.util.Collection<String> capabilities) {
+        setCapabilities(capabilities);
         return this;
     }
 
@@ -298,16 +298,16 @@ public class UpdateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getCapabilities() != null)
-            sb.append("Capabilities: ").append(getCapabilities()).append(",");
+        if (getWorkspaceId() != null)
+            sb.append("WorkspaceId: ").append(getWorkspaceId()).append(",");
+        if (getSceneId() != null)
+            sb.append("SceneId: ").append(getSceneId()).append(",");
         if (getContentLocation() != null)
             sb.append("ContentLocation: ").append(getContentLocation()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
-        if (getSceneId() != null)
-            sb.append("SceneId: ").append(getSceneId()).append(",");
-        if (getWorkspaceId() != null)
-            sb.append("WorkspaceId: ").append(getWorkspaceId());
+        if (getCapabilities() != null)
+            sb.append("Capabilities: ").append(getCapabilities());
         sb.append("}");
         return sb.toString();
     }
@@ -322,9 +322,13 @@ public class UpdateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (obj instanceof UpdateSceneRequest == false)
             return false;
         UpdateSceneRequest other = (UpdateSceneRequest) obj;
-        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
+        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
             return false;
-        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
+        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+            return false;
+        if (other.getSceneId() == null ^ this.getSceneId() == null)
+            return false;
+        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
             return false;
         if (other.getContentLocation() == null ^ this.getContentLocation() == null)
             return false;
@@ -334,13 +338,9 @@ public class UpdateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
-        if (other.getSceneId() == null ^ this.getSceneId() == null)
+        if (other.getCapabilities() == null ^ this.getCapabilities() == null)
             return false;
-        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
-            return false;
-        if (other.getWorkspaceId() == null ^ this.getWorkspaceId() == null)
-            return false;
-        if (other.getWorkspaceId() != null && other.getWorkspaceId().equals(this.getWorkspaceId()) == false)
+        if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false)
             return false;
         return true;
     }
@@ -350,11 +350,11 @@ public class UpdateSceneRequest extends com.amazonaws.AmazonWebServiceRequest im
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
+        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getSceneId() == null) ? 0 : getSceneId().hashCode());
         hashCode = prime * hashCode + ((getContentLocation() == null) ? 0 : getContentLocation().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
-        hashCode = prime * hashCode + ((getSceneId() == null) ? 0 : getSceneId().hashCode());
-        hashCode = prime * hashCode + ((getWorkspaceId() == null) ? 0 : getWorkspaceId().hashCode());
+        hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode());
         return hashCode;
     }
 

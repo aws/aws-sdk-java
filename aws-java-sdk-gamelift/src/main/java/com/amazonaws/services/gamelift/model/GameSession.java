@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,12 +30,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * values after this time. Game session logs are retained for 14 days.
  * </p>
  * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>CreateGameSession</a> | <a>DescribeGameSessions</a> | <a>DescribeGameSessionDetails</a> |
- * <a>SearchGameSessions</a> | <a>UpdateGameSession</a> | <a>GetGameSessionLogUrl</a> | <a>StartGameSessionPlacement</a>
- * | <a>DescribeGameSessionPlacement</a> | <a>StopGameSessionPlacement</a> | <a href=
+ * <a href=
  * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
  * >All APIs by task</a>
  * </p>
@@ -116,10 +111,9 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * >Start a Game Session</a>).
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
@@ -177,7 +171,7 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
@@ -731,18 +725,15 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * >Start a Game Session</a>).
      * </p>
      * 
      * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *         to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *         <a href=
+     *         to a game server process with a request to start a new game session (see <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *         <a>SearchGameSessions</a>.
+     *         >Start a Game Session</a>).
      */
 
     public java.util.List<GameProperty> getGameProperties() {
@@ -752,19 +743,16 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
      *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
+     *        to a game server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        >Start a Game Session</a>).
      */
 
     public void setGameProperties(java.util.Collection<GameProperty> gameProperties) {
@@ -779,10 +767,9 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * >Start a Game Session</a>).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -792,11 +779,9 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param gameProperties
      *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
+     *        to a game server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -813,19 +798,16 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     * <a>SearchGameSessions</a>.
+     * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameProperties
      *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
+     *        to a game server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). You can search for active game sessions based on this custom data with
-     *        <a>SearchGameSessions</a>.
+     *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1196,14 +1178,14 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      */
@@ -1215,14 +1197,13 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @return A set of custom game session properties, formatted as a single string value. This data is passed to a
-     *         game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *         href=
+     *         game server process with a request to start a new game session (see <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *         >Start a Game Session</a>).
      */
@@ -1234,14 +1215,14 @@ public class GameSession implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      * >Start a Game Session</a>).
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
      *        >Start a Game Session</a>).
      * @return Returns a reference to this object so that method calls can be chained together.

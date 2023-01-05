@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,15 +27,17 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
-     * use <a>UpdateScript</a> to change this value later.
+     * Version information associated with a build or script. Version strings do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      */
     private String version;
@@ -67,22 +69,27 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
      * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a
+     * href
+     * ="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
+     * General Reference for actual tagging limits.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      * 
      * @param name
      *        A descriptive label that is associated with a script. Script names do not need to be unique. You can use
-     *        <a>UpdateScript</a> to change this value later.
+     *        <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     *        to change this value later.
      */
 
     public void setName(String name) {
@@ -91,12 +98,14 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      * 
      * @return A descriptive label that is associated with a script. Script names do not need to be unique. You can use
-     *         <a>UpdateScript</a> to change this value later.
+     *         <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     *         to change this value later.
      */
 
     public String getName() {
@@ -105,13 +114,15 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use
-     * <a>UpdateScript</a> to change this value later.
+     * A descriptive label that is associated with a script. Script names do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      * 
      * @param name
      *        A descriptive label that is associated with a script. Script names do not need to be unique. You can use
-     *        <a>UpdateScript</a> to change this value later.
+     *        <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
+     *        to change this value later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,13 +133,16 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
-     * use <a>UpdateScript</a> to change this value later.
+     * Version information associated with a build or script. Version strings do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      * 
      * @param version
-     *        Version information that is associated with a build or script. Version strings do not need to be unique.
-     *        You can use <a>UpdateScript</a> to change this value later.
+     *        Version information associated with a build or script. Version strings do not need to be unique. You can
+     *        use <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to
+     *        change this value later.
      */
 
     public void setVersion(String version) {
@@ -137,12 +151,15 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
-     * use <a>UpdateScript</a> to change this value later.
+     * Version information associated with a build or script. Version strings do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      * 
-     * @return Version information that is associated with a build or script. Version strings do not need to be unique.
-     *         You can use <a>UpdateScript</a> to change this value later.
+     * @return Version information associated with a build or script. Version strings do not need to be unique. You can
+     *         use <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to
+     *         change this value later.
      */
 
     public String getVersion() {
@@ -151,13 +168,16 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Version information that is associated with a build or script. Version strings do not need to be unique. You can
-     * use <a>UpdateScript</a> to change this value later.
+     * Version information associated with a build or script. Version strings do not need to be unique. You can use <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to change
+     * this value later.
      * </p>
      * 
      * @param version
-     *        Version information that is associated with a build or script. Version strings do not need to be unique.
-     *        You can use <a>UpdateScript</a> to change this value later.
+     *        Version information associated with a build or script. Version strings do not need to be unique. You can
+     *        use <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a> to
+     *        change this value later.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -339,9 +359,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
      * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a
+     * href
+     * ="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
+     * General Reference for actual tagging limits.
      * </p>
      * 
      * @return A list of labels to assign to the new script resource. Tags are developer-defined key-value pairs.
@@ -349,9 +372,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         allocation. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services
      *         Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     *         use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     *         tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     *         actual tagging limits.
+     *         use <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     *         href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     *         and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">
+     *         ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated.
+     *         See the Amazon Web Services General Reference for actual tagging limits.
      */
 
     public java.util.List<Tag> getTags() {
@@ -364,9 +390,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
      * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a
+     * href
+     * ="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
+     * General Reference for actual tagging limits.
      * </p>
      * 
      * @param tags
@@ -374,9 +403,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
      *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-     *        to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
-     *        General Reference for actual tagging limits.
+     *        resource is created, you can use <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     *        and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">
+     *        ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
+     *        the Amazon Web Services General Reference for actual tagging limits.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -394,9 +426,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
      * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a
+     * href
+     * ="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
+     * General Reference for actual tagging limits.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -409,9 +444,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
      *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-     *        to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
-     *        General Reference for actual tagging limits.
+     *        resource is created, you can use <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     *        and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">
+     *        ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
+     *        the Amazon Web Services General Reference for actual tagging limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,9 +469,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Web Services resources are useful for resource management, access management and cost allocation. For more
      * information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web
      * Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     * use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view tags. The
-     * maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for actual tagging
-     * limits.
+     * use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>, and <a
+     * href
+     * ="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">ListTagsForResource</a>
+     * to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
+     * General Reference for actual tagging limits.
      * </p>
      * 
      * @param tags
@@ -441,9 +482,12 @@ public class CreateScriptRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Amazon Web Services resources are useful for resource management, access management and cost allocation.
      *        For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
      *        Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the
-     *        resource is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a>
-     *        to add, remove, and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services
-     *        General Reference for actual tagging limits.
+     *        resource is created, you can use <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_TagResource.html">TagResource</a>, <a
+     *        href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UntagResource.html">UntagResource</a>,
+     *        and <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_ListTagsForResource.html">
+     *        ListTagsForResource</a> to add, remove, and view tags. The maximum tag limit may be lower than stated. See
+     *        the Amazon Web Services General Reference for actual tagging limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

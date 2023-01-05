@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class UpdateWorkgroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("configParameters").build();
     private static final MarshallingInfo<Boolean> ENHANCEDVPCROUTING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enhancedVpcRouting").build();
+    private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("port").build();
     private static final MarshallingInfo<Boolean> PUBLICLYACCESSIBLE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publiclyAccessible").build();
     private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -62,6 +64,7 @@ public class UpdateWorkgroupRequestMarshaller {
             protocolMarshaller.marshall(updateWorkgroupRequest.getBaseCapacity(), BASECAPACITY_BINDING);
             protocolMarshaller.marshall(updateWorkgroupRequest.getConfigParameters(), CONFIGPARAMETERS_BINDING);
             protocolMarshaller.marshall(updateWorkgroupRequest.getEnhancedVpcRouting(), ENHANCEDVPCROUTING_BINDING);
+            protocolMarshaller.marshall(updateWorkgroupRequest.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(updateWorkgroupRequest.getPubliclyAccessible(), PUBLICLYACCESSIBLE_BINDING);
             protocolMarshaller.marshall(updateWorkgroupRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(updateWorkgroupRequest.getSubnetIds(), SUBNETIDS_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class PackageFilterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("name").build();
     private static final MarshallingInfo<StructuredPojo> RELEASE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("release").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCELAMBDALAYERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceLambdaLayerArn").build();
     private static final MarshallingInfo<StructuredPojo> SOURCELAYERHASH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceLayerHash").build();
     private static final MarshallingInfo<StructuredPojo> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -60,6 +62,7 @@ public class PackageFilterMarshaller {
             protocolMarshaller.marshall(packageFilter.getEpoch(), EPOCH_BINDING);
             protocolMarshaller.marshall(packageFilter.getName(), NAME_BINDING);
             protocolMarshaller.marshall(packageFilter.getRelease(), RELEASE_BINDING);
+            protocolMarshaller.marshall(packageFilter.getSourceLambdaLayerArn(), SOURCELAMBDALAYERARN_BINDING);
             protocolMarshaller.marshall(packageFilter.getSourceLayerHash(), SOURCELAYERHASH_BINDING);
             protocolMarshaller.marshall(packageFilter.getVersion(), VERSION_BINDING);
         } catch (Exception e) {

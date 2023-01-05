@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class SlackWorkspaceConfigurationMarshaller {
 
+    private static final MarshallingInfo<Boolean> ALLOWORGANIZATIONMEMBERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("allowOrganizationMemberAccount").build();
     private static final MarshallingInfo<String> TEAMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("teamId").build();
+    private static final MarshallingInfo<String> TEAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("teamName").build();
 
     private static final SlackWorkspaceConfigurationMarshaller instance = new SlackWorkspaceConfigurationMarshaller();
 
@@ -46,7 +50,9 @@ public class SlackWorkspaceConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(slackWorkspaceConfiguration.getAllowOrganizationMemberAccount(), ALLOWORGANIZATIONMEMBERACCOUNT_BINDING);
             protocolMarshaller.marshall(slackWorkspaceConfiguration.getTeamId(), TEAMID_BINDING);
+            protocolMarshaller.marshall(slackWorkspaceConfiguration.getTeamName(), TEAMNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

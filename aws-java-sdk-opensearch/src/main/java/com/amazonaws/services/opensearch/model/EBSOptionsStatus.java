@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Status of the EBS options for the specified domain.
+ * The status of the EBS options for the specified OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,7 +27,7 @@ public class EBSOptionsStatus implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The EBS options for the specified domain.
+     * The configured EBS options for the specified domain.
      * </p>
      */
     private EBSOptions options;
@@ -40,11 +40,11 @@ public class EBSOptionsStatus implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The EBS options for the specified domain.
+     * The configured EBS options for the specified domain.
      * </p>
      * 
      * @param options
-     *        The EBS options for the specified domain.
+     *        The configured EBS options for the specified domain.
      */
 
     public void setOptions(EBSOptions options) {
@@ -53,10 +53,10 @@ public class EBSOptionsStatus implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The EBS options for the specified domain.
+     * The configured EBS options for the specified domain.
      * </p>
      * 
-     * @return The EBS options for the specified domain.
+     * @return The configured EBS options for the specified domain.
      */
 
     public EBSOptions getOptions() {
@@ -65,11 +65,11 @@ public class EBSOptionsStatus implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The EBS options for the specified domain.
+     * The configured EBS options for the specified domain.
      * </p>
      * 
      * @param options
-     *        The EBS options for the specified domain.
+     *        The configured EBS options for the specified domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

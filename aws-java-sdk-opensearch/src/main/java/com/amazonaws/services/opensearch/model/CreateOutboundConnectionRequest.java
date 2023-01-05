@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the parameters to the <code> <a>CreateOutboundConnection</a> </code> operation.
+ * Container for the parameters to the <code>CreateOutboundConnection</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,30 +27,30 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      */
     private DomainInformationContainer localDomainInfo;
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      */
     private DomainInformationContainer remoteDomainInfo;
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      */
     private String connectionAlias;
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Name and Region of the source (local) domain.
      */
 
     public void setLocalDomainInfo(DomainInformationContainer localDomainInfo) {
@@ -59,10 +59,10 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * @return Name and Region of the source (local) domain.
      */
 
     public DomainInformationContainer getLocalDomainInfo() {
@@ -71,11 +71,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     * Name and Region of the source (local) domain.
      * </p>
      * 
      * @param localDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the local OpenSearch domain.
+     *        Name and Region of the source (local) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +86,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Name and Region of the destination (remote) domain.
      */
 
     public void setRemoteDomainInfo(DomainInformationContainer remoteDomainInfo) {
@@ -99,10 +99,10 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      * 
-     * @return The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * @return Name and Region of the destination (remote) domain.
      */
 
     public DomainInformationContainer getRemoteDomainInfo() {
@@ -111,11 +111,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     * Name and Region of the destination (remote) domain.
      * </p>
      * 
      * @param remoteDomainInfo
-     *        The <code> <a>AWSDomainInformation</a> </code> for the remote OpenSearch domain.
+     *        Name and Region of the destination (remote) domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias used used by the customer for this cross-cluster connection.
+     *        Name of the connection.
      */
 
     public void setConnectionAlias(String connectionAlias) {
@@ -139,10 +139,10 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
-     * @return The connection alias used used by the customer for this cross-cluster connection.
+     * @return Name of the connection.
      */
 
     public String getConnectionAlias() {
@@ -151,11 +151,11 @@ public class CreateOutboundConnectionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The connection alias used used by the customer for this cross-cluster connection.
+     * Name of the connection.
      * </p>
      * 
      * @param connectionAlias
-     *        The connection alias used used by the customer for this cross-cluster connection.
+     *        Name of the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -23,9 +23,8 @@ package com.amazonaws.auth;
  * {@link BasicAWSCredentials}, but callers are free to provide their own
  * implementation, for example, to load AWS credentials from an encrypted file.
  * <p>
- * For more details on AWS access keys, see: <a href="http://docs.amazonwebservices.com/AWSSecurityCredentials/1.0/AboutAWSCredentials.html#AccessKeys"
- * >http://docs.amazonwebservices.com/AWSSecurityCredentials/1.0/
- * AboutAWSCredentials.html#AccessKeys</a>
+ * For more details on AWS access keys, see: <a href="https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-about"
+ * target="_blank">Accessing AWS using your AWS Credentials</a>
  */
 public interface AWSCredentials {
 

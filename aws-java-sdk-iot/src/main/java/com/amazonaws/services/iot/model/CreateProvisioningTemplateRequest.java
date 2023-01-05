@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,10 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
     private String provisioningRoleArn;
     /**
      * <p>
-     * Creates a pre-provisioning hook template.
+     * Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      */
     private ProvisioningHook preProvisioningHook;
@@ -304,11 +307,17 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Creates a pre-provisioning hook template.
+     * Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      * 
      * @param preProvisioningHook
-     *        Creates a pre-provisioning hook template.
+     *        Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>.
+     *        For more information about provisioning template types, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     *        >type</a>.
      */
 
     public void setPreProvisioningHook(ProvisioningHook preProvisioningHook) {
@@ -317,10 +326,16 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Creates a pre-provisioning hook template.
+     * Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      * 
-     * @return Creates a pre-provisioning hook template.
+     * @return Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>.
+     *         For more information about provisioning template types, see <a href=
+     *         "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     *         >type</a>.
      */
 
     public ProvisioningHook getPreProvisioningHook() {
@@ -329,11 +344,17 @@ public class CreateProvisioningTemplateRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Creates a pre-provisioning hook template.
+     * Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>. For
+     * more information about provisioning template types, see <a href=
+     * "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     * >type</a>.
      * </p>
      * 
      * @param preProvisioningHook
-     *        Creates a pre-provisioning hook template.
+     *        Creates a pre-provisioning hook template. Only supports template of type <code>FLEET_PROVISIONING</code>.
+     *        For more information about provisioning template types, see <a href=
+     *        "https://docs.aws.amazon.com/iot/latest/apireference/API_CreateProvisioningTemplate.html#iot-CreateProvisioningTemplate-request-type"
+     *        >type</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

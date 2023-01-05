@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A key value pair for a resource tag.
+ * A tag (key-value pair) for an Amazon OpenSearch Service resource.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,27 +27,26 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached.
+     * The tag key. Tag keys must be unique for the domain to which they are attached.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have
-     * to be unique in a tag set. For example, you can have a key value pair in a tag set of
-     * <code>project : Trinity</code> and <code>cost-center : Trinity</code>
+     * The value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set.
+     * For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and
+     * <code>cost-center : Trinity</code>
      * </p>
      */
     private String value;
 
     /**
      * <p>
-     * The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached.
+     * The tag key. Tag keys must be unique for the domain to which they are attached.
      * </p>
      * 
      * @param key
-     *        The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are
-     *        attached.
+     *        The tag key. Tag keys must be unique for the domain to which they are attached.
      */
 
     public void setKey(String key) {
@@ -56,11 +55,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached.
+     * The tag key. Tag keys must be unique for the domain to which they are attached.
      * </p>
      * 
-     * @return The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are
-     *         attached.
+     * @return The tag key. Tag keys must be unique for the domain to which they are attached.
      */
 
     public String getKey() {
@@ -69,12 +67,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are attached.
+     * The tag key. Tag keys must be unique for the domain to which they are attached.
      * </p>
      * 
      * @param key
-     *        The <code>TagKey</code>, the name of the tag. Tag keys must be unique for the domain to which they are
-     *        attached.
+     *        The tag key. Tag keys must be unique for the domain to which they are attached.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,15 +82,15 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have
-     * to be unique in a tag set. For example, you can have a key value pair in a tag set of
-     * <code>project : Trinity</code> and <code>cost-center : Trinity</code>
+     * The value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set.
+     * For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and
+     * <code>cost-center : Trinity</code>
      * </p>
      * 
      * @param value
-     *        The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
-     *        don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of
-     *        <code>project : Trinity</code> and <code>cost-center : Trinity</code>
+     *        The value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a
+     *        tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and
+     *        <code>cost-center : Trinity</code>
      */
 
     public void setValue(String value) {
@@ -102,14 +99,14 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have
-     * to be unique in a tag set. For example, you can have a key value pair in a tag set of
-     * <code>project : Trinity</code> and <code>cost-center : Trinity</code>
+     * The value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set.
+     * For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and
+     * <code>cost-center : Trinity</code>
      * </p>
      * 
-     * @return The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
-     *         don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of
-     *         <code>project : Trinity</code> and <code>cost-center : Trinity</code>
+     * @return The value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a
+     *         tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and
+     *         <code>cost-center : Trinity</code>
      */
 
     public String getValue() {
@@ -118,15 +115,15 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and don't have
-     * to be unique in a tag set. For example, you can have a key value pair in a tag set of
-     * <code>project : Trinity</code> and <code>cost-center : Trinity</code>
+     * The value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a tag set.
+     * For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and
+     * <code>cost-center : Trinity</code>
      * </p>
      * 
      * @param value
-     *        The <code>TagValue</code>, the value assigned to the corresponding tag key. Tag values can be null and
-     *        don't have to be unique in a tag set. For example, you can have a key value pair in a tag set of
-     *        <code>project : Trinity</code> and <code>cost-center : Trinity</code>
+     *        The value assigned to the corresponding tag key. Tag values can be null and don't have to be unique in a
+     *        tag set. For example, you can have a key value pair in a tag set of <code>project : Trinity</code> and
+     *        <code>cost-center : Trinity</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

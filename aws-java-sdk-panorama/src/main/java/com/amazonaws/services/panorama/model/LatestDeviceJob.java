@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class LatestDeviceJob implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String imageVersion;
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     */
+    private String jobType;
     /**
      * <p>
      * Status of the latest device job.
@@ -78,6 +84,65 @@ public class LatestDeviceJob implements Serializable, Cloneable, StructuredPojo 
 
     public LatestDeviceJob withImageVersion(String imageVersion) {
         setImageVersion(imageVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @see JobType
+     */
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @return The job's type.
+     * @see JobType
+     */
+
+    public String getJobType() {
+        return this.jobType;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public LatestDeviceJob withJobType(String jobType) {
+        setJobType(jobType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The job's type.
+     * </p>
+     * 
+     * @param jobType
+     *        The job's type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public LatestDeviceJob withJobType(JobType jobType) {
+        this.jobType = jobType.toString();
         return this;
     }
 
@@ -154,6 +219,8 @@ public class LatestDeviceJob implements Serializable, Cloneable, StructuredPojo 
         sb.append("{");
         if (getImageVersion() != null)
             sb.append("ImageVersion: ").append(getImageVersion()).append(",");
+        if (getJobType() != null)
+            sb.append("JobType: ").append(getJobType()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus());
         sb.append("}");
@@ -174,6 +241,10 @@ public class LatestDeviceJob implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getImageVersion() != null && other.getImageVersion().equals(this.getImageVersion()) == false)
             return false;
+        if (other.getJobType() == null ^ this.getJobType() == null)
+            return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -187,6 +258,7 @@ public class LatestDeviceJob implements Serializable, Cloneable, StructuredPojo 
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImageVersion() == null) ? 0 : getImageVersion().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }

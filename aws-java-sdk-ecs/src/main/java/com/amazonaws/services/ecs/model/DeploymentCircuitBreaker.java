@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
     /**
      * <p>
      * Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * on, when a service deployment fails, the service is rolled back to the last deployment that completed
      * successfully.
      * </p>
      */
@@ -109,14 +109,14 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
     /**
      * <p>
      * Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * on, when a service deployment fails, the service is rolled back to the last deployment that completed
      * successfully.
      * </p>
      * 
      * @param rollback
      *        Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If
-     *        rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
-     *        that completed successfully.
+     *        rollback is on, when a service deployment fails, the service is rolled back to the last deployment that
+     *        completed successfully.
      */
 
     public void setRollback(Boolean rollback) {
@@ -126,13 +126,13 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
     /**
      * <p>
      * Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * on, when a service deployment fails, the service is rolled back to the last deployment that completed
      * successfully.
      * </p>
      * 
      * @return Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If
-     *         rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
-     *         that completed successfully.
+     *         rollback is on, when a service deployment fails, the service is rolled back to the last deployment that
+     *         completed successfully.
      */
 
     public Boolean getRollback() {
@@ -142,14 +142,14 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
     /**
      * <p>
      * Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * on, when a service deployment fails, the service is rolled back to the last deployment that completed
      * successfully.
      * </p>
      * 
      * @param rollback
      *        Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If
-     *        rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
-     *        that completed successfully.
+     *        rollback is on, when a service deployment fails, the service is rolled back to the last deployment that
+     *        completed successfully.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,13 +161,13 @@ public class DeploymentCircuitBreaker implements Serializable, Cloneable, Struct
     /**
      * <p>
      * Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If rollback is
-     * enabled, when a service deployment fails, the service is rolled back to the last deployment that completed
+     * on, when a service deployment fails, the service is rolled back to the last deployment that completed
      * successfully.
      * </p>
      * 
      * @return Determines whether to configure Amazon ECS to roll back the service if a service deployment fails. If
-     *         rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment
-     *         that completed successfully.
+     *         rollback is on, when a service deployment fails, the service is rolled back to the last deployment that
+     *         completed successfully.
      */
 
     public Boolean isRollback() {

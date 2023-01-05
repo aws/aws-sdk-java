@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * For more information about configuring scaling policies for a specific service, see <a
- * href="https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html">Getting started with
- * Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+ * href="https://docs.aws.amazon.com/autoscaling/application/userguide/integrated-services-list.html">Amazon Web
+ * Services services that you can use with Application Auto Scaling</a> in the <i>Application Auto Scaling User
+ * Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ScalingPolicy"
@@ -215,7 +216,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -281,6 +282,16 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The scaling policy type.
+     * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
      * </p>
      */
     private String policyType;
@@ -1184,7 +1195,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1300,7 +1311,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1425,7 +1436,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1540,7 +1551,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *         <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *         endpoint variant.
      *         </p>
      *         </li>
@@ -1665,7 +1676,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -1781,7 +1792,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -1908,7 +1919,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2024,7 +2035,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2149,7 +2160,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model endpoint
+     * <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model endpoint
      * variant.
      * </p>
      * </li>
@@ -2265,7 +2276,7 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for an SageMaker model
+     *        <code>sagemaker:variant:DesiredInstanceCount</code> - The number of EC2 instances for a SageMaker model
      *        endpoint variant.
      *        </p>
      *        </li>
@@ -2341,9 +2352,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @see PolicyType
      */
 
@@ -2355,8 +2385,27 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
-     * @return The scaling policy type.
+     * @return The scaling policy type.</p>
+     *         <p>
+     *         The following policy types are supported:
+     *         </p>
+     *         <p>
+     *         <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *         </p>
+     *         <p>
+     *         <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *         MSK, Amazon ElastiCache, or Neptune.
      * @see PolicyType
      */
 
@@ -2368,9 +2417,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -2384,9 +2452,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @see PolicyType
      */
 
@@ -2398,9 +2485,28 @@ public class ScalingPolicy implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The scaling policy type.
      * </p>
+     * <p>
+     * The following policy types are supported:
+     * </p>
+     * <p>
+     * <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     * </p>
+     * <p>
+     * <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon MSK,
+     * Amazon ElastiCache, or Neptune.
+     * </p>
      * 
      * @param policyType
-     *        The scaling policy type.
+     *        The scaling policy type.</p>
+     *        <p>
+     *        The following policy types are supported:
+     *        </p>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>—Not supported for Amazon EMR
+     *        </p>
+     *        <p>
+     *        <code>StepScaling</code>—Not supported for DynamoDB, Amazon Comprehend, Lambda, Amazon Keyspaces, Amazon
+     *        MSK, Amazon ElastiCache, or Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configured endpoint options for the domain and their current status.
+ * The configured endpoint options for a domain and their current status.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,25 +27,24 @@ public class DomainEndpointOptionsStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Options to configure the endpoint for the domain.
+     * Options to configure the endpoint for a domain.
      * </p>
      */
     private DomainEndpointOptions options;
     /**
      * <p>
-     * The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the endpoint options for a domain.
      * </p>
      */
     private OptionStatus status;
 
     /**
      * <p>
-     * Options to configure the endpoint for the domain.
+     * Options to configure the endpoint for a domain.
      * </p>
      * 
      * @param options
-     *        Options to configure the endpoint for the domain.
+     *        Options to configure the endpoint for a domain.
      */
 
     public void setOptions(DomainEndpointOptions options) {
@@ -54,10 +53,10 @@ public class DomainEndpointOptionsStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Options to configure the endpoint for the domain.
+     * Options to configure the endpoint for a domain.
      * </p>
      * 
-     * @return Options to configure the endpoint for the domain.
+     * @return Options to configure the endpoint for a domain.
      */
 
     public DomainEndpointOptions getOptions() {
@@ -66,11 +65,11 @@ public class DomainEndpointOptionsStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Options to configure the endpoint for the domain.
+     * Options to configure the endpoint for a domain.
      * </p>
      * 
      * @param options
-     *        Options to configure the endpoint for the domain.
+     *        Options to configure the endpoint for a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,13 +80,11 @@ public class DomainEndpointOptionsStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the endpoint options for a domain.
      * </p>
      * 
      * @param status
-     *        The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
-     *        information that's included.
+     *        The status of the endpoint options for a domain.
      */
 
     public void setStatus(OptionStatus status) {
@@ -96,12 +93,10 @@ public class DomainEndpointOptionsStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the endpoint options for a domain.
      * </p>
      * 
-     * @return The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
-     *         information that's included.
+     * @return The status of the endpoint options for a domain.
      */
 
     public OptionStatus getStatus() {
@@ -110,13 +105,11 @@ public class DomainEndpointOptionsStatus implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status information
-     * that's included.
+     * The status of the endpoint options for a domain.
      * </p>
      * 
      * @param status
-     *        The status of the endpoint options for the domain. See <code>OptionStatus</code> for the status
-     *        information that's included.
+     *        The status of the endpoint options for a domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <li>
      * <p>
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
      * </p>
      * </li>
      * </ul>
@@ -140,23 +145,28 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     private Integer batchSize;
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      */
     private FilterCriteria filterCriteria;
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only
+     * change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms
+     * default batching window after you have changed it. To restore the default batching window, you must create a new
+     * event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
@@ -278,6 +288,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -301,6 +316,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon MQ</b> - The ARN of the broker.
      *        </p>
      *        </li>
      */
@@ -334,6 +354,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The Amazon Resource Name (ARN) of the event source.</p>
@@ -356,6 +381,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *         <li>
      *         <p>
      *         <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Amazon MQ</b> - The ARN of the broker.
      *         </p>
      *         </li>
      */
@@ -389,6 +419,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <b>Amazon MQ</b> - The ARN of the broker.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param eventSourceArn
@@ -412,6 +447,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      *        <li>
      *        <p>
      *        <b>Amazon Managed Streaming for Apache Kafka</b> - The ARN of the cluster.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Amazon MQ</b> - The ARN of the broker.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -955,14 +995,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      * 
      * @param filterCriteria
-     *        (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should
-     *        process an event. For more information, see <a
+     *        An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event
      *        filtering</a>.
      */
@@ -973,13 +1013,13 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      * 
-     * @return (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should
-     *         process an event. For more information, see <a
+     * @return An object that defines the filter criteria that determine whether Lambda should process an event. For
+     *         more information, see <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event
      *         filtering</a>.
      */
@@ -990,14 +1030,14 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should process
-     * an event. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event filtering</a>.
+     * An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     * information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
+     * event filtering</a>.
      * </p>
      * 
      * @param filterCriteria
-     *        (Streams and Amazon SQS) An object that defines the filter criteria that determine whether Lambda should
-     *        process an event. For more information, see <a
+     *        An object that defines the filter criteria that determine whether Lambda should process an event. For more
+     *        information, see <a
      *        href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda event
      *        filtering</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1010,26 +1050,36 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only
+     * change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms
+     * default batching window after you have changed it. To restore the default batching window, you must create a new
+     * event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
-     *        gathering records before invoking the function.</p>
+     *        The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.
+     *        You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds
+     *        in increments of seconds.</p>
      *        <p>
-     *        Default: 0
+     *        For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK,
+     *        Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that
+     *        because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you
+     *        cannot revert back to the 500 ms default batching window after you have changed it. To restore the default
+     *        batching window, you must create a new event source mapping.
      *        </p>
      *        <p>
-     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     *        Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value
+     *        greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -1038,25 +1088,35 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only
+     * change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms
+     * default batching window after you have changed it. To restore the default batching window, you must create a new
+     * event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
-     * @return (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
-     *         gathering records before invoking the function.</p>
+     * @return The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the
+     *         function. You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to
+     *         300 seconds in increments of seconds.</p>
      *         <p>
-     *         Default: 0
+     *         For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK,
+     *         Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that
+     *         because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you
+     *         cannot revert back to the 500 ms default batching window after you have changed it. To restore the
+     *         default batching window, you must create a new event source mapping.
      *         </p>
      *         <p>
-     *         Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     *         <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     *         Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value
+     *         greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -1065,26 +1125,36 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends gathering
-     * records before invoking the function.
+     * The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function. You
+     * can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds in
+     * increments of seconds.
      * </p>
      * <p>
-     * Default: 0
+     * For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
+     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that because you can only
+     * change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot revert back to the 500 ms
+     * default batching window after you have changed it. To restore the default batching window, you must create a new
+     * event source mapping.
      * </p>
      * <p>
-     * Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     * <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     * Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value greater
+     * than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams and Amazon SQS standard queues) The maximum amount of time, in seconds, that Lambda spends
-     *        gathering records before invoking the function.</p>
+     *        The maximum amount of time, in seconds, that Lambda spends gathering records before invoking the function.
+     *        You can configure <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300 seconds
+     *        in increments of seconds.</p>
      *        <p>
-     *        Default: 0
+     *        For streams and Amazon SQS event sources, the default batching window is 0 seconds. For Amazon MSK,
+     *        Self-managed Apache Kafka, and Amazon MQ event sources, the default batching window is 500 ms. Note that
+     *        because you can only change <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you
+     *        cannot revert back to the 500 ms default batching window after you have changed it. To restore the default
+     *        batching window, you must create a new event source mapping.
      *        </p>
      *        <p>
-     *        Related setting: When you set <code>BatchSize</code> to a value greater than 10, you must set
-     *        <code>MaximumBatchingWindowInSeconds</code> to at least 1.
+     *        Related setting: For streams and Amazon SQS event sources, when you set <code>BatchSize</code> to a value
+     *        greater than 10, you must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

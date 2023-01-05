@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,8 @@ public class CmafGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minBufferTime").build();
     private static final MarshallingInfo<Double> MINFINALSEGMENTLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minFinalSegmentLength").build();
+    private static final MarshallingInfo<String> MPDMANIFESTBANDWIDTHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpdManifestBandwidthType").build();
     private static final MarshallingInfo<String> MPDPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mpdProfile").build();
     private static final MarshallingInfo<String> PTSOFFSETHANDLINGFORBFRAMES_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -70,6 +72,8 @@ public class CmafGroupSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("streamInfResolution").build();
     private static final MarshallingInfo<String> TARGETDURATIONCOMPATIBILITYMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetDurationCompatibilityMode").build();
+    private static final MarshallingInfo<String> VIDEOCOMPOSITIONOFFSETS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoCompositionOffsets").build();
     private static final MarshallingInfo<String> WRITEDASHMANIFEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("writeDashManifest").build();
     private static final MarshallingInfo<String> WRITEHLSMANIFEST_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -107,6 +111,7 @@ public class CmafGroupSettingsMarshaller {
             protocolMarshaller.marshall(cmafGroupSettings.getManifestDurationFormat(), MANIFESTDURATIONFORMAT_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getMinBufferTime(), MINBUFFERTIME_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getMinFinalSegmentLength(), MINFINALSEGMENTLENGTH_BINDING);
+            protocolMarshaller.marshall(cmafGroupSettings.getMpdManifestBandwidthType(), MPDMANIFESTBANDWIDTHTYPE_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getMpdProfile(), MPDPROFILE_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getPtsOffsetHandlingForBFrames(), PTSOFFSETHANDLINGFORBFRAMES_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getSegmentControl(), SEGMENTCONTROL_BINDING);
@@ -114,6 +119,7 @@ public class CmafGroupSettingsMarshaller {
             protocolMarshaller.marshall(cmafGroupSettings.getSegmentLengthControl(), SEGMENTLENGTHCONTROL_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getStreamInfResolution(), STREAMINFRESOLUTION_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getTargetDurationCompatibilityMode(), TARGETDURATIONCOMPATIBILITYMODE_BINDING);
+            protocolMarshaller.marshall(cmafGroupSettings.getVideoCompositionOffsets(), VIDEOCOMPOSITIONOFFSETS_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getWriteDashManifest(), WRITEDASHMANIFEST_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getWriteHlsManifest(), WRITEHLSMANIFEST_BINDING);
             protocolMarshaller.marshall(cmafGroupSettings.getWriteSegmentTimelineInRepresentation(), WRITESEGMENTTIMELINEINREPRESENTATION_BINDING);

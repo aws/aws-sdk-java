@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,13 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
      * </p>
      */
     private String executionRoleIdentityConfig;
+    /**
+     * <p>
+     * The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication
+     * between Domain-level apps and user apps.
+     * </p>
+     */
+    private java.util.List<String> securityGroupIds;
 
     /**
      * <p>
@@ -168,6 +175,84 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication
+     * between Domain-level apps and user apps.
+     * </p>
+     * 
+     * @return The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for
+     *         communication between Domain-level apps and user apps.
+     */
+
+    public java.util.List<String> getSecurityGroupIds() {
+        return securityGroupIds;
+    }
+
+    /**
+     * <p>
+     * The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication
+     * between Domain-level apps and user apps.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for
+     *        communication between Domain-level apps and user apps.
+     */
+
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        this.securityGroupIds = new java.util.ArrayList<String>(securityGroupIds);
+    }
+
+    /**
+     * <p>
+     * The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication
+     * between Domain-level apps and user apps.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroupIds(java.util.Collection)} or {@link #withSecurityGroupIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for
+     *        communication between Domain-level apps and user apps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainSettingsForUpdate withSecurityGroupIds(String... securityGroupIds) {
+        if (this.securityGroupIds == null) {
+            setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
+        }
+        for (String ele : securityGroupIds) {
+            this.securityGroupIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for communication
+     * between Domain-level apps and user apps.
+     * </p>
+     * 
+     * @param securityGroupIds
+     *        The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code> uses for
+     *        communication between Domain-level apps and user apps.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainSettingsForUpdate withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        setSecurityGroupIds(securityGroupIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +267,9 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
         if (getRStudioServerProDomainSettingsForUpdate() != null)
             sb.append("RStudioServerProDomainSettingsForUpdate: ").append(getRStudioServerProDomainSettingsForUpdate()).append(",");
         if (getExecutionRoleIdentityConfig() != null)
-            sb.append("ExecutionRoleIdentityConfig: ").append(getExecutionRoleIdentityConfig());
+            sb.append("ExecutionRoleIdentityConfig: ").append(getExecutionRoleIdentityConfig()).append(",");
+        if (getSecurityGroupIds() != null)
+            sb.append("SecurityGroupIds: ").append(getSecurityGroupIds());
         sb.append("}");
         return sb.toString();
     }
@@ -206,6 +293,10 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
             return false;
         if (other.getExecutionRoleIdentityConfig() != null && other.getExecutionRoleIdentityConfig().equals(this.getExecutionRoleIdentityConfig()) == false)
             return false;
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null)
+            return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false)
+            return false;
         return true;
     }
 
@@ -216,6 +307,7 @@ public class DomainSettingsForUpdate implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getRStudioServerProDomainSettingsForUpdate() == null) ? 0 : getRStudioServerProDomainSettingsForUpdate().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleIdentityConfig() == null) ? 0 : getExecutionRoleIdentityConfig().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         return hashCode;
     }
 

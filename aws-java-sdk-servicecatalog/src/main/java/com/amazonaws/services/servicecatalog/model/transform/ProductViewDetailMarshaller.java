@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class ProductViewDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductARN").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> SOURCECONNECTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceConnection").build();
 
     private static final ProductViewDetailMarshaller instance = new ProductViewDetailMarshaller();
 
@@ -56,6 +58,7 @@ public class ProductViewDetailMarshaller {
             protocolMarshaller.marshall(productViewDetail.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(productViewDetail.getProductARN(), PRODUCTARN_BINDING);
             protocolMarshaller.marshall(productViewDetail.getCreatedTime(), CREATEDTIME_BINDING);
+            protocolMarshaller.marshall(productViewDetail.getSourceConnection(), SOURCECONNECTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -156,6 +156,12 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private java.util.Date byCompleteAfter;
+    /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     */
+    private String byParentJobId;
 
     /**
      * <p>
@@ -1010,6 +1016,46 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     * 
+     * @param byParentJobId
+     *        This is a filter to list child (nested) jobs based on parent job ID.
+     */
+
+    public void setByParentJobId(String byParentJobId) {
+        this.byParentJobId = byParentJobId;
+    }
+
+    /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     * 
+     * @return This is a filter to list child (nested) jobs based on parent job ID.
+     */
+
+    public String getByParentJobId() {
+        return this.byParentJobId;
+    }
+
+    /**
+     * <p>
+     * This is a filter to list child (nested) jobs based on parent job ID.
+     * </p>
+     * 
+     * @param byParentJobId
+     *        This is a filter to list child (nested) jobs based on parent job ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListCopyJobsRequest withByParentJobId(String byParentJobId) {
+        setByParentJobId(byParentJobId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1042,7 +1088,9 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getByCompleteBefore() != null)
             sb.append("ByCompleteBefore: ").append(getByCompleteBefore()).append(",");
         if (getByCompleteAfter() != null)
-            sb.append("ByCompleteAfter: ").append(getByCompleteAfter());
+            sb.append("ByCompleteAfter: ").append(getByCompleteAfter()).append(",");
+        if (getByParentJobId() != null)
+            sb.append("ByParentJobId: ").append(getByParentJobId());
         sb.append("}");
         return sb.toString();
     }
@@ -1101,6 +1149,10 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getByCompleteAfter() != null && other.getByCompleteAfter().equals(this.getByCompleteAfter()) == false)
             return false;
+        if (other.getByParentJobId() == null ^ this.getByParentJobId() == null)
+            return false;
+        if (other.getByParentJobId() != null && other.getByParentJobId().equals(this.getByParentJobId()) == false)
+            return false;
         return true;
     }
 
@@ -1120,6 +1172,7 @@ public class ListCopyJobsRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
         hashCode = prime * hashCode + ((getByCompleteBefore() == null) ? 0 : getByCompleteBefore().hashCode());
         hashCode = prime * hashCode + ((getByCompleteAfter() == null) ? 0 : getByCompleteAfter().hashCode());
+        hashCode = prime * hashCode + ((getByParentJobId() == null) ? 0 : getByParentJobId().hashCode());
         return hashCode;
     }
 

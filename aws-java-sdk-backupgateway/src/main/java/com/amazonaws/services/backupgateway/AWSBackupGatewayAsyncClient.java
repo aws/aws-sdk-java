@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -258,6 +258,40 @@ public class AWSBackupGatewayAsyncClient extends AWSBackupGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetBandwidthRateLimitScheduleResult> getBandwidthRateLimitScheduleAsync(GetBandwidthRateLimitScheduleRequest request) {
+
+        return getBandwidthRateLimitScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBandwidthRateLimitScheduleResult> getBandwidthRateLimitScheduleAsync(
+            final GetBandwidthRateLimitScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetBandwidthRateLimitScheduleRequest, GetBandwidthRateLimitScheduleResult> asyncHandler) {
+        final GetBandwidthRateLimitScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetBandwidthRateLimitScheduleResult>() {
+            @Override
+            public GetBandwidthRateLimitScheduleResult call() throws Exception {
+                GetBandwidthRateLimitScheduleResult result = null;
+
+                try {
+                    result = executeGetBandwidthRateLimitSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetGatewayResult> getGatewayAsync(GetGatewayRequest request) {
 
         return getGatewayAsync(request, null);
@@ -275,6 +309,73 @@ public class AWSBackupGatewayAsyncClient extends AWSBackupGatewayClient implemen
 
                 try {
                     result = executeGetGateway(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHypervisorResult> getHypervisorAsync(GetHypervisorRequest request) {
+
+        return getHypervisorAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHypervisorResult> getHypervisorAsync(final GetHypervisorRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetHypervisorRequest, GetHypervisorResult> asyncHandler) {
+        final GetHypervisorRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetHypervisorResult>() {
+            @Override
+            public GetHypervisorResult call() throws Exception {
+                GetHypervisorResult result = null;
+
+                try {
+                    result = executeGetHypervisor(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHypervisorPropertyMappingsResult> getHypervisorPropertyMappingsAsync(GetHypervisorPropertyMappingsRequest request) {
+
+        return getHypervisorPropertyMappingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHypervisorPropertyMappingsResult> getHypervisorPropertyMappingsAsync(
+            final GetHypervisorPropertyMappingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetHypervisorPropertyMappingsRequest, GetHypervisorPropertyMappingsResult> asyncHandler) {
+        final GetHypervisorPropertyMappingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetHypervisorPropertyMappingsResult>() {
+            @Override
+            public GetHypervisorPropertyMappingsResult call() throws Exception {
+                GetHypervisorPropertyMappingsResult result = null;
+
+                try {
+                    result = executeGetHypervisorPropertyMappings(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -490,6 +591,74 @@ public class AWSBackupGatewayAsyncClient extends AWSBackupGatewayClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<PutBandwidthRateLimitScheduleResult> putBandwidthRateLimitScheduleAsync(PutBandwidthRateLimitScheduleRequest request) {
+
+        return putBandwidthRateLimitScheduleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBandwidthRateLimitScheduleResult> putBandwidthRateLimitScheduleAsync(
+            final PutBandwidthRateLimitScheduleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutBandwidthRateLimitScheduleRequest, PutBandwidthRateLimitScheduleResult> asyncHandler) {
+        final PutBandwidthRateLimitScheduleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutBandwidthRateLimitScheduleResult>() {
+            @Override
+            public PutBandwidthRateLimitScheduleResult call() throws Exception {
+                PutBandwidthRateLimitScheduleResult result = null;
+
+                try {
+                    result = executePutBandwidthRateLimitSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutHypervisorPropertyMappingsResult> putHypervisorPropertyMappingsAsync(PutHypervisorPropertyMappingsRequest request) {
+
+        return putHypervisorPropertyMappingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutHypervisorPropertyMappingsResult> putHypervisorPropertyMappingsAsync(
+            final PutHypervisorPropertyMappingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutHypervisorPropertyMappingsRequest, PutHypervisorPropertyMappingsResult> asyncHandler) {
+        final PutHypervisorPropertyMappingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutHypervisorPropertyMappingsResult>() {
+            @Override
+            public PutHypervisorPropertyMappingsResult call() throws Exception {
+                PutHypervisorPropertyMappingsResult result = null;
+
+                try {
+                    result = executePutHypervisorPropertyMappings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutMaintenanceStartTimeResult> putMaintenanceStartTimeAsync(PutMaintenanceStartTimeRequest request) {
 
         return putMaintenanceStartTimeAsync(request, null);
@@ -507,6 +676,41 @@ public class AWSBackupGatewayAsyncClient extends AWSBackupGatewayClient implemen
 
                 try {
                     result = executePutMaintenanceStartTime(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartVirtualMachinesMetadataSyncResult> startVirtualMachinesMetadataSyncAsync(
+            StartVirtualMachinesMetadataSyncRequest request) {
+
+        return startVirtualMachinesMetadataSyncAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartVirtualMachinesMetadataSyncResult> startVirtualMachinesMetadataSyncAsync(
+            final StartVirtualMachinesMetadataSyncRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartVirtualMachinesMetadataSyncRequest, StartVirtualMachinesMetadataSyncResult> asyncHandler) {
+        final StartVirtualMachinesMetadataSyncRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartVirtualMachinesMetadataSyncResult>() {
+            @Override
+            public StartVirtualMachinesMetadataSyncResult call() throws Exception {
+                StartVirtualMachinesMetadataSyncResult result = null;
+
+                try {
+                    result = executeStartVirtualMachinesMetadataSync(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

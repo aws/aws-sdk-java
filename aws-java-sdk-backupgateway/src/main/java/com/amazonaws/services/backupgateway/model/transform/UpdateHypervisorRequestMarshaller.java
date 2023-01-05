@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class UpdateHypervisorRequestMarshaller {
             .marshallLocationName("Host").build();
     private static final MarshallingInfo<String> HYPERVISORARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HypervisorArn").build();
+    private static final MarshallingInfo<String> LOGGROUPARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogGroupArn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> PASSWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,6 +58,7 @@ public class UpdateHypervisorRequestMarshaller {
         try {
             protocolMarshaller.marshall(updateHypervisorRequest.getHost(), HOST_BINDING);
             protocolMarshaller.marshall(updateHypervisorRequest.getHypervisorArn(), HYPERVISORARN_BINDING);
+            protocolMarshaller.marshall(updateHypervisorRequest.getLogGroupArn(), LOGGROUPARN_BINDING);
             protocolMarshaller.marshall(updateHypervisorRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateHypervisorRequest.getPassword(), PASSWORD_BINDING);
             protocolMarshaller.marshall(updateHypervisorRequest.getUsername(), USERNAME_BINDING);

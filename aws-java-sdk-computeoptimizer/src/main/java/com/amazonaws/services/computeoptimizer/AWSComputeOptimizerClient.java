@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,14 +52,15 @@ import com.amazonaws.services.computeoptimizer.model.transform.*;
  * <p>
  * <p>
  * Compute Optimizer is a service that analyzes the configuration and utilization metrics of your Amazon Web Services
- * compute resources, such as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, and Amazon EBS
- * volumes. It reports whether your resources are optimal, and generates optimization recommendations to reduce the cost
- * and improve the performance of your workloads. Compute Optimizer also provides recent utilization metric data, in
- * addition to projected utilization metric data for the recommendations, which you can use to evaluate which
- * recommendation provides the best price-performance trade-off. The analysis of your usage patterns can help you decide
- * when to move or resize your running resources, and still meet your performance and capacity requirements. For more
- * information about Compute Optimizer, including the required permissions to use the service, see the <a
- * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute Optimizer User Guide</a>.
+ * compute resources, such as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, Amazon EBS
+ * volumes, and Amazon ECS services on Fargate. It reports whether your resources are optimal, and generates
+ * optimization recommendations to reduce the cost and improve the performance of your workloads. Compute Optimizer also
+ * provides recent utilization metric data, in addition to projected utilization metric data for the recommendations,
+ * which you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of
+ * your usage patterns can help you decide when to move or resize your running resources, and still meet your
+ * performance and capacity requirements. For more information about Compute Optimizer, including the required
+ * permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">Compute
+ * Optimizer User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -579,6 +580,91 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
 
     /**
      * <p>
+     * Exports optimization recommendations for Amazon ECS services on Fargate.
+     * </p>
+     * <p>
+     * Recommendations are exported in a CSV file, and its metadata in a JSON file, to an existing Amazon Simple Storage
+     * Service (Amazon S3) bucket that you specify. For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting
+     * Recommendations</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * <p>
+     * You can only have one Amazon ECS service export job in progress per Amazon Web Services Region.
+     * </p>
+     * 
+     * @param exportECSServiceRecommendationsRequest
+     * @return Result of the ExportECSServiceRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         The value supplied for the input parameter is out of range or not valid.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) Amazon Web Services access key ID or X.509
+     *         certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @throws LimitExceededException
+     *         The request exceeds a limit of the service.
+     * @sample AWSComputeOptimizer.ExportECSServiceRecommendations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/ExportECSServiceRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportECSServiceRecommendationsResult exportECSServiceRecommendations(ExportECSServiceRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportECSServiceRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final ExportECSServiceRecommendationsResult executeExportECSServiceRecommendations(
+            ExportECSServiceRecommendationsRequest exportECSServiceRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportECSServiceRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportECSServiceRecommendationsRequest> request = null;
+        Response<ExportECSServiceRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportECSServiceRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportECSServiceRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportECSServiceRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportECSServiceRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportECSServiceRecommendationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Exports optimization recommendations for Lambda functions.
      * </p>
      * <p>
@@ -980,6 +1066,163 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
             HttpResponseHandler<AmazonWebServiceResponse<GetEC2RecommendationProjectedMetricsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetEC2RecommendationProjectedMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the projected metrics of Amazon ECS service recommendations.
+     * </p>
+     * 
+     * @param getECSServiceRecommendationProjectedMetricsRequest
+     * @return Result of the GetECSServiceRecommendationProjectedMetrics operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         The value supplied for the input parameter is out of range or not valid.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) Amazon Web Services access key ID or X.509
+     *         certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSComputeOptimizer.GetECSServiceRecommendationProjectedMetrics
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetECSServiceRecommendationProjectedMetrics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetECSServiceRecommendationProjectedMetricsResult getECSServiceRecommendationProjectedMetrics(
+            GetECSServiceRecommendationProjectedMetricsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetECSServiceRecommendationProjectedMetrics(request);
+    }
+
+    @SdkInternalApi
+    final GetECSServiceRecommendationProjectedMetricsResult executeGetECSServiceRecommendationProjectedMetrics(
+            GetECSServiceRecommendationProjectedMetricsRequest getECSServiceRecommendationProjectedMetricsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getECSServiceRecommendationProjectedMetricsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetECSServiceRecommendationProjectedMetricsRequest> request = null;
+        Response<GetECSServiceRecommendationProjectedMetricsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetECSServiceRecommendationProjectedMetricsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getECSServiceRecommendationProjectedMetricsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetECSServiceRecommendationProjectedMetrics");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetECSServiceRecommendationProjectedMetricsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetECSServiceRecommendationProjectedMetricsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns Amazon ECS service recommendations.
+     * </p>
+     * <p>
+     * Compute Optimizer generates recommendations for Amazon ECS services on Fargate that meet a specific set of
+     * requirements. For more information, see the <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+     * requirements</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param getECSServiceRecommendationsRequest
+     * @return Result of the GetECSServiceRecommendations operation returned by the service.
+     * @throws OptInRequiredException
+     *         The account is not opted in to Compute Optimizer.
+     * @throws InternalServerException
+     *         An internal error has occurred. Try your call again.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the server.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws InvalidParameterValueException
+     *         The value supplied for the input parameter is out of range or not valid.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws MissingAuthenticationTokenException
+     *         The request must contain either a valid (registered) Amazon Web Services access key ID or X.509
+     *         certificate.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AWSComputeOptimizer.GetECSServiceRecommendations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/GetECSServiceRecommendations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetECSServiceRecommendationsResult getECSServiceRecommendations(GetECSServiceRecommendationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetECSServiceRecommendations(request);
+    }
+
+    @SdkInternalApi
+    final GetECSServiceRecommendationsResult executeGetECSServiceRecommendations(GetECSServiceRecommendationsRequest getECSServiceRecommendationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getECSServiceRecommendationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetECSServiceRecommendationsRequest> request = null;
+        Response<GetECSServiceRecommendationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetECSServiceRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getECSServiceRecommendationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Compute Optimizer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetECSServiceRecommendations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetECSServiceRecommendationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetECSServiceRecommendationsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1415,6 +1658,12 @@ public class AWSComputeOptimizerClient extends AmazonWebServiceClient implements
      * <li>
      * <p>
      * Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>, or
+     * <code>Optimized</code>.
      * </p>
      * </li>
      * </ul>

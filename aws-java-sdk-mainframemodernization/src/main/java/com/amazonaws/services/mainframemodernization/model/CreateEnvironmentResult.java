@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of this environment.
+     * The unique identifier of the runtime environment.
      * </p>
      */
     private String environmentId;
 
     /**
      * <p>
-     * The identifier of this environment.
+     * The unique identifier of the runtime environment.
      * </p>
      * 
      * @param environmentId
-     *        The identifier of this environment.
+     *        The unique identifier of the runtime environment.
      */
 
     public void setEnvironmentId(String environmentId) {
@@ -45,10 +45,10 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of this environment.
+     * The unique identifier of the runtime environment.
      * </p>
      * 
-     * @return The identifier of this environment.
+     * @return The unique identifier of the runtime environment.
      */
 
     public String getEnvironmentId() {
@@ -57,11 +57,11 @@ public class CreateEnvironmentResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The identifier of this environment.
+     * The unique identifier of the runtime environment.
      * </p>
      * 
      * @param environmentId
-     *        The identifier of this environment.
+     *        The unique identifier of the runtime environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

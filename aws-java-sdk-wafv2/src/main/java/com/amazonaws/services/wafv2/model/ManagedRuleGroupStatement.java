@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,10 +65,14 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     private String version;
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<ExcludedRule> excludedRules;
     /**
@@ -82,21 +86,26 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     private Statement scopeDownStatement;
     /**
      * <p>
-     * Additional information that's used by a managed rule group. Most managed rule groups don't require this.
+     * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
-     * Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     * provide information about the sign-in page of your application.
-     * </p>
-     * <p>
-     * You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration,
-     * for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends
-     * on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual
-     * configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.
+     * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
+     * you want the Bot Control rule group to use.
      * </p>
      */
     private java.util.List<ManagedRuleGroupConfig> managedRuleGroupConfigs;
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     */
+    private java.util.List<RuleActionOverride> ruleActionOverrides;
 
     /**
      * <p>
@@ -238,14 +247,20 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * 
-     * @return The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *         rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *         useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     * @return Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *         <p>
+     *         Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *         including <code>Count</code>.
+     *         </p>
      */
 
     public java.util.List<ExcludedRule> getExcludedRules() {
@@ -254,15 +269,21 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * 
      * @param excludedRules
-     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     *        Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *        <p>
+     *        Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *        including <code>Count</code>.
+     *        </p>
      */
 
     public void setExcludedRules(java.util.Collection<ExcludedRule> excludedRules) {
@@ -276,10 +297,14 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExcludedRules(java.util.Collection)} or {@link #withExcludedRules(java.util.Collection)} if you want
@@ -287,9 +312,11 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param excludedRules
-     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     *        Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *        <p>
+     *        Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *        including <code>Count</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,15 +332,21 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a rule, WAF
-     * evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for
-     * testing the rules in a rule group without modifying how they handle your web traffic.
+     * Rules in the referenced rule group whose actions are set to <code>Count</code>.
      * </p>
+     * <note>
+     * <p>
+     * Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting, including
+     * <code>Count</code>.
+     * </p>
+     * </note>
      * 
      * @param excludedRules
-     *        The rules in the referenced rule group whose actions are set to <code>Count</code>. When you exclude a
-     *        rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a
-     *        useful option for testing the rules in a rule group without modifying how they handle your web traffic.
+     *        Rules in the referenced rule group whose actions are set to <code>Count</code>. </p> <note>
+     *        <p>
+     *        Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid action setting,
+     *        including <code>Count</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -382,32 +415,18 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Additional information that's used by a managed rule group. Most managed rule groups don't require this.
+     * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
-     * Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     * provide information about the sign-in page of your application.
-     * </p>
-     * <p>
-     * You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration,
-     * for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends
-     * on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual
-     * configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.
+     * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
+     * you want the Bot Control rule group to use.
      * </p>
      * 
-     * @return Additional information that's used by a managed rule group. Most managed rule groups don't require
+     * @return Additional information that's used by a managed rule group. Many managed rule groups don't require
      *         this.</p>
      *         <p>
-     *         Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>,
-     *         to provide information about the sign-in page of your application.
-     *         </p>
-     *         <p>
-     *         You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group
-     *         configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration
-     *         that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you
-     *         provide the following individual configuration objects: <code>LoginPath</code>,
-     *         <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.
+     *         Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
+     *         level that you want the Bot Control rule group to use.
      */
 
     public java.util.List<ManagedRuleGroupConfig> getManagedRuleGroupConfigs() {
@@ -416,32 +435,19 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Additional information that's used by a managed rule group. Most managed rule groups don't require this.
+     * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
-     * Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     * provide information about the sign-in page of your application.
-     * </p>
-     * <p>
-     * You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration,
-     * for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends
-     * on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual
-     * configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.
+     * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
+     * you want the Bot Control rule group to use.
      * </p>
      * 
      * @param managedRuleGroupConfigs
-     *        Additional information that's used by a managed rule group. Most managed rule groups don't require
+     *        Additional information that's used by a managed rule group. Many managed rule groups don't require
      *        this.</p>
      *        <p>
-     *        Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     *        provide information about the sign-in page of your application.
-     *        </p>
-     *        <p>
-     *        You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group
-     *        configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration
-     *        that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you
-     *        provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.
+     *        Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
+     *        level that you want the Bot Control rule group to use.
      */
 
     public void setManagedRuleGroupConfigs(java.util.Collection<ManagedRuleGroupConfig> managedRuleGroupConfigs) {
@@ -455,18 +461,11 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Additional information that's used by a managed rule group. Most managed rule groups don't require this.
+     * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
-     * Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     * provide information about the sign-in page of your application.
-     * </p>
-     * <p>
-     * You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration,
-     * for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends
-     * on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual
-     * configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.
+     * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
+     * you want the Bot Control rule group to use.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -475,17 +474,11 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param managedRuleGroupConfigs
-     *        Additional information that's used by a managed rule group. Most managed rule groups don't require
+     *        Additional information that's used by a managed rule group. Many managed rule groups don't require
      *        this.</p>
      *        <p>
-     *        Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     *        provide information about the sign-in page of your application.
-     *        </p>
-     *        <p>
-     *        You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group
-     *        configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration
-     *        that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you
-     *        provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.
+     *        Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
+     *        level that you want the Bot Control rule group to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -501,37 +494,142 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Additional information that's used by a managed rule group. Most managed rule groups don't require this.
+     * Additional information that's used by a managed rule group. Many managed rule groups don't require this.
      * </p>
      * <p>
-     * Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     * provide information about the sign-in page of your application.
-     * </p>
-     * <p>
-     * You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group configuration,
-     * for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration that you provide depends
-     * on the needs of the managed rule group. For the ATP managed rule group, you provide the following individual
-     * configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and
-     * <code>UsernameField</code>.
+     * Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection level that
+     * you want the Bot Control rule group to use.
      * </p>
      * 
      * @param managedRuleGroupConfigs
-     *        Additional information that's used by a managed rule group. Most managed rule groups don't require
+     *        Additional information that's used by a managed rule group. Many managed rule groups don't require
      *        this.</p>
      *        <p>
-     *        Use this for the account takeover prevention managed rule group <code>AWSManagedRulesATPRuleSet</code>, to
-     *        provide information about the sign-in page of your application.
-     *        </p>
-     *        <p>
-     *        You can provide multiple individual <code>ManagedRuleGroupConfig</code> objects for any rule group
-     *        configuration, for example <code>UsernameField</code> and <code>PasswordField</code>. The configuration
-     *        that you provide depends on the needs of the managed rule group. For the ATP managed rule group, you
-     *        provide the following individual configuration objects: <code>LoginPath</code>, <code>PasswordField</code>, <code>PayloadType</code> and <code>UsernameField</code>.
+     *        Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure the protection
+     *        level that you want the Bot Control rule group to use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ManagedRuleGroupStatement withManagedRuleGroupConfigs(java.util.Collection<ManagedRuleGroupConfig> managedRuleGroupConfigs) {
         setManagedRuleGroupConfigs(managedRuleGroupConfigs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * 
+     * @return Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *         specify one override for each rule whose action you want to change. </p>
+     *         <p>
+     *         You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *         and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *         traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *         web traffic.
+     */
+
+    public java.util.List<RuleActionOverride> getRuleActionOverrides() {
+        return ruleActionOverrides;
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * 
+     * @param ruleActionOverrides
+     *        Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *        specify one override for each rule whose action you want to change. </p>
+     *        <p>
+     *        You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *        and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *        traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *        web traffic.
+     */
+
+    public void setRuleActionOverrides(java.util.Collection<RuleActionOverride> ruleActionOverrides) {
+        if (ruleActionOverrides == null) {
+            this.ruleActionOverrides = null;
+            return;
+        }
+
+        this.ruleActionOverrides = new java.util.ArrayList<RuleActionOverride>(ruleActionOverrides);
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRuleActionOverrides(java.util.Collection)} or {@link #withRuleActionOverrides(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param ruleActionOverrides
+     *        Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *        specify one override for each rule whose action you want to change. </p>
+     *        <p>
+     *        You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *        and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *        traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *        web traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedRuleGroupStatement withRuleActionOverrides(RuleActionOverride... ruleActionOverrides) {
+        if (this.ruleActionOverrides == null) {
+            setRuleActionOverrides(new java.util.ArrayList<RuleActionOverride>(ruleActionOverrides.length));
+        }
+        for (RuleActionOverride ele : ruleActionOverrides) {
+            this.ruleActionOverrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Action settings to use in the place of the rule actions that are configured inside the rule group. You specify
+     * one override for each rule whose action you want to change.
+     * </p>
+     * <p>
+     * You can use overrides for testing, for example you can override all of rule actions to <code>Count</code> and
+     * then monitor the resulting count metrics to understand how the rule group would handle your web traffic. You can
+     * also permanently override some or all actions, to modify how the rule group manages your web traffic.
+     * </p>
+     * 
+     * @param ruleActionOverrides
+     *        Action settings to use in the place of the rule actions that are configured inside the rule group. You
+     *        specify one override for each rule whose action you want to change. </p>
+     *        <p>
+     *        You can use overrides for testing, for example you can override all of rule actions to <code>Count</code>
+     *        and then monitor the resulting count metrics to understand how the rule group would handle your web
+     *        traffic. You can also permanently override some or all actions, to modify how the rule group manages your
+     *        web traffic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedRuleGroupStatement withRuleActionOverrides(java.util.Collection<RuleActionOverride> ruleActionOverrides) {
+        setRuleActionOverrides(ruleActionOverrides);
         return this;
     }
 
@@ -558,7 +656,9 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
         if (getScopeDownStatement() != null)
             sb.append("ScopeDownStatement: ").append(getScopeDownStatement()).append(",");
         if (getManagedRuleGroupConfigs() != null)
-            sb.append("ManagedRuleGroupConfigs: ").append(getManagedRuleGroupConfigs());
+            sb.append("ManagedRuleGroupConfigs: ").append(getManagedRuleGroupConfigs()).append(",");
+        if (getRuleActionOverrides() != null)
+            sb.append("RuleActionOverrides: ").append(getRuleActionOverrides());
         sb.append("}");
         return sb.toString();
     }
@@ -597,6 +697,10 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
             return false;
         if (other.getManagedRuleGroupConfigs() != null && other.getManagedRuleGroupConfigs().equals(this.getManagedRuleGroupConfigs()) == false)
             return false;
+        if (other.getRuleActionOverrides() == null ^ this.getRuleActionOverrides() == null)
+            return false;
+        if (other.getRuleActionOverrides() != null && other.getRuleActionOverrides().equals(this.getRuleActionOverrides()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +715,7 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getExcludedRules() == null) ? 0 : getExcludedRules().hashCode());
         hashCode = prime * hashCode + ((getScopeDownStatement() == null) ? 0 : getScopeDownStatement().hashCode());
         hashCode = prime * hashCode + ((getManagedRuleGroupConfigs() == null) ? 0 : getManagedRuleGroupConfigs().hashCode());
+        hashCode = prime * hashCode + ((getRuleActionOverrides() == null) ? 0 : getRuleActionOverrides().hashCode());
         return hashCode;
     }
 

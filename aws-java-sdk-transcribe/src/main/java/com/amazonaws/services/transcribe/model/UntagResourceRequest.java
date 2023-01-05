@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.
+     * For example, <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.
      * </p>
      * <p>
      * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
@@ -53,7 +53,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.
+     * For example, <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.
      * </p>
      * <p>
      * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
@@ -65,8 +65,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from. ARNs have
      *        the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      *        <p>
-     *        For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>
-     *        .
+     *        For example,
+     *        <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.
      *        </p>
      *        <p>
      *        Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
@@ -84,7 +84,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.
+     * For example, <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.
      * </p>
      * <p>
      * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
@@ -96,7 +96,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      *         <p>
      *         For example,
-     *         <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.
+     *         <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.
      *         </p>
      *         <p>
      *         Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
@@ -114,7 +114,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.
      * </p>
      * <p>
-     * For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>.
+     * For example, <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.
      * </p>
      * <p>
      * Valid values for <code>resource-type</code> are: <code>transcription-job</code>,
@@ -126,8 +126,8 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from. ARNs have
      *        the format <code>arn:partition:service:region:account-id:resource-type/resource-id</code>.</p>
      *        <p>
-     *        For example, <code>arn:aws:transcribe:us-west-2:account-id:transcription-job/transcription-job-name</code>
-     *        .
+     *        For example,
+     *        <code>arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name</code>.
      *        </p>
      *        <p>
      *        Valid values for <code>resource-type</code> are: <code>transcription-job</code>,

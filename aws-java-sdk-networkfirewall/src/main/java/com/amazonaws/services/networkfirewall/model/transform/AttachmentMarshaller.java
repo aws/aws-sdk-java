@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class AttachmentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusMessage").build();
 
     private static final AttachmentMarshaller instance = new AttachmentMarshaller();
 
@@ -53,6 +55,7 @@ public class AttachmentMarshaller {
             protocolMarshaller.marshall(attachment.getSubnetId(), SUBNETID_BINDING);
             protocolMarshaller.marshall(attachment.getEndpointId(), ENDPOINTID_BINDING);
             protocolMarshaller.marshall(attachment.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(attachment.getStatusMessage(), STATUSMESSAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

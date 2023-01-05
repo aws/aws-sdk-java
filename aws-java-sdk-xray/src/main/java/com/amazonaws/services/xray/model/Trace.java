@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,9 +42,10 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
     private Double duration;
     /**
      * <p>
-     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
-     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints
-     * and quotas</a>.
+     * LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more
+     * information about this limit and other X-Ray limits and quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     * quotas</a>.
      * </p>
      */
     private Boolean limitExceeded;
@@ -143,15 +144,17 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
-     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints
-     * and quotas</a>.
+     * LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more
+     * information about this limit and other X-Ray limits and quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     * quotas</a>.
      * </p>
      * 
      * @param limitExceeded
-     *        LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
-     *        about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services
-     *        X-Ray endpoints and quotas</a>.
+     *        LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For
+     *        more information about this limit and other X-Ray limits and quotas, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     *        quotas</a>.
      */
 
     public void setLimitExceeded(Boolean limitExceeded) {
@@ -160,14 +163,16 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
-     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints
-     * and quotas</a>.
+     * LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more
+     * information about this limit and other X-Ray limits and quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     * quotas</a>.
      * </p>
      * 
-     * @return LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
-     *         about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services
-     *         X-Ray endpoints and quotas</a>.
+     * @return LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For
+     *         more information about this limit and other X-Ray limits and quotas, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     *         quotas</a>.
      */
 
     public Boolean getLimitExceeded() {
@@ -176,15 +181,17 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
-     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints
-     * and quotas</a>.
+     * LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more
+     * information about this limit and other X-Ray limits and quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     * quotas</a>.
      * </p>
      * 
      * @param limitExceeded
-     *        LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
-     *        about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services
-     *        X-Ray endpoints and quotas</a>.
+     *        LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For
+     *        more information about this limit and other X-Ray limits and quotas, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     *        quotas</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,14 +202,16 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
-     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints
-     * and quotas</a>.
+     * LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For more
+     * information about this limit and other X-Ray limits and quotas, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     * quotas</a>.
      * </p>
      * 
-     * @return LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
-     *         about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services
-     *         X-Ray endpoints and quotas</a>.
+     * @return LimitExceeded is set to true when the trace has exceeded the <code>Trace document size</code> limit. For
+     *         more information about this limit and other X-Ray limits and quotas, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/xray.html">Amazon Web Services X-Ray endpoints and
+     *         quotas</a>.
      */
 
     public Boolean isLimitExceeded() {

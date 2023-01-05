@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,18 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     */
+    private String exploitAvailable;
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     */
+    private ExploitabilityDetails exploitabilityDetails;
     /**
      * <p>
      * The Amazon Resource Number (ARN) of the finding.
@@ -210,6 +222,105 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
     public Finding withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        If a finding discovered in your environment has an exploit available.
+     * @see ExploitAvailable
+     */
+
+    public void setExploitAvailable(String exploitAvailable) {
+        this.exploitAvailable = exploitAvailable;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @return If a finding discovered in your environment has an exploit available.
+     * @see ExploitAvailable
+     */
+
+    public String getExploitAvailable() {
+        return this.exploitAvailable;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        If a finding discovered in your environment has an exploit available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExploitAvailable
+     */
+
+    public Finding withExploitAvailable(String exploitAvailable) {
+        setExploitAvailable(exploitAvailable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If a finding discovered in your environment has an exploit available.
+     * </p>
+     * 
+     * @param exploitAvailable
+     *        If a finding discovered in your environment has an exploit available.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ExploitAvailable
+     */
+
+    public Finding withExploitAvailable(ExploitAvailable exploitAvailable) {
+        this.exploitAvailable = exploitAvailable.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     * 
+     * @param exploitabilityDetails
+     *        The details of an exploit available for a finding discovered in your environment.
+     */
+
+    public void setExploitabilityDetails(ExploitabilityDetails exploitabilityDetails) {
+        this.exploitabilityDetails = exploitabilityDetails;
+    }
+
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     * 
+     * @return The details of an exploit available for a finding discovered in your environment.
+     */
+
+    public ExploitabilityDetails getExploitabilityDetails() {
+        return this.exploitabilityDetails;
+    }
+
+    /**
+     * <p>
+     * The details of an exploit available for a finding discovered in your environment.
+     * </p>
+     * 
+     * @param exploitabilityDetails
+     *        The details of an exploit available for a finding discovered in your environment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Finding withExploitabilityDetails(ExploitabilityDetails exploitabilityDetails) {
+        setExploitabilityDetails(exploitabilityDetails);
         return this;
     }
 
@@ -951,6 +1062,10 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
             sb.append("AwsAccountId: ").append(getAwsAccountId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getExploitAvailable() != null)
+            sb.append("ExploitAvailable: ").append(getExploitAvailable()).append(",");
+        if (getExploitabilityDetails() != null)
+            sb.append("ExploitabilityDetails: ").append(getExploitabilityDetails()).append(",");
         if (getFindingArn() != null)
             sb.append("FindingArn: ").append(getFindingArn()).append(",");
         if (getFirstObservedAt() != null)
@@ -1002,6 +1117,14 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+            return false;
+        if (other.getExploitAvailable() == null ^ this.getExploitAvailable() == null)
+            return false;
+        if (other.getExploitAvailable() != null && other.getExploitAvailable().equals(this.getExploitAvailable()) == false)
+            return false;
+        if (other.getExploitabilityDetails() == null ^ this.getExploitabilityDetails() == null)
+            return false;
+        if (other.getExploitabilityDetails() != null && other.getExploitabilityDetails().equals(this.getExploitabilityDetails()) == false)
             return false;
         if (other.getFindingArn() == null ^ this.getFindingArn() == null)
             return false;
@@ -1073,6 +1196,8 @@ public class Finding implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAwsAccountId() == null) ? 0 : getAwsAccountId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getExploitAvailable() == null) ? 0 : getExploitAvailable().hashCode());
+        hashCode = prime * hashCode + ((getExploitabilityDetails() == null) ? 0 : getExploitabilityDetails().hashCode());
         hashCode = prime * hashCode + ((getFindingArn() == null) ? 0 : getFindingArn().hashCode());
         hashCode = prime * hashCode + ((getFirstObservedAt() == null) ? 0 : getFirstObservedAt().hashCode());
         hashCode = prime * hashCode + ((getFixAvailable() == null) ? 0 : getFixAvailable().hashCode());

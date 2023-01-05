@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
     private String domainName;
     /**
      * <p>
-     * The name of the domain.
+     * The name servers of the domain.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Nameserver> nameservers;
@@ -179,6 +179,12 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> statusList;
+    /**
+     * <p>
+     * A complex type that contains information about the DNSSEC configuration.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DnssecKey> dnssecKeys;
 
     /**
      * <p>
@@ -222,10 +228,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the domain.
+     * The name servers of the domain.
      * </p>
      * 
-     * @return The name of the domain.
+     * @return The name servers of the domain.
      */
 
     public java.util.List<Nameserver> getNameservers() {
@@ -237,11 +243,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the domain.
+     * The name servers of the domain.
      * </p>
      * 
      * @param nameservers
-     *        The name of the domain.
+     *        The name servers of the domain.
      */
 
     public void setNameservers(java.util.Collection<Nameserver> nameservers) {
@@ -255,7 +261,7 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the domain.
+     * The name servers of the domain.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -264,7 +270,7 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * 
      * @param nameservers
-     *        The name of the domain.
+     *        The name servers of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +286,11 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The name of the domain.
+     * The name servers of the domain.
      * </p>
      * 
      * @param nameservers
-     *        The name of the domain.
+     *        The name servers of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1340,6 +1346,79 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * A complex type that contains information about the DNSSEC configuration.
+     * </p>
+     * 
+     * @return A complex type that contains information about the DNSSEC configuration.
+     */
+
+    public java.util.List<DnssecKey> getDnssecKeys() {
+        if (dnssecKeys == null) {
+            dnssecKeys = new com.amazonaws.internal.SdkInternalList<DnssecKey>();
+        }
+        return dnssecKeys;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information about the DNSSEC configuration.
+     * </p>
+     * 
+     * @param dnssecKeys
+     *        A complex type that contains information about the DNSSEC configuration.
+     */
+
+    public void setDnssecKeys(java.util.Collection<DnssecKey> dnssecKeys) {
+        if (dnssecKeys == null) {
+            this.dnssecKeys = null;
+            return;
+        }
+
+        this.dnssecKeys = new com.amazonaws.internal.SdkInternalList<DnssecKey>(dnssecKeys);
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information about the DNSSEC configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDnssecKeys(java.util.Collection)} or {@link #withDnssecKeys(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dnssecKeys
+     *        A complex type that contains information about the DNSSEC configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDomainDetailResult withDnssecKeys(DnssecKey... dnssecKeys) {
+        if (this.dnssecKeys == null) {
+            setDnssecKeys(new com.amazonaws.internal.SdkInternalList<DnssecKey>(dnssecKeys.length));
+        }
+        for (DnssecKey ele : dnssecKeys) {
+            this.dnssecKeys.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A complex type that contains information about the DNSSEC configuration.
+     * </p>
+     * 
+     * @param dnssecKeys
+     *        A complex type that contains information about the DNSSEC configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDomainDetailResult withDnssecKeys(java.util.Collection<DnssecKey> dnssecKeys) {
+        setDnssecKeys(dnssecKeys);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1392,7 +1471,9 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
         if (getDnsSec() != null)
             sb.append("DnsSec: ").append(getDnsSec()).append(",");
         if (getStatusList() != null)
-            sb.append("StatusList: ").append(getStatusList());
+            sb.append("StatusList: ").append(getStatusList()).append(",");
+        if (getDnssecKeys() != null)
+            sb.append("DnssecKeys: ").append(getDnssecKeys());
         sb.append("}");
         return sb.toString();
     }
@@ -1491,6 +1572,10 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getStatusList() != null && other.getStatusList().equals(this.getStatusList()) == false)
             return false;
+        if (other.getDnssecKeys() == null ^ this.getDnssecKeys() == null)
+            return false;
+        if (other.getDnssecKeys() != null && other.getDnssecKeys().equals(this.getDnssecKeys()) == false)
+            return false;
         return true;
     }
 
@@ -1520,6 +1605,7 @@ public class GetDomainDetailResult extends com.amazonaws.AmazonWebServiceResult<
         hashCode = prime * hashCode + ((getReseller() == null) ? 0 : getReseller().hashCode());
         hashCode = prime * hashCode + ((getDnsSec() == null) ? 0 : getDnsSec().hashCode());
         hashCode = prime * hashCode + ((getStatusList() == null) ? 0 : getStatusList().hashCode());
+        hashCode = prime * hashCode + ((getDnssecKeys() == null) ? 0 : getDnssecKeys().hashCode());
         return hashCode;
     }
 

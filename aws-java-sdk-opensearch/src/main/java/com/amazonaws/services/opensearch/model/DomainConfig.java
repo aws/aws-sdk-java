@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration of a domain.
+ * Container for the configuration of an OpenSearch Service domain.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,111 +27,104 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or
-     * Elasticsearch domain.
+     * The OpenSearch or Elasticsearch version that the domain is running.
      * </p>
      */
     private VersionStatus engineVersion;
     /**
      * <p>
-     * The <code>ClusterConfig</code> for the domain.
+     * Container for the cluster configuration of a the domain.
      * </p>
      */
     private ClusterConfigStatus clusterConfig;
     /**
      * <p>
-     * The <code>EBSOptions</code> for the domain.
+     * Container for EBS options configured for an OpenSearch Service domain.
      * </p>
      */
     private EBSOptionsStatus eBSOptions;
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Specifies the access policies for the domain.
      * </p>
      */
     private AccessPoliciesStatus accessPolicies;
     /**
      * <p>
-     * The <code>SnapshotOptions</code> for the domain.
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      */
     private SnapshotOptionsStatus snapshotOptions;
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The current VPC options for the domain and the status of any updates to their configuration.
      * </p>
      */
     private VPCDerivedInfoStatus vPCOptions;
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Container for Amazon Cognito options for the domain.
      * </p>
      */
     private CognitoOptionsStatus cognitoOptions;
     /**
      * <p>
-     * The <code>EncryptionAtRestOptions</code> for the domain.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      */
     private EncryptionAtRestOptionsStatus encryptionAtRestOptions;
     /**
      * <p>
-     * The <code>NodeToNodeEncryptionOptions</code> for the domain.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      */
     private NodeToNodeEncryptionOptionsStatus nodeToNodeEncryptionOptions;
     /**
      * <p>
-     * The <code>AdvancedOptions</code> for the domain. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced options</a>.
      * </p>
      */
     private AdvancedOptionsStatus advancedOptions;
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Key-value pairs to configure slow log publishing.
      * </p>
      */
     private LogPublishingOptionsStatus logPublishingOptions;
     /**
      * <p>
-     * The <code>DomainEndpointOptions</code> for the domain.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      */
     private DomainEndpointOptionsStatus domainEndpointOptions;
     /**
      * <p>
-     * Specifies <code>AdvancedSecurityOptions</code> for the domain.
+     * Container for fine-grained access control settings for the domain.
      * </p>
      */
     private AdvancedSecurityOptionsStatus advancedSecurityOptions;
     /**
      * <p>
-     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * Container for Auto-Tune settings for the domain.
      * </p>
      */
     private AutoTuneOptionsStatus autoTuneOptions;
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Container for information about the progress of an existing configuration change.
      * </p>
      */
     private ChangeProgressDetails changeProgressDetails;
 
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or
-     * Elasticsearch domain.
+     * The OpenSearch or Elasticsearch version that the domain is running.
      * </p>
      * 
      * @param engineVersion
-     *        String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or
-     *        Elasticsearch domain.
+     *        The OpenSearch or Elasticsearch version that the domain is running.
      */
 
     public void setEngineVersion(VersionStatus engineVersion) {
@@ -140,12 +133,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or
-     * Elasticsearch domain.
+     * The OpenSearch or Elasticsearch version that the domain is running.
      * </p>
      * 
-     * @return String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or
-     *         Elasticsearch domain.
+     * @return The OpenSearch or Elasticsearch version that the domain is running.
      */
 
     public VersionStatus getEngineVersion() {
@@ -154,13 +145,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or
-     * Elasticsearch domain.
+     * The OpenSearch or Elasticsearch version that the domain is running.
      * </p>
      * 
      * @param engineVersion
-     *        String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch or
-     *        Elasticsearch domain.
+     *        The OpenSearch or Elasticsearch version that the domain is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,11 +160,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>ClusterConfig</code> for the domain.
+     * Container for the cluster configuration of a the domain.
      * </p>
      * 
      * @param clusterConfig
-     *        The <code>ClusterConfig</code> for the domain.
+     *        Container for the cluster configuration of a the domain.
      */
 
     public void setClusterConfig(ClusterConfigStatus clusterConfig) {
@@ -184,10 +173,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>ClusterConfig</code> for the domain.
+     * Container for the cluster configuration of a the domain.
      * </p>
      * 
-     * @return The <code>ClusterConfig</code> for the domain.
+     * @return Container for the cluster configuration of a the domain.
      */
 
     public ClusterConfigStatus getClusterConfig() {
@@ -196,11 +185,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>ClusterConfig</code> for the domain.
+     * Container for the cluster configuration of a the domain.
      * </p>
      * 
      * @param clusterConfig
-     *        The <code>ClusterConfig</code> for the domain.
+     *        Container for the cluster configuration of a the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -211,11 +200,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EBSOptions</code> for the domain.
+     * Container for EBS options configured for an OpenSearch Service domain.
      * </p>
      * 
      * @param eBSOptions
-     *        The <code>EBSOptions</code> for the domain.
+     *        Container for EBS options configured for an OpenSearch Service domain.
      */
 
     public void setEBSOptions(EBSOptionsStatus eBSOptions) {
@@ -224,10 +213,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EBSOptions</code> for the domain.
+     * Container for EBS options configured for an OpenSearch Service domain.
      * </p>
      * 
-     * @return The <code>EBSOptions</code> for the domain.
+     * @return Container for EBS options configured for an OpenSearch Service domain.
      */
 
     public EBSOptionsStatus getEBSOptions() {
@@ -236,11 +225,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EBSOptions</code> for the domain.
+     * Container for EBS options configured for an OpenSearch Service domain.
      * </p>
      * 
      * @param eBSOptions
-     *        The <code>EBSOptions</code> for the domain.
+     *        Container for EBS options configured for an OpenSearch Service domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,11 +240,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Specifies the access policies for the domain.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Specifies the access policies for the domain.
      */
 
     public void setAccessPolicies(AccessPoliciesStatus accessPolicies) {
@@ -264,10 +253,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Specifies the access policies for the domain.
      * </p>
      * 
-     * @return IAM access policy as a JSON-formatted string.
+     * @return Specifies the access policies for the domain.
      */
 
     public AccessPoliciesStatus getAccessPolicies() {
@@ -276,11 +265,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IAM access policy as a JSON-formatted string.
+     * Specifies the access policies for the domain.
      * </p>
      * 
      * @param accessPolicies
-     *        IAM access policy as a JSON-formatted string.
+     *        Specifies the access policies for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -291,11 +280,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>SnapshotOptions</code> for the domain.
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
      * @param snapshotOptions
-     *        The <code>SnapshotOptions</code> for the domain.
+     *        DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      */
 
     public void setSnapshotOptions(SnapshotOptionsStatus snapshotOptions) {
@@ -304,10 +293,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>SnapshotOptions</code> for the domain.
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
-     * @return The <code>SnapshotOptions</code> for the domain.
+     * @return DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      */
 
     public SnapshotOptionsStatus getSnapshotOptions() {
@@ -316,11 +305,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>SnapshotOptions</code> for the domain.
+     * DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * </p>
      * 
      * @param snapshotOptions
-     *        The <code>SnapshotOptions</code> for the domain.
+     *        DEPRECATED. Container for parameters required to configure automated snapshots of domain indexes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,15 +320,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The current VPC options for the domain and the status of any updates to their configuration.
      * </p>
      * 
      * @param vPCOptions
-     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-     *        Launching your Amazon OpenSearch Service domains using a VPC</a>.
+     *        The current VPC options for the domain and the status of any updates to their configuration.
      */
 
     public void setVPCOptions(VPCDerivedInfoStatus vPCOptions) {
@@ -348,14 +333,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The current VPC options for the domain and the status of any updates to their configuration.
      * </p>
      * 
-     * @return The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-     *         Launching your Amazon OpenSearch Service domains using a VPC</a>.
+     * @return The current VPC options for the domain and the status of any updates to their configuration.
      */
 
     public VPCDerivedInfoStatus getVPCOptions() {
@@ -364,15 +345,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank"> Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.
+     * The current VPC options for the domain and the status of any updates to their configuration.
      * </p>
      * 
      * @param vPCOptions
-     *        The <code>VPCOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html" target="_blank">
-     *        Launching your Amazon OpenSearch Service domains using a VPC</a>.
+     *        The current VPC options for the domain and the status of any updates to their configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -383,15 +360,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Container for Amazon Cognito options for the domain.
      * </p>
      * 
      * @param cognitoOptions
-     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Container for Amazon Cognito options for the domain.
      */
 
     public void setCognitoOptions(CognitoOptionsStatus cognitoOptions) {
@@ -400,14 +373,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Container for Amazon Cognito options for the domain.
      * </p>
      * 
-     * @return The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     *         href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *         target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * @return Container for Amazon Cognito options for the domain.
      */
 
     public CognitoOptionsStatus getCognitoOptions() {
@@ -416,15 +385,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     * href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     * target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     * Container for Amazon Cognito options for the domain.
      * </p>
      * 
      * @param cognitoOptions
-     *        The <code>CognitoOptions</code> for the specified domain. For more information, see <a
-     *        href="http://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-     *        target="_blank">Configuring Amazon Cognito authentication for OpenSearch Dashboards</a>.
+     *        Container for Amazon Cognito options for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -435,11 +400,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EncryptionAtRestOptions</code> for the domain.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        The <code>EncryptionAtRestOptions</code> for the domain.
+     *        Key-value pairs to enable encryption at rest.
      */
 
     public void setEncryptionAtRestOptions(EncryptionAtRestOptionsStatus encryptionAtRestOptions) {
@@ -448,10 +413,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EncryptionAtRestOptions</code> for the domain.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      * 
-     * @return The <code>EncryptionAtRestOptions</code> for the domain.
+     * @return Key-value pairs to enable encryption at rest.
      */
 
     public EncryptionAtRestOptionsStatus getEncryptionAtRestOptions() {
@@ -460,11 +425,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>EncryptionAtRestOptions</code> for the domain.
+     * Key-value pairs to enable encryption at rest.
      * </p>
      * 
      * @param encryptionAtRestOptions
-     *        The <code>EncryptionAtRestOptions</code> for the domain.
+     *        Key-value pairs to enable encryption at rest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -475,11 +440,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>NodeToNodeEncryptionOptions</code> for the domain.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        The <code>NodeToNodeEncryptionOptions</code> for the domain.
+     *        Whether node-to-node encryption is enabled or disabled.
      */
 
     public void setNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsStatus nodeToNodeEncryptionOptions) {
@@ -488,10 +453,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>NodeToNodeEncryptionOptions</code> for the domain.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      * 
-     * @return The <code>NodeToNodeEncryptionOptions</code> for the domain.
+     * @return Whether node-to-node encryption is enabled or disabled.
      */
 
     public NodeToNodeEncryptionOptionsStatus getNodeToNodeEncryptionOptions() {
@@ -500,11 +465,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>NodeToNodeEncryptionOptions</code> for the domain.
+     * Whether node-to-node encryption is enabled or disabled.
      * </p>
      * 
      * @param nodeToNodeEncryptionOptions
-     *        The <code>NodeToNodeEncryptionOptions</code> for the domain.
+     *        Whether node-to-node encryption is enabled or disabled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,15 +480,15 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>AdvancedOptions</code> for the domain. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced options</a>.
      * </p>
      * 
      * @param advancedOptions
-     *        The <code>AdvancedOptions</code> for the domain. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *        target="_blank">Advanced options </a> for more information.
+     *        Key-value pairs to specify advanced configuration options. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *        >Advanced options</a>.
      */
 
     public void setAdvancedOptions(AdvancedOptionsStatus advancedOptions) {
@@ -532,14 +497,14 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>AdvancedOptions</code> for the domain. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced options</a>.
      * </p>
      * 
-     * @return The <code>AdvancedOptions</code> for the domain. See <a href=
-     *         "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *         target="_blank">Advanced options </a> for more information.
+     * @return Key-value pairs to specify advanced configuration options. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *         >Advanced options</a>.
      */
 
     public AdvancedOptionsStatus getAdvancedOptions() {
@@ -548,15 +513,15 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>AdvancedOptions</code> for the domain. See <a href=
-     * "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     * target="_blank">Advanced options </a> for more information.
+     * Key-value pairs to specify advanced configuration options. For more information, see <a href=
+     * "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     * >Advanced options</a>.
      * </p>
      * 
      * @param advancedOptions
-     *        The <code>AdvancedOptions</code> for the domain. See <a href=
-     *        "http://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
-     *        target="_blank">Advanced options </a> for more information.
+     *        Key-value pairs to specify advanced configuration options. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options"
+     *        >Advanced options</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -567,11 +532,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Key-value pairs to configure slow log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Log publishing options for the given domain.
+     *        Key-value pairs to configure slow log publishing.
      */
 
     public void setLogPublishingOptions(LogPublishingOptionsStatus logPublishingOptions) {
@@ -580,10 +545,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Key-value pairs to configure slow log publishing.
      * </p>
      * 
-     * @return Log publishing options for the given domain.
+     * @return Key-value pairs to configure slow log publishing.
      */
 
     public LogPublishingOptionsStatus getLogPublishingOptions() {
@@ -592,11 +557,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Log publishing options for the given domain.
+     * Key-value pairs to configure slow log publishing.
      * </p>
      * 
      * @param logPublishingOptions
-     *        Log publishing options for the given domain.
+     *        Key-value pairs to configure slow log publishing.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -607,11 +572,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>DomainEndpointOptions</code> for the domain.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        The <code>DomainEndpointOptions</code> for the domain.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public void setDomainEndpointOptions(DomainEndpointOptionsStatus domainEndpointOptions) {
@@ -620,10 +585,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>DomainEndpointOptions</code> for the domain.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
-     * @return The <code>DomainEndpointOptions</code> for the domain.
+     * @return Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      */
 
     public DomainEndpointOptionsStatus getDomainEndpointOptions() {
@@ -632,11 +597,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>DomainEndpointOptions</code> for the domain.
+     * Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * </p>
      * 
      * @param domainEndpointOptions
-     *        The <code>DomainEndpointOptions</code> for the domain.
+     *        Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -647,11 +612,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies <code>AdvancedSecurityOptions</code> for the domain.
+     * Container for fine-grained access control settings for the domain.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        Specifies <code>AdvancedSecurityOptions</code> for the domain.
+     *        Container for fine-grained access control settings for the domain.
      */
 
     public void setAdvancedSecurityOptions(AdvancedSecurityOptionsStatus advancedSecurityOptions) {
@@ -660,10 +625,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies <code>AdvancedSecurityOptions</code> for the domain.
+     * Container for fine-grained access control settings for the domain.
      * </p>
      * 
-     * @return Specifies <code>AdvancedSecurityOptions</code> for the domain.
+     * @return Container for fine-grained access control settings for the domain.
      */
 
     public AdvancedSecurityOptionsStatus getAdvancedSecurityOptions() {
@@ -672,11 +637,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies <code>AdvancedSecurityOptions</code> for the domain.
+     * Container for fine-grained access control settings for the domain.
      * </p>
      * 
      * @param advancedSecurityOptions
-     *        Specifies <code>AdvancedSecurityOptions</code> for the domain.
+     *        Container for fine-grained access control settings for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -687,11 +652,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * Container for Auto-Tune settings for the domain.
      * </p>
      * 
      * @param autoTuneOptions
-     *        Specifies <code>AutoTuneOptions</code> for the domain.
+     *        Container for Auto-Tune settings for the domain.
      */
 
     public void setAutoTuneOptions(AutoTuneOptionsStatus autoTuneOptions) {
@@ -700,10 +665,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * Container for Auto-Tune settings for the domain.
      * </p>
      * 
-     * @return Specifies <code>AutoTuneOptions</code> for the domain.
+     * @return Container for Auto-Tune settings for the domain.
      */
 
     public AutoTuneOptionsStatus getAutoTuneOptions() {
@@ -712,11 +677,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies <code>AutoTuneOptions</code> for the domain.
+     * Container for Auto-Tune settings for the domain.
      * </p>
      * 
      * @param autoTuneOptions
-     *        Specifies <code>AutoTuneOptions</code> for the domain.
+     *        Container for Auto-Tune settings for the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -727,11 +692,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Container for information about the progress of an existing configuration change.
      * </p>
      * 
      * @param changeProgressDetails
-     *        Specifies change details of the domain configuration change.
+     *        Container for information about the progress of an existing configuration change.
      */
 
     public void setChangeProgressDetails(ChangeProgressDetails changeProgressDetails) {
@@ -740,10 +705,10 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Container for information about the progress of an existing configuration change.
      * </p>
      * 
-     * @return Specifies change details of the domain configuration change.
+     * @return Container for information about the progress of an existing configuration change.
      */
 
     public ChangeProgressDetails getChangeProgressDetails() {
@@ -752,11 +717,11 @@ public class DomainConfig implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies change details of the domain configuration change.
+     * Container for information about the progress of an existing configuration change.
      * </p>
      * 
      * @param changeProgressDetails
-     *        Specifies change details of the domain configuration change.
+     *        Container for information about the progress of an existing configuration change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

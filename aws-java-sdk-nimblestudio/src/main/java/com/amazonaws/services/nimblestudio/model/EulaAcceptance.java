@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class EulaAcceptance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the EULA was accepted.
+     * The ISO timestamp in seconds for when the EULA was accepted.
      * </p>
      */
     private java.util.Date acceptedAt;
@@ -61,11 +61,11 @@ public class EulaAcceptance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the EULA was accepted.
+     * The ISO timestamp in seconds for when the EULA was accepted.
      * </p>
      * 
      * @param acceptedAt
-     *        The Unix epoch timestamp in seconds for when the EULA was accepted.
+     *        The ISO timestamp in seconds for when the EULA was accepted.
      */
 
     public void setAcceptedAt(java.util.Date acceptedAt) {
@@ -74,10 +74,10 @@ public class EulaAcceptance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the EULA was accepted.
+     * The ISO timestamp in seconds for when the EULA was accepted.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the EULA was accepted.
+     * @return The ISO timestamp in seconds for when the EULA was accepted.
      */
 
     public java.util.Date getAcceptedAt() {
@@ -86,11 +86,11 @@ public class EulaAcceptance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the EULA was accepted.
+     * The ISO timestamp in seconds for when the EULA was accepted.
      * </p>
      * 
      * @param acceptedAt
-     *        The Unix epoch timestamp in seconds for when the EULA was accepted.
+     *        The ISO timestamp in seconds for when the EULA was accepted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

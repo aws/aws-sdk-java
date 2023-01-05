@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -287,6 +287,18 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
 
         if (restoreDBInstanceFromS3Request.getNetworkType() != null) {
             request.addParameter("NetworkType", StringUtils.fromString(restoreDBInstanceFromS3Request.getNetworkType()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getStorageThroughput() != null) {
+            request.addParameter("StorageThroughput", StringUtils.fromInteger(restoreDBInstanceFromS3Request.getStorageThroughput()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getManageMasterUserPassword() != null) {
+            request.addParameter("ManageMasterUserPassword", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getManageMasterUserPassword()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getMasterUserSecretKmsKeyId() != null) {
+            request.addParameter("MasterUserSecretKmsKeyId", StringUtils.fromString(restoreDBInstanceFromS3Request.getMasterUserSecretKmsKeyId()));
         }
 
         return request;

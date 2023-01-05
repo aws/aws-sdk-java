@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1055,6 +1055,31 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Describes the updates of a directory for a particular update type.
+     * </p>
+     * 
+     * @param describeUpdateDirectoryRequest
+     * @return Result of the DescribeUpdateDirectory operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @sample AWSDirectoryService.DescribeUpdateDirectory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeUpdateDirectory" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeUpdateDirectoryResult describeUpdateDirectory(DescribeUpdateDirectoryRequest describeUpdateDirectoryRequest);
+
+    /**
+     * <p>
      * Disables alternative client authentication methods for the specified directory.
      * </p>
      * 
@@ -1774,6 +1799,38 @@ public interface AWSDirectoryService {
      *      API Documentation</a>
      */
     UpdateConditionalForwarderResult updateConditionalForwarder(UpdateConditionalForwarderRequest updateConditionalForwarderRequest);
+
+    /**
+     * <p>
+     * Updates the directory for a particular update type.
+     * </p>
+     * 
+     * @param updateDirectorySetupRequest
+     * @return Result of the UpdateDirectorySetup operation returned by the service.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws DirectoryInDesiredStateException
+     *         The directory is already updated to desired update type settings.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws SnapshotLimitExceededException
+     *         The maximum number of manual snapshots for the directory has been reached. You can use the
+     *         <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a directory.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in Directory Service.
+     * @sample AWSDirectoryService.UpdateDirectorySetup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/UpdateDirectorySetup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateDirectorySetupResult updateDirectorySetup(UpdateDirectorySetupRequest updateDirectorySetupRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class AggregationResponseMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("findingTypeAggregation").build();
     private static final MarshallingInfo<StructuredPojo> IMAGELAYERAGGREGATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageLayerAggregation").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDAFUNCTIONAGGREGATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionAggregation").build();
+    private static final MarshallingInfo<StructuredPojo> LAMBDALAYERAGGREGATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaLayerAggregation").build();
     private static final MarshallingInfo<StructuredPojo> PACKAGEAGGREGATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("packageAggregation").build();
     private static final MarshallingInfo<StructuredPojo> REPOSITORYAGGREGATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -68,6 +72,8 @@ public class AggregationResponseMarshaller {
             protocolMarshaller.marshall(aggregationResponse.getEc2InstanceAggregation(), EC2INSTANCEAGGREGATION_BINDING);
             protocolMarshaller.marshall(aggregationResponse.getFindingTypeAggregation(), FINDINGTYPEAGGREGATION_BINDING);
             protocolMarshaller.marshall(aggregationResponse.getImageLayerAggregation(), IMAGELAYERAGGREGATION_BINDING);
+            protocolMarshaller.marshall(aggregationResponse.getLambdaFunctionAggregation(), LAMBDAFUNCTIONAGGREGATION_BINDING);
+            protocolMarshaller.marshall(aggregationResponse.getLambdaLayerAggregation(), LAMBDALAYERAGGREGATION_BINDING);
             protocolMarshaller.marshall(aggregationResponse.getPackageAggregation(), PACKAGEAGGREGATION_BINDING);
             protocolMarshaller.marshall(aggregationResponse.getRepositoryAggregation(), REPOSITORYAGGREGATION_BINDING);
             protocolMarshaller.marshall(aggregationResponse.getTitleAggregation(), TITLEAGGREGATION_BINDING);

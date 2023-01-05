@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribeFunctionRequest extends com.amazonaws.AmazonWebServiceReque
     private String name;
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      */
     private String stage;
@@ -80,11 +80,11 @@ public class DescribeFunctionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
      * @param stage
-     *        The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     *        The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @see FunctionStage
      */
 
@@ -94,10 +94,10 @@ public class DescribeFunctionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
-     * @return The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * @return The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @see FunctionStage
      */
 
@@ -107,11 +107,11 @@ public class DescribeFunctionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
      * @param stage
-     *        The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     *        The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionStage
      */
@@ -123,11 +123,11 @@ public class DescribeFunctionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     * The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * </p>
      * 
      * @param stage
-     *        The function’s stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+     *        The function's stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FunctionStage
      */

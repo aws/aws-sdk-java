@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
     private String failureReason;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      */
     private String imageArn;
@@ -77,6 +77,101 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private Integer version;
+    /**
+     * <p>
+     * The stability of the image version specified by the maintainer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STABLE</code>: The image version is stable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be
+     * archived are automatically archived after three months.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no
+     * longer actively supported.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String vendorGuidance;
+    /**
+     * <p>
+     * Indicates SageMaker job type compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String jobType;
+    /**
+     * <p>
+     * The machine learning framework vended in the image version.
+     * </p>
+     */
+    private String mLFramework;
+    /**
+     * <p>
+     * The supported programming language and its version.
+     * </p>
+     */
+    private String programmingLang;
+    /**
+     * <p>
+     * Indicates CPU or GPU compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CPU</code>: The image version is compatible with CPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU</code>: The image version is compatible with GPU.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String processor;
+    /**
+     * <p>
+     * Indicates Horovod compatibility.
+     * </p>
+     */
+    private Boolean horovod;
+    /**
+     * <p>
+     * The maintainer description of the image version.
+     * </p>
+     */
+    private String releaseNotes;
 
     /**
      * <p>
@@ -240,11 +335,11 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      * 
      * @param imageArn
-     *        The Amazon Resource Name (ARN) of the image the version is based on.
+     *        The ARN of the image the version is based on.
      */
 
     public void setImageArn(String imageArn) {
@@ -253,10 +348,10 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the image the version is based on.
+     * @return The ARN of the image the version is based on.
      */
 
     public String getImageArn() {
@@ -265,11 +360,11 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the image the version is based on.
+     * The ARN of the image the version is based on.
      * </p>
      * 
      * @param imageArn
-     *        The Amazon Resource Name (ARN) of the image the version is based on.
+     *        The ARN of the image the version is based on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -458,6 +553,767 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The stability of the image version specified by the maintainer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STABLE</code>: The image version is stable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be
+     * archived are automatically archived after three months.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no
+     * longer actively supported.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The stability of the image version specified by the maintainer.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STABLE</code>: The image version is stable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set
+     *        to be archived are automatically archived after three months.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are
+     *        no longer actively supported.
+     *        </p>
+     *        </li>
+     * @see VendorGuidance
+     */
+
+    public void setVendorGuidance(String vendorGuidance) {
+        this.vendorGuidance = vendorGuidance;
+    }
+
+    /**
+     * <p>
+     * The stability of the image version specified by the maintainer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STABLE</code>: The image version is stable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be
+     * archived are automatically archived after three months.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no
+     * longer actively supported.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The stability of the image version specified by the maintainer.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>STABLE</code>: The image version is stable.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set
+     *         to be archived are automatically archived after three months.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are
+     *         no longer actively supported.
+     *         </p>
+     *         </li>
+     * @see VendorGuidance
+     */
+
+    public String getVendorGuidance() {
+        return this.vendorGuidance;
+    }
+
+    /**
+     * <p>
+     * The stability of the image version specified by the maintainer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STABLE</code>: The image version is stable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be
+     * archived are automatically archived after three months.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no
+     * longer actively supported.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The stability of the image version specified by the maintainer.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STABLE</code>: The image version is stable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set
+     *        to be archived are automatically archived after three months.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are
+     *        no longer actively supported.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VendorGuidance
+     */
+
+    public DescribeImageVersionResult withVendorGuidance(String vendorGuidance) {
+        setVendorGuidance(vendorGuidance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The stability of the image version specified by the maintainer.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>STABLE</code>: The image version is stable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set to be
+     * archived are automatically archived after three months.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are no
+     * longer actively supported.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param vendorGuidance
+     *        The stability of the image version specified by the maintainer.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>NOT_PROVIDED</code>: The maintainers did not provide a status for image version stability.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>STABLE</code>: The image version is stable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TO_BE_ARCHIVED</code>: The image version is set to be archived. Custom image versions that are set
+     *        to be archived are automatically archived after three months.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ARCHIVED</code>: The image version is archived. Archived image versions are not searchable and are
+     *        no longer actively supported.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see VendorGuidance
+     */
+
+    public DescribeImageVersionResult withVendorGuidance(VendorGuidance vendorGuidance) {
+        this.vendorGuidance = vendorGuidance.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates SageMaker job type compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param jobType
+     *        Indicates SageMaker job type compatibility.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     *        </p>
+     *        </li>
+     * @see JobType
+     */
+
+    public void setJobType(String jobType) {
+        this.jobType = jobType;
+    }
+
+    /**
+     * <p>
+     * Indicates SageMaker job type compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates SageMaker job type compatibility.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     *         </p>
+     *         </li>
+     * @see JobType
+     */
+
+    public String getJobType() {
+        return this.jobType;
+    }
+
+    /**
+     * <p>
+     * Indicates SageMaker job type compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param jobType
+     *        Indicates SageMaker job type compatibility.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public DescribeImageVersionResult withJobType(String jobType) {
+        setJobType(jobType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates SageMaker job type compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param jobType
+     *        Indicates SageMaker job type compatibility.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TRAINING</code>: The image version is compatible with SageMaker training jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INFERENCE</code>: The image version is compatible with SageMaker inference jobs.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NOTEBOOK_KERNEL</code>: The image version is compatible with SageMaker notebook kernels.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see JobType
+     */
+
+    public DescribeImageVersionResult withJobType(JobType jobType) {
+        this.jobType = jobType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The machine learning framework vended in the image version.
+     * </p>
+     * 
+     * @param mLFramework
+     *        The machine learning framework vended in the image version.
+     */
+
+    public void setMLFramework(String mLFramework) {
+        this.mLFramework = mLFramework;
+    }
+
+    /**
+     * <p>
+     * The machine learning framework vended in the image version.
+     * </p>
+     * 
+     * @return The machine learning framework vended in the image version.
+     */
+
+    public String getMLFramework() {
+        return this.mLFramework;
+    }
+
+    /**
+     * <p>
+     * The machine learning framework vended in the image version.
+     * </p>
+     * 
+     * @param mLFramework
+     *        The machine learning framework vended in the image version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImageVersionResult withMLFramework(String mLFramework) {
+        setMLFramework(mLFramework);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported programming language and its version.
+     * </p>
+     * 
+     * @param programmingLang
+     *        The supported programming language and its version.
+     */
+
+    public void setProgrammingLang(String programmingLang) {
+        this.programmingLang = programmingLang;
+    }
+
+    /**
+     * <p>
+     * The supported programming language and its version.
+     * </p>
+     * 
+     * @return The supported programming language and its version.
+     */
+
+    public String getProgrammingLang() {
+        return this.programmingLang;
+    }
+
+    /**
+     * <p>
+     * The supported programming language and its version.
+     * </p>
+     * 
+     * @param programmingLang
+     *        The supported programming language and its version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImageVersionResult withProgrammingLang(String programmingLang) {
+        setProgrammingLang(programmingLang);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates CPU or GPU compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CPU</code>: The image version is compatible with CPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU</code>: The image version is compatible with GPU.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param processor
+     *        Indicates CPU or GPU compatibility.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CPU</code>: The image version is compatible with CPU.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code>: The image version is compatible with GPU.
+     *        </p>
+     *        </li>
+     * @see Processor
+     */
+
+    public void setProcessor(String processor) {
+        this.processor = processor;
+    }
+
+    /**
+     * <p>
+     * Indicates CPU or GPU compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CPU</code>: The image version is compatible with CPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU</code>: The image version is compatible with GPU.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates CPU or GPU compatibility.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CPU</code>: The image version is compatible with CPU.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>GPU</code>: The image version is compatible with GPU.
+     *         </p>
+     *         </li>
+     * @see Processor
+     */
+
+    public String getProcessor() {
+        return this.processor;
+    }
+
+    /**
+     * <p>
+     * Indicates CPU or GPU compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CPU</code>: The image version is compatible with CPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU</code>: The image version is compatible with GPU.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param processor
+     *        Indicates CPU or GPU compatibility.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CPU</code>: The image version is compatible with CPU.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code>: The image version is compatible with GPU.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Processor
+     */
+
+    public DescribeImageVersionResult withProcessor(String processor) {
+        setProcessor(processor);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates CPU or GPU compatibility.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CPU</code>: The image version is compatible with CPU.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>GPU</code>: The image version is compatible with GPU.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param processor
+     *        Indicates CPU or GPU compatibility.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CPU</code>: The image version is compatible with CPU.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>GPU</code>: The image version is compatible with GPU.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Processor
+     */
+
+    public DescribeImageVersionResult withProcessor(Processor processor) {
+        this.processor = processor.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates Horovod compatibility.
+     * </p>
+     * 
+     * @param horovod
+     *        Indicates Horovod compatibility.
+     */
+
+    public void setHorovod(Boolean horovod) {
+        this.horovod = horovod;
+    }
+
+    /**
+     * <p>
+     * Indicates Horovod compatibility.
+     * </p>
+     * 
+     * @return Indicates Horovod compatibility.
+     */
+
+    public Boolean getHorovod() {
+        return this.horovod;
+    }
+
+    /**
+     * <p>
+     * Indicates Horovod compatibility.
+     * </p>
+     * 
+     * @param horovod
+     *        Indicates Horovod compatibility.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImageVersionResult withHorovod(Boolean horovod) {
+        setHorovod(horovod);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates Horovod compatibility.
+     * </p>
+     * 
+     * @return Indicates Horovod compatibility.
+     */
+
+    public Boolean isHorovod() {
+        return this.horovod;
+    }
+
+    /**
+     * <p>
+     * The maintainer description of the image version.
+     * </p>
+     * 
+     * @param releaseNotes
+     *        The maintainer description of the image version.
+     */
+
+    public void setReleaseNotes(String releaseNotes) {
+        this.releaseNotes = releaseNotes;
+    }
+
+    /**
+     * <p>
+     * The maintainer description of the image version.
+     * </p>
+     * 
+     * @return The maintainer description of the image version.
+     */
+
+    public String getReleaseNotes() {
+        return this.releaseNotes;
+    }
+
+    /**
+     * <p>
+     * The maintainer description of the image version.
+     * </p>
+     * 
+     * @param releaseNotes
+     *        The maintainer description of the image version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeImageVersionResult withReleaseNotes(String releaseNotes) {
+        setReleaseNotes(releaseNotes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -486,7 +1342,21 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getVersion() != null)
-            sb.append("Version: ").append(getVersion());
+            sb.append("Version: ").append(getVersion()).append(",");
+        if (getVendorGuidance() != null)
+            sb.append("VendorGuidance: ").append(getVendorGuidance()).append(",");
+        if (getJobType() != null)
+            sb.append("JobType: ").append(getJobType()).append(",");
+        if (getMLFramework() != null)
+            sb.append("MLFramework: ").append(getMLFramework()).append(",");
+        if (getProgrammingLang() != null)
+            sb.append("ProgrammingLang: ").append(getProgrammingLang()).append(",");
+        if (getProcessor() != null)
+            sb.append("Processor: ").append(getProcessor()).append(",");
+        if (getHorovod() != null)
+            sb.append("Horovod: ").append(getHorovod()).append(",");
+        if (getReleaseNotes() != null)
+            sb.append("ReleaseNotes: ").append(getReleaseNotes());
         sb.append("}");
         return sb.toString();
     }
@@ -537,6 +1407,34 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getVersion() != null && other.getVersion().equals(this.getVersion()) == false)
             return false;
+        if (other.getVendorGuidance() == null ^ this.getVendorGuidance() == null)
+            return false;
+        if (other.getVendorGuidance() != null && other.getVendorGuidance().equals(this.getVendorGuidance()) == false)
+            return false;
+        if (other.getJobType() == null ^ this.getJobType() == null)
+            return false;
+        if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
+            return false;
+        if (other.getMLFramework() == null ^ this.getMLFramework() == null)
+            return false;
+        if (other.getMLFramework() != null && other.getMLFramework().equals(this.getMLFramework()) == false)
+            return false;
+        if (other.getProgrammingLang() == null ^ this.getProgrammingLang() == null)
+            return false;
+        if (other.getProgrammingLang() != null && other.getProgrammingLang().equals(this.getProgrammingLang()) == false)
+            return false;
+        if (other.getProcessor() == null ^ this.getProcessor() == null)
+            return false;
+        if (other.getProcessor() != null && other.getProcessor().equals(this.getProcessor()) == false)
+            return false;
+        if (other.getHorovod() == null ^ this.getHorovod() == null)
+            return false;
+        if (other.getHorovod() != null && other.getHorovod().equals(this.getHorovod()) == false)
+            return false;
+        if (other.getReleaseNotes() == null ^ this.getReleaseNotes() == null)
+            return false;
+        if (other.getReleaseNotes() != null && other.getReleaseNotes().equals(this.getReleaseNotes()) == false)
+            return false;
         return true;
     }
 
@@ -554,6 +1452,13 @@ public class DescribeImageVersionResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getImageVersionStatus() == null) ? 0 : getImageVersionStatus().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
+        hashCode = prime * hashCode + ((getVendorGuidance() == null) ? 0 : getVendorGuidance().hashCode());
+        hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getMLFramework() == null) ? 0 : getMLFramework().hashCode());
+        hashCode = prime * hashCode + ((getProgrammingLang() == null) ? 0 : getProgrammingLang().hashCode());
+        hashCode = prime * hashCode + ((getProcessor() == null) ? 0 : getProcessor().hashCode());
+        hashCode = prime * hashCode + ((getHorovod() == null) ? 0 : getHorovod().hashCode());
+        hashCode = prime * hashCode + ((getReleaseNotes() == null) ? 0 : getReleaseNotes().hashCode());
         return hashCode;
     }
 

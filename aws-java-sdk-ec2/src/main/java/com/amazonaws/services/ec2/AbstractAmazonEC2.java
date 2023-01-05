@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public void setRegion(com.amazonaws.regions.Region region) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AcceptAddressTransferResult acceptAddressTransfer(AcceptAddressTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -196,6 +201,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public AttachVerifiedAccessTrustProviderResult attachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AttachVolumeResult attachVolume(AttachVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -247,6 +257,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CancelExportTaskResult cancelExportTask(CancelExportTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelImageLaunchPermissionResult cancelImageLaunchPermission(CancelImageLaunchPermissionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -637,6 +652,26 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateVerifiedAccessEndpointResult createVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVerifiedAccessGroupResult createVerifiedAccessGroup(CreateVerifiedAccessGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVerifiedAccessInstanceResult createVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateVerifiedAccessTrustProviderResult createVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateVolumeResult createVolume(CreateVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -988,6 +1023,26 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DeleteVerifiedAccessEndpointResult deleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVerifiedAccessGroupResult deleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVerifiedAccessInstanceResult deleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVerifiedAccessTrustProviderResult deleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteVolumeResult deleteVolume(DeleteVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1081,6 +1136,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeAddressTransfersResult describeAddressTransfers(DescribeAddressTransfersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAddressesResult describeAddresses(DescribeAddressesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1108,6 +1168,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribeAvailabilityZonesResult describeAvailabilityZones() {
         return describeAvailabilityZones(new DescribeAvailabilityZonesRequest());
+    }
+
+    @Override
+    public DescribeAwsNetworkPerformanceMetricSubscriptionsResult describeAwsNetworkPerformanceMetricSubscriptions(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1855,6 +1921,32 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeVerifiedAccessEndpointsResult describeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVerifiedAccessGroupsResult describeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVerifiedAccessInstanceLoggingConfigurationsResult describeVerifiedAccessInstanceLoggingConfigurations(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVerifiedAccessInstancesResult describeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeVerifiedAccessTrustProvidersResult describeVerifiedAccessTrustProviders(DescribeVerifiedAccessTrustProvidersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeVolumeAttributeResult describeVolumeAttribute(DescribeVolumeAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2000,12 +2092,28 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DetachVerifiedAccessTrustProviderResult detachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DetachVolumeResult detachVolume(DetachVolumeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DetachVpnGatewayResult detachVpnGateway(DetachVpnGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableAddressTransferResult disableAddressTransfer(DisableAddressTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisableAwsNetworkPerformanceMetricSubscriptionResult disableAwsNetworkPerformanceMetricSubscription(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2120,6 +2228,17 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public EnableAddressTransferResult enableAddressTransfer(EnableAddressTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableAwsNetworkPerformanceMetricSubscriptionResult enableAwsNetworkPerformanceMetricSubscription(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public EnableEbsEncryptionByDefaultResult enableEbsEncryptionByDefault(EnableEbsEncryptionByDefaultRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2141,6 +2260,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public EnableIpamOrganizationAdminAccountResult enableIpamOrganizationAdminAccount(EnableIpamOrganizationAdminAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableReachabilityAnalyzerOrganizationSharingResult enableReachabilityAnalyzerOrganizationSharing(
+            EnableReachabilityAnalyzerOrganizationSharingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2202,6 +2327,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public GetAssociatedIpv6PoolCidrsResult getAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAwsNetworkPerformanceDataResult getAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2369,6 +2499,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public GetTransitGatewayRouteTablePropagationsResult getTransitGatewayRouteTablePropagations(GetTransitGatewayRouteTablePropagationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVerifiedAccessEndpointPolicyResult getVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetVerifiedAccessGroupPolicyResult getVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2641,6 +2781,42 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyTransitGatewayVpcAttachmentResult modifyTransitGatewayVpcAttachment(ModifyTransitGatewayVpcAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVerifiedAccessEndpointResult modifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVerifiedAccessEndpointPolicyResult modifyVerifiedAccessEndpointPolicy(ModifyVerifiedAccessEndpointPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVerifiedAccessGroupResult modifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVerifiedAccessGroupPolicyResult modifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVerifiedAccessInstanceResult modifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVerifiedAccessInstanceLoggingConfigurationResult modifyVerifiedAccessInstanceLoggingConfiguration(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVerifiedAccessTrustProviderResult modifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

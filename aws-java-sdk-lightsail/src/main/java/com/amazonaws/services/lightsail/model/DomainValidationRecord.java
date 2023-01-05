@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the domain validation records of an Amazon Lightsail SSL/TLS certificate.
+ * Describes the domain name system (DNS) records that you must add to the DNS of your registered domain to validate
+ * ownership for an Amazon Lightsail SSL/TLS certificate.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/DomainValidationRecord" target="_top">AWS
@@ -41,6 +42,19 @@ public class DomainValidationRecord implements Serializable, Cloneable, Structur
      * </p>
      */
     private ResourceRecord resourceRecord;
+    /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of the domain to validate domain ownership.
+     * </p>
+     */
+    private DnsRecordCreationState dnsRecordCreationState;
+    /**
+     * <p>
+     * The validation status of the record.
+     * </p>
+     */
+    private String validationStatus;
 
     /**
      * <p>
@@ -129,6 +143,111 @@ public class DomainValidationRecord implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of the domain to validate domain ownership.
+     * </p>
+     * 
+     * @param dnsRecordCreationState
+     *        An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     *        Lightsail to the DNS of the domain to validate domain ownership.
+     */
+
+    public void setDnsRecordCreationState(DnsRecordCreationState dnsRecordCreationState) {
+        this.dnsRecordCreationState = dnsRecordCreationState;
+    }
+
+    /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of the domain to validate domain ownership.
+     * </p>
+     * 
+     * @return An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     *         Lightsail to the DNS of the domain to validate domain ownership.
+     */
+
+    public DnsRecordCreationState getDnsRecordCreationState() {
+        return this.dnsRecordCreationState;
+    }
+
+    /**
+     * <p>
+     * An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     * Lightsail to the DNS of the domain to validate domain ownership.
+     * </p>
+     * 
+     * @param dnsRecordCreationState
+     *        An object that describes the state of the canonical name (CNAME) records that are automatically added by
+     *        Lightsail to the DNS of the domain to validate domain ownership.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainValidationRecord withDnsRecordCreationState(DnsRecordCreationState dnsRecordCreationState) {
+        setDnsRecordCreationState(dnsRecordCreationState);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The validation status of the record.
+     * </p>
+     * 
+     * @param validationStatus
+     *        The validation status of the record.
+     * @see CertificateDomainValidationStatus
+     */
+
+    public void setValidationStatus(String validationStatus) {
+        this.validationStatus = validationStatus;
+    }
+
+    /**
+     * <p>
+     * The validation status of the record.
+     * </p>
+     * 
+     * @return The validation status of the record.
+     * @see CertificateDomainValidationStatus
+     */
+
+    public String getValidationStatus() {
+        return this.validationStatus;
+    }
+
+    /**
+     * <p>
+     * The validation status of the record.
+     * </p>
+     * 
+     * @param validationStatus
+     *        The validation status of the record.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateDomainValidationStatus
+     */
+
+    public DomainValidationRecord withValidationStatus(String validationStatus) {
+        setValidationStatus(validationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The validation status of the record.
+     * </p>
+     * 
+     * @param validationStatus
+     *        The validation status of the record.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateDomainValidationStatus
+     */
+
+    public DomainValidationRecord withValidationStatus(CertificateDomainValidationStatus validationStatus) {
+        this.validationStatus = validationStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -143,7 +262,11 @@ public class DomainValidationRecord implements Serializable, Cloneable, Structur
         if (getDomainName() != null)
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getResourceRecord() != null)
-            sb.append("ResourceRecord: ").append(getResourceRecord());
+            sb.append("ResourceRecord: ").append(getResourceRecord()).append(",");
+        if (getDnsRecordCreationState() != null)
+            sb.append("DnsRecordCreationState: ").append(getDnsRecordCreationState()).append(",");
+        if (getValidationStatus() != null)
+            sb.append("ValidationStatus: ").append(getValidationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +289,14 @@ public class DomainValidationRecord implements Serializable, Cloneable, Structur
             return false;
         if (other.getResourceRecord() != null && other.getResourceRecord().equals(this.getResourceRecord()) == false)
             return false;
+        if (other.getDnsRecordCreationState() == null ^ this.getDnsRecordCreationState() == null)
+            return false;
+        if (other.getDnsRecordCreationState() != null && other.getDnsRecordCreationState().equals(this.getDnsRecordCreationState()) == false)
+            return false;
+        if (other.getValidationStatus() == null ^ this.getValidationStatus() == null)
+            return false;
+        if (other.getValidationStatus() != null && other.getValidationStatus().equals(this.getValidationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +307,8 @@ public class DomainValidationRecord implements Serializable, Cloneable, Structur
 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getResourceRecord() == null) ? 0 : getResourceRecord().hashCode());
+        hashCode = prime * hashCode + ((getDnsRecordCreationState() == null) ? 0 : getDnsRecordCreationState().hashCode());
+        hashCode = prime * hashCode + ((getValidationStatus() == null) ? 0 : getValidationStatus().hashCode());
         return hashCode;
     }
 

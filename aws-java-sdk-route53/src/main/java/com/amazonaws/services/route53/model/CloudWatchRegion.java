@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,7 @@ public enum CloudWatchRegion {
     UsWest2("us-west-2"),
     CaCentral1("ca-central-1"),
     EuCentral1("eu-central-1"),
+    EuCentral2("eu-central-2"),
     EuWest1("eu-west-1"),
     EuWest2("eu-west-2"),
     EuWest3("eu-west-3"),
@@ -33,6 +34,7 @@ public enum CloudWatchRegion {
     MeSouth1("me-south-1"),
     MeCentral1("me-central-1"),
     ApSouth1("ap-south-1"),
+    ApSouth2("ap-south-2"),
     ApSoutheast1("ap-southeast-1"),
     ApSoutheast2("ap-southeast-2"),
     ApSoutheast3("ap-southeast-3"),
@@ -45,6 +47,7 @@ public enum CloudWatchRegion {
     CnNorth1("cn-north-1"),
     AfSouth1("af-south-1"),
     EuSouth1("eu-south-1"),
+    EuSouth2("eu-south-2"),
     UsGovWest1("us-gov-west-1"),
     UsGovEast1("us-gov-east-1"),
     UsIsoEast1("us-iso-east-1"),

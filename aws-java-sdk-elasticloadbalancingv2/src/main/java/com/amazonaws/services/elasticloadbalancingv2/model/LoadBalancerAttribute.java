@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -160,17 +168,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route requests to
      * targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are
      * <code>true</code> and <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
      * </p>
      * </li>
      * </ul>
@@ -188,13 +185,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -320,28 +325,25 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by all load balancers:
+     *        The following attributes are supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *        The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers
+     *        and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is
+     *        <code>true</code>, and cannot be changed.
      *        </p>
      *        </li>
      *        </ul>
@@ -467,17 +469,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        are <code>true</code> and <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
-     *        </ul>
-     *        <p>
-     *        The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
-     *        The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
-     *        </p>
-     *        </li>
      */
 
     public void setKey(String key) {
@@ -489,13 +480,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -621,27 +620,24 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return The name of the attribute.</p>
      *         <p>
-     *         The following attribute is supported by all load balancers:
+     *         The following attributes are supported by all load balancers:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      *         <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *         The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers
+     *         and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is
+     *         <code>true</code>, and cannot be changed.
      *         </p>
      *         </li>
      *         </ul>
@@ -767,17 +763,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *         values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
      *         </p>
      *         </li>
-     *         </ul>
-     *         <p>
-     *         The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
-     *         The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
-     *         </p>
-     *         </li>
      */
 
     public String getKey() {
@@ -789,13 +774,21 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * The name of the attribute.
      * </p>
      * <p>
-     * The following attribute is supported by all load balancers:
+     * The following attributes are supported by all load balancers:
      * </p>
      * <ul>
      * <li>
      * <p>
      * <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      * <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
+     * possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers and Gateway
+     * Load Balancers is <code>false</code>. The default for Application Load Balancers is <code>true</code>, and cannot
+     * be changed.
      * </p>
      * </li>
      * </ul>
@@ -921,28 +914,25 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      * </p>
      * </li>
      * </ul>
-     * <p>
-     * The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled. The
-     * possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param key
      *        The name of the attribute.</p>
      *        <p>
-     *        The following attribute is supported by all load balancers:
+     *        The following attributes are supported by all load balancers:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        <code>deletion_protection.enabled</code> - Indicates whether deletion protection is enabled. The value is
      *        <code>true</code> or <code>false</code>. The default is <code>false</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
+     *        The possible values are <code>true</code> and <code>false</code>. The default for Network Load Balancers
+     *        and Gateway Load Balancers is <code>false</code>. The default for Application Load Balancers is
+     *        <code>true</code>, and cannot be changed.
      *        </p>
      *        </li>
      *        </ul>
@@ -1066,17 +1056,6 @@ public class LoadBalancerAttribute implements Serializable, Cloneable {
      *        <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load balancer to route
      *        requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values
      *        are <code>true</code> and <code>false</code>. The default is <code>false</code>.
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        The following attribute is supported by Network Load Balancers and Gateway Load Balancers:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load balancing is enabled.
-     *        The possible values are <code>true</code> and <code>false</code>. The default is <code>false</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

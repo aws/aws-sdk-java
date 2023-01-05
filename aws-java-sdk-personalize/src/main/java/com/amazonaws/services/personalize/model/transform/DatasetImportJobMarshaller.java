@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class DatasetImportJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failureReason").build();
     private static final MarshallingInfo<String> IMPORTMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("importMode").build();
+    private static final MarshallingInfo<Boolean> PUBLISHATTRIBUTIONMETRICSTOS3_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("publishAttributionMetricsToS3").build();
 
     private static final DatasetImportJobMarshaller instance = new DatasetImportJobMarshaller();
 
@@ -74,6 +76,7 @@ public class DatasetImportJobMarshaller {
             protocolMarshaller.marshall(datasetImportJob.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);
             protocolMarshaller.marshall(datasetImportJob.getFailureReason(), FAILUREREASON_BINDING);
             protocolMarshaller.marshall(datasetImportJob.getImportMode(), IMPORTMODE_BINDING);
+            protocolMarshaller.marshall(datasetImportJob.getPublishAttributionMetricsToS3(), PUBLISHATTRIBUTIONMETRICSTOS3_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

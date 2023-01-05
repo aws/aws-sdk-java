@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,15 @@ public class LifecycleRuleAndOperatorStaxUnmarshaller implements Unmarshaller<Li
                     continue;
                 }
 
+                if (context.testExpression("ObjectSizeGreaterThan", targetDepth)) {
+                    lifecycleRuleAndOperator.setObjectSizeGreaterThan(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ObjectSizeLessThan", targetDepth)) {
+                    lifecycleRuleAndOperator.setObjectSizeLessThan(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return lifecycleRuleAndOperator;

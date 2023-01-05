@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,7 +110,7 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
     private String subRegion;
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
      * </p>
      */
     private TimeZone timeZone;
@@ -682,11 +682,11 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
      * </p>
      * 
      * @param timeZone
-     *        The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected
+     *        The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected
      *        partner.
      */
 
@@ -696,10 +696,10 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
      * </p>
      * 
-     * @return The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected
+     * @return The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected
      *         partner.
      */
 
@@ -709,11 +709,11 @@ public class Place implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected partner.
+     * The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected partner.
      * </p>
      * 
      * @param timeZone
-     *        The time zone in which the <code>Place</code> is located. Returned only when using Here as the selected
+     *        The time zone in which the <code>Place</code> is located. Returned only when using HERE as the selected
      *        partner.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

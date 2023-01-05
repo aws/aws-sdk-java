@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for request parameters to the <code> <a>CreatePackage</a> </code> operation.
+ * Container for request parameters to the <code>CreatePackage</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,13 +27,13 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier for the package.
+     * Unique name for the package.
      * </p>
      */
     private String packageName;
     /**
      * <p>
-     * Type of package. Currently supports only TXT-DICTIONARY.
+     * Type of package.
      * </p>
      */
     private String packageType;
@@ -52,11 +52,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier for the package.
+     * Unique name for the package.
      * </p>
      * 
      * @param packageName
-     *        Unique identifier for the package.
+     *        Unique name for the package.
      */
 
     public void setPackageName(String packageName) {
@@ -65,10 +65,10 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier for the package.
+     * Unique name for the package.
      * </p>
      * 
-     * @return Unique identifier for the package.
+     * @return Unique name for the package.
      */
 
     public String getPackageName() {
@@ -77,11 +77,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique identifier for the package.
+     * Unique name for the package.
      * </p>
      * 
      * @param packageName
-     *        Unique identifier for the package.
+     *        Unique name for the package.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package. Currently supports only TXT-DICTIONARY.
+     * Type of package.
      * </p>
      * 
      * @param packageType
-     *        Type of package. Currently supports only TXT-DICTIONARY.
+     *        Type of package.
      * @see PackageType
      */
 
@@ -106,10 +106,10 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package. Currently supports only TXT-DICTIONARY.
+     * Type of package.
      * </p>
      * 
-     * @return Type of package. Currently supports only TXT-DICTIONARY.
+     * @return Type of package.
      * @see PackageType
      */
 
@@ -119,11 +119,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package. Currently supports only TXT-DICTIONARY.
+     * Type of package.
      * </p>
      * 
      * @param packageType
-     *        Type of package. Currently supports only TXT-DICTIONARY.
+     *        Type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */
@@ -135,11 +135,11 @@ public class CreatePackageRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Type of package. Currently supports only TXT-DICTIONARY.
+     * Type of package.
      * </p>
      * 
      * @param packageType
-     *        Type of package. Currently supports only TXT-DICTIONARY.
+     *        Type of package.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PackageType
      */

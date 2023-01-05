@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class SolutionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("creationDateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdatedDateTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> RECIPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("recipeArn").build();
 
     private static final SolutionSummaryMarshaller instance = new SolutionSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class SolutionSummaryMarshaller {
             protocolMarshaller.marshall(solutionSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(solutionSummary.getCreationDateTime(), CREATIONDATETIME_BINDING);
             protocolMarshaller.marshall(solutionSummary.getLastUpdatedDateTime(), LASTUPDATEDDATETIME_BINDING);
+            protocolMarshaller.marshall(solutionSummary.getRecipeArn(), RECIPEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

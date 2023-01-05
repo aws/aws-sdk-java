@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,8 @@ public class SqlParameter implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-     * <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
+     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
      * <i>Amazon Redshift Database Developer Guide</i>.
      * </p>
      */
@@ -85,14 +85,14 @@ public class SqlParameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-     * <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
+     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
      * <i>Amazon Redshift Database Developer Guide</i>.
      * </p>
      * 
      * @param value
      *        The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more
-     *        inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
+     *        information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      *        types</a> in the <i>Amazon Redshift Database Developer Guide</i>.
      */
 
@@ -102,14 +102,15 @@ public class SqlParameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-     * <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
+     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
      * <i>Amazon Redshift Database Developer Guide</i>.
      * </p>
      * 
      * @return The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more
-     *         inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
-     *         types</a> in the <i>Amazon Redshift Database Developer Guide</i>.
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
+     *         <i>Amazon Redshift Database Developer Guide</i>.
      */
 
     public String getValue() {
@@ -118,14 +119,14 @@ public class SqlParameter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more inforation, see
-     * <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
+     * The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more information,
+     * see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data types</a> in the
      * <i>Amazon Redshift Database Developer Guide</i>.
      * </p>
      * 
      * @param value
      *        The value of the parameter. Amazon Redshift implicitly converts to the proper data type. For more
-     *        inforation, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
+     *        information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/c_Supported_data_types.html">Data
      *        types</a> in the <i>Amazon Redshift Database Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,18 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Parent> parents;
+    /**
+     * <p>
+     * A list of potential aliases for a given label.
+     * </p>
+     */
+    private java.util.List<LabelAlias> aliases;
+    /**
+     * <p>
+     * A list of the categories associated with a given label.
+     * </p>
+     */
+    private java.util.List<LabelCategory> categories;
 
     /**
      * <p>
@@ -292,6 +304,146 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A list of potential aliases for a given label.
+     * </p>
+     * 
+     * @return A list of potential aliases for a given label.
+     */
+
+    public java.util.List<LabelAlias> getAliases() {
+        return aliases;
+    }
+
+    /**
+     * <p>
+     * A list of potential aliases for a given label.
+     * </p>
+     * 
+     * @param aliases
+     *        A list of potential aliases for a given label.
+     */
+
+    public void setAliases(java.util.Collection<LabelAlias> aliases) {
+        if (aliases == null) {
+            this.aliases = null;
+            return;
+        }
+
+        this.aliases = new java.util.ArrayList<LabelAlias>(aliases);
+    }
+
+    /**
+     * <p>
+     * A list of potential aliases for a given label.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAliases(java.util.Collection)} or {@link #withAliases(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param aliases
+     *        A list of potential aliases for a given label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Label withAliases(LabelAlias... aliases) {
+        if (this.aliases == null) {
+            setAliases(new java.util.ArrayList<LabelAlias>(aliases.length));
+        }
+        for (LabelAlias ele : aliases) {
+            this.aliases.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of potential aliases for a given label.
+     * </p>
+     * 
+     * @param aliases
+     *        A list of potential aliases for a given label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Label withAliases(java.util.Collection<LabelAlias> aliases) {
+        setAliases(aliases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the categories associated with a given label.
+     * </p>
+     * 
+     * @return A list of the categories associated with a given label.
+     */
+
+    public java.util.List<LabelCategory> getCategories() {
+        return categories;
+    }
+
+    /**
+     * <p>
+     * A list of the categories associated with a given label.
+     * </p>
+     * 
+     * @param categories
+     *        A list of the categories associated with a given label.
+     */
+
+    public void setCategories(java.util.Collection<LabelCategory> categories) {
+        if (categories == null) {
+            this.categories = null;
+            return;
+        }
+
+        this.categories = new java.util.ArrayList<LabelCategory>(categories);
+    }
+
+    /**
+     * <p>
+     * A list of the categories associated with a given label.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setCategories(java.util.Collection)} or {@link #withCategories(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param categories
+     *        A list of the categories associated with a given label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Label withCategories(LabelCategory... categories) {
+        if (this.categories == null) {
+            setCategories(new java.util.ArrayList<LabelCategory>(categories.length));
+        }
+        for (LabelCategory ele : categories) {
+            this.categories.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the categories associated with a given label.
+     * </p>
+     * 
+     * @param categories
+     *        A list of the categories associated with a given label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Label withCategories(java.util.Collection<LabelCategory> categories) {
+        setCategories(categories);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -310,7 +462,11 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
         if (getInstances() != null)
             sb.append("Instances: ").append(getInstances()).append(",");
         if (getParents() != null)
-            sb.append("Parents: ").append(getParents());
+            sb.append("Parents: ").append(getParents()).append(",");
+        if (getAliases() != null)
+            sb.append("Aliases: ").append(getAliases()).append(",");
+        if (getCategories() != null)
+            sb.append("Categories: ").append(getCategories());
         sb.append("}");
         return sb.toString();
     }
@@ -341,6 +497,14 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getParents() != null && other.getParents().equals(this.getParents()) == false)
             return false;
+        if (other.getAliases() == null ^ this.getAliases() == null)
+            return false;
+        if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false)
+            return false;
+        if (other.getCategories() == null ^ this.getCategories() == null)
+            return false;
+        if (other.getCategories() != null && other.getCategories().equals(this.getCategories()) == false)
+            return false;
         return true;
     }
 
@@ -353,6 +517,8 @@ public class Label implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getConfidence() == null) ? 0 : getConfidence().hashCode());
         hashCode = prime * hashCode + ((getInstances() == null) ? 0 : getInstances().hashCode());
         hashCode = prime * hashCode + ((getParents() == null) ? 0 : getParents().hashCode());
+        hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
+        hashCode = prime * hashCode + ((getCategories() == null) ? 0 : getCategories().hashCode());
         return hashCode;
     }
 

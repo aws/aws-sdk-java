@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,24 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.List<CoverageStringFilter> ecrRepositoryName;
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by function names.
+     * </p>
+     */
+    private java.util.List<CoverageStringFilter> lambdaFunctionName;
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     * </p>
+     */
+    private java.util.List<CoverageStringFilter> lambdaFunctionRuntime;
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by tag.
+     * </p>
+     */
+    private java.util.List<CoverageMapFilter> lambdaFunctionTags;
     /**
      * <p>
      * An array of Amazon Web Services resource IDs to return coverage statistics for.
@@ -361,6 +379,216 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
 
     public CoverageFilterCriteria withEcrRepositoryName(java.util.Collection<CoverageStringFilter> ecrRepositoryName) {
         setEcrRepositoryName(ecrRepositoryName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by function names.
+     * </p>
+     * 
+     * @return Returns coverage statistics for AWS Lambda functions filtered by function names.
+     */
+
+    public java.util.List<CoverageStringFilter> getLambdaFunctionName() {
+        return lambdaFunctionName;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by function names.
+     * </p>
+     * 
+     * @param lambdaFunctionName
+     *        Returns coverage statistics for AWS Lambda functions filtered by function names.
+     */
+
+    public void setLambdaFunctionName(java.util.Collection<CoverageStringFilter> lambdaFunctionName) {
+        if (lambdaFunctionName == null) {
+            this.lambdaFunctionName = null;
+            return;
+        }
+
+        this.lambdaFunctionName = new java.util.ArrayList<CoverageStringFilter>(lambdaFunctionName);
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by function names.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionName(java.util.Collection)} or {@link #withLambdaFunctionName(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionName
+     *        Returns coverage statistics for AWS Lambda functions filtered by function names.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withLambdaFunctionName(CoverageStringFilter... lambdaFunctionName) {
+        if (this.lambdaFunctionName == null) {
+            setLambdaFunctionName(new java.util.ArrayList<CoverageStringFilter>(lambdaFunctionName.length));
+        }
+        for (CoverageStringFilter ele : lambdaFunctionName) {
+            this.lambdaFunctionName.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by function names.
+     * </p>
+     * 
+     * @param lambdaFunctionName
+     *        Returns coverage statistics for AWS Lambda functions filtered by function names.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withLambdaFunctionName(java.util.Collection<CoverageStringFilter> lambdaFunctionName) {
+        setLambdaFunctionName(lambdaFunctionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     * </p>
+     * 
+     * @return Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     */
+
+    public java.util.List<CoverageStringFilter> getLambdaFunctionRuntime() {
+        return lambdaFunctionRuntime;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     * </p>
+     * 
+     * @param lambdaFunctionRuntime
+     *        Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     */
+
+    public void setLambdaFunctionRuntime(java.util.Collection<CoverageStringFilter> lambdaFunctionRuntime) {
+        if (lambdaFunctionRuntime == null) {
+            this.lambdaFunctionRuntime = null;
+            return;
+        }
+
+        this.lambdaFunctionRuntime = new java.util.ArrayList<CoverageStringFilter>(lambdaFunctionRuntime);
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionRuntime(java.util.Collection)} or
+     * {@link #withLambdaFunctionRuntime(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionRuntime
+     *        Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withLambdaFunctionRuntime(CoverageStringFilter... lambdaFunctionRuntime) {
+        if (this.lambdaFunctionRuntime == null) {
+            setLambdaFunctionRuntime(new java.util.ArrayList<CoverageStringFilter>(lambdaFunctionRuntime.length));
+        }
+        for (CoverageStringFilter ele : lambdaFunctionRuntime) {
+            this.lambdaFunctionRuntime.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     * </p>
+     * 
+     * @param lambdaFunctionRuntime
+     *        Returns coverage statistics for AWS Lambda functions filtered by runtime.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withLambdaFunctionRuntime(java.util.Collection<CoverageStringFilter> lambdaFunctionRuntime) {
+        setLambdaFunctionRuntime(lambdaFunctionRuntime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by tag.
+     * </p>
+     * 
+     * @return Returns coverage statistics for AWS Lambda functions filtered by tag.
+     */
+
+    public java.util.List<CoverageMapFilter> getLambdaFunctionTags() {
+        return lambdaFunctionTags;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by tag.
+     * </p>
+     * 
+     * @param lambdaFunctionTags
+     *        Returns coverage statistics for AWS Lambda functions filtered by tag.
+     */
+
+    public void setLambdaFunctionTags(java.util.Collection<CoverageMapFilter> lambdaFunctionTags) {
+        if (lambdaFunctionTags == null) {
+            this.lambdaFunctionTags = null;
+            return;
+        }
+
+        this.lambdaFunctionTags = new java.util.ArrayList<CoverageMapFilter>(lambdaFunctionTags);
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by tag.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLambdaFunctionTags(java.util.Collection)} or {@link #withLambdaFunctionTags(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param lambdaFunctionTags
+     *        Returns coverage statistics for AWS Lambda functions filtered by tag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withLambdaFunctionTags(CoverageMapFilter... lambdaFunctionTags) {
+        if (this.lambdaFunctionTags == null) {
+            setLambdaFunctionTags(new java.util.ArrayList<CoverageMapFilter>(lambdaFunctionTags.length));
+        }
+        for (CoverageMapFilter ele : lambdaFunctionTags) {
+            this.lambdaFunctionTags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returns coverage statistics for AWS Lambda functions filtered by tag.
+     * </p>
+     * 
+     * @param lambdaFunctionTags
+     *        Returns coverage statistics for AWS Lambda functions filtered by tag.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CoverageFilterCriteria withLambdaFunctionTags(java.util.Collection<CoverageMapFilter> lambdaFunctionTags) {
+        setLambdaFunctionTags(lambdaFunctionTags);
         return this;
     }
 
@@ -742,6 +970,12 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
             sb.append("EcrImageTags: ").append(getEcrImageTags()).append(",");
         if (getEcrRepositoryName() != null)
             sb.append("EcrRepositoryName: ").append(getEcrRepositoryName()).append(",");
+        if (getLambdaFunctionName() != null)
+            sb.append("LambdaFunctionName: ").append(getLambdaFunctionName()).append(",");
+        if (getLambdaFunctionRuntime() != null)
+            sb.append("LambdaFunctionRuntime: ").append(getLambdaFunctionRuntime()).append(",");
+        if (getLambdaFunctionTags() != null)
+            sb.append("LambdaFunctionTags: ").append(getLambdaFunctionTags()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
@@ -782,6 +1016,18 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
             return false;
         if (other.getEcrRepositoryName() != null && other.getEcrRepositoryName().equals(this.getEcrRepositoryName()) == false)
             return false;
+        if (other.getLambdaFunctionName() == null ^ this.getLambdaFunctionName() == null)
+            return false;
+        if (other.getLambdaFunctionName() != null && other.getLambdaFunctionName().equals(this.getLambdaFunctionName()) == false)
+            return false;
+        if (other.getLambdaFunctionRuntime() == null ^ this.getLambdaFunctionRuntime() == null)
+            return false;
+        if (other.getLambdaFunctionRuntime() != null && other.getLambdaFunctionRuntime().equals(this.getLambdaFunctionRuntime()) == false)
+            return false;
+        if (other.getLambdaFunctionTags() == null ^ this.getLambdaFunctionTags() == null)
+            return false;
+        if (other.getLambdaFunctionTags() != null && other.getLambdaFunctionTags().equals(this.getLambdaFunctionTags()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -814,6 +1060,9 @@ public class CoverageFilterCriteria implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getEc2InstanceTags() == null) ? 0 : getEc2InstanceTags().hashCode());
         hashCode = prime * hashCode + ((getEcrImageTags() == null) ? 0 : getEcrImageTags().hashCode());
         hashCode = prime * hashCode + ((getEcrRepositoryName() == null) ? 0 : getEcrRepositoryName().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionName() == null) ? 0 : getLambdaFunctionName().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionRuntime() == null) ? 0 : getLambdaFunctionRuntime().hashCode());
+        hashCode = prime * hashCode + ((getLambdaFunctionTags() == null) ? 0 : getLambdaFunctionTags().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getScanStatusCode() == null) ? 0 : getScanStatusCode().hashCode());

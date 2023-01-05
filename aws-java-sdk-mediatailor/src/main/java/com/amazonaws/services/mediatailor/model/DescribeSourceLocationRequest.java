@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeSourceLocationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      */
     private String sourceLocationName;
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location.
      */
 
     public void setSourceLocationName(String sourceLocationName) {
@@ -47,10 +47,10 @@ public class DescribeSourceLocationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
-     * @return The identifier for the source location you are working on.
+     * @return The name of the source location.
      */
 
     public String getSourceLocationName() {
@@ -59,11 +59,11 @@ public class DescribeSourceLocationRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The identifier for the source location you are working on.
+     * The name of the source location.
      * </p>
      * 
      * @param sourceLocationName
-     *        The identifier for the source location you are working on.
+     *        The name of the source location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

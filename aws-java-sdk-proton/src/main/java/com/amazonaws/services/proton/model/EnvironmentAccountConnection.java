@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,13 @@ public class EnvironmentAccountConnection implements Serializable, Cloneable, St
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     */
+    private String codebuildRoleArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the IAM service role that Proton uses when provisioning directly defined
@@ -137,6 +144,55 @@ public class EnvironmentAccountConnection implements Serializable, Cloneable, St
 
     public EnvironmentAccountConnection withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     *        provision infrastructure resources using CodeBuild-based provisioning in the associated environment
+     *        account.
+     */
+
+    public void setCodebuildRoleArn(String codebuildRoleArn) {
+        this.codebuildRoleArn = codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role
+     *         to provision infrastructure resources using CodeBuild-based provisioning in the associated environment
+     *         account.
+     */
+
+    public String getCodebuildRoleArn() {
+        return this.codebuildRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     * provision infrastructure resources using CodeBuild-based provisioning in the associated environment account.
+     * </p>
+     * 
+     * @param codebuildRoleArn
+     *        The Amazon Resource Name (ARN) of an IAM service role in the environment account. Proton uses this role to
+     *        provision infrastructure resources using CodeBuild-based provisioning in the associated environment
+     *        account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EnvironmentAccountConnection withCodebuildRoleArn(String codebuildRoleArn) {
+        setCodebuildRoleArn(codebuildRoleArn);
         return this;
     }
 
@@ -596,6 +652,8 @@ public class EnvironmentAccountConnection implements Serializable, Cloneable, St
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCodebuildRoleArn() != null)
+            sb.append("CodebuildRoleArn: ").append(getCodebuildRoleArn()).append(",");
         if (getComponentRoleArn() != null)
             sb.append("ComponentRoleArn: ").append(getComponentRoleArn()).append(",");
         if (getEnvironmentAccountId() != null)
@@ -631,6 +689,10 @@ public class EnvironmentAccountConnection implements Serializable, Cloneable, St
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCodebuildRoleArn() == null ^ this.getCodebuildRoleArn() == null)
+            return false;
+        if (other.getCodebuildRoleArn() != null && other.getCodebuildRoleArn().equals(this.getCodebuildRoleArn()) == false)
             return false;
         if (other.getComponentRoleArn() == null ^ this.getComponentRoleArn() == null)
             return false;
@@ -677,6 +739,7 @@ public class EnvironmentAccountConnection implements Serializable, Cloneable, St
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCodebuildRoleArn() == null) ? 0 : getCodebuildRoleArn().hashCode());
         hashCode = prime * hashCode + ((getComponentRoleArn() == null) ? 0 : getComponentRoleArn().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentAccountId() == null) ? 0 : getEnvironmentAccountId().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentName() == null) ? 0 : getEnvironmentName().hashCode());

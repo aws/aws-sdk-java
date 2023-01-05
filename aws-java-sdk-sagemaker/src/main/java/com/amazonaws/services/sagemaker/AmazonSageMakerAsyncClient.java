@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -883,6 +883,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHubResult> createHubAsync(CreateHubRequest request) {
+
+        return createHubAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHubResult> createHubAsync(final CreateHubRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateHubRequest, CreateHubResult> asyncHandler) {
+        final CreateHubRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateHubResult>() {
+            @Override
+            public CreateHubResult call() throws Exception {
+                CreateHubResult result = null;
+
+                try {
+                    result = executeCreateHub(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateHumanTaskUiResult> createHumanTaskUiAsync(CreateHumanTaskUiRequest request) {
 
         return createHumanTaskUiAsync(request, null);
@@ -1000,6 +1033,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeCreateImageVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInferenceExperimentResult> createInferenceExperimentAsync(CreateInferenceExperimentRequest request) {
+
+        return createInferenceExperimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInferenceExperimentResult> createInferenceExperimentAsync(final CreateInferenceExperimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateInferenceExperimentRequest, CreateInferenceExperimentResult> asyncHandler) {
+        final CreateInferenceExperimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateInferenceExperimentResult>() {
+            @Override
+            public CreateInferenceExperimentResult call() throws Exception {
+                CreateInferenceExperimentResult result = null;
+
+                try {
+                    result = executeCreateInferenceExperiment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1134,6 +1200,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeCreateModelBiasJobDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelCardResult> createModelCardAsync(CreateModelCardRequest request) {
+
+        return createModelCardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelCardResult> createModelCardAsync(final CreateModelCardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateModelCardRequest, CreateModelCardResult> asyncHandler) {
+        final CreateModelCardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateModelCardResult>() {
+            @Override
+            public CreateModelCardResult call() throws Exception {
+                CreateModelCardResult result = null;
+
+                try {
+                    result = executeCreateModelCard(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelCardExportJobResult> createModelCardExportJobAsync(CreateModelCardExportJobRequest request) {
+
+        return createModelCardExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateModelCardExportJobResult> createModelCardExportJobAsync(final CreateModelCardExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateModelCardExportJobRequest, CreateModelCardExportJobResult> asyncHandler) {
+        final CreateModelCardExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateModelCardExportJobResult>() {
+            @Override
+            public CreateModelCardExportJobResult call() throws Exception {
+                CreateModelCardExportJobResult result = null;
+
+                try {
+                    result = executeCreateModelCardExportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1538,6 +1670,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeCreateProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSpaceResult> createSpaceAsync(CreateSpaceRequest request) {
+
+        return createSpaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSpaceResult> createSpaceAsync(final CreateSpaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateSpaceRequest, CreateSpaceResult> asyncHandler) {
+        final CreateSpaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateSpaceResult>() {
+            @Override
+            public CreateSpaceResult call() throws Exception {
+                CreateSpaceResult result = null;
+
+                try {
+                    result = executeCreateSpace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2413,6 +2578,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteHubResult> deleteHubAsync(DeleteHubRequest request) {
+
+        return deleteHubAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHubResult> deleteHubAsync(final DeleteHubRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteHubRequest, DeleteHubResult> asyncHandler) {
+        final DeleteHubRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteHubResult>() {
+            @Override
+            public DeleteHubResult call() throws Exception {
+                DeleteHubResult result = null;
+
+                try {
+                    result = executeDeleteHub(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHubContentResult> deleteHubContentAsync(DeleteHubContentRequest request) {
+
+        return deleteHubContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHubContentResult> deleteHubContentAsync(final DeleteHubContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteHubContentRequest, DeleteHubContentResult> asyncHandler) {
+        final DeleteHubContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteHubContentResult>() {
+            @Override
+            public DeleteHubContentResult call() throws Exception {
+                DeleteHubContentResult result = null;
+
+                try {
+                    result = executeDeleteHubContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteHumanTaskUiResult> deleteHumanTaskUiAsync(DeleteHumanTaskUiRequest request) {
 
         return deleteHumanTaskUiAsync(request, null);
@@ -2512,6 +2743,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteInferenceExperimentResult> deleteInferenceExperimentAsync(DeleteInferenceExperimentRequest request) {
+
+        return deleteInferenceExperimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInferenceExperimentResult> deleteInferenceExperimentAsync(final DeleteInferenceExperimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteInferenceExperimentRequest, DeleteInferenceExperimentResult> asyncHandler) {
+        final DeleteInferenceExperimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteInferenceExperimentResult>() {
+            @Override
+            public DeleteInferenceExperimentResult call() throws Exception {
+                DeleteInferenceExperimentResult result = null;
+
+                try {
+                    result = executeDeleteInferenceExperiment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelResult> deleteModelAsync(DeleteModelRequest request) {
 
         return deleteModelAsync(request, null);
@@ -2562,6 +2826,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDeleteModelBiasJobDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelCardResult> deleteModelCardAsync(DeleteModelCardRequest request) {
+
+        return deleteModelCardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteModelCardResult> deleteModelCardAsync(final DeleteModelCardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteModelCardRequest, DeleteModelCardResult> asyncHandler) {
+        final DeleteModelCardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteModelCardResult>() {
+            @Override
+            public DeleteModelCardResult call() throws Exception {
+                DeleteModelCardResult result = null;
+
+                try {
+                    result = executeDeleteModelCard(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2899,6 +3196,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDeleteProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSpaceResult> deleteSpaceAsync(DeleteSpaceRequest request) {
+
+        return deleteSpaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSpaceResult> deleteSpaceAsync(final DeleteSpaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteSpaceRequest, DeleteSpaceResult> asyncHandler) {
+        final DeleteSpaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteSpaceResult>() {
+            @Override
+            public DeleteSpaceResult call() throws Exception {
+                DeleteSpaceResult result = null;
+
+                try {
+                    result = executeDeleteSpace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -3874,6 +4204,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeHubResult> describeHubAsync(DescribeHubRequest request) {
+
+        return describeHubAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHubResult> describeHubAsync(final DescribeHubRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHubRequest, DescribeHubResult> asyncHandler) {
+        final DescribeHubRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeHubResult>() {
+            @Override
+            public DescribeHubResult call() throws Exception {
+                DescribeHubResult result = null;
+
+                try {
+                    result = executeDescribeHub(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHubContentResult> describeHubContentAsync(DescribeHubContentRequest request) {
+
+        return describeHubContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeHubContentResult> describeHubContentAsync(final DescribeHubContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeHubContentRequest, DescribeHubContentResult> asyncHandler) {
+        final DescribeHubContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeHubContentResult>() {
+            @Override
+            public DescribeHubContentResult call() throws Exception {
+                DescribeHubContentResult result = null;
+
+                try {
+                    result = executeDescribeHubContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeHumanTaskUiResult> describeHumanTaskUiAsync(DescribeHumanTaskUiRequest request) {
 
         return describeHumanTaskUiAsync(request, null);
@@ -3992,6 +4388,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDescribeImageVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInferenceExperimentResult> describeInferenceExperimentAsync(DescribeInferenceExperimentRequest request) {
+
+        return describeInferenceExperimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInferenceExperimentResult> describeInferenceExperimentAsync(final DescribeInferenceExperimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInferenceExperimentRequest, DescribeInferenceExperimentResult> asyncHandler) {
+        final DescribeInferenceExperimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInferenceExperimentResult>() {
+            @Override
+            public DescribeInferenceExperimentResult call() throws Exception {
+                DescribeInferenceExperimentResult result = null;
+
+                try {
+                    result = executeDescribeInferenceExperiment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4160,6 +4589,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDescribeModelBiasJobDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelCardResult> describeModelCardAsync(DescribeModelCardRequest request) {
+
+        return describeModelCardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelCardResult> describeModelCardAsync(final DescribeModelCardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeModelCardRequest, DescribeModelCardResult> asyncHandler) {
+        final DescribeModelCardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeModelCardResult>() {
+            @Override
+            public DescribeModelCardResult call() throws Exception {
+                DescribeModelCardResult result = null;
+
+                try {
+                    result = executeDescribeModelCard(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelCardExportJobResult> describeModelCardExportJobAsync(DescribeModelCardExportJobRequest request) {
+
+        return describeModelCardExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeModelCardExportJobResult> describeModelCardExportJobAsync(final DescribeModelCardExportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeModelCardExportJobRequest, DescribeModelCardExportJobResult> asyncHandler) {
+        final DescribeModelCardExportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeModelCardExportJobResult>() {
+            @Override
+            public DescribeModelCardExportJobResult call() throws Exception {
+                DescribeModelCardExportJobResult result = null;
+
+                try {
+                    result = executeDescribeModelCardExportJob(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -4564,6 +5059,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeDescribeProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSpaceResult> describeSpaceAsync(DescribeSpaceRequest request) {
+
+        return describeSpaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeSpaceResult> describeSpaceAsync(final DescribeSpaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeSpaceRequest, DescribeSpaceResult> asyncHandler) {
+        final DescribeSpaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeSpaceResult>() {
+            @Override
+            public DescribeSpaceResult call() throws Exception {
+                DescribeSpaceResult result = null;
+
+                try {
+                    result = executeDescribeSpace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -5148,6 +5676,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ImportHubContentResult> importHubContentAsync(ImportHubContentRequest request) {
+
+        return importHubContentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportHubContentResult> importHubContentAsync(final ImportHubContentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportHubContentRequest, ImportHubContentResult> asyncHandler) {
+        final ImportHubContentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportHubContentResult>() {
+            @Override
+            public ImportHubContentResult call() throws Exception {
+                ImportHubContentResult result = null;
+
+                try {
+                    result = executeImportHubContent(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListActionsResult> listActionsAsync(ListActionsRequest request) {
 
         return listActionsAsync(request, null);
@@ -5198,6 +5759,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListAlgorithms(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(ListAliasesRequest request) {
+
+        return listAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAliasesResult> listAliasesAsync(final ListAliasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAliasesRequest, ListAliasesResult> asyncHandler) {
+        final ListAliasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAliasesResult>() {
+            @Override
+            public ListAliasesResult call() throws Exception {
+                ListAliasesResult result = null;
+
+                try {
+                    result = executeListAliases(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -5875,6 +6469,105 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListHubContentVersionsResult> listHubContentVersionsAsync(ListHubContentVersionsRequest request) {
+
+        return listHubContentVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHubContentVersionsResult> listHubContentVersionsAsync(final ListHubContentVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHubContentVersionsRequest, ListHubContentVersionsResult> asyncHandler) {
+        final ListHubContentVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHubContentVersionsResult>() {
+            @Override
+            public ListHubContentVersionsResult call() throws Exception {
+                ListHubContentVersionsResult result = null;
+
+                try {
+                    result = executeListHubContentVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHubContentsResult> listHubContentsAsync(ListHubContentsRequest request) {
+
+        return listHubContentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHubContentsResult> listHubContentsAsync(final ListHubContentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHubContentsRequest, ListHubContentsResult> asyncHandler) {
+        final ListHubContentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHubContentsResult>() {
+            @Override
+            public ListHubContentsResult call() throws Exception {
+                ListHubContentsResult result = null;
+
+                try {
+                    result = executeListHubContents(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHubsResult> listHubsAsync(ListHubsRequest request) {
+
+        return listHubsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHubsResult> listHubsAsync(final ListHubsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListHubsRequest, ListHubsResult> asyncHandler) {
+        final ListHubsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListHubsResult>() {
+            @Override
+            public ListHubsResult call() throws Exception {
+                ListHubsResult result = null;
+
+                try {
+                    result = executeListHubs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListHumanTaskUisResult> listHumanTaskUisAsync(ListHumanTaskUisRequest request) {
 
         return listHumanTaskUisAsync(request, null);
@@ -5991,6 +6684,74 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListImages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceExperimentsResult> listInferenceExperimentsAsync(ListInferenceExperimentsRequest request) {
+
+        return listInferenceExperimentsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceExperimentsResult> listInferenceExperimentsAsync(final ListInferenceExperimentsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInferenceExperimentsRequest, ListInferenceExperimentsResult> asyncHandler) {
+        final ListInferenceExperimentsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInferenceExperimentsResult>() {
+            @Override
+            public ListInferenceExperimentsResult call() throws Exception {
+                ListInferenceExperimentsResult result = null;
+
+                try {
+                    result = executeListInferenceExperiments(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            ListInferenceRecommendationsJobStepsRequest request) {
+
+        return listInferenceRecommendationsJobStepsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInferenceRecommendationsJobStepsResult> listInferenceRecommendationsJobStepsAsync(
+            final ListInferenceRecommendationsJobStepsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInferenceRecommendationsJobStepsRequest, ListInferenceRecommendationsJobStepsResult> asyncHandler) {
+        final ListInferenceRecommendationsJobStepsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInferenceRecommendationsJobStepsResult>() {
+            @Override
+            public ListInferenceRecommendationsJobStepsResult call() throws Exception {
+                ListInferenceRecommendationsJobStepsResult result = null;
+
+                try {
+                    result = executeListInferenceRecommendationsJobSteps(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6158,6 +6919,105 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListModelBiasJobDefinitions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelCardExportJobsResult> listModelCardExportJobsAsync(ListModelCardExportJobsRequest request) {
+
+        return listModelCardExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelCardExportJobsResult> listModelCardExportJobsAsync(final ListModelCardExportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListModelCardExportJobsRequest, ListModelCardExportJobsResult> asyncHandler) {
+        final ListModelCardExportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListModelCardExportJobsResult>() {
+            @Override
+            public ListModelCardExportJobsResult call() throws Exception {
+                ListModelCardExportJobsResult result = null;
+
+                try {
+                    result = executeListModelCardExportJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelCardVersionsResult> listModelCardVersionsAsync(ListModelCardVersionsRequest request) {
+
+        return listModelCardVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelCardVersionsResult> listModelCardVersionsAsync(final ListModelCardVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListModelCardVersionsRequest, ListModelCardVersionsResult> asyncHandler) {
+        final ListModelCardVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListModelCardVersionsResult>() {
+            @Override
+            public ListModelCardVersionsResult call() throws Exception {
+                ListModelCardVersionsResult result = null;
+
+                try {
+                    result = executeListModelCardVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelCardsResult> listModelCardsAsync(ListModelCardsRequest request) {
+
+        return listModelCardsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListModelCardsResult> listModelCardsAsync(final ListModelCardsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListModelCardsRequest, ListModelCardsResult> asyncHandler) {
+        final ListModelCardsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListModelCardsResult>() {
+            @Override
+            public ListModelCardsResult call() throws Exception {
+                ListModelCardsResult result = null;
+
+                try {
+                    result = executeListModelCards(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6359,6 +7219,72 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoringAlertHistoryResult> listMonitoringAlertHistoryAsync(ListMonitoringAlertHistoryRequest request) {
+
+        return listMonitoringAlertHistoryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoringAlertHistoryResult> listMonitoringAlertHistoryAsync(final ListMonitoringAlertHistoryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMonitoringAlertHistoryRequest, ListMonitoringAlertHistoryResult> asyncHandler) {
+        final ListMonitoringAlertHistoryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMonitoringAlertHistoryResult>() {
+            @Override
+            public ListMonitoringAlertHistoryResult call() throws Exception {
+                ListMonitoringAlertHistoryResult result = null;
+
+                try {
+                    result = executeListMonitoringAlertHistory(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoringAlertsResult> listMonitoringAlertsAsync(ListMonitoringAlertsRequest request) {
+
+        return listMonitoringAlertsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMonitoringAlertsResult> listMonitoringAlertsAsync(final ListMonitoringAlertsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListMonitoringAlertsRequest, ListMonitoringAlertsResult> asyncHandler) {
+        final ListMonitoringAlertsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListMonitoringAlertsResult>() {
+            @Override
+            public ListMonitoringAlertsResult call() throws Exception {
+                ListMonitoringAlertsResult result = null;
+
+                try {
+                    result = executeListMonitoringAlerts(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -6693,6 +7619,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeListProjects(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSpacesResult> listSpacesAsync(ListSpacesRequest request) {
+
+        return listSpacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSpacesResult> listSpacesAsync(final ListSpacesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSpacesRequest, ListSpacesResult> asyncHandler) {
+        final ListSpacesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSpacesResult>() {
+            @Override
+            public ListSpacesResult call() throws Exception {
+                ListSpacesResult result = null;
+
+                try {
+                    result = executeListSpaces(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -7408,6 +8367,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<StartInferenceExperimentResult> startInferenceExperimentAsync(StartInferenceExperimentRequest request) {
+
+        return startInferenceExperimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartInferenceExperimentResult> startInferenceExperimentAsync(final StartInferenceExperimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartInferenceExperimentRequest, StartInferenceExperimentResult> asyncHandler) {
+        final StartInferenceExperimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartInferenceExperimentResult>() {
+            @Override
+            public StartInferenceExperimentResult call() throws Exception {
+                StartInferenceExperimentResult result = null;
+
+                try {
+                    result = executeStartInferenceExperiment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartMonitoringScheduleResult> startMonitoringScheduleAsync(StartMonitoringScheduleRequest request) {
 
         return startMonitoringScheduleAsync(request, null);
@@ -7656,6 +8648,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeStopHyperParameterTuningJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopInferenceExperimentResult> stopInferenceExperimentAsync(StopInferenceExperimentRequest request) {
+
+        return stopInferenceExperimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopInferenceExperimentResult> stopInferenceExperimentAsync(final StopInferenceExperimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopInferenceExperimentRequest, StopInferenceExperimentResult> asyncHandler) {
+        final StopInferenceExperimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopInferenceExperimentResult>() {
+            @Override
+            public StopInferenceExperimentResult call() throws Exception {
+                StopInferenceExperimentResult result = null;
+
+                try {
+                    result = executeStopInferenceExperiment(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -8369,6 +9394,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateHubResult> updateHubAsync(UpdateHubRequest request) {
+
+        return updateHubAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHubResult> updateHubAsync(final UpdateHubRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateHubRequest, UpdateHubResult> asyncHandler) {
+        final UpdateHubRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateHubResult>() {
+            @Override
+            public UpdateHubResult call() throws Exception {
+                UpdateHubResult result = null;
+
+                try {
+                    result = executeUpdateHub(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateImageResult> updateImageAsync(UpdateImageRequest request) {
 
         return updateImageAsync(request, null);
@@ -8402,6 +9460,105 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateImageVersionResult> updateImageVersionAsync(UpdateImageVersionRequest request) {
+
+        return updateImageVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateImageVersionResult> updateImageVersionAsync(final UpdateImageVersionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateImageVersionRequest, UpdateImageVersionResult> asyncHandler) {
+        final UpdateImageVersionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateImageVersionResult>() {
+            @Override
+            public UpdateImageVersionResult call() throws Exception {
+                UpdateImageVersionResult result = null;
+
+                try {
+                    result = executeUpdateImageVersion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInferenceExperimentResult> updateInferenceExperimentAsync(UpdateInferenceExperimentRequest request) {
+
+        return updateInferenceExperimentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInferenceExperimentResult> updateInferenceExperimentAsync(final UpdateInferenceExperimentRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateInferenceExperimentRequest, UpdateInferenceExperimentResult> asyncHandler) {
+        final UpdateInferenceExperimentRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateInferenceExperimentResult>() {
+            @Override
+            public UpdateInferenceExperimentResult call() throws Exception {
+                UpdateInferenceExperimentResult result = null;
+
+                try {
+                    result = executeUpdateInferenceExperiment(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelCardResult> updateModelCardAsync(UpdateModelCardRequest request) {
+
+        return updateModelCardAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateModelCardResult> updateModelCardAsync(final UpdateModelCardRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateModelCardRequest, UpdateModelCardResult> asyncHandler) {
+        final UpdateModelCardRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateModelCardResult>() {
+            @Override
+            public UpdateModelCardResult call() throws Exception {
+                UpdateModelCardResult result = null;
+
+                try {
+                    result = executeUpdateModelCard(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateModelPackageResult> updateModelPackageAsync(UpdateModelPackageRequest request) {
 
         return updateModelPackageAsync(request, null);
@@ -8419,6 +9576,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeUpdateModelPackage(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMonitoringAlertResult> updateMonitoringAlertAsync(UpdateMonitoringAlertRequest request) {
+
+        return updateMonitoringAlertAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMonitoringAlertResult> updateMonitoringAlertAsync(final UpdateMonitoringAlertRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateMonitoringAlertRequest, UpdateMonitoringAlertResult> asyncHandler) {
+        final UpdateMonitoringAlertRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateMonitoringAlertResult>() {
+            @Override
+            public UpdateMonitoringAlertResult call() throws Exception {
+                UpdateMonitoringAlertResult result = null;
+
+                try {
+                    result = executeUpdateMonitoringAlert(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -8619,6 +9809,39 @@ public class AmazonSageMakerAsyncClient extends AmazonSageMakerClient implements
 
                 try {
                     result = executeUpdateProject(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSpaceResult> updateSpaceAsync(UpdateSpaceRequest request) {
+
+        return updateSpaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSpaceResult> updateSpaceAsync(final UpdateSpaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateSpaceRequest, UpdateSpaceResult> asyncHandler) {
+        final UpdateSpaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateSpaceResult>() {
+            @Override
+            public UpdateSpaceResult call() throws Exception {
+                UpdateSpaceResult result = null;
+
+                try {
+                    result = executeUpdateSpace(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

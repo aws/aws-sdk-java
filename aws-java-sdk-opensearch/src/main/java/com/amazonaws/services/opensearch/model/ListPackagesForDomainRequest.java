@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Container for the request parameters to the <code> <a>ListPackagesForDomain</a> </code> operation.
+ * Container for the request parameters to the <code>ListPackagesForDomain</code> operation.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -33,14 +33,16 @@ public class ListPackagesForDomainRequest extends com.amazonaws.AmazonWebService
     private String domainName;
     /**
      * <p>
-     * Limits results to a maximum number of packages.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns
+     * results in the next page.
      * </p>
      */
     private String nextToken;
@@ -87,11 +89,13 @@ public class ListPackagesForDomainRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Limits results to a maximum number of packages.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Limits results to a maximum number of packages.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -100,10 +104,12 @@ public class ListPackagesForDomainRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Limits results to a maximum number of packages.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
-     * @return Limits results to a maximum number of packages.
+     * @return An optional parameter that specifies the maximum number of results to return. You can use
+     *         <code>nextToken</code> to get the next page of results.
      */
 
     public Integer getMaxResults() {
@@ -112,11 +118,13 @@ public class ListPackagesForDomainRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Limits results to a maximum number of packages.
+     * An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code>
+     * to get the next page of results.
      * </p>
      * 
      * @param maxResults
-     *        Limits results to a maximum number of packages.
+     *        An optional parameter that specifies the maximum number of results to return. You can use
+     *        <code>nextToken</code> to get the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,13 +135,15 @@ public class ListPackagesForDomainRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns
+     * results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If
-     *        provided, returns results for the next page.
+     *        If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can
+     *        include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations,
+     *        which returns results in the next page.
      */
 
     public void setNextToken(String nextToken) {
@@ -142,12 +152,14 @@ public class ListPackagesForDomainRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns
+     * results in the next page.
      * </p>
      * 
-     * @return Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If
-     *         provided, returns results for the next page.
+     * @return If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can
+     *         include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations,
+     *         which returns results in the next page.
      */
 
     public String getNextToken() {
@@ -156,13 +168,15 @@ public class ListPackagesForDomainRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided,
-     * returns results for the next page.
+     * If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include
+     * the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns
+     * results in the next page.
      * </p>
      * 
      * @param nextToken
-     *        Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If
-     *        provided, returns results for the next page.
+     *        If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can
+     *        include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations,
+     *        which returns results in the next page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

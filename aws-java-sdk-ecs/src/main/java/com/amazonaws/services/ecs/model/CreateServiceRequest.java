@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -251,8 +251,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -378,6 +378,21 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Boolean enableExecuteCommand;
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     */
+    private ServiceConnectConfiguration serviceConnectConfiguration;
 
     /**
      * <p>
@@ -2100,8 +2115,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -2117,8 +2132,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        configured to use a load balancer. If your service has a load balancer defined and you don't specify a
      *        health check grace period value, the default value of <code>0</code> is used.</p>
      *        <p>
-     *        If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the
-     *        task definition healtch check parameters. For more information, see <a
+     *        If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the
+     *        task definition health check parameters. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      *        </p>
      *        <p>
@@ -2140,8 +2155,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -2156,8 +2171,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         configured to use a load balancer. If your service has a load balancer defined and you don't specify a
      *         health check grace period value, the default value of <code>0</code> is used.</p>
      *         <p>
-     *         If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the
-     *         task definition healtch check parameters. For more information, see <a
+     *         If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in
+     *         the task definition health check parameters. For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      *         </p>
      *         <p>
@@ -2179,8 +2194,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * value, the default value of <code>0</code> is used.
      * </p>
      * <p>
-     * If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the task
-     * definition healtch check parameters. For more information, see <a
+     * If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the task
+     * definition health check parameters. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      * </p>
      * <p>
@@ -2196,8 +2211,8 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        configured to use a load balancer. If your service has a load balancer defined and you don't specify a
      *        health check grace period value, the default value of <code>0</code> is used.</p>
      *        <p>
-     *        If you do not use an Elastic Load Balancing, we recomend that you use the <code>startPeriod</code> in the
-     *        task definition healtch check parameters. For more information, see <a
+     *        If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code> in the
+     *        task definition health check parameters. For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health check</a>.
      *        </p>
      *        <p>
@@ -3184,6 +3199,97 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public void setServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        this.serviceConnectConfiguration = serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return The configuration for this service to discover and connect to services, and be discovered by, and
+     *         connected from, other services within a namespace.</p>
+     *         <p>
+     *         Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *         connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *         container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS
+     *         services create are supported with Service Connect. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *         Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     */
+
+    public ServiceConnectConfiguration getServiceConnectConfiguration() {
+        return this.serviceConnectConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration for this service to discover and connect to services, and be discovered by, and connected from,
+     * other services within a namespace.
+     * </p>
+     * <p>
+     * Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can connect to
+     * services across all of the clusters in the namespace. Tasks connect through a managed proxy container that
+     * collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services create are supported
+     * with Service Connect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in
+     * the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param serviceConnectConfiguration
+     *        The configuration for this service to discover and connect to services, and be discovered by, and
+     *        connected from, other services within a namespace.</p>
+     *        <p>
+     *        Tasks that run in a namespace can use short names to connect to services in the namespace. Tasks can
+     *        connect to services across all of the clusters in the namespace. Tasks connect through a managed proxy
+     *        container that collects logs and metrics for increased visibility. Only the tasks that Amazon ECS services
+     *        create are supported with Service Connect. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+     *        Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateServiceRequest withServiceConnectConfiguration(ServiceConnectConfiguration serviceConnectConfiguration) {
+        setServiceConnectConfiguration(serviceConnectConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3238,7 +3344,9 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getPropagateTags() != null)
             sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
         if (getEnableExecuteCommand() != null)
-            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand());
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand()).append(",");
+        if (getServiceConnectConfiguration() != null)
+            sb.append("ServiceConnectConfiguration: ").append(getServiceConnectConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -3342,6 +3450,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
             return false;
+        if (other.getServiceConnectConfiguration() == null ^ this.getServiceConnectConfiguration() == null)
+            return false;
+        if (other.getServiceConnectConfiguration() != null && other.getServiceConnectConfiguration().equals(this.getServiceConnectConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -3372,6 +3484,7 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
         hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
+        hashCode = prime * hashCode + ((getServiceConnectConfiguration() == null) ? 0 : getServiceConnectConfiguration().hashCode());
         return hashCode;
     }
 

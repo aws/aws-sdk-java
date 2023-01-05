@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,8 @@ public class CreateFunctionRequestMarshaller {
             .marshallLocationName("Architectures").build();
     private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EphemeralStorage").build();
+    private static final MarshallingInfo<StructuredPojo> SNAPSTART_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnapStart").build();
 
     private static final CreateFunctionRequestMarshaller instance = new CreateFunctionRequestMarshaller();
 
@@ -112,6 +114,7 @@ public class CreateFunctionRequestMarshaller {
             protocolMarshaller.marshall(createFunctionRequest.getCodeSigningConfigArn(), CODESIGNINGCONFIGARN_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getArchitectures(), ARCHITECTURES_BINDING);
             protocolMarshaller.marshall(createFunctionRequest.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
+            protocolMarshaller.marshall(createFunctionRequest.getSnapStart(), SNAPSTART_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

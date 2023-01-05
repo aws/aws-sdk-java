@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.logs.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,12 +28,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeLogGroupsRequestMarshaller {
 
+    private static final MarshallingInfo<List> ACCOUNTIDENTIFIERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accountIdentifiers").build();
     private static final MarshallingInfo<String> LOGGROUPNAMEPREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupNamePrefix").build();
+    private static final MarshallingInfo<String> LOGGROUPNAMEPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logGroupNamePattern").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("nextToken").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("limit").build();
+    private static final MarshallingInfo<Boolean> INCLUDELINKEDACCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("includeLinkedAccounts").build();
 
     private static final DescribeLogGroupsRequestMarshaller instance = new DescribeLogGroupsRequestMarshaller();
 
@@ -50,9 +57,12 @@ public class DescribeLogGroupsRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(describeLogGroupsRequest.getAccountIdentifiers(), ACCOUNTIDENTIFIERS_BINDING);
             protocolMarshaller.marshall(describeLogGroupsRequest.getLogGroupNamePrefix(), LOGGROUPNAMEPREFIX_BINDING);
+            protocolMarshaller.marshall(describeLogGroupsRequest.getLogGroupNamePattern(), LOGGROUPNAMEPATTERN_BINDING);
             protocolMarshaller.marshall(describeLogGroupsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(describeLogGroupsRequest.getLimit(), LIMIT_BINDING);
+            protocolMarshaller.marshall(describeLogGroupsRequest.getIncludeLinkedAccounts(), INCLUDELINKEDACCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

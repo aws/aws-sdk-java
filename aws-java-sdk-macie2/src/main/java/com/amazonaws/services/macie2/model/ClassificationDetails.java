@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery result for
      * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
      * Otherwise, this value is the path to a file.
      * </p>
@@ -38,20 +38,23 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
     private String detailedResultsLocation;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job that produced the finding.
+     * The Amazon Resource Name (ARN) of the classification job that produced the finding. This value is null if the
+     * origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      */
     private String jobArn;
     /**
      * <p>
-     * The unique identifier for the classification job that produced the finding.
+     * The unique identifier for the classification job that produced the finding. This value is null if the origin of
+     * the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      */
     private String jobId;
     /**
      * <p>
-     * Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for
-     * a classification job.
+     * Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     * SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for automated
+     * sensitive data discovery.
      * </p>
      */
     private String originType;
@@ -64,13 +67,13 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery result for
      * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
      * Otherwise, this value is the path to a file.
      * </p>
      * 
      * @param detailedResultsLocation
-     *        The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
+     *        The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery
      *        result for the finding. If a finding applies to a large archive or compressed file, this value is the path
      *        to a folder. Otherwise, this value is the path to a file.
      */
@@ -81,12 +84,12 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery result for
      * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
      * Otherwise, this value is the path to a file.
      * </p>
      * 
-     * @return The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
+     * @return The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery
      *         result for the finding. If a finding applies to a large archive or compressed file, this value is the
      *         path to a folder. Otherwise, this value is the path to a file.
      */
@@ -97,13 +100,13 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery result for
      * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
      * Otherwise, this value is the path to a file.
      * </p>
      * 
      * @param detailedResultsLocation
-     *        The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
+     *        The path to the folder or file in Amazon S3 that contains the corresponding sensitive data discovery
      *        result for the finding. If a finding applies to a large archive or compressed file, this value is the path
      *        to a folder. Otherwise, this value is the path to a file.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -116,11 +119,13 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job that produced the finding.
+     * The Amazon Resource Name (ARN) of the classification job that produced the finding. This value is null if the
+     * origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      * 
      * @param jobArn
-     *        The Amazon Resource Name (ARN) of the classification job that produced the finding.
+     *        The Amazon Resource Name (ARN) of the classification job that produced the finding. This value is null if
+     *        the origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      */
 
     public void setJobArn(String jobArn) {
@@ -129,10 +134,12 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job that produced the finding.
+     * The Amazon Resource Name (ARN) of the classification job that produced the finding. This value is null if the
+     * origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the classification job that produced the finding.
+     * @return The Amazon Resource Name (ARN) of the classification job that produced the finding. This value is null if
+     *         the origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      */
 
     public String getJobArn() {
@@ -141,11 +148,13 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the classification job that produced the finding.
+     * The Amazon Resource Name (ARN) of the classification job that produced the finding. This value is null if the
+     * origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      * 
      * @param jobArn
-     *        The Amazon Resource Name (ARN) of the classification job that produced the finding.
+     *        The Amazon Resource Name (ARN) of the classification job that produced the finding. This value is null if
+     *        the origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,11 +165,13 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier for the classification job that produced the finding.
+     * The unique identifier for the classification job that produced the finding. This value is null if the origin of
+     * the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      * 
      * @param jobId
-     *        The unique identifier for the classification job that produced the finding.
+     *        The unique identifier for the classification job that produced the finding. This value is null if the
+     *        origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      */
 
     public void setJobId(String jobId) {
@@ -169,10 +180,12 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier for the classification job that produced the finding.
+     * The unique identifier for the classification job that produced the finding. This value is null if the origin of
+     * the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      * 
-     * @return The unique identifier for the classification job that produced the finding.
+     * @return The unique identifier for the classification job that produced the finding. This value is null if the
+     *         origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      */
 
     public String getJobId() {
@@ -181,11 +194,13 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The unique identifier for the classification job that produced the finding.
+     * The unique identifier for the classification job that produced the finding. This value is null if the origin of
+     * the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * </p>
      * 
      * @param jobId
-     *        The unique identifier for the classification job that produced the finding.
+     *        The unique identifier for the classification job that produced the finding. This value is null if the
+     *        origin of the finding (originType) is AUTOMATED_SENSITIVE_DATA_DISCOVERY.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,13 +211,15 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for
-     * a classification job.
+     * Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     * SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for automated
+     * sensitive data discovery.
      * </p>
      * 
      * @param originType
-     *        Specifies how Amazon Macie found the sensitive data that produced the finding:
-     *        SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.
+     *        Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     *        SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for
+     *        automated sensitive data discovery.
      * @see OriginType
      */
 
@@ -212,12 +229,14 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for
-     * a classification job.
+     * Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     * SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for automated
+     * sensitive data discovery.
      * </p>
      * 
-     * @return Specifies how Amazon Macie found the sensitive data that produced the finding:
-     *         SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.
+     * @return Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     *         SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for
+     *         automated sensitive data discovery.
      * @see OriginType
      */
 
@@ -227,13 +246,15 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for
-     * a classification job.
+     * Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     * SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for automated
+     * sensitive data discovery.
      * </p>
      * 
      * @param originType
-     *        Specifies how Amazon Macie found the sensitive data that produced the finding:
-     *        SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.
+     *        Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     *        SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for
+     *        automated sensitive data discovery.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */
@@ -245,13 +266,15 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Specifies how Amazon Macie found the sensitive data that produced the finding: SENSITIVE_DATA_DISCOVERY_JOB, for
-     * a classification job.
+     * Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     * SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for automated
+     * sensitive data discovery.
      * </p>
      * 
      * @param originType
-     *        Specifies how Amazon Macie found the sensitive data that produced the finding:
-     *        SENSITIVE_DATA_DISCOVERY_JOB, for a classification job.
+     *        Specifies how Amazon Macie found the sensitive data that produced the finding. Possible values are:
+     *        SENSITIVE_DATA_DISCOVERY_JOB, for a classification job; and, AUTOMATED_SENSITIVE_DATA_DISCOVERY, for
+     *        automated sensitive data discovery.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OriginType
      */

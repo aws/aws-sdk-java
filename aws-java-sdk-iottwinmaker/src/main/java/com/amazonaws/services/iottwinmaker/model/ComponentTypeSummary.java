@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,12 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
     private java.util.Date creationDateTime;
     /**
      * <p>
+     * The date and time when the component type was last updated.
+     * </p>
+     */
+    private java.util.Date updateDateTime;
+    /**
+     * <p>
      * The description of the component type.
      * </p>
      */
@@ -60,10 +66,10 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
     private Status status;
     /**
      * <p>
-     * The date and time when the component type was last updated.
+     * The component type name.
      * </p>
      */
-    private java.util.Date updateDateTime;
+    private String componentTypeName;
 
     /**
      * <p>
@@ -187,6 +193,46 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The date and time when the component type was last updated.
+     * </p>
+     * 
+     * @param updateDateTime
+     *        The date and time when the component type was last updated.
+     */
+
+    public void setUpdateDateTime(java.util.Date updateDateTime) {
+        this.updateDateTime = updateDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the component type was last updated.
+     * </p>
+     * 
+     * @return The date and time when the component type was last updated.
+     */
+
+    public java.util.Date getUpdateDateTime() {
+        return this.updateDateTime;
+    }
+
+    /**
+     * <p>
+     * The date and time when the component type was last updated.
+     * </p>
+     * 
+     * @param updateDateTime
+     *        The date and time when the component type was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentTypeSummary withUpdateDateTime(java.util.Date updateDateTime) {
+        setUpdateDateTime(updateDateTime);
+        return this;
+    }
+
+    /**
+     * <p>
      * The description of the component type.
      * </p>
      * 
@@ -267,41 +313,41 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The date and time when the component type was last updated.
+     * The component type name.
      * </p>
      * 
-     * @param updateDateTime
-     *        The date and time when the component type was last updated.
+     * @param componentTypeName
+     *        The component type name.
      */
 
-    public void setUpdateDateTime(java.util.Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
+    public void setComponentTypeName(String componentTypeName) {
+        this.componentTypeName = componentTypeName;
     }
 
     /**
      * <p>
-     * The date and time when the component type was last updated.
+     * The component type name.
      * </p>
      * 
-     * @return The date and time when the component type was last updated.
+     * @return The component type name.
      */
 
-    public java.util.Date getUpdateDateTime() {
-        return this.updateDateTime;
+    public String getComponentTypeName() {
+        return this.componentTypeName;
     }
 
     /**
      * <p>
-     * The date and time when the component type was last updated.
+     * The component type name.
      * </p>
      * 
-     * @param updateDateTime
-     *        The date and time when the component type was last updated.
+     * @param componentTypeName
+     *        The component type name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public ComponentTypeSummary withUpdateDateTime(java.util.Date updateDateTime) {
-        setUpdateDateTime(updateDateTime);
+    public ComponentTypeSummary withComponentTypeName(String componentTypeName) {
+        setComponentTypeName(componentTypeName);
         return this;
     }
 
@@ -323,12 +369,14 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
             sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
         if (getCreationDateTime() != null)
             sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
+        if (getUpdateDateTime() != null)
+            sb.append("UpdateDateTime: ").append(getUpdateDateTime()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
-        if (getUpdateDateTime() != null)
-            sb.append("UpdateDateTime: ").append(getUpdateDateTime());
+        if (getComponentTypeName() != null)
+            sb.append("ComponentTypeName: ").append(getComponentTypeName());
         sb.append("}");
         return sb.toString();
     }
@@ -355,6 +403,10 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
+        if (other.getUpdateDateTime() == null ^ this.getUpdateDateTime() == null)
+            return false;
+        if (other.getUpdateDateTime() != null && other.getUpdateDateTime().equals(this.getUpdateDateTime()) == false)
+            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
@@ -363,9 +415,9 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
-        if (other.getUpdateDateTime() == null ^ this.getUpdateDateTime() == null)
+        if (other.getComponentTypeName() == null ^ this.getComponentTypeName() == null)
             return false;
-        if (other.getUpdateDateTime() != null && other.getUpdateDateTime().equals(this.getUpdateDateTime()) == false)
+        if (other.getComponentTypeName() != null && other.getComponentTypeName().equals(this.getComponentTypeName()) == false)
             return false;
         return true;
     }
@@ -378,9 +430,10 @@ public class ComponentTypeSummary implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
+        hashCode = prime * hashCode + ((getUpdateDateTime() == null) ? 0 : getUpdateDateTime().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        hashCode = prime * hashCode + ((getUpdateDateTime() == null) ? 0 : getUpdateDateTime().hashCode());
+        hashCode = prime * hashCode + ((getComponentTypeName() == null) ? 0 : getComponentTypeName().hashCode());
         return hashCode;
     }
 

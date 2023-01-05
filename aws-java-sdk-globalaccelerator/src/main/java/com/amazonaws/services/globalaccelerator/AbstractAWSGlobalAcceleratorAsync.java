@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     @Override
     public java.util.concurrent.Future<AddCustomRoutingEndpointsResult> addCustomRoutingEndpointsAsync(AddCustomRoutingEndpointsRequest request,
             com.amazonaws.handlers.AsyncHandler<AddCustomRoutingEndpointsRequest, AddCustomRoutingEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(AddEndpointsRequest request) {
+
+        return addEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddEndpointsResult> addEndpointsAsync(AddEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddEndpointsRequest, AddEndpointsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -518,6 +531,19 @@ public class AbstractAWSGlobalAcceleratorAsync extends AbstractAWSGlobalAccelera
     @Override
     public java.util.concurrent.Future<RemoveCustomRoutingEndpointsResult> removeCustomRoutingEndpointsAsync(RemoveCustomRoutingEndpointsRequest request,
             com.amazonaws.handlers.AsyncHandler<RemoveCustomRoutingEndpointsRequest, RemoveCustomRoutingEndpointsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(RemoveEndpointsRequest request) {
+
+        return removeEndpointsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveEndpointsResult> removeEndpointsAsync(RemoveEndpointsRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveEndpointsRequest, RemoveEndpointsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

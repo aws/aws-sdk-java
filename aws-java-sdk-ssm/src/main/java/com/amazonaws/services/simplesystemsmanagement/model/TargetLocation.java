@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,8 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String executionRoleName;
+
+    private AlarmConfiguration targetLocationAlarmConfiguration;
 
     /**
      * <p>
@@ -348,6 +350,32 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param targetLocationAlarmConfiguration
+     */
+
+    public void setTargetLocationAlarmConfiguration(AlarmConfiguration targetLocationAlarmConfiguration) {
+        this.targetLocationAlarmConfiguration = targetLocationAlarmConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public AlarmConfiguration getTargetLocationAlarmConfiguration() {
+        return this.targetLocationAlarmConfiguration;
+    }
+
+    /**
+     * @param targetLocationAlarmConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TargetLocation withTargetLocationAlarmConfiguration(AlarmConfiguration targetLocationAlarmConfiguration) {
+        setTargetLocationAlarmConfiguration(targetLocationAlarmConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -368,7 +396,9 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
         if (getTargetLocationMaxErrors() != null)
             sb.append("TargetLocationMaxErrors: ").append(getTargetLocationMaxErrors()).append(",");
         if (getExecutionRoleName() != null)
-            sb.append("ExecutionRoleName: ").append(getExecutionRoleName());
+            sb.append("ExecutionRoleName: ").append(getExecutionRoleName()).append(",");
+        if (getTargetLocationAlarmConfiguration() != null)
+            sb.append("TargetLocationAlarmConfiguration: ").append(getTargetLocationAlarmConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -403,6 +433,11 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExecutionRoleName() != null && other.getExecutionRoleName().equals(this.getExecutionRoleName()) == false)
             return false;
+        if (other.getTargetLocationAlarmConfiguration() == null ^ this.getTargetLocationAlarmConfiguration() == null)
+            return false;
+        if (other.getTargetLocationAlarmConfiguration() != null
+                && other.getTargetLocationAlarmConfiguration().equals(this.getTargetLocationAlarmConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -416,6 +451,7 @@ public class TargetLocation implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetLocationMaxConcurrency() == null) ? 0 : getTargetLocationMaxConcurrency().hashCode());
         hashCode = prime * hashCode + ((getTargetLocationMaxErrors() == null) ? 0 : getTargetLocationMaxErrors().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleName() == null) ? 0 : getExecutionRoleName().hashCode());
+        hashCode = prime * hashCode + ((getTargetLocationAlarmConfiguration() == null) ? 0 : getTargetLocationAlarmConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,17 @@ public class GetLogRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String logRecordPointer;
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     */
+    private Boolean unmask;
 
     /**
      * <p>
@@ -88,6 +99,94 @@ public class GetLogRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @param unmask
+     *        Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *        The default is <code>false</code>.</p>
+     *        <p>
+     *        To use this operation with this parameter, you must be signed into an account with the
+     *        <code>logs:Unmask</code> permission.
+     */
+
+    public void setUnmask(Boolean unmask) {
+        this.unmask = unmask;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *         The default is <code>false</code>.</p>
+     *         <p>
+     *         To use this operation with this parameter, you must be signed into an account with the
+     *         <code>logs:Unmask</code> permission.
+     */
+
+    public Boolean getUnmask() {
+        return this.unmask;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @param unmask
+     *        Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *        The default is <code>false</code>.</p>
+     *        <p>
+     *        To use this operation with this parameter, you must be signed into an account with the
+     *        <code>logs:Unmask</code> permission.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetLogRecordRequest withUnmask(Boolean unmask) {
+        setUnmask(unmask);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible. The
+     * default is <code>false</code>.
+     * </p>
+     * <p>
+     * To use this operation with this parameter, you must be signed into an account with the <code>logs:Unmask</code>
+     * permission.
+     * </p>
+     * 
+     * @return Specify <code>true</code> to display the log event fields with all sensitive data unmasked and visible.
+     *         The default is <code>false</code>.</p>
+     *         <p>
+     *         To use this operation with this parameter, you must be signed into an account with the
+     *         <code>logs:Unmask</code> permission.
+     */
+
+    public Boolean isUnmask() {
+        return this.unmask;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -100,7 +199,9 @@ public class GetLogRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getLogRecordPointer() != null)
-            sb.append("LogRecordPointer: ").append(getLogRecordPointer());
+            sb.append("LogRecordPointer: ").append(getLogRecordPointer()).append(",");
+        if (getUnmask() != null)
+            sb.append("Unmask: ").append(getUnmask());
         sb.append("}");
         return sb.toString();
     }
@@ -119,6 +220,10 @@ public class GetLogRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getLogRecordPointer() != null && other.getLogRecordPointer().equals(this.getLogRecordPointer()) == false)
             return false;
+        if (other.getUnmask() == null ^ this.getUnmask() == null)
+            return false;
+        if (other.getUnmask() != null && other.getUnmask().equals(this.getUnmask()) == false)
+            return false;
         return true;
     }
 
@@ -128,6 +233,7 @@ public class GetLogRecordRequest extends com.amazonaws.AmazonWebServiceRequest i
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getLogRecordPointer() == null) ? 0 : getLogRecordPointer().hashCode());
+        hashCode = prime * hashCode + ((getUnmask() == null) ? 0 : getUnmask().hashCode());
         return hashCode;
     }
 

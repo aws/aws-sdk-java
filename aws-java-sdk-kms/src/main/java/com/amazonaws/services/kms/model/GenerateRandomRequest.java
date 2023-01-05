@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,12 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer numberOfBytes;
     /**
      * <p>
-     * Generates the random byte string in the CloudHSM cluster that is associated with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
-     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key
+     * store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * External key store IDs are not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
      * </p>
      */
     private String customKeyStoreId;
@@ -82,15 +85,20 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Generates the random byte string in the CloudHSM cluster that is associated with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
-     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key
+     * store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * External key store IDs are not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
      * </p>
      * 
      * @param customKeyStoreId
-     *        Generates the random byte string in the CloudHSM cluster that is associated with the specified <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *        store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     *        Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM
+     *        key store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+     *        <p>
+     *        External key store IDs are not valid for this parameter. If you specify the ID of an external key store,
+     *        <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
      */
 
     public void setCustomKeyStoreId(String customKeyStoreId) {
@@ -99,14 +107,19 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Generates the random byte string in the CloudHSM cluster that is associated with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
-     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key
+     * store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * External key store IDs are not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
      * </p>
      * 
-     * @return Generates the random byte string in the CloudHSM cluster that is associated with the specified <a
-     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *         store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * @return Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM
+     *         key store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+     *         <p>
+     *         External key store IDs are not valid for this parameter. If you specify the ID of an external key store,
+     *         <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
      */
 
     public String getCustomKeyStoreId() {
@@ -115,15 +128,20 @@ public class GenerateRandomRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * Generates the random byte string in the CloudHSM cluster that is associated with the specified <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.
-     * To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM key
+     * store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     * </p>
+     * <p>
+     * External key store IDs are not valid for this parameter. If you specify the ID of an external key store,
+     * <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
      * </p>
      * 
      * @param customKeyStoreId
-     *        Generates the random byte string in the CloudHSM cluster that is associated with the specified <a
-     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key
-     *        store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.
+     *        Generates the random byte string in the CloudHSM cluster that is associated with the specified CloudHSM
+     *        key store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
+     *        <p>
+     *        External key store IDs are not valid for this parameter. If you specify the ID of an external key store,
+     *        <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

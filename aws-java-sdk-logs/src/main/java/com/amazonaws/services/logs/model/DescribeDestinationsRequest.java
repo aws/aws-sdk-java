@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
     private String nextToken;
     /**
      * <p>
-     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is
+     * used.
      * </p>
      */
     private Integer limit;
@@ -126,11 +127,13 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is
+     * used.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     *        The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items
+     *        is used.
      */
 
     public void setLimit(Integer limit) {
@@ -139,10 +142,12 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is
+     * used.
      * </p>
      * 
-     * @return The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * @return The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items
+     *         is used.
      */
 
     public Integer getLimit() {
@@ -151,11 +156,13 @@ public class DescribeDestinationsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     * The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is
+     * used.
      * </p>
      * 
      * @param limit
-     *        The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+     *        The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items
+     *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

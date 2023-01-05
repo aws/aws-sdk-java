@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      */
     private String arn;
@@ -51,7 +52,7 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     private StudioComponentConfiguration configuration;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      */
     private java.util.Date createdAt;
@@ -87,8 +88,8 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     private String name;
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      */
     private String runtimeRoleArn;
@@ -101,7 +102,7 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      */
     private String secureInitializationRoleArn;
@@ -137,7 +138,7 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     private String subtype;
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -149,7 +150,7 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     private String type;
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      */
     private java.util.Date updatedAt;
@@ -162,11 +163,13 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      */
 
     public void setArn(String arn) {
@@ -175,10 +178,12 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
-     * @return The ARN of the resource.
+     * @return The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *         unique across all Regions.
      */
 
     public String getArn() {
@@ -187,11 +192,13 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The ARN of the resource.
+     * The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are unique
+     * across all Regions.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource.
+     *        The Amazon Resource Name (ARN) that is assigned to a studio resource and uniquely identifies it. ARNs are
+     *        unique across all Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +249,11 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      */
 
     public void setCreatedAt(java.util.Date createdAt) {
@@ -255,10 +262,10 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was created.
+     * @return The ISO timestamp in seconds for when the resource was created.
      */
 
     public java.util.Date getCreatedAt() {
@@ -267,11 +274,11 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was created.
+     * The ISO timestamp in seconds for when the resource was created.
      * </p>
      * 
      * @param createdAt
-     *        The Unix epoch timestamp in seconds for when the resource was created.
+     *        The ISO timestamp in seconds for when the resource was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -542,13 +549,13 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      * 
      * @param runtimeRoleArn
-     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
-     *        anytime while the instance is running.
+     *        An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     *        resources at anytime while the instance is running.
      */
 
     public void setRuntimeRoleArn(String runtimeRoleArn) {
@@ -557,12 +564,12 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      * 
-     * @return An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
-     *         anytime while the instance is running.
+     * @return An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     *         resources at anytime while the instance is running.
      */
 
     public String getRuntimeRoleArn() {
@@ -571,13 +578,13 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An IAM role attached to a Studio Component that gives the studio component access to AWS resources at anytime
-     * while the instance is running.
+     * An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     * resources at anytime while the instance is running.
      * </p>
      * 
      * @param runtimeRoleArn
-     *        An IAM role attached to a Studio Component that gives the studio component access to AWS resources at
-     *        anytime while the instance is running.
+     *        An IAM role attached to a Studio Component that gives the studio component access to Amazon Web Services
+     *        resources at anytime while the instance is running.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -659,12 +666,12 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      * 
      * @param secureInitializationRoleArn
      *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     *        component access to AWS resources when the system initialization script runs.
+     *        component access to Amazon Web Services resources when the system initialization script runs.
      */
 
     public void setSecureInitializationRoleArn(String secureInitializationRoleArn) {
@@ -674,11 +681,11 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      * 
      * @return An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     *         component access to AWS resources when the system initialization script runs.
+     *         component access to Amazon Web Services resources when the system initialization script runs.
      */
 
     public String getSecureInitializationRoleArn() {
@@ -688,12 +695,12 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     * component access to AWS resources when the system initialization script runs.
+     * component access to Amazon Web Services resources when the system initialization script runs.
      * </p>
      * 
      * @param secureInitializationRoleArn
      *        An IAM role attached to Studio Component when the system initialization script runs which give the studio
-     *        component access to AWS resources when the system initialization script runs.
+     *        component access to Amazon Web Services resources when the system initialization script runs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -961,10 +968,10 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
-     * @return A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * @return A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -973,11 +980,11 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -986,11 +993,11 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * A collection of labels, in the form of key:value pairs, that apply to this resource.
+     * A collection of labels, in the form of key-value pairs, that apply to this resource.
      * </p>
      * 
      * @param tags
-     *        A collection of labels, in the form of key:value pairs, that apply to this resource.
+     *        A collection of labels, in the form of key-value pairs, that apply to this resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1088,11 +1095,11 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      */
 
     public void setUpdatedAt(java.util.Date updatedAt) {
@@ -1101,10 +1108,10 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
-     * @return The Unix epoch timestamp in seconds for when the resource was updated.
+     * @return The ISO timestamp in seconds for when the resource was updated.
      */
 
     public java.util.Date getUpdatedAt() {
@@ -1113,11 +1120,11 @@ public class StudioComponent implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Unix epoch timestamp in seconds for when the resource was updated.
+     * The ISO timestamp in seconds for when the resource was updated.
      * </p>
      * 
      * @param updatedAt
-     *        The Unix epoch timestamp in seconds for when the resource was updated.
+     *        The ISO timestamp in seconds for when the resource was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

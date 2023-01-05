@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -25,6 +25,8 @@ import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.JsonUnmarshallerContextImpl;
 import com.amazonaws.transform.Unmarshaller;
+import com.amazonaws.util.CollectionUtils;
+import com.amazonaws.util.StringUtils;
 import com.fasterxml.jackson.core.JsonFactory;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -47,19 +49,32 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     private final JsonErrorMessageParser errorMessageParser;
     private final JsonFactory jsonFactory;
 
+    private static final String QUERY_ERROR_DELIMITER = ";";
 
     private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers;
     private final Map<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers;
+
+    private boolean hasAwsQueryCompatible;
 
     public JsonErrorResponseHandler(
             List<JsonErrorUnmarshaller> errorUnmarshallers,
             ErrorCodeParser errorCodeParser,
             JsonErrorMessageParser errorMessageParser,
             JsonFactory jsonFactory) {
+        this(errorUnmarshallers, errorCodeParser, false, errorMessageParser, jsonFactory);
+    }
+
+    public JsonErrorResponseHandler(
+            List<JsonErrorUnmarshaller> errorUnmarshallers,
+            ErrorCodeParser errorCodeParser,
+            boolean hasAwsQueryCompatible,
+            JsonErrorMessageParser errorMessageParser,
+            JsonFactory jsonFactory) {
         this.unmarshallers = errorUnmarshallers;
         this.simpleTypeUnmarshallers = null;
         this.customTypeUnmarshallers = null;
         this.errorCodeParser = errorCodeParser;
+        this.hasAwsQueryCompatible = hasAwsQueryCompatible;
         this.errorMessageParser = errorMessageParser;
         this.jsonFactory = jsonFactory;
     }
@@ -71,10 +86,23 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             ErrorCodeParser errorCodeParser,
             JsonErrorMessageParser errorMessageParser,
             JsonFactory jsonFactory) {
+        this(errorUnmarshallers, simpleTypeUnmarshallers, customTypeUnmarshallers, errorCodeParser,
+                false, errorMessageParser, jsonFactory);
+    }
+
+    public JsonErrorResponseHandler(
+            List<JsonErrorUnmarshaller> errorUnmarshallers,
+            Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers,
+            Map<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers,
+            ErrorCodeParser errorCodeParser,
+            boolean hasAwsQueryCompatible,
+            JsonErrorMessageParser errorMessageParser,
+            JsonFactory jsonFactory) {
         this.unmarshallers = errorUnmarshallers;
         this.simpleTypeUnmarshallers = simpleTypeUnmarshallers;
         this.customTypeUnmarshallers = customTypeUnmarshallers;
         this.errorCodeParser = errorCodeParser;
+        this.hasAwsQueryCompatible = hasAwsQueryCompatible;
         this.errorMessageParser = errorMessageParser;
         this.jsonFactory = jsonFactory;
     }
@@ -100,7 +128,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
             ase.setErrorMessage(errorMessageParser.parseErrorMessage(response, jsonContent.getJsonNode()));
         }
 
-        ase.setErrorCode(errorCode);
+        ase.setErrorCode(getEffectiveErrorCode(response, errorCode));
         ase.setServiceName(response.getRequest().getServiceName());
         ase.setStatusCode(response.getStatusCode());
         ase.setErrorType(getErrorTypeFromStatusCode(response.getStatusCode()));
@@ -201,4 +229,32 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         return null;
     }
 
+    private String getEffectiveErrorCode(HttpResponse response, String errorCode) {
+        if (this.hasAwsQueryCompatible) {
+            String compatibleErrorCode = queryCompatibleErrorCodeFromResponse(response);
+            if (!StringUtils.isNullOrEmpty(compatibleErrorCode)) {
+                return compatibleErrorCode;
+            }
+        }
+        return errorCode;
+    }
+
+    private String queryCompatibleErrorCodeFromResponse(HttpResponse response) {
+        List<String> headerValues = response.getHeaderValues(X_AMZN_QUERY_ERROR);
+        if (!CollectionUtils.isNullOrEmpty(headerValues)) {
+            String queryHeaderValue = headerValues.get(0);
+            if (!StringUtils.isNullOrEmpty(queryHeaderValue)) {
+                return parseQueryErrorCodeFromDelimiter(queryHeaderValue);
+            }
+        }
+        return null;
+    }
+
+    private String parseQueryErrorCodeFromDelimiter(String queryHeaderValue) {
+        int delimiter = queryHeaderValue.indexOf(QUERY_ERROR_DELIMITER);
+        if (delimiter > 0) {
+            return queryHeaderValue.substring(0, delimiter);
+        }
+        return null;
+    }
 }

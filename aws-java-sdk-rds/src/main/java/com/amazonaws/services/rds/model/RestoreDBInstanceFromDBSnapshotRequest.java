@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <li>
      * <p>
      * Must match the identifier of an existing DBSnapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
      * </p>
      * </li>
      * <li>
@@ -284,7 +294,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
+     * IOPS storage</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints: Must be an integer greater than 1000.
@@ -311,10 +321,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -501,8 +512,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      */
     private Boolean enableCustomerOwnedIp;
@@ -584,6 +595,62 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String networkType;
+    /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     */
+    private Integer storageThroughput;
+    /**
+     * <p>
+     * The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.
+     * </p>
+     * <p>
+     * For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ
+     * deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
+     * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an Aurora DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String dBClusterSnapshotIdentifier;
 
     /**
      * Default constructor for RestoreDBInstanceFromDBSnapshotRequest object. Callers should use the setter or fluent
@@ -630,6 +697,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        Must match the identifier of an existing DBSnapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
      *        </p>
      *        </li>
      *        <li>
@@ -834,6 +911,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
@@ -849,6 +936,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        Must match the identifier of an existing DBSnapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
      *        </p>
      *        </li>
      *        <li>
@@ -878,6 +975,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
@@ -892,6 +999,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <li>
      *         <p>
      *         Must match the identifier of an existing DBSnapshot.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
      *         </p>
      *         </li>
      *         <li>
@@ -921,6 +1038,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * <li>
      * <p>
+     * Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
      * the shared DB snapshot.
      * </p>
@@ -936,6 +1063,16 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <li>
      *        <p>
      *        Must match the identifier of an existing DBSnapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
      *        </p>
      *        </li>
      *        <li>
@@ -2239,7 +2376,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
+     * IOPS storage</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints: Must be an integer greater than 1000.
@@ -2253,7 +2390,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <p>
      *        The provisioned IOPS value must follow the requirements for your database engine. For more information,
      *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     *        RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
+     *        RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints: Must be an integer greater than 1000.
@@ -2273,7 +2410,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
+     * IOPS storage</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints: Must be an integer greater than 1000.
@@ -2286,7 +2423,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         <p>
      *         The provisioned IOPS value must follow the requirements for your database engine. For more information,
      *         see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     *         RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
+     *         RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
      *         Constraints: Must be an integer greater than 1000.
@@ -2306,7 +2443,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * <p>
      * The provisioned IOPS value must follow the requirements for your database engine. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
-     * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
+     * IOPS storage</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * Constraints: Must be an integer greater than 1000.
@@ -2320,7 +2457,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        <p>
      *        The provisioned IOPS value must follow the requirements for your database engine. For more information,
      *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-     *        RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
+     *        RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints: Must be an integer greater than 1000.
@@ -2474,10 +2611,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2486,10 +2624,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param storageType
      *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
-     *        Valid values: <code>standard | gp2 | io1</code>
+     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
      *        </p>
      *        <p>
-     *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     *        <code>Iops</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2504,10 +2643,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2515,10 +2655,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * 
      * @return Specifies the storage type to be associated with the DB instance.</p>
      *         <p>
-     *         Valid values: <code>standard | gp2 | io1</code>
+     *         Valid values: <code>gp2 | gp3 | io1 | standard</code>
      *         </p>
      *         <p>
-     *         If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     *         If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     *         <code>Iops</code> parameter.
      *         </p>
      *         <p>
      *         Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2533,10 +2674,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * Specifies the storage type to be associated with the DB instance.
      * </p>
      * <p>
-     * Valid values: <code>standard | gp2 | io1</code>
+     * Valid values: <code>gp2 | gp3 | io1 | standard</code>
      * </p>
      * <p>
-     * If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     * If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the <code>Iops</code>
+     * parameter.
      * </p>
      * <p>
      * Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -2545,10 +2687,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * @param storageType
      *        Specifies the storage type to be associated with the DB instance.</p>
      *        <p>
-     *        Valid values: <code>standard | gp2 | io1</code>
+     *        Valid values: <code>gp2 | gp3 | io1 | standard</code>
      *        </p>
      *        <p>
-     *        If you specify <code>io1</code>, you must also include a value for the <code>Iops</code> parameter.
+     *        If you specify <code>io1</code> or <code>gp3</code>, you must also include a value for the
+     *        <code>Iops</code> parameter.
      *        </p>
      *        <p>
      *        Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise <code>gp2</code>
@@ -3793,8 +3936,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -3814,9 +3957,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        For more information about CoIPs, see <a href=
-     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *        For more information about CoIPs, see <a
+     *        href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *        addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public void setEnableCustomerOwnedIp(Boolean enableCustomerOwnedIp) {
@@ -3842,8 +3985,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -3862,9 +4005,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         For more information about CoIPs, see <a href=
-     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *         For more information about CoIPs, see <a
+     *         href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *         addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean getEnableCustomerOwnedIp() {
@@ -3890,8 +4033,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @param enableCustomerOwnedIp
@@ -3911,9 +4054,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *        on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
-     *        For more information about CoIPs, see <a href=
-     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *        >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *        For more information about CoIPs, see <a
+     *        href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *        addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3941,8 +4084,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      * <p>
      * For more information about CoIPs, see <a
-     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     * >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     * addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      * </p>
      * 
      * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
@@ -3961,9 +4104,9 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      *         RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
-     *         For more information about CoIPs, see <a href=
-     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
-     *         >Customer-owned IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
+     *         For more information about CoIPs, see <a
+     *         href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned IP
+     *         addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.
      */
 
     public Boolean isEnableCustomerOwnedIp() {
@@ -4445,6 +4588,344 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput value for the DB instance.</p>
+     *        <p>
+     *        This setting doesn't apply to RDS Custom or Amazon Aurora.
+     */
+
+    public void setStorageThroughput(Integer storageThroughput) {
+        this.storageThroughput = storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     * 
+     * @return Specifies the storage throughput value for the DB instance.</p>
+     *         <p>
+     *         This setting doesn't apply to RDS Custom or Amazon Aurora.
+     */
+
+    public Integer getStorageThroughput() {
+        return this.storageThroughput;
+    }
+
+    /**
+     * <p>
+     * Specifies the storage throughput value for the DB instance.
+     * </p>
+     * <p>
+     * This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * </p>
+     * 
+     * @param storageThroughput
+     *        Specifies the storage throughput value for the DB instance.</p>
+     *        <p>
+     *        This setting doesn't apply to RDS Custom or Amazon Aurora.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withStorageThroughput(Integer storageThroughput) {
+        setStorageThroughput(storageThroughput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.
+     * </p>
+     * <p>
+     * For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ
+     * deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
+     * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an Aurora DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBClusterSnapshotIdentifier
+     *        The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+     *        <p>
+     *        For more information on Multi-AZ DB clusters, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ
+     *        deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
+     *        <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be the identifier of an Aurora DB cluster snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+     *        </p>
+     *        </li>
+     */
+
+    public void setDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
+        this.dBClusterSnapshotIdentifier = dBClusterSnapshotIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.
+     * </p>
+     * <p>
+     * For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ
+     * deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
+     * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an Aurora DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+     *         <p>
+     *         For more information on Multi-AZ DB clusters, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
+     *         Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
+     *         <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be the identifier of an Aurora DB cluster snapshot.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+     *         </p>
+     *         </li>
+     */
+
+    public String getDBClusterSnapshotIdentifier() {
+        return this.dBClusterSnapshotIdentifier;
+    }
+
+    /**
+     * <p>
+     * The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.
+     * </p>
+     * <p>
+     * For more information on Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ
+     * deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
+     * <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an Aurora DB cluster snapshot.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBClusterSnapshotIdentifier
+     *        The identifier for the RDS for MySQL Multi-AZ DB cluster snapshot to restore from.</p>
+     *        <p>
+     *        For more information on Multi-AZ DB clusters, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"> Multi-AZ
+     *        deployments with two readable standby DB instances</a> in the <i>Amazon RDS User Guide</i>.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must match the identifier of an existing Multi-AZ DB cluster snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the
+     *        <code>DBClusterSnapshotIdentifier</code> must be the ARN of the shared snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be the identifier of an Aurora DB cluster snapshot.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be the identifier of an RDS for PostgreSQL Multi-AZ DB cluster snapshot.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreDBInstanceFromDBSnapshotRequest withDBClusterSnapshotIdentifier(String dBClusterSnapshotIdentifier) {
+        setDBClusterSnapshotIdentifier(dBClusterSnapshotIdentifier);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4519,7 +5000,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
         if (getBackupTarget() != null)
             sb.append("BackupTarget: ").append(getBackupTarget()).append(",");
         if (getNetworkType() != null)
-            sb.append("NetworkType: ").append(getNetworkType());
+            sb.append("NetworkType: ").append(getNetworkType()).append(",");
+        if (getStorageThroughput() != null)
+            sb.append("StorageThroughput: ").append(getStorageThroughput()).append(",");
+        if (getDBClusterSnapshotIdentifier() != null)
+            sb.append("DBClusterSnapshotIdentifier: ").append(getDBClusterSnapshotIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -4663,6 +5148,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
             return false;
         if (other.getNetworkType() != null && other.getNetworkType().equals(this.getNetworkType()) == false)
             return false;
+        if (other.getStorageThroughput() == null ^ this.getStorageThroughput() == null)
+            return false;
+        if (other.getStorageThroughput() != null && other.getStorageThroughput().equals(this.getStorageThroughput()) == false)
+            return false;
+        if (other.getDBClusterSnapshotIdentifier() == null ^ this.getDBClusterSnapshotIdentifier() == null)
+            return false;
+        if (other.getDBClusterSnapshotIdentifier() != null && other.getDBClusterSnapshotIdentifier().equals(this.getDBClusterSnapshotIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -4703,6 +5196,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getCustomIamInstanceProfile() == null) ? 0 : getCustomIamInstanceProfile().hashCode());
         hashCode = prime * hashCode + ((getBackupTarget() == null) ? 0 : getBackupTarget().hashCode());
         hashCode = prime * hashCode + ((getNetworkType() == null) ? 0 : getNetworkType().hashCode());
+        hashCode = prime * hashCode + ((getStorageThroughput() == null) ? 0 : getStorageThroughput().hashCode());
+        hashCode = prime * hashCode + ((getDBClusterSnapshotIdentifier() == null) ? 0 : getDBClusterSnapshotIdentifier().hashCode());
         return hashCode;
     }
 

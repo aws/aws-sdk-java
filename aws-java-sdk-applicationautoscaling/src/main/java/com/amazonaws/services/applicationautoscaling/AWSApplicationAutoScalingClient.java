@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -185,6 +185,12 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("FailedResourceAccessException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.FailedResourceAccessExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.ConcurrentUpdateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationautoscaling.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -197,14 +203,8 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                             new JsonErrorShapeMetadata().withErrorCode("ObjectNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationautoscaling.model.transform.ObjectNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FailedResourceAccessException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.applicationautoscaling.model.transform.FailedResourceAccessExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationautoscaling.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.applicationautoscaling.model.transform.ConcurrentUpdateExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException.class));
 
     /**
@@ -714,6 +714,11 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
      * <p>
      * You can filter the results using <code>ResourceId</code> and <code>ScalableDimension</code>.
      * </p>
+     * <p>
+     * For information about viewing scaling activities using the Amazon Web Services CLI, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-scaling-activities.html"
+     * >Scaling activities for Application Auto Scaling</a>.
+     * </p>
      * 
      * @param describeScalingActivitiesRequest
      * @return Result of the DescribeScalingActivities operation returned by the service.
@@ -1145,16 +1150,21 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
 
     /**
      * <p>
-     * Registers or updates a scalable target.
+     * Registers or updates a scalable target, the resource that you want to scale.
      * </p>
      * <p>
-     * A scalable target is a resource that Application Auto Scaling can scale out and scale in. Scalable targets are
-     * uniquely identified by the combination of resource ID, scalable dimension, and namespace.
+     * Scalable targets are uniquely identified by the combination of resource ID, scalable dimension, and namespace,
+     * which represents some capacity dimension of the underlying service.
      * </p>
      * <p>
-     * When you register a new scalable target, you must specify values for minimum and maximum capacity. Current
-     * capacity will be adjusted within the specified range when scaling starts. Application Auto Scaling scaling
-     * policies will not scale capacity to values that are outside of this range.
+     * When you register a new scalable target, you must specify values for the minimum and maximum capacity. If the
+     * specified resource is not active in the target service, this operation does not change the resource's current
+     * capacity. Otherwise, it changes the resource's current capacity to a value that is inside of this range.
+     * </p>
+     * <p>
+     * If you choose to add a scaling policy, current capacity is adjustable within the specified range when scaling
+     * starts. Application Auto Scaling scaling policies will not scale capacity to values that are outside of the
+     * minimum and maximum range.
      * </p>
      * <p>
      * After you register a scalable target, you do not need to register it again to use other Application Auto Scaling

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,28 @@ public class GetEffectiveRecommendationPreferencesResult extends com.amazonaws.A
      * </p>
      */
     private String enhancedInfrastructureMetrics;
+    /**
+     * <p>
+     * The provider of the external metrics recommendation preference. Considers all applicable preferences that you
+     * might have set at the account and organization level.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     * <p>
+     * To validate whether the preference is applied to your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the <a>GetEC2InstanceRecommendations</a>
+     * actions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     */
+    private ExternalMetricsPreference externalMetricsPreference;
 
     /**
      * <p>
@@ -223,6 +245,139 @@ public class GetEffectiveRecommendationPreferencesResult extends com.amazonaws.A
     }
 
     /**
+     * <p>
+     * The provider of the external metrics recommendation preference. Considers all applicable preferences that you
+     * might have set at the account and organization level.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     * <p>
+     * To validate whether the preference is applied to your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the <a>GetEC2InstanceRecommendations</a>
+     * actions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param externalMetricsPreference
+     *        The provider of the external metrics recommendation preference. Considers all applicable preferences that
+     *        you might have set at the account and organization level.</p>
+     *        <p>
+     *        If the preference is applied in the latest recommendation refresh, an object with a valid
+     *        <code>source</code> value appears in the response. If the preference isn't applied to the recommendations
+     *        already, then this object doesn't appear in the response.
+     *        </p>
+     *        <p>
+     *        To validate whether the preference is applied to your last generated set of recommendations, review the
+     *        <code>effectiveRecommendationPreferences</code> value in the response of the
+     *        <a>GetEC2InstanceRecommendations</a> actions.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
+     *        infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+     */
+
+    public void setExternalMetricsPreference(ExternalMetricsPreference externalMetricsPreference) {
+        this.externalMetricsPreference = externalMetricsPreference;
+    }
+
+    /**
+     * <p>
+     * The provider of the external metrics recommendation preference. Considers all applicable preferences that you
+     * might have set at the account and organization level.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     * <p>
+     * To validate whether the preference is applied to your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the <a>GetEC2InstanceRecommendations</a>
+     * actions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @return The provider of the external metrics recommendation preference. Considers all applicable preferences that
+     *         you might have set at the account and organization level.</p>
+     *         <p>
+     *         If the preference is applied in the latest recommendation refresh, an object with a valid
+     *         <code>source</code> value appears in the response. If the preference isn't applied to the recommendations
+     *         already, then this object doesn't appear in the response.
+     *         </p>
+     *         <p>
+     *         To validate whether the preference is applied to your last generated set of recommendations, review the
+     *         <code>effectiveRecommendationPreferences</code> value in the response of the
+     *         <a>GetEC2InstanceRecommendations</a> actions.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
+     *         infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+     */
+
+    public ExternalMetricsPreference getExternalMetricsPreference() {
+        return this.externalMetricsPreference;
+    }
+
+    /**
+     * <p>
+     * The provider of the external metrics recommendation preference. Considers all applicable preferences that you
+     * might have set at the account and organization level.
+     * </p>
+     * <p>
+     * If the preference is applied in the latest recommendation refresh, an object with a valid <code>source</code>
+     * value appears in the response. If the preference isn't applied to the recommendations already, then this object
+     * doesn't appear in the response.
+     * </p>
+     * <p>
+     * To validate whether the preference is applied to your last generated set of recommendations, review the
+     * <code>effectiveRecommendationPreferences</code> value in the response of the <a>GetEC2InstanceRecommendations</a>
+     * actions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
+     * infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+     * </p>
+     * 
+     * @param externalMetricsPreference
+     *        The provider of the external metrics recommendation preference. Considers all applicable preferences that
+     *        you might have set at the account and organization level.</p>
+     *        <p>
+     *        If the preference is applied in the latest recommendation refresh, an object with a valid
+     *        <code>source</code> value appears in the response. If the preference isn't applied to the recommendations
+     *        already, then this object doesn't appear in the response.
+     *        </p>
+     *        <p>
+     *        To validate whether the preference is applied to your last generated set of recommendations, review the
+     *        <code>effectiveRecommendationPreferences</code> value in the response of the
+     *        <a>GetEC2InstanceRecommendations</a> actions.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/external-metrics-ingestion.html">Enhanced
+     *        infrastructure metrics</a> in the <i>Compute Optimizer User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetEffectiveRecommendationPreferencesResult withExternalMetricsPreference(ExternalMetricsPreference externalMetricsPreference) {
+        setExternalMetricsPreference(externalMetricsPreference);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -235,7 +390,9 @@ public class GetEffectiveRecommendationPreferencesResult extends com.amazonaws.A
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEnhancedInfrastructureMetrics() != null)
-            sb.append("EnhancedInfrastructureMetrics: ").append(getEnhancedInfrastructureMetrics());
+            sb.append("EnhancedInfrastructureMetrics: ").append(getEnhancedInfrastructureMetrics()).append(",");
+        if (getExternalMetricsPreference() != null)
+            sb.append("ExternalMetricsPreference: ").append(getExternalMetricsPreference());
         sb.append("}");
         return sb.toString();
     }
@@ -255,6 +412,10 @@ public class GetEffectiveRecommendationPreferencesResult extends com.amazonaws.A
         if (other.getEnhancedInfrastructureMetrics() != null
                 && other.getEnhancedInfrastructureMetrics().equals(this.getEnhancedInfrastructureMetrics()) == false)
             return false;
+        if (other.getExternalMetricsPreference() == null ^ this.getExternalMetricsPreference() == null)
+            return false;
+        if (other.getExternalMetricsPreference() != null && other.getExternalMetricsPreference().equals(this.getExternalMetricsPreference()) == false)
+            return false;
         return true;
     }
 
@@ -264,6 +425,7 @@ public class GetEffectiveRecommendationPreferencesResult extends com.amazonaws.A
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEnhancedInfrastructureMetrics() == null) ? 0 : getEnhancedInfrastructureMetrics().hashCode());
+        hashCode = prime * hashCode + ((getExternalMetricsPreference() == null) ? 0 : getExternalMetricsPreference().hashCode());
         return hashCode;
     }
 

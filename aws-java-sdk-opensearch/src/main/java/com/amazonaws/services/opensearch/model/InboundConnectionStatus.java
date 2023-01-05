@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The connection status of an inbound cross-cluster connection.
+ * The status of an inbound cross-cluster connection for OpenSearch Service.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,53 +27,149 @@ public class InboundConnectionStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The state code for the inbound connection. Can be one of the following:
+     * The status code for the connection. Can be one of the following:
      * </p>
      * <ul>
-     * <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     * <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     * <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     * <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     * <li>REJECTING: Inbound connection rejection is in process.</li>
-     * <li>REJECTED: Inbound connection is rejected.</li>
-     * <li>DELETING: Inbound connection deletion is in progress.</li>
-     * <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     * <li>
+     * <p>
+     * <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     * </p>
+     * </li>
      * </ul>
      */
     private String statusCode;
     /**
      * <p>
-     * Verbose information for the inbound connection status.
+     * Information about the connection.
      * </p>
      */
     private String message;
 
     /**
      * <p>
-     * The state code for the inbound connection. Can be one of the following:
+     * The status code for the connection. Can be one of the following:
      * </p>
      * <ul>
-     * <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     * <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     * <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     * <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     * <li>REJECTING: Inbound connection rejection is in process.</li>
-     * <li>REJECTED: Inbound connection is rejected.</li>
-     * <li>DELETING: Inbound connection deletion is in progress.</li>
-     * <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     * <li>
+     * <p>
+     * <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusCode
-     *        The state code for the inbound connection. Can be one of the following:</p>
+     *        The status code for the connection. Can be one of the following:</p>
      *        <ul>
-     *        <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     *        <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     *        <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     *        <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     *        <li>REJECTING: Inbound connection rejection is in process.</li>
-     *        <li>REJECTED: Inbound connection is rejected.</li>
-     *        <li>DELETING: Inbound connection deletion is in progress.</li>
-     *        <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     *        <li>
+     *        <p>
+     *        <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECTING</b>: Inbound connection rejection is in process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECTED</b>: Inbound connection is rejected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b>: Inbound connection deletion is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     *        </p>
+     *        </li>
      * @see InboundConnectionStatusCode
      */
 
@@ -83,29 +179,93 @@ public class InboundConnectionStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The state code for the inbound connection. Can be one of the following:
+     * The status code for the connection. Can be one of the following:
      * </p>
      * <ul>
-     * <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     * <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     * <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     * <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     * <li>REJECTING: Inbound connection rejection is in process.</li>
-     * <li>REJECTED: Inbound connection is rejected.</li>
-     * <li>DELETING: Inbound connection deletion is in progress.</li>
-     * <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     * <li>
+     * <p>
+     * <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The state code for the inbound connection. Can be one of the following:</p>
+     * @return The status code for the connection. Can be one of the following:</p>
      *         <ul>
-     *         <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     *         <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     *         <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     *         <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     *         <li>REJECTING: Inbound connection rejection is in process.</li>
-     *         <li>REJECTED: Inbound connection is rejected.</li>
-     *         <li>DELETING: Inbound connection deletion is in progress.</li>
-     *         <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     *         <li>
+     *         <p>
+     *         <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>REJECTING</b>: Inbound connection rejection is in process.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>REJECTED</b>: Inbound connection is rejected.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DELETING</b>: Inbound connection deletion is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     *         </p>
+     *         </li>
      * @see InboundConnectionStatusCode
      */
 
@@ -115,30 +275,94 @@ public class InboundConnectionStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The state code for the inbound connection. Can be one of the following:
+     * The status code for the connection. Can be one of the following:
      * </p>
      * <ul>
-     * <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     * <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     * <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     * <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     * <li>REJECTING: Inbound connection rejection is in process.</li>
-     * <li>REJECTED: Inbound connection is rejected.</li>
-     * <li>DELETING: Inbound connection deletion is in progress.</li>
-     * <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     * <li>
+     * <p>
+     * <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusCode
-     *        The state code for the inbound connection. Can be one of the following:</p>
+     *        The status code for the connection. Can be one of the following:</p>
      *        <ul>
-     *        <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     *        <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     *        <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     *        <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     *        <li>REJECTING: Inbound connection rejection is in process.</li>
-     *        <li>REJECTED: Inbound connection is rejected.</li>
-     *        <li>DELETING: Inbound connection deletion is in progress.</li>
-     *        <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     *        <li>
+     *        <p>
+     *        <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECTING</b>: Inbound connection rejection is in process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECTED</b>: Inbound connection is rejected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b>: Inbound connection deletion is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InboundConnectionStatusCode
      */
@@ -150,30 +374,94 @@ public class InboundConnectionStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The state code for the inbound connection. Can be one of the following:
+     * The status code for the connection. Can be one of the following:
      * </p>
      * <ul>
-     * <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     * <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     * <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     * <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     * <li>REJECTING: Inbound connection rejection is in process.</li>
-     * <li>REJECTED: Inbound connection is rejected.</li>
-     * <li>DELETING: Inbound connection deletion is in progress.</li>
-     * <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     * <li>
+     * <p>
+     * <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTING</b>: Inbound connection rejection is in process.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>REJECTED</b>: Inbound connection is rejected.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETING</b>: Inbound connection deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param statusCode
-     *        The state code for the inbound connection. Can be one of the following:</p>
+     *        The status code for the connection. Can be one of the following:</p>
      *        <ul>
-     *        <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by the remote domain owner.</li>
-     *        <li>APPROVED: Inbound connection is pending acceptance by the remote domain owner.</li>
-     *        <li>PROVISIONING: Inbound connection provisioning is in progress.</li>
-     *        <li>ACTIVE: Inbound connection is active and ready to use.</li>
-     *        <li>REJECTING: Inbound connection rejection is in process.</li>
-     *        <li>REJECTED: Inbound connection is rejected.</li>
-     *        <li>DELETING: Inbound connection deletion is in progress.</li>
-     *        <li>DELETED: Inbound connection is deleted and can no longer be used.</li>
+     *        <li>
+     *        <p>
+     *        <b>PENDING_ACCEPTANCE</b> - Inbound connection is not yet accepted by the remote domain owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>APPROVED</b>: Inbound connection is pending acceptance by the remote domain owner.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>PROVISIONING</b>: Inbound connection is being provisioned.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>ACTIVE</b>: Inbound connection is active and ready to use.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECTING</b>: Inbound connection rejection is in process.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>REJECTED</b>: Inbound connection is rejected.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETING</b>: Inbound connection deletion is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>DELETED</b>: Inbound connection is deleted and can no longer be used.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InboundConnectionStatusCode
      */
@@ -185,11 +473,11 @@ public class InboundConnectionStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Verbose information for the inbound connection status.
+     * Information about the connection.
      * </p>
      * 
      * @param message
-     *        Verbose information for the inbound connection status.
+     *        Information about the connection.
      */
 
     public void setMessage(String message) {
@@ -198,10 +486,10 @@ public class InboundConnectionStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Verbose information for the inbound connection status.
+     * Information about the connection.
      * </p>
      * 
-     * @return Verbose information for the inbound connection status.
+     * @return Information about the connection.
      */
 
     public String getMessage() {
@@ -210,11 +498,11 @@ public class InboundConnectionStatus implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Verbose information for the inbound connection status.
+     * Information about the connection.
      * </p>
      * 
      * @param message
-     *        Verbose information for the inbound connection status.
+     *        Information about the connection.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

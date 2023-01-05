@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * a fleet. New game sessions are assigned an IP address/port number combination, which must fall into the fleet's
  * allowed ranges. Fleets with custom game builds must have permissions explicitly set. For Realtime Servers fleets,
  * GameLift automatically opens two port ranges, one for TCP messaging and one for UDP.
- * </p>
- * <p>
- * <b>Related actions</b>
- * </p>
- * <p>
- * <a>DescribeFleetPortSettings</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission" target="_top">AWS API

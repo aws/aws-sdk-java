@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,6 +130,21 @@ public interface AmazonEC2 {
      */
     @Deprecated
     void setRegion(com.amazonaws.regions.Region region);
+
+    /**
+     * <p>
+     * Accepts an Elastic IP address transfer. For more information, see <a href=
+     * "https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept"
+     * >Accept a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param acceptAddressTransferRequest
+     * @return Result of the AcceptAddressTransfer operation returned by the service.
+     * @sample AmazonEC2.AcceptAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AcceptAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AcceptAddressTransferResult acceptAddressTransfer(AcceptAddressTransferRequest acceptAddressTransferRequest);
 
     /**
      * <p>
@@ -788,6 +803,20 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. One or more trust providers can be attached to an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param attachVerifiedAccessTrustProviderRequest
+     * @return Result of the AttachVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.AttachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AttachVerifiedAccessTrustProviderResult attachVerifiedAccessTrustProvider(AttachVerifiedAccessTrustProviderRequest attachVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
      * Attaches an EBS volume to a running or stopped instance and exposes it to the instance with the specified device
      * name.
      * </p>
@@ -1068,6 +1097,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information,
+     * see <a href="https://docs.aws.amazon.com/">Cancel having an AMI shared with your Amazon Web Services account</a>
+     * in the <i>Amazon EC2 User Guide</i>.
+     * </p>
+     * 
+     * @param cancelImageLaunchPermissionRequest
+     * @return Result of the CancelImageLaunchPermission operation returned by the service.
+     * @sample AmazonEC2.CancelImageLaunchPermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CancelImageLaunchPermission"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelImageLaunchPermissionResult cancelImageLaunchPermission(CancelImageLaunchPermissionRequest cancelImageLaunchPermissionRequest);
+
+    /**
+     * <p>
      * Cancels an in-process import virtual machine or import snapshot task.
      * </p>
      * 
@@ -1193,12 +1237,12 @@ public interface AmazonEC2 {
      * Outpost are encrypted by default using the default encryption key for the Region, or a different key that you
      * specify in the request using <b>KmsKeyId</b>. Outposts do not support unencrypted snapshots. For more
      * information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami"> Amazon
-     * EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information about the prerequisites and limits when copying an AMI, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copying an AMI</a> in the <i>Amazon
-     * Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/CopyingAMIs.html">Copy an AMI</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param copyImageRequest
@@ -1623,8 +1667,8 @@ public interface AmazonEC2 {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating Amazon EBS-Backed
-     * Linux AMIs</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create an Amazon EBS-backed
+     * Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createImageRequest
@@ -2151,13 +2195,13 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * Creates a root volume replacement task for an Amazon EC2 instance. The root volume can either be restored to its
-     * initial launch state, or it can be restored using a specific snapshot.
+     * Replaces the EBS-backed root volume for a <code>running</code> instance with a new volume that is restored to the
+     * original root volume's launch state, that is restored to a specific snapshot taken from the original root volume,
+     * or that is restored from an AMI that has the same key characteristics as that of the instance.
      * </p>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace
+     * a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param createReplaceRootVolumeTaskRequest
@@ -2216,12 +2260,12 @@ public interface AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createRestoreImageTaskRequest
@@ -2440,12 +2484,12 @@ public interface AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param createStoreImageTaskRequest
@@ -2829,6 +2873,66 @@ public interface AmazonEC2 {
      *      target="_top">AWS API Documentation</a>
      */
     CreateTransitGatewayVpcAttachmentResult createTransitGatewayVpcAttachment(CreateTransitGatewayVpcAttachmentRequest createTransitGatewayVpcAttachmentRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access endpoint is where you define your application along with an optional
+     * endpoint-level access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessEndpointRequest
+     * @return Result of the CreateVerifiedAccessEndpoint operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVerifiedAccessEndpointResult createVerifiedAccessEndpoint(CreateVerifiedAccessEndpointRequest createVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints
+     * who's associated applications have similar security requirements. Each instance within an Amazon Web Services
+     * Verified Access group shares an Amazon Web Services Verified Access policy. For example, you can group all Amazon
+     * Web Services Verified Access instances associated with “sales” applications together and use one common Amazon
+     * Web Services Verified Access policy.
+     * </p>
+     * 
+     * @param createVerifiedAccessGroupRequest
+     * @return Result of the CreateVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateVerifiedAccessGroupResult createVerifiedAccessGroup(CreateVerifiedAccessGroupRequest createVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and
+     * grants access only when your security requirements are met.
+     * </p>
+     * 
+     * @param createVerifiedAccessInstanceRequest
+     * @return Result of the CreateVerifiedAccessInstance operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVerifiedAccessInstanceResult createVerifiedAccessInstance(CreateVerifiedAccessInstanceRequest createVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * A trust provider is a third-party entity that creates, maintains, and manages identity information for users and
+     * devices. When an application request is made, the identity information sent by the trust provider will be
+     * evaluated by Amazon Web Services Verified Access, before allowing or denying the application request.
+     * </p>
+     * 
+     * @param createVerifiedAccessTrustProviderRequest
+     * @return Result of the CreateVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.CreateVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateVerifiedAccessTrustProviderResult createVerifiedAccessTrustProvider(CreateVerifiedAccessTrustProviderRequest createVerifiedAccessTrustProviderRequest);
 
     /**
      * <p>
@@ -4004,6 +4108,58 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Delete an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessEndpointRequest
+     * @return Result of the DeleteVerifiedAccessEndpoint operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVerifiedAccessEndpointResult deleteVerifiedAccessEndpoint(DeleteVerifiedAccessEndpointRequest deleteVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access group.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessGroupRequest
+     * @return Result of the DeleteVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteVerifiedAccessGroupResult deleteVerifiedAccessGroup(DeleteVerifiedAccessGroupRequest deleteVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessInstanceRequest
+     * @return Result of the DeleteVerifiedAccessInstance operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVerifiedAccessInstanceResult deleteVerifiedAccessInstance(DeleteVerifiedAccessInstanceRequest deleteVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param deleteVerifiedAccessTrustProviderRequest
+     * @return Result of the DeleteVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.DeleteVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteVerifiedAccessTrustProviderResult deleteVerifiedAccessTrustProvider(DeleteVerifiedAccessTrustProviderRequest deleteVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
      * Deletes the specified EBS volume. The volume must be in the <code>available</code> state (not attached to an
      * instance).
      * </p>
@@ -4254,8 +4410,8 @@ public interface AmazonEC2 {
      * <p>
      * If you deregister an AMI that matches a Recycle Bin retention rule, the AMI is retained in the Recycle Bin for
      * the specified retention period. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * <p>
      * When you deregister an AMI, it doesn't affect any instances that you've already launched from the AMI. You'll
@@ -4390,6 +4546,21 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Describes an Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param describeAddressTransfersRequest
+     * @return Result of the DescribeAddressTransfers operation returned by the service.
+     * @sample AmazonEC2.DescribeAddressTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAddressTransfers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAddressTransfersResult describeAddressTransfers(DescribeAddressTransfersRequest describeAddressTransfersRequest);
+
+    /**
+     * <p>
      * Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
      * </p>
      * <p>
@@ -4490,6 +4661,21 @@ public interface AmazonEC2 {
      * @see #describeAvailabilityZones(DescribeAvailabilityZonesRequest)
      */
     DescribeAvailabilityZonesResult describeAvailabilityZones();
+
+    /**
+     * <p>
+     * Describes the current Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param describeAwsNetworkPerformanceMetricSubscriptionsRequest
+     * @return Result of the DescribeAwsNetworkPerformanceMetricSubscriptions operation returned by the service.
+     * @sample AmazonEC2.DescribeAwsNetworkPerformanceMetricSubscriptions
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAwsNetworkPerformanceMetricSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeAwsNetworkPerformanceMetricSubscriptionsResult describeAwsNetworkPerformanceMetricSubscriptions(
+            DescribeAwsNetworkPerformanceMetricSubscriptionsRequest describeAwsNetworkPerformanceMetricSubscriptionsRequest);
 
     /**
      * <p>
@@ -5918,8 +6104,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Describes a root volume replacement task. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root
-     * volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/replace-root.html">Replace a root volume</a> in the
+     * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * 
      * @param describeReplaceRootVolumeTasksRequest
@@ -6349,7 +6535,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-monitor.html">Monitor fleet events using Amazon
-     * EventBridge</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * EventBridge</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeSpotFleetRequestHistoryRequest
@@ -6482,12 +6668,12 @@ public interface AmazonEC2 {
      * <p>
      * To use this API, you must have the required permissions. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html#ami-s3-permissions">Permissions
-     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * for storing and restoring AMIs using Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-store-restore.html">Store and restore an AMI using
-     * Amazon S3</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * Amazon S3</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param describeStoreImageTasksRequest
@@ -6748,6 +6934,74 @@ public interface AmazonEC2 {
      */
     DescribeTrunkInterfaceAssociationsResult describeTrunkInterfaceAssociations(
             DescribeTrunkInterfaceAssociationsRequest describeTrunkInterfaceAssociationsRequest);
+
+    /**
+     * <p>
+     * Describe Amazon Web Services Verified Access endpoints.
+     * </p>
+     * 
+     * @param describeVerifiedAccessEndpointsRequest
+     * @return Result of the DescribeVerifiedAccessEndpoints operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVerifiedAccessEndpointsResult describeVerifiedAccessEndpoints(DescribeVerifiedAccessEndpointsRequest describeVerifiedAccessEndpointsRequest);
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access groups.
+     * </p>
+     * 
+     * @param describeVerifiedAccessGroupsRequest
+     * @return Result of the DescribeVerifiedAccessGroups operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVerifiedAccessGroupsResult describeVerifiedAccessGroups(DescribeVerifiedAccessGroupsRequest describeVerifiedAccessGroupsRequest);
+
+    /**
+     * <p>
+     * Describes the current logging configuration for the Amazon Web Services Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstanceLoggingConfigurationsRequest
+     * @return Result of the DescribeVerifiedAccessInstanceLoggingConfigurations operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessInstanceLoggingConfigurations
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVerifiedAccessInstanceLoggingConfigurationsResult describeVerifiedAccessInstanceLoggingConfigurations(
+            DescribeVerifiedAccessInstanceLoggingConfigurationsRequest describeVerifiedAccessInstanceLoggingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Describe Verified Access instances.
+     * </p>
+     * 
+     * @param describeVerifiedAccessInstancesRequest
+     * @return Result of the DescribeVerifiedAccessInstances operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVerifiedAccessInstancesResult describeVerifiedAccessInstances(DescribeVerifiedAccessInstancesRequest describeVerifiedAccessInstancesRequest);
+
+    /**
+     * <p>
+     * Describe details of existing Verified Access trust providers.
+     * </p>
+     * 
+     * @param describeVerifiedAccessTrustProvidersRequest
+     * @return Result of the DescribeVerifiedAccessTrustProviders operation returned by the service.
+     * @sample AmazonEC2.DescribeVerifiedAccessTrustProviders
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeVerifiedAccessTrustProvidersResult describeVerifiedAccessTrustProviders(
+            DescribeVerifiedAccessTrustProvidersRequest describeVerifiedAccessTrustProvidersRequest);
 
     /**
      * <p>
@@ -7189,6 +7443,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Detach a trust provider from an Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param detachVerifiedAccessTrustProviderRequest
+     * @return Result of the DetachVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.DetachVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DetachVerifiedAccessTrustProviderResult detachVerifiedAccessTrustProvider(DetachVerifiedAccessTrustProviderRequest detachVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
      * Detaches an EBS volume from an instance. Make sure to unmount any file systems on the device within your
      * operating system before detaching the volume. Failure to do so can result in the volume becoming stuck in the
      * <code>busy</code> state while detaching. If this happens, detachment can be delayed indefinitely until you
@@ -7233,6 +7500,36 @@ public interface AmazonEC2 {
      *      Documentation</a>
      */
     DetachVpnGatewayResult detachVpnGateway(DetachVpnGatewayRequest detachVpnGatewayRequest);
+
+    /**
+     * <p>
+     * Disables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param disableAddressTransferRequest
+     * @return Result of the DisableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2.DisableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DisableAddressTransferResult disableAddressTransfer(DisableAddressTransferRequest disableAddressTransferRequest);
+
+    /**
+     * <p>
+     * Disables Infrastructure Performance metric subscriptions.
+     * </p>
+     * 
+     * @param disableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return Result of the DisableAwsNetworkPerformanceMetricSubscription operation returned by the service.
+     * @sample AmazonEC2.DisableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisableAwsNetworkPerformanceMetricSubscriptionResult disableAwsNetworkPerformanceMetricSubscription(
+            DisableAwsNetworkPerformanceMetricSubscriptionRequest disableAwsNetworkPerformanceMetricSubscriptionRequest);
 
     /**
      * <p>
@@ -7298,7 +7595,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param disableImageDeprecationRequest
@@ -7647,6 +7944,36 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Enables Elastic IP address transfer. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP
+     * addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param enableAddressTransferRequest
+     * @return Result of the EnableAddressTransfer operation returned by the service.
+     * @sample AmazonEC2.EnableAddressTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAddressTransfer" target="_top">AWS API
+     *      Documentation</a>
+     */
+    EnableAddressTransferResult enableAddressTransfer(EnableAddressTransferRequest enableAddressTransferRequest);
+
+    /**
+     * <p>
+     * Enables Infrastructure Performance subscriptions.
+     * </p>
+     * 
+     * @param enableAwsNetworkPerformanceMetricSubscriptionRequest
+     * @return Result of the EnableAwsNetworkPerformanceMetricSubscription operation returned by the service.
+     * @sample AmazonEC2.EnableAwsNetworkPerformanceMetricSubscription
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableAwsNetworkPerformanceMetricSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EnableAwsNetworkPerformanceMetricSubscriptionResult enableAwsNetworkPerformanceMetricSubscription(
+            EnableAwsNetworkPerformanceMetricSubscriptionRequest enableAwsNetworkPerformanceMetricSubscriptionRequest);
+
+    /**
+     * <p>
      * Enables EBS encryption by default for your account in the current Region.
      * </p>
      * <p>
@@ -7729,7 +8056,7 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-deprecate.html">Deprecate an AMI</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param enableImageDeprecationRequest
@@ -7756,6 +8083,26 @@ public interface AmazonEC2 {
      */
     EnableIpamOrganizationAdminAccountResult enableIpamOrganizationAdminAccount(
             EnableIpamOrganizationAdminAccountRequest enableIpamOrganizationAdminAccountRequest);
+
+    /**
+     * <p>
+     * Establishes a trust relationship between Reachability Analyzer and Organizations. This operation must be
+     * performed by the management account for the organization.
+     * </p>
+     * <p>
+     * After you establish a trust relationship, a user in the management account or a delegated administrator account
+     * can run a cross-account analysis using resources from the member accounts.
+     * </p>
+     * 
+     * @param enableReachabilityAnalyzerOrganizationSharingRequest
+     * @return Result of the EnableReachabilityAnalyzerOrganizationSharing operation returned by the service.
+     * @sample AmazonEC2.EnableReachabilityAnalyzerOrganizationSharing
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableReachabilityAnalyzerOrganizationSharing"
+     *      target="_top">AWS API Documentation</a>
+     */
+    EnableReachabilityAnalyzerOrganizationSharingResult enableReachabilityAnalyzerOrganizationSharing(
+            EnableReachabilityAnalyzerOrganizationSharingRequest enableReachabilityAnalyzerOrganizationSharingRequest);
 
     /**
      * <p>
@@ -7962,6 +8309,19 @@ public interface AmazonEC2 {
      *      API Documentation</a>
      */
     GetAssociatedIpv6PoolCidrsResult getAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest getAssociatedIpv6PoolCidrsRequest);
+
+    /**
+     * <p>
+     * Gets network performance data.
+     * </p>
+     * 
+     * @param getAwsNetworkPerformanceDataRequest
+     * @return Result of the GetAwsNetworkPerformanceData operation returned by the service.
+     * @sample AmazonEC2.GetAwsNetworkPerformanceData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetAwsNetworkPerformanceData"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAwsNetworkPerformanceDataResult getAwsNetworkPerformanceData(GetAwsNetworkPerformanceDataRequest getAwsNetworkPerformanceDataRequest);
 
     /**
      * <p>
@@ -8551,6 +8911,32 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Get the Verified Access policy associated with the endpoint.
+     * </p>
+     * 
+     * @param getVerifiedAccessEndpointPolicyRequest
+     * @return Result of the GetVerifiedAccessEndpointPolicy operation returned by the service.
+     * @sample AmazonEC2.GetVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVerifiedAccessEndpointPolicyResult getVerifiedAccessEndpointPolicy(GetVerifiedAccessEndpointPolicyRequest getVerifiedAccessEndpointPolicyRequest);
+
+    /**
+     * <p>
+     * Shows the contents of the Verified Access policy associated with the group.
+     * </p>
+     * 
+     * @param getVerifiedAccessGroupPolicyRequest
+     * @return Result of the GetVerifiedAccessGroupPolicy operation returned by the service.
+     * @sample AmazonEC2.GetVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetVerifiedAccessGroupPolicyResult getVerifiedAccessGroupPolicy(GetVerifiedAccessGroupPolicyRequest getVerifiedAccessGroupPolicyRequest);
+
+    /**
+     * <p>
      * Download an Amazon Web Services-provided sample configuration file to be used with the customer gateway device
      * specified for your Site-to-Site VPN connection.
      * </p>
@@ -8733,8 +9119,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Lists one or more AMIs that are currently in the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param listImagesInRecycleBinRequest
@@ -9655,6 +10041,100 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointRequest
+     * @return Result of the ModifyVerifiedAccessEndpoint operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVerifiedAccessEndpointResult modifyVerifiedAccessEndpoint(ModifyVerifiedAccessEndpointRequest modifyVerifiedAccessEndpointRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access endpoint policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessEndpointPolicyRequest
+     * @return Result of the ModifyVerifiedAccessEndpointPolicy operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessEndpointPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVerifiedAccessEndpointPolicyResult modifyVerifiedAccessEndpointPolicy(
+            ModifyVerifiedAccessEndpointPolicyRequest modifyVerifiedAccessEndpointPolicyRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group configuration.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupRequest
+     * @return Result of the ModifyVerifiedAccessGroup operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyVerifiedAccessGroupResult modifyVerifiedAccessGroup(ModifyVerifiedAccessGroupRequest modifyVerifiedAccessGroupRequest);
+
+    /**
+     * <p>
+     * Modifies the specified Verified Access group policy.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessGroupPolicyRequest
+     * @return Result of the ModifyVerifiedAccessGroupPolicy operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessGroupPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVerifiedAccessGroupPolicyResult modifyVerifiedAccessGroupPolicy(ModifyVerifiedAccessGroupPolicyRequest modifyVerifiedAccessGroupPolicyRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceRequest
+     * @return Result of the ModifyVerifiedAccessInstance operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVerifiedAccessInstanceResult modifyVerifiedAccessInstance(ModifyVerifiedAccessInstanceRequest modifyVerifiedAccessInstanceRequest);
+
+    /**
+     * <p>
+     * Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessInstanceLoggingConfigurationRequest
+     * @return Result of the ModifyVerifiedAccessInstanceLoggingConfiguration operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessInstanceLoggingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstanceLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVerifiedAccessInstanceLoggingConfigurationResult modifyVerifiedAccessInstanceLoggingConfiguration(
+            ModifyVerifiedAccessInstanceLoggingConfigurationRequest modifyVerifiedAccessInstanceLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Modifies the configuration of the specified Amazon Web Services Verified Access trust provider.
+     * </p>
+     * 
+     * @param modifyVerifiedAccessTrustProviderRequest
+     * @return Result of the ModifyVerifiedAccessTrustProvider operation returned by the service.
+     * @sample AmazonEC2.ModifyVerifiedAccessTrustProvider
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessTrustProvider"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyVerifiedAccessTrustProviderResult modifyVerifiedAccessTrustProvider(ModifyVerifiedAccessTrustProviderRequest modifyVerifiedAccessTrustProviderRequest);
+
+    /**
+     * <p>
      * You can modify several parameters of an existing EBS volume, including volume size, volume type, and IOPS
      * capacity. If your EBS volume is attached to a current-generation EC2 instance type, you might be able to apply
      * these changes without stopping the instance or detaching the volume from it. For more information about modifying
@@ -10242,7 +10722,7 @@ public interface AmazonEC2 {
      * <p>
      * Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an
      * instance from the AMI. For more information about creating AMIs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Creating your own AMIs</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the
      * <i>Amazon Elastic Compute Cloud User Guide</i>.
      * </p>
      * <note>
@@ -10307,8 +10787,8 @@ public interface AmazonEC2 {
      * billing product code, make sure that the Reserved Instance has the matching billing product code. If you purchase
      * a Reserved Instance without the matching billing product code, the Reserved Instance will not be applied to the
      * On-Demand Instance. For information about how to obtain the platform details and billing information of an AMI,
-     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understanding AMI
-     * billing</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-billing-info.html">Understand AMI billing
+     * information</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param registerImageRequest
@@ -10705,14 +11185,14 @@ public interface AmazonEC2 {
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet requests</a> in
-     * the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <important>
      * <p>
      * We strongly discourage using the RequestSpotFleet API because it is a legacy API with no planned investment. For
      * options for requesting Spot Instances, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use"
-     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * >Which is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * </important>
      * 
@@ -10899,8 +11379,8 @@ public interface AmazonEC2 {
     /**
      * <p>
      * Restores an AMI from the Recycle Bin. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the Amazon Elastic
-     * Compute Cloud User Guide.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2
+     * User Guide</i>.
      * </p>
      * 
      * @param restoreImageFromRecycleBinRequest

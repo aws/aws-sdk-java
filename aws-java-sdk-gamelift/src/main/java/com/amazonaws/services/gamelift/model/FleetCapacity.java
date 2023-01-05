@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String instanceType;
-    /**
-     * <p>
-     * The current instance count and capacity settings for the fleet location.
-     * </p>
-     */
+
     private EC2InstanceCounts instanceCounts;
     /**
      * <p>
@@ -275,12 +271,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The current instance count and capacity settings for the fleet location.
-     * </p>
-     * 
      * @param instanceCounts
-     *        The current instance count and capacity settings for the fleet location.
      */
 
     public void setInstanceCounts(EC2InstanceCounts instanceCounts) {
@@ -288,11 +279,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The current instance count and capacity settings for the fleet location.
-     * </p>
-     * 
-     * @return The current instance count and capacity settings for the fleet location.
+     * @return
      */
 
     public EC2InstanceCounts getInstanceCounts() {
@@ -300,12 +287,7 @@ public class FleetCapacity implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p>
-     * The current instance count and capacity settings for the fleet location.
-     * </p>
-     * 
      * @param instanceCounts
-     *        The current instance count and capacity settings for the fleet location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

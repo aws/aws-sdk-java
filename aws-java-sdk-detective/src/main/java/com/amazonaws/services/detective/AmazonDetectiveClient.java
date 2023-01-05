@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -190,6 +190,9 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                     .withSupportsIon(false)
                     .withContentTypeOverride("application/json")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.detective.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.detective.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -269,6 +272,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param acceptInvitationRequest
      * @return Result of the AcceptInvitation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -332,6 +337,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param batchGetGraphMemberDatasourcesRequest
      * @return Result of the BatchGetGraphMemberDatasources operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -395,6 +402,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param batchGetMembershipDatasourcesRequest
      * @return Result of the BatchGetMembershipDatasources operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -477,6 +486,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param createGraphRequest
      * @return Result of the CreateGraph operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -594,6 +605,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param createMembersRequest
      * @return Result of the CreateMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -679,6 +692,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param deleteGraphRequest
      * @return Result of the DeleteGraph operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -754,6 +769,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param deleteMembersRequest
      * @return Result of the DeleteMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -821,6 +838,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param describeOrganizationConfigurationRequest
      * @return Result of the DescribeOrganizationConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -897,6 +916,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param disableOrganizationAdminAccountRequest
      * @return Result of the DisableOrganizationAdminAccount operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -967,6 +988,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param disassociateMembershipRequest
      * @return Result of the DisassociateMembership operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -1048,6 +1071,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param enableOrganizationAdminAccountRequest
      * @return Result of the EnableOrganizationAdminAccount operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1111,6 +1136,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param getMembersRequest
      * @return Result of the GetMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1172,6 +1199,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listDatasourcePackagesRequest
      * @return Result of the ListDatasourcePackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1239,6 +1268,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listGraphsRequest
      * @return Result of the ListGraphs operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1306,6 +1337,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1372,6 +1405,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listMembersRequest
      * @return Result of the ListMembers operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1434,6 +1469,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listOrganizationAdminAccountsRequest
      * @return Result of the ListOrganizationAdminAccounts operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1497,6 +1534,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1563,6 +1602,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param rejectInvitationRequest
      * @return Result of the RejectInvitation operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -1642,6 +1683,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param startMonitoringMemberRequest
      * @return Result of the StartMonitoringMember operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws ConflictException
      *         The request attempted an invalid action.
      * @throws InternalServerException
@@ -1726,6 +1769,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1787,6 +1832,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException
@@ -1848,6 +1895,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param updateDatasourcePackagesRequest
      * @return Result of the UpdateDatasourcePackages operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ResourceNotFoundException
@@ -1932,6 +1981,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * 
      * @param updateOrganizationConfigurationRequest
      * @return Result of the UpdateOrganizationConfiguration operation returned by the service.
+     * @throws AccessDeniedException
+     *         The request issuer does not have permission to access this resource or perform this operation.
      * @throws InternalServerException
      *         The request was valid but failed because of a problem with the service.
      * @throws ValidationException

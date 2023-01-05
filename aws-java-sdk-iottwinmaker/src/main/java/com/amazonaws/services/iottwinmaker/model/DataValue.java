@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,28 +42,28 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
     private Double doubleValue;
     /**
      * <p>
-     * An expression that produces the value.
-     * </p>
-     */
-    private String expression;
-    /**
-     * <p>
      * An integer value.
      * </p>
      */
     private Integer integerValue;
     /**
      * <p>
-     * A list of multiple values.
-     * </p>
-     */
-    private java.util.List<DataValue> listValue;
-    /**
-     * <p>
      * A long value.
      * </p>
      */
     private Long longValue;
+    /**
+     * <p>
+     * A string value.
+     * </p>
+     */
+    private String stringValue;
+    /**
+     * <p>
+     * A list of multiple values.
+     * </p>
+     */
+    private java.util.List<DataValue> listValue;
     /**
      * <p>
      * An object that maps strings to multiple <code>DataValue</code> objects.
@@ -78,10 +78,10 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
     private RelationshipValue relationshipValue;
     /**
      * <p>
-     * A string value.
+     * An expression that produces the value.
      * </p>
      */
-    private String stringValue;
+    private String expression;
 
     /**
      * <p>
@@ -177,46 +177,6 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An expression that produces the value.
-     * </p>
-     * 
-     * @param expression
-     *        An expression that produces the value.
-     */
-
-    public void setExpression(String expression) {
-        this.expression = expression;
-    }
-
-    /**
-     * <p>
-     * An expression that produces the value.
-     * </p>
-     * 
-     * @return An expression that produces the value.
-     */
-
-    public String getExpression() {
-        return this.expression;
-    }
-
-    /**
-     * <p>
-     * An expression that produces the value.
-     * </p>
-     * 
-     * @param expression
-     *        An expression that produces the value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataValue withExpression(String expression) {
-        setExpression(expression);
-        return this;
-    }
-
-    /**
-     * <p>
      * An integer value.
      * </p>
      * 
@@ -252,6 +212,86 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
 
     public DataValue withIntegerValue(Integer integerValue) {
         setIntegerValue(integerValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A long value.
+     * </p>
+     * 
+     * @param longValue
+     *        A long value.
+     */
+
+    public void setLongValue(Long longValue) {
+        this.longValue = longValue;
+    }
+
+    /**
+     * <p>
+     * A long value.
+     * </p>
+     * 
+     * @return A long value.
+     */
+
+    public Long getLongValue() {
+        return this.longValue;
+    }
+
+    /**
+     * <p>
+     * A long value.
+     * </p>
+     * 
+     * @param longValue
+     *        A long value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataValue withLongValue(Long longValue) {
+        setLongValue(longValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A string value.
+     * </p>
+     * 
+     * @param stringValue
+     *        A string value.
+     */
+
+    public void setStringValue(String stringValue) {
+        this.stringValue = stringValue;
+    }
+
+    /**
+     * <p>
+     * A string value.
+     * </p>
+     * 
+     * @return A string value.
+     */
+
+    public String getStringValue() {
+        return this.stringValue;
+    }
+
+    /**
+     * <p>
+     * A string value.
+     * </p>
+     * 
+     * @param stringValue
+     *        A string value.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataValue withStringValue(String stringValue) {
+        setStringValue(stringValue);
         return this;
     }
 
@@ -322,46 +362,6 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
 
     public DataValue withListValue(java.util.Collection<DataValue> listValue) {
         setListValue(listValue);
-        return this;
-    }
-
-    /**
-     * <p>
-     * A long value.
-     * </p>
-     * 
-     * @param longValue
-     *        A long value.
-     */
-
-    public void setLongValue(Long longValue) {
-        this.longValue = longValue;
-    }
-
-    /**
-     * <p>
-     * A long value.
-     * </p>
-     * 
-     * @return A long value.
-     */
-
-    public Long getLongValue() {
-        return this.longValue;
-    }
-
-    /**
-     * <p>
-     * A long value.
-     * </p>
-     * 
-     * @param longValue
-     *        A long value.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public DataValue withLongValue(Long longValue) {
-        setLongValue(longValue);
         return this;
     }
 
@@ -475,41 +475,41 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A string value.
+     * An expression that produces the value.
      * </p>
      * 
-     * @param stringValue
-     *        A string value.
+     * @param expression
+     *        An expression that produces the value.
      */
 
-    public void setStringValue(String stringValue) {
-        this.stringValue = stringValue;
+    public void setExpression(String expression) {
+        this.expression = expression;
     }
 
     /**
      * <p>
-     * A string value.
+     * An expression that produces the value.
      * </p>
      * 
-     * @return A string value.
+     * @return An expression that produces the value.
      */
 
-    public String getStringValue() {
-        return this.stringValue;
+    public String getExpression() {
+        return this.expression;
     }
 
     /**
      * <p>
-     * A string value.
+     * An expression that produces the value.
      * </p>
      * 
-     * @param stringValue
-     *        A string value.
+     * @param expression
+     *        An expression that produces the value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public DataValue withStringValue(String stringValue) {
-        setStringValue(stringValue);
+    public DataValue withExpression(String expression) {
+        setExpression(expression);
         return this;
     }
 
@@ -529,20 +529,20 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
             sb.append("BooleanValue: ").append(getBooleanValue()).append(",");
         if (getDoubleValue() != null)
             sb.append("DoubleValue: ").append(getDoubleValue()).append(",");
-        if (getExpression() != null)
-            sb.append("Expression: ").append(getExpression()).append(",");
         if (getIntegerValue() != null)
             sb.append("IntegerValue: ").append(getIntegerValue()).append(",");
-        if (getListValue() != null)
-            sb.append("ListValue: ").append(getListValue()).append(",");
         if (getLongValue() != null)
             sb.append("LongValue: ").append(getLongValue()).append(",");
+        if (getStringValue() != null)
+            sb.append("StringValue: ").append(getStringValue()).append(",");
+        if (getListValue() != null)
+            sb.append("ListValue: ").append(getListValue()).append(",");
         if (getMapValue() != null)
             sb.append("MapValue: ").append(getMapValue()).append(",");
         if (getRelationshipValue() != null)
             sb.append("RelationshipValue: ").append(getRelationshipValue()).append(",");
-        if (getStringValue() != null)
-            sb.append("StringValue: ").append(getStringValue());
+        if (getExpression() != null)
+            sb.append("Expression: ").append(getExpression());
         sb.append("}");
         return sb.toString();
     }
@@ -565,21 +565,21 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDoubleValue() != null && other.getDoubleValue().equals(this.getDoubleValue()) == false)
             return false;
-        if (other.getExpression() == null ^ this.getExpression() == null)
-            return false;
-        if (other.getExpression() != null && other.getExpression().equals(this.getExpression()) == false)
-            return false;
         if (other.getIntegerValue() == null ^ this.getIntegerValue() == null)
             return false;
         if (other.getIntegerValue() != null && other.getIntegerValue().equals(this.getIntegerValue()) == false)
             return false;
-        if (other.getListValue() == null ^ this.getListValue() == null)
-            return false;
-        if (other.getListValue() != null && other.getListValue().equals(this.getListValue()) == false)
-            return false;
         if (other.getLongValue() == null ^ this.getLongValue() == null)
             return false;
         if (other.getLongValue() != null && other.getLongValue().equals(this.getLongValue()) == false)
+            return false;
+        if (other.getStringValue() == null ^ this.getStringValue() == null)
+            return false;
+        if (other.getStringValue() != null && other.getStringValue().equals(this.getStringValue()) == false)
+            return false;
+        if (other.getListValue() == null ^ this.getListValue() == null)
+            return false;
+        if (other.getListValue() != null && other.getListValue().equals(this.getListValue()) == false)
             return false;
         if (other.getMapValue() == null ^ this.getMapValue() == null)
             return false;
@@ -589,9 +589,9 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRelationshipValue() != null && other.getRelationshipValue().equals(this.getRelationshipValue()) == false)
             return false;
-        if (other.getStringValue() == null ^ this.getStringValue() == null)
+        if (other.getExpression() == null ^ this.getExpression() == null)
             return false;
-        if (other.getStringValue() != null && other.getStringValue().equals(this.getStringValue()) == false)
+        if (other.getExpression() != null && other.getExpression().equals(this.getExpression()) == false)
             return false;
         return true;
     }
@@ -603,13 +603,13 @@ public class DataValue implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getBooleanValue() == null) ? 0 : getBooleanValue().hashCode());
         hashCode = prime * hashCode + ((getDoubleValue() == null) ? 0 : getDoubleValue().hashCode());
-        hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         hashCode = prime * hashCode + ((getIntegerValue() == null) ? 0 : getIntegerValue().hashCode());
-        hashCode = prime * hashCode + ((getListValue() == null) ? 0 : getListValue().hashCode());
         hashCode = prime * hashCode + ((getLongValue() == null) ? 0 : getLongValue().hashCode());
+        hashCode = prime * hashCode + ((getStringValue() == null) ? 0 : getStringValue().hashCode());
+        hashCode = prime * hashCode + ((getListValue() == null) ? 0 : getListValue().hashCode());
         hashCode = prime * hashCode + ((getMapValue() == null) ? 0 : getMapValue().hashCode());
         hashCode = prime * hashCode + ((getRelationshipValue() == null) ? 0 : getRelationshipValue().hashCode());
-        hashCode = prime * hashCode + ((getStringValue() == null) ? 0 : getStringValue().hashCode());
+        hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         return hashCode;
     }
 

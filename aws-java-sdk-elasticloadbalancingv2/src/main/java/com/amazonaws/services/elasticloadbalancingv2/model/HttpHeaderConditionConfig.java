@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,9 +42,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
     private String httpHeaderName;
     /**
      * <p>
-     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
-     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
-     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters.
+     * The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If the same header appears multiple times in the request, we search them in order until a match is found.
@@ -125,9 +125,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
-     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
-     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters.
+     * The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If the same header appears multiple times in the request, we search them in order until a match is found.
@@ -137,9 +137,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
      * header. To require that all of the strings are a match, create one condition per string.
      * </p>
      * 
-     * @return One or more strings to compare against the value of the HTTP header. The maximum size of each string is
-     *         128 characters. The comparison strings are case insensitive. The following wildcard characters are
-     *         supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     * @return The strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     *         characters. The comparison strings are case insensitive. The following wildcard characters are supported:
+     *         * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
      *         <p>
      *         If the same header appears multiple times in the request, we search them in order until a match is found.
      *         </p>
@@ -154,9 +154,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
-     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
-     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters.
+     * The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If the same header appears multiple times in the request, we search them in order until a match is found.
@@ -167,9 +167,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more strings to compare against the value of the HTTP header. The maximum size of each string is
-     *        128 characters. The comparison strings are case insensitive. The following wildcard characters are
-     *        supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     *        The strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     *        characters. The comparison strings are case insensitive. The following wildcard characters are supported:
+     *        * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
      *        <p>
      *        If the same header appears multiple times in the request, we search them in order until a match is found.
      *        </p>
@@ -189,9 +189,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
-     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
-     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters.
+     * The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If the same header appears multiple times in the request, we search them in order until a match is found.
@@ -207,9 +207,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more strings to compare against the value of the HTTP header. The maximum size of each string is
-     *        128 characters. The comparison strings are case insensitive. The following wildcard characters are
-     *        supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     *        The strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     *        characters. The comparison strings are case insensitive. The following wildcard characters are supported:
+     *        * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
      *        <p>
      *        If the same header appears multiple times in the request, we search them in order until a match is found.
      *        </p>
@@ -231,9 +231,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
 
     /**
      * <p>
-     * One or more strings to compare against the value of the HTTP header. The maximum size of each string is 128
-     * characters. The comparison strings are case insensitive. The following wildcard characters are supported: *
-     * (matches 0 or more characters) and ? (matches exactly 1 character).
+     * The strings to compare against the value of the HTTP header. The maximum size of each string is 128 characters.
+     * The comparison strings are case insensitive. The following wildcard characters are supported: * (matches 0 or
+     * more characters) and ? (matches exactly 1 character).
      * </p>
      * <p>
      * If the same header appears multiple times in the request, we search them in order until a match is found.
@@ -244,9 +244,9 @@ public class HttpHeaderConditionConfig implements Serializable, Cloneable {
      * </p>
      * 
      * @param values
-     *        One or more strings to compare against the value of the HTTP header. The maximum size of each string is
-     *        128 characters. The comparison strings are case insensitive. The following wildcard characters are
-     *        supported: * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
+     *        The strings to compare against the value of the HTTP header. The maximum size of each string is 128
+     *        characters. The comparison strings are case insensitive. The following wildcard characters are supported:
+     *        * (matches 0 or more characters) and ? (matches exactly 1 character).</p>
      *        <p>
      *        If the same header appears multiple times in the request, we search them in order until a match is found.
      *        </p>

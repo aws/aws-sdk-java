@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,12 +25,28 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags.
+     * </p>
+     */
     private String resourceArn;
-
+    /**
+     * <p>
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique
+     * and cannot be duplicated for a particular resource.
+     * </p>
+     */
     private java.util.List<String> tagKeys;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags.
+     * </p>
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the
+     *        tags.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -38,7 +54,12 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the
+     *         tags.
      */
 
     public String getResourceArn() {
@@ -46,7 +67,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the tags.
+     * </p>
+     * 
      * @param resourceArn
+     *        The Amazon Resource Name (ARN) of the given Amazon Translate resource from which you want to remove the
+     *        tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -56,7 +83,13 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique
+     * and cannot be duplicated for a particular resource.
+     * </p>
+     * 
+     * @return The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be
+     *         unique and cannot be duplicated for a particular resource.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -64,7 +97,14 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique
+     * and cannot be duplicated for a particular resource.
+     * </p>
+     * 
      * @param tagKeys
+     *        The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be
+     *        unique and cannot be duplicated for a particular resource.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -78,12 +118,18 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique
+     * and cannot be duplicated for a particular resource.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override
      * the existing values.
      * </p>
      * 
      * @param tagKeys
+     *        The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be
+     *        unique and cannot be duplicated for a particular resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -98,7 +144,14 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be unique
+     * and cannot be duplicated for a particular resource.
+     * </p>
+     * 
      * @param tagKeys
+     *        The initial part of a key-value pair that forms a tag being removed from a given resource. Keys must be
+     *        unique and cannot be duplicated for a particular resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

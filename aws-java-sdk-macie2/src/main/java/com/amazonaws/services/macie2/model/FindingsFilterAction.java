@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The action to perform on findings that meet the filter criteria. To suppress (automatically archive) findings that
- * meet the criteria, set this value to ARCHIVE. Valid values are:
+ * The action to perform on findings that match the filter criteria. To suppress (automatically archive) findings that
+ * match the criteria, set this value to ARCHIVE. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

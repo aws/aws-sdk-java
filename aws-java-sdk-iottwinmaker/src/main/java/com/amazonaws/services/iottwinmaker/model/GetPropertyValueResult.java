@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,18 @@ public class GetPropertyValueResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.Map<String, PropertyLatestValue> propertyValues;
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     */
+    private String nextToken;
+    /**
+     * <p>
+     * A table of property values.
+     * </p>
+     */
+    private java.util.List<java.util.List<java.util.Map<String, DataValue>>> tabularPropertyValues;
 
     /**
      * <p>
@@ -106,6 +118,116 @@ public class GetPropertyValueResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @return The string that specifies the next page of results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The string that specifies the next page of results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The string that specifies the next page of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A table of property values.
+     * </p>
+     * 
+     * @return A table of property values.
+     */
+
+    public java.util.List<java.util.List<java.util.Map<String, DataValue>>> getTabularPropertyValues() {
+        return tabularPropertyValues;
+    }
+
+    /**
+     * <p>
+     * A table of property values.
+     * </p>
+     * 
+     * @param tabularPropertyValues
+     *        A table of property values.
+     */
+
+    public void setTabularPropertyValues(java.util.Collection<java.util.List<java.util.Map<String, DataValue>>> tabularPropertyValues) {
+        if (tabularPropertyValues == null) {
+            this.tabularPropertyValues = null;
+            return;
+        }
+
+        this.tabularPropertyValues = new java.util.ArrayList<java.util.List<java.util.Map<String, DataValue>>>(tabularPropertyValues);
+    }
+
+    /**
+     * <p>
+     * A table of property values.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTabularPropertyValues(java.util.Collection)} or
+     * {@link #withTabularPropertyValues(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param tabularPropertyValues
+     *        A table of property values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueResult withTabularPropertyValues(java.util.List<java.util.Map<String, DataValue>>... tabularPropertyValues) {
+        if (this.tabularPropertyValues == null) {
+            setTabularPropertyValues(new java.util.ArrayList<java.util.List<java.util.Map<String, DataValue>>>(tabularPropertyValues.length));
+        }
+        for (java.util.List<java.util.Map<String, DataValue>> ele : tabularPropertyValues) {
+            this.tabularPropertyValues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A table of property values.
+     * </p>
+     * 
+     * @param tabularPropertyValues
+     *        A table of property values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPropertyValueResult withTabularPropertyValues(java.util.Collection<java.util.List<java.util.Map<String, DataValue>>> tabularPropertyValues) {
+        setTabularPropertyValues(tabularPropertyValues);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +240,11 @@ public class GetPropertyValueResult extends com.amazonaws.AmazonWebServiceResult
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPropertyValues() != null)
-            sb.append("PropertyValues: ").append(getPropertyValues());
+            sb.append("PropertyValues: ").append(getPropertyValues()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken()).append(",");
+        if (getTabularPropertyValues() != null)
+            sb.append("TabularPropertyValues: ").append(getTabularPropertyValues());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +263,14 @@ public class GetPropertyValueResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getPropertyValues() != null && other.getPropertyValues().equals(this.getPropertyValues()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
+        if (other.getTabularPropertyValues() == null ^ this.getTabularPropertyValues() == null)
+            return false;
+        if (other.getTabularPropertyValues() != null && other.getTabularPropertyValues().equals(this.getTabularPropertyValues()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +280,8 @@ public class GetPropertyValueResult extends com.amazonaws.AmazonWebServiceResult
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getPropertyValues() == null) ? 0 : getPropertyValues().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
+        hashCode = prime * hashCode + ((getTabularPropertyValues() == null) ? 0 : getTabularPropertyValues().hashCode());
         return hashCode;
     }
 

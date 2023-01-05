@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,6 +159,11 @@ public class AbstractAmazonECS implements AmazonECS {
     }
 
     @Override
+    public GetTaskProtectionResult getTaskProtection(GetTaskProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAccountSettingsResult listAccountSettings(ListAccountSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -196,6 +201,11 @@ public class AbstractAmazonECS implements AmazonECS {
     @Override
     public ListServicesResult listServices() {
         return listServices(new ListServicesRequest());
+    }
+
+    @Override
+    public ListServicesByNamespaceResult listServicesByNamespace(ListServicesByNamespaceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -340,6 +350,11 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public UpdateServicePrimaryTaskSetResult updateServicePrimaryTaskSet(UpdateServicePrimaryTaskSetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTaskProtectionResult updateTaskProtection(UpdateTaskProtectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

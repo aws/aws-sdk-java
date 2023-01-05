@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,12 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.List<ResourceTag> resourceTags;
+    /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     */
+    private LockConfiguration lockConfiguration;
 
     /**
      * <p>
@@ -453,6 +459,46 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     * 
+     * @param lockConfiguration
+     *        Information about the retention rule lock configuration.
+     */
+
+    public void setLockConfiguration(LockConfiguration lockConfiguration) {
+        this.lockConfiguration = lockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     * 
+     * @return Information about the retention rule lock configuration.
+     */
+
+    public LockConfiguration getLockConfiguration() {
+        return this.lockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Information about the retention rule lock configuration.
+     * </p>
+     * 
+     * @param lockConfiguration
+     *        Information about the retention rule lock configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleRequest withLockConfiguration(LockConfiguration lockConfiguration) {
+        setLockConfiguration(lockConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -473,7 +519,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
         if (getResourceTags() != null)
-            sb.append("ResourceTags: ").append(getResourceTags());
+            sb.append("ResourceTags: ").append(getResourceTags()).append(",");
+        if (getLockConfiguration() != null)
+            sb.append("LockConfiguration: ").append(getLockConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -508,6 +556,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getResourceTags() != null && other.getResourceTags().equals(this.getResourceTags()) == false)
             return false;
+        if (other.getLockConfiguration() == null ^ this.getLockConfiguration() == null)
+            return false;
+        if (other.getLockConfiguration() != null && other.getLockConfiguration().equals(this.getLockConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -521,6 +573,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResourceTags() == null) ? 0 : getResourceTags().hashCode());
+        hashCode = prime * hashCode + ((getLockConfiguration() == null) ? 0 : getLockConfiguration().hashCode());
         return hashCode;
     }
 

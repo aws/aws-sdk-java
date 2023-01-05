@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,16 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private java.util.Date updatedTimestamp;
+    /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -649,6 +659,67 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified
+     *        ARN to a KMS key in the following format.</p>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * 
+     * @return Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified
+     *         ARN to a KMS key in the following format.</p>
+     *         <p>
+     *         <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified ARN to
+     * a KMS key in the following format.
+     * </p>
+     * <p>
+     * <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        Specifies the KMS key ID that encrypts the events delivered by CloudTrail. The value is a fully specified
+     *        ARN to a KMS key in the following format.</p>
+     *        <p>
+     *        <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventDataStoreResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -681,7 +752,9 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
         if (getCreatedTimestamp() != null)
             sb.append("CreatedTimestamp: ").append(getCreatedTimestamp()).append(",");
         if (getUpdatedTimestamp() != null)
-            sb.append("UpdatedTimestamp: ").append(getUpdatedTimestamp());
+            sb.append("UpdatedTimestamp: ").append(getUpdatedTimestamp()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -740,6 +813,10 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getUpdatedTimestamp() != null && other.getUpdatedTimestamp().equals(this.getUpdatedTimestamp()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -759,6 +836,7 @@ public class CreateEventDataStoreResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getTagsList() == null) ? 0 : getTagsList().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimestamp() == null) ? 0 : getCreatedTimestamp().hashCode());
         hashCode = prime * hashCode + ((getUpdatedTimestamp() == null) ? 0 : getUpdatedTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

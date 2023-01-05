@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,9 +18,6 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * <p>
- * Represents the input for a request operation.
- * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateMatchmakingConfiguration"
  *      target="_top">AWS API Documentation</a>
@@ -107,20 +104,22 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      */
     private java.util.List<GameProperty> gameProperties;
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      */
     private String gameSessionData;
@@ -128,8 +127,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      * <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature.
-     * Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-     * session has one or more open slots. Learn more about manual and automatic backfill in <a
+     * Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session has one or more
+     * open slots. Learn more about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
@@ -164,10 +163,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value
      * pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost
      * allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource
-     * is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-     * and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     * actual tagging limits.
+     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -737,17 +733,17 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @return A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *         to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *         <a href=
+     *         to a game server process with a request to start a new game session (see <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is
+     *         >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
      *         created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
      *         <code>STANDALONE</code>.
      */
@@ -759,19 +755,19 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameProperties
      *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
+     *        to a game server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
-     *        for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
+     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      */
 
@@ -787,10 +783,11 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -800,11 +797,10 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * 
      * @param gameProperties
      *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
+     *        to a game server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
-     *        for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
+     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -822,19 +818,19 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a
-     * game server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * game server process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameProperties
      *        A set of custom properties for a game session, formatted as key:value pairs. These properties are passed
-     *        to a game server process in the <a>GameSession</a> object with a request to start a new game session (see
-     *        <a href=
+     *        to a game server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
-     *        for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
+     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -847,18 +843,19 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
-     *        for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
+     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      */
 
@@ -869,17 +866,17 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @return A set of custom game session properties, formatted as a single string value. This data is passed to a
-     *         game server process in the <a>GameSession</a> object with a request to start a new game session (see <a
-     *         href=
+     *         game server process with a request to start a new game session (see <a href=
      *         "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *         >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is
+     *         >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
      *         created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
      *         <code>STANDALONE</code>.
      */
@@ -891,18 +888,19 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
     /**
      * <p>
      * A set of custom game session properties, formatted as a single string value. This data is passed to a game server
-     * process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     * process with a request to start a new game session (see <a href=
      * "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     * >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created for a
-     * successful match. This parameter is not used if <code>FlexMatchMode</code> is set to <code>STANDALONE</code>.
+     * >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is created
+     * for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     * <code>STANDALONE</code>.
      * </p>
      * 
      * @param gameSessionData
      *        A set of custom game session properties, formatted as a single string value. This data is passed to a game
-     *        server process in the <a>GameSession</a> object with a request to start a new game session (see <a href=
+     *        server process with a request to start a new game session (see <a href=
      *        "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession"
-     *        >Start a Game Session</a>). This information is added to the new <a>GameSession</a> object that is created
-     *        for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
+     *        >Start a Game Session</a>). This information is added to the new <code>GameSession</code> object that is
+     *        created for a successful match. This parameter is not used if <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -916,8 +914,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      * <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature.
-     * Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-     * session has one or more open slots. Learn more about manual and automatic backfill in <a
+     * Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session has one or more
+     * open slots. Learn more about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
@@ -926,8 +924,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * @param backfillMode
      *        The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      *        <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill
-     *        feature. Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request
-     *        whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a
+     *        feature. Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session
+     *        has one or more open slots. Learn more about manual and automatic backfill in <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing
      *        Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
@@ -942,8 +940,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      * <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature.
-     * Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-     * session has one or more open slots. Learn more about manual and automatic backfill in <a
+     * Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session has one or more
+     * open slots. Learn more about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
@@ -951,8 +949,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * 
      * @return The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      *         <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill
-     *         feature. Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request
-     *         whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a
+     *         feature. Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game
+     *         session has one or more open slots. Learn more about manual and automatic backfill in <a
      *         href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing
      *         Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *         <code>STANDALONE</code>.
@@ -967,8 +965,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      * <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature.
-     * Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-     * session has one or more open slots. Learn more about manual and automatic backfill in <a
+     * Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session has one or more
+     * open slots. Learn more about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
@@ -977,8 +975,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * @param backfillMode
      *        The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      *        <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill
-     *        feature. Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request
-     *        whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a
+     *        feature. Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session
+     *        has one or more open slots. Learn more about manual and automatic backfill in <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing
      *        Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
@@ -995,8 +993,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * <p>
      * The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      * <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill feature.
-     * Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request whenever a game
-     * session has one or more open slots. Learn more about manual and automatic backfill in <a
+     * Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session has one or more
+     * open slots. Learn more about manual and automatic backfill in <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing Games
      * with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>.
@@ -1005,8 +1003,8 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * @param backfillMode
      *        The method used to backfill game sessions that are created with this matchmaking configuration. Specify
      *        <code>MANUAL</code> when your game manages backfill requests manually or does not use the match backfill
-     *        feature. Specify <code>AUTOMATIC</code> to have GameLift create a <a>StartMatchBackfill</a> request
-     *        whenever a game session has one or more open slots. Learn more about manual and automatic backfill in <a
+     *        feature. Specify <code>AUTOMATIC</code> to have GameLift create a backfill request whenever a game session
+     *        has one or more open slots. Learn more about manual and automatic backfill in <a
      *        href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-backfill.html"> Backfill Existing
      *        Games with FlexMatch</a>. Automatic backfill is not available when <code>FlexMatchMode</code> is set to
      *        <code>STANDALONE</code>.
@@ -1215,20 +1213,14 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value
      * pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost
      * allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource
-     * is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-     * and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     * actual tagging limits.
+     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @return A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined
      *         key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access
      *         management and cost allocation. For more information, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services
-     *         Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     *         use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     *         tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     *         actual tagging limits.
+     *         Resources</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1240,10 +1232,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value
      * pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost
      * allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource
-     * is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-     * and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     * actual tagging limits.
+     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
@@ -1251,10 +1240,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      *        key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access
      *        management and cost allocation. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services
-     *        Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     *        use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     *        tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     *        actual tagging limits.
+     *        Resources</a> in the <i>Amazon Web Services General Reference</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1271,10 +1257,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value
      * pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost
      * allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource
-     * is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-     * and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     * actual tagging limits.
+     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1287,10 +1270,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      *        key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access
      *        management and cost allocation. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services
-     *        Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     *        use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     *        tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     *        actual tagging limits.
+     *        Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1309,10 +1289,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      * A list of labels to assign to the new matchmaking configuration resource. Tags are developer-defined key-value
      * pairs. Tagging Amazon Web Services resources are useful for resource management, access management and cost
      * allocation. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">
-     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource
-     * is created, you can use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove,
-     * and view tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     * actual tagging limits.
+     * Tagging Amazon Web Services Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
      * @param tags
@@ -1320,10 +1297,7 @@ public class CreateMatchmakingConfigurationRequest extends com.amazonaws.AmazonW
      *        key-value pairs. Tagging Amazon Web Services resources are useful for resource management, access
      *        management and cost allocation. For more information, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html"> Tagging Amazon Web Services
-     *        Resources</a> in the <i>Amazon Web Services General Reference</i>. Once the resource is created, you can
-     *        use <a>TagResource</a>, <a>UntagResource</a>, and <a>ListTagsForResource</a> to add, remove, and view
-     *        tags. The maximum tag limit may be lower than stated. See the Amazon Web Services General Reference for
-     *        actual tagging limits.
+     *        Resources</a> in the <i>Amazon Web Services General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,14 +34,14 @@ public class UpdateOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      */
     private String id;
     /**
      * <p>
      * The version of the origin request policy that you are updating. The version is returned in the origin request
-     * policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+     * policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
      * </p>
      */
     private String ifMatch;
@@ -89,12 +89,12 @@ public class UpdateOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      * 
      * @param id
      *        The unique identifier for the origin request policy that you are updating. The identifier is returned in a
-     *        cache behavior’s <code>OriginRequestPolicyId</code> field in the response to
+     *        cache behavior's <code>OriginRequestPolicyId</code> field in the response to
      *        <code>GetDistributionConfig</code>.
      */
 
@@ -105,11 +105,11 @@ public class UpdateOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      * 
      * @return The unique identifier for the origin request policy that you are updating. The identifier is returned in
-     *         a cache behavior’s <code>OriginRequestPolicyId</code> field in the response to
+     *         a cache behavior's <code>OriginRequestPolicyId</code> field in the response to
      *         <code>GetDistributionConfig</code>.
      */
 
@@ -120,12 +120,12 @@ public class UpdateOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The unique identifier for the origin request policy that you are updating. The identifier is returned in a cache
-     * behavior’s <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
+     * behavior's <code>OriginRequestPolicyId</code> field in the response to <code>GetDistributionConfig</code>.
      * </p>
      * 
      * @param id
      *        The unique identifier for the origin request policy that you are updating. The identifier is returned in a
-     *        cache behavior’s <code>OriginRequestPolicyId</code> field in the response to
+     *        cache behavior's <code>OriginRequestPolicyId</code> field in the response to
      *        <code>GetDistributionConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -138,12 +138,12 @@ public class UpdateOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The version of the origin request policy that you are updating. The version is returned in the origin request
-     * policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+     * policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
      *        The version of the origin request policy that you are updating. The version is returned in the origin
-     *        request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+     *        request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
      */
 
     public void setIfMatch(String ifMatch) {
@@ -153,11 +153,11 @@ public class UpdateOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The version of the origin request policy that you are updating. The version is returned in the origin request
-     * policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+     * policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
      * </p>
      * 
      * @return The version of the origin request policy that you are updating. The version is returned in the origin
-     *         request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+     *         request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
      */
 
     public String getIfMatch() {
@@ -167,12 +167,12 @@ public class UpdateOriginRequestPolicyRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The version of the origin request policy that you are updating. The version is returned in the origin request
-     * policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+     * policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
      * </p>
      * 
      * @param ifMatch
      *        The version of the origin request policy that you are updating. The version is returned in the origin
-     *        request policy’s <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+     *        request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

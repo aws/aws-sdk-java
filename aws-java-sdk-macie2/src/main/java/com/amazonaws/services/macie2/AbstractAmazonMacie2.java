@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -164,12 +164,22 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public GetAutomatedDiscoveryConfigurationResult getAutomatedDiscoveryConfiguration(GetAutomatedDiscoveryConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetBucketStatisticsResult getBucketStatistics(GetBucketStatisticsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetClassificationExportConfigurationResult getClassificationExportConfiguration(GetClassificationExportConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetClassificationScopeResult getClassificationScope(GetClassificationScopeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -219,6 +229,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public GetResourceProfileResult getResourceProfile(GetResourceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetRevealConfigurationResult getRevealConfiguration(GetRevealConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -230,6 +245,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public GetSensitiveDataOccurrencesAvailabilityResult getSensitiveDataOccurrencesAvailability(GetSensitiveDataOccurrencesAvailabilityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSensitivityInspectionTemplateResult getSensitivityInspectionTemplate(GetSensitivityInspectionTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -250,6 +270,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public ListClassificationJobsResult listClassificationJobs(ListClassificationJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListClassificationScopesResult listClassificationScopes(ListClassificationScopesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -285,6 +310,21 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public ListOrganizationAdminAccountsResult listOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceProfileArtifactsResult listResourceProfileArtifacts(ListResourceProfileArtifactsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListResourceProfileDetectionsResult listResourceProfileDetections(ListResourceProfileDetectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSensitivityInspectionTemplatesResult listSensitivityInspectionTemplates(ListSensitivityInspectionTemplatesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -329,7 +369,17 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public UpdateAutomatedDiscoveryConfigurationResult updateAutomatedDiscoveryConfiguration(UpdateAutomatedDiscoveryConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateClassificationJobResult updateClassificationJob(UpdateClassificationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateClassificationScopeResult updateClassificationScope(UpdateClassificationScopeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -354,7 +404,22 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public UpdateResourceProfileResult updateResourceProfile(UpdateResourceProfileRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateResourceProfileDetectionsResult updateResourceProfileDetections(UpdateResourceProfileDetectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateRevealConfigurationResult updateRevealConfiguration(UpdateRevealConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSensitivityInspectionTemplateResult updateSensitivityInspectionTemplate(UpdateSensitivityInspectionTemplateRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

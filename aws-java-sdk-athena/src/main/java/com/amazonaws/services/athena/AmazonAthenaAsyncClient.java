@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -254,6 +254,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNotebookResult> createNotebookAsync(CreateNotebookRequest request) {
+
+        return createNotebookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNotebookResult> createNotebookAsync(final CreateNotebookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNotebookRequest, CreateNotebookResult> asyncHandler) {
+        final CreateNotebookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNotebookResult>() {
+            @Override
+            public CreateNotebookResult call() throws Exception {
+                CreateNotebookResult result = null;
+
+                try {
+                    result = executeCreateNotebook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreatePreparedStatementResult> createPreparedStatementAsync(CreatePreparedStatementRequest request) {
 
         return createPreparedStatementAsync(request, null);
@@ -271,6 +304,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeCreatePreparedStatement(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePresignedNotebookUrlResult> createPresignedNotebookUrlAsync(CreatePresignedNotebookUrlRequest request) {
+
+        return createPresignedNotebookUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePresignedNotebookUrlResult> createPresignedNotebookUrlAsync(final CreatePresignedNotebookUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePresignedNotebookUrlRequest, CreatePresignedNotebookUrlResult> asyncHandler) {
+        final CreatePresignedNotebookUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePresignedNotebookUrlResult>() {
+            @Override
+            public CreatePresignedNotebookUrlResult call() throws Exception {
+                CreatePresignedNotebookUrlResult result = null;
+
+                try {
+                    result = executeCreatePresignedNotebookUrl(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -386,6 +452,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNotebookResult> deleteNotebookAsync(DeleteNotebookRequest request) {
+
+        return deleteNotebookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNotebookResult> deleteNotebookAsync(final DeleteNotebookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNotebookRequest, DeleteNotebookResult> asyncHandler) {
+        final DeleteNotebookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNotebookResult>() {
+            @Override
+            public DeleteNotebookResult call() throws Exception {
+                DeleteNotebookResult result = null;
+
+                try {
+                    result = executeDeleteNotebook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeletePreparedStatementResult> deletePreparedStatementAsync(DeletePreparedStatementRequest request) {
 
         return deletePreparedStatementAsync(request, null);
@@ -436,6 +535,139 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeDeleteWorkGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportNotebookResult> exportNotebookAsync(ExportNotebookRequest request) {
+
+        return exportNotebookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportNotebookResult> exportNotebookAsync(final ExportNotebookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportNotebookRequest, ExportNotebookResult> asyncHandler) {
+        final ExportNotebookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportNotebookResult>() {
+            @Override
+            public ExportNotebookResult call() throws Exception {
+                ExportNotebookResult result = null;
+
+                try {
+                    result = executeExportNotebook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculationExecutionResult> getCalculationExecutionAsync(GetCalculationExecutionRequest request) {
+
+        return getCalculationExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculationExecutionResult> getCalculationExecutionAsync(final GetCalculationExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionRequest, GetCalculationExecutionResult> asyncHandler) {
+        final GetCalculationExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCalculationExecutionResult>() {
+            @Override
+            public GetCalculationExecutionResult call() throws Exception {
+                GetCalculationExecutionResult result = null;
+
+                try {
+                    result = executeGetCalculationExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculationExecutionCodeResult> getCalculationExecutionCodeAsync(GetCalculationExecutionCodeRequest request) {
+
+        return getCalculationExecutionCodeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculationExecutionCodeResult> getCalculationExecutionCodeAsync(final GetCalculationExecutionCodeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionCodeRequest, GetCalculationExecutionCodeResult> asyncHandler) {
+        final GetCalculationExecutionCodeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCalculationExecutionCodeResult>() {
+            @Override
+            public GetCalculationExecutionCodeResult call() throws Exception {
+                GetCalculationExecutionCodeResult result = null;
+
+                try {
+                    result = executeGetCalculationExecutionCode(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculationExecutionStatusResult> getCalculationExecutionStatusAsync(GetCalculationExecutionStatusRequest request) {
+
+        return getCalculationExecutionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCalculationExecutionStatusResult> getCalculationExecutionStatusAsync(
+            final GetCalculationExecutionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCalculationExecutionStatusRequest, GetCalculationExecutionStatusResult> asyncHandler) {
+        final GetCalculationExecutionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCalculationExecutionStatusResult>() {
+            @Override
+            public GetCalculationExecutionStatusResult call() throws Exception {
+                GetCalculationExecutionStatusResult result = null;
+
+                try {
+                    result = executeGetCalculationExecutionStatus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -535,6 +767,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeGetNamedQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNotebookMetadataResult> getNotebookMetadataAsync(GetNotebookMetadataRequest request) {
+
+        return getNotebookMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNotebookMetadataResult> getNotebookMetadataAsync(final GetNotebookMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetNotebookMetadataRequest, GetNotebookMetadataResult> asyncHandler) {
+        final GetNotebookMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetNotebookMetadataResult>() {
+            @Override
+            public GetNotebookMetadataResult call() throws Exception {
+                GetNotebookMetadataResult result = null;
+
+                try {
+                    result = executeGetNotebookMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -683,6 +948,72 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<GetSessionResult> getSessionAsync(GetSessionRequest request) {
+
+        return getSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSessionResult> getSessionAsync(final GetSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSessionRequest, GetSessionResult> asyncHandler) {
+        final GetSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSessionResult>() {
+            @Override
+            public GetSessionResult call() throws Exception {
+                GetSessionResult result = null;
+
+                try {
+                    result = executeGetSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSessionStatusResult> getSessionStatusAsync(GetSessionStatusRequest request) {
+
+        return getSessionStatusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSessionStatusResult> getSessionStatusAsync(final GetSessionStatusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSessionStatusRequest, GetSessionStatusResult> asyncHandler) {
+        final GetSessionStatusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSessionStatusResult>() {
+            @Override
+            public GetSessionStatusResult call() throws Exception {
+                GetSessionStatusResult result = null;
+
+                try {
+                    result = executeGetSessionStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTableMetadataResult> getTableMetadataAsync(GetTableMetadataRequest request) {
 
         return getTableMetadataAsync(request, null);
@@ -733,6 +1064,105 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeGetWorkGroup(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportNotebookResult> importNotebookAsync(ImportNotebookRequest request) {
+
+        return importNotebookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportNotebookResult> importNotebookAsync(final ImportNotebookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportNotebookRequest, ImportNotebookResult> asyncHandler) {
+        final ImportNotebookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportNotebookResult>() {
+            @Override
+            public ImportNotebookResult call() throws Exception {
+                ImportNotebookResult result = null;
+
+                try {
+                    result = executeImportNotebook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationDPUSizesResult> listApplicationDPUSizesAsync(ListApplicationDPUSizesRequest request) {
+
+        return listApplicationDPUSizesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApplicationDPUSizesResult> listApplicationDPUSizesAsync(final ListApplicationDPUSizesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListApplicationDPUSizesRequest, ListApplicationDPUSizesResult> asyncHandler) {
+        final ListApplicationDPUSizesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListApplicationDPUSizesResult>() {
+            @Override
+            public ListApplicationDPUSizesResult call() throws Exception {
+                ListApplicationDPUSizesResult result = null;
+
+                try {
+                    result = executeListApplicationDPUSizes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculationExecutionsResult> listCalculationExecutionsAsync(ListCalculationExecutionsRequest request) {
+
+        return listCalculationExecutionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCalculationExecutionsResult> listCalculationExecutionsAsync(final ListCalculationExecutionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCalculationExecutionsRequest, ListCalculationExecutionsResult> asyncHandler) {
+        final ListCalculationExecutionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCalculationExecutionsResult>() {
+            @Override
+            public ListCalculationExecutionsResult call() throws Exception {
+                ListCalculationExecutionsResult result = null;
+
+                try {
+                    result = executeListCalculationExecutions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -848,6 +1278,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<ListExecutorsResult> listExecutorsAsync(ListExecutorsRequest request) {
+
+        return listExecutorsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExecutorsResult> listExecutorsAsync(final ListExecutorsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListExecutorsRequest, ListExecutorsResult> asyncHandler) {
+        final ListExecutorsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListExecutorsResult>() {
+            @Override
+            public ListExecutorsResult call() throws Exception {
+                ListExecutorsResult result = null;
+
+                try {
+                    result = executeListExecutors(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListNamedQueriesResult> listNamedQueriesAsync(ListNamedQueriesRequest request) {
 
         return listNamedQueriesAsync(request, null);
@@ -865,6 +1328,72 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeListNamedQueries(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookMetadataResult> listNotebookMetadataAsync(ListNotebookMetadataRequest request) {
+
+        return listNotebookMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookMetadataResult> listNotebookMetadataAsync(final ListNotebookMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNotebookMetadataRequest, ListNotebookMetadataResult> asyncHandler) {
+        final ListNotebookMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNotebookMetadataResult>() {
+            @Override
+            public ListNotebookMetadataResult call() throws Exception {
+                ListNotebookMetadataResult result = null;
+
+                try {
+                    result = executeListNotebookMetadata(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookSessionsResult> listNotebookSessionsAsync(ListNotebookSessionsRequest request) {
+
+        return listNotebookSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNotebookSessionsResult> listNotebookSessionsAsync(final ListNotebookSessionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNotebookSessionsRequest, ListNotebookSessionsResult> asyncHandler) {
+        final ListNotebookSessionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNotebookSessionsResult>() {
+            @Override
+            public ListNotebookSessionsResult call() throws Exception {
+                ListNotebookSessionsResult result = null;
+
+                try {
+                    result = executeListNotebookSessions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -931,6 +1460,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeListQueryExecutions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSessionsResult> listSessionsAsync(ListSessionsRequest request) {
+
+        return listSessionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSessionsResult> listSessionsAsync(final ListSessionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSessionsRequest, ListSessionsResult> asyncHandler) {
+        final ListSessionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSessionsResult>() {
+            @Override
+            public ListSessionsResult call() throws Exception {
+                ListSessionsResult result = null;
+
+                try {
+                    result = executeListSessions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1046,6 +1608,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<StartCalculationExecutionResult> startCalculationExecutionAsync(StartCalculationExecutionRequest request) {
+
+        return startCalculationExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartCalculationExecutionResult> startCalculationExecutionAsync(final StartCalculationExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartCalculationExecutionRequest, StartCalculationExecutionResult> asyncHandler) {
+        final StartCalculationExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartCalculationExecutionResult>() {
+            @Override
+            public StartCalculationExecutionResult call() throws Exception {
+                StartCalculationExecutionResult result = null;
+
+                try {
+                    result = executeStartCalculationExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartQueryExecutionResult> startQueryExecutionAsync(StartQueryExecutionRequest request) {
 
         return startQueryExecutionAsync(request, null);
@@ -1063,6 +1658,72 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeStartQueryExecution(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSessionResult> startSessionAsync(StartSessionRequest request) {
+
+        return startSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSessionResult> startSessionAsync(final StartSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSessionRequest, StartSessionResult> asyncHandler) {
+        final StartSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSessionResult>() {
+            @Override
+            public StartSessionResult call() throws Exception {
+                StartSessionResult result = null;
+
+                try {
+                    result = executeStartSession(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCalculationExecutionResult> stopCalculationExecutionAsync(StopCalculationExecutionRequest request) {
+
+        return stopCalculationExecutionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopCalculationExecutionResult> stopCalculationExecutionAsync(final StopCalculationExecutionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StopCalculationExecutionRequest, StopCalculationExecutionResult> asyncHandler) {
+        final StopCalculationExecutionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StopCalculationExecutionResult>() {
+            @Override
+            public StopCalculationExecutionResult call() throws Exception {
+                StopCalculationExecutionResult result = null;
+
+                try {
+                    result = executeStopCalculationExecution(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1129,6 +1790,39 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest request) {
+
+        return terminateSessionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(final TerminateSessionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TerminateSessionRequest, TerminateSessionResult> asyncHandler) {
+        final TerminateSessionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TerminateSessionResult>() {
+            @Override
+            public TerminateSessionResult call() throws Exception {
+                TerminateSessionResult result = null;
+
+                try {
+                    result = executeTerminateSession(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1228,6 +1922,72 @@ public class AmazonAthenaAsyncClient extends AmazonAthenaClient implements Amazo
 
                 try {
                     result = executeUpdateNamedQuery(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookResult> updateNotebookAsync(UpdateNotebookRequest request) {
+
+        return updateNotebookAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookResult> updateNotebookAsync(final UpdateNotebookRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNotebookRequest, UpdateNotebookResult> asyncHandler) {
+        final UpdateNotebookRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNotebookResult>() {
+            @Override
+            public UpdateNotebookResult call() throws Exception {
+                UpdateNotebookResult result = null;
+
+                try {
+                    result = executeUpdateNotebook(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookMetadataResult> updateNotebookMetadataAsync(UpdateNotebookMetadataRequest request) {
+
+        return updateNotebookMetadataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateNotebookMetadataResult> updateNotebookMetadataAsync(final UpdateNotebookMetadataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateNotebookMetadataRequest, UpdateNotebookMetadataResult> asyncHandler) {
+        final UpdateNotebookMetadataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateNotebookMetadataResult>() {
+            @Override
+            public UpdateNotebookMetadataResult call() throws Exception {
+                UpdateNotebookMetadataResult result = null;
+
+                try {
+                    result = executeUpdateNotebookMetadata(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

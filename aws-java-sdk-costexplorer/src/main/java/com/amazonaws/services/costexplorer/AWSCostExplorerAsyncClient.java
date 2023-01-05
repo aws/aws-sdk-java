@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -993,6 +993,41 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            ListSavingsPlansPurchaseRecommendationGenerationRequest request) {
+
+        return listSavingsPlansPurchaseRecommendationGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSavingsPlansPurchaseRecommendationGenerationResult> listSavingsPlansPurchaseRecommendationGenerationAsync(
+            final ListSavingsPlansPurchaseRecommendationGenerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListSavingsPlansPurchaseRecommendationGenerationRequest, ListSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler) {
+        final ListSavingsPlansPurchaseRecommendationGenerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListSavingsPlansPurchaseRecommendationGenerationResult>() {
+            @Override
+            public ListSavingsPlansPurchaseRecommendationGenerationResult call() throws Exception {
+                ListSavingsPlansPurchaseRecommendationGenerationResult result = null;
+
+                try {
+                    result = executeListSavingsPlansPurchaseRecommendationGeneration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1043,6 +1078,41 @@ public class AWSCostExplorerAsyncClient extends AWSCostExplorerClient implements
 
                 try {
                     result = executeProvideAnomalyFeedback(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            StartSavingsPlansPurchaseRecommendationGenerationRequest request) {
+
+        return startSavingsPlansPurchaseRecommendationGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSavingsPlansPurchaseRecommendationGenerationResult> startSavingsPlansPurchaseRecommendationGenerationAsync(
+            final StartSavingsPlansPurchaseRecommendationGenerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSavingsPlansPurchaseRecommendationGenerationRequest, StartSavingsPlansPurchaseRecommendationGenerationResult> asyncHandler) {
+        final StartSavingsPlansPurchaseRecommendationGenerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSavingsPlansPurchaseRecommendationGenerationResult>() {
+            @Override
+            public StartSavingsPlansPurchaseRecommendationGenerationResult call() throws Exception {
+                StartSavingsPlansPurchaseRecommendationGenerationResult result = null;
+
+                try {
+                    result = executeStartSavingsPlansPurchaseRecommendationGeneration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,9 +17,9 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it’s
+ * An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it's
  * associated with. The distribution and account IDs are partially hidden, which allows you to identify the
- * distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+ * distributions and accounts that you own, but helps to protect the information of ones that you don't own.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ConflictingAlias" target="_top">AWS API
@@ -42,7 +42,7 @@ public class ConflictingAlias implements Serializable, Cloneable {
     private String distributionId;
     /**
      * <p>
-     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated with
+     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with
      * the alias.
      * </p>
      */
@@ -130,12 +130,12 @@ public class ConflictingAlias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated with
+     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with
      * the alias.
      * </p>
      * 
      * @param accountId
-     *        The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated
+     *        The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated
      *        with the alias.
      */
 
@@ -145,11 +145,11 @@ public class ConflictingAlias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated with
+     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with
      * the alias.
      * </p>
      * 
-     * @return The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated
+     * @return The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated
      *         with the alias.
      */
 
@@ -159,12 +159,12 @@ public class ConflictingAlias implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated with
+     * The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated with
      * the alias.
      * </p>
      * 
      * @param accountId
-     *        The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s associated
+     *        The (partially hidden) ID of the Amazon Web Services account that owns the distribution that's associated
      *        with the alias.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

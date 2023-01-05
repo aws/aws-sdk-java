@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
     private java.util.List<String> deviceIds;
     /**
      * <p>
-     * Configuration settings for the job.
+     * Configuration settings for a software update job.
      * </p>
      */
     private DeviceJobConfig deviceJobConfig;
@@ -116,11 +116,11 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Configuration settings for the job.
+     * Configuration settings for a software update job.
      * </p>
      * 
      * @param deviceJobConfig
-     *        Configuration settings for the job.
+     *        Configuration settings for a software update job.
      */
 
     public void setDeviceJobConfig(DeviceJobConfig deviceJobConfig) {
@@ -129,10 +129,10 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Configuration settings for the job.
+     * Configuration settings for a software update job.
      * </p>
      * 
-     * @return Configuration settings for the job.
+     * @return Configuration settings for a software update job.
      */
 
     public DeviceJobConfig getDeviceJobConfig() {
@@ -141,11 +141,11 @@ public class CreateJobForDevicesRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Configuration settings for the job.
+     * Configuration settings for a software update job.
      * </p>
      * 
      * @param deviceJobConfig
-     *        Configuration settings for the job.
+     *        Configuration settings for a software update job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

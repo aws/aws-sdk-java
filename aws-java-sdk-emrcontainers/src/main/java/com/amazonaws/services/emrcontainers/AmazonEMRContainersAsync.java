@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,41 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return A Java Future containing the result of the CreateJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsync.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest createJobTemplateRequest);
+
+    /**
+     * <p>
+     * Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.CreateJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/CreateJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateJobTemplateResult> createJobTemplateAsync(CreateJobTemplateRequest createJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateJobTemplateRequest, CreateJobTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a managed endpoint. A managed endpoint is a gateway that connects EMR Studio to Amazon EMR on EKS so that
      * EMR Studio can communicate with your virtual cluster.
      * </p>
@@ -166,6 +201,41 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
      */
     java.util.concurrent.Future<CreateVirtualClusterResult> createVirtualClusterAsync(CreateVirtualClusterRequest createVirtualClusterRequest,
             com.amazonaws.handlers.AsyncHandler<CreateVirtualClusterRequest, CreateVirtualClusterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return A Java Future containing the result of the DeleteJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsync.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest deleteJobTemplateRequest);
+
+    /**
+     * <p>
+     * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to
+     * start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values,
+     * enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.DeleteJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteJobTemplateResult> deleteJobTemplateAsync(DeleteJobTemplateRequest deleteJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteJobTemplateRequest, DeleteJobTemplateResult> asyncHandler);
 
     /**
      * <p>
@@ -272,6 +342,41 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
 
     /**
      * <p>
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return A Java Future containing the result of the DescribeJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsync.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest describeJobTemplateRequest);
+
+    /**
+     * <p>
+     * Displays detailed information about a specified job template. Job template stores values of StartJobRun API
+     * request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating
+     * recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeJobTemplate operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.DescribeJobTemplate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DescribeJobTemplate"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeJobTemplateResult> describeJobTemplateAsync(DescribeJobTemplateRequest describeJobTemplateRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeJobTemplateRequest, DescribeJobTemplateResult> asyncHandler);
+
+    /**
+     * <p>
      * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects EMR Studio
      * to Amazon EMR on EKS so that EMR Studio can communicate with your virtual cluster.
      * </p>
@@ -372,6 +477,41 @@ public interface AmazonEMRContainersAsync extends AmazonEMRContainers {
      */
     java.util.concurrent.Future<ListJobRunsResult> listJobRunsAsync(ListJobRunsRequest listJobRunsRequest,
             com.amazonaws.handlers.AsyncHandler<ListJobRunsRequest, ListJobRunsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return A Java Future containing the result of the ListJobTemplates operation returned by the service.
+     * @sample AmazonEMRContainersAsync.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest listJobTemplatesRequest);
+
+    /**
+     * <p>
+     * Lists job templates based on a set of parameters. Job template stores values of StartJobRun API request in a
+     * template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring
+     * StartJobRun API request values, enforcing certain values in StartJobRun API request.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListJobTemplates operation returned by the service.
+     * @sample AmazonEMRContainersAsyncHandler.ListJobTemplates
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/ListJobTemplates"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListJobTemplatesResult> listJobTemplatesAsync(ListJobTemplatesRequest listJobTemplatesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListJobTemplatesRequest, ListJobTemplatesResult> asyncHandler);
 
     /**
      * <p>

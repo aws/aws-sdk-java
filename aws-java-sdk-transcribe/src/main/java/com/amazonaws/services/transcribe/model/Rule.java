@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,18 +19,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A rule is a set of criteria you can specify to flag an attribute in your Call Analytics output. Rules define a Call
- * Analytics category.
+ * A rule is a set of criteria that you can specify to flag an attribute in your Call Analytics output. Rules define a
+ * Call Analytics category.
  * </p>
  * <p>
- * Rules can include these parameters: , , , and . To learn more about these parameters, refer to <a href=
- * "https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html#call-analytics-create-categories-rules"
- * >Rule criteria</a>.
+ * Rules can include these parameters: , , , and .
  * </p>
  * <p>
- * To learn more about Call Analytics categories, see <a
- * href="https://docs.aws.amazon.com/transcribe/latest/dg/call-analytics-create-categories.html">Creating
- * categories</a>.
+ * To learn more about Call Analytics rules and categories, see <a
+ * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-batch.html">Creating categories for batch
+ * transcriptions</a> and <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-categories-stream.html">Creating
+ * categories for streaming transcriptions</a>.
  * </p>
  * <p>
  * To learn more about Call Analytics, see <a

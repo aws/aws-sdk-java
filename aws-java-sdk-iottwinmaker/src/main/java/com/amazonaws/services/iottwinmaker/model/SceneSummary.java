@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,10 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of the scene.
+     * The ID of the scene.
      * </p>
      */
-    private String arn;
+    private String sceneId;
     /**
      * <p>
      * The relative path that specifies the location of the content definition file.
@@ -42,66 +42,66 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
     private String contentLocation;
     /**
      * <p>
+     * The ARN of the scene.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
      * The date and time when the scene was created.
      * </p>
      */
     private java.util.Date creationDateTime;
     /**
      * <p>
-     * The scene description.
-     * </p>
-     */
-    private String description;
-    /**
-     * <p>
-     * The ID of the scene.
-     * </p>
-     */
-    private String sceneId;
-    /**
-     * <p>
      * The date and time when the scene was last updated.
      * </p>
      */
     private java.util.Date updateDateTime;
+    /**
+     * <p>
+     * The scene description.
+     * </p>
+     */
+    private String description;
 
     /**
      * <p>
-     * The ARN of the scene.
+     * The ID of the scene.
      * </p>
      * 
-     * @param arn
-     *        The ARN of the scene.
+     * @param sceneId
+     *        The ID of the scene.
      */
 
-    public void setArn(String arn) {
-        this.arn = arn;
+    public void setSceneId(String sceneId) {
+        this.sceneId = sceneId;
     }
 
     /**
      * <p>
-     * The ARN of the scene.
+     * The ID of the scene.
      * </p>
      * 
-     * @return The ARN of the scene.
+     * @return The ID of the scene.
      */
 
-    public String getArn() {
-        return this.arn;
+    public String getSceneId() {
+        return this.sceneId;
     }
 
     /**
      * <p>
-     * The ARN of the scene.
+     * The ID of the scene.
      * </p>
      * 
-     * @param arn
-     *        The ARN of the scene.
+     * @param sceneId
+     *        The ID of the scene.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public SceneSummary withArn(String arn) {
-        setArn(arn);
+    public SceneSummary withSceneId(String sceneId) {
+        setSceneId(sceneId);
         return this;
     }
 
@@ -147,6 +147,46 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The ARN of the scene.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the scene.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the scene.
+     * </p>
+     * 
+     * @return The ARN of the scene.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the scene.
+     * </p>
+     * 
+     * @param arn
+     *        The ARN of the scene.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SceneSummary withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The date and time when the scene was created.
      * </p>
      * 
@@ -182,86 +222,6 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
 
     public SceneSummary withCreationDateTime(java.util.Date creationDateTime) {
         setCreationDateTime(creationDateTime);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The scene description.
-     * </p>
-     * 
-     * @param description
-     *        The scene description.
-     */
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    /**
-     * <p>
-     * The scene description.
-     * </p>
-     * 
-     * @return The scene description.
-     */
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    /**
-     * <p>
-     * The scene description.
-     * </p>
-     * 
-     * @param description
-     *        The scene description.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SceneSummary withDescription(String description) {
-        setDescription(description);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The ID of the scene.
-     * </p>
-     * 
-     * @param sceneId
-     *        The ID of the scene.
-     */
-
-    public void setSceneId(String sceneId) {
-        this.sceneId = sceneId;
-    }
-
-    /**
-     * <p>
-     * The ID of the scene.
-     * </p>
-     * 
-     * @return The ID of the scene.
-     */
-
-    public String getSceneId() {
-        return this.sceneId;
-    }
-
-    /**
-     * <p>
-     * The ID of the scene.
-     * </p>
-     * 
-     * @param sceneId
-     *        The ID of the scene.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public SceneSummary withSceneId(String sceneId) {
-        setSceneId(sceneId);
         return this;
     }
 
@@ -306,6 +266,46 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The scene description.
+     * </p>
+     * 
+     * @param description
+     *        The scene description.
+     */
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * <p>
+     * The scene description.
+     * </p>
+     * 
+     * @return The scene description.
+     */
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    /**
+     * <p>
+     * The scene description.
+     * </p>
+     * 
+     * @param description
+     *        The scene description.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SceneSummary withDescription(String description) {
+        setDescription(description);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -317,18 +317,18 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getArn() != null)
-            sb.append("Arn: ").append(getArn()).append(",");
-        if (getContentLocation() != null)
-            sb.append("ContentLocation: ").append(getContentLocation()).append(",");
-        if (getCreationDateTime() != null)
-            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription()).append(",");
         if (getSceneId() != null)
             sb.append("SceneId: ").append(getSceneId()).append(",");
+        if (getContentLocation() != null)
+            sb.append("ContentLocation: ").append(getContentLocation()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreationDateTime() != null)
+            sb.append("CreationDateTime: ").append(getCreationDateTime()).append(",");
         if (getUpdateDateTime() != null)
-            sb.append("UpdateDateTime: ").append(getUpdateDateTime());
+            sb.append("UpdateDateTime: ").append(getUpdateDateTime()).append(",");
+        if (getDescription() != null)
+            sb.append("Description: ").append(getDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -343,29 +343,29 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof SceneSummary == false)
             return false;
         SceneSummary other = (SceneSummary) obj;
-        if (other.getArn() == null ^ this.getArn() == null)
+        if (other.getSceneId() == null ^ this.getSceneId() == null)
             return false;
-        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
             return false;
         if (other.getContentLocation() == null ^ this.getContentLocation() == null)
             return false;
         if (other.getContentLocation() != null && other.getContentLocation().equals(this.getContentLocation()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         if (other.getCreationDateTime() == null ^ this.getCreationDateTime() == null)
             return false;
         if (other.getCreationDateTime() != null && other.getCreationDateTime().equals(this.getCreationDateTime()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
-            return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
-            return false;
-        if (other.getSceneId() == null ^ this.getSceneId() == null)
-            return false;
-        if (other.getSceneId() != null && other.getSceneId().equals(this.getSceneId()) == false)
-            return false;
         if (other.getUpdateDateTime() == null ^ this.getUpdateDateTime() == null)
             return false;
         if (other.getUpdateDateTime() != null && other.getUpdateDateTime().equals(this.getUpdateDateTime()) == false)
+            return false;
+        if (other.getDescription() == null ^ this.getDescription() == null)
+            return false;
+        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
         return true;
     }
@@ -375,12 +375,12 @@ public class SceneSummary implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
-        hashCode = prime * hashCode + ((getContentLocation() == null) ? 0 : getContentLocation().hashCode());
-        hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getSceneId() == null) ? 0 : getSceneId().hashCode());
+        hashCode = prime * hashCode + ((getContentLocation() == null) ? 0 : getContentLocation().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());
         hashCode = prime * hashCode + ((getUpdateDateTime() == null) ? 0 : getUpdateDateTime().hashCode());
+        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         return hashCode;
     }
 

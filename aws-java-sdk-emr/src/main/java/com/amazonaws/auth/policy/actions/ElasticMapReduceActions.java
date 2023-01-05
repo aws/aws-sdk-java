@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,8 @@ public enum ElasticMapReduceActions implements Action {
     GetAutoTerminationPolicy("elasticmapreduce:GetAutoTerminationPolicy"),
     /** Action for the GetBlockPublicAccessConfiguration operation. */
     GetBlockPublicAccessConfiguration("elasticmapreduce:GetBlockPublicAccessConfiguration"),
+    /** Action for the GetClusterSessionCredentials operation. */
+    GetClusterSessionCredentials("elasticmapreduce:GetClusterSessionCredentials"),
     /** Action for the GetManagedScalingPolicy operation. */
     GetManagedScalingPolicy("elasticmapreduce:GetManagedScalingPolicy"),
     /** Action for the GetStudioSessionMapping operation. */

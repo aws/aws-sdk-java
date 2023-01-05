@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
     private java.util.Date pushedAt;
     /**
      * <p>
-     * The registry the Amazon ECR container image belongs to.
+     * The registry for the Amazon ECR container image.
      * </p>
      */
     private String registry;
@@ -349,11 +349,11 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The registry the Amazon ECR container image belongs to.
+     * The registry for the Amazon ECR container image.
      * </p>
      * 
      * @param registry
-     *        The registry the Amazon ECR container image belongs to.
+     *        The registry for the Amazon ECR container image.
      */
 
     public void setRegistry(String registry) {
@@ -362,10 +362,10 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The registry the Amazon ECR container image belongs to.
+     * The registry for the Amazon ECR container image.
      * </p>
      * 
-     * @return The registry the Amazon ECR container image belongs to.
+     * @return The registry for the Amazon ECR container image.
      */
 
     public String getRegistry() {
@@ -374,11 +374,11 @@ public class AwsEcrContainerImageDetails implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The registry the Amazon ECR container image belongs to.
+     * The registry for the Amazon ECR container image.
      * </p>
      * 
      * @param registry
-     *        The registry the Amazon ECR container image belongs to.
+     *        The registry for the Amazon ECR container image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

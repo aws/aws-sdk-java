@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
     }
 
     @Override
+    public GetTableRestoreStatusResult getTableRestoreStatus(GetTableRestoreStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetUsageLimitResult getUsageLimit(GetUsageLimitRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -148,6 +153,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
     }
 
     @Override
+    public ListTableRestoreStatusResult listTableRestoreStatus(ListTableRestoreStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -174,6 +184,11 @@ public class AbstractAWSRedshiftServerless implements AWSRedshiftServerless {
 
     @Override
     public RestoreFromSnapshotResult restoreFromSnapshot(RestoreFromSnapshotRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreTableFromSnapshotResult restoreTableFromSnapshot(RestoreTableFromSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,37 @@ import com.amazonaws.services.workdocs.model.*;
  * perform the three use cases above, as well as give users the ability to grant access on a selective basis using the
  * IAM model.
  * </p>
+ * <note>
+ * <p>
+ * The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>READ (Get*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>LIST (Describe*)</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>DELETE*, CANCEL</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For information about Amazon WorkDocs API pricing, see <a href="https://aws.amazon.com/workdocs/pricing/">Amazon
+ * WorkDocs Pricing</a>.
+ * </p>
+ * </note>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
@@ -297,8 +328,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to
-     * Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html">Setting up
+     * notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param createNotificationSubscriptionRequest
@@ -318,8 +349,8 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to
-     * Notifications</a> in the <i>Amazon WorkDocs Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/manage-notifications.html">Setting up
+     * notifications for an IAM user or role</a> in the <i>Amazon WorkDocs Developer Guide</i>.
      * </p>
      * 
      * @param createNotificationSubscriptionRequest
@@ -493,6 +524,39 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      */
     java.util.concurrent.Future<DeleteDocumentResult> deleteDocumentAsync(DeleteDocumentRequest deleteDocumentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDocumentRequest, DeleteDocumentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code> parameter to delete
+     * prior versions.
+     * </p>
+     * 
+     * @param deleteDocumentVersionRequest
+     * @return A Java Future containing the result of the DeleteDocumentVersion operation returned by the service.
+     * @sample AmazonWorkDocsAsync.DeleteDocumentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocumentVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(DeleteDocumentVersionRequest deleteDocumentVersionRequest);
+
+    /**
+     * <p>
+     * Deletes a version of an Amazon WorkDocs document. Use the <code>DeletePriorVersions</code> parameter to delete
+     * prior versions.
+     * </p>
+     * 
+     * @param deleteDocumentVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteDocumentVersion operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.DeleteDocumentVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DeleteDocumentVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteDocumentVersionResult> deleteDocumentVersionAsync(DeleteDocumentVersionRequest deleteDocumentVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteDocumentVersionRequest, DeleteDocumentVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -1349,6 +1413,37 @@ public interface AmazonWorkDocsAsync extends AmazonWorkDocs {
      */
     java.util.concurrent.Future<RemoveResourcePermissionResult> removeResourcePermissionAsync(RemoveResourcePermissionRequest removeResourcePermissionRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveResourcePermissionRequest, RemoveResourcePermissionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Recovers a deleted version of an Amazon WorkDocs document.
+     * </p>
+     * 
+     * @param restoreDocumentVersionsRequest
+     * @return A Java Future containing the result of the RestoreDocumentVersions operation returned by the service.
+     * @sample AmazonWorkDocsAsync.RestoreDocumentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RestoreDocumentVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(RestoreDocumentVersionsRequest restoreDocumentVersionsRequest);
+
+    /**
+     * <p>
+     * Recovers a deleted version of an Amazon WorkDocs document.
+     * </p>
+     * 
+     * @param restoreDocumentVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreDocumentVersions operation returned by the service.
+     * @sample AmazonWorkDocsAsyncHandler.RestoreDocumentVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/RestoreDocumentVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreDocumentVersionsResult> restoreDocumentVersionsAsync(RestoreDocumentVersionsRequest restoreDocumentVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreDocumentVersionsRequest, RestoreDocumentVersionsResult> asyncHandler);
 
     /**
      * <p>

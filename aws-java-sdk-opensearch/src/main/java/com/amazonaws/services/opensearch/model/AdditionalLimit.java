@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,60 +19,65 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * List of limits that are specific to a given InstanceType and for each of its <code> <a>InstanceRole</a> </code> .
+ * List of limits that are specific to a given instance type.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * <p>
-     * Additional limit is specific to a given InstanceType and for each of its <code> <a>InstanceRole</a> </code> etc.
-     * <br/>
-     * Attributes and their details: <br/>
      * <ul>
-     * <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much
-     * data nodes up to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node.
-     * <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how
-     * much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> up to which you don't need any master
-     * nodes to govern them.
-     * </ul>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the
+     * maximum number of data nodes of a given instance type a master node can support.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies
+     * the maximum number of data nodes of a given instance type can exist without a master node governing them.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String limitName;
     /**
      * <p>
-     * Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     * The values of the additional instance type limits.
      * </p>
      */
     private java.util.List<String> limitValues;
 
     /**
-     * <p>
-     * Additional limit is specific to a given InstanceType and for each of its <code> <a>InstanceRole</a> </code> etc.
-     * <br/>
-     * Attributes and their details: <br/>
      * <ul>
-     * <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much
-     * data nodes up to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node.
-     * <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how
-     * much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> up to which you don't need any master
-     * nodes to govern them.
-     * </ul>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the
+     * maximum number of data nodes of a given instance type a master node can support.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies
+     * the maximum number of data nodes of a given instance type can exist without a master node governing them.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param limitName
-     *        Additional limit is specific to a given InstanceType and for each of its
-     *        <code> <a>InstanceRole</a> </code> etc. <br/>
-     *        Attributes and their details: <br/>
-     *        <ul>
-     *        <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify
-     *        how much data nodes up to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master
-     *        node.
-     *        <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify
-     *        how much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> up to which you don't need any
-     *        master nodes to govern them.
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies
+     *        the maximum number of data nodes of a given instance type a master node can support.
+     *        </p>
+     *        </li> <li>
+     *        <p>
+     *        <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and
+     *        specifies the maximum number of data nodes of a given instance type can exist without a master node
+     *        governing them.
+     *        </p>
+     *        </li>
      */
 
     public void setLimitName(String limitName) {
@@ -80,30 +85,33 @@ public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * Additional limit is specific to a given InstanceType and for each of its <code> <a>InstanceRole</a> </code> etc.
-     * <br/>
-     * Attributes and their details: <br/>
      * <ul>
-     * <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much
-     * data nodes up to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node.
-     * <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how
-     * much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> up to which you don't need any master
-     * nodes to govern them.
-     * </ul>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the
+     * maximum number of data nodes of a given instance type a master node can support.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies
+     * the maximum number of data nodes of a given instance type can exist without a master node governing them.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Additional limit is specific to a given InstanceType and for each of its
-     *         <code> <a>InstanceRole</a> </code> etc. <br/>
-     *         Attributes and their details: <br/>
-     *         <ul>
-     *         <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify
-     *         how much data nodes up to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master
-     *         node.
-     *         <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify
-     *         how much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> up to which you don't need any
-     *         master nodes to govern them.
-     *         </ul>
+     * @return <li>
+     *         <p>
+     *         <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and
+     *         specifies the maximum number of data nodes of a given instance type a master node can support.
+     *         </p>
+     *         </li> <li>
+     *         <p>
+     *         <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and
+     *         specifies the maximum number of data nodes of a given instance type can exist without a master node
+     *         governing them.
+     *         </p>
+     *         </li>
      */
 
     public String getLimitName() {
@@ -111,31 +119,34 @@ public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
-     * <p>
-     * Additional limit is specific to a given InstanceType and for each of its <code> <a>InstanceRole</a> </code> etc.
-     * <br/>
-     * Attributes and their details: <br/>
      * <ul>
-     * <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify how much
-     * data nodes up to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master node.
-     * <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify how
-     * much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> up to which you don't need any master
-     * nodes to govern them.
-     * </ul>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies the
+     * maximum number of data nodes of a given instance type a master node can support.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and specifies
+     * the maximum number of data nodes of a given instance type can exist without a master node governing them.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param limitName
-     *        Additional limit is specific to a given InstanceType and for each of its
-     *        <code> <a>InstanceRole</a> </code> etc. <br/>
-     *        Attributes and their details: <br/>
-     *        <ul>
-     *        <li>MaximumNumberOfDataNodesSupported</li> This attribute is present on the master node only to specify
-     *        how much data nodes up to which given <code> <a>ESPartitionInstanceType</a> </code> can support as master
-     *        node.
-     *        <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute is present on data node only to specify
-     *        how much data nodes of given <code> <a>ESPartitionInstanceType</a> </code> up to which you don't need any
-     *        master nodes to govern them.
-     *        </ul>
+     *        <li>
+     *        <p>
+     *        <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master nodes and specifies
+     *        the maximum number of data nodes of a given instance type a master node can support.
+     *        </p>
+     *        </li> <li>
+     *        <p>
+     *        <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies to data nodes and
+     *        specifies the maximum number of data nodes of a given instance type can exist without a master node
+     *        governing them.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,10 +157,10 @@ public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     * The values of the additional instance type limits.
      * </p>
      * 
-     * @return Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     * @return The values of the additional instance type limits.
      */
 
     public java.util.List<String> getLimitValues() {
@@ -158,11 +169,11 @@ public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     * The values of the additional instance type limits.
      * </p>
      * 
      * @param limitValues
-     *        Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     *        The values of the additional instance type limits.
      */
 
     public void setLimitValues(java.util.Collection<String> limitValues) {
@@ -176,7 +187,7 @@ public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     * The values of the additional instance type limits.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -185,7 +196,7 @@ public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param limitValues
-     *        Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     *        The values of the additional instance type limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,11 +212,11 @@ public class AdditionalLimit implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     * The values of the additional instance type limits.
      * </p>
      * 
      * @param limitValues
-     *        Value for a given <code> <a>AdditionalLimit$LimitName</a> </code> .
+     *        The values of the additional instance type limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,16 +30,16 @@ public class ComponentRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ID of the component type.
-     * </p>
-     */
-    private String componentTypeId;
-    /**
-     * <p>
      * The description of the component request.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     */
+    private String componentTypeId;
     /**
      * <p>
      * An object that maps strings to the properties to set in the component type. Each string in the mapping must be
@@ -47,46 +47,12 @@ public class ComponentRequest implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Map<String, PropertyRequest> properties;
-
     /**
      * <p>
-     * The ID of the component type.
+     * The property groups.
      * </p>
-     * 
-     * @param componentTypeId
-     *        The ID of the component type.
      */
-
-    public void setComponentTypeId(String componentTypeId) {
-        this.componentTypeId = componentTypeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the component type.
-     * </p>
-     * 
-     * @return The ID of the component type.
-     */
-
-    public String getComponentTypeId() {
-        return this.componentTypeId;
-    }
-
-    /**
-     * <p>
-     * The ID of the component type.
-     * </p>
-     * 
-     * @param componentTypeId
-     *        The ID of the component type.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public ComponentRequest withComponentTypeId(String componentTypeId) {
-        setComponentTypeId(componentTypeId);
-        return this;
-    }
+    private java.util.Map<String, ComponentPropertyGroupRequest> propertyGroups;
 
     /**
      * <p>
@@ -125,6 +91,46 @@ public class ComponentRequest implements Serializable, Cloneable, StructuredPojo
 
     public ComponentRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     * 
+     * @param componentTypeId
+     *        The ID of the component type.
+     */
+
+    public void setComponentTypeId(String componentTypeId) {
+        this.componentTypeId = componentTypeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     * 
+     * @return The ID of the component type.
+     */
+
+    public String getComponentTypeId() {
+        return this.componentTypeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the component type.
+     * </p>
+     * 
+     * @param componentTypeId
+     *        The ID of the component type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentRequest withComponentTypeId(String componentTypeId) {
+        setComponentTypeId(componentTypeId);
         return this;
     }
 
@@ -203,6 +209,74 @@ public class ComponentRequest implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The property groups.
+     * </p>
+     * 
+     * @return The property groups.
+     */
+
+    public java.util.Map<String, ComponentPropertyGroupRequest> getPropertyGroups() {
+        return propertyGroups;
+    }
+
+    /**
+     * <p>
+     * The property groups.
+     * </p>
+     * 
+     * @param propertyGroups
+     *        The property groups.
+     */
+
+    public void setPropertyGroups(java.util.Map<String, ComponentPropertyGroupRequest> propertyGroups) {
+        this.propertyGroups = propertyGroups;
+    }
+
+    /**
+     * <p>
+     * The property groups.
+     * </p>
+     * 
+     * @param propertyGroups
+     *        The property groups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentRequest withPropertyGroups(java.util.Map<String, ComponentPropertyGroupRequest> propertyGroups) {
+        setPropertyGroups(propertyGroups);
+        return this;
+    }
+
+    /**
+     * Add a single PropertyGroups entry
+     *
+     * @see ComponentRequest#withPropertyGroups
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentRequest addPropertyGroupsEntry(String key, ComponentPropertyGroupRequest value) {
+        if (null == this.propertyGroups) {
+            this.propertyGroups = new java.util.HashMap<String, ComponentPropertyGroupRequest>();
+        }
+        if (this.propertyGroups.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.propertyGroups.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into PropertyGroups.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ComponentRequest clearPropertyGroupsEntries() {
+        this.propertyGroups = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -214,12 +288,14 @@ public class ComponentRequest implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getComponentTypeId() != null)
-            sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getComponentTypeId() != null)
+            sb.append("ComponentTypeId: ").append(getComponentTypeId()).append(",");
         if (getProperties() != null)
-            sb.append("Properties: ").append(getProperties());
+            sb.append("Properties: ").append(getProperties()).append(",");
+        if (getPropertyGroups() != null)
+            sb.append("PropertyGroups: ").append(getPropertyGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -234,17 +310,21 @@ public class ComponentRequest implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof ComponentRequest == false)
             return false;
         ComponentRequest other = (ComponentRequest) obj;
-        if (other.getComponentTypeId() == null ^ this.getComponentTypeId() == null)
-            return false;
-        if (other.getComponentTypeId() != null && other.getComponentTypeId().equals(this.getComponentTypeId()) == false)
-            return false;
         if (other.getDescription() == null ^ this.getDescription() == null)
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getComponentTypeId() == null ^ this.getComponentTypeId() == null)
+            return false;
+        if (other.getComponentTypeId() != null && other.getComponentTypeId().equals(this.getComponentTypeId()) == false)
+            return false;
         if (other.getProperties() == null ^ this.getProperties() == null)
             return false;
         if (other.getProperties() != null && other.getProperties().equals(this.getProperties()) == false)
+            return false;
+        if (other.getPropertyGroups() == null ^ this.getPropertyGroups() == null)
+            return false;
+        if (other.getPropertyGroups() != null && other.getPropertyGroups().equals(this.getPropertyGroups()) == false)
             return false;
         return true;
     }
@@ -254,9 +334,10 @@ public class ComponentRequest implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getComponentTypeId() == null) ? 0 : getComponentTypeId().hashCode());
         hashCode = prime * hashCode + ((getProperties() == null) ? 0 : getProperties().hashCode());
+        hashCode = prime * hashCode + ((getPropertyGroups() == null) ? 0 : getPropertyGroups().hashCode());
         return hashCode;
     }
 

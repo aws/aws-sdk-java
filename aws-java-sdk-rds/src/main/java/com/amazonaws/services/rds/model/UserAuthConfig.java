@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,12 @@ public class UserAuthConfig implements Serializable, Cloneable {
      * </p>
      */
     private String iAMAuth;
+    /**
+     * <p>
+     * The type of authentication the proxy uses for connections from clients.
+     * </p>
+     */
+    private String clientPasswordAuthType;
 
     /**
      * <p>
@@ -324,6 +330,65 @@ public class UserAuthConfig implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The type of authentication the proxy uses for connections from clients.
+     * </p>
+     * 
+     * @param clientPasswordAuthType
+     *        The type of authentication the proxy uses for connections from clients.
+     * @see ClientPasswordAuthType
+     */
+
+    public void setClientPasswordAuthType(String clientPasswordAuthType) {
+        this.clientPasswordAuthType = clientPasswordAuthType;
+    }
+
+    /**
+     * <p>
+     * The type of authentication the proxy uses for connections from clients.
+     * </p>
+     * 
+     * @return The type of authentication the proxy uses for connections from clients.
+     * @see ClientPasswordAuthType
+     */
+
+    public String getClientPasswordAuthType() {
+        return this.clientPasswordAuthType;
+    }
+
+    /**
+     * <p>
+     * The type of authentication the proxy uses for connections from clients.
+     * </p>
+     * 
+     * @param clientPasswordAuthType
+     *        The type of authentication the proxy uses for connections from clients.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClientPasswordAuthType
+     */
+
+    public UserAuthConfig withClientPasswordAuthType(String clientPasswordAuthType) {
+        setClientPasswordAuthType(clientPasswordAuthType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of authentication the proxy uses for connections from clients.
+     * </p>
+     * 
+     * @param clientPasswordAuthType
+     *        The type of authentication the proxy uses for connections from clients.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ClientPasswordAuthType
+     */
+
+    public UserAuthConfig withClientPasswordAuthType(ClientPasswordAuthType clientPasswordAuthType) {
+        this.clientPasswordAuthType = clientPasswordAuthType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -344,7 +409,9 @@ public class UserAuthConfig implements Serializable, Cloneable {
         if (getSecretArn() != null)
             sb.append("SecretArn: ").append(getSecretArn()).append(",");
         if (getIAMAuth() != null)
-            sb.append("IAMAuth: ").append(getIAMAuth());
+            sb.append("IAMAuth: ").append(getIAMAuth()).append(",");
+        if (getClientPasswordAuthType() != null)
+            sb.append("ClientPasswordAuthType: ").append(getClientPasswordAuthType());
         sb.append("}");
         return sb.toString();
     }
@@ -379,6 +446,10 @@ public class UserAuthConfig implements Serializable, Cloneable {
             return false;
         if (other.getIAMAuth() != null && other.getIAMAuth().equals(this.getIAMAuth()) == false)
             return false;
+        if (other.getClientPasswordAuthType() == null ^ this.getClientPasswordAuthType() == null)
+            return false;
+        if (other.getClientPasswordAuthType() != null && other.getClientPasswordAuthType().equals(this.getClientPasswordAuthType()) == false)
+            return false;
         return true;
     }
 
@@ -392,6 +463,7 @@ public class UserAuthConfig implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAuthScheme() == null) ? 0 : getAuthScheme().hashCode());
         hashCode = prime * hashCode + ((getSecretArn() == null) ? 0 : getSecretArn().hashCode());
         hashCode = prime * hashCode + ((getIAMAuth() == null) ? 0 : getIAMAuth().hashCode());
+        hashCode = prime * hashCode + ((getClientPasswordAuthType() == null) ? 0 : getClientPasswordAuthType().hashCode());
         return hashCode;
     }
 

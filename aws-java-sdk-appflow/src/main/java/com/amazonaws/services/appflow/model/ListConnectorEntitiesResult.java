@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,14 @@ public class ListConnectorEntitiesResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.Map<String, java.util.List<ConnectorEntity>> connectorEntityMap;
+    /**
+     * <p>
+     * A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of
+     * results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the
+     * response is too big for the page size.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -106,6 +114,58 @@ public class ListConnectorEntitiesResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of
+     * results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the
+     * response is too big for the page size.
+     * </p>
+     * 
+     * @param nextToken
+     *        A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of
+     *        results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the
+     *        response is too big for the page size.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of
+     * results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the
+     * response is too big for the page size.
+     * </p>
+     * 
+     * @return A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page
+     *         of results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if
+     *         the response is too big for the page size.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of
+     * results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the
+     * response is too big for the page size.
+     * </p>
+     * 
+     * @param nextToken
+     *        A token that you specify in your next <code>ListConnectorEntities</code> operation to get the next page of
+     *        results in paginated response. The <code>ListConnectorEntities</code> operation provides this token if the
+     *        response is too big for the page size.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListConnectorEntitiesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -118,7 +178,9 @@ public class ListConnectorEntitiesResult extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getConnectorEntityMap() != null)
-            sb.append("ConnectorEntityMap: ").append(getConnectorEntityMap());
+            sb.append("ConnectorEntityMap: ").append(getConnectorEntityMap()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -137,6 +199,10 @@ public class ListConnectorEntitiesResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getConnectorEntityMap() != null && other.getConnectorEntityMap().equals(this.getConnectorEntityMap()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -146,6 +212,7 @@ public class ListConnectorEntitiesResult extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getConnectorEntityMap() == null) ? 0 : getConnectorEntityMap().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

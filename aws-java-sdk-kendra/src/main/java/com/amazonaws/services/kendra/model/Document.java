@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -101,7 +101,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -111,7 +111,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.</p>
+     *        A identifier of the document in the index.</p>
      *        <p>
      *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
      *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
@@ -125,7 +125,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -134,7 +134,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * vice versa.
      * </p>
      * 
-     * @return A unique identifier of the document in the index.</p>
+     * @return A identifier of the document in the index.</p>
      *         <p>
      *         Note, each document ID must be unique per index. You cannot create a data source to index your documents
      *         with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or
@@ -148,7 +148,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier of the document in the index.
+     * A identifier of the document in the index.
      * </p>
      * <p>
      * Note, each document ID must be unique per index. You cannot create a data source to index your documents with
@@ -158,7 +158,7 @@ public class Document implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param id
-     *        A unique identifier of the document in the index.</p>
+     *        A identifier of the document in the index.</p>
      *        <p>
      *        Note, each document ID must be unique per index. You cannot create a data source to index your documents
      *        with their unique IDs and then use the <code>BatchPutDocument</code> API to index the same documents, or

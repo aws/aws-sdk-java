@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class StopStreamEncryptionRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EncryptionType").build();
     private static final MarshallingInfo<String> KEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KeyId").build();
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamARN").build();
 
     private static final StopStreamEncryptionRequestMarshaller instance = new StopStreamEncryptionRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class StopStreamEncryptionRequestMarshaller {
             protocolMarshaller.marshall(stopStreamEncryptionRequest.getStreamName(), STREAMNAME_BINDING);
             protocolMarshaller.marshall(stopStreamEncryptionRequest.getEncryptionType(), ENCRYPTIONTYPE_BINDING);
             protocolMarshaller.marshall(stopStreamEncryptionRequest.getKeyId(), KEYID_BINDING);
+            protocolMarshaller.marshall(stopStreamEncryptionRequest.getStreamARN(), STREAMARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

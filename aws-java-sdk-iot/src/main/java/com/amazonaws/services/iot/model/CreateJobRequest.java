@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2022 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2023 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -154,6 +154,13 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </note>
      */
     private java.util.Map<String, String> documentParameters;
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     */
+    private SchedulingConfig schedulingConfig;
 
     /**
      * <p>
@@ -1137,6 +1144,52 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     */
+
+    public void setSchedulingConfig(SchedulingConfig schedulingConfig) {
+        this.schedulingConfig = schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @return The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *         the end behavior for each job execution.
+     */
+
+    public SchedulingConfig getSchedulingConfig() {
+        return this.schedulingConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration that allows you to schedule a job for a future date and time in addition to specifying the end
+     * behavior for each job execution.
+     * </p>
+     * 
+     * @param schedulingConfig
+     *        The configuration that allows you to schedule a job for a future date and time in addition to specifying
+     *        the end behavior for each job execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateJobRequest withSchedulingConfig(SchedulingConfig schedulingConfig) {
+        setSchedulingConfig(schedulingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1177,7 +1230,9 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getJobExecutionsRetryConfig() != null)
             sb.append("JobExecutionsRetryConfig: ").append(getJobExecutionsRetryConfig()).append(",");
         if (getDocumentParameters() != null)
-            sb.append("DocumentParameters: ").append(getDocumentParameters());
+            sb.append("DocumentParameters: ").append(getDocumentParameters()).append(",");
+        if (getSchedulingConfig() != null)
+            sb.append("SchedulingConfig: ").append(getSchedulingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1252,6 +1307,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDocumentParameters() != null && other.getDocumentParameters().equals(this.getDocumentParameters()) == false)
             return false;
+        if (other.getSchedulingConfig() == null ^ this.getSchedulingConfig() == null)
+            return false;
+        if (other.getSchedulingConfig() != null && other.getSchedulingConfig().equals(this.getSchedulingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1275,6 +1334,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getJobTemplateArn() == null) ? 0 : getJobTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getJobExecutionsRetryConfig() == null) ? 0 : getJobExecutionsRetryConfig().hashCode());
         hashCode = prime * hashCode + ((getDocumentParameters() == null) ? 0 : getDocumentParameters().hashCode());
+        hashCode = prime * hashCode + ((getSchedulingConfig() == null) ? 0 : getSchedulingConfig().hashCode());
         return hashCode;
     }
 
